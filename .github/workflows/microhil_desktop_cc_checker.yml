@@ -12,7 +12,7 @@ jobs:
     - name: install GTK--
       id: install_gtkmm
       run: |
-        apt install libgtkmm-3.0-dev
+        sudo apt install libgtkmm-3.0-dev
     - name: make all
       id: gnu_make_all
       run: |
