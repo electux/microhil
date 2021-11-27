@@ -54,8 +54,6 @@ Copyright (C) 2020 by [electux.github.io/microhil](https://electux.github.io/mic
 
 **microhil** is free software; you can redistribute it and/or modify it.
 
-Lets help and support GNOME.
+Lets help and support Raspberry PI && GNOME.
 
-[![GNOME](https://raw.githubusercontent.com/electux/microhil/dev/docs/GNOME.png)](https://www.gnome.org/)
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.gnome.org/support-gnome/donate/)
+|[![RPi](https://raw.githubusercontent.com/electux/microhil/desktop/docs/RPi.png)](https://www.raspberrypi.org/)|[![GNOME](https://raw.githubusercontent.com/electux/microhil/dev/docs/GNOME.png)](https://www.gnome.org/)|[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.raspberrypi.org/donate/)|[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.gnome.org/support-gnome/donate/)|
