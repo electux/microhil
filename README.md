@@ -56,5 +56,9 @@ Copyright (C) 2020 by [electux.github.io/microhil](https://electux.github.io/mic
 
 Lets help and support Raspberry PI && GNOME.
 
-[![RPi](https://raw.githubusercontent.com/electux/microhil/desktop/docs/RPi.png)](https://www.raspberrypi.org/donate/)
-[![GNOME](https://raw.githubusercontent.com/electux/microhil/dev/docs/GNOME.png)](https://www.gnome.org/support-gnome/donate/)
+<a href="https://www.raspberrypi.org/donate/">
+<img src="https://raw.githubusercontent.com/electux/microhil/desktop/docs/RPi.png" alt="RPi" width="350" height="115">
+</a> <a href="https://www.gnome.org/support-gnome/donate/">
+<img src="https://raw.githubusercontent.com/electux/microhil/dev/docs/GNOME.png" alt="GNOME" width="350" height="115">
+</a>
+
