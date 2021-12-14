@@ -36,8 +36,6 @@ To install **microhil** type the following
 
 **microhil** requires next modules and libraries
 
-    * None
-
 ### Docs
 
 [![Documentation Status](https://readthedocs.org/projects/microhil/badge/?version=latest)](https://microhil.readthedocs.io/projects/microhil/en/latest/?badge=latest)
