@@ -1,13 +1,13 @@
-name: microhil-desktop CC checker
+name: microhil-device C checker
 on:
   push:
     branches: [ master ]
     paths:
-      - 'sw/microhil-desktop/**'
+      - 'sw/microhil-device0/**'
   pull_request:
     branches: [ master ]
     paths:
-      - 'sw/microhil-desktop/**'
+      - 'sw/microhil-device1/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +18,7 @@ jobs:
         run: |
           echo Checking length of line in modules
           modules_ok=0
-          modules=($(find sw/ -type f -name '*.cc' -exec echo '{}' \;))
+          modules=($(find sw/ -type f -name '*.c' -exec echo '{}' \;))
           for mod in "${modules[@]}"; do line_length=$(wc -L < "${mod}"); [[ $line_length -gt 80 ]] && modules_ok=1; done
           [[ $modules_ok -eq 0 ]] && echo ::set-output name=status::success || echo ::set-output name=status::failure
       - name: Check number of lines in modules
@@ -26,7 +26,7 @@ jobs:
         run: |
           echo Checking number of lines in modules
           modules_ok=0
-          modules=($(find sw/ -type f -name '*.cc' -exec echo '{}' \;))
+          modules=($(find sw/ -type f -name '*.c' -exec echo '{}' \;))
           for mod in "${modules[@]}"; do line_numbers=$(wc -l < "${mod}"); [[ $line_numbers -gt 300 ]] && modules_ok=1; done
           [[ $modules_ok -eq 0 ]] && echo ::set-output name=status::success || echo ::set-output name=status::failure
       - name: Check on failures
