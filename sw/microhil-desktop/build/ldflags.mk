@@ -6,4 +6,4 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-LDFLAGS=
+LDFLAGS = 
