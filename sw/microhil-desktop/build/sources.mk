@@ -6,4 +6,6 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-SOURCES=../microhil_desktop.cc ../main.cc
+SOURCES = \
+	../microhil_desktop.cc \
+	../main.cc
