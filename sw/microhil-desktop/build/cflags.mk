@@ -6,5 +6,4 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-GENERATED_SRC = resources.c
-OBJECTS = $(GENERATED_SRC:.c=.o) $(SOURCES:.cc=.o)
+CFLAGS = -c -Wall -g

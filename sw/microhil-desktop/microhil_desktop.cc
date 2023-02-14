@@ -19,11 +19,11 @@
 #include <iostream>
 #include "microhil_desktop.h"
 
-MicroHIL::MicroHIL()
+MicroHIL::MicroHIL():
+ui{Gtk::Builder::create_from_resource("/org/gtkmm/microhil-desktop/home.ui")}
 {
-  this->set_title(MICROHIL_TITLE);
-  this->set_border_width(MICROHIL_BORDER_WIDTH);
-  this->add(this->main_grid);
+  set_default_size(400, 400);
+  show_all();
 }
 
 MicroHIL::~MicroHIL()

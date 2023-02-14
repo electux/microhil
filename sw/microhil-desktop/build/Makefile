@@ -6,23 +6,33 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-CC=g++
-RM=rm
+CC  = gcc
+CXX = g++
+RM  = rm
 
 include ccflags.mk
+include cflags.mk
 include ldflags.mk
 include sources.mk
 include objects.mk
 
 EXECUTABLE=microhil-desktop
 
+GLIB_COMPILE_RESOURCES = $(shell pkg-config --variable=glib_compile_resources gio-2.0)
+
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@ `pkg-config gtkmm-3.0 --libs`
+	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@ `pkg-config gtkmm-3.0 --libs`
+
+resources.c: ../resource/microhil-desktop.gresource.xml ../resource/home.ui
+	$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=../resource --generate-source $<
 
 .cc.o:
-	$(CC) $(CFLAGS) $< -o $@ `pkg-config gtkmm-3.0 --cflags`
+	$(CXX) $(CCFLAGS) $< -o $@ `pkg-config gtkmm-3.0 --cflags`
+
+.c.o:
+	$(CC) $(CFLAGS) $< -o $@ `pkg-config gio-2.0 --cflags`
 
 clean:
-	$(RM) -rf ../*.o $(EXECUTABLE)
+	$(RM) -rf ../*.o *.o resources.c $(EXECUTABLE)
