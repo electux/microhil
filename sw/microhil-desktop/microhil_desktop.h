@@ -1,4 +1,4 @@
-/* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
+/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * microhil_desktop.h
  * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -25,14 +25,16 @@
 #include <gtkmm/builder.h>
 #include <giomm/resource.h>
 
+using MRefPtr = Glib::RefPtr<Gtk::Builder>;
+
 class MicroHIL : public Gtk::ApplicationWindow
 {
 public:
-  MicroHIL();
-  ~MicroHIL();
+    MicroHIL(BaseObjectType* object, MRefPtr const& ui);
+    ~MicroHIL();
 
 private:
-  Glib::RefPtr<Gtk::Builder> ui;
+    MRefPtr ui;
 };
 
 #endif

@@ -1,4 +1,4 @@
-/* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
+/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * main.cc
  * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -19,9 +19,24 @@
 #include "microhil_desktop.h"
 #include <gtkmm/application.h>
 
+namespace
+{
+    constexpr char kAppId[]{"org.gtkmm.microHIL"};
+    constexpr char kHomeUI[]{"/org/gtkmm/microhil-desktop/home.ui"};
+    constexpr char kwindowId[]{"Window"};
+}
+
 int main(int argc, char *argv[])
 {
-  auto app = Gtk::Application::create(argc, argv, "org.gtkmm.microHIL");
-  MicroHIL window_instance;
-  return app->run(window_instance);
+    MicroHIL *windowInstance {nullptr};
+
+    auto app = Gtk::Application::create(argc, argv, kAppId);
+    auto builder = Gtk::Builder::create_from_resource(kHomeUI);
+
+    builder->get_widget_derived(kwindowId, windowInstance);
+    auto result = app->run(*windowInstance);
+
+    delete windowInstance;
+
+    return result;
 }
