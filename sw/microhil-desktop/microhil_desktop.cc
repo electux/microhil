@@ -1,4 +1,4 @@
-/* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
+/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * microhil_desktop.cc
  * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -19,14 +19,13 @@
 #include <iostream>
 #include "microhil_desktop.h"
 
-MicroHIL::MicroHIL():
-ui{Gtk::Builder::create_from_resource("/org/gtkmm/microhil-desktop/home.ui")}
+MicroHIL::MicroHIL(BaseObjectType* object, MRefPtr const& ui):
+Gtk::ApplicationWindow(object), ui{ui}
 {
-  set_default_size(400, 400);
-  show_all();
+
 }
 
 MicroHIL::~MicroHIL()
 {
-  std::cout << "Clean up code/data" << std::endl;
+    std::cout << "Clean up code/data" << std::endl;
 }
