@@ -1,31 +1,31 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_desktop.cc
- * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
- * 
- * microhil_desktop is free software: you can redistribute it and/or modify it
+ * microhil_controller_if.h
+ * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
+ *
+ * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
- * microhil_desktop is distributed in the hope that it will be useful, but
+ *
+ * microhildesk is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <iostream>
-#include "microhil_desktop.h"
 
-MicroHIL::MicroHIL(BaseObjectType* object, MRefPtr const& ui):
-Gtk::ApplicationWindow(object), ui{ui}
+#ifndef MICROHIL_CONTROLLER_IF_H
+#define MICROHIL_CONTROLLER_IF_H
+
+class IMicroHILController
 {
+public:
+    virtual ~IMicroHILController() = default;
+    virtual void setEnabled(bool switchController) = 0;
+    virtual bool isEnabled() const = 0;
+};
 
-}
-
-MicroHIL::~MicroHIL()
-{
-    std::cout << "Clean up code/data" << std::endl;
-}
+#endif

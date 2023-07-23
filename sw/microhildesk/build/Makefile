@@ -1,5 +1,5 @@
 #
-# @brief   microhil-desktop
+# @brief   microhildesk
 # @version 1.0.0
 # @date    Fri 26 Nov 2021 11:10:21 PM CET
 # @company None, free software to use 2021
@@ -16,7 +16,7 @@ include ldflags.mk
 include sources.mk
 include objects.mk
 
-EXECUTABLE=microhil-desktop
+EXECUTABLE=microhildesk
 
 GLIB_COMPILE_RESOURCES = $(shell pkg-config --variable=glib_compile_resources gio-2.0)
 
@@ -25,7 +25,7 @@ all: $(SOURCES) $(EXECUTABLE)
 $(EXECUTABLE): $(OBJECTS)
 	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@ `pkg-config gtkmm-3.0 --libs`
 
-resources.c: ../resource/microhil-desktop.gresource.xml ../resource/home.ui
+resources.c: ../resource/microhildesk.gresource.xml ../resource/home.ui
 	$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=../resource --generate-source $<
 
 .cc.o:
