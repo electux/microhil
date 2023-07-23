@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/gtkmm/microhil-desktop">
+  <gresource prefix="/org/gtkmm/microhildesk">
     <file preprocess="xml-stripblanks">home.ui</file>
   </gresource>
 </gresources>
