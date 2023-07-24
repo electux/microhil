@@ -10,4 +10,5 @@ SOURCES = \
 	../microhil_model.cc \
 	../microhil_view.cc \
 	../microhil_controller.cc \
+	../application.cc \
 	../main.cc
