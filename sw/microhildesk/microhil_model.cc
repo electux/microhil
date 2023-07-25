@@ -1,3 +1,4 @@
+#include "microhil_model.h"
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * microhil_model.cc
@@ -26,12 +27,22 @@ void MicroHILModel::setChannel0(bool channelState)
     }
 }
 
+bool MicroHILModel::getChannel0() const
+{
+    return channel0;
+}
+
 void MicroHILModel::setChannel1(bool channelState)
 {
     if(channel1 != channelState)
     {
         channel1 = channelState;
     }
+}
+
+bool MicroHILModel::getChannel1() const
+{
+    return channel1;
 }
 
 void MicroHILModel::setChannel2(bool channelState)
@@ -42,10 +53,20 @@ void MicroHILModel::setChannel2(bool channelState)
     }
 }
 
+bool MicroHILModel::getChannel2() const
+{
+    return channel2;
+}
+
 void MicroHILModel::setChannel3(bool channelState)
 {
     if(channel3 != channelState)
     {
         channel3 = channelState;
     }
+}
+
+bool MicroHILModel::getChannel3() const
+{
+    return channel3;
 }

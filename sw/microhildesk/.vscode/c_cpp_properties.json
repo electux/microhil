@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Linux C++ GTK3",
+            "name": "microhildesk linux C++ GTK3",
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/include/x86_64-linux-gnu/",

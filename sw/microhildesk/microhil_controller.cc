@@ -18,8 +18,9 @@
  */
 #include "microhil_controller.h"
 
-MicroHILController::MicroHILController()
+MicroHILController::MicroHILController(IMicroHILModel *model, IMicroHILView *view)
 {
+    
 }
 
 void MicroHILController::setEnabled(bool switchController)

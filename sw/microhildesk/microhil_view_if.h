@@ -25,16 +25,16 @@
 class IMicroHILView
 {
 public:
+    using channel0Changed = sigc::signal<void(bool)>;
+    using channel1Changed = sigc::signal<void(bool)>;
+    using channel2Changed = sigc::signal<void(bool)>;
+    using channel3Changed = sigc::signal<void(bool)>;
+
     virtual ~IMicroHILView() = default;
     virtual void onChannel0() = 0;
     virtual void onChannel1() = 0;
     virtual void onChannel2() = 0;
     virtual void onChannel3() = 0;
-
-    using channel0Changed = sigc::signal<void(bool)>;
-    using channel1Changed = sigc::signal<void(bool)>;
-    using channel2Changed = sigc::signal<void(bool)>;
-    using channel3Changed = sigc::signal<void(bool)>;
 
     virtual channel0Changed channel0IsChanged() = 0;
     virtual channel1Changed channel1IsChanged() = 0;

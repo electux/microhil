@@ -27,11 +27,11 @@
 #include <gtkmm/checkbutton.h>
 #include "microhil_view_if.h"
 
-using BRefPtr = Glib::RefPtr<Gtk::Builder>;
-
 class MicroHILView : public IMicroHILView, public Gtk::ApplicationWindow
 {
 public:
+    using BRefPtr = Glib::RefPtr<Gtk::Builder>;
+
     MicroHILView(BaseObjectType* object, BRefPtr const& ui);
     ~MicroHILView();
 
