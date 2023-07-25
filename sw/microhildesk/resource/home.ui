@@ -9,13 +9,14 @@
     <property name="title">microHIL</property>
     <property name="resizable">False</property>
     <property name="default-width">600</property>
-    <property name="default-height">350</property>
+    <property name="default-height">250</property>
     <property name="destroy-with-parent">True</property>
     <child>
       <object class="GtkBox" id="Channels">
         <property name="name">Channels</property>
         <property name="visible">True</property>
         <property name="can-focus">False</property>
+        <property name="spacing">6</property>
         <property name="homogeneous">True</property>
         <child>
           <object class="GtkBox" id="Channel0">
@@ -23,13 +24,16 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="orientation">vertical</property>
+            <property name="spacing">4</property>
+            <property name="baseline-position">top</property>
             <child>
               <object class="GtkCheckButton" id="EnableChannel0">
-                <property name="label" translatable="yes">checkbutton</property>
+                <property name="label" translatable="yes">Channel #0</property>
                 <property name="name">EnableChannel0</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
+                <property name="tooltip-text" translatable="yes">Enable channel #0 for usage and control</property>
                 <property name="draw-indicator">True</property>
               </object>
               <packing>
@@ -39,10 +43,116 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkBox" id="ChannelOptions0">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-bottom">1</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">2</property>
+                <property name="homogeneous">True</property>
+                <property name="baseline-position">top</property>
+                <child>
+                  <object class="GtkComboBox" id="Channel0Selector">
+                    <property name="name">Channel0Selector</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="tooltip-text" translatable="yes">Select the type of control</property>
+                    <property name="active">0</property>
+                    <property name="id-column">2</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="Channel0ToggleLabel">
+                    <property name="name">Channel0ToggleLabel</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Toogle channel #0</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="Channel0ToggleButton">
+                    <property name="label" translatable="yes">Activate</property>
+                    <property name="name">Channel0ToggleButton</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Activate or diactivate channel #0</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="Channel0TimerLabel">
+                    <property name="name">Channel0TimerLabel</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Use timer #0</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="Channel0TimerSpin">
+                    <property name="name">Channel0TimerSpin</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="tooltip-text" translatable="yes">Set the timer for channel #0</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Channel0TimerButton">
+                    <property name="label" translatable="yes">Start</property>
+                    <property name="name">Channel0TimerButton</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Start or stop timer for channel #0</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">5</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkProgressBar" id="Channel0TimerStatus">
+                <property name="name">Channel0TimerStatus</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -57,13 +167,16 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="orientation">vertical</property>
+            <property name="spacing">4</property>
+            <property name="baseline-position">top</property>
             <child>
               <object class="GtkCheckButton" id="EnableChannel1">
-                <property name="label" translatable="yes">checkbutton</property>
+                <property name="label" translatable="yes">Channel #1</property>
                 <property name="name">EnableChannel1</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
+                <property name="tooltip-text" translatable="yes">Enable channel #1 for usage and control</property>
                 <property name="draw-indicator">True</property>
               </object>
               <packing>
@@ -73,10 +186,115 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkBox" id="ChannelOptions1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">2</property>
+                <property name="homogeneous">True</property>
+                <property name="baseline-position">top</property>
+                <child>
+                  <object class="GtkComboBox" id="Channel1Selector">
+                    <property name="name">Channel1Selector</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="tooltip-text" translatable="yes">Select the type of control</property>
+                    <property name="active">0</property>
+                    <property name="id-column">2</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="Channel1ToggleLabel">
+                    <property name="name">Channel1ToggleLabel</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Toogle channel #1</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="Channel1ToggleButton">
+                    <property name="label" translatable="yes">Activate</property>
+                    <property name="name">Channel1ToggleButton</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Activate or diactivate channel #1</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="Channel1TimerLabel">
+                    <property name="name">Channel1TimerLabel</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Use timer #1</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="Channel1TimerSpin">
+                    <property name="name">Channel1TimerSpin</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="tooltip-text" translatable="yes">Set the timer for channel #1</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Channel1TimerButton">
+                    <property name="label" translatable="yes">Start</property>
+                    <property name="name">Channel1TimerButton</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Start or stop timer for channel #1</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">5</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkProgressBar" id="Channel1TimerStatus">
+                <property name="name">Channel1TimerStatus</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -91,13 +309,16 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="orientation">vertical</property>
+            <property name="spacing">4</property>
+            <property name="baseline-position">top</property>
             <child>
               <object class="GtkCheckButton" id="EnableChannel2">
-                <property name="label" translatable="yes">checkbutton</property>
+                <property name="label" translatable="yes">Channel #2</property>
                 <property name="name">EnableChannel2</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
+                <property name="tooltip-text" translatable="yes">Enable channel #2 for usage and control</property>
                 <property name="draw-indicator">True</property>
               </object>
               <packing>
@@ -107,10 +328,115 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkBox" id="ChannelOptions2">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">2</property>
+                <property name="homogeneous">True</property>
+                <property name="baseline-position">top</property>
+                <child>
+                  <object class="GtkComboBox" id="Channel2Selector">
+                    <property name="name">Channel2Selector</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="tooltip-text" translatable="yes">Select the type of control</property>
+                    <property name="active">0</property>
+                    <property name="id-column">2</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="Channel2ToggleLabel">
+                    <property name="name">Channel2ToggleLabel</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Toogle channel #2</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="Channel2ToggleButton">
+                    <property name="label" translatable="yes">Activate</property>
+                    <property name="name">Channel2ToggleButton</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Activate or diactivate channel #2</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="Channel2TimerLabel">
+                    <property name="name">Channel2TimerLabel</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Use timer #2</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="Channel2TimerSpin">
+                    <property name="name">Channel2TimerSpin</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="tooltip-text" translatable="yes">Set the timer for channel #2</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Channel2TimerButton">
+                    <property name="label" translatable="yes">Start</property>
+                    <property name="name">Channel2TimerButton</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Start or stop timer for channel #2</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">5</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkProgressBar" id="Channel2TimerStatus">
+                <property name="name">Channel2TimerStatus</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -125,13 +451,16 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="orientation">vertical</property>
+            <property name="spacing">4</property>
+            <property name="baseline-position">top</property>
             <child>
               <object class="GtkCheckButton" id="EnableChannel3">
-                <property name="label" translatable="yes">checkbutton</property>
+                <property name="label" translatable="yes">Channel #3</property>
                 <property name="name">EnableChannel3</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">False</property>
+                <property name="tooltip-text" translatable="yes">Enable channel #3 for usage and control</property>
                 <property name="draw-indicator">True</property>
               </object>
               <packing>
@@ -141,10 +470,115 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkBox" id="ChannelOptions3">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">2</property>
+                <property name="homogeneous">True</property>
+                <property name="baseline-position">top</property>
+                <child>
+                  <object class="GtkComboBox" id="Channel3Selector">
+                    <property name="name">Channel3Selector</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="tooltip-text" translatable="yes">Select the type of control</property>
+                    <property name="active">0</property>
+                    <property name="id-column">2</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="Channel3ToggleLabel">
+                    <property name="name">Channel3ToggleLabel</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Toogle channel #3</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToggleButton" id="Channel3ToggleButton">
+                    <property name="label" translatable="yes">Activate</property>
+                    <property name="name">Channel3ToggleButton</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Activate or diactivate channel #3</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="Channel3TimerLabel">
+                    <property name="name">Channel3TimerLabel</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Use timer #3</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="Channel3TimerSpin">
+                    <property name="name">Channel3TimerSpin</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="tooltip-text" translatable="yes">Set the timer for channel #3</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="Channel3TimerButton">
+                    <property name="label" translatable="yes">Start</property>
+                    <property name="name">Channel3TimerButton</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="tooltip-text" translatable="yes">Start or stop timer for channel #3</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">5</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkProgressBar" id="Channel3TimerStatus">
+                <property name="name">Channel3TimerStatus</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
             </child>
           </object>
           <packing>
