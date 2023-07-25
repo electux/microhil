@@ -29,9 +29,13 @@ public:
     ~MicroHILModel() = default;
 
     void setChannel0(bool channelState) final;
+    bool getChannel0() const final;
     void setChannel1(bool channelState) final;
+    bool getChannel1() const final;
     void setChannel2(bool channelState) final;
+    bool getChannel2() const final;
     void setChannel3(bool channelState) final;
+    bool getChannel3() const final;
 
 private:
     bool channel0 {false};

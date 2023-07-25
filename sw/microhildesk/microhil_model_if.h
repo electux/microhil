@@ -25,9 +25,13 @@ class IMicroHILModel
 public:
     virtual ~IMicroHILModel() = default;
     virtual void setChannel0(bool channelState) = 0;
+    virtual bool getChannel0() const = 0;
     virtual void setChannel1(bool channelState) = 0;
+    virtual bool getChannel1() const = 0;
     virtual void setChannel2(bool channelState) = 0;
+    virtual bool getChannel2() const = 0;
     virtual void setChannel3(bool channelState) = 0;
+    virtual bool getChannel3() const = 0;
 };
 
 #endif
