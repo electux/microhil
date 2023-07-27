@@ -21,9 +21,9 @@
 #define APPLICATION_H
 
 #include <gtkmm/application.h>
-#include "microhil_model.h"
-#include "microhil_view.h"
-#include "microhil_controller.h"
+#include "model/microhil_model.h"
+#include "view/microhil_view.h"
+#include "controller/microhil_controller.h"
 
 class Application
 {

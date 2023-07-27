@@ -115,6 +115,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="tooltip-text" translatable="yes">Set the timer for channel #0</property>
+                    <property name="numeric">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -123,7 +124,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="Channel0TimerButton">
+                  <object class="GtkToggleButton" id="Channel0TimerButton">
                     <property name="label" translatable="yes">Start</property>
                     <property name="name">Channel0TimerButton</property>
                     <property name="visible">True</property>
@@ -259,6 +260,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="tooltip-text" translatable="yes">Set the timer for channel #1</property>
+                    <property name="numeric">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -267,7 +269,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="Channel1TimerButton">
+                  <object class="GtkToggleButton" id="Channel1TimerButton">
                     <property name="label" translatable="yes">Start</property>
                     <property name="name">Channel1TimerButton</property>
                     <property name="visible">True</property>
@@ -403,6 +405,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="tooltip-text" translatable="yes">Set the timer for channel #2</property>
+                    <property name="numeric">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -411,7 +414,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="Channel2TimerButton">
+                  <object class="GtkToggleButton" id="Channel2TimerButton">
                     <property name="label" translatable="yes">Start</property>
                     <property name="name">Channel2TimerButton</property>
                     <property name="visible">True</property>
@@ -547,6 +550,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="tooltip-text" translatable="yes">Set the timer for channel #3</property>
+                    <property name="numeric">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -555,7 +559,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="Channel3TimerButton">
+                  <object class="GtkToggleButton" id="Channel3TimerButton">
                     <property name="label" translatable="yes">Start</property>
                     <property name="name">Channel3TimerButton</property>
                     <property name="visible">True</property>

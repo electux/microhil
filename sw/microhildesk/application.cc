@@ -17,9 +17,6 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "application.h"
-#include "microhil_model.h"
-#include "microhil_view.h"
-#include "microhil_controller.h"
 
 namespace
 {

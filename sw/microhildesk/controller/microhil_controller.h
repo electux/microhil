@@ -19,8 +19,8 @@
 
 #pragma once
 
-#include "microhil_model.h"
-#include "microhil_view.h"
+#include "../model/microhil_model.h"
+#include "../view/microhil_view.h"
 #include "microhil_controller_abstract.h"
 
 class MicroHILController: public AbMicroHILController
