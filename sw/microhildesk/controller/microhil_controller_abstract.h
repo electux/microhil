@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_model.h
+ * microhil_controller_abstract.h
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -17,31 +17,12 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MICROHIL_MODEL_H
-#define MICROHIL_MODEL_H
+#pragma once
 
-#include "microhil_model_if.h"
-
-class MicroHILModel: public IMicroHILModel
+class AbMicroHILController
 {
 public:
-    MicroHILModel() = default;
-    ~MicroHILModel() = default;
-
-    void setChannel0(bool channelState) final;
-    bool getChannel0() const final;
-    void setChannel1(bool channelState) final;
-    bool getChannel1() const final;
-    void setChannel2(bool channelState) final;
-    bool getChannel2() const final;
-    void setChannel3(bool channelState) final;
-    bool getChannel3() const final;
-
-private:
-    bool channel0 {false};
-    bool channel1 {false};
-    bool channel2 {false};
-    bool channel3 {false};
+    virtual ~AbMicroHILController() = default;
+    virtual void setEnabled(bool switchController) = 0;
+    virtual bool isEnabled() const = 0;
 };
-
-#endif

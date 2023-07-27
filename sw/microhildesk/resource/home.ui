@@ -52,13 +52,15 @@
                 <property name="homogeneous">True</property>
                 <property name="baseline-position">top</property>
                 <child>
-                  <object class="GtkComboBox" id="Channel0Selector">
+                  <object class="GtkComboBoxText" id="Channel0Selector">
                     <property name="name">Channel0Selector</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes">Select the type of control</property>
-                    <property name="active">0</property>
-                    <property name="id-column">2</property>
+                    <items>
+                      <item id="0" translatable="yes">Toogle Active</item>
+                      <item id="1" translatable="yes">Timer Active</item>
+                    </items>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -113,6 +115,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="tooltip-text" translatable="yes">Set the timer for channel #0</property>
+                    <property name="numeric">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -121,7 +124,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="Channel0TimerButton">
+                  <object class="GtkToggleButton" id="Channel0TimerButton">
                     <property name="label" translatable="yes">Start</property>
                     <property name="name">Channel0TimerButton</property>
                     <property name="visible">True</property>
@@ -194,13 +197,15 @@
                 <property name="homogeneous">True</property>
                 <property name="baseline-position">top</property>
                 <child>
-                  <object class="GtkComboBox" id="Channel1Selector">
+                  <object class="GtkComboBoxText" id="Channel1Selector">
                     <property name="name">Channel1Selector</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes">Select the type of control</property>
-                    <property name="active">0</property>
-                    <property name="id-column">2</property>
+                    <items>
+                      <item id="0" translatable="yes">Toogle Active</item>
+                      <item id="1" translatable="yes">Timer Active</item>
+                    </items>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -255,6 +260,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="tooltip-text" translatable="yes">Set the timer for channel #1</property>
+                    <property name="numeric">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -263,7 +269,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="Channel1TimerButton">
+                  <object class="GtkToggleButton" id="Channel1TimerButton">
                     <property name="label" translatable="yes">Start</property>
                     <property name="name">Channel1TimerButton</property>
                     <property name="visible">True</property>
@@ -336,13 +342,15 @@
                 <property name="homogeneous">True</property>
                 <property name="baseline-position">top</property>
                 <child>
-                  <object class="GtkComboBox" id="Channel2Selector">
+                  <object class="GtkComboBoxText" id="Channel2Selector">
                     <property name="name">Channel2Selector</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes">Select the type of control</property>
-                    <property name="active">0</property>
-                    <property name="id-column">2</property>
+                    <items>
+                      <item id="0" translatable="yes">Toogle Active</item>
+                      <item id="1" translatable="yes">Timer Active</item>
+                    </items>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -397,6 +405,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="tooltip-text" translatable="yes">Set the timer for channel #2</property>
+                    <property name="numeric">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -405,7 +414,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="Channel2TimerButton">
+                  <object class="GtkToggleButton" id="Channel2TimerButton">
                     <property name="label" translatable="yes">Start</property>
                     <property name="name">Channel2TimerButton</property>
                     <property name="visible">True</property>
@@ -478,13 +487,15 @@
                 <property name="homogeneous">True</property>
                 <property name="baseline-position">top</property>
                 <child>
-                  <object class="GtkComboBox" id="Channel3Selector">
+                  <object class="GtkComboBoxText" id="Channel3Selector">
                     <property name="name">Channel3Selector</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="tooltip-text" translatable="yes">Select the type of control</property>
-                    <property name="active">0</property>
-                    <property name="id-column">2</property>
+                    <items>
+                      <item id="0" translatable="yes">Toogle Active</item>
+                      <item id="1" translatable="yes">Timer Active</item>
+                    </items>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -539,6 +550,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="tooltip-text" translatable="yes">Set the timer for channel #3</property>
+                    <property name="numeric">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -547,7 +559,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="Channel3TimerButton">
+                  <object class="GtkToggleButton" id="Channel3TimerButton">
                     <property name="label" translatable="yes">Start</property>
                     <property name="name">Channel3TimerButton</property>
                     <property name="visible">True</property>

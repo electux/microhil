@@ -6,4 +6,4 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-CCFLAGS=-c -Wall -g -std=c++11
+CCFLAGS=-c -Wall -g -std=c++17

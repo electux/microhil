@@ -7,8 +7,8 @@
 #
 
 SOURCES = \
-	../microhil_model.cc \
-	../microhil_view.cc \
-	../microhil_controller.cc \
+	../model/microhil_model.cc \
+	../view/microhil_view.cc \
+	../controller/microhil_controller.cc \
 	../application.cc \
 	../main.cc

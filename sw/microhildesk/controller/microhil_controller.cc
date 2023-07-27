@@ -18,17 +18,19 @@
  */
 #include "microhil_controller.h"
 
-MicroHILController::MicroHILController(IMicroHILModel *model, IMicroHILView *view)
+MicroHILController::MicroHILController(
+    MicroHILModel *model, MicroHILView *view
+)
 {
     
 }
 
 void MicroHILController::setEnabled(bool switchController)
 {
-    enabled = switchController;
+    m_enabled = switchController;
 }
 
 bool MicroHILController::isEnabled() const
 {
-    return enabled;
+    return m_enabled;
 }

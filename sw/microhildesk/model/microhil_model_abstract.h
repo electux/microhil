@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_controller_if.h
+ * microhil_model_abstract.h
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -17,15 +17,28 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MICROHIL_CONTROLLER_IF_H
-#define MICROHIL_CONTROLLER_IF_H
+#pragma once
 
-class IMicroHILController
+enum class ChannelState: bool
 {
-public:
-    virtual ~IMicroHILController() = default;
-    virtual void setEnabled(bool switchController) = 0;
-    virtual bool isEnabled() const = 0;
+    OFF = false,
+    ON  = true
 };
 
-#endif
+class AbMicroHILModel
+{
+public:
+    virtual ~AbMicroHILModel() = default;
+    virtual void setChannel0(ChannelState state) = 0;
+    virtual ChannelState getChannel0() const = 0;
+    virtual bool isOnChannel0() const = 0;
+    virtual void setChannel1(ChannelState state) = 0;
+    virtual ChannelState getChannel1() const = 0;
+    virtual bool isOnChannel1() const = 0;
+    virtual void setChannel2(ChannelState state) = 0;
+    virtual ChannelState getChannel2() const = 0;
+    virtual bool isOnChannel2() const = 0;
+    virtual void setChannel3(ChannelState state) = 0;
+    virtual ChannelState getChannel3() const = 0;
+    virtual bool isOnChannel3() const = 0;
+};

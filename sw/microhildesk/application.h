@@ -21,22 +21,20 @@
 #define APPLICATION_H
 
 #include <gtkmm/application.h>
-#include "microhil_model.h"
-#include "microhil_view.h"
-#include "microhil_controller.h"
+#include "model/microhil_model.h"
+#include "view/microhil_view.h"
+#include "controller/microhil_controller.h"
 
 class Application
 {
 public:
-    using ARefPtr = Glib::RefPtr<Gtk::Application>;
-
     Application(int argc, char *argv[]);
     ~Application();
     int run();
 
 private:
-    ARefPtr m_app;
-    MicroHILView::BRefPtr m_builder;
+    Glib::RefPtr<Gtk::Application> m_app;
+    Glib::RefPtr<Gtk::Builder> m_builder;
 
     MicroHILModel *m_model{nullptr};
     MicroHILView *m_view {nullptr};
