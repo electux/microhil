@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_controller_if.h
+ * microhil_controller_abstract.h
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -17,15 +17,12 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MICROHIL_CONTROLLER_IF_H
-#define MICROHIL_CONTROLLER_IF_H
+#pragma once
 
-class IMicroHILController
+class AbMicroHILController
 {
 public:
-    virtual ~IMicroHILController() = default;
+    virtual ~AbMicroHILController() = default;
     virtual void setEnabled(bool switchController) = 0;
     virtual bool isEnabled() const = 0;
 };
-
-#endif

@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_view_if.h
+ * microhil_view_abstract.h
  * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -17,12 +17,11 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MICROHIL_VIEW_IF_H
-#define MICROHIL_VIEW_IF_H
+#pragma once
 
 #include <sigc++/sigc++.h>
 
-class IMicroHILView
+class AbMicroHILView
 {
 public:
     using channel0Changed = sigc::signal<void(bool)>;
@@ -30,7 +29,7 @@ public:
     using channel2Changed = sigc::signal<void(bool)>;
     using channel3Changed = sigc::signal<void(bool)>;
 
-    virtual ~IMicroHILView() = default;
+    virtual ~AbMicroHILView() = default;
     virtual void onChannel0() = 0;
     virtual void onChannel1() = 0;
     virtual void onChannel2() = 0;
@@ -41,5 +40,3 @@ public:
     virtual channel2Changed channel2IsChanged() = 0;
     virtual channel3Changed channel3IsChanged() = 0;
 };
-
-#endif

@@ -17,17 +17,16 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MICROHIL_CONTROLLER_H
-#define MICROHIL_CONTROLLER_H
+#pragma once
 
-#include "microhil_model_if.h"
-#include "microhil_view_if.h"
-#include "microhil_controller_if.h"
+#include "microhil_model.h"
+#include "microhil_view.h"
+#include "microhil_controller_abstract.h"
 
-class MicroHILController: public IMicroHILController
+class MicroHILController: public AbMicroHILController
 {
 public:
-    MicroHILController(IMicroHILModel *model, IMicroHILView *view);
+    MicroHILController(MicroHILModel *model, MicroHILView *view);
     ~MicroHILController() = default;
 
     void setEnabled(bool switchController) final;
@@ -35,7 +34,5 @@ public:
 
 private:
 
-    bool enabled {false};
+    bool m_enabled {false};
 };
-
-#endif

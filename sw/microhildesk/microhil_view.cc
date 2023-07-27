@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <iostream>
 #include "microhil_view.h"
 
 namespace
@@ -27,13 +26,22 @@ namespace
     constexpr char kCheckButton3Id[]{"EnableChannel3"};
 }
 
-MicroHILView::MicroHILView(BaseObjectType* object, BRefPtr const& ui):
-Gtk::ApplicationWindow(object), ui{ui}
+MicroHILView::MicroHILView(
+    BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+): Gtk::ApplicationWindow(object), m_ui{ui}
 {
-    ui->get_widget(kCheckButton0Id, m_checkButtonChannel0);
-    ui->get_widget(kCheckButton1Id, m_checkButtonChannel1);
-    ui->get_widget(kCheckButton2Id, m_checkButtonChannel2);
-    ui->get_widget(kCheckButton3Id, m_checkButtonChannel3);
+    m_checkButtonChannel0 = Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
+        m_ui->get_object(kCheckButton0Id)
+    );
+    m_checkButtonChannel1 = Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
+        m_ui->get_object(kCheckButton1Id)
+    );
+    m_checkButtonChannel2 = Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
+        m_ui->get_object(kCheckButton2Id)
+    );
+    m_checkButtonChannel3 = Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
+        m_ui->get_object(kCheckButton3Id)
+    );
 
     m_checkButtonChannel0->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel0)
@@ -94,12 +102,4 @@ MicroHILView::channel2Changed MicroHILView::channel2IsChanged()
 MicroHILView::channel3Changed MicroHILView::channel3IsChanged()
 {
     return m_channel3;
-}
-
-MicroHILView::~MicroHILView()
-{
-    if(m_checkButtonChannel0) delete m_checkButtonChannel0;
-    if(m_checkButtonChannel1) delete m_checkButtonChannel1;
-    if(m_checkButtonChannel2) delete m_checkButtonChannel2;
-    if(m_checkButtonChannel3) delete m_checkButtonChannel3;
 }

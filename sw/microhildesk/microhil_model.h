@@ -17,31 +17,32 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MICROHIL_MODEL_H
-#define MICROHIL_MODEL_H
+#pragma once
 
-#include "microhil_model_if.h"
+#include "microhil_model_abstract.h"
 
-class MicroHILModel: public IMicroHILModel
+class MicroHILModel: public AbMicroHILModel
 {
 public:
     MicroHILModel() = default;
     ~MicroHILModel() = default;
 
-    void setChannel0(bool channelState) final;
-    bool getChannel0() const final;
-    void setChannel1(bool channelState) final;
-    bool getChannel1() const final;
-    void setChannel2(bool channelState) final;
-    bool getChannel2() const final;
-    void setChannel3(bool channelState) final;
-    bool getChannel3() const final;
+    void setChannel0(ChannelState state) final;
+    ChannelState getChannel0() const final;
+    bool isOnChannel0() const final;
+    void setChannel1(ChannelState state) final;
+    ChannelState getChannel1() const final;
+    bool isOnChannel1() const final;
+    void setChannel2(ChannelState state) final;
+    ChannelState getChannel2() const final;
+    bool isOnChannel2() const final;
+    void setChannel3(ChannelState state) final;
+    ChannelState getChannel3() const final;
+    bool isOnChannel3() const final;
 
 private:
-    bool channel0 {false};
-    bool channel1 {false};
-    bool channel2 {false};
-    bool channel3 {false};
+    ChannelState m_channel0 {ChannelState::OFF};
+    ChannelState m_channel1 {ChannelState::OFF};
+    ChannelState m_channel2 {ChannelState::OFF};
+    ChannelState m_channel3 {ChannelState::OFF};
 };
-
-#endif

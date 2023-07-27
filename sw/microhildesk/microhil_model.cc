@@ -1,4 +1,3 @@
-#include "microhil_model.h"
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * microhil_model.cc
@@ -19,54 +18,74 @@
  */
 #include "microhil_model.h"
 
-void MicroHILModel::setChannel0(bool channelState)
+void MicroHILModel::setChannel0(ChannelState state)
 {
-    if(channel0 != channelState)
+    if(m_channel0 != state)
     {
-        channel0 = channelState;
+        m_channel0 = state;
     }
 }
 
-bool MicroHILModel::getChannel0() const
+ChannelState MicroHILModel::getChannel0() const
 {
-    return channel0;
+    return m_channel0;
 }
 
-void MicroHILModel::setChannel1(bool channelState)
+bool MicroHILModel::isOnChannel0() const
 {
-    if(channel1 != channelState)
+    return bool(m_channel0);
+}
+
+void MicroHILModel::setChannel1(ChannelState state)
+{
+    if(m_channel1 != state)
     {
-        channel1 = channelState;
+        m_channel1 = state;
     }
 }
 
-bool MicroHILModel::getChannel1() const
+ChannelState MicroHILModel::getChannel1() const
 {
-    return channel1;
+    return m_channel1;
 }
 
-void MicroHILModel::setChannel2(bool channelState)
+bool MicroHILModel::isOnChannel1() const
 {
-    if(channel2 != channelState)
+    return bool(m_channel1);
+}
+
+void MicroHILModel::setChannel2(ChannelState state)
+{
+    if(m_channel2 != state)
     {
-        channel2 = channelState;
+        m_channel2 = state;
     }
 }
 
-bool MicroHILModel::getChannel2() const
+ChannelState MicroHILModel::getChannel2() const
 {
-    return channel2;
+    return m_channel2;
 }
 
-void MicroHILModel::setChannel3(bool channelState)
+bool MicroHILModel::isOnChannel2() const
 {
-    if(channel3 != channelState)
+    return bool(m_channel2);
+}
+
+void MicroHILModel::setChannel3(ChannelState state)
+{
+    if(m_channel3 != state)
     {
-        channel3 = channelState;
+        m_channel3 = state;
     }
 }
 
-bool MicroHILModel::getChannel3() const
+ChannelState MicroHILModel::getChannel3() const
 {
-    return channel3;
+    return m_channel3;
+}
+
+bool MicroHILModel::isOnChannel3() const
+{
+    return bool(m_channel3);
 }

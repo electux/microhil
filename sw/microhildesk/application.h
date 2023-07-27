@@ -28,15 +28,13 @@
 class Application
 {
 public:
-    using ARefPtr = Glib::RefPtr<Gtk::Application>;
-
     Application(int argc, char *argv[]);
     ~Application();
     int run();
 
 private:
-    ARefPtr m_app;
-    MicroHILView::BRefPtr m_builder;
+    Glib::RefPtr<Gtk::Application> m_app;
+    Glib::RefPtr<Gtk::Builder> m_builder;
 
     MicroHILModel *m_model{nullptr};
     MicroHILView *m_view {nullptr};

@@ -17,23 +17,20 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MICROHIL_VIEW_H
-#define MICROHIL_VIEW_H
+#pragma once
 
 #include <gtkmm/application.h>
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/builder.h>
 #include <giomm/resource.h>
 #include <gtkmm/checkbutton.h>
-#include "microhil_view_if.h"
+#include "microhil_view_abstract.h"
 
-class MicroHILView : public IMicroHILView, public Gtk::ApplicationWindow
+class MicroHILView : public AbMicroHILView, public Gtk::ApplicationWindow
 {
 public:
-    using BRefPtr = Glib::RefPtr<Gtk::Builder>;
-
-    MicroHILView(BaseObjectType* object, BRefPtr const& ui);
-    ~MicroHILView();
+    MicroHILView(BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui);
+    ~MicroHILView() = default;
 
     void onChannel0() final;
     void onChannel1() final;
@@ -46,17 +43,15 @@ public:
     channel3Changed channel3IsChanged() final;
 
 private:
-    BRefPtr ui;
+    Glib::RefPtr<Gtk::Builder> m_ui;
 
-    Gtk::CheckButton *m_checkButtonChannel0;
-    Gtk::CheckButton *m_checkButtonChannel1;
-    Gtk::CheckButton *m_checkButtonChannel2;
-    Gtk::CheckButton *m_checkButtonChannel3;
+    Glib::RefPtr<Gtk::CheckButton> m_checkButtonChannel0;
+    Glib::RefPtr<Gtk::CheckButton> m_checkButtonChannel1;
+    Glib::RefPtr<Gtk::CheckButton> m_checkButtonChannel2;
+    Glib::RefPtr<Gtk::CheckButton> m_checkButtonChannel3;
 
     channel0Changed m_channel0;
     channel1Changed m_channel1;
     channel2Changed m_channel2;
     channel3Changed m_channel3;
 };
-
-#endif
