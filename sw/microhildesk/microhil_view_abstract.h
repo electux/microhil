@@ -24,19 +24,49 @@
 class AbMicroHILView
 {
 public:
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Signal types for enable check buttons
     using channel0Changed = sigc::signal<void(bool)>;
     using channel1Changed = sigc::signal<void(bool)>;
     using channel2Changed = sigc::signal<void(bool)>;
     using channel3Changed = sigc::signal<void(bool)>;
 
+    ////////////////////////////////////////////////////////////////////////////
+    // Signal types for selectable comboboxes
+    using select0Changed = sigc::signal<void(int)>;
+    using select1Changed = sigc::signal<void(int)>;
+    using select2Changed = sigc::signal<void(int)>;
+    using select3Changed = sigc::signal<void(int)>;
+
     virtual ~AbMicroHILView() = default;
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Signals for enabling check buttons
+    virtual channel0Changed channel0IsChanged() = 0;
+    virtual channel1Changed channel1IsChanged() = 0;
+    virtual channel2Changed channel2IsChanged() = 0;
+    virtual channel3Changed channel3IsChanged() = 0;
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Slots for enabling check buttons
     virtual void onChannel0() = 0;
     virtual void onChannel1() = 0;
     virtual void onChannel2() = 0;
     virtual void onChannel3() = 0;
 
-    virtual channel0Changed channel0IsChanged() = 0;
-    virtual channel1Changed channel1IsChanged() = 0;
-    virtual channel2Changed channel2IsChanged() = 0;
-    virtual channel3Changed channel3IsChanged() = 0;
+    ////////////////////////////////////////////////////////////////////////////
+    // Signals for selecting comboboxes
+    virtual select0Changed channel0IsSelected() = 0;
+    virtual select1Changed channel1IsSelected() = 0;
+    virtual select2Changed channel2IsSelected() = 0;
+    virtual select3Changed channel3IsSelected() = 0;
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Slots for processing comboboxes
+    virtual void onChannel0TypeSelected() = 0;
+    virtual void onChannel1TypeSelected() = 0;
+    virtual void onChannel2TypeSelected() = 0;
+    virtual void onChannel3TypeSelected() = 0;
+
 };
