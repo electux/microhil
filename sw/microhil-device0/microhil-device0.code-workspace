@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdlib.h": "c",
+			"pico.h": "c",
+			"types.h": "c",
+			"config.h": "c",
+			"config_autogen.h": "c",
+			"platform.h": "c",
+			"error.h": "c",
+			"time.h": "c",
+			"timer.h": "c",
+			"address_mapped.h": "c",
+			"gpio.h": "c"
+		}
+	}
+}

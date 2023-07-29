@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "microhil pico build",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "make",
+                "--directory=${workspaceFolder}/build"
+            ]
+        },
+        {
+            "label": "microhil pico clean",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "make",
+                "--directory=${workspaceFolder}/build",
+                "clean"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
