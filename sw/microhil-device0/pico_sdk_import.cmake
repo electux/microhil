@@ -5,6 +5,8 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
+set(PICO_SDK_PATH "/opt/pico/pico-sdk")
+
 # Checking SDK path
 if (DEFINED ENV{PICO_SDK_PATH} AND (NOT PICO_SDK_PATH))
     set(PICO_SDK_PATH $ENV{PICO_SDK_PATH})
