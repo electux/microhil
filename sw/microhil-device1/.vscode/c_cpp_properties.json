@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "microhil-deviceo",
+            "name": "microhil-device1",
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/pico/pico-sdk/src/common/pico_stdlib/include",
@@ -24,7 +24,7 @@
             "compilerPath": "/usr/bin/arm-none-eabi-g++",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "gcc-arm"
         }
     ],
     "version": 4
