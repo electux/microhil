@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "microhil-device0",
+            "name": "microhil-device1",
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/pico/pico-sdk/src/common/pico_stdlib/include",
