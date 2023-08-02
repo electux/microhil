@@ -20,35 +20,53 @@
 
 namespace
 {
-    constexpr char kCheckButton0Id[]{"EnableChannel0"};
-    constexpr char kCheckButton1Id[]{"EnableChannel1"};
-    constexpr char kCheckButton2Id[]{"EnableChannel2"};
-    constexpr char kCheckButton3Id[]{"EnableChannel3"};
+    constexpr const char* kCheckButtonsId[]
+    {
+        "EnableChannel0",
+        "EnableChannel1",
+        "EnableChannel2",
+        "EnableChannel3"
+    };
 
-    constexpr char kComboBoxText0Id[]{"Channel0Selector"};
-    constexpr char kComboBoxText1Id[]{"Channel1Selector"};
-    constexpr char kComboBoxText2Id[]{"Channel2Selector"};
-    constexpr char kComboBoxText3Id[]{"Channel3Selector"};
+    constexpr const char* kToggleButtonsId[]
+    {
+        "Channel0ToggleButton",
+        "Channel1ToggleButton",
+        "Channel2ToggleButton",
+        "Channel3ToggleButton"
+    };
 
-    constexpr char kToggleButton0Id[]{"Channel0ToggleButton"};
-    constexpr char kToggleButton1Id[]{"Channel1ToggleButton"};
-    constexpr char kToggleButton2Id[]{"Channel2ToggleButton"};
-    constexpr char kToggleButton3Id[]{"Channel3ToggleButton"};
+    constexpr const char* kComboBoxTextsId[]
+    {
+        "Channel0Selector",
+        "Channel1Selector",
+        "Channel2Selector",
+        "Channel3Selector"
+    };
 
-    constexpr char kTimerSpinButton0Id[]{"Channel0TimerSpin"};
-    constexpr char kTimerSpinButton1Id[]{"Channel1TimerSpin"};
-    constexpr char kTimerSpinButton2Id[]{"Channel2TimerSpin"};
-    constexpr char kTimerSpinButton3Id[]{"Channel3TimerSpin"};
+    constexpr const char* kTimerSpinButtonsId[]
+    {
+        "Channel0TimerSpin",
+        "Channel1TimerSpin",
+        "Channel2TimerSpin",
+        "Channel3TimerSpin"
+    };
 
-    constexpr char kTimerToggleButton0Id[]{"Channel0TimerButton"};
-    constexpr char kTimerToggleButton1Id[]{"Channel1TimerButton"};
-    constexpr char kTimerToggleButton2Id[]{"Channel2TimerButton"};
-    constexpr char kTimerToggleButton3Id[]{"Channel3TimerButton"};
+    constexpr const char* kTimerToggleButtonsId[]
+    {
+        "Channel0TimerButton",
+        "Channel1TimerButton",
+        "Channel2TimerButton",
+        "Channel3TimerButton"
+    };
 
-    constexpr char kTimerProgressBarStatus0Id[]{"Channel0TimerStatus"};
-    constexpr char kTimerProgressBarStatus1Id[]{"Channel1TimerStatus"};
-    constexpr char kTimerProgressBarStatus2Id[]{"Channel2TimerStatus"};
-    constexpr char kTimerProgressBarStatus3Id[]{"Channel3TimerStatus"};
+    constexpr const char* kTimerProgressBarStatus0Id[]
+    {
+        "Channel0TimerStatus",
+        "Channel1TimerStatus",
+        "Channel2TimerStatus",
+        "Channel3TimerStatus"
+    };
 }
 
 MicroHILView::MicroHILView(
@@ -56,170 +74,115 @@ MicroHILView::MicroHILView(
 ): Gtk::ApplicationWindow(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////////
-    // Bind enable/disable check buttons (enable/disable channel) 
-    m_enableChannel0 = Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
-        m_ui->get_object(kCheckButton0Id)
-    );
-    m_enableChannel1 = Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
-        m_ui->get_object(kCheckButton1Id)
-    );
-    m_enableChannel2 = Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
-        m_ui->get_object(kCheckButton2Id)
-    );
-    m_enableChannel3 = Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
-        m_ui->get_object(kCheckButton3Id)
-    );
+    // Bind channel widgets
+    for (int i = 0; i < 4; i++)
+    {
+        m_enableChannels.push_back(
+            Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
+                m_ui->get_object(kCheckButtonsId[i])
+            )
+        );
+        m_toggleChannels.push_back(
+            Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
+                m_ui->get_object(kToggleButtonsId[i])
+            )
+        );
+        m_selectControlChannels.push_back(
+            Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
+                m_ui->get_object(kComboBoxTextsId[i])
+            )
+        );
+        m_spinTimerChannels.push_back(
+            Glib::RefPtr<Gtk::SpinButton>::cast_dynamic(
+                m_ui->get_object(kTimerSpinButtonsId[i])
+            )
+        );
+        m_toggleTimerChannels.push_back(
+            Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
+                m_ui->get_object(kTimerToggleButtonsId[i])
+            )
+        );
+    }
 
     ////////////////////////////////////////////////////////////////////////////
-    // Bind control comboboxes (toogle/timer-toggle based control)
-    m_selectControlChannel0 = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
-        m_ui->get_object(kComboBoxText0Id)
-    );
-
-    m_selectControlChannel1 = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
-        m_ui->get_object(kComboBoxText1Id)
-    );
-
-    m_selectControlChannel2 = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
-        m_ui->get_object(kComboBoxText2Id)
-    );
-
-    m_selectControlChannel3 = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
-        m_ui->get_object(kComboBoxText3Id)
-    );
-
-    ////////////////////////////////////////////////////////////////////////////
-    // Map signals for enable/disable check buttons (enable/disable channel)
-    m_enableChannel0->signal_toggled().connect(
+    // Map channel signals and slots
+    m_enableChannels[0]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel0)
     );
 
-    m_enableChannel1->signal_toggled().connect(
+    m_enableChannels[1]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel1)
     );
 
-    m_enableChannel2->signal_toggled().connect(
+    m_enableChannels[2]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel2)
     );
 
-    m_enableChannel3->signal_toggled().connect(
+    m_enableChannels[3]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel3)
     );
 
-    ////////////////////////////////////////////////////////////////////////////
-    // Map signals for selecting comboboxes (selecting type of control channel)
-    m_selectControlChannel0->signal_changed().connect(
+    m_selectControlChannels[0]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel0TypeSelected)
     );
 
-    m_selectControlChannel1->signal_changed().connect(
+    m_selectControlChannels[1]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel1TypeSelected)
     );
 
-    m_selectControlChannel2->signal_changed().connect(
+    m_selectControlChannels[2]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel2TypeSelected)
     );
 
-    m_selectControlChannel3->signal_changed().connect(
+    m_selectControlChannels[3]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel3TypeSelected)
     );
 
-    ////////////////////////////////////////////////////////////////////////////
-    // Bind toggle buttons (turn-on/turn-off channels)
-    m_toggleChannel0 = Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
-        m_ui->get_object(kToggleButton0Id)
-    );
-    m_toggleChannel1 = Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
-        m_ui->get_object(kToggleButton1Id)
-    );
-    m_toggleChannel2 = Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
-        m_ui->get_object(kToggleButton2Id)
-    );
-    m_toggleChannel3 = Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
-        m_ui->get_object(kToggleButton3Id)
-    );
-
-    ////////////////////////////////////////////////////////////////////////////
-    // Map signals for toggle buttons (turn-on/turn-off channels)
-    m_toggleChannel0->signal_toggled().connect(
+    m_toggleChannels[0]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel0Toggled)
     );
 
-    m_toggleChannel1->signal_toggled().connect(
+    m_toggleChannels[1]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel1Toggled)
     );
 
-    m_toggleChannel2->signal_toggled().connect(
+    m_toggleChannels[2]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel2Toggled)
     );
 
-    m_toggleChannel3->signal_toggled().connect(
+    m_toggleChannels[3]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel3Toggled)
     );
 
-    ////////////////////////////////////////////////////////////////////////////
-    // Bind spin buttons (setup timer)
-    m_spinTimerChannel0 = Glib::RefPtr<Gtk::SpinButton>::cast_dynamic(
-        m_ui->get_object(kTimerSpinButton0Id)
-    );
-    m_spinTimerChannel1 = Glib::RefPtr<Gtk::SpinButton>::cast_dynamic(
-        m_ui->get_object(kTimerSpinButton1Id)
-    );
-    m_spinTimerChannel2 = Glib::RefPtr<Gtk::SpinButton>::cast_dynamic(
-        m_ui->get_object(kTimerSpinButton2Id)
-    );
-    m_spinTimerChannel3 = Glib::RefPtr<Gtk::SpinButton>::cast_dynamic(
-        m_ui->get_object(kTimerSpinButton3Id)
-    );
-
-    ////////////////////////////////////////////////////////////////////////////
-    // Map signals for spin buttons (setup timer)
-    m_spinTimerChannel0->signal_changed().connect(
+    m_spinTimerChannels[0]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel0SpinTimerChanged)
     );
 
-    m_spinTimerChannel1->signal_changed().connect(
+    m_spinTimerChannels[1]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel1SpinTimerChanged)
     );
 
-    m_spinTimerChannel2->signal_changed().connect(
+    m_spinTimerChannels[2]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel2SpinTimerChanged)
     );
 
-    m_spinTimerChannel3->signal_changed().connect(
+    m_spinTimerChannels[3]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel3SpinTimerChanged)
     );
 
-    ////////////////////////////////////////////////////////////////////////////
-    // Bind toggle buttons (turn-on/turn-off timer)
-    m_toggleTimerChannel0 = Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
-        m_ui->get_object(kTimerToggleButton0Id)
-    );
-    m_toggleTimerChannel1 = Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
-        m_ui->get_object(kTimerToggleButton1Id)
-    );
-    m_toggleTimerChannel2 = Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
-        m_ui->get_object(kTimerToggleButton2Id)
-    );
-    m_toggleTimerChannel3 = Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
-        m_ui->get_object(kTimerToggleButton3Id)
-    );
-
-    ////////////////////////////////////////////////////////////////////////////
-    // Map signals for toggle buttons (based on timer)
-    m_toggleTimerChannel0->signal_toggled().connect(
+    m_toggleTimerChannels[0]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel0TimerChanged)
     );
 
-    m_toggleTimerChannel1->signal_toggled().connect(
+    m_toggleTimerChannels[1]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel1TimerChanged)
     );
 
-    m_toggleTimerChannel2->signal_toggled().connect(
+    m_toggleTimerChannels[2]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel2TimerChanged)
     );
 
-    m_toggleTimerChannel3->signal_toggled().connect(
+    m_toggleTimerChannels[3]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILView::onChannel3TimerChanged)
     );
 }
@@ -246,25 +209,25 @@ MicroHILView::channel3Changed MicroHILView::channel3IsChanged()
 
 void MicroHILView::onChannel0()
 {
-    bool status = m_enableChannel0->get_active();
+    bool status = m_enableChannels[0]->get_active();
     m_channel0Enabled.emit(status);
 }
 
 void MicroHILView::onChannel1()
 {
-    bool status = m_enableChannel1->get_active();
+    bool status = m_enableChannels[1]->get_active();
     m_channel1Enabled.emit(status);
 }
 
 void MicroHILView::onChannel2()
 {
-    bool status = m_enableChannel2->get_active();
+    bool status = m_enableChannels[2]->get_active();
     m_channel2Enabled.emit(status);
 }
 
 void MicroHILView::onChannel3()
 {
-    bool status = m_enableChannel3->get_active();
+    bool status = m_enableChannels[3]->get_active();
     m_channel3Enabled.emit(status);
 }
 
@@ -290,25 +253,61 @@ MicroHILView::select3Changed MicroHILView::channel3IsSelected()
 
 void MicroHILView::onChannel0TypeSelected()
 {
-    int controlType = m_selectControlChannel0->get_active_row_number();
+    int controlType = m_selectControlChannels[0]->get_active_row_number();
+
+    switch(controlType)
+    {
+        case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+            break;
+        case static_cast<int>(channelControlType::TIMER_BUTTON):
+            break;
+    }
+
     m_channel0ControlType.emit(controlType);
 }
 
 void MicroHILView::onChannel1TypeSelected()
 {
-    int controlType = m_selectControlChannel1->get_active_row_number();
+    int controlType = m_selectControlChannels[1]->get_active_row_number();
+
+    switch(controlType)
+    {
+        case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+            break;
+        case static_cast<int>(channelControlType::TIMER_BUTTON):
+            break;
+    }
+
     m_channel1ControlType.emit(controlType);
 }
 
 void MicroHILView::onChannel2TypeSelected()
 {
-    int controlType = m_selectControlChannel2->get_active_row_number();
+    int controlType = m_selectControlChannels[2]->get_active_row_number();
+
+    switch(controlType)
+    {
+        case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+            break;
+        case static_cast<int>(channelControlType::TIMER_BUTTON):
+            break;
+    }
+
     m_channel2ControlType.emit(controlType);
 }
 
 void MicroHILView::onChannel3TypeSelected()
 {
-    int controlType = m_selectControlChannel3->get_active_row_number();
+    int controlType = m_selectControlChannels[3]->get_active_row_number();
+
+    switch(controlType)
+    {
+        case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+            break;
+        case static_cast<int>(channelControlType::TIMER_BUTTON):
+            break;
+    }
+
     m_channel3ControlType.emit(controlType);
 }
 
@@ -334,25 +333,25 @@ MicroHILView::channel3Toggled MicroHILView::channel3IsToggled()
 
 void MicroHILView::onChannel0Toggled()
 {
-    bool status = m_toggleChannel0->get_active();
+    bool status = m_toggleChannels[0]->get_active();
     m_channel0Toggled.emit(status);
 }
 
 void MicroHILView::onChannel1Toggled()
 {
-    bool status = m_toggleChannel1->get_active();
+    bool status = m_toggleChannels[1]->get_active();
     m_channel1Toggled.emit(status);
 }
 
 void MicroHILView::onChannel2Toggled()
 {
-    bool status = m_toggleChannel2->get_active();
+    bool status = m_toggleChannels[2]->get_active();
     m_channel2Toggled.emit(status);
 }
 
 void MicroHILView::onChannel3Toggled()
 {
-    bool status = m_toggleChannel3->get_active();
+    bool status = m_toggleChannels[3]->get_active();
     m_channel3Toggled.emit(status);
 }
 
@@ -382,25 +381,25 @@ MicroHILView::channel3IsSpinTimerChanged()
 
 void MicroHILView::onChannel0SpinTimerChanged()
 {
-    int value = m_spinTimerChannel0->get_value_as_int();
+    int value = m_spinTimerChannels[0]->get_value_as_int();
     m_channel0SpinTimerChanged.emit(value);
 }
 
 void MicroHILView::onChannel1SpinTimerChanged()
 {
-    int value = m_spinTimerChannel1->get_value_as_int();
+    int value = m_spinTimerChannels[1]->get_value_as_int();
     m_channel1SpinTimerChanged.emit(value);
 }
 
 void MicroHILView::onChannel2SpinTimerChanged()
 {
-    int value = m_spinTimerChannel2->get_value_as_int();
+    int value = m_spinTimerChannels[2]->get_value_as_int();
     m_channel2SpinTimerChanged.emit(value);
 }
 
 void MicroHILView::onChannel3SpinTimerChanged()
 {
-    int value = m_spinTimerChannel3->get_value_as_int();
+    int value = m_spinTimerChannels[3]->get_value_as_int();
     m_channel3SpinTimerChanged.emit(value);
 }
 
@@ -426,24 +425,24 @@ MicroHILView::channel3TimerToggled MicroHILView::channel3IsTimerChanged()
 
 void MicroHILView::onChannel0TimerChanged()
 {
-    bool status = m_toggleTimerChannel0->get_active();
+    bool status = m_toggleTimerChannels[0]->get_active();
     m_channel0TimerToggled.emit(status);
 }
 
 void MicroHILView::onChannel1TimerChanged()
 {
-    bool status = m_toggleTimerChannel1->get_active();
+    bool status = m_toggleTimerChannels[1]->get_active();
     m_channel1TimerToggled.emit(status);
 }
 
 void MicroHILView::onChannel2TimerChanged()
 {
-    bool status = m_toggleTimerChannel2->get_active();
+    bool status = m_toggleTimerChannels[2]->get_active();
     m_channel2TimerToggled.emit(status);
 }
 
 void MicroHILView::onChannel3TimerChanged()
 {
-    bool status = m_toggleTimerChannel3->get_active();
+    bool status = m_toggleTimerChannels[3]->get_active();
     m_channel3TimerToggled.emit(status);
 }

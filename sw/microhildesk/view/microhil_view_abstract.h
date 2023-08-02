@@ -47,7 +47,7 @@ public:
     using channel3Toggled = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////////
-    // Signal types for spin buttons (setup timer)
+    // Signal types for spin buttons (based on timer setup)
     using channel0SpinTimerChanged = sigc::signal<void(int)>;
     using channel1SpinTimerChanged = sigc::signal<void(int)>;
     using channel2SpinTimerChanged = sigc::signal<void(int)>;
