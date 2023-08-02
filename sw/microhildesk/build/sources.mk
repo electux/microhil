@@ -8,6 +8,9 @@
 
 SOURCES = \
 	../model/microhil_model.cc \
+	../view/microhil_view_signals.cc \
+	../view/microhil_view_slots.cc \
+	../view/microhil_view_map.cc \
 	../view/microhil_view.cc \
 	../controller/microhil_controller.cc \
 	../application.cc \

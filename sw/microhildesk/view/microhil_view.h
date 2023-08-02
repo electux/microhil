@@ -33,8 +33,8 @@
 
 enum class channelState
 {
-    OFF = false,
-    ON = true
+    DISABLE = false,
+    ENABLE = true
 };
 
 enum class channelControlType
@@ -132,6 +132,10 @@ public:
     void onChannel3TimerChanged() final;
 
 private:
+    ////////////////////////////////////////////////////////////////////////////
+    // Map channel signals and slots
+    void mapping();
+
     Glib::RefPtr<Gtk::Builder> m_ui;
     std::vector<Glib::RefPtr<Gtk::CheckButton>> m_enableChannels;
     std::vector<Glib::RefPtr<Gtk::ComboBoxText>> m_selectControlChannels;
