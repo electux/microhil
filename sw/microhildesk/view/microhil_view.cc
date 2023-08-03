@@ -84,14 +84,14 @@ MicroHILView::MicroHILView(
                 m_ui->get_object(kCheckButtonsId[i])
             )
         );
-        m_toggleChannels.push_back(
-            Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
-                m_ui->get_object(kToggleButtonsId[i])
-            )
-        );
         m_selectControlChannels.push_back(
             Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
                 m_ui->get_object(kComboBoxTextsId[i])
+            )
+        );
+        m_toggleChannels.push_back(
+            Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
+                m_ui->get_object(kToggleButtonsId[i])
             )
         );
         m_spinTimerChannels.push_back(
@@ -104,9 +104,157 @@ MicroHILView::MicroHILView(
                 m_ui->get_object(kTimerToggleButtonsId[i])
             )
         );
+        m_stautsTimerChannels.push_back(
+            Glib::RefPtr<Gtk::ProgressBar>::cast_dynamic(
+                m_ui->get_object(kTimerProgressBarStatus0Id[i])
+            )
+        );
     }
 
     ////////////////////////////////////////////////////////////////////////////
     // Map channel signals and slots
     mapping();
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Disabled all channels by default
+    disableChannel0();
+    disableChannel1();
+    disableChannel2();
+    disableChannel3();
+}
+
+void MicroHILView::disableChannel0()
+{
+    m_selectControlChannels[0]->set_sensitive(false);
+    m_toggleChannels[0]->set_sensitive(false);
+    m_spinTimerChannels[0]->set_sensitive(false);
+    m_toggleTimerChannels[0]->set_sensitive(false);
+    m_stautsTimerChannels[0]->set_sensitive(false);
+}
+
+void MicroHILView::enableChannel0()
+{
+    m_selectControlChannels[0]->set_sensitive(true);
+    m_toggleChannels[0]->set_sensitive(true);
+    m_spinTimerChannels[0]->set_sensitive(true);
+    m_toggleTimerChannels[0]->set_sensitive(true);
+    m_stautsTimerChannels[0]->set_sensitive(true);
+}
+
+void MicroHILView::disableChannel1()
+{
+    m_selectControlChannels[1]->set_sensitive(false);
+    m_toggleChannels[1]->set_sensitive(false);
+    m_spinTimerChannels[1]->set_sensitive(false);
+    m_toggleTimerChannels[1]->set_sensitive(false);
+    m_stautsTimerChannels[1]->set_sensitive(false);
+}
+
+void MicroHILView::enableChannel1()
+{
+    m_selectControlChannels[1]->set_sensitive(true);
+    m_toggleChannels[1]->set_sensitive(true);
+    m_spinTimerChannels[1]->set_sensitive(true);
+    m_toggleTimerChannels[1]->set_sensitive(true);
+    m_stautsTimerChannels[1]->set_sensitive(true);
+}
+
+void MicroHILView::disableChannel2()
+{
+    m_selectControlChannels[2]->set_sensitive(false);
+    m_toggleChannels[2]->set_sensitive(false);
+    m_spinTimerChannels[2]->set_sensitive(false);
+    m_toggleTimerChannels[2]->set_sensitive(false);
+    m_stautsTimerChannels[2]->set_sensitive(false);
+}
+
+void MicroHILView::enableChannel2()
+{
+    m_selectControlChannels[2]->set_sensitive(true);
+    m_toggleChannels[2]->set_sensitive(true);
+    m_spinTimerChannels[2]->set_sensitive(true);
+    m_toggleTimerChannels[2]->set_sensitive(true);
+    m_stautsTimerChannels[2]->set_sensitive(true);
+}
+
+void MicroHILView::disableChannel3()
+{
+    m_selectControlChannels[3]->set_sensitive(false);
+    m_toggleChannels[3]->set_sensitive(false);
+    m_spinTimerChannels[3]->set_sensitive(false);
+    m_toggleTimerChannels[3]->set_sensitive(false);
+    m_stautsTimerChannels[3]->set_sensitive(false);
+}
+
+void MicroHILView::enableChannel3()
+{
+    m_selectControlChannels[3]->set_sensitive(true);
+    m_toggleChannels[3]->set_sensitive(true);
+    m_spinTimerChannels[3]->set_sensitive(true);
+    m_toggleTimerChannels[3]->set_sensitive(true);
+    m_stautsTimerChannels[3]->set_sensitive(true);
+}
+
+void MicroHILView::toggleModeChannel0()
+{
+    m_toggleChannels[0]->set_sensitive(true);
+    m_spinTimerChannels[0]->set_sensitive(false);
+    m_toggleTimerChannels[0]->set_sensitive(false);
+    m_stautsTimerChannels[0]->set_sensitive(true);
+}
+
+void MicroHILView::timerModeChannel0()
+{
+    m_toggleChannels[0]->set_sensitive(false);
+    m_spinTimerChannels[0]->set_sensitive(true);
+    m_toggleTimerChannels[0]->set_sensitive(true);
+    m_stautsTimerChannels[0]->set_sensitive(true);
+}
+
+void MicroHILView::toggleModeChannel1()
+{
+    m_toggleChannels[1]->set_sensitive(true);
+    m_spinTimerChannels[1]->set_sensitive(false);
+    m_toggleTimerChannels[1]->set_sensitive(false);
+    m_stautsTimerChannels[1]->set_sensitive(true);
+}
+
+void MicroHILView::timerModeChannel1()
+{
+    m_toggleChannels[1]->set_sensitive(false);
+    m_spinTimerChannels[1]->set_sensitive(true);
+    m_toggleTimerChannels[1]->set_sensitive(true);
+    m_stautsTimerChannels[1]->set_sensitive(true);
+}
+
+void MicroHILView::toggleModeChannel2()
+{
+    m_toggleChannels[2]->set_sensitive(true);
+    m_spinTimerChannels[2]->set_sensitive(false);
+    m_toggleTimerChannels[2]->set_sensitive(false);
+    m_stautsTimerChannels[2]->set_sensitive(true);
+}
+
+void MicroHILView::timerModeChannel2()
+{
+    m_toggleChannels[2]->set_sensitive(false);
+    m_spinTimerChannels[2]->set_sensitive(true);
+    m_toggleTimerChannels[2]->set_sensitive(true);
+    m_stautsTimerChannels[2]->set_sensitive(true);
+}
+
+void MicroHILView::toggleModeChannel3()
+{
+    m_toggleChannels[3]->set_sensitive(true);
+    m_spinTimerChannels[3]->set_sensitive(false);
+    m_toggleTimerChannels[3]->set_sensitive(false);
+    m_stautsTimerChannels[3]->set_sensitive(true);
+}
+
+void MicroHILView::timerModeChannel3()
+{
+    m_toggleChannels[3]->set_sensitive(false);
+    m_spinTimerChannels[3]->set_sensitive(true);
+    m_toggleTimerChannels[3]->set_sensitive(true);
+    m_stautsTimerChannels[3]->set_sensitive(true);
 }
