@@ -21,155 +21,251 @@
 void MicroHILView::onChannel0()
 {
     bool status = m_enableChannels[0]->get_active();
+
+    if(status)
+    {
+        enableChannel0();
+    }
+    else
+    {
+        disableChannel0();
+    }
+
     m_channel0Enabled.emit(status);
 }
 
 void MicroHILView::onChannel1()
 {
     bool status = m_enableChannels[1]->get_active();
+
+    if(status)
+    {
+        enableChannel1();
+    }
+    else
+    {
+        disableChannel1();
+    }
+
     m_channel1Enabled.emit(status);
 }
 
 void MicroHILView::onChannel2()
 {
     bool status = m_enableChannels[2]->get_active();
+
+    if(status)
+    {
+        enableChannel2();
+    }
+    else
+    {
+        disableChannel2();
+    }
+
     m_channel2Enabled.emit(status);
 }
 
 void MicroHILView::onChannel3()
 {
     bool status = m_enableChannels[3]->get_active();
+
+    if(status)
+    {
+        enableChannel3();
+    }
+    else
+    {
+        disableChannel3();
+    }
+
     m_channel3Enabled.emit(status);
 }
 
 void MicroHILView::onChannel0TypeSelected()
 {
-    int controlType = m_selectControlChannels[0]->get_active_row_number();
-
-    switch(controlType)
+    if(m_enableChannels[0]->get_active() == true)
     {
-        case static_cast<int>(channelControlType::TOGGLE_BUTTON):
-            break;
-        case static_cast<int>(channelControlType::TIMER_BUTTON):
-            break;
-    }
+        int controlType = m_selectControlChannels[0]->get_active_row_number();
 
-    m_channel0ControlType.emit(controlType);
+        switch(controlType)
+        {
+            case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+                toggleModeChannel0();
+                break;
+            case static_cast<int>(channelControlType::TIMER_BUTTON):
+                timerModeChannel0();
+                break;
+        }
+
+        m_channel0ControlType.emit(controlType);
+    }
 }
 
 void MicroHILView::onChannel1TypeSelected()
 {
-    int controlType = m_selectControlChannels[1]->get_active_row_number();
-
-    switch(controlType)
+    if(m_enableChannels[1]->get_active() == true)
     {
-        case static_cast<int>(channelControlType::TOGGLE_BUTTON):
-            break;
-        case static_cast<int>(channelControlType::TIMER_BUTTON):
-            break;
-    }
+        int controlType = m_selectControlChannels[1]->get_active_row_number();
 
-    m_channel1ControlType.emit(controlType);
+        switch(controlType)
+        {
+            case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+                toggleModeChannel1();
+                break;
+            case static_cast<int>(channelControlType::TIMER_BUTTON):
+                timerModeChannel1();
+                break;
+        }
+
+        m_channel1ControlType.emit(controlType);
+    }
 }
 
 void MicroHILView::onChannel2TypeSelected()
 {
-    int controlType = m_selectControlChannels[2]->get_active_row_number();
-
-    switch(controlType)
+    if(m_enableChannels[2]->get_active() == true)
     {
-        case static_cast<int>(channelControlType::TOGGLE_BUTTON):
-            break;
-        case static_cast<int>(channelControlType::TIMER_BUTTON):
-            break;
-    }
+        int controlType = m_selectControlChannels[2]->get_active_row_number();
 
-    m_channel2ControlType.emit(controlType);
+        switch(controlType)
+        {
+            case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+                toggleModeChannel2();
+                break;
+            case static_cast<int>(channelControlType::TIMER_BUTTON):
+                timerModeChannel2();
+                break;
+        }
+
+        m_channel2ControlType.emit(controlType);
+    }
 }
 
 void MicroHILView::onChannel3TypeSelected()
 {
-    int controlType = m_selectControlChannels[3]->get_active_row_number();
-
-    switch(controlType)
+    if(m_enableChannels[3]->get_active() == true)
     {
-        case static_cast<int>(channelControlType::TOGGLE_BUTTON):
-            break;
-        case static_cast<int>(channelControlType::TIMER_BUTTON):
-            break;
-    }
+        int controlType = m_selectControlChannels[3]->get_active_row_number();
 
-    m_channel3ControlType.emit(controlType);
+        switch(controlType)
+        {
+            case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+                toggleModeChannel3();
+                break;
+            case static_cast<int>(channelControlType::TIMER_BUTTON):
+                timerModeChannel3();
+                break;
+        }
+
+        m_channel3ControlType.emit(controlType);
+    }
 }
 
 void MicroHILView::onChannel0Toggled()
 {
-    bool status = m_toggleChannels[0]->get_active();
-    m_channel0Toggled.emit(status);
+    if(m_enableChannels[0]->get_active() == true)
+    {
+        bool status = m_toggleChannels[0]->get_active();
+        m_channel0Toggled.emit(status);
+    }
 }
 
 void MicroHILView::onChannel1Toggled()
 {
-    bool status = m_toggleChannels[1]->get_active();
-    m_channel1Toggled.emit(status);
+    if(m_enableChannels[1]->get_active() == true)
+    {
+        bool status = m_toggleChannels[1]->get_active();
+        m_channel1Toggled.emit(status);
+    }
 }
 
 void MicroHILView::onChannel2Toggled()
 {
-    bool status = m_toggleChannels[2]->get_active();
-    m_channel2Toggled.emit(status);
+    if(m_enableChannels[2]->get_active() == true)
+    {
+        bool status = m_toggleChannels[2]->get_active();
+        m_channel2Toggled.emit(status);
+    }
 }
 
 void MicroHILView::onChannel3Toggled()
 {
-    bool status = m_toggleChannels[3]->get_active();
-    m_channel3Toggled.emit(status);
+    if(m_enableChannels[3]->get_active() == true)
+    {
+        bool status = m_toggleChannels[3]->get_active();
+        m_channel3Toggled.emit(status);
+    }
 }
 
 void MicroHILView::onChannel0SpinTimerChanged()
 {
-    int value = m_spinTimerChannels[0]->get_value_as_int();
-    m_channel0SpinTimerChanged.emit(value);
+    if(m_enableChannels[0]->get_active() == true)
+    {
+        int value = m_spinTimerChannels[0]->get_value_as_int();
+        m_channel0SpinTimerChanged.emit(value);
+    }
 }
 
 void MicroHILView::onChannel1SpinTimerChanged()
 {
-    int value = m_spinTimerChannels[1]->get_value_as_int();
-    m_channel1SpinTimerChanged.emit(value);
+    if(m_enableChannels[1]->get_active() == true)
+    {
+        int value = m_spinTimerChannels[1]->get_value_as_int();
+        m_channel1SpinTimerChanged.emit(value);
+    }
 }
 
 void MicroHILView::onChannel2SpinTimerChanged()
 {
-    int value = m_spinTimerChannels[2]->get_value_as_int();
-    m_channel2SpinTimerChanged.emit(value);
+    if(m_enableChannels[2]->get_active() == true)
+    {
+        int value = m_spinTimerChannels[2]->get_value_as_int();
+        m_channel2SpinTimerChanged.emit(value);
+    }
 }
 
 void MicroHILView::onChannel3SpinTimerChanged()
 {
-    int value = m_spinTimerChannels[3]->get_value_as_int();
-    m_channel3SpinTimerChanged.emit(value);
+    if(m_enableChannels[3]->get_active() == true)
+    {
+        int value = m_spinTimerChannels[3]->get_value_as_int();
+        m_channel3SpinTimerChanged.emit(value);
+    }
 }
 
 void MicroHILView::onChannel0TimerChanged()
 {
-    bool status = m_toggleTimerChannels[0]->get_active();
-    m_channel0TimerToggled.emit(status);
+    if(m_enableChannels[0]->get_active() == true)
+    {
+        bool status = m_toggleTimerChannels[0]->get_active();
+        m_channel0TimerToggled.emit(status);
+    }
 }
 
 void MicroHILView::onChannel1TimerChanged()
 {
-    bool status = m_toggleTimerChannels[1]->get_active();
-    m_channel1TimerToggled.emit(status);
+    if(m_enableChannels[1]->get_active() == true)
+    {
+        bool status = m_toggleTimerChannels[1]->get_active();
+        m_channel1TimerToggled.emit(status);
+    }
 }
 
 void MicroHILView::onChannel2TimerChanged()
 {
-    bool status = m_toggleTimerChannels[2]->get_active();
-    m_channel2TimerToggled.emit(status);
+    if(m_enableChannels[2]->get_active() == true)
+    {
+        bool status = m_toggleTimerChannels[2]->get_active();
+        m_channel2TimerToggled.emit(status);
+    }
 }
 
 void MicroHILView::onChannel3TimerChanged()
 {
-    bool status = m_toggleTimerChannels[3]->get_active();
-    m_channel3TimerToggled.emit(status);
+    if(m_enableChannels[3]->get_active() == true)
+    {
+        bool status = m_toggleTimerChannels[3]->get_active();
+        m_channel3TimerToggled.emit(status);
+    }
 }

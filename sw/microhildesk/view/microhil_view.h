@@ -20,7 +20,6 @@
 #pragma once
 
 #include <vector>
-#include <gtkmm/application.h>
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/builder.h>
 #include <giomm/resource.h>
@@ -30,12 +29,6 @@
 #include <gtkmm/spinbutton.h>
 #include <gtkmm/progressbar.h>
 #include "microhil_view_abstract.h"
-
-enum class channelState
-{
-    DISABLE = false,
-    ENABLE = true
-};
 
 enum class channelControlType
 {
@@ -135,6 +128,28 @@ private:
     ////////////////////////////////////////////////////////////////////////////
     // Map channel signals and slots
     void mapping();
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Enable/Disable complete channel
+    void enableChannel0();
+    void disableChannel0();
+    void enableChannel1();
+    void disableChannel1();
+    void enableChannel2();
+    void disableChannel2();
+    void enableChannel3();
+    void disableChannel3();
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Setup channel mode
+    void toggleModeChannel0();
+    void timerModeChannel0();
+    void toggleModeChannel1();
+    void timerModeChannel1();
+    void toggleModeChannel2();
+    void timerModeChannel2();
+    void toggleModeChannel3();
+    void timerModeChannel3();
 
     Glib::RefPtr<Gtk::Builder> m_ui;
     std::vector<Glib::RefPtr<Gtk::CheckButton>> m_enableChannels;
