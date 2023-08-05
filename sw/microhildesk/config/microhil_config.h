@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_controller.cc
- * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * microhil_config.h
+ * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -16,23 +16,32 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "microhil_controller.h"
-#include "../config/microhil_config.h"
 
-MicroHILController::MicroHILController(
-    MicroHILModel *model, MicroHILView *view
-)
-{
-    // TODO config setup
-    MicroHILConfig config;
-}
+#pragma once
 
-void MicroHILController::setEnabled(bool switchController)
-{
-    m_enabled = switchController;
-}
+#include <glibmm.h>
+#include <glibmm/keyfile.h>
+#include "microhil_config_abstract.h"
 
-bool MicroHILController::isEnabled() const
+class MicroHILConfig: public AbMicroHILConfig
 {
-    return m_enabled;
-}
+    public:
+        MicroHILConfig();
+        ~MicroHILConfig() = default;
+
+        bool load() final;
+        bool validate() final;
+
+        Glib::ustring getDevice() final;
+        int getBaudRate() final;
+        int getDataBits() final;
+        Glib::ustring getParity() final;
+        int getStopBits() final;
+
+    private:
+        bool checkConfigPath();
+
+        std::string m_homePath{};
+        std::string m_configFilePath{};
+        Glib::KeyFile m_configuration{};
+};

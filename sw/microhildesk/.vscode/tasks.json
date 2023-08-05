@@ -8,7 +8,8 @@
             "args": [
                 "make",
                 "--directory=${workspaceFolder}/build"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "microhildesk clean",
