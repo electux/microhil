@@ -7,6 +7,7 @@
 #
 
 SOURCES = \
+	../config/microhil_config.cc \
 	../model/microhil_model.cc \
 	../view/microhil_view_signals.cc \
 	../view/microhil_view_slots.cc \
