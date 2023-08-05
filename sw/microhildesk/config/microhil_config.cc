@@ -56,12 +56,15 @@ MicroHILConfig::MicroHILConfig()
 
 bool MicroHILConfig::load()
 {
-    if(!validate())
+    auto loadedConfig = m_configuration.load_from_file(m_configFilePath);
+    auto validatedConfig  = validate(); 
+
+    if(!loadedConfig || !validatedConfig)
     {
         return false;
     }
 
-    return m_configuration.load_from_file(m_configFilePath);
+    return true;
 }
 
 bool MicroHILConfig::validate()
@@ -117,7 +120,7 @@ Glib::ustring MicroHILConfig::getParity()
 
 int MicroHILConfig::getStopBits()
 {
-    return m_configuration.get_integer(
+    return (int) m_configuration.get_integer(
         kConfigSerialSection, kConfigSerialStopBits
     );
 }
@@ -146,7 +149,7 @@ bool MicroHILConfig::checkConfigPath()
         std::ofstream defaultConfig(m_configFilePath);
         for (int i = 0; i < kConfigSerialLength; i++)
         {
-            defaultConfig << kConfigSerialDefault[i];
+            defaultConfig << kConfigSerialDefault[i] << "\n";
         }
         defaultConfig.close();
     }

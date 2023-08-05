@@ -29,12 +29,13 @@ Application::Application(int argc, char *argv[])
 {
     m_app = Gtk::Application::create(argc, argv, kAppId);
     m_builder = Gtk::Builder::create_from_resource(kHomeUI);
+    m_config = new MicroHILConfig();
 
     if(m_app && m_builder)
     {
         m_model = new MicroHILModel();
         m_builder->get_widget_derived(kwindowId, m_view);
-        m_controller = new MicroHILController(m_model, m_view);
+        m_controller = new MicroHILController(m_config, m_model, m_view);
     }
 }
 
@@ -43,6 +44,7 @@ Application::~Application()
     if(m_model) delete m_model;
     if(m_view) delete m_view;
     if(m_controller) delete m_controller;
+    if(m_config) delete m_config;
 }
 
 int Application::run()

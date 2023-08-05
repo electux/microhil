@@ -23,7 +23,7 @@ class AbMicroHILConfig
 {
     public:
         AbMicroHILConfig() = default;
-        ~AbMicroHILConfig() = default;
+        virtual ~AbMicroHILConfig() = default;
 
         virtual bool load() = 0;
         virtual bool validate() = 0;
