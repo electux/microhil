@@ -19,6 +19,7 @@
 
 #pragma once
 
+#include "../config/microhil_config.h"
 #include "../model/microhil_model.h"
 #include "../view/microhil_view.h"
 #include "microhil_controller_abstract.h"
@@ -26,7 +27,9 @@
 class MicroHILController: public AbMicroHILController
 {
 public:
-    MicroHILController(MicroHILModel *model, MicroHILView *view);
+    MicroHILController(
+        MicroHILConfig *config,  MicroHILModel *model, MicroHILView *view
+    );
     ~MicroHILController() = default;
 
     void setEnabled(bool switchController) final;

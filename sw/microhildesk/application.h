@@ -21,6 +21,7 @@
 #define APPLICATION_H
 
 #include <gtkmm/application.h>
+#include "config/microhil_config.h"
 #include "model/microhil_model.h"
 #include "view/microhil_view.h"
 #include "controller/microhil_controller.h"
@@ -36,6 +37,7 @@ private:
     Glib::RefPtr<Gtk::Application> m_app;
     Glib::RefPtr<Gtk::Builder> m_builder;
 
+    MicroHILConfig *m_config{nullptr};
     MicroHILModel *m_model{nullptr};
     MicroHILView *m_view {nullptr};
     MicroHILController *m_controller{nullptr};

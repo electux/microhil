@@ -17,14 +17,24 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "microhil_controller.h"
-#include "../config/microhil_config.h"
 
 MicroHILController::MicroHILController(
-    MicroHILModel *model, MicroHILView *view
+    MicroHILConfig *config, MicroHILModel *model, MicroHILView *view
 )
 {
-    // TODO config setup
-    MicroHILConfig config;
+    auto preValidConfig = config->isPreValid();
+    if(!preValidConfig)
+    {
+        // TODO
+        // Emit signal for error handler
+    }
+
+    auto loadConfig = config->load();
+    if(!loadConfig)
+    {
+        // TODO
+        // Emit signal for error handler
+    }
 }
 
 void MicroHILController::setEnabled(bool switchController)
