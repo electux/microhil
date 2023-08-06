@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_serial_com.h
+ * microhil_dialog.cc
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -16,21 +16,16 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include "microhil_dialog.h"
 
-#pragma once
-
-#include "microhil_com_abstract.h"
-
-class MicroHILCom: public AbMicroHILCom
+MicroHILDialog::MicroHILDialog()
 {
-    public:
-        MicroHILCom();
-        ~MicroHILCom() = default;
+}
 
-        void open() final;
-        void close() final;
-        void read(
-            std::vector<uint8_t>& dataBuffer, size_t len, size_t timeout
-        ) final;
-        void write(std::vector<uint8_t>& dataBuffer) final;
-};
+void MicroHILDialog::show()
+{
+}
+
+void MicroHILDialog::hide()
+{
+}

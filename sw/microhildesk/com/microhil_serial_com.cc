@@ -18,3 +18,25 @@
  */
 
 #include "microhil_serial_com.h"
+
+MicroHILCom::MicroHILCom()
+{
+}
+
+void MicroHILCom::open()
+{
+}
+
+void MicroHILCom::close()
+{
+}
+
+void MicroHILCom::read(
+    std::vector<uint8_t> &dataBuffer, size_t len, size_t timeout
+)
+{
+}
+
+void MicroHILCom::write(std::vector<uint8_t> &dataBuffer)
+{
+}

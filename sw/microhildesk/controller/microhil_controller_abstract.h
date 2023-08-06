@@ -23,6 +23,7 @@ class AbMicroHILController
 {
 public:
     virtual ~AbMicroHILController() = default;
+
     virtual void setEnabled(bool switchController) = 0;
     virtual bool isEnabled() const = 0;
 };

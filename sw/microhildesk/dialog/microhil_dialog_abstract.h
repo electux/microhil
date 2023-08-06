@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_serial_com.h
+ * microhil_dialog_abstract.h
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -19,18 +19,11 @@
 
 #pragma once
 
-#include "microhil_com_abstract.h"
-
-class MicroHILCom: public AbMicroHILCom
+class AbMicroHILDialog
 {
     public:
-        MicroHILCom();
-        ~MicroHILCom() = default;
+        virtual ~AbMicroHILDialog() = default;
 
-        void open() final;
-        void close() final;
-        void read(
-            std::vector<uint8_t>& dataBuffer, size_t len, size_t timeout
-        ) final;
-        void write(std::vector<uint8_t>& dataBuffer) final;
+        virtual void show() = 0;
+        virtual void hide() = 0;
 };
