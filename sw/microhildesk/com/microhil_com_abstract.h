@@ -28,6 +28,7 @@ class AbMicroHILCom
 {
     public:
         virtual ~AbMicroHILCom() = default;
+
         virtual void open() = 0;
         virtual void close() = 0;
         virtual void read(

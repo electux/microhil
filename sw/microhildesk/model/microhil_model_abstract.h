@@ -29,6 +29,7 @@ class AbMicroHILModel
 {
 public:
     virtual ~AbMicroHILModel() = default;
+
     virtual void setChannel0(ChannelState state) = 0;
     virtual ChannelState getChannel0() const = 0;
     virtual bool isOnChannel0() const = 0;

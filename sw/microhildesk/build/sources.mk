@@ -8,6 +8,8 @@
 
 SOURCES = \
 	../config/microhil_config.cc \
+	../dialog/microhil_dialog.cc \
+	../com/microhil_serial_com.cc \
 	../model/microhil_model.cc \
 	../view/microhil_view_signals.cc \
 	../view/microhil_view_slots.cc \
