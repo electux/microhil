@@ -14,7 +14,7 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 #pragma once
@@ -29,16 +29,37 @@ class MicroHILConfig: public AbMicroHILConfig
         MicroHILConfig();
         ~MicroHILConfig() = default;
 
+        ////////////////////////////////////////////////////////////////////////
+        // Load configuration
         bool load() final;
+
+        ////////////////////////////////////////////////////////////////////////
+        // Validate configuration (existing all parameters in configuration)
         bool validate() final;
 
+        ////////////////////////////////////////////////////////////////////////
+        // Getting device name for serial communication from configuration
         Glib::ustring getDevice() final;
+
+        ////////////////////////////////////////////////////////////////////////
+        // Getting baud rate for serial communication from configuration
         int getBaudRate() final;
+
+        ////////////////////////////////////////////////////////////////////////
+        // Getting data bits for serial communication from configuration
         int getDataBits() final;
+
+        ////////////////////////////////////////////////////////////////////////
+        // Getting parity for serial communication from configuration
         Glib::ustring getParity() final;
+
+        ////////////////////////////////////////////////////////////////////////
+        // Getting stop bits for serial communication from configuration
         int getStopBits() final;
 
     private:
+        ////////////////////////////////////////////////////////////////////////
+        // Checking existence of configuration file
         bool checkConfigPath();
 
         std::string m_homePath{};

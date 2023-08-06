@@ -14,7 +14,7 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 #pragma once
@@ -34,5 +34,7 @@ class AbMicroHILLog
     public:
         virtual ~AbMicroHILLog() = default;
 
+        ////////////////////////////////////////////////////////////////////////
+        // Write log message
         virtual void write(Glib::ustring message, LogLevel level) = 0;
 };

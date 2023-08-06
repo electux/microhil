@@ -14,12 +14,13 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include "microhil_controller.h"
 
 MicroHILController::MicroHILController(
-    MicroHILConfig *config, MicroHILModel *model, MicroHILView *view
+    MicroHILConfig *config, MicroHILLog *log,
+    MicroHILModel *model, MicroHILView *view
 )
 {
     auto preValidConfig = config->isPreValid();

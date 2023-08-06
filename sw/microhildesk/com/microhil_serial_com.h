@@ -14,7 +14,7 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 #pragma once
@@ -27,10 +27,21 @@ class MicroHILCom: public AbMicroHILCom
         MicroHILCom();
         ~MicroHILCom() = default;
 
+        ////////////////////////////////////////////////////////////////////////
+        // Open communication channel
         void open() final;
+
+        ////////////////////////////////////////////////////////////////////////
+        // Close communication channel
         void close() final;
+
+        ////////////////////////////////////////////////////////////////////////
+        // Read from communication channel
         void read(
             std::vector<uint8_t>& dataBuffer, size_t len, size_t timeout
         ) final;
+
+        ////////////////////////////////////////////////////////////////////////
+        // Write to communication channel
         void write(std::vector<uint8_t>& dataBuffer) final;
 };
