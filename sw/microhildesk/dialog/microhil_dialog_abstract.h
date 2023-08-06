@@ -14,7 +14,7 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 #pragma once
@@ -24,6 +24,11 @@ class AbMicroHILDialog
     public:
         virtual ~AbMicroHILDialog() = default;
 
+        ////////////////////////////////////////////////////////////////////////
+        // Show dialog with message
         virtual void show() = 0;
+
+        ////////////////////////////////////////////////////////////////////////
+        // Hide dialog with message
         virtual void hide() = 0;
 };

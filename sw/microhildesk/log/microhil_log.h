@@ -14,7 +14,7 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 #pragma once
@@ -27,5 +27,7 @@ class MicroHILLog: public AbMicroHILLog
         MicroHILLog();
         ~MicroHILLog() = default;
 
+        ////////////////////////////////////////////////////////////////////////
+        // Write log message
         void write(Glib::ustring message, LogLevel level) final;
 };

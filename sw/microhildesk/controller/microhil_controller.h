@@ -14,12 +14,13 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 #pragma once
 
 #include "../config/microhil_config.h"
+#include "../log/microhil_log.h"
 #include "../model/microhil_model.h"
 #include "../view/microhil_view.h"
 #include "microhil_controller_abstract.h"
@@ -28,14 +29,19 @@ class MicroHILController: public AbMicroHILController
 {
 public:
     MicroHILController(
-        MicroHILConfig *config,  MicroHILModel *model, MicroHILView *view
+        MicroHILConfig *config, MicroHILLog *log,  
+        MicroHILModel *model, MicroHILView *view
     );
     ~MicroHILController() = default;
 
+    ////////////////////////////////////////////////////////////////////////
+    // Enable controller
     void setEnabled(bool switchController) final;
+
+    ////////////////////////////////////////////////////////////////////////
+    // Check is controller enabled
     bool isEnabled() const final;
 
 private:
-
     bool m_enabled {false};
 };

@@ -14,7 +14,7 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include "application.h"
 
@@ -30,12 +30,22 @@ Application::Application(int argc, char *argv[])
     m_app = Gtk::Application::create(argc, argv, kAppId);
     m_builder = Gtk::Builder::create_from_resource(kHomeUI);
     m_config = new MicroHILConfig();
+    m_log = new MicroHILLog();
 
-    if(m_app && m_builder)
+    ////////////////////////////////////////////////////////////////////////////
+    // Check and prepare model, view and controller
+    if(m_app && m_builder && m_config && m_log)
     {
         m_model = new MicroHILModel();
         m_builder->get_widget_derived(kwindowId, m_view);
-        m_controller = new MicroHILController(m_config, m_model, m_view);
+        m_controller = new MicroHILController(
+            m_config, m_log, m_model, m_view
+        );
+    }
+    else
+    {
+        // TODO
+        // Early initialization failed 
     }
 }
 
@@ -44,6 +54,7 @@ Application::~Application()
     if(m_model) delete m_model;
     if(m_view) delete m_view;
     if(m_controller) delete m_controller;
+    if(m_log) delete m_log;
     if(m_config) delete m_config;
 }
 

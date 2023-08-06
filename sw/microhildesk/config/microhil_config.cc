@@ -14,7 +14,7 @@
  * See the GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License along
- * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <fstream>
 #include <iostream>
@@ -128,7 +128,7 @@ int MicroHILConfig::getStopBits()
 bool MicroHILConfig::checkConfigPath()
 {
     ////////////////////////////////////////////////////////////////////////////
-    // Check home directory
+    // Check home directory /home/<username>/.microhil/
     std::filesystem::directory_entry homeDirEntry{m_homePath};
     auto homeDirExists = homeDirEntry.exists();
 
@@ -142,6 +142,7 @@ bool MicroHILConfig::checkConfigPath()
 
     ////////////////////////////////////////////////////////////////////////////
     // Check config file in case of missing generate new with default setup
+    // Configuration file location: /home/<username>/.microhil/config
     auto configFileExists = std::filesystem::exists(m_configFilePath);
 
     if(!configFileExists)
