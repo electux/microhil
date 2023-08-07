@@ -23,51 +23,55 @@
 #include <glibmm/keyfile.h>
 #include "microhil_config_abstract.h"
 
-class MicroHILConfig: public AbMicroHILConfig
+class MicroHILConfig : public AbMicroHILConfig
 {
-    public:
-        ////////////////////////////////////////////////////////////////////////
-        // MicroHILConfig constructor
-        MicroHILConfig();
+public:
+    ////////////////////////////////////////////////////////////////////////
+    // MicroHILConfig constructor
+    MicroHILConfig();
 
-        ////////////////////////////////////////////////////////////////////////
-        // MicroHILConfig destructor
-        ~MicroHILConfig() = default;
+    ////////////////////////////////////////////////////////////////////////
+    // MicroHILConfig destructor
+    ~MicroHILConfig() = default;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Load configuration
-        bool load() final;
+    ////////////////////////////////////////////////////////////////////////
+    // Load configuration
+    bool load() final;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Validate configuration (existing all parameters in configuration)
-        bool validate() final;
+    ////////////////////////////////////////////////////////////////////////
+    // Validate configuration (existing all parameters in configuration)
+    bool validate() final;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Getting device name for serial communication from configuration
-        Glib::ustring getDevice() final;
+    ////////////////////////////////////////////////////////////////////////
+    // Getting device name for serial communication from configuration
+    Glib::ustring getDevice() final;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Getting baud rate for serial communication from configuration
-        int getBaudRate() final;
+    ////////////////////////////////////////////////////////////////////////
+    // Getting baud rate for serial communication from configuration
+    int getBaudRate() final;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Getting data bits for serial communication from configuration
-        int getDataBits() final;
+    ////////////////////////////////////////////////////////////////////////
+    // Getting data bits for serial communication from configuration
+    int getDataBits() final;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Getting parity for serial communication from configuration
-        Glib::ustring getParity() final;
+    ////////////////////////////////////////////////////////////////////////
+    // Getting parity for serial communication from configuration
+    Glib::ustring getParity() final;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Getting stop bits for serial communication from configuration
-        int getStopBits() final;
+    ////////////////////////////////////////////////////////////////////////
+    // Getting stop bits for serial communication from configuration
+    int getStopBits() final;
 
-    private:
-        ////////////////////////////////////////////////////////////////////////
-        // Checking existence of configuration file
-        bool checkConfigPath();
+    ////////////////////////////////////////////////////////////////////////
+    // Getting log level
+    Glib::ustring getLogLevel() final;
 
-        std::string m_homePath{};
-        std::string m_configFilePath{};
-        Glib::KeyFile m_configuration{};
+private:
+    ////////////////////////////////////////////////////////////////////////
+    // Checking existence of configuration file
+    bool checkConfigPath();
+
+    std::string m_homePath{};
+    std::string m_configFilePath{};
+    Glib::KeyFile m_configuration{};
 };

@@ -32,7 +32,12 @@ namespace
     constexpr const char kConfigSerialDataBits[]{"data_bits"};
     constexpr const char kConfigSerialParity[]{"parity"};
     constexpr const char kConfigSerialStopBits[]{"stop_bits"};
-    constexpr const char* kConfigSerialDefault[]{
+    constexpr const char kConfigLogSection[]{"log"};
+    constexpr const char kConfigLogLevel[]{"level"};
+    constexpr const char* kConfigSerialDefault[]
+    {
+        "[log]",
+        "level=INFO",
         "[serial]",
         "device=/dev/ttyUSB0",
         "baud_rate=115200",
@@ -79,7 +84,8 @@ bool MicroHILConfig::validate()
         m_configuration.has_key(kConfigSerialSection, kConfigSerialBaudRate) &&
         m_configuration.has_key(kConfigSerialSection, kConfigSerialDataBits) &&
         m_configuration.has_key(kConfigSerialSection, kConfigSerialParity) &&
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialStopBits)
+        m_configuration.has_key(kConfigSerialSection, kConfigSerialStopBits) &&
+        m_configuration.has_key(kConfigLogSection, kConfigLogLevel)
     );
 
     if(!configCheck)
@@ -123,6 +129,11 @@ int MicroHILConfig::getStopBits()
     return (int) m_configuration.get_integer(
         kConfigSerialSection, kConfigSerialStopBits
     );
+}
+
+Glib::ustring MicroHILConfig::getLogLevel()
+{
+    return m_configuration.get_string(kConfigLogSection, kConfigLogLevel);
 }
 
 bool MicroHILConfig::checkConfigPath()
