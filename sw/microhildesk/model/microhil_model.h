@@ -23,61 +23,66 @@
 
 class MicroHILModel: public AbMicroHILModel
 {
-public:
-    MicroHILModel();
-    ~MicroHILModel() = default;
+    public:
+        ////////////////////////////////////////////////////////////////////////
+        // MicroHILModel constructor
+        MicroHILModel();
 
-    ////////////////////////////////////////////////////////////////////////
-    // Set channel 0 state (ON/OFF)
-    void setChannel0(ChannelState state) final;
+        ////////////////////////////////////////////////////////////////////////
+        // MicroHILModel destructor
+        ~MicroHILModel() = default;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Get channel 0 state (ON/OFF)
-    ChannelState getChannel0() const final;
+        ////////////////////////////////////////////////////////////////////////
+        // Set channel 0 state (ON/OFF)
+        void setChannel0(ChannelState state) final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Check is channel 0 ON (true) or OFF (false)
-    bool isOnChannel0() const final;
+        ////////////////////////////////////////////////////////////////////////
+        // Get channel 0 state (ON/OFF)
+        ChannelState getChannel0() const final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Set channel 1 state (ON/OFF)
-    void setChannel1(ChannelState state) final;
+        ////////////////////////////////////////////////////////////////////////
+        // Check is channel 0 ON (true) or OFF (false)
+        bool isOnChannel0() const final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Get channel 1 state (ON/OFF)
-    ChannelState getChannel1() const final;
+        ////////////////////////////////////////////////////////////////////////
+        // Set channel 1 state (ON/OFF)
+        void setChannel1(ChannelState state) final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Check is channel 1 ON (true) or OFF (false)
-    bool isOnChannel1() const final;
+        ////////////////////////////////////////////////////////////////////////
+        // Get channel 1 state (ON/OFF)
+        ChannelState getChannel1() const final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Set channel 2 state (ON/OFF)
-    void setChannel2(ChannelState state) final;
+        ////////////////////////////////////////////////////////////////////////
+        // Check is channel 1 ON (true) or OFF (false)
+        bool isOnChannel1() const final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Get channel 2 state (ON/OFF)
-    ChannelState getChannel2() const final;
+        ////////////////////////////////////////////////////////////////////////
+        // Set channel 2 state (ON/OFF)
+        void setChannel2(ChannelState state) final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Check is channel 2 ON (true) or OFF (false)
-    bool isOnChannel2() const final;
+        ////////////////////////////////////////////////////////////////////////
+        // Get channel 2 state (ON/OFF)
+        ChannelState getChannel2() const final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Set channel 3 state (ON/OFF)
-    void setChannel3(ChannelState state) final;
+        ////////////////////////////////////////////////////////////////////////
+        // Check is channel 2 ON (true) or OFF (false)
+        bool isOnChannel2() const final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Get channel 3 state (ON/OFF)
-    ChannelState getChannel3() const final;
+        ////////////////////////////////////////////////////////////////////////
+        // Set channel 3 state (ON/OFF)
+        void setChannel3(ChannelState state) final;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Check is channel 3 ON (true) or OFF (false)
-    bool isOnChannel3() const final;
+        ////////////////////////////////////////////////////////////////////////
+        // Get channel 3 state (ON/OFF)
+        ChannelState getChannel3() const final;
 
-private:
-    ChannelState m_channel0 {ChannelState::OFF};
-    ChannelState m_channel1 {ChannelState::OFF};
-    ChannelState m_channel2 {ChannelState::OFF};
-    ChannelState m_channel3 {ChannelState::OFF};
+        ////////////////////////////////////////////////////////////////////////
+        // Check is channel 3 ON (true) or OFF (false)
+        bool isOnChannel3() const final;
+
+    private:
+        ChannelState m_channel0 {ChannelState::OFF};
+        ChannelState m_channel1 {ChannelState::OFF};
+        ChannelState m_channel2 {ChannelState::OFF};
+        ChannelState m_channel3 {ChannelState::OFF};
 };

@@ -21,6 +21,8 @@
 
 MicroHILCom::MicroHILCom()
 {
+    // TODO
+    // Mapping signals/slots
 }
 
 void MicroHILCom::open()

@@ -20,6 +20,8 @@
 
 MicroHILDialog::MicroHILDialog()
 {
+    // TODO
+    // Mapping signals/slots
 }
 
 void MicroHILDialog::show()

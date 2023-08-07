@@ -27,21 +27,26 @@
 
 class MicroHILController: public AbMicroHILController
 {
-public:
-    MicroHILController(
-        MicroHILConfig *config, MicroHILLog *log,  
-        MicroHILModel *model, MicroHILView *view
-    );
-    ~MicroHILController() = default;
+    public:
+        ////////////////////////////////////////////////////////////////////////
+        // MicroHILController constructor
+        MicroHILController(
+            MicroHILConfig *config, MicroHILLog *log,  
+            MicroHILModel *model, MicroHILView *view
+        );
 
-    ////////////////////////////////////////////////////////////////////////
-    // Enable controller
-    void setEnabled(bool switchController) final;
+        ////////////////////////////////////////////////////////////////////////
+        // MicroHILController destructor
+        ~MicroHILController() = default;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Check is controller enabled
-    bool isEnabled() const final;
+        ////////////////////////////////////////////////////////////////////////
+        // Enable controller
+        void setEnabled(bool switchController) final;
 
-private:
-    bool m_enabled {false};
+        ////////////////////////////////////////////////////////////////////////
+        // Check is controller enabled
+        bool isEnabled() const final;
+
+    private:
+        bool m_enabled {false};
 };
