@@ -28,21 +28,26 @@
 
 class Application
 {
-public:
-    Application(int argc, char *argv[]);
-    ~Application();
+    public:
+        ////////////////////////////////////////////////////////////////////////
+        // Application constructor
+        Application(int argc, char *argv[]);
 
-    ////////////////////////////////////////////////////////////////////////////
-    // Starts the application (run main loop)
-    int run();
+        ////////////////////////////////////////////////////////////////////////
+        // Application destructor
+        ~Application();
 
-private:
-    Glib::RefPtr<Gtk::Application> m_app;
-    Glib::RefPtr<Gtk::Builder> m_builder;
+        ////////////////////////////////////////////////////////////////////////
+        // Starts the application (run main loop)
+        int run();
 
-    MicroHILConfig *m_config{nullptr};
-    MicroHILLog *m_log{nullptr};
-    MicroHILModel *m_model{nullptr};
-    MicroHILView *m_view {nullptr};
-    MicroHILController *m_controller{nullptr};
+    private:
+        Glib::RefPtr<Gtk::Application> m_app;
+        Glib::RefPtr<Gtk::Builder> m_builder;
+
+        MicroHILConfig *m_config{nullptr};
+        MicroHILLog *m_log{nullptr};
+        MicroHILModel *m_model{nullptr};
+        MicroHILView *m_view {nullptr};
+        MicroHILController *m_controller{nullptr};
 };

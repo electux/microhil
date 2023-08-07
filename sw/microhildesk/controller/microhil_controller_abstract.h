@@ -21,14 +21,16 @@
 
 class AbMicroHILController
 {
-public:
-    virtual ~AbMicroHILController() = default;
+    public:
+        ////////////////////////////////////////////////////////////////////////
+        // AbMicroHILController destructor
+        virtual ~AbMicroHILController() = default;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Enable controller
-    virtual void setEnabled(bool switchController) = 0;
+        ////////////////////////////////////////////////////////////////////////
+        // Enable controller
+        virtual void setEnabled(bool switchController) = 0;
 
-    ////////////////////////////////////////////////////////////////////////
-    // Check is controller enabled
-    virtual bool isEnabled() const = 0;
+        ////////////////////////////////////////////////////////////////////////
+        // Check is controller enabled
+        virtual bool isEnabled() const = 0;
 };

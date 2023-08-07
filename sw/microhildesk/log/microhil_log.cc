@@ -20,6 +20,8 @@
 
 MicroHILLog::MicroHILLog()
 {
+    // TODO
+    // Mapping signals/slots
 }
 
 void MicroHILLog::write(Glib::ustring message, LogLevel level)
