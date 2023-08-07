@@ -62,6 +62,10 @@ class AbMicroHILConfig
         // Getting stop bits for serial communication from configuration
         virtual int getStopBits() = 0;
 
+        ////////////////////////////////////////////////////////////////////////
+        // Getting log level
+        virtual Glib::ustring getLogLevel() = 0;
+
     private:
         bool m_configPreValidate{false};
 };
