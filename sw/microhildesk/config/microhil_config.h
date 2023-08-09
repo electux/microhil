@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-
 #pragma once
 
 #include <glibmm.h>
@@ -44,27 +43,31 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     // Getting device name for serial communication from configuration
-    Glib::ustring getDevice() final;
+    Glib::ustring getDevice() const final;
 
     ////////////////////////////////////////////////////////////////////////
     // Getting baud rate for serial communication from configuration
-    int getBaudRate() final;
+    int getBaudRate() const final;
 
     ////////////////////////////////////////////////////////////////////////
     // Getting data bits for serial communication from configuration
-    int getDataBits() final;
+    int getDataBits() const final;
 
     ////////////////////////////////////////////////////////////////////////
     // Getting parity for serial communication from configuration
-    Glib::ustring getParity() final;
+    Glib::ustring getParity() const final;
 
     ////////////////////////////////////////////////////////////////////////
     // Getting stop bits for serial communication from configuration
-    int getStopBits() final;
+    int getStopBits() const final;
 
     ////////////////////////////////////////////////////////////////////////
     // Getting log level
-    Glib::ustring getLogLevel() final;
+    Glib::ustring getLogLevel() const final;
+
+    ////////////////////////////////////////////////////////////////////////
+    // Getting log file path
+    Glib::ustring getLogFile() const final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
