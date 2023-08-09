@@ -16,38 +16,33 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-
 #pragma once
 
 #include <gtkmm/application.h>
-#include "config/microhil_config.h"
-#include "log/microhil_log.h"
 #include "model/microhil_model.h"
 #include "view/microhil_view.h"
 #include "controller/microhil_controller.h"
 
 class Application
 {
-    public:
-        ////////////////////////////////////////////////////////////////////////
-        // Application constructor
-        Application(int argc, char *argv[]);
+public:
+    ////////////////////////////////////////////////////////////////////////
+    // Application constructor
+    Application(int argc, char *argv[]);
 
-        ////////////////////////////////////////////////////////////////////////
-        // Application destructor
-        ~Application();
+    ////////////////////////////////////////////////////////////////////////
+    // Application destructor
+    ~Application();
 
-        ////////////////////////////////////////////////////////////////////////
-        // Starts the application (run main loop)
-        int run();
+    ////////////////////////////////////////////////////////////////////////
+    // Starts the application (run main loop)
+    int run();
 
-    private:
-        Glib::RefPtr<Gtk::Application> m_app;
-        Glib::RefPtr<Gtk::Builder> m_builder;
+private:
+    Glib::RefPtr<Gtk::Application> m_app;
+    Glib::RefPtr<Gtk::Builder> m_builder;
 
-        MicroHILConfig *m_config{nullptr};
-        MicroHILLog *m_log{nullptr};
-        MicroHILModel *m_model{nullptr};
-        MicroHILView *m_view {nullptr};
-        MicroHILController *m_controller{nullptr};
+    MicroHILModel *m_model{nullptr};
+    MicroHILView *m_view {nullptr};
+    MicroHILController *m_controller{nullptr};
 };

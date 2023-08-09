@@ -25,7 +25,7 @@ namespace
 {
     constexpr const char kHomeDirName[]{"/.microhil/"};
     constexpr const char kConfigFileName[]{"config"};
-    constexpr const int kConfigSerialLength{6};
+    constexpr const int kConfigSerialLength{9};
     constexpr const char kConfigSerialSection[]{"serial"};
     constexpr const char kConfigSerialDevice[]{"device"};
     constexpr const char kConfigSerialBaudRate[]{"baud_rate"};
@@ -34,10 +34,12 @@ namespace
     constexpr const char kConfigSerialStopBits[]{"stop_bits"};
     constexpr const char kConfigLogSection[]{"log"};
     constexpr const char kConfigLogLevel[]{"level"};
+    constexpr const char kConfigLogFile[]{"file"};
     constexpr const char* kConfigSerialDefault[]
     {
         "[log]",
         "level=INFO",
+        "file=/tmp/microhil.log",
         "[serial]",
         "device=/dev/ttyUSB0",
         "baud_rate=115200",
@@ -49,12 +51,12 @@ namespace
 
 MicroHILConfig::MicroHILConfig()
 {
-    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     // Setup expected paths for home directory and config file
     m_homePath = Glib::get_home_dir() + kHomeDirName;
     m_configFilePath = m_homePath + kConfigFileName;
 
-    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     // Prevalidation of configuration path
     setPreValid(checkConfigPath());
 }
@@ -85,7 +87,8 @@ bool MicroHILConfig::validate()
         m_configuration.has_key(kConfigSerialSection, kConfigSerialDataBits) &&
         m_configuration.has_key(kConfigSerialSection, kConfigSerialParity) &&
         m_configuration.has_key(kConfigSerialSection, kConfigSerialStopBits) &&
-        m_configuration.has_key(kConfigLogSection, kConfigLogLevel)
+        m_configuration.has_key(kConfigLogSection, kConfigLogLevel) &&
+        m_configuration.has_key(kConfigLogSection, kConfigLogFile)
     );
 
     if(!configCheck)
@@ -96,49 +99,54 @@ bool MicroHILConfig::validate()
     return true;
 }
 
-Glib::ustring MicroHILConfig::getDevice()
+Glib::ustring MicroHILConfig::getDevice() const
 {
     return m_configuration.get_string(
         kConfigSerialSection, kConfigSerialDevice
     );
 }
 
-int MicroHILConfig::getBaudRate()
+int MicroHILConfig::getBaudRate() const
 {
     return m_configuration.get_integer(
         kConfigSerialSection, kConfigSerialBaudRate
     );
 }
 
-int MicroHILConfig::getDataBits()
+int MicroHILConfig::getDataBits() const
 {
     return m_configuration.get_integer(
         kConfigSerialSection, kConfigSerialDataBits
     );
 }
 
-Glib::ustring MicroHILConfig::getParity()
+Glib::ustring MicroHILConfig::getParity() const
 {
     return m_configuration.get_string(
         kConfigSerialSection, kConfigSerialParity
     );
 }
 
-int MicroHILConfig::getStopBits()
+int MicroHILConfig::getStopBits() const
 {
     return (int) m_configuration.get_integer(
         kConfigSerialSection, kConfigSerialStopBits
     );
 }
 
-Glib::ustring MicroHILConfig::getLogLevel()
+Glib::ustring MicroHILConfig::getLogLevel() const
 {
     return m_configuration.get_string(kConfigLogSection, kConfigLogLevel);
 }
 
+Glib::ustring MicroHILConfig::getLogFile() const
+{
+    return m_configuration.get_string(kConfigLogSection, kConfigLogFile);
+}
+
 bool MicroHILConfig::checkConfigPath()
 {
-    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     // Check home directory /home/<username>/.microhil/
     std::filesystem::directory_entry homeDirEntry{m_homePath};
     auto homeDirExists = homeDirEntry.exists();
@@ -151,7 +159,7 @@ bool MicroHILConfig::checkConfigPath()
         }
     }
 
-    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     // Check config file in case of missing generate new with default setup
     // Configuration file location: /home/<username>/.microhil/config
     auto configFileExists = std::filesystem::exists(m_configFilePath);

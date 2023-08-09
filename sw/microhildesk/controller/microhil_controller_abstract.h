@@ -16,21 +16,20 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-
 #pragma once
 
 class AbMicroHILController
 {
-    public:
-        ////////////////////////////////////////////////////////////////////////
-        // AbMicroHILController destructor
-        virtual ~AbMicroHILController() = default;
+public:
+    ////////////////////////////////////////////////////////////////////////
+    // AbMicroHILController destructor
+    virtual ~AbMicroHILController() = default;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Enable controller
-        virtual void setEnabled(bool switchController) = 0;
+    ////////////////////////////////////////////////////////////////////////
+    // Enable controller (enable/disable communication)
+    virtual void setEnabled(bool switchController) = 0;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Check is controller enabled
-        virtual bool isEnabled() const = 0;
+    ////////////////////////////////////////////////////////////////////////
+    // Check is controller enabled (is serial communication enabled)
+    virtual bool isEnabled() const = 0;
 };

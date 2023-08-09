@@ -16,27 +16,25 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-
 #pragma once
 
 #include <glibmm.h>
 
 enum class LogLevel
 {
-    DEBUG = 0,
-    INFO = 1,
-    WARNING = 2,
-    ERROR = 3
+    INFO = 0,
+    WARNING = 1,
+    ERROR = 2
 };
 
 class AbMicroHILLog
 {
-    public:
-        ////////////////////////////////////////////////////////////////////////
-        // AbMicroHILLog destructor
-        virtual ~AbMicroHILLog() = default;
+public:
+    ////////////////////////////////////////////////////////////////////////
+    // AbMicroHILLog destructor
+    virtual ~AbMicroHILLog() = default;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Write log message
-        virtual void write(Glib::ustring message, LogLevel level) = 0;
+    ////////////////////////////////////////////////////////////////////////
+    // Write log message
+    virtual void write(const Glib::ustring message, LogLevel level) = 0;
 };

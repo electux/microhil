@@ -19,19 +19,33 @@
 #include "microhil_controller.h"
 
 MicroHILController::MicroHILController(
-    MicroHILConfig *config, MicroHILLog *log,
     MicroHILModel *model, MicroHILView *view
-)
+): 
+    m_enabled{false},
+    m_config{std::move(new MicroHILConfig())},
+    m_log{std::move(new MicroHILLog())}
 {
-    auto preValidConfig = config->isPreValid();
-    if(!preValidConfig)
+    ////////////////////////////////////////////////////////////////////////
+    // Checking existance of configuration
+    if(!m_config->isPreValid())
     {
         // TODO
         // Emit signal for error handler
     }
 
-    auto loadConfig = config->load();
-    if(!loadConfig)
+    ////////////////////////////////////////////////////////////////////////
+    // Loading configuration from file
+    if(!m_config->load())
+    {
+        // TODO
+        // Emit signal for error handler
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    // Setup log file destination from configuration
+    m_log->setFilePath(m_config->getLogFile());
+
+    if(!m_log->open())
     {
         // TODO
         // Emit signal for error handler

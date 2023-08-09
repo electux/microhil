@@ -16,9 +16,9 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-
 #pragma once
 
+#include <memory>
 #include "../config/microhil_config.h"
 #include "../log/microhil_log.h"
 #include "../model/microhil_model.h"
@@ -27,26 +27,26 @@
 
 class MicroHILController: public AbMicroHILController
 {
-    public:
-        ////////////////////////////////////////////////////////////////////////
-        // MicroHILController constructor
-        MicroHILController(
-            MicroHILConfig *config, MicroHILLog *log,  
-            MicroHILModel *model, MicroHILView *view
-        );
+public:
+    ////////////////////////////////////////////////////////////////////////
+    // MicroHILController constructor
+    MicroHILController(MicroHILModel *model, MicroHILView *view);
 
-        ////////////////////////////////////////////////////////////////////////
-        // MicroHILController destructor
-        ~MicroHILController() = default;
+    ////////////////////////////////////////////////////////////////////////
+    // MicroHILController destructor
+    ~MicroHILController() = default;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Enable controller
-        void setEnabled(bool switchController) final;
+    ////////////////////////////////////////////////////////////////////////
+    // Enable controller (enable/disable communication)
+    void setEnabled(bool switchController) final;
 
-        ////////////////////////////////////////////////////////////////////////
-        // Check is controller enabled
-        bool isEnabled() const final;
+    ////////////////////////////////////////////////////////////////////////
+    // Check is controller enabled (is serial communication enabled)
+    bool isEnabled() const final;
 
-    private:
-        bool m_enabled {false};
+private:
+    bool m_enabled {};
+
+    std::unique_ptr<MicroHILConfig> m_config{nullptr};
+    std::unique_ptr<MicroHILLog> m_log{nullptr};
 };

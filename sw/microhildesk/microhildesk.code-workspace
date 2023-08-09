@@ -70,7 +70,9 @@
 			"valarray": "cpp",
 			"*.inc": "cpp",
 			"complex": "cpp",
-			"cfenv": "cpp"
+			"cfenv": "cpp",
+			"codecvt": "cpp",
+			"fstream": "cpp"
 		}
 	}
 }
