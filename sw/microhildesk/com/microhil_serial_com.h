@@ -18,18 +18,23 @@
  */
 #pragma once
 
+#include <memory>
+#include <libserial/SerialPort.h>
 #include "microhil_com_abstract.h"
 
-class MicroHILCom: public AbMicroHILCom
+using LibSerial::SerialPort;
+using LibSerial::BaudRate;
+
+class MicroHILSerialCom: public AbMicroHILCom
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     // MicroHILCom constructor
-    MicroHILCom();
+    MicroHILSerialCom();
 
     ////////////////////////////////////////////////////////////////////////
     // MicroHILCom destructor
-    ~MicroHILCom() = default;
+    ~MicroHILSerialCom();
 
     ////////////////////////////////////////////////////////////////////////
     // Open communication channel
@@ -48,4 +53,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     // Write to communication channel
     void write(std::vector<uint8_t>& dataBuffer) final;
+
+private:
+    std::unique_ptr<SerialPort> m_serialPort;
 };

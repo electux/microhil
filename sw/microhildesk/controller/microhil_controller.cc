@@ -23,7 +23,8 @@ MicroHILController::MicroHILController(
 ): 
     m_enabled{false},
     m_config{std::move(new MicroHILConfig())},
-    m_log{std::move(new MicroHILLog())}
+    m_log{std::move(new MicroHILLog())},
+    m_serial{std::move(new MicroHILSerialCom())}
 {
     ////////////////////////////////////////////////////////////////////////
     // Checking existance of configuration

@@ -2,5 +2,10 @@
 <gresources>
   <gresource prefix="/org/gtkmm/microhildesk">
     <file preprocess="xml-stripblanks">home.ui</file>
+    <file preprocess="xml-stripblanks">serial.ui</file>
+    <file preprocess="xml-stripblanks">log.ui</file>
+    <file preprocess="xml-stripblanks">about.ui</file>
+    <file>logo.ico</file>
+    <file>logo.png</file>
   </gresource>
 </gresources>
