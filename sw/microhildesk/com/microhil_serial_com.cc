@@ -18,26 +18,40 @@
  */
 #include "microhil_serial_com.h"
 
-MicroHILCom::MicroHILCom()
+MicroHILSerialCom::MicroHILSerialCom():
+    m_serialPort{std::move(new SerialPort())}
 {
     // TODO
     // Mapping signals/slots
 }
 
-void MicroHILCom::open()
+MicroHILSerialCom::~MicroHILSerialCom()
 {
+    close();
 }
 
-void MicroHILCom::close()
+void MicroHILSerialCom::open()
 {
+    if(!m_serialPort->IsOpen())
+    {
+        m_serialPort->Open("/dev/ttyUSB0");
+    }
 }
 
-void MicroHILCom::read(
+void MicroHILSerialCom::close()
+{
+    if(m_serialPort->IsOpen())
+    {
+        m_serialPort->Close();
+    }
+}
+
+void MicroHILSerialCom::read(
     std::vector<uint8_t> &dataBuffer, size_t len, size_t timeout
 )
 {
 }
 
-void MicroHILCom::write(std::vector<uint8_t> &dataBuffer)
+void MicroHILSerialCom::write(std::vector<uint8_t> &dataBuffer)
 {
 }

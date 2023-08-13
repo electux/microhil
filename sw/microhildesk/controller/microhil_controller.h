@@ -21,6 +21,7 @@
 #include <memory>
 #include "../config/microhil_config.h"
 #include "../log/microhil_log.h"
+#include "../com/microhil_serial_com.h"
 #include "../model/microhil_model.h"
 #include "../view/microhil_view.h"
 #include "microhil_controller_abstract.h"
@@ -49,4 +50,5 @@ private:
 
     std::unique_ptr<MicroHILConfig> m_config{nullptr};
     std::unique_ptr<MicroHILLog> m_log{nullptr};
+    std::unique_ptr<MicroHILSerialCom> m_serial{nullptr};
 };

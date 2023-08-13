@@ -6,4 +6,9 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-LDFLAGS =
+RESOURCES = \
+	../resource/home.ui \
+	../resource/serial.ui \
+	../resource/log.ui \
+	../resource/about.ui
+

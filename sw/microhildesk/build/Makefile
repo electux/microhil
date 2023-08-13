@@ -15,6 +15,7 @@ include cflags.mk
 include ldflags.mk
 include sources.mk
 include objects.mk
+include resources.mk
 
 EXECUTABLE=microhildesk
 
@@ -23,9 +24,9 @@ GLIB_COMPILE_RESOURCES = $(shell pkg-config --variable=glib_compile_resources gi
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@ `pkg-config gtkmm-3.0 --libs`
+	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@ `pkg-config gtkmm-3.0 --libs` `pkg-config libserial --libs`
 
-resources.c: ../resource/microhildesk.gresource.xml ../resource/home.ui
+resources.c: ../resource/microhildesk.gresource.xml $(RESOURCES)
 	$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=../resource --generate-source $<
 
 .cc.o:
