@@ -42,9 +42,9 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="LogLevelOk">
+              <object class="GtkButton" id="LogOk">
                 <property name="label" translatable="yes">Ok</property>
-                <property name="name">LogLevelOk</property>
+                <property name="name">LogOk</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>

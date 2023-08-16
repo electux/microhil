@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_log.h
+ * microhil_view_dialog.h
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -18,53 +18,55 @@
  */
 #pragma once
 
-#include <iostream>
-#include <fstream>
-#include "microhil_log_abstract.h"
+#include <gtkmm/builder.h>
+#include <gtkmm/button.h>
+#include <gtkmm/label.h>
+#include <gtkmm/dialog.h>
+#include "microhil_view_dialog_abstract.h"
 
-using namespace std;
-
-class MicroHILLog: public AbMicroHILLog
+class MicroHILViewDialog: public AbMicroHILViewDialog, public Gtk::Dialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog constructor
-    MicroHILLog();
+    // MicroHILViewDialog constructor
+    MicroHILViewDialog(
+        BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog destructor
-    ~MicroHILLog();
+    // MicroHILViewDialog destructor
+    ~MicroHILViewDialog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Setting file path for logger
-    void setFilePath(const Glib::ustring logFilePath);
+    // Signals for emitting from dialog Close button
+    closeDialog closeDialogChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting file path for logger
-    Glib::ustring getFilePath() const;
+    // Slots for processing Close button for dialog
+    void onCloseDialogChange() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Open log file for collecting log messages
-    bool open();
+    // Show dialog with message
+    void show(const Glib::ustring message, MessageType type) final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Write log message
-    void write(const Glib::ustring message, LogLevel level) final;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Close log file
-    bool close();
+    // Hide dialog
+    void hide() final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // Getting current date and time
-    Glib::ustring getCurrentDateTime() const;
+    // Conversion of message type to unicode string
+    Glib::ustring toUnicodeStringMessageType(MessageType type) const;
 
     ////////////////////////////////////////////////////////////////////////
-    // Convert log level type to human readable string 
-    Glib::ustring getLogType(LogLevel level) const;
+    // Map Close button signal and slot
+    void mapping();
 
-    Glib::ustring m_logFilePath{};
-    ofstream m_logFile{};
-    bool m_fileOpened{};
+    Glib::RefPtr<Gtk::Builder> m_ui;
+    Glib::RefPtr<Gtk::Label> m_text;
+    Glib::RefPtr<Gtk::Button> m_close;
+
+    ////////////////////////////////////////////////////////////////////////
+    // Signal for emitting from Close button (hide about dialog)
+    closeDialog m_closeDialog;
 };

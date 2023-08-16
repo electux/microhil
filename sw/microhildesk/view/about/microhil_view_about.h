@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_log.h
- * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * microhil_view_about.h
+ * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -18,53 +18,41 @@
  */
 #pragma once
 
-#include <iostream>
-#include <fstream>
-#include "microhil_log_abstract.h"
+#include <gtkmm/builder.h>
+#include <gtkmm/button.h>
+#include <gtkmm/aboutdialog.h>
+#include "microhil_view_about_abstract.h"
 
-using namespace std;
-
-class MicroHILLog: public AbMicroHILLog
+class MicroHILViewAbout : public AbMicroHILViewAbout, public Gtk::AboutDialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog constructor
-    MicroHILLog();
+    // MicroHILViewAbout constructor
+    MicroHILViewAbout(
+        BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog destructor
-    ~MicroHILLog();
+    // MicroHILViewAbout destructor
+    ~MicroHILViewAbout() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Setting file path for logger
-    void setFilePath(const Glib::ustring logFilePath);
+    // Signal for emitting from about Ok button
+    visibleAbout visibleAboutChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting file path for logger
-    Glib::ustring getFilePath() const;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Open log file for collecting log messages
-    bool open();
-
-    ////////////////////////////////////////////////////////////////////////
-    // Write log message
-    void write(const Glib::ustring message, LogLevel level) final;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Close log file
-    bool close();
+    // Slots for processing Ok button for about dialog
+    void onVisibleAboutChange() final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // Getting current date and time
-    Glib::ustring getCurrentDateTime() const;
+    // Map Ok button signal and slot
+    void mapping();
+
+    Glib::RefPtr<Gtk::Builder> m_ui;
+    Glib::RefPtr<Gtk::Button> m_ok;
 
     ////////////////////////////////////////////////////////////////////////
-    // Convert log level type to human readable string 
-    Glib::ustring getLogType(LogLevel level) const;
-
-    Glib::ustring m_logFilePath{};
-    ofstream m_logFile{};
-    bool m_fileOpened{};
+    // Signal for emitting from Ok button (hide about dialog)
+    visibleAbout m_visibleAbout;
 };

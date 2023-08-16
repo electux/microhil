@@ -9,13 +9,28 @@
 SOURCES = \
 	../config/microhil_config.cc \
 	../log/microhil_log.cc \
-	../dialog/microhil_dialog.cc \
 	../com/microhil_serial_com.cc \
 	../model/microhil_model.cc \
 	../view/microhil_view_signals.cc \
 	../view/microhil_view_slots.cc \
 	../view/microhil_view_map.cc \
 	../view/microhil_view.cc \
+	../view/about/microhil_view_about_signals.cc \
+	../view/about/microhil_view_about_slots.cc \
+	../view/about/microhil_view_about_map.cc \
+	../view/about/microhil_view_about.cc \
+	../view/dialog/microhil_view_dialog_signals.cc \
+	../view/dialog/microhil_view_dialog_slots.cc \
+	../view/dialog/microhil_view_dialog_map.cc \
+	../view/dialog/microhil_view_dialog.cc \
+	../view/settings/log/microhil_view_log_signals.cc \
+	../view/settings/log/microhil_view_log_slots.cc \
+	../view/settings/log/microhil_view_log_map.cc \
+	../view/settings/log/microhil_view_log.cc \
+	../view/settings/serial/microhil_view_serial_signals.cc \
+	../view/settings/serial/microhil_view_serial_slots.cc \
+	../view/settings/serial/microhil_view_serial_map.cc \
+	../view/settings/serial/microhil_view_serial.cc \
 	../controller/microhil_controller.cc \
 	../application.cc \
 	../main.cc

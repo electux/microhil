@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_log.h
+ * microhil_view_log_abstract.h
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -18,53 +18,51 @@
  */
 #pragma once
 
-#include <iostream>
-#include <fstream>
-#include "microhil_log_abstract.h"
+#include <sigc++/sigc++.h>
 
-using namespace std;
-
-class MicroHILLog: public AbMicroHILLog
+class AbMicroHILViewLog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog constructor
-    MicroHILLog();
+    // Signal type for log file path
+    using logFilePath = sigc::signal<void(Glib::ustring)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog destructor
-    ~MicroHILLog();
+    // Signal type for selectable log level
+    using selectLogLevel = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Setting file path for logger
-    void setFilePath(const Glib::ustring logFilePath);
+    // Signal types for Log Cancel and Ok buttons
+    using cancelLog = sigc::signal<void(bool)>;
+    using okLog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting file path for logger
-    Glib::ustring getFilePath() const;
+    // AbMicroHILViewLog destructor
+    virtual ~AbMicroHILViewLog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Open log file for collecting log messages
-    bool open();
+    // Signal for emitting from Log input
+    virtual logFilePath logFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Write log message
-    void write(const Glib::ustring message, LogLevel level) final;
+    // Slot for processing log input 
+    virtual void onLogFilePathChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Close log file
-    bool close();
-
-private:
-    ////////////////////////////////////////////////////////////////////////
-    // Getting current date and time
-    Glib::ustring getCurrentDateTime() const;
+    // Signal for emitting from Log level combobox
+    virtual selectLogLevel logLevelChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Convert log level type to human readable string 
-    Glib::ustring getLogType(LogLevel level) const;
+    // Slot for processing loge level from combobox
+    virtual void onLogLevelChange() = 0;
 
-    Glib::ustring m_logFilePath{};
-    ofstream m_logFile{};
-    bool m_fileOpened{};
+    ////////////////////////////////////////////////////////////////////////
+    // Signals for emitting from Log Cancel and Ok buttons
+    virtual cancelLog cancelLogChanged() = 0;
+    virtual okLog okLogChanged() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    // Slots for processing Log Cancel and Ok buttons
+    virtual void onCancelLogChange() = 0;
+    virtual void onOkLogChange() = 0;
 };
