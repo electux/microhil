@@ -66,8 +66,8 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="SetrialPortDevice">
-            <property name="name">SetrialPortDevice</property>
+          <object class="GtkLabel" id="SerialPortDevice">
+            <property name="name">SerialPortDevice</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="label" translatable="yes">Port device</property>
@@ -79,8 +79,8 @@
           </packing>
         </child>
         <child>
-          <object class="GtkEntry" id="SetrialPortDeviceInput">
-            <property name="name">SetrialPortDeviceInput</property>
+          <object class="GtkEntry" id="SerialPortDeviceInput">
+            <property name="name">SerialPortDeviceInput</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="tooltip-text" translatable="yes">Set serial port device path</property>
@@ -148,8 +148,8 @@
           </packing>
         </child>
         <child>
-          <object class="GtkComboBoxText" id="SerialDataBitsSelector">
-            <property name="name">SerialDataBitsSelector</property>
+          <object class="GtkComboBoxText" id="SerialPortDataBitsSelector">
+            <property name="name">SerialPortDataBitsSelector</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="tooltip-text" translatable="yes">Set data bits for serial port</property>
@@ -181,8 +181,8 @@
           </packing>
         </child>
         <child>
-          <object class="GtkComboBoxText" id="SerialParitySelector">
-            <property name="name">SerialParitySelector</property>
+          <object class="GtkComboBoxText" id="SerialPortParitySelector">
+            <property name="name">SerialPortParitySelector</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="tooltip-text" translatable="yes">Set parity for serial port</property>
@@ -214,11 +214,11 @@
           </packing>
         </child>
         <child>
-          <object class="GtkComboBoxText" id="StopBitsSelector">
-            <property name="name">StopBitsSelector</property>
+          <object class="GtkComboBoxText" id="SerialPortStopBitsSelector">
+            <property name="name">SerialPortStopBitsSelector</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
-            <property name="tooltip-text" translatable="yes">Set stop bits for setial port</property>
+            <property name="tooltip-text" translatable="yes">Set stop bits for serial port</property>
             <items>
               <item id="0" translatable="yes">1</item>
               <item id="1" translatable="yes">2</item>

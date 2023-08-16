@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_log.h
+ * microhil_view_dialog_abstract.h
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -18,53 +18,39 @@
  */
 #pragma once
 
-#include <iostream>
-#include <fstream>
-#include "microhil_log_abstract.h"
+#include <sigc++/sigc++.h>
 
-using namespace std;
+enum class MessageType
+{
+    INFO = 0,
+    WARNING = 1,
+    ERROR = 2
+};
 
-class MicroHILLog: public AbMicroHILLog
+class AbMicroHILViewDialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog constructor
-    MicroHILLog();
+    // Signal type for dialog Close button
+    using closeDialog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog destructor
-    ~MicroHILLog();
+    // AbMicroHILViewDialog destructor
+    virtual ~AbMicroHILViewDialog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Setting file path for logger
-    void setFilePath(const Glib::ustring logFilePath);
+    // Signals for emitting from dialog Close button
+    virtual closeDialog closeDialogChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting file path for logger
-    Glib::ustring getFilePath() const;
+    // Slots for processing Close button for dialog
+    virtual void onCloseDialogChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Open log file for collecting log messages
-    bool open();
+    // Show dialog with message
+    virtual void show(Glib::ustring message, MessageType type) = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Write log message
-    void write(const Glib::ustring message, LogLevel level) final;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Close log file
-    bool close();
-
-private:
-    ////////////////////////////////////////////////////////////////////////
-    // Getting current date and time
-    Glib::ustring getCurrentDateTime() const;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Convert log level type to human readable string 
-    Glib::ustring getLogType(LogLevel level) const;
-
-    Glib::ustring m_logFilePath{};
-    ofstream m_logFile{};
-    bool m_fileOpened{};
+    // Hide dialog
+    virtual void hide() = 0;
 };

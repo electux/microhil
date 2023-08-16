@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_dialog.h
+ * microhil_view_home_abstract.h
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -16,26 +16,3 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#pragma once
-
-#include "microhil_dialog_abstract.h"
-
-class MicroHILDialog: public AbMicroHILDialog
-{
-public:
-    ////////////////////////////////////////////////////////////////////////
-    // MicroHILDialog constructor
-    MicroHILDialog();
-
-    ////////////////////////////////////////////////////////////////////////
-    // MicroHILDialog destructor
-    ~MicroHILDialog() = default;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Show dialog with message
-    void show() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Hide dialog with message
-    void hide() final;
-};

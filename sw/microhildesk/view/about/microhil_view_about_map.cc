@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_dialog_abstract.h
- * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * microhil_view_about_map.cc
+ * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -16,20 +16,13 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#pragma once
+#include "microhil_view_about.h"
 
-class AbMicroHILDialog
+void MicroHILViewAbout::mapping()
 {
-public:
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILDialog destructor
-    virtual ~AbMicroHILDialog() = default;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Show dialog with message
-    virtual void show() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Hide dialog with message
-    virtual void hide() = 0;
-};
+    // Map Ok button signal and slot
+    m_ok->signal_clicked().connect(
+        sigc::mem_fun(*this, &MicroHILViewAbout::onVisibleAboutChange)
+    );
+}
