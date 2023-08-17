@@ -1,0 +1,8 @@
+<map id="view/settings/serial/microhil_view_serial_abstract.h" name="view/settings/serial/microhil_view_serial_abstract.h">
+<area shape="rect" id="node1" title=" " alt="" coords="300,5,460,61"/>
+<area shape="rect" id="node2" href="$d4/dfa/microhil__view__serial_8h.html" title=" " alt="" coords="294,109,466,151"/>
+<area shape="rect" id="node3" href="$d9/d99/microhil__view__serial_8cc.html" title=" " alt="" coords="5,206,184,247"/>
+<area shape="rect" id="node4" href="$da/d14/microhil__view__serial__map_8cc.html" title=" " alt="" coords="208,199,368,255"/>
+<area shape="rect" id="node5" href="$d1/d99/microhil__view__serial__signals_8cc.html" title=" " alt="" coords="392,199,552,255"/>
+<area shape="rect" id="node6" href="$d4/df5/microhil__view__serial__slots_8cc.html" title=" " alt="" coords="576,199,736,255"/>
+</map>

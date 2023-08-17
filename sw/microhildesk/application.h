@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * application.h
- * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  * 
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -40,7 +40,6 @@ public:
 
 private:
     Glib::RefPtr<Gtk::Application> m_app;
-    Glib::RefPtr<Gtk::Builder> m_builder;
 
     MicroHILModel *m_model{nullptr};
     MicroHILView *m_view {nullptr};

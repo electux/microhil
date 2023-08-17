@@ -11,10 +11,11 @@ SOURCES = \
 	../log/microhil_log.cc \
 	../com/microhil_serial_com.cc \
 	../model/microhil_model.cc \
-	../view/microhil_view_signals.cc \
-	../view/microhil_view_slots.cc \
-	../view/microhil_view_map.cc \
 	../view/microhil_view.cc \
+	../view/home/microhil_view_home_signals.cc \
+	../view/home/microhil_view_home_slots.cc \
+	../view/home/microhil_view_home_map.cc \
+	../view/home/microhil_view_home.cc \
 	../view/about/microhil_view_about_signals.cc \
 	../view/about/microhil_view_about_slots.cc \
 	../view/about/microhil_view_about_map.cc \
