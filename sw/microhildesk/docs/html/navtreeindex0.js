@@ -246,8 +246,8 @@ var NAVTREEINDEX0 =
 "d8/dd0/microhil__config_8cc.html":[1,0,1,0],
 "d8/dd0/microhil__config_8cc_source.html":[1,0,1,0],
 "d8/dee/classMicroHILView.html":[0,0,17],
-"d8/dee/classMicroHILView.html#a0d62913f5b61fd8ea9af3b7cfe4e08d7":[0,0,17,4],
-"d8/dee/classMicroHILView.html#a21a24c80a327c7b61dd8b6ee85bddd4f":[0,0,17,2],
 "d8/dee/classMicroHILView.html#a26053434361a0f1082770a5cae998e96":[0,0,17,0],
-"d8/dee/classMicroHILView.html#a9eecfd422958a028bedffc51aa22093f":[0,0,17,1]
+"d8/dee/classMicroHILView.html#a781661581d5ddf63bd7451682c24afd9":[0,0,17,2],
+"d8/dee/classMicroHILView.html#aa7415c85cd912c3df65ceeb69ad1772f":[0,0,17,1],
+"d8/dee/classMicroHILView.html#af5b626a64d82e72446e1a09f4a0e6767":[0,0,17,3]
 };

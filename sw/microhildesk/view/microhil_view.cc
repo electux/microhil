@@ -27,16 +27,10 @@ namespace
 MicroHILView::MicroHILView()
 {
     m_builder = Gtk::Builder::create_from_resource(kHomeUI);
-    m_builder->get_widget_derived(kwindowId, m_home);
+    m_builder->get_widget_derived(kwindowId, (MicroHILViewHome*&) m_home);
 }
 
-MicroHILView::~MicroHILView()
-{
-    delete m_home;
-}
-
-MicroHILViewHome *MicroHILView::getHome()
+Glib::RefPtr<MicroHILViewHome> MicroHILView::getHome()
 {
     return m_home;
 }
-

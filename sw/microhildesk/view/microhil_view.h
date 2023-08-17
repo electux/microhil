@@ -31,18 +31,18 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     // MicroHILView destructor
-    ~MicroHILView();
+    ~MicroHILView() = default;
 
     ////////////////////////////////////////////////////////////////////////
     // Getting home view
-    MicroHILViewHome *getHome();
+    Glib::RefPtr<MicroHILViewHome> getHome();
 
 private:
     ////////////////////////////////////////////////////////////////////////
     // UI builder
-    Glib::RefPtr<Gtk::Builder> m_builder;
+    Glib::RefPtr<Gtk::Builder> m_builder{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     // Home view
-    MicroHILViewHome *m_home{nullptr};
+    Glib::RefPtr<MicroHILViewHome> m_home{nullptr};
 };
