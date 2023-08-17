@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * microhil_config_abstract.h
- * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -17,6 +17,8 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+
+#include <glibmm/ustring.h>
 
 class AbMicroHILConfig
 {
@@ -70,5 +72,7 @@ public:
     virtual Glib::ustring getLogFile() const = 0;
 
 private:
+    ////////////////////////////////////////////////////////////////////////
+    // Pre-validation flag for configuration
     bool m_configPreValidate{false};
 };

@@ -3,7 +3,7 @@ var searchData=
   ['main_0',['main',['../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cc']]],
   ['mapping_1',['mapping',['../da/dcd/classMicroHILViewDialog.html#a0cba4ebf5a1ceb331b95853d928eec13',1,'MicroHILViewDialog::mapping()'],['../dd/dde/classMicroHILViewSerial.html#ac3180885e01d13d32a6305cb4af6feb7',1,'MicroHILViewSerial::mapping()'],['../d4/dc6/classMicroHILViewLog.html#a00b8e12d4c3b5e1faf03cdafa685dcc9',1,'MicroHILViewLog::mapping()'],['../df/da5/classMicroHILViewHome.html#a95b95333e5690868abe65075d1f41c20',1,'MicroHILViewHome::mapping()'],['../d1/df8/classMicroHILViewAbout.html#a1916cb6515d36133bd4f9f5fc68be2e0',1,'MicroHILViewAbout::mapping()']]],
   ['microhilconfig_2',['MicroHILConfig',['../d0/df4/classMicroHILConfig.html#a306bb65530ec104babc1832209756664',1,'MicroHILConfig']]],
-  ['microhilcontroller_3',['MicroHILController',['../dd/d47/classMicroHILController.html#a687538b64472000318b1fe2b78f5c711',1,'MicroHILController']]],
+  ['microhilcontroller_3',['MicroHILController',['../dd/d47/classMicroHILController.html#a5f530710d0b0b543d1cc75d0c378092c',1,'MicroHILController']]],
   ['microhillog_4',['MicroHILLog',['../d1/de3/classMicroHILLog.html#aba0d4eda72475fcc5f148c686b497edb',1,'MicroHILLog']]],
   ['microhilmodel_5',['MicroHILModel',['../de/dce/classMicroHILModel.html#a5aa7958d760aab08bb1ca35f0a5e1f9a',1,'MicroHILModel']]],
   ['microhilserialcom_6',['MicroHILSerialCom',['../d5/dd0/classMicroHILSerialCom.html#a620a05edf19214528201747c6507bc08',1,'MicroHILSerialCom']]],

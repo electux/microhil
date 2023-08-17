@@ -18,6 +18,7 @@
  */
 #pragma once
 
+#include <glibmm/ustring.h>
 #include <sigc++/sigc++.h>
 
 enum class MessageType

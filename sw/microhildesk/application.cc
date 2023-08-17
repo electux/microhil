@@ -26,21 +26,14 @@ namespace
 Application::Application(int argc, char *argv[])
 {
     ////////////////////////////////////////////////////////////////////////
-    // Setup app
+    // Setup application
     m_app = Gtk::Application::create(argc, argv, kAppId);
-    
+
     ////////////////////////////////////////////////////////////////////////
     // Check and prepare model, view and controller
-    m_model = new MicroHILModel();
-    m_view = new MicroHILView();
-    m_controller = new MicroHILController(m_model, m_view);
-}
-
-Application::~Application()
-{
-    if(m_model) delete m_model;
-    if(m_view) delete m_view;
-    if(m_controller) delete m_controller;
+    m_model = make_shared<MicroHILModel>();
+    m_view = make_shared<MicroHILView>();
+    m_controller = make_unique<MicroHILController>(m_model, m_view);
 }
 
 int Application::run()

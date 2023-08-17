@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * microhil_view_about.h
- * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -49,7 +49,12 @@ private:
     // Map Ok button signal and slot
     void mapping();
 
+    ////////////////////////////////////////////////////////////////////////
+    // UI builder
     Glib::RefPtr<Gtk::Builder> m_ui;
+
+    ////////////////////////////////////////////////////////////////////////
+    // Widgets for about view
     Glib::RefPtr<Gtk::Button> m_ok;
 
     ////////////////////////////////////////////////////////////////////////

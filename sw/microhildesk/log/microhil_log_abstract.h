@@ -18,7 +18,7 @@
  */
 #pragma once
 
-#include <glibmm.h>
+#include <glibmm/ustring.h>
 
 enum class LogLevel
 {

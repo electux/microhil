@@ -64,7 +64,9 @@ private:
     // Convert log level type to human readable string 
     Glib::ustring getLogType(LogLevel level) const;
 
+    ////////////////////////////////////////////////////////////////////////
+    // Log file path, log file and flag for checking log file state
     Glib::ustring m_logFilePath{};
     ofstream m_logFile{};
-    bool m_fileOpened{};
+    bool m_fileOpened{false};
 };

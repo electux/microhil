@@ -18,11 +18,9 @@
  */
 #include "microhil_serial_com.h"
 
-MicroHILSerialCom::MicroHILSerialCom():
-    m_serialPort{std::move(new SerialPort())}
+MicroHILSerialCom::MicroHILSerialCom()
 {
-    // TODO
-    // Mapping signals/slots
+    m_serialPort = make_unique<SerialPort>();
 }
 
 MicroHILSerialCom::~MicroHILSerialCom()

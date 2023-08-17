@@ -80,6 +80,8 @@ public:
     bool isOnChannel3() const final;
 
 private:
+    ////////////////////////////////////////////////////////////////////////
+    // Channel states
     ChannelState m_channel0 {ChannelState::OFF};
     ChannelState m_channel1 {ChannelState::OFF};
     ChannelState m_channel2 {ChannelState::OFF};

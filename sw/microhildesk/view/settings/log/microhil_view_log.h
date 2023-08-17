@@ -69,7 +69,12 @@ private:
     // Map all signals and slots for log dialog
     void mapping();
 
+    ////////////////////////////////////////////////////////////////////////
+    // UI builder
     Glib::RefPtr<Gtk::Builder> m_ui;
+
+    ////////////////////////////////////////////////////////////////////////
+    // Widgets for log view
     Glib::RefPtr<Gtk::Entry> m_device;
     Glib::RefPtr<Gtk::ComboBoxText> m_level;
     Glib::RefPtr<Gtk::Button> m_cancel;

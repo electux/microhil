@@ -37,7 +37,7 @@ var searchData=
   ['m_5fconfigfilepath_34',['m_configFilePath',['../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb',1,'MicroHILConfig']]],
   ['m_5fconfigprevalidate_35',['m_configPreValidate',['../d6/dac/classAbMicroHILConfig.html#acae659392274d3c4682b79b6d1d66e58',1,'AbMicroHILConfig']]],
   ['m_5fconfiguration_36',['m_configuration',['../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0',1,'MicroHILConfig']]],
-  ['m_5fcontroller_37',['m_controller',['../d5/d4c/classApplication.html#a3e23326a2727bdfcbeea4c77815d2fd0',1,'Application']]],
+  ['m_5fcontroller_37',['m_controller',['../d5/d4c/classApplication.html#add794493f575f1f0b2987ee0a5872e36',1,'Application']]],
   ['m_5fdatabits_38',['m_dataBits',['../dd/dde/classMicroHILViewSerial.html#a5adb9440bd4a1f930d6bdfdda3e849b4',1,'MicroHILViewSerial']]],
   ['m_5fdevice_39',['m_device',['../d4/dc6/classMicroHILViewLog.html#ad6ae4fe5459b72362327062eca5a3a76',1,'MicroHILViewLog::m_device()'],['../dd/dde/classMicroHILViewSerial.html#af42a01d7527339b38d5084e7babcc6f3',1,'MicroHILViewSerial::m_device()']]],
   ['m_5fenablechannels_40',['m_enableChannels',['../df/da5/classMicroHILViewHome.html#aabadf00e0b70bf343476856934082fb6',1,'MicroHILViewHome']]],
@@ -50,7 +50,7 @@ var searchData=
   ['m_5flogfile_47',['m_logFile',['../d1/de3/classMicroHILLog.html#ad7080e2c535671238c8483cb96c3f29c',1,'MicroHILLog']]],
   ['m_5flogfilepath_48',['m_logFilePath',['../d1/de3/classMicroHILLog.html#a6cde3223f0930a22a2154563e95af40e',1,'MicroHILLog::m_logFilePath()'],['../d4/dc6/classMicroHILViewLog.html#a671ec9fad7578f1bfb23badf120be349',1,'MicroHILViewLog::m_logFilePath()']]],
   ['m_5floglevel_49',['m_logLevel',['../d4/dc6/classMicroHILViewLog.html#ac71d5b7c94287779dc6bbf182ff238c1',1,'MicroHILViewLog']]],
-  ['m_5fmodel_50',['m_model',['../d5/d4c/classApplication.html#a0721424dfabd5bf4f0cf3a4901fd8c2a',1,'Application']]],
+  ['m_5fmodel_50',['m_model',['../d5/d4c/classApplication.html#a35276de12398545067aceb3799ffe0d3',1,'Application']]],
   ['m_5fok_51',['m_ok',['../d1/df8/classMicroHILViewAbout.html#a233f21c711a68dba0522c5bd8db22b76',1,'MicroHILViewAbout::m_ok()'],['../d4/dc6/classMicroHILViewLog.html#aa4a32a48f6dd2a8d68a276d9c8d9a9e9',1,'MicroHILViewLog::m_ok()'],['../dd/dde/classMicroHILViewSerial.html#af73401f6f7d6fca143fbef5d6d3667d5',1,'MicroHILViewSerial::m_ok()']]],
   ['m_5foklog_52',['m_okLog',['../d4/dc6/classMicroHILViewLog.html#a35b137cbf50f8a335a70559ee47134c8',1,'MicroHILViewLog']]],
   ['m_5fokserial_53',['m_okSerial',['../dd/dde/classMicroHILViewSerial.html#abcaaa0149e9df0abc97eae8db44da5d9',1,'MicroHILViewSerial']]],
@@ -70,6 +70,6 @@ var searchData=
   ['m_5ftogglechannels_67',['m_toggleChannels',['../df/da5/classMicroHILViewHome.html#a36d76d9b49de7b68d592e1758fce2f00',1,'MicroHILViewHome']]],
   ['m_5ftoggletimerchannels_68',['m_toggleTimerChannels',['../df/da5/classMicroHILViewHome.html#a4966ef067c9f9a9e1cb041d2f7a12cba',1,'MicroHILViewHome']]],
   ['m_5fui_69',['m_ui',['../d1/df8/classMicroHILViewAbout.html#a27e0246247975889d9f9148d4c211bab',1,'MicroHILViewAbout::m_ui()'],['../da/dcd/classMicroHILViewDialog.html#a3e50fa72ccafa4c9e6757834d1a433ae',1,'MicroHILViewDialog::m_ui()'],['../df/da5/classMicroHILViewHome.html#a9d0d7df31fdcd8b41b51d42459bb0a7c',1,'MicroHILViewHome::m_ui()'],['../d4/dc6/classMicroHILViewLog.html#a7819502cb045ff0255f3e3da0b909171',1,'MicroHILViewLog::m_ui()'],['../dd/dde/classMicroHILViewSerial.html#a1724c517e49d1b35ac006847ea933ed0',1,'MicroHILViewSerial::m_ui()']]],
-  ['m_5fview_70',['m_view',['../d5/d4c/classApplication.html#ace68d4d1013b60b76ac11b96561b3fed',1,'Application']]],
+  ['m_5fview_70',['m_view',['../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1',1,'Application']]],
   ['m_5fvisibleabout_71',['m_visibleAbout',['../d1/df8/classMicroHILViewAbout.html#a53b4029922266b86c2a8acf93c8bc20c',1,'MicroHILViewAbout']]]
 ];

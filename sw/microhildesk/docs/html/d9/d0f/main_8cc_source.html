@@ -106,30 +106,36 @@ $(document).ready(function(){initNavTree('d9/d0f/main_8cc_source.html','../../')
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d32/application_8h.html">application.h</a>&quot;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">   21</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="../../d5/d4c/classApplication.html">Application</a> *app = <span class="keyword">new</span> <a class="code hl_class" href="../../d5/d4c/classApplication.html">Application</a>(argc, argv);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">int</span> status {EXIT_FAILURE};</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span>(app)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        status = app-&gt;<a class="code hl_function" href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">run</a>();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">delete</span> app;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// Create application</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>std::unique_ptr&lt;Application&gt; <a class="code hl_function" href="../../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a">create</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[]);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">   25</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">auto</span> app = <a class="code hl_function" href="../../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a">create</a>(argc, argv);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">int</span> status {EXIT_FAILURE};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span>(app)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        status = app-&gt;run();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a">   38</a></span>std::unique_ptr&lt;Application&gt; <a class="code hl_function" href="../../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a">create</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">return</span> make_unique&lt;Application&gt;(argc, argv);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 <div class="ttc" id="aapplication_8h_html"><div class="ttname"><a href="../../db/d32/application_8h.html">application.h</a></div></div>
-<div class="ttc" id="aclassApplication_html"><div class="ttname"><a href="../../d5/d4c/classApplication.html">Application</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00026">application.h:27</a></div></div>
-<div class="ttc" id="aclassApplication_html_a8cf8941c8db90117d3735bce5ae1fdf4"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">Application::run</a></div><div class="ttdeci">int run()</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d16/application_8cc_source.html#l00046">application.cc:46</a></div></div>
-<div class="ttc" id="amain_8cc_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d0f/main_8cc_source.html#l00021">main.cc:21</a></div></div>
+<div class="ttc" id="amain_8cc_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d0f/main_8cc_source.html#l00025">main.cc:25</a></div></div>
+<div class="ttc" id="amain_8cc_html_ac310f031e90c68ee35850afe11f3448a"><div class="ttname"><a href="../../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a">create</a></div><div class="ttdeci">std::unique_ptr&lt; Application &gt; create(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d0f/main_8cc_source.html#l00038">main.cc:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d0f/main_8cc.html">main.cc</a></li>
-    <li class="footer">Generated on Thu Aug 17 2023 02:55:25 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Aug 17 2023 20:49:03 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

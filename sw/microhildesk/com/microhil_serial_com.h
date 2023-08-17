@@ -24,6 +24,9 @@
 
 using LibSerial::SerialPort;
 using LibSerial::BaudRate;
+using LibSerial::CharacterSize;
+using LibSerial::Parity;
+using LibSerial::StopBits;
 
 class MicroHILSerialCom: public AbMicroHILCom
 {
@@ -55,5 +58,7 @@ public:
     void write(std::vector<uint8_t>& dataBuffer) final;
 
 private:
-    std::unique_ptr<SerialPort> m_serialPort;
+    ////////////////////////////////////////////////////////////////////////
+    // Serial port
+    std::unique_ptr<SerialPort> m_serialPort{nullptr};
 };

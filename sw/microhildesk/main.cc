@@ -18,16 +18,24 @@
  */
 #include "application.h"
 
+////////////////////////////////////////////////////////////////////////
+// Create application
+std::unique_ptr<Application> create(int argc, char *argv[]);
+
 int main(int argc, char *argv[])
 {
-    Application *app = new Application(argc, argv);
+    auto app = create(argc, argv);
     int status {EXIT_FAILURE};
 
     if(app)
     {
         status = app->run();
-        delete app;
     }
 
     return status;
+}
+
+std::unique_ptr<Application> create(int argc, char *argv[])
+{
+    return make_unique<Application>(argc, argv);
 }
