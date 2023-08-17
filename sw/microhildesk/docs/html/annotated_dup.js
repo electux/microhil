@@ -8,6 +8,7 @@ var annotated_dup =
     [ "AbMicroHILView", "d9/d4a/classAbMicroHILView.html", "d9/d4a/classAbMicroHILView" ],
     [ "AbMicroHILViewAbout", "d6/d7b/classAbMicroHILViewAbout.html", "d6/d7b/classAbMicroHILViewAbout" ],
     [ "AbMicroHILViewDialog", "d9/d02/classAbMicroHILViewDialog.html", "d9/d02/classAbMicroHILViewDialog" ],
+    [ "AbMicroHILViewHome", "d5/d72/classAbMicroHILViewHome.html", "d5/d72/classAbMicroHILViewHome" ],
     [ "AbMicroHILViewLog", "d1/d49/classAbMicroHILViewLog.html", "d1/d49/classAbMicroHILViewLog" ],
     [ "AbMicroHILViewSerial", "df/dcb/classAbMicroHILViewSerial.html", "df/dcb/classAbMicroHILViewSerial" ],
     [ "Application", "d5/d4c/classApplication.html", "d5/d4c/classApplication" ],
@@ -19,6 +20,7 @@ var annotated_dup =
     [ "MicroHILView", "d8/dee/classMicroHILView.html", "d8/dee/classMicroHILView" ],
     [ "MicroHILViewAbout", "d1/df8/classMicroHILViewAbout.html", "d1/df8/classMicroHILViewAbout" ],
     [ "MicroHILViewDialog", "da/dcd/classMicroHILViewDialog.html", "da/dcd/classMicroHILViewDialog" ],
+    [ "MicroHILViewHome", "df/da5/classMicroHILViewHome.html", "df/da5/classMicroHILViewHome" ],
     [ "MicroHILViewLog", "d4/dc6/classMicroHILViewLog.html", "d4/dc6/classMicroHILViewLog" ],
     [ "MicroHILViewSerial", "dd/dde/classMicroHILViewSerial.html", "dd/dde/classMicroHILViewSerial" ]
 ];

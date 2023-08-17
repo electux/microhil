@@ -24,6 +24,9 @@ var hierarchy =
     [ "AbMicroHILViewDialog", "d9/d02/classAbMicroHILViewDialog.html", [
       [ "MicroHILViewDialog", "da/dcd/classMicroHILViewDialog.html", null ]
     ] ],
+    [ "AbMicroHILViewHome", "d5/d72/classAbMicroHILViewHome.html", [
+      [ "MicroHILViewHome", "df/da5/classMicroHILViewHome.html", null ]
+    ] ],
     [ "AbMicroHILViewLog", "d1/d49/classAbMicroHILViewLog.html", [
       [ "MicroHILViewLog", "d4/dc6/classMicroHILViewLog.html", null ]
     ] ],
@@ -35,7 +38,7 @@ var hierarchy =
     ] ],
     [ "Application", "d5/d4c/classApplication.html", null ],
     [ "Gtk::ApplicationWindow", null, [
-      [ "MicroHILView", "d8/dee/classMicroHILView.html", null ]
+      [ "MicroHILViewHome", "df/da5/classMicroHILViewHome.html", null ]
     ] ],
     [ "Gtk::Dialog", null, [
       [ "MicroHILViewDialog", "da/dcd/classMicroHILViewDialog.html", null ],
