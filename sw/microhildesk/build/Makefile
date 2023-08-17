@@ -36,4 +36,4 @@ resources.c: ../resource/microhildesk.gresource.xml $(RESOURCES)
 	$(CC) $(CFLAGS) $< -o $@ `pkg-config gio-2.0 --cflags`
 
 clean:
-	$(RM) -rf ../*/*.o ../*.o *.o resources.c $(EXECUTABLE)
+	$(RM) -rf ../*/*/*/*.o ../*/*/*.o ../*/*.o ../*.o *.o resources.c $(EXECUTABLE)
