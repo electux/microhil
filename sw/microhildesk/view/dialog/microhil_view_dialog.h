@@ -62,7 +62,12 @@ private:
     // Map Close button signal and slot
     void mapping();
 
+    ////////////////////////////////////////////////////////////////////////
+    // UI builder
     Glib::RefPtr<Gtk::Builder> m_ui;
+
+    ////////////////////////////////////////////////////////////////////////
+    // Widgets for dialog view
     Glib::RefPtr<Gtk::Label> m_text;
     Glib::RefPtr<Gtk::Button> m_close;
 

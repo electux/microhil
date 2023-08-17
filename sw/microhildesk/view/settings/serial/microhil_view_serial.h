@@ -93,7 +93,12 @@ private:
     // Map all signals and slots for serial dialog
     void mapping();
 
+    ////////////////////////////////////////////////////////////////////////
+    // UI builder
     Glib::RefPtr<Gtk::Builder> m_ui;
+
+    ////////////////////////////////////////////////////////////////////////
+    // Widgets for serial view
     Glib::RefPtr<Gtk::Entry> m_device;
     Glib::RefPtr<Gtk::ComboBoxText> m_baudRate;
     Glib::RefPtr<Gtk::ComboBoxText> m_dataBits;

@@ -19,13 +19,15 @@
 #include "microhil_controller.h"
 
 MicroHILController::MicroHILController(
-    MicroHILModel *model, MicroHILView *view
-): 
-    m_enabled{false},
-    m_config{std::move(new MicroHILConfig())},
-    m_log{std::move(new MicroHILLog())},
-    m_serial{std::move(new MicroHILSerialCom())}
+    std::shared_ptr<MicroHILModel> model, std::shared_ptr<MicroHILView> view
+)
 {
+    ////////////////////////////////////////////////////////////////////////
+    // Prepare and setup configuration, log and serial
+    m_config = make_unique<MicroHILConfig>();
+    m_log = make_unique<MicroHILLog>();
+    m_serial = make_unique<MicroHILSerialCom>();
+
     ////////////////////////////////////////////////////////////////////////
     // Checking existance of configuration
     if(!m_config->isPreValid())

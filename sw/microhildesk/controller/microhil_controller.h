@@ -31,7 +31,10 @@ class MicroHILController: public AbMicroHILController
 public:
     ////////////////////////////////////////////////////////////////////////
     // MicroHILController constructor
-    MicroHILController(MicroHILModel *model, MicroHILView *view);
+    MicroHILController(
+        std::shared_ptr<MicroHILModel> model,
+        std::shared_ptr<MicroHILView> view
+    );
 
     ////////////////////////////////////////////////////////////////////////
     // MicroHILController destructor
@@ -46,8 +49,12 @@ public:
     bool isEnabled() const final;
 
 private:
-    bool m_enabled {};
+    ////////////////////////////////////////////////////////////////////////
+    // Enable/Disable state of controller
+    bool m_enabled{false};
 
+    ////////////////////////////////////////////////////////////////////////
+    // Configuration, log and serial port
     std::unique_ptr<MicroHILConfig> m_config{nullptr};
     std::unique_ptr<MicroHILLog> m_log{nullptr};
     std::unique_ptr<MicroHILSerialCom> m_serial{nullptr};

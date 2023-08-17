@@ -20,8 +20,6 @@
 
 MicroHILModel::MicroHILModel()
 {
-    // TODO
-    // Mapping signals/slots
 }
 
 void MicroHILModel::setChannel0(ChannelState state)

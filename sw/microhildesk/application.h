@@ -18,6 +18,7 @@
  */
 #pragma once
 
+#include <memory>
 #include <gtkmm/application.h>
 #include "model/microhil_model.h"
 #include "view/microhil_view.h"
@@ -32,16 +33,20 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     // Application destructor
-    ~Application();
+    ~Application() = default;
 
     ////////////////////////////////////////////////////////////////////////
     // Starts the application (run main loop)
     int run();
 
 private:
-    Glib::RefPtr<Gtk::Application> m_app;
+    ////////////////////////////////////////////////////////////////////////
+    // Application
+    Glib::RefPtr<Gtk::Application> m_app{nullptr};
 
-    MicroHILModel *m_model{nullptr};
-    MicroHILView *m_view {nullptr};
-    MicroHILController *m_controller{nullptr};
+    ////////////////////////////////////////////////////////////////////////
+    // Model, View and controller
+    std::shared_ptr<MicroHILModel> m_model{nullptr};
+    std::shared_ptr<MicroHILView> m_view {nullptr};
+    std::unique_ptr<MicroHILController> m_controller{nullptr};
 };

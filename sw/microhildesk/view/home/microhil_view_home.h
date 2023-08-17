@@ -35,8 +35,7 @@ enum class channelControlType
     TIMER_BUTTON = 1
 };
 
-class MicroHILViewHome
-: public AbMicroHILViewHome, public Gtk::ApplicationWindow
+class MicroHILViewHome: public AbMicroHILViewHome, public Gtk::ApplicationWindow
 {
 public:
     ////////////////////////////////////////////////////////////////////////
@@ -158,7 +157,12 @@ private:
     void toggleModeChannel3();
     void timerModeChannel3();
 
+    ////////////////////////////////////////////////////////////////////////
+    // UI builder
     Glib::RefPtr<Gtk::Builder> m_ui;
+
+    ////////////////////////////////////////////////////////////////////////
+    // Widgets for home view
     std::vector<Glib::RefPtr<Gtk::CheckButton>> m_enableChannels;
     std::vector<Glib::RefPtr<Gtk::ComboBoxText>> m_selectControlChannels;
     std::vector<Glib::RefPtr<Gtk::ToggleButton>> m_toggleChannels;

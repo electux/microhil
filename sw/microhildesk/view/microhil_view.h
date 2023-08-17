@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * microhil_view.h
- * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -18,6 +18,7 @@
  */
 #pragma once
 
+#include <gtkmm/builder.h>
 #include "home/microhil_view_home.h"
 #include "microhil_view_abstract.h"
 
@@ -37,7 +38,11 @@ public:
     MicroHILViewHome *getHome();
 
 private:
+    ////////////////////////////////////////////////////////////////////////
+    // UI builder
     Glib::RefPtr<Gtk::Builder> m_builder;
 
+    ////////////////////////////////////////////////////////////////////////
+    // Home view
     MicroHILViewHome *m_home{nullptr};
 };

@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * microhil_config.h
- * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -74,6 +74,8 @@ private:
     // Checking existence of configuration file
     bool checkConfigPath();
 
+    ////////////////////////////////////////////////////////////////////////
+    // Home directory, configuration file and configuration
     std::string m_homePath{};
     std::string m_configFilePath{};
     Glib::KeyFile m_configuration{};
