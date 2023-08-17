@@ -8,6 +8,7 @@ var searchData=
   ['microhilview_5',['MicroHILView',['../d8/dee/classMicroHILView.html',1,'']]],
   ['microhilviewabout_6',['MicroHILViewAbout',['../d1/df8/classMicroHILViewAbout.html',1,'']]],
   ['microhilviewdialog_7',['MicroHILViewDialog',['../da/dcd/classMicroHILViewDialog.html',1,'']]],
-  ['microhilviewlog_8',['MicroHILViewLog',['../d4/dc6/classMicroHILViewLog.html',1,'']]],
-  ['microhilviewserial_9',['MicroHILViewSerial',['../dd/dde/classMicroHILViewSerial.html',1,'']]]
+  ['microhilviewhome_8',['MicroHILViewHome',['../df/da5/classMicroHILViewHome.html',1,'']]],
+  ['microhilviewlog_9',['MicroHILViewLog',['../d4/dc6/classMicroHILViewLog.html',1,'']]],
+  ['microhilviewserial_10',['MicroHILViewSerial',['../dd/dde/classMicroHILViewSerial.html',1,'']]]
 ];

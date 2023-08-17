@@ -8,7 +8,8 @@ var searchData=
   ['abmicrohilview_5',['AbMicroHILView',['../d9/d4a/classAbMicroHILView.html',1,'']]],
   ['abmicrohilviewabout_6',['AbMicroHILViewAbout',['../d6/d7b/classAbMicroHILViewAbout.html',1,'']]],
   ['abmicrohilviewdialog_7',['AbMicroHILViewDialog',['../d9/d02/classAbMicroHILViewDialog.html',1,'']]],
-  ['abmicrohilviewlog_8',['AbMicroHILViewLog',['../d1/d49/classAbMicroHILViewLog.html',1,'']]],
-  ['abmicrohilviewserial_9',['AbMicroHILViewSerial',['../df/dcb/classAbMicroHILViewSerial.html',1,'']]],
-  ['application_10',['Application',['../d5/d4c/classApplication.html',1,'']]]
+  ['abmicrohilviewhome_8',['AbMicroHILViewHome',['../d5/d72/classAbMicroHILViewHome.html',1,'']]],
+  ['abmicrohilviewlog_9',['AbMicroHILViewLog',['../d1/d49/classAbMicroHILViewLog.html',1,'']]],
+  ['abmicrohilviewserial_10',['AbMicroHILViewSerial',['../df/dcb/classAbMicroHILViewSerial.html',1,'']]],
+  ['application_11',['Application',['../d5/d4c/classApplication.html',1,'']]]
 ];

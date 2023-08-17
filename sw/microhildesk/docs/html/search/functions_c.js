@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['timermodechannel0_0',['timerModeChannel0',['../d8/dee/classMicroHILView.html#a4296371da7c66122043397e4087af34a',1,'MicroHILView']]],
-  ['timermodechannel1_1',['timerModeChannel1',['../d8/dee/classMicroHILView.html#a4568a84eb8114a7cfa117532b3580bb5',1,'MicroHILView']]],
-  ['timermodechannel2_2',['timerModeChannel2',['../d8/dee/classMicroHILView.html#a984eacb37142ed722268ce348cfe5e02',1,'MicroHILView']]],
-  ['timermodechannel3_3',['timerModeChannel3',['../d8/dee/classMicroHILView.html#a83698e2e1eaeb6dd6110bd200f9b8fe1',1,'MicroHILView']]],
-  ['togglemodechannel0_4',['toggleModeChannel0',['../d8/dee/classMicroHILView.html#a91900b0e48ede15d764672bf0a05dc0e',1,'MicroHILView']]],
-  ['togglemodechannel1_5',['toggleModeChannel1',['../d8/dee/classMicroHILView.html#ace6bbf9dfc7db359cc3beb020fe65623',1,'MicroHILView']]],
-  ['togglemodechannel2_6',['toggleModeChannel2',['../d8/dee/classMicroHILView.html#ac4d2c98a05a2b6ecec2f7f75d2ccdb3d',1,'MicroHILView']]],
-  ['togglemodechannel3_7',['toggleModeChannel3',['../d8/dee/classMicroHILView.html#a1e2d0c340a38e95a12a06fc047a3a672',1,'MicroHILView']]],
+  ['timermodechannel0_0',['timerModeChannel0',['../df/da5/classMicroHILViewHome.html#ae6650cba258a87d40a4eb6681340fb60',1,'MicroHILViewHome']]],
+  ['timermodechannel1_1',['timerModeChannel1',['../df/da5/classMicroHILViewHome.html#aa85dfa235723feb26d97329fae56eaa7',1,'MicroHILViewHome']]],
+  ['timermodechannel2_2',['timerModeChannel2',['../df/da5/classMicroHILViewHome.html#a48d8e5cf4961dccc0588ea46ccc91089',1,'MicroHILViewHome']]],
+  ['timermodechannel3_3',['timerModeChannel3',['../df/da5/classMicroHILViewHome.html#ab548b1850901e9338a78b01d2bd8e5ed',1,'MicroHILViewHome']]],
+  ['togglemodechannel0_4',['toggleModeChannel0',['../df/da5/classMicroHILViewHome.html#aa20f8b70a576b23ae2782d63a4337d0d',1,'MicroHILViewHome']]],
+  ['togglemodechannel1_5',['toggleModeChannel1',['../df/da5/classMicroHILViewHome.html#a430ff20a8dfb0cd0173eb6b360d85b85',1,'MicroHILViewHome']]],
+  ['togglemodechannel2_6',['toggleModeChannel2',['../df/da5/classMicroHILViewHome.html#aac1511484eccbad9d309c3744e25dcce',1,'MicroHILViewHome']]],
+  ['togglemodechannel3_7',['toggleModeChannel3',['../df/da5/classMicroHILViewHome.html#aee29ef6a0f274980f1edea84b2f418d9',1,'MicroHILViewHome']]],
   ['tounicodestringmessagetype_8',['toUnicodeStringMessageType',['../da/dcd/classMicroHILViewDialog.html#aaa4d1c0e0fcb6b5fe7006a2e349e5b7a',1,'MicroHILViewDialog']]]
 ];
