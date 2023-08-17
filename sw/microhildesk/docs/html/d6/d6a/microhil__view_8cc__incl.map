@@ -1,11 +1,11 @@
 <map id="view/microhil_view.cc" name="view/microhil_view.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="835,5,1001,32"/>
-<area shape="rect" id="node2" href="$d5/d3e/microhil__view_8h.html" title=" " alt="" coords="856,80,980,107"/>
-<area shape="rect" id="node3" href="$d0/ddf/microhil__view__home_8h.html" title=" " alt="" coords="743,155,898,196"/>
-<area shape="rect" id="node15" href="$df/dec/microhil__view__abstract_8h.html" title=" " alt="" coords="923,162,1108,189"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,251,68,278"/>
-<area shape="rect" id="node5" title=" " alt="" coords="92,251,299,278"/>
-<area shape="rect" id="node6" title=" " alt="" coords="323,251,452,278"/>
+<area shape="rect" id="node1" title=" " alt="" coords="641,5,806,32"/>
+<area shape="rect" id="node2" href="$d5/d3e/microhil__view_8h.html" title=" " alt="" coords="661,80,785,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,251,135,278"/>
+<area shape="rect" id="node4" href="$d0/ddf/microhil__view__home_8h.html" title=" " alt="" coords="646,155,801,196"/>
+<area shape="rect" id="node15" href="$df/dec/microhil__view__abstract_8h.html" title=" " alt="" coords="825,162,1011,189"/>
+<area shape="rect" id="node5" title=" " alt="" coords="159,251,221,278"/>
+<area shape="rect" id="node6" title=" " alt="" coords="245,251,452,278"/>
 <area shape="rect" id="node7" title=" " alt="" coords="476,251,616,278"/>
 <area shape="rect" id="node8" title=" " alt="" coords="641,251,806,278"/>
 <area shape="rect" id="node9" title=" " alt="" coords="830,251,1009,278"/>

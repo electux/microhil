@@ -140,12 +140,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a0eec6f8d2b4685c3f504841e81db44f0"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; SerialPort &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a></td></tr>
+<tr class="memitem:a0eec6f8d2b4685c3f504841e81db44f0"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; SerialPort &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a> {nullptr}</td></tr>
 <tr class="separator:a0eec6f8d2b4685c3f504841e81db44f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00028">28</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00031">31</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a620a05edf19214528201747c6507bc08" name="a620a05edf19214528201747c6507bc08"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a620a05edf19214528201747c6507bc08">&#9670;&nbsp;</a></span>MicroHILSerialCom()</h2>
@@ -163,14 +163,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00021">21</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>                                    :</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>{std::move(<span class="keyword">new</span> SerialPort())}</div>
-<div class="line"><span class="lineno">   23</span>{</div>
-<div class="line"><span class="lineno">   24</span>    <span class="comment">// TODO</span></div>
-<div class="line"><span class="lineno">   25</span>    <span class="comment">// Mapping signals/slots</span></div>
-<div class="line"><span class="lineno">   26</span>}</div>
-<div class="ttc" id="aclassMicroHILSerialCom_html_a0eec6f8d2b4685c3f504841e81db44f0"><div class="ttname"><a href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">MicroHILSerialCom::m_serialPort</a></div><div class="ttdeci">std::unique_ptr&lt; SerialPort &gt; m_serialPort</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/microhil__serial__com_8h_source.html#l00058">microhil_serial_com.h:58</a></div></div>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a> = make_unique&lt;SerialPort&gt;();</div>
+<div class="line"><span class="lineno">   24</span>}</div>
+<div class="ttc" id="aclassMicroHILSerialCom_html_a0eec6f8d2b4685c3f504841e81db44f0"><div class="ttname"><a href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">MicroHILSerialCom::m_serialPort</a></div><div class="ttdeci">std::unique_ptr&lt; SerialPort &gt; m_serialPort</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/microhil__serial__com_8h_source.html#l00063">microhil_serial_com.h:63</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00063">m_serialPort</a>.</p>
+
 </div>
 </div>
 <a id="a065f8807f98f6290a72037a66b974878" name="a065f8807f98f6290a72037a66b974878"></a>
@@ -188,13 +187,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00028">28</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>{</div>
-<div class="line"><span class="lineno">   30</span>    <a class="code hl_function" href="../../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d">close</a>();</div>
-<div class="line"><span class="lineno">   31</span>}</div>
-<div class="ttc" id="aclassMicroHILSerialCom_html_abcf5e51035faf096fc61c6c4c509108d"><div class="ttname"><a href="../../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d">MicroHILSerialCom::close</a></div><div class="ttdeci">void close() final</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d72/microhil__serial__com_8cc_source.html#l00041">microhil_serial_com.cc:41</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00026">26</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_function" href="../../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d">close</a>();</div>
+<div class="line"><span class="lineno">   29</span>}</div>
+<div class="ttc" id="aclassMicroHILSerialCom_html_abcf5e51035faf096fc61c6c4c509108d"><div class="ttname"><a href="../../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d">MicroHILSerialCom::close</a></div><div class="ttdeci">void close() final</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d72/microhil__serial__com_8cc_source.html#l00039">microhil_serial_com.cc:39</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00041">close()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00039">close()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -233,17 +232,17 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d7/d8c/classAbMicroHILCom.html#af762ae29a1dc726357e8bab13f959e6b">AbMicroHILCom</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00041">41</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;IsOpen())</div>
-<div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>        <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;Close();</div>
-<div class="line"><span class="lineno">   46</span>    }</div>
-<div class="line"><span class="lineno">   47</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00039">39</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;IsOpen())</div>
+<div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;Close();</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00058">m_serialPort</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00063">m_serialPort</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00028">~MicroHILSerialCom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00026">~MicroHILSerialCom()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -281,15 +280,15 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d7/d8c/classAbMicroHILCom.html#ae4ba84cfc77140abcc635e64ba3f8a4f">AbMicroHILCom</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00033">33</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;IsOpen())</div>
-<div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;Open(<span class="stringliteral">&quot;/dev/ttyUSB0&quot;</span>);</div>
-<div class="line"><span class="lineno">   38</span>    }</div>
-<div class="line"><span class="lineno">   39</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00031">31</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;IsOpen())</div>
+<div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;Open(<span class="stringliteral">&quot;/dev/ttyUSB0&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="line"><span class="lineno">   37</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00058">m_serialPort</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00063">m_serialPort</a>.</p>
 
 </div>
 </div>
@@ -335,9 +334,9 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d7/d8c/classAbMicroHILCom.html#a7d706513b737695730c242c1a7b0d140">AbMicroHILCom</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00049">49</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>{</div>
-<div class="line"><span class="lineno">   53</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00047">47</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
+<div class="line"><span class="lineno">   51</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -367,9 +366,9 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d7/d8c/classAbMicroHILCom.html#a30794ae75b851cbe0a95b036717168a4">AbMicroHILCom</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00055">55</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
-<div class="line"><span class="lineno">   57</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00053">53</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -384,7 +383,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;SerialPort&gt; MicroHILSerialCom::m_serialPort</td>
+          <td class="memname">std::unique_ptr&lt;SerialPort&gt; MicroHILSerialCom::m_serialPort {nullptr}</td>
         </tr>
       </table>
   </td>
@@ -394,9 +393,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00058">58</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00063">63</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00041">close()</a>, and <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00033">open()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00039">close()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00021">MicroHILSerialCom()</a>, and <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00031">open()</a>.</p>
 
 </div>
 </div>
@@ -410,7 +409,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html">MicroHILSerialCom</a></li>
-    <li class="footer">Generated on Thu Aug 17 2023 02:55:25 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Aug 17 2023 20:49:03 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

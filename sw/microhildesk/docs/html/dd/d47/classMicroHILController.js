@@ -1,6 +1,6 @@
 var classMicroHILController =
 [
-    [ "MicroHILController", "dd/d47/classMicroHILController.html#a687538b64472000318b1fe2b78f5c711", null ],
+    [ "MicroHILController", "dd/d47/classMicroHILController.html#a5f530710d0b0b543d1cc75d0c378092c", null ],
     [ "~MicroHILController", "dd/d47/classMicroHILController.html#abf067ad4188129de91b96e523a7d2d8b", null ],
     [ "isEnabled", "dd/d47/classMicroHILController.html#ace4f057fd606228b72623be9abb6272c", null ],
     [ "setEnabled", "dd/d47/classMicroHILController.html#a024ac54258033deaddb53ebef57b6e66", null ],
