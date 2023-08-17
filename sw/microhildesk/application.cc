@@ -42,7 +42,7 @@ int Application::run()
 
     if(m_app && m_view)
     {
-        status = m_app->run(*(m_view->getHome()));
+        status = m_app->run(*(m_view->getHome().get()));
     }
 
     return status;

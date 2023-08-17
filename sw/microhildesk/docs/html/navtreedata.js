@@ -50,7 +50,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d8/dee/classMicroHILView.html#af5b626a64d82e72446e1a09f4a0e6767",
+"d8/dee/classMicroHILView.html#af8c3fdc724d0b83b7a5f634f29d22216",
 "df/dcb/classAbMicroHILViewSerial.html#a408841c28d5251db34810bbc955f1fcc"
 ];
 

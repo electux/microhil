@@ -1,6 +1,6 @@
 var NAVTREEINDEX1 =
 {
-"d8/dee/classMicroHILView.html#af5b626a64d82e72446e1a09f4a0e6767":[0,0,17,3],
+"d8/dee/classMicroHILView.html#af8c3fdc724d0b83b7a5f634f29d22216":[0,0,17,4],
 "d9/d02/classAbMicroHILViewDialog.html":[0,0,7],
 "d9/d02/classAbMicroHILViewDialog.html#a122a57905a292b2fdd8202598b03b78a":[0,0,7,4],
 "d9/d02/classAbMicroHILViewDialog.html#a32568bf106815d8f9eccb73f61828d45":[0,0,7,5],

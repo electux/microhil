@@ -9,7 +9,7 @@ var searchData=
   ['getdatabits_6',['getDataBits',['../d0/df4/classMicroHILConfig.html#ae228696819e997e62462ca60a79b7125',1,'MicroHILConfig::getDataBits()'],['../d6/dac/classAbMicroHILConfig.html#afacb3380c4372eac9c820d48a2c67d22',1,'AbMicroHILConfig::getDataBits()']]],
   ['getdevice_7',['getDevice',['../d0/df4/classMicroHILConfig.html#a63a9cd2a12c62a1eea0fee846c58f0ce',1,'MicroHILConfig::getDevice()'],['../d6/dac/classAbMicroHILConfig.html#af025fb9420991c868d70368b140718e6',1,'AbMicroHILConfig::getDevice()']]],
   ['getfilepath_8',['getFilePath',['../d1/de3/classMicroHILLog.html#abc4dfd03d7aba8b8f659df5f9a433362',1,'MicroHILLog']]],
-  ['gethome_9',['getHome',['../d8/dee/classMicroHILView.html#a21a24c80a327c7b61dd8b6ee85bddd4f',1,'MicroHILView']]],
+  ['gethome_9',['getHome',['../d8/dee/classMicroHILView.html#a781661581d5ddf63bd7451682c24afd9',1,'MicroHILView']]],
   ['getlogfile_10',['getLogFile',['../d0/df4/classMicroHILConfig.html#a15e908cc2eb9c8b978224fc0794a1561',1,'MicroHILConfig::getLogFile()'],['../d6/dac/classAbMicroHILConfig.html#a67fd4f566052ec8fa53c4d9ee807d600',1,'AbMicroHILConfig::getLogFile()']]],
   ['getloglevel_11',['getLogLevel',['../d0/df4/classMicroHILConfig.html#a26fa491309fb246b94440f840caa4125',1,'MicroHILConfig::getLogLevel()'],['../d6/dac/classAbMicroHILConfig.html#a910f15fa70a715cc73f54c7ac328950f',1,'AbMicroHILConfig::getLogLevel()']]],
   ['getlogtype_12',['getLogType',['../d1/de3/classMicroHILLog.html#ad671d5846c30812c92fc488d4d84636b',1,'MicroHILLog']]],

@@ -43,7 +43,7 @@ var searchData=
   ['m_5fenablechannels_40',['m_enableChannels',['../df/da5/classMicroHILViewHome.html#aabadf00e0b70bf343476856934082fb6',1,'MicroHILViewHome']]],
   ['m_5fenabled_41',['m_enabled',['../dd/d47/classMicroHILController.html#af929feea44b17d872ddafcea6fd88b03',1,'MicroHILController']]],
   ['m_5ffileopened_42',['m_fileOpened',['../d1/de3/classMicroHILLog.html#ac6652e44251c87c829517020dce5c108',1,'MicroHILLog']]],
-  ['m_5fhome_43',['m_home',['../d8/dee/classMicroHILView.html#a0d62913f5b61fd8ea9af3b7cfe4e08d7',1,'MicroHILView']]],
+  ['m_5fhome_43',['m_home',['../d8/dee/classMicroHILView.html#af8c3fdc724d0b83b7a5f634f29d22216',1,'MicroHILView']]],
   ['m_5fhomepath_44',['m_homePath',['../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b',1,'MicroHILConfig']]],
   ['m_5flevel_45',['m_level',['../d4/dc6/classMicroHILViewLog.html#a3786a79d7cee80281fcdf21a76efe12e',1,'MicroHILViewLog']]],
   ['m_5flog_46',['m_log',['../dd/d47/classMicroHILController.html#a80c08639c9d26d02dd70bbe28b56b39d',1,'MicroHILController']]],

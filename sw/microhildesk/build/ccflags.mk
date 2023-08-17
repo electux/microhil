@@ -6,4 +6,27 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-CCFLAGS=-c -Wall -g -std=c++17
+CCFLAGS = \
+	-std=c++17 \
+	-c \
+	-g \
+	-pedantic \
+	-Wall \
+	-Wextra \
+	-Wcast-align \
+	-Wcast-qual \
+	-Wdisabled-optimization \
+	-Wformat=2 \
+	-Winit-self \
+	-Wlogical-op \
+	-Wmissing-declarations \
+	-Wmissing-include-dirs \
+	-Wnoexcept \
+	-Woverloaded-virtual \
+	-Wshadow \
+	-Wsign-promo \
+	-Wstrict-null-sentinel \
+	-Wstrict-overflow=5 \
+	-Wundef \
+	-Werror \
+	-Wno-unused
