@@ -28,7 +28,4 @@ jobs:
           modules_ok=0
           modules=($(find sw/ -type f -name '*.cc' -exec echo '{}' \;))
           for mod in "${modules[@]}"; do line_numbers=$(wc -l < "${mod}"); [[ $line_numbers -gt 500 ]] && modules_ok=1; done
-          [[ $modules_ok -eq 0 ]] && echo "action_state=success" || echo "action_state=failure"
-      - name: Check on failures
-        if: "$action_state" == "failure"
-        run: exit 1
+          [[ $modules_ok -eq 0 ]] && echo exit 0 || exit 1
