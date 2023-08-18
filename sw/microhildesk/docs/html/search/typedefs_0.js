@@ -18,5 +18,21 @@ var searchData=
   ['channel3spintimerchanged_15',['channel3SpinTimerChanged',['../d5/d72/classAbMicroHILViewHome.html#ae3ade0939b928ed88954e47721076972',1,'AbMicroHILViewHome']]],
   ['channel3timertoggled_16',['channel3TimerToggled',['../d5/d72/classAbMicroHILViewHome.html#a6d7f191d3fecaaac8fceaccd5f38aad7',1,'AbMicroHILViewHome']]],
   ['channel3toggled_17',['channel3Toggled',['../d5/d72/classAbMicroHILViewHome.html#a43917ca2de59718b7ec638ebc756b891',1,'AbMicroHILViewHome']]],
-  ['closedialog_18',['closeDialog',['../d9/d02/classAbMicroHILViewDialog.html#ad6ff8b71e3ff8916ff99dbe7a6790fb7',1,'AbMicroHILViewDialog']]]
+  ['channel4changed_18',['channel4Changed',['../d5/d72/classAbMicroHILViewHome.html#a1f7b800a4ec276dafbb632dc603264d3',1,'AbMicroHILViewHome']]],
+  ['channel4spintimerchanged_19',['channel4SpinTimerChanged',['../d5/d72/classAbMicroHILViewHome.html#a6a752e0311fb9633c74153db0aceaab1',1,'AbMicroHILViewHome']]],
+  ['channel4timertoggled_20',['channel4TimerToggled',['../d5/d72/classAbMicroHILViewHome.html#a054e85b5a5d38648b0463e249b270bf6',1,'AbMicroHILViewHome']]],
+  ['channel4toggled_21',['channel4Toggled',['../d5/d72/classAbMicroHILViewHome.html#abf2f1ce2d85027bb244adb09c99f9873',1,'AbMicroHILViewHome']]],
+  ['channel5changed_22',['channel5Changed',['../d5/d72/classAbMicroHILViewHome.html#ac8df4f609f80db0170786a2aebad0b10',1,'AbMicroHILViewHome']]],
+  ['channel5spintimerchanged_23',['channel5SpinTimerChanged',['../d5/d72/classAbMicroHILViewHome.html#a27e7fa470c153ffe76cbbb82da6f2171',1,'AbMicroHILViewHome']]],
+  ['channel5timertoggled_24',['channel5TimerToggled',['../d5/d72/classAbMicroHILViewHome.html#a2270887af566593b245c74aa3539fb97',1,'AbMicroHILViewHome']]],
+  ['channel5toggled_25',['channel5Toggled',['../d5/d72/classAbMicroHILViewHome.html#a089c082027558a7dda2840572e5d2893',1,'AbMicroHILViewHome']]],
+  ['channel6changed_26',['channel6Changed',['../d5/d72/classAbMicroHILViewHome.html#a7e239c8932f0c2c5b5b59820d3326380',1,'AbMicroHILViewHome']]],
+  ['channel6spintimerchanged_27',['channel6SpinTimerChanged',['../d5/d72/classAbMicroHILViewHome.html#acdb63faa754825af7cbd88cb819bebeb',1,'AbMicroHILViewHome']]],
+  ['channel6timertoggled_28',['channel6TimerToggled',['../d5/d72/classAbMicroHILViewHome.html#a19be735c0b7d1360f32135a9b8c9e4c8',1,'AbMicroHILViewHome']]],
+  ['channel6toggled_29',['channel6Toggled',['../d5/d72/classAbMicroHILViewHome.html#a2b4d2737e1b4aa0daf6e852622d132ca',1,'AbMicroHILViewHome']]],
+  ['channel7changed_30',['channel7Changed',['../d5/d72/classAbMicroHILViewHome.html#a3d76bde26394a568cf07687007fc717a',1,'AbMicroHILViewHome']]],
+  ['channel7spintimerchanged_31',['channel7SpinTimerChanged',['../d5/d72/classAbMicroHILViewHome.html#a115e3e95ac6754210dc7bbdee8193c40',1,'AbMicroHILViewHome']]],
+  ['channel7timertoggled_32',['channel7TimerToggled',['../d5/d72/classAbMicroHILViewHome.html#af971397cdee01580780bc2639f663d00',1,'AbMicroHILViewHome']]],
+  ['channel7toggled_33',['channel7Toggled',['../d5/d72/classAbMicroHILViewHome.html#ac9b64f967a75cb2110942920384fec4f',1,'AbMicroHILViewHome']]],
+  ['closedialog_34',['closeDialog',['../d9/d02/classAbMicroHILViewDialog.html#ad6ff8b71e3ff8916ff99dbe7a6790fb7',1,'AbMicroHILViewDialog']]]
 ];
