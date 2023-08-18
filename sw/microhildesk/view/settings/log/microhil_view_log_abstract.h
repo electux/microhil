@@ -21,49 +21,64 @@
 #include <glibmm/ustring.h>
 #include <sigc++/sigc++.h>
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILViewLog class declaration and definition 
 class AbMicroHILViewLog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // Signal type for log file path
+    /// @brief Signal type for log file path
     using logFilePath = sigc::signal<void(Glib::ustring)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal type for selectable log level
+    /// @brief Signal type for selectable log level
     using selectLogLevel = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal types for Log Cancel and Ok buttons
+    /// @brief Signal type for Log Cancel button
     using cancelLog = sigc::signal<void(bool)>;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal type for Log Ok button
     using okLog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILViewLog destructor
+    /// @brief AbMicroHILViewLog destructor
     virtual ~AbMicroHILViewLog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from Log input
+    /// @brief Signal for emitting from Log input
+    /// @return Signal for entry action
     virtual logFilePath logFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slot for processing log input 
+    /// @brief Slot for processing log input 
     virtual void onLogFilePathChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from Log level combobox
+    /// @brief Signal for emitting from Log level combobox
+    /// @return Signal for changed log level by combobox
     virtual selectLogLevel logLevelChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slot for processing loge level from combobox
+    /// @brief Slot for processing loge level from combobox
     virtual void onLogLevelChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from Log Cancel and Ok buttons
+    /// @brief Signal for emitting from Log Cancel button
+    /// @return Signal for performed action
     virtual cancelLog cancelLogChanged() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for emitting from Log Ok button 
+    /// @return Signal for performed action
     virtual okLog okLogChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing Log Cancel and Ok buttons
+    /// @brief Slot for processing Log Cancel button
     virtual void onCancelLogChange() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Log Ok button
     virtual void onOkLogChange() = 0;
 };

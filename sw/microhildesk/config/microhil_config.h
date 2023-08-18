@@ -22,61 +22,79 @@
 #include <glibmm/keyfile.h>
 #include "microhil_config_abstract.h"
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief MicroHILConfig class declaration and definition 
 class MicroHILConfig : public AbMicroHILConfig
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILConfig constructor
+    /// @brief MicroHILConfig constructor
     MicroHILConfig();
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILConfig destructor
+    /// @brief MicroHILConfig destructor
     ~MicroHILConfig() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Load configuration
+    /// @brief Load configuration from file
+    /// @return boolean status true for success else false
     bool load() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Validate configuration (existing all parameters in configuration)
+    /// @brief Validate configuration (existing all expected parameters)
+    /// @return boolean status true for success else false
     bool validate() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting device name for serial communication from configuration
+    /// @brief Getting serial device file path from configuration
+    /// @return file path for serial device
     Glib::ustring getDevice() const final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting baud rate for serial communication from configuration
+    /// @brief Getting baud rate for serial port from configuration
+    /// @return integer value for serial port baud rate
     int getBaudRate() const final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting data bits for serial communication from configuration
+    /// @brief Getting data bits for serial port from configuration
+    /// @return integer value for data bits for charachter
     int getDataBits() const final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting parity for serial communication from configuration
+    /// @brief Getting parity for serial port from configuration
+    /// @return parity type for the serial port
     Glib::ustring getParity() const final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting stop bits for serial communication from configuration
+    /// @brief Getting stop bits for serial port from configuration
+    /// @return integer number of stop bits for the serial port
     int getStopBits() const final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting log level
+    /// @brief Getting log level
+    /// @return log level
     Glib::ustring getLogLevel() const final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting log file path
-    Glib::ustring getLogFile() const final;
+    /// @brief Getting log path
+    /// @return log path
+    Glib::ustring getLogPath() const final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // Checking existence of configuration file
+    /// @brief Checking existence of configuration file
+    /// @return boolean status true for existing else false
     bool checkConfigPath();
 
     ////////////////////////////////////////////////////////////////////////
-    // Home directory, configuration file and configuration
+    /// @brief Home directory path
     std::string m_homePath{};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Configuration file path 
     std::string m_configFilePath{};
+    
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Configuration instance
     Glib::KeyFile m_configuration{};
 };

@@ -1,5 +1,5 @@
 <map id="MicroHILViewAbout::MicroHILViewAbout" name="MicroHILViewAbout::MicroHILViewAbout">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,161,47"/>
-<area shape="rect" id="node2" href="$d1/df8/classMicroHILViewAbout.html#a1916cb6515d36133bd4f9f5fc68be2e0" title=" " alt="" coords="209,5,365,47"/>
-<area shape="rect" id="node3" href="$d1/df8/classMicroHILViewAbout.html#afa32542c25a3fd97e53259a75ad79f6d" title=" " alt="" coords="413,5,583,47"/>
+<area shape="rect" id="node1" title="MicroHILViewAbout constructor." alt="" coords="5,5,161,47"/>
+<area shape="rect" id="node2" href="$d1/df8/classMicroHILViewAbout.html#a1916cb6515d36133bd4f9f5fc68be2e0" title="Map Ok button signal and slot." alt="" coords="209,5,365,47"/>
+<area shape="rect" id="node3" href="$d1/df8/classMicroHILViewAbout.html#afa32542c25a3fd97e53259a75ad79f6d" title="Slots for processing Ok button for about dialog." alt="" coords="413,5,583,47"/>
 </map>

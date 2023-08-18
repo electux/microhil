@@ -18,78 +18,34 @@
  */
 #include "microhil_model.h"
 
+namespace
+{
+    ////////////////////////////////////////////////////////////////////////
+    /// Number of channels
+    constexpr const int kNumberOfChannels{8};
+}
+
 MicroHILModel::MicroHILModel()
 {
-}
-
-void MicroHILModel::setChannel0(ChannelState state)
-{
-    if(m_channel0 != state)
+    ////////////////////////////////////////////////////////////////////////
+    /// Set all channels in model to OFF by default
+    for(int i = 0; i < kNumberOfChannels; i++)
     {
-        m_channel0 = state;
+        m_channels.push_back(ChannelState::OFF);
     }
 }
 
-ChannelState MicroHILModel::getChannel0() const
+void MicroHILModel::setChannel(int id, ChannelState state)
 {
-    return m_channel0;
+    m_channels[id] = state;
 }
 
-bool MicroHILModel::isOnChannel0() const
+ChannelState MicroHILModel::getChannel(int id) const
 {
-    return bool(m_channel0);
+    return m_channels[id];
 }
 
-void MicroHILModel::setChannel1(ChannelState state)
+bool MicroHILModel::isOnChannel(int id) const
 {
-    if(m_channel1 != state)
-    {
-        m_channel1 = state;
-    }
-}
-
-ChannelState MicroHILModel::getChannel1() const
-{
-    return m_channel1;
-}
-
-bool MicroHILModel::isOnChannel1() const
-{
-    return bool(m_channel1);
-}
-
-void MicroHILModel::setChannel2(ChannelState state)
-{
-    if(m_channel2 != state)
-    {
-        m_channel2 = state;
-    }
-}
-
-ChannelState MicroHILModel::getChannel2() const
-{
-    return m_channel2;
-}
-
-bool MicroHILModel::isOnChannel2() const
-{
-    return bool(m_channel2);
-}
-
-void MicroHILModel::setChannel3(ChannelState state)
-{
-    if(m_channel3 != state)
-    {
-        m_channel3 = state;
-    }
-}
-
-ChannelState MicroHILModel::getChannel3() const
-{
-    return m_channel3;
-}
-
-bool MicroHILModel::isOnChannel3() const
-{
-    return bool(m_channel3);
+    return m_channels[id] == ChannelState::ON;
 }

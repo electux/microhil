@@ -18,18 +18,22 @@
  */
 #pragma once
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILController class declaration and definition 
 class AbMicroHILController
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILController destructor
+    /// @brief AbMicroHILController destructor
     virtual ~AbMicroHILController() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Enable controller (enable/disable communication)
+    /// @brief Enable controller (enable/disable communication)
+    /// @param switchController request value
     virtual void setEnabled(bool switchController) = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Check is controller enabled (is serial communication enabled)
+    /// @brief Check is controller enabled (is serial communication enabled)
+    /// @return boolean status true for enabled else false
     virtual bool isEnabled() const = 0;
 };

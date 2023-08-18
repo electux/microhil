@@ -21,6 +21,8 @@
 #include <glibmm/ustring.h>
 #include <sigc++/sigc++.h>
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief Scoped enumerator for dialog message types
 enum class MessageType
 {
     INFO = 0,
@@ -28,30 +30,35 @@ enum class MessageType
     ERROR = 2
 };
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILViewDialog class declaration and definition
 class AbMicroHILViewDialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // Signal type for dialog Close button
+    /// @brief Signal type for dialog Close button
     using closeDialog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILViewDialog destructor
+    /// @brief AbMicroHILViewDialog destructor
     virtual ~AbMicroHILViewDialog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from dialog Close button
+    /// @brief Signals for emitting from dialog Close button
+    /// @return signal after pressing Close button
     virtual closeDialog closeDialogChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing Close button for dialog
+    /// @brief Slots for processing Close button for dialog
     virtual void onCloseDialogChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Show dialog with message
+    /// @brief Show dialog with message
+    /// @param message for presenting
+    /// @param type of dialog message
     virtual void show(Glib::ustring message, MessageType type) = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Hide dialog
+    /// @brief Hide dialog
     virtual void hide() = 0;
 };

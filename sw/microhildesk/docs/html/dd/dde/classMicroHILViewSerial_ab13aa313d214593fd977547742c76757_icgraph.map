@@ -1,5 +1,5 @@
 <map id="MicroHILViewSerial::onOkSerialChange" name="MicroHILViewSerial::onOkSerialChange">
-<area shape="rect" id="node1" title=" " alt="" coords="403,5,553,47"/>
-<area shape="rect" id="node2" href="$dd/dde/classMicroHILViewSerial.html#ac3180885e01d13d32a6305cb4af6feb7" title=" " alt="" coords="208,5,355,47"/>
-<area shape="rect" id="node3" href="$dd/dde/classMicroHILViewSerial.html#ac8851c24668e8ef3054149c19618b2bc" title=" " alt="" coords="5,5,160,47"/>
+<area shape="rect" id="node1" title="Slot for processing Ok button." alt="" coords="403,5,553,47"/>
+<area shape="rect" id="node2" href="$dd/dde/classMicroHILViewSerial.html#ac3180885e01d13d32a6305cb4af6feb7" title="Map all signals and slots for serial dialog." alt="" coords="208,5,355,47"/>
+<area shape="rect" id="node3" href="$dd/dde/classMicroHILViewSerial.html#ac8851c24668e8ef3054149c19618b2bc" title="MicroHILViewSerial constructor." alt="" coords="5,5,160,47"/>
 </map>

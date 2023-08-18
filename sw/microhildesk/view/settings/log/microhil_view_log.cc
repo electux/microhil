@@ -20,9 +20,20 @@
 
 namespace
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Entry id
     constexpr const char kLogDevicePathId[]{"LogFilePathInput"};
+    
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Combobox id
     constexpr const char kLogLevelSelectorId[]{"LogLevelSelector"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Cancel button id
     constexpr const char kCancelButtonId[]{"LogCancel"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Ok button id
     constexpr const char kOkButtonId[]{"LogOk"};
 }
 
@@ -31,19 +42,19 @@ MicroHILViewLog::MicroHILViewLog(
 ): Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
-    // Bind Log file path entry
+    /// Bind Log file path entry
     m_device = Glib::RefPtr<Gtk::Entry>::cast_dynamic(
         m_ui->get_object(kLogDevicePathId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind Log level combobox selector
+    /// Bind Log level combobox selector
     m_level = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kLogLevelSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind Cancel and Ok buttons
+    /// Bind Cancel and Ok buttons
     m_cancel = Glib::RefPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kCancelButtonId)
     );
@@ -53,6 +64,6 @@ MicroHILViewLog::MicroHILViewLog(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Map Ok button signal and slot
+    /// Map Ok button signal and slot
     mapping();
 }

@@ -20,12 +20,32 @@
 
 namespace
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Entry id
     constexpr const char kDevicePathId[]{"SerialPortDeviceInput"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Combobox id for selecting baud rate
     constexpr const char kBaudRateSelectorId[]{"SerialPortBaudRateSelector"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Combobox id for selecting data bits 
     constexpr const char kDataBitsSelectorId[]{"SerialPortDataBitsSelector"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Combobox id for selecting parity
     constexpr const char kParitySelectorId[]{"SerialPortParitySelector"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Combobox id for selecting stop bits
     constexpr const char kStopBitsId[]{"SerialPortStopBitsSelector"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Cancel button id
     constexpr const char kCancelButtonId[]{"SerialCancel"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Ok button id
     constexpr const char kOkButtonId[]{"SerialOk"};
 }
 
@@ -34,37 +54,37 @@ MicroHILViewSerial::MicroHILViewSerial(
 ): Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
-    // Bind Log file path entry
+    /// Bind Log file path entry
     m_device = Glib::RefPtr<Gtk::Entry>::cast_dynamic(
         m_ui->get_object(kDevicePathId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind baud rate combobox selector
+    /// Bind baud rate combobox selector
     m_baudRate = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kBaudRateSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind data bits combobox selector
+    /// Bind data bits combobox selector
     m_dataBits = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kDataBitsSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind parity combobox selector
+    /// Bind parity combobox selector
     m_parity = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kParitySelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind stop bits combobox selector
+    /// Bind stop bits combobox selector
     m_stopBits = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kStopBitsId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind Cancel and Ok buttons
+    /// Bind Cancel and Ok buttons
     m_cancel = Glib::RefPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kCancelButtonId)
     );
@@ -74,6 +94,6 @@ MicroHILViewSerial::MicroHILViewSerial(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Map all signals and slots
+    /// Map all signals and slots
     mapping();
 }

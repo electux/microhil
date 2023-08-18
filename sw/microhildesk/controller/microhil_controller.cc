@@ -23,13 +23,13 @@ MicroHILController::MicroHILController(
 )
 {
     ////////////////////////////////////////////////////////////////////////
-    // Prepare and setup configuration, log and serial
+    /// Prepare and setup configuration, log and serial
     m_config = make_unique<MicroHILConfig>();
     m_log = make_unique<MicroHILLog>();
     m_serial = make_unique<MicroHILSerialCom>();
 
     ////////////////////////////////////////////////////////////////////////
-    // Checking existance of configuration
+    /// Checking existance of configuration
     if(!m_config->isPreValid())
     {
         // TODO
@@ -37,7 +37,7 @@ MicroHILController::MicroHILController(
     }
 
     ////////////////////////////////////////////////////////////////////////
-    // Loading configuration from file
+    /// Loading configuration from file
     if(!m_config->load())
     {
         // TODO
@@ -45,8 +45,8 @@ MicroHILController::MicroHILController(
     }
 
     ////////////////////////////////////////////////////////////////////////
-    // Setup log file destination from configuration
-    m_log->setFilePath(m_config->getLogFile());
+    /// Setup log file destination from configuration
+    m_log->setFilePath(m_config->getLogPath());
 
     if(!m_log->open())
     {

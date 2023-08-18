@@ -23,41 +23,46 @@
 #include <gtkmm/aboutdialog.h>
 #include "microhil_view_about_abstract.h"
 
-class MicroHILViewAbout : public AbMicroHILViewAbout, public Gtk::AboutDialog
+////////////////////////////////////////////////////////////////////////////
+/// @brief MicroHILViewAbout class declaration and definition 
+class MicroHILViewAbout: public AbMicroHILViewAbout, public Gtk::AboutDialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILViewAbout constructor
+    /// @brief MicroHILViewAbout constructor
+    /// @param object base object type
+    /// @param ui builder parser
     MicroHILViewAbout(
         BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILViewAbout destructor
+    /// @brief MicroHILViewAbout destructor
     ~MicroHILViewAbout() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from about Ok button
+    /// @brief Signals for emitting from about Ok button
+    /// @return signal for pressed about Ok button
     visibleAbout visibleAboutChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing Ok button for about dialog
+    /// @brief Slots for processing Ok button for about dialog
     void onVisibleAboutChange() final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // Map Ok button signal and slot
+    /// @brief Map Ok button signal and slot
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
-    // UI builder
+    /// @brief UI builder instance
     Glib::RefPtr<Gtk::Builder> m_ui;
 
     ////////////////////////////////////////////////////////////////////////
-    // Widgets for about view
+    /// @brief Ok button for about view
     Glib::RefPtr<Gtk::Button> m_ok;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from Ok button (hide about dialog)
+    /// @brief Signal for emitting from Ok button (hide about dialog)
     visibleAbout m_visibleAbout;
 };

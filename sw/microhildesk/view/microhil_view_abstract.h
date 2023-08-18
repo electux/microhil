@@ -18,10 +18,12 @@
  */
 #pragma once
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILView class declaration and definition 
 class AbMicroHILView
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILView destructor
+    /// @brief AbMicroHILView destructor
     virtual ~AbMicroHILView() = default;
 };

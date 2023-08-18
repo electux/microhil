@@ -22,27 +22,30 @@
 #include "home/microhil_view_home.h"
 #include "microhil_view_abstract.h"
 
-class MicroHILView : public AbMicroHILView
+////////////////////////////////////////////////////////////////////////////
+/// @brief MicroHILView class declaration and definition 
+class MicroHILView: public AbMicroHILView
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILView constructor
+    /// @brief MicroHILView constructor
     MicroHILView();
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILView destructor
+    /// @brief MicroHILView destructor
     ~MicroHILView() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting home view
+    /// @brief Getting home view
+    /// @return home view instance
     Glib::RefPtr<MicroHILViewHome> getHome();
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // UI builder
+    /// @brief UI builder instance
     Glib::RefPtr<Gtk::Builder> m_builder{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
-    // Home view
+    /// @brief Home view instance
     Glib::RefPtr<MicroHILViewHome> m_home{nullptr};
 };

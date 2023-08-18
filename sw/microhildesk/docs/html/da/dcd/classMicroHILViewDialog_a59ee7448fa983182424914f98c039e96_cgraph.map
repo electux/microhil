@@ -1,6 +1,6 @@
 <map id="MicroHILViewDialog::MicroHILViewDialog" name="MicroHILViewDialog::MicroHILViewDialog">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,165,47"/>
-<area shape="rect" id="node2" href="$da/dcd/classMicroHILViewDialog.html#a0cba4ebf5a1ceb331b95853d928eec13" title=" " alt="" coords="213,5,365,47"/>
-<area shape="rect" id="node3" href="$da/dcd/classMicroHILViewDialog.html#a11a470e80145534e25c22fe7ed1734b7" title=" " alt="" coords="413,5,587,47"/>
-<area shape="rect" id="node4" href="$da/dcd/classMicroHILViewDialog.html#a34330e77b9349405dde38926cb46ed2b" title=" " alt="" coords="635,5,787,47"/>
+<area shape="rect" id="node1" title="MicroHILViewDialog constructor." alt="" coords="5,5,165,47"/>
+<area shape="rect" id="node2" href="$da/dcd/classMicroHILViewDialog.html#a0cba4ebf5a1ceb331b95853d928eec13" title="Map Close button signal and slot." alt="" coords="213,5,365,47"/>
+<area shape="rect" id="node3" href="$da/dcd/classMicroHILViewDialog.html#a11a470e80145534e25c22fe7ed1734b7" title="Slots for processing Close button for dialog." alt="" coords="413,5,587,47"/>
+<area shape="rect" id="node4" href="$da/dcd/classMicroHILViewDialog.html#a34330e77b9349405dde38926cb46ed2b" title="Hide dialog." alt="" coords="635,5,787,47"/>
 </map>

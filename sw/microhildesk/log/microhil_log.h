@@ -24,49 +24,66 @@
 
 using namespace std;
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief MicroHILLog class declaration and definition 
 class MicroHILLog: public AbMicroHILLog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog constructor
+    /// @brief MicroHILLog constructor
     MicroHILLog();
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILLog destructor
+    /// @brief MicroHILLog destructor (needed for closing file)
     ~MicroHILLog();
 
     ////////////////////////////////////////////////////////////////////////
-    // Setting file path for logger
+    /// @brief Setting file path for logger
+    /// @param logFilePath file path for storing log messages
     void setFilePath(const Glib::ustring logFilePath);
 
     ////////////////////////////////////////////////////////////////////////
-    // Getting file path for logger
+    /// @brief Getting file path for logger
+    /// @return Log file path
     Glib::ustring getFilePath() const;
 
     ////////////////////////////////////////////////////////////////////////
-    // Open log file for collecting log messages
-    bool open();
+    /// @brief Open storage for collecting log messages
+    /// @return boolean status true for success else false
+    bool open() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Write log message
+    /// @brief Write log message
+    /// @param message log message to be stored
+    /// @param level log level
     void write(const Glib::ustring message, LogLevel level) final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Close log file
-    bool close();
+    /// @brief Close log storage
+    /// @return boolean status true for success else false
+    bool close() final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // Getting current date and time
+    /// @brief Getting current date and time
+    /// @return current date time in string format (18-08-2023 22:52:06)
     Glib::ustring getCurrentDateTime() const;
 
     ////////////////////////////////////////////////////////////////////////
-    // Convert log level type to human readable string 
+    /// @brief Convert log level type to human readable string
+    /// @param level log level
+    /// @return string representation of log level
     Glib::ustring getLogType(LogLevel level) const;
 
     ////////////////////////////////////////////////////////////////////////
-    // Log file path, log file and flag for checking log file state
+    /// @brief Log file path
     Glib::ustring m_logFilePath{};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Log file instance
     ofstream m_logFile{};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Flag for checking log file state
     bool m_fileOpened{false};
 };

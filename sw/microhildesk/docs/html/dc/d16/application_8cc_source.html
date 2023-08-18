@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../microhil_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">microhildesk
+   <div id="projectname">microhildesk<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">MicroHIL application for controlling micro HIL HW</div>
   </td>
  </tr>
  </tbody>
@@ -108,46 +109,44 @@ $(document).ready(function(){initNavTree('dc/d16/application_8cc_source.html','.
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">constexpr</span> <span class="keywordtype">char</span> kAppId[]{<span class="stringliteral">&quot;org.gtkmm.microhildesk&quot;</span>};</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329">   26</a></span><a class="code hl_function" href="../../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329">Application::Application</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// Setup application</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a> = <a class="code hl_function" href="../../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a">Gtk::Application::create</a>(argc, argv, kAppId);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Check and prepare model, view and controller</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a35276de12398545067aceb3799ffe0d3">m_model</a> = make_shared&lt;MicroHILModel&gt;();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">m_view</a> = make_shared&lt;MicroHILView&gt;();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#add794493f575f1f0b2987ee0a5872e36">m_controller</a> = make_unique&lt;MicroHILController&gt;(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#a35276de12398545067aceb3799ffe0d3">m_model</a>, <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">m_view</a>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">   39</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">Application::run</a>()</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> status {EXIT_FAILURE};</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a> &amp;&amp; <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">m_view</a>)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        status = <a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a>-&gt;run(*(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">m_view</a>-&gt;getHome().get()));</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">constexpr</span> <span class="keywordtype">char</span> kAppId[]{<span class="stringliteral">&quot;org.gtkmm.microhildesk&quot;</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329">   28</a></span><a class="code hl_function" href="../../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329">Application::Application</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a> = <a class="code hl_function" href="../../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a">Gtk::Application::create</a>(argc, argv, kAppId);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a35276de12398545067aceb3799ffe0d3">m_model</a> = make_shared&lt;MicroHILModel&gt;();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">m_view</a> = make_shared&lt;MicroHILView&gt;();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#add794493f575f1f0b2987ee0a5872e36">m_controller</a> = make_unique&lt;MicroHILController&gt;(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#a35276de12398545067aceb3799ffe0d3">m_model</a>, <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">m_view</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">   41</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">Application::run</a>()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">int</span> status {EXIT_FAILURE};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a> &amp;&amp; <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">m_view</a>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        status = <a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a>-&gt;run(*(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">m_view</a>-&gt;getHome().get()));</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 <div class="ttc" id="aapplication_8h_html"><div class="ttname"><a href="../../db/d32/application_8h.html">application.h</a></div></div>
-<div class="ttc" id="aclassApplication_html_a0f9bc8452ac4d0de88eec9d59e8227c1"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">Application::m_view</a></div><div class="ttdeci">std::shared_ptr&lt; MicroHILView &gt; m_view</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00050">application.h:50</a></div></div>
-<div class="ttc" id="aclassApplication_html_a35276de12398545067aceb3799ffe0d3"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a35276de12398545067aceb3799ffe0d3">Application::m_model</a></div><div class="ttdeci">std::shared_ptr&lt; MicroHILModel &gt; m_model</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00049">application.h:49</a></div></div>
-<div class="ttc" id="aclassApplication_html_a4f945a7f8d003a3b8f716f7128206329"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329">Application::Application</a></div><div class="ttdeci">Application(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d16/application_8cc_source.html#l00026">application.cc:26</a></div></div>
-<div class="ttc" id="aclassApplication_html_a8cf8941c8db90117d3735bce5ae1fdf4"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">Application::run</a></div><div class="ttdeci">int run()</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d16/application_8cc_source.html#l00039">application.cc:39</a></div></div>
-<div class="ttc" id="aclassApplication_html_ad43d89902592cb40eb345b0cd8723ef6"><div class="ttname"><a href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">Application::m_app</a></div><div class="ttdeci">Glib::RefPtr&lt; Gtk::Application &gt; m_app</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00045">application.h:45</a></div></div>
-<div class="ttc" id="aclassApplication_html_add794493f575f1f0b2987ee0a5872e36"><div class="ttname"><a href="../../d5/d4c/classApplication.html#add794493f575f1f0b2987ee0a5872e36">Application::m_controller</a></div><div class="ttdeci">std::unique_ptr&lt; MicroHILController &gt; m_controller</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00051">application.h:51</a></div></div>
-<div class="ttc" id="amain_8cc_html_ac310f031e90c68ee35850afe11f3448a"><div class="ttname"><a href="../../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a">create</a></div><div class="ttdeci">std::unique_ptr&lt; Application &gt; create(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d0f/main_8cc_source.html#l00038">main.cc:38</a></div></div>
+<div class="ttc" id="aclassApplication_html_a0f9bc8452ac4d0de88eec9d59e8227c1"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a0f9bc8452ac4d0de88eec9d59e8227c1">Application::m_view</a></div><div class="ttdeci">std::shared_ptr&lt; MicroHILView &gt; m_view</div><div class="ttdoc">View instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00058">application.h:58</a></div></div>
+<div class="ttc" id="aclassApplication_html_a35276de12398545067aceb3799ffe0d3"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a35276de12398545067aceb3799ffe0d3">Application::m_model</a></div><div class="ttdeci">std::shared_ptr&lt; MicroHILModel &gt; m_model</div><div class="ttdoc">Model instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00054">application.h:54</a></div></div>
+<div class="ttc" id="aclassApplication_html_a4f945a7f8d003a3b8f716f7128206329"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329">Application::Application</a></div><div class="ttdeci">Application(int argc, char *argv[])</div><div class="ttdoc">Application constructor.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d16/application_8cc_source.html#l00028">application.cc:28</a></div></div>
+<div class="ttc" id="aclassApplication_html_a8cf8941c8db90117d3735bce5ae1fdf4"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">Application::run</a></div><div class="ttdeci">int run()</div><div class="ttdoc">Starts the application (run main loop)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d16/application_8cc_source.html#l00041">application.cc:41</a></div></div>
+<div class="ttc" id="aclassApplication_html_ad43d89902592cb40eb345b0cd8723ef6"><div class="ttname"><a href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">Application::m_app</a></div><div class="ttdeci">Glib::RefPtr&lt; Gtk::Application &gt; m_app</div><div class="ttdoc">Application instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00050">application.h:50</a></div></div>
+<div class="ttc" id="aclassApplication_html_add794493f575f1f0b2987ee0a5872e36"><div class="ttname"><a href="../../d5/d4c/classApplication.html#add794493f575f1f0b2987ee0a5872e36">Application::m_controller</a></div><div class="ttdeci">std::unique_ptr&lt; MicroHILController &gt; m_controller</div><div class="ttdoc">Controller instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00062">application.h:62</a></div></div>
+<div class="ttc" id="amain_8cc_html_ac310f031e90c68ee35850afe11f3448a"><div class="ttname"><a href="../../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a">create</a></div><div class="ttdeci">std::unique_ptr&lt; Application &gt; create(int argc, char *argv[])</div><div class="ttdoc">Create application.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d0f/main_8cc_source.html#l00046">main.cc:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d16/application_8cc.html">application.cc</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 18:32:15 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sat Aug 19 2023 00:26:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -21,85 +21,103 @@
 #include <glibmm/ustring.h>
 #include <sigc++/sigc++.h>
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILViewSerial class declaration and definition 
 class AbMicroHILViewSerial
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // Signal type for serial device file path
+    /// @brief Signal type for serial device file path
     using serialDevicePath = sigc::signal<void(Glib::ustring)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal type for selectable serial baud rate
+    /// @brief Signal type for selectable serial baud rate
     using serialBaudRate = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal type for selectable serial data bits
+    /// @brief Signal type for selectable serial data bits
     using serialDataBits = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal type for selectable serial parity
+    /// @brief Signal type for selectable serial parity
     using serialParity = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal type for selectable serial stop bits
+    /// @brief Signal type for selectable serial stop bits
     using serialStopBits = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal types for Serial Cancel and Ok buttons
+    /// @brief Signal type for Cancel button
     using cancelSerial = sigc::signal<void(bool)>;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal type for Ok button
     using okSerial = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILViewLog destructor
+    /// @brief AbMicroHILViewLog destructor
     virtual ~AbMicroHILViewSerial() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from Serial device file path input
+    /// @brief Signal for emitting from device file path input
+    /// @return Signal after pefrormed action
     virtual serialDevicePath serialFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slot for processing Serial file path input 
+    /// @brief Slot for processing Serial file path input 
     virtual void onserialFilePathChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from Serial baud rate combobox
+    /// @brief Signal for emitting from Serial baud rate combobox
+    /// @return Signal after pefrormed action
     virtual serialBaudRate serialBaudRateChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slot for processing Serial baud rate from combobox
+    /// @brief Slot for processing Serial baud rate from combobox
     virtual void onSerialBaudRateChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from Serial data bits combobox
+    /// @brief Signal for emitting from Serial data bits combobox
+    /// @return Signal after pefrormed action
     virtual serialDataBits serialDataBitsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slot for processing Serial data bits combobox
+    /// @brief Slot for processing Serial data bits combobox
     virtual void onSerialDataBitsChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from Serial parity combobox
+    /// @brief Signal for emitting from Serial parity combobox
+    /// @return Signal after pefrormed action
     virtual serialParity serialParityChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slot for processing Serial parity combobox
+    /// @brief Slot for processing Serial parity combobox
     virtual void onSerialParityChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from Serial stop bits combobox
+    /// @brief Signal for emitting from Serial stop bits combobox
+    /// @return Signal after pefrormed action
     virtual serialStopBits serialStopBitsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slot for processing Serial stop bits combobox
+    /// @brief Slot for processing Serial stop bits combobox
     virtual void onSerialStopBitsChange() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from Serial Cancel and Ok buttons
+    /// @brief Signal for emitting from Serial Cancel button
+    /// @return Signal after pefrormed action
     virtual cancelSerial cancelSerialChanged() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for emitting from Serial Ok button
+    /// @return Signal after pefrormed action
     virtual okSerial okSerialChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing Serial Cancel and Ok buttons
+    /// @brief Slot for processing Cancel button
     virtual void onCancelSerialChange() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Ok button
     virtual void onOkSerialChange() = 0;
 };

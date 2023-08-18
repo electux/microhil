@@ -20,17 +20,19 @@
 
 namespace
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// MicroHIL application ID
     constexpr char kAppId[]{"org.gtkmm.microhildesk"};
 }
 
 Application::Application(int argc, char *argv[])
 {
     ////////////////////////////////////////////////////////////////////////
-    // Setup application
+    /// Setup MicroHIL application and initializes gtkmm
     m_app = Gtk::Application::create(argc, argv, kAppId);
 
     ////////////////////////////////////////////////////////////////////////
-    // Check and prepare model, view and controller
+    /// Check and prepare model, view and controller
     m_model = make_shared<MicroHILModel>();
     m_view = make_shared<MicroHILView>();
     m_controller = make_unique<MicroHILController>(m_model, m_view);
@@ -42,6 +44,8 @@ int Application::run()
 
     if(m_app && m_view)
     {
+        ////////////////////////////////////////////////////////////////////
+        /// Starts the MicroHIL application
         status = m_app->run(*(m_view->getHome().get()));
     }
 

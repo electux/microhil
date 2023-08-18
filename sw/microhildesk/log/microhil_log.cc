@@ -21,8 +21,16 @@
 
 namespace
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// String representation of info log level
     constexpr const char kInfoLogLevel[]{" INFO "};
+    
+    ////////////////////////////////////////////////////////////////////////
+    /// String representation of warning log level
     constexpr const char kWarningLogLevel[]{" WARNING "};
+    
+    ////////////////////////////////////////////////////////////////////////
+    /// String representation of error log level
     constexpr const char kErrorLogLevel[]{" ERROR "};
 }
 

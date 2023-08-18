@@ -20,7 +20,12 @@
 
 namespace
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Resource path for home UI
     constexpr char kHomeUI[]{"/org/gtkmm/microhildesk/home.ui"};
+    
+    ////////////////////////////////////////////////////////////////////////
+    /// Application window ID
     constexpr char kwindowId[]{"Window"};
 }
 

@@ -24,54 +24,66 @@
 #include <gtkmm/dialog.h>
 #include "microhil_view_dialog_abstract.h"
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief MicroHILViewDialog class declaration and definition 
 class MicroHILViewDialog: public AbMicroHILViewDialog, public Gtk::Dialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILViewDialog constructor
+    /// @brief MicroHILViewDialog constructor
+    /// @param object base object type
+    /// @param ui builder parser
     MicroHILViewDialog(
         BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILViewDialog destructor
+    /// @brief MicroHILViewDialog destructor
     ~MicroHILViewDialog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from dialog Close button
+    /// @brief Signals for emitting from dialog Close button
+    /// @return signal after pressing Close button
     closeDialog closeDialogChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing Close button for dialog
+    /// @brief Slots for processing Close button for dialog
     void onCloseDialogChange() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Show dialog with message
+    /// @brief Show dialog with message
+    /// @param message for presenting
+    /// @param type of dialog message
     void show(const Glib::ustring message, MessageType type) final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Hide dialog
+    /// @brief Hide dialog
     void hide() final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // Conversion of message type to unicode string
+    /// @brief Conversion of message type to unicode string
+    /// @param type of dialog message
+    /// @return string representation of dialog message type
     Glib::ustring toUnicodeStringMessageType(MessageType type) const;
 
     ////////////////////////////////////////////////////////////////////////
-    // Map Close button signal and slot
+    /// @brief Map Close button signal and slot
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
-    // UI builder
+    /// @brief UI builder instance
     Glib::RefPtr<Gtk::Builder> m_ui;
 
     ////////////////////////////////////////////////////////////////////////
-    // Widgets for dialog view
+    /// @brief Dialog message text filed
     Glib::RefPtr<Gtk::Label> m_text;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Close button for dialog message
     Glib::RefPtr<Gtk::Button> m_close;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal for emitting from Close button (hide about dialog)
+    /// @brief Signal for emitting from Close button (hide about dialog)
     closeDialog m_closeDialog;
 };

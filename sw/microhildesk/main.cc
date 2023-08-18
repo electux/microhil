@@ -19,9 +19,17 @@
 #include "application.h"
 
 ////////////////////////////////////////////////////////////////////////
-// Create application
+/// @brief Create application
+/// @param argc number of arguments
+/// @param argv array of arguments
+/// @return std::unique_ptr for application
 std::unique_ptr<Application> create(int argc, char *argv[]);
 
+////////////////////////////////////////////////////////////////////////
+/// @brief Main entry point
+/// @param argc number of arguments
+/// @param argv array of arguments
+/// @return integer exit status (exit failure value is 1)
 int main(int argc, char *argv[])
 {
     auto app = create(argc, argv);

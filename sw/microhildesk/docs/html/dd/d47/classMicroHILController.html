@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../microhil_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">microhildesk
+   <div id="projectname">microhildesk<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">MicroHIL application for controlling micro HIL HW</div>
   </td>
  </tr>
  </tbody>
@@ -91,14 +92,17 @@ $(document).ready(function(){initNavTree('dd/d47/classMicroHILController.html','
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="../../dd/d47/classMicroHILController.html" title="MicroHILController class declaration and definition.">MicroHILController</a> class declaration and definition.  
+ <a href="../../dd/d47/classMicroHILController.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MicroHILController:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d0b/classMicroHILController__inherit__graph.png" border="0" usemap="#aMicroHILController_inherit__map" alt="Inheritance graph"/></div>
 <map name="aMicroHILController_inherit__map" id="aMicroHILController_inherit__map">
-<area shape="rect" title=" " alt="" coords="14,160,193,325"/>
-<area shape="rect" href="../../de/dee/classAbMicroHILController.html" title=" " alt="" coords="5,5,201,112"/>
+<area shape="rect" title="MicroHILController class declaration and definition." alt="" coords="14,160,193,325"/>
+<area shape="rect" href="../../de/dee/classAbMicroHILController.html" title="AbMicroHILController class declaration and definition." alt="" coords="5,5,201,112"/>
 </map>
 </div>
 <div class="dynheader">
@@ -106,8 +110,8 @@ Collaboration diagram for MicroHILController:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/d96/classMicroHILController__coll__graph.png" border="0" usemap="#aMicroHILController_coll__map" alt="Collaboration graph"/></div>
 <map name="aMicroHILController_coll__map" id="aMicroHILController_coll__map">
-<area shape="rect" title=" " alt="" coords="321,175,499,296"/>
-<area shape="rect" href="../../de/dee/classAbMicroHILController.html" title=" " alt="" coords="5,5,201,112"/>
+<area shape="rect" title="MicroHILController class declaration and definition." alt="" coords="321,175,499,296"/>
+<area shape="rect" href="../../de/dee/classAbMicroHILController.html" title="AbMicroHILController class declaration and definition." alt="" coords="5,5,201,112"/>
 <area shape="rect" title=" " alt="" coords="226,20,277,97"/>
 <area shape="rect" title=" " alt="" coords="301,20,519,97"/>
 <area shape="rect" title=" " alt="" coords="544,20,745,97"/>
@@ -118,35 +122,47 @@ Collaboration diagram for MicroHILController:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f530710d0b0b543d1cc75d0c378092c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d47/classMicroHILController.html#a5f530710d0b0b543d1cc75d0c378092c">MicroHILController</a> (std::shared_ptr&lt; <a class="el" href="../../de/dce/classMicroHILModel.html">MicroHILModel</a> &gt; model, std::shared_ptr&lt; <a class="el" href="../../d8/dee/classMicroHILView.html">MicroHILView</a> &gt; view)</td></tr>
+<tr class="memdesc:a5f530710d0b0b543d1cc75d0c378092c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../dd/d47/classMicroHILController.html" title="MicroHILController class declaration and definition.">MicroHILController</a> constructor.  <a href="../../dd/d47/classMicroHILController.html#a5f530710d0b0b543d1cc75d0c378092c">More...</a><br /></td></tr>
 <tr class="separator:a5f530710d0b0b543d1cc75d0c378092c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf067ad4188129de91b96e523a7d2d8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d47/classMicroHILController.html#abf067ad4188129de91b96e523a7d2d8b">~MicroHILController</a> ()=default</td></tr>
+<tr class="memdesc:abf067ad4188129de91b96e523a7d2d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../dd/d47/classMicroHILController.html" title="MicroHILController class declaration and definition.">MicroHILController</a> destructor.  <a href="../../dd/d47/classMicroHILController.html#abf067ad4188129de91b96e523a7d2d8b">More...</a><br /></td></tr>
 <tr class="separator:abf067ad4188129de91b96e523a7d2d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a024ac54258033deaddb53ebef57b6e66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d47/classMicroHILController.html#a024ac54258033deaddb53ebef57b6e66">setEnabled</a> (bool switchController) final</td></tr>
+<tr class="memdesc:a024ac54258033deaddb53ebef57b6e66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable controller (enable/disable communication)  <a href="../../dd/d47/classMicroHILController.html#a024ac54258033deaddb53ebef57b6e66">More...</a><br /></td></tr>
 <tr class="separator:a024ac54258033deaddb53ebef57b6e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace4f057fd606228b72623be9abb6272c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d47/classMicroHILController.html#ace4f057fd606228b72623be9abb6272c">isEnabled</a> () const final</td></tr>
+<tr class="memdesc:ace4f057fd606228b72623be9abb6272c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check is controller enabled (is serial communication enabled)  <a href="../../dd/d47/classMicroHILController.html#ace4f057fd606228b72623be9abb6272c">More...</a><br /></td></tr>
 <tr class="separator:ace4f057fd606228b72623be9abb6272c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classAbMicroHILController"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classAbMicroHILController')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../de/dee/classAbMicroHILController.html">AbMicroHILController</a></td></tr>
 <tr class="memitem:afe2b0c9fab883b4c4a47d5f067c88a7c inherit pub_methods_classAbMicroHILController"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dee/classAbMicroHILController.html#afe2b0c9fab883b4c4a47d5f067c88a7c">~AbMicroHILController</a> ()=default</td></tr>
+<tr class="memdesc:afe2b0c9fab883b4c4a47d5f067c88a7c inherit pub_methods_classAbMicroHILController"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/dee/classAbMicroHILController.html" title="AbMicroHILController class declaration and definition.">AbMicroHILController</a> destructor.  <a href="../../de/dee/classAbMicroHILController.html#afe2b0c9fab883b4c4a47d5f067c88a7c">More...</a><br /></td></tr>
 <tr class="separator:afe2b0c9fab883b4c4a47d5f067c88a7c inherit pub_methods_classAbMicroHILController"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af942a232add2c65747f1cf34406c70a2 inherit pub_methods_classAbMicroHILController"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dee/classAbMicroHILController.html#af942a232add2c65747f1cf34406c70a2">setEnabled</a> (bool switchController)=0</td></tr>
+<tr class="memdesc:af942a232add2c65747f1cf34406c70a2 inherit pub_methods_classAbMicroHILController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable controller (enable/disable communication)  <a href="../../de/dee/classAbMicroHILController.html#af942a232add2c65747f1cf34406c70a2">More...</a><br /></td></tr>
 <tr class="separator:af942a232add2c65747f1cf34406c70a2 inherit pub_methods_classAbMicroHILController"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac15c24930446eea9d1540f418b1a655a inherit pub_methods_classAbMicroHILController"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dee/classAbMicroHILController.html#ac15c24930446eea9d1540f418b1a655a">isEnabled</a> () const =0</td></tr>
+<tr class="memdesc:ac15c24930446eea9d1540f418b1a655a inherit pub_methods_classAbMicroHILController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check is controller enabled (is serial communication enabled)  <a href="../../de/dee/classAbMicroHILController.html#ac15c24930446eea9d1540f418b1a655a">More...</a><br /></td></tr>
 <tr class="separator:ac15c24930446eea9d1540f418b1a655a inherit pub_methods_classAbMicroHILController"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af929feea44b17d872ddafcea6fd88b03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d47/classMicroHILController.html#af929feea44b17d872ddafcea6fd88b03">m_enabled</a> {false}</td></tr>
+<tr class="memdesc:af929feea44b17d872ddafcea6fd88b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/Disable state of controller.  <a href="../../dd/d47/classMicroHILController.html#af929feea44b17d872ddafcea6fd88b03">More...</a><br /></td></tr>
 <tr class="separator:af929feea44b17d872ddafcea6fd88b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add52de5ad13062c2222b7e20e31fd8ef"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d0/df4/classMicroHILConfig.html">MicroHILConfig</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d47/classMicroHILController.html#add52de5ad13062c2222b7e20e31fd8ef">m_config</a> {nullptr}</td></tr>
+<tr class="memdesc:add52de5ad13062c2222b7e20e31fd8ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration instance.  <a href="../../dd/d47/classMicroHILController.html#add52de5ad13062c2222b7e20e31fd8ef">More...</a><br /></td></tr>
 <tr class="separator:add52de5ad13062c2222b7e20e31fd8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80c08639c9d26d02dd70bbe28b56b39d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d1/de3/classMicroHILLog.html">MicroHILLog</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d47/classMicroHILController.html#a80c08639c9d26d02dd70bbe28b56b39d">m_log</a> {nullptr}</td></tr>
+<tr class="memdesc:a80c08639c9d26d02dd70bbe28b56b39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log instance.  <a href="../../dd/d47/classMicroHILController.html#a80c08639c9d26d02dd70bbe28b56b39d">More...</a><br /></td></tr>
 <tr class="separator:a80c08639c9d26d02dd70bbe28b56b39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2765dbf1785d7c296114a99bd4a1f4c6"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d5/dd0/classMicroHILSerialCom.html">MicroHILSerialCom</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d47/classMicroHILController.html#a2765dbf1785d7c296114a99bd4a1f4c6">m_serial</a> {nullptr}</td></tr>
+<tr class="memdesc:a2765dbf1785d7c296114a99bd4a1f4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial port instance.  <a href="../../dd/d47/classMicroHILController.html#a2765dbf1785d7c296114a99bd4a1f4c6">More...</a><br /></td></tr>
 <tr class="separator:a2765dbf1785d7c296114a99bd4a1f4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00029">29</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<div class="textblock"><p ><a class="el" href="../../dd/d47/classMicroHILController.html" title="MicroHILController class declaration and definition.">MicroHILController</a> class declaration and definition. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00031">31</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5f530710d0b0b543d1cc75d0c378092c" name="a5f530710d0b0b543d1cc75d0c378092c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f530710d0b0b543d1cc75d0c378092c">&#9670;&nbsp;</a></span>MicroHILController()</h2>
@@ -174,29 +190,38 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="../../dd/d47/classMicroHILController.html" title="MicroHILController class declaration and definition.">MicroHILController</a> constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">model</td><td>instance </td></tr>
+    <tr><td class="paramname">view</td><td>instance </td></tr>
+  </table>
+  </dd>
+</dl>
+<p >Prepare and setup configuration, log and serial</p>
+<p >Checking existance of configuration</p>
+<p >Loading configuration from file</p>
+<p >Setup log file destination from configuration</p>
+
 <p class="definition">Definition at line <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00021">21</a> of file <a class="el" href="../../db/d49/microhil__controller_8cc_source.html">microhil_controller.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
-<div class="line"><span class="lineno">   26</span>    <span class="comment">// Prepare and setup configuration, log and serial</span></div>
 <div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#add52de5ad13062c2222b7e20e31fd8ef">m_config</a> = make_unique&lt;MicroHILConfig&gt;();</div>
 <div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#a80c08639c9d26d02dd70bbe28b56b39d">m_log</a> = make_unique&lt;MicroHILLog&gt;();</div>
 <div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#a2765dbf1785d7c296114a99bd4a1f4c6">m_serial</a> = make_unique&lt;MicroHILSerialCom&gt;();</div>
 <div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="comment">// Checking existance of configuration</span></div>
 <div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#add52de5ad13062c2222b7e20e31fd8ef">m_config</a>-&gt;isPreValid())</div>
 <div class="line"><span class="lineno">   34</span>    {</div>
 <div class="line"><span class="lineno">   35</span>        <span class="comment">// TODO</span></div>
 <div class="line"><span class="lineno">   36</span>        <span class="comment">// Emit signal for error handler</span></div>
 <div class="line"><span class="lineno">   37</span>    }</div>
 <div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   40</span>    <span class="comment">// Loading configuration from file</span></div>
 <div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#add52de5ad13062c2222b7e20e31fd8ef">m_config</a>-&gt;load())</div>
 <div class="line"><span class="lineno">   42</span>    {</div>
 <div class="line"><span class="lineno">   43</span>        <span class="comment">// TODO</span></div>
 <div class="line"><span class="lineno">   44</span>        <span class="comment">// Emit signal for error handler</span></div>
 <div class="line"><span class="lineno">   45</span>    }</div>
 <div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   48</span>    <span class="comment">// Setup log file destination from configuration</span></div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#a80c08639c9d26d02dd70bbe28b56b39d">m_log</a>-&gt;setFilePath(<a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#add52de5ad13062c2222b7e20e31fd8ef">m_config</a>-&gt;getLogFile());</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#a80c08639c9d26d02dd70bbe28b56b39d">m_log</a>-&gt;setFilePath(<a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#add52de5ad13062c2222b7e20e31fd8ef">m_config</a>-&gt;getLogPath());</div>
 <div class="line"><span class="lineno">   50</span> </div>
 <div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#a80c08639c9d26d02dd70bbe28b56b39d">m_log</a>-&gt;open())</div>
 <div class="line"><span class="lineno">   52</span>    {</div>
@@ -204,11 +229,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   54</span>        <span class="comment">// Emit signal for error handler</span></div>
 <div class="line"><span class="lineno">   55</span>    }</div>
 <div class="line"><span class="lineno">   56</span>}</div>
-<div class="ttc" id="aclassMicroHILController_html_a2765dbf1785d7c296114a99bd4a1f4c6"><div class="ttname"><a href="../../dd/d47/classMicroHILController.html#a2765dbf1785d7c296114a99bd4a1f4c6">MicroHILController::m_serial</a></div><div class="ttdeci">std::unique_ptr&lt; MicroHILSerialCom &gt; m_serial</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00060">microhil_controller.h:60</a></div></div>
-<div class="ttc" id="aclassMicroHILController_html_a80c08639c9d26d02dd70bbe28b56b39d"><div class="ttname"><a href="../../dd/d47/classMicroHILController.html#a80c08639c9d26d02dd70bbe28b56b39d">MicroHILController::m_log</a></div><div class="ttdeci">std::unique_ptr&lt; MicroHILLog &gt; m_log</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00059">microhil_controller.h:59</a></div></div>
-<div class="ttc" id="aclassMicroHILController_html_add52de5ad13062c2222b7e20e31fd8ef"><div class="ttname"><a href="../../dd/d47/classMicroHILController.html#add52de5ad13062c2222b7e20e31fd8ef">MicroHILController::m_config</a></div><div class="ttdeci">std::unique_ptr&lt; MicroHILConfig &gt; m_config</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00058">microhil_controller.h:58</a></div></div>
+<div class="ttc" id="aclassMicroHILController_html_a2765dbf1785d7c296114a99bd4a1f4c6"><div class="ttname"><a href="../../dd/d47/classMicroHILController.html#a2765dbf1785d7c296114a99bd4a1f4c6">MicroHILController::m_serial</a></div><div class="ttdeci">std::unique_ptr&lt; MicroHILSerialCom &gt; m_serial</div><div class="ttdoc">Serial port instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00072">microhil_controller.h:72</a></div></div>
+<div class="ttc" id="aclassMicroHILController_html_a80c08639c9d26d02dd70bbe28b56b39d"><div class="ttname"><a href="../../dd/d47/classMicroHILController.html#a80c08639c9d26d02dd70bbe28b56b39d">MicroHILController::m_log</a></div><div class="ttdeci">std::unique_ptr&lt; MicroHILLog &gt; m_log</div><div class="ttdoc">Log instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00068">microhil_controller.h:68</a></div></div>
+<div class="ttc" id="aclassMicroHILController_html_add52de5ad13062c2222b7e20e31fd8ef"><div class="ttname"><a href="../../dd/d47/classMicroHILController.html#add52de5ad13062c2222b7e20e31fd8ef">MicroHILController::m_config</a></div><div class="ttdeci">std::unique_ptr&lt; MicroHILConfig &gt; m_config</div><div class="ttdoc">Configuration instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00064">microhil_controller.h:64</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00058">m_config</a>, <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00059">m_log</a>, and <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00060">m_serial</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00064">m_config</a>, <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00068">m_log</a>, and <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00072">m_serial</a>.</p>
 
 </div>
 </div>
@@ -234,6 +259,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="../../dd/d47/classMicroHILController.html" title="MicroHILController class declaration and definition.">MicroHILController</a> destructor. </p>
 
 </div>
 </div>
@@ -261,15 +288,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Check is controller enabled (is serial communication enabled) </p>
+<dl class="section return"><dt>Returns</dt><dd>boolean status true for enabled else false </dd></dl>
+
 <p>Implements <a class="el" href="../../de/dee/classAbMicroHILController.html#ac15c24930446eea9d1540f418b1a655a">AbMicroHILController</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00063">63</a> of file <a class="el" href="../../db/d49/microhil__controller_8cc_source.html">microhil_controller.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
 <div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#af929feea44b17d872ddafcea6fd88b03">m_enabled</a>;</div>
 <div class="line"><span class="lineno">   66</span>}</div>
-<div class="ttc" id="aclassMicroHILController_html_af929feea44b17d872ddafcea6fd88b03"><div class="ttname"><a href="../../dd/d47/classMicroHILController.html#af929feea44b17d872ddafcea6fd88b03">MicroHILController::m_enabled</a></div><div class="ttdeci">bool m_enabled</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00054">microhil_controller.h:54</a></div></div>
+<div class="ttc" id="aclassMicroHILController_html_af929feea44b17d872ddafcea6fd88b03"><div class="ttname"><a href="../../dd/d47/classMicroHILController.html#af929feea44b17d872ddafcea6fd88b03">MicroHILController::m_enabled</a></div><div class="ttdeci">bool m_enabled</div><div class="ttdoc">Enable/Disable state of controller.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00060">microhil_controller.h:60</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00054">m_enabled</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00060">m_enabled</a>.</p>
 
 </div>
 </div>
@@ -297,6 +327,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Enable controller (enable/disable communication) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">switchController</td><td>request value </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="../../de/dee/classAbMicroHILController.html#af942a232add2c65747f1cf34406c70a2">AbMicroHILController</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00058">58</a> of file <a class="el" href="../../db/d49/microhil__controller_8cc_source.html">microhil_controller.cc</a>.</p>
@@ -304,7 +342,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="../../dd/d47/classMicroHILController.html#af929feea44b17d872ddafcea6fd88b03">m_enabled</a> = switchController;</div>
 <div class="line"><span class="lineno">   61</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00054">m_enabled</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00060">m_enabled</a>.</p>
 
 </div>
 </div>
@@ -329,7 +367,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00058">58</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p>Configuration instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00064">64</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00021">MicroHILController()</a>.</p>
 
@@ -355,7 +395,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00054">54</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p>Enable/Disable state of controller. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00060">60</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00063">isEnabled()</a>, and <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00058">setEnabled()</a>.</p>
 
@@ -381,7 +423,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00059">59</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p>Log instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00068">68</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00021">MicroHILController()</a>.</p>
 
@@ -407,7 +451,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00060">60</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p>Serial port instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00072">72</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00021">MicroHILController()</a>.</p>
 
@@ -423,7 +469,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d47/classMicroHILController.html">MicroHILController</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 18:32:18 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sat Aug 19 2023 00:26:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

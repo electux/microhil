@@ -26,36 +26,48 @@
 #include "../view/microhil_view.h"
 #include "microhil_controller_abstract.h"
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief MicroHILController class declaration and definition 
 class MicroHILController: public AbMicroHILController
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILController constructor
+    /// @brief MicroHILController constructor
+    /// @param model instance
+    /// @param view instance
     MicroHILController(
         std::shared_ptr<MicroHILModel> model,
         std::shared_ptr<MicroHILView> view
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILController destructor
+    /// @brief MicroHILController destructor
     ~MicroHILController() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Enable controller (enable/disable communication)
+    /// @brief Enable controller (enable/disable communication)
+    /// @param switchController request value
     void setEnabled(bool switchController) final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Check is controller enabled (is serial communication enabled)
+    /// @brief Check is controller enabled (is serial communication enabled)
+    /// @return boolean status true for enabled else false
     bool isEnabled() const final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // Enable/Disable state of controller
+    /// @brief Enable/Disable state of controller
     bool m_enabled{false};
 
     ////////////////////////////////////////////////////////////////////////
-    // Configuration, log and serial port
+    /// @brief Configuration instance
     std::unique_ptr<MicroHILConfig> m_config{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Log instance 
     std::unique_ptr<MicroHILLog> m_log{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Serial port instance
     std::unique_ptr<MicroHILSerialCom> m_serial{nullptr};
 };

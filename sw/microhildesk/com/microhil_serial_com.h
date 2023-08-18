@@ -28,37 +28,41 @@ using LibSerial::CharacterSize;
 using LibSerial::Parity;
 using LibSerial::StopBits;
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief MicroHILSerialCom class declaration and definition
 class MicroHILSerialCom: public AbMicroHILCom
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILCom constructor
+    /// @brief MicroHILCom constructor
     MicroHILSerialCom();
 
     ////////////////////////////////////////////////////////////////////////
-    // MicroHILCom destructor
+    /// @brief MicroHILCom destructor
     ~MicroHILSerialCom();
 
     ////////////////////////////////////////////////////////////////////////
-    // Open communication channel
+    /// @brief Open the serial communication channel
     void open() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Close communication channel
+    /// @brief Close the serial communication channel
     void close() final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Read from communication channel
-    void read(
-        std::vector<uint8_t>& dataBuffer, size_t len, size_t timeout
-    ) final;
+    /// @brief Read from serial communication channel
+    /// @param data buffer to be placed to after reading the serial port
+    /// @param len length of data to read before returning
+    /// @param timeout timeout period in miliseconds
+    void read(v_uint8& data, size_t len, size_t timeout) final;
 
     ////////////////////////////////////////////////////////////////////////
-    // Write to communication channel
-    void write(std::vector<uint8_t>& dataBuffer) final;
+    /// @brief Write data to the serial communication channel
+    /// @param data to be written to the serial port
+    void write(v_uint8& data) final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // Serial port
+    /// @brief Serial port instance
     std::unique_ptr<SerialPort> m_serialPort{nullptr};
 };

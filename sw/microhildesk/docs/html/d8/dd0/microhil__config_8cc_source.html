@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../microhil_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">microhildesk
+   <div id="projectname">microhildesk<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">MicroHIL application for controlling micro HIL HW</div>
   </td>
  </tr>
  </tbody>
@@ -111,171 +112,182 @@ $(document).ready(function(){initNavTree('d8/dd0/microhil__config_8cc_source.htm
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kHomeDirName[]{<span class="stringliteral">&quot;/.microhil/&quot;</span>};</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigFileName[]{<span class="stringliteral">&quot;config&quot;</span>};</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kConfigSerialLength{9};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialSection[]{<span class="stringliteral">&quot;serial&quot;</span>};</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialDevice[]{<span class="stringliteral">&quot;device&quot;</span>};</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialBaudRate[]{<span class="stringliteral">&quot;baud_rate&quot;</span>};</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialDataBits[]{<span class="stringliteral">&quot;data_bits&quot;</span>};</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialParity[]{<span class="stringliteral">&quot;parity&quot;</span>};</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialStopBits[]{<span class="stringliteral">&quot;stop_bits&quot;</span>};</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigLogSection[]{<span class="stringliteral">&quot;log&quot;</span>};</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigLogLevel[]{<span class="stringliteral">&quot;level&quot;</span>};</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigLogFile[]{<span class="stringliteral">&quot;file&quot;</span>};</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kConfigSerialDefault[]</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="stringliteral">&quot;[log]&quot;</span>,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="stringliteral">&quot;level=INFO&quot;</span>,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="stringliteral">&quot;file=/tmp/microhil.log&quot;</span>,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="stringliteral">&quot;[serial]&quot;</span>,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="stringliteral">&quot;device=/dev/ttyUSB0&quot;</span>,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="stringliteral">&quot;baud_rate=115200&quot;</span>,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="stringliteral">&quot;data_bits=8&quot;</span>,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="stringliteral">&quot;parity=None&quot;</span>,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="stringliteral">&quot;stop_bits=1&quot;</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    };</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a306bb65530ec104babc1832209756664">   52</a></span><a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a306bb65530ec104babc1832209756664">MicroHILConfig::MicroHILConfig</a>()</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// Setup expected paths for home directory and config file</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">m_homePath</a> = Glib::get_home_dir() + kHomeDirName;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a> = <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">m_homePath</a> + kConfigFileName;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// Prevalidation of configuration path</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="../../d6/dac/classAbMicroHILConfig.html#abaa1ac7499dc4c2ae28d19b64655c553">setPreValid</a>(<a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069">checkConfigPath</a>());</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88">   64</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88">MicroHILConfig::load</a>()</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">auto</span> loadedConfig = <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.load_from_file(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a>);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">auto</span> validatedConfig = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">validate</a>(); </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span>(!loadedConfig || !validatedConfig)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kHomeDirName[]{<span class="stringliteral">&quot;/.microhil/&quot;</span>};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigFileName[]{<span class="stringliteral">&quot;config&quot;</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kConfigSerialLength{9};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialSection[]{<span class="stringliteral">&quot;serial&quot;</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialDevice[]{<span class="stringliteral">&quot;device&quot;</span>};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialBaudRate[]{<span class="stringliteral">&quot;baud_rate&quot;</span>};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialDataBits[]{<span class="stringliteral">&quot;data_bits&quot;</span>};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialParity[]{<span class="stringliteral">&quot;parity&quot;</span>};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigSerialStopBits[]{<span class="stringliteral">&quot;stop_bits&quot;</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigLogSection[]{<span class="stringliteral">&quot;log&quot;</span>};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigLogLevel[]{<span class="stringliteral">&quot;level&quot;</span>};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> kConfigLogFile[]{<span class="stringliteral">&quot;file&quot;</span>};</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">   77</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">MicroHILConfig::validate</a>()</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span>(!<a class="code hl_function" href="../../d6/dac/classAbMicroHILConfig.html#ae8936a9dba12444d6bb1eb151b35f428">isPreValid</a>())</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">auto</span> configCheck = (</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialDevice) &amp;&amp;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialBaudRate) &amp;&amp;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialDataBits) &amp;&amp;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialParity) &amp;&amp;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialStopBits) &amp;&amp;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigLogSection, kConfigLogLevel) &amp;&amp;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigLogSection, kConfigLogFile)</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    );</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span>(!configCheck)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kConfigSerialDefault[]</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="stringliteral">&quot;[log]&quot;</span>,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="stringliteral">&quot;level=INFO&quot;</span>,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="stringliteral">&quot;file=/tmp/microhil.log&quot;</span>,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="stringliteral">&quot;[serial]&quot;</span>,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="stringliteral">&quot;device=/dev/ttyUSB0&quot;</span>,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="stringliteral">&quot;baud_rate=115200&quot;</span>,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="stringliteral">&quot;data_bits=8&quot;</span>,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="stringliteral">&quot;parity=None&quot;</span>,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="stringliteral">&quot;stop_bits=1&quot;</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    };</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a306bb65530ec104babc1832209756664">   90</a></span><a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a306bb65530ec104babc1832209756664">MicroHILConfig::MicroHILConfig</a>()</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">m_homePath</a> = Glib::get_home_dir() + kHomeDirName;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a> = <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">m_homePath</a> + kConfigFileName;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_function" href="../../d6/dac/classAbMicroHILConfig.html#abaa1ac7499dc4c2ae28d19b64655c553">setPreValid</a>(<a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069">checkConfigPath</a>());</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a63a9cd2a12c62a1eea0fee846c58f0ce">  102</a></span>Glib::ustring <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a63a9cd2a12c62a1eea0fee846c58f0ce">MicroHILConfig::getDevice</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_string(</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        kConfigSerialSection, kConfigSerialDevice</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    );</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#aa591e4f20e440e72549a35233877b068">  109</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#aa591e4f20e440e72549a35233877b068">MicroHILConfig::getBaudRate</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_integer(</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        kConfigSerialSection, kConfigSerialBaudRate</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    );</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#ae228696819e997e62462ca60a79b7125">  116</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#ae228696819e997e62462ca60a79b7125">MicroHILConfig::getDataBits</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_integer(</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        kConfigSerialSection, kConfigSerialDataBits</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    );</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#ab2a4f27ad70ce56587c8e1e797a4a341">  123</a></span>Glib::ustring <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#ab2a4f27ad70ce56587c8e1e797a4a341">MicroHILConfig::getParity</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_string(</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        kConfigSerialSection, kConfigSerialParity</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    );</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a3b313e05fdf35e40ea5f42d68cde0528">  130</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a3b313e05fdf35e40ea5f42d68cde0528">MicroHILConfig::getStopBits</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">return</span> (<span class="keywordtype">int</span>) <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_integer(</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        kConfigSerialSection, kConfigSerialStopBits</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    );</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a26fa491309fb246b94440f840caa4125">  137</a></span>Glib::ustring <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a26fa491309fb246b94440f840caa4125">MicroHILConfig::getLogLevel</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_string(kConfigLogSection, kConfigLogLevel);</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a15e908cc2eb9c8b978224fc0794a1561">  142</a></span>Glib::ustring <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a15e908cc2eb9c8b978224fc0794a1561">MicroHILConfig::getLogFile</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_string(kConfigLogSection, kConfigLogFile);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88">  102</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88">MicroHILConfig::load</a>()</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">auto</span> loadedConfig = <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.load_from_file(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">auto</span> validatedConfig = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">validate</a>(); </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">if</span>(!loadedConfig || !validatedConfig)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">  120</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">MicroHILConfig::validate</a>()</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">if</span>(!<a class="code hl_function" href="../../d6/dac/classAbMicroHILConfig.html#ae8936a9dba12444d6bb1eb151b35f428">isPreValid</a>())</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keyword">auto</span> configCheck = (</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialDevice) &amp;&amp;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialBaudRate) &amp;&amp;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialDataBits) &amp;&amp;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialParity) &amp;&amp;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigSerialSection, kConfigSerialStopBits) &amp;&amp;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigLogSection, kConfigLogLevel) &amp;&amp;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.has_key(kConfigLogSection, kConfigLogFile)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    );</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">if</span>(!configCheck)</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069">  147</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069">MicroHILConfig::checkConfigPath</a>()</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>{</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="comment">// Check home directory /home/&lt;username&gt;/.microhil/</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    std::filesystem::directory_entry homeDirEntry{<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">m_homePath</a>};</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">auto</span> homeDirExists = homeDirEntry.exists();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a63a9cd2a12c62a1eea0fee846c58f0ce">  147</a></span>Glib::ustring <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a63a9cd2a12c62a1eea0fee846c58f0ce">MicroHILConfig::getDevice</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_string(</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        kConfigSerialSection, kConfigSerialDevice</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    );</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">if</span>(!homeDirExists)</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">if</span>(!std::filesystem::create_directory(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">m_homePath</a>))</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        }</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="comment">// Check config file in case of missing generate new with default setup</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="comment">// Configuration file location: /home/&lt;username&gt;/.microhil/config</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">auto</span> configFileExists = std::filesystem::exists(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a>);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">if</span>(!configFileExists)</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    {</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        std::ofstream defaultConfig(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a>);</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; kConfigSerialLength; i++)</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        {</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            defaultConfig &lt;&lt; kConfigSerialDefault[i] &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        }</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        defaultConfig.close();</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>}</div>
-<div class="ttc" id="aclassAbMicroHILConfig_html_abaa1ac7499dc4c2ae28d19b64655c553"><div class="ttname"><a href="../../d6/dac/classAbMicroHILConfig.html#abaa1ac7499dc4c2ae28d19b64655c553">AbMicroHILConfig::setPreValid</a></div><div class="ttdeci">void setPreValid(bool configValid)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00040">microhil_config_abstract.h:40</a></div></div>
-<div class="ttc" id="aclassAbMicroHILConfig_html_ae8936a9dba12444d6bb1eb151b35f428"><div class="ttname"><a href="../../d6/dac/classAbMicroHILConfig.html#ae8936a9dba12444d6bb1eb151b35f428">AbMicroHILConfig::isPreValid</a></div><div class="ttdeci">bool isPreValid() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00044">microhil_config_abstract.h:44</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a15e908cc2eb9c8b978224fc0794a1561"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a15e908cc2eb9c8b978224fc0794a1561">MicroHILConfig::getLogFile</a></div><div class="ttdeci">Glib::ustring getLogFile() const final</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00142">microhil_config.cc:142</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a26fa491309fb246b94440f840caa4125"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a26fa491309fb246b94440f840caa4125">MicroHILConfig::getLogLevel</a></div><div class="ttdeci">Glib::ustring getLogLevel() const final</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00137">microhil_config.cc:137</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a306bb65530ec104babc1832209756664"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a306bb65530ec104babc1832209756664">MicroHILConfig::MicroHILConfig</a></div><div class="ttdeci">MicroHILConfig()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00052">microhil_config.cc:52</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a3b313e05fdf35e40ea5f42d68cde0528"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a3b313e05fdf35e40ea5f42d68cde0528">MicroHILConfig::getStopBits</a></div><div class="ttdeci">int getStopBits() const final</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00130">microhil_config.cc:130</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a4e452ded7432a192d0f54c321643220b"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">MicroHILConfig::m_homePath</a></div><div class="ttdeci">std::string m_homePath</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d31/microhil__config_8h_source.html#l00079">microhil_config.h:79</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a4fcb7248968603e7c052bf59fda4ddbb"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">MicroHILConfig::m_configFilePath</a></div><div class="ttdeci">std::string m_configFilePath</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d31/microhil__config_8h_source.html#l00080">microhil_config.h:80</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a63a9cd2a12c62a1eea0fee846c58f0ce"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a63a9cd2a12c62a1eea0fee846c58f0ce">MicroHILConfig::getDevice</a></div><div class="ttdeci">Glib::ustring getDevice() const final</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00102">microhil_config.cc:102</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a9bfff605b83f8d1d48aee5f8bf4bb069"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069">MicroHILConfig::checkConfigPath</a></div><div class="ttdeci">bool checkConfigPath()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00147">microhil_config.cc:147</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_aa591e4f20e440e72549a35233877b068"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#aa591e4f20e440e72549a35233877b068">MicroHILConfig::getBaudRate</a></div><div class="ttdeci">int getBaudRate() const final</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00109">microhil_config.cc:109</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_ab2a4f27ad70ce56587c8e1e797a4a341"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ab2a4f27ad70ce56587c8e1e797a4a341">MicroHILConfig::getParity</a></div><div class="ttdeci">Glib::ustring getParity() const final</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00123">microhil_config.cc:123</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_ac527db221c6ec3f65768a22d27dcddc0"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">MicroHILConfig::m_configuration</a></div><div class="ttdeci">Glib::KeyFile m_configuration</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d31/microhil__config_8h_source.html#l00081">microhil_config.h:81</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_ae228696819e997e62462ca60a79b7125"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ae228696819e997e62462ca60a79b7125">MicroHILConfig::getDataBits</a></div><div class="ttdeci">int getDataBits() const final</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00116">microhil_config.cc:116</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_af1a33f30981c1bf928e0e39c1bec5e88"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88">MicroHILConfig::load</a></div><div class="ttdeci">bool load() final</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00064">microhil_config.cc:64</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_afc38ae3f5a51c7126dc65754c2b535b1"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">MicroHILConfig::validate</a></div><div class="ttdeci">bool validate() final</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00077">microhil_config.cc:77</a></div></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#aa591e4f20e440e72549a35233877b068">  154</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#aa591e4f20e440e72549a35233877b068">MicroHILConfig::getBaudRate</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_integer(</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        kConfigSerialSection, kConfigSerialBaudRate</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    );</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#ae228696819e997e62462ca60a79b7125">  161</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#ae228696819e997e62462ca60a79b7125">MicroHILConfig::getDataBits</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_integer(</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        kConfigSerialSection, kConfigSerialDataBits</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    );</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>}</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#ab2a4f27ad70ce56587c8e1e797a4a341">  168</a></span>Glib::ustring <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#ab2a4f27ad70ce56587c8e1e797a4a341">MicroHILConfig::getParity</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_string(</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        kConfigSerialSection, kConfigSerialParity</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    );</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a3b313e05fdf35e40ea5f42d68cde0528">  175</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a3b313e05fdf35e40ea5f42d68cde0528">MicroHILConfig::getStopBits</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">return</span> (<span class="keywordtype">int</span>) <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_integer(</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        kConfigSerialSection, kConfigSerialStopBits</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    );</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a26fa491309fb246b94440f840caa4125">  182</a></span>Glib::ustring <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a26fa491309fb246b94440f840caa4125">MicroHILConfig::getLogLevel</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_string(kConfigLogSection, kConfigLogLevel);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>}</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a886ff27dc88c4eee0c5801b5ccdc0891">  187</a></span>Glib::ustring <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a886ff27dc88c4eee0c5801b5ccdc0891">MicroHILConfig::getLogPath</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">m_configuration</a>.get_string(kConfigLogSection, kConfigLogFile);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="../../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069">  192</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069">MicroHILConfig::checkConfigPath</a>()</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>{</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="comment">// Check home directory /home/&lt;username&gt;/.microhil/</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    std::filesystem::directory_entry homeDirEntry{<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">m_homePath</a>};</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keyword">auto</span> homeDirExists = homeDirEntry.exists();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">if</span>(!homeDirExists)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">if</span>(!std::filesystem::create_directory(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">m_homePath</a>))</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="comment">// Check config file in case of missing generate new with default setup</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="comment">// Configuration file location: /home/&lt;username&gt;/.microhil/config</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keyword">auto</span> configFileExists = std::filesystem::exists(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a>);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keywordflow">if</span>(!configFileExists)</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        std::ofstream defaultConfig(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a>);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; kConfigSerialLength; i++)</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            defaultConfig &lt;&lt; kConfigSerialDefault[i] &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        defaultConfig.close();</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>}</div>
+<div class="ttc" id="aclassAbMicroHILConfig_html_abaa1ac7499dc4c2ae28d19b64655c553"><div class="ttname"><a href="../../d6/dac/classAbMicroHILConfig.html#abaa1ac7499dc4c2ae28d19b64655c553">AbMicroHILConfig::setPreValid</a></div><div class="ttdeci">void setPreValid(bool configValid)</div><div class="ttdoc">Set pre-validation state (existing configuration)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00045">microhil_config_abstract.h:45</a></div></div>
+<div class="ttc" id="aclassAbMicroHILConfig_html_ae8936a9dba12444d6bb1eb151b35f428"><div class="ttname"><a href="../../d6/dac/classAbMicroHILConfig.html#ae8936a9dba12444d6bb1eb151b35f428">AbMicroHILConfig::isPreValid</a></div><div class="ttdeci">bool isPreValid() const</div><div class="ttdoc">Check is pre-validation state (existing configuration)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00050">microhil_config_abstract.h:50</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a26fa491309fb246b94440f840caa4125"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a26fa491309fb246b94440f840caa4125">MicroHILConfig::getLogLevel</a></div><div class="ttdeci">Glib::ustring getLogLevel() const final</div><div class="ttdoc">Getting log level.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00182">microhil_config.cc:182</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a306bb65530ec104babc1832209756664"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a306bb65530ec104babc1832209756664">MicroHILConfig::MicroHILConfig</a></div><div class="ttdeci">MicroHILConfig()</div><div class="ttdoc">MicroHILConfig constructor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00090">microhil_config.cc:90</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a3b313e05fdf35e40ea5f42d68cde0528"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a3b313e05fdf35e40ea5f42d68cde0528">MicroHILConfig::getStopBits</a></div><div class="ttdeci">int getStopBits() const final</div><div class="ttdoc">Getting stop bits for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00175">microhil_config.cc:175</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a4e452ded7432a192d0f54c321643220b"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a4e452ded7432a192d0f54c321643220b">MicroHILConfig::m_homePath</a></div><div class="ttdeci">std::string m_homePath</div><div class="ttdoc">Home directory path.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d31/microhil__config_8h_source.html#l00091">microhil_config.h:91</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a4fcb7248968603e7c052bf59fda4ddbb"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">MicroHILConfig::m_configFilePath</a></div><div class="ttdeci">std::string m_configFilePath</div><div class="ttdoc">Configuration file path.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d31/microhil__config_8h_source.html#l00095">microhil_config.h:95</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a63a9cd2a12c62a1eea0fee846c58f0ce"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a63a9cd2a12c62a1eea0fee846c58f0ce">MicroHILConfig::getDevice</a></div><div class="ttdeci">Glib::ustring getDevice() const final</div><div class="ttdoc">Getting serial device file path from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00147">microhil_config.cc:147</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a886ff27dc88c4eee0c5801b5ccdc0891"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a886ff27dc88c4eee0c5801b5ccdc0891">MicroHILConfig::getLogPath</a></div><div class="ttdeci">Glib::ustring getLogPath() const final</div><div class="ttdoc">Getting log path.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00187">microhil_config.cc:187</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a9bfff605b83f8d1d48aee5f8bf4bb069"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069">MicroHILConfig::checkConfigPath</a></div><div class="ttdeci">bool checkConfigPath()</div><div class="ttdoc">Checking existence of configuration file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00192">microhil_config.cc:192</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_aa591e4f20e440e72549a35233877b068"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#aa591e4f20e440e72549a35233877b068">MicroHILConfig::getBaudRate</a></div><div class="ttdeci">int getBaudRate() const final</div><div class="ttdoc">Getting baud rate for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00154">microhil_config.cc:154</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_ab2a4f27ad70ce56587c8e1e797a4a341"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ab2a4f27ad70ce56587c8e1e797a4a341">MicroHILConfig::getParity</a></div><div class="ttdeci">Glib::ustring getParity() const final</div><div class="ttdoc">Getting parity for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00168">microhil_config.cc:168</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_ac527db221c6ec3f65768a22d27dcddc0"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ac527db221c6ec3f65768a22d27dcddc0">MicroHILConfig::m_configuration</a></div><div class="ttdeci">Glib::KeyFile m_configuration</div><div class="ttdoc">Configuration instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d31/microhil__config_8h_source.html#l00099">microhil_config.h:99</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_ae228696819e997e62462ca60a79b7125"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ae228696819e997e62462ca60a79b7125">MicroHILConfig::getDataBits</a></div><div class="ttdeci">int getDataBits() const final</div><div class="ttdoc">Getting data bits for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00161">microhil_config.cc:161</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_af1a33f30981c1bf928e0e39c1bec5e88"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88">MicroHILConfig::load</a></div><div class="ttdeci">bool load() final</div><div class="ttdoc">Load configuration from file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00102">microhil_config.cc:102</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_afc38ae3f5a51c7126dc65754c2b535b1"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">MicroHILConfig::validate</a></div><div class="ttdeci">bool validate() final</div><div class="ttdoc">Validate configuration (existing all expected parameters)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00120">microhil_config.cc:120</a></div></div>
 <div class="ttc" id="amicrohil__config_8h_html"><div class="ttname"><a href="../../d7/d31/microhil__config_8h.html">microhil_config.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -283,7 +295,7 @@ $(document).ready(function(){initNavTree('d8/dd0/microhil__config_8cc_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_9f351d46ce3cc29445a41dc3a31e6919.html">config</a></li><li class="navelem"><a class="el" href="../../d8/dd0/microhil__config_8cc.html">microhil_config.cc</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 18:32:15 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sat Aug 19 2023 00:26:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

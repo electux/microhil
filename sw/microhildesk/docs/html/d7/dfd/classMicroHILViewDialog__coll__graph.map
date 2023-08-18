@@ -1,6 +1,6 @@
 <map id="MicroHILViewDialog" name="MicroHILViewDialog">
-<area shape="rect" id="node1" title=" " alt="" coords="415,204,649,384"/>
-<area shape="rect" id="node2" href="$d9/d02/classAbMicroHILViewDialog.html" title=" " alt="" coords="5,5,211,141"/>
+<area shape="rect" id="node1" title="MicroHILViewDialog class declaration and definition." alt="" coords="415,204,649,384"/>
+<area shape="rect" id="node2" href="$d9/d02/classAbMicroHILViewDialog.html" title="AbMicroHILViewDialog class declaration and definition." alt="" coords="5,5,211,141"/>
 <area shape="rect" id="node3" title=" " alt="" coords="235,35,330,112"/>
 <area shape="rect" id="node4" title=" " alt="" coords="354,35,523,112"/>
 <area shape="rect" id="node5" title=" " alt="" coords="547,35,706,112"/>
