@@ -41,6 +41,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ]
       ] ]
     ] ]
@@ -50,8 +51,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d5/d72/classAbMicroHILViewHome.html#af4b7101db7ba58ffbe310881e4459c01",
-"df/da5/classMicroHILViewHome.html#a36c608095fa9d76d0ac75489bfe39577"
+"d5/d72/classAbMicroHILViewHome.html#aee56e1050bb930807169487f858bde5e",
+"df/da5/classMicroHILViewHome.html#a579569d56f3f7ffe378f0fad17bf87ef"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

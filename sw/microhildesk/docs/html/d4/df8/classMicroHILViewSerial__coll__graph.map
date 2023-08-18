@@ -1,6 +1,6 @@
 <map id="MicroHILViewSerial" name="MicroHILViewSerial">
-<area shape="rect" id="node1" title=" " alt="" coords="1076,395,1288,633"/>
-<area shape="rect" id="node2" href="$df/dcb/classAbMicroHILViewSerial.html" title=" " alt="" coords="5,5,217,288"/>
+<area shape="rect" id="node1" title="MicroHILViewSerial class declaration and definition." alt="" coords="1076,395,1288,633"/>
+<area shape="rect" id="node2" href="$df/dcb/classAbMicroHILViewSerial.html" title="AbMicroHILViewSerial class declaration and definition." alt="" coords="5,5,217,288"/>
 <area shape="rect" id="node3" title=" " alt="" coords="241,108,336,185"/>
 <area shape="rect" id="node4" title=" " alt="" coords="360,108,529,185"/>
 <area shape="rect" id="node5" title=" " alt="" coords="554,108,711,185"/>

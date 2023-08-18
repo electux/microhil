@@ -44,12 +44,10 @@ void MicroHILSerialCom::close()
     }
 }
 
-void MicroHILSerialCom::read(
-    std::vector<uint8_t> &dataBuffer, size_t len, size_t timeout
-)
+void MicroHILSerialCom::read(v_uint8& data, size_t len, size_t timeout)
 {
 }
 
-void MicroHILSerialCom::write(std::vector<uint8_t> &dataBuffer)
+void MicroHILSerialCom::write(v_uint8& data)
 {
 }

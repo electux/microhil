@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../microhil_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">microhildesk
+   <div id="projectname">microhildesk<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">MicroHIL application for controlling micro HIL HW</div>
   </td>
  </tr>
  </tbody>
@@ -90,14 +91,17 @@ $(document).ready(function(){initNavTree('db/dda/classAbMicroHILModel.html','../
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="../../db/dda/classAbMicroHILModel.html" title="AbMicroHILModel class declaration and definition.">AbMicroHILModel</a> class declaration and definition.  
+ <a href="../../db/dda/classAbMicroHILModel.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../dd/d70/microhil__model__abstract_8h_source.html">microhil_model_abstract.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AbMicroHILModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dbd/classAbMicroHILModel__inherit__graph.png" border="0" usemap="#aAbMicroHILModel_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAbMicroHILModel_inherit__map" id="aAbMicroHILModel_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,5,177,259"/>
-<area shape="rect" href="../../de/dce/classMicroHILModel.html" title=" " alt="" coords="14,307,169,619"/>
+<area shape="rect" title="AbMicroHILModel class declaration and definition." alt="" coords="5,5,177,127"/>
+<area shape="rect" href="../../de/dce/classMicroHILModel.html" title="MicroHILModel class declaration and definition." alt="" coords="14,175,169,311"/>
 </map>
 </div>
 <div class="dynheader">
@@ -105,42 +109,29 @@ Collaboration diagram for AbMicroHILModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/de1/classAbMicroHILModel__coll__graph.png" border="0" usemap="#aAbMicroHILModel_coll__map" alt="Collaboration graph"/></div>
 <map name="aAbMicroHILModel_coll__map" id="aAbMicroHILModel_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,177,259"/>
+<area shape="rect" title="AbMicroHILModel class declaration and definition." alt="" coords="5,5,177,127"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abd3dcd46e8d782fccd9edc9120193941"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#abd3dcd46e8d782fccd9edc9120193941">~AbMicroHILModel</a> ()=default</td></tr>
+<tr class="memdesc:abd3dcd46e8d782fccd9edc9120193941"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/dda/classAbMicroHILModel.html" title="AbMicroHILModel class declaration and definition.">AbMicroHILModel</a> destructor.  <a href="../../db/dda/classAbMicroHILModel.html#abd3dcd46e8d782fccd9edc9120193941">More...</a><br /></td></tr>
 <tr class="separator:abd3dcd46e8d782fccd9edc9120193941"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d8be76e10a684b446d37fb5903656fd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#a0d8be76e10a684b446d37fb5903656fd">setChannel0</a> (<a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> state)=0</td></tr>
-<tr class="separator:a0d8be76e10a684b446d37fb5903656fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca4c279e05bc1570289f03b57011347e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#aca4c279e05bc1570289f03b57011347e">getChannel0</a> () const =0</td></tr>
-<tr class="separator:aca4c279e05bc1570289f03b57011347e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8e935f6b3eb56a2975367c586380afe"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#ac8e935f6b3eb56a2975367c586380afe">isOnChannel0</a> () const =0</td></tr>
-<tr class="separator:ac8e935f6b3eb56a2975367c586380afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6b5837ff1c4128eb53ee26ccaf60031"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#af6b5837ff1c4128eb53ee26ccaf60031">setChannel1</a> (<a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> state)=0</td></tr>
-<tr class="separator:af6b5837ff1c4128eb53ee26ccaf60031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb4fa1ff9de5715cf8a8fd91b3f91287"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#afb4fa1ff9de5715cf8a8fd91b3f91287">getChannel1</a> () const =0</td></tr>
-<tr class="separator:afb4fa1ff9de5715cf8a8fd91b3f91287"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a398cf48fef407fe026cd0dd7103d89e7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#a398cf48fef407fe026cd0dd7103d89e7">isOnChannel1</a> () const =0</td></tr>
-<tr class="separator:a398cf48fef407fe026cd0dd7103d89e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eac7a0bc71071c6d54370a2401f784c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#a4eac7a0bc71071c6d54370a2401f784c">setChannel2</a> (<a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> state)=0</td></tr>
-<tr class="separator:a4eac7a0bc71071c6d54370a2401f784c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcacb99784568c0d6602497174cc076f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#abcacb99784568c0d6602497174cc076f">getChannel2</a> () const =0</td></tr>
-<tr class="separator:abcacb99784568c0d6602497174cc076f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a2b15a101c63580167c6e77713b6eb5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#a5a2b15a101c63580167c6e77713b6eb5">isOnChannel2</a> () const =0</td></tr>
-<tr class="separator:a5a2b15a101c63580167c6e77713b6eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ad1b2f1fa6145a213b2956c84124ad2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#a1ad1b2f1fa6145a213b2956c84124ad2">setChannel3</a> (<a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> state)=0</td></tr>
-<tr class="separator:a1ad1b2f1fa6145a213b2956c84124ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae290001750aa4b49972b85a44856639"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#aae290001750aa4b49972b85a44856639">getChannel3</a> () const =0</td></tr>
-<tr class="separator:aae290001750aa4b49972b85a44856639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a138a6ea54c0bacff68e1daab6ed57b28"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#a138a6ea54c0bacff68e1daab6ed57b28">isOnChannel3</a> () const =0</td></tr>
-<tr class="separator:a138a6ea54c0bacff68e1daab6ed57b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2555c4bf8700bffe1a5ddbebe38eda5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#ae2555c4bf8700bffe1a5ddbebe38eda5">setChannel</a> (int id, <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> state)=0</td></tr>
+<tr class="memdesc:ae2555c4bf8700bffe1a5ddbebe38eda5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set channel #0 state (ON/OFF)  <a href="../../db/dda/classAbMicroHILModel.html#ae2555c4bf8700bffe1a5ddbebe38eda5">More...</a><br /></td></tr>
+<tr class="separator:ae2555c4bf8700bffe1a5ddbebe38eda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dfb19b44cbf9dd569ae4542081805a9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#a0dfb19b44cbf9dd569ae4542081805a9">getChannel</a> (int id) const =0</td></tr>
+<tr class="memdesc:a0dfb19b44cbf9dd569ae4542081805a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get channel #0 state (ON/OFF)  <a href="../../db/dda/classAbMicroHILModel.html#a0dfb19b44cbf9dd569ae4542081805a9">More...</a><br /></td></tr>
+<tr class="separator:a0dfb19b44cbf9dd569ae4542081805a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3bc3927cc028ff1337e9e8c9e8f12c8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dda/classAbMicroHILModel.html#ac3bc3927cc028ff1337e9e8c9e8f12c8">isOnChannel</a> (int id) const =0</td></tr>
+<tr class="memdesc:ac3bc3927cc028ff1337e9e8c9e8f12c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check is channel #0 ON (true) or OFF (false)  <a href="../../db/dda/classAbMicroHILModel.html#ac3bc3927cc028ff1337e9e8c9e8f12c8">More...</a><br /></td></tr>
+<tr class="separator:ac3bc3927cc028ff1337e9e8c9e8f12c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dd/d70/microhil__model__abstract_8h_source.html#l00027">27</a> of file <a class="el" href="../../dd/d70/microhil__model__abstract_8h_source.html">microhil_model_abstract.h</a>.</p>
+<div class="textblock"><p ><a class="el" href="../../db/dda/classAbMicroHILModel.html" title="AbMicroHILModel class declaration and definition.">AbMicroHILModel</a> class declaration and definition. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d70/microhil__model__abstract_8h_source.html#l00031">31</a> of file <a class="el" href="../../dd/d70/microhil__model__abstract_8h_source.html">microhil_model_abstract.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abd3dcd46e8d782fccd9edc9120193941" name="abd3dcd46e8d782fccd9edc9120193941"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd3dcd46e8d782fccd9edc9120193941">&#9670;&nbsp;</a></span>~AbMicroHILModel()</h2>
@@ -165,11 +156,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="../../db/dda/classAbMicroHILModel.html" title="AbMicroHILModel class declaration and definition.">AbMicroHILModel</a> destructor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aca4c279e05bc1570289f03b57011347e" name="aca4c279e05bc1570289f03b57011347e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca4c279e05bc1570289f03b57011347e">&#9670;&nbsp;</a></span>getChannel0()</h2>
+<a id="a0dfb19b44cbf9dd569ae4542081805a9" name="a0dfb19b44cbf9dd569ae4542081805a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dfb19b44cbf9dd569ae4542081805a9">&#9670;&nbsp;</a></span>getChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,9 +171,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> AbMicroHILModel::getChannel0 </td>
+          <td class="memname">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> AbMicroHILModel::getChannel </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -191,12 +185,21 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a61f9b5c811b7caa84b46162c4342cf11">MicroHILModel</a>.</p>
+<p>Get channel #0 state (ON/OFF) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>request channel by id </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>channel state in enumerator format (ON | OFF) </dd></dl>
+
+<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#ac282f18d2d66831b8e8488e1d9ad3d07">MicroHILModel</a>.</p>
 
 </div>
 </div>
-<a id="afb4fa1ff9de5715cf8a8fd91b3f91287" name="afb4fa1ff9de5715cf8a8fd91b3f91287"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb4fa1ff9de5715cf8a8fd91b3f91287">&#9670;&nbsp;</a></span>getChannel1()</h2>
+<a id="ac3bc3927cc028ff1337e9e8c9e8f12c8" name="ac3bc3927cc028ff1337e9e8c9e8f12c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3bc3927cc028ff1337e9e8c9e8f12c8">&#9670;&nbsp;</a></span>isOnChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,9 +208,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> AbMicroHILModel::getChannel1 </td>
+          <td class="memname">virtual bool AbMicroHILModel::isOnChannel </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -218,12 +222,21 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#acd4b7154f4d426c2e153ad932ad0895f">MicroHILModel</a>.</p>
+<p>Check is channel #0 ON (true) or OFF (false) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>request channel by id </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean status true for open else false </dd></dl>
+
+<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a771b57ae4b64fda8798eb849441350fa">MicroHILModel</a>.</p>
 
 </div>
 </div>
-<a id="abcacb99784568c0d6602497174cc076f" name="abcacb99784568c0d6602497174cc076f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcacb99784568c0d6602497174cc076f">&#9670;&nbsp;</a></span>getChannel2()</h2>
+<a id="ae2555c4bf8700bffe1a5ddbebe38eda5" name="ae2555c4bf8700bffe1a5ddbebe38eda5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2555c4bf8700bffe1a5ddbebe38eda5">&#9670;&nbsp;</a></span>setChannel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,229 +245,21 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> AbMicroHILModel::getChannel2 </td>
+          <td class="memname">virtual void AbMicroHILModel::setChannel </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
         </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a201f482580b5322ef498cec9e56a7675">MicroHILModel</a>.</p>
-
-</div>
-</div>
-<a id="aae290001750aa4b49972b85a44856639" name="aae290001750aa4b49972b85a44856639"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae290001750aa4b49972b85a44856639">&#9670;&nbsp;</a></span>getChannel3()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> AbMicroHILModel::getChannel3 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a92c4400388ce2af987ccf239fdfdb35a">MicroHILModel</a>.</p>
-
-</div>
-</div>
-<a id="ac8e935f6b3eb56a2975367c586380afe" name="ac8e935f6b3eb56a2975367c586380afe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8e935f6b3eb56a2975367c586380afe">&#9670;&nbsp;</a></span>isOnChannel0()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool AbMicroHILModel::isOnChannel0 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a6f43dc75a9572062b66d631fd05a5516">MicroHILModel</a>.</p>
-
-</div>
-</div>
-<a id="a398cf48fef407fe026cd0dd7103d89e7" name="a398cf48fef407fe026cd0dd7103d89e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a398cf48fef407fe026cd0dd7103d89e7">&#9670;&nbsp;</a></span>isOnChannel1()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool AbMicroHILModel::isOnChannel1 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a884c818773ad94eeb126aa0ac2045a1d">MicroHILModel</a>.</p>
-
-</div>
-</div>
-<a id="a5a2b15a101c63580167c6e77713b6eb5" name="a5a2b15a101c63580167c6e77713b6eb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a2b15a101c63580167c6e77713b6eb5">&#9670;&nbsp;</a></span>isOnChannel2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool AbMicroHILModel::isOnChannel2 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#ae7a3e1de54658d50b24896c5e1813f78">MicroHILModel</a>.</p>
-
-</div>
-</div>
-<a id="a138a6ea54c0bacff68e1daab6ed57b28" name="a138a6ea54c0bacff68e1daab6ed57b28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a138a6ea54c0bacff68e1daab6ed57b28">&#9670;&nbsp;</a></span>isOnChannel3()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool AbMicroHILModel::isOnChannel3 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a51d80494e4f51af0a31bc87e50b88e09">MicroHILModel</a>.</p>
-
-</div>
-</div>
-<a id="a0d8be76e10a684b446d37fb5903656fd" name="a0d8be76e10a684b446d37fb5903656fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d8be76e10a684b446d37fb5903656fd">&#9670;&nbsp;</a></span>setChannel0()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AbMicroHILModel::setChannel0 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a>&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#adcebfc369da79b4bd594fb4d2fd78eda">MicroHILModel</a>.</p>
-
-</div>
-</div>
-<a id="af6b5837ff1c4128eb53ee26ccaf60031" name="af6b5837ff1c4128eb53ee26ccaf60031"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6b5837ff1c4128eb53ee26ccaf60031">&#9670;&nbsp;</a></span>setChannel1()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AbMicroHILModel::setChannel1 </td>
-          <td>(</td>
           <td class="paramtype"><a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a>&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"><em>state</em>&#160;</td>
         </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a0acea1902845acb5b8d6b5c5c94f38dc">MicroHILModel</a>.</p>
-
-</div>
-</div>
-<a id="a4eac7a0bc71071c6d54370a2401f784c" name="a4eac7a0bc71071c6d54370a2401f784c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4eac7a0bc71071c6d54370a2401f784c">&#9670;&nbsp;</a></span>setChannel2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
         <tr>
-          <td class="memname">virtual void AbMicroHILModel::setChannel2 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a>&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
           <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -464,35 +269,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a67aec40e94a73200ec0f58827e85a0ca">MicroHILModel</a>.</p>
+<p>Set channel #0 state (ON/OFF) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>request channel by id </td></tr>
+    <tr><td class="paramname">state</td><td>request for channel #0 (ON | OFF) </td></tr>
+  </table>
+  </dd>
+</dl>
 
-</div>
-</div>
-<a id="a1ad1b2f1fa6145a213b2956c84124ad2" name="a1ad1b2f1fa6145a213b2956c84124ad2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ad1b2f1fa6145a213b2956c84124ad2">&#9670;&nbsp;</a></span>setChannel3()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AbMicroHILModel::setChannel3 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a>&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#a414a9050c6308fca2ea14f651fe14d6d">MicroHILModel</a>.</p>
+<p>Implemented in <a class="el" href="../../de/dce/classMicroHILModel.html#ae93dad69bf2b19ec5c788349ad65a1dd">MicroHILModel</a>.</p>
 
 </div>
 </div>
@@ -505,7 +291,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/dda/classAbMicroHILModel.html">AbMicroHILModel</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 18:32:17 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sat Aug 19 2023 00:26:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

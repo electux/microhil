@@ -20,10 +20,24 @@
 
 namespace
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Dialog message id
     constexpr const char kDialogMessage[]{"DialogMessageText"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Close button id for dialog message
     constexpr const char kCloseButtonId[]{"DialogClose"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// String representation of info message type
     constexpr const char kInfoMessage[]{" INFO "};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// String representation of warning message type
     constexpr const char kWarningMessage[]{" WARNING "};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// String representation of error message type
     constexpr const char kErrorMessage[]{" ERROR "};
 }
 
@@ -32,19 +46,19 @@ MicroHILViewDialog::MicroHILViewDialog(
 ): Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
-    // Bind Dialog message
+    /// Bind Dialog message
     m_text = Glib::RefPtr<Gtk::Label>::cast_dynamic(
         m_ui->get_object(kDialogMessage)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind Close button
+    /// Bind Close button
     m_close = Glib::RefPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kCloseButtonId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Map signals and slots
+    /// Map signals and slots
     mapping();
 }
 

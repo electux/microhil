@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../microhil_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">microhildesk
+   <div id="projectname">microhildesk<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">MicroHIL application for controlling micro HIL HW</div>
   </td>
  </tr>
  </tbody>
@@ -91,14 +92,17 @@ $(document).ready(function(){initNavTree('d9/d02/classAbMicroHILViewDialog.html'
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html" title="AbMicroHILViewDialog class declaration and definition.">AbMicroHILViewDialog</a> class declaration and definition.  
+ <a href="../../d9/d02/classAbMicroHILViewDialog.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html">microhil_view_dialog_abstract.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AbMicroHILViewDialog:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/dab/classAbMicroHILViewDialog__inherit__graph.png" border="0" usemap="#aAbMicroHILViewDialog_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAbMicroHILViewDialog_inherit__map" id="aAbMicroHILViewDialog_inherit__map">
-<area shape="rect" title=" " alt="" coords="19,5,225,141"/>
-<area shape="rect" href="../../da/dcd/classMicroHILViewDialog.html" title=" " alt="" coords="5,189,239,413"/>
+<area shape="rect" title="AbMicroHILViewDialog class declaration and definition." alt="" coords="19,5,225,141"/>
+<area shape="rect" href="../../da/dcd/classMicroHILViewDialog.html" title="MicroHILViewDialog class declaration and definition." alt="" coords="5,189,239,413"/>
 </map>
 </div>
 <div class="dynheader">
@@ -106,31 +110,38 @@ Collaboration diagram for AbMicroHILViewDialog:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/dee/classAbMicroHILViewDialog__coll__graph.png" border="0" usemap="#aAbMicroHILViewDialog_coll__map" alt="Collaboration graph"/></div>
 <map name="aAbMicroHILViewDialog_coll__map" id="aAbMicroHILViewDialog_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,211,141"/>
+<area shape="rect" title="AbMicroHILViewDialog class declaration and definition." alt="" coords="5,5,211,141"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ad6ff8b71e3ff8916ff99dbe7a6790fb7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html#ad6ff8b71e3ff8916ff99dbe7a6790fb7">closeDialog</a> = sigc::signal&lt; void(bool)&gt;</td></tr>
+<tr class="memdesc:ad6ff8b71e3ff8916ff99dbe7a6790fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for dialog Close button.  <a href="../../d9/d02/classAbMicroHILViewDialog.html#ad6ff8b71e3ff8916ff99dbe7a6790fb7">More...</a><br /></td></tr>
 <tr class="separator:ad6ff8b71e3ff8916ff99dbe7a6790fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab344d3b987f2b4c6e738fcaacecd8870"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html#ab344d3b987f2b4c6e738fcaacecd8870">~AbMicroHILViewDialog</a> ()=default</td></tr>
+<tr class="memdesc:ab344d3b987f2b4c6e738fcaacecd8870"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html" title="AbMicroHILViewDialog class declaration and definition.">AbMicroHILViewDialog</a> destructor.  <a href="../../d9/d02/classAbMicroHILViewDialog.html#ab344d3b987f2b4c6e738fcaacecd8870">More...</a><br /></td></tr>
 <tr class="separator:ab344d3b987f2b4c6e738fcaacecd8870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a694b436cc56312aeef9d6e7eb5eb61ff"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html#ad6ff8b71e3ff8916ff99dbe7a6790fb7">closeDialog</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html#a694b436cc56312aeef9d6e7eb5eb61ff">closeDialogChanged</a> ()=0</td></tr>
+<tr class="memdesc:a694b436cc56312aeef9d6e7eb5eb61ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals for emitting from dialog Close button.  <a href="../../d9/d02/classAbMicroHILViewDialog.html#a694b436cc56312aeef9d6e7eb5eb61ff">More...</a><br /></td></tr>
 <tr class="separator:a694b436cc56312aeef9d6e7eb5eb61ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a122a57905a292b2fdd8202598b03b78a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html#a122a57905a292b2fdd8202598b03b78a">onCloseDialogChange</a> ()=0</td></tr>
+<tr class="memdesc:a122a57905a292b2fdd8202598b03b78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slots for processing Close button for dialog.  <a href="../../d9/d02/classAbMicroHILViewDialog.html#a122a57905a292b2fdd8202598b03b78a">More...</a><br /></td></tr>
 <tr class="separator:a122a57905a292b2fdd8202598b03b78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32568bf106815d8f9eccb73f61828d45"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html#a32568bf106815d8f9eccb73f61828d45">show</a> (Glib::ustring message, <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013">MessageType</a> type)=0</td></tr>
+<tr class="memdesc:a32568bf106815d8f9eccb73f61828d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show dialog with message.  <a href="../../d9/d02/classAbMicroHILViewDialog.html#a32568bf106815d8f9eccb73f61828d45">More...</a><br /></td></tr>
 <tr class="separator:a32568bf106815d8f9eccb73f61828d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33c369811225f57fbd0ad30ee35b1bbb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html#a33c369811225f57fbd0ad30ee35b1bbb">hide</a> ()=0</td></tr>
+<tr class="memdesc:a33c369811225f57fbd0ad30ee35b1bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hide dialog.  <a href="../../d9/d02/classAbMicroHILViewDialog.html#a33c369811225f57fbd0ad30ee35b1bbb">More...</a><br /></td></tr>
 <tr class="separator:a33c369811225f57fbd0ad30ee35b1bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html#l00031">31</a> of file <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html">microhil_view_dialog_abstract.h</a>.</p>
+<div class="textblock"><p ><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html" title="AbMicroHILViewDialog class declaration and definition.">AbMicroHILViewDialog</a> class declaration and definition. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html#l00035">35</a> of file <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html">microhil_view_dialog_abstract.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ad6ff8b71e3ff8916ff99dbe7a6790fb7" name="ad6ff8b71e3ff8916ff99dbe7a6790fb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6ff8b71e3ff8916ff99dbe7a6790fb7">&#9670;&nbsp;</a></span>closeDialog</h2>
@@ -144,7 +155,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html#l00036">36</a> of file <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html">microhil_view_dialog_abstract.h</a>.</p>
+<p>Signal type for dialog Close button. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html#l00040">40</a> of file <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html">microhil_view_dialog_abstract.h</a>.</p>
 
 </div>
 </div>
@@ -172,6 +185,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html" title="AbMicroHILViewDialog class declaration and definition.">AbMicroHILViewDialog</a> destructor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -197,6 +212,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Signals for emitting from dialog Close button. </p>
+<dl class="section return"><dt>Returns</dt><dd>signal after pressing Close button </dd></dl>
 
 <p>Implemented in <a class="el" href="../../da/dcd/classMicroHILViewDialog.html#a4f25b1abc2d5de54f2ab9cc8b2382910">MicroHILViewDialog</a>.</p>
 
@@ -225,6 +243,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Hide dialog. </p>
+
 <p>Implemented in <a class="el" href="../../da/dcd/classMicroHILViewDialog.html#a34330e77b9349405dde38926cb46ed2b">MicroHILViewDialog</a>.</p>
 
 </div>
@@ -251,6 +271,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Slots for processing Close button for dialog. </p>
 
 <p>Implemented in <a class="el" href="../../da/dcd/classMicroHILViewDialog.html#a11a470e80145534e25c22fe7ed1734b7">MicroHILViewDialog</a>.</p>
 
@@ -290,6 +312,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Show dialog with message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>for presenting </td></tr>
+    <tr><td class="paramname">type</td><td>of dialog message </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="../../da/dcd/classMicroHILViewDialog.html#a22789006b07056dae81b9d1f572819e3">MicroHILViewDialog</a>.</p>
 
 </div>
@@ -303,7 +334,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d02/classAbMicroHILViewDialog.html">AbMicroHILViewDialog</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 18:32:17 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sat Aug 19 2023 00:26:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -20,22 +20,25 @@
 
 #include <sigc++/sigc++.h>
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILViewAbout class declaration and definition 
 class AbMicroHILViewAbout
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // Signal type for about Ok button
+    /// @brief Signal type for about Ok button
     using visibleAbout = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILViewAbout destructor
+    /// @brief AbMicroHILViewAbout destructor
     virtual ~AbMicroHILViewAbout() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from about Ok button
+    /// @brief Signals for emitting from about Ok button
+    /// @return signal for pressed about Ok button
     virtual visibleAbout visibleAboutChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing Ok button for about dialog
+    /// @brief Slots for processing Ok button for about dialog
     virtual void onVisibleAboutChange() = 0;
 };

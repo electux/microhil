@@ -22,29 +22,34 @@
 #include <vector>
 
 using namespace std;
+using v_uint8 = std::vector<uint8_t>;
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILCom class declaration and definition
 class AbMicroHILCom
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILCom destructor
+    /// @brief AbMicroHILCom destructor
     virtual ~AbMicroHILCom() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Open communication channel
+    /// @brief Open communication channel
     virtual void open() = 0;
     
     ////////////////////////////////////////////////////////////////////////
-    // Close communication channel
+    /// @brief Close communication channel
     virtual void close() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Read from communication channel
-    virtual void read(
-        std::vector<uint8_t>& dataBuffer, size_t len, size_t timeout
-    ) = 0;
+    /// @brief Read from communication channel
+    /// @param data buffer to be placed to after reading the serial port
+    /// @param len length of data to read before returning
+    /// @param timeout timeout period in miliseconds
+    virtual void read(v_uint8& data, size_t len, size_t timeout) = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Write to communication channel
-    virtual void write(std::vector<uint8_t>& dataBuffer) = 0;
+    /// @brief Write to communication channel
+    /// @param data to be written to the serial port
+    virtual void write(v_uint8& data) = 0;
 };

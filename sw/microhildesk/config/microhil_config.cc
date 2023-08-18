@@ -23,18 +23,56 @@
 
 namespace
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Configuration directory name
     constexpr const char kHomeDirName[]{"/.microhil/"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Configuration file name
     constexpr const char kConfigFileName[]{"config"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Number of lines in configurtion file
     constexpr const int kConfigSerialLength{9};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial configuration section 
     constexpr const char kConfigSerialSection[]{"serial"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial device configuration parameter
     constexpr const char kConfigSerialDevice[]{"device"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial baud rate configuration parameter
     constexpr const char kConfigSerialBaudRate[]{"baud_rate"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial data bits configuration parameter
     constexpr const char kConfigSerialDataBits[]{"data_bits"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial parity configuration parameter
     constexpr const char kConfigSerialParity[]{"parity"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial stop bits configuration parameter
     constexpr const char kConfigSerialStopBits[]{"stop_bits"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Log configuration section
     constexpr const char kConfigLogSection[]{"log"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Log level configuration parameter
     constexpr const char kConfigLogLevel[]{"level"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Log file path configuration parameter
     constexpr const char kConfigLogFile[]{"file"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Default configuration
     constexpr const char* kConfigSerialDefault[]
     {
         "[log]",
@@ -52,18 +90,23 @@ namespace
 MicroHILConfig::MicroHILConfig()
 {
     ////////////////////////////////////////////////////////////////////////
-    // Setup expected paths for home directory and config file
+    /// Setup expected paths for home directory and configuration file
     m_homePath = Glib::get_home_dir() + kHomeDirName;
     m_configFilePath = m_homePath + kConfigFileName;
 
     ////////////////////////////////////////////////////////////////////////
-    // Prevalidation of configuration path
+    /// Pre-validation of configuration path
     setPreValid(checkConfigPath());
 }
 
 bool MicroHILConfig::load()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Load configuration from file 
     auto loadedConfig = m_configuration.load_from_file(m_configFilePath);
+    
+    ////////////////////////////////////////////////////////////////////////
+    /// Validation of loaded configuration
     auto validatedConfig = validate(); 
 
     if(!loadedConfig || !validatedConfig)
@@ -81,6 +124,8 @@ bool MicroHILConfig::validate()
         return false;
     }
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Checking configuration parameters
     auto configCheck = (
         m_configuration.has_key(kConfigSerialSection, kConfigSerialDevice) &&
         m_configuration.has_key(kConfigSerialSection, kConfigSerialBaudRate) &&
@@ -139,7 +184,7 @@ Glib::ustring MicroHILConfig::getLogLevel() const
     return m_configuration.get_string(kConfigLogSection, kConfigLogLevel);
 }
 
-Glib::ustring MicroHILConfig::getLogFile() const
+Glib::ustring MicroHILConfig::getLogPath() const
 {
     return m_configuration.get_string(kConfigLogSection, kConfigLogFile);
 }

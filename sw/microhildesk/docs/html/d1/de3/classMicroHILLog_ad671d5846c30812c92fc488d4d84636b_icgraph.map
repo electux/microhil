@@ -1,4 +1,4 @@
 <map id="MicroHILLog::getLogType" name="MicroHILLog::getLogType">
-<area shape="rect" id="node1" title=" " alt="" coords="196,5,380,32"/>
-<area shape="rect" id="node2" href="$d1/de3/classMicroHILLog.html#ad2cf77a6a06d47fac8457c67070f5083" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node1" title="Convert log level type to human readable string." alt="" coords="196,5,380,32"/>
+<area shape="rect" id="node2" href="$d1/de3/classMicroHILLog.html#ad2cf77a6a06d47fac8457c67070f5083" title="Write log message." alt="" coords="5,5,148,32"/>
 </map>

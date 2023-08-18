@@ -1,9 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$d9/d02/classAbMicroHILViewDialog.html" title=" " alt="" coords="5,5,175,32"/>
-<area shape="rect" id="node2" href="$da/dcd/classMicroHILViewDialog.html" title=" " alt="" coords="223,19,375,45"/>
-<area shape="rect" id="node3" href="$d1/d49/classAbMicroHILViewLog.html" title=" " alt="" coords="15,107,165,133"/>
-<area shape="rect" id="node4" href="$d4/dc6/classMicroHILViewLog.html" title=" " alt="" coords="232,81,365,108"/>
-<area shape="rect" id="node5" href="$df/dcb/classAbMicroHILViewSerial.html" title=" " alt="" coords="8,157,172,184"/>
-<area shape="rect" id="node6" href="$dd/dde/classMicroHILViewSerial.html" title=" " alt="" coords="225,144,372,171"/>
+<area shape="rect" id="node1" href="$d9/d02/classAbMicroHILViewDialog.html" title="AbMicroHILViewDialog class declaration and definition." alt="" coords="5,5,175,32"/>
+<area shape="rect" id="node2" href="$da/dcd/classMicroHILViewDialog.html" title="MicroHILViewDialog class declaration and definition." alt="" coords="223,19,375,45"/>
+<area shape="rect" id="node3" href="$d1/d49/classAbMicroHILViewLog.html" title="AbMicroHILViewLog class declaration and definition." alt="" coords="15,107,165,133"/>
+<area shape="rect" id="node4" href="$d4/dc6/classMicroHILViewLog.html" title="MicroHILViewLog class declaration and definition." alt="" coords="232,81,365,108"/>
+<area shape="rect" id="node5" href="$df/dcb/classAbMicroHILViewSerial.html" title="AbMicroHILViewSerial class declaration and definition." alt="" coords="8,157,172,184"/>
+<area shape="rect" id="node6" href="$dd/dde/classMicroHILViewSerial.html" title="MicroHILViewSerial class declaration and definition." alt="" coords="225,144,372,171"/>
 <area shape="rect" id="node7" title=" " alt="" coords="43,56,137,83"/>
 </map>

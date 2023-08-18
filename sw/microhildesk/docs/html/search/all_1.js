@@ -79,7 +79,7 @@ var searchData=
   ['channelcontroltype_76',['channelControlType',['../d0/ddf/microhil__view__home_8h.html#a4654e7513eff694898ce1e17b8e3571d',1,'microhil_view_home.h']]],
   ['channelstate_77',['ChannelState',['../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05',1,'microhil_model_abstract.h']]],
   ['checkconfigpath_78',['checkConfigPath',['../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069',1,'MicroHILConfig']]],
-  ['close_79',['close',['../d7/d8c/classAbMicroHILCom.html#af762ae29a1dc726357e8bab13f959e6b',1,'AbMicroHILCom::close()'],['../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d',1,'MicroHILSerialCom::close()'],['../d1/de3/classMicroHILLog.html#a91d8239cc0292079c299c96b981b1a4f',1,'MicroHILLog::close()']]],
+  ['close_79',['close',['../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d',1,'MicroHILSerialCom::close()'],['../d9/de8/classAbMicroHILLog.html#aa7854ceccdaae2f079523e3d93b2e269',1,'AbMicroHILLog::close()'],['../d1/de3/classMicroHILLog.html#a5894c0411514735f36f100eef5881ae9',1,'MicroHILLog::close()'],['../d7/d8c/classAbMicroHILCom.html#af762ae29a1dc726357e8bab13f959e6b',1,'AbMicroHILCom::close()']]],
   ['closedialog_80',['closeDialog',['../d9/d02/classAbMicroHILViewDialog.html#ad6ff8b71e3ff8916ff99dbe7a6790fb7',1,'AbMicroHILViewDialog']]],
   ['closedialogchanged_81',['closeDialogChanged',['../da/dcd/classMicroHILViewDialog.html#a4f25b1abc2d5de54f2ab9cc8b2382910',1,'MicroHILViewDialog::closeDialogChanged()'],['../d9/d02/classAbMicroHILViewDialog.html#a694b436cc56312aeef9d6e7eb5eb61ff',1,'AbMicroHILViewDialog::closeDialogChanged()']]],
   ['create_82',['create',['../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a',1,'main.cc']]]

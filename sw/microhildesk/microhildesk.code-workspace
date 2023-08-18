@@ -72,7 +72,9 @@
 			"complex": "cpp",
 			"cfenv": "cpp",
 			"codecvt": "cpp",
-			"fstream": "cpp"
+			"fstream": "cpp",
+			"callback": "cpp",
+			"camera": "cpp"
 		}
 	}
 }

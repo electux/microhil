@@ -1,6 +1,6 @@
 <map id="MicroHILConfig" name="MicroHILConfig">
-<area shape="rect" id="node1" title=" " alt="" coords="154,461,310,700"/>
-<area shape="rect" id="node2" href="$d6/dac/classAbMicroHILConfig.html" title=" " alt="" coords="5,145,179,384"/>
+<area shape="rect" id="node1" title="MicroHILConfig class declaration and definition." alt="" coords="154,461,310,700"/>
+<area shape="rect" id="node2" href="$d6/dac/classAbMicroHILConfig.html" title="AbMicroHILConfig class declaration and definition." alt="" coords="5,145,179,384"/>
 <area shape="rect" id="node3" title=" " alt="" coords="67,5,117,83"/>
 <area shape="rect" id="node4" title=" " alt="" coords="203,226,261,303"/>
 <area shape="rect" id="node5" title=" " alt="" coords="348,226,417,303"/>

@@ -20,6 +20,8 @@
 
 #include <glibmm/ustring.h>
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief Scoped enumerator for log levels
 enum class LogLevel
 {
     INFO = 0,
@@ -27,14 +29,28 @@ enum class LogLevel
     ERROR = 2
 };
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILLog class declaration and definition
 class AbMicroHILLog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILLog destructor
+    /// @brief AbMicroHILLog destructor
     virtual ~AbMicroHILLog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Write log message
+    /// @brief Open storage for collecting log messages
+    /// @return boolean status true for success else false
+    virtual bool open() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Write log message
+    /// @param message log message to be stored
+    /// @param level log level
     virtual void write(const Glib::ustring message, LogLevel level) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Close log storage
+    /// @return boolean status true for success else false
+    virtual bool close() = 0;
 };

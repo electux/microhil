@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../microhil_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">microhildesk
+   <div id="projectname">microhildesk<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">MicroHIL application for controlling micro HIL HW</div>
   </td>
  </tr>
  </tbody>
@@ -90,14 +91,17 @@ $(document).ready(function(){initNavTree('d7/d8c/classAbMicroHILCom.html','../..
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="../../d7/d8c/classAbMicroHILCom.html" title="AbMicroHILCom class declaration and definition.">AbMicroHILCom</a> class declaration and definition.  
+ <a href="../../d7/d8c/classAbMicroHILCom.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../d3/d72/microhil__com__abstract_8h_source.html">microhil_com_abstract.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AbMicroHILCom:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/db0/classAbMicroHILCom__inherit__graph.png" border="0" usemap="#aAbMicroHILCom_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAbMicroHILCom_inherit__map" id="aAbMicroHILCom_inherit__map">
-<area shape="rect" title=" " alt="" coords="15,5,178,141"/>
-<area shape="rect" href="../../d5/dd0/classMicroHILSerialCom.html" title=" " alt="" coords="5,189,188,340"/>
+<area shape="rect" title="AbMicroHILCom class declaration and definition." alt="" coords="15,5,178,141"/>
+<area shape="rect" href="../../d5/dd0/classMicroHILSerialCom.html" title="MicroHILSerialCom class declaration and definition." alt="" coords="5,189,188,340"/>
 </map>
 </div>
 <div class="dynheader">
@@ -105,26 +109,32 @@ Collaboration diagram for AbMicroHILCom:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/d8d/classAbMicroHILCom__coll__graph.png" border="0" usemap="#aAbMicroHILCom_coll__map" alt="Collaboration graph"/></div>
 <map name="aAbMicroHILCom_coll__map" id="aAbMicroHILCom_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,168,141"/>
+<area shape="rect" title="AbMicroHILCom class declaration and definition." alt="" coords="5,5,168,141"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e181bee3c80ea03abd0a50995a2ec91"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d8c/classAbMicroHILCom.html#a7e181bee3c80ea03abd0a50995a2ec91">~AbMicroHILCom</a> ()=default</td></tr>
+<tr class="memdesc:a7e181bee3c80ea03abd0a50995a2ec91"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d7/d8c/classAbMicroHILCom.html" title="AbMicroHILCom class declaration and definition.">AbMicroHILCom</a> destructor.  <a href="../../d7/d8c/classAbMicroHILCom.html#a7e181bee3c80ea03abd0a50995a2ec91">More...</a><br /></td></tr>
 <tr class="separator:a7e181bee3c80ea03abd0a50995a2ec91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4ba84cfc77140abcc635e64ba3f8a4f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d8c/classAbMicroHILCom.html#ae4ba84cfc77140abcc635e64ba3f8a4f">open</a> ()=0</td></tr>
+<tr class="memdesc:ae4ba84cfc77140abcc635e64ba3f8a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open communication channel.  <a href="../../d7/d8c/classAbMicroHILCom.html#ae4ba84cfc77140abcc635e64ba3f8a4f">More...</a><br /></td></tr>
 <tr class="separator:ae4ba84cfc77140abcc635e64ba3f8a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af762ae29a1dc726357e8bab13f959e6b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d8c/classAbMicroHILCom.html#af762ae29a1dc726357e8bab13f959e6b">close</a> ()=0</td></tr>
+<tr class="memdesc:af762ae29a1dc726357e8bab13f959e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close communication channel.  <a href="../../d7/d8c/classAbMicroHILCom.html#af762ae29a1dc726357e8bab13f959e6b">More...</a><br /></td></tr>
 <tr class="separator:af762ae29a1dc726357e8bab13f959e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d706513b737695730c242c1a7b0d140"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d8c/classAbMicroHILCom.html#a7d706513b737695730c242c1a7b0d140">read</a> (std::vector&lt; uint8_t &gt; &amp;dataBuffer, size_t len, size_t timeout)=0</td></tr>
-<tr class="separator:a7d706513b737695730c242c1a7b0d140"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30794ae75b851cbe0a95b036717168a4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d8c/classAbMicroHILCom.html#a30794ae75b851cbe0a95b036717168a4">write</a> (std::vector&lt; uint8_t &gt; &amp;dataBuffer)=0</td></tr>
-<tr class="separator:a30794ae75b851cbe0a95b036717168a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf57fe39a02b5cc6b1e9651da38e2132"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d8c/classAbMicroHILCom.html#adf57fe39a02b5cc6b1e9651da38e2132">read</a> (<a class="el" href="../../d3/d72/microhil__com__abstract_8h.html#ae3de6a2547f88004e22fe1c577f960e6">v_uint8</a> &amp;data, size_t len, size_t timeout)=0</td></tr>
+<tr class="memdesc:adf57fe39a02b5cc6b1e9651da38e2132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from communication channel.  <a href="../../d7/d8c/classAbMicroHILCom.html#adf57fe39a02b5cc6b1e9651da38e2132">More...</a><br /></td></tr>
+<tr class="separator:adf57fe39a02b5cc6b1e9651da38e2132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f16b35596efef6834e10a8fecfe60ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d8c/classAbMicroHILCom.html#a9f16b35596efef6834e10a8fecfe60ba">write</a> (<a class="el" href="../../d3/d72/microhil__com__abstract_8h.html#ae3de6a2547f88004e22fe1c577f960e6">v_uint8</a> &amp;data)=0</td></tr>
+<tr class="memdesc:a9f16b35596efef6834e10a8fecfe60ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to communication channel.  <a href="../../d7/d8c/classAbMicroHILCom.html#a9f16b35596efef6834e10a8fecfe60ba">More...</a><br /></td></tr>
+<tr class="separator:a9f16b35596efef6834e10a8fecfe60ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d3/d72/microhil__com__abstract_8h_source.html#l00026">26</a> of file <a class="el" href="../../d3/d72/microhil__com__abstract_8h_source.html">microhil_com_abstract.h</a>.</p>
+<div class="textblock"><p ><a class="el" href="../../d7/d8c/classAbMicroHILCom.html" title="AbMicroHILCom class declaration and definition.">AbMicroHILCom</a> class declaration and definition. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d72/microhil__com__abstract_8h_source.html#l00029">29</a> of file <a class="el" href="../../d3/d72/microhil__com__abstract_8h_source.html">microhil_com_abstract.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e181bee3c80ea03abd0a50995a2ec91" name="a7e181bee3c80ea03abd0a50995a2ec91"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e181bee3c80ea03abd0a50995a2ec91">&#9670;&nbsp;</a></span>~AbMicroHILCom()</h2>
@@ -148,6 +158,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="../../d7/d8c/classAbMicroHILCom.html" title="AbMicroHILCom class declaration and definition.">AbMicroHILCom</a> destructor. </p>
 
 </div>
 </div>
@@ -174,6 +186,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Close communication channel. </p>
 
 <p>Implemented in <a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d">MicroHILSerialCom</a>.</p>
 
@@ -202,12 +216,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Open communication channel. </p>
+
 <p>Implemented in <a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#ad0b7404d4c0c4424873db3d250260436">MicroHILSerialCom</a>.</p>
 
 </div>
 </div>
-<a id="a7d706513b737695730c242c1a7b0d140" name="a7d706513b737695730c242c1a7b0d140"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d706513b737695730c242c1a7b0d140">&#9670;&nbsp;</a></span>read()</h2>
+<a id="adf57fe39a02b5cc6b1e9651da38e2132" name="adf57fe39a02b5cc6b1e9651da38e2132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf57fe39a02b5cc6b1e9651da38e2132">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,8 +234,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void AbMicroHILCom::read </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>dataBuffer</em>, </td>
+          <td class="paramtype"><a class="el" href="../../d3/d72/microhil__com__abstract_8h.html#ae3de6a2547f88004e22fe1c577f960e6">v_uint8</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -246,12 +262,22 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#adb9827e575a53d4affe3be19a7e15b50">MicroHILSerialCom</a>.</p>
+<p>Read from communication channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>buffer to be placed to after reading the serial port </td></tr>
+    <tr><td class="paramname">len</td><td>length of data to read before returning </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout period in miliseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#a3a912fdb185284ecfb57ff3134788d92">MicroHILSerialCom</a>.</p>
 
 </div>
 </div>
-<a id="a30794ae75b851cbe0a95b036717168a4" name="a30794ae75b851cbe0a95b036717168a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30794ae75b851cbe0a95b036717168a4">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a9f16b35596efef6834e10a8fecfe60ba" name="a9f16b35596efef6834e10a8fecfe60ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f16b35596efef6834e10a8fecfe60ba">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,8 +288,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void AbMicroHILCom::write </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>dataBuffer</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d3/d72/microhil__com__abstract_8h.html#ae3de6a2547f88004e22fe1c577f960e6">v_uint8</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -274,7 +300,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#a3842cd0b4f57e7d2ab2288b9b6d3b989">MicroHILSerialCom</a>.</p>
+<p>Write to communication channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>to be written to the serial port </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#a6e597d6fe53283e124d485208d909413">MicroHILSerialCom</a>.</p>
 
 </div>
 </div>
@@ -287,7 +321,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d8c/classAbMicroHILCom.html">AbMicroHILCom</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 18:32:17 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sat Aug 19 2023 00:26:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

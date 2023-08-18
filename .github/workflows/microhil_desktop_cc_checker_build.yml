@@ -1,31 +1,32 @@
-name: microhil-desktop C++ CI
+name: microhildesk C++ CI
 on:
   push:
     branches: [ master ]
     paths:
-      - 'sw/microhil-desktop/**'
+      - 'sw/microhildesk/**'
   pull_request:
     branches: [ master ]
     paths:
-      - 'sw/microhil-desktop/**'
+      - 'sw/microhildesk/**'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: install GTK--
+    - name: install gtkmm
       id: install_gtkmm
       run: |
         sudo apt-get update
         sudo apt-get install jq
+        sudo apt-get install libserial-dev
         sudo apt-get install libgtkmm-3.0-dev
     - name: make all
       id: gnu_make_all
       run: |
-        cd sw/microhil-desktop/build
+        cd sw/microhildesk/build
         make all
     - name: make clean
       id: gnu_make_clean
       run: |
-        cd sw/microhil-desktop/build
+        cd sw/microhildesk/build
         make clean

@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../microhil_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">microhildesk
+   <div id="projectname">microhildesk<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">MicroHIL application for controlling micro HIL HW</div>
   </td>
  </tr>
  </tbody>
@@ -108,26 +109,30 @@ $(document).ready(function(){initNavTree('d5/d0c/microhil__log__abstract_8h_sour
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;glibmm/ustring.h&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">   23</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_enumvalue" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">INFO</a> = 0,</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_enumvalue" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a059e9861e0400dfbe05c98a841f3f96b">WARNING</a> = 1,</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_enumvalue" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 2</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d9/de8/classAbMicroHILLog.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d9/de8/classAbMicroHILLog.html">AbMicroHILLog</a></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// AbMicroHILLog destructor</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d9/de8/classAbMicroHILLog.html#a676689a9712b27c2ef4e328be33f36e3">   35</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="../../d9/de8/classAbMicroHILLog.html#a676689a9712b27c2ef4e328be33f36e3">~AbMicroHILLog</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// Write log message</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d9/de8/classAbMicroHILLog.html#a8db99606c729fac2fc06bb43ae2a4c93">   39</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/de8/classAbMicroHILLog.html#a8db99606c729fac2fc06bb43ae2a4c93">write</a>(<span class="keyword">const</span> Glib::ustring message, <a class="code hl_enumeration" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level) = 0;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
-<div class="ttc" id="aclassAbMicroHILLog_html"><div class="ttname"><a href="../../d9/de8/classAbMicroHILLog.html">AbMicroHILLog</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0c/microhil__log__abstract_8h_source.html#l00030">microhil_log_abstract.h:31</a></div></div>
-<div class="ttc" id="aclassAbMicroHILLog_html_a676689a9712b27c2ef4e328be33f36e3"><div class="ttname"><a href="../../d9/de8/classAbMicroHILLog.html#a676689a9712b27c2ef4e328be33f36e3">AbMicroHILLog::~AbMicroHILLog</a></div><div class="ttdeci">virtual ~AbMicroHILLog()=default</div></div>
-<div class="ttc" id="aclassAbMicroHILLog_html_a8db99606c729fac2fc06bb43ae2a4c93"><div class="ttname"><a href="../../d9/de8/classAbMicroHILLog.html#a8db99606c729fac2fc06bb43ae2a4c93">AbMicroHILLog::write</a></div><div class="ttdeci">virtual void write(const Glib::ustring message, LogLevel level)=0</div></div>
-<div class="ttc" id="amicrohil__log__abstract_8h_html_aca1fd1d8935433e6ba2e3918214e07f9"><div class="ttname"><a href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></div><div class="ttdeci">LogLevel</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0c/microhil__log__abstract_8h_source.html#l00023">microhil_log_abstract.h:24</a></div></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">   25</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_enumvalue" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">INFO</a> = 0,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_enumvalue" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a059e9861e0400dfbe05c98a841f3f96b">WARNING</a> = 1,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_enumvalue" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a> = 2</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d9/de8/classAbMicroHILLog.html">   34</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d9/de8/classAbMicroHILLog.html">AbMicroHILLog</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d9/de8/classAbMicroHILLog.html#a676689a9712b27c2ef4e328be33f36e3">   39</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="../../d9/de8/classAbMicroHILLog.html#a676689a9712b27c2ef4e328be33f36e3">~AbMicroHILLog</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d9/de8/classAbMicroHILLog.html#a666e147c16c92c0459f211228b30c4de">   44</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/de8/classAbMicroHILLog.html#a666e147c16c92c0459f211228b30c4de">open</a>() = 0;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../d9/de8/classAbMicroHILLog.html#a8db99606c729fac2fc06bb43ae2a4c93">   50</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/de8/classAbMicroHILLog.html#a8db99606c729fac2fc06bb43ae2a4c93">write</a>(<span class="keyword">const</span> Glib::ustring message, <a class="code hl_enumeration" href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a> level) = 0;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../d9/de8/classAbMicroHILLog.html#aa7854ceccdaae2f079523e3d93b2e269">   55</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/de8/classAbMicroHILLog.html#aa7854ceccdaae2f079523e3d93b2e269">close</a>() = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="ttc" id="aclassAbMicroHILLog_html"><div class="ttname"><a href="../../d9/de8/classAbMicroHILLog.html">AbMicroHILLog</a></div><div class="ttdoc">AbMicroHILLog class declaration and definition.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0c/microhil__log__abstract_8h_source.html#l00034">microhil_log_abstract.h:35</a></div></div>
+<div class="ttc" id="aclassAbMicroHILLog_html_a666e147c16c92c0459f211228b30c4de"><div class="ttname"><a href="../../d9/de8/classAbMicroHILLog.html#a666e147c16c92c0459f211228b30c4de">AbMicroHILLog::open</a></div><div class="ttdeci">virtual bool open()=0</div><div class="ttdoc">Open storage for collecting log messages.</div></div>
+<div class="ttc" id="aclassAbMicroHILLog_html_a676689a9712b27c2ef4e328be33f36e3"><div class="ttname"><a href="../../d9/de8/classAbMicroHILLog.html#a676689a9712b27c2ef4e328be33f36e3">AbMicroHILLog::~AbMicroHILLog</a></div><div class="ttdeci">virtual ~AbMicroHILLog()=default</div><div class="ttdoc">AbMicroHILLog destructor.</div></div>
+<div class="ttc" id="aclassAbMicroHILLog_html_a8db99606c729fac2fc06bb43ae2a4c93"><div class="ttname"><a href="../../d9/de8/classAbMicroHILLog.html#a8db99606c729fac2fc06bb43ae2a4c93">AbMicroHILLog::write</a></div><div class="ttdeci">virtual void write(const Glib::ustring message, LogLevel level)=0</div><div class="ttdoc">Write log message.</div></div>
+<div class="ttc" id="aclassAbMicroHILLog_html_aa7854ceccdaae2f079523e3d93b2e269"><div class="ttname"><a href="../../d9/de8/classAbMicroHILLog.html#aa7854ceccdaae2f079523e3d93b2e269">AbMicroHILLog::close</a></div><div class="ttdeci">virtual bool close()=0</div><div class="ttdoc">Close log storage.</div></div>
+<div class="ttc" id="amicrohil__log__abstract_8h_html_aca1fd1d8935433e6ba2e3918214e07f9"><div class="ttname"><a href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a></div><div class="ttdeci">LogLevel</div><div class="ttdoc">Scoped enumerator for log levels.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0c/microhil__log__abstract_8h_source.html#l00025">microhil_log_abstract.h:26</a></div></div>
 <div class="ttc" id="amicrohil__log__abstract_8h_html_aca1fd1d8935433e6ba2e3918214e07f9a059e9861e0400dfbe05c98a841f3f96b"><div class="ttname"><a href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a059e9861e0400dfbe05c98a841f3f96b">LogLevel::WARNING</a></div><div class="ttdeci">@ WARNING</div></div>
 <div class="ttc" id="amicrohil__log__abstract_8h_html_aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3"><div class="ttname"><a href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a551b723eafd6a31d444fcb2f5920fbd3">LogLevel::INFO</a></div><div class="ttdeci">@ INFO</div></div>
 <div class="ttc" id="amicrohil__log__abstract_8h_html_aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5"><div class="ttname"><a href="../../d5/d0c/microhil__log__abstract_8h.html#aca1fd1d8935433e6ba2e3918214e07f9abb1ca97ec761fc37101737ba0aa2e7c5">LogLevel::ERROR</a></div><div class="ttdeci">@ ERROR</div></div>
@@ -137,7 +142,7 @@ $(document).ready(function(){initNavTree('d5/d0c/microhil__log__abstract_8h_sour
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_9381a7bbd03577d6d8720c7f35c94ffa.html">log</a></li><li class="navelem"><a class="el" href="../../d5/d0c/microhil__log__abstract_8h.html">microhil_log_abstract.h</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 18:32:15 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sat Aug 19 2023 00:26:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

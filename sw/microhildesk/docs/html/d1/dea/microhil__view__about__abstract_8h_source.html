@@ -26,8 +26,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../microhil_logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">microhildesk
+   <div id="projectname">microhildesk<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">MicroHIL application for controlling micro HIL HW</div>
   </td>
  </tr>
  </tbody>
@@ -108,33 +109,29 @@ $(document).ready(function(){initNavTree('d1/dea/microhil__view__about__abstract
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;sigc++/sigc++.h&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/d7b/classAbMicroHILViewAbout.html">AbMicroHILViewAbout</a></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Signal type for about Ok button</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html#a23aee97a42ffb2515550d85af25e996f">   28</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d6/d7b/classAbMicroHILViewAbout.html#a23aee97a42ffb2515550d85af25e996f">visibleAbout</a> = sigc::signal&lt;void(<span class="keywordtype">bool</span>)&gt;;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// AbMicroHILViewAbout destructor</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html#a3e2290016c0d8098df51549b2d3cf8ee">   32</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="../../d6/d7b/classAbMicroHILViewAbout.html#a3e2290016c0d8098df51549b2d3cf8ee">~AbMicroHILViewAbout</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// Signals for emitting from about Ok button</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html#a95aa177bf4be5d415704fd606dcfc36c">   36</a></span>    <span class="keyword">virtual</span> <a class="code hl_typedef" href="../../d6/d7b/classAbMicroHILViewAbout.html#a23aee97a42ffb2515550d85af25e996f">visibleAbout</a> <a class="code hl_function" href="../../d6/d7b/classAbMicroHILViewAbout.html#a95aa177bf4be5d415704fd606dcfc36c">visibleAboutChanged</a>() = 0;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// Slots for processing Ok button for about dialog</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html#a2c98747623e3ed82dc838acf23320747">   40</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d7b/classAbMicroHILViewAbout.html#a2c98747623e3ed82dc838acf23320747">onVisibleAboutChange</a>() = 0;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
-<div class="ttc" id="aclassAbMicroHILViewAbout_html"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html">AbMicroHILViewAbout</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dea/microhil__view__about__abstract_8h_source.html#l00023">microhil_view_about_abstract.h:24</a></div></div>
-<div class="ttc" id="aclassAbMicroHILViewAbout_html_a23aee97a42ffb2515550d85af25e996f"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html#a23aee97a42ffb2515550d85af25e996f">AbMicroHILViewAbout::visibleAbout</a></div><div class="ttdeci">sigc::signal&lt; void(bool)&gt; visibleAbout</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dea/microhil__view__about__abstract_8h_source.html#l00028">microhil_view_about_abstract.h:28</a></div></div>
-<div class="ttc" id="aclassAbMicroHILViewAbout_html_a2c98747623e3ed82dc838acf23320747"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html#a2c98747623e3ed82dc838acf23320747">AbMicroHILViewAbout::onVisibleAboutChange</a></div><div class="ttdeci">virtual void onVisibleAboutChange()=0</div></div>
-<div class="ttc" id="aclassAbMicroHILViewAbout_html_a3e2290016c0d8098df51549b2d3cf8ee"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html#a3e2290016c0d8098df51549b2d3cf8ee">AbMicroHILViewAbout::~AbMicroHILViewAbout</a></div><div class="ttdeci">virtual ~AbMicroHILViewAbout()=default</div></div>
-<div class="ttc" id="aclassAbMicroHILViewAbout_html_a95aa177bf4be5d415704fd606dcfc36c"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html#a95aa177bf4be5d415704fd606dcfc36c">AbMicroHILViewAbout::visibleAboutChanged</a></div><div class="ttdeci">virtual visibleAbout visibleAboutChanged()=0</div></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/d7b/classAbMicroHILViewAbout.html">AbMicroHILViewAbout</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html#a23aee97a42ffb2515550d85af25e996f">   30</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d6/d7b/classAbMicroHILViewAbout.html#a23aee97a42ffb2515550d85af25e996f">visibleAbout</a> = sigc::signal&lt;void(<span class="keywordtype">bool</span>)&gt;;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html#a3e2290016c0d8098df51549b2d3cf8ee">   34</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="../../d6/d7b/classAbMicroHILViewAbout.html#a3e2290016c0d8098df51549b2d3cf8ee">~AbMicroHILViewAbout</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html#a95aa177bf4be5d415704fd606dcfc36c">   39</a></span>    <span class="keyword">virtual</span> <a class="code hl_typedef" href="../../d6/d7b/classAbMicroHILViewAbout.html#a23aee97a42ffb2515550d85af25e996f">visibleAbout</a> <a class="code hl_function" href="../../d6/d7b/classAbMicroHILViewAbout.html#a95aa177bf4be5d415704fd606dcfc36c">visibleAboutChanged</a>() = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d6/d7b/classAbMicroHILViewAbout.html#a2c98747623e3ed82dc838acf23320747">   43</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d7b/classAbMicroHILViewAbout.html#a2c98747623e3ed82dc838acf23320747">onVisibleAboutChange</a>() = 0;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+<div class="ttc" id="aclassAbMicroHILViewAbout_html"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html">AbMicroHILViewAbout</a></div><div class="ttdoc">AbMicroHILViewAbout class declaration and definition.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dea/microhil__view__about__abstract_8h_source.html#l00025">microhil_view_about_abstract.h:26</a></div></div>
+<div class="ttc" id="aclassAbMicroHILViewAbout_html_a23aee97a42ffb2515550d85af25e996f"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html#a23aee97a42ffb2515550d85af25e996f">AbMicroHILViewAbout::visibleAbout</a></div><div class="ttdeci">sigc::signal&lt; void(bool)&gt; visibleAbout</div><div class="ttdoc">Signal type for about Ok button.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dea/microhil__view__about__abstract_8h_source.html#l00030">microhil_view_about_abstract.h:30</a></div></div>
+<div class="ttc" id="aclassAbMicroHILViewAbout_html_a2c98747623e3ed82dc838acf23320747"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html#a2c98747623e3ed82dc838acf23320747">AbMicroHILViewAbout::onVisibleAboutChange</a></div><div class="ttdeci">virtual void onVisibleAboutChange()=0</div><div class="ttdoc">Slots for processing Ok button for about dialog.</div></div>
+<div class="ttc" id="aclassAbMicroHILViewAbout_html_a3e2290016c0d8098df51549b2d3cf8ee"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html#a3e2290016c0d8098df51549b2d3cf8ee">AbMicroHILViewAbout::~AbMicroHILViewAbout</a></div><div class="ttdeci">virtual ~AbMicroHILViewAbout()=default</div><div class="ttdoc">AbMicroHILViewAbout destructor.</div></div>
+<div class="ttc" id="aclassAbMicroHILViewAbout_html_a95aa177bf4be5d415704fd606dcfc36c"><div class="ttname"><a href="../../d6/d7b/classAbMicroHILViewAbout.html#a95aa177bf4be5d415704fd606dcfc36c">AbMicroHILViewAbout::visibleAboutChanged</a></div><div class="ttdeci">virtual visibleAbout visibleAboutChanged()=0</div><div class="ttdoc">Signals for emitting from about Ok button.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_b2f003339c516cc00c8cadcafbe82f13.html">view</a></li><li class="navelem"><a class="el" href="../../dir_8a7199df7c9f34269196c175eb72be76.html">about</a></li><li class="navelem"><a class="el" href="../../d1/dea/microhil__view__about__abstract_8h.html">microhil_view_about_abstract.h</a></li>
-    <li class="footer">Generated on Fri Aug 18 2023 18:32:15 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sat Aug 19 2023 00:26:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

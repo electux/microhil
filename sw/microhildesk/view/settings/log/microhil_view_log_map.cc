@@ -21,7 +21,7 @@
 void MicroHILViewLog::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
-    // Map signals and slots
+    /// Map signals and slots
     m_device->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILViewLog::onLogFilePathChange)
     );

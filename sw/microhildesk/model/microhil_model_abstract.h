@@ -18,64 +18,38 @@
  */
 #pragma once
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief Scoped enumerator for channel states
 enum class ChannelState: bool
 {
     OFF = false,
     ON  = true
 };
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILModel class declaration and definition
 class AbMicroHILModel
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILModel destructor
+    /// @brief AbMicroHILModel destructor
     virtual ~AbMicroHILModel() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Set channel 0 state (ON/OFF)
-    virtual void setChannel0(ChannelState state) = 0;
+    /// @brief Set channel #0 state (ON/OFF)
+    /// @param id request channel by id
+    /// @param state request for channel #0 (ON | OFF)
+    virtual void setChannel(int id, ChannelState state) = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Get channel 0 state (ON/OFF)
-    virtual ChannelState getChannel0() const = 0;
+    /// @brief Get channel #0 state (ON/OFF)
+    /// @param id request channel by id
+    /// @return channel state in enumerator format (ON | OFF)
+    virtual ChannelState getChannel(int id) const = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Check is channel 0 ON (true) or OFF (false)
-    virtual bool isOnChannel0() const = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Set channel 1 state (ON/OFF)
-    virtual void setChannel1(ChannelState state) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Get channel 1 state (ON/OFF)
-    virtual ChannelState getChannel1() const = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Check is channel 1 ON (true) or OFF (false)
-    virtual bool isOnChannel1() const = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Set channel 2 state (ON/OFF)
-    virtual void setChannel2(ChannelState state) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Get channel 2 state (ON/OFF)
-    virtual ChannelState getChannel2() const = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Check is channel 2 ON (true) or OFF (false)
-    virtual bool isOnChannel2() const = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Set channel 3 state (ON/OFF)
-    virtual void setChannel3(ChannelState state) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Get channel 3 state (ON/OFF)
-    virtual ChannelState getChannel3() const = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    // Check is channel 3 ON (true) or OFF (false)
-    virtual bool isOnChannel3() const = 0;
+    /// @brief Check is channel #0 ON (true) or OFF (false)
+    /// @param id request channel by id
+    /// @return boolean status true for open else false
+    virtual bool isOnChannel(int id) const = 0;
 };

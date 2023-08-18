@@ -24,29 +24,40 @@
 #include "view/microhil_view.h"
 #include "controller/microhil_controller.h"
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief Application entry class declaration and definition
 class Application
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // Application constructor
+    /// @brief Application constructor
+    /// @param argc number of arguments
+    /// @param argv array of arguments
     Application(int argc, char *argv[]);
 
     ////////////////////////////////////////////////////////////////////////
-    // Application destructor
+    /// @brief Application destructor
     ~Application() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Starts the application (run main loop)
+    /// @brief Starts the application (run main loop)
+    /// @return integer exit status (exit failure value is 1)
     int run();
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    // Application
+    /// @brief Application instance
     Glib::RefPtr<Gtk::Application> m_app{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
-    // Model, View and controller
+    /// @brief Model instance
     std::shared_ptr<MicroHILModel> m_model{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief View instance
     std::shared_ptr<MicroHILView> m_view {nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Controller instance
     std::unique_ptr<MicroHILController> m_controller{nullptr};
 };
