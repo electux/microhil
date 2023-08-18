@@ -42,6 +42,30 @@ MicroHILViewHome::channel3IsChanged()
     return m_channel3Enabled;
 }
 
+MicroHILViewHome::channel4Changed
+MicroHILViewHome::channel4IsChanged()
+{
+    return m_channel4Enabled;
+}
+
+MicroHILViewHome::channel5Changed
+MicroHILViewHome::channel5IsChanged()
+{
+    return m_channel5Enabled;
+}
+
+MicroHILViewHome::channel6Changed
+MicroHILViewHome::channel6IsChanged()
+{
+    return m_channel6Enabled;
+}
+
+MicroHILViewHome::channel7Changed
+MicroHILViewHome::channel7IsChanged()
+{
+    return m_channel7Enabled;
+}
+
 MicroHILViewHome::select0Changed
 MicroHILViewHome::channel0IsSelected()
 {
@@ -64,6 +88,30 @@ MicroHILViewHome::select3Changed
 MicroHILViewHome::channel3IsSelected()
 {
     return m_channel3ControlType;
+}
+
+MicroHILViewHome::select4Changed
+MicroHILViewHome::channel4IsSelected()
+{
+    return m_channel4ControlType;
+}
+
+MicroHILViewHome::select5Changed
+MicroHILViewHome::channel5IsSelected()
+{
+    return m_channel5ControlType;
+}
+
+MicroHILViewHome::select6Changed
+MicroHILViewHome::channel6IsSelected()
+{
+    return m_channel6ControlType;
+}
+
+MicroHILViewHome::select7Changed
+MicroHILViewHome::channel7IsSelected()
+{
+    return m_channel7ControlType;
 }
 
 MicroHILViewHome::channel0Toggled
@@ -90,6 +138,30 @@ MicroHILViewHome::channel3IsToggled()
     return m_channel3Toggled;
 }
 
+MicroHILViewHome::channel4Toggled
+MicroHILViewHome::channel4IsToggled()
+{
+    return m_channel4Toggled;
+}
+
+MicroHILViewHome::channel5Toggled
+MicroHILViewHome::channel5IsToggled()
+{
+    return m_channel5Toggled;
+}
+
+MicroHILViewHome::channel6Toggled
+MicroHILViewHome::channel6IsToggled()
+{
+    return m_channel6Toggled;
+}
+
+MicroHILViewHome::channel7Toggled
+MicroHILViewHome::channel7IsToggled()
+{
+    return m_channel7Toggled;
+}
+
 MicroHILViewHome::channel0SpinTimerChanged
 MicroHILViewHome::channel0IsSpinTimerChanged()
 {
@@ -114,6 +186,30 @@ MicroHILViewHome::channel3IsSpinTimerChanged()
     return m_channel3SpinTimerChanged;
 }
 
+MicroHILViewHome::channel4SpinTimerChanged
+MicroHILViewHome::channel4IsSpinTimerChanged()
+{
+    return m_channel4SpinTimerChanged;
+}
+
+MicroHILViewHome::channel5SpinTimerChanged
+MicroHILViewHome::channel5IsSpinTimerChanged()
+{
+    return m_channel5SpinTimerChanged;
+}
+
+MicroHILViewHome::channel6SpinTimerChanged
+MicroHILViewHome::channel6IsSpinTimerChanged()
+{
+    return m_channel6SpinTimerChanged;
+}
+
+MicroHILViewHome::channel7SpinTimerChanged
+MicroHILViewHome::channel7IsSpinTimerChanged()
+{
+    return m_channel7SpinTimerChanged;
+}
+
 MicroHILViewHome::channel0TimerToggled
 MicroHILViewHome::channel0IsTimerChanged()
 {
@@ -136,4 +232,28 @@ MicroHILViewHome::channel3TimerToggled
 MicroHILViewHome::channel3IsTimerChanged()
 {
     return m_channel3TimerToggled;
+}
+
+MicroHILViewHome::channel4TimerToggled
+MicroHILViewHome::channel4IsTimerChanged()
+{
+    return m_channel4TimerToggled;
+}
+
+MicroHILViewHome::channel5TimerToggled
+MicroHILViewHome::channel5IsTimerChanged()
+{
+    return m_channel5TimerToggled;
+}
+
+MicroHILViewHome::channel6TimerToggled
+MicroHILViewHome::channel6IsTimerChanged()
+{
+    return m_channel6TimerToggled;
+}
+
+MicroHILViewHome::channel7TimerToggled
+MicroHILViewHome::channel7IsTimerChanged()
+{
+    return m_channel7TimerToggled;
 }

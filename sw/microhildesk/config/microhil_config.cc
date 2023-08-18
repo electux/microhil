@@ -64,7 +64,7 @@ MicroHILConfig::MicroHILConfig()
 bool MicroHILConfig::load()
 {
     auto loadedConfig = m_configuration.load_from_file(m_configFilePath);
-    auto validatedConfig  = validate(); 
+    auto validatedConfig = validate(); 
 
     if(!loadedConfig || !validatedConfig)
     {
