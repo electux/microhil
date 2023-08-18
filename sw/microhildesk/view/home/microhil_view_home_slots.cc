@@ -82,6 +82,70 @@ void MicroHILViewHome::onChannel3()
     m_channel3Enabled.emit(status);
 }
 
+void MicroHILViewHome::onChannel4()
+{
+    bool status = m_enableChannels[4]->get_active();
+
+    if(status)
+    {
+        enableChannel4();
+    }
+    else
+    {
+        disableChannel4();
+    }
+
+    m_channel4Enabled.emit(status);
+}
+
+void MicroHILViewHome::onChannel5()
+{
+    bool status = m_enableChannels[5]->get_active();
+
+    if(status)
+    {
+        enableChannel5();
+    }
+    else
+    {
+        disableChannel5();
+    }
+
+    m_channel5Enabled.emit(status);
+}
+
+void MicroHILViewHome::onChannel6()
+{
+    bool status = m_enableChannels[6]->get_active();
+
+    if(status)
+    {
+        enableChannel6();
+    }
+    else
+    {
+        disableChannel6();
+    }
+
+    m_channel6Enabled.emit(status);
+}
+
+void MicroHILViewHome::onChannel7()
+{
+    bool status = m_enableChannels[7]->get_active();
+
+    if(status)
+    {
+        enableChannel7();
+    }
+    else
+    {
+        disableChannel7();
+    }
+
+    m_channel7Enabled.emit(status);
+}
+
 void MicroHILViewHome::onChannel0TypeSelected()
 {
     if(m_enableChannels[0]->get_active() == true)
@@ -162,6 +226,86 @@ void MicroHILViewHome::onChannel3TypeSelected()
     }
 }
 
+void MicroHILViewHome::onChannel4TypeSelected()
+{
+    if(m_enableChannels[4]->get_active() == true)
+    {
+        int controlType = m_selectControlChannels[4]->get_active_row_number();
+
+        switch(controlType)
+        {
+            case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+                toggleModeChannel4();
+                break;
+            case static_cast<int>(channelControlType::TIMER_BUTTON):
+                timerModeChannel4();
+                break;
+        }
+
+        m_channel4ControlType.emit(controlType);
+    }
+}
+
+void MicroHILViewHome::onChannel5TypeSelected()
+{
+    if(m_enableChannels[5]->get_active() == true)
+    {
+        int controlType = m_selectControlChannels[5]->get_active_row_number();
+
+        switch(controlType)
+        {
+            case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+                toggleModeChannel5();
+                break;
+            case static_cast<int>(channelControlType::TIMER_BUTTON):
+                timerModeChannel5();
+                break;
+        }
+
+        m_channel5ControlType.emit(controlType);
+    }
+}
+
+void MicroHILViewHome::onChannel6TypeSelected()
+{
+    if(m_enableChannels[6]->get_active() == true)
+    {
+        int controlType = m_selectControlChannels[6]->get_active_row_number();
+
+        switch(controlType)
+        {
+            case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+                toggleModeChannel6();
+                break;
+            case static_cast<int>(channelControlType::TIMER_BUTTON):
+                timerModeChannel6();
+                break;
+        }
+
+        m_channel6ControlType.emit(controlType);
+    }
+}
+
+void MicroHILViewHome::onChannel7TypeSelected()
+{
+    if(m_enableChannels[7]->get_active() == true)
+    {
+        int controlType = m_selectControlChannels[7]->get_active_row_number();
+
+        switch(controlType)
+        {
+            case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+                toggleModeChannel7();
+                break;
+            case static_cast<int>(channelControlType::TIMER_BUTTON):
+                timerModeChannel7();
+                break;
+        }
+
+        m_channel7ControlType.emit(controlType);
+    }
+}
+
 void MicroHILViewHome::onChannel0Toggled()
 {
     if(m_enableChannels[0]->get_active() == true)
@@ -195,6 +339,42 @@ void MicroHILViewHome::onChannel3Toggled()
     {
         bool status = m_toggleChannels[3]->get_active();
         m_channel3Toggled.emit(status);
+    }
+}
+
+void MicroHILViewHome::onChannel4Toggled()
+{
+    if(m_enableChannels[4]->get_active() == true)
+    {
+        bool status = m_toggleChannels[4]->get_active();
+        m_channel4Toggled.emit(status);
+    }
+}
+
+void MicroHILViewHome::onChannel5Toggled()
+{
+    if(m_enableChannels[5]->get_active() == true)
+    {
+        bool status = m_toggleChannels[5]->get_active();
+        m_channel5Toggled.emit(status);
+    }
+}
+
+void MicroHILViewHome::onChannel6Toggled()
+{
+    if(m_enableChannels[6]->get_active() == true)
+    {
+        bool status = m_toggleChannels[6]->get_active();
+        m_channel6Toggled.emit(status);
+    }
+}
+
+void MicroHILViewHome::onChannel7Toggled()
+{
+    if(m_enableChannels[7]->get_active() == true)
+    {
+        bool status = m_toggleChannels[7]->get_active();
+        m_channel7Toggled.emit(status);
     }
 }
 
@@ -234,6 +414,42 @@ void MicroHILViewHome::onChannel3SpinTimerChanged()
     }
 }
 
+void MicroHILViewHome::onChannel4SpinTimerChanged()
+{
+    if(m_enableChannels[4]->get_active() == true)
+    {
+        int value = m_spinTimerChannels[4]->get_value_as_int();
+        m_channel4SpinTimerChanged.emit(value);
+    }
+}
+
+void MicroHILViewHome::onChannel5SpinTimerChanged()
+{
+    if(m_enableChannels[5]->get_active() == true)
+    {
+        int value = m_spinTimerChannels[5]->get_value_as_int();
+        m_channel5SpinTimerChanged.emit(value);
+    }
+}
+
+void MicroHILViewHome::onChannel6SpinTimerChanged()
+{
+    if(m_enableChannels[6]->get_active() == true)
+    {
+        int value = m_spinTimerChannels[6]->get_value_as_int();
+        m_channel6SpinTimerChanged.emit(value);
+    }
+}
+
+void MicroHILViewHome::onChannel7SpinTimerChanged()
+{
+    if(m_enableChannels[7]->get_active() == true)
+    {
+        int value = m_spinTimerChannels[7]->get_value_as_int();
+        m_channel7SpinTimerChanged.emit(value);
+    }
+}
+
 void MicroHILViewHome::onChannel0TimerChanged()
 {
     if(m_enableChannels[0]->get_active() == true)
@@ -267,5 +483,41 @@ void MicroHILViewHome::onChannel3TimerChanged()
     {
         bool status = m_toggleTimerChannels[3]->get_active();
         m_channel3TimerToggled.emit(status);
+    }
+}
+
+void MicroHILViewHome::onChannel4TimerChanged()
+{
+    if(m_enableChannels[4]->get_active() == true)
+    {
+        bool status = m_toggleTimerChannels[4]->get_active();
+        m_channel4TimerToggled.emit(status);
+    }
+}
+
+void MicroHILViewHome::onChannel5TimerChanged()
+{
+    if(m_enableChannels[5]->get_active() == true)
+    {
+        bool status = m_toggleTimerChannels[5]->get_active();
+        m_channel5TimerToggled.emit(status);
+    }
+}
+
+void MicroHILViewHome::onChannel6TimerChanged()
+{
+    if(m_enableChannels[6]->get_active() == true)
+    {
+        bool status = m_toggleTimerChannels[6]->get_active();
+        m_channel6TimerToggled.emit(status);
+    }
+}
+
+void MicroHILViewHome::onChannel7TimerChanged()
+{
+    if(m_enableChannels[7]->get_active() == true)
+    {
+        bool status = m_toggleTimerChannels[7]->get_active();
+        m_channel7TimerToggled.emit(status);
     }
 }

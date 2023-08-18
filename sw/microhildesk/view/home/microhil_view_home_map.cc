@@ -38,6 +38,22 @@ void MicroHILViewHome::mapping()
         sigc::mem_fun(*this, &MicroHILViewHome::onChannel3)
     );
 
+    m_enableChannels[4]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel4)
+    );
+
+    m_enableChannels[5]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel5)
+    );
+
+    m_enableChannels[6]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel6)
+    );
+
+    m_enableChannels[7]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel7)
+    );
+
     m_selectControlChannels[0]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILViewHome::onChannel0TypeSelected)
     );
@@ -52,6 +68,22 @@ void MicroHILViewHome::mapping()
 
     m_selectControlChannels[3]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILViewHome::onChannel3TypeSelected)
+    );
+
+    m_selectControlChannels[4]->signal_changed().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel4TypeSelected)
+    );
+
+    m_selectControlChannels[5]->signal_changed().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel5TypeSelected)
+    );
+
+    m_selectControlChannels[6]->signal_changed().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel6TypeSelected)
+    );
+
+    m_selectControlChannels[7]->signal_changed().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel7TypeSelected)
     );
 
     m_toggleChannels[0]->signal_toggled().connect(
@@ -70,6 +102,22 @@ void MicroHILViewHome::mapping()
         sigc::mem_fun(*this, &MicroHILViewHome::onChannel3Toggled)
     );
 
+    m_toggleChannels[4]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel4Toggled)
+    );
+
+    m_toggleChannels[5]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel5Toggled)
+    );
+
+    m_toggleChannels[6]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel6Toggled)
+    );
+
+    m_toggleChannels[7]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel7Toggled)
+    );
+
     m_spinTimerChannels[0]->signal_changed().connect(
         sigc::mem_fun(*this, &MicroHILViewHome::onChannel0SpinTimerChanged)
     );
@@ -86,6 +134,22 @@ void MicroHILViewHome::mapping()
         sigc::mem_fun(*this, &MicroHILViewHome::onChannel3SpinTimerChanged)
     );
 
+    m_spinTimerChannels[4]->signal_changed().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel4SpinTimerChanged)
+    );
+
+    m_spinTimerChannels[5]->signal_changed().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel5SpinTimerChanged)
+    );
+
+    m_spinTimerChannels[6]->signal_changed().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel6SpinTimerChanged)
+    );
+
+    m_spinTimerChannels[7]->signal_changed().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel7SpinTimerChanged)
+    );
+
     m_toggleTimerChannels[0]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILViewHome::onChannel0TimerChanged)
     );
@@ -100,5 +164,21 @@ void MicroHILViewHome::mapping()
 
     m_toggleTimerChannels[3]->signal_toggled().connect(
         sigc::mem_fun(*this, &MicroHILViewHome::onChannel3TimerChanged)
+    );
+
+    m_toggleTimerChannels[4]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel4TimerChanged)
+    );
+
+    m_toggleTimerChannels[5]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel5TimerChanged)
+    );
+
+    m_toggleTimerChannels[6]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel6TimerChanged)
+    );
+
+    m_toggleTimerChannels[7]->signal_toggled().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onChannel7TimerChanged)
     );
 }

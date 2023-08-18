@@ -50,8 +50,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d8/dee/classMicroHILView.html#af8c3fdc724d0b83b7a5f634f29d22216",
-"df/dcb/classAbMicroHILViewSerial.html#a408841c28d5251db34810bbc955f1fcc"
+"d5/d72/classAbMicroHILViewHome.html#af4b7101db7ba58ffbe310881e4459c01",
+"df/da5/classMicroHILViewHome.html#a36c608095fa9d76d0ac75489bfe39577"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
