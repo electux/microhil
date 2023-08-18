@@ -20,7 +20,7 @@ jobs:
           modules_ok=0
           modules=($(find sw/ -type f -name '*.c' -exec echo '{}' \;))
           for mod in "${modules[@]}"; do line_length=$(wc -L < "${mod}"); [[ $line_length -gt 80 ]] && modules_ok=1; done
-          [[ $modules_ok -eq 0 ]] && echo "action_state=success" >> "$GITHUB_ENV" || echo "action_state=failure" >> "$GITHUB_ENV"
+          [[ $modules_ok -eq 0 ]] && echo "action_state=success" || echo "action_state=failure"
       - name: Check on failures
         if: "$action_state" == "failure"
         run: exit 1
