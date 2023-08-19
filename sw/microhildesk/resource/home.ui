@@ -37,17 +37,21 @@
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <child>
-                      <object class="GtkMenuItem">
+                      <object class="GtkMenuItem" id="Connect">
+                        <property name="name">Connect</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Connect to serial port</property>
                         <property name="label">Connect</property>
                         <property name="use-underline">True</property>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkMenuItem">
+                      <object class="GtkMenuItem" id="Disconnect">
+                        <property name="name">Disconnect</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Disconnect from serial port</property>
                         <property name="label">Disconnect</property>
                         <property name="use-underline">True</property>
                       </object>
@@ -59,9 +63,11 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkMenuItem">
+                      <object class="GtkMenuItem" id="Quit">
+                        <property name="name">Quit</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Quit from application</property>
                         <property name="label">Quit</property>
                         <property name="use-underline">True</property>
                       </object>

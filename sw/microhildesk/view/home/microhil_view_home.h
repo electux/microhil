@@ -22,6 +22,7 @@
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/builder.h>
 #include <giomm/resource.h>
+#include <gtkmm/menuitem.h>
 #include <gtkmm/checkbutton.h>
 #include <gtkmm/comboboxtext.h>
 #include <gtkmm/togglebutton.h>
@@ -96,6 +97,30 @@ public:
     /// @param id for channel (Channel::ID0 .. Channel::ID7)
     void onToggleTimerChanged(Channel id) final;
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Connect meni-item
+    void onConnectClicked();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Disconnect meni-item
+    void onDisconnectClicked();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Quit meni-item
+    void onQuitClicked();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Serial Settings meni-item
+    void onSerialSettingsClicked();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Log Settings meni-item
+    void onLogSettingsClicked();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing About meni-item
+    void onAboutClicked();
+
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Map channels (signals and slots)
@@ -124,6 +149,30 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
     Glib::RefPtr<Gtk::Builder> m_ui;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Connect menu-item
+    Glib::RefPtr<Gtk::MenuItem> m_connect;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Disconnect menu-item
+    Glib::RefPtr<Gtk::MenuItem> m_disconnect;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Quit menu-item
+    Glib::RefPtr<Gtk::MenuItem> m_quit;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Serial Port Settings menu-item
+    Glib::RefPtr<Gtk::MenuItem> m_serialSettings;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Log Settings menu-item
+    Glib::RefPtr<Gtk::MenuItem> m_logSettings;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application About menu-item
+    Glib::RefPtr<Gtk::MenuItem> m_about;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Check buttons for enable/disable channels

@@ -21,6 +21,42 @@
 void MicroHILViewHome::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
+    /// Map Connect menu-item signal slot
+    m_connect->signal_activate().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onConnectClicked)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Map Disconnect menu-item signal slot
+    m_disconnect->signal_activate().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onDisconnectClicked)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Map Quit menu-item signal slot
+    m_quit->signal_activate().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onQuitClicked)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Map Serial Settings menu-item signal slot
+    m_serialSettings->signal_activate().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onSerialSettingsClicked)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Map Log Settings menu-item signal slot
+    m_logSettings->signal_activate().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onLogSettingsClicked)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Map About menu-item signal slot
+    m_about->signal_activate().connect(
+        sigc::mem_fun(*this, &MicroHILViewHome::onAboutClicked)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
     /// Map channels (signals and slots)
     for (int i = 0; i < 8; i++)
     {
