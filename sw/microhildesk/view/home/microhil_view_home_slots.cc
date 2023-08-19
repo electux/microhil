@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <iostream>
 #include "microhil_view_home.h"
 
 void MicroHILViewHome::onChannelChanged(Channel id)
@@ -87,4 +88,34 @@ void MicroHILViewHome::onToggleTimerChanged(Channel id)
         bool status = m_toggleTimerChannels[ix]->get_active();
         m_channelTimerToggled.emit(id, status);
     }
+}
+
+void MicroHILViewHome::onConnectClicked()
+{
+    std::cout << "TODO: Connect" << std::endl;
+}
+
+void MicroHILViewHome::onDisconnectClicked()
+{
+    std::cout << "TODO: Disconnect" << std::endl;
+}
+
+void MicroHILViewHome::onQuitClicked()
+{
+    std::cout << "TODO: Quit" << std::endl;
+}
+
+void MicroHILViewHome::onSerialSettingsClicked()
+{
+    std::cout << "TODO: Serial Settings" << std::endl;
+}
+
+void MicroHILViewHome::onLogSettingsClicked()
+{
+    std::cout << "TODO: Log Settings" << std::endl;
+}
+
+void MicroHILViewHome::onAboutClicked()
+{
+    std::cout << "TODO: About" << std::endl;
 }

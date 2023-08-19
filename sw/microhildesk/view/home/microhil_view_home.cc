@@ -25,6 +25,30 @@ namespace
     constexpr int kNumberOfChannels {8};
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Connect menu-item id
+    constexpr const char kConnectId[]{"Connect"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Disconnect menu-item id
+    constexpr const char kDisconnectId[]{"Disconnect"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Quit menu-item id
+    constexpr const char kQuitId[]{"Quit"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Serial Settings menu-item id
+    constexpr const char kSerialSettingsId[]{"HomeSerialPortSettings"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application Log Settings menu-item id
+    constexpr const char kLogSettingsId[]{"HomeLogSettings"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Application About menu-item id
+    constexpr const char kAboutId[]{"HomeAbout"};
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Check buttons (UI ids)
     constexpr const char* kCheckButtonsId[]
     {
@@ -113,6 +137,42 @@ MicroHILViewHome::MicroHILViewHome(
     BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
 ): Gtk::ApplicationWindow(object), m_ui{ui}
 {
+    ////////////////////////////////////////////////////////////////////////
+    // Bind Connect menu-item
+    m_connect = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kConnectId)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    // Bind Disconnect menu-item
+    m_disconnect = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kDisconnectId)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    // Bind Quit menu-item
+    m_quit = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kQuitId)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    // Bind Serial Settings menu-item
+    m_serialSettings = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kSerialSettingsId)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    // Bind Log Settings menu-item
+    m_logSettings = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kLogSettingsId)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    // Bind About menu-item
+    m_about = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kAboutId)
+    );
+
     ////////////////////////////////////////////////////////////////////////
     // Bind channels
     for (int i = 0; i < kNumberOfChannels; i++)
