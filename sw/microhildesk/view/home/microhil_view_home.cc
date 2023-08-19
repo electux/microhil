@@ -20,8 +20,12 @@
 
 namespace
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Number of channels
     constexpr int kNumberOfChannels {8};
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Check buttons (UI ids)
     constexpr const char* kCheckButtonsId[]
     {
         "EnableChannel0",
@@ -34,6 +38,8 @@ namespace
         "EnableChannel7"
     };
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Toggle buttons (UI ids)
     constexpr const char* kToggleButtonsId[]
     {
         "Channel0ToggleButton",
@@ -46,6 +52,8 @@ namespace
         "Channel7ToggleButton"
     };
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Comboboxes (UI ids)
     constexpr const char* kComboBoxTextsId[]
     {
         "Channel0Selector",
@@ -58,6 +66,8 @@ namespace
         "Channel7Selector"
     };
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Spin buttons (UI ids)
     constexpr const char* kTimerSpinButtonsId[]
     {
         "Channel0TimerSpin",
@@ -70,6 +80,8 @@ namespace
         "Channel7TimerSpin"
     };
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Toogle buttons (UI ids)
     constexpr const char* kTimerToggleButtonsId[]
     {
         "Channel0TimerButton",
@@ -82,6 +94,8 @@ namespace
         "Channel7TimerButton"
     };
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Status bars (UI ids) 
     constexpr const char* kTimerProgressBarStatus0Id[]
     {
         "Channel0TimerStatus",
@@ -100,7 +114,7 @@ MicroHILViewHome::MicroHILViewHome(
 ): Gtk::ApplicationWindow(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
-    // Bind channel widgets
+    // Bind channels
     for (int i = 0; i < kNumberOfChannels; i++)
     {
         m_enableChannels.push_back(
@@ -136,17 +150,13 @@ MicroHILViewHome::MicroHILViewHome(
     }
 
     ////////////////////////////////////////////////////////////////////////
-    // Map channel signals and slots
+    // Map channels (signals and slots)
     mapping();
 
     ////////////////////////////////////////////////////////////////////////
     // Disabled all channels by default
-    disableChannel0();
-    disableChannel1();
-    disableChannel2();
-    disableChannel3();
-    disableChannel4();
-    disableChannel5();
-    disableChannel6();
-    disableChannel7();
+    for (int i = 0; i < kNumberOfChannels; i++)
+    {
+        disableChannel(static_cast<Channel>(i));
+    }
 }

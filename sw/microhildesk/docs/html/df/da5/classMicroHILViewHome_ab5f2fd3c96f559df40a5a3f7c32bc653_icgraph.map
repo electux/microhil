@@ -1,0 +1,6 @@
+<map id="MicroHILViewHome::timerModeChannel" name="MicroHILViewHome::timerModeChannel">
+<area shape="rect" id="node1" title="Setup channel timer mode." alt="" coords="851,5,1079,47"/>
+<area shape="rect" id="node2" href="$df/da5/classMicroHILViewHome.html#a15f6d30bc22bd703301ac53ffb298ea3" title="Slot for processing comboboxes (control type)" alt="" coords="600,5,803,47"/>
+<area shape="rect" id="node3" href="$df/da5/classMicroHILViewHome.html#a95b95333e5690868abe65075d1f41c20" title="Map channels (signals and slots)" alt="" coords="337,13,552,39"/>
+<area shape="rect" id="node4" href="$df/da5/classMicroHILViewHome.html#a3a8bb766c183c4a7a51d676b70e45629" title="MicroHILViewHome constructor." alt="" coords="5,13,289,39"/>
+</map>

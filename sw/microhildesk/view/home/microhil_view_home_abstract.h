@@ -20,175 +20,104 @@
 
 #include <sigc++/sigc++.h>
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief Scoped enumerator for channel IDs
+enum class Channel: int
+{
+    ID0 = 0,
+    ID1 = 1,
+    ID2 = 2,
+    ID3 = 3,
+    ID4 = 4,
+    ID5 = 5,
+    ID6 = 6,
+    ID7 = 7
+}; 
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief  Scoped enumerator for channel control types
+enum class channelControlType
+{
+    TOGGLE_BUTTON = 0,
+    TIMER_BUTTON = 1
+};
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief AbMicroHILViewHome class declaration and definition 
 class AbMicroHILViewHome
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    // Signal types for check buttons (enable/disable channel)
-    using channel0Changed = sigc::signal<void(bool)>;
-    using channel1Changed = sigc::signal<void(bool)>;
-    using channel2Changed = sigc::signal<void(bool)>;
-    using channel3Changed = sigc::signal<void(bool)>;
-    using channel4Changed = sigc::signal<void(bool)>;
-    using channel5Changed = sigc::signal<void(bool)>;
-    using channel6Changed = sigc::signal<void(bool)>;
-    using channel7Changed = sigc::signal<void(bool)>;
+    /// @brief Signal type for check buttons (enable/disable channel)
+    using channelChanged = sigc::signal<void(Channel, bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal types for selectable comboboxes (toogle/timer type control)
-    using select0Changed = sigc::signal<void(int)>;
-    using select1Changed = sigc::signal<void(int)>;
-    using select2Changed = sigc::signal<void(int)>;
-    using select3Changed = sigc::signal<void(int)>;
-    using select4Changed = sigc::signal<void(int)>;
-    using select5Changed = sigc::signal<void(int)>;
-    using select6Changed = sigc::signal<void(int)>;
-    using select7Changed = sigc::signal<void(int)>;
+    /// @brief Signal type for comboboxes (toogle/timer type control)
+    using selectChanged = sigc::signal<void(Channel, int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal types for toogle buttons (turn on/turn off channel)
-    using channel0Toggled = sigc::signal<void(bool)>;
-    using channel1Toggled = sigc::signal<void(bool)>;
-    using channel2Toggled = sigc::signal<void(bool)>;
-    using channel3Toggled = sigc::signal<void(bool)>;
-    using channel4Toggled = sigc::signal<void(bool)>;
-    using channel5Toggled = sigc::signal<void(bool)>;
-    using channel6Toggled = sigc::signal<void(bool)>;
-    using channel7Toggled = sigc::signal<void(bool)>;
+    /// @brief Signal type for toogle buttons (turn on/turn off channel)
+    using channelToggled = sigc::signal<void(Channel, bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal types for spin buttons (based on timer setup)
-    using channel0SpinTimerChanged = sigc::signal<void(int)>;
-    using channel1SpinTimerChanged = sigc::signal<void(int)>;
-    using channel2SpinTimerChanged = sigc::signal<void(int)>;
-    using channel3SpinTimerChanged = sigc::signal<void(int)>;
-    using channel4SpinTimerChanged = sigc::signal<void(int)>;
-    using channel5SpinTimerChanged = sigc::signal<void(int)>;
-    using channel6SpinTimerChanged = sigc::signal<void(int)>;
-    using channel7SpinTimerChanged = sigc::signal<void(int)>;
+    /// @brief Signal type for spin buttons (based on timer setup)
+    using channelSpinTimerChanged = sigc::signal<void(Channel, int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signal types for toogle buttons (based on timer setup)
-    using channel0TimerToggled = sigc::signal<void(bool)>;
-    using channel1TimerToggled = sigc::signal<void(bool)>;
-    using channel2TimerToggled = sigc::signal<void(bool)>;
-    using channel3TimerToggled = sigc::signal<void(bool)>;
-    using channel4TimerToggled = sigc::signal<void(bool)>;
-    using channel5TimerToggled = sigc::signal<void(bool)>;
-    using channel6TimerToggled = sigc::signal<void(bool)>;
-    using channel7TimerToggled = sigc::signal<void(bool)>;
+    /// @brief Signal type for toogle buttons (based on timer setup)
+    using channelTimerToggled = sigc::signal<void(Channel, bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    // AbMicroHILViewHome destructor
+    /// @brief AbMicroHILViewHome destructor
     virtual ~AbMicroHILViewHome() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from check buttons (enable/disable channel)
-    virtual channel0Changed channel0IsChanged() = 0;
-    virtual channel1Changed channel1IsChanged() = 0;
-    virtual channel2Changed channel2IsChanged() = 0;
-    virtual channel3Changed channel3IsChanged() = 0;
-    virtual channel4Changed channel4IsChanged() = 0;
-    virtual channel5Changed channel5IsChanged() = 0;
-    virtual channel6Changed channel6IsChanged() = 0;
-    virtual channel7Changed channel7IsChanged() = 0;
+    /// @brief Signal for check buttons (enable/disable channel)
+    /// @return Signal for perfomed action
+    virtual channelChanged channelIsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing check buttons (enable/disable channel)
-    virtual void onChannel0() = 0;
-    virtual void onChannel1() = 0;
-    virtual void onChannel2() = 0;
-    virtual void onChannel3() = 0;
-    virtual void onChannel4() = 0;
-    virtual void onChannel5() = 0;
-    virtual void onChannel6() = 0;
-    virtual void onChannel7() = 0;
+    /// @brief Slot for processing check buttons (enable/disable channel)
+    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    virtual void onChannelChanged(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from selection comboboxes (control type)
-    virtual select0Changed channel0IsSelected() = 0;
-    virtual select1Changed channel1IsSelected() = 0;
-    virtual select2Changed channel2IsSelected() = 0;
-    virtual select3Changed channel3IsSelected() = 0;
-    virtual select4Changed channel4IsSelected() = 0;
-    virtual select5Changed channel5IsSelected() = 0;
-    virtual select6Changed channel6IsSelected() = 0;
-    virtual select7Changed channel7IsSelected() = 0;
+    /// @brief Signal for comboboxes (control type)
+    /// @return Signal for perfomed action
+    virtual selectChanged channelIsSelected() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing comboboxes (control type)
-    virtual void onChannel0TypeSelected() = 0;
-    virtual void onChannel1TypeSelected() = 0;
-    virtual void onChannel2TypeSelected() = 0;
-    virtual void onChannel3TypeSelected() = 0;
-    virtual void onChannel4TypeSelected() = 0;
-    virtual void onChannel5TypeSelected() = 0;
-    virtual void onChannel6TypeSelected() = 0;
-    virtual void onChannel7TypeSelected() = 0;
+    /// @brief Slot for processing comboboxes (control type)
+    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    virtual void onTypeSelected(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from toggling buttons (turn on/turn off channel)
-    virtual channel0Toggled channel0IsToggled() = 0;
-    virtual channel1Toggled channel1IsToggled() = 0;
-    virtual channel2Toggled channel2IsToggled() = 0;
-    virtual channel3Toggled channel3IsToggled() = 0;
-    virtual channel4Toggled channel4IsToggled() = 0;
-    virtual channel5Toggled channel5IsToggled() = 0;
-    virtual channel6Toggled channel6IsToggled() = 0;
-    virtual channel7Toggled channel7IsToggled() = 0;
+    /// @brief Signal for toggling buttons (turn on/turn off channel)
+    /// @return Signal for perfomed action
+    virtual channelToggled channelIsToggled() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing toggle buttons (turn on/turn off channel)
-    virtual void onChannel0Toggled() = 0;
-    virtual void onChannel1Toggled() = 0;
-    virtual void onChannel2Toggled() = 0;
-    virtual void onChannel3Toggled() = 0;
-    virtual void onChannel4Toggled() = 0;
-    virtual void onChannel5Toggled() = 0;
-    virtual void onChannel6Toggled() = 0;
-    virtual void onChannel7Toggled() = 0;
+    /// @brief Slot for processing toggle buttons (turn on/turn off channel)
+    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    virtual void onToggled(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from spin buttons (based on timer)
-    virtual channel0SpinTimerChanged channel0IsSpinTimerChanged() = 0;
-    virtual channel1SpinTimerChanged channel1IsSpinTimerChanged() = 0;
-    virtual channel2SpinTimerChanged channel2IsSpinTimerChanged() = 0;
-    virtual channel3SpinTimerChanged channel3IsSpinTimerChanged() = 0;
-    virtual channel4SpinTimerChanged channel4IsSpinTimerChanged() = 0;
-    virtual channel5SpinTimerChanged channel5IsSpinTimerChanged() = 0;
-    virtual channel6SpinTimerChanged channel6IsSpinTimerChanged() = 0;
-    virtual channel7SpinTimerChanged channel7IsSpinTimerChanged() = 0;
+    /// @brief Signal for spin buttons (based on timer)
+    /// @return Signal for perfomed action
+    virtual channelSpinTimerChanged channelIsSpinTimerChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing spin buttons (based on timer)
-    virtual void onChannel0SpinTimerChanged() = 0;
-    virtual void onChannel1SpinTimerChanged() = 0;
-    virtual void onChannel2SpinTimerChanged() = 0;
-    virtual void onChannel3SpinTimerChanged() = 0;
-    virtual void onChannel4SpinTimerChanged() = 0;
-    virtual void onChannel5SpinTimerChanged() = 0;
-    virtual void onChannel6SpinTimerChanged() = 0;
-    virtual void onChannel7SpinTimerChanged() = 0;
+    /// @brief Slot for processing spin buttons (based on timer)
+    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    virtual void onSpinTimerChanged(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Signals for emitting from toggle buttons (based on timer)
-    virtual channel0TimerToggled channel0IsTimerChanged() = 0;
-    virtual channel1TimerToggled channel1IsTimerChanged() = 0;
-    virtual channel2TimerToggled channel2IsTimerChanged() = 0;
-    virtual channel3TimerToggled channel3IsTimerChanged() = 0;
-    virtual channel4TimerToggled channel4IsTimerChanged() = 0;
-    virtual channel5TimerToggled channel5IsTimerChanged() = 0;
-    virtual channel6TimerToggled channel6IsTimerChanged() = 0;
-    virtual channel7TimerToggled channel7IsTimerChanged() = 0;
+    /// @brief Signal for toggle buttons (based on timer)
+    /// @return Signal for perfomed action
+    virtual channelTimerToggled channelIsTimerChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    // Slots for processing toggle buttons (turn on/turn off timer)
-    virtual void onChannel0TimerChanged() = 0;
-    virtual void onChannel1TimerChanged() = 0;
-    virtual void onChannel2TimerChanged() = 0;
-    virtual void onChannel3TimerChanged() = 0;
-    virtual void onChannel4TimerChanged() = 0;
-    virtual void onChannel5TimerChanged() = 0;
-    virtual void onChannel6TimerChanged() = 0;
-    virtual void onChannel7TimerChanged() = 0;
+    /// @brief Slot for processing toggle buttons (turn on/turn off timer)
+    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    virtual void onToggleTimerChanged(Channel id) = 0;
 };
