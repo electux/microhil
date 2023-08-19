@@ -1,13 +1,19 @@
 <map id="MicroHILViewHome::MicroHILViewHome" name="MicroHILViewHome::MicroHILViewHome">
-<area shape="rect" id="node1" title="MicroHILViewHome constructor." alt="" coords="5,105,289,131"/>
-<area shape="rect" id="node2" href="$df/da5/classMicroHILViewHome.html#aec5801a38d8e7fbf5426237fbb3738e5" title="Disable complete channel." alt="" coords="887,5,1091,47"/>
-<area shape="rect" id="node3" href="$df/da5/classMicroHILViewHome.html#a95b95333e5690868abe65075d1f41c20" title="Map channels (signals and slots)" alt="" coords="337,166,552,193"/>
-<area shape="rect" id="node4" href="$df/da5/classMicroHILViewHome.html#aa70150be122ed75bda3ad6356aac0d8d" title="Slot for processing check buttons (enable/disable channel)" alt="" coords="600,64,827,105"/>
-<area shape="rect" id="node6" href="$df/da5/classMicroHILViewHome.html#a9ac5e1c22694e06ffd9b13a8950b2022" title="Slot for processing spin buttons (based on timer)" alt="" coords="613,129,814,171"/>
-<area shape="rect" id="node7" href="$df/da5/classMicroHILViewHome.html#a82479725a3146860d470f51525b77824" title="Slot for processing toggle buttons (turn on/turn off channel)" alt="" coords="602,195,825,222"/>
-<area shape="rect" id="node8" href="$df/da5/classMicroHILViewHome.html#a27582e392f2e437f6f0c770bdde81d62" title="Slot for processing toggle buttons (turn on/turn off timer)" alt="" coords="606,247,821,288"/>
-<area shape="rect" id="node9" href="$df/da5/classMicroHILViewHome.html#a15f6d30bc22bd703301ac53ffb298ea3" title="Slot for processing comboboxes (control type)" alt="" coords="612,312,815,353"/>
-<area shape="rect" id="node5" href="$df/da5/classMicroHILViewHome.html#a9554ab9c33b6b8bb2ece4d7df32b3d25" title="Enable complete channel." alt="" coords="888,71,1089,112"/>
-<area shape="rect" id="node10" href="$df/da5/classMicroHILViewHome.html#ab5f2fd3c96f559df40a5a3f7c32bc653" title="Setup channel timer mode." alt="" coords="875,279,1103,320"/>
-<area shape="rect" id="node11" href="$df/da5/classMicroHILViewHome.html#ac0f1c35b582b4c869bc534734dfcd768" title="Setup channel in toggle mode." alt="" coords="889,344,1088,385"/>
+<area shape="rect" id="node1" title="MicroHILViewHome constructor." alt="" coords="5,175,289,202"/>
+<area shape="rect" id="node2" href="$df/da5/classMicroHILViewHome.html#aec5801a38d8e7fbf5426237fbb3738e5" title="Disable complete channel." alt="" coords="909,5,1113,47"/>
+<area shape="rect" id="node3" href="$df/da5/classMicroHILViewHome.html#a95b95333e5690868abe65075d1f41c20" title="Map channels (signals and slots)" alt="" coords="337,335,552,362"/>
+<area shape="rect" id="node4" href="$df/da5/classMicroHILViewHome.html#a83d17bfd6398b96cd001a109b610607c" title="Slot for processing About meni&#45;item." alt="" coords="619,35,830,76"/>
+<area shape="rect" id="node5" href="$df/da5/classMicroHILViewHome.html#aa70150be122ed75bda3ad6356aac0d8d" title="Slot for processing check buttons (enable/disable channel)" alt="" coords="611,100,838,141"/>
+<area shape="rect" id="node7" href="$df/da5/classMicroHILViewHome.html#ad67f581653cb0d72089054e26ab15e72" title="Slot for processing Connect meni&#45;item." alt="" coords="611,165,838,207"/>
+<area shape="rect" id="node8" href="$df/da5/classMicroHILViewHome.html#a66d4212510d1e46c105d946e381b7e11" title="Slot for processing Disconnect meni&#45;item." alt="" coords="602,231,847,272"/>
+<area shape="rect" id="node9" href="$df/da5/classMicroHILViewHome.html#a0aba81051e960a3150be1b58b2359efd" title="Slot for processing Log Settings meni&#45;item." alt="" coords="600,296,849,337"/>
+<area shape="rect" id="node10" href="$df/da5/classMicroHILViewHome.html#a3990e62010d4c0ac9b0e8aeee5f03913" title="Slot for processing Quit meni&#45;item." alt="" coords="625,361,825,403"/>
+<area shape="rect" id="node11" href="$df/da5/classMicroHILViewHome.html#a6520af975bf4e588ebc75bdea8d4de00" title="Slot for processing Serial Settings meni&#45;item." alt="" coords="619,427,830,468"/>
+<area shape="rect" id="node12" href="$df/da5/classMicroHILViewHome.html#a9ac5e1c22694e06ffd9b13a8950b2022" title="Slot for processing spin buttons (based on timer)" alt="" coords="624,492,825,533"/>
+<area shape="rect" id="node13" href="$df/da5/classMicroHILViewHome.html#a82479725a3146860d470f51525b77824" title="Slot for processing toggle buttons (turn on/turn off channel)" alt="" coords="613,558,836,585"/>
+<area shape="rect" id="node14" href="$df/da5/classMicroHILViewHome.html#a27582e392f2e437f6f0c770bdde81d62" title="Slot for processing toggle buttons (turn on/turn off timer)" alt="" coords="617,609,832,651"/>
+<area shape="rect" id="node15" href="$df/da5/classMicroHILViewHome.html#a15f6d30bc22bd703301ac53ffb298ea3" title="Slot for processing comboboxes (control type)" alt="" coords="623,675,826,716"/>
+<area shape="rect" id="node6" href="$df/da5/classMicroHILViewHome.html#a9554ab9c33b6b8bb2ece4d7df32b3d25" title="Enable complete channel." alt="" coords="911,100,1112,141"/>
+<area shape="rect" id="node16" href="$df/da5/classMicroHILViewHome.html#ab5f2fd3c96f559df40a5a3f7c32bc653" title="Setup channel timer mode." alt="" coords="897,641,1125,683"/>
+<area shape="rect" id="node17" href="$df/da5/classMicroHILViewHome.html#ac0f1c35b582b4c869bc534734dfcd768" title="Setup channel in toggle mode." alt="" coords="912,707,1111,748"/>
 </map>
