@@ -18,274 +18,40 @@
  */
 #include "microhil_view_home.h"
 
-void MicroHILViewHome::disableChannel0()
+void MicroHILViewHome::disableChannel(Channel id)
 {
-    m_selectControlChannels[0]->set_sensitive(false);
-    m_toggleChannels[0]->set_sensitive(false);
-    m_spinTimerChannels[0]->set_sensitive(false);
-    m_toggleTimerChannels[0]->set_sensitive(false);
-    m_stautsTimerChannels[0]->set_sensitive(false);
+    auto ix = static_cast<int>(id);
+    m_selectControlChannels[ix]->set_sensitive(false);
+    m_toggleChannels[ix]->set_sensitive(false);
+    m_spinTimerChannels[ix]->set_sensitive(false);
+    m_toggleTimerChannels[ix]->set_sensitive(false);
+    m_stautsTimerChannels[ix]->set_sensitive(false);
 }
 
-void MicroHILViewHome::enableChannel0()
+void MicroHILViewHome::enableChannel(Channel id)
 {
-    m_selectControlChannels[0]->set_sensitive(true);
-    m_toggleChannels[0]->set_sensitive(true);
-    m_spinTimerChannels[0]->set_sensitive(true);
-    m_toggleTimerChannels[0]->set_sensitive(true);
-    m_stautsTimerChannels[0]->set_sensitive(true);
+    auto ix = static_cast<int>(id);
+    m_selectControlChannels[ix]->set_sensitive(true);
+    m_toggleChannels[ix]->set_sensitive(false);
+    m_spinTimerChannels[ix]->set_sensitive(false);
+    m_toggleTimerChannels[ix]->set_sensitive(false);
+    m_stautsTimerChannels[ix]->set_sensitive(false);
 }
 
-void MicroHILViewHome::disableChannel1()
+void MicroHILViewHome::toggleModeChannel(Channel id)
 {
-    m_selectControlChannels[1]->set_sensitive(false);
-    m_toggleChannels[1]->set_sensitive(false);
-    m_spinTimerChannels[1]->set_sensitive(false);
-    m_toggleTimerChannels[1]->set_sensitive(false);
-    m_stautsTimerChannels[1]->set_sensitive(false);
+    auto ix = static_cast<int>(id);
+    m_toggleChannels[ix]->set_sensitive(true);
+    m_spinTimerChannels[ix]->set_sensitive(false);
+    m_toggleTimerChannels[ix]->set_sensitive(false);
+    m_stautsTimerChannels[ix]->set_sensitive(true);
 }
 
-void MicroHILViewHome::enableChannel1()
+void MicroHILViewHome::timerModeChannel(Channel id)
 {
-    m_selectControlChannels[1]->set_sensitive(true);
-    m_toggleChannels[1]->set_sensitive(true);
-    m_spinTimerChannels[1]->set_sensitive(true);
-    m_toggleTimerChannels[1]->set_sensitive(true);
-    m_stautsTimerChannels[1]->set_sensitive(true);
-}
-
-void MicroHILViewHome::disableChannel2()
-{
-    m_selectControlChannels[2]->set_sensitive(false);
-    m_toggleChannels[2]->set_sensitive(false);
-    m_spinTimerChannels[2]->set_sensitive(false);
-    m_toggleTimerChannels[2]->set_sensitive(false);
-    m_stautsTimerChannels[2]->set_sensitive(false);
-}
-
-void MicroHILViewHome::enableChannel2()
-{
-    m_selectControlChannels[2]->set_sensitive(true);
-    m_toggleChannels[2]->set_sensitive(true);
-    m_spinTimerChannels[2]->set_sensitive(true);
-    m_toggleTimerChannels[2]->set_sensitive(true);
-    m_stautsTimerChannels[2]->set_sensitive(true);
-}
-
-void MicroHILViewHome::disableChannel3()
-{
-    m_selectControlChannels[3]->set_sensitive(false);
-    m_toggleChannels[3]->set_sensitive(false);
-    m_spinTimerChannels[3]->set_sensitive(false);
-    m_toggleTimerChannels[3]->set_sensitive(false);
-    m_stautsTimerChannels[3]->set_sensitive(false);
-}
-
-void MicroHILViewHome::enableChannel3()
-{
-    m_selectControlChannels[3]->set_sensitive(true);
-    m_toggleChannels[3]->set_sensitive(true);
-    m_spinTimerChannels[3]->set_sensitive(true);
-    m_toggleTimerChannels[3]->set_sensitive(true);
-    m_stautsTimerChannels[3]->set_sensitive(true);
-}
-
-void MicroHILViewHome::disableChannel4()
-{
-    m_selectControlChannels[4]->set_sensitive(false);
-    m_toggleChannels[4]->set_sensitive(false);
-    m_spinTimerChannels[4]->set_sensitive(false);
-    m_toggleTimerChannels[4]->set_sensitive(false);
-    m_stautsTimerChannels[4]->set_sensitive(false);
-}
-
-void MicroHILViewHome::enableChannel4()
-{
-    m_selectControlChannels[4]->set_sensitive(true);
-    m_toggleChannels[4]->set_sensitive(true);
-    m_spinTimerChannels[4]->set_sensitive(true);
-    m_toggleTimerChannels[4]->set_sensitive(true);
-    m_stautsTimerChannels[4]->set_sensitive(true);
-}
-
-void MicroHILViewHome::disableChannel5()
-{
-    m_selectControlChannels[5]->set_sensitive(false);
-    m_toggleChannels[5]->set_sensitive(false);
-    m_spinTimerChannels[5]->set_sensitive(false);
-    m_toggleTimerChannels[5]->set_sensitive(false);
-    m_stautsTimerChannels[5]->set_sensitive(false);
-}
-
-void MicroHILViewHome::enableChannel5()
-{
-    m_selectControlChannels[5]->set_sensitive(true);
-    m_toggleChannels[5]->set_sensitive(true);
-    m_spinTimerChannels[5]->set_sensitive(true);
-    m_toggleTimerChannels[5]->set_sensitive(true);
-    m_stautsTimerChannels[5]->set_sensitive(true);
-}
-
-void MicroHILViewHome::disableChannel6()
-{
-    m_selectControlChannels[6]->set_sensitive(false);
-    m_toggleChannels[6]->set_sensitive(false);
-    m_spinTimerChannels[6]->set_sensitive(false);
-    m_toggleTimerChannels[6]->set_sensitive(false);
-    m_stautsTimerChannels[6]->set_sensitive(false);
-}
-
-void MicroHILViewHome::enableChannel6()
-{
-    m_selectControlChannels[6]->set_sensitive(true);
-    m_toggleChannels[6]->set_sensitive(true);
-    m_spinTimerChannels[6]->set_sensitive(true);
-    m_toggleTimerChannels[6]->set_sensitive(true);
-    m_stautsTimerChannels[6]->set_sensitive(true);
-}
-
-void MicroHILViewHome::disableChannel7()
-{
-    m_selectControlChannels[7]->set_sensitive(false);
-    m_toggleChannels[7]->set_sensitive(false);
-    m_spinTimerChannels[7]->set_sensitive(false);
-    m_toggleTimerChannels[7]->set_sensitive(false);
-    m_stautsTimerChannels[7]->set_sensitive(false);
-}
-
-void MicroHILViewHome::enableChannel7()
-{
-    m_selectControlChannels[7]->set_sensitive(true);
-    m_toggleChannels[7]->set_sensitive(true);
-    m_spinTimerChannels[7]->set_sensitive(true);
-    m_toggleTimerChannels[7]->set_sensitive(true);
-    m_stautsTimerChannels[7]->set_sensitive(true);
-}
-
-void MicroHILViewHome::toggleModeChannel0()
-{
-    m_toggleChannels[0]->set_sensitive(true);
-    m_spinTimerChannels[0]->set_sensitive(false);
-    m_toggleTimerChannels[0]->set_sensitive(false);
-    m_stautsTimerChannels[0]->set_sensitive(true);
-}
-
-void MicroHILViewHome::timerModeChannel0()
-{
-    m_toggleChannels[0]->set_sensitive(false);
-    m_spinTimerChannels[0]->set_sensitive(true);
-    m_toggleTimerChannels[0]->set_sensitive(true);
-    m_stautsTimerChannels[0]->set_sensitive(true);
-}
-
-void MicroHILViewHome::toggleModeChannel1()
-{
-    m_toggleChannels[1]->set_sensitive(true);
-    m_spinTimerChannels[1]->set_sensitive(false);
-    m_toggleTimerChannels[1]->set_sensitive(false);
-    m_stautsTimerChannels[1]->set_sensitive(true);
-}
-
-void MicroHILViewHome::timerModeChannel1()
-{
-    m_toggleChannels[1]->set_sensitive(false);
-    m_spinTimerChannels[1]->set_sensitive(true);
-    m_toggleTimerChannels[1]->set_sensitive(true);
-    m_stautsTimerChannels[1]->set_sensitive(true);
-}
-
-void MicroHILViewHome::toggleModeChannel2()
-{
-    m_toggleChannels[2]->set_sensitive(true);
-    m_spinTimerChannels[2]->set_sensitive(false);
-    m_toggleTimerChannels[2]->set_sensitive(false);
-    m_stautsTimerChannels[2]->set_sensitive(true);
-}
-
-void MicroHILViewHome::timerModeChannel2()
-{
-    m_toggleChannels[2]->set_sensitive(false);
-    m_spinTimerChannels[2]->set_sensitive(true);
-    m_toggleTimerChannels[2]->set_sensitive(true);
-    m_stautsTimerChannels[2]->set_sensitive(true);
-}
-
-void MicroHILViewHome::toggleModeChannel3()
-{
-    m_toggleChannels[3]->set_sensitive(true);
-    m_spinTimerChannels[3]->set_sensitive(false);
-    m_toggleTimerChannels[3]->set_sensitive(false);
-    m_stautsTimerChannels[3]->set_sensitive(true);
-}
-
-void MicroHILViewHome::timerModeChannel3()
-{
-    m_toggleChannels[3]->set_sensitive(false);
-    m_spinTimerChannels[3]->set_sensitive(true);
-    m_toggleTimerChannels[3]->set_sensitive(true);
-    m_stautsTimerChannels[3]->set_sensitive(true);
-}
-
-void MicroHILViewHome::toggleModeChannel4()
-{
-    m_toggleChannels[4]->set_sensitive(true);
-    m_spinTimerChannels[4]->set_sensitive(false);
-    m_toggleTimerChannels[4]->set_sensitive(false);
-    m_stautsTimerChannels[4]->set_sensitive(true);
-}
-
-void MicroHILViewHome::timerModeChannel4()
-{
-    m_toggleChannels[4]->set_sensitive(false);
-    m_spinTimerChannels[4]->set_sensitive(true);
-    m_toggleTimerChannels[4]->set_sensitive(true);
-    m_stautsTimerChannels[4]->set_sensitive(true);
-}
-
-void MicroHILViewHome::toggleModeChannel5()
-{
-    m_toggleChannels[5]->set_sensitive(true);
-    m_spinTimerChannels[5]->set_sensitive(false);
-    m_toggleTimerChannels[5]->set_sensitive(false);
-    m_stautsTimerChannels[5]->set_sensitive(true);
-}
-
-void MicroHILViewHome::timerModeChannel5()
-{
-    m_toggleChannels[5]->set_sensitive(false);
-    m_spinTimerChannels[5]->set_sensitive(true);
-    m_toggleTimerChannels[5]->set_sensitive(true);
-    m_stautsTimerChannels[5]->set_sensitive(true);
-}
-
-void MicroHILViewHome::toggleModeChannel6()
-{
-    m_toggleChannels[6]->set_sensitive(true);
-    m_spinTimerChannels[6]->set_sensitive(false);
-    m_toggleTimerChannels[6]->set_sensitive(false);
-    m_stautsTimerChannels[6]->set_sensitive(true);
-}
-
-void MicroHILViewHome::timerModeChannel6()
-{
-    m_toggleChannels[6]->set_sensitive(false);
-    m_spinTimerChannels[6]->set_sensitive(true);
-    m_toggleTimerChannels[6]->set_sensitive(true);
-    m_stautsTimerChannels[6]->set_sensitive(true);
-}
-
-void MicroHILViewHome::toggleModeChannel7()
-{
-    m_toggleChannels[7]->set_sensitive(true);
-    m_spinTimerChannels[7]->set_sensitive(false);
-    m_toggleTimerChannels[7]->set_sensitive(false);
-    m_stautsTimerChannels[7]->set_sensitive(true);
-}
-
-void MicroHILViewHome::timerModeChannel7()
-{
-    m_toggleChannels[7]->set_sensitive(false);
-    m_spinTimerChannels[7]->set_sensitive(true);
-    m_toggleTimerChannels[7]->set_sensitive(true);
-    m_stautsTimerChannels[7]->set_sensitive(true);
+    auto ix = static_cast<int>(id);
+    m_toggleChannels[ix]->set_sensitive(false);
+    m_spinTimerChannels[ix]->set_sensitive(true);
+    m_toggleTimerChannels[ix]->set_sensitive(true);
+    m_stautsTimerChannels[ix]->set_sensitive(true);
 }
