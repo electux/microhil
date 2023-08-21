@@ -1,7 +1,7 @@
 <map id="MicroHILViewLog::mapping" name="MicroHILViewLog::mapping">
-<area shape="rect" id="node1" title="Map all signals and slots for log dialog." alt="" coords="5,111,204,138"/>
-<area shape="rect" id="node2" href="$d4/dc6/classMicroHILViewLog.html#a9b124ec7f40140d088cef9d609b083de" title="Slot for processing Log Cancel button." alt="" coords="259,5,460,47"/>
-<area shape="rect" id="node3" href="$d4/dc6/classMicroHILViewLog.html#a0fe401532192243179a6a103a25e420b" title="Slot for processing log input." alt="" coords="258,71,461,112"/>
-<area shape="rect" id="node4" href="$d4/dc6/classMicroHILViewLog.html#ac21a99ec502f1515f680551977a0dedf" title="Slot for processing loge level from combobox." alt="" coords="252,136,467,177"/>
-<area shape="rect" id="node5" href="$d4/dc6/classMicroHILViewLog.html#a86fa963c6b9e772c418fced24e6c388b" title="Slot for processing Log Ok button." alt="" coords="260,201,459,243"/>
+<area shape="rect" id="node1" title="Map all widgets (signals and slots)" alt="" coords="5,111,204,138"/>
+<area shape="rect" id="node2" href="$d4/dc6/classMicroHILViewLog.html#a2eea31dfe1c4977711a53ca91dd8e81e" title="Slot for processing Cancel button." alt="" coords="259,5,460,47"/>
+<area shape="rect" id="node3" href="$d4/dc6/classMicroHILViewLog.html#ab92cd28f989d81350cfcdb3ba93e268d" title="Slot for processing log file path input." alt="" coords="258,71,461,112"/>
+<area shape="rect" id="node4" href="$d4/dc6/classMicroHILViewLog.html#a24e93c38113fa539a9005d5ce642bd52" title="Slot for processing log level combobox." alt="" coords="252,136,467,177"/>
+<area shape="rect" id="node5" href="$d4/dc6/classMicroHILViewLog.html#acb037a2ab54f0a480594d3a009a983ef" title="Slot for processing Ok button." alt="" coords="260,201,459,243"/>
 </map>

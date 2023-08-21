@@ -38,7 +38,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MicroHILViewHome constructor
     /// @param object base object instance
-    /// @param ui builder parser
+    /// @param ui builder instance
     MicroHILViewHome(
         BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
     );
@@ -148,31 +148,31 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_ui;
+    Glib::RefPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Connect menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_connect;
+    Glib::RefPtr<Gtk::MenuItem> m_connect{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Disconnect menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_disconnect;
+    Glib::RefPtr<Gtk::MenuItem> m_disconnect{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Quit menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_quit;
+    Glib::RefPtr<Gtk::MenuItem> m_quit{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Serial Port Settings menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_serialSettings;
+    Glib::RefPtr<Gtk::MenuItem> m_serialSettings{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Log Settings menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_logSettings;
+    Glib::RefPtr<Gtk::MenuItem> m_logSettings{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application About menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_about;
+    Glib::RefPtr<Gtk::MenuItem> m_about{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Check buttons for enable/disable channels
@@ -200,25 +200,25 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Adjustment setup for channel visual status
-    Glib::RefPtr<Gtk::Adjustment> m_adjustment_digits;
+    Glib::RefPtr<Gtk::Adjustment> m_adjustment_digits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for check buttons (enable/disable channel)
-    channelChanged m_channelEnabled;
+    channelChanged m_channelEnabled{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for comboboxes (toogle/timer type control)
-    selectChanged m_channelControlType;
+    selectChanged m_channelControlType{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toogle buttons (turn on/turn off channel)
-    channelToggled m_channelToggled;
+    channelToggled m_channelToggled{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for spin buttons (based on timer setup)
-    channelSpinTimerChanged m_channelSpinTimerChanged;
+    channelSpinTimerChanged m_channelSpinTimerChanged{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toogle buttons (based on timer setup)
-    channelTimerToggled m_channelTimerToggled;
+    channelTimerToggled m_channelTimerToggled{};
 };

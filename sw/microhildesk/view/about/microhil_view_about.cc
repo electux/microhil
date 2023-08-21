@@ -36,6 +36,10 @@ MicroHILViewAbout::MicroHILViewAbout(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map Ok button signal and slot
+    /// Map Ok button (signal and slot)
     mapping();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Hide About dialog by default
+    this->hide();
 }

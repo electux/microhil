@@ -21,18 +21,62 @@
 namespace
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Resource path for home UI
-    constexpr char kHomeUI[]{"/org/gtkmm/microhildesk/home.ui"};
-    
+    /// Resource path for Home UI
+    constexpr char kHomeUI[]{"/org/gtkmm/microhildesk/microhil.ui"};
+
     ////////////////////////////////////////////////////////////////////////
-    /// Application window ID
-    constexpr char kwindowId[]{"Window"};
+    /// Application Window ID
+    constexpr char kWindowId[]{"Window"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Application Dialog ID
+    constexpr char kDialogId[]{"DialogMessage"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Application Log Settings ID
+    constexpr char kLogId[]{"LogDialog"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Application Serial Settings ID
+    constexpr char kSerialId[]{"SerialDialog"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Application About ID
+    constexpr char kAboutId[]{"AboutDialog"};
 }
 
 MicroHILView::MicroHILView()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Setup builder and home view
     m_builder = Gtk::Builder::create_from_resource(kHomeUI);
-    m_builder->get_widget_derived(kwindowId, (MicroHILViewHome*&) m_home);
+    m_builder->get_widget_derived(
+        kWindowId, (MicroHILViewHome*&) m_home
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Setup builder and dialog view
+    m_builder->get_widget_derived(
+        kDialogId, (MicroHILViewDialog*&) m_dialog
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Setup builder and Log Settings view
+    m_builder->get_widget_derived(
+        kLogId, (MicroHILViewLog*&) m_log
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Setup builder and Serial Settings view
+    m_builder->get_widget_derived(
+        kSerialId, (MicroHILViewSerial*&) m_serial
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Setup builder and About view
+    m_builder->get_widget_derived(
+        kAboutId, (MicroHILViewAbout*&) m_about
+    );
 }
 
 Glib::RefPtr<MicroHILViewHome> MicroHILView::getHome()

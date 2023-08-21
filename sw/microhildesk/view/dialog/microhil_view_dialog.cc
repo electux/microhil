@@ -26,7 +26,7 @@ namespace
 
     ////////////////////////////////////////////////////////////////////////
     /// Close button id for dialog message
-    constexpr const char kCloseButtonId[]{"DialogClose"};
+    constexpr const char kCloseButtonId[]{"CloseDialog"};
 
     ////////////////////////////////////////////////////////////////////////
     /// String representation of info message type
@@ -58,19 +58,21 @@ MicroHILViewDialog::MicroHILViewDialog(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map signals and slots
+    /// Map Close button (signal and slot)
     mapping();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Hide Dialog by default
+    this->hide();
 }
 
-void MicroHILViewDialog::show(const Glib::ustring message, MessageType type)
+void MicroHILViewDialog::setMessage(
+    const Glib::ustring message, MessageType type
+)
 {
     const auto messageType = toUnicodeStringMessageType(type);
     this->set_title(messageType);
     m_text->set_text(message);
-}
-
-void MicroHILViewDialog::hide()
-{
 }
 
 Glib::ustring MicroHILViewDialog::toUnicodeStringMessageType(

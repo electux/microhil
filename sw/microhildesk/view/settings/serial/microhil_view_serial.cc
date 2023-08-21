@@ -60,40 +60,46 @@ MicroHILViewSerial::MicroHILViewSerial(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind baud rate combobox selector
+    /// Bind baud rate combobox
     m_baudRate = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kBaudRateSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind data bits combobox selector
+    /// Bind data bits combobox
     m_dataBits = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kDataBitsSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind parity combobox selector
+    /// Bind parity combobox
     m_parity = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kParitySelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind stop bits combobox selector
+    /// Bind stop bits combobox
     m_stopBits = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kStopBitsId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Cancel and Ok buttons
+    /// Bind Cancel button
     m_cancel = Glib::RefPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kCancelButtonId)
     );
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Bind Ok button
     m_ok = Glib::RefPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kOkButtonId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map all signals and slots
+    /// Map all widgets (signals and slots)
     mapping();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Hide Serial Settings by default
+    this->hide();
 }

@@ -18,30 +18,30 @@
  */
 #include "microhil_view_serial.h"
 
-void MicroHILViewSerial::onserialFilePathChange()
+void MicroHILViewSerial::onSerialFilePathChanged()
 {
 }
 
-void MicroHILViewSerial::onSerialBaudRateChange()
+void MicroHILViewSerial::onSerialBaudRateChanged()
 {
 }
 
-void MicroHILViewSerial::onSerialDataBitsChange()
+void MicroHILViewSerial::onSerialDataBitsChanged()
 {
 }
 
-void MicroHILViewSerial::onSerialParityChange()
+void MicroHILViewSerial::onSerialParityChanged()
 {
 }
 
-void MicroHILViewSerial::onSerialStopBitsChange()
+void MicroHILViewSerial::onSerialStopBitsChanged()
 {
 }
 
-void MicroHILViewSerial::onCancelSerialChange()
+void MicroHILViewSerial::onCancelSerialTriggered()
 {
 }
 
-void MicroHILViewSerial::onOkSerialChange()
+void MicroHILViewSerial::onOkSerialTriggered()
 {
 }

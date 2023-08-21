@@ -2,10 +2,95 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
+  <object class="GtkDialog" id="DialogMessage">
+    <property name="name">DialogMessage</property>
+    <property name="width-request">180</property>
+    <property name="height-request">100</property>
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">microHIL</property>
+    <property name="resizable">False</property>
+    <property name="default-width">180</property>
+    <property name="default-height">100</property>
+    <property name="destroy-with-parent">True</property>
+    <property name="icon">logo.ico</property>
+    <property name="type-hint">dialog</property>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="name">DialogMessageBox</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="name">DialogMessageButtonBox</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkButton" id="CloseDialog">
+                <property name="label" translatable="yes">Close</property>
+                <property name="name">CloseDialog</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="sensitive">False</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="DialogMessageText">
+                <property name="name">DialogMessageText</property>
+                <property name="visible">True</property>
+                <property name="sensitive">False</property>
+                <property name="can-focus">False</property>
+                <property name="margin-bottom">169</property>
+                <property name="label" translatable="yes">label</property>
+                <property name="track-visited-links">False</property>
+                <attributes>
+                  <attribute name="size" value="1024"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkApplicationWindow" id="Window">
     <property name="name">Window</property>
     <property name="visible">True</property>
-    <property name="can-focus">True</property>
+    <property name="can-focus">False</property>
     <property name="title">microHIL</property>
     <property name="resizable">False</property>
     <property name="default-width">600</property>
@@ -16,34 +101,32 @@
       <object class="GtkBox" id="Home">
         <property name="name">Home</property>
         <property name="visible">True</property>
-        <property name="can-focus">True</property>
+        <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkMenuBar" id="HomeMenuBar">
             <property name="name">HomeMenuBar</property>
             <property name="visible">True</property>
-            <property name="can-focus">True</property>
+            <property name="can-focus">False</property>
             <child>
               <object class="GtkMenuItem" id="HomeMenuBarFile">
                 <property name="name">HomeMenuBarFile</property>
                 <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="label" translatable="yes">_File</property>
-                <property name="use-underline">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">File</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="HomeMenuBarFileSubMenu">
                     <property name="name">HomeMenuBarFileSubMenu</property>
                     <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    <property name="can-focus">False</property>
                     <child>
                       <object class="GtkMenuItem" id="Connect">
                         <property name="name">Connect</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="tooltip-text" translatable="yes">Connect to serial port</property>
-                        <property name="label">Connect</property>
-                        <property name="use-underline">True</property>
+                        <property name="label" translatable="yes">Connect</property>
                       </object>
                     </child>
                     <child>
@@ -52,8 +135,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="tooltip-text" translatable="yes">Disconnect from serial port</property>
-                        <property name="label">Disconnect</property>
-                        <property name="use-underline">True</property>
+                        <property name="label" translatable="yes">Disconnect</property>
                       </object>
                     </child>
                     <child>
@@ -68,8 +150,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="tooltip-text" translatable="yes">Quit from application</property>
-                        <property name="label">Quit</property>
-                        <property name="use-underline">True</property>
+                        <property name="label" translatable="yes">Quit</property>
                       </object>
                     </child>
                   </object>
@@ -80,9 +161,8 @@
               <object class="GtkMenuItem" id="HomeMenuBarEdit">
                 <property name="name">HomeMenuBarEdit</property>
                 <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="label" translatable="yes">_Edit</property>
-                <property name="use-underline">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Edit</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="HomeMenuBarEditSubMenu">
                     <property name="name">HomeMenuBarEditSubMenu</property>
@@ -93,8 +173,7 @@
                         <property name="name">HomeSerialPortSettings</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label">Serial Port Settings</property>
-                        <property name="use-underline">True</property>
+                        <property name="label" translatable="yes">Serial Settings</property>
                       </object>
                     </child>
                     <child>
@@ -102,8 +181,7 @@
                         <property name="name">HomeLogSettings</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label">Log Settings</property>
-                        <property name="use-underline">True</property>
+                        <property name="label" translatable="yes">Log Settings</property>
                       </object>
                     </child>
                   </object>
@@ -114,9 +192,8 @@
               <object class="GtkMenuItem" id="HomeMenuBarHelp">
                 <property name="name">HomeMenuBarHelp</property>
                 <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="label" translatable="yes">_Help</property>
-                <property name="use-underline">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Help</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="HomeMenuBarHelpSubMenu">
                     <property name="name">HomeMenuBarHelpSubMenu</property>
@@ -126,9 +203,8 @@
                       <object class="GtkMenuItem" id="HomeAbout">
                         <property name="name">HomeAbout</property>
                         <property name="visible">True</property>
-                        <property name="can-focus">True</property>
-                        <property name="label">About</property>
-                        <property name="use-underline">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">About</property>
                       </object>
                     </child>
                   </object>
@@ -1319,6 +1395,420 @@
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAboutDialog" id="AboutDialog">
+    <property name="name">AboutDialog</property>
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">microHIL About</property>
+    <property name="resizable">False</property>
+    <property name="destroy-with-parent">True</property>
+    <property name="icon">logo.ico</property>
+    <property name="type-hint">dialog</property>
+    <property name="attached-to">HomeAbout</property>
+    <property name="program-name">MicroHIL</property>
+    <property name="version">v1.0.0</property>
+    <property name="website">https://electux.github.io/microhil</property>
+    <property name="website-label" translatable="yes">electux.github.io/microhil</property>
+    <property name="license" translatable="yes">This program comes with absolutely no warranty.
+See the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html"&gt;GNU General Public License, version 3 or later&lt;/a&gt; for details.</property>
+    <property name="authors">Vladimir Roncevic &lt;elektron.ronca@gmail.com&gt;</property>
+    <property name="logo">logo.png</property>
+    <property name="wrap-license">True</property>
+    <property name="license-type">gpl-3-0</property>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="name">AboutBox</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="name">AboutButtonBox</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkButton" id="AboutOk">
+                <property name="label" translatable="yes">Ok</property>
+                <property name="name">AboutOk</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkDialog" id="LogDialog">
+    <property name="name">LogDialog</property>
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="tooltip-text" translatable="yes">Setting log level path and level</property>
+    <property name="title" translatable="yes">microHIL Log Settings</property>
+    <property name="resizable">False</property>
+    <property name="default-width">320</property>
+    <property name="default-height">120</property>
+    <property name="destroy-with-parent">True</property>
+    <property name="icon">logo.ico</property>
+    <property name="type-hint">dialog</property>
+    <property name="attached-to">HomeLogSettings</property>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="name">LogBox</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="name">LogButtonBox</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
+            <child>
+              <object class="GtkButton" id="LogCancel">
+                <property name="label" translatable="yes">Cancel</property>
+                <property name="name">LogCancel</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Cancel Log Settings</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="LogOk">
+                <property name="label" translatable="yes">Ok</property>
+                <property name="name">LogOk</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Confirm Log Settings</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="LogFilePath">
+            <property name="name">LogFilePath</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Log file path</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="LogFilePathInput">
+            <property name="name">LogFilePathInput</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="tooltip-text" translatable="yes">Set log file path</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="LogLevel">
+            <property name="name">LogLevel</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Log level</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBoxText" id="LogLevelSelector">
+            <property name="name">LogLevelSelector</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="tooltip-text" translatable="yes">Set log level</property>
+            <items>
+              <item id="0" translatable="yes">Info</item>
+              <item id="1" translatable="yes">Warning</item>
+              <item id="2" translatable="yes">Error</item>
+            </items>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkDialog" id="SerialDialog">
+    <property name="name">SerialDialog</property>
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="tooltip-text" translatable="yes">Serial Port Settings</property>
+    <property name="title" translatable="yes">microHIL Serial Port Settings</property>
+    <property name="resizable">False</property>
+    <property name="default-width">320</property>
+    <property name="default-height">260</property>
+    <property name="destroy-with-parent">True</property>
+    <property name="icon">logo.ico</property>
+    <property name="type-hint">dialog</property>
+    <property name="attached-to">HomeSerialPortSettings</property>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="name">SerialBox</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <property name="homogeneous">True</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="name">SerialButtonBox</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="layout-style">end</property>
+            <child>
+              <object class="GtkButton" id="SerialCancel">
+                <property name="label" translatable="yes">Cancel</property>
+                <property name="name">SerialCancel</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Cancel serial port settings</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="SerialOk">
+                <property name="label" translatable="yes">Ok</property>
+                <property name="name">SerialOk</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">Confirm serial port settings</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="SerialPortDevice">
+            <property name="name">SerialPortDevice</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Port device</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="SerialPortDeviceInput">
+            <property name="name">SerialPortDeviceInput</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="tooltip-text" translatable="yes">Set serial port device path</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="SerialPortBaudRate">
+            <property name="name">SerialPortBaudRate</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Baud rate</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBoxText" id="SerialPortBaudRateSelector">
+            <property name="name">SerialPortBaudRateSelector</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="tooltip-text" translatable="yes">Set baud rate for serial port</property>
+            <items>
+              <item id="0" translatable="yes">110</item>
+              <item id="1" translatable="yes">300</item>
+              <item id="2" translatable="yes">600</item>
+              <item id="3" translatable="yes">1200</item>
+              <item id="4" translatable="yes">2400</item>
+              <item id="5" translatable="yes">4800</item>
+              <item id="6" translatable="yes">9600</item>
+              <item id="7" translatable="yes">14400</item>
+              <item id="8" translatable="yes">19200</item>
+              <item id="9" translatable="yes">38400</item>
+              <item id="10" translatable="yes">57600</item>
+              <item id="11" translatable="yes">115200</item>
+              <item id="12" translatable="yes">128000</item>
+              <item id="13" translatable="yes">256000</item>
+            </items>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="SerialDataBits">
+            <property name="name">SerialDataBits</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Data bits</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBoxText" id="SerialPortDataBitsSelector">
+            <property name="name">SerialPortDataBitsSelector</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="tooltip-text" translatable="yes">Set data bits for serial port</property>
+            <items>
+              <item id="0" translatable="yes">5</item>
+              <item id="1" translatable="yes">6</item>
+              <item id="2" translatable="yes">7</item>
+              <item id="3" translatable="yes">8</item>
+              <item id="4" translatable="yes">9</item>
+            </items>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="SerialParity">
+            <property name="name">SerialParity</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Parity</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBoxText" id="SerialPortParitySelector">
+            <property name="name">SerialPortParitySelector</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="tooltip-text" translatable="yes">Set parity for serial port</property>
+            <items>
+              <item id="0" translatable="yes">None</item>
+              <item id="1" translatable="yes">Odd</item>
+              <item id="2" translatable="yes">Even</item>
+              <item id="3" translatable="yes">Mark</item>
+              <item id="4" translatable="yes">Space</item>
+            </items>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="StopBits">
+            <property name="name">StopBits</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Stop bits</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBoxText" id="SerialPortStopBitsSelector">
+            <property name="name">SerialPortStopBitsSelector</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="tooltip-text" translatable="yes">Set stop bits for serial port</property>
+            <items>
+              <item id="0" translatable="yes">1</item>
+              <item id="1" translatable="yes">2</item>
+            </items>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">10</property>
           </packing>
         </child>
       </object>

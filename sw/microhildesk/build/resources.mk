@@ -7,8 +7,4 @@
 #
 
 RESOURCES = \
-	../resource/home.ui \
-	../resource/serial.ui \
-	../resource/log.ui \
-	../resource/dialog.ui \
-	../resource/about.ui
+	../resource/microhil.ui
