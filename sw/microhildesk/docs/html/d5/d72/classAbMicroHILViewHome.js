@@ -1,5 +1,6 @@
 var classAbMicroHILViewHome =
 [
+    [ "actionViewTriggered", "d5/d72/classAbMicroHILViewHome.html#a2d5eed5dd61f95e9fb085995cafbae6c", null ],
     [ "channelChanged", "d5/d72/classAbMicroHILViewHome.html#a06fef375b9f7295ff4ca104dd4db3c7d", null ],
     [ "channelSpinTimerChanged", "d5/d72/classAbMicroHILViewHome.html#a616624621b3737be12b7a52ffb1d9e8b", null ],
     [ "channelTimerToggled", "d5/d72/classAbMicroHILViewHome.html#a3b328d7118bdaf3620110b397c582582", null ],
@@ -15,5 +16,6 @@ var classAbMicroHILViewHome =
     [ "onSpinTimerChanged", "d5/d72/classAbMicroHILViewHome.html#ad4dfcc76aa4e1da658878bbb6a90e988", null ],
     [ "onToggled", "d5/d72/classAbMicroHILViewHome.html#a41fdc2ab04f712070206baca70f55b50", null ],
     [ "onToggleTimerChanged", "d5/d72/classAbMicroHILViewHome.html#ad86b7bddf0b309cd9f4b0b288f9461ef", null ],
-    [ "onTypeSelected", "d5/d72/classAbMicroHILViewHome.html#afff6953c719843f7ba57d1a5c62ae62f", null ]
+    [ "onTypeSelected", "d5/d72/classAbMicroHILViewHome.html#afff6953c719843f7ba57d1a5c62ae62f", null ],
+    [ "viewChanged", "d5/d72/classAbMicroHILViewHome.html#a5c765a64e05bad3f57b0de957fae85fb", null ]
 ];

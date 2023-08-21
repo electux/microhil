@@ -20,28 +20,37 @@
 
 void MicroHILViewSerial::onSerialFilePathChanged()
 {
+    // TODO
 }
 
 void MicroHILViewSerial::onSerialBaudRateChanged()
 {
+    // TODO
 }
 
 void MicroHILViewSerial::onSerialDataBitsChanged()
 {
+    // TODO
 }
 
 void MicroHILViewSerial::onSerialParityChanged()
 {
+    // TODO
 }
 
 void MicroHILViewSerial::onSerialStopBitsChanged()
 {
+    // TODO
 }
 
 void MicroHILViewSerial::onCancelSerialTriggered()
 {
+    // TODO
+    this->hide();
 }
 
 void MicroHILViewSerial::onOkSerialTriggered()
 {
+    // TODO
+    this->hide();
 }

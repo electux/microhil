@@ -11,7 +11,8 @@ var searchData=
   ['abmicrohilviewhome_8',['AbMicroHILViewHome',['../d5/d72/classAbMicroHILViewHome.html',1,'']]],
   ['abmicrohilviewlog_9',['AbMicroHILViewLog',['../d1/d49/classAbMicroHILViewLog.html',1,'']]],
   ['abmicrohilviewserial_10',['AbMicroHILViewSerial',['../df/dcb/classAbMicroHILViewSerial.html',1,'']]],
-  ['application_11',['Application',['../d5/d4c/classApplication.html',1,'Application'],['../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329',1,'Application::Application()']]],
-  ['application_2ecc_12',['application.cc',['../dc/d16/application_8cc.html',1,'']]],
-  ['application_2eh_13',['application.h',['../db/d32/application_8h.html',1,'']]]
+  ['actionviewtriggered_11',['actionViewTriggered',['../d5/d72/classAbMicroHILViewHome.html#a2d5eed5dd61f95e9fb085995cafbae6c',1,'AbMicroHILViewHome']]],
+  ['application_12',['Application',['../d5/d4c/classApplication.html',1,'Application'],['../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329',1,'Application::Application()']]],
+  ['application_2ecc_13',['application.cc',['../dc/d16/application_8cc.html',1,'']]],
+  ['application_2eh_14',['application.h',['../db/d32/application_8h.html',1,'']]]
 ];

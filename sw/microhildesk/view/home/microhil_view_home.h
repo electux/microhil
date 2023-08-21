@@ -48,8 +48,13 @@ public:
     ~MicroHILViewHome() = default;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for menu items (changed view)
+    /// @return Signal for clicked menu item
+    actionViewTriggered viewChanged() final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for check buttons (enable/disable channel)
-    /// @return Signal for perfomed action
+    /// @return Signal for clicked button
     channelChanged channelIsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -59,7 +64,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for comboboxes (control type)
-    /// @return Signal for perfomed action
+    /// @return Signal for changed channel state combobox
     selectChanged channelIsSelected() final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -69,7 +74,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggling buttons (turn on/turn off channel)
-    /// @return Signal for perfomed action
+    /// @return Signal for toggled button
     channelToggled channelIsToggled() final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -79,7 +84,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for spin buttons (based on timer)
-    /// @return Signal for perfomed action
+    /// @return Signal for changed spin button
     channelSpinTimerChanged channelIsSpinTimerChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -89,7 +94,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggle buttons (based on timer)
-    /// @return Signal for perfomed action
+    /// @return Signal for toggled button
     channelTimerToggled channelIsTimerChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -128,22 +133,22 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Enable complete channel
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
     void enableChannel(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Disable complete channel
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
     void disableChannel(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup channel in toggle mode
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
     void toggleModeChannel(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup channel timer mode
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
     void timerModeChannel(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
@@ -201,6 +206,10 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Adjustment setup for channel visual status
     Glib::RefPtr<Gtk::Adjustment> m_adjustment_digits{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for menu items (triggered another view)
+    actionViewTriggered m_actionViewTriggered{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for check buttons (enable/disable channel)

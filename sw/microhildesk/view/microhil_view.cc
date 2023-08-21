@@ -77,6 +77,10 @@ MicroHILView::MicroHILView()
     m_builder->get_widget_derived(
         kAboutId, (MicroHILViewAbout*&) m_about
     );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Mapping views (signals and slots)
+    mapping();
 }
 
 Glib::RefPtr<MicroHILViewHome> MicroHILView::getHome()

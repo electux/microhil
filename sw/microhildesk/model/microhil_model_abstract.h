@@ -22,8 +22,8 @@
 /// @brief Scoped enumerator for channel states
 enum class ChannelState: bool
 {
-    OFF = false,
-    ON  = true
+    MICROHIL_OFF = false,
+    MICROHIL_ON  = true
 };
 
 ////////////////////////////////////////////////////////////////////////////

@@ -81,11 +81,11 @@ Glib::ustring MicroHILViewDialog::toUnicodeStringMessageType(
 {
     switch(type)
     {
-        case MessageType::INFO:
+        case MessageType::MICROHIL_INFO:
             return kInfoMessage;
-        case MessageType::WARNING:
+        case MessageType::MICROHIL_WARNING:
             return kWarningMessage;
-        case MessageType::ERROR:
+        case MessageType::MICROHIL_ERROR:
             return kErrorMessage;
     }
 

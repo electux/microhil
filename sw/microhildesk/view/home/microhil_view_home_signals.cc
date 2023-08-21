@@ -18,6 +18,12 @@
  */
 #include "microhil_view_home.h"
 
+MicroHILViewHome::actionViewTriggered
+MicroHILViewHome::viewChanged()
+{
+    return m_actionViewTriggered;
+}
+
 MicroHILViewHome::channelChanged
 MicroHILViewHome::channelIsChanged()
 {

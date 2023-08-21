@@ -31,7 +31,7 @@ MicroHILModel::MicroHILModel()
     /// Set all channels in model to OFF by default
     for(int i = 0; i < kNumberOfChannels; i++)
     {
-        m_channels.push_back(ChannelState::OFF);
+        m_channels.push_back(ChannelState::MICROHIL_OFF);
     }
 }
 
@@ -47,5 +47,5 @@ ChannelState MicroHILModel::getChannel(int id) const
 
 bool MicroHILModel::isOnChannel(int id) const
 {
-    return m_channels[id] == ChannelState::ON;
+    return m_channels[id] == ChannelState::MICROHIL_ON;
 }
