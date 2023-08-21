@@ -32,7 +32,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MicroHILViewDialog constructor
     /// @param object base object type
-    /// @param ui builder parser
+    /// @param ui builder instance
     MicroHILViewDialog(
         BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
     );
@@ -42,23 +42,19 @@ public:
     ~MicroHILViewDialog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signals for emitting from dialog Close button
-    /// @return signal after pressing Close button
-    closeDialog closeDialogChanged() final;
+    /// @brief Signal for Close button
+    /// @return Signal for clicked Close button
+    hideDialog hideDialogTrigered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slots for processing Close button for dialog
-    void onCloseDialogChange() final;
+    /// @brief Slot for processing Close button (self hide Dialog)
+    void onHideDialogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Show dialog with message
-    /// @param message for presenting
+    /// @brief Set message for dialog
+    /// @param message with information for user
     /// @param type of dialog message
-    void show(const Glib::ustring message, MessageType type) final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Hide dialog
-    void hide() final;
+    void setMessage(const Glib::ustring message, MessageType type) final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
@@ -68,7 +64,7 @@ private:
     Glib::ustring toUnicodeStringMessageType(MessageType type) const;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Map Close button signal and slot
+    /// @brief Map Close button (signal and slot)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
@@ -84,6 +80,6 @@ private:
     Glib::RefPtr<Gtk::Button> m_close;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Close button (hide about dialog)
-    closeDialog m_closeDialog;
+    /// @brief Signal for Close button (self hide Dialog)
+    hideDialog m_hideDialog;
 };

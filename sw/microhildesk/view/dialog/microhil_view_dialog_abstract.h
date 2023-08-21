@@ -36,29 +36,25 @@ class AbMicroHILViewDialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for dialog Close button
-    using closeDialog = sigc::signal<void(bool)>;
+    /// @brief Signal type for Close button (self hide Dialog signal)
+    using hideDialog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILViewDialog destructor
     virtual ~AbMicroHILViewDialog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signals for emitting from dialog Close button
-    /// @return signal after pressing Close button
-    virtual closeDialog closeDialogChanged() = 0;
+    /// @brief Signal for Close button
+    /// @return Signal for clicked Close button
+    virtual hideDialog hideDialogTrigered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slots for processing Close button for dialog
-    virtual void onCloseDialogChange() = 0;
+    /// @brief Slot for processing Close button (self hide Dialog)
+    virtual void onHideDialogTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Show dialog with message
-    /// @param message for presenting
+    /// @brief Set message for dialog
+    /// @param message with information for user
     /// @param type of dialog message
-    virtual void show(Glib::ustring message, MessageType type) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Hide dialog
-    virtual void hide() = 0;
+    virtual void setMessage(Glib::ustring message, MessageType type) = 0;
 };

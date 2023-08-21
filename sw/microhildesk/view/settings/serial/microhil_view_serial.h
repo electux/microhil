@@ -33,7 +33,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MicroHILViewSerial constructor
     /// @param object base object instance
-    /// @param ui buider parser
+    /// @param ui buider instance
     MicroHILViewSerial(
         BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
     );
@@ -43,71 +43,71 @@ public:
     ~MicroHILViewSerial() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from device file path input
-    /// @return Signal after pefrormed action
+    /// @brief Signal for device file path input
+    /// @return Signal for changed device file path entry
     serialDevicePath serialFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial file path input 
-    void onserialFilePathChange() final;
+    /// @brief Slot for processing device file path input
+    void onSerialFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial baud rate combobox
-    /// @return Signal after pefrormed action
+    /// @brief Signal for baud rate combobox
+    /// @return Signal for selected baud rate combobox
     serialBaudRate serialBaudRateChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial baud rate from combobox
-    void onSerialBaudRateChange() final;
+    /// @brief Slot for processing baud rate combobox
+    void onSerialBaudRateChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial data bits combobox
-    /// @return Signal after pefrormed action
+    /// @brief Signal for data bits combobox
+    /// @return Signal for selected data bits combobox
     serialDataBits serialDataBitsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial data bits combobox
-    void onSerialDataBitsChange() final;
+    /// @brief Slot for processing data bits combobox
+    void onSerialDataBitsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial parity combobox
-    /// @return Signal after pefrormed action
+    /// @brief Signal for parity combobox
+    /// @return Signal for selected parity combobox
     serialParity serialParityChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial parity combobox
-    void onSerialParityChange() final;
+    /// @brief Slot for processing parity combobox
+    void onSerialParityChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial stop bits combobox
-    /// @return Signal after pefrormed action
+    /// @brief Signal for stop bits combobox
+    /// @return Signal for selected stop bits combobox
     serialStopBits serialStopBitsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial stop bits combobox
-    void onSerialStopBitsChange() final;
+    /// @brief Slot for processing stop bits combobox
+    void onSerialStopBitsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial Cancel button
-    /// @return Signal after pefrormed action
-    cancelSerial cancelSerialChanged() final;
+    /// @brief Signal for Cancel button
+    /// @return Signal for clicked Cancel button
+    cancelSerial cancelSerialTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial Ok button
-    /// @return Signal after pefrormed action
-    okSerial okSerialChanged() final;
+    /// @brief Signal for Ok button
+    /// @return Signal for clicked Ok button
+    okSerial okSerialTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Cancel button
-    void onCancelSerialChange() final;
+    /// @brief Slot for processing Cancel button (dismiss)
+    void onCancelSerialTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Ok button
-    void onOkSerialChange() final;
+    /// @brief Slot for processing Ok button (confirm)
+    void onOkSerialTriggered() final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Map all signals and slots for serial dialog
+    /// @brief Map all widgets (signals and slots)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
@@ -143,30 +143,30 @@ private:
     Glib::RefPtr<Gtk::Button> m_ok;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial device path input
+    /// @brief Signal for device path input
     serialDevicePath m_serialDevicePath;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial baud rate combobox
+    /// @brief Signal for baud rate combobox
     serialBaudRate m_serialBaudeRate;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial data bits combobox
+    /// @brief Signal for data bits combobox
     serialDataBits m_serialDataBits;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial parity combobox
+    /// @brief Signal for parity combobox
     serialParity m_serialParity;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial stop bits combobox
+    /// @brief Signal for stop bits combobox
     serialStopBits m_serialStopBits;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Cancel button (dismiss)
+    /// @brief Signal for Cancel button (dismiss)
     cancelSerial m_cancelSerial;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Ok button (confirm)
+    /// @brief Signal for Ok button (confirm)
     okSerial m_okSerial;
 };

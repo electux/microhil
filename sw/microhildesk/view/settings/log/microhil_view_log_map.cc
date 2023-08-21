@@ -21,20 +21,20 @@
 void MicroHILViewLog::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Map signals and slots
+    /// Map all widgets (signals and slots)
     m_device->signal_changed().connect(
-        sigc::mem_fun(*this, &MicroHILViewLog::onLogFilePathChange)
+        sigc::mem_fun(*this, &MicroHILViewLog::onLogFilePathChanged)
     );
 
     m_level->signal_changed().connect(
-        sigc::mem_fun(*this, &MicroHILViewLog::onLogLevelChange)
+        sigc::mem_fun(*this, &MicroHILViewLog::onLogLevelChanged)
     );
 
     m_cancel->signal_clicked().connect(
-        sigc::mem_fun(*this, &MicroHILViewLog::onCancelLogChange)
+        sigc::mem_fun(*this, &MicroHILViewLog::onCancelLogTriggered)
     );
 
     m_ok->signal_clicked().connect(
-        sigc::mem_fun(*this, &MicroHILViewLog::onOkLogChange)
+        sigc::mem_fun(*this, &MicroHILViewLog::onOkLogTriggered)
     );
 }

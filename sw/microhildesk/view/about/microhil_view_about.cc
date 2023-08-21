@@ -36,6 +36,6 @@ MicroHILViewAbout::MicroHILViewAbout(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map Ok button signal and slot
+    /// Map Ok button (signal and slot)
     mapping();
 }

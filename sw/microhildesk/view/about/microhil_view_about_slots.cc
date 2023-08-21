@@ -18,7 +18,6 @@
  */
 #include "microhil_view_about.h"
 
-void MicroHILViewAbout::onVisibleAboutChange()
+void MicroHILViewAbout::onHideAboutTriggered()
 {
-    this->hide();
 }

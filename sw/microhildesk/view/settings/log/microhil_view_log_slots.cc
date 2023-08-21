@@ -18,18 +18,18 @@
  */
 #include "microhil_view_log.h"
 
-void MicroHILViewLog::onLogFilePathChange()
+void MicroHILViewLog::onLogFilePathChanged()
 {
 }
 
-void MicroHILViewLog::onLogLevelChange()
+void MicroHILViewLog::onLogLevelChanged()
 {
 }
 
-void MicroHILViewLog::onCancelLogChange()
+void MicroHILViewLog::onCancelLogTriggered()
 {
 }
 
-void MicroHILViewLog::onOkLogChange()
+void MicroHILViewLog::onOkLogTriggered()
 {
 }

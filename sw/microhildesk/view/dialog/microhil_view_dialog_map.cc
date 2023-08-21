@@ -21,6 +21,6 @@
 void MicroHILViewDialog::mapping()
 {
     m_close->signal_clicked().connect(
-        sigc::mem_fun(*this, &MicroHILViewDialog::onCloseDialogChange)
+        sigc::mem_fun(*this, &MicroHILViewDialog::onHideDialogTriggered)
     );
 }

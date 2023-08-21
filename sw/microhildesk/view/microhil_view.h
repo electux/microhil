@@ -18,8 +18,13 @@
  */
 #pragma once
 
+#include <vector>
 #include <gtkmm/builder.h>
 #include "home/microhil_view_home.h"
+#include "dialog/microhil_view_dialog.h"
+#include "settings/log/microhil_view_log.h"
+#include "settings/serial/microhil_view_serial.h"
+#include "about/microhil_view_about.h"
 #include "microhil_view_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
@@ -43,9 +48,25 @@ public:
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_builder{nullptr};
+    Glib::RefPtr<Gtk::Builder> m_builder;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Home view instance
     Glib::RefPtr<MicroHILViewHome> m_home{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Dialog view instance
+    Glib::RefPtr<MicroHILViewDialog> m_dialog{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Log Settings view instance
+    Glib::RefPtr<MicroHILViewLog> m_log{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Serial Settings view instance
+    Glib::RefPtr<MicroHILViewSerial> m_serial{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief About view instance
+    Glib::RefPtr<MicroHILViewAbout> m_about{nullptr};
 };

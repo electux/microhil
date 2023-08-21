@@ -27,23 +27,23 @@ class AbMicroHILViewSerial
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for serial device file path
+    /// @brief Signal type for serial device file path input
     using serialDevicePath = sigc::signal<void(Glib::ustring)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for selectable serial baud rate
+    /// @brief Signal type for serial baud rate combobox
     using serialBaudRate = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for selectable serial data bits
+    /// @brief Signal type for serial data bits combobox
     using serialDataBits = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for selectable serial parity
+    /// @brief Signal type for serial parity combobox
     using serialParity = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for selectable serial stop bits
+    /// @brief Signal type for serial stop bits combobox
     using serialStopBits = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
@@ -59,65 +59,65 @@ public:
     virtual ~AbMicroHILViewSerial() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from device file path input
-    /// @return Signal after pefrormed action
+    /// @brief Signal for device file path input
+    /// @return Signal for changed device file path entry
     virtual serialDevicePath serialFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial file path input 
-    virtual void onserialFilePathChange() = 0;
+    /// @brief Slot for processing device file path input 
+    virtual void onSerialFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial baud rate combobox
-    /// @return Signal after pefrormed action
+    /// @brief Signal for baud rate combobox
+    /// @return Signal for selected baud rate combobox
     virtual serialBaudRate serialBaudRateChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial baud rate from combobox
-    virtual void onSerialBaudRateChange() = 0;
+    /// @brief Slot for processing baud rate combobox
+    virtual void onSerialBaudRateChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial data bits combobox
-    /// @return Signal after pefrormed action
+    /// @brief Signal for data bits combobox
+    /// @return Signal for selected data bits combobox
     virtual serialDataBits serialDataBitsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial data bits combobox
-    virtual void onSerialDataBitsChange() = 0;
+    /// @brief Slot for processing data bits combobox
+    virtual void onSerialDataBitsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial parity combobox
-    /// @return Signal after pefrormed action
+    /// @brief Signal for parity combobox
+    /// @return Signal for selected parity combobox
     virtual serialParity serialParityChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial parity combobox
-    virtual void onSerialParityChange() = 0;
+    /// @brief Slot for processing parity combobox
+    virtual void onSerialParityChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial stop bits combobox
-    /// @return Signal after pefrormed action
+    /// @brief Signal for stop bits combobox
+    /// @return Signal for selected stop bits combobox
     virtual serialStopBits serialStopBitsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Serial stop bits combobox
-    virtual void onSerialStopBitsChange() = 0;
+    /// @brief Slot for processing stop bits combobox
+    virtual void onSerialStopBitsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial Cancel button
-    /// @return Signal after pefrormed action
-    virtual cancelSerial cancelSerialChanged() = 0;
+    /// @brief Signal for Cancel button
+    /// @return Signal for clicked Cancel button
+    virtual cancelSerial cancelSerialTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Serial Ok button
-    /// @return Signal after pefrormed action
-    virtual okSerial okSerialChanged() = 0;
+    /// @brief Signal for Ok button
+    /// @return Signal for clicked Ok button
+    virtual okSerial okSerialTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Cancel button
-    virtual void onCancelSerialChange() = 0;
+    /// @brief Slot for processing Cancel button (dismiss)
+    virtual void onCancelSerialTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Ok button
-    virtual void onOkSerialChange() = 0;
+    /// @brief Slot for processing Ok button (confirm)
+    virtual void onOkSerialTriggered() = 0;
 };

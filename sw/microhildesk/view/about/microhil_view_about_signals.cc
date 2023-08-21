@@ -18,7 +18,8 @@
  */
 #include "microhil_view_about.h"
 
-MicroHILViewAbout::visibleAbout MicroHILViewAbout::visibleAboutChanged()
+MicroHILViewAbout::hideAbout
+MicroHILViewAbout::hideAboutTriggered()
 {
-    return m_visibleAbout;
+    return m_hideAbout;
 }

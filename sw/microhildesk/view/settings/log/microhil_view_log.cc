@@ -48,22 +48,24 @@ MicroHILViewLog::MicroHILViewLog(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Log level combobox selector
+    /// Bind Log level combobox
     m_level = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kLogLevelSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Cancel and Ok buttons
+    /// Bind Cancel button
     m_cancel = Glib::RefPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kCancelButtonId)
     );
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Bind Ok button
     m_ok = Glib::RefPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kOkButtonId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map Ok button signal and slot
+    /// Map all widgets (signals and slots)
     mapping();
 }

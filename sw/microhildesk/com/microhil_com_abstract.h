@@ -43,13 +43,13 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Read from communication channel
-    /// @param data buffer to be placed to after reading the serial port
+    /// @param data buffer to be placed to after reading channel
     /// @param len length of data to read before returning
     /// @param timeout timeout period in miliseconds
     virtual void read(v_uint8& data, size_t len, size_t timeout) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Write to communication channel
-    /// @param data to be written to the serial port
+    /// @param data to be written to channel
     virtual void write(v_uint8& data) = 0;
 };

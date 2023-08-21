@@ -33,7 +33,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MicroHILViewLog constructor
     /// @param object base object instance
-    /// @param ui bulder parser
+    /// @param ui bulder instance
     MicroHILViewLog(
         BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
     );
@@ -43,44 +43,44 @@ public:
     ~MicroHILViewLog() = default;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Log input
-    /// @return Signal for entry action
+    /// @brief Signal for log file path input
+    /// @return Signal for changed log file path entry
     logFilePath logFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing log input
-    void onLogFilePathChange() final;
+    /// @brief Slot for processing log file path input 
+    void onLogFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Log level combobox
-    /// @return Signal for changed log level by combobox
+    /// @brief Signal for log level combobox
+    /// @return Signal for selected log level combobox 
     selectLogLevel logLevelChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing loge level from combobox
-    void onLogLevelChange() final;
+    /// @brief Slot for processing log level combobox
+    void onLogLevelChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Log Cancel button
-    /// @return Signal for performed action
-    cancelLog cancelLogChanged() final;
+    /// @brief Signal for Cancel button
+    /// @return Signal for clicked Cancel button
+    cancelLog cancelLogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Log Ok button 
-    /// @return Signal for performed action
-    okLog okLogChanged() final;
+    /// @brief Signal for Ok button 
+    /// @return Signal for clicked Ok button
+    okLog okLogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Log Cancel button
-    void onCancelLogChange() final;
+    /// @brief Slot for processing Cancel button
+    void onCancelLogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Log Ok button
-    void onOkLogChange() final;
+    /// @brief Slot for processing Ok button
+    void onOkLogTriggered() final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Map all signals and slots for log dialog
+    /// @brief Map all widgets (signals and slots)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
@@ -104,18 +104,18 @@ private:
     Glib::RefPtr<Gtk::Button> m_ok;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting after type action on input
+    /// @brief Signal for log file path input
     logFilePath m_logFilePath;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting after select action on combobox
+    /// @brief Signal for log level combobox
     selectLogLevel m_logLevel;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Cancel button (dismiss)
+    /// @brief Signal for Cancel button (dismiss)
     cancelLog m_cancelLog;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for emitting from Ok button (confirm)
+    /// @brief Signal for Ok button (confirm)
     okLog m_okLog;
 };
