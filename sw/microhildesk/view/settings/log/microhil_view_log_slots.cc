@@ -20,16 +20,22 @@
 
 void MicroHILViewLog::onLogFilePathChanged()
 {
+    // TODO
 }
 
 void MicroHILViewLog::onLogLevelChanged()
 {
+    // TODO
 }
 
 void MicroHILViewLog::onCancelLogTriggered()
 {
+    // TODO
+    this->hide();
 }
 
 void MicroHILViewLog::onOkLogTriggered()
 {
+    // TODO
+    this->hide();
 }

@@ -40,15 +40,15 @@ void MicroHILViewHome::onTypeSelected(Channel id)
 {
     auto ix = static_cast<int>(id);
 
-    if(m_enableChannels[ix]->get_active() == true)
+    if(m_enableChannels[ix]->get_active())
     {
         int controlType = m_selectControlChannels[ix]->get_active_row_number();
         switch(controlType)
         {
-            case static_cast<int>(channelControlType::TOGGLE_BUTTON):
+            case static_cast<int>(channelControlType::MICROHIL_TOGGLE_BUTTON):
                 toggleModeChannel(id);
                 break;
-            case static_cast<int>(channelControlType::TIMER_BUTTON):
+            case static_cast<int>(channelControlType::MICROHIL_TIMER_BUTTON):
                 timerModeChannel(id);
                 break;
         }
@@ -61,7 +61,7 @@ void MicroHILViewHome::onToggled(Channel id)
 {
     auto ix = static_cast<int>(id);
 
-    if(m_enableChannels[ix]->get_active() == true)
+    if(m_enableChannels[ix]->get_active())
     {
         bool status = m_toggleChannels[ix]->get_active();
         m_channelToggled.emit(id, status);
@@ -72,7 +72,7 @@ void MicroHILViewHome::onSpinTimerChanged(Channel id)
 {
     auto ix = static_cast<int>(id);
 
-    if(m_enableChannels[ix]->get_active() == true)
+    if(m_enableChannels[ix]->get_active())
     {
         int value = m_spinTimerChannels[ix]->get_value_as_int();
         m_channelSpinTimerChanged.emit(id, value);
@@ -83,7 +83,7 @@ void MicroHILViewHome::onToggleTimerChanged(Channel id)
 {
     auto ix = static_cast<int>(id);
 
-    if(m_enableChannels[ix]->get_active() == true)
+    if(m_enableChannels[ix]->get_active())
     {
         bool status = m_toggleTimerChannels[ix]->get_active();
         m_channelTimerToggled.emit(id, status);
@@ -92,30 +92,30 @@ void MicroHILViewHome::onToggleTimerChanged(Channel id)
 
 void MicroHILViewHome::onConnectClicked()
 {
-    std::cout << "TODO: Connect" << std::endl;
+    m_actionViewTriggered.emit(ViewId::MICROHIL_CONNECT);
 }
 
 void MicroHILViewHome::onDisconnectClicked()
 {
-    std::cout << "TODO: Disconnect" << std::endl;
+    m_actionViewTriggered.emit(ViewId::MICROHIL_DISCONNECT);
 }
 
 void MicroHILViewHome::onQuitClicked()
 {
-    std::cout << "TODO: Quit" << std::endl;
+    m_actionViewTriggered.emit(ViewId::MICROHIL_QUIT);
 }
 
 void MicroHILViewHome::onSerialSettingsClicked()
 {
-    std::cout << "TODO: Serial Settings" << std::endl;
+    m_actionViewTriggered.emit(ViewId::MICROHIL_SERIAL_SETTINGS);
 }
 
 void MicroHILViewHome::onLogSettingsClicked()
 {
-    std::cout << "TODO: Log Settings" << std::endl;
+    m_actionViewTriggered.emit(ViewId::MICROHIL_LOG_SETTINGS);
 }
 
 void MicroHILViewHome::onAboutClicked()
 {
-    std::cout << "TODO: About" << std::endl;
+    m_actionViewTriggered.emit(ViewId::MICROHIL_ABOUT);
 }

@@ -20,4 +20,5 @@
 
 void MicroHILViewAbout::onHideAboutTriggered()
 {
+    this->hide();
 }

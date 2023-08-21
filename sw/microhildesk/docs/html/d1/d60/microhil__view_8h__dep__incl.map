@@ -1,8 +1,10 @@
 <map id="view/microhil_view.h" name="view/microhil_view.h">
-<area shape="rect" id="node1" title=" " alt="" coords="149,5,307,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="326,5,485,32"/>
 <area shape="rect" id="node2" href="$db/d32/application_8h.html" title=" " alt="" coords="67,177,173,203"/>
 <area shape="rect" id="node5" href="$d6/da2/microhil__controller_8h.html" title=" " alt="" coords="157,80,299,121"/>
 <area shape="rect" id="node7" href="$d6/dd3/microhil__view_8cc.html" title=" " alt="" coords="323,87,488,114"/>
+<area shape="rect" id="node8" href="$d2/df9/microhil__view__map_8cc.html" title=" " alt="" coords="513,80,661,121"/>
+<area shape="rect" id="node9" href="$d4/d7c/microhil__view__slots_8cc.html" title=" " alt="" coords="685,80,833,121"/>
 <area shape="rect" id="node3" href="$dc/d16/application_8cc.html" title=" " alt="" coords="5,259,117,285"/>
 <area shape="rect" id="node4" href="$d9/d0f/main_8cc.html" title=" " alt="" coords="142,259,215,285"/>
 <area shape="rect" id="node6" href="$db/d49/microhil__controller_8cc.html" title=" " alt="" coords="197,169,339,211"/>

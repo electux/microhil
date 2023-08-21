@@ -47,6 +47,15 @@ public:
 
 private:
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Mapping views (signal and slots)
+    void mapping();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing requests for triggering view
+    /// @param id of requested view
+    void onViewChanged(ViewId id);
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
     Glib::RefPtr<Gtk::Builder> m_builder{nullptr};
 

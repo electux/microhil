@@ -180,13 +180,13 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   29</span>{</div>
 <div class="line"><span class="lineno">   32</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; kNumberOfChannels; i++)</div>
 <div class="line"><span class="lineno">   33</span>    {</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_variable" href="../../de/dce/classMicroHILModel.html#ad8770f71e954a4e39f65ee0b1e31e161">m_channels</a>.push_back(<a class="code hl_enumvalue" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a88559a0cfd8250c9d65970cc145c92d4">ChannelState::OFF</a>);</div>
+<div class="line"><span class="lineno">   34</span>        <a class="code hl_variable" href="../../de/dce/classMicroHILModel.html#ad8770f71e954a4e39f65ee0b1e31e161">m_channels</a>.push_back(<a class="code hl_enumvalue" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a3c76c41f1fd2cbc13411d21e5a4e9dbf">ChannelState::MICROHIL_OFF</a>);</div>
 <div class="line"><span class="lineno">   35</span>    }</div>
 <div class="line"><span class="lineno">   36</span>}</div>
 <div class="ttc" id="aclassMicroHILModel_html_ad8770f71e954a4e39f65ee0b1e31e161"><div class="ttname"><a href="../../de/dce/classMicroHILModel.html#ad8770f71e954a4e39f65ee0b1e31e161">MicroHILModel::m_channels</a></div><div class="ttdeci">std::vector&lt; ChannelState &gt; m_channels</div><div class="ttdoc">Channel states.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d57/microhil__model_8h_source.html#l00058">microhil_model.h:58</a></div></div>
-<div class="ttc" id="amicrohil__model__abstract_8h_html_af01e337765f2caf3f5f9e88d5fc19b05a88559a0cfd8250c9d65970cc145c92d4"><div class="ttname"><a href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a88559a0cfd8250c9d65970cc145c92d4">ChannelState::OFF</a></div><div class="ttdeci">@ OFF</div></div>
+<div class="ttc" id="amicrohil__model__abstract_8h_html_af01e337765f2caf3f5f9e88d5fc19b05a3c76c41f1fd2cbc13411d21e5a4e9dbf"><div class="ttname"><a href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a3c76c41f1fd2cbc13411d21e5a4e9dbf">ChannelState::MICROHIL_OFF</a></div><div class="ttdeci">@ MICROHIL_OFF</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>, and <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a88559a0cfd8250c9d65970cc145c92d4">OFF</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>, and <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a3c76c41f1fd2cbc13411d21e5a4e9dbf">MICROHIL_OFF</a>.</p>
 
 </div>
 </div>
@@ -299,11 +299,11 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00048">48</a> of file <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html">microhil_model.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../de/dce/classMicroHILModel.html#ad8770f71e954a4e39f65ee0b1e31e161">m_channels</a>[id] == <a class="code hl_enumvalue" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a90651ebea9a35ec4e018c8157492e17c">ChannelState::ON</a>;</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../de/dce/classMicroHILModel.html#ad8770f71e954a4e39f65ee0b1e31e161">m_channels</a>[id] == <a class="code hl_enumvalue" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">ChannelState::MICROHIL_ON</a>;</div>
 <div class="line"><span class="lineno">   51</span>}</div>
-<div class="ttc" id="amicrohil__model__abstract_8h_html_af01e337765f2caf3f5f9e88d5fc19b05a90651ebea9a35ec4e018c8157492e17c"><div class="ttname"><a href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a90651ebea9a35ec4e018c8157492e17c">ChannelState::ON</a></div><div class="ttdeci">@ ON</div></div>
+<div class="ttc" id="amicrohil__model__abstract_8h_html_af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae"><div class="ttname"><a href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">ChannelState::MICROHIL_ON</a></div><div class="ttdeci">@ MICROHIL_ON</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>, and <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a90651ebea9a35ec4e018c8157492e17c">ON</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>, and <a class="el" href="../../dd/d70/microhil__model__abstract_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">MICROHIL_ON</a>.</p>
 
 </div>
 </div>
@@ -400,7 +400,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/dce/classMicroHILModel.html">MicroHILModel</a></li>
-    <li class="footer">Generated on Mon Aug 21 2023 20:05:44 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 21 2023 23:06:59 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

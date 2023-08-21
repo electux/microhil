@@ -414,7 +414,8 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dc9/microhil__view__dialog__slots_8cc_source.html#l00021">21</a> of file <a class="el" href="../../da/dc9/microhil__view__dialog__slots_8cc_source.html">microhil_view_dialog_slots.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
-<div class="line"><span class="lineno">   23</span>}</div>
+<div class="line"><span class="lineno">   23</span>    this-&gt;hide();</div>
+<div class="line"><span class="lineno">   24</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../d3/d3b/microhil__view__dialog__map_8cc_source.html#l00021">mapping()</a>.</p>
 <div class="dynheader">
@@ -533,21 +534,21 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
 <div class="line"><span class="lineno">   82</span>    <span class="keywordflow">switch</span>(type)</div>
 <div class="line"><span class="lineno">   83</span>    {</div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013a551b723eafd6a31d444fcb2f5920fbd3">MessageType::INFO</a>:</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013a5c275391c03b613d150162fb88b43675">MessageType::MICROHIL_INFO</a>:</div>
 <div class="line"><span class="lineno">   85</span>            <span class="keywordflow">return</span> kInfoMessage;</div>
-<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013a059e9861e0400dfbe05c98a841f3f96b">MessageType::WARNING</a>:</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013aa4dd09d3ec446e8317a230e3c5eed791">MessageType::MICROHIL_WARNING</a>:</div>
 <div class="line"><span class="lineno">   87</span>            <span class="keywordflow">return</span> kWarningMessage;</div>
-<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013abb1ca97ec761fc37101737ba0aa2e7c5">MessageType::ERROR</a>:</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013ac2632392c1fd9eae2206c224f13ee03e">MessageType::MICROHIL_ERROR</a>:</div>
 <div class="line"><span class="lineno">   89</span>            <span class="keywordflow">return</span> kErrorMessage;</div>
 <div class="line"><span class="lineno">   90</span>    }</div>
 <div class="line"><span class="lineno">   91</span> </div>
 <div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> kInfoMessage;</div>
 <div class="line"><span class="lineno">   93</span>}</div>
-<div class="ttc" id="amicrohil__view__dialog__abstract_8h_html_ac6606ebe91c8ac66a2c314c79f5ab013a059e9861e0400dfbe05c98a841f3f96b"><div class="ttname"><a href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013a059e9861e0400dfbe05c98a841f3f96b">MessageType::WARNING</a></div><div class="ttdeci">@ WARNING</div></div>
-<div class="ttc" id="amicrohil__view__dialog__abstract_8h_html_ac6606ebe91c8ac66a2c314c79f5ab013a551b723eafd6a31d444fcb2f5920fbd3"><div class="ttname"><a href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013a551b723eafd6a31d444fcb2f5920fbd3">MessageType::INFO</a></div><div class="ttdeci">@ INFO</div></div>
-<div class="ttc" id="amicrohil__view__dialog__abstract_8h_html_ac6606ebe91c8ac66a2c314c79f5ab013abb1ca97ec761fc37101737ba0aa2e7c5"><div class="ttname"><a href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013abb1ca97ec761fc37101737ba0aa2e7c5">MessageType::ERROR</a></div><div class="ttdeci">@ ERROR</div></div>
+<div class="ttc" id="amicrohil__view__dialog__abstract_8h_html_ac6606ebe91c8ac66a2c314c79f5ab013a5c275391c03b613d150162fb88b43675"><div class="ttname"><a href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013a5c275391c03b613d150162fb88b43675">MessageType::MICROHIL_INFO</a></div><div class="ttdeci">@ MICROHIL_INFO</div></div>
+<div class="ttc" id="amicrohil__view__dialog__abstract_8h_html_ac6606ebe91c8ac66a2c314c79f5ab013aa4dd09d3ec446e8317a230e3c5eed791"><div class="ttname"><a href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013aa4dd09d3ec446e8317a230e3c5eed791">MessageType::MICROHIL_WARNING</a></div><div class="ttdeci">@ MICROHIL_WARNING</div></div>
+<div class="ttc" id="amicrohil__view__dialog__abstract_8h_html_ac6606ebe91c8ac66a2c314c79f5ab013ac2632392c1fd9eae2206c224f13ee03e"><div class="ttname"><a href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013ac2632392c1fd9eae2206c224f13ee03e">MessageType::MICROHIL_ERROR</a></div><div class="ttdeci">@ MICROHIL_ERROR</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013abb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a>, <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013a551b723eafd6a31d444fcb2f5920fbd3">INFO</a>, and <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013a059e9861e0400dfbe05c98a841f3f96b">WARNING</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013ac2632392c1fd9eae2206c224f13ee03e">MICROHIL_ERROR</a>, <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013a5c275391c03b613d150162fb88b43675">MICROHIL_INFO</a>, and <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013aa4dd09d3ec446e8317a230e3c5eed791">MICROHIL_WARNING</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d35/microhil__view__dialog_8cc_source.html#l00069">setMessage()</a>.</p>
 <div class="dynheader">
@@ -688,7 +689,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/dcd/classMicroHILViewDialog.html">MicroHILViewDialog</a></li>
-    <li class="footer">Generated on Mon Aug 21 2023 20:05:44 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 21 2023 23:06:59 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

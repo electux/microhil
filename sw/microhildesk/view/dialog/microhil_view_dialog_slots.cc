@@ -20,4 +20,5 @@
 
 void MicroHILViewDialog::onHideDialogTriggered()
 {
+    this->hide();
 }

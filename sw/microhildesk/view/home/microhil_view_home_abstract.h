@@ -21,25 +21,38 @@
 #include <sigc++/sigc++.h>
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Scoped enumerator for View IDs
+enum class ViewId: int
+{
+    MICROHIL_CONNECT = 0,
+    MICROHIL_DISCONNECT = 1,
+    MICROHIL_QUIT = 2,
+    MICROHIL_MESSAGE = 3,
+    MICROHIL_SERIAL_SETTINGS = 4,
+    MICROHIL_LOG_SETTINGS = 5,
+    MICROHIL_ABOUT = 6
+};
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped enumerator for channel IDs
 enum class Channel: int
 {
-    ID0 = 0,
-    ID1 = 1,
-    ID2 = 2,
-    ID3 = 3,
-    ID4 = 4,
-    ID5 = 5,
-    ID6 = 6,
-    ID7 = 7
+    MICROHIL_ID0 = 0,
+    MICROHIL_ID1 = 1,
+    MICROHIL_ID2 = 2,
+    MICROHIL_ID3 = 3,
+    MICROHIL_ID4 = 4,
+    MICROHIL_ID5 = 5,
+    MICROHIL_ID6 = 6,
+    MICROHIL_ID7 = 7
 }; 
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief  Scoped enumerator for channel control types
-enum class channelControlType
+enum class channelControlType: int
 {
-    TOGGLE_BUTTON = 0,
-    TIMER_BUTTON = 1
+    MICROHIL_TOGGLE_BUTTON = 0,
+    MICROHIL_TIMER_BUTTON = 1
 };
 
 ////////////////////////////////////////////////////////////////////////////
@@ -47,6 +60,10 @@ enum class channelControlType
 class AbMicroHILViewHome
 {
 public:
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal type for menu itmes (trigger another view)
+    using actionViewTriggered = sigc::signal<void(ViewId)>;
+
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for check buttons (enable/disable channel)
     using channelChanged = sigc::signal<void(Channel, bool)>;
@@ -72,52 +89,57 @@ public:
     virtual ~AbMicroHILViewHome() = default;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for menu items (changed view)
+    /// @return Signal for clicked menu item
+    virtual actionViewTriggered viewChanged() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for check buttons (enable/disable channel)
-    /// @return Signal for perfomed action
+    /// @return Signal for clicked button
     virtual channelChanged channelIsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing check buttons (enable/disable channel)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onChannelChanged(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for comboboxes (control type)
-    /// @return Signal for perfomed action
+    /// @return Signal for changed channel state combobox
     virtual selectChanged channelIsSelected() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing comboboxes (control type)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onTypeSelected(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggling buttons (turn on/turn off channel)
-    /// @return Signal for perfomed action
+    /// @return Signal for toggled button
     virtual channelToggled channelIsToggled() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off channel)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onToggled(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for spin buttons (based on timer)
-    /// @return Signal for perfomed action
+    /// @return Signal for changed spin button
     virtual channelSpinTimerChanged channelIsSpinTimerChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing spin buttons (based on timer)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onSpinTimerChanged(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggle buttons (based on timer)
-    /// @return Signal for perfomed action
+    /// @return Signal for toggled button
     virtual channelTimerToggled channelIsTimerChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off timer)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onToggleTimerChanged(Channel id) = 0;
 };

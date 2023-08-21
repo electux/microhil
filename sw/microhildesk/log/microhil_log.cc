@@ -105,11 +105,11 @@ Glib::ustring MicroHILLog::getLogType(LogLevel level) const
 {
     switch(level)
     {
-        case LogLevel::INFO:
+        case LogLevel::MICROHIL_INFO:
             return kInfoLogLevel;
-        case LogLevel::WARNING:
+        case LogLevel::MICROHIL_WARNING:
             return kWarningLogLevel;
-        case LogLevel::ERROR:
+        case LogLevel::MICROHIL_ERROR:
             return kErrorLogLevel;
     }
 

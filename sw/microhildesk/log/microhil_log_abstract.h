@@ -24,9 +24,9 @@
 /// @brief Scoped enumerator for log levels
 enum class LogLevel
 {
-    INFO = 0,
-    WARNING = 1,
-    ERROR = 2
+    MICROHIL_INFO = 0,
+    MICROHIL_WARNING = 1,
+    MICROHIL_ERROR = 2
 };
 
 ////////////////////////////////////////////////////////////////////////////

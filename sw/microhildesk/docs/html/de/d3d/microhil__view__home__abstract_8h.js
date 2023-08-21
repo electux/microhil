@@ -2,17 +2,26 @@ var microhil__view__home__abstract_8h =
 [
     [ "AbMicroHILViewHome", "d5/d72/classAbMicroHILViewHome.html", "d5/d72/classAbMicroHILViewHome" ],
     [ "Channel", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109", [
-      [ "ID0", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a70fed692dfa06c151c9f4d889e7b4b19", null ],
-      [ "ID1", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a5027e37325ce86ec093583d463392445", null ],
-      [ "ID2", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a5bdf6bccf21be5a5680df04759aa5bf4", null ],
-      [ "ID3", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109ac0f44879dc0d4eae7b3f0b3e801e373c", null ],
-      [ "ID4", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109ac068c0d330d8d5dd41a8c3b2c3d7c603", null ],
-      [ "ID5", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a5b8e2fd648a621e14c1fb36a7774cc4a", null ],
-      [ "ID6", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109ac5de56d5c171e842517e865f1b491abe", null ],
-      [ "ID7", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109ad4ede5603755f81358de3bd98ecf9f6f", null ]
+      [ "MICROHIL_ID0", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de", null ],
+      [ "MICROHIL_ID1", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a8ec09b5dd8e26cf2acb2cd70175893de", null ],
+      [ "MICROHIL_ID2", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a95ce628b5fa6d6f9c04d29672ee3162a", null ],
+      [ "MICROHIL_ID3", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a7dae88f19fe6bbca2d5a615a3657edca", null ],
+      [ "MICROHIL_ID4", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109aff882a2f7ccd742c36ed4487bad4b0d0", null ],
+      [ "MICROHIL_ID5", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109afeaa0854bccba9a05861ffecdf810f85", null ],
+      [ "MICROHIL_ID6", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a0149654c0afc2e3aa57f7f97456eac7c", null ],
+      [ "MICROHIL_ID7", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1a4787f619fb79ba49dac613a4aa7ea8", null ]
     ] ],
-    [ "channelControlType", "de/d3d/microhil__view__home__abstract_8h.html#a4654e7513eff694898ce1e17b8e3571d", [
-      [ "TOGGLE_BUTTON", "de/d3d/microhil__view__home__abstract_8h.html#a4654e7513eff694898ce1e17b8e3571daf904c5cfcf8d4da911c88aaceaf04095", null ],
-      [ "TIMER_BUTTON", "de/d3d/microhil__view__home__abstract_8h.html#a4654e7513eff694898ce1e17b8e3571da12cc6288a39e8cea4d3f93a51608f871", null ]
+    [ "channelControlType", "de/d3d/microhil__view__home__abstract_8h.html#a2436236bd5d3769ab90b777e2f183e05", [
+      [ "MICROHIL_TOGGLE_BUTTON", "de/d3d/microhil__view__home__abstract_8h.html#a2436236bd5d3769ab90b777e2f183e05a75ea5086045cad60adf7a88b733208ac", null ],
+      [ "MICROHIL_TIMER_BUTTON", "de/d3d/microhil__view__home__abstract_8h.html#a2436236bd5d3769ab90b777e2f183e05aac7325381df480edd19170961fca6459", null ]
+    ] ],
+    [ "ViewId", "de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411", [
+      [ "MICROHIL_CONNECT", "de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411ac6e643acee95bffc822758de60ee3840", null ],
+      [ "MICROHIL_DISCONNECT", "de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411a77f062dbc56e4a7c82f25ae6cae86123", null ],
+      [ "MICROHIL_QUIT", "de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411ab730a81441d3d824fc9fd8b5146f03da", null ],
+      [ "MICROHIL_MESSAGE", "de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411a0c2692029cffca7632a98b08d5e7e0d2", null ],
+      [ "MICROHIL_SERIAL_SETTINGS", "de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411a286064fba622d91c6f129d3cfaa62d63", null ],
+      [ "MICROHIL_LOG_SETTINGS", "de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411ab03f98ddbf20c27802bd077b92288235", null ],
+      [ "MICROHIL_ABOUT", "de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411a880a9c4a87bbcae68f8ea508d0977f8c", null ]
     ] ]
 ];
