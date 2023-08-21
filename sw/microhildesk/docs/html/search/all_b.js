@@ -15,6 +15,6 @@ var searchData=
   ['setchannel_12',['setChannel',['../de/dce/classMicroHILModel.html#ae93dad69bf2b19ec5c788349ad65a1dd',1,'MicroHILModel::setChannel()'],['../db/dda/classAbMicroHILModel.html#ae2555c4bf8700bffe1a5ddbebe38eda5',1,'AbMicroHILModel::setChannel()']]],
   ['setenabled_13',['setEnabled',['../dd/d47/classMicroHILController.html#a024ac54258033deaddb53ebef57b6e66',1,'MicroHILController::setEnabled()'],['../de/dee/classAbMicroHILController.html#af942a232add2c65747f1cf34406c70a2',1,'AbMicroHILController::setEnabled()']]],
   ['setfilepath_14',['setFilePath',['../d1/de3/classMicroHILLog.html#a0565006bf3529688d56271ac6a2f4cb9',1,'MicroHILLog']]],
-  ['setprevalid_15',['setPreValid',['../d6/dac/classAbMicroHILConfig.html#abaa1ac7499dc4c2ae28d19b64655c553',1,'AbMicroHILConfig']]],
-  ['show_16',['show',['../da/dcd/classMicroHILViewDialog.html#a22789006b07056dae81b9d1f572819e3',1,'MicroHILViewDialog::show()'],['../d9/d02/classAbMicroHILViewDialog.html#a32568bf106815d8f9eccb73f61828d45',1,'AbMicroHILViewDialog::show()']]]
+  ['setmessage_15',['setMessage',['../da/dcd/classMicroHILViewDialog.html#a4d704d8e97e3e9aa1d59482f363f707a',1,'MicroHILViewDialog::setMessage()'],['../d9/d02/classAbMicroHILViewDialog.html#a0403a55faf074f8faaff7271faf8af49',1,'AbMicroHILViewDialog::setMessage()']]],
+  ['setprevalid_16',['setPreValid',['../d6/dac/classAbMicroHILConfig.html#abaa1ac7499dc4c2ae28d19b64655c553',1,'AbMicroHILConfig']]]
 ];

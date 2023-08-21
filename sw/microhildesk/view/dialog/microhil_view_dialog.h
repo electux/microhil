@@ -69,17 +69,17 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_ui;
+    Glib::RefPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Dialog message text filed
-    Glib::RefPtr<Gtk::Label> m_text;
+    Glib::RefPtr<Gtk::Label> m_text{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Close button for dialog message
-    Glib::RefPtr<Gtk::Button> m_close;
+    Glib::RefPtr<Gtk::Button> m_close{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button (self hide Dialog)
-    hideDialog m_hideDialog;
+    hideDialog m_hideDialog{};
 };

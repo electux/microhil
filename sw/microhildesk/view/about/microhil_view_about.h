@@ -56,13 +56,13 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_ui;
+    Glib::RefPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Ok button for about view
-    Glib::RefPtr<Gtk::Button> m_ok;
+    Glib::RefPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button (self hide AboutDialog)
-    hideAbout m_hideAbout;
+    hideAbout m_hideAbout{};
 };

@@ -21,8 +21,6 @@
 #include <vector>
 #include "microhil_model_abstract.h"
 
-using namespace::std;
-
 ////////////////////////////////////////////////////////////////////////////
 /// @brief MicroHILModel class declaration and definition 
 class MicroHILModel: public AbMicroHILModel

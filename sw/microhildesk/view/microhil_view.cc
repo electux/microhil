@@ -23,23 +23,23 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Resource path for Home UI
     constexpr char kHomeUI[]{"/org/gtkmm/microhildesk/microhil.ui"};
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// Application Window ID
     constexpr char kWindowId[]{"Window"};
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// Application Dialog ID
     constexpr char kDialogId[]{"DialogMessage"};
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// Application Log Settings ID
     constexpr char kLogId[]{"LogDialog"};
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// Application Serial Settings ID
     constexpr char kSerialId[]{"SerialDialog"};
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// Application About ID
     constexpr char kAboutId[]{"AboutDialog"};
@@ -60,15 +60,11 @@ MicroHILView::MicroHILView()
         kDialogId, (MicroHILViewDialog*&) m_dialog
     );
 
-    // m_dialog->hide();
-
     ////////////////////////////////////////////////////////////////////////
     /// Setup builder and Log Settings view
     m_builder->get_widget_derived(
         kLogId, (MicroHILViewLog*&) m_log
     );
-
-    // m_log->hide();
 
     ////////////////////////////////////////////////////////////////////////
     /// Setup builder and Serial Settings view
@@ -76,15 +72,11 @@ MicroHILView::MicroHILView()
         kSerialId, (MicroHILViewSerial*&) m_serial
     );
 
-    // m_serial->hide();
-
     ////////////////////////////////////////////////////////////////////////
     /// Setup builder and About view
     m_builder->get_widget_derived(
         kAboutId, (MicroHILViewAbout*&) m_about
     );
-
-    // m_about->hide();
 }
 
 Glib::RefPtr<MicroHILViewHome> MicroHILView::getHome()

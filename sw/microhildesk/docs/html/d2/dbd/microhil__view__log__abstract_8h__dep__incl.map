@@ -1,8 +1,15 @@
 <map id="view/settings/log/microhil_view_log_abstract.h" name="view/settings/log/microhil_view_log_abstract.h">
-<area shape="rect" id="node1" title=" " alt="" coords="327,5,517,47"/>
-<area shape="rect" id="node2" href="$d2/dd2/microhil__view__log_8h.html" title=" " alt="" coords="327,95,517,136"/>
-<area shape="rect" id="node3" href="$d3/dd6/microhil__view__log_8cc.html" title=" " alt="" coords="5,184,196,225"/>
-<area shape="rect" id="node4" href="$dd/dcf/microhil__view__log__map_8cc.html" title=" " alt="" coords="220,184,411,225"/>
-<area shape="rect" id="node5" href="$d2/dd1/microhil__view__log__signals_8cc.html" title=" " alt="" coords="435,184,625,225"/>
-<area shape="rect" id="node6" href="$db/d53/microhil__view__log__slots_8cc.html" title=" " alt="" coords="649,184,840,225"/>
+<area shape="rect" id="node1" title=" " alt="" coords="546,5,737,47"/>
+<area shape="rect" id="node2" href="$d2/dd2/microhil__view__log_8h.html" title=" " alt="" coords="546,95,737,136"/>
+<area shape="rect" id="node3" href="$d5/d3e/microhil__view_8h.html" title=" " alt="" coords="149,191,307,218"/>
+<area shape="rect" id="node10" href="$d3/dd6/microhil__view__log_8cc.html" title=" " alt="" coords="331,184,522,225"/>
+<area shape="rect" id="node11" href="$dd/dcf/microhil__view__log__map_8cc.html" title=" " alt="" coords="546,184,737,225"/>
+<area shape="rect" id="node12" href="$d2/dd1/microhil__view__log__signals_8cc.html" title=" " alt="" coords="761,184,951,225"/>
+<area shape="rect" id="node13" href="$db/d53/microhil__view__log__slots_8cc.html" title=" " alt="" coords="975,184,1166,225"/>
+<area shape="rect" id="node4" href="$db/d32/application_8h.html" title=" " alt="" coords="67,370,173,397"/>
+<area shape="rect" id="node7" href="$d6/da2/microhil__controller_8h.html" title=" " alt="" coords="157,273,299,315"/>
+<area shape="rect" id="node9" href="$d6/dd3/microhil__view_8cc.html" title=" " alt="" coords="323,281,488,307"/>
+<area shape="rect" id="node5" href="$dc/d16/application_8cc.html" title=" " alt="" coords="5,452,117,479"/>
+<area shape="rect" id="node6" href="$d9/d0f/main_8cc.html" title=" " alt="" coords="142,452,215,479"/>
+<area shape="rect" id="node8" href="$db/d49/microhil__controller_8cc.html" title=" " alt="" coords="197,363,339,404"/>
 </map>

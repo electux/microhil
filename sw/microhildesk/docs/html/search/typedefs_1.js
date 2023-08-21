@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['logfilepath_0',['logFilePath',['../d1/d49/classAbMicroHILViewLog.html#a03b0f096efc9c4be2fc9387d0979fe46',1,'AbMicroHILViewLog']]]
+  ['hideabout_0',['hideAbout',['../d6/d7b/classAbMicroHILViewAbout.html#ab4c65c5ecfdac3ddaa34c01fe0f166cb',1,'AbMicroHILViewAbout']]],
+  ['hidedialog_1',['hideDialog',['../d9/d02/classAbMicroHILViewDialog.html#a2599097500eed1583413318f0a4448d4',1,'AbMicroHILViewDialog']]]
 ];

@@ -114,6 +114,7 @@
                 <property name="name">HomeMenuBarFile</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="label" translatable="yes">File</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="HomeMenuBarFileSubMenu">
                     <property name="name">HomeMenuBarFileSubMenu</property>
@@ -125,6 +126,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="tooltip-text" translatable="yes">Connect to serial port</property>
+                        <property name="label" translatable="yes">Connect</property>
                       </object>
                     </child>
                     <child>
@@ -133,6 +135,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="tooltip-text" translatable="yes">Disconnect from serial port</property>
+                        <property name="label" translatable="yes">Disconnect</property>
                       </object>
                     </child>
                     <child>
@@ -147,6 +150,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="tooltip-text" translatable="yes">Quit from application</property>
+                        <property name="label" translatable="yes">Quit</property>
                       </object>
                     </child>
                   </object>
@@ -158,6 +162,7 @@
                 <property name="name">HomeMenuBarEdit</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Edit</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="HomeMenuBarEditSubMenu">
                     <property name="name">HomeMenuBarEditSubMenu</property>
@@ -168,6 +173,7 @@
                         <property name="name">HomeSerialPortSettings</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Serial Settings</property>
                       </object>
                     </child>
                     <child>
@@ -175,6 +181,7 @@
                         <property name="name">HomeLogSettings</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Log Settings</property>
                       </object>
                     </child>
                   </object>
@@ -186,6 +193,7 @@
                 <property name="name">HomeMenuBarHelp</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Help</property>
                 <child type="submenu">
                   <object class="GtkMenu" id="HomeMenuBarHelpSubMenu">
                     <property name="name">HomeMenuBarHelpSubMenu</property>
@@ -196,6 +204,7 @@
                         <property name="name">HomeAbout</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">About</property>
                       </object>
                     </child>
                   </object>

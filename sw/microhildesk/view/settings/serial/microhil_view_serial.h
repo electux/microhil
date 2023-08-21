@@ -112,61 +112,61 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_ui;
+    Glib::RefPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Set device file path
-    Glib::RefPtr<Gtk::Entry> m_device;
+    Glib::RefPtr<Gtk::Entry> m_device{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select baud rate
-    Glib::RefPtr<Gtk::ComboBoxText> m_baudRate;
+    Glib::RefPtr<Gtk::ComboBoxText> m_baudRate{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select data bits
-    Glib::RefPtr<Gtk::ComboBoxText> m_dataBits;
+    Glib::RefPtr<Gtk::ComboBoxText> m_dataBits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select parity
-    Glib::RefPtr<Gtk::ComboBoxText> m_parity;
+    Glib::RefPtr<Gtk::ComboBoxText> m_parity{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select stop bits
-    Glib::RefPtr<Gtk::ComboBoxText> m_stopBits;
+    Glib::RefPtr<Gtk::ComboBoxText> m_stopBits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Dismiss button
-    Glib::RefPtr<Gtk::Button> m_cancel;
+    Glib::RefPtr<Gtk::Button> m_cancel{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Confirm button
-    Glib::RefPtr<Gtk::Button> m_ok;
+    Glib::RefPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for device path input
-    serialDevicePath m_serialDevicePath;
+    serialDevicePath m_serialDevicePath{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for baud rate combobox
-    serialBaudRate m_serialBaudeRate;
+    serialBaudRate m_serialBaudeRate{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for data bits combobox
-    serialDataBits m_serialDataBits;
+    serialDataBits m_serialDataBits{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for parity combobox
-    serialParity m_serialParity;
+    serialParity m_serialParity{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for stop bits combobox
-    serialStopBits m_serialStopBits;
+    serialStopBits m_serialStopBits{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button (dismiss)
-    cancelSerial m_cancelSerial;
+    cancelSerial m_cancelSerial{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button (confirm)
-    okSerial m_okSerial;
+    okSerial m_okSerial{};
 };

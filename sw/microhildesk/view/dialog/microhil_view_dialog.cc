@@ -60,6 +60,10 @@ MicroHILViewDialog::MicroHILViewDialog(
     ////////////////////////////////////////////////////////////////////////
     /// Map Close button (signal and slot)
     mapping();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Hide Dialog by default
+    this->hide();
 }
 
 void MicroHILViewDialog::setMessage(

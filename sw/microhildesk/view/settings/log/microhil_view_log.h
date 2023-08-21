@@ -85,37 +85,37 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_ui;
+    Glib::RefPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI entry for setting file log path
-    Glib::RefPtr<Gtk::Entry> m_device;
+    Glib::RefPtr<Gtk::Entry> m_device{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Combobox for selecting log level type
-    Glib::RefPtr<Gtk::ComboBoxText> m_level;
+    Glib::RefPtr<Gtk::ComboBoxText> m_level{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Cancel button
-    Glib::RefPtr<Gtk::Button> m_cancel;
+    Glib::RefPtr<Gtk::Button> m_cancel{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Confirm button
-    Glib::RefPtr<Gtk::Button> m_ok;
+    Glib::RefPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log file path input
-    logFilePath m_logFilePath;
+    logFilePath m_logFilePath{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log level combobox
-    selectLogLevel m_logLevel;
+    selectLogLevel m_logLevel{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button (dismiss)
-    cancelLog m_cancelLog;
+    cancelLog m_cancelLog{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button (confirm)
-    okLog m_okLog;
+    okLog m_okLog{};
 };
