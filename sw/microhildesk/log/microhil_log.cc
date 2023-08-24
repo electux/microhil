@@ -55,6 +55,16 @@ Glib::ustring MicroHILLog::getFilePath() const
     return m_logFilePath;
 }
 
+void MicroHILLog::setLogLevel(LogLevel level)
+{
+    m_logLevel = level;
+}
+
+LogLevel MicroHILLog::getLogLevel() const
+{
+    return m_logLevel;
+}
+
 bool MicroHILLog::open()
 {
     if(!m_logFile.is_open() && !m_fileOpened)
@@ -69,7 +79,7 @@ bool MicroHILLog::open()
 void MicroHILLog::write(const Glib::ustring message, LogLevel level)
 {
     const auto currentTime = getCurrentDateTime();
-    const auto prefixLogLevel = getLogType(level);
+    const auto prefixLogLevel = toStringLogType(level);
     Glib::ustring logMessage = currentTime + prefixLogLevel + message;
 
     if(m_logFile.is_open() && m_fileOpened)
@@ -101,7 +111,7 @@ Glib::ustring MicroHILLog::getCurrentDateTime() const
     return Glib::ustring(buffer);
 }
 
-Glib::ustring MicroHILLog::getLogType(LogLevel level) const
+Glib::ustring MicroHILLog::toStringLogType(LogLevel level) const
 {
     switch(level)
     {

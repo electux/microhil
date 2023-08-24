@@ -18,6 +18,12 @@
  */
 #include "microhil_view_serial.h"
 
+MicroHILViewSerial::serialSetup
+MicroHILViewSerial::serialSetupChanged()
+{
+    return m_serialSetup;
+}
+
 MicroHILViewSerial::serialDevicePath
 MicroHILViewSerial::serialFilePathChanged()
 {

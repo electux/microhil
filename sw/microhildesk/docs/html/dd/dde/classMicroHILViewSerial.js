@@ -16,6 +16,7 @@ var classMicroHILViewSerial =
     [ "serialDataBitsChanged", "dd/dde/classMicroHILViewSerial.html#a5102e5f3ec8157a21270f7e0a89f32dc", null ],
     [ "serialFilePathChanged", "dd/dde/classMicroHILViewSerial.html#a6c4bba6518ef9fe89a877c052a18855e", null ],
     [ "serialParityChanged", "dd/dde/classMicroHILViewSerial.html#a304b45fca0c5c41808891dcf70e443f3", null ],
+    [ "serialSetupChanged", "dd/dde/classMicroHILViewSerial.html#a5f7a96670df1488d55cb09b80c36e757", null ],
     [ "serialStopBitsChanged", "dd/dde/classMicroHILViewSerial.html#a5efa1ec1bee320b95e09b375cecd860e", null ],
     [ "m_baudRate", "dd/dde/classMicroHILViewSerial.html#a137288c0161b6aa7f9aa05388d7eefbf", null ],
     [ "m_cancel", "dd/dde/classMicroHILViewSerial.html#adba0b9daa556fa4ee47a2e03da96f6e3", null ],
@@ -29,6 +30,7 @@ var classMicroHILViewSerial =
     [ "m_serialDataBits", "dd/dde/classMicroHILViewSerial.html#afed1c9dfadf3273a66e1430385a4f40c", null ],
     [ "m_serialDevicePath", "dd/dde/classMicroHILViewSerial.html#ab533468ec18ac9826123364b25cd4d6e", null ],
     [ "m_serialParity", "dd/dde/classMicroHILViewSerial.html#a6114308f2aec6297ac47bce98f1bffb8", null ],
+    [ "m_serialSetup", "dd/dde/classMicroHILViewSerial.html#a819bf2b9f76c518438c8dd1eacdc6446", null ],
     [ "m_serialStopBits", "dd/dde/classMicroHILViewSerial.html#ad95b24df0f1d6bb10159ca2aafac7d0d", null ],
     [ "m_stopBits", "dd/dde/classMicroHILViewSerial.html#a2472fbe9adcdb4d5d50cb78fe7c9ec0a", null ],
     [ "m_ui", "dd/dde/classMicroHILViewSerial.html#a1724c517e49d1b35ac006847ea933ed0", null ]

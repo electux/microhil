@@ -27,6 +27,12 @@ class AbMicroHILViewSerial
 {
 public:
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal type for serial settings
+    using serialSetup = sigc::signal<void(
+        Glib::ustring, unsigned int, unsigned int, unsigned int, unsigned int
+    )>;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial device file path input
     using serialDevicePath = sigc::signal<void(Glib::ustring)>;
 
@@ -57,6 +63,11 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILViewLog destructor
     virtual ~AbMicroHILViewSerial() = default;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for serial settings
+    /// @return Signal for changed serial settings
+    virtual serialSetup serialSetupChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for device file path input

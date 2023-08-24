@@ -32,7 +32,7 @@ void MicroHILSerialCom::open()
 {
     if(!m_serialPort->IsOpen())
     {
-        m_serialPort->Open("/dev/ttyUSB0");
+        m_serialPort->Open(std::string(m_device));
     }
 }
 
@@ -44,7 +44,19 @@ void MicroHILSerialCom::close()
     }
 }
 
-void MicroHILSerialCom::read(v_uint8& data, size_t len, size_t timeout)
+void MicroHILSerialCom::setup(
+    Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
+    unsigned int parity, unsigned int stopBits
+)
+{
+    m_serialPort->SetBaudRate(static_cast<BaudRate>(baudRate));
+    m_serialPort->SetCharacterSize(static_cast<CharacterSize>(dataBits));
+    m_serialPort->SetParity(static_cast<Parity>(parity));
+    m_serialPort->SetStopBits(static_cast<StopBits>(stopBits));
+    m_device = device;
+}
+
+void MicroHILSerialCom::read(v_uint8 &data, size_t len, size_t timeout)
 {
 }
 

@@ -1,12 +1,13 @@
 <map id="view/settings/log/microhil_view_log_slots.cc" name="view/settings/log/microhil_view_log_slots.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="357,5,548,47"/>
-<area shape="rect" id="node2" href="$d2/dd2/microhil__view__log_8h.html" title=" " alt="" coords="377,95,529,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,169,135,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="159,169,277,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="301,169,428,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="453,169,631,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="655,169,781,196"/>
-<area shape="rect" id="node8" href="$dc/d95/microhil__view__log__abstract_8h.html" title=" " alt="" coords="805,169,1017,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="765,244,898,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="923,244,1057,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="284,5,475,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="262,95,353,121"/>
+<area shape="rect" id="node3" href="$d2/dd2/microhil__view__log_8h.html" title=" " alt="" coords="377,95,529,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,169,135,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="159,169,277,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="301,169,428,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="453,169,631,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="655,169,781,196"/>
+<area shape="rect" id="node9" href="$dc/d95/microhil__view__log__abstract_8h.html" title=" " alt="" coords="805,169,1017,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="765,244,898,271"/>
+<area shape="rect" id="node11" title=" " alt="" coords="923,244,1057,271"/>
 </map>

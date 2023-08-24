@@ -20,7 +20,7 @@
 
 MicroHILController::MicroHILController(
     std::shared_ptr<MicroHILModel> model, std::shared_ptr<MicroHILView> view
-)
+): m_model{model}, m_view{view}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Prepare and setup configuration, log and serial
@@ -53,6 +53,10 @@ MicroHILController::MicroHILController(
         // TODO
         // Emit signal for error handler
     }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Mapping views and backend (signals and slots)
+    mapping();
 }
 
 void MicroHILController::setEnabled(bool switchController)

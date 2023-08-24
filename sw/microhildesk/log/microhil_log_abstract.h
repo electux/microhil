@@ -22,7 +22,7 @@
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped enumerator for log levels
-enum class LogLevel
+enum class LogLevel: int
 {
     MICROHIL_INFO = 0,
     MICROHIL_WARNING = 1,

@@ -56,8 +56,38 @@ public:
 
 private:
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Mapping views and backend (signals and slots)
+    void mapping();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing log settings changes
+    /// @param logPath is absolute path of log file
+    /// @param logLevel is level for logging messages
+    void onLogSettingsChanged(Glib::ustring logPath, int logLevel);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing serial settings changes
+    /// @param device file path
+    /// @param baudRate for serial port
+    /// @param dataBits for serial port
+    /// @param parity for serial port
+    /// @param stopBits for serial port
+    void onSerialSettingsChanged(
+        Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
+        unsigned int parity, unsigned int stopBits
+    );
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Enable/Disable state of controller
     bool m_enabled{false};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Model instance
+    std::shared_ptr<MicroHILModel> m_model{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief View instance
+    std::shared_ptr<MicroHILView> m_view{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration instance

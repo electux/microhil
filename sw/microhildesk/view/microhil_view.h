@@ -42,8 +42,18 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting home view
-    /// @return home view instance
+    /// @return Home view instance
     Glib::RefPtr<MicroHILViewHome> getHome();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Getting log settings
+    /// @return Log settings instance
+    Glib::RefPtr<MicroHILViewLog> getLogSettings();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Getting serial settings
+    /// @return Serial settings instance
+    Glib::RefPtr<MicroHILViewSerial> getSerialSettings();
 
 private:
     ////////////////////////////////////////////////////////////////////////

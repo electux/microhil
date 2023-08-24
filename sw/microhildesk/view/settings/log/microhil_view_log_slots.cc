@@ -16,11 +16,19 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <filesystem>
 #include "microhil_view_log.h"
 
 void MicroHILViewLog::onLogFilePathChanged()
 {
-    // TODO
+    auto logPath = m_device->get_text();
+
+    auto logPathExists = std::filesystem::exists(std::string(logPath));
+
+    if(logPathExists)
+    {
+        // TODO Dialog message box with confirmation
+    }
 }
 
 void MicroHILViewLog::onLogLevelChanged()
@@ -30,12 +38,17 @@ void MicroHILViewLog::onLogLevelChanged()
 
 void MicroHILViewLog::onCancelLogTriggered()
 {
-    // TODO
     this->hide();
 }
 
 void MicroHILViewLog::onOkLogTriggered()
 {
-    // TODO
+    auto logPath = m_device->get_text();
+    auto logLevel = m_level->get_active_row_number();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Emit new log settings 
+    m_logSetup.emit(logPath, logLevel);
+
     this->hide();
 }

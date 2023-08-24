@@ -8,6 +8,7 @@
 
 SOURCES = \
 	../config/microhil_config.cc \
+	../log/microhil_log_slots.cc \
 	../log/microhil_log.cc \
 	../com/microhil_serial_com.cc \
 	../model/microhil_model.cc \
@@ -35,6 +36,8 @@ SOURCES = \
 	../view/settings/serial/microhil_view_serial_slots.cc \
 	../view/settings/serial/microhil_view_serial_map.cc \
 	../view/settings/serial/microhil_view_serial.cc \
+	../controller/microhil_controller_slots.cc \
+	../controller/microhil_controller_map.cc \
 	../controller/microhil_controller.cc \
 	../application.cc \
 	../main.cc

@@ -101,7 +101,7 @@ Inheritance diagram for MicroHILSerialCom:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/de3/classMicroHILSerialCom__inherit__graph.png" border="0" usemap="#aMicroHILSerialCom_inherit__map" alt="Inheritance graph"/></div>
 <map name="aMicroHILSerialCom_inherit__map" id="aMicroHILSerialCom_inherit__map">
-<area shape="rect" title="MicroHILSerialCom class declaration and definition." alt="" coords="5,189,188,340"/>
+<area shape="rect" title="MicroHILSerialCom class declaration and definition." alt="" coords="5,189,188,369"/>
 <area shape="rect" href="../../d7/d8c/classAbMicroHILCom.html" title="AbMicroHILCom class declaration and definition." alt="" coords="15,5,178,141"/>
 </map>
 </div>
@@ -110,9 +110,10 @@ Collaboration diagram for MicroHILSerialCom:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/dff/classMicroHILSerialCom__coll__graph.png" border="0" usemap="#aMicroHILSerialCom_coll__map" alt="Collaboration graph"/></div>
 <map name="aMicroHILSerialCom_coll__map" id="aMicroHILSerialCom_coll__map">
-<area shape="rect" title="MicroHILSerialCom class declaration and definition." alt="" coords="94,204,277,355"/>
+<area shape="rect" title="MicroHILSerialCom class declaration and definition." alt="" coords="193,204,375,369"/>
 <area shape="rect" href="../../d7/d8c/classAbMicroHILCom.html" title="AbMicroHILCom class declaration and definition." alt="" coords="5,5,168,141"/>
 <area shape="rect" title=" " alt="" coords="192,35,376,112"/>
+<area shape="rect" title=" " alt="" coords="400,35,467,112"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -130,6 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abcf5e51035faf096fc61c6c4c509108d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d">close</a> () final</td></tr>
 <tr class="memdesc:abcf5e51035faf096fc61c6c4c509108d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the serial communication channel.  <a href="../../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d">More...</a><br /></td></tr>
 <tr class="separator:abcf5e51035faf096fc61c6c4c509108d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff1032e83aa5bf16a4823fcfd3e993b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#aff1032e83aa5bf16a4823fcfd3e993b2">setup</a> (Glib::ustring device, unsigned int baudRate, unsigned int dataBits, unsigned int parity, unsigned int stopBits)</td></tr>
+<tr class="memdesc:aff1032e83aa5bf16a4823fcfd3e993b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup serial port parameters.  <a href="../../d5/dd0/classMicroHILSerialCom.html#aff1032e83aa5bf16a4823fcfd3e993b2">More...</a><br /></td></tr>
+<tr class="separator:aff1032e83aa5bf16a4823fcfd3e993b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a912fdb185284ecfb57ff3134788d92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#a3a912fdb185284ecfb57ff3134788d92">read</a> (<a class="el" href="../../d3/d72/microhil__com__abstract_8h.html#ae3de6a2547f88004e22fe1c577f960e6">v_uint8</a> &amp;data, size_t len, size_t timeout) final</td></tr>
 <tr class="memdesc:a3a912fdb185284ecfb57ff3134788d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from serial communication channel.  <a href="../../d5/dd0/classMicroHILSerialCom.html#a3a912fdb185284ecfb57ff3134788d92">More...</a><br /></td></tr>
 <tr class="separator:a3a912fdb185284ecfb57ff3134788d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,11 +162,14 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a0eec6f8d2b4685c3f504841e81db44f0"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; SerialPort &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a> {nullptr}</td></tr>
 <tr class="memdesc:a0eec6f8d2b4685c3f504841e81db44f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial port instance.  <a href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">More...</a><br /></td></tr>
 <tr class="separator:a0eec6f8d2b4685c3f504841e81db44f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88681f7d312494bad97e7dcd71a64d4f"><td class="memItemLeft" align="right" valign="top">Glib::ustring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html#a88681f7d312494bad97e7dcd71a64d4f">m_device</a> {}</td></tr>
+<tr class="memdesc:a88681f7d312494bad97e7dcd71a64d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial port device file path.  <a href="../../d5/dd0/classMicroHILSerialCom.html#a88681f7d312494bad97e7dcd71a64d4f">More...</a><br /></td></tr>
+<tr class="separator:a88681f7d312494bad97e7dcd71a64d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html" title="MicroHILSerialCom class declaration and definition.">MicroHILSerialCom</a> class declaration and definition. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00033">33</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00034">34</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a620a05edf19214528201747c6507bc08" name="a620a05edf19214528201747c6507bc08"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a620a05edf19214528201747c6507bc08">&#9670;&nbsp;</a></span>MicroHILSerialCom()</h2>
@@ -185,9 +192,9 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
 <div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a> = make_unique&lt;SerialPort&gt;();</div>
 <div class="line"><span class="lineno">   24</span>}</div>
-<div class="ttc" id="aclassMicroHILSerialCom_html_a0eec6f8d2b4685c3f504841e81db44f0"><div class="ttname"><a href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">MicroHILSerialCom::m_serialPort</a></div><div class="ttdeci">std::unique_ptr&lt; SerialPort &gt; m_serialPort</div><div class="ttdoc">Serial port instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/microhil__serial__com_8h_source.html#l00067">microhil_serial_com.h:67</a></div></div>
+<div class="ttc" id="aclassMicroHILSerialCom_html_a0eec6f8d2b4685c3f504841e81db44f0"><div class="ttname"><a href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">MicroHILSerialCom::m_serialPort</a></div><div class="ttdeci">std::unique_ptr&lt; SerialPort &gt; m_serialPort</div><div class="ttdoc">Serial port instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/microhil__serial__com_8h_source.html#l00080">microhil_serial_com.h:80</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00067">m_serialPort</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00080">m_serialPort</a>.</p>
 
 </div>
 </div>
@@ -263,7 +270,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   44</span>    }</div>
 <div class="line"><span class="lineno">   45</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00067">m_serialPort</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00080">m_serialPort</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00026">~MicroHILSerialCom()</a>.</p>
 <div class="dynheader">
@@ -309,11 +316,12 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
 <div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;IsOpen())</div>
 <div class="line"><span class="lineno">   34</span>    {</div>
-<div class="line"><span class="lineno">   35</span>        <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;Open(<span class="stringliteral">&quot;/dev/ttyUSB0&quot;</span>);</div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;Open(std::string(<a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a88681f7d312494bad97e7dcd71a64d4f">m_device</a>));</div>
 <div class="line"><span class="lineno">   36</span>    }</div>
 <div class="line"><span class="lineno">   37</span>}</div>
+<div class="ttc" id="aclassMicroHILSerialCom_html_a88681f7d312494bad97e7dcd71a64d4f"><div class="ttname"><a href="../../d5/dd0/classMicroHILSerialCom.html#a88681f7d312494bad97e7dcd71a64d4f">MicroHILSerialCom::m_device</a></div><div class="ttdeci">Glib::ustring m_device</div><div class="ttdoc">Serial port device file path.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/microhil__serial__com_8h_source.html#l00084">microhil_serial_com.h:84</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00067">m_serialPort</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00084">m_device</a>, and <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00080">m_serialPort</a>.</p>
 
 </div>
 </div>
@@ -369,10 +377,79 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d7/d8c/classAbMicroHILCom.html#adf57fe39a02b5cc6b1e9651da38e2132">AbMicroHILCom</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00047">47</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
-<div class="line"><span class="lineno">   49</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00059">59</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
+<div class="line"><span class="lineno">   61</span>}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="aff1032e83aa5bf16a4823fcfd3e993b2" name="aff1032e83aa5bf16a4823fcfd3e993b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff1032e83aa5bf16a4823fcfd3e993b2">&#9670;&nbsp;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MicroHILSerialCom::setup </td>
+          <td>(</td>
+          <td class="paramtype">Glib::ustring&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>baudRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>dataBits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>parity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>stopBits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setup serial port parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>file path </td></tr>
+    <tr><td class="paramname">baudRate</td><td>for serial port </td></tr>
+    <tr><td class="paramname">dataBits</td><td>for serial port </td></tr>
+    <tr><td class="paramname">parity</td><td>for serial port </td></tr>
+    <tr><td class="paramname">stopBits</td><td>for serial port </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00047">47</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;SetBaudRate(<span class="keyword">static_cast&lt;</span>BaudRate<span class="keyword">&gt;</span>(baudRate));</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;SetCharacterSize(<span class="keyword">static_cast&lt;</span>CharacterSize<span class="keyword">&gt;</span>(dataBits));</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;SetParity(<span class="keyword">static_cast&lt;</span>Parity<span class="keyword">&gt;</span>(parity));</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a0eec6f8d2b4685c3f504841e81db44f0">m_serialPort</a>-&gt;SetStopBits(<span class="keyword">static_cast&lt;</span>StopBits<span class="keyword">&gt;</span>(stopBits));</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="../../d5/dd0/classMicroHILSerialCom.html#a88681f7d312494bad97e7dcd71a64d4f">m_device</a> = device;</div>
+<div class="line"><span class="lineno">   57</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00084">m_device</a>, and <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00080">m_serialPort</a>.</p>
+
 </div>
 </div>
 <a id="a6e597d6fe53283e124d485208d909413" name="a6e597d6fe53283e124d485208d909413"></a>
@@ -409,13 +486,41 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d7/d8c/classAbMicroHILCom.html#a9f16b35596efef6834e10a8fecfe60ba">AbMicroHILCom</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00051">51</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>{</div>
-<div class="line"><span class="lineno">   53</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00063">63</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a88681f7d312494bad97e7dcd71a64d4f" name="a88681f7d312494bad97e7dcd71a64d4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88681f7d312494bad97e7dcd71a64d4f">&#9670;&nbsp;</a></span>m_device</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Glib::ustring MicroHILSerialCom::m_device {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Serial port device file path. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00084">84</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00031">open()</a>, and <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00047">setup()</a>.</p>
+
+</div>
+</div>
 <a id="a0eec6f8d2b4685c3f504841e81db44f0" name="a0eec6f8d2b4685c3f504841e81db44f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0eec6f8d2b4685c3f504841e81db44f0">&#9670;&nbsp;</a></span>m_serialPort</h2>
 
@@ -438,9 +543,9 @@ Here is the caller graph for this function:</div>
 
 <p>Serial port instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00067">67</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00080">80</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00039">close()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00021">MicroHILSerialCom()</a>, and <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00031">open()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00039">close()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00021">MicroHILSerialCom()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00031">open()</a>, and <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00047">setup()</a>.</p>
 
 </div>
 </div>
@@ -454,7 +559,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/dd0/classMicroHILSerialCom.html">MicroHILSerialCom</a></li>
-    <li class="footer">Generated on Mon Aug 21 2023 23:06:59 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Aug 24 2023 02:17:04 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

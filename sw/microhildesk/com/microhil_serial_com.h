@@ -20,6 +20,7 @@
 
 #include <memory>
 #include <libserial/SerialPort.h>
+#include <glibmm/ustring.h>
 #include "microhil_com_abstract.h"
 
 using LibSerial::SerialPort;
@@ -50,6 +51,18 @@ public:
     void close() final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Setup serial port parameters
+    /// @param device file path
+    /// @param baudRate for serial port
+    /// @param dataBits for serial port
+    /// @param parity for serial port
+    /// @param stopBits for serial port
+    void setup(
+        Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
+        unsigned int parity, unsigned int stopBits
+    );
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Read from serial communication channel
     /// @param data buffer to be placed to after reading the serial port
     /// @param len length of data to read before returning
@@ -65,4 +78,8 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Serial port instance
     std::unique_ptr<SerialPort> m_serialPort{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Serial port device file path
+    Glib::ustring m_device{};
 };
