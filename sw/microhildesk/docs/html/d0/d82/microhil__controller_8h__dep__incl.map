@@ -1,7 +1,9 @@
 <map id="controller/microhil_controller.h" name="controller/microhil_controller.h">
-<area shape="rect" id="node1" title=" " alt="" coords="123,5,264,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="281,5,423,47"/>
 <area shape="rect" id="node2" href="$db/d32/application_8h.html" title=" " alt="" coords="67,102,173,129"/>
 <area shape="rect" id="node5" href="$db/d49/microhil__controller_8cc.html" title=" " alt="" coords="197,95,339,136"/>
+<area shape="rect" id="node6" href="$d0/dab/microhil__controller__map_8cc.html" title=" " alt="" coords="363,95,509,136"/>
+<area shape="rect" id="node7" href="$d2/df4/microhil__controller__slots_8cc.html" title=" " alt="" coords="533,95,680,136"/>
 <area shape="rect" id="node3" href="$dc/d16/application_8cc.html" title=" " alt="" coords="5,184,117,211"/>
 <area shape="rect" id="node4" href="$d9/d0f/main_8cc.html" title=" " alt="" coords="142,184,215,211"/>
 </map>

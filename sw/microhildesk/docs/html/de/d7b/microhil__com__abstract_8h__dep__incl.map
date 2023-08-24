@@ -1,10 +1,12 @@
 <map id="com/microhil_com_abstract.h" name="com/microhil_com_abstract.h">
-<area shape="rect" id="node1" title=" " alt="" coords="59,5,273,32"/>
-<area shape="rect" id="node2" href="$d1/d90/microhil__serial__com_8h.html" title=" " alt="" coords="91,80,241,121"/>
-<area shape="rect" id="node3" href="$d7/d72/microhil__serial__com_8cc.html" title=" " alt="" coords="5,169,156,211"/>
-<area shape="rect" id="node4" href="$d6/da2/microhil__controller_8h.html" title=" " alt="" coords="181,169,322,211"/>
-<area shape="rect" id="node5" href="$db/d32/application_8h.html" title=" " alt="" coords="123,266,230,293"/>
-<area shape="rect" id="node8" href="$db/d49/microhil__controller_8cc.html" title=" " alt="" coords="254,259,395,300"/>
-<area shape="rect" id="node6" href="$dc/d16/application_8cc.html" title=" " alt="" coords="62,348,174,375"/>
-<area shape="rect" id="node7" href="$d9/d0f/main_8cc.html" title=" " alt="" coords="199,348,272,375"/>
+<area shape="rect" id="node1" title=" " alt="" coords="159,5,374,32"/>
+<area shape="rect" id="node2" href="$d1/d90/microhil__serial__com_8h.html" title=" " alt="" coords="191,80,342,121"/>
+<area shape="rect" id="node3" href="$d7/d72/microhil__serial__com_8cc.html" title=" " alt="" coords="106,169,257,211"/>
+<area shape="rect" id="node4" href="$d6/da2/microhil__controller_8h.html" title=" " alt="" coords="281,169,423,211"/>
+<area shape="rect" id="node5" href="$db/d32/application_8h.html" title=" " alt="" coords="67,266,173,293"/>
+<area shape="rect" id="node8" href="$db/d49/microhil__controller_8cc.html" title=" " alt="" coords="197,259,339,300"/>
+<area shape="rect" id="node9" href="$d0/dab/microhil__controller__map_8cc.html" title=" " alt="" coords="363,259,509,300"/>
+<area shape="rect" id="node10" href="$d2/df4/microhil__controller__slots_8cc.html" title=" " alt="" coords="533,259,680,300"/>
+<area shape="rect" id="node6" href="$dc/d16/application_8cc.html" title=" " alt="" coords="5,348,117,375"/>
+<area shape="rect" id="node7" href="$d9/d0f/main_8cc.html" title=" " alt="" coords="142,348,215,375"/>
 </map>

@@ -3,6 +3,8 @@ var classMicroHILView =
     [ "MicroHILView", "d8/dee/classMicroHILView.html#a26053434361a0f1082770a5cae998e96", null ],
     [ "~MicroHILView", "d8/dee/classMicroHILView.html#aa7415c85cd912c3df65ceeb69ad1772f", null ],
     [ "getHome", "d8/dee/classMicroHILView.html#a781661581d5ddf63bd7451682c24afd9", null ],
+    [ "getLogSettings", "d8/dee/classMicroHILView.html#a922631dd5525f7461a14c89df4b1d72a", null ],
+    [ "getSerialSettings", "d8/dee/classMicroHILView.html#ac4963c790cb1309fc222a91c1945a497", null ],
     [ "mapping", "d8/dee/classMicroHILView.html#ab19711c44af35d0969e226a9f4cad99e", null ],
     [ "onViewChanged", "d8/dee/classMicroHILView.html#acdc64167bae5e0a40ffc08093f468279", null ],
     [ "m_about", "d8/dee/classMicroHILView.html#a85d42fbdb22cd898fc7eeb33306462fc", null ],

@@ -27,6 +27,10 @@ class AbMicroHILViewLog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal type for log settings
+    using logSetup = sigc::signal<void(Glib::ustring, int)>;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log file path input
     using logFilePath = sigc::signal<void(Glib::ustring)>;
 
@@ -45,6 +49,11 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILViewLog destructor
     virtual ~AbMicroHILViewLog() = default;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for log settings
+    /// @return Signal for changed log settings
+    virtual logSetup logSetupChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log file path input

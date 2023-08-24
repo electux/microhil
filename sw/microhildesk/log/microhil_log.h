@@ -48,6 +48,16 @@ public:
     Glib::ustring getFilePath() const;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Setup log level
+    /// @param level of logging
+    void setLogLevel(LogLevel level);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Getting log level
+    /// @return Scoped enumeration of log level
+    LogLevel getLogLevel() const;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Open storage for collecting log messages
     /// @return boolean status true for success else false
     bool open() final;
@@ -73,7 +83,7 @@ private:
     /// @brief Convert log level type to human readable string
     /// @param level log level
     /// @return string representation of log level
-    Glib::ustring getLogType(LogLevel level) const;
+    Glib::ustring toStringLogType(LogLevel level) const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log file path
@@ -82,6 +92,10 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log file instance
     ofstream m_logFile{};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Type of log level
+    LogLevel m_logLevel{LogLevel::MICROHIL_INFO};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Flag for checking log file state

@@ -1,5 +1,5 @@
 <map id="MicroHILLog::write" name="MicroHILLog::write">
 <area shape="rect" id="node1" title="Write log message." alt="" coords="5,31,148,57"/>
 <area shape="rect" id="node2" href="$d1/de3/classMicroHILLog.html#ad62e15ce3181fe3533d7ace2034c9377" title="Getting current date and time." alt="" coords="196,5,439,32"/>
-<area shape="rect" id="node3" href="$d1/de3/classMicroHILLog.html#ad671d5846c30812c92fc488d4d84636b" title="Convert log level type to human readable string." alt="" coords="225,56,409,83"/>
+<area shape="rect" id="node3" href="$d1/de3/classMicroHILLog.html#a43a087279349a6d87710bf60a5133e83" title="Convert log level type to human readable string." alt="" coords="210,56,425,83"/>
 </map>

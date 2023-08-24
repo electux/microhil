@@ -87,3 +87,13 @@ Glib::RefPtr<MicroHILViewHome> MicroHILView::getHome()
 {
     return m_home;
 }
+
+Glib::RefPtr<MicroHILViewLog> MicroHILView::getLogSettings()
+{
+    return m_log;
+}
+
+Glib::RefPtr<MicroHILViewSerial> MicroHILView::getSerialSettings()
+{
+    return m_serial;
+}

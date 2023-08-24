@@ -43,6 +43,11 @@ public:
     ~MicroHILViewLog() = default;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for log settings
+    /// @return Signal for changed log settings
+    logSetup logSetupChanged() final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log file path input
     /// @return Signal for changed log file path entry
     logFilePath logFilePathChanged() final;
@@ -102,6 +107,10 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Confirm button
     Glib::RefPtr<Gtk::Button> m_ok{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for log settings
+    logSetup m_logSetup{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log file path input

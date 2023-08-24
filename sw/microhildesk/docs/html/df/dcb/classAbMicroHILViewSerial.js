@@ -6,6 +6,7 @@ var classAbMicroHILViewSerial =
     [ "serialDataBits", "df/dcb/classAbMicroHILViewSerial.html#a1e134114ce350981de15a7f16b74a759", null ],
     [ "serialDevicePath", "df/dcb/classAbMicroHILViewSerial.html#a23c048cfd8792eeca1926aeceb69cac8", null ],
     [ "serialParity", "df/dcb/classAbMicroHILViewSerial.html#ad7778bbe5f3998855332bb4aadd9a2de", null ],
+    [ "serialSetup", "df/dcb/classAbMicroHILViewSerial.html#a3c09a6825c4ae370866589bde47afca4", null ],
     [ "serialStopBits", "df/dcb/classAbMicroHILViewSerial.html#a4fb7b30e5243287060e8bba67316e92d", null ],
     [ "~AbMicroHILViewSerial", "df/dcb/classAbMicroHILViewSerial.html#ab5e4ce55c18e4d7db0bf90d971a3162b", null ],
     [ "cancelSerialTriggered", "df/dcb/classAbMicroHILViewSerial.html#ab92d701843d4658fde0755eeba2d3c4a", null ],
@@ -21,5 +22,6 @@ var classAbMicroHILViewSerial =
     [ "serialDataBitsChanged", "df/dcb/classAbMicroHILViewSerial.html#af56af52ee5f62be3cdad3095af0ed082", null ],
     [ "serialFilePathChanged", "df/dcb/classAbMicroHILViewSerial.html#ae9afa3bc0173436c5daead5b64b40263", null ],
     [ "serialParityChanged", "df/dcb/classAbMicroHILViewSerial.html#ad2ab6ac516ac4644efa8b96af0a3e6bc", null ],
+    [ "serialSetupChanged", "df/dcb/classAbMicroHILViewSerial.html#a6f730a70e7c6b475f9c6d3491faf0000", null ],
     [ "serialStopBitsChanged", "df/dcb/classAbMicroHILViewSerial.html#a033faa247e87d21ceb1dbde99bea6bf4", null ]
 ];

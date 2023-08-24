@@ -45,12 +45,22 @@ void MicroHILViewSerial::onSerialStopBitsChanged()
 
 void MicroHILViewSerial::onCancelSerialTriggered()
 {
-    // TODO
     this->hide();
 }
 
 void MicroHILViewSerial::onOkSerialTriggered()
 {
-    // TODO
+    auto devicePath = m_device->get_text();
+    auto baudRate = m_baudRate->get_active_row_number();
+    auto dataBits = m_dataBits->get_active_row_number();
+    auto parity = m_parity->get_active_row_number();
+    auto stopBits = m_stopBits->get_active_row_number();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Emit new serial settings
+    m_serialSetup.emit(
+        devicePath, baudRate, dataBits, parity, stopBits
+    );
+
     this->hide();
 }

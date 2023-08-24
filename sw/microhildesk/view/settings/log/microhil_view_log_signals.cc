@@ -18,6 +18,12 @@
  */
 #include "microhil_view_log.h"
 
+MicroHILViewLog::logSetup
+MicroHILViewLog::logSetupChanged()
+{
+    return m_logSetup;
+}
+
 MicroHILViewLog::logFilePath
 MicroHILViewLog::logFilePathChanged()
 {

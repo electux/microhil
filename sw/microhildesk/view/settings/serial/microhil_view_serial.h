@@ -43,6 +43,11 @@ public:
     ~MicroHILViewSerial() = default;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for serial settings
+    /// @return Signal for changed serial settings
+    serialSetup serialSetupChanged() final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for device file path input
     /// @return Signal for changed device file path entry
     serialDevicePath serialFilePathChanged() final;
@@ -141,6 +146,10 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Confirm button
     Glib::RefPtr<Gtk::Button> m_ok{nullptr};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief ignal for serial settings
+    serialSetup m_serialSetup{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for device path input
