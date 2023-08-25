@@ -19,6 +19,7 @@
 #include <fstream>
 #include <iostream>
 #include <filesystem>
+#include <glibmm/miscutils.h>
 #include "microhil_config.h"
 
 namespace
@@ -33,43 +34,7 @@ namespace
 
     ////////////////////////////////////////////////////////////////////////
     /// Number of lines in configurtion file
-    constexpr const int kConfigSerialLength{9};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Serial configuration section 
-    constexpr const char kConfigSerialSection[]{"serial"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Serial device configuration parameter
-    constexpr const char kConfigSerialDevice[]{"device"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Serial baud rate configuration parameter
-    constexpr const char kConfigSerialBaudRate[]{"baud_rate"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Serial data bits configuration parameter
-    constexpr const char kConfigSerialDataBits[]{"data_bits"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Serial parity configuration parameter
-    constexpr const char kConfigSerialParity[]{"parity"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Serial stop bits configuration parameter
-    constexpr const char kConfigSerialStopBits[]{"stop_bits"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Log configuration section
-    constexpr const char kConfigLogSection[]{"log"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Log level configuration parameter
-    constexpr const char kConfigLogLevel[]{"level"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Log file path configuration parameter
-    constexpr const char kConfigLogFile[]{"file"};
+    constexpr const int kConfigLength{9};
 
     ////////////////////////////////////////////////////////////////////////
     /// Default configuration
@@ -104,7 +69,7 @@ bool MicroHILConfig::load()
     ////////////////////////////////////////////////////////////////////////
     /// Load configuration from file 
     auto loadedConfig = m_configuration.load_from_file(m_configFilePath);
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// Validation of loaded configuration
     auto validatedConfig = validate(); 
@@ -126,67 +91,15 @@ bool MicroHILConfig::validate()
 
     ////////////////////////////////////////////////////////////////////////
     /// Checking configuration parameters
-    auto configCheck = (
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialDevice) &&
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialBaudRate) &&
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialDataBits) &&
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialParity) &&
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialStopBits) &&
-        m_configuration.has_key(kConfigLogSection, kConfigLogLevel) &&
-        m_configuration.has_key(kConfigLogSection, kConfigLogFile)
-    );
+    auto configLogCheck = validateLogSettings();
+    auto configSerialCheck = validateSerialSettings();
 
-    if(!configCheck)
+    if(!configLogCheck || !configSerialCheck)
     {
         return false;
     }
 
     return true;
-}
-
-Glib::ustring MicroHILConfig::getDevice() const
-{
-    return m_configuration.get_string(
-        kConfigSerialSection, kConfigSerialDevice
-    );
-}
-
-int MicroHILConfig::getBaudRate() const
-{
-    return m_configuration.get_integer(
-        kConfigSerialSection, kConfigSerialBaudRate
-    );
-}
-
-int MicroHILConfig::getDataBits() const
-{
-    return m_configuration.get_integer(
-        kConfigSerialSection, kConfigSerialDataBits
-    );
-}
-
-Glib::ustring MicroHILConfig::getParity() const
-{
-    return m_configuration.get_string(
-        kConfigSerialSection, kConfigSerialParity
-    );
-}
-
-int MicroHILConfig::getStopBits() const
-{
-    return (int) m_configuration.get_integer(
-        kConfigSerialSection, kConfigSerialStopBits
-    );
-}
-
-Glib::ustring MicroHILConfig::getLogLevel() const
-{
-    return m_configuration.get_string(kConfigLogSection, kConfigLogLevel);
-}
-
-Glib::ustring MicroHILConfig::getLogPath() const
-{
-    return m_configuration.get_string(kConfigLogSection, kConfigLogFile);
 }
 
 bool MicroHILConfig::checkConfigPath()
@@ -212,10 +125,12 @@ bool MicroHILConfig::checkConfigPath()
     if(!configFileExists)
     {
         std::ofstream defaultConfig(m_configFilePath);
-        for (int i = 0; i < kConfigSerialLength; i++)
+
+        for (int i = 0; i < kConfigLength; i++)
         {
             defaultConfig << kConfigSerialDefault[i] << "\n";
         }
+
         defaultConfig.close();
     }
 

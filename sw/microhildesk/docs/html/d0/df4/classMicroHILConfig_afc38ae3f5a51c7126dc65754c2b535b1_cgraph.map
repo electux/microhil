@@ -1,4 +1,6 @@
 <map id="MicroHILConfig::validate" name="MicroHILConfig::validate">
-<area shape="rect" id="node1" title="Validate configuration (existing all expected parameters)" alt="" coords="5,5,187,32"/>
+<area shape="rect" id="node1" title="Validate configuration (existing all expected parameters)" alt="" coords="5,64,187,91"/>
 <area shape="rect" id="node2" href="$d6/dac/classAbMicroHILConfig.html#ae8936a9dba12444d6bb1eb151b35f428" title="Check is pre&#45;validation state (existing configuration)" alt="" coords="235,5,444,32"/>
+<area shape="rect" id="node3" href="$d0/df4/classMicroHILConfig.html#ae173ca4c21b87e2f4c8a277b2fda05f9" title="Validate log configuration (existing expected parameters)" alt="" coords="249,57,430,98"/>
+<area shape="rect" id="node4" href="$d0/df4/classMicroHILConfig.html#a8fbcd180120cd3bf7c96fda109edebdb" title="Validate serial configuration (existing expected parameters)" alt="" coords="249,122,430,163"/>
 </map>

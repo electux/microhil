@@ -22,7 +22,7 @@ namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// MicroHIL application ID
-    constexpr char kAppId[]{"org.gtkmm.microhildesk"};
+    constexpr const char kAppId[]{"org.electux.microhildesk"};
 }
 
 Application::Application(int argc, char *argv[])
