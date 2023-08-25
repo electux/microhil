@@ -1,0 +1,5 @@
+<map id="MicroHILConfig::validateLogSettings" name="MicroHILConfig::validateLogSettings">
+<area shape="rect" id="node1" title="Validate log configuration (existing expected parameters)" alt="" coords="439,5,620,47"/>
+<area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1" title="Validate configuration (existing all expected parameters)" alt="" coords="209,13,391,39"/>
+<area shape="rect" id="node3" href="$d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88" title="Load configuration from file." alt="" coords="5,13,161,39"/>
+</map>

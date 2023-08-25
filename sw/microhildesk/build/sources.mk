@@ -7,6 +7,8 @@
 #
 
 SOURCES = \
+	../config/microhil_config_log.cc \
+	../config/microhil_config_serial.cc \
 	../config/microhil_config.cc \
 	../log/microhil_log_slots.cc \
 	../log/microhil_log.cc \

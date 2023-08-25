@@ -22,6 +22,13 @@ void MicroHILController::onLogSettingsChanged(
     Glib::ustring logPath, int logLevel
 )
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Update log configuration
+    m_config->setLogPath(logPath);
+    m_config->setLogLevel(logLevel);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Update logger
     m_log->close();
     m_log->setFilePath(logPath);
     m_log->setLogLevel(static_cast<LogLevel>(logLevel));

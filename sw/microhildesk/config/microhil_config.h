@@ -18,7 +18,6 @@
  */
 #pragma once
 
-#include <glibmm.h>
 #include <glibmm/keyfile.h>
 #include "microhil_config_abstract.h"
 
@@ -46,9 +45,19 @@ public:
     bool validate() final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Setting serial device file path to configuration
+    /// @param device file path
+    void setDevice(Glib::ustring device) final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial device file path from configuration
     /// @return file path for serial device
     Glib::ustring getDevice() const final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Setting baud rate for serial port to configuration
+    /// @param baudRate for serial port
+    void setBaudRate(int baudRate) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting baud rate for serial port from configuration
@@ -56,9 +65,19 @@ public:
     int getBaudRate() const final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Setting data bits for serial port to configuration
+    /// @param dataBits for serial port
+    void setDataBits(int dataBits) final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Getting data bits for serial port from configuration
     /// @return integer value for data bits for charachter
     int getDataBits() const final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Setting parity for serial port to configuration
+    /// @param parity for serial port
+    void setParity(Glib::ustring parity) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
@@ -66,14 +85,29 @@ public:
     Glib::ustring getParity() const final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Setting stop bits for serial port to configuration
+    /// @param stopBits for serial port
+    void setStopBits(int stopBits) final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Getting stop bits for serial port from configuration
     /// @return integer number of stop bits for the serial port
     int getStopBits() const final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Setting log level
+    /// @param level for log settings
+    void setLogLevel(int level) final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
     /// @return log level
     Glib::ustring getLogLevel() const final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Setting log path
+    /// @param path for log messages
+    void setLogPath(Glib::ustring path) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log path
@@ -87,13 +121,29 @@ private:
     bool checkConfigPath();
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert integer log level to string format
+    /// @param logLevel in integer format
+    /// @return string format of log level
+    Glib::ustring logLevelToUnicodeString(int logLevel);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Validate log configuration (existing expected parameters)
+    /// @return boolean status true for success else false
+    bool validateLogSettings();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Validate serial configuration (existing expected parameters)
+    /// @return boolean status true for success else false
+    bool validateSerialSettings();
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Home directory path
     std::string m_homePath{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration file path 
     std::string m_configFilePath{};
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration instance
     Glib::KeyFile m_configuration{};

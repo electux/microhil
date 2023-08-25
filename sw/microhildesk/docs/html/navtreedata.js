@@ -31,7 +31,7 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ]
       ] ]
@@ -51,8 +51,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d9/d4a/classAbMicroHILView.html#ab5243a61ba44b0b03958b7f106ec31ca",
-"globals_enum.html"
+"d8/dee/classMicroHILView.html#a85d42fbdb22cd898fc7eeb33306462fc",
+"dir_d3bff1ab3a40b4e5d0775c67ace1b0da.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
