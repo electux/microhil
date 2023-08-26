@@ -21,6 +21,17 @@
 #include <glibmm/ustring.h>
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Scoped enumerator for serial port parity
+enum class ParityConfig: int
+{
+    MICROHIL_NONE_CONFIG = 0,
+    MICROHIL_ODD_CONFIG = 1,
+    MICROHIL_EVEN_CONFIG = 2,
+    MICROHIL_MARK_CONFIG = 3,
+    MICROHIL_SPACE_CONFIG = 4
+};
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped enumerator for log levels
 enum class LogLevelConfig: int
 {
@@ -42,6 +53,11 @@ public:
     /// @brief Load configuration
     /// @return boolean status true for success else false
     virtual bool load() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Store configuration
+    /// @return boolean status true for success else false
+    virtual bool store() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Validate configuration (existing all expected parameters)
@@ -91,7 +107,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting parity for serial port to configuration
     /// @param parity for serial port
-    virtual void setParity(Glib::ustring parity) = 0;
+    virtual void setParity(int parity) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration

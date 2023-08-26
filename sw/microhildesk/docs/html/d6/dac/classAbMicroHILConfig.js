@@ -15,9 +15,10 @@ var classAbMicroHILConfig =
     [ "setDevice", "d6/dac/classAbMicroHILConfig.html#aa9ea73bde6589c4abd244fdb3db79251", null ],
     [ "setLogLevel", "d6/dac/classAbMicroHILConfig.html#af7ac8a4994c75b559dc62f8498fe85fa", null ],
     [ "setLogPath", "d6/dac/classAbMicroHILConfig.html#a70db66aaf18500ee306bbdc32372ce6f", null ],
-    [ "setParity", "d6/dac/classAbMicroHILConfig.html#a5656189f16d836d63801eb16a84b389e", null ],
+    [ "setParity", "d6/dac/classAbMicroHILConfig.html#a7a0b07c331129f03e5a0580f69dfb6ed", null ],
     [ "setPreValid", "d6/dac/classAbMicroHILConfig.html#abaa1ac7499dc4c2ae28d19b64655c553", null ],
     [ "setStopBits", "d6/dac/classAbMicroHILConfig.html#a84254ab28b83c0c81654ba98d8d643fd", null ],
+    [ "store", "d6/dac/classAbMicroHILConfig.html#a6e4f6fb31c7eff5d5139f55ad20858c4", null ],
     [ "validate", "d6/dac/classAbMicroHILConfig.html#a4a51b9f8ac882cb05df1c2baa4a34856", null ],
     [ "m_configPreValidate", "d6/dac/classAbMicroHILConfig.html#acae659392274d3c4682b79b6d1d66e58", null ]
 ];

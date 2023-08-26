@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['viewid_0',['ViewId',['../de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411',1,'microhil_view_home_abstract.h']]]
+  ['parityconfig_0',['ParityConfig',['../d8/d3b/microhil__config__abstract_8h.html#a96f03ed1b8e4f644998208c87a46d63c',1,'microhil_config_abstract.h']]]
 ];
