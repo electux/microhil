@@ -40,6 +40,11 @@ public:
     bool load() final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Store configuration
+    /// @return boolean status true for success else false
+    bool store() final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Validate configuration (existing all expected parameters)
     /// @return boolean status true for success else false
     bool validate() final;
@@ -77,7 +82,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting parity for serial port to configuration
     /// @param parity for serial port
-    void setParity(Glib::ustring parity) final;
+    void setParity(int parity) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
@@ -125,6 +130,18 @@ private:
     /// @param logLevel in integer format
     /// @return string format of log level
     Glib::ustring logLevelToUnicodeString(int logLevel);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Process and prepare baud rate
+    /// @param baudRate for serial port
+    /// @return baud rate for serial port in final format
+    int processBaudRate(int baudRate);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert integer parity to string format
+    /// @param parity in integer format
+    /// @return string format of parity
+    Glib::ustring parityToUnicodeString(int parity);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Validate log configuration (existing expected parameters)

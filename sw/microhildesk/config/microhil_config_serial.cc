@@ -43,6 +43,34 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Serial stop bits configuration parameter
     constexpr const char kConfigSerialStopBits[]{"stop_bits"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity NONE configuration parameter
+    constexpr const char kConfigParityNone[]{"NONE"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity ODD configuration parameter
+    constexpr const char kConfigParityOdd[]{"ODD"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity EVEN configuration parameter
+    constexpr const char kConfigParityEven[]{"EVEN"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity MARK configuration parameter
+    constexpr const char kConfigParityMark[]{"MARK"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity SPACE configuration parameter
+    constexpr const char kConfigParitySpace[]{"SPACE"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port data bits offset configuration parameter
+    constexpr const int kConfigDataBitsOffset{5};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port stop bits offset configuration parameter
+    constexpr const int kConfigStopBitsOffset{1};
 }
 
 void MicroHILConfig::setDevice(Glib::ustring device)
@@ -61,8 +89,10 @@ Glib::ustring MicroHILConfig::getDevice() const
 
 void MicroHILConfig::setBaudRate(int baudRate)
 {
+    auto baudRatePrepared = processBaudRate(baudRate);
+
     m_configuration.set_integer(
-        kConfigSerialSection, kConfigSerialBaudRate, baudRate
+        kConfigSerialSection, kConfigSerialBaudRate, baudRatePrepared
     );
 }
 
@@ -75,8 +105,10 @@ int MicroHILConfig::getBaudRate() const
 
 void MicroHILConfig::setDataBits(int dataBits)
 {
+    auto dataBitsPrepared = dataBits + kConfigDataBitsOffset;
+
     m_configuration.set_integer(
-        kConfigSerialSection, kConfigSerialDataBits, dataBits
+        kConfigSerialSection, kConfigSerialDataBits, dataBitsPrepared
     );
 }
 
@@ -87,10 +119,12 @@ int MicroHILConfig::getDataBits() const
     );
 }
 
-void MicroHILConfig::setParity(Glib::ustring parity)
+void MicroHILConfig::setParity(int parity)
 {
+    auto parityPrepared = parityToUnicodeString(parity);
+
     m_configuration.set_string(
-        kConfigSerialSection, kConfigSerialParity, parity
+        kConfigSerialSection, kConfigSerialParity, parityPrepared
     );
 }
 
@@ -103,8 +137,10 @@ Glib::ustring MicroHILConfig::getParity() const
 
 void MicroHILConfig::setStopBits(int stopBits)
 {
+    auto stopBitsPrepared = stopBits + kConfigStopBitsOffset;
+
     m_configuration.set_integer(
-        kConfigSerialSection, kConfigSerialStopBits, stopBits
+        kConfigSerialSection, kConfigSerialStopBits, stopBitsPrepared
     );
 }
 
@@ -133,4 +169,48 @@ bool MicroHILConfig::validateSerialSettings()
     }
 
     return true;
+}
+
+int MicroHILConfig::processBaudRate(int baudRate)
+{
+    switch(baudRate)
+    {
+        case 0: return 110;
+        case 1: return 300;
+        case 2: return 600;
+        case 3: return 1200;
+        case 4: return 2400;
+        case 5: return 4800;
+        case 6: return 9600;
+        case 7: return 14400;
+        case 8: return 19200;
+        case 9: return 38400;
+        case 10: return 57600;
+        case 11: return 115200;
+        case 12: return 128000;
+        case 13: return 256000;
+    }
+
+    return 115200;
+}
+
+Glib::ustring MicroHILConfig::parityToUnicodeString(int parity)
+{
+    auto parityPrepared = static_cast<ParityConfig>(parity);
+
+    switch(parityPrepared)
+    {
+        case ParityConfig::MICROHIL_NONE_CONFIG:
+            return kConfigParityNone;
+        case ParityConfig::MICROHIL_ODD_CONFIG:
+            return kConfigParityOdd;
+        case ParityConfig::MICROHIL_EVEN_CONFIG:
+            return kConfigParityEven;
+        case ParityConfig::MICROHIL_MARK_CONFIG:
+            return kConfigParityMark;
+        case ParityConfig::MICROHIL_SPACE_CONFIG:
+            return kConfigParitySpace;
+    }
+
+    return kConfigParityNone;
 }

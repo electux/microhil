@@ -55,6 +55,18 @@ Glib::ustring MicroHILLog::getFilePath() const
     return m_logFilePath;
 }
 
+void MicroHILLog::setLogLevel(Glib::ustring level)
+{
+    auto logLevelPrepared = toLogType(level);
+
+    m_logLevel = logLevelPrepared;
+}
+
+void MicroHILLog::setLogLevel(int level)
+{
+    m_logLevel = static_cast<LogLevel>(level);
+}
+
 void MicroHILLog::setLogLevel(LogLevel level)
 {
     m_logLevel = level;
@@ -124,4 +136,19 @@ Glib::ustring MicroHILLog::toStringLogType(LogLevel level) const
     }
 
     return kInfoLogLevel;
+}
+
+LogLevel MicroHILLog::toLogType(Glib::ustring level) const
+{
+    if(level == kWarningLogLevel)
+    {
+        return LogLevel::MICROHIL_WARNING;
+    }
+
+    if(level == kErrorLogLevel)
+    {
+        return LogLevel::MICROHIL_ERROR;
+    }
+
+    return LogLevel::MICROHIL_INFO;
 }

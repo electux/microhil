@@ -48,6 +48,10 @@ MicroHILController::MicroHILController(
     /// Setup log file destination from configuration
     m_log->setFilePath(m_config->getLogPath());
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Setup log level from configuration
+    m_log->setLogLevel(m_config->getLogLevel());
+
     if(!m_log->open())
     {
         // TODO

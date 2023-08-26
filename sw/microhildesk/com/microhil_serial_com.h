@@ -63,6 +63,18 @@ public:
     );
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Setup serial port parameters
+    /// @param device file path
+    /// @param baudRate for serial port
+    /// @param dataBits for serial port
+    /// @param parity for serial port
+    /// @param stopBits for serial port
+    void setup(
+        Glib::ustring device, BaudRate baudRate, CharacterSize dataBits,
+        Parity parity, StopBits stopBits
+    );
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Read from serial communication channel
     /// @param data buffer to be placed to after reading the serial port
     /// @param len length of data to read before returning

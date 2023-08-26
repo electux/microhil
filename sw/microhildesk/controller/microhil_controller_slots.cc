@@ -27,11 +27,16 @@ void MicroHILController::onLogSettingsChanged(
     m_config->setLogPath(logPath);
     m_config->setLogLevel(logLevel);
 
+    if (!m_config->store())
+    {
+        // TODO error handler
+    }
+
     ////////////////////////////////////////////////////////////////////////
-    /// Update logger
+    /// Update log handler
     m_log->close();
     m_log->setFilePath(logPath);
-    m_log->setLogLevel(static_cast<LogLevel>(logLevel));
+    m_log->setLogLevel(logLevel);
     m_log->open();
 }
 
@@ -40,6 +45,21 @@ void MicroHILController::onSerialSettingsChanged(
     unsigned int parity, unsigned int stopBits
 )
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Update serial configuration
+    m_config->setDevice(device);
+    m_config->setBaudRate(baudRate);
+    m_config->setDataBits(dataBits);
+    m_config->setParity(parity);
+    m_config->setStopBits(stopBits);
+
+    if (!m_config->store())
+    {
+        // TODO error handler
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Update serial handler
     // m_serial->close();
     // m_serial->setup(device, baudRate, dataBits, parity, stopBits);
     // TODO dialog message to open port?

@@ -79,7 +79,16 @@ bool MicroHILConfig::load()
         return false;
     }
 
+    // TODO emit signal for loaded configuration
+    //      ===> MicroHILViewLog
+    //      ===> MicroHILViewSerial
+
     return true;
+}
+
+bool MicroHILConfig::store()
+{
+    return m_configuration.save_to_file(m_configFilePath);
 }
 
 bool MicroHILConfig::validate()

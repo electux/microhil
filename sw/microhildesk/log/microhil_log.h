@@ -50,6 +50,16 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup log level
     /// @param level of logging
+    void setLogLevel(Glib::ustring level);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Setup log level
+    /// @param level of logging
+    void setLogLevel(int level);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Setup log level
+    /// @param level of logging
     void setLogLevel(LogLevel level);
 
     ////////////////////////////////////////////////////////////////////////
@@ -84,6 +94,12 @@ private:
     /// @param level log level
     /// @return string representation of log level
     Glib::ustring toStringLogType(LogLevel level) const;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert log level string to level type
+    /// @param level type in string format
+    /// @return log level type
+    LogLevel toLogType(Glib::ustring level) const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log file path

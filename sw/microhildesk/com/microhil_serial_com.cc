@@ -56,6 +56,18 @@ void MicroHILSerialCom::setup(
     m_device = device;
 }
 
+void MicroHILSerialCom::setup(
+    Glib::ustring device, BaudRate baudRate, CharacterSize dataBits,
+    Parity parity, StopBits stopBits
+)
+{
+    m_serialPort->SetBaudRate(baudRate);
+    m_serialPort->SetCharacterSize(dataBits);
+    m_serialPort->SetParity(parity);
+    m_serialPort->SetStopBits(stopBits);
+    m_device = device;
+}
+
 void MicroHILSerialCom::read(v_uint8 &data, size_t len, size_t timeout)
 {
 }
