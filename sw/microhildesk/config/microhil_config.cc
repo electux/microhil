@@ -79,9 +79,22 @@ bool MicroHILConfig::load()
         return false;
     }
 
-    // TODO emit signal for loaded configuration
-    //      ===> MicroHILViewLog
-    //      ===> MicroHILViewSerial
+    ////////////////////////////////////////////////////////////////////////
+    /// Emit signal for loaded log configuration
+    m_logConfiguration.emit(
+        getLogPath(),
+        logLevelStringToInt(getLogLevel())
+    );
+    
+    ////////////////////////////////////////////////////////////////////////
+    /// Emit signal for loaded serial configuration
+    m_serialConfiguration.emit(
+        getDevice(),
+        getBaudRate(),
+        getDataBits(),
+        parityStringToInt(getParity()),
+        getStopBits()
+    );
 
     return true;
 }

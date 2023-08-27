@@ -1,5 +1,7 @@
 var classAbMicroHILConfig =
 [
+    [ "logConfiguration", "d6/dac/classAbMicroHILConfig.html#a89093149d1a975fa7aa9a02c53886f84", null ],
+    [ "serialConfiguration", "d6/dac/classAbMicroHILConfig.html#a0caf94d5d0998b0e2232de98b9b61bd9", null ],
     [ "~AbMicroHILConfig", "d6/dac/classAbMicroHILConfig.html#accc50153a0f08f3918d7abad2d72437e", null ],
     [ "getBaudRate", "d6/dac/classAbMicroHILConfig.html#a178d285f2dc1a8d0e01a3a5270d7801f", null ],
     [ "getDataBits", "d6/dac/classAbMicroHILConfig.html#afacb3380c4372eac9c820d48a2c67d22", null ],
@@ -10,6 +12,8 @@ var classAbMicroHILConfig =
     [ "getStopBits", "d6/dac/classAbMicroHILConfig.html#aa20ce84f85b990acc7840bfe6da7e812", null ],
     [ "isPreValid", "d6/dac/classAbMicroHILConfig.html#ae8936a9dba12444d6bb1eb151b35f428", null ],
     [ "load", "d6/dac/classAbMicroHILConfig.html#afd78d43340fe7ea9f7ebe0800b7a94da", null ],
+    [ "logConfigurationLoaded", "d6/dac/classAbMicroHILConfig.html#a26abdd577fd3d9b9e527bfd4e1d923a6", null ],
+    [ "serialConfigurationLoaded", "d6/dac/classAbMicroHILConfig.html#a6d648b9e5f07e5a569f1509ed4175022", null ],
     [ "setBaudRate", "d6/dac/classAbMicroHILConfig.html#a205d94c3caf5f67d395f43a39771995a", null ],
     [ "setDataBits", "d6/dac/classAbMicroHILConfig.html#acef5cd910d57db77b11069214fd6bd8c", null ],
     [ "setDevice", "d6/dac/classAbMicroHILConfig.html#aa9ea73bde6589c4abd244fdb3db79251", null ],

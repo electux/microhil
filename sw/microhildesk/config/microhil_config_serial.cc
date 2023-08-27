@@ -89,6 +89,8 @@ Glib::ustring MicroHILConfig::getDevice() const
 
 void MicroHILConfig::setBaudRate(int baudRate)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Pre-process baud rate for serial port
     auto baudRatePrepared = processBaudRate(baudRate);
 
     m_configuration.set_integer(
@@ -105,6 +107,8 @@ int MicroHILConfig::getBaudRate() const
 
 void MicroHILConfig::setDataBits(int dataBits)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Pre-process data bits for serial port
     auto dataBitsPrepared = dataBits + kConfigDataBitsOffset;
 
     m_configuration.set_integer(
@@ -121,6 +125,8 @@ int MicroHILConfig::getDataBits() const
 
 void MicroHILConfig::setParity(int parity)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Pre-process parity for serial port
     auto parityPrepared = parityToUnicodeString(parity);
 
     m_configuration.set_string(
@@ -137,6 +143,8 @@ Glib::ustring MicroHILConfig::getParity() const
 
 void MicroHILConfig::setStopBits(int stopBits)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Pre-process stop bits for serial port
     auto stopBitsPrepared = stopBits + kConfigStopBitsOffset;
 
     m_configuration.set_integer(
@@ -196,6 +204,8 @@ int MicroHILConfig::processBaudRate(int baudRate)
 
 Glib::ustring MicroHILConfig::parityToUnicodeString(int parity)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Convert integer parity ti scopped class 
     auto parityPrepared = static_cast<ParityConfig>(parity);
 
     switch(parityPrepared)
@@ -213,4 +223,29 @@ Glib::ustring MicroHILConfig::parityToUnicodeString(int parity)
     }
 
     return kConfigParityNone;
+}
+
+int MicroHILConfig::parityStringToInt(Glib::ustring parity)
+{
+    if(parity == kConfigParityOdd)
+    {
+        return 1;
+    }
+
+    if(parity == kConfigParityEven)
+    {
+        return 2;
+    }
+
+    if(parity == kConfigParityMark)
+    {
+        return 3;
+    }
+
+    if(parity == kConfigParitySpace)
+    {
+        return 4;
+    }
+
+    return 0;
 }

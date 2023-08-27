@@ -18,6 +18,7 @@
  */
 #pragma once
 
+#include <sigc++/sigc++.h>
 #include <glibmm/ustring.h>
 
 ////////////////////////////////////////////////////////////////////////////
@@ -46,8 +47,28 @@ class AbMicroHILConfig
 {
 public:
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal type for loaded log configuration from file
+    using logConfiguration = sigc::signal<void(Glib::ustring, int)>;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal type for loaded serial configuration from file
+    using serialConfiguration = sigc::signal<void(
+        Glib::ustring, int, int, int, int
+    )>;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILConfig destructor
     virtual ~AbMicroHILConfig() = default;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for loaded log configuration
+    /// @return Signal for loaded log configuration
+    virtual logConfiguration logConfigurationLoaded() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for loaded serial configuration
+    /// @return Signal for loaded serial configuration
+    virtual serialConfiguration serialConfigurationLoaded() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Load configuration
