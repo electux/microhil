@@ -47,6 +47,8 @@ namespace
 
 void MicroHILConfig::setLogLevel(int level)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Convert integer log level to string format
     auto logLevel = logLevelToUnicodeString(level);
 
     m_configuration.set_string(
@@ -73,6 +75,8 @@ Glib::ustring MicroHILConfig::getLogPath() const
 
 Glib::ustring MicroHILConfig::logLevelToUnicodeString(int logLevel)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Convert integer log level to scopped class 
     auto logLevelType = static_cast<LogLevelConfig>(logLevel);
 
     switch(logLevelType)
@@ -87,6 +91,21 @@ Glib::ustring MicroHILConfig::logLevelToUnicodeString(int logLevel)
     }
 
     return kConfigLogLevelInfo;
+}
+
+int MicroHILConfig::logLevelStringToInt(Glib::ustring level)
+{
+    if(level == kConfigLogLevelWarning)
+    {
+        return 1;
+    }
+
+    if(level == kConfigLogLevelError)
+    {
+        return 2;
+    }
+
+    return 0;
 }
 
 bool MicroHILConfig::validateLogSettings()

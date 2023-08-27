@@ -35,6 +35,16 @@ public:
     ~MicroHILConfig() = default;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for loaded log configuration
+    /// @return Signal for loaded log configuration
+    logConfiguration logConfigurationLoaded() final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for loaded serial configuration
+    /// @return Signal for loaded serial configuration
+    serialConfiguration serialConfigurationLoaded() final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Load configuration from file
     /// @return boolean status true for success else false
     bool load() final;
@@ -132,6 +142,12 @@ private:
     Glib::ustring logLevelToUnicodeString(int logLevel);
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert log level in strong format to integer
+    /// @param level in string format
+    /// @return log level in integer format
+    int logLevelStringToInt(Glib::ustring level);
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Process and prepare baud rate
     /// @param baudRate for serial port
     /// @return baud rate for serial port in final format
@@ -142,6 +158,12 @@ private:
     /// @param parity in integer format
     /// @return string format of parity
     Glib::ustring parityToUnicodeString(int parity);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert parity to integer format
+    /// @param parity in string format
+    /// @return parity in integer format
+    int parityStringToInt(Glib::ustring parity);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Validate log configuration (existing expected parameters)
@@ -164,4 +186,12 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration instance
     Glib::KeyFile m_configuration{};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Signal for loaded log configuration from file
+    logConfiguration m_logConfiguration{};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Signal for loaded serial configuration from file
+    serialConfiguration m_serialConfiguration{};
 };
