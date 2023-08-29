@@ -103,7 +103,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial device file path from configuration
     /// @return file path for serial device
-    virtual Glib::ustring getDevice() const = 0;
+    virtual Glib::ustring getDevice() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting baud rate for serial port to configuration
@@ -113,7 +113,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting baud rate for serial port from configuration
     /// @return integer value for serial port baud rate
-    virtual int getBaudRate() const = 0;
+    virtual int getBaudRate() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting data bits for serial port to configuration
@@ -123,7 +123,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting data bits for serial port from configuration
     /// @return integer value for data bits for charachter
-    virtual int getDataBits() const = 0;
+    virtual int getDataBits() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting parity for serial port to configuration
@@ -133,7 +133,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
     /// @return parity type for the serial port
-    virtual Glib::ustring getParity() const = 0;
+    virtual Glib::ustring getParity() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting stop bits for serial port to configuration
@@ -143,7 +143,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting stop bits for serial port from configuration
     /// @return integer number of stop bits for the serial port
-    virtual int getStopBits() const = 0;
+    virtual int getStopBits() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log level
@@ -153,7 +153,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
     /// @return log level
-    virtual Glib::ustring getLogLevel() const = 0;
+    virtual Glib::ustring getLogLevel() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log path
@@ -163,7 +163,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log path
     /// @return log path
-    virtual Glib::ustring getLogPath() const = 0;
+    virtual Glib::ustring getLogPath() = 0;
 
 private:
     ////////////////////////////////////////////////////////////////////////

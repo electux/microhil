@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['validate_0',['validate',['../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1',1,'MicroHILConfig::validate()'],['../d6/dac/classAbMicroHILConfig.html#a4a51b9f8ac882cb05df1c2baa4a34856',1,'AbMicroHILConfig::validate()']]],
-  ['validatelogsettings_1',['validateLogSettings',['../d0/df4/classMicroHILConfig.html#ae173ca4c21b87e2f4c8a277b2fda05f9',1,'MicroHILConfig']]],
-  ['validateserialsettings_2',['validateSerialSettings',['../d0/df4/classMicroHILConfig.html#a8fbcd180120cd3bf7c96fda109edebdb',1,'MicroHILConfig']]],
-  ['viewchanged_3',['viewChanged',['../df/da5/classMicroHILViewHome.html#a4677539a1b47a82fe5436194a57dc5b9',1,'MicroHILViewHome::viewChanged()'],['../d5/d72/classAbMicroHILViewHome.html#a5c765a64e05bad3f57b0de957fae85fb',1,'AbMicroHILViewHome::viewChanged()']]]
+  ['timermodechannel_0',['timerModeChannel',['../df/da5/classMicroHILViewHome.html#ab5f2fd3c96f559df40a5a3f7c32bc653',1,'MicroHILViewHome']]],
+  ['togglemodechannel_1',['toggleModeChannel',['../df/da5/classMicroHILViewHome.html#ac0f1c35b582b4c869bc534734dfcd768',1,'MicroHILViewHome']]],
+  ['tologtype_2',['toLogType',['../d1/de3/classMicroHILLog.html#a4921aefdbed46869380816298295b37c',1,'MicroHILLog']]],
+  ['tostringlogtype_3',['toStringLogType',['../d1/de3/classMicroHILLog.html#a43a087279349a6d87710bf60a5133e83',1,'MicroHILLog']]],
+  ['tounicodestringmessagetype_4',['toUnicodeStringMessageType',['../da/dcd/classMicroHILViewDialog.html#aaa4d1c0e0fcb6b5fe7006a2e349e5b7a',1,'MicroHILViewDialog']]]
 ];

@@ -1,4 +1,13 @@
 var searchData=
 [
-  ['disablechannel_0',['disableChannel',['../df/da5/classMicroHILViewHome.html#aec5801a38d8e7fbf5426237fbb3738e5',1,'MicroHILViewHome']]]
+  ['cancellogtriggered_0',['cancelLogTriggered',['../d1/d49/classAbMicroHILViewLog.html#a3bfd431a9d6512797de7b40231e7ed79',1,'AbMicroHILViewLog::cancelLogTriggered()'],['../d4/dc6/classMicroHILViewLog.html#a76787fdd4815a2d97329758f2d8cf85d',1,'MicroHILViewLog::cancelLogTriggered()']]],
+  ['cancelserialtriggered_1',['cancelSerialTriggered',['../dd/dde/classMicroHILViewSerial.html#a558eb6265845423c8dd9c4cd6b7e252f',1,'MicroHILViewSerial::cancelSerialTriggered()'],['../df/dcb/classAbMicroHILViewSerial.html#ab92d701843d4658fde0755eeba2d3c4a',1,'AbMicroHILViewSerial::cancelSerialTriggered()']]],
+  ['channelischanged_2',['channelIsChanged',['../df/da5/classMicroHILViewHome.html#a74af022036d7e0e851006ae10b8a2e2e',1,'MicroHILViewHome::channelIsChanged()'],['../d5/d72/classAbMicroHILViewHome.html#a30a923c81da1ae48971587e3c3218320',1,'AbMicroHILViewHome::channelIsChanged()']]],
+  ['channelisselected_3',['channelIsSelected',['../df/da5/classMicroHILViewHome.html#a8ac173c6fab774bb4ca8d4b22f7b67a8',1,'MicroHILViewHome::channelIsSelected()'],['../d5/d72/classAbMicroHILViewHome.html#a5d6f35362746ad38742da13b98d4c824',1,'AbMicroHILViewHome::channelIsSelected()']]],
+  ['channelisspintimerchanged_4',['channelIsSpinTimerChanged',['../df/da5/classMicroHILViewHome.html#a87b9b91af2116ad63aa4f1a1bf0e2da2',1,'MicroHILViewHome::channelIsSpinTimerChanged()'],['../d5/d72/classAbMicroHILViewHome.html#ab34fabd26a642f642a1187a28cd31732',1,'AbMicroHILViewHome::channelIsSpinTimerChanged()']]],
+  ['channelistimerchanged_5',['channelIsTimerChanged',['../df/da5/classMicroHILViewHome.html#a72d6ba3949413c334566759abfb6747d',1,'MicroHILViewHome::channelIsTimerChanged()'],['../d5/d72/classAbMicroHILViewHome.html#a0cddc437984e52d97d55db159318061f',1,'AbMicroHILViewHome::channelIsTimerChanged()']]],
+  ['channelistoggled_6',['channelIsToggled',['../df/da5/classMicroHILViewHome.html#a54c40b7c1eadf131cdf5ff2fbed04ccf',1,'MicroHILViewHome::channelIsToggled()'],['../d5/d72/classAbMicroHILViewHome.html#a08417eedc134c03ca5c7715e6e43ee50',1,'AbMicroHILViewHome::channelIsToggled()']]],
+  ['checkconfigpath_7',['checkConfigPath',['../d0/df4/classMicroHILConfig.html#a9bfff605b83f8d1d48aee5f8bf4bb069',1,'MicroHILConfig']]],
+  ['close_8',['close',['../d7/d8c/classAbMicroHILCom.html#af762ae29a1dc726357e8bab13f959e6b',1,'AbMicroHILCom::close()'],['../d5/dd0/classMicroHILSerialCom.html#abcf5e51035faf096fc61c6c4c509108d',1,'MicroHILSerialCom::close()'],['../d1/de3/classMicroHILLog.html#a5894c0411514735f36f100eef5881ae9',1,'MicroHILLog::close()'],['../d9/de8/classAbMicroHILLog.html#aa7854ceccdaae2f079523e3d93b2e269',1,'AbMicroHILLog::close()']]],
+  ['create_9',['create',['../d9/d0f/main_8cc.html#ac310f031e90c68ee35850afe11f3448a',1,'main.cc']]]
 ];

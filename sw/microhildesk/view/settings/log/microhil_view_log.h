@@ -83,6 +83,12 @@ public:
     /// @brief Slot for processing Ok button
     void onOkLogTriggered() final;
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Set loaded parameters for log settings view
+    /// @param filePath is absolute log file path
+    /// @param logLevel is level for logging
+    void logSettingsLoaded(Glib::ustring filePath, int logLevel);
+
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Map all widgets (signals and slots)

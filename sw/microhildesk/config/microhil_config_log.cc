@@ -31,18 +31,6 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Log file path configuration parameter
     constexpr const char kConfigLogFile[]{"file"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Log level configuration parameter info
-    constexpr const char kConfigLogLevelInfo[]{"INFO"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Log level configuration parameter warning
-    constexpr const char kConfigLogLevelWarning[]{"WARNING"};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Log level configuration parameter error
-    constexpr const char kConfigLogLevelError[]{"ERROR"};
 }
 
 void MicroHILConfig::setLogLevel(int level)
@@ -56,7 +44,7 @@ void MicroHILConfig::setLogLevel(int level)
     );
 }
 
-Glib::ustring MicroHILConfig::getLogLevel() const
+Glib::ustring MicroHILConfig::getLogLevel()
 {
     return m_configuration.get_string(kConfigLogSection, kConfigLogLevel);
 }
@@ -68,44 +56,9 @@ void MicroHILConfig::setLogPath(Glib::ustring path)
     );
 }
 
-Glib::ustring MicroHILConfig::getLogPath() const
+Glib::ustring MicroHILConfig::getLogPath()
 {
     return m_configuration.get_string(kConfigLogSection, kConfigLogFile);
-}
-
-Glib::ustring MicroHILConfig::logLevelToUnicodeString(int logLevel)
-{
-    ////////////////////////////////////////////////////////////////////////
-    /// Convert integer log level to scopped class 
-    auto logLevelType = static_cast<LogLevelConfig>(logLevel);
-
-    switch(logLevelType)
-    {
-        case LogLevelConfig::MICROHIL_INFO_CONFIG:
-            return kConfigLogLevelInfo;
-        case LogLevelConfig::MICROHIL_WARNING_CONFIG:
-            return kConfigLogLevelWarning;
-        case LogLevelConfig::MICROHIL_ERROR_CONFIG:
-            return kConfigLogLevelError;
-
-    }
-
-    return kConfigLogLevelInfo;
-}
-
-int MicroHILConfig::logLevelStringToInt(Glib::ustring level)
-{
-    if(level == kConfigLogLevelWarning)
-    {
-        return 1;
-    }
-
-    if(level == kConfigLogLevelError)
-    {
-        return 2;
-    }
-
-    return 0;
 }
 
 bool MicroHILConfig::validateLogSettings()

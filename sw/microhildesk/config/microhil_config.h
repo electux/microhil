@@ -67,7 +67,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial device file path from configuration
     /// @return file path for serial device
-    Glib::ustring getDevice() const final;
+    Glib::ustring getDevice() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting baud rate for serial port to configuration
@@ -77,7 +77,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting baud rate for serial port from configuration
     /// @return integer value for serial port baud rate
-    int getBaudRate() const final;
+    int getBaudRate() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting data bits for serial port to configuration
@@ -87,7 +87,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting data bits for serial port from configuration
     /// @return integer value for data bits for charachter
-    int getDataBits() const final;
+    int getDataBits() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting parity for serial port to configuration
@@ -97,7 +97,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
     /// @return parity type for the serial port
-    Glib::ustring getParity() const final;
+    Glib::ustring getParity() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting stop bits for serial port to configuration
@@ -107,7 +107,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting stop bits for serial port from configuration
     /// @return integer number of stop bits for the serial port
-    int getStopBits() const final;
+    int getStopBits() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log level
@@ -117,7 +117,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
     /// @return log level
-    Glib::ustring getLogLevel() const final;
+    Glib::ustring getLogLevel() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log path
@@ -127,7 +127,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log path
     /// @return log path
-    Glib::ustring getLogPath() const final;
+    Glib::ustring getLogPath() final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
@@ -148,22 +148,52 @@ private:
     int logLevelStringToInt(Glib::ustring level);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Process and prepare baud rate
-    /// @param baudRate for serial port
-    /// @return baud rate for serial port in final format
-    int processBaudRate(int baudRate);
+    /// @brief Process and prepare baud rate (to config file)
+    /// @param baudRate for serial port (combobox index)
+    /// @return baud rate for serial port in integer format
+    int intToBaudRate(int baudRate);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert integer parity to string format
-    /// @param parity in integer format
-    /// @return string format of parity
+    /// @brief Process and prepare baud rate (from config file)
+    /// @param baudRate value from config file
+    /// @return index for combobox
+    int baudRateToInt(const int baudRate);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Process and prepare data bits (from config file)
+    /// @param dataBits value from config file
+    /// @return index for combobox
+    int dataBitsToInt(int dataBits);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert combobox index to data bits (to config file)
+    /// @param dataBits for serial port (index combobox)
+    /// @return data bits for serial port in integer format
+    int intToDataBits(int dataBits);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert integer parity to string format (to config file)
+    /// @param parity index combobox
+    /// @return string format of parity in string format
     Glib::ustring parityToUnicodeString(int parity);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert parity to integer format
-    /// @param parity in string format
-    /// @return parity in integer format
-    int parityStringToInt(Glib::ustring parity);
+    /// @brief Convert parity to integer format (from config file)
+    /// @param parity in string format (from config file)
+    /// @return parity in integer format (to combobox index)
+    int parityUnicodeStringToInt(Glib::ustring parity);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert stop-bits to integer (from config file)
+    /// @param dataBits from config file
+    /// @return stop-bits in integer format (index combobox)
+    int stopBitsToInt(int stopBits);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert combobox index to data-bits (to config file)
+    /// @param dataBits index from combobox
+    /// @return data-bits in integer format
+    int intToStopBits(int stopBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Validate log configuration (existing expected parameters)

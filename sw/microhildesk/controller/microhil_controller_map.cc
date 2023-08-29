@@ -20,10 +20,26 @@
 
 void MicroHILController::mapping()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Map log settings signal from configuration with controller slot
+    m_config->logConfigurationLoaded().connect(
+        sigc::mem_fun(*this, &MicroHILController::onLogSettingsLoaded)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Map serial settings signal from configuration with controller slot
+    m_config->serialConfigurationLoaded().connect(
+        sigc::mem_fun(*this, &MicroHILController::onSerialSettingsLoaded)
+    );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Map log view signal with controller slot
     m_view->getLogSettings()->logSetupChanged().connect(
         sigc::mem_fun(*this, &MicroHILController::onLogSettingsChanged)
     );
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Map serial view signal with controller slot
     m_view->getSerialSettings()->serialSetupChanged().connect(
         sigc::mem_fun(*this, &MicroHILController::onSerialSettingsChanged)
     );

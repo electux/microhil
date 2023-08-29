@@ -16,6 +16,7 @@ var classMicroHILViewSerial =
     [ "serialDataBitsChanged", "dd/dde/classMicroHILViewSerial.html#a5102e5f3ec8157a21270f7e0a89f32dc", null ],
     [ "serialFilePathChanged", "dd/dde/classMicroHILViewSerial.html#a6c4bba6518ef9fe89a877c052a18855e", null ],
     [ "serialParityChanged", "dd/dde/classMicroHILViewSerial.html#a304b45fca0c5c41808891dcf70e443f3", null ],
+    [ "serialSettingsLoaded", "dd/dde/classMicroHILViewSerial.html#adfc3787871515d2c19b7420b9e698c8a", null ],
     [ "serialSetupChanged", "dd/dde/classMicroHILViewSerial.html#a5f7a96670df1488d55cb09b80c36e757", null ],
     [ "serialStopBitsChanged", "dd/dde/classMicroHILViewSerial.html#a5efa1ec1bee320b95e09b375cecd860e", null ],
     [ "m_baudRate", "dd/dde/classMicroHILViewSerial.html#a137288c0161b6aa7f9aa05388d7eefbf", null ],

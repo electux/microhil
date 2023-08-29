@@ -29,6 +29,10 @@ MicroHILController::MicroHILController(
     m_serial = make_unique<MicroHILSerialCom>();
 
     ////////////////////////////////////////////////////////////////////////
+    /// Mapping views and backend (signals and slots)
+    mapping();
+
+    ////////////////////////////////////////////////////////////////////////
     /// Checking existance of configuration
     if(!m_config->isPreValid())
     {
@@ -57,10 +61,6 @@ MicroHILController::MicroHILController(
         // TODO
         // Emit signal for error handler
     }
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Mapping views and backend (signals and slots)
-    mapping();
 }
 
 void MicroHILController::setEnabled(bool switchController)
