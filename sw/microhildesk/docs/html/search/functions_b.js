@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['read_0',['read',['../d7/d8c/classAbMicroHILCom.html#adf57fe39a02b5cc6b1e9651da38e2132',1,'AbMicroHILCom::read()'],['../d5/dd0/classMicroHILSerialCom.html#a3a912fdb185284ecfb57ff3134788d92',1,'MicroHILSerialCom::read()']]],
-  ['run_1',['run',['../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4',1,'Application']]]
+  ['paritytounicodestring_0',['parityToUnicodeString',['../d0/df4/classMicroHILConfig.html#a085ba15c749e915331f3d6b1accd9fca',1,'MicroHILConfig']]],
+  ['parityunicodestringtoint_1',['parityUnicodeStringToInt',['../d0/df4/classMicroHILConfig.html#a919d7e70c84129f794e51968d8617977',1,'MicroHILConfig']]]
 ];

@@ -103,3 +103,14 @@ MicroHILViewSerial::MicroHILViewSerial(
     /// Hide Serial Settings by default
     this->hide();
 }
+
+void MicroHILViewSerial::serialSettingsLoaded(
+    Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
+    unsigned int parity, unsigned int stopBits)
+{
+    m_device->set_text(device);
+    m_baudRate->set_active(baudRate);
+    m_dataBits->set_active(dataBits);
+    m_parity->set_active(parity);
+    m_stopBits->set_active(stopBits);
+}

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['isenabled_0',['isEnabled',['../dd/d47/classMicroHILController.html#ace4f057fd606228b72623be9abb6272c',1,'MicroHILController::isEnabled()'],['../de/dee/classAbMicroHILController.html#ac15c24930446eea9d1540f418b1a655a',1,'AbMicroHILController::isEnabled()']]],
-  ['isonchannel_1',['isOnChannel',['../de/dce/classMicroHILModel.html#a771b57ae4b64fda8798eb849441350fa',1,'MicroHILModel::isOnChannel()'],['../db/dda/classAbMicroHILModel.html#ac3bc3927cc028ff1337e9e8c9e8f12c8',1,'AbMicroHILModel::isOnChannel()']]],
-  ['isprevalid_2',['isPreValid',['../d6/dac/classAbMicroHILConfig.html#ae8936a9dba12444d6bb1eb151b35f428',1,'AbMicroHILConfig']]]
+  ['hideabouttriggered_0',['hideAboutTriggered',['../d1/df8/classMicroHILViewAbout.html#a219bbe915d05e452305e63207c7b31a3',1,'MicroHILViewAbout::hideAboutTriggered()'],['../d6/d7b/classAbMicroHILViewAbout.html#aa66a365f56a4b2d2c823bd4857391199',1,'AbMicroHILViewAbout::hideAboutTriggered()']]],
+  ['hidedialogtrigered_1',['hideDialogTrigered',['../da/dcd/classMicroHILViewDialog.html#a9cb67883b302350017d3b7451b51c8e4',1,'MicroHILViewDialog::hideDialogTrigered()'],['../d9/d02/classAbMicroHILViewDialog.html#a3d6fc1e820bcdc3685f7784af915aaef',1,'AbMicroHILViewDialog::hideDialogTrigered()']]]
 ];

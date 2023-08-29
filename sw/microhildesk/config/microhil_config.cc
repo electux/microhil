@@ -85,14 +85,14 @@ bool MicroHILConfig::load()
         getLogPath(),
         logLevelStringToInt(getLogLevel())
     );
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// Emit signal for loaded serial configuration
     m_serialConfiguration.emit(
         getDevice(),
         getBaudRate(),
         getDataBits(),
-        parityStringToInt(getParity()),
+        parityUnicodeStringToInt(getParity()),
         getStopBits()
     );
 

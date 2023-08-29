@@ -1,0 +1,5 @@
+<map id="MicroHILConfig::dataBitsToInt" name="MicroHILConfig::dataBitsToInt">
+<area shape="rect" id="node1" title="Process and prepare data bits (from config file)" alt="" coords="463,5,645,47"/>
+<area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#a08e46f81bbe5d4a5c849e9780c3d8c67" title="Getting data bits for serial port from configuration." alt="" coords="209,13,415,39"/>
+<area shape="rect" id="node3" href="$d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88" title="Load configuration from file." alt="" coords="5,13,161,39"/>
+</map>

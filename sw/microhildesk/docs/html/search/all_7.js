@@ -1,15 +1,9 @@
 var searchData=
 [
-  ['load_0',['load',['../d6/dac/classAbMicroHILConfig.html#afd78d43340fe7ea9f7ebe0800b7a94da',1,'AbMicroHILConfig::load()'],['../d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88',1,'MicroHILConfig::load()']]],
-  ['logconfiguration_1',['logConfiguration',['../d6/dac/classAbMicroHILConfig.html#a89093149d1a975fa7aa9a02c53886f84',1,'AbMicroHILConfig']]],
-  ['logconfigurationloaded_2',['logConfigurationLoaded',['../d0/df4/classMicroHILConfig.html#a8a483a009ba2d2a0fa8288f1b612e144',1,'MicroHILConfig::logConfigurationLoaded()'],['../d6/dac/classAbMicroHILConfig.html#a26abdd577fd3d9b9e527bfd4e1d923a6',1,'AbMicroHILConfig::logConfigurationLoaded()']]],
-  ['logfilepath_3',['logFilePath',['../d1/d49/classAbMicroHILViewLog.html#a03b0f096efc9c4be2fc9387d0979fe46',1,'AbMicroHILViewLog']]],
-  ['logfilepathchanged_4',['logFilePathChanged',['../d4/dc6/classMicroHILViewLog.html#a86f1d2db9f512864178b9a68fcaaf5a4',1,'MicroHILViewLog::logFilePathChanged()'],['../d1/d49/classAbMicroHILViewLog.html#a1c3aaf0e1a50b0ade6bd1db059ab7fd9',1,'AbMicroHILViewLog::logFilePathChanged()']]],
-  ['loglevel_5',['LogLevel',['../d5/d0c/microhil__log__abstract_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94',1,'microhil_log_abstract.h']]],
-  ['loglevelchanged_6',['logLevelChanged',['../d4/dc6/classMicroHILViewLog.html#af358dff1193c4aaefb485b19c9f9674a',1,'MicroHILViewLog::logLevelChanged()'],['../d1/d49/classAbMicroHILViewLog.html#a15b34ee3360b23777484c6df1358616e',1,'AbMicroHILViewLog::logLevelChanged()']]],
-  ['loglevelconfig_7',['LogLevelConfig',['../d8/d3b/microhil__config__abstract_8h.html#a3fc630a93082b538c6bfdc552440e183',1,'microhil_config_abstract.h']]],
-  ['loglevelstringtoint_8',['logLevelStringToInt',['../d0/df4/classMicroHILConfig.html#ac1cb3080751fae071dfb81fd4711b696',1,'MicroHILConfig']]],
-  ['logleveltounicodestring_9',['logLevelToUnicodeString',['../d0/df4/classMicroHILConfig.html#acea6a5825a7493378ecb64e46db8597b',1,'MicroHILConfig']]],
-  ['logsetup_10',['logSetup',['../d1/d49/classAbMicroHILViewLog.html#a1daec3ae4e8e011dbd7264aee9f082d8',1,'AbMicroHILViewLog']]],
-  ['logsetupchanged_11',['logSetupChanged',['../d4/dc6/classMicroHILViewLog.html#ae2507c9f994a83635e02b585ac47d10a',1,'MicroHILViewLog::logSetupChanged()'],['../d1/d49/classAbMicroHILViewLog.html#a2279fa7b4cf407a3f5012dc3ab110e7e',1,'AbMicroHILViewLog::logSetupChanged()']]]
+  ['inttobaudrate_0',['intToBaudRate',['../d0/df4/classMicroHILConfig.html#ae21a8b7336243f7b8aca9ffa77cfab58',1,'MicroHILConfig']]],
+  ['inttodatabits_1',['intToDataBits',['../d0/df4/classMicroHILConfig.html#a7e4b87f786669548339d42590514d984',1,'MicroHILConfig']]],
+  ['inttostopbits_2',['intToStopBits',['../d0/df4/classMicroHILConfig.html#ad9a9c00e278d46f259e12683fb71a4aa',1,'MicroHILConfig']]],
+  ['isenabled_3',['isEnabled',['../dd/d47/classMicroHILController.html#ace4f057fd606228b72623be9abb6272c',1,'MicroHILController::isEnabled()'],['../de/dee/classAbMicroHILController.html#ac15c24930446eea9d1540f418b1a655a',1,'AbMicroHILController::isEnabled()']]],
+  ['isonchannel_4',['isOnChannel',['../de/dce/classMicroHILModel.html#a771b57ae4b64fda8798eb849441350fa',1,'MicroHILModel::isOnChannel()'],['../db/dda/classAbMicroHILModel.html#ac3bc3927cc028ff1337e9e8c9e8f12c8',1,'AbMicroHILModel::isOnChannel()']]],
+  ['isprevalid_5',['isPreValid',['../d6/dac/classAbMicroHILConfig.html#ae8936a9dba12444d6bb1eb151b35f428',1,'AbMicroHILConfig']]]
 ];
