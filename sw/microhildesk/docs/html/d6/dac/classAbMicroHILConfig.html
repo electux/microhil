@@ -121,9 +121,9 @@ Public Types</h2></td></tr>
 <tr class="memitem:a8b1d61c4c6e9c09f19de3ad47ae61870"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a8b1d61c4c6e9c09f19de3ad47ae61870">SigLogConfig</a> = sigc::signal&lt; void(Glib::ustring, int)&gt;</td></tr>
 <tr class="memdesc:a8b1d61c4c6e9c09f19de3ad47ae61870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for loaded log configuration from file.  <a href="../../d6/dac/classAbMicroHILConfig.html#a8b1d61c4c6e9c09f19de3ad47ae61870">More...</a><br /></td></tr>
 <tr class="separator:a8b1d61c4c6e9c09f19de3ad47ae61870"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57e5375dee0598ec3a076b8fc5beb88e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a57e5375dee0598ec3a076b8fc5beb88e">SigSerialConfig</a> = sigc::signal&lt; void(Glib::ustring, int, int, int, int)&gt;</td></tr>
-<tr class="memdesc:a57e5375dee0598ec3a076b8fc5beb88e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for loaded serial configuration from file.  <a href="../../d6/dac/classAbMicroHILConfig.html#a57e5375dee0598ec3a076b8fc5beb88e">More...</a><br /></td></tr>
-<tr class="separator:a57e5375dee0598ec3a076b8fc5beb88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ba9d90b52193d7b3ba31af2c1709fe0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a3ba9d90b52193d7b3ba31af2c1709fe0">SigSerialConfig</a> = sigc::signal&lt; void(Glib::ustring, <a class="el" href="../../d8/d3b/microhil__config__abstract_8h.html#aad209747db3504611ba24e9364764067">VectorUInt</a>)&gt;</td></tr>
+<tr class="memdesc:a3ba9d90b52193d7b3ba31af2c1709fe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for loaded serial configuration from file.  <a href="../../d6/dac/classAbMicroHILConfig.html#a3ba9d90b52193d7b3ba31af2c1709fe0">More...</a><br /></td></tr>
+<tr class="separator:a3ba9d90b52193d7b3ba31af2c1709fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae773c122a6dd84b0f5f0980446be55e4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a8b1d61c4c6e9c09f19de3ad47ae61870">SigLogConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dac/classAbMicroHILConfig.html#ae773c122a6dd84b0f5f0980446be55e4">LogConfigLoaded</a> ()=0</td></tr>
 <tr class="memdesc:ae773c122a6dd84b0f5f0980446be55e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for loaded log configuration.  <a href="../../d6/dac/classAbMicroHILConfig.html#ae773c122a6dd84b0f5f0980446be55e4">More...</a><br /></td></tr>
 <tr class="separator:ae773c122a6dd84b0f5f0980446be55e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6842c742c6ae9728c2009c06f0ae6c95"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a57e5375dee0598ec3a076b8fc5beb88e">SigSerialConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a6842c742c6ae9728c2009c06f0ae6c95">SerialConfigLoaded</a> ()=0</td></tr>
+<tr class="memitem:a6842c742c6ae9728c2009c06f0ae6c95"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a3ba9d90b52193d7b3ba31af2c1709fe0">SigSerialConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a6842c742c6ae9728c2009c06f0ae6c95">SerialConfigLoaded</a> ()=0</td></tr>
 <tr class="memdesc:a6842c742c6ae9728c2009c06f0ae6c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for loaded serial configuration.  <a href="../../d6/dac/classAbMicroHILConfig.html#a6842c742c6ae9728c2009c06f0ae6c95">More...</a><br /></td></tr>
 <tr class="separator:a6842c742c6ae9728c2009c06f0ae6c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd78d43340fe7ea9f7ebe0800b7a94da"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dac/classAbMicroHILConfig.html#afd78d43340fe7ea9f7ebe0800b7a94da">load</a> ()=0</td></tr>
@@ -203,7 +203,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="../../d6/dac/classAbMicroHILConfig.html" title="AbMicroHILConfig class declaration and definition.">AbMicroHILConfig</a> class declaration and definition. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00046">46</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00051">51</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a8b1d61c4c6e9c09f19de3ad47ae61870" name="a8b1d61c4c6e9c09f19de3ad47ae61870"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b1d61c4c6e9c09f19de3ad47ae61870">&#9670;&nbsp;</a></span>SigLogConfig</h2>
@@ -219,25 +219,25 @@ Private Attributes</h2></td></tr>
 
 <p>Signal type for loaded log configuration from file. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00051">51</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00056">56</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
 
 </div>
 </div>
-<a id="a57e5375dee0598ec3a076b8fc5beb88e" name="a57e5375dee0598ec3a076b8fc5beb88e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57e5375dee0598ec3a076b8fc5beb88e">&#9670;&nbsp;</a></span>SigSerialConfig</h2>
+<a id="a3ba9d90b52193d7b3ba31af2c1709fe0" name="a3ba9d90b52193d7b3ba31af2c1709fe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ba9d90b52193d7b3ba31af2c1709fe0">&#9670;&nbsp;</a></span>SigSerialConfig</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a57e5375dee0598ec3a076b8fc5beb88e">AbMicroHILConfig::SigSerialConfig</a> =  sigc::signal&lt;void( Glib::ustring, int, int, int, int )&gt;</td>
+          <td class="memname">using <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a3ba9d90b52193d7b3ba31af2c1709fe0">AbMicroHILConfig::SigSerialConfig</a> =  sigc::signal&lt;void(Glib::ustring, <a class="el" href="../../d8/d3b/microhil__config__abstract_8h.html#aad209747db3504611ba24e9364764067">VectorUInt</a>)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Signal type for loaded serial configuration from file. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00055">55</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00060">60</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
 
 </div>
 </div>
@@ -506,13 +506,13 @@ Private Attributes</h2></td></tr>
 <p>Check is pre-validation state (existing configuration) </p>
 <dl class="section return"><dt>Returns</dt><dd>boolean status true for valid else false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00096">96</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/dac/classAbMicroHILConfig.html#acae659392274d3c4682b79b6d1d66e58">m_configPreValidate</a>;};</div>
-<div class="ttc" id="aclassAbMicroHILConfig_html_acae659392274d3c4682b79b6d1d66e58"><div class="ttname"><a href="../../d6/dac/classAbMicroHILConfig.html#acae659392274d3c4682b79b6d1d66e58">AbMicroHILConfig::m_configPreValidate</a></div><div class="ttdeci">bool m_configPreValidate</div><div class="ttdoc">Pre-validation flag for configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00171">microhil_config_abstract.h:171</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00099">99</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/dac/classAbMicroHILConfig.html#acae659392274d3c4682b79b6d1d66e58">m_configPreValidate</a>;};</div>
+<div class="ttc" id="aclassAbMicroHILConfig_html_acae659392274d3c4682b79b6d1d66e58"><div class="ttname"><a href="../../d6/dac/classAbMicroHILConfig.html#acae659392274d3c4682b79b6d1d66e58">AbMicroHILConfig::m_configPreValidate</a></div><div class="ttdeci">bool m_configPreValidate</div><div class="ttdoc">Pre-validation flag for configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00174">microhil_config_abstract.h:174</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00171">m_configPreValidate</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00174">m_configPreValidate</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00109">MicroHILConfig::validate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00106">MicroHILConfig::validate()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -596,7 +596,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a57e5375dee0598ec3a076b8fc5beb88e">SigSerialConfig</a> AbMicroHILConfig::SerialConfigLoaded </td>
+          <td class="memname">virtual <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a3ba9d90b52193d7b3ba31af2c1709fe0">SigSerialConfig</a> AbMicroHILConfig::SerialConfigLoaded </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -864,10 +864,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00091">91</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>{<a class="code hl_variable" href="../../d6/dac/classAbMicroHILConfig.html#acae659392274d3c4682b79b6d1d66e58">m_configPreValidate</a> = configValid;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00094">94</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>{<a class="code hl_variable" href="../../d6/dac/classAbMicroHILConfig.html#acae659392274d3c4682b79b6d1d66e58">m_configPreValidate</a> = configValid;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00171">m_configPreValidate</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00174">m_configPreValidate</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00055">MicroHILConfig::MicroHILConfig()</a>.</p>
 <div class="dynheader">
@@ -1001,9 +1001,9 @@ Here is the caller graph for this function:</div>
 
 <p>Pre-validation flag for configuration. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00171">171</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00174">174</a> of file <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html">microhil_config_abstract.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00096">isPreValid()</a>, and <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00091">setPreValid()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00099">isPreValid()</a>, and <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00094">setPreValid()</a>.</p>
 
 </div>
 </div>
@@ -1016,7 +1016,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/dac/classAbMicroHILConfig.html">AbMicroHILConfig</a></li>
-    <li class="footer">Generated on Wed Aug 30 2023 23:15:24 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Aug 31 2023 00:45:33 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

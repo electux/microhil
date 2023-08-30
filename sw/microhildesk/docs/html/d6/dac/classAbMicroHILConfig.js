@@ -1,7 +1,7 @@
 var classAbMicroHILConfig =
 [
     [ "SigLogConfig", "d6/dac/classAbMicroHILConfig.html#a8b1d61c4c6e9c09f19de3ad47ae61870", null ],
-    [ "SigSerialConfig", "d6/dac/classAbMicroHILConfig.html#a57e5375dee0598ec3a076b8fc5beb88e", null ],
+    [ "SigSerialConfig", "d6/dac/classAbMicroHILConfig.html#a3ba9d90b52193d7b3ba31af2c1709fe0", null ],
     [ "~AbMicroHILConfig", "d6/dac/classAbMicroHILConfig.html#accc50153a0f08f3918d7abad2d72437e", null ],
     [ "getBaudRate", "d6/dac/classAbMicroHILConfig.html#abdcda0d32fa3f598fa0c444ba3d8ded1", null ],
     [ "getDataBits", "d6/dac/classAbMicroHILConfig.html#ae0f3fcb35695c6ed26129ec17641f910", null ],

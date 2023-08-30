@@ -6,7 +6,7 @@ var classAbMicroHILViewSerial =
     [ "SigSerialDataBits", "df/dcb/classAbMicroHILViewSerial.html#a6f58bd6e34b4c6572bc3919fc711fcc3", null ],
     [ "SigSerialDevicePath", "df/dcb/classAbMicroHILViewSerial.html#aaf6a31de2bdfbb92a2c9001434d1b491", null ],
     [ "SigSerialParity", "df/dcb/classAbMicroHILViewSerial.html#a63fdb66f57f7a73bf54a1ebb81831c27", null ],
-    [ "SigSerialSetup", "df/dcb/classAbMicroHILViewSerial.html#ac6986f209523f7928f528439925f3661", null ],
+    [ "SigSerialSetup", "df/dcb/classAbMicroHILViewSerial.html#a5bee19834a6836b3e112e77c0b2cd436", null ],
     [ "SigSerialStopBits", "df/dcb/classAbMicroHILViewSerial.html#aa35e78d1015612c937c2e14f336d1ce0", null ],
     [ "~AbMicroHILViewSerial", "df/dcb/classAbMicroHILViewSerial.html#ab5e4ce55c18e4d7db0bf90d971a3162b", null ],
     [ "cancelSerialTriggered", "df/dcb/classAbMicroHILViewSerial.html#a149530e52ddf03c6bc91d5ccdfac1c17", null ],

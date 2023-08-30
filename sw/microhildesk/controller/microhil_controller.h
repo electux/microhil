@@ -27,6 +27,10 @@
 #include "microhil_controller_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Declared type vector of int elements
+using VectorUInt = std::vector<unsigned int>;
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief MicroHILController class declaration and definition 
 class MicroHILController: public AbMicroHILController
 {
@@ -73,27 +77,15 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
-    /// @param device file path
-    /// @param baudRate for serial port
-    /// @param dataBits for serial port
-    /// @param parity for serial port
-    /// @param stopBits for serial port
-    void onSerialSettingsChanged(
-        Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
-        unsigned int parity, unsigned int stopBits
-    );
+    /// @param device file path for serial device
+    /// @param params set of serial parameters
+    void onSerialSettingsChanged(Glib::ustring device, VectorUInt params);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
-    /// @param device file path
-    /// @param baudRate for serial port
-    /// @param dataBits for serial port
-    /// @param parity for serial port
-    /// @param stopBits for serial port
-    void onSerialSettingsLoaded(
-        Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
-        unsigned int parity, unsigned int stopBits
-    );
+    /// @param device file path for serial device
+    /// @param params set of serial parameters
+    void onSerialSettingsLoaded(Glib::ustring device, VectorUInt params);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Enable/Disable state of controller

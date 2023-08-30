@@ -113,14 +113,8 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Set loaded parameters for serial settings view
     /// @param device is absolute path for serial device
-    /// @param baudRate for serial port
-    /// @param dataBits for serial port
-    /// @param parity for serial port
-    /// @param stopBits for serial port
-    void serialSettingsLoaded(
-        Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
-        unsigned int parity, unsigned int stopBits
-    );
+    /// @param params for serial port parameters
+    void serialSettingsLoaded(Glib::ustring device, VectorUInt params);
 
 private:
     ////////////////////////////////////////////////////////////////////////

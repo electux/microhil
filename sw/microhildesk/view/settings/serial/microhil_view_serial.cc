@@ -105,12 +105,12 @@ MicroHILViewSerial::MicroHILViewSerial(
 }
 
 void MicroHILViewSerial::serialSettingsLoaded(
-    Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
-    unsigned int parity, unsigned int stopBits)
+    Glib::ustring device, VectorUInt params
+)
 {
     m_device->set_text(device);
-    m_baudRate->set_active(baudRate);
-    m_dataBits->set_active(dataBits);
-    m_parity->set_active(parity);
-    m_stopBits->set_active(stopBits);
+    m_baudRate->set_active(params[0]);
+    m_dataBits->set_active(params[1]);
+    m_parity->set_active(params[2]);
+    m_stopBits->set_active(params[3]);
 }
