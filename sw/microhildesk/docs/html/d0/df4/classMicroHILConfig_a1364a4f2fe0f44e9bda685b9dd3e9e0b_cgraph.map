@@ -1,4 +1,4 @@
 <map id="MicroHILConfig::getStopBits" name="MicroHILConfig::getStopBits">
 <area shape="rect" id="node1" title="Getting stop bits for serial port from configuration." alt="" coords="5,13,208,39"/>
-<area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#a18998f86ad72924425450bd2b6ea74ee" title="Convert stop&#45;bits to integer (from config file)" alt="" coords="256,5,437,47"/>
+<area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#a364a146bf7b12b64bb413175801c2fa6" title="Convert stop&#45;bits to integer (from config file)" alt="" coords="256,5,437,47"/>
 </map>

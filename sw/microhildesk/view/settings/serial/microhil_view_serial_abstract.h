@@ -28,37 +28,37 @@ class AbMicroHILViewSerial
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial settings
-    using serialSetup = sigc::signal<void(
+    using SigSerialSetup = sigc::signal<void(
         Glib::ustring, unsigned int, unsigned int, unsigned int, unsigned int
     )>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial device file path input
-    using serialDevicePath = sigc::signal<void(Glib::ustring)>;
+    using SigSerialDevicePath = sigc::signal<void(Glib::ustring)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial baud rate combobox
-    using serialBaudRate = sigc::signal<void(int)>;
+    using SigSerialBaudRate = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial data bits combobox
-    using serialDataBits = sigc::signal<void(int)>;
+    using SigSerialDataBits = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial parity combobox
-    using serialParity = sigc::signal<void(int)>;
+    using SigSerialParity = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial stop bits combobox
-    using serialStopBits = sigc::signal<void(int)>;
+    using SigSerialStopBits = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for Cancel button
-    using cancelSerial = sigc::signal<void(bool)>;
+    using SigCancelSerial = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for Ok button
-    using okSerial = sigc::signal<void(bool)>;
+    using SigOkSerial = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILViewLog destructor
@@ -67,12 +67,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for serial settings
     /// @return Signal for changed serial settings
-    virtual serialSetup serialSetupChanged() = 0;
+    virtual SigSerialSetup serialSetupChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for device file path input
     /// @return Signal for changed device file path entry
-    virtual serialDevicePath serialFilePathChanged() = 0;
+    virtual SigSerialDevicePath serialFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing device file path input 
@@ -81,7 +81,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for baud rate combobox
     /// @return Signal for selected baud rate combobox
-    virtual serialBaudRate serialBaudRateChanged() = 0;
+    virtual SigSerialBaudRate serialBaudRateChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing baud rate combobox
@@ -90,7 +90,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for data bits combobox
     /// @return Signal for selected data bits combobox
-    virtual serialDataBits serialDataBitsChanged() = 0;
+    virtual SigSerialDataBits serialDataBitsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing data bits combobox
@@ -99,7 +99,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for parity combobox
     /// @return Signal for selected parity combobox
-    virtual serialParity serialParityChanged() = 0;
+    virtual SigSerialParity serialParityChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing parity combobox
@@ -108,7 +108,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for stop bits combobox
     /// @return Signal for selected stop bits combobox
-    virtual serialStopBits serialStopBitsChanged() = 0;
+    virtual SigSerialStopBits serialStopBitsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing stop bits combobox
@@ -117,12 +117,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button
     /// @return Signal for clicked Cancel button
-    virtual cancelSerial cancelSerialTriggered() = 0;
+    virtual SigCancelSerial cancelSerialTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button
     /// @return Signal for clicked Ok button
-    virtual okSerial okSerialTriggered() = 0;
+    virtual SigOkSerial okSerialTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Cancel button (dismiss)

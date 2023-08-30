@@ -50,12 +50,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (changed view)
     /// @return Signal for clicked menu item
-    actionViewTriggered viewChanged() final;
+    SigActionViewTriggered viewChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for check buttons (enable/disable channel)
     /// @return Signal for clicked button
-    channelChanged channelIsChanged() final;
+    SigChannelChanged channelIsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing check buttons (enable/disable channel)
@@ -65,7 +65,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for comboboxes (control type)
     /// @return Signal for changed channel state combobox
-    selectChanged channelIsSelected() final;
+    SigSelectChanged channelIsSelected() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing comboboxes (control type)
@@ -75,7 +75,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggling buttons (turn on/turn off channel)
     /// @return Signal for toggled button
-    channelToggled channelIsToggled() final;
+    SigChannelToggled channelIsToggled() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off channel)
@@ -85,7 +85,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for spin buttons (based on timer)
     /// @return Signal for changed spin button
-    channelSpinTimerChanged channelIsSpinTimerChanged() final;
+    SigChannelSpinTimerChanged channelIsSpinTimerChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing spin buttons (based on timer)
@@ -95,7 +95,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggle buttons (based on timer)
     /// @return Signal for toggled button
-    channelTimerToggled channelIsTimerChanged() final;
+    SigChannelTimerToggled channelIsTimerChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off timer)
@@ -181,27 +181,27 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Check buttons for enable/disable channels
-    std::vector<Glib::RefPtr<Gtk::CheckButton>> m_enableChannels;
+    std::vector<Glib::RefPtr<Gtk::CheckButton>> m_enableChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Comboboxes for selecting channel mode
-    std::vector<Glib::RefPtr<Gtk::ComboBoxText>> m_selectControlChannels;
+    std::vector<Glib::RefPtr<Gtk::ComboBoxText>> m_selectControlChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toggle button for direct channel control
-    std::vector<Glib::RefPtr<Gtk::ToggleButton>> m_toggleChannels;
+    std::vector<Glib::RefPtr<Gtk::ToggleButton>> m_toggleChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Spin button for setup channel timer
-    std::vector<Glib::RefPtr<Gtk::SpinButton>> m_spinTimerChannels;
+    std::vector<Glib::RefPtr<Gtk::SpinButton>> m_spinTimerChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toggle button for starting channel timer
-    std::vector<Glib::RefPtr<Gtk::ToggleButton>> m_toggleTimerChannels;
+    std::vector<Glib::RefPtr<Gtk::ToggleButton>> m_toggleTimerChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Visual status for channels
-    std::vector<Glib::RefPtr<Gtk::ProgressBar>> m_stautsTimerChannels; 
+    std::vector<Glib::RefPtr<Gtk::ProgressBar>> m_stautsTimerChannels{}; 
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Adjustment setup for channel visual status
@@ -209,25 +209,25 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (triggered another view)
-    actionViewTriggered m_actionViewTriggered{};
+    SigActionViewTriggered m_actionViewTriggered{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for check buttons (enable/disable channel)
-    channelChanged m_channelEnabled{};
+    SigChannelChanged m_channelEnabled{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for comboboxes (toogle/timer type control)
-    selectChanged m_channelControlType{};
+    SigSelectChanged m_channelControlType{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toogle buttons (turn on/turn off channel)
-    channelToggled m_channelToggled{};
+    SigChannelToggled m_channelToggled{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for spin buttons (based on timer setup)
-    channelSpinTimerChanged m_channelSpinTimerChanged{};
+    SigChannelSpinTimerChanged m_channelSpinTimerChanged{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toogle buttons (based on timer setup)
-    channelTimerToggled m_channelTimerToggled{};
+    SigChannelTimerToggled m_channelTimerToggled{};
 };

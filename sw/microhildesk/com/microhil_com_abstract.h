@@ -22,7 +22,10 @@
 #include <vector>
 
 using namespace std;
-using v_uint8 = std::vector<uint8_t>;
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Declared type vector of uint8_t elements
+using VectorByte = std::vector<uint8_t>;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief AbMicroHILCom class declaration and definition
@@ -46,10 +49,10 @@ public:
     /// @param data buffer to be placed to after reading channel
     /// @param len length of data to read before returning
     /// @param timeout timeout period in miliseconds
-    virtual void read(v_uint8& data, size_t len, size_t timeout) = 0;
+    virtual void read(VectorByte& data, size_t len, size_t timeout) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Write to communication channel
     /// @param data to be written to channel
-    virtual void write(v_uint8& data) = 0;
+    virtual void write(VectorByte& data) = 0;
 };

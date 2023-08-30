@@ -44,7 +44,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button
     /// @return Signal for clicked Close button
-    hideDialog hideDialogTrigered() final;
+    SigHideDialog hideDialogTrigered() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Close button (self hide Dialog)
@@ -54,14 +54,14 @@ public:
     /// @brief Set message for dialog
     /// @param message with information for user
     /// @param type of dialog message
-    void setMessage(const Glib::ustring message, MessageType type) final;
+    void setMessage(const Glib::ustring message, const MessageType type) final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Conversion of message type to unicode string
     /// @param type of dialog message
     /// @return string representation of dialog message type
-    Glib::ustring toUnicodeStringMessageType(MessageType type) const;
+    Glib::ustring toUnicodeStringMessageType(const MessageType type) const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Map Close button (signal and slot)
@@ -81,5 +81,5 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button (self hide Dialog)
-    hideDialog m_hideDialog{};
+    SigHideDialog m_hideDialog{};
 };

@@ -25,11 +25,11 @@ namespace
     constexpr const char kDevicePathId[]{"SerialPortDeviceInput"};
 
     ////////////////////////////////////////////////////////////////////////
-    /// Combobox id for selecting baud rate
+    /// Combobox id for selecting baud-rate
     constexpr const char kBaudRateSelectorId[]{"SerialPortBaudRateSelector"};
 
     ////////////////////////////////////////////////////////////////////////
-    /// Combobox id for selecting data bits 
+    /// Combobox id for selecting data-bits 
     constexpr const char kDataBitsSelectorId[]{"SerialPortDataBitsSelector"};
 
     ////////////////////////////////////////////////////////////////////////
@@ -37,7 +37,7 @@ namespace
     constexpr const char kParitySelectorId[]{"SerialPortParitySelector"};
 
     ////////////////////////////////////////////////////////////////////////
-    /// Combobox id for selecting stop bits
+    /// Combobox id for selecting stop-bits
     constexpr const char kStopBitsId[]{"SerialPortStopBitsSelector"};
 
     ////////////////////////////////////////////////////////////////////////
@@ -60,13 +60,13 @@ MicroHILViewSerial::MicroHILViewSerial(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind baud rate combobox
+    /// Bind baud-rate combobox
     m_baudRate = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kBaudRateSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind data bits combobox
+    /// Bind data-bits combobox
     m_dataBits = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kDataBitsSelectorId)
     );
@@ -78,7 +78,7 @@ MicroHILViewSerial::MicroHILViewSerial(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind stop bits combobox
+    /// Bind stop-bits combobox
     m_stopBits = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kStopBitsId)
     );

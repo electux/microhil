@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['oklogtriggered_0',['okLogTriggered',['../d1/d49/classAbMicroHILViewLog.html#a9056b0ee8c9a3d09e6d1da87cc9ff4bc',1,'AbMicroHILViewLog::okLogTriggered()'],['../d4/dc6/classMicroHILViewLog.html#aa19938c669c1e4345b421ca0508627ec',1,'MicroHILViewLog::okLogTriggered()']]],
-  ['okserialtriggered_1',['okSerialTriggered',['../df/dcb/classAbMicroHILViewSerial.html#ae4fa56046d478895fa696106eef41d26',1,'AbMicroHILViewSerial::okSerialTriggered()'],['../dd/dde/classMicroHILViewSerial.html#aa5e33c179a1bc580a83da5aeaf3a6206',1,'MicroHILViewSerial::okSerialTriggered()']]],
+  ['oklogtriggered_0',['okLogTriggered',['../d1/d49/classAbMicroHILViewLog.html#aaa26c81290cf0eca73a3b9f579a07b4f',1,'AbMicroHILViewLog::okLogTriggered()'],['../d4/dc6/classMicroHILViewLog.html#a894f8f1c192d9216eddcbb2d58f0e7cb',1,'MicroHILViewLog::okLogTriggered()']]],
+  ['okserialtriggered_1',['okSerialTriggered',['../df/dcb/classAbMicroHILViewSerial.html#a851e111353018a296e81434bf655274d',1,'AbMicroHILViewSerial::okSerialTriggered()'],['../dd/dde/classMicroHILViewSerial.html#aff28693824512cb185f0ab6bdef9c833',1,'MicroHILViewSerial::okSerialTriggered()']]],
   ['onaboutclicked_2',['onAboutClicked',['../df/da5/classMicroHILViewHome.html#a83d17bfd6398b96cd001a109b610607c',1,'MicroHILViewHome']]],
   ['oncancellogtriggered_3',['onCancelLogTriggered',['../d4/dc6/classMicroHILViewLog.html#a2eea31dfe1c4977711a53ca91dd8e81e',1,'MicroHILViewLog::onCancelLogTriggered()'],['../d1/d49/classAbMicroHILViewLog.html#ae294b39647e6be559d13648be049211d',1,'AbMicroHILViewLog::onCancelLogTriggered()']]],
   ['oncancelserialtriggered_4',['onCancelSerialTriggered',['../dd/dde/classMicroHILViewSerial.html#a2c7f0dc7bb87d4f6e6f1466264072d8b',1,'MicroHILViewSerial::onCancelSerialTriggered()'],['../df/dcb/classAbMicroHILViewSerial.html#ab9d8c753a3414c025e64d1ae44416e08',1,'AbMicroHILViewSerial::onCancelSerialTriggered()']]],

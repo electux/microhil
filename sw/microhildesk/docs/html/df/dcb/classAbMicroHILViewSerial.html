@@ -116,75 +116,75 @@ Collaboration diagram for AbMicroHILViewSerial:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a3c09a6825c4ae370866589bde47afca4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a3c09a6825c4ae370866589bde47afca4">serialSetup</a> = sigc::signal&lt; void(Glib::ustring, unsigned int, unsigned int, unsigned int, unsigned int)&gt;</td></tr>
-<tr class="memdesc:a3c09a6825c4ae370866589bde47afca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial settings.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a3c09a6825c4ae370866589bde47afca4">More...</a><br /></td></tr>
-<tr class="separator:a3c09a6825c4ae370866589bde47afca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23c048cfd8792eeca1926aeceb69cac8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a23c048cfd8792eeca1926aeceb69cac8">serialDevicePath</a> = sigc::signal&lt; void(Glib::ustring)&gt;</td></tr>
-<tr class="memdesc:a23c048cfd8792eeca1926aeceb69cac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial device file path input.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a23c048cfd8792eeca1926aeceb69cac8">More...</a><br /></td></tr>
-<tr class="separator:a23c048cfd8792eeca1926aeceb69cac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab03ae3e309ac5c7946cd9d1c966bce30"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ab03ae3e309ac5c7946cd9d1c966bce30">serialBaudRate</a> = sigc::signal&lt; void(int)&gt;</td></tr>
-<tr class="memdesc:ab03ae3e309ac5c7946cd9d1c966bce30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial baud rate combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#ab03ae3e309ac5c7946cd9d1c966bce30">More...</a><br /></td></tr>
-<tr class="separator:ab03ae3e309ac5c7946cd9d1c966bce30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e134114ce350981de15a7f16b74a759"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a1e134114ce350981de15a7f16b74a759">serialDataBits</a> = sigc::signal&lt; void(int)&gt;</td></tr>
-<tr class="memdesc:a1e134114ce350981de15a7f16b74a759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial data bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a1e134114ce350981de15a7f16b74a759">More...</a><br /></td></tr>
-<tr class="separator:a1e134114ce350981de15a7f16b74a759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7778bbe5f3998855332bb4aadd9a2de"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ad7778bbe5f3998855332bb4aadd9a2de">serialParity</a> = sigc::signal&lt; void(int)&gt;</td></tr>
-<tr class="memdesc:ad7778bbe5f3998855332bb4aadd9a2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial parity combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#ad7778bbe5f3998855332bb4aadd9a2de">More...</a><br /></td></tr>
-<tr class="separator:ad7778bbe5f3998855332bb4aadd9a2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fb7b30e5243287060e8bba67316e92d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a4fb7b30e5243287060e8bba67316e92d">serialStopBits</a> = sigc::signal&lt; void(int)&gt;</td></tr>
-<tr class="memdesc:a4fb7b30e5243287060e8bba67316e92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial stop bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a4fb7b30e5243287060e8bba67316e92d">More...</a><br /></td></tr>
-<tr class="separator:a4fb7b30e5243287060e8bba67316e92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e5470b7e5de31e2c00635a0b731d492"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a8e5470b7e5de31e2c00635a0b731d492">cancelSerial</a> = sigc::signal&lt; void(bool)&gt;</td></tr>
-<tr class="memdesc:a8e5470b7e5de31e2c00635a0b731d492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for Cancel button.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a8e5470b7e5de31e2c00635a0b731d492">More...</a><br /></td></tr>
-<tr class="separator:a8e5470b7e5de31e2c00635a0b731d492"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a408841c28d5251db34810bbc955f1fcc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a408841c28d5251db34810bbc955f1fcc">okSerial</a> = sigc::signal&lt; void(bool)&gt;</td></tr>
-<tr class="memdesc:a408841c28d5251db34810bbc955f1fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for Ok button.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a408841c28d5251db34810bbc955f1fcc">More...</a><br /></td></tr>
-<tr class="separator:a408841c28d5251db34810bbc955f1fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6986f209523f7928f528439925f3661"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ac6986f209523f7928f528439925f3661">SigSerialSetup</a> = sigc::signal&lt; void(Glib::ustring, unsigned int, unsigned int, unsigned int, unsigned int)&gt;</td></tr>
+<tr class="memdesc:ac6986f209523f7928f528439925f3661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial settings.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#ac6986f209523f7928f528439925f3661">More...</a><br /></td></tr>
+<tr class="separator:ac6986f209523f7928f528439925f3661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf6a31de2bdfbb92a2c9001434d1b491"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#aaf6a31de2bdfbb92a2c9001434d1b491">SigSerialDevicePath</a> = sigc::signal&lt; void(Glib::ustring)&gt;</td></tr>
+<tr class="memdesc:aaf6a31de2bdfbb92a2c9001434d1b491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial device file path input.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#aaf6a31de2bdfbb92a2c9001434d1b491">More...</a><br /></td></tr>
+<tr class="separator:aaf6a31de2bdfbb92a2c9001434d1b491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71fb61d5f7ecc156c2d37f25b30a573e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a71fb61d5f7ecc156c2d37f25b30a573e">SigSerialBaudRate</a> = sigc::signal&lt; void(int)&gt;</td></tr>
+<tr class="memdesc:a71fb61d5f7ecc156c2d37f25b30a573e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial baud rate combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a71fb61d5f7ecc156c2d37f25b30a573e">More...</a><br /></td></tr>
+<tr class="separator:a71fb61d5f7ecc156c2d37f25b30a573e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f58bd6e34b4c6572bc3919fc711fcc3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a6f58bd6e34b4c6572bc3919fc711fcc3">SigSerialDataBits</a> = sigc::signal&lt; void(int)&gt;</td></tr>
+<tr class="memdesc:a6f58bd6e34b4c6572bc3919fc711fcc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial data bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a6f58bd6e34b4c6572bc3919fc711fcc3">More...</a><br /></td></tr>
+<tr class="separator:a6f58bd6e34b4c6572bc3919fc711fcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63fdb66f57f7a73bf54a1ebb81831c27"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a63fdb66f57f7a73bf54a1ebb81831c27">SigSerialParity</a> = sigc::signal&lt; void(int)&gt;</td></tr>
+<tr class="memdesc:a63fdb66f57f7a73bf54a1ebb81831c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial parity combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a63fdb66f57f7a73bf54a1ebb81831c27">More...</a><br /></td></tr>
+<tr class="separator:a63fdb66f57f7a73bf54a1ebb81831c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa35e78d1015612c937c2e14f336d1ce0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#aa35e78d1015612c937c2e14f336d1ce0">SigSerialStopBits</a> = sigc::signal&lt; void(int)&gt;</td></tr>
+<tr class="memdesc:aa35e78d1015612c937c2e14f336d1ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial stop bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#aa35e78d1015612c937c2e14f336d1ce0">More...</a><br /></td></tr>
+<tr class="separator:aa35e78d1015612c937c2e14f336d1ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af072dfb630b2b605a3858334b7a2941f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#af072dfb630b2b605a3858334b7a2941f">SigCancelSerial</a> = sigc::signal&lt; void(bool)&gt;</td></tr>
+<tr class="memdesc:af072dfb630b2b605a3858334b7a2941f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for Cancel button.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#af072dfb630b2b605a3858334b7a2941f">More...</a><br /></td></tr>
+<tr class="separator:af072dfb630b2b605a3858334b7a2941f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e938540defd1bc99a4021222da28d7c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a9e938540defd1bc99a4021222da28d7c">SigOkSerial</a> = sigc::signal&lt; void(bool)&gt;</td></tr>
+<tr class="memdesc:a9e938540defd1bc99a4021222da28d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for Ok button.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a9e938540defd1bc99a4021222da28d7c">More...</a><br /></td></tr>
+<tr class="separator:a9e938540defd1bc99a4021222da28d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5e4ce55c18e4d7db0bf90d971a3162b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ab5e4ce55c18e4d7db0bf90d971a3162b">~AbMicroHILViewSerial</a> ()=default</td></tr>
 <tr class="memdesc:ab5e4ce55c18e4d7db0bf90d971a3162b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d49/classAbMicroHILViewLog.html" title="AbMicroHILViewLog class declaration and definition.">AbMicroHILViewLog</a> destructor.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#ab5e4ce55c18e4d7db0bf90d971a3162b">More...</a><br /></td></tr>
 <tr class="separator:ab5e4ce55c18e4d7db0bf90d971a3162b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f730a70e7c6b475f9c6d3491faf0000"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a3c09a6825c4ae370866589bde47afca4">serialSetup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a6f730a70e7c6b475f9c6d3491faf0000">serialSetupChanged</a> ()=0</td></tr>
-<tr class="memdesc:a6f730a70e7c6b475f9c6d3491faf0000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for serial settings.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a6f730a70e7c6b475f9c6d3491faf0000">More...</a><br /></td></tr>
-<tr class="separator:a6f730a70e7c6b475f9c6d3491faf0000"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9afa3bc0173436c5daead5b64b40263"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a23c048cfd8792eeca1926aeceb69cac8">serialDevicePath</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ae9afa3bc0173436c5daead5b64b40263">serialFilePathChanged</a> ()=0</td></tr>
-<tr class="memdesc:ae9afa3bc0173436c5daead5b64b40263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for device file path input.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#ae9afa3bc0173436c5daead5b64b40263">More...</a><br /></td></tr>
-<tr class="separator:ae9afa3bc0173436c5daead5b64b40263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0144fbe9ae717688502c3a515a6f1b15"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ac6986f209523f7928f528439925f3661">SigSerialSetup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a0144fbe9ae717688502c3a515a6f1b15">serialSetupChanged</a> ()=0</td></tr>
+<tr class="memdesc:a0144fbe9ae717688502c3a515a6f1b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for serial settings.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a0144fbe9ae717688502c3a515a6f1b15">More...</a><br /></td></tr>
+<tr class="separator:a0144fbe9ae717688502c3a515a6f1b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3326a0203a3ca1b4c0bec20d5c440f20"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#aaf6a31de2bdfbb92a2c9001434d1b491">SigSerialDevicePath</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a3326a0203a3ca1b4c0bec20d5c440f20">serialFilePathChanged</a> ()=0</td></tr>
+<tr class="memdesc:a3326a0203a3ca1b4c0bec20d5c440f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for device file path input.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a3326a0203a3ca1b4c0bec20d5c440f20">More...</a><br /></td></tr>
+<tr class="separator:a3326a0203a3ca1b4c0bec20d5c440f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a24c35e7d29696e7c894185d58084a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a05a24c35e7d29696e7c894185d58084a">onSerialFilePathChanged</a> ()=0</td></tr>
 <tr class="memdesc:a05a24c35e7d29696e7c894185d58084a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing device file path input.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a05a24c35e7d29696e7c894185d58084a">More...</a><br /></td></tr>
 <tr class="separator:a05a24c35e7d29696e7c894185d58084a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20dc7a80abe87927d92d5b2603312668"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ab03ae3e309ac5c7946cd9d1c966bce30">serialBaudRate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a20dc7a80abe87927d92d5b2603312668">serialBaudRateChanged</a> ()=0</td></tr>
-<tr class="memdesc:a20dc7a80abe87927d92d5b2603312668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for baud rate combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a20dc7a80abe87927d92d5b2603312668">More...</a><br /></td></tr>
-<tr class="separator:a20dc7a80abe87927d92d5b2603312668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6229340eb5795d43a1b7b6d4e57d5ecd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a71fb61d5f7ecc156c2d37f25b30a573e">SigSerialBaudRate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a6229340eb5795d43a1b7b6d4e57d5ecd">serialBaudRateChanged</a> ()=0</td></tr>
+<tr class="memdesc:a6229340eb5795d43a1b7b6d4e57d5ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for baud rate combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a6229340eb5795d43a1b7b6d4e57d5ecd">More...</a><br /></td></tr>
+<tr class="separator:a6229340eb5795d43a1b7b6d4e57d5ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aa3397f79d284d30245c5d3aa306ec7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a8aa3397f79d284d30245c5d3aa306ec7">onSerialBaudRateChanged</a> ()=0</td></tr>
 <tr class="memdesc:a8aa3397f79d284d30245c5d3aa306ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing baud rate combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a8aa3397f79d284d30245c5d3aa306ec7">More...</a><br /></td></tr>
 <tr class="separator:a8aa3397f79d284d30245c5d3aa306ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af56af52ee5f62be3cdad3095af0ed082"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a1e134114ce350981de15a7f16b74a759">serialDataBits</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#af56af52ee5f62be3cdad3095af0ed082">serialDataBitsChanged</a> ()=0</td></tr>
-<tr class="memdesc:af56af52ee5f62be3cdad3095af0ed082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for data bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#af56af52ee5f62be3cdad3095af0ed082">More...</a><br /></td></tr>
-<tr class="separator:af56af52ee5f62be3cdad3095af0ed082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00580fc301417da157285e3720e57718"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a6f58bd6e34b4c6572bc3919fc711fcc3">SigSerialDataBits</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a00580fc301417da157285e3720e57718">serialDataBitsChanged</a> ()=0</td></tr>
+<tr class="memdesc:a00580fc301417da157285e3720e57718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for data bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a00580fc301417da157285e3720e57718">More...</a><br /></td></tr>
+<tr class="separator:a00580fc301417da157285e3720e57718"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd1502aa3436f7ba7cdfa77ff87811f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a2dd1502aa3436f7ba7cdfa77ff87811f">onSerialDataBitsChanged</a> ()=0</td></tr>
 <tr class="memdesc:a2dd1502aa3436f7ba7cdfa77ff87811f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing data bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a2dd1502aa3436f7ba7cdfa77ff87811f">More...</a><br /></td></tr>
 <tr class="separator:a2dd1502aa3436f7ba7cdfa77ff87811f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2ab6ac516ac4644efa8b96af0a3e6bc"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ad7778bbe5f3998855332bb4aadd9a2de">serialParity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ad2ab6ac516ac4644efa8b96af0a3e6bc">serialParityChanged</a> ()=0</td></tr>
-<tr class="memdesc:ad2ab6ac516ac4644efa8b96af0a3e6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for parity combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#ad2ab6ac516ac4644efa8b96af0a3e6bc">More...</a><br /></td></tr>
-<tr class="separator:ad2ab6ac516ac4644efa8b96af0a3e6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26288bee52ad578ad7197966145f7476"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a63fdb66f57f7a73bf54a1ebb81831c27">SigSerialParity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a26288bee52ad578ad7197966145f7476">serialParityChanged</a> ()=0</td></tr>
+<tr class="memdesc:a26288bee52ad578ad7197966145f7476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for parity combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a26288bee52ad578ad7197966145f7476">More...</a><br /></td></tr>
+<tr class="separator:a26288bee52ad578ad7197966145f7476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6449d5596f6344e56c154bc7bbecc3e3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a6449d5596f6344e56c154bc7bbecc3e3">onSerialParityChanged</a> ()=0</td></tr>
 <tr class="memdesc:a6449d5596f6344e56c154bc7bbecc3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing parity combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a6449d5596f6344e56c154bc7bbecc3e3">More...</a><br /></td></tr>
 <tr class="separator:a6449d5596f6344e56c154bc7bbecc3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a033faa247e87d21ceb1dbde99bea6bf4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a4fb7b30e5243287060e8bba67316e92d">serialStopBits</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a033faa247e87d21ceb1dbde99bea6bf4">serialStopBitsChanged</a> ()=0</td></tr>
-<tr class="memdesc:a033faa247e87d21ceb1dbde99bea6bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for stop bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a033faa247e87d21ceb1dbde99bea6bf4">More...</a><br /></td></tr>
-<tr class="separator:a033faa247e87d21ceb1dbde99bea6bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59af2b13384253c318342780a97325bb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#aa35e78d1015612c937c2e14f336d1ce0">SigSerialStopBits</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a59af2b13384253c318342780a97325bb">serialStopBitsChanged</a> ()=0</td></tr>
+<tr class="memdesc:a59af2b13384253c318342780a97325bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for stop bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a59af2b13384253c318342780a97325bb">More...</a><br /></td></tr>
+<tr class="separator:a59af2b13384253c318342780a97325bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11cbb83ec450b56519f21ca476c73925"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a11cbb83ec450b56519f21ca476c73925">onSerialStopBitsChanged</a> ()=0</td></tr>
 <tr class="memdesc:a11cbb83ec450b56519f21ca476c73925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing stop bits combobox.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a11cbb83ec450b56519f21ca476c73925">More...</a><br /></td></tr>
 <tr class="separator:a11cbb83ec450b56519f21ca476c73925"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab92d701843d4658fde0755eeba2d3c4a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a8e5470b7e5de31e2c00635a0b731d492">cancelSerial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ab92d701843d4658fde0755eeba2d3c4a">cancelSerialTriggered</a> ()=0</td></tr>
-<tr class="memdesc:ab92d701843d4658fde0755eeba2d3c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for Cancel button.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#ab92d701843d4658fde0755eeba2d3c4a">More...</a><br /></td></tr>
-<tr class="separator:ab92d701843d4658fde0755eeba2d3c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4fa56046d478895fa696106eef41d26"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a408841c28d5251db34810bbc955f1fcc">okSerial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ae4fa56046d478895fa696106eef41d26">okSerialTriggered</a> ()=0</td></tr>
-<tr class="memdesc:ae4fa56046d478895fa696106eef41d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for Ok button.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#ae4fa56046d478895fa696106eef41d26">More...</a><br /></td></tr>
-<tr class="separator:ae4fa56046d478895fa696106eef41d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149530e52ddf03c6bc91d5ccdfac1c17"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#af072dfb630b2b605a3858334b7a2941f">SigCancelSerial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a149530e52ddf03c6bc91d5ccdfac1c17">cancelSerialTriggered</a> ()=0</td></tr>
+<tr class="memdesc:a149530e52ddf03c6bc91d5ccdfac1c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for Cancel button.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a149530e52ddf03c6bc91d5ccdfac1c17">More...</a><br /></td></tr>
+<tr class="separator:a149530e52ddf03c6bc91d5ccdfac1c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a851e111353018a296e81434bf655274d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a9e938540defd1bc99a4021222da28d7c">SigOkSerial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a851e111353018a296e81434bf655274d">okSerialTriggered</a> ()=0</td></tr>
+<tr class="memdesc:a851e111353018a296e81434bf655274d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for Ok button.  <a href="../../df/dcb/classAbMicroHILViewSerial.html#a851e111353018a296e81434bf655274d">More...</a><br /></td></tr>
+<tr class="separator:a851e111353018a296e81434bf655274d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9d8c753a3414c025e64d1ae44416e08"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ab9d8c753a3414c025e64d1ae44416e08">onCancelSerialTriggered</a> ()=0</td></tr>
 <tr class="memdesc:ab9d8c753a3414c025e64d1ae44416e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing Cancel button (dismiss)  <a href="../../df/dcb/classAbMicroHILViewSerial.html#ab9d8c753a3414c025e64d1ae44416e08">More...</a><br /></td></tr>
 <tr class="separator:ab9d8c753a3414c025e64d1ae44416e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,14 +197,14 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d8b/microhil__view__serial__abstract_8h_source.html#l00026">26</a> of file <a class="el" href="../../d6/d8b/microhil__view__serial__abstract_8h_source.html">microhil_view_serial_abstract.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a8e5470b7e5de31e2c00635a0b731d492" name="a8e5470b7e5de31e2c00635a0b731d492"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e5470b7e5de31e2c00635a0b731d492">&#9670;&nbsp;</a></span>cancelSerial</h2>
+<a id="af072dfb630b2b605a3858334b7a2941f" name="af072dfb630b2b605a3858334b7a2941f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af072dfb630b2b605a3858334b7a2941f">&#9670;&nbsp;</a></span>SigCancelSerial</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a8e5470b7e5de31e2c00635a0b731d492">AbMicroHILViewSerial::cancelSerial</a> =  sigc::signal&lt;void(bool)&gt;</td>
+          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#af072dfb630b2b605a3858334b7a2941f">AbMicroHILViewSerial::SigCancelSerial</a> =  sigc::signal&lt;void(bool)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -215,14 +215,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a408841c28d5251db34810bbc955f1fcc" name="a408841c28d5251db34810bbc955f1fcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a408841c28d5251db34810bbc955f1fcc">&#9670;&nbsp;</a></span>okSerial</h2>
+<a id="a9e938540defd1bc99a4021222da28d7c" name="a9e938540defd1bc99a4021222da28d7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e938540defd1bc99a4021222da28d7c">&#9670;&nbsp;</a></span>SigOkSerial</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a408841c28d5251db34810bbc955f1fcc">AbMicroHILViewSerial::okSerial</a> =  sigc::signal&lt;void(bool)&gt;</td>
+          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a9e938540defd1bc99a4021222da28d7c">AbMicroHILViewSerial::SigOkSerial</a> =  sigc::signal&lt;void(bool)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -233,14 +233,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab03ae3e309ac5c7946cd9d1c966bce30" name="ab03ae3e309ac5c7946cd9d1c966bce30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab03ae3e309ac5c7946cd9d1c966bce30">&#9670;&nbsp;</a></span>serialBaudRate</h2>
+<a id="a71fb61d5f7ecc156c2d37f25b30a573e" name="a71fb61d5f7ecc156c2d37f25b30a573e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71fb61d5f7ecc156c2d37f25b30a573e">&#9670;&nbsp;</a></span>SigSerialBaudRate</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ab03ae3e309ac5c7946cd9d1c966bce30">AbMicroHILViewSerial::serialBaudRate</a> =  sigc::signal&lt;void(int)&gt;</td>
+          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a71fb61d5f7ecc156c2d37f25b30a573e">AbMicroHILViewSerial::SigSerialBaudRate</a> =  sigc::signal&lt;void(int)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -251,14 +251,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1e134114ce350981de15a7f16b74a759" name="a1e134114ce350981de15a7f16b74a759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e134114ce350981de15a7f16b74a759">&#9670;&nbsp;</a></span>serialDataBits</h2>
+<a id="a6f58bd6e34b4c6572bc3919fc711fcc3" name="a6f58bd6e34b4c6572bc3919fc711fcc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f58bd6e34b4c6572bc3919fc711fcc3">&#9670;&nbsp;</a></span>SigSerialDataBits</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a1e134114ce350981de15a7f16b74a759">AbMicroHILViewSerial::serialDataBits</a> =  sigc::signal&lt;void(int)&gt;</td>
+          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a6f58bd6e34b4c6572bc3919fc711fcc3">AbMicroHILViewSerial::SigSerialDataBits</a> =  sigc::signal&lt;void(int)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -269,14 +269,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a23c048cfd8792eeca1926aeceb69cac8" name="a23c048cfd8792eeca1926aeceb69cac8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23c048cfd8792eeca1926aeceb69cac8">&#9670;&nbsp;</a></span>serialDevicePath</h2>
+<a id="aaf6a31de2bdfbb92a2c9001434d1b491" name="aaf6a31de2bdfbb92a2c9001434d1b491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf6a31de2bdfbb92a2c9001434d1b491">&#9670;&nbsp;</a></span>SigSerialDevicePath</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a23c048cfd8792eeca1926aeceb69cac8">AbMicroHILViewSerial::serialDevicePath</a> =  sigc::signal&lt;void(Glib::ustring)&gt;</td>
+          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#aaf6a31de2bdfbb92a2c9001434d1b491">AbMicroHILViewSerial::SigSerialDevicePath</a> =  sigc::signal&lt;void(Glib::ustring)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -287,14 +287,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad7778bbe5f3998855332bb4aadd9a2de" name="ad7778bbe5f3998855332bb4aadd9a2de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7778bbe5f3998855332bb4aadd9a2de">&#9670;&nbsp;</a></span>serialParity</h2>
+<a id="a63fdb66f57f7a73bf54a1ebb81831c27" name="a63fdb66f57f7a73bf54a1ebb81831c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63fdb66f57f7a73bf54a1ebb81831c27">&#9670;&nbsp;</a></span>SigSerialParity</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ad7778bbe5f3998855332bb4aadd9a2de">AbMicroHILViewSerial::serialParity</a> =  sigc::signal&lt;void(int)&gt;</td>
+          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a63fdb66f57f7a73bf54a1ebb81831c27">AbMicroHILViewSerial::SigSerialParity</a> =  sigc::signal&lt;void(int)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -305,14 +305,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3c09a6825c4ae370866589bde47afca4" name="a3c09a6825c4ae370866589bde47afca4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c09a6825c4ae370866589bde47afca4">&#9670;&nbsp;</a></span>serialSetup</h2>
+<a id="ac6986f209523f7928f528439925f3661" name="ac6986f209523f7928f528439925f3661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6986f209523f7928f528439925f3661">&#9670;&nbsp;</a></span>SigSerialSetup</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a3c09a6825c4ae370866589bde47afca4">AbMicroHILViewSerial::serialSetup</a> =  sigc::signal&lt;void( Glib::ustring, unsigned int, unsigned int, unsigned int, unsigned int )&gt;</td>
+          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ac6986f209523f7928f528439925f3661">AbMicroHILViewSerial::SigSerialSetup</a> =  sigc::signal&lt;void( Glib::ustring, unsigned int, unsigned int, unsigned int, unsigned int )&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -323,14 +323,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4fb7b30e5243287060e8bba67316e92d" name="a4fb7b30e5243287060e8bba67316e92d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fb7b30e5243287060e8bba67316e92d">&#9670;&nbsp;</a></span>serialStopBits</h2>
+<a id="aa35e78d1015612c937c2e14f336d1ce0" name="aa35e78d1015612c937c2e14f336d1ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa35e78d1015612c937c2e14f336d1ce0">&#9670;&nbsp;</a></span>SigSerialStopBits</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a4fb7b30e5243287060e8bba67316e92d">AbMicroHILViewSerial::serialStopBits</a> =  sigc::signal&lt;void(int)&gt;</td>
+          <td class="memname">using <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#aa35e78d1015612c937c2e14f336d1ce0">AbMicroHILViewSerial::SigSerialStopBits</a> =  sigc::signal&lt;void(int)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -370,8 +370,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab92d701843d4658fde0755eeba2d3c4a" name="ab92d701843d4658fde0755eeba2d3c4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab92d701843d4658fde0755eeba2d3c4a">&#9670;&nbsp;</a></span>cancelSerialTriggered()</h2>
+<a id="a149530e52ddf03c6bc91d5ccdfac1c17" name="a149530e52ddf03c6bc91d5ccdfac1c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a149530e52ddf03c6bc91d5ccdfac1c17">&#9670;&nbsp;</a></span>cancelSerialTriggered()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,7 +380,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a8e5470b7e5de31e2c00635a0b731d492">cancelSerial</a> AbMicroHILViewSerial::cancelSerialTriggered </td>
+          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#af072dfb630b2b605a3858334b7a2941f">SigCancelSerial</a> AbMicroHILViewSerial::cancelSerialTriggered </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -396,12 +396,12 @@ Public Member Functions</h2></td></tr>
 <p>Signal for Cancel button. </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for clicked Cancel button </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a558eb6265845423c8dd9c4cd6b7e252f">MicroHILViewSerial</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a60a2d8801d097c71ac1ba29e276b1fee">MicroHILViewSerial</a>.</p>
 
 </div>
 </div>
-<a id="ae4fa56046d478895fa696106eef41d26" name="ae4fa56046d478895fa696106eef41d26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4fa56046d478895fa696106eef41d26">&#9670;&nbsp;</a></span>okSerialTriggered()</h2>
+<a id="a851e111353018a296e81434bf655274d" name="a851e111353018a296e81434bf655274d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851e111353018a296e81434bf655274d">&#9670;&nbsp;</a></span>okSerialTriggered()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,7 +410,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a408841c28d5251db34810bbc955f1fcc">okSerial</a> AbMicroHILViewSerial::okSerialTriggered </td>
+          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a9e938540defd1bc99a4021222da28d7c">SigOkSerial</a> AbMicroHILViewSerial::okSerialTriggered </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -426,7 +426,7 @@ Public Member Functions</h2></td></tr>
 <p>Signal for Ok button. </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for clicked Ok button </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#aa5e33c179a1bc580a83da5aeaf3a6206">MicroHILViewSerial</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#aff28693824512cb185f0ab6bdef9c833">MicroHILViewSerial</a>.</p>
 
 </div>
 </div>
@@ -633,8 +633,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a20dc7a80abe87927d92d5b2603312668" name="a20dc7a80abe87927d92d5b2603312668"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20dc7a80abe87927d92d5b2603312668">&#9670;&nbsp;</a></span>serialBaudRateChanged()</h2>
+<a id="a6229340eb5795d43a1b7b6d4e57d5ecd" name="a6229340eb5795d43a1b7b6d4e57d5ecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6229340eb5795d43a1b7b6d4e57d5ecd">&#9670;&nbsp;</a></span>serialBaudRateChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -643,7 +643,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ab03ae3e309ac5c7946cd9d1c966bce30">serialBaudRate</a> AbMicroHILViewSerial::serialBaudRateChanged </td>
+          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a71fb61d5f7ecc156c2d37f25b30a573e">SigSerialBaudRate</a> AbMicroHILViewSerial::serialBaudRateChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -659,12 +659,12 @@ Public Member Functions</h2></td></tr>
 <p>Signal for baud rate combobox. </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for selected baud rate combobox </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a4da0a2f3bc5a2050d294d6607531acd0">MicroHILViewSerial</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a2a6831ce6177bea38d58f16d9fdd7738">MicroHILViewSerial</a>.</p>
 
 </div>
 </div>
-<a id="af56af52ee5f62be3cdad3095af0ed082" name="af56af52ee5f62be3cdad3095af0ed082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af56af52ee5f62be3cdad3095af0ed082">&#9670;&nbsp;</a></span>serialDataBitsChanged()</h2>
+<a id="a00580fc301417da157285e3720e57718" name="a00580fc301417da157285e3720e57718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00580fc301417da157285e3720e57718">&#9670;&nbsp;</a></span>serialDataBitsChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -673,7 +673,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a1e134114ce350981de15a7f16b74a759">serialDataBits</a> AbMicroHILViewSerial::serialDataBitsChanged </td>
+          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a6f58bd6e34b4c6572bc3919fc711fcc3">SigSerialDataBits</a> AbMicroHILViewSerial::serialDataBitsChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -689,12 +689,12 @@ Public Member Functions</h2></td></tr>
 <p>Signal for data bits combobox. </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for selected data bits combobox </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a5102e5f3ec8157a21270f7e0a89f32dc">MicroHILViewSerial</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a35265f58f7c2e4dbca76d3710d55cb8c">MicroHILViewSerial</a>.</p>
 
 </div>
 </div>
-<a id="ae9afa3bc0173436c5daead5b64b40263" name="ae9afa3bc0173436c5daead5b64b40263"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9afa3bc0173436c5daead5b64b40263">&#9670;&nbsp;</a></span>serialFilePathChanged()</h2>
+<a id="a3326a0203a3ca1b4c0bec20d5c440f20" name="a3326a0203a3ca1b4c0bec20d5c440f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3326a0203a3ca1b4c0bec20d5c440f20">&#9670;&nbsp;</a></span>serialFilePathChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -703,7 +703,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a23c048cfd8792eeca1926aeceb69cac8">serialDevicePath</a> AbMicroHILViewSerial::serialFilePathChanged </td>
+          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#aaf6a31de2bdfbb92a2c9001434d1b491">SigSerialDevicePath</a> AbMicroHILViewSerial::serialFilePathChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -719,12 +719,12 @@ Public Member Functions</h2></td></tr>
 <p>Signal for device file path input. </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for changed device file path entry </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a6c4bba6518ef9fe89a877c052a18855e">MicroHILViewSerial</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#ae67483d458482c9ce1cc587ac52a4284">MicroHILViewSerial</a>.</p>
 
 </div>
 </div>
-<a id="ad2ab6ac516ac4644efa8b96af0a3e6bc" name="ad2ab6ac516ac4644efa8b96af0a3e6bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2ab6ac516ac4644efa8b96af0a3e6bc">&#9670;&nbsp;</a></span>serialParityChanged()</h2>
+<a id="a26288bee52ad578ad7197966145f7476" name="a26288bee52ad578ad7197966145f7476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26288bee52ad578ad7197966145f7476">&#9670;&nbsp;</a></span>serialParityChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -733,7 +733,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ad7778bbe5f3998855332bb4aadd9a2de">serialParity</a> AbMicroHILViewSerial::serialParityChanged </td>
+          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a63fdb66f57f7a73bf54a1ebb81831c27">SigSerialParity</a> AbMicroHILViewSerial::serialParityChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -749,12 +749,12 @@ Public Member Functions</h2></td></tr>
 <p>Signal for parity combobox. </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for selected parity combobox </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a304b45fca0c5c41808891dcf70e443f3">MicroHILViewSerial</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a8e301d004526da1bb663dae097281685">MicroHILViewSerial</a>.</p>
 
 </div>
 </div>
-<a id="a6f730a70e7c6b475f9c6d3491faf0000" name="a6f730a70e7c6b475f9c6d3491faf0000"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f730a70e7c6b475f9c6d3491faf0000">&#9670;&nbsp;</a></span>serialSetupChanged()</h2>
+<a id="a0144fbe9ae717688502c3a515a6f1b15" name="a0144fbe9ae717688502c3a515a6f1b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0144fbe9ae717688502c3a515a6f1b15">&#9670;&nbsp;</a></span>serialSetupChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -763,7 +763,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a3c09a6825c4ae370866589bde47afca4">serialSetup</a> AbMicroHILViewSerial::serialSetupChanged </td>
+          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#ac6986f209523f7928f528439925f3661">SigSerialSetup</a> AbMicroHILViewSerial::serialSetupChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -779,12 +779,12 @@ Public Member Functions</h2></td></tr>
 <p>Signal for serial settings. </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for changed serial settings </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a5f7a96670df1488d55cb09b80c36e757">MicroHILViewSerial</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a00c9f045bace5648909beca80ee6cf2b">MicroHILViewSerial</a>.</p>
 
 </div>
 </div>
-<a id="a033faa247e87d21ceb1dbde99bea6bf4" name="a033faa247e87d21ceb1dbde99bea6bf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a033faa247e87d21ceb1dbde99bea6bf4">&#9670;&nbsp;</a></span>serialStopBitsChanged()</h2>
+<a id="a59af2b13384253c318342780a97325bb" name="a59af2b13384253c318342780a97325bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59af2b13384253c318342780a97325bb">&#9670;&nbsp;</a></span>serialStopBitsChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -793,7 +793,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#a4fb7b30e5243287060e8bba67316e92d">serialStopBits</a> AbMicroHILViewSerial::serialStopBitsChanged </td>
+          <td class="memname">virtual <a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html#aa35e78d1015612c937c2e14f336d1ce0">SigSerialStopBits</a> AbMicroHILViewSerial::serialStopBitsChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -809,7 +809,7 @@ Public Member Functions</h2></td></tr>
 <p>Signal for stop bits combobox. </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for selected stop bits combobox </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#a5efa1ec1bee320b95e09b375cecd860e">MicroHILViewSerial</a>.</p>
+<p>Implemented in <a class="el" href="../../dd/dde/classMicroHILViewSerial.html#aac319dd0f6adcf6f3cec9cd0997af325">MicroHILViewSerial</a>.</p>
 
 </div>
 </div>
@@ -822,7 +822,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/dcb/classAbMicroHILViewSerial.html">AbMicroHILViewSerial</a></li>
-    <li class="footer">Generated on Tue Aug 29 2023 22:28:39 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Aug 30 2023 23:15:24 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

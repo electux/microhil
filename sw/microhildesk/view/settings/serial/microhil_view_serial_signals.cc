@@ -18,49 +18,49 @@
  */
 #include "microhil_view_serial.h"
 
-MicroHILViewSerial::serialSetup
+MicroHILViewSerial::SigSerialSetup
 MicroHILViewSerial::serialSetupChanged()
 {
     return m_serialSetup;
 }
 
-MicroHILViewSerial::serialDevicePath
+MicroHILViewSerial::SigSerialDevicePath
 MicroHILViewSerial::serialFilePathChanged()
 {
     return m_serialDevicePath;
 }
 
-MicroHILViewSerial::serialBaudRate
+MicroHILViewSerial::SigSerialBaudRate
 MicroHILViewSerial::serialBaudRateChanged()
 {
     return m_serialBaudeRate;
 }
 
-MicroHILViewSerial::serialDataBits
+MicroHILViewSerial::SigSerialDataBits
 MicroHILViewSerial::serialDataBitsChanged()
 {
     return m_serialDataBits;
 }
 
-MicroHILViewSerial::serialParity
+MicroHILViewSerial::SigSerialParity
 MicroHILViewSerial::serialParityChanged()
 {
     return m_serialParity;
 }
 
-MicroHILViewSerial::serialStopBits
+MicroHILViewSerial::SigSerialStopBits
 MicroHILViewSerial::serialStopBitsChanged()
 {
     return m_serialStopBits;
 }
 
-MicroHILViewSerial::cancelSerial
+MicroHILViewSerial::SigCancelSerial
 MicroHILViewSerial::cancelSerialTriggered()
 {
     return m_cancelSerial;
 }
 
-MicroHILViewSerial::okSerial
+MicroHILViewSerial::SigOkSerial
 MicroHILViewSerial::okSerialTriggered()
 {
     return m_okSerial;

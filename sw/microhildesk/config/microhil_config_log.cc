@@ -39,39 +39,41 @@ void MicroHILConfig::setLogLevel(int level)
     /// Convert integer log level to string format
     auto logLevel = logLevelToUnicodeString(level);
 
-    m_configuration.set_string(
+    m_config.set_string(
         kConfigLogSection, kConfigLogLevel, logLevel
     );
 }
 
 Glib::ustring MicroHILConfig::getLogLevel()
 {
-    return m_configuration.get_string(kConfigLogSection, kConfigLogLevel);
+    return m_config.get_string(kConfigLogSection, kConfigLogLevel);
 }
 
 void MicroHILConfig::setLogPath(Glib::ustring path)
 {
-    m_configuration.set_string(
+    m_config.set_string(
         kConfigLogSection, kConfigLogFile, path
     );
 }
 
 Glib::ustring MicroHILConfig::getLogPath()
 {
-    return m_configuration.get_string(kConfigLogSection, kConfigLogFile);
+    return m_config.get_string(kConfigLogSection, kConfigLogFile);
 }
 
 bool MicroHILConfig::validateLogSettings()
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Checking log configuration parameters
+    /// Checking log configuration parameters from config file
     auto configCheck = (
-        m_configuration.has_key(kConfigLogSection, kConfigLogLevel) &&
-        m_configuration.has_key(kConfigLogSection, kConfigLogFile)
+        m_config.has_key(kConfigLogSection, kConfigLogLevel) &&
+        m_config.has_key(kConfigLogSection, kConfigLogFile)
     );
 
     if(!configCheck)
     {
+        ////////////////////////////////////////////////////////////////////
+        /// Configuration file, log section corrupted
         return false;
     }
 

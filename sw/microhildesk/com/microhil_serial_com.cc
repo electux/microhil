@@ -68,10 +68,12 @@ void MicroHILSerialCom::setup(
     m_device = device;
 }
 
-void MicroHILSerialCom::read(v_uint8 &data, size_t len, size_t timeout)
+void MicroHILSerialCom::read(VectorByte &data, size_t len, size_t timeout)
 {
+    // TODO
 }
 
-void MicroHILSerialCom::write(v_uint8& data)
+void MicroHILSerialCom::write(VectorByte& data)
 {
+    // TODO
 }

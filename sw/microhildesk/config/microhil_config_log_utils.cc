@@ -31,12 +31,24 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Log level configuration parameter error
     constexpr const char kConfigLogLevelError[]{"ERROR"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Log level configuration info index id
+    constexpr const int kConfigLogLevelInfoId{0};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Log level configuration warning index id
+    constexpr const int kConfigLogLevelWarningId{1};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Log level configuration error index id
+    constexpr const int kConfigLogLevelErrorId{2};
 }
 
-Glib::ustring MicroHILConfig::logLevelToUnicodeString(int logLevel)
+Glib::ustring MicroHILConfig::logLevelToUnicodeString(const int logLevel)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert integer log level to scopped class 
+    /// Convert integer log level to scopped enumerator class 
     auto logLevelType = static_cast<LogLevelConfig>(logLevel);
 
     switch(logLevelType)
@@ -53,17 +65,17 @@ Glib::ustring MicroHILConfig::logLevelToUnicodeString(int logLevel)
     return kConfigLogLevelInfo;
 }
 
-int MicroHILConfig::logLevelStringToInt(Glib::ustring level)
+int MicroHILConfig::logLevelStringToInt(const Glib::ustring level)
 {
     if(level == kConfigLogLevelWarning)
     {
-        return 1;
+        return kConfigLogLevelWarningId;
     }
 
     if(level == kConfigLogLevelError)
     {
-        return 2;
+        return kConfigLogLevelErrorId;
     }
 
-    return 0;
+    return kConfigLogLevelInfoId;
 }

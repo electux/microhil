@@ -22,7 +22,7 @@
 #include <sigc++/sigc++.h>
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Scoped enumerator for dialog message types
+/// @brief Scoped class enumerator for dialog message types
 enum class MessageType
 {
     MICROHIL_INFO = 0,
@@ -37,7 +37,7 @@ class AbMicroHILViewDialog
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for Close button (self hide Dialog signal)
-    using hideDialog = sigc::signal<void(bool)>;
+    using SigHideDialog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILViewDialog destructor
@@ -46,7 +46,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button
     /// @return Signal for clicked Close button
-    virtual hideDialog hideDialogTrigered() = 0;
+    virtual SigHideDialog hideDialogTrigered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Close button (self hide Dialog)
@@ -56,5 +56,7 @@ public:
     /// @brief Set message for dialog
     /// @param message with information for user
     /// @param type of dialog message
-    virtual void setMessage(Glib::ustring message, MessageType type) = 0;
+    virtual void setMessage(
+        const Glib::ustring message, const MessageType type
+    ) = 0;
 };

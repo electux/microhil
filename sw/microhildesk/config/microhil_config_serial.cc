@@ -45,34 +45,34 @@ namespace
     constexpr const char kConfigSerialStopBits[]{"stop_bits"};
 }
 
-void MicroHILConfig::setDevice(Glib::ustring device)
+void MicroHILConfig::setDevice(const Glib::ustring device)
 {
-    m_configuration.set_string(
+    m_config.set_string(
         kConfigSerialSection, kConfigSerialDevice, device
     );
 }
 
 Glib::ustring MicroHILConfig::getDevice()
 {
-    return m_configuration.get_string(
+    return m_config.get_string(
         kConfigSerialSection, kConfigSerialDevice
     );
 }
 
-void MicroHILConfig::setBaudRate(int baudRate)
+void MicroHILConfig::setBaudRate(const int baudRate)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process baud-rate for configuration file
     auto baudRatePrepared = intToBaudRate(baudRate);
 
-    m_configuration.set_integer(
+    m_config.set_integer(
         kConfigSerialSection, kConfigSerialBaudRate, baudRatePrepared
     );
 }
 
 int MicroHILConfig::getBaudRate()
 {
-    auto baudRate = m_configuration.get_integer(
+    auto baudRate = m_config.get_integer(
         kConfigSerialSection, kConfigSerialBaudRate
     );
 
@@ -81,20 +81,20 @@ int MicroHILConfig::getBaudRate()
     return baudRateToInt(baudRate);
 }
 
-void MicroHILConfig::setDataBits(int dataBits)
+void MicroHILConfig::setDataBits(const int dataBits)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process data-bits for configuration file
     auto dataBitsPrepared = intToDataBits(dataBits);
 
-    m_configuration.set_integer(
+    m_config.set_integer(
         kConfigSerialSection, kConfigSerialDataBits, dataBitsPrepared
     );
 }
 
 int MicroHILConfig::getDataBits()
 {
-    auto dataBits = m_configuration.get_integer(
+    auto dataBits = m_config.get_integer(
         kConfigSerialSection, kConfigSerialDataBits
     );
 
@@ -103,38 +103,38 @@ int MicroHILConfig::getDataBits()
     return dataBitsToInt(dataBits);
 }
 
-void MicroHILConfig::setParity(int parity)
+void MicroHILConfig::setParity(const int parity)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process parity for configuration file
     auto parityPrepared = parityToUnicodeString(parity);
 
-    m_configuration.set_string(
+    m_config.set_string(
         kConfigSerialSection, kConfigSerialParity, parityPrepared
     );
 }
 
 Glib::ustring MicroHILConfig::getParity()
 {
-    return m_configuration.get_string(
+    return m_config.get_string(
         kConfigSerialSection, kConfigSerialParity
     );
 }
 
-void MicroHILConfig::setStopBits(int stopBits)
+void MicroHILConfig::setStopBits(const int stopBits)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process stop-bits for configuration file
     auto stopBitsPrepared = intToStopBits(stopBits);
 
-    m_configuration.set_integer(
+    m_config.set_integer(
         kConfigSerialSection, kConfigSerialStopBits, stopBitsPrepared
     );
 }
 
 int MicroHILConfig::getStopBits()
 {
-    auto stopBits = (int) m_configuration.get_integer(
+    auto stopBits = (int) m_config.get_integer(
         kConfigSerialSection, kConfigSerialStopBits
     );
 
@@ -146,17 +146,19 @@ int MicroHILConfig::getStopBits()
 bool MicroHILConfig::validateSerialSettings()
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Checking serial configuration parameters
+    /// Checking serial configuration parameters from config file
     auto configCheck = (
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialDevice) &&
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialBaudRate) &&
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialDataBits) &&
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialParity) &&
-        m_configuration.has_key(kConfigSerialSection, kConfigSerialStopBits)
+        m_config.has_key(kConfigSerialSection, kConfigSerialDevice) &&
+        m_config.has_key(kConfigSerialSection, kConfigSerialBaudRate) &&
+        m_config.has_key(kConfigSerialSection, kConfigSerialDataBits) &&
+        m_config.has_key(kConfigSerialSection, kConfigSerialParity) &&
+        m_config.has_key(kConfigSerialSection, kConfigSerialStopBits)
     );
 
     if(!configCheck)
     {
+        ////////////////////////////////////////////////////////////////////
+        /// Configuration file, serial section corrupted
         return false;
     }
 

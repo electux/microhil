@@ -67,7 +67,7 @@ MicroHILViewDialog::MicroHILViewDialog(
 }
 
 void MicroHILViewDialog::setMessage(
-    const Glib::ustring message, MessageType type
+    const Glib::ustring message, const MessageType type
 )
 {
     const auto messageType = toUnicodeStringMessageType(type);
@@ -76,7 +76,7 @@ void MicroHILViewDialog::setMessage(
 }
 
 Glib::ustring MicroHILViewDialog::toUnicodeStringMessageType(
-    MessageType type
+    const MessageType type
 ) const
 {
     switch(type)

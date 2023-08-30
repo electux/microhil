@@ -18,14 +18,14 @@
  */
 #include "microhil_config.h"
 
-MicroHILConfig::logConfiguration
-MicroHILConfig::logConfigurationLoaded()
+MicroHILConfig::SigLogConfig
+MicroHILConfig::LogConfigLoaded()
 {
-    return m_logConfiguration;
+    return m_logConfig;
 }
 
-MicroHILConfig::serialConfiguration
-MicroHILConfig::serialConfigurationLoaded()
+MicroHILConfig::SigSerialConfig
+MicroHILConfig::SerialConfigLoaded()
 {
-    return m_serialConfiguration;
+    return m_serialConfig;
 }

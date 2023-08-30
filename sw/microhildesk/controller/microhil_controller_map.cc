@@ -22,13 +22,13 @@ void MicroHILController::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Map log settings signal from configuration with controller slot
-    m_config->logConfigurationLoaded().connect(
+    m_config->LogConfigLoaded().connect(
         sigc::mem_fun(*this, &MicroHILController::onLogSettingsLoaded)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Map serial settings signal from configuration with controller slot
-    m_config->serialConfigurationLoaded().connect(
+    m_config->SerialConfigLoaded().connect(
         sigc::mem_fun(*this, &MicroHILController::onSerialSettingsLoaded)
     );
 

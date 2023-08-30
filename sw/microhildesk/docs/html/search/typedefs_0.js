@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['actionviewtriggered_0',['actionViewTriggered',['../d5/d72/classAbMicroHILViewHome.html#a2d5eed5dd61f95e9fb085995cafbae6c',1,'AbMicroHILViewHome']]]
+  ['sigactionviewtriggered_0',['SigActionViewTriggered',['../d5/d72/classAbMicroHILViewHome.html#a4009700bb6c402d480c964b2af7d919c',1,'AbMicroHILViewHome']]],
+  ['sigcancellog_1',['SigCancelLog',['../d1/d49/classAbMicroHILViewLog.html#a97145198f81d522cf4b717ef3f2ae50c',1,'AbMicroHILViewLog']]],
+  ['sigcancelserial_2',['SigCancelSerial',['../df/dcb/classAbMicroHILViewSerial.html#af072dfb630b2b605a3858334b7a2941f',1,'AbMicroHILViewSerial']]],
+  ['sigchannelchanged_3',['SigChannelChanged',['../d5/d72/classAbMicroHILViewHome.html#a4414c772832775957147bcc6cf367395',1,'AbMicroHILViewHome']]],
+  ['sigchannelspintimerchanged_4',['SigChannelSpinTimerChanged',['../d5/d72/classAbMicroHILViewHome.html#a65fc80fa00be54ca58f2dfa9bd431b07',1,'AbMicroHILViewHome']]],
+  ['sigchanneltimertoggled_5',['SigChannelTimerToggled',['../d5/d72/classAbMicroHILViewHome.html#aa58bf95bd3af45089830b33e0fed080c',1,'AbMicroHILViewHome']]],
+  ['sigchanneltoggled_6',['SigChannelToggled',['../d5/d72/classAbMicroHILViewHome.html#a3a93af7f2ae70ec152b97c425713a07c',1,'AbMicroHILViewHome']]],
+  ['sighideabout_7',['SigHideAbout',['../d6/d7b/classAbMicroHILViewAbout.html#ad2c66fc574b059b661c7b5bf92f2d884',1,'AbMicroHILViewAbout']]],
+  ['sighidedialog_8',['SigHideDialog',['../d9/d02/classAbMicroHILViewDialog.html#abaa2288114fe5761a262f9a439e62d5e',1,'AbMicroHILViewDialog']]],
+  ['siglogconfig_9',['SigLogConfig',['../d6/dac/classAbMicroHILConfig.html#a8b1d61c4c6e9c09f19de3ad47ae61870',1,'AbMicroHILConfig']]],
+  ['siglogfilepath_10',['SigLogFilePath',['../d1/d49/classAbMicroHILViewLog.html#a497377a9aa693038f03ec92730659222',1,'AbMicroHILViewLog']]],
+  ['siglogsetup_11',['SigLogSetup',['../d1/d49/classAbMicroHILViewLog.html#aaba38bc5a22b0a1d9b7e86a1827586ef',1,'AbMicroHILViewLog']]],
+  ['sigoklog_12',['SigOkLog',['../d1/d49/classAbMicroHILViewLog.html#af674f0e2515f4259a4eb7a6dc4743804',1,'AbMicroHILViewLog']]],
+  ['sigokserial_13',['SigOkSerial',['../df/dcb/classAbMicroHILViewSerial.html#a9e938540defd1bc99a4021222da28d7c',1,'AbMicroHILViewSerial']]],
+  ['sigselectchanged_14',['SigSelectChanged',['../d5/d72/classAbMicroHILViewHome.html#af9793dffdeff0326a01701b3c56c1b50',1,'AbMicroHILViewHome']]],
+  ['sigselectloglevel_15',['SigSelectLogLevel',['../d1/d49/classAbMicroHILViewLog.html#a9a885824dc20a1fe3850986fd3ae8658',1,'AbMicroHILViewLog']]],
+  ['sigserialbaudrate_16',['SigSerialBaudRate',['../df/dcb/classAbMicroHILViewSerial.html#a71fb61d5f7ecc156c2d37f25b30a573e',1,'AbMicroHILViewSerial']]],
+  ['sigserialconfig_17',['SigSerialConfig',['../d6/dac/classAbMicroHILConfig.html#a57e5375dee0598ec3a076b8fc5beb88e',1,'AbMicroHILConfig']]],
+  ['sigserialdatabits_18',['SigSerialDataBits',['../df/dcb/classAbMicroHILViewSerial.html#a6f58bd6e34b4c6572bc3919fc711fcc3',1,'AbMicroHILViewSerial']]],
+  ['sigserialdevicepath_19',['SigSerialDevicePath',['../df/dcb/classAbMicroHILViewSerial.html#aaf6a31de2bdfbb92a2c9001434d1b491',1,'AbMicroHILViewSerial']]],
+  ['sigserialparity_20',['SigSerialParity',['../df/dcb/classAbMicroHILViewSerial.html#a63fdb66f57f7a73bf54a1ebb81831c27',1,'AbMicroHILViewSerial']]],
+  ['sigserialsetup_21',['SigSerialSetup',['../df/dcb/classAbMicroHILViewSerial.html#ac6986f209523f7928f528439925f3661',1,'AbMicroHILViewSerial']]],
+  ['sigserialstopbits_22',['SigSerialStopBits',['../df/dcb/classAbMicroHILViewSerial.html#aa35e78d1015612c937c2e14f336d1ce0',1,'AbMicroHILViewSerial']]]
 ];

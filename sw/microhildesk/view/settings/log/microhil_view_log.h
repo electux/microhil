@@ -45,12 +45,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings
     /// @return Signal for changed log settings
-    logSetup logSetupChanged() final;
+    SigLogSetup logSetupChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log file path input
     /// @return Signal for changed log file path entry
-    logFilePath logFilePathChanged() final;
+    SigLogFilePath logFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing log file path input 
@@ -59,7 +59,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log level combobox
     /// @return Signal for selected log level combobox 
-    selectLogLevel logLevelChanged() final;
+    SigSelectLogLevel logLevelChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing log level combobox
@@ -68,12 +68,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button
     /// @return Signal for clicked Cancel button
-    cancelLog cancelLogTriggered() final;
+    SigCancelLog cancelLogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button 
     /// @return Signal for clicked Ok button
-    okLog okLogTriggered() final;
+    SigOkLog okLogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Cancel button
@@ -116,21 +116,21 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings
-    logSetup m_logSetup{};
+    SigLogSetup m_logSetup{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log file path input
-    logFilePath m_logFilePath{};
+    SigLogFilePath m_logFilePath{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log level combobox
-    selectLogLevel m_logLevel{};
+    SigSelectLogLevel m_logLevel{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button (dismiss)
-    cancelLog m_cancelLog{};
+    SigCancelLog m_cancelLog{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button (confirm)
-    okLog m_okLog{};
+    SigOkLog m_okLog{};
 };

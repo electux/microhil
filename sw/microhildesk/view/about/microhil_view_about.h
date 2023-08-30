@@ -43,7 +43,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button
     /// @return Signal for clicked Ok button
-    hideAbout hideAboutTriggered() final;
+    SigHideAbout hideAboutTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Ok button (self hide AboutDialog)
@@ -64,5 +64,5 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button (self hide AboutDialog)
-    hideAbout m_hideAbout{};
+    SigHideAbout m_hideAbout{};
 };

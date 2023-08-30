@@ -37,12 +37,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for loaded log configuration
     /// @return Signal for loaded log configuration
-    logConfiguration logConfigurationLoaded() final;
+    SigLogConfig LogConfigLoaded() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for loaded serial configuration
     /// @return Signal for loaded serial configuration
-    serialConfiguration serialConfigurationLoaded() final;
+    SigSerialConfig SerialConfigLoaded() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Load configuration from file
@@ -62,7 +62,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting serial device file path to configuration
     /// @param device file path
-    void setDevice(Glib::ustring device) final;
+    void setDevice(const Glib::ustring device) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial device file path from configuration
@@ -72,7 +72,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting baud rate for serial port to configuration
     /// @param baudRate for serial port
-    void setBaudRate(int baudRate) final;
+    void setBaudRate(const int baudRate) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting baud rate for serial port from configuration
@@ -82,7 +82,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting data bits for serial port to configuration
     /// @param dataBits for serial port
-    void setDataBits(int dataBits) final;
+    void setDataBits(const int dataBits) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting data bits for serial port from configuration
@@ -92,7 +92,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting parity for serial port to configuration
     /// @param parity for serial port
-    void setParity(int parity) final;
+    void setParity(const int parity) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
@@ -102,7 +102,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting stop bits for serial port to configuration
     /// @param stopBits for serial port
-    void setStopBits(int stopBits) final;
+    void setStopBits(const int stopBits) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting stop bits for serial port from configuration
@@ -112,7 +112,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log level
     /// @param level for log settings
-    void setLogLevel(int level) final;
+    void setLogLevel(const int level) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
@@ -122,7 +122,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log path
     /// @param path for log messages
-    void setLogPath(Glib::ustring path) final;
+    void setLogPath(const Glib::ustring path) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log path
@@ -139,19 +139,19 @@ private:
     /// @brief Convert integer log level to string format
     /// @param logLevel in integer format
     /// @return string format of log level
-    Glib::ustring logLevelToUnicodeString(int logLevel);
+    Glib::ustring logLevelToUnicodeString(const int logLevel);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert log level in strong format to integer
     /// @param level in string format
     /// @return log level in integer format
-    int logLevelStringToInt(Glib::ustring level);
+    int logLevelStringToInt(const Glib::ustring level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Process and prepare baud rate (to config file)
     /// @param baudRate for serial port (combobox index)
     /// @return baud rate for serial port in integer format
-    int intToBaudRate(int baudRate);
+    int intToBaudRate(const int baudRate);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Process and prepare baud rate (from config file)
@@ -163,37 +163,37 @@ private:
     /// @brief Process and prepare data bits (from config file)
     /// @param dataBits value from config file
     /// @return index for combobox
-    int dataBitsToInt(int dataBits);
+    int dataBitsToInt(const int dataBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert combobox index to data bits (to config file)
     /// @param dataBits for serial port (index combobox)
     /// @return data bits for serial port in integer format
-    int intToDataBits(int dataBits);
+    int intToDataBits(const int dataBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert integer parity to string format (to config file)
     /// @param parity index combobox
     /// @return string format of parity in string format
-    Glib::ustring parityToUnicodeString(int parity);
+    Glib::ustring parityToUnicodeString(const int parity);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert parity to integer format (from config file)
     /// @param parity in string format (from config file)
     /// @return parity in integer format (to combobox index)
-    int parityUnicodeStringToInt(Glib::ustring parity);
+    int parityUnicodeStringToInt(const Glib::ustring parity);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert stop-bits to integer (from config file)
     /// @param dataBits from config file
     /// @return stop-bits in integer format (index combobox)
-    int stopBitsToInt(int stopBits);
+    int stopBitsToInt(const int stopBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert combobox index to data-bits (to config file)
     /// @param dataBits index from combobox
     /// @return data-bits in integer format
-    int intToStopBits(int stopBits);
+    int intToStopBits(const int stopBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Validate log configuration (existing expected parameters)
@@ -215,13 +215,13 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration instance
-    Glib::KeyFile m_configuration{};
+    Glib::KeyFile m_config{};
 
     ////////////////////////////////////////////////////////////////////////
     /// Signal for loaded log configuration from file
-    logConfiguration m_logConfiguration{};
+    SigLogConfig m_logConfig{};
 
     ////////////////////////////////////////////////////////////////////////
     /// Signal for loaded serial configuration from file
-    serialConfiguration m_serialConfiguration{};
+    SigSerialConfig m_serialConfig{};
 };

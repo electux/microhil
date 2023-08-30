@@ -22,7 +22,7 @@
 #include <glibmm/ustring.h>
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Scoped enumerator for serial port parity
+/// @brief Scoped class enumerator for serial port parity
 enum class ParityConfig: int
 {
     MICROHIL_NONE_CONFIG = 0,
@@ -33,7 +33,7 @@ enum class ParityConfig: int
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Scoped enumerator for log levels
+/// @brief Scoped class enumerator for log levels
 enum class LogLevelConfig: int
 {
     MICROHIL_INFO_CONFIG = 0,
@@ -48,11 +48,11 @@ class AbMicroHILConfig
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for loaded log configuration from file
-    using logConfiguration = sigc::signal<void(Glib::ustring, int)>;
+    using SigLogConfig = sigc::signal<void(Glib::ustring, int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for loaded serial configuration from file
-    using serialConfiguration = sigc::signal<void(
+    using SigSerialConfig = sigc::signal<void(
         Glib::ustring, int, int, int, int
     )>;
 
@@ -63,12 +63,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for loaded log configuration
     /// @return Signal for loaded log configuration
-    virtual logConfiguration logConfigurationLoaded() = 0;
+    virtual SigLogConfig LogConfigLoaded() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for loaded serial configuration
     /// @return Signal for loaded serial configuration
-    virtual serialConfiguration serialConfigurationLoaded() = 0;
+    virtual SigSerialConfig SerialConfigLoaded() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Load configuration
@@ -98,7 +98,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting serial device file path to configuration
     /// @param device file path
-    virtual void setDevice(Glib::ustring device) = 0;
+    virtual void setDevice(const Glib::ustring device) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial device file path from configuration
@@ -108,7 +108,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting baud rate for serial port to configuration
     /// @param baudRate for serial port
-    virtual void setBaudRate(int baudRate) = 0;
+    virtual void setBaudRate(const int baudRate) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting baud rate for serial port from configuration
@@ -118,7 +118,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting data bits for serial port to configuration
     /// @param dataBits for serial port
-    virtual void setDataBits(int dataBits) = 0;
+    virtual void setDataBits(const int dataBits) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting data bits for serial port from configuration
@@ -128,7 +128,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting parity for serial port to configuration
     /// @param parity for serial port
-    virtual void setParity(int parity) = 0;
+    virtual void setParity(const int parity) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
@@ -138,7 +138,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting stop bits for serial port to configuration
     /// @param stopBits for serial port
-    virtual void setStopBits(int stopBits) = 0;
+    virtual void setStopBits(const int stopBits) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting stop bits for serial port from configuration
@@ -148,7 +148,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log level
     /// @param level for log settings
-    virtual void setLogLevel(int level) = 0;
+    virtual void setLogLevel(const int level) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
@@ -158,7 +158,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log path
     /// @param path for log messages
-    virtual void setLogPath(Glib::ustring path) = 0;
+    virtual void setLogPath(const Glib::ustring path) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log path

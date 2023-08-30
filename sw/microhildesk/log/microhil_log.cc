@@ -55,19 +55,19 @@ Glib::ustring MicroHILLog::getFilePath() const
     return m_logFilePath;
 }
 
-void MicroHILLog::setLogLevel(Glib::ustring level)
+void MicroHILLog::setLogLevel(const Glib::ustring level)
 {
     auto logLevelPrepared = toLogType(level);
 
     m_logLevel = logLevelPrepared;
 }
 
-void MicroHILLog::setLogLevel(int level)
+void MicroHILLog::setLogLevel(const int level)
 {
     m_logLevel = static_cast<LogLevel>(level);
 }
 
-void MicroHILLog::setLogLevel(LogLevel level)
+void MicroHILLog::setLogLevel(const LogLevel level)
 {
     m_logLevel = level;
 }
@@ -88,7 +88,7 @@ bool MicroHILLog::open()
     return m_fileOpened;
 }
 
-void MicroHILLog::write(const Glib::ustring message, LogLevel level)
+void MicroHILLog::write(const Glib::ustring message, const LogLevel level)
 {
     const auto currentTime = getCurrentDateTime();
     const auto prefixLogLevel = toStringLogType(level);
@@ -123,7 +123,7 @@ Glib::ustring MicroHILLog::getCurrentDateTime() const
     return Glib::ustring(buffer);
 }
 
-Glib::ustring MicroHILLog::toStringLogType(LogLevel level) const
+Glib::ustring MicroHILLog::toStringLogType(const LogLevel level) const
 {
     switch(level)
     {
@@ -138,7 +138,7 @@ Glib::ustring MicroHILLog::toStringLogType(LogLevel level) const
     return kInfoLogLevel;
 }
 
-LogLevel MicroHILLog::toLogType(Glib::ustring level) const
+LogLevel MicroHILLog::toLogType(const Glib::ustring level) const
 {
     if(level == kWarningLogLevel)
     {
