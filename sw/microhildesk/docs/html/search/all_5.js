@@ -1,7 +1,7 @@
 var searchData=
 [
   ['getbaudrate_0',['getBaudRate',['../d6/dac/classAbMicroHILConfig.html#abdcda0d32fa3f598fa0c444ba3d8ded1',1,'AbMicroHILConfig::getBaudRate()'],['../d0/df4/classMicroHILConfig.html#aa04f4a742ad7f38c0df0d7dc77837e5f',1,'MicroHILConfig::getBaudRate()']]],
-  ['getchannel_1',['getChannel',['../de/dce/classMicroHILModel.html#ac282f18d2d66831b8e8488e1d9ad3d07',1,'MicroHILModel::getChannel()'],['../db/dda/classAbMicroHILModel.html#a0dfb19b44cbf9dd569ae4542081805a9',1,'AbMicroHILModel::getChannel()']]],
+  ['getchannel_1',['getChannel',['../de/dce/classMicroHILModel.html#ab5487606d2b3acbc8dce236a61ec0ad9',1,'MicroHILModel::getChannel()'],['../db/dda/classAbMicroHILModel.html#ae51b690f41bdc13b4bb5c34c007a8c48',1,'AbMicroHILModel::getChannel()']]],
   ['getcurrentdatetime_2',['getCurrentDateTime',['../d1/de3/classMicroHILLog.html#ad62e15ce3181fe3533d7ace2034c9377',1,'MicroHILLog']]],
   ['getdatabits_3',['getDataBits',['../d0/df4/classMicroHILConfig.html#a08e46f81bbe5d4a5c849e9780c3d8c67',1,'MicroHILConfig::getDataBits()'],['../d6/dac/classAbMicroHILConfig.html#ae0f3fcb35695c6ed26129ec17641f910',1,'AbMicroHILConfig::getDataBits()']]],
   ['getdevice_4',['getDevice',['../d0/df4/classMicroHILConfig.html#ad598733e0b382cd58c48efef0ddd77c9',1,'MicroHILConfig::getDevice()'],['../d6/dac/classAbMicroHILConfig.html#a894af46204ce9d78a1ca9223dc4fa33b',1,'AbMicroHILConfig::getDevice()']]],

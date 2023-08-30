@@ -45,62 +45,62 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for serial settings
     /// @return Signal for changed serial settings
-    serialSetup serialSetupChanged() final;
+    SigSerialSetup serialSetupChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for device file path input
     /// @return Signal for changed device file path entry
-    serialDevicePath serialFilePathChanged() final;
+    SigSerialDevicePath serialFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing device file path input
     void onSerialFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for baud rate combobox
-    /// @return Signal for selected baud rate combobox
-    serialBaudRate serialBaudRateChanged() final;
+    /// @brief Signal for baud-rate combobox
+    /// @return Signal for selected baud-rate combobox
+    SigSerialBaudRate serialBaudRateChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing baud rate combobox
+    /// @brief Slot for processing baud-rate combobox
     void onSerialBaudRateChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for data bits combobox
-    /// @return Signal for selected data bits combobox
-    serialDataBits serialDataBitsChanged() final;
+    /// @brief Signal for data-bits combobox
+    /// @return Signal for selected data-bits combobox
+    SigSerialDataBits serialDataBitsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing data bits combobox
+    /// @brief Slot for processing data-bits combobox
     void onSerialDataBitsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for parity combobox
     /// @return Signal for selected parity combobox
-    serialParity serialParityChanged() final;
+    SigSerialParity serialParityChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing parity combobox
     void onSerialParityChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for stop bits combobox
-    /// @return Signal for selected stop bits combobox
-    serialStopBits serialStopBitsChanged() final;
+    /// @brief Signal for stop-bits combobox
+    /// @return Signal for selected stop-bits combobox
+    SigSerialStopBits serialStopBitsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing stop bits combobox
+    /// @brief Slot for processing stop-bits combobox
     void onSerialStopBitsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button
     /// @return Signal for clicked Cancel button
-    cancelSerial cancelSerialTriggered() final;
+    SigCancelSerial cancelSerialTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button
     /// @return Signal for clicked Ok button
-    okSerial okSerialTriggered() final;
+    SigOkSerial okSerialTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Cancel button (dismiss)
@@ -136,11 +136,11 @@ private:
     Glib::RefPtr<Gtk::Entry> m_device{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Select baud rate
+    /// @brief Select baud-rate
     Glib::RefPtr<Gtk::ComboBoxText> m_baudRate{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Select data bits
+    /// @brief Select data-bits
     Glib::RefPtr<Gtk::ComboBoxText> m_dataBits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
@@ -148,7 +148,7 @@ private:
     Glib::RefPtr<Gtk::ComboBoxText> m_parity{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Select stop bits
+    /// @brief Select stop-bits
     Glib::RefPtr<Gtk::ComboBoxText> m_stopBits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
@@ -161,33 +161,33 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief ignal for serial settings
-    serialSetup m_serialSetup{};
+    SigSerialSetup m_serialSetup{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for device path input
-    serialDevicePath m_serialDevicePath{};
+    SigSerialDevicePath m_serialDevicePath{};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for baud rate combobox
-    serialBaudRate m_serialBaudeRate{};
+    /// @brief Signal for baud-rate combobox
+    SigSerialBaudRate m_serialBaudeRate{};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for data bits combobox
-    serialDataBits m_serialDataBits{};
+    /// @brief Signal for data-bits combobox
+    SigSerialDataBits m_serialDataBits{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for parity combobox
-    serialParity m_serialParity{};
+    SigSerialParity m_serialParity{};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for stop bits combobox
-    serialStopBits m_serialStopBits{};
+    /// @brief Signal for stop-bits combobox
+    SigSerialStopBits m_serialStopBits{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button (dismiss)
-    cancelSerial m_cancelSerial{};
+    SigCancelSerial m_cancelSerial{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button (confirm)
-    okSerial m_okSerial{};
+    SigOkSerial m_okSerial{};
 };

@@ -21,7 +21,7 @@
 #include <sigc++/sigc++.h>
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Scoped enumerator for View IDs
+/// @brief Scoped class enumerator for View IDs
 enum class ViewId: int
 {
     MICROHIL_CONNECT = 0,
@@ -34,7 +34,7 @@ enum class ViewId: int
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Scoped enumerator for channel IDs
+/// @brief Scoped class enumerator for channel IDs
 enum class Channel: int
 {
     MICROHIL_ID0 = 0,
@@ -48,7 +48,7 @@ enum class Channel: int
 }; 
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief  Scoped enumerator for channel control types
+/// @brief Scoped class enumerator for channel control types
 enum class channelControlType: int
 {
     MICROHIL_TOGGLE_BUTTON = 0,
@@ -62,27 +62,27 @@ class AbMicroHILViewHome
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for menu itmes (trigger another view)
-    using actionViewTriggered = sigc::signal<void(ViewId)>;
+    using SigActionViewTriggered = sigc::signal<void(ViewId)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for check buttons (enable/disable channel)
-    using channelChanged = sigc::signal<void(Channel, bool)>;
+    using SigChannelChanged = sigc::signal<void(Channel, bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for comboboxes (toogle/timer type control)
-    using selectChanged = sigc::signal<void(Channel, int)>;
+    using SigSelectChanged = sigc::signal<void(Channel, int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for toogle buttons (turn on/turn off channel)
-    using channelToggled = sigc::signal<void(Channel, bool)>;
+    using SigChannelToggled = sigc::signal<void(Channel, bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for spin buttons (based on timer setup)
-    using channelSpinTimerChanged = sigc::signal<void(Channel, int)>;
+    using SigChannelSpinTimerChanged = sigc::signal<void(Channel, int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for toogle buttons (based on timer setup)
-    using channelTimerToggled = sigc::signal<void(Channel, bool)>;
+    using SigChannelTimerToggled = sigc::signal<void(Channel, bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILViewHome destructor
@@ -91,12 +91,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (changed view)
     /// @return Signal for clicked menu item
-    virtual actionViewTriggered viewChanged() = 0;
+    virtual SigActionViewTriggered viewChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for check buttons (enable/disable channel)
     /// @return Signal for clicked button
-    virtual channelChanged channelIsChanged() = 0;
+    virtual SigChannelChanged channelIsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing check buttons (enable/disable channel)
@@ -106,7 +106,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for comboboxes (control type)
     /// @return Signal for changed channel state combobox
-    virtual selectChanged channelIsSelected() = 0;
+    virtual SigSelectChanged channelIsSelected() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing comboboxes (control type)
@@ -116,7 +116,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggling buttons (turn on/turn off channel)
     /// @return Signal for toggled button
-    virtual channelToggled channelIsToggled() = 0;
+    virtual SigChannelToggled channelIsToggled() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off channel)
@@ -126,7 +126,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for spin buttons (based on timer)
     /// @return Signal for changed spin button
-    virtual channelSpinTimerChanged channelIsSpinTimerChanged() = 0;
+    virtual SigChannelSpinTimerChanged channelIsSpinTimerChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing spin buttons (based on timer)
@@ -136,7 +136,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggle buttons (based on timer)
     /// @return Signal for toggled button
-    virtual channelTimerToggled channelIsTimerChanged() = 0;
+    virtual SigChannelTimerToggled channelIsTimerChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off timer)

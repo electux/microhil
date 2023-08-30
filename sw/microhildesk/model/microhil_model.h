@@ -38,19 +38,19 @@ public:
     /// @brief Set channel #0 state (ON/OFF)
     /// @param id request channel by id
     /// @param state request for channel #0 (ON | OFF)
-    void setChannel(int id, ChannelState state) final;
+    void setChannel(const int id, const ChannelState state) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Get channel #0 state (ON/OFF)
     /// @param id request channel by id
     /// @return channel state in enumerator format (ON | OFF)
-    ChannelState getChannel(int id) const final;
+    ChannelState getChannel(const int id) const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Check is channel #0 ON (true) or OFF (false)
     /// @param id request channel by id
     /// @return boolean status true for open else false
-    bool isOnChannel(int id) const final;
+    bool isOnChannel(const int id) const final;
 
 private:
     ////////////////////////////////////////////////////////////////////////

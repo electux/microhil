@@ -27,7 +27,7 @@ class AbMicroHILViewAbout
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for Ok button (self hide AboutDialog signal)
-    using hideAbout = sigc::signal<void(bool)>;
+    using SigHideAbout = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILViewAbout destructor
@@ -36,7 +36,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button
     /// @return Signal for clicked Ok button
-    virtual hideAbout hideAboutTriggered() = 0;
+    virtual SigHideAbout hideAboutTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Ok button (self hide AboutDialog)

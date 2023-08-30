@@ -21,7 +21,7 @@
 namespace
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Number of channels
+    /// Number of controllable channels
     constexpr const int kNumberOfChannels{8};
 }
 
@@ -35,17 +35,17 @@ MicroHILModel::MicroHILModel()
     }
 }
 
-void MicroHILModel::setChannel(int id, ChannelState state)
+void MicroHILModel::setChannel(const int id, const ChannelState state)
 {
     m_channels[id] = state;
 }
 
-ChannelState MicroHILModel::getChannel(int id) const
+ChannelState MicroHILModel::getChannel(const int id) const
 {
     return m_channels[id];
 }
 
-bool MicroHILModel::isOnChannel(int id) const
+bool MicroHILModel::isOnChannel(const int id) const
 {
     return m_channels[id] == ChannelState::MICROHIL_ON;
 }

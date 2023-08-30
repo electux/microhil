@@ -18,6 +18,13 @@
  */
 #include "microhil_view_home.h"
 
+namespace
+{
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Number of map channels
+    constexpr int kNumberOfMapChannels{8};
+}
+
 void MicroHILViewHome::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
@@ -58,7 +65,7 @@ void MicroHILViewHome::mapping()
 
     ////////////////////////////////////////////////////////////////////////
     /// Map channels (signals and slots)
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < kNumberOfMapChannels; i++)
     {
         m_enableChannels[i]->signal_toggled().connect(
             sigc::bind<Channel>(

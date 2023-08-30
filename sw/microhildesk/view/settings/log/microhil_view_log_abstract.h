@@ -28,23 +28,23 @@ class AbMicroHILViewLog
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log settings
-    using logSetup = sigc::signal<void(Glib::ustring, int)>;
+    using SigLogSetup = sigc::signal<void(Glib::ustring, int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log file path input
-    using logFilePath = sigc::signal<void(Glib::ustring)>;
+    using SigLogFilePath = sigc::signal<void(Glib::ustring)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log level combobox
-    using selectLogLevel = sigc::signal<void(int)>;
+    using SigSelectLogLevel = sigc::signal<void(int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for Cancel button (dismiss)
-    using cancelLog = sigc::signal<void(bool)>;
+    using SigCancelLog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for Ok button (confirm)
-    using okLog = sigc::signal<void(bool)>;
+    using SigOkLog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILViewLog destructor
@@ -53,12 +53,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings
     /// @return Signal for changed log settings
-    virtual logSetup logSetupChanged() = 0;
+    virtual SigLogSetup logSetupChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log file path input
     /// @return Signal for changed log file path entry
-    virtual logFilePath logFilePathChanged() = 0;
+    virtual SigLogFilePath logFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing log file path input 
@@ -67,7 +67,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log level combobox
     /// @return Signal for selected log level combobox 
-    virtual selectLogLevel logLevelChanged() = 0;
+    virtual SigSelectLogLevel logLevelChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing log level combobox
@@ -76,12 +76,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button
     /// @return Signal for clicked Cancel button
-    virtual cancelLog cancelLogTriggered() = 0;
+    virtual SigCancelLog cancelLogTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button 
     /// @return Signal for clicked Ok button
-    virtual okLog okLogTriggered() = 0;
+    virtual SigOkLog okLogTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Cancel button

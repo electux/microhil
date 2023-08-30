@@ -47,12 +47,32 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Serial port parity SPACE configuration parameter
     constexpr const char kConfigParitySpace[]{"SPACE"};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity NONE combobox item index id
+    constexpr const int kConfigParityNoneId{0};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity ODD combobox item index id
+    constexpr const int kConfigParityOddId{1};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity EVEN combobox item index id
+    constexpr const int kConfigParityEvenId{2};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity MARK combobox item index id
+    constexpr const int kConfigParityMarkId{3};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Serial port parity SPACE combobox item index id
+    constexpr const int kConfigParitySpaceId{4};
 }
 
 int MicroHILConfig::baudRateToInt(const int baudRate)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert baud-rate to index combobox 
+    /// Convert baud-rate to index item for combobox 
     switch(baudRate)
     {
         case 110: return 0;
@@ -74,10 +94,10 @@ int MicroHILConfig::baudRateToInt(const int baudRate)
     return 115200;
 }
 
-int MicroHILConfig::intToBaudRate(int baudRate)
+int MicroHILConfig::intToBaudRate(const int baudRate)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert index combobox to baud-rate
+    /// Convert index item of combobox to baud-rate
     switch(baudRate)
     {
         case 0: return 110;
@@ -99,24 +119,24 @@ int MicroHILConfig::intToBaudRate(int baudRate)
     return 115200;
 }
 
-int MicroHILConfig::dataBitsToInt(int dataBits)
+int MicroHILConfig::dataBitsToInt(const int dataBits)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Pre-process data-bits to index xombobox
+    /// Pre-process data-bits to index item of combobox
     return (dataBits - kConfigDataBitsOffset);
 }
 
-int MicroHILConfig::intToDataBits(int dataBits)
+int MicroHILConfig::intToDataBits(const int dataBits)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Pre-process index combobox to data-bits
+    /// Pre-process index item of combobox to data-bits
     return (dataBits + kConfigDataBitsOffset);
 }
 
-Glib::ustring MicroHILConfig::parityToUnicodeString(int parity)
+Glib::ustring MicroHILConfig::parityToUnicodeString(const int parity)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert integer parity to scopped class 
+    /// Convert integer parity to scopped enumerator class 
     auto parityPrepared = static_cast<ParityConfig>(parity);
 
     switch(parityPrepared)
@@ -136,43 +156,43 @@ Glib::ustring MicroHILConfig::parityToUnicodeString(int parity)
     return kConfigParityNone;
 }
 
-int MicroHILConfig::parityUnicodeStringToInt(Glib::ustring parity)
+int MicroHILConfig::parityUnicodeStringToInt(const Glib::ustring parity)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert string parity to integer format for combobox 
+    /// Convert string format of parity to index item for combobox 
     if(parity == kConfigParityOdd)
     {
-        return 1;
+        return kConfigParityOddId;
     }
 
     if(parity == kConfigParityEven)
     {
-        return 2;
+        return kConfigParityEvenId;
     }
 
     if(parity == kConfigParityMark)
     {
-        return 3;
+        return kConfigParityMarkId;
     }
 
     if(parity == kConfigParitySpace)
     {
-        return 4;
+        return kConfigParitySpaceId;
     }
 
-    return 0;
+    return kConfigParityNoneId;
 }
 
-int MicroHILConfig::stopBitsToInt(int stopBits)
+int MicroHILConfig::stopBitsToInt(const int stopBits)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Pre-process stop-bits to index combobox
+    /// Pre-process stop-bits to index item for combobox
     return (stopBits - kConfigStopBitsOffset);
 }
 
-int MicroHILConfig::intToStopBits(int stopBits)
+int MicroHILConfig::intToStopBits(const int stopBits)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Pre-process index combobox to stop-bits
+    /// Pre-process index item from combobox to stop-bits
     return (stopBits + kConfigStopBitsOffset);
 }

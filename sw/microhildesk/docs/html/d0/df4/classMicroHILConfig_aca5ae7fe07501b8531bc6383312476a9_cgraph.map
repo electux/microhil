@@ -1,0 +1,4 @@
+<map id="MicroHILConfig::setParity" name="MicroHILConfig::setParity">
+<area shape="rect" id="node1" title="Setting parity for serial port to configuration." alt="" coords="5,13,191,39"/>
+<area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#a201fe62a9e21462aa18b9e0cc82fb918" title="Convert integer parity to string format (to config file)" alt="" coords="239,5,419,47"/>
+</map>

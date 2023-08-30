@@ -21,8 +21,8 @@
 namespace
 {
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Number of channels
-    constexpr int kNumberOfChannels {8};
+    /// @brief Number of view channels
+    constexpr int kNumberOfViewChannels{8};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Connect menu-item id
@@ -174,8 +174,8 @@ MicroHILViewHome::MicroHILViewHome(
     );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind channels
-    for (int i = 0; i < kNumberOfChannels; i++)
+    // Bind channels widgets
+    for (int i = 0; i < kNumberOfViewChannels; i++)
     {
         m_enableChannels.push_back(
             Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
@@ -215,7 +215,7 @@ MicroHILViewHome::MicroHILViewHome(
 
     ////////////////////////////////////////////////////////////////////////
     // Disabled all channels by default
-    for (int i = 0; i < kNumberOfChannels; i++)
+    for (int i = 0; i < kNumberOfViewChannels; i++)
     {
         disableChannel(static_cast<Channel>(i));
     }

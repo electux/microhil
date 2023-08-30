@@ -79,12 +79,12 @@ public:
     /// @param data buffer to be placed to after reading the serial port
     /// @param len length of data to read before returning
     /// @param timeout timeout period in miliseconds
-    void read(v_uint8& data, size_t len, size_t timeout) final;
+    void read(VectorByte& data, size_t len, size_t timeout) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Write data to the serial communication channel
     /// @param data to be written to the serial port
-    void write(v_uint8& data) final;
+    void write(VectorByte& data) final;
 
 private:
     ////////////////////////////////////////////////////////////////////////

@@ -18,7 +18,7 @@
  */
 #include "microhil_view_dialog.h"
 
-MicroHILViewDialog::hideDialog
+MicroHILViewDialog::SigHideDialog
 MicroHILViewDialog::hideDialogTrigered()
 {
     return m_hideDialog;

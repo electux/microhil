@@ -68,7 +68,7 @@ bool MicroHILConfig::load()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Load configuration from file 
-    auto loadedConfig = m_configuration.load_from_file(m_configFilePath);
+    auto loadedConfig = m_config.load_from_file(m_configFilePath);
 
     ////////////////////////////////////////////////////////////////////////
     /// Validation of loaded configuration
@@ -76,19 +76,21 @@ bool MicroHILConfig::load()
 
     if(!loadedConfig || !validatedConfig)
     {
+        ////////////////////////////////////////////////////////////////////
+        /// Configuration file corrupted
         return false;
     }
 
     ////////////////////////////////////////////////////////////////////////
     /// Emit signal for loaded log configuration
-    m_logConfiguration.emit(
+    m_logConfig.emit(
         getLogPath(),
         logLevelStringToInt(getLogLevel())
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Emit signal for loaded serial configuration
-    m_serialConfiguration.emit(
+    m_serialConfig.emit(
         getDevice(),
         getBaudRate(),
         getDataBits(),
@@ -101,7 +103,7 @@ bool MicroHILConfig::load()
 
 bool MicroHILConfig::store()
 {
-    return m_configuration.save_to_file(m_configFilePath);
+    return m_config.save_to_file(m_configFilePath);
 }
 
 bool MicroHILConfig::validate()
@@ -118,6 +120,8 @@ bool MicroHILConfig::validate()
 
     if(!configLogCheck || !configSerialCheck)
     {
+        ////////////////////////////////////////////////////////////////////
+        /// Configuration file corrupted
         return false;
     }
 
@@ -135,6 +139,8 @@ bool MicroHILConfig::checkConfigPath()
     {
         if(!std::filesystem::create_directory(m_homePath))
         {
+            ////////////////////////////////////////////////////////////////////
+            /// Failed to create home configuration directory
             return false;
         }
     }

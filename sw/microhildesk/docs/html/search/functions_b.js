@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['paritytounicodestring_0',['parityToUnicodeString',['../d0/df4/classMicroHILConfig.html#a085ba15c749e915331f3d6b1accd9fca',1,'MicroHILConfig']]],
-  ['parityunicodestringtoint_1',['parityUnicodeStringToInt',['../d0/df4/classMicroHILConfig.html#a919d7e70c84129f794e51968d8617977',1,'MicroHILConfig']]]
+  ['paritytounicodestring_0',['parityToUnicodeString',['../d0/df4/classMicroHILConfig.html#a201fe62a9e21462aa18b9e0cc82fb918',1,'MicroHILConfig']]],
+  ['parityunicodestringtoint_1',['parityUnicodeStringToInt',['../d0/df4/classMicroHILConfig.html#a927f312b9d162e9c1d933c5c4a2bbd7a',1,'MicroHILConfig']]]
 ];

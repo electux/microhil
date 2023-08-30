@@ -19,7 +19,7 @@
 #pragma once
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Scoped enumerator for channel states
+/// @brief Scoped class enumerator for channel states
 enum class ChannelState: bool
 {
     MICROHIL_OFF = false,
@@ -39,17 +39,17 @@ public:
     /// @brief Set channel #0 state (ON/OFF)
     /// @param id request channel by id
     /// @param state request for channel #0 (ON | OFF)
-    virtual void setChannel(int id, ChannelState state) = 0;
+    virtual void setChannel(const int id, const ChannelState state) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Get channel #0 state (ON/OFF)
     /// @param id request channel by id
     /// @return channel state in enumerator format (ON | OFF)
-    virtual ChannelState getChannel(int id) const = 0;
+    virtual ChannelState getChannel(const int id) const = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Check is channel #0 ON (true) or OFF (false)
     /// @param id request channel by id
     /// @return boolean status true for open else false
-    virtual bool isOnChannel(int id) const = 0;
+    virtual bool isOnChannel(const int id) const = 0;
 };

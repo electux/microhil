@@ -50,17 +50,17 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup log level
     /// @param level of logging
-    void setLogLevel(Glib::ustring level);
+    void setLogLevel(const Glib::ustring level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup log level
     /// @param level of logging
-    void setLogLevel(int level);
+    void setLogLevel(const int level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup log level
     /// @param level of logging
-    void setLogLevel(LogLevel level);
+    void setLogLevel(const LogLevel level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
@@ -76,7 +76,7 @@ public:
     /// @brief Write log message
     /// @param message log message to be stored
     /// @param level log level
-    void write(const Glib::ustring message, LogLevel level) final;
+    void write(const Glib::ustring message, const LogLevel level) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Close log storage
@@ -93,13 +93,13 @@ private:
     /// @brief Convert log level type to human readable string
     /// @param level log level
     /// @return string representation of log level
-    Glib::ustring toStringLogType(LogLevel level) const;
+    Glib::ustring toStringLogType(const LogLevel level) const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert log level string to level type
     /// @param level type in string format
     /// @return log level type
-    LogLevel toLogType(Glib::ustring level) const;
+    LogLevel toLogType(const Glib::ustring level) const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log file path

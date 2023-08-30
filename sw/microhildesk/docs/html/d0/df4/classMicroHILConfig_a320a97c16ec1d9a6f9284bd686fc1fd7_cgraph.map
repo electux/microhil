@@ -1,0 +1,4 @@
+<map id="MicroHILConfig::setLogLevel" name="MicroHILConfig::setLogLevel">
+<area shape="rect" id="node1" title="Setting log level." alt="" coords="5,13,212,39"/>
+<area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#a6bd7c801e544d7d7c26c0ca93fc2c31c" title="Convert integer log level to string format." alt="" coords="260,5,443,47"/>
+</map>
