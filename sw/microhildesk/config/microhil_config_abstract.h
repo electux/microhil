@@ -18,6 +18,7 @@
  */
 #pragma once
 
+#include <vector>
 #include <sigc++/sigc++.h>
 #include <glibmm/ustring.h>
 
@@ -42,6 +43,10 @@ enum class LogLevelConfig: int
 };
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Declared type vector of int elements
+using VectorUInt = std::vector<unsigned int>;
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief AbMicroHILConfig class declaration and definition
 class AbMicroHILConfig
 {
@@ -52,9 +57,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for loaded serial configuration from file
-    using SigSerialConfig = sigc::signal<void(
-        Glib::ustring, int, int, int, int
-    )>;
+    using SigSerialConfig = sigc::signal<void(Glib::ustring, VectorUInt)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILConfig destructor

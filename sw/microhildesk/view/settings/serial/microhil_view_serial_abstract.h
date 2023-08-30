@@ -18,8 +18,13 @@
  */
 #pragma once
 
+#include <vector>
 #include <glibmm/ustring.h>
 #include <sigc++/sigc++.h>
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Declared type vector of unsigned int elements
+using VectorUInt = std::vector<unsigned int>;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief AbMicroHILViewSerial class declaration and definition 
@@ -28,9 +33,7 @@ class AbMicroHILViewSerial
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial settings
-    using SigSerialSetup = sigc::signal<void(
-        Glib::ustring, unsigned int, unsigned int, unsigned int, unsigned int
-    )>;
+    using SigSerialSetup = sigc::signal<void(Glib::ustring, VectorUInt)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial device file path input

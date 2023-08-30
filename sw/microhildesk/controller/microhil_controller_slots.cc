@@ -47,17 +47,16 @@ void MicroHILController::onLogSettingsLoaded(Glib::ustring path, int level)
 }
 
 void MicroHILController::onSerialSettingsChanged(
-    Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
-    unsigned int parity, unsigned int stopBits
+    Glib::ustring device, VectorUInt params
 )
 {
     ////////////////////////////////////////////////////////////////////////
     /// Update serial configuration
     m_config->setDevice(device);
-    m_config->setBaudRate(baudRate);
-    m_config->setDataBits(dataBits);
-    m_config->setParity(parity);
-    m_config->setStopBits(stopBits);
+    m_config->setBaudRate(params[0]);
+    m_config->setDataBits(params[1]);
+    m_config->setParity(params[2]);
+    m_config->setStopBits(params[3]);
 
     if (!m_config->store())
     {
@@ -73,10 +72,8 @@ void MicroHILController::onSerialSettingsChanged(
 }
 
 void MicroHILController::onSerialSettingsLoaded(
-    Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
-    unsigned int parity, unsigned int stopBits)
+    Glib::ustring device, VectorUInt params
+)
 {
-    m_view->getSerialSettings()->serialSettingsLoaded(
-        device, baudRate, dataBits, parity, stopBits
-    );
+    m_view->getSerialSettings()->serialSettingsLoaded(device, params);
 }

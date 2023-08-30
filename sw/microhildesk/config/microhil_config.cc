@@ -83,20 +83,17 @@ bool MicroHILConfig::load()
 
     ////////////////////////////////////////////////////////////////////////
     /// Emit signal for loaded log configuration
-    m_logConfig.emit(
-        getLogPath(),
-        logLevelStringToInt(getLogLevel())
-    );
+    m_logConfig.emit(getLogPath(), logLevelStringToInt(getLogLevel()));
+
+    VectorUInt serialParams{};
+    serialParams.push_back(getBaudRate());
+    serialParams.push_back(getDataBits());
+    serialParams.push_back(parityUnicodeStringToInt(getParity()));
+    serialParams.push_back(getStopBits());
 
     ////////////////////////////////////////////////////////////////////////
     /// Emit signal for loaded serial configuration
-    m_serialConfig.emit(
-        getDevice(),
-        getBaudRate(),
-        getDataBits(),
-        parityUnicodeStringToInt(getParity()),
-        getStopBits()
-    );
+    m_serialConfig.emit(getDevice(), serialParams);
 
     return true;
 }
