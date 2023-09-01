@@ -2,8 +2,12 @@ name: Lint Code Base MicroHIL
 on:
   push:
     branches: [master]
+    paths:
+      - 'sw/microhildesk/**'
   pull_request:
     branches: [master]
+    paths:
+      - 'sw/microhildesk/**'
 jobs:
   build:
     name: Lint Code Base MicroHIL
