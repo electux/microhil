@@ -8,7 +8,7 @@ The README is used to introduce the tool and provide instructions on
 how to install the tool, any machine dependencies it may have and any
 other information that should be provided before the tool is installed.
 
-[![microhil-desktop C++ CI](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml) [![GitHub issues open](https://img.shields.io/github/issues/electux/microhil.svg)](https://github.com/electux/microhil/issues) [![GitHub contributors](https://img.shields.io/github/contributors/electux/microhil.svg)](https://github.com/electux/microhil/graphs/contributors)
+[![microhil-desktop C++ CI](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml) [![Lint Code Base MicroHIL](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_linter.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_linter.yml) [![GitHub issues open](https://img.shields.io/github/issues/electux/microhil.svg)](https://github.com/electux/microhil/issues) [![GitHub contributors](https://img.shields.io/github/contributors/electux/microhil.svg)](https://github.com/electux/microhil/graphs/contributors)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
