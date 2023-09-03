@@ -45,14 +45,14 @@ namespace
     constexpr const char kConfigSerialStopBits[]{"stop_bits"};
 }
 
-void MicroHILConfig::setDevice(const Glib::ustring device)
+void MicroHILConfig::setDevice(const MHString device)
 {
     m_config.set_string(
         kConfigSerialSection, kConfigSerialDevice, device
     );
 }
 
-Glib::ustring MicroHILConfig::getDevice()
+MHString MicroHILConfig::getDevice()
 {
     return m_config.get_string(
         kConfigSerialSection, kConfigSerialDevice
@@ -114,7 +114,7 @@ void MicroHILConfig::setParity(const int parity)
     );
 }
 
-Glib::ustring MicroHILConfig::getParity()
+MHString MicroHILConfig::getParity()
 {
     return m_config.get_string(
         kConfigSerialSection, kConfigSerialParity

@@ -19,15 +19,14 @@
 #include "microhil_controller.h"
 
 MicroHILController::MicroHILController(
-    std::shared_ptr<MicroHILModel> model, std::shared_ptr<MicroHILView> view
-): m_model{model}, m_view{view}
+    MHSPtr<MicroHILModel> model, MHSPtr<MicroHILView> view
+):
+    m_model{model},
+    m_view{view},
+    m_config{MHmakeUPtr<MicroHILConfig>()},
+    m_log{MHmakeUPtr<MicroHILLog>()},
+    m_serial{MHmakeUPtr<MicroHILSerialCom>()}
 {
-    ////////////////////////////////////////////////////////////////////////
-    /// Prepare and setup configuration, log and serial
-    m_config = make_unique<MicroHILConfig>();
-    m_log = make_unique<MicroHILLog>();
-    m_serial = make_unique<MicroHILSerialCom>();
-
     ////////////////////////////////////////////////////////////////////////
     /// Mapping views and backend (signals and slots)
     mapping();

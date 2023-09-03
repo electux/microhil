@@ -87,7 +87,7 @@ public:
     /// @brief Set loaded parameters for log settings view
     /// @param filePath is absolute log file path
     /// @param logLevel is level for logging
-    void logSettingsLoaded(Glib::ustring filePath, int logLevel);
+    void logSettingsLoaded(MHString filePath, int logLevel);
 
 private:
     ////////////////////////////////////////////////////////////////////////

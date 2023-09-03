@@ -45,11 +45,11 @@ namespace
     constexpr char kAboutId[]{"AboutDialog"};
 }
 
-MicroHILView::MicroHILView()
+MicroHILView::MicroHILView():
+    m_builder{Gtk::Builder::create_from_resource(kHomeUI)}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Setup builder and home view
-    m_builder = Gtk::Builder::create_from_resource(kHomeUI);
     m_builder->get_widget_derived(
         kWindowId, (MicroHILViewHome*&) m_home
     );

@@ -19,16 +19,16 @@
 #include "application.h"
 
 ////////////////////////////////////////////////////////////////////////
-/// @brief Create application
-/// @param argc number of arguments
-/// @param argv array of arguments
-/// @return std::unique_ptr for application
-std::unique_ptr<Application> create(int argc, char *argv[]);
+/// @brief Create an application instance
+/// @param argc is the number of arguments for the application
+/// @param argv is the array of arguments for the application
+/// @return Unique pointer for application
+MHUPtr<Application> create(int argc, char *argv[]);
 
 ////////////////////////////////////////////////////////////////////////
-/// @brief Main entry point
-/// @param argc number of arguments
-/// @param argv array of arguments
+/// @brief Main entry point for application
+/// @param argc is the number of arguments for the application
+/// @param argv is the array of arguments for the application
 /// @return integer exit status (exit failure value is 1)
 int main(int argc, char *argv[])
 {
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     return status;
 }
 
-std::unique_ptr<Application> create(int argc, char *argv[])
+MHUPtr<Application> create(int argc, char *argv[])
 {
     return make_unique<Application>(argc, argv);
 }

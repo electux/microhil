@@ -18,8 +18,8 @@
  */
 #pragma once
 
-#include <glibmm/ustring.h>
 #include <sigc++/sigc++.h>
+#include "../../utils/microhil_types.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for dialog message types
@@ -56,7 +56,5 @@ public:
     /// @brief Set message for dialog
     /// @param message with information for user
     /// @param type of dialog message
-    virtual void setMessage(
-        const Glib::ustring message, const MessageType type
-    ) = 0;
+    virtual void setMessage(const MHString message, const MessageType type) = 0;
 };

@@ -1699,13 +1699,11 @@ See the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html"&gt;GNU General Pu
               <item id="4" translatable="yes">2400</item>
               <item id="5" translatable="yes">4800</item>
               <item id="6" translatable="yes">9600</item>
-              <item id="7" translatable="yes">14400</item>
-              <item id="8" translatable="yes">19200</item>
-              <item id="9" translatable="yes">38400</item>
-              <item id="10" translatable="yes">57600</item>
-              <item id="11" translatable="yes">115200</item>
-              <item id="12" translatable="yes">128000</item>
-              <item id="13" translatable="yes">256000</item>
+              <item id="7" translatable="yes">19200</item>
+              <item id="8" translatable="yes">38400</item>
+              <item id="9" translatable="yes">57600</item>
+              <item id="10" translatable="yes">115200</item>
+              <item id="11" translatable="yes">230400</item>
             </items>
           </object>
           <packing>
@@ -1767,11 +1765,9 @@ See the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html"&gt;GNU General Pu
             <property name="can-focus">False</property>
             <property name="tooltip-text" translatable="yes">Set parity for serial port</property>
             <items>
-              <item id="0" translatable="yes">None</item>
+              <item id="0" translatable="yes">Even</item>
               <item id="1" translatable="yes">Odd</item>
-              <item id="2" translatable="yes">Even</item>
-              <item id="3" translatable="yes">Mark</item>
-              <item id="4" translatable="yes">Space</item>
+              <item id="2" translatable="yes">None</item>
             </items>
           </object>
           <packing>

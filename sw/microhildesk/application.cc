@@ -25,17 +25,13 @@ namespace
     constexpr const char kAppId[]{"org.electux.microhildesk"};
 }
 
-Application::Application(int argc, char *argv[])
+Application::Application(int argc, char *argv[]):
+    m_app{Gtk::Application::create(argc, argv, kAppId)},
+    m_model{MHmakeSPtr<MicroHILModel>()},
+    m_view{MHmakeSPtr<MicroHILView>()},
+    m_controller{MHmakeUPtr<MicroHILController>(m_model, m_view)}
 {
-    ////////////////////////////////////////////////////////////////////////
-    /// Setup MicroHIL application and initializes gtkmm
-    m_app = Gtk::Application::create(argc, argv, kAppId);
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Check and prepare model, view and controller
-    m_model = make_shared<MicroHILModel>();
-    m_view = make_shared<MicroHILView>();
-    m_controller = make_unique<MicroHILController>(m_model, m_view);
+    // TODO
 }
 
 int Application::run()

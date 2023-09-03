@@ -5,7 +5,7 @@ var classMicroHILViewLog =
     [ "cancelLogTriggered", "d4/dc6/classMicroHILViewLog.html#aa0f329dd59026322c2b4ddd3baa261ab", null ],
     [ "logFilePathChanged", "d4/dc6/classMicroHILViewLog.html#afb71cf368097a4dc7eeb288d2f63cdd5", null ],
     [ "logLevelChanged", "d4/dc6/classMicroHILViewLog.html#aa4a70141f08befb39635d44c4c10cb51", null ],
-    [ "logSettingsLoaded", "d4/dc6/classMicroHILViewLog.html#aa14a1fe3e798dcfe761ad135d9cefd9a", null ],
+    [ "logSettingsLoaded", "d4/dc6/classMicroHILViewLog.html#a8a429aeae576844acc7e8cba2b633ce9", null ],
     [ "logSetupChanged", "d4/dc6/classMicroHILViewLog.html#a87aa4e49b3ba84e80dad9569e0a5a13d", null ],
     [ "mapping", "d4/dc6/classMicroHILViewLog.html#a00b8e12d4c3b5e1faf03cdafa685dcc9", null ],
     [ "okLogTriggered", "d4/dc6/classMicroHILViewLog.html#a894f8f1c192d9216eddcbb2d58f0e7cb", null ],

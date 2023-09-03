@@ -18,38 +18,32 @@
  */
 #include "microhil_view_home.h"
 
-MicroHILViewHome::SigActionViewTriggered
-MicroHILViewHome::viewChanged()
+MicroHILViewHome::SigActionViewTriggered MicroHILViewHome::viewChanged()
 {
     return m_actionViewTriggered;
 }
 
-MicroHILViewHome::SigChannelChanged
-MicroHILViewHome::channelIsChanged()
+MicroHILViewHome::SigChannelChanged MicroHILViewHome::channelIsChanged()
 {
     return m_channelEnabled;
 }
 
-MicroHILViewHome::SigSelectChanged
-MicroHILViewHome::channelIsSelected()
+MicroHILViewHome::SigSelectChanged MicroHILViewHome::channelIsSelected()
 {
     return m_channelControlType;
 }
 
-MicroHILViewHome::SigChannelToggled
-MicroHILViewHome::channelIsToggled()
+MicroHILViewHome::SigChannelToggled MicroHILViewHome::channelIsToggled()
 {
     return m_channelToggled;
 }
 
-MicroHILViewHome::SigChannelSpinTimerChanged
-MicroHILViewHome::channelIsSpinTimerChanged()
+MicroHILViewHome::SigChannelSpinTimerChanged MicroHILViewHome::channelIsSpinTimerChanged()
 {
     return m_channelSpinTimerChanged;
 }
 
-MicroHILViewHome::SigChannelTimerToggled
-MicroHILViewHome::channelIsTimerChanged()
+MicroHILViewHome::SigChannelTimerToggled MicroHILViewHome::channelIsTimerChanged()
 {
     return m_channelTimerToggled;
 }

@@ -18,17 +18,12 @@
  */
 #pragma once
 
-#include <memory>
 #include "../config/microhil_config.h"
 #include "../log/microhil_log.h"
 #include "../com/microhil_serial_com.h"
 #include "../model/microhil_model.h"
 #include "../view/microhil_view.h"
 #include "microhil_controller_abstract.h"
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief Declared type vector of int elements
-using VectorUInt = std::vector<unsigned int>;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief MicroHILController class declaration and definition 
@@ -39,10 +34,7 @@ public:
     /// @brief MicroHILController constructor
     /// @param model instance
     /// @param view instance
-    MicroHILController(
-        std::shared_ptr<MicroHILModel> model,
-        std::shared_ptr<MicroHILView> view
-    );
+    MicroHILController(MHSPtr<MicroHILModel> model, MHSPtr<MicroHILView> view);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief MicroHILController destructor
@@ -67,25 +59,25 @@ private:
     /// @brief Slot for processing log settings changes
     /// @param path is absolute path of log file
     /// @param level is level for logging messages
-    void onLogSettingsChanged(Glib::ustring path, int level);
+    void onLogSettingsChanged(MHString path, int level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing log settings loaded
     /// @param path is absolute path of log file
     /// @param logLevel is level for logging messages
-    void onLogSettingsLoaded(Glib::ustring path, int level);
+    void onLogSettingsLoaded(MHString path, int level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
-    /// @param device file path for serial device
+    /// @param dev file path for serial device
     /// @param params set of serial parameters
-    void onSerialSettingsChanged(Glib::ustring device, VectorUInt params);
+    void onSerialSettingsChanged(MHString dev, MHVecUInt params);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
-    /// @param device file path for serial device
+    /// @param dev file path for serial device
     /// @param params set of serial parameters
-    void onSerialSettingsLoaded(Glib::ustring device, VectorUInt params);
+    void onSerialSettingsLoaded(MHString dev, MHVecUInt params);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Enable/Disable state of controller
@@ -93,21 +85,21 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Model instance
-    std::shared_ptr<MicroHILModel> m_model{nullptr};
+    MHSPtr<MicroHILModel> m_model{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief View instance
-    std::shared_ptr<MicroHILView> m_view{nullptr};
+    MHSPtr<MicroHILView> m_view{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration instance
-    std::unique_ptr<MicroHILConfig> m_config{nullptr};
+    MHUPtr<MicroHILConfig> m_config{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log instance 
-    std::unique_ptr<MicroHILLog> m_log{nullptr};
+    MHUPtr<MicroHILLog> m_log{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Serial port instance
-    std::unique_ptr<MicroHILSerialCom> m_serial{nullptr};
+    MHUPtr<MicroHILSerialCom> m_serial{nullptr};
 };

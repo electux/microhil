@@ -54,14 +54,14 @@ public:
     /// @brief Set message for dialog
     /// @param message with information for user
     /// @param type of dialog message
-    void setMessage(const Glib::ustring message, const MessageType type) final;
+    void setMessage(const MHString message, const MessageType type) final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Conversion of message type to unicode string
     /// @param type of dialog message
     /// @return string representation of dialog message type
-    Glib::ustring toUnicodeStringMessageType(const MessageType type) const;
+    MHString toUnicodeStringMessageType(const MessageType type);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Map Close button (signal and slot)

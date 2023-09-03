@@ -18,9 +18,10 @@
  */
 #include "microhil_serial_com.h"
 
-MicroHILSerialCom::MicroHILSerialCom()
+MicroHILSerialCom::MicroHILSerialCom():
+    m_serialPort{MHmakeUPtr<SerialPort>()}
 {
-    m_serialPort = make_unique<SerialPort>();
+    close();
 }
 
 MicroHILSerialCom::~MicroHILSerialCom()
@@ -44,36 +45,30 @@ void MicroHILSerialCom::close()
     }
 }
 
-void MicroHILSerialCom::setup(
-    Glib::ustring device, unsigned int baudRate, unsigned int dataBits,
-    unsigned int parity, unsigned int stopBits
-)
+void MicroHILSerialCom::setup(MHString device, MHVecUInt params)
 {
-    m_serialPort->SetBaudRate(static_cast<BaudRate>(baudRate));
-    m_serialPort->SetCharacterSize(static_cast<CharacterSize>(dataBits));
-    m_serialPort->SetParity(static_cast<Parity>(parity));
-    m_serialPort->SetStopBits(static_cast<StopBits>(stopBits));
+    m_serialPort->SetBaudRate(uintToBaudRate(params[0]));
+    m_serialPort->SetCharacterSize(uintToDataBits(params[1]));
+    m_serialPort->SetParity(uintToParity(params[2]));
+    m_serialPort->SetStopBits(uintToStopBits(params[3]));
     m_device = device;
 }
 
-void MicroHILSerialCom::setup(
-    Glib::ustring device, BaudRate baudRate, CharacterSize dataBits,
-    Parity parity, StopBits stopBits
-)
+void MicroHILSerialCom::setup(MHString device, MHSerialParams params)
 {
-    m_serialPort->SetBaudRate(baudRate);
-    m_serialPort->SetCharacterSize(dataBits);
-    m_serialPort->SetParity(parity);
-    m_serialPort->SetStopBits(stopBits);
+    m_serialPort->SetBaudRate(params.baudRate);
+    m_serialPort->SetCharacterSize(params.dataBits);
+    m_serialPort->SetParity(params.parity);
+    m_serialPort->SetStopBits(params.stopBits);
     m_device = device;
 }
 
-void MicroHILSerialCom::read(VectorByte &data, size_t len, size_t timeout)
+void MicroHILSerialCom::read(MHVecByte &data, size_t len, size_t timeout)
 {
     // TODO
 }
 
-void MicroHILSerialCom::write(VectorByte& data)
+void MicroHILSerialCom::write(MHVecByte& data)
 {
     // TODO
 }

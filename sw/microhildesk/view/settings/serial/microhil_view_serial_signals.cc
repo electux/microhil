@@ -18,50 +18,42 @@
  */
 #include "microhil_view_serial.h"
 
-MicroHILViewSerial::SigSerialSetup
-MicroHILViewSerial::serialSetupChanged()
+MicroHILViewSerial::SigSerialSetup MicroHILViewSerial::serialSetupChanged()
 {
     return m_serialSetup;
 }
 
-MicroHILViewSerial::SigSerialDevicePath
-MicroHILViewSerial::serialFilePathChanged()
+MicroHILViewSerial::SigSerialDevicePath MicroHILViewSerial::serialFilePathChanged()
 {
     return m_serialDevicePath;
 }
 
-MicroHILViewSerial::SigSerialBaudRate
-MicroHILViewSerial::serialBaudRateChanged()
+MicroHILViewSerial::SigSerialBaudRate MicroHILViewSerial::serialBaudRateChanged()
 {
     return m_serialBaudeRate;
 }
 
-MicroHILViewSerial::SigSerialDataBits
-MicroHILViewSerial::serialDataBitsChanged()
+MicroHILViewSerial::SigSerialDataBits MicroHILViewSerial::serialDataBitsChanged()
 {
     return m_serialDataBits;
 }
 
-MicroHILViewSerial::SigSerialParity
-MicroHILViewSerial::serialParityChanged()
+MicroHILViewSerial::SigSerialParity MicroHILViewSerial::serialParityChanged()
 {
     return m_serialParity;
 }
 
-MicroHILViewSerial::SigSerialStopBits
-MicroHILViewSerial::serialStopBitsChanged()
+MicroHILViewSerial::SigSerialStopBits MicroHILViewSerial::serialStopBitsChanged()
 {
     return m_serialStopBits;
 }
 
-MicroHILViewSerial::SigCancelSerial
-MicroHILViewSerial::cancelSerialTriggered()
+MicroHILViewSerial::SigCancelSerial MicroHILViewSerial::cancelSerialTriggered()
 {
     return m_cancelSerial;
 }
 
-MicroHILViewSerial::SigOkSerial
-MicroHILViewSerial::okSerialTriggered()
+MicroHILViewSerial::SigOkSerial MicroHILViewSerial::okSerialTriggered()
 {
     return m_okSerial;
 }

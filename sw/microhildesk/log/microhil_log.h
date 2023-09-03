@@ -40,17 +40,17 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting file path for logger
     /// @param logFilePath file path for storing log messages
-    void setFilePath(const Glib::ustring logFilePath);
+    void setFilePath(const MHString logFilePath);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting file path for logger
     /// @return Log file path
-    Glib::ustring getFilePath() const;
+    MHString getFilePath() const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup log level
     /// @param level of logging
-    void setLogLevel(const Glib::ustring level);
+    void setLogLevel(const MHString level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup log level
@@ -76,7 +76,7 @@ public:
     /// @brief Write log message
     /// @param message log message to be stored
     /// @param level log level
-    void write(const Glib::ustring message, const LogLevel level) final;
+    void write(const MHString message, const LogLevel level) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Close log storage
@@ -87,23 +87,23 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting current date and time
     /// @return current date time in string format (18-08-2023 22:52:06)
-    Glib::ustring getCurrentDateTime() const;
+    MHString getCurrentDateTime() const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert log level type to human readable string
     /// @param level log level
     /// @return string representation of log level
-    Glib::ustring toStringLogType(const LogLevel level) const;
+    MHString toStringLogType(const LogLevel level) const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert log level string to level type
     /// @param level type in string format
     /// @return log level type
-    LogLevel toLogType(const Glib::ustring level) const;
+    LogLevel toLogType(const MHString level) const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log file path
-    Glib::ustring m_logFilePath{};
+    MHString m_logFilePath{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log file instance

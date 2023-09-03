@@ -62,12 +62,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting serial device file path to configuration
     /// @param device file path
-    void setDevice(const Glib::ustring device) final;
+    void setDevice(const MHString device) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial device file path from configuration
     /// @return file path for serial device
-    Glib::ustring getDevice() final;
+    MHString getDevice() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting baud rate for serial port to configuration
@@ -97,7 +97,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
     /// @return parity type for the serial port
-    Glib::ustring getParity() final;
+    MHString getParity() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting stop bits for serial port to configuration
@@ -117,17 +117,17 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
     /// @return log level
-    Glib::ustring getLogLevel() final;
+    MHString getLogLevel() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log path
     /// @param path for log messages
-    void setLogPath(const Glib::ustring path) final;
+    void setLogPath(const MHString path) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log path
     /// @return log path
-    Glib::ustring getLogPath() final;
+    MHString getLogPath() final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
@@ -139,13 +139,13 @@ private:
     /// @brief Convert integer log level to string format
     /// @param logLevel in integer format
     /// @return string format of log level
-    Glib::ustring logLevelToUnicodeString(const int logLevel);
+    MHString logLevelToUnicodeString(const int logLevel);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert log level in strong format to integer
     /// @param level in string format
     /// @return log level in integer format
-    int logLevelStringToInt(const Glib::ustring level);
+    int logLevelStringToInt(const MHString level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Process and prepare baud rate (to config file)
@@ -175,13 +175,13 @@ private:
     /// @brief Convert integer parity to string format (to config file)
     /// @param parity index combobox
     /// @return string format of parity in string format
-    Glib::ustring parityToUnicodeString(const int parity);
+    MHString parityToUnicodeString(const int parity);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert parity to integer format (from config file)
     /// @param parity in string format (from config file)
     /// @return parity in integer format (to combobox index)
-    int parityUnicodeStringToInt(const Glib::ustring parity);
+    int parityUnicodeStringToInt(const MHString parity);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert stop-bits to integer (from config file)

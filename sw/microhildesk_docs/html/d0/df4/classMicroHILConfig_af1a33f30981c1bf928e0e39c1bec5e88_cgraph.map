@@ -2,13 +2,13 @@
 <area shape="rect" id="node1" title="Load configuration from file." alt="" coords="5,251,161,278"/>
 <area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#aa04f4a742ad7f38c0df0d7dc77837e5f" title="Getting baud rate for serial port from configuration." alt="" coords="213,17,425,43"/>
 <area shape="rect" id="node4" href="$d0/df4/classMicroHILConfig.html#a08e46f81bbe5d4a5c849e9780c3d8c67" title="Getting data bits for serial port from configuration." alt="" coords="216,74,421,101"/>
-<area shape="rect" id="node6" href="$d0/df4/classMicroHILConfig.html#ad598733e0b382cd58c48efef0ddd77c9" title="Getting serial device file path from configuration." alt="" coords="221,125,416,151"/>
-<area shape="rect" id="node7" href="$d0/df4/classMicroHILConfig.html#a9737aac00f3b608ca2b84abc59c20429" title="Getting log level." alt="" coords="215,175,422,202"/>
-<area shape="rect" id="node8" href="$d0/df4/classMicroHILConfig.html#a92ef8e54ef4c80982f96b0bf6de143bf" title="Getting log path." alt="" coords="219,226,419,253"/>
-<area shape="rect" id="node9" href="$d0/df4/classMicroHILConfig.html#aed7d2299abcfe363645135d1841f5825" title="Getting parity for serial port from configuration." alt="" coords="225,277,412,303"/>
+<area shape="rect" id="node6" href="$d0/df4/classMicroHILConfig.html#abee9cdaa8585fc7e3acaf8bc0d3951fd" title="Getting serial device file path from configuration." alt="" coords="221,125,416,151"/>
+<area shape="rect" id="node7" href="$d0/df4/classMicroHILConfig.html#a16dd044264fde47b3f9a5291ec4d7ac8" title="Getting log level." alt="" coords="215,175,422,202"/>
+<area shape="rect" id="node8" href="$d0/df4/classMicroHILConfig.html#a31fcc4a26afcb3f9f5b29273f5f98d6c" title="Getting log path." alt="" coords="219,226,419,253"/>
+<area shape="rect" id="node9" href="$d0/df4/classMicroHILConfig.html#a66f70e451a866a0b7dfd323b525c124c" title="Getting parity for serial port from configuration." alt="" coords="225,277,412,303"/>
 <area shape="rect" id="node10" href="$d0/df4/classMicroHILConfig.html#a1364a4f2fe0f44e9bda685b9dd3e9e0b" title="Getting stop bits for serial port from configuration." alt="" coords="217,327,420,354"/>
-<area shape="rect" id="node12" href="$d0/df4/classMicroHILConfig.html#ad6c8d1e024d0d11dca6c417f1fd84769" title="Convert log level in strong format to integer." alt="" coords="227,379,410,420"/>
-<area shape="rect" id="node13" href="$d0/df4/classMicroHILConfig.html#a927f312b9d162e9c1d933c5c4a2bbd7a" title="Convert parity to integer format (from config file)" alt="" coords="209,444,428,485"/>
+<area shape="rect" id="node12" href="$d0/df4/classMicroHILConfig.html#ac1314bbf90605dcd4a52cf21a680e480" title="Convert log level in strong format to integer." alt="" coords="227,379,410,420"/>
+<area shape="rect" id="node13" href="$d0/df4/classMicroHILConfig.html#a303969f86a8b884f6c2f040eeb51e9ed" title="Convert parity to integer format (from config file)" alt="" coords="209,444,428,485"/>
 <area shape="rect" id="node14" href="$d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1" title="Validate configuration (existing all expected parameters)" alt="" coords="228,510,409,537"/>
 <area shape="rect" id="node3" href="$d0/df4/classMicroHILConfig.html#ab5f6856d93fc397ba2ad26b8bea1a7b7" title="Process and prepare baud rate (from config file)" alt="" coords="485,5,676,47"/>
 <area shape="rect" id="node5" href="$d0/df4/classMicroHILConfig.html#ac82d4efd0c6aea87b71c6c552dd90a92" title="Process and prepare data bits (from config file)" alt="" coords="489,71,672,112"/>

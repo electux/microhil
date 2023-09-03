@@ -18,9 +18,8 @@
  */
 #pragma once
 
-#include <vector>
 #include <sigc++/sigc++.h>
-#include <glibmm/ustring.h>
+#include "../utils/microhil_types.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for serial port parity
@@ -43,21 +42,17 @@ enum class LogLevelConfig: int
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Declared type vector of int elements
-using VectorUInt = std::vector<unsigned int>;
-
-////////////////////////////////////////////////////////////////////////////
 /// @brief AbMicroHILConfig class declaration and definition
 class AbMicroHILConfig
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for loaded log configuration from file
-    using SigLogConfig = sigc::signal<void(Glib::ustring, int)>;
+    using SigLogConfig = sigc::signal<void(MHString, int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for loaded serial configuration from file
-    using SigSerialConfig = sigc::signal<void(Glib::ustring, VectorUInt)>;
+    using SigSerialConfig = sigc::signal<void(MHString, MHVecUInt)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMicroHILConfig destructor
@@ -101,12 +96,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting serial device file path to configuration
     /// @param device file path
-    virtual void setDevice(const Glib::ustring device) = 0;
+    virtual void setDevice(const MHString device) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial device file path from configuration
     /// @return file path for serial device
-    virtual Glib::ustring getDevice() = 0;
+    virtual MHString getDevice() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting baud rate for serial port to configuration
@@ -136,7 +131,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
     /// @return parity type for the serial port
-    virtual Glib::ustring getParity() = 0;
+    virtual MHString getParity() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting stop bits for serial port to configuration
@@ -156,17 +151,17 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
     /// @return log level
-    virtual Glib::ustring getLogLevel() = 0;
+    virtual MHString getLogLevel() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log path
     /// @param path for log messages
-    virtual void setLogPath(const Glib::ustring path) = 0;
+    virtual void setLogPath(const MHString path) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log path
     /// @return log path
-    virtual Glib::ustring getLogPath() = 0;
+    virtual MHString getLogPath() = 0;
 
 private:
     ////////////////////////////////////////////////////////////////////////

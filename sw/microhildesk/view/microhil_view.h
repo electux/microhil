@@ -18,7 +18,6 @@
  */
 #pragma once
 
-#include <vector>
 #include <gtkmm/builder.h>
 #include "home/microhil_view_home.h"
 #include "dialog/microhil_view_dialog.h"

@@ -18,7 +18,6 @@
  */
 #pragma once
 
-#include <memory>
 #include <gtkmm/application.h>
 #include "model/microhil_model.h"
 #include "view/microhil_view.h"
@@ -31,8 +30,8 @@ class Application
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application constructor
-    /// @param argc number of arguments
-    /// @param argv array of arguments
+    /// @param argc is the number of arguments for the application
+    /// @param argv is the array of arguments for the application
     Application(int argc, char *argv[]);
 
     ////////////////////////////////////////////////////////////////////////
@@ -51,13 +50,13 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Model instance
-    std::shared_ptr<MicroHILModel> m_model{nullptr};
+    MHSPtr<MicroHILModel> m_model{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief View instance
-    std::shared_ptr<MicroHILView> m_view {nullptr};
+    MHSPtr<MicroHILView> m_view {nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Controller instance
-    std::unique_ptr<MicroHILController> m_controller{nullptr};
+    MHUPtr<MicroHILController> m_controller{nullptr};
 };

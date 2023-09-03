@@ -74,7 +74,7 @@ MicroHILViewLog::MicroHILViewLog(
     this->hide(); 
 }
 
-void MicroHILViewLog::logSettingsLoaded(Glib::ustring filePath, int logLevel)
+void MicroHILViewLog::logSettingsLoaded(MHString filePath, int logLevel)
 {
     m_device->set_text(filePath);
     m_level->set_active(logLevel);

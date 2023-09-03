@@ -18,32 +18,27 @@
  */
 #include "microhil_view_log.h"
 
-MicroHILViewLog::SigLogSetup
-MicroHILViewLog::logSetupChanged()
+MicroHILViewLog::SigLogSetup MicroHILViewLog::logSetupChanged()
 {
     return m_logSetup;
 }
 
-MicroHILViewLog::SigLogFilePath
-MicroHILViewLog::logFilePathChanged()
+MicroHILViewLog::SigLogFilePath MicroHILViewLog::logFilePathChanged()
 {
     return m_logFilePath;
 }
 
-MicroHILViewLog::SigSelectLogLevel
-MicroHILViewLog::logLevelChanged()
+MicroHILViewLog::SigSelectLogLevel MicroHILViewLog::logLevelChanged()
 {
     return m_logLevel;
 }
 
-MicroHILViewLog::SigCancelLog
-MicroHILViewLog::cancelLogTriggered()
+MicroHILViewLog::SigCancelLog MicroHILViewLog::cancelLogTriggered()
 {
     return m_cancelLog;
 }
 
-MicroHILViewLog::SigOkLog
-MicroHILViewLog::okLogTriggered()
+MicroHILViewLog::SigOkLog MicroHILViewLog::okLogTriggered()
 {
     return m_okLog;
 }

@@ -45,7 +45,7 @@ namespace
     constexpr const int kConfigLogLevelErrorId{2};
 }
 
-Glib::ustring MicroHILConfig::logLevelToUnicodeString(const int logLevel)
+MHString MicroHILConfig::logLevelToUnicodeString(const int logLevel)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Convert integer log level to scopped enumerator class 
@@ -59,13 +59,12 @@ Glib::ustring MicroHILConfig::logLevelToUnicodeString(const int logLevel)
             return kConfigLogLevelWarning;
         case LogLevelConfig::MICROHIL_ERROR_CONFIG:
             return kConfigLogLevelError;
-
     }
 
     return kConfigLogLevelInfo;
 }
 
-int MicroHILConfig::logLevelStringToInt(const Glib::ustring level)
+int MicroHILConfig::logLevelStringToInt(const MHString level)
 {
     if(level == kConfigLogLevelWarning)
     {

@@ -104,9 +104,7 @@ MicroHILViewSerial::MicroHILViewSerial(
     this->hide();
 }
 
-void MicroHILViewSerial::serialSettingsLoaded(
-    Glib::ustring device, VectorUInt params
-)
+void MicroHILViewSerial::serialSettingsLoaded(MHString device, MHVecUInt params)
 {
     m_device->set_text(device);
     m_baudRate->set_active(params[0]);

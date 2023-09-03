@@ -15,6 +15,7 @@ SOURCES = \
 	../config/microhil_config.cc \
 	../log/microhil_log_slots.cc \
 	../log/microhil_log.cc \
+	../com/microhil_serial_com_utils.cc \
 	../com/microhil_serial_com.cc \
 	../model/microhil_model.cc \
 	../view/microhil_view_slots.cc \

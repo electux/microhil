@@ -52,13 +52,10 @@ namespace
     };
 }
 
-MicroHILConfig::MicroHILConfig()
+MicroHILConfig::MicroHILConfig():
+    m_homePath{Glib::get_home_dir() + kHomeDirName},
+    m_configFilePath{m_homePath + kConfigFileName}
 {
-    ////////////////////////////////////////////////////////////////////////
-    /// Setup expected paths for home directory and configuration file
-    m_homePath = Glib::get_home_dir() + kHomeDirName;
-    m_configFilePath = m_homePath + kConfigFileName;
-
     ////////////////////////////////////////////////////////////////////////
     /// Pre-validation of configuration path
     setPreValid(checkConfigPath());
@@ -85,7 +82,7 @@ bool MicroHILConfig::load()
     /// Emit signal for loaded log configuration
     m_logConfig.emit(getLogPath(), logLevelStringToInt(getLogLevel()));
 
-    VectorUInt serialParams{};
+    MHVecUInt serialParams{};
     serialParams.push_back(getBaudRate());
     serialParams.push_back(getDataBits());
     serialParams.push_back(parityUnicodeStringToInt(getParity()));
@@ -136,7 +133,7 @@ bool MicroHILConfig::checkConfigPath()
     {
         if(!std::filesystem::create_directory(m_homePath))
         {
-            ////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////
             /// Failed to create home configuration directory
             return false;
         }
