@@ -1,11 +1,12 @@
 <map id="com/microhil_serial_com.h" name="com/microhil_serial_com.h">
-<area shape="rect" id="node1" title=" " alt="" coords="191,5,342,47"/>
-<area shape="rect" id="node2" href="$d7/d72/microhil__serial__com_8cc.html" title=" " alt="" coords="106,95,257,136"/>
-<area shape="rect" id="node3" href="$d6/da2/microhil__controller_8h.html" title=" " alt="" coords="281,95,423,136"/>
-<area shape="rect" id="node4" href="$db/d32/application_8h.html" title=" " alt="" coords="67,191,173,218"/>
-<area shape="rect" id="node7" href="$db/d49/microhil__controller_8cc.html" title=" " alt="" coords="197,184,339,225"/>
-<area shape="rect" id="node8" href="$d0/dab/microhil__controller__map_8cc.html" title=" " alt="" coords="363,184,509,225"/>
-<area shape="rect" id="node9" href="$d2/df4/microhil__controller__slots_8cc.html" title=" " alt="" coords="533,184,680,225"/>
-<area shape="rect" id="node5" href="$dc/d16/application_8cc.html" title=" " alt="" coords="5,273,117,300"/>
-<area shape="rect" id="node6" href="$d9/d0f/main_8cc.html" title=" " alt="" coords="142,273,215,300"/>
+<area shape="rect" id="node1" title=" " alt="" coords="180,5,331,47"/>
+<area shape="rect" id="node2" href="$d7/d72/microhil__serial__com_8cc.html" title=" " alt="" coords="5,95,156,136"/>
+<area shape="rect" id="node3" href="$d3/df3/microhil__serial__com__utils_8cc.html" title=" " alt="" coords="180,95,331,136"/>
+<area shape="rect" id="node4" href="$d6/da2/microhil__controller_8h.html" title=" " alt="" coords="355,95,497,136"/>
+<area shape="rect" id="node5" href="$db/d32/application_8h.html" title=" " alt="" coords="141,191,247,218"/>
+<area shape="rect" id="node8" href="$db/d49/microhil__controller_8cc.html" title=" " alt="" coords="271,184,413,225"/>
+<area shape="rect" id="node9" href="$d0/dab/microhil__controller__map_8cc.html" title=" " alt="" coords="437,184,583,225"/>
+<area shape="rect" id="node10" href="$d2/df4/microhil__controller__slots_8cc.html" title=" " alt="" coords="607,184,754,225"/>
+<area shape="rect" id="node6" href="$dc/d16/application_8cc.html" title=" " alt="" coords="79,273,191,300"/>
+<area shape="rect" id="node7" href="$d9/d0f/main_8cc.html" title=" " alt="" coords="216,273,289,300"/>
 </map>

@@ -133,7 +133,7 @@ int MicroHILConfig::intToDataBits(const int dataBits)
     return (dataBits + kConfigDataBitsOffset);
 }
 
-Glib::ustring MicroHILConfig::parityToUnicodeString(const int parity)
+MHString MicroHILConfig::parityToUnicodeString(const int parity)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Convert integer parity to scopped enumerator class 
@@ -156,7 +156,7 @@ Glib::ustring MicroHILConfig::parityToUnicodeString(const int parity)
     return kConfigParityNone;
 }
 
-int MicroHILConfig::parityUnicodeStringToInt(const Glib::ustring parity)
+int MicroHILConfig::parityUnicodeStringToInt(const MHString parity)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Convert string format of parity to index item for combobox 

@@ -1,8 +1,8 @@
 var classAbMicroHILViewLog =
 [
     [ "SigCancelLog", "d1/d49/classAbMicroHILViewLog.html#a97145198f81d522cf4b717ef3f2ae50c", null ],
-    [ "SigLogFilePath", "d1/d49/classAbMicroHILViewLog.html#a497377a9aa693038f03ec92730659222", null ],
-    [ "SigLogSetup", "d1/d49/classAbMicroHILViewLog.html#aaba38bc5a22b0a1d9b7e86a1827586ef", null ],
+    [ "SigLogFilePath", "d1/d49/classAbMicroHILViewLog.html#af460a255d36505db222c279969000cb5", null ],
+    [ "SigLogSetup", "d1/d49/classAbMicroHILViewLog.html#af1ffff3eb591c84ad25606f73e078f01", null ],
     [ "SigOkLog", "d1/d49/classAbMicroHILViewLog.html#af674f0e2515f4259a4eb7a6dc4743804", null ],
     [ "SigSelectLogLevel", "d1/d49/classAbMicroHILViewLog.html#a9a885824dc20a1fe3850986fd3ae8658", null ],
     [ "~AbMicroHILViewLog", "d1/d49/classAbMicroHILViewLog.html#a66c889bc3a8eab9ac4acedb24739691a", null ],

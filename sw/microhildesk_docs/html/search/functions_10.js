@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['write_0',['write',['../d7/d8c/classAbMicroHILCom.html#aba8696676854713a080fad61f2d97d06',1,'AbMicroHILCom::write()'],['../d5/dd0/classMicroHILSerialCom.html#a06b20c385a5197b3e4c395cbc880309e',1,'MicroHILSerialCom::write()'],['../d1/de3/classMicroHILLog.html#afd5f2670a6f2a0d11992a71095083f6d',1,'MicroHILLog::write()'],['../d9/de8/classAbMicroHILLog.html#a8891723333d75fe32fad2651070b9f12',1,'AbMicroHILLog::write()']]]
+  ['validate_0',['validate',['../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1',1,'MicroHILConfig::validate()'],['../d6/dac/classAbMicroHILConfig.html#a4a51b9f8ac882cb05df1c2baa4a34856',1,'AbMicroHILConfig::validate()']]],
+  ['validatelogsettings_1',['validateLogSettings',['../d0/df4/classMicroHILConfig.html#ae173ca4c21b87e2f4c8a277b2fda05f9',1,'MicroHILConfig']]],
+  ['validateserialsettings_2',['validateSerialSettings',['../d0/df4/classMicroHILConfig.html#a8fbcd180120cd3bf7c96fda109edebdb',1,'MicroHILConfig']]],
+  ['viewchanged_3',['viewChanged',['../df/da5/classMicroHILViewHome.html#af3cc47063b68a0ca8036514c07795050',1,'MicroHILViewHome::viewChanged()'],['../d5/d72/classAbMicroHILViewHome.html#a4a342997ad30dc79e0a4cd6a7cfb31d8',1,'AbMicroHILViewHome::viewChanged()']]]
 ];

@@ -44,19 +44,19 @@ void MicroHILConfig::setLogLevel(int level)
     );
 }
 
-Glib::ustring MicroHILConfig::getLogLevel()
+MHString MicroHILConfig::getLogLevel()
 {
     return m_config.get_string(kConfigLogSection, kConfigLogLevel);
 }
 
-void MicroHILConfig::setLogPath(Glib::ustring path)
+void MicroHILConfig::setLogPath(MHString path)
 {
     m_config.set_string(
         kConfigLogSection, kConfigLogFile, path
     );
 }
 
-Glib::ustring MicroHILConfig::getLogPath()
+MHString MicroHILConfig::getLogPath()
 {
     return m_config.get_string(kConfigLogSection, kConfigLogFile);
 }

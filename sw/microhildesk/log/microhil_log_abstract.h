@@ -18,7 +18,7 @@
  */
 #pragma once
 
-#include <glibmm/ustring.h>
+#include "../utils/microhil_types.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for log levels
@@ -47,7 +47,7 @@ public:
     /// @brief Write log message
     /// @param message log message to be stored
     /// @param level log level
-    virtual void write(const Glib::ustring message, const LogLevel level) = 0;
+    virtual void write(const MHString message, const LogLevel level) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Close log storage

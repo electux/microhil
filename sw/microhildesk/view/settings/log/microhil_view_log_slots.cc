@@ -22,7 +22,6 @@
 void MicroHILViewLog::onLogFilePathChanged()
 {
     auto logPath = m_device->get_text();
-
     auto logPathExists = std::filesystem::exists(std::string(logPath));
 
     if(logPathExists)

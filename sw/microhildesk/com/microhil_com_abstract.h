@@ -18,14 +18,7 @@
  */
 #pragma once
 
-#include <cstdint>
-#include <vector>
-
-using namespace std;
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief Declared type vector of uint8_t elements
-using VectorByte = std::vector<uint8_t>;
+#include "../utils/microhil_types.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief AbMicroHILCom class declaration and definition
@@ -49,10 +42,10 @@ public:
     /// @param data buffer to be placed to after reading channel
     /// @param len length of data to read before returning
     /// @param timeout timeout period in miliseconds
-    virtual void read(VectorByte& data, size_t len, size_t timeout) = 0;
+    virtual void read(MHVecByte& data, size_t len, size_t timeout) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Write to communication channel
     /// @param data to be written to channel
-    virtual void write(VectorByte& data) = 0;
+    virtual void write(MHVecByte& data) = 0;
 };

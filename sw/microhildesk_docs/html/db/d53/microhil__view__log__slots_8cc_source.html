@@ -111,40 +111,39 @@ $(document).ready(function(){initNavTree('db/d53/microhil__view__log__slots_8cc_
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d4/dc6/classMicroHILViewLog.html#ab92cd28f989d81350cfcdb3ba93e268d">   22</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dc6/classMicroHILViewLog.html#ab92cd28f989d81350cfcdb3ba93e268d">MicroHILViewLog::onLogFilePathChanged</a>()</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">auto</span> logPath = <a class="code hl_variable" href="../../d4/dc6/classMicroHILViewLog.html#ad6ae4fe5459b72362327062eca5a3a76">m_device</a>-&gt;get_text();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">auto</span> logPathExists = std::filesystem::exists(std::string(logPath));</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span>(logPathExists)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment">// TODO Dialog message box with confirmation</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d4/dc6/classMicroHILViewLog.html#a24e93c38113fa539a9005d5ce642bd52">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dc6/classMicroHILViewLog.html#a24e93c38113fa539a9005d5ce642bd52">MicroHILViewLog::onLogLevelChanged</a>()</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// TODO</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../d4/dc6/classMicroHILViewLog.html#a2eea31dfe1c4977711a53ca91dd8e81e">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dc6/classMicroHILViewLog.html#a2eea31dfe1c4977711a53ca91dd8e81e">MicroHILViewLog::onCancelLogTriggered</a>()</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    this-&gt;hide();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d4/dc6/classMicroHILViewLog.html#acb037a2ab54f0a480594d3a009a983ef">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dc6/classMicroHILViewLog.html#acb037a2ab54f0a480594d3a009a983ef">MicroHILViewLog::onOkLogTriggered</a>()</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">auto</span> logPath = <a class="code hl_variable" href="../../d4/dc6/classMicroHILViewLog.html#ad6ae4fe5459b72362327062eca5a3a76">m_device</a>-&gt;get_text();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">auto</span> logLevel = <a class="code hl_variable" href="../../d4/dc6/classMicroHILViewLog.html#a3786a79d7cee80281fcdf21a76efe12e">m_level</a>-&gt;get_active_row_number();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_variable" href="../../d4/dc6/classMicroHILViewLog.html#a35bc13c9fb22bb82a37fd2ef3a8dc280">m_logSetup</a>.emit(logPath, logLevel);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    this-&gt;hide();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
-<div class="ttc" id="aclassMicroHILViewLog_html_a24e93c38113fa539a9005d5ce642bd52"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#a24e93c38113fa539a9005d5ce642bd52">MicroHILViewLog::onLogLevelChanged</a></div><div class="ttdeci">void onLogLevelChanged() final</div><div class="ttdoc">Slot for processing log level combobox.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00034">microhil_view_log_slots.cc:34</a></div></div>
-<div class="ttc" id="aclassMicroHILViewLog_html_a2eea31dfe1c4977711a53ca91dd8e81e"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#a2eea31dfe1c4977711a53ca91dd8e81e">MicroHILViewLog::onCancelLogTriggered</a></div><div class="ttdeci">void onCancelLogTriggered() final</div><div class="ttdoc">Slot for processing Cancel button.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00039">microhil_view_log_slots.cc:39</a></div></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span> logPathExists = std::filesystem::exists(std::string(logPath));</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span>(logPathExists)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="comment">// TODO Dialog message box with confirmation</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d4/dc6/classMicroHILViewLog.html#a24e93c38113fa539a9005d5ce642bd52">   33</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dc6/classMicroHILViewLog.html#a24e93c38113fa539a9005d5ce642bd52">MicroHILViewLog::onLogLevelChanged</a>()</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// TODO</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d4/dc6/classMicroHILViewLog.html#a2eea31dfe1c4977711a53ca91dd8e81e">   38</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dc6/classMicroHILViewLog.html#a2eea31dfe1c4977711a53ca91dd8e81e">MicroHILViewLog::onCancelLogTriggered</a>()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    this-&gt;hide();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d4/dc6/classMicroHILViewLog.html#acb037a2ab54f0a480594d3a009a983ef">   43</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/dc6/classMicroHILViewLog.html#acb037a2ab54f0a480594d3a009a983ef">MicroHILViewLog::onOkLogTriggered</a>()</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">auto</span> logPath = <a class="code hl_variable" href="../../d4/dc6/classMicroHILViewLog.html#ad6ae4fe5459b72362327062eca5a3a76">m_device</a>-&gt;get_text();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">auto</span> logLevel = <a class="code hl_variable" href="../../d4/dc6/classMicroHILViewLog.html#a3786a79d7cee80281fcdf21a76efe12e">m_level</a>-&gt;get_active_row_number();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_variable" href="../../d4/dc6/classMicroHILViewLog.html#a35bc13c9fb22bb82a37fd2ef3a8dc280">m_logSetup</a>.emit(logPath, logLevel);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    this-&gt;hide();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="ttc" id="aclassMicroHILViewLog_html_a24e93c38113fa539a9005d5ce642bd52"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#a24e93c38113fa539a9005d5ce642bd52">MicroHILViewLog::onLogLevelChanged</a></div><div class="ttdeci">void onLogLevelChanged() final</div><div class="ttdoc">Slot for processing log level combobox.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00033">microhil_view_log_slots.cc:33</a></div></div>
+<div class="ttc" id="aclassMicroHILViewLog_html_a2eea31dfe1c4977711a53ca91dd8e81e"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#a2eea31dfe1c4977711a53ca91dd8e81e">MicroHILViewLog::onCancelLogTriggered</a></div><div class="ttdeci">void onCancelLogTriggered() final</div><div class="ttdoc">Slot for processing Cancel button.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00038">microhil_view_log_slots.cc:38</a></div></div>
 <div class="ttc" id="aclassMicroHILViewLog_html_a35bc13c9fb22bb82a37fd2ef3a8dc280"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#a35bc13c9fb22bb82a37fd2ef3a8dc280">MicroHILViewLog::m_logSetup</a></div><div class="ttdeci">SigLogSetup m_logSetup</div><div class="ttdoc">Signal for log settings.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00119">microhil_view_log.h:119</a></div></div>
 <div class="ttc" id="aclassMicroHILViewLog_html_a3786a79d7cee80281fcdf21a76efe12e"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#a3786a79d7cee80281fcdf21a76efe12e">MicroHILViewLog::m_level</a></div><div class="ttdeci">Glib::RefPtr&lt; Gtk::ComboBoxText &gt; m_level</div><div class="ttdoc">Combobox for selecting log level type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00107">microhil_view_log.h:107</a></div></div>
 <div class="ttc" id="aclassMicroHILViewLog_html_ab92cd28f989d81350cfcdb3ba93e268d"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#ab92cd28f989d81350cfcdb3ba93e268d">MicroHILViewLog::onLogFilePathChanged</a></div><div class="ttdeci">void onLogFilePathChanged() final</div><div class="ttdoc">Slot for processing log file path input.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00022">microhil_view_log_slots.cc:22</a></div></div>
-<div class="ttc" id="aclassMicroHILViewLog_html_acb037a2ab54f0a480594d3a009a983ef"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#acb037a2ab54f0a480594d3a009a983ef">MicroHILViewLog::onOkLogTriggered</a></div><div class="ttdeci">void onOkLogTriggered() final</div><div class="ttdoc">Slot for processing Ok button.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00044">microhil_view_log_slots.cc:44</a></div></div>
+<div class="ttc" id="aclassMicroHILViewLog_html_acb037a2ab54f0a480594d3a009a983ef"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#acb037a2ab54f0a480594d3a009a983ef">MicroHILViewLog::onOkLogTriggered</a></div><div class="ttdeci">void onOkLogTriggered() final</div><div class="ttdoc">Slot for processing Ok button.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00043">microhil_view_log_slots.cc:43</a></div></div>
 <div class="ttc" id="aclassMicroHILViewLog_html_ad6ae4fe5459b72362327062eca5a3a76"><div class="ttname"><a href="../../d4/dc6/classMicroHILViewLog.html#ad6ae4fe5459b72362327062eca5a3a76">MicroHILViewLog::m_device</a></div><div class="ttdeci">Glib::RefPtr&lt; Gtk::Entry &gt; m_device</div><div class="ttdoc">UI entry for setting file log path.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00103">microhil_view_log.h:103</a></div></div>
 <div class="ttc" id="amicrohil__view__log_8h_html"><div class="ttname"><a href="../../d2/dd2/microhil__view__log_8h.html">microhil_view_log.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -153,7 +152,7 @@ $(document).ready(function(){initNavTree('db/d53/microhil__view__log__slots_8cc_
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_b2f003339c516cc00c8cadcafbe82f13.html">view</a></li><li class="navelem"><a class="el" href="../../dir_e22712b3a9356e91e25cb7078501a1b7.html">settings</a></li><li class="navelem"><a class="el" href="../../dir_43da3e1f4716c82b0c6ec4df1504d37b.html">log</a></li><li class="navelem"><a class="el" href="../../db/d53/microhil__view__log__slots_8cc.html">microhil_view_log_slots.cc</a></li>
-    <li class="footer">Generated on Sat Sep 2 2023 00:10:29 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Sep 4 2023 00:42:48 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

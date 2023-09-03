@@ -45,17 +45,17 @@ MicroHILLog::~MicroHILLog()
     }
 }
 
-void MicroHILLog::setFilePath(const Glib::ustring logFilePath)
+void MicroHILLog::setFilePath(const MHString logFilePath)
 {
     m_logFilePath = logFilePath;
 }
 
-Glib::ustring MicroHILLog::getFilePath() const
+MHString MicroHILLog::getFilePath() const
 {
     return m_logFilePath;
 }
 
-void MicroHILLog::setLogLevel(const Glib::ustring level)
+void MicroHILLog::setLogLevel(const MHString level)
 {
     auto logLevelPrepared = toLogType(level);
 
@@ -88,11 +88,11 @@ bool MicroHILLog::open()
     return m_fileOpened;
 }
 
-void MicroHILLog::write(const Glib::ustring message, const LogLevel level)
+void MicroHILLog::write(const MHString message, const LogLevel level)
 {
     const auto currentTime = getCurrentDateTime();
     const auto prefixLogLevel = toStringLogType(level);
-    Glib::ustring logMessage = currentTime + prefixLogLevel + message;
+    MHString logMessage = currentTime + prefixLogLevel + message;
 
     if(m_logFile.is_open() && m_fileOpened)
     {
@@ -111,7 +111,7 @@ bool MicroHILLog::close()
     return !m_fileOpened;
 }
 
-Glib::ustring MicroHILLog::getCurrentDateTime() const
+MHString MicroHILLog::getCurrentDateTime() const
 {
     time_t rawTime;
     char buffer[80];
@@ -120,25 +120,22 @@ Glib::ustring MicroHILLog::getCurrentDateTime() const
     const struct tm *timeInfo = localtime(&rawTime);
     strftime(buffer, 80, "%d-%m-%Y %I:%M:%S", timeInfo);
 
-    return Glib::ustring(buffer);
+    return MHString(buffer);
 }
 
-Glib::ustring MicroHILLog::toStringLogType(const LogLevel level) const
+MHString MicroHILLog::toStringLogType(const LogLevel level) const
 {
     switch(level)
     {
-        case LogLevel::MICROHIL_INFO:
-            return kInfoLogLevel;
-        case LogLevel::MICROHIL_WARNING:
-            return kWarningLogLevel;
-        case LogLevel::MICROHIL_ERROR:
-            return kErrorLogLevel;
+        case LogLevel::MICROHIL_INFO: return kInfoLogLevel;
+        case LogLevel::MICROHIL_WARNING: return kWarningLogLevel;
+        case LogLevel::MICROHIL_ERROR: return kErrorLogLevel;
     }
 
     return kInfoLogLevel;
 }
 
-LogLevel MicroHILLog::toLogType(const Glib::ustring level) const
+LogLevel MicroHILLog::toLogType(const MHString level) const
 {
     if(level == kWarningLogLevel)
     {

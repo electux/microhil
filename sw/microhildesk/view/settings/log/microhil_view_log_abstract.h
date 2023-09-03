@@ -18,8 +18,8 @@
  */
 #pragma once
 
-#include <glibmm/ustring.h>
 #include <sigc++/sigc++.h>
+#include "../../../utils/microhil_types.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief AbMicroHILViewLog class declaration and definition 
@@ -28,11 +28,11 @@ class AbMicroHILViewLog
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log settings
-    using SigLogSetup = sigc::signal<void(Glib::ustring, int)>;
+    using SigLogSetup = sigc::signal<void(MHString, int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log file path input
-    using SigLogFilePath = sigc::signal<void(Glib::ustring)>;
+    using SigLogFilePath = sigc::signal<void(MHString)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log level combobox

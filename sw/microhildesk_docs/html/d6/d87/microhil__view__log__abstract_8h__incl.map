@@ -1,5 +1,9 @@
 <map id="view/settings/log/microhil_view_log_abstract.h" name="view/settings/log/microhil_view_log_abstract.h">
-<area shape="rect" id="node1" title=" " alt="" coords="55,5,246,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,139,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="163,95,298,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="59,5,249,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,102,140,129"/>
+<area shape="rect" id="node3" href="$db/db9/microhil__types_8h.html" title=" " alt="" coords="164,95,307,136"/>
+<area shape="rect" id="node4" title=" " alt="" coords="55,184,133,211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="157,184,223,211"/>
+<area shape="rect" id="node6" title=" " alt="" coords="248,184,311,211"/>
+<area shape="rect" id="node7" title=" " alt="" coords="335,184,469,211"/>
 </map>

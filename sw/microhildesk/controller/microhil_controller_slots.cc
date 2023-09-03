@@ -19,18 +19,17 @@
 #include <iostream>
 #include "microhil_controller.h"
 
-void MicroHILController::onLogSettingsChanged(
-    Glib::ustring path, int level
-)
+void MicroHILController::onLogSettingsChanged(MHString path, int level)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Update log configuration
+    /// Update the log configuration
     m_config->setLogPath(path);
     m_config->setLogLevel(level);
 
     if (!m_config->store())
     {
         // TODO error handler
+        // TODO logging
     }
 
     ////////////////////////////////////////////////////////////////////////
@@ -39,41 +38,41 @@ void MicroHILController::onLogSettingsChanged(
     m_log->setFilePath(path);
     m_log->setLogLevel(level);
     m_log->open();
+    // TODO logging
 }
 
-void MicroHILController::onLogSettingsLoaded(Glib::ustring path, int level)
+void MicroHILController::onLogSettingsLoaded(MHString path, int level)
 {
     m_view->getLogSettings()->logSettingsLoaded(path, level);
 }
 
-void MicroHILController::onSerialSettingsChanged(
-    Glib::ustring device, VectorUInt params
-)
+void MicroHILController::onSerialSettingsChanged(MHString dev, MHVecUInt params)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Update serial configuration
-    m_config->setDevice(device);
-    m_config->setBaudRate(params[0]);
-    m_config->setDataBits(params[1]);
-    m_config->setParity(params[2]);
-    m_config->setStopBits(params[3]);
+    /// Update the serial port configuration
+    /// Note: Glib::KeyFile store only signed integers
+    m_config->setDevice(dev);
+    m_config->setBaudRate(static_cast<int>(params[0]));
+    m_config->setDataBits(static_cast<int>(params[1]));
+    m_config->setParity(static_cast<int>(params[2]));
+    m_config->setStopBits(static_cast<int>(params[3]));
 
     if (!m_config->store())
     {
         // TODO error handler
+        // TODO logging
     }
 
     ////////////////////////////////////////////////////////////////////////
     /// Update serial handler
-    // m_serial->close();
-    // m_serial->setup(device, baudRate, dataBits, parity, stopBits);
+    m_serial->close();
+    // m_serial->setup(device, params);
     // TODO dialog message to open port?
     // m_serial->open();
+    // TODO logging
 }
 
-void MicroHILController::onSerialSettingsLoaded(
-    Glib::ustring device, VectorUInt params
-)
+void MicroHILController::onSerialSettingsLoaded(MHString dev, MHVecUInt params)
 {
-    m_view->getSerialSettings()->serialSettingsLoaded(device, params);
+    m_view->getSerialSettings()->serialSettingsLoaded(dev, params);
 }
