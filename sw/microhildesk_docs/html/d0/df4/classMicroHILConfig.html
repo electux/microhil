@@ -458,7 +458,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   94</span>    <span class="keywordflow">return</span> 115200;</div>
 <div class="line"><span class="lineno">   95</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00073">getBaudRate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00069">getBaudRate()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -521,7 +521,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  148</span>    {</div>
 <div class="line"><span class="lineno">  149</span>        std::ofstream defaultConfig(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a>);</div>
 <div class="line"><span class="lineno">  150</span> </div>
-<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; kConfigLength; i++)</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; kConfigLength; i++)</div>
 <div class="line"><span class="lineno">  152</span>        {</div>
 <div class="line"><span class="lineno">  153</span>            defaultConfig &lt;&lt; kConfigSerialDefault[i] &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><span class="lineno">  154</span>        }</div>
@@ -589,7 +589,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00035">dataBits</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00095">getDataBits()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00091">getDataBits()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -632,14 +632,14 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#abdcda0d32fa3f598fa0c444ba3d8ded1">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00073">73</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keyword">auto</span> baudRate = <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_integer(</div>
-<div class="line"><span class="lineno">   76</span>        kConfigSerialSection, kConfigSerialBaudRate</div>
-<div class="line"><span class="lineno">   77</span>    );</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#ab5f6856d93fc397ba2ad26b8bea1a7b7">baudRateToInt</a>(baudRate);</div>
-<div class="line"><span class="lineno">   82</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00069">69</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>{</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keyword">auto</span> baudRate = <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_integer(</div>
+<div class="line"><span class="lineno">   72</span>        kConfigSerialSection, kConfigSerialBaudRate</div>
+<div class="line"><span class="lineno">   73</span>    );</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#ab5f6856d93fc397ba2ad26b8bea1a7b7">baudRateToInt</a>(baudRate);</div>
+<div class="line"><span class="lineno">   78</span>}</div>
 <div class="ttc" id="aclassMicroHILConfig_html_aaf0f252a097bdb9a8a31e031c5cd68a2"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">MicroHILConfig::m_config</a></div><div class="ttdeci">Glib::KeyFile m_config</div><div class="ttdoc">Configuration instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d31/microhil__config_8h_source.html#l00218">microhil_config.h:218</a></div></div>
 <div class="ttc" id="aclassMicroHILConfig_html_ab5f6856d93fc397ba2ad26b8bea1a7b7"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ab5f6856d93fc397ba2ad26b8bea1a7b7">MicroHILConfig::baudRateToInt</a></div><div class="ttdeci">int baudRateToInt(const int baudRate)</div><div class="ttdoc">Process and prepare baud rate (from config file)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00072">microhil_config_serial_utils.cc:72</a></div></div>
 </div><!-- fragment -->
@@ -696,14 +696,14 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#ae0f3fcb35695c6ed26129ec17641f910">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00095">95</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>{</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a41d8e850a1864321c57a26a7d0d55886">dataBits</a> = <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_integer(</div>
-<div class="line"><span class="lineno">   98</span>        kConfigSerialSection, kConfigSerialDataBits</div>
-<div class="line"><span class="lineno">   99</span>    );</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#ac82d4efd0c6aea87b71c6c552dd90a92">dataBitsToInt</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a41d8e850a1864321c57a26a7d0d55886">dataBits</a>);</div>
-<div class="line"><span class="lineno">  104</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00091">91</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a41d8e850a1864321c57a26a7d0d55886">dataBits</a> = <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_integer(</div>
+<div class="line"><span class="lineno">   94</span>        kConfigSerialSection, kConfigSerialDataBits</div>
+<div class="line"><span class="lineno">   95</span>    );</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#ac82d4efd0c6aea87b71c6c552dd90a92">dataBitsToInt</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a41d8e850a1864321c57a26a7d0d55886">dataBits</a>);</div>
+<div class="line"><span class="lineno">  100</span>}</div>
 <div class="ttc" id="aclassMicroHILConfig_html_ac82d4efd0c6aea87b71c6c552dd90a92"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ac82d4efd0c6aea87b71c6c552dd90a92">MicroHILConfig::dataBitsToInt</a></div><div class="ttdeci">int dataBitsToInt(const int dataBits)</div><div class="ttdoc">Process and prepare data bits (from config file)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00122">microhil_config_serial_utils.cc:122</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00035">dataBits</a>, <a class="el" href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00122">dataBitsToInt()</a>, and <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
@@ -758,12 +758,10 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a1a964ba4f81b5d240cd532549b4c7b33">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00055">55</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_string(</div>
-<div class="line"><span class="lineno">   58</span>        kConfigSerialSection, kConfigSerialDevice</div>
-<div class="line"><span class="lineno">   59</span>    );</div>
-<div class="line"><span class="lineno">   60</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00053">53</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_string(kConfigSerialSection, kConfigSerialDevice);</div>
+<div class="line"><span class="lineno">   56</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
 
@@ -808,10 +806,10 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#aaa8f797fb55a60ecdc85330d6998d570">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00047">47</a> of file <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html">microhil_config_log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_string(kConfigLogSection, kConfigLogLevel);</div>
-<div class="line"><span class="lineno">   50</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00045">45</a> of file <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html">microhil_config_log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_string(kConfigLogSection, kConfigLogLevel);</div>
+<div class="line"><span class="lineno">   48</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
 
@@ -856,10 +854,10 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#aea8cb3ac68b5ddb2295ad2e516a749de">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00059">59</a> of file <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html">microhil_config_log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_string(kConfigLogSection, kConfigLogFile);</div>
-<div class="line"><span class="lineno">   62</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00055">55</a> of file <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html">microhil_config_log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_string(kConfigLogSection, kConfigLogFile);</div>
+<div class="line"><span class="lineno">   58</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
 
@@ -904,12 +902,10 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#abc8174783da33c5dab94f728dacf57ee">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00117">117</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  118</span>{</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_string(</div>
-<div class="line"><span class="lineno">  120</span>        kConfigSerialSection, kConfigSerialParity</div>
-<div class="line"><span class="lineno">  121</span>    );</div>
-<div class="line"><span class="lineno">  122</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00113">113</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_string(kConfigSerialSection, kConfigSerialParity);</div>
+<div class="line"><span class="lineno">  116</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
 
@@ -955,14 +951,14 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#ad1fb648f7bdedaf7793a89f30a519358">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00135">135</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  136</span>{</div>
-<div class="line"><span class="lineno">  137</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a6e35cdcc10724ded511ff54120c908e9">stopBits</a> = (int) <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_integer(</div>
-<div class="line"><span class="lineno">  138</span>        kConfigSerialSection, kConfigSerialStopBits</div>
-<div class="line"><span class="lineno">  139</span>    );</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a364a146bf7b12b64bb413175801c2fa6">stopBitsToInt</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a6e35cdcc10724ded511ff54120c908e9">stopBits</a>);</div>
-<div class="line"><span class="lineno">  144</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00129">129</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>{</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a6e35cdcc10724ded511ff54120c908e9">stopBits</a> = (int)<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.get_integer(</div>
+<div class="line"><span class="lineno">  132</span>        kConfigSerialSection, kConfigSerialStopBits</div>
+<div class="line"><span class="lineno">  133</span>    );</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a364a146bf7b12b64bb413175801c2fa6">stopBitsToInt</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a6e35cdcc10724ded511ff54120c908e9">stopBits</a>);</div>
+<div class="line"><span class="lineno">  138</span>}</div>
 <div class="ttc" id="aclassMicroHILConfig_html_a364a146bf7b12b64bb413175801c2fa6"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a364a146bf7b12b64bb413175801c2fa6">MicroHILConfig::stopBitsToInt</a></div><div class="ttdeci">int stopBitsToInt(const int stopBits)</div><div class="ttdoc">Convert stop-bits to integer (from config file)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00186">microhil_config_serial_utils.cc:186</a></div></div>
 <div class="ttc" id="amicrohil__serial__com_8h_html_a6e35cdcc10724ded511ff54120c908e9"><div class="ttname"><a href="../../d1/d90/microhil__serial__com_8h.html#a6e35cdcc10724ded511ff54120c908e9">stopBits</a></div><div class="ttdeci">StopBits stopBits</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/microhil__serial__com_8h_source.html#l00037">microhil_serial_com.h:37</a></div></div>
 </div><!-- fragment -->
@@ -1047,7 +1043,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> 115200;</div>
 <div class="line"><span class="lineno">  120</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00062">setBaudRate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00058">setBaudRate()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1101,7 +1097,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00035">dataBits</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00084">setDataBits()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00080">setDataBits()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1155,7 +1151,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00037">stopBits</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00124">setStopBits()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00118">setStopBits()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1205,7 +1201,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
 <div class="line"><span class="lineno">   68</span>    <span class="keyword">auto</span> loadedConfig = <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.load_from_file(<a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#a4fcb7248968603e7c052bf59fda4ddbb">m_configFilePath</a>);</div>
 <div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   72</span>    <span class="keyword">auto</span> validatedConfig = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">validate</a>(); </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keyword">auto</span> validatedConfig = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">validate</a>();</div>
 <div class="line"><span class="lineno">   73</span> </div>
 <div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span>(!loadedConfig || !validatedConfig)</div>
 <div class="line"><span class="lineno">   75</span>    {</div>
@@ -1224,21 +1220,21 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   94</span> </div>
 <div class="line"><span class="lineno">   95</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   96</span>}</div>
-<div class="ttc" id="aclassMicroHILConfig_html_a08e46f81bbe5d4a5c849e9780c3d8c67"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a08e46f81bbe5d4a5c849e9780c3d8c67">MicroHILConfig::getDataBits</a></div><div class="ttdeci">int getDataBits() final</div><div class="ttdoc">Getting data bits for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00095">microhil_config_serial.cc:95</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a1364a4f2fe0f44e9bda685b9dd3e9e0b"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a1364a4f2fe0f44e9bda685b9dd3e9e0b">MicroHILConfig::getStopBits</a></div><div class="ttdeci">int getStopBits() final</div><div class="ttdoc">Getting stop bits for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00135">microhil_config_serial.cc:135</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a16dd044264fde47b3f9a5291ec4d7ac8"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a16dd044264fde47b3f9a5291ec4d7ac8">MicroHILConfig::getLogLevel</a></div><div class="ttdeci">MHString getLogLevel() final</div><div class="ttdoc">Getting log level.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d66/microhil__config__log_8cc_source.html#l00047">microhil_config_log.cc:47</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a08e46f81bbe5d4a5c849e9780c3d8c67"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a08e46f81bbe5d4a5c849e9780c3d8c67">MicroHILConfig::getDataBits</a></div><div class="ttdeci">int getDataBits() final</div><div class="ttdoc">Getting data bits for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00091">microhil_config_serial.cc:91</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a1364a4f2fe0f44e9bda685b9dd3e9e0b"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a1364a4f2fe0f44e9bda685b9dd3e9e0b">MicroHILConfig::getStopBits</a></div><div class="ttdeci">int getStopBits() final</div><div class="ttdoc">Getting stop bits for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00129">microhil_config_serial.cc:129</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a16dd044264fde47b3f9a5291ec4d7ac8"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a16dd044264fde47b3f9a5291ec4d7ac8">MicroHILConfig::getLogLevel</a></div><div class="ttdeci">MHString getLogLevel() final</div><div class="ttdoc">Getting log level.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d66/microhil__config__log_8cc_source.html#l00045">microhil_config_log.cc:45</a></div></div>
 <div class="ttc" id="aclassMicroHILConfig_html_a303969f86a8b884f6c2f040eeb51e9ed"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a303969f86a8b884f6c2f040eeb51e9ed">MicroHILConfig::parityUnicodeStringToInt</a></div><div class="ttdeci">int parityUnicodeStringToInt(const MHString parity)</div><div class="ttdoc">Convert parity to integer format (from config file)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00159">microhil_config_serial_utils.cc:159</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a31fcc4a26afcb3f9f5b29273f5f98d6c"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a31fcc4a26afcb3f9f5b29273f5f98d6c">MicroHILConfig::getLogPath</a></div><div class="ttdeci">MHString getLogPath() final</div><div class="ttdoc">Getting log path.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d66/microhil__config__log_8cc_source.html#l00059">microhil_config_log.cc:59</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a66f70e451a866a0b7dfd323b525c124c"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a66f70e451a866a0b7dfd323b525c124c">MicroHILConfig::getParity</a></div><div class="ttdeci">MHString getParity() final</div><div class="ttdoc">Getting parity for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00117">microhil_config_serial.cc:117</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_aa04f4a742ad7f38c0df0d7dc77837e5f"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#aa04f4a742ad7f38c0df0d7dc77837e5f">MicroHILConfig::getBaudRate</a></div><div class="ttdeci">int getBaudRate() final</div><div class="ttdoc">Getting baud rate for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00073">microhil_config_serial.cc:73</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_abee9cdaa8585fc7e3acaf8bc0d3951fd"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#abee9cdaa8585fc7e3acaf8bc0d3951fd">MicroHILConfig::getDevice</a></div><div class="ttdeci">MHString getDevice() final</div><div class="ttdoc">Getting serial device file path from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00055">microhil_config_serial.cc:55</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a31fcc4a26afcb3f9f5b29273f5f98d6c"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a31fcc4a26afcb3f9f5b29273f5f98d6c">MicroHILConfig::getLogPath</a></div><div class="ttdeci">MHString getLogPath() final</div><div class="ttdoc">Getting log path.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d66/microhil__config__log_8cc_source.html#l00055">microhil_config_log.cc:55</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a66f70e451a866a0b7dfd323b525c124c"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a66f70e451a866a0b7dfd323b525c124c">MicroHILConfig::getParity</a></div><div class="ttdeci">MHString getParity() final</div><div class="ttdoc">Getting parity for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00113">microhil_config_serial.cc:113</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_aa04f4a742ad7f38c0df0d7dc77837e5f"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#aa04f4a742ad7f38c0df0d7dc77837e5f">MicroHILConfig::getBaudRate</a></div><div class="ttdeci">int getBaudRate() final</div><div class="ttdoc">Getting baud rate for serial port from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00069">microhil_config_serial.cc:69</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_abee9cdaa8585fc7e3acaf8bc0d3951fd"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#abee9cdaa8585fc7e3acaf8bc0d3951fd">MicroHILConfig::getDevice</a></div><div class="ttdeci">MHString getDevice() final</div><div class="ttdoc">Getting serial device file path from configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00053">microhil_config_serial.cc:53</a></div></div>
 <div class="ttc" id="aclassMicroHILConfig_html_ac1314bbf90605dcd4a52cf21a680e480"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ac1314bbf90605dcd4a52cf21a680e480">MicroHILConfig::logLevelStringToInt</a></div><div class="ttdeci">int logLevelStringToInt(const MHString level)</div><div class="ttdoc">Convert log level in strong format to integer.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dc0/microhil__config__log__utils_8cc_source.html#l00067">microhil_config_log_utils.cc:67</a></div></div>
 <div class="ttc" id="aclassMicroHILConfig_html_ac4fef4f3ec8e2b2abc5a2f02a2b9fd2c"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ac4fef4f3ec8e2b2abc5a2f02a2b9fd2c">MicroHILConfig::m_logConfig</a></div><div class="ttdeci">SigLogConfig m_logConfig</div><div class="ttdoc">Signal for loaded log configuration from file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d31/microhil__config_8h_source.html#l00222">microhil_config.h:222</a></div></div>
 <div class="ttc" id="aclassMicroHILConfig_html_ae8c98a6d2546a578b09f0839c00831fd"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ae8c98a6d2546a578b09f0839c00831fd">MicroHILConfig::m_serialConfig</a></div><div class="ttdeci">SigSerialConfig m_serialConfig</div><div class="ttdoc">Signal for loaded serial configuration from file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d31/microhil__config_8h_source.html#l00226">microhil_config.h:226</a></div></div>
 <div class="ttc" id="aclassMicroHILConfig_html_afc38ae3f5a51c7126dc65754c2b535b1"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#afc38ae3f5a51c7126dc65754c2b535b1">MicroHILConfig::validate</a></div><div class="ttdeci">bool validate() final</div><div class="ttdoc">Validate configuration (existing all expected parameters)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/dd0/microhil__config_8cc_source.html#l00103">microhil_config.cc:103</a></div></div>
-<div class="ttc" id="amicrohil__types_8h_html_a2918554c846c4149ce02029e00920b89"><div class="ttname"><a href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; MHVecUInt</div><div class="ttdoc">Declared type vector of int elements.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/db9/microhil__types_8h_source.html#l00050">microhil_types.h:50</a></div></div>
+<div class="ttc" id="amicrohil__types_8h_html_a2918554c846c4149ce02029e00920b89"><div class="ttname"><a href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; MHVecUInt</div><div class="ttdoc">Declared type vector of int elements.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/db9/microhil__types_8h_source.html#l00060">microhil_types.h:60</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00073">getBaudRate()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00095">getDataBits()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00055">getDevice()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00047">getLogLevel()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00059">getLogPath()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00117">getParity()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00135">getStopBits()</a>, <a class="el" href="../../d2/dc0/microhil__config__log__utils_8cc_source.html#l00067">logLevelStringToInt()</a>, <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>, <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00214">m_configFilePath</a>, <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00222">m_logConfig</a>, <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00226">m_serialConfig</a>, <a class="el" href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00159">parityUnicodeStringToInt()</a>, and <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00103">validate()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00069">getBaudRate()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00091">getDataBits()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00053">getDevice()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00045">getLogLevel()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00055">getLogPath()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00113">getParity()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00129">getStopBits()</a>, <a class="el" href="../../d2/dc0/microhil__config__log__utils_8cc_source.html#l00067">logLevelStringToInt()</a>, <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>, <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00214">m_configFilePath</a>, <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00222">m_logConfig</a>, <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00226">m_serialConfig</a>, <a class="el" href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00159">parityUnicodeStringToInt()</a>, and <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00103">validate()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1498,7 +1494,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d8/d3b/microhil__config__abstract_8h.html#a96f03ed1b8e4f644998208c87a46d63cab98fa3e53825a5d9bed0e58c4a2afd98">MICROHIL_EVEN_CONFIG</a>, <a class="el" href="../../d8/d3b/microhil__config__abstract_8h.html#a96f03ed1b8e4f644998208c87a46d63ca6a3999d161141f4fef5c02e5318c6c73">MICROHIL_MARK_CONFIG</a>, <a class="el" href="../../d8/d3b/microhil__config__abstract_8h.html#a96f03ed1b8e4f644998208c87a46d63ca3602fe06b8ee2c924049afc4ceae8d94">MICROHIL_NONE_CONFIG</a>, <a class="el" href="../../d8/d3b/microhil__config__abstract_8h.html#a96f03ed1b8e4f644998208c87a46d63ca9328956b47e5266a28fc061a245d4e77">MICROHIL_ODD_CONFIG</a>, <a class="el" href="../../d8/d3b/microhil__config__abstract_8h.html#a96f03ed1b8e4f644998208c87a46d63ca21430bd2bd13477f7c21621899cea146">MICROHIL_SPACE_CONFIG</a>, and <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00036">parity</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00106">setParity()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00102">setParity()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1657,14 +1653,14 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#ace541257629c4f45529d276718466eb2">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00062">62</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>{</div>
-<div class="line"><span class="lineno">   66</span>    <span class="keyword">auto</span> baudRatePrepared = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a9fbdfbb53889a4f4a5bf5cd607cc8cb4">intToBaudRate</a>(baudRate);</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_integer(</div>
-<div class="line"><span class="lineno">   69</span>        kConfigSerialSection, kConfigSerialBaudRate, baudRatePrepared</div>
-<div class="line"><span class="lineno">   70</span>    );</div>
-<div class="line"><span class="lineno">   71</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00058">58</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keyword">auto</span> baudRatePrepared = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a9fbdfbb53889a4f4a5bf5cd607cc8cb4">intToBaudRate</a>(baudRate);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_integer(</div>
+<div class="line"><span class="lineno">   65</span>        kConfigSerialSection, kConfigSerialBaudRate, baudRatePrepared</div>
+<div class="line"><span class="lineno">   66</span>    );</div>
+<div class="line"><span class="lineno">   67</span>}</div>
 <div class="ttc" id="aclassMicroHILConfig_html_a9fbdfbb53889a4f4a5bf5cd607cc8cb4"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a9fbdfbb53889a4f4a5bf5cd607cc8cb4">MicroHILConfig::intToBaudRate</a></div><div class="ttdeci">int intToBaudRate(const int baudRate)</div><div class="ttdoc">Process and prepare baud rate (to config file)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00097">microhil_config_serial_utils.cc:97</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00097">intToBaudRate()</a>, and <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
@@ -1715,14 +1711,14 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#aea91be9222fded01eb030050b4512375">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00084">84</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keyword">auto</span> dataBitsPrepared = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a625af041d802d6b41e0964e4bb18a995">intToDataBits</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a41d8e850a1864321c57a26a7d0d55886">dataBits</a>);</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_integer(</div>
-<div class="line"><span class="lineno">   91</span>        kConfigSerialSection, kConfigSerialDataBits, dataBitsPrepared</div>
-<div class="line"><span class="lineno">   92</span>    );</div>
-<div class="line"><span class="lineno">   93</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00080">80</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keyword">auto</span> dataBitsPrepared = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a625af041d802d6b41e0964e4bb18a995">intToDataBits</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a41d8e850a1864321c57a26a7d0d55886">dataBits</a>);</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_integer(</div>
+<div class="line"><span class="lineno">   87</span>        kConfigSerialSection, kConfigSerialDataBits, dataBitsPrepared</div>
+<div class="line"><span class="lineno">   88</span>    );</div>
+<div class="line"><span class="lineno">   89</span>}</div>
 <div class="ttc" id="aclassMicroHILConfig_html_a625af041d802d6b41e0964e4bb18a995"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a625af041d802d6b41e0964e4bb18a995">MicroHILConfig::intToDataBits</a></div><div class="ttdeci">int intToDataBits(const int dataBits)</div><div class="ttdoc">Convert combobox index to data bits (to config file)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00129">microhil_config_serial_utils.cc:129</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00035">dataBits</a>, <a class="el" href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00129">intToDataBits()</a>, and <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
@@ -1774,10 +1770,8 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00048">48</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
-<div class="line"><span class="lineno">   50</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_string(</div>
-<div class="line"><span class="lineno">   51</span>        kConfigSerialSection, kConfigSerialDevice, device</div>
-<div class="line"><span class="lineno">   52</span>    );</div>
-<div class="line"><span class="lineno">   53</span>}</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_string(kConfigSerialSection, kConfigSerialDevice, device);</div>
+<div class="line"><span class="lineno">   51</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
 
@@ -1822,10 +1816,8 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
 <div class="line"><span class="lineno">   40</span>    <span class="keyword">auto</span> logLevel = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a6fc73049f419021063df1eccccb593aa">logLevelToUnicodeString</a>(level);</div>
 <div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_string(</div>
-<div class="line"><span class="lineno">   43</span>        kConfigLogSection, kConfigLogLevel, logLevel</div>
-<div class="line"><span class="lineno">   44</span>    );</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_string(kConfigLogSection, kConfigLogLevel, logLevel);</div>
+<div class="line"><span class="lineno">   43</span>}</div>
 <div class="ttc" id="aclassMicroHILConfig_html_a6fc73049f419021063df1eccccb593aa"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a6fc73049f419021063df1eccccb593aa">MicroHILConfig::logLevelToUnicodeString</a></div><div class="ttdeci">MHString logLevelToUnicodeString(const int logLevel)</div><div class="ttdoc">Convert integer log level to string format.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dc0/microhil__config__log__utils_8cc_source.html#l00048">microhil_config_log_utils.cc:48</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d2/dc0/microhil__config__log__utils_8cc_source.html#l00048">logLevelToUnicodeString()</a>, and <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
@@ -1875,12 +1867,10 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#a400e3cbfe4fa9037d14a7e89461b26ca">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00052">52</a> of file <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html">microhil_config_log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
-<div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_string(</div>
-<div class="line"><span class="lineno">   55</span>        kConfigLogSection, kConfigLogFile, path</div>
-<div class="line"><span class="lineno">   56</span>    );</div>
-<div class="line"><span class="lineno">   57</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00050">50</a> of file <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html">microhil_config_log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_string(kConfigLogSection, kConfigLogFile, path);</div>
+<div class="line"><span class="lineno">   53</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
 
@@ -1921,14 +1911,14 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#aa292302c4f7d437057e739d0c1f11e26">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00106">106</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  107</span>{</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keyword">auto</span> parityPrepared = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a205d55d86e07c5115813ef76d2d0fe4a">parityToUnicodeString</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#af53615ab97eeb88006434724461bf125">parity</a>);</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_string(</div>
-<div class="line"><span class="lineno">  113</span>        kConfigSerialSection, kConfigSerialParity, parityPrepared</div>
-<div class="line"><span class="lineno">  114</span>    );</div>
-<div class="line"><span class="lineno">  115</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00102">102</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>{</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keyword">auto</span> parityPrepared = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a205d55d86e07c5115813ef76d2d0fe4a">parityToUnicodeString</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#af53615ab97eeb88006434724461bf125">parity</a>);</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_string(</div>
+<div class="line"><span class="lineno">  109</span>        kConfigSerialSection, kConfigSerialParity, parityPrepared</div>
+<div class="line"><span class="lineno">  110</span>    );</div>
+<div class="line"><span class="lineno">  111</span>}</div>
 <div class="ttc" id="aclassMicroHILConfig_html_a205d55d86e07c5115813ef76d2d0fe4a"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a205d55d86e07c5115813ef76d2d0fe4a">MicroHILConfig::parityToUnicodeString</a></div><div class="ttdeci">MHString parityToUnicodeString(const int parity)</div><div class="ttdoc">Convert integer parity to string format (to config file)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00136">microhil_config_serial_utils.cc:136</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>, <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00036">parity</a>, and <a class="el" href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00136">parityToUnicodeString()</a>.</p>
@@ -1979,14 +1969,14 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/dac/classAbMicroHILConfig.html#aaefe6346888bec10281a7c36e1578142">AbMicroHILConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00124">124</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
-<div class="line"><span class="lineno">  128</span>    <span class="keyword">auto</span> stopBitsPrepared = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a5e91578e1e9c82cd32578c5ae2dc91f7">intToStopBits</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a6e35cdcc10724ded511ff54120c908e9">stopBits</a>);</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_integer(</div>
-<div class="line"><span class="lineno">  131</span>        kConfigSerialSection, kConfigSerialStopBits, stopBitsPrepared</div>
-<div class="line"><span class="lineno">  132</span>    );</div>
-<div class="line"><span class="lineno">  133</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00118">118</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keyword">auto</span> stopBitsPrepared = <a class="code hl_function" href="../../d0/df4/classMicroHILConfig.html#a5e91578e1e9c82cd32578c5ae2dc91f7">intToStopBits</a>(<a class="code hl_variable" href="../../d1/d90/microhil__serial__com_8h.html#a6e35cdcc10724ded511ff54120c908e9">stopBits</a>);</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.set_integer(</div>
+<div class="line"><span class="lineno">  125</span>        kConfigSerialSection, kConfigSerialStopBits, stopBitsPrepared</div>
+<div class="line"><span class="lineno">  126</span>    );</div>
+<div class="line"><span class="lineno">  127</span>}</div>
 <div class="ttc" id="aclassMicroHILConfig_html_a5e91578e1e9c82cd32578c5ae2dc91f7"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a5e91578e1e9c82cd32578c5ae2dc91f7">MicroHILConfig::intToStopBits</a></div><div class="ttdeci">int intToStopBits(const int stopBits)</div><div class="ttdoc">Convert combobox index to data-bits (to config file)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00193">microhil_config_serial_utils.cc:193</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/dcf/microhil__config__serial__utils_8cc_source.html#l00193">intToStopBits()</a>, <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>, and <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00037">stopBits</a>.</p>
@@ -2043,7 +2033,7 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00037">stopBits</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00135">getStopBits()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00129">getStopBits()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2142,10 +2132,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  122</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  123</span>}</div>
 <div class="ttc" id="aclassAbMicroHILConfig_html_ae8936a9dba12444d6bb1eb151b35f428"><div class="ttname"><a href="../../d6/dac/classAbMicroHILConfig.html#ae8936a9dba12444d6bb1eb151b35f428">AbMicroHILConfig::isPreValid</a></div><div class="ttdeci">bool isPreValid() const</div><div class="ttdoc">Check is pre-validation state (existing configuration)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00094">microhil_config_abstract.h:94</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_a8fbcd180120cd3bf7c96fda109edebdb"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a8fbcd180120cd3bf7c96fda109edebdb">MicroHILConfig::validateSerialSettings</a></div><div class="ttdeci">bool validateSerialSettings()</div><div class="ttdoc">Validate serial configuration (existing expected parameters)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00146">microhil_config_serial.cc:146</a></div></div>
-<div class="ttc" id="aclassMicroHILConfig_html_ae173ca4c21b87e2f4c8a277b2fda05f9"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ae173ca4c21b87e2f4c8a277b2fda05f9">MicroHILConfig::validateLogSettings</a></div><div class="ttdeci">bool validateLogSettings()</div><div class="ttdoc">Validate log configuration (existing expected parameters)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d66/microhil__config__log_8cc_source.html#l00064">microhil_config_log.cc:64</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_a8fbcd180120cd3bf7c96fda109edebdb"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#a8fbcd180120cd3bf7c96fda109edebdb">MicroHILConfig::validateSerialSettings</a></div><div class="ttdeci">bool validateSerialSettings()</div><div class="ttdoc">Validate serial configuration (existing expected parameters)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00140">microhil_config_serial.cc:140</a></div></div>
+<div class="ttc" id="aclassMicroHILConfig_html_ae173ca4c21b87e2f4c8a277b2fda05f9"><div class="ttname"><a href="../../d0/df4/classMicroHILConfig.html#ae173ca4c21b87e2f4c8a277b2fda05f9">MicroHILConfig::validateLogSettings</a></div><div class="ttdeci">bool validateLogSettings()</div><div class="ttdoc">Validate log configuration (existing expected parameters)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d66/microhil__config__log_8cc_source.html#l00060">microhil_config_log.cc:60</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00094">AbMicroHILConfig::isPreValid()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00064">validateLogSettings()</a>, and <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00146">validateSerialSettings()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d3b/microhil__config__abstract_8h_source.html#l00094">AbMicroHILConfig::isPreValid()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00060">validateLogSettings()</a>, and <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00140">validateSerialSettings()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00064">load()</a>.</p>
 <div class="dynheader">
@@ -2199,20 +2189,20 @@ Here is the caller graph for this function:</div>
 <p >Checking log configuration parameters from config file</p>
 <p >Configuration file, log section corrupted</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00064">64</a> of file <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html">microhil_config_log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keyword">auto</span> configCheck = (</div>
-<div class="line"><span class="lineno">   69</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigLogSection, kConfigLogLevel) &amp;&amp;</div>
-<div class="line"><span class="lineno">   70</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigLogSection, kConfigLogFile)</div>
-<div class="line"><span class="lineno">   71</span>    );</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span>(!configCheck)</div>
-<div class="line"><span class="lineno">   74</span>    {</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   78</span>    }</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   81</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00060">60</a> of file <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html">microhil_config_log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keyword">auto</span> configCheck = (</div>
+<div class="line"><span class="lineno">   65</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigLogSection, kConfigLogLevel) &amp;&amp;</div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigLogSection, kConfigLogFile)</div>
+<div class="line"><span class="lineno">   67</span>    );</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span>(!configCheck)</div>
+<div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   77</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
 
@@ -2258,23 +2248,23 @@ Here is the caller graph for this function:</div>
 <p >Checking serial configuration parameters from config file</p>
 <p >Configuration file, serial section corrupted</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00146">146</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  147</span>{</div>
-<div class="line"><span class="lineno">  150</span>    <span class="keyword">auto</span> configCheck = (</div>
-<div class="line"><span class="lineno">  151</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialDevice) &amp;&amp;</div>
-<div class="line"><span class="lineno">  152</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialBaudRate) &amp;&amp;</div>
-<div class="line"><span class="lineno">  153</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialDataBits) &amp;&amp;</div>
-<div class="line"><span class="lineno">  154</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialParity) &amp;&amp;</div>
-<div class="line"><span class="lineno">  155</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialStopBits)</div>
-<div class="line"><span class="lineno">  156</span>    );</div>
-<div class="line"><span class="lineno">  157</span> </div>
-<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span>(!configCheck)</div>
-<div class="line"><span class="lineno">  159</span>    {</div>
-<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
-<div class="line"><span class="lineno">  164</span> </div>
-<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  166</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00140">140</a> of file <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html">microhil_config_serial.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>{</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keyword">auto</span> configCheck = (</div>
+<div class="line"><span class="lineno">  145</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialDevice) &amp;&amp;</div>
+<div class="line"><span class="lineno">  146</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialBaudRate) &amp;&amp;</div>
+<div class="line"><span class="lineno">  147</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialDataBits) &amp;&amp;</div>
+<div class="line"><span class="lineno">  148</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialParity) &amp;&amp;</div>
+<div class="line"><span class="lineno">  149</span>        <a class="code hl_variable" href="../../d0/df4/classMicroHILConfig.html#aaf0f252a097bdb9a8a31e031c5cd68a2">m_config</a>.has_key(kConfigSerialSection, kConfigSerialStopBits)</div>
+<div class="line"><span class="lineno">  150</span>    );</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span>(!configCheck)</div>
+<div class="line"><span class="lineno">  153</span>    {</div>
+<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  160</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">m_config</a>.</p>
 
@@ -2317,7 +2307,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d31/microhil__config_8h_source.html#l00218">218</a> of file <a class="el" href="../../d7/d31/microhil__config_8h_source.html">microhil_config.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00073">getBaudRate()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00095">getDataBits()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00055">getDevice()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00047">getLogLevel()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00059">getLogPath()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00117">getParity()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00135">getStopBits()</a>, <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00064">load()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00062">setBaudRate()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00084">setDataBits()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00048">setDevice()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00036">setLogLevel()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00052">setLogPath()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00106">setParity()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00124">setStopBits()</a>, <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00098">store()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00064">validateLogSettings()</a>, and <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00146">validateSerialSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00069">getBaudRate()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00091">getDataBits()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00053">getDevice()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00045">getLogLevel()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00055">getLogPath()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00113">getParity()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00129">getStopBits()</a>, <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00064">load()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00058">setBaudRate()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00080">setDataBits()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00048">setDevice()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00036">setLogLevel()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00050">setLogPath()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00102">setParity()</a>, <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00118">setStopBits()</a>, <a class="el" href="../../d8/dd0/microhil__config_8cc_source.html#l00098">store()</a>, <a class="el" href="../../d7/d66/microhil__config__log_8cc_source.html#l00060">validateLogSettings()</a>, and <a class="el" href="../../d6/dbd/microhil__config__serial_8cc_source.html#l00140">validateSerialSettings()</a>.</p>
 
 </div>
 </div>
@@ -2448,7 +2438,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/df4/classMicroHILConfig.html">MicroHILConfig</a></li>
-    <li class="footer">Generated on Mon Sep 4 2023 00:42:48 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Sep 4 2023 21:36:36 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

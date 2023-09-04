@@ -35,7 +35,7 @@ public:
     /// @param object base object instance
     /// @param ui bulder instance
     MicroHILViewLog(
-        BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+        BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
     );
 
     ////////////////////////////////////////////////////////////////////////
@@ -96,23 +96,23 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_ui{nullptr};
+    MHRPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI entry for setting file log path
-    Glib::RefPtr<Gtk::Entry> m_device{nullptr};
+    MHRPtr<Gtk::Entry> m_device{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Combobox for selecting log level type
-    Glib::RefPtr<Gtk::ComboBoxText> m_level{nullptr};
+    MHRPtr<Gtk::ComboBoxText> m_level{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Cancel button
-    Glib::RefPtr<Gtk::Button> m_cancel{nullptr};
+    MHRPtr<Gtk::Button> m_cancel{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Confirm button
-    Glib::RefPtr<Gtk::Button> m_ok{nullptr};
+    MHRPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings

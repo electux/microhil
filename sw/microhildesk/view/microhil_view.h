@@ -42,17 +42,17 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting home view
     /// @return Home view instance
-    Glib::RefPtr<MicroHILViewHome> getHome();
+    MHRPtr<MicroHILViewHome> getHome();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log settings
     /// @return Log settings instance
-    Glib::RefPtr<MicroHILViewLog> getLogSettings();
+    MHRPtr<MicroHILViewLog> getLogSettings();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial settings
     /// @return Serial settings instance
-    Glib::RefPtr<MicroHILViewSerial> getSerialSettings();
+    MHRPtr<MicroHILViewSerial> getSerialSettings();
 
 private:
     ////////////////////////////////////////////////////////////////////////
@@ -66,25 +66,25 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_builder{nullptr};
+    MHRPtr<Gtk::Builder> m_builder{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Home view instance
-    Glib::RefPtr<MicroHILViewHome> m_home{nullptr};
+    MHRPtr<MicroHILViewHome> m_home{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Dialog view instance
-    Glib::RefPtr<MicroHILViewDialog> m_dialog{nullptr};
+    MHRPtr<MicroHILViewDialog> m_dialog{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log Settings view instance
-    Glib::RefPtr<MicroHILViewLog> m_log{nullptr};
+    MHRPtr<MicroHILViewLog> m_log{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Serial Settings view instance
-    Glib::RefPtr<MicroHILViewSerial> m_serial{nullptr};
+    MHRPtr<MicroHILViewSerial> m_serial{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief About view instance
-    Glib::RefPtr<MicroHILViewAbout> m_about{nullptr};
+    MHRPtr<MicroHILViewAbout> m_about{nullptr};
 };

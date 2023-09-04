@@ -1,6 +1,6 @@
 <map id="MicroHILViewHome::disableChannel" name="MicroHILViewHome::disableChannel">
 <area shape="rect" id="node1" title="Disable complete channel." alt="" coords="875,5,1079,47"/>
-<area shape="rect" id="node2" href="$df/da5/classMicroHILViewHome.html#a3a8bb766c183c4a7a51d676b70e45629" title="MicroHILViewHome constructor." alt="" coords="5,13,289,39"/>
+<area shape="rect" id="node2" href="$df/da5/classMicroHILViewHome.html#a2af02c3861d8746033c79c72579f201b" title="MicroHILViewHome constructor." alt="" coords="5,13,289,39"/>
 <area shape="rect" id="node3" href="$df/da5/classMicroHILViewHome.html#aa70150be122ed75bda3ad6356aac0d8d" title="Slot for processing check buttons (enable/disable channel)" alt="" coords="600,35,827,76"/>
 <area shape="rect" id="node4" href="$df/da5/classMicroHILViewHome.html#a95b95333e5690868abe65075d1f41c20" title="Map channels (signals and slots)" alt="" coords="337,38,552,65"/>
 </map>

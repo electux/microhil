@@ -28,6 +28,7 @@
 #include <gtkmm/togglebutton.h>
 #include <gtkmm/spinbutton.h>
 #include <gtkmm/progressbar.h>
+#include "../../utils/microhil_types.h"
 #include "microhil_view_home_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
@@ -40,7 +41,7 @@ public:
     /// @param object base object instance
     /// @param ui builder instance
     MicroHILViewHome(
-        BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+        BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
     );
 
     ////////////////////////////////////////////////////////////////////////
@@ -153,59 +154,59 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_ui{nullptr};
+    MHRPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Connect menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_connect{nullptr};
+    MHRPtr<Gtk::MenuItem> m_connect{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Disconnect menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_disconnect{nullptr};
+    MHRPtr<Gtk::MenuItem> m_disconnect{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Quit menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_quit{nullptr};
+    MHRPtr<Gtk::MenuItem> m_quit{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Serial Port Settings menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_serialSettings{nullptr};
+    MHRPtr<Gtk::MenuItem> m_serialSettings{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Log Settings menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_logSettings{nullptr};
+    MHRPtr<Gtk::MenuItem> m_logSettings{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application About menu-item
-    Glib::RefPtr<Gtk::MenuItem> m_about{nullptr};
+    MHRPtr<Gtk::MenuItem> m_about{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Check buttons for enable/disable channels
-    std::vector<Glib::RefPtr<Gtk::CheckButton>> m_enableChannels{};
+    std::vector<MHRPtr<Gtk::CheckButton>> m_enableChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Comboboxes for selecting channel mode
-    std::vector<Glib::RefPtr<Gtk::ComboBoxText>> m_selectControlChannels{};
+    std::vector<MHRPtr<Gtk::ComboBoxText>> m_selectControlChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toggle button for direct channel control
-    std::vector<Glib::RefPtr<Gtk::ToggleButton>> m_toggleChannels{};
+    std::vector<MHRPtr<Gtk::ToggleButton>> m_toggleChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Spin button for setup channel timer
-    std::vector<Glib::RefPtr<Gtk::SpinButton>> m_spinTimerChannels{};
+    std::vector<MHRPtr<Gtk::SpinButton>> m_spinTimerChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toggle button for starting channel timer
-    std::vector<Glib::RefPtr<Gtk::ToggleButton>> m_toggleTimerChannels{};
+    std::vector<MHRPtr<Gtk::ToggleButton>> m_toggleTimerChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Visual status for channels
-    std::vector<Glib::RefPtr<Gtk::ProgressBar>> m_stautsTimerChannels{}; 
+    std::vector<MHRPtr<Gtk::ProgressBar>> m_stautsTimerChannels{}; 
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Adjustment setup for channel visual status
-    Glib::RefPtr<Gtk::Adjustment> m_adjustment_digits{nullptr};
+    MHRPtr<Gtk::Adjustment> m_adjustment_digits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (triggered another view)

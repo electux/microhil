@@ -153,7 +153,7 @@ unsigned int MicroHILSerialCom::parityToUInt(const Parity parity)
         case Parity::PARITY_EVEN: return kParityEven;
         case Parity::PARITY_ODD: return kParityOdd;
         case Parity::PARITY_NONE: return kParityNone;
-        case Parity::PARITY_INVALID: return kInvalidParameter; 
+        case Parity::PARITY_INVALID: return kInvalidParameter;
     }
 
     return kInvalidParameter;

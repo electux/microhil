@@ -42,18 +42,18 @@ namespace
 }
 
 MicroHILViewDialog::MicroHILViewDialog(
-    BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+    BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
 ): Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Bind Dialog message
-    m_text = Glib::RefPtr<Gtk::Label>::cast_dynamic(
+    m_text = MHRPtr<Gtk::Label>::cast_dynamic(
         m_ui->get_object(kDialogMessage)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Close button
-    m_close = Glib::RefPtr<Gtk::Button>::cast_dynamic(
+    m_close = MHRPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kCloseButtonId)
     );
 

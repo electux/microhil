@@ -35,7 +35,7 @@ public:
     /// @param object base object instance
     /// @param ui buider instance
     MicroHILViewSerial(
-        BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+        BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
     );
 
     ////////////////////////////////////////////////////////////////////////
@@ -123,35 +123,35 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_ui{nullptr};
+    MHRPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Set device file path
-    Glib::RefPtr<Gtk::Entry> m_device{nullptr};
+    MHRPtr<Gtk::Entry> m_device{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select baud-rate
-    Glib::RefPtr<Gtk::ComboBoxText> m_baudRate{nullptr};
+    MHRPtr<Gtk::ComboBoxText> m_baudRate{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select data-bits
-    Glib::RefPtr<Gtk::ComboBoxText> m_dataBits{nullptr};
+    MHRPtr<Gtk::ComboBoxText> m_dataBits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select parity
-    Glib::RefPtr<Gtk::ComboBoxText> m_parity{nullptr};
+    MHRPtr<Gtk::ComboBoxText> m_parity{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select stop-bits
-    Glib::RefPtr<Gtk::ComboBoxText> m_stopBits{nullptr};
+    MHRPtr<Gtk::ComboBoxText> m_stopBits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Dismiss button
-    Glib::RefPtr<Gtk::Button> m_cancel{nullptr};
+    MHRPtr<Gtk::Button> m_cancel{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Confirm button
-    Glib::RefPtr<Gtk::Button> m_ok{nullptr};
+    MHRPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief ignal for serial settings

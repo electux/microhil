@@ -101,11 +101,11 @@ Collaboration diagram for Application:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/d78/classApplication__coll__graph.png" border="0" usemap="#aApplication_coll__map" alt="Collaboration graph"/></div>
 <map name="aApplication_coll__map" id="aApplication_coll__map">
-<area shape="rect" title="Application entry class declaration and definition." alt="" coords="367,145,498,252"/>
-<area shape="rect" title=" " alt="" coords="5,5,201,83"/>
-<area shape="rect" title=" " alt="" coords="226,5,423,83"/>
-<area shape="rect" title=" " alt="" coords="448,5,636,83"/>
-<area shape="rect" title=" " alt="" coords="660,5,883,83"/>
+<area shape="rect" title="Application entry class declaration and definition." alt="" coords="376,145,507,252"/>
+<area shape="rect" title=" " alt="" coords="5,5,211,83"/>
+<area shape="rect" title=" " alt="" coords="235,5,432,83"/>
+<area shape="rect" title=" " alt="" coords="457,5,645,83"/>
+<area shape="rect" title=" " alt="" coords="669,5,891,83"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -123,9 +123,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ad43d89902592cb40eb345b0cd8723ef6"><td class="memItemLeft" align="right" valign="top">Glib::RefPtr&lt; Gtk::Application &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a> {nullptr}</td></tr>
-<tr class="memdesc:ad43d89902592cb40eb345b0cd8723ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d5/d4c/classApplication.html" title="Application entry class declaration and definition.">Application</a> instance.  <a href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">More...</a><br /></td></tr>
-<tr class="separator:ad43d89902592cb40eb345b0cd8723ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85af3d477ff967c425a0154d6325c388"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a>&lt; Gtk::Application &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a> {nullptr}</td></tr>
+<tr class="memdesc:a85af3d477ff967c425a0154d6325c388"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d5/d4c/classApplication.html" title="Application entry class declaration and definition.">Application</a> instance.  <a href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">More...</a><br /></td></tr>
+<tr class="separator:a85af3d477ff967c425a0154d6325c388"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5e009fb48cd6e67627d8c2006bb9b94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/db9/microhil__types_8h.html#aac5b9ebacc76c826882751049df12f02">MHSPtr</a>&lt; <a class="el" href="../../de/dce/classMicroHILModel.html">MicroHILModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4c/classApplication.html#ad5e009fb48cd6e67627d8c2006bb9b94">m_model</a> {nullptr}</td></tr>
 <tr class="memdesc:ad5e009fb48cd6e67627d8c2006bb9b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Model instance.  <a href="../../d5/d4c/classApplication.html#ad5e009fb48cd6e67627d8c2006bb9b94">More...</a><br /></td></tr>
 <tr class="separator:ad5e009fb48cd6e67627d8c2006bb9b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,15 +178,15 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d16/application_8cc_source.html#l00028">28</a> of file <a class="el" href="../../dc/d16/application_8cc_source.html">application.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   28</span>                                              :</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a>{<a class="code hl_function" href="../../d9/d0f/main_8cc.html#a692a7f9ca2ecd9c46e94768758900b39">Gtk::Application::create</a>(argc, argv, kAppId)},</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a>{<a class="code hl_function" href="../../d9/d0f/main_8cc.html#a692a7f9ca2ecd9c46e94768758900b39">Gtk::Application::create</a>(argc, argv, kAppId)},</div>
 <div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad5e009fb48cd6e67627d8c2006bb9b94">m_model</a>{MHmakeSPtr&lt;MicroHILModel&gt;()},</div>
 <div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#afda4ac2f7cd464b53d07ba48fb343ddc">m_view</a>{MHmakeSPtr&lt;MicroHILView&gt;()},</div>
 <div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="../../d5/d4c/classApplication.html#acc1bdbb1f1306f11345b33d528f1d86c">m_controller</a>{MHmakeUPtr&lt;MicroHILController&gt;(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad5e009fb48cd6e67627d8c2006bb9b94">m_model</a>, <a class="code hl_variable" href="../../d5/d4c/classApplication.html#afda4ac2f7cd464b53d07ba48fb343ddc">m_view</a>)}</div>
 <div class="line"><span class="lineno">   33</span>{</div>
 <div class="line"><span class="lineno">   34</span>    <span class="comment">// TODO</span></div>
 <div class="line"><span class="lineno">   35</span>}</div>
+<div class="ttc" id="aclassApplication_html_a85af3d477ff967c425a0154d6325c388"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">Application::m_app</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Application &gt; m_app</div><div class="ttdoc">Application instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00049">application.h:49</a></div></div>
 <div class="ttc" id="aclassApplication_html_acc1bdbb1f1306f11345b33d528f1d86c"><div class="ttname"><a href="../../d5/d4c/classApplication.html#acc1bdbb1f1306f11345b33d528f1d86c">Application::m_controller</a></div><div class="ttdeci">MHUPtr&lt; MicroHILController &gt; m_controller</div><div class="ttdoc">Controller instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00061">application.h:61</a></div></div>
-<div class="ttc" id="aclassApplication_html_ad43d89902592cb40eb345b0cd8723ef6"><div class="ttname"><a href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">Application::m_app</a></div><div class="ttdeci">Glib::RefPtr&lt; Gtk::Application &gt; m_app</div><div class="ttdoc">Application instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00049">application.h:49</a></div></div>
 <div class="ttc" id="aclassApplication_html_ad5e009fb48cd6e67627d8c2006bb9b94"><div class="ttname"><a href="../../d5/d4c/classApplication.html#ad5e009fb48cd6e67627d8c2006bb9b94">Application::m_model</a></div><div class="ttdeci">MHSPtr&lt; MicroHILModel &gt; m_model</div><div class="ttdoc">Model instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00053">application.h:53</a></div></div>
 <div class="ttc" id="aclassApplication_html_afda4ac2f7cd464b53d07ba48fb343ddc"><div class="ttname"><a href="../../d5/d4c/classApplication.html#afda4ac2f7cd464b53d07ba48fb343ddc">Application::m_view</a></div><div class="ttdeci">MHSPtr&lt; MicroHILView &gt; m_view</div><div class="ttdoc">View instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00057">application.h:57</a></div></div>
 <div class="ttc" id="amain_8cc_html_a692a7f9ca2ecd9c46e94768758900b39"><div class="ttname"><a href="../../d9/d0f/main_8cc.html#a692a7f9ca2ecd9c46e94768758900b39">create</a></div><div class="ttdeci">MHUPtr&lt; Application &gt; create(int argc, char *argv[])</div><div class="ttdoc">Create an application instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d0f/main_8cc_source.html#l00046">main.cc:46</a></div></div>
@@ -242,11 +242,11 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d16/application_8cc_source.html#l00037">37</a> of file <a class="el" href="../../dc/d16/application_8cc_source.html">application.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">int</span> status {EXIT_FAILURE};</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">int</span> status{EXIT_FAILURE};</div>
 <div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a> &amp;&amp; <a class="code hl_variable" href="../../d5/d4c/classApplication.html#afda4ac2f7cd464b53d07ba48fb343ddc">m_view</a>)</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a> &amp;&amp; <a class="code hl_variable" href="../../d5/d4c/classApplication.html#afda4ac2f7cd464b53d07ba48fb343ddc">m_view</a>)</div>
 <div class="line"><span class="lineno">   42</span>    {</div>
-<div class="line"><span class="lineno">   45</span>        status = <a class="code hl_variable" href="../../d5/d4c/classApplication.html#ad43d89902592cb40eb345b0cd8723ef6">m_app</a>-&gt;run(*(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#afda4ac2f7cd464b53d07ba48fb343ddc">m_view</a>-&gt;getHome().get()));</div>
+<div class="line"><span class="lineno">   45</span>        status = <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a>-&gt;run(*(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#afda4ac2f7cd464b53d07ba48fb343ddc">m_view</a>-&gt;getHome().get()));</div>
 <div class="line"><span class="lineno">   46</span>    }</div>
 <div class="line"><span class="lineno">   47</span> </div>
 <div class="line"><span class="lineno">   48</span>    <span class="keywordflow">return</span> status;</div>
@@ -257,8 +257,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad43d89902592cb40eb345b0cd8723ef6" name="ad43d89902592cb40eb345b0cd8723ef6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad43d89902592cb40eb345b0cd8723ef6">&#9670;&nbsp;</a></span>m_app</h2>
+<a id="a85af3d477ff967c425a0154d6325c388" name="a85af3d477ff967c425a0154d6325c388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85af3d477ff967c425a0154d6325c388">&#9670;&nbsp;</a></span>m_app</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +267,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Glib::RefPtr&lt;Gtk::Application&gt; Application::m_app {nullptr}</td>
+          <td class="memname"><a class="el" href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a>&lt;Gtk::Application&gt; Application::m_app {nullptr}</td>
         </tr>
       </table>
   </td>
@@ -375,7 +375,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d4c/classApplication.html">Application</a></li>
-    <li class="footer">Generated on Mon Sep 4 2023 00:42:48 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Sep 4 2023 21:36:36 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

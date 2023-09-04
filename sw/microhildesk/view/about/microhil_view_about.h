@@ -21,6 +21,7 @@
 #include <gtkmm/builder.h>
 #include <gtkmm/button.h>
 #include <gtkmm/aboutdialog.h>
+#include "../../utils/microhil_types.h"
 #include "microhil_view_about_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
@@ -33,7 +34,7 @@ public:
     /// @param object base object type
     /// @param ui builder instance
     MicroHILViewAbout(
-        BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+        BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
     );
 
     ////////////////////////////////////////////////////////////////////////
@@ -56,11 +57,11 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    Glib::RefPtr<Gtk::Builder> m_ui{nullptr};
+    MHRPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Ok button for about view
-    Glib::RefPtr<Gtk::Button> m_ok{nullptr};
+    MHRPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button (self hide AboutDialog)

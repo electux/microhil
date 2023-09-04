@@ -26,7 +26,7 @@ void MicroHILController::onLogSettingsChanged(MHString path, int level)
     m_config->setLogPath(path);
     m_config->setLogLevel(level);
 
-    if (!m_config->store())
+    if(!m_config->store())
     {
         // TODO error handler
         // TODO logging
@@ -57,7 +57,7 @@ void MicroHILController::onSerialSettingsChanged(MHString dev, MHVecUInt params)
     m_config->setParity(static_cast<int>(params[2]));
     m_config->setStopBits(static_cast<int>(params[3]));
 
-    if (!m_config->store())
+    if(!m_config->store())
     {
         // TODO error handler
         // TODO logging

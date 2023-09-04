@@ -38,30 +38,30 @@ namespace
 }
 
 MicroHILViewLog::MicroHILViewLog(
-    BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+    BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
 ): Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Bind Log file path entry
-    m_device = Glib::RefPtr<Gtk::Entry>::cast_dynamic(
+    m_device = MHRPtr<Gtk::Entry>::cast_dynamic(
         m_ui->get_object(kLogDevicePathId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Log level combobox
-    m_level = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
+    m_level = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kLogLevelSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Cancel button
-    m_cancel = Glib::RefPtr<Gtk::Button>::cast_dynamic(
+    m_cancel = MHRPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kCancelButtonId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Ok button
-    m_ok = Glib::RefPtr<Gtk::Button>::cast_dynamic(
+    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kOkButtonId)
     );
 

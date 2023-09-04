@@ -1,5 +1,6 @@
 var microhil__types_8h =
 [
+    [ "MHRPtr", "db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6", null ],
     [ "MHSPtr", "db/db9/microhil__types_8h.html#aac5b9ebacc76c826882751049df12f02", null ],
     [ "MHString", "db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3", null ],
     [ "MHUPtr", "db/db9/microhil__types_8h.html#abdb3c8213843b3ab03c37b98870102a1", null ],
