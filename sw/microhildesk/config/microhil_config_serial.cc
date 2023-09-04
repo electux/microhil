@@ -2,17 +2,17 @@
 /*
  * microhil_config_serial.cc
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
- * 
+ *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * microhildesk is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -47,16 +47,12 @@ namespace
 
 void MicroHILConfig::setDevice(const MHString device)
 {
-    m_config.set_string(
-        kConfigSerialSection, kConfigSerialDevice, device
-    );
+    m_config.set_string(kConfigSerialSection, kConfigSerialDevice, device);
 }
 
 MHString MicroHILConfig::getDevice()
 {
-    return m_config.get_string(
-        kConfigSerialSection, kConfigSerialDevice
-    );
+    return m_config.get_string(kConfigSerialSection, kConfigSerialDevice);
 }
 
 void MicroHILConfig::setBaudRate(const int baudRate)
@@ -116,9 +112,7 @@ void MicroHILConfig::setParity(const int parity)
 
 MHString MicroHILConfig::getParity()
 {
-    return m_config.get_string(
-        kConfigSerialSection, kConfigSerialParity
-    );
+    return m_config.get_string(kConfigSerialSection, kConfigSerialParity);
 }
 
 void MicroHILConfig::setStopBits(const int stopBits)
@@ -134,7 +128,7 @@ void MicroHILConfig::setStopBits(const int stopBits)
 
 int MicroHILConfig::getStopBits()
 {
-    auto stopBits = (int) m_config.get_integer(
+    auto stopBits = (int)m_config.get_integer(
         kConfigSerialSection, kConfigSerialStopBits
     );
 

@@ -50,48 +50,48 @@ namespace
 }
 
 MicroHILViewSerial::MicroHILViewSerial(
-    BaseObjectType *object, Glib::RefPtr<Gtk::Builder> const &ui
+    BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui
 ): Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Bind Log file path entry
-    m_device = Glib::RefPtr<Gtk::Entry>::cast_dynamic(
+    m_device = MHRPtr<Gtk::Entry>::cast_dynamic(
         m_ui->get_object(kDevicePathId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind baud-rate combobox
-    m_baudRate = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
+    m_baudRate = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kBaudRateSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind data-bits combobox
-    m_dataBits = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
+    m_dataBits = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kDataBitsSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind parity combobox
-    m_parity = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
+    m_parity = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kParitySelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind stop-bits combobox
-    m_stopBits = Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
+    m_stopBits = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kStopBitsId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Cancel button
-    m_cancel = Glib::RefPtr<Gtk::Button>::cast_dynamic(
+    m_cancel = MHRPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kCancelButtonId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Ok button
-    m_ok = Glib::RefPtr<Gtk::Button>::cast_dynamic(
+    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kOkButtonId)
     );
 

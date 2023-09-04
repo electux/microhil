@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include "../../utils/microhil_types.h"
 #include "microhil_view_home.h"
 
 namespace
@@ -134,42 +135,42 @@ namespace
 }
 
 MicroHILViewHome::MicroHILViewHome(
-    BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+    BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
 ): Gtk::ApplicationWindow(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     // Bind Connect menu-item
-    m_connect = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+    m_connect = MHRPtr<Gtk::MenuItem>::cast_dynamic(
         m_ui->get_object(kConnectId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     // Bind Disconnect menu-item
-    m_disconnect = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+    m_disconnect = MHRPtr<Gtk::MenuItem>::cast_dynamic(
         m_ui->get_object(kDisconnectId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     // Bind Quit menu-item
-    m_quit = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+    m_quit = MHRPtr<Gtk::MenuItem>::cast_dynamic(
         m_ui->get_object(kQuitId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     // Bind Serial Settings menu-item
-    m_serialSettings = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+    m_serialSettings = MHRPtr<Gtk::MenuItem>::cast_dynamic(
         m_ui->get_object(kSerialSettingsId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     // Bind Log Settings menu-item
-    m_logSettings = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+    m_logSettings = MHRPtr<Gtk::MenuItem>::cast_dynamic(
         m_ui->get_object(kLogSettingsId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     // Bind About menu-item
-    m_about = Glib::RefPtr<Gtk::MenuItem>::cast_dynamic(
+    m_about = MHRPtr<Gtk::MenuItem>::cast_dynamic(
         m_ui->get_object(kAboutId)
     );
 
@@ -178,32 +179,32 @@ MicroHILViewHome::MicroHILViewHome(
     for (int i = 0; i < kNumberOfViewChannels; i++)
     {
         m_enableChannels.push_back(
-            Glib::RefPtr<Gtk::CheckButton>::cast_dynamic(
+            MHRPtr<Gtk::CheckButton>::cast_dynamic(
                 m_ui->get_object(kCheckButtonsId[i])
             )
         );
         m_selectControlChannels.push_back(
-            Glib::RefPtr<Gtk::ComboBoxText>::cast_dynamic(
+            MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
                 m_ui->get_object(kComboBoxTextsId[i])
             )
         );
         m_toggleChannels.push_back(
-            Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
+            MHRPtr<Gtk::ToggleButton>::cast_dynamic(
                 m_ui->get_object(kToggleButtonsId[i])
             )
         );
         m_spinTimerChannels.push_back(
-            Glib::RefPtr<Gtk::SpinButton>::cast_dynamic(
+            MHRPtr<Gtk::SpinButton>::cast_dynamic(
                 m_ui->get_object(kTimerSpinButtonsId[i])
             )
         );
         m_toggleTimerChannels.push_back(
-            Glib::RefPtr<Gtk::ToggleButton>::cast_dynamic(
+            MHRPtr<Gtk::ToggleButton>::cast_dynamic(
                 m_ui->get_object(kTimerToggleButtonsId[i])
             )
         );
         m_stautsTimerChannels.push_back(
-            Glib::RefPtr<Gtk::ProgressBar>::cast_dynamic(
+            MHRPtr<Gtk::ProgressBar>::cast_dynamic(
                 m_ui->get_object(kTimerProgressBarStatus0Id[i])
             )
         );

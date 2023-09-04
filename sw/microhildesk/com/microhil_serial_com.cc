@@ -63,7 +63,7 @@ void MicroHILSerialCom::setup(MHString device, MHSerialParams params)
     m_device = device;
 }
 
-void MicroHILSerialCom::read(MHVecByte &data, size_t len, size_t timeout)
+void MicroHILSerialCom::read(MHVecByte& data, size_t len, size_t timeout)
 {
     // TODO
 }

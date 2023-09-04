@@ -1,5 +1,5 @@
 <map id="MicroHILViewHome::onToggled" name="MicroHILViewHome::onToggled">
 <area shape="rect" id="node1" title="Slot for processing toggle buttons (turn on/turn off channel)" alt="" coords="600,5,823,32"/>
 <area shape="rect" id="node2" href="$df/da5/classMicroHILViewHome.html#a95b95333e5690868abe65075d1f41c20" title="Map channels (signals and slots)" alt="" coords="337,5,552,32"/>
-<area shape="rect" id="node3" href="$df/da5/classMicroHILViewHome.html#a3a8bb766c183c4a7a51d676b70e45629" title="MicroHILViewHome constructor." alt="" coords="5,5,289,32"/>
+<area shape="rect" id="node3" href="$df/da5/classMicroHILViewHome.html#a2af02c3861d8746033c79c72579f201b" title="MicroHILViewHome constructor." alt="" coords="5,5,289,32"/>
 </map>

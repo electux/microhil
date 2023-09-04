@@ -25,7 +25,7 @@ namespace
     constexpr const char kAppId[]{"org.electux.microhildesk"};
 }
 
-Application::Application(int argc, char *argv[]):
+Application::Application(int argc, char* argv[]):
     m_app{Gtk::Application::create(argc, argv, kAppId)},
     m_model{MHmakeSPtr<MicroHILModel>()},
     m_view{MHmakeSPtr<MicroHILView>()},
@@ -36,7 +36,7 @@ Application::Application(int argc, char *argv[]):
 
 int Application::run()
 {
-    int status {EXIT_FAILURE};
+    int status{EXIT_FAILURE};
 
     if(m_app && m_view)
     {

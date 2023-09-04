@@ -24,11 +24,11 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// String representation of info log level
     constexpr const char kInfoLogLevel[]{" INFO "};
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// String representation of warning log level
     constexpr const char kWarningLogLevel[]{" WARNING "};
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// String representation of error log level
     constexpr const char kErrorLogLevel[]{" ERROR "};
@@ -117,7 +117,7 @@ MHString MicroHILLog::getCurrentDateTime() const
     char buffer[80];
 
     time(&rawTime);
-    const struct tm *timeInfo = localtime(&rawTime);
+    const struct tm* timeInfo = localtime(&rawTime);
     strftime(buffer, 80, "%d-%m-%Y %I:%M:%S", timeInfo);
 
     return MHString(buffer);

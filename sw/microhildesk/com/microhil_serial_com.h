@@ -29,7 +29,7 @@ using LibSerial::StopBits;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Declaration of serial parameters structure
-using MHSerialParams = struct 
+using MHSerialParams = struct
 {
     BaudRate baudRate;
     CharacterSize dataBits;

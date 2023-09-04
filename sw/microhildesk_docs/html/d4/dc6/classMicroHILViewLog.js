@@ -1,6 +1,6 @@
 var classMicroHILViewLog =
 [
-    [ "MicroHILViewLog", "d4/dc6/classMicroHILViewLog.html#ad26c9a17405963b713854d0bb084630a", null ],
+    [ "MicroHILViewLog", "d4/dc6/classMicroHILViewLog.html#a59ea4ad3bfa3df105cbb0587e817543b", null ],
     [ "~MicroHILViewLog", "d4/dc6/classMicroHILViewLog.html#a25a946b781e1a720ace91f5a4263d329", null ],
     [ "cancelLogTriggered", "d4/dc6/classMicroHILViewLog.html#aa0f329dd59026322c2b4ddd3baa261ab", null ],
     [ "logFilePathChanged", "d4/dc6/classMicroHILViewLog.html#afb71cf368097a4dc7eeb288d2f63cdd5", null ],
@@ -13,14 +13,14 @@ var classMicroHILViewLog =
     [ "onLogFilePathChanged", "d4/dc6/classMicroHILViewLog.html#ab92cd28f989d81350cfcdb3ba93e268d", null ],
     [ "onLogLevelChanged", "d4/dc6/classMicroHILViewLog.html#a24e93c38113fa539a9005d5ce642bd52", null ],
     [ "onOkLogTriggered", "d4/dc6/classMicroHILViewLog.html#acb037a2ab54f0a480594d3a009a983ef", null ],
-    [ "m_cancel", "d4/dc6/classMicroHILViewLog.html#a11902b66ffab374920b78705f802e7ee", null ],
+    [ "m_cancel", "d4/dc6/classMicroHILViewLog.html#ac12827781543cd63dcd7a400457d344d", null ],
     [ "m_cancelLog", "d4/dc6/classMicroHILViewLog.html#a6db280dbed687653815e35a7845a5c87", null ],
-    [ "m_device", "d4/dc6/classMicroHILViewLog.html#ad6ae4fe5459b72362327062eca5a3a76", null ],
-    [ "m_level", "d4/dc6/classMicroHILViewLog.html#a3786a79d7cee80281fcdf21a76efe12e", null ],
+    [ "m_device", "d4/dc6/classMicroHILViewLog.html#aee1601b7c387b9d05e69de6be775bb87", null ],
+    [ "m_level", "d4/dc6/classMicroHILViewLog.html#a10da9d2f38fa0aec3383332b144e8397", null ],
     [ "m_logFilePath", "d4/dc6/classMicroHILViewLog.html#a46c1cabae98981c82cb509b22991e5f3", null ],
     [ "m_logLevel", "d4/dc6/classMicroHILViewLog.html#a6e9f1ea7155652f19f5676ce90ff7a44", null ],
     [ "m_logSetup", "d4/dc6/classMicroHILViewLog.html#a35bc13c9fb22bb82a37fd2ef3a8dc280", null ],
-    [ "m_ok", "d4/dc6/classMicroHILViewLog.html#aa4a32a48f6dd2a8d68a276d9c8d9a9e9", null ],
+    [ "m_ok", "d4/dc6/classMicroHILViewLog.html#aaf2fe7e195467eb530e75ecd1740dfbe", null ],
     [ "m_okLog", "d4/dc6/classMicroHILViewLog.html#a4c2bd32b01e9b53655c81af624a1cff7", null ],
-    [ "m_ui", "d4/dc6/classMicroHILViewLog.html#a7819502cb045ff0255f3e3da0b909171", null ]
+    [ "m_ui", "d4/dc6/classMicroHILViewLog.html#af32e1bcf5ad57c7c01419bf596bc1df3", null ]
 ];

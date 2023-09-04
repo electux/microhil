@@ -2,17 +2,17 @@
 /*
  * microhil_config_log.cc
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
- * 
+ *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * microhildesk is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -39,9 +39,7 @@ void MicroHILConfig::setLogLevel(int level)
     /// Convert integer log level to string format
     auto logLevel = logLevelToUnicodeString(level);
 
-    m_config.set_string(
-        kConfigLogSection, kConfigLogLevel, logLevel
-    );
+    m_config.set_string(kConfigLogSection, kConfigLogLevel, logLevel);
 }
 
 MHString MicroHILConfig::getLogLevel()
@@ -51,9 +49,7 @@ MHString MicroHILConfig::getLogLevel()
 
 void MicroHILConfig::setLogPath(MHString path)
 {
-    m_config.set_string(
-        kConfigLogSection, kConfigLogFile, path
-    );
+    m_config.set_string(kConfigLogSection, kConfigLogFile, path);
 }
 
 MHString MicroHILConfig::getLogPath()

@@ -26,12 +26,12 @@ namespace
 }
 
 MicroHILViewAbout::MicroHILViewAbout(
-    BaseObjectType* object, Glib::RefPtr<Gtk::Builder> const& ui
+    BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
 ): Gtk::AboutDialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Bind Ok button
-    m_ok = Glib::RefPtr<Gtk::Button>::cast_dynamic(
+    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(
         m_ui->get_object(kOkButtonId)
     );
 
