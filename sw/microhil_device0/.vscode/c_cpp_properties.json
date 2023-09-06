@@ -4,6 +4,10 @@
             "name": "microhil-device0",
             "includePath": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/src/channel",
+                "${workspaceFolder}/src/ws2812",
+                "${workspaceFolder}/src/io_config",
+                "${workspaceFolder}/src/infrared",
                 "/opt/pico/pico-sdk/src/common/pico_stdlib/include",
                 "/opt/pico/pico-sdk/src/common/pico_base/include",
                 "/opt/pico/pico-sdk/src/common/pico_time/include",
@@ -18,7 +22,13 @@
                 "/opt/pico/pico-sdk/src/rp2_common/pico_stdio/include",
                 "/opt/pico/pico-sdk/src/rp2_common/hardware_gpio/include",
                 "/opt/pico/pico-sdk/src/rp2_common/hardware_irq/include",
-                "/opt/pico/pico-sdk/src/rp2_common/hardware_uart/include"
+                "/opt/pico/pico-sdk/src/rp2_common/hardware_uart/include",
+                "/opt/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include",
+                "/opt/pico/pico-sdk/src/rp2_common/hardware_pio/include",
+                "/opt/pico/pico-sdk/src/rp2_common/hardware_clocks/include",
+                "/opt/pico/pico-sdk/src/rp2_common/hardware_pwm/include",
+                "/opt/pico/pico-sdk/src/rp2_common/hardware_spi/include",
+                "/opt/pico/pico-sdk/src/rp2_common/hardware_i2c/include"
             ],
             "defines": [],
             "cStandard": "c11",

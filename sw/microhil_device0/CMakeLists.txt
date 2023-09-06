@@ -1,5 +1,5 @@
 #
-# @brief   microhil main entry point for build process
+# @brief   microhil-device0 main entry point for build process
 # @version v1.0.3
 # @date    2021-12-15
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -24,4 +24,3 @@ include(pro_auto_set_url.cmake)
 
 # Add source directory
 add_subdirectory(src)
-

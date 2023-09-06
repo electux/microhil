@@ -1,14 +1,14 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * main.c
- * Copyright (C) 2021 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
- * microhil is free software: you can redistribute it and/or modify it
+ * microhil-device0 is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * microhil is distributed in the hope that it will be useful, but
+ * microhil-device0 is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
@@ -17,24 +17,31 @@
  * with this program_name.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "pico/stdlib.h"
+#include "microhil_channel.h"
 
-int main() {
-#ifndef PICO_DEFAULT_LED_PIN
-#warning blink example requires a board with a regular LED
-#else
+int main()
+{
+    microhil_init();
+    char *buf;
+    int i = 1, count = -1;
 
-    const uint LED_PIN = PICO_DEFAULT_LED_PIN;
+    while (1)
+    {
+        i = stdio_usb_in_chars(buf, 10);
+        microhil_channel_switch(i);
 
-    gpio_init(LED_PIN);
-    gpio_set_dir(LED_PIN, GPIO_OUT);
-
-    while (true) {
-        gpio_put(LED_PIN, 1);
-        sleep_ms(250);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(250);
+        if (count == 0)
+        {
+            count = 1;
+            printf("****System stability****\r\n\r\n");
+        }
+        else if (count == -1)
+        {
+            printf("***System restart...****\r\n\r\n");
+            sleep_ms(2000);
+            count++;
+        }
     }
 
-#endif
+    return 0;
 }
