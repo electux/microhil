@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "microhil pico build",
+            "label": "microhil-device0 build",
             "type": "shell",
             "command": "",
             "args": [
@@ -12,7 +12,7 @@
             "problemMatcher": []
         },
         {
-            "label": "microhil pico clean",
+            "label": "microhil-device0 clean",
             "type": "shell",
             "command": "",
             "args": [

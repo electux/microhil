@@ -16,7 +16,13 @@
 			"time.h": "c",
 			"timer.h": "c",
 			"address_mapped.h": "c",
-			"gpio.h": "c"
+			"gpio.h": "c",
+			"stdio_usb.h": "c",
+			"ws2812.pio.h": "c",
+			"clocks.h": "c",
+			"dev_config.h": "c",
+			"pio.h": "c",
+			"io_config.h": "c"
 		}
 	}
 }

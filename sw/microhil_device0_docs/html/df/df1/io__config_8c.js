@@ -1,0 +1,26 @@
+var io__config_8c =
+[
+    [ "microhil_delay_ms", "df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0", null ],
+    [ "microhil_delay_us", "df/df1/io__config_8c.html#ae08dc066d13c0d0459fd04cade80dbd4", null ],
+    [ "microhil_digital_read", "df/df1/io__config_8c.html#af91ef9c739725b4065fc59972780c45e", null ],
+    [ "microhil_digital_write", "df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0", null ],
+    [ "microhil_gpio_init", "df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b", null ],
+    [ "microhil_gpio_mode", "df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9", null ],
+    [ "microhil_i2c_read_byte", "df/df1/io__config_8c.html#aa943320358befee6a57d0cbb1e629d8d", null ],
+    [ "microhil_i2c_write_byte", "df/df1/io__config_8c.html#a9e642c83232f265324b36ec5e4130d6f", null ],
+    [ "microhil_i2c_write_n_bytes", "df/df1/io__config_8c.html#a961de8697a10bcf699854f6f92fcaa40", null ],
+    [ "microhil_module_exit", "df/df1/io__config_8c.html#aa54d51fe3736245ee1facd505e91a502", null ],
+    [ "microhil_module_init", "df/df1/io__config_8c.html#af6e2931cf076c56e94f0ff44a2b401ec", null ],
+    [ "microhil_set_pwm_1", "df/df1/io__config_8c.html#a3d02c5ddc7ce26e1aed4bd1097cd37fe", null ],
+    [ "microhil_spi_write_byte", "df/df1/io__config_8c.html#acc3c58dd3878a045dd688105b3cec87e", null ],
+    [ "microhil_spi_write_n_bytes", "df/df1/io__config_8c.html#a1418747777c58136973ee99798a4b973", null ],
+    [ "EPD_BL_PIN", "df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713", null ],
+    [ "EPD_CLK_PIN", "df/df1/io__config_8c.html#a5f4c6bbf4118330c31dedce8d67da371", null ],
+    [ "EPD_CS_PIN", "df/df1/io__config_8c.html#a9f1df78d406d79a1083a8ae913a3b530", null ],
+    [ "EPD_DC_PIN", "df/df1/io__config_8c.html#a5115807d46ade29998cff07d48f0fc0b", null ],
+    [ "EPD_MOSI_PIN", "df/df1/io__config_8c.html#adfb3cf65137d57b937817b3fc3e8fcff", null ],
+    [ "EPD_RST_PIN", "df/df1/io__config_8c.html#abf07dc5aa88c6d4a600fe7d59a0eef9b", null ],
+    [ "EPD_SCL_PIN", "df/df1/io__config_8c.html#a85ae6dc6cce2133da1981700887add40", null ],
+    [ "EPD_SDA_PIN", "df/df1/io__config_8c.html#a79e5a0b947b7dd91e2b3cf3f0a9467db", null ],
+    [ "slice_num", "df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae", null ]
+];
