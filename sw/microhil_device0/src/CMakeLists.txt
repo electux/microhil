@@ -9,14 +9,12 @@
 pico_simple_hardware_target(pio)
 
 add_subdirectory(io_config)
-add_subdirectory(infrared)
 add_subdirectory(ws2812)
 add_subdirectory(channel)
 
 include_directories(channel)
 include_directories(ws2812)
 include_directories(io_config)
-include_directories(infrared)
 
 # Create executable
 add_executable("${CMAKE_PROJECT_NAME}" main.c)
@@ -26,7 +24,7 @@ pico_enable_stdio_usb("${CMAKE_PROJECT_NAME}" 1)
 pico_enable_stdio_uart("${CMAKE_PROJECT_NAME}" 1)
 
 # Link all libraries
-target_link_libraries("${CMAKE_PROJECT_NAME}" channel ws2812 infrared io_config)
+target_link_libraries("${CMAKE_PROJECT_NAME}" channel ws2812 io_config)
 
 # Create extra output files map/bin/hex
 pico_add_extra_outputs("${CMAKE_PROJECT_NAME}")

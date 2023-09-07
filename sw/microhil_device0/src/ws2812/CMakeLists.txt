@@ -8,8 +8,7 @@
 aux_source_directory(. DIR_WS2812_SRCS)
 
 include_directories(../io_config)
-include_directories(../infrared)
 
 add_library(ws2812 ${DIR_WS2812_SRCS})
 
-target_link_libraries(ws2812 PUBLIC io_config infrared)
+target_link_libraries(ws2812 PUBLIC io_config)

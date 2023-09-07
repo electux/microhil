@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['slice_5fnum_0',['slice_num',['../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae',1,'slice_num():&#160;io_config.c'],['../df/d6a/io__config_8h.html#af8eb9cf9a6e9c4eea13d416da945f6ae',1,'slice_num():&#160;io_config.c']]]
+  ['ws2812_5fparallel_5fprogram_0',['ws2812_parallel_program',['../d6/d69/ws2812_8pio_8h.html#a43f3648710207eb40798826e7c65c80f',1,'ws2812.pio.h']]],
+  ['ws2812_5fparallel_5fprogram_5finstructions_1',['ws2812_parallel_program_instructions',['../d6/d69/ws2812_8pio_8h.html#ac7bac5ef999e632c91881c48b911a22f',1,'ws2812.pio.h']]],
+  ['ws2812_5fprogram_2',['ws2812_program',['../d6/d69/ws2812_8pio_8h.html#a55e4cbdb9411683b8a5655f4454d000c',1,'ws2812.pio.h']]],
+  ['ws2812_5fprogram_5finstructions_3',['ws2812_program_instructions',['../d6/d69/ws2812_8pio_8h.html#a5b57b783765a7b5cc24fc330edcfe167',1,'ws2812.pio.h']]]
 ];

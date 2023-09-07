@@ -14,34 +14,21 @@
  * See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along
- * with this program_name.  If not, see <http://www.gnu.org/licenses/>.
+ * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
-
-#include "microhil_channel.h"
+#include "channel.h"
 
 int main()
 {
-    microhil_init();
+    bool status = microhil_init();
 
-    char *buf;
+    char *buffer = NULL;
     int i = 1, count = -1;
 
-    while (1)
+    while(status)
     {
-        i = stdio_usb_in_chars(buf, 10);
+        i = stdio_usb_in_chars(buffer, 10);
         microhil_channel_switch(i);
-
-        if (count == 0)
-        {
-            count = 1;
-            printf("****System stability****\r\n\r\n");
-        }
-        else if (count == -1)
-        {
-            printf("***System restart...****\r\n\r\n");
-            sleep_ms(2000);
-            count++;
-        }
     }
 
     return 0;
