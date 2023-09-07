@@ -1,6 +1,5 @@
 <map id="microhil_gpio_mode" name="microhil_gpio_mode">
-<area shape="rect" id="node1" title=" " alt="" coords="460,31,615,57"/>
-<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b" title=" " alt="" coords="243,5,381,32"/>
-<area shape="rect" id="node4" href="$dd/de6/infrared_8c.html#a06868af7ffb19548165677dafbb2b643" title=" " alt="" coords="212,56,412,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="399,5,553,32"/>
+<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b" title=" " alt="" coords="212,5,351,32"/>
 <area shape="rect" id="node3" href="$df/df1/io__config_8c.html#af6e2931cf076c56e94f0ff44a2b401ec" title=" " alt="" coords="5,5,164,32"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="microhil_all_channels_on" name="microhil_all_channels_on">
+<area shape="rect" id="node1" title="Set all channels to ON." alt="" coords="5,81,192,108"/>
+<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title=" " alt="" coords="245,5,390,32"/>
+<area shape="rect" id="node3" href="$de/d3f/channel__pwm_8c.html#a2bb5757956e78852e400df1074eca368" title="Write value to PWM channel." alt="" coords="240,56,395,83"/>
+<area shape="rect" id="node4" href="$d0/d22/channel__led_8c.html#ab37825a07ffed31f0bf6acda6b17c9f1" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="277,107,358,133"/>
+<area shape="rect" id="node5" href="$d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253" title="Generate 32&#45;bit RGB value." alt="" coords="276,157,359,184"/>
+</map>

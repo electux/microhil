@@ -1,0 +1,27 @@
+var channel_8h =
+[
+    [ "MICROHIL_ALL_CHANNELS_OFF", "d5/d7b/channel_8h.html#acf1d49511608e17f8b08e06953d85e8b", null ],
+    [ "MICROHIL_ALL_CHANNELS_ON", "d5/d7b/channel_8h.html#abc7b8c6af2084f717da6179c4d0fb671", null ],
+    [ "MICROHIL_CHANNEL_1", "d5/d7b/channel_8h.html#a951f27c5222f0675e1426ee62374de2f", null ],
+    [ "MICROHIL_CHANNEL_2", "d5/d7b/channel_8h.html#a25f2304b1961cab0957c26e7d3cf5fa3", null ],
+    [ "MICROHIL_CHANNEL_3", "d5/d7b/channel_8h.html#ae0919ca3864ee12f24dc2f10655827c0", null ],
+    [ "MICROHIL_CHANNEL_4", "d5/d7b/channel_8h.html#ab9767a4105f32099b7761aaf4ae1aeed", null ],
+    [ "MICROHIL_CHANNEL_5", "d5/d7b/channel_8h.html#a9131a4361440d901414262f370060709", null ],
+    [ "MICROHIL_CHANNEL_6", "d5/d7b/channel_8h.html#ae97d195adcc74151c0704adce67fa497", null ],
+    [ "MICROHIL_CHANNEL_7", "d5/d7b/channel_8h.html#a138bc87a3ad9c3db3bd85b751fd5a6b1", null ],
+    [ "MICROHIL_CHANNEL_8", "d5/d7b/channel_8h.html#a5343a98c29151d6ec9133f7161224d68", null ],
+    [ "MICROHIL_CHANNELS_ERROR", "d5/d7b/channel_8h.html#abc39911cf0804b7e25914876409fde8e", null ],
+    [ "MICROHIL_NUMBER_OF_CHANNELS", "d5/d7b/channel_8h.html#ac54c73055d263f7697426070dc5c452a", null ],
+    [ "id_to_gpio", "d5/d7b/channel_8h.html#a20a1359efba58a808fd2a235231df196", null ],
+    [ "microhil_all_channels_off", "d5/d7b/channel_8h.html#a4d0b5716356dbea2a25811b5cd894182", null ],
+    [ "microhil_all_channels_on", "d5/d7b/channel_8h.html#aed07b8a710efb4cd7a9d6b08d27b85e4", null ],
+    [ "microhil_channel_switch", "d5/d7b/channel_8h.html#a5e86a6713a5ab382af4f00fef013e63b", null ],
+    [ "microhil_init", "d5/d7b/channel_8h.html#ad215bce0c7df0f50ffd866ae3316f76e", null ],
+    [ "microhil_init_pwm", "d5/d7b/channel_8h.html#a6610e997c081bd66aad2ae96d70675d4", null ],
+    [ "microhil_init_relay", "d5/d7b/channel_8h.html#a2b038c609ce91d186f79899abb3a9356", null ],
+    [ "microhil_pio_init", "d5/d7b/channel_8h.html#a1d894ba2c3fdf553fd6cf62d5f376ac4", null ],
+    [ "microhil_write_pwm", "d5/d7b/channel_8h.html#a2bb5757956e78852e400df1074eca368", null ],
+    [ "put_pixel", "d5/d7b/channel_8h.html#ab37825a07ffed31f0bf6acda6b17c9f1", null ],
+    [ "urgb_u32", "d5/d7b/channel_8h.html#a6f9aa8064d7f3cd8908b853c8a002253", null ],
+    [ "channels", "d5/d7b/channel_8h.html#a1603d7844686736afb2344f446611a73", null ]
+];

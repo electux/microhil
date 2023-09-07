@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pin_5ftx_0',['PIN_TX',['../db/de1/microhil__channel__pio_8c.html#a1012967e69a813e72e15c51d7df57011',1,'microhil_channel_pio.c']]]
+  ['slice_5fnum_0',['slice_num',['../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae',1,'slice_num():&#160;io_config.c'],['../df/d6a/io__config_8h.html#af8eb9cf9a6e9c4eea13d416da945f6ae',1,'slice_num():&#160;io_config.c']]]
 ];

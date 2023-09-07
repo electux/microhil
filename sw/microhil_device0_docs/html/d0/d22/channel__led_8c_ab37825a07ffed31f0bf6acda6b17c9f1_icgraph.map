@@ -1,0 +1,8 @@
+<map id="put_pixel" name="put_pixel">
+<area shape="rect" id="node1" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="573,81,655,108"/>
+<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#a4d0b5716356dbea2a25811b5cd894182" title="Set all channels to OFF." alt="" coords="339,5,525,32"/>
+<area shape="rect" id="node3" href="$d4/d28/channel_8c.html#a5e86a6713a5ab382af4f00fef013e63b" title="Switch channel state." alt="" coords="108,69,291,96"/>
+<area shape="rect" id="node5" href="$d4/d28/channel_8c.html#aed07b8a710efb4cd7a9d6b08d27b85e4" title="Set all channels to ON." alt="" coords="339,107,525,133"/>
+<area shape="rect" id="node6" href="$d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global initialization of microHIL device." alt="" coords="148,132,251,159"/>
+<area shape="rect" id="node4" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,60,133"/>
+</map>
