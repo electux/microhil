@@ -110,41 +110,42 @@ $(document).ready(function(){initNavTree('d0/d29/main_8c_source.html','../../');
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   22</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#a0680439f6baf36f3b08c77d103dfd22a">microhil_init</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">char</span> *buf;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">int</span> i = 1, count = -1;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">while</span> (1)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        i = stdio_usb_in_chars(buf, 10);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#a5e86a6713a5ab382af4f00fef013e63b">microhil_channel_switch</a>(i);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">if</span> (count == 0)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            count = 1;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            printf(<span class="stringliteral">&quot;****System stability****\r\n\r\n&quot;</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count == -1)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            printf(<span class="stringliteral">&quot;***System restart...****\r\n\r\n&quot;</span>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            sleep_ms(2000);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            count++;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#ad215bce0c7df0f50ffd866ae3316f76e">microhil_init</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">char</span> *buf;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">int</span> i = 1, count = -1;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        i = stdio_usb_in_chars(buf, 10);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_function" href="../../d6/d64/microhil__channel_8c.html#a5e86a6713a5ab382af4f00fef013e63b">microhil_channel_switch</a>(i);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span> (count == 0)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            count = 1;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            printf(<span class="stringliteral">&quot;****System stability****\r\n\r\n&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count == -1)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            printf(<span class="stringliteral">&quot;***System restart...****\r\n\r\n&quot;</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            sleep_ms(2000);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            count++;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 <div class="ttc" id="amain_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d29/main_8c_source.html#l00022">main.c:22</a></div></div>
+<div class="ttc" id="amicrohil__channel_8c_html_a5e86a6713a5ab382af4f00fef013e63b"><div class="ttname"><a href="../../d6/d64/microhil__channel_8c.html#a5e86a6713a5ab382af4f00fef013e63b">microhil_channel_switch</a></div><div class="ttdeci">void microhil_channel_switch(int id)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d64/microhil__channel_8c_source.html#l00071">microhil_channel.c:71</a></div></div>
 <div class="ttc" id="amicrohil__channel_8h_html"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html">microhil_channel.h</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_a0680439f6baf36f3b08c77d103dfd22a"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a0680439f6baf36f3b08c77d103dfd22a">microhil_init</a></div><div class="ttdeci">void microhil_init()</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5a/microhil__channel__init_8c_source.html#l00031">microhil_channel_init.c:31</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_a5e86a6713a5ab382af4f00fef013e63b"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a5e86a6713a5ab382af4f00fef013e63b">microhil_channel_switch</a></div><div class="ttdeci">void microhil_channel_switch(int id)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/microhil__channel__action_8c_source.html#l00071">microhil_channel_action.c:71</a></div></div>
+<div class="ttc" id="amicrohil__channel_8h_html_ad215bce0c7df0f50ffd866ae3316f76e"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#ad215bce0c7df0f50ffd866ae3316f76e">microhil_init</a></div><div class="ttdeci">bool microhil_init()</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5a/microhil__channel__init_8c_source.html#l00028">microhil_channel_init.c:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d0/d29/main_8c.html">main.c</a></li>
-    <li class="footer">Generated on Wed Sep 6 2023 04:11:51 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Sep 7 2023 06:59:00 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

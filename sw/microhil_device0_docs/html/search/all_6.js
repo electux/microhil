@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['relays_0',['Relays',['../d2/d0c/microhil__channel_8h.html#adae4978cc6b9bcaf0401d24bfbdb02a9',1,'Relays():&#160;microhil_channel_init.c'],['../d2/d5a/microhil__channel__init_8c.html#adae4978cc6b9bcaf0401d24bfbdb02a9',1,'Relays():&#160;microhil_channel_init.c']]]
+  ['slice_5fnum_0',['slice_num',['../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae',1,'slice_num():&#160;io_config.c'],['../df/d6a/io__config_8h.html#af8eb9cf9a6e9c4eea13d416da945f6ae',1,'slice_num():&#160;io_config.c']]],
+  ['spi_5fport_1',['SPI_PORT',['../df/d6a/io__config_8h.html#a8112c985f7444e82198d7571ce0a9160',1,'io_config.h']]]
 ];

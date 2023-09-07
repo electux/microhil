@@ -22,6 +22,7 @@
 int main()
 {
     microhil_init();
+
     char *buf;
     int i = 1, count = -1;
 
