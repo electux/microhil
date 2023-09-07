@@ -116,104 +116,113 @@ Include dependency graph for microhil_channel_init.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0680439f6baf36f3b08c77d103dfd22a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5a/microhil__channel__init_8c.html#a0680439f6baf36f3b08c77d103dfd22a">microhil_init</a> ()</td></tr>
-<tr class="separator:a0680439f6baf36f3b08c77d103dfd22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad215bce0c7df0f50ffd866ae3316f76e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5a/microhil__channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e">microhil_init</a> ()</td></tr>
+<tr class="separator:ad215bce0c7df0f50ffd866ae3316f76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:adae4978cc6b9bcaf0401d24bfbdb02a9"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5a/microhil__channel__init_8c.html#adae4978cc6b9bcaf0401d24bfbdb02a9">Relays</a> [8] = {0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1}</td></tr>
-<tr class="separator:adae4978cc6b9bcaf0401d24bfbdb02a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1012967e69a813e72e15c51d7df57011"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5a/microhil__channel__init_8c.html#a1012967e69a813e72e15c51d7df57011">PIN_TX</a> = 13</td></tr>
-<tr class="separator:a1012967e69a813e72e15c51d7df57011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c71e7b8cb7eaf9dcf149a58b713c083"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5a/microhil__channel__init_8c.html#a6c71e7b8cb7eaf9dcf149a58b713c083">channels</a> [8] = {0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1}</td></tr>
+<tr class="separator:a6c71e7b8cb7eaf9dcf149a58b713c083"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a0680439f6baf36f3b08c77d103dfd22a" name="a0680439f6baf36f3b08c77d103dfd22a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0680439f6baf36f3b08c77d103dfd22a">&#9670;&nbsp;</a></span>microhil_init()</h2>
+<a id="ad215bce0c7df0f50ffd866ae3316f76e" name="ad215bce0c7df0f50ffd866ae3316f76e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad215bce0c7df0f50ffd866ae3316f76e">&#9670;&nbsp;</a></span>microhil_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void microhil_init </td>
+          <td class="memname">bool microhil_init </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true for success else false </dd></dl>
+<p >Perform initialization for stdio types</p>
+<p >Failed to perform initialization for stdio types</p>
+<p >Perform initialization for stdio usb</p>
+<p >Failed to perform initialization for stdio usb</p>
+<p >Perform initialization for RELAY</p>
+<p >Failed to perform initialization for RELAY</p>
+<p >Perform initialization for PIO</p>
+<p >Failed to perform initialization for PIO</p>
+<p >Perform initialization for PWM</p>
+<p >Failed to perform initialization for PWM</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html#l00031">31</a> of file <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html">microhil_channel_init.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
-<div class="line"><span class="lineno">   33</span>    stdio_init_all();</div>
-<div class="line"><span class="lineno">   34</span>    stdio_usb_init();</div>
-<div class="line"><span class="lineno">   35</span>    gpio_init(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#a7749c854e9001634011694695dd7008f">JDQ1</a>);</div>
-<div class="line"><span class="lineno">   36</span>    gpio_init(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#ab47d221d47192d16d32a5055e6512e5d">JDQ2</a>);</div>
-<div class="line"><span class="lineno">   37</span>    gpio_init(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#a0ea81c4fb10bf3fd2f7dbf1f6be2038f">JDQ3</a>);</div>
-<div class="line"><span class="lineno">   38</span>    gpio_init(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#ade1a8df1ec4653e6ed02fc683a63812b">JDQ4</a>);</div>
-<div class="line"><span class="lineno">   39</span>    gpio_init(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#a821c38f59c40da0497a17902fe3be690">JDQ5</a>);</div>
-<div class="line"><span class="lineno">   40</span>    gpio_init(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#aaecc2b24dd07d49b732c22f9511fc769">JDQ6</a>);</div>
-<div class="line"><span class="lineno">   41</span>    gpio_init(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#aade5195fc05c7bfce3f7862d9f8598de">JDQ7</a>);</div>
-<div class="line"><span class="lineno">   42</span>    gpio_init(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#a186b502ca5efca00f6f216f7a664cca9">JDQ8</a>);</div>
-<div class="line"><span class="lineno">   43</span>    gpio_set_dir(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#a7749c854e9001634011694695dd7008f">JDQ1</a>, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   44</span>    gpio_set_dir(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#ab47d221d47192d16d32a5055e6512e5d">JDQ2</a>, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   45</span>    gpio_set_dir(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#a0ea81c4fb10bf3fd2f7dbf1f6be2038f">JDQ3</a>, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   46</span>    gpio_set_dir(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#ade1a8df1ec4653e6ed02fc683a63812b">JDQ4</a>, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   47</span>    gpio_set_dir(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#a821c38f59c40da0497a17902fe3be690">JDQ5</a>, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   48</span>    gpio_set_dir(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#aaecc2b24dd07d49b732c22f9511fc769">JDQ6</a>, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   49</span>    gpio_set_dir(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#aade5195fc05c7bfce3f7862d9f8598de">JDQ7</a>, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   50</span>    gpio_set_dir(<a class="code hl_define" href="../../d2/d0c/microhil__channel_8h.html#a186b502ca5efca00f6f216f7a664cca9">JDQ8</a>, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    PIO pio = pio0;</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordtype">int</span> sm = 0;</div>
-<div class="line"><span class="lineno">   54</span>    uint offset = pio_add_program(pio, &amp;<a class="code hl_variable" href="../../d6/d69/ws2812_8pio_8h.html#a55e4cbdb9411683b8a5655f4454d000c">ws2812_program</a>);</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    <a class="code hl_function" href="../../d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1">ws2812_program_init</a>(pio, sm, offset, <a class="code hl_variable" href="../../d2/d5a/microhil__channel__init_8c.html#a1012967e69a813e72e15c51d7df57011">PIN_TX</a>, 800000, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   57</span>    gpio_set_function(6, GPIO_FUNC_PWM);</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a> = pwm_gpio_to_slice_num(6);</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    pwm_set_wrap(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 500);</div>
-<div class="line"><span class="lineno">   62</span>    pwm_set_chan_level(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, PWM_CHAN_A, 1);</div>
-<div class="line"><span class="lineno">   63</span>    pwm_set_clkdiv(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 50);</div>
-<div class="line"><span class="lineno">   64</span>    pwm_set_enabled(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   65</span>    <a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#a9e6f38587a6a1273e931b3fb16f3000f">put_pixel</a>(<a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#abee13d16b0376847bddb141ef56ccc83">urgb_u32</a>(0, 0, 0)); <span class="comment">// RGB</span></div>
-<div class="line"><span class="lineno">   66</span>    <span class="comment">// microhil_write_pwm(80); //buzzer</span></div>
-<div class="line"><span class="lineno">   67</span>}</div>
-<div class="ttc" id="aio__config_8c_html_af8eb9cf9a6e9c4eea13d416da945f6ae"><div class="ttname"><a href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a></div><div class="ttdeci">uint slice_num</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00055">io_config.c:55</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_a0ea81c4fb10bf3fd2f7dbf1f6be2038f"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a0ea81c4fb10bf3fd2f7dbf1f6be2038f">JDQ3</a></div><div class="ttdeci">#define JDQ3</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d0c/microhil__channel_8h_source.html#l00040">microhil_channel.h:40</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_a186b502ca5efca00f6f216f7a664cca9"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a186b502ca5efca00f6f216f7a664cca9">JDQ8</a></div><div class="ttdeci">#define JDQ8</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d0c/microhil__channel_8h_source.html#l00060">microhil_channel.h:60</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_a7749c854e9001634011694695dd7008f"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a7749c854e9001634011694695dd7008f">JDQ1</a></div><div class="ttdeci">#define JDQ1</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d0c/microhil__channel_8h_source.html#l00032">microhil_channel.h:32</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_a821c38f59c40da0497a17902fe3be690"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a821c38f59c40da0497a17902fe3be690">JDQ5</a></div><div class="ttdeci">#define JDQ5</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d0c/microhil__channel_8h_source.html#l00048">microhil_channel.h:48</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_a9e6f38587a6a1273e931b3fb16f3000f"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a9e6f38587a6a1273e931b3fb16f3000f">put_pixel</a></div><div class="ttdeci">void put_pixel(uint32_t pixel_grb)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/microhil__channel__utils_8c_source.html#l00024">microhil_channel_utils.c:24</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_aade5195fc05c7bfce3f7862d9f8598de"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#aade5195fc05c7bfce3f7862d9f8598de">JDQ7</a></div><div class="ttdeci">#define JDQ7</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d0c/microhil__channel_8h_source.html#l00056">microhil_channel.h:56</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_aaecc2b24dd07d49b732c22f9511fc769"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#aaecc2b24dd07d49b732c22f9511fc769">JDQ6</a></div><div class="ttdeci">#define JDQ6</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d0c/microhil__channel_8h_source.html#l00052">microhil_channel.h:52</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_ab47d221d47192d16d32a5055e6512e5d"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#ab47d221d47192d16d32a5055e6512e5d">JDQ2</a></div><div class="ttdeci">#define JDQ2</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d0c/microhil__channel_8h_source.html#l00036">microhil_channel.h:36</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_abee13d16b0376847bddb141ef56ccc83"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#abee13d16b0376847bddb141ef56ccc83">urgb_u32</a></div><div class="ttdeci">uint32_t urgb_u32(uint8_t r, uint8_t g, uint8_t b)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/microhil__channel__utils_8c_source.html#l00035">microhil_channel_utils.c:35</a></div></div>
-<div class="ttc" id="amicrohil__channel_8h_html_ade1a8df1ec4653e6ed02fc683a63812b"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#ade1a8df1ec4653e6ed02fc683a63812b">JDQ4</a></div><div class="ttdeci">#define JDQ4</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d0c/microhil__channel_8h_source.html#l00044">microhil_channel.h:44</a></div></div>
-<div class="ttc" id="amicrohil__channel__init_8c_html_a1012967e69a813e72e15c51d7df57011"><div class="ttname"><a href="../../d2/d5a/microhil__channel__init_8c.html#a1012967e69a813e72e15c51d7df57011">PIN_TX</a></div><div class="ttdeci">const int PIN_TX</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5a/microhil__channel__init_8c_source.html#l00027">microhil_channel_init.c:27</a></div></div>
-<div class="ttc" id="aws2812_8pio_8h_html_a55e4cbdb9411683b8a5655f4454d000c"><div class="ttname"><a href="../../d6/d69/ws2812_8pio_8h.html#a55e4cbdb9411683b8a5655f4454d000c">ws2812_program</a></div><div class="ttdeci">static const struct pio_program ws2812_program</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d69/ws2812_8pio_8h_source.html#l00062">ws2812.pio.h:62</a></div></div>
-<div class="ttc" id="aws2812_8pio_8h_html_a7cc3cfcf374474bf4515d9fe0fa27af1"><div class="ttname"><a href="../../d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1">ws2812_program_init</a></div><div class="ttdeci">static void ws2812_program_init(PIO pio, uint sm, uint offset, uint pin, float freq, bool rgbw)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d69/ws2812_8pio_8h_source.html#l00095">ws2812.pio.h:95</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html#l00028">28</a> of file <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html">microhil_channel_init.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordtype">bool</span> status = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   34</span>    status = stdio_init_all();</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span>(!status)</div>
+<div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   45</span>    status = stdio_usb_init();</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (!status)</div>
+<div class="line"><span class="lineno">   48</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   56</span>    status = <a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#a2b038c609ce91d186f79899abb3a9356">microhil_init_relay</a>();</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (!status)</div>
+<div class="line"><span class="lineno">   59</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   67</span>    status = <a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#a1d894ba2c3fdf553fd6cf62d5f376ac4">microhil_pio_init</a>();</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (!status)</div>
+<div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   78</span>    status = <a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#a6610e997c081bd66aad2ae96d70675d4">microhil_init_pwm</a>();</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span> (!status)</div>
+<div class="line"><span class="lineno">   81</span>    {</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#ab37825a07ffed31f0bf6acda6b17c9f1">put_pixel</a>(<a class="code hl_function" href="../../d2/d0c/microhil__channel_8h.html#a6f9aa8064d7f3cd8908b853c8a002253">urgb_u32</a>(0, 0, 0));</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">   90</span>}</div>
+<div class="ttc" id="amicrohil__channel_8h_html_a1d894ba2c3fdf553fd6cf62d5f376ac4"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a1d894ba2c3fdf553fd6cf62d5f376ac4">microhil_pio_init</a></div><div class="ttdeci">bool microhil_pio_init()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/de1/microhil__channel__pio_8c_source.html#l00028">microhil_channel_pio.c:28</a></div></div>
+<div class="ttc" id="amicrohil__channel_8h_html_a2b038c609ce91d186f79899abb3a9356"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a2b038c609ce91d186f79899abb3a9356">microhil_init_relay</a></div><div class="ttdeci">bool microhil_init_relay()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dfd/microhil__channel__relay_8c_source.html#l00024">microhil_channel_relay.c:24</a></div></div>
+<div class="ttc" id="amicrohil__channel_8h_html_a6610e997c081bd66aad2ae96d70675d4"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a6610e997c081bd66aad2ae96d70675d4">microhil_init_pwm</a></div><div class="ttdeci">bool microhil_init_pwm()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d7e/microhil__channel__pwm_8c_source.html#l00024">microhil_channel_pwm.c:24</a></div></div>
+<div class="ttc" id="amicrohil__channel_8h_html_a6f9aa8064d7f3cd8908b853c8a002253"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#a6f9aa8064d7f3cd8908b853c8a002253">urgb_u32</a></div><div class="ttdeci">uint32_t urgb_u32(uint8_t red, uint8_t green, uint8_t blue)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d21/microhil__channel__led_8c_source.html#l00035">microhil_channel_led.c:35</a></div></div>
+<div class="ttc" id="amicrohil__channel_8h_html_ab37825a07ffed31f0bf6acda6b17c9f1"><div class="ttname"><a href="../../d2/d0c/microhil__channel_8h.html#ab37825a07ffed31f0bf6acda6b17c9f1">put_pixel</a></div><div class="ttdeci">void put_pixel(uint32_t pixel_rgb)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d21/microhil__channel__led_8c_source.html#l00024">microhil_channel_led.c:24</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/d0c/microhil__channel_8h_source.html#l00032">JDQ1</a>, <a class="el" href="../../d2/d0c/microhil__channel_8h_source.html#l00036">JDQ2</a>, <a class="el" href="../../d2/d0c/microhil__channel_8h_source.html#l00040">JDQ3</a>, <a class="el" href="../../d2/d0c/microhil__channel_8h_source.html#l00044">JDQ4</a>, <a class="el" href="../../d2/d0c/microhil__channel_8h_source.html#l00048">JDQ5</a>, <a class="el" href="../../d2/d0c/microhil__channel_8h_source.html#l00052">JDQ6</a>, <a class="el" href="../../d2/d0c/microhil__channel_8h_source.html#l00056">JDQ7</a>, <a class="el" href="../../d2/d0c/microhil__channel_8h_source.html#l00060">JDQ8</a>, <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html#l00027">PIN_TX</a>, <a class="el" href="../../dc/d23/microhil__channel__utils_8c_source.html#l00024">put_pixel()</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00055">slice_num</a>, <a class="el" href="../../dc/d23/microhil__channel__utils_8c_source.html#l00035">urgb_u32()</a>, <a class="el" href="../../d6/d69/ws2812_8pio_8h_source.html#l00062">ws2812_program</a>, and <a class="el" href="../../d6/d69/ws2812_8pio_8h_source.html#l00095">ws2812_program_init()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d7e/microhil__channel__pwm_8c_source.html#l00024">microhil_init_pwm()</a>, <a class="el" href="../../da/dfd/microhil__channel__relay_8c_source.html#l00024">microhil_init_relay()</a>, <a class="el" href="../../db/de1/microhil__channel__pio_8c_source.html#l00028">microhil_pio_init()</a>, <a class="el" href="../../d9/d21/microhil__channel__led_8c_source.html#l00024">put_pixel()</a>, and <a class="el" href="../../d9/d21/microhil__channel__led_8c_source.html#l00035">urgb_u32()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/d29/main_8c_source.html#l00022">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/d5a/microhil__channel__init_8c_a0680439f6baf36f3b08c77d103dfd22a_cgraph.png" border="0" usemap="#ad2/d5a/microhil__channel__init_8c_a0680439f6baf36f3b08c77d103dfd22a_cgraph" alt=""/></div>
-<map name="ad2/d5a/microhil__channel__init_8c_a0680439f6baf36f3b08c77d103dfd22a_cgraph" id="ad2/d5a/microhil__channel__init_8c_a0680439f6baf36f3b08c77d103dfd22a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,108,83"/>
-<area shape="rect" href="../../dc/d23/microhil__channel__utils_8c.html#a9e6f38587a6a1273e931b3fb16f3000f" title=" " alt="" coords="197,5,278,32"/>
-<area shape="rect" href="../../dc/d23/microhil__channel__utils_8c.html#abee13d16b0376847bddb141ef56ccc83" title=" " alt="" coords="196,56,279,83"/>
-<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1" title=" " alt="" coords="156,107,319,133"/>
-<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title=" " alt="" coords="367,99,529,141"/>
+<div class="center"><img src="../../d2/d5a/microhil__channel__init_8c_ad215bce0c7df0f50ffd866ae3316f76e_cgraph.png" border="0" usemap="#ad2/d5a/microhil__channel__init_8c_ad215bce0c7df0f50ffd866ae3316f76e_cgraph" alt=""/></div>
+<map name="ad2/d5a/microhil__channel__init_8c_ad215bce0c7df0f50ffd866ae3316f76e_cgraph" id="ad2/d5a/microhil__channel__init_8c_ad215bce0c7df0f50ffd866ae3316f76e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,107,108,133"/>
+<area shape="rect" href="../../d9/d7e/microhil__channel__pwm_8c.html#a6610e997c081bd66aad2ae96d70675d4" title=" " alt="" coords="156,5,299,32"/>
+<area shape="rect" href="../../da/dfd/microhil__channel__relay_8c.html#a2b038c609ce91d186f79899abb3a9356" title=" " alt="" coords="156,56,299,83"/>
+<area shape="rect" href="../../db/de1/microhil__channel__pio_8c.html#a1d894ba2c3fdf553fd6cf62d5f376ac4" title=" " alt="" coords="162,107,293,133"/>
+<area shape="rect" href="../../d9/d21/microhil__channel__led_8c.html#ab37825a07ffed31f0bf6acda6b17c9f1" title=" " alt="" coords="187,157,268,184"/>
+<area shape="rect" href="../../d9/d21/microhil__channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253" title=" " alt="" coords="186,208,269,235"/>
+<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1" title=" " alt="" coords="347,107,509,133"/>
+<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title=" " alt="" coords="557,99,720,141"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/d5a/microhil__channel__init_8c_a0680439f6baf36f3b08c77d103dfd22a_icgraph.png" border="0" usemap="#ad2/d5a/microhil__channel__init_8c_a0680439f6baf36f3b08c77d103dfd22a_icgraph" alt=""/></div>
-<map name="ad2/d5a/microhil__channel__init_8c_a0680439f6baf36f3b08c77d103dfd22a_icgraph" id="ad2/d5a/microhil__channel__init_8c_a0680439f6baf36f3b08c77d103dfd22a_icgraph">
+<div class="center"><img src="../../d2/d5a/microhil__channel__init_8c_ad215bce0c7df0f50ffd866ae3316f76e_icgraph.png" border="0" usemap="#ad2/d5a/microhil__channel__init_8c_ad215bce0c7df0f50ffd866ae3316f76e_icgraph" alt=""/></div>
+<map name="ad2/d5a/microhil__channel__init_8c_ad215bce0c7df0f50ffd866ae3316f76e_icgraph" id="ad2/d5a/microhil__channel__init_8c_ad215bce0c7df0f50ffd866ae3316f76e_icgraph">
 <area shape="rect" title=" " alt="" coords="108,5,211,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,32"/>
 </map>
@@ -222,39 +231,21 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a1012967e69a813e72e15c51d7df57011" name="a1012967e69a813e72e15c51d7df57011"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1012967e69a813e72e15c51d7df57011">&#9670;&nbsp;</a></span>PIN_TX</h2>
+<a id="a6c71e7b8cb7eaf9dcf149a58b713c083" name="a6c71e7b8cb7eaf9dcf149a58b713c083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c71e7b8cb7eaf9dcf149a58b713c083">&#9670;&nbsp;</a></span>channels</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int PIN_TX = 13</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html#l00027">27</a> of file <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html">microhil_channel_init.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html#l00031">microhil_init()</a>.</p>
-
-</div>
-</div>
-<a id="adae4978cc6b9bcaf0401d24bfbdb02a9" name="adae4978cc6b9bcaf0401d24bfbdb02a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adae4978cc6b9bcaf0401d24bfbdb02a9">&#9670;&nbsp;</a></span>Relays</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned char Relays[8] = {0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1}</td>
+          <td class="memname">unsigned char channels[8] = {0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html#l00023">23</a> of file <a class="el" href="../../d2/d5a/microhil__channel__init_8c_source.html">microhil_channel_init.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d12/microhil__channel__action_8c_source.html#l00048">microhil_all_channels_off()</a>, <a class="el" href="../../d8/d12/microhil__channel__action_8c_source.html#l00023">microhil_all_channels_on()</a>, and <a class="el" href="../../d8/d12/microhil__channel__action_8c_source.html#l00071">microhil_channel_switch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/d64/microhil__channel_8c_source.html#l00048">microhil_all_channels_off()</a>, <a class="el" href="../../d6/d64/microhil__channel_8c_source.html#l00023">microhil_all_channels_on()</a>, and <a class="el" href="../../d6/d64/microhil__channel_8c_source.html#l00071">microhil_channel_switch()</a>.</p>
 
 </div>
 </div>
@@ -264,7 +255,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bbca32ae125625ab0d7554a76a48380c.html">channel</a></li><li class="navelem"><a class="el" href="../../d2/d5a/microhil__channel__init_8c.html">microhil_channel_init.c</a></li>
-    <li class="footer">Generated on Wed Sep 6 2023 04:11:51 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Sep 7 2023 06:59:00 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

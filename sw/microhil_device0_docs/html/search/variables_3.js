@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['relays_0',['Relays',['../d2/d0c/microhil__channel_8h.html#adae4978cc6b9bcaf0401d24bfbdb02a9',1,'Relays():&#160;microhil_channel_init.c'],['../d2/d5a/microhil__channel__init_8c.html#adae4978cc6b9bcaf0401d24bfbdb02a9',1,'Relays():&#160;microhil_channel_init.c']]]
+  ['pin_5ftx_0',['PIN_TX',['../db/de1/microhil__channel__pio_8c.html#a1012967e69a813e72e15c51d7df57011',1,'microhil_channel_pio.c']]]
 ];

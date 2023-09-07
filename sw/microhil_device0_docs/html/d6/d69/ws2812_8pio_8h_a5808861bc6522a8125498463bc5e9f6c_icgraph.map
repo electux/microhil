@@ -1,6 +1,7 @@
 <map id="ws2812_program_get_default_config" name="ws2812_program_get_default_config">
-<area shape="rect" id="node1" title=" " alt="" coords="469,5,632,47"/>
-<area shape="rect" id="node2" href="$d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1" title=" " alt="" coords="259,13,421,39"/>
-<area shape="rect" id="node3" href="$d2/d5a/microhil__channel__init_8c.html#a0680439f6baf36f3b08c77d103dfd22a" title=" " alt="" coords="108,13,211,39"/>
-<area shape="rect" id="node4" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,39"/>
+<area shape="rect" id="node1" title=" " alt="" coords="648,5,811,47"/>
+<area shape="rect" id="node2" href="$d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1" title=" " alt="" coords="437,13,600,39"/>
+<area shape="rect" id="node3" href="$db/de1/microhil__channel__pio_8c.html#a1d894ba2c3fdf553fd6cf62d5f376ac4" title=" " alt="" coords="259,13,389,39"/>
+<area shape="rect" id="node4" href="$d2/d5a/microhil__channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title=" " alt="" coords="108,13,211,39"/>
+<area shape="rect" id="node5" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,39"/>
 </map>

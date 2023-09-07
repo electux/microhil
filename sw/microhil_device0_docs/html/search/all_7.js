@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['slice_5fnum_0',['slice_num',['../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae',1,'slice_num():&#160;io_config.c'],['../df/d6a/io__config_8h.html#af8eb9cf9a6e9c4eea13d416da945f6ae',1,'slice_num():&#160;io_config.c']]],
-  ['spi_5fport_1',['SPI_PORT',['../df/d6a/io__config_8h.html#a8112c985f7444e82198d7571ce0a9160',1,'io_config.h']]]
+  ['urgb_5fu32_0',['urgb_u32',['../d2/d0c/microhil__channel_8h.html#a6f9aa8064d7f3cd8908b853c8a002253',1,'urgb_u32(uint8_t red, uint8_t green, uint8_t blue):&#160;microhil_channel_led.c'],['../d9/d21/microhil__channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253',1,'urgb_u32(uint8_t red, uint8_t green, uint8_t blue):&#160;microhil_channel_led.c']]]
 ];

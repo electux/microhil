@@ -1,7 +1,0 @@
-<map id="microhil_all_channels_on" name="microhil_all_channels_on">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,192,108"/>
-<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title=" " alt="" coords="245,5,390,32"/>
-<area shape="rect" id="node3" href="$dc/d23/microhil__channel__utils_8c.html#a2bb5757956e78852e400df1074eca368" title=" " alt="" coords="240,56,395,83"/>
-<area shape="rect" id="node4" href="$dc/d23/microhil__channel__utils_8c.html#a9e6f38587a6a1273e931b3fb16f3000f" title=" " alt="" coords="277,107,358,133"/>
-<area shape="rect" id="node5" href="$dc/d23/microhil__channel__utils_8c.html#abee13d16b0376847bddb141ef56ccc83" title=" " alt="" coords="276,157,359,184"/>
-</map>

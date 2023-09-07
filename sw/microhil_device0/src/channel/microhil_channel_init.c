@@ -20,48 +20,71 @@
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief
-unsigned char Relays[8] = {0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1};
+unsigned char channels[8] = {0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1};
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-const int PIN_TX = 13;
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-void microhil_init()
+/// @brief 
+/// @return true for success else false
+bool microhil_init()
 {
-    stdio_init_all();
-    stdio_usb_init();
-    gpio_init(JDQ1);
-    gpio_init(JDQ2);
-    gpio_init(JDQ3);
-    gpio_init(JDQ4);
-    gpio_init(JDQ5);
-    gpio_init(JDQ6);
-    gpio_init(JDQ7);
-    gpio_init(JDQ8);
-    gpio_set_dir(JDQ1, GPIO_OUT);
-    gpio_set_dir(JDQ2, GPIO_OUT);
-    gpio_set_dir(JDQ3, GPIO_OUT);
-    gpio_set_dir(JDQ4, GPIO_OUT);
-    gpio_set_dir(JDQ5, GPIO_OUT);
-    gpio_set_dir(JDQ6, GPIO_OUT);
-    gpio_set_dir(JDQ7, GPIO_OUT);
-    gpio_set_dir(JDQ8, GPIO_OUT);
+    bool status = false;
 
-    PIO pio = pio0;
-    int sm = 0;
-    uint offset = pio_add_program(pio, &ws2812_program);
+    ////////////////////////////////////////////////////////////////////////
+    /// Perform initialization for stdio types
+    status = stdio_init_all();
 
-    ws2812_program_init(pio, sm, offset, PIN_TX, 800000, true);
-    gpio_set_function(6, GPIO_FUNC_PWM);
+    if(!status)
+    {
+        ////////////////////////////////////////////////////////////////////
+        /// Failed to perform initialization for stdio types
+        return status;
+    }
 
-    slice_num = pwm_gpio_to_slice_num(6);
+    ////////////////////////////////////////////////////////////////////////
+    /// Perform initialization for stdio usb
+    status = stdio_usb_init();
 
-    pwm_set_wrap(slice_num, 500);
-    pwm_set_chan_level(slice_num, PWM_CHAN_A, 1);
-    pwm_set_clkdiv(slice_num, 50);
-    pwm_set_enabled(slice_num, true);
-    put_pixel(urgb_u32(0, 0, 0)); // RGB
-    // microhil_write_pwm(80); //buzzer
+    if (!status)
+    {
+        ////////////////////////////////////////////////////////////////////
+        /// Failed to perform initialization for stdio usb
+        return status;
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Perform initialization for RELAY
+    status = microhil_init_relay();
+
+    if (!status)
+    {
+        ////////////////////////////////////////////////////////////////////
+        /// Failed to perform initialization for RELAY
+        return status;
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Perform initialization for PIO
+    status = microhil_pio_init();
+
+    if (!status)
+    {
+        ////////////////////////////////////////////////////////////////////
+        /// Failed to perform initialization for PIO
+        return status;
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Perform initialization for PWM
+    status = microhil_init_pwm();
+
+    if (!status)
+    {
+        ////////////////////////////////////////////////////////////////////
+        /// Failed to perform initialization for PWM
+        return status;
+    }
+
+    put_pixel(urgb_u32(0, 0, 0));
+
+    return status;
 }
