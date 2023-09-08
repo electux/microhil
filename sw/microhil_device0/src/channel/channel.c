@@ -40,7 +40,7 @@ void microhil_all_channels_on()
         channels[i] = 0x0;
     }
 
-    printf("%s %s\n", MICROHIL_INFO, MICROHIL_ALL_ON);
+    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_ALL_ON);
 
     ////////////////////////////////////////////////////////////////////////
     /// Led notification
@@ -73,7 +73,7 @@ void microhil_all_channels_off()
         channels[i] = 0x1;
     }
 
-    printf("%s %s\n", MICROHIL_INFO, MICROHIL_ALL_OFF);
+    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_ALL_OFF);
 
     ////////////////////////////////////////////////////////////////////////
     /// Led notification
@@ -102,18 +102,18 @@ void microhil_channel_switch(int id)
             microhil_all_channels_on();
             break;
         case MICROHIL_CHANNELS_ERROR:
-            printf("%s %s\n", MICROHIL_ERROR, MICROHIL_NO_SUPPORT);
+            printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_NO_SUPPORT);
             break;
         default:
             gpio_put(gpio, channels[id - 1]);
 
             if(channels[id - 1] == 1)
             {
-                printf("%s channel %d on\n", MICROHIL_INFO, id - 1);
+                printf("%s channel %d on\n", MICROHIL_CHANNEL_INFO, id - 1);
             }
             else if(channels[id - 1] == 0)
             {
-                printf("%s channel %d off\n", MICROHIL_INFO, id - 1);
+                printf("%s channel %d off\n", MICROHIL_CHANNEL_INFO, id - 1);
             }
 
             channels[id - 1] = !channels[id - 1];

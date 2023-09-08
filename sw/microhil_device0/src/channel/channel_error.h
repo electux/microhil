@@ -19,8 +19,8 @@
 #pragma once
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Prefix error message
-#define MICROHIL_ERROR "[microHIL] ERROR"
+/// @brief Prefix error message for channel modules
+#define MICROHIL_CHANNEL_ERROR "[microHIL] ERROR"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Error message for not supported channel operation

@@ -23,8 +23,9 @@
 			"dev_config.h": "c",
 			"pio.h": "c",
 			"io_config.h": "c",
-			"microhil_channel.h": "c",
-			"microhil_channel_error.h": "c"
+			"channel.h": "c",
+			"channel_error.h": "c",
+			"channel.h": "c"
 		}
 	}
 }

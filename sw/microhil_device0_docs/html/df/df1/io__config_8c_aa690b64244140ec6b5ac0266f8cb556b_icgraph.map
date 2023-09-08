@@ -1,4 +1,4 @@
 <map id="microhil_gpio_init" name="microhil_gpio_init">
-<area shape="rect" id="node1" title=" " alt="" coords="212,5,351,32"/>
-<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#af6e2931cf076c56e94f0ff44a2b401ec" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node1" title="Private function for initialization reserved pins." alt="" coords="212,5,351,32"/>
+<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#ad2bf568b529a4e27411ffd7d9445e2a2" title="PWM, I2C, SPI modules initialization." alt="" coords="5,5,164,32"/>
 </map>

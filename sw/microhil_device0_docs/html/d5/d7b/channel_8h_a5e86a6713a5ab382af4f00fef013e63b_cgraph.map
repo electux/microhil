@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title="Switch channel state." alt="" coords="5,157,188,184"/>
 <area shape="rect" id="node2" href="$d4/d28/channel_8c.html#a20a1359efba58a808fd2a235231df196" title="Convert command id to GPIO number or global ON/OFF." alt="" coords="285,5,374,32"/>
 <area shape="rect" id="node3" href="$d4/d28/channel_8c.html#a4d0b5716356dbea2a25811b5cd894182" title="Set all channels to OFF." alt="" coords="236,208,423,235"/>
-<area shape="rect" id="node4" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title=" " alt="" coords="475,107,621,133"/>
+<area shape="rect" id="node4" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title="Delay in miliseconds." alt="" coords="475,107,621,133"/>
 <area shape="rect" id="node5" href="$de/d3f/channel__pwm_8c.html#a2bb5757956e78852e400df1074eca368" title="Write value to PWM channel." alt="" coords="471,157,625,184"/>
 <area shape="rect" id="node6" href="$d0/d22/channel__led_8c.html#ab37825a07ffed31f0bf6acda6b17c9f1" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="507,208,589,235"/>
 <area shape="rect" id="node7" href="$d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253" title="Generate 32&#45;bit RGB value." alt="" coords="507,259,589,285"/>

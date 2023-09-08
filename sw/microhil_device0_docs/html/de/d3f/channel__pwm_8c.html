@@ -161,15 +161,15 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   41</span> </div>
 <div class="line"><span class="lineno">   42</span>    status = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    printf(<span class="stringliteral">&quot;%s %s\n&quot;</span>, <a class="code hl_define" href="../../da/db9/channel__info_8h.html#a117d1d9a2142505304b764735a405d91">MICROHIL_INFO</a>, <a class="code hl_define" href="../../da/db9/channel__info_8h.html#a1ac488341047c01d6ff8d1bb06603c45">MICROHIL_PWM_INIT_OK</a>);</div>
+<div class="line"><span class="lineno">   44</span>    printf(<span class="stringliteral">&quot;%s %s\n&quot;</span>, <a class="code hl_define" href="../../da/db9/channel__info_8h.html#aa02451346a3e9f392f9cac896e74c92d">MICROHIL_CHANNEL_INFO</a>, <a class="code hl_define" href="../../da/db9/channel__info_8h.html#a1ac488341047c01d6ff8d1bb06603c45">MICROHIL_PWM_INIT_OK</a>);</div>
 <div class="line"><span class="lineno">   45</span> </div>
 <div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> status;</div>
 <div class="line"><span class="lineno">   47</span>}</div>
-<div class="ttc" id="achannel__info_8h_html_a117d1d9a2142505304b764735a405d91"><div class="ttname"><a href="../../da/db9/channel__info_8h.html#a117d1d9a2142505304b764735a405d91">MICROHIL_INFO</a></div><div class="ttdeci">#define MICROHIL_INFO</div><div class="ttdoc">Prefix info message.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/db9/channel__info_8h_source.html#l00023">channel_info.h:23</a></div></div>
 <div class="ttc" id="achannel__info_8h_html_a1ac488341047c01d6ff8d1bb06603c45"><div class="ttname"><a href="../../da/db9/channel__info_8h.html#a1ac488341047c01d6ff8d1bb06603c45">MICROHIL_PWM_INIT_OK</a></div><div class="ttdeci">#define MICROHIL_PWM_INIT_OK</div><div class="ttdoc">Info message for successfully initialized PWM channel.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/db9/channel__info_8h_source.html#l00035">channel_info.h:35</a></div></div>
-<div class="ttc" id="aio__config_8c_html_af8eb9cf9a6e9c4eea13d416da945f6ae"><div class="ttname"><a href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a></div><div class="ttdeci">uint slice_num</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00055">io_config.c:55</a></div></div>
+<div class="ttc" id="achannel__info_8h_html_aa02451346a3e9f392f9cac896e74c92d"><div class="ttname"><a href="../../da/db9/channel__info_8h.html#aa02451346a3e9f392f9cac896e74c92d">MICROHIL_CHANNEL_INFO</a></div><div class="ttdeci">#define MICROHIL_CHANNEL_INFO</div><div class="ttdoc">Prefix info message for channel modules.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/db9/channel__info_8h_source.html#l00023">channel_info.h:23</a></div></div>
+<div class="ttc" id="aio__config_8c_html_af8eb9cf9a6e9c4eea13d416da945f6ae"><div class="ttname"><a href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a></div><div class="ttdeci">uint slice_num</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00057">io_config.c:57</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../da/db9/channel__info_8h_source.html#l00023">MICROHIL_INFO</a>, <a class="el" href="../../da/db9/channel__info_8h_source.html#l00035">MICROHIL_PWM_INIT_OK</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00055">slice_num</a>.</p>
+<p class="reference">References <a class="el" href="../../da/db9/channel__info_8h_source.html#l00023">MICROHIL_CHANNEL_INFO</a>, <a class="el" href="../../da/db9/channel__info_8h_source.html#l00035">MICROHIL_PWM_INIT_OK</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00057">slice_num</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00028">microhil_init()</a>.</p>
 <div class="dynheader">
@@ -213,7 +213,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
 <div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (value &lt; 0 || value &gt; 100)</div>
 <div class="line"><span class="lineno">   55</span>    {</div>
-<div class="line"><span class="lineno">   56</span>        printf(<span class="stringliteral">&quot;%s %s\n&quot;</span>, <a class="code hl_define" href="../../d9/d14/channel__error_8h.html#a98a3577500a7b28b817e9f145c5e6974">MICROHIL_ERROR</a>, <a class="code hl_define" href="../../d9/d14/channel__error_8h.html#a2f5f2ac3a16c8df02f509abcda43a0d6">MICROHIL_PWM_WRITE_FAILED</a>);</div>
+<div class="line"><span class="lineno">   56</span>        printf(<span class="stringliteral">&quot;%s %s\n&quot;</span>, <a class="code hl_define" href="../../d9/d14/channel__error_8h.html#ae056eb9c490aa43fc3ce7d47a3bb7d0c">MICROHIL_CHANNEL_ERROR</a>, <a class="code hl_define" href="../../d9/d14/channel__error_8h.html#a2f5f2ac3a16c8df02f509abcda43a0d6">MICROHIL_PWM_WRITE_FAILED</a>);</div>
 <div class="line"><span class="lineno">   57</span>    }</div>
 <div class="line"><span class="lineno">   58</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">   59</span>    {</div>
@@ -221,9 +221,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   61</span>    }</div>
 <div class="line"><span class="lineno">   62</span>}</div>
 <div class="ttc" id="achannel__error_8h_html_a2f5f2ac3a16c8df02f509abcda43a0d6"><div class="ttname"><a href="../../d9/d14/channel__error_8h.html#a2f5f2ac3a16c8df02f509abcda43a0d6">MICROHIL_PWM_WRITE_FAILED</a></div><div class="ttdeci">#define MICROHIL_PWM_WRITE_FAILED</div><div class="ttdoc">Error message for failing to write PWM value.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d14/channel__error_8h_source.html#l00031">channel_error.h:31</a></div></div>
-<div class="ttc" id="achannel__error_8h_html_a98a3577500a7b28b817e9f145c5e6974"><div class="ttname"><a href="../../d9/d14/channel__error_8h.html#a98a3577500a7b28b817e9f145c5e6974">MICROHIL_ERROR</a></div><div class="ttdeci">#define MICROHIL_ERROR</div><div class="ttdoc">Prefix error message.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d14/channel__error_8h_source.html#l00023">channel_error.h:23</a></div></div>
+<div class="ttc" id="achannel__error_8h_html_ae056eb9c490aa43fc3ce7d47a3bb7d0c"><div class="ttname"><a href="../../d9/d14/channel__error_8h.html#ae056eb9c490aa43fc3ce7d47a3bb7d0c">MICROHIL_CHANNEL_ERROR</a></div><div class="ttdeci">#define MICROHIL_CHANNEL_ERROR</div><div class="ttdoc">Prefix error message for channel modules.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d14/channel__error_8h_source.html#l00023">channel_error.h:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d9/d14/channel__error_8h_source.html#l00023">MICROHIL_ERROR</a>, <a class="el" href="../../d9/d14/channel__error_8h_source.html#l00031">MICROHIL_PWM_WRITE_FAILED</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00055">slice_num</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d14/channel__error_8h_source.html#l00023">MICROHIL_CHANNEL_ERROR</a>, <a class="el" href="../../d9/d14/channel__error_8h_source.html#l00031">MICROHIL_PWM_WRITE_FAILED</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00057">slice_num</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00058">microhil_all_channels_off()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00025">microhil_all_channels_on()</a>, and <a class="el" href="../../d4/d28/channel_8c_source.html#l00092">microhil_channel_switch()</a>.</p>
 <div class="dynheader">
@@ -247,7 +247,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bbca32ae125625ab0d7554a76a48380c.html">channel</a></li><li class="navelem"><a class="el" href="../../de/d3f/channel__pwm_8c.html">channel_pwm.c</a></li>
-    <li class="footer">Generated on Fri Sep 8 2023 00:17:08 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Sep 8 2023 03:04:37 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -31,18 +31,23 @@ bool microhil_pio_init()
 
     ////////////////////////////////////////////////////////////////////////
     /// Add PIO program
-    PIO pio = pio0;
-    int sm = 0;
-    uint offset = pio_add_program(pio, &ws2812_program);
+    ws2812_init init = {
+        .pio = pio0,
+        .sm = 0,
+        .offset = pio_add_program(pio0, &ws2812_program),
+        .pin = PIN_TX,
+        .freq = 800000,
+        .rgbw = true
+    };
 
-    if(offset == 0)
+    if(init.offset == 0)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to load PIO program
         return status;
     }
 
-    ws2812_program_init(pio, sm, offset, PIN_TX, 800000, true);
+    ws2812_program_init(&init);
 
     status = true;
 

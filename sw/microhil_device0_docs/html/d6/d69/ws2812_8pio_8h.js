@@ -1,5 +1,7 @@
 var ws2812_8pio_8h =
 [
+    [ "_ws2812_init", "d7/d9d/struct__ws2812__init.html", "d7/d9d/struct__ws2812__init" ],
+    [ "_ws2812_parallel_init", "d1/dc2/struct__ws2812__parallel__init.html", "d1/dc2/struct__ws2812__parallel__init" ],
     [ "WS2812_PARALLEL_T1", "d6/d69/ws2812_8pio_8h.html#acd5000189613379e2c62c04e43bafc4c", null ],
     [ "WS2812_PARALLEL_T2", "d6/d69/ws2812_8pio_8h.html#a44f211cb37ef4fda6ba94129bca8b12e", null ],
     [ "WS2812_PARALLEL_T3", "d6/d69/ws2812_8pio_8h.html#a776c42d7fe6ff03a306f2a01665cf0ff", null ],
@@ -10,10 +12,12 @@ var ws2812_8pio_8h =
     [ "WS2812_T3", "d6/d69/ws2812_8pio_8h.html#a250d5756e778ed82a5b3bc1e8737ce77", null ],
     [ "WS2812_WRAP", "d6/d69/ws2812_8pio_8h.html#af2d317d596023b53831a259139e82aac", null ],
     [ "WS2812_WRAP_TARGET", "d6/d69/ws2812_8pio_8h.html#a4b13c333dbda6ea7273eca00d4636a2e", null ],
+    [ "ws2812_init", "d6/d69/ws2812_8pio_8h.html#aa7890f501fe489cca764122c7857696b", null ],
+    [ "ws2812_parallel_init", "d6/d69/ws2812_8pio_8h.html#aadf3145df03cc97c3988d89730c5ea99", null ],
     [ "ws2812_parallel_program_get_default_config", "d6/d69/ws2812_8pio_8h.html#add870a68b6c5369f320512429ed17887", null ],
-    [ "ws2812_parallel_program_init", "d6/d69/ws2812_8pio_8h.html#aa0cdd27235063ad1280b76af81b98517", null ],
+    [ "ws2812_parallel_program_init", "d6/d69/ws2812_8pio_8h.html#a5a3128927ffc7fe6d41edc7531ca97cc", null ],
     [ "ws2812_program_get_default_config", "d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c", null ],
-    [ "ws2812_program_init", "d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1", null ],
+    [ "ws2812_program_init", "d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74", null ],
     [ "ws2812_parallel_program", "d6/d69/ws2812_8pio_8h.html#a43f3648710207eb40798826e7c65c80f", null ],
     [ "ws2812_parallel_program_instructions", "d6/d69/ws2812_8pio_8h.html#ac7bac5ef999e632c91881c48b911a22f", null ],
     [ "ws2812_program", "d6/d69/ws2812_8pio_8h.html#a55e4cbdb9411683b8a5655f4454d000c", null ],

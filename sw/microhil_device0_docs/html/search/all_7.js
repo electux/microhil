@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['urgb_5fu32_0',['urgb_u32',['../d5/d7b/channel_8h.html#a6f9aa8064d7f3cd8908b853c8a002253',1,'urgb_u32(uint8_t red, uint8_t green, uint8_t blue):&#160;channel_led.c'],['../d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253',1,'urgb_u32(uint8_t red, uint8_t green, uint8_t blue):&#160;channel_led.c']]]
+  ['offset_0',['offset',['../d7/d9d/struct__ws2812__init.html#a4a2f569505eaed1f05381121a5e730fb',1,'_ws2812_init::offset()'],['../d1/dc2/struct__ws2812__parallel__init.html#ae24a4ba14e803f45abb70408b0d298fd',1,'_ws2812_parallel_init::offset()']]]
 ];

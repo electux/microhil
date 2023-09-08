@@ -5,6 +5,6 @@
 <area shape="rect" id="node4" href="$de/dab/channel__pio_8c.html#a1d894ba2c3fdf553fd6cf62d5f376ac4" title="Initialization of PIO state machine." alt="" coords="162,107,293,133"/>
 <area shape="rect" id="node7" href="$d0/d22/channel__led_8c.html#ab37825a07ffed31f0bf6acda6b17c9f1" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="187,157,268,184"/>
 <area shape="rect" id="node8" href="$d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253" title="Generate 32&#45;bit RGB value." alt="" coords="186,208,269,235"/>
-<area shape="rect" id="node5" href="$d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1" title=" " alt="" coords="347,107,509,133"/>
-<area shape="rect" id="node6" href="$d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title=" " alt="" coords="557,99,720,141"/>
+<area shape="rect" id="node5" href="$d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Perform WS2812 program initialization." alt="" coords="347,107,509,133"/>
+<area shape="rect" id="node6" href="$d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title="TODO." alt="" coords="557,99,720,141"/>
 </map>

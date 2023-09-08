@@ -24,27 +24,27 @@
 #endif
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_WRAP_TARGET 0
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_WRAP 3
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_T1 2
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_T2 5
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_T3 3
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief 
+/// @brief TODO
 static const uint16_t ws2812_program_instructions[] =
 {
             //     .wrap_target
@@ -58,7 +58,7 @@ static const uint16_t ws2812_program_instructions[] =
 #if !PICO_NO_HARDWARE
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 static const struct pio_program ws2812_program =
 {
     .instructions = ws2812_program_instructions,
@@ -67,9 +67,9 @@ static const struct pio_program ws2812_program =
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param offset
-/// @return
+/// @brief TODO
+/// @param offset TODO
+/// @return TODO
 static inline pio_sm_config ws2812_program_get_default_config(uint offset)
 {
     pio_sm_config config = pio_get_default_sm_config();
@@ -85,58 +85,63 @@ static inline pio_sm_config ws2812_program_get_default_config(uint offset)
 #include "hardware/clocks.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param pio
-/// @param sm
-/// @param offset
-/// @param pin
-/// @param freq
-/// @param rgbw
-static inline void ws2812_program_init(
-    PIO pio, uint sm, uint offset, uint pin, float freq, bool rgbw
-)
+/// @brief WS2812 init structure
+typedef struct _ws2812_init
 {
-    pio_gpio_init(pio, pin);
-    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);
+    PIO pio;
+    uint sm;
+    uint offset;
+    uint pin;
+    float freq;
+    bool rgbw;
+} ws2812_init;
 
-    pio_sm_config config = ws2812_program_get_default_config(offset);
+////////////////////////////////////////////////////////////////////////////
+/// @brief Perform WS2812 program initialization
+/// @param init is pointer to WS2812 init structure
+static inline void ws2812_program_init(ws2812_init* init)
+{
+    pio_gpio_init(init->pio, init->pin);
+    pio_sm_set_consecutive_pindirs(init->pio, init->sm, init->pin, 1, true);
 
-    sm_config_set_sideset_pins(&config, pin);
-    sm_config_set_out_shift(&config, false, true, rgbw ? 32 : 24);
+    pio_sm_config config = ws2812_program_get_default_config(init->offset);
+
+    sm_config_set_sideset_pins(&config, init->pin);
+    sm_config_set_out_shift(&config, false, true, init->rgbw ? 32 : 24);
     sm_config_set_fifo_join(&config, PIO_FIFO_JOIN_TX);
 
     int cycles_per_bit = (WS2812_T1 + WS2812_T2 + WS2812_T3);
-    float div = clock_get_hz(clk_sys) / (freq * cycles_per_bit);
+    float div = clock_get_hz(clk_sys) / (init->freq * cycles_per_bit);
 
     sm_config_set_clkdiv(&config, div);
-    pio_sm_init(pio, sm, offset, &config);
-    pio_sm_set_enabled(pio, sm, true);
+    pio_sm_init(init->pio, init->sm, init->offset, &config);
+    pio_sm_set_enabled(init->pio, init->sm, true);
 }
 
 #endif
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_PARALLEL_WRAP_TARGET 0
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_PARALLEL_WRAP 3
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_PARALLEL_T1 2
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_PARALLEL_T2 5
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 #define WS2812_PARALLEL_T3 3
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 static const uint16_t ws2812_parallel_program_instructions[] = 
 {
             //     .wrap_target
@@ -150,7 +155,7 @@ static const uint16_t ws2812_parallel_program_instructions[] =
 #if !PICO_NO_HARDWARE
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 static const struct pio_program ws2812_parallel_program =
 {
     .instructions = ws2812_parallel_program_instructions,
@@ -159,9 +164,9 @@ static const struct pio_program ws2812_parallel_program =
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param offset
-/// @return
+/// @brief TODO
+/// @param offset TODO
+/// @return TODO
 static inline pio_sm_config ws2812_parallel_program_get_default_config(
     uint offset
 )
@@ -178,42 +183,51 @@ static inline pio_sm_config ws2812_parallel_program_get_default_config(
 #include "hardware/clocks.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param pio
-/// @param sm
-/// @param offset
-/// @param pin_base
-/// @param pin_count
-/// @param freq
-static inline void ws2812_parallel_program_init(
-    PIO pio, uint sm, uint offset, uint pin_base, uint pin_count, float freq
-)
+/// @brief WS2812 parallel init structure
+typedef struct _ws2812_parallel_init
 {
-    uint max_pin_count = pin_base + pin_count;
+    PIO pio;
+    uint sm;
+    uint offset;
+    uint pin_base;
+    uint pin_count;
+    float freq;
+} ws2812_parallel_init;
 
-    for (uint i = pin_base; i < max_pin_count; i++)
+////////////////////////////////////////////////////////////////////////////
+/// @brief Perform WS2812 parallel program initialization
+/// @param init is pointer to WS2812 parallel init structure
+static inline void ws2812_parallel_program_init(ws2812_parallel_init* init)
+{
+    uint max_pin_count = init->pin_base + init->pin_count;
+
+    for (uint i = init->pin_base; i < max_pin_count; i++)
     {
-        pio_gpio_init(pio, i);
+        pio_gpio_init(init->pio, i);
     }
 
-    pio_sm_set_consecutive_pindirs(pio, sm, pin_base, pin_count, true);
+    pio_sm_set_consecutive_pindirs(
+        init->pio, init->sm, init->pin_base, init->pin_count, true
+    );
 
-    pio_sm_config config = ws2812_parallel_program_get_default_config(offset);
+    pio_sm_config config = ws2812_parallel_program_get_default_config(
+        init->offset
+    );
 
     sm_config_set_out_shift(&config, true, true, 32);
-    sm_config_set_out_pins(&config, pin_base, pin_count);
-    sm_config_set_set_pins(&config, pin_base, pin_count);
+    sm_config_set_out_pins(&config, init->pin_base, init->pin_count);
+    sm_config_set_set_pins(&config, init->pin_base, init->pin_count);
     sm_config_set_fifo_join(&config, PIO_FIFO_JOIN_TX);
 
     int cycles_per_bit = (
         WS2812_PARALLEL_T1 + WS2812_PARALLEL_T2 + WS2812_PARALLEL_T3
     );
 
-    float div = clock_get_hz(clk_sys) / (freq * cycles_per_bit);
+    float div = clock_get_hz(clk_sys) / (init->freq * cycles_per_bit);
 
     sm_config_set_clkdiv(&config, div);
-    pio_sm_init(pio, sm, offset, &config);
-    pio_sm_set_enabled(pio, sm, true);
+    pio_sm_init(init->pio, init->sm, init->offset, &config);
+    pio_sm_set_enabled(init->pio, init->sm, true);
 }
 
 #endif

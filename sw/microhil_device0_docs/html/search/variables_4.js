@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['ws2812_5fparallel_5fprogram_0',['ws2812_parallel_program',['../d6/d69/ws2812_8pio_8h.html#a43f3648710207eb40798826e7c65c80f',1,'ws2812.pio.h']]],
-  ['ws2812_5fparallel_5fprogram_5finstructions_1',['ws2812_parallel_program_instructions',['../d6/d69/ws2812_8pio_8h.html#ac7bac5ef999e632c91881c48b911a22f',1,'ws2812.pio.h']]],
-  ['ws2812_5fprogram_2',['ws2812_program',['../d6/d69/ws2812_8pio_8h.html#a55e4cbdb9411683b8a5655f4454d000c',1,'ws2812.pio.h']]],
-  ['ws2812_5fprogram_5finstructions_3',['ws2812_program_instructions',['../d6/d69/ws2812_8pio_8h.html#a5b57b783765a7b5cc24fc330edcfe167',1,'ws2812.pio.h']]]
+  ['pin_0',['pin',['../d7/d9d/struct__ws2812__init.html#a45c81fc356a288ef7aba12c7b8d868ed',1,'_ws2812_init']]],
+  ['pin_5fbase_1',['pin_base',['../d1/dc2/struct__ws2812__parallel__init.html#a66f2de05aec12efeeeaed39252717ebf',1,'_ws2812_parallel_init']]],
+  ['pin_5fcount_2',['pin_count',['../d1/dc2/struct__ws2812__parallel__init.html#ad67d25501ff78e4ae0fa3dd62845d0b0',1,'_ws2812_parallel_init']]],
+  ['pin_5ftx_3',['PIN_TX',['../de/dab/channel__pio_8c.html#a1012967e69a813e72e15c51d7df57011',1,'channel_pio.c']]],
+  ['pio_4',['pio',['../d7/d9d/struct__ws2812__init.html#abf1c83ba08ed53d7a1970f4bc4b4644c',1,'_ws2812_init::pio()'],['../d1/dc2/struct__ws2812__parallel__init.html#a3b3bb953327b6d01072dc9c804c911f0',1,'_ws2812_parallel_init::pio()']]]
 ];

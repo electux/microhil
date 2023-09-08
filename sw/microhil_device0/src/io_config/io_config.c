@@ -16,120 +16,50 @@
  * You should have received a copy of the GNU General Public License along
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
+#include "io_config_info.h"
+#include "io_config_error.h"
 #include "io_config.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-int EPD_RST_PIN;
+/// @brief TODO
+int epd_rst_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-int EPD_DC_PIN;
+/// @brief TODO
+int epd_dc_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-int EPD_CS_PIN;
+/// @brief TODO
+int epd_cs_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-int EPD_BL_PIN;
+/// @brief TODO
+int epd_bl_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-int EPD_CLK_PIN;
+/// @brief TODO
+int epd_clk_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-int EPD_MOSI_PIN;
+/// @brief TODO
+int epd_mosi_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-int EPD_SCL_PIN;
+/// @brief TODO
+int epd_scl_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-int EPD_SDA_PIN;
+/// @brief TODO
+int epd_sda_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 uint slice_num;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param pin
-/// @param value
-void microhil_digital_write(uint16_t pin, uint8_t value)
-{
-    gpio_put(pin, value);
-}
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param pin
-/// @return
-uint8_t microhil_digital_read(uint16_t pin)
-{
-    return gpio_get(pin);
-}
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param value
-void microhil_spi_write_byte(uint8_t value)
-{
-    spi_write_blocking(SPI_PORT, &value, 1);
-}
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param data
-/// @param len
-void microhil_spi_write_n_bytes(uint8_t *data, uint32_t len)
-{
-    spi_write_blocking(SPI_PORT, data, len);
-}
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param addr
-/// @param reg
-/// @param value
-void microhil_i2c_write_byte(uint8_t addr, uint8_t reg, uint8_t value)
-{
-    uint8_t data[2] = {reg, value};
-
-    i2c_write_blocking(i2c1, addr, data, 2, false);
-}
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param addr
-/// @param data
-/// @param len
-void microhil_i2c_write_n_bytes(uint8_t addr, uint8_t *data, uint32_t len)
-{
-    i2c_write_blocking(i2c1, addr, data, len, false);
-}
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param addr
-/// @param reg
-/// @return
-uint8_t microhil_i2c_read_byte(uint8_t addr, uint8_t reg)
-{
-    uint8_t buf;
-
-    i2c_write_blocking(i2c1, addr, &reg, 1, true);
-    i2c_read_blocking(i2c1, addr, &buf, 1, false);
-
-    return buf;
-}
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param pin
-/// @param mode
+/// @brief Setting port pin configuration
+/// @param pin is GPIO pin number
+/// @param mode is GPIO pin direction (GPIO_IN | GPIO_OUT)
 void microhil_gpio_mode(uint16_t pin, uint16_t mode)
 {
     gpio_init(pin);
@@ -145,82 +75,117 @@ void microhil_gpio_mode(uint16_t pin, uint16_t mode)
 }
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param ms
+/// @brief Drive GPIO pin
+/// @param pin is GPIO number
+/// @param value is GPIO value (true - set | false - clear)
+void microhil_digital_write(uint16_t pin, uint8_t value)
+{
+    gpio_put(pin, value);
+}
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Get GPIO state
+/// @param pin is GPIO pin number
+/// @return state of GPIO pin
+uint8_t microhil_digital_read(uint16_t pin)
+{
+    return gpio_get(pin);
+}
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Write byte to an SPI device (blocking)
+/// @param value is byte for write
+void microhil_spi_write_byte(uint8_t value)
+{
+    spi_write_blocking(MICROHIL_SPI_PORT_1, &value, 1);
+}
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Write n bytes to an SPI device (blocking)
+/// @param data is buffer for write
+/// @param len is length of buffer to write
+void microhil_spi_write_n_bytes(uint8_t *data, uint32_t len)
+{
+    spi_write_blocking(MICROHIL_SPI_PORT_1, data, len);
+}
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Send byte to i2c device
+/// @param addr is address of device
+/// @param reg is register destination
+/// @param value is byte to send
+void microhil_i2c_write_byte(uint8_t addr, uint8_t reg, uint8_t value)
+{
+    uint8_t data[2] = {reg, value};
+
+    i2c_write_blocking(MICROHIL_I2C_PORT_1, addr, data, 2, false);
+}
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Send n bytes to i2c device
+/// @param addr is address of device
+/// @param data to send
+/// @param len is length of data to send
+void microhil_i2c_write_n_bytes(uint8_t addr, uint8_t *data, uint32_t len)
+{
+    i2c_write_blocking(MICROHIL_I2C_PORT_1, addr, data, len, false);
+}
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Read byte from i2c bus device
+/// @param addr is address of device
+/// @param reg is data to send
+/// @return byte from i2c device
+uint8_t microhil_i2c_read_byte(uint8_t addr, uint8_t reg)
+{
+    uint8_t buffer;
+
+    i2c_write_blocking(MICROHIL_I2C_PORT_1, addr, &reg, 1, true);
+    i2c_read_blocking(MICROHIL_I2C_PORT_1, addr, &buffer, 1, false);
+
+    return buffer;
+}
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Delay in miliseconds
+/// @param ms is number of miliseconds to sleep
 void microhil_delay_ms(uint32_t ms)
 {
     sleep_ms(ms);
 }
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param us
+/// @brief Delay in microseconds
+/// @param us is number of microseconds to sleep
 void microhil_delay_us(uint32_t us)
 {
     sleep_us(us);
 }
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief Private function for initialization reserved pins
 void microhil_gpio_init()
 {
-    microhil_gpio_mode(EPD_RST_PIN, 1);
-    microhil_gpio_mode(EPD_DC_PIN, 1);
-    microhil_gpio_mode(EPD_CS_PIN, 1);
-    microhil_gpio_mode(EPD_BL_PIN, 1);
-    microhil_gpio_mode(EPD_CS_PIN, 1);
-    microhil_gpio_mode(EPD_BL_PIN, 1);
-    microhil_digital_write(EPD_CS_PIN, 1);
-    microhil_digital_write(EPD_DC_PIN, 0);
-    microhil_digital_write(EPD_BL_PIN, 1);
+    microhil_gpio_mode(epd_rst_pin, 1);
+    microhil_gpio_mode(epd_dc_pin, 1);
+    microhil_gpio_mode(epd_cs_pin, 1);
+    microhil_gpio_mode(epd_bl_pin, 1);
+    microhil_gpio_mode(epd_cs_pin, 1);
+    microhil_gpio_mode(epd_bl_pin, 1);
+
+    microhil_digital_write(epd_cs_pin, 1);
+    microhil_digital_write(epd_dc_pin, 0);
+    microhil_digital_write(epd_bl_pin, 1);
 }
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @return
-uint8_t microhil_module_init()
-{
-    stdio_init_all();
-
-    EPD_RST_PIN = 12;
-    EPD_DC_PIN = 8;
-    EPD_BL_PIN = 6;
-    EPD_CS_PIN = 9;
-    EPD_CLK_PIN = 10;
-    EPD_MOSI_PIN = 11;
-    EPD_SCL_PIN = 7;
-    EPD_SDA_PIN = 6;
-
-    spi_init(SPI_PORT, 1000 * 1000);
-    gpio_set_function(EPD_CLK_PIN, GPIO_FUNC_SPI);
-    gpio_set_function(EPD_MOSI_PIN, GPIO_FUNC_SPI);
-    microhil_gpio_init();
-    gpio_set_function(EPD_BL_PIN, GPIO_FUNC_PWM);
-
-    slice_num = pwm_gpio_to_slice_num(EPD_BL_PIN);
-
-    pwm_set_wrap(slice_num, 100);
-    pwm_set_chan_level(slice_num, PWM_CHAN_B, 1);
-    pwm_set_clkdiv(slice_num, 50);
-    pwm_set_enabled(slice_num, true);
-    i2c_init(i2c1, 100 * 1000);
-    gpio_set_function(EPD_SDA_PIN, GPIO_FUNC_I2C);
-    gpio_set_function(EPD_SCL_PIN, GPIO_FUNC_I2C);
-    gpio_pull_up(EPD_SDA_PIN);
-    gpio_pull_up(EPD_SCL_PIN);
-    printf("microhil_module_init OK \r\n");
-
-    return 0;
-}
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param value
+/// @brief Set the current PWM counter compare value for one channel
+/// @param value is new value for selected output
 void microhil_set_pwm_1(uint8_t value)
 {
     if (value < 0 || value > 100)
     {
-        printf("microhil_write_pwm Error \r\n");
+        printf("%s %s\n", MICROHIL_IO_CONFIG_ERROR, MICROHIL_PWM_SET_ERROR);
     }
     else
     {
@@ -229,7 +194,58 @@ void microhil_set_pwm_1(uint8_t value)
 }
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-void microhil_module_exit()
+/// @brief PWM, I2C, SPI modules initialization
+/// @return true for success else false
+bool microhil_module_init()
 {
+    bool status = false;
+
+    status = stdio_init_all();
+
+    if (!status)
+    {
+        ////////////////////////////////////////////////////////////////////
+        /// Failed to perform initialization for stdio types
+        return status;
+    }
+
+    epd_rst_pin = 12;
+    epd_dc_pin = 8;
+    epd_bl_pin = 6;
+    epd_cs_pin = 9;
+    epd_clk_pin = 10;
+    epd_mosi_pin = 11;
+    epd_scl_pin = 7;
+    epd_sda_pin = 6;
+
+    spi_init(MICROHIL_SPI_PORT_1, 1000 * 1000);
+    gpio_set_function(epd_clk_pin, GPIO_FUNC_SPI);
+    gpio_set_function(epd_mosi_pin, GPIO_FUNC_SPI);
+
+    microhil_gpio_init();
+
+    gpio_set_function(epd_bl_pin, GPIO_FUNC_PWM);
+    slice_num = pwm_gpio_to_slice_num(epd_bl_pin);
+    pwm_set_wrap(slice_num, 100);
+    pwm_set_chan_level(slice_num, PWM_CHAN_B, 1);
+    pwm_set_clkdiv(slice_num, 50);
+    pwm_set_enabled(slice_num, true);
+
+    i2c_init(MICROHIL_I2C_PORT_1, 100 * 1000);
+    gpio_set_function(epd_sda_pin, GPIO_FUNC_I2C);
+    gpio_set_function(epd_scl_pin, GPIO_FUNC_I2C);
+    gpio_pull_up(epd_sda_pin);
+    gpio_pull_up(epd_scl_pin);
+
+    printf("%s %s\n", MICROHIL_IO_CONFIG_INFO, MICROHIL_MODULE_INIT_OK);
+
+    return status;
+}
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Perform actions on exit
+/// @return true for success else false
+bool microhil_module_exit()
+{
+    return true;
 }

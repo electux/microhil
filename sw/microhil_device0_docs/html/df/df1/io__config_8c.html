@@ -90,19 +90,23 @@ $(document).ready(function(){initNavTree('df/df1/io__config_8c.html','../../'); 
   <div class="headertitle"><div class="title">io_config.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../df/d6a/io__config_8h_source.html">io_config.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d64/io__config__info_8h_source.html">io_config_info.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d02/io__config__error_8h_source.html">io_config_error.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d6a/io__config_8h_source.html">io_config.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for io_config.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/d65/io__config_8c__incl.png" border="0" usemap="#asrc_2io__config_2io__config_8c" alt=""/></div>
 <map name="asrc_2io__config_2io__config_8c" id="asrc_2io__config_2io__config_8c">
-<area shape="rect" title=" " alt="" coords="220,5,396,32"/>
-<area shape="rect" href="../../df/d6a/io__config_8h.html" title=" " alt="" coords="262,80,354,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,107,181"/>
-<area shape="rect" title=" " alt="" coords="131,155,250,181"/>
-<area shape="rect" title=" " alt="" coords="275,155,341,181"/>
-<area shape="rect" title=" " alt="" coords="366,155,485,181"/>
-<area shape="rect" title=" " alt="" coords="508,155,639,181"/>
+<area shape="rect" title=" " alt="" coords="130,5,306,32"/>
+<area shape="rect" href="../../d7/d64/io__config__info_8h.html" title=" " alt="" coords="5,80,129,107"/>
+<area shape="rect" href="../../df/d02/io__config__error_8h.html" title=" " alt="" coords="153,80,283,107"/>
+<area shape="rect" href="../../df/d6a/io__config_8h.html" title=" " alt="" coords="307,80,399,107"/>
+<area shape="rect" title=" " alt="" coords="50,155,151,181"/>
+<area shape="rect" title=" " alt="" coords="176,155,295,181"/>
+<area shape="rect" title=" " alt="" coords="319,155,386,181"/>
+<area shape="rect" title=" " alt="" coords="411,155,529,181"/>
+<area shape="rect" title=" " alt="" coords="553,155,683,181"/>
 </map>
 </div>
 </div>
@@ -110,54 +114,77 @@ Include dependency graph for io_config.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aec63a111fed6b8b5e445df0a4bf61ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a> (uint16_t pin, uint16_t mode)</td></tr>
+<tr class="memdesc:aec63a111fed6b8b5e445df0a4bf61ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setting port pin configuration.  <a href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">More...</a><br /></td></tr>
+<tr class="separator:aec63a111fed6b8b5e445df0a4bf61ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d8daad81a37e4c9414bf9b2972832b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">microhil_digital_write</a> (uint16_t pin, uint8_t value)</td></tr>
+<tr class="memdesc:a6d8daad81a37e4c9414bf9b2972832b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drive GPIO pin.  <a href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">More...</a><br /></td></tr>
 <tr class="separator:a6d8daad81a37e4c9414bf9b2972832b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af91ef9c739725b4065fc59972780c45e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#af91ef9c739725b4065fc59972780c45e">microhil_digital_read</a> (uint16_t pin)</td></tr>
+<tr class="memdesc:af91ef9c739725b4065fc59972780c45e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GPIO state.  <a href="../../df/df1/io__config_8c.html#af91ef9c739725b4065fc59972780c45e">More...</a><br /></td></tr>
 <tr class="separator:af91ef9c739725b4065fc59972780c45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc3c58dd3878a045dd688105b3cec87e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#acc3c58dd3878a045dd688105b3cec87e">microhil_spi_write_byte</a> (uint8_t value)</td></tr>
+<tr class="memdesc:acc3c58dd3878a045dd688105b3cec87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write byte to an SPI device (blocking)  <a href="../../df/df1/io__config_8c.html#acc3c58dd3878a045dd688105b3cec87e">More...</a><br /></td></tr>
 <tr class="separator:acc3c58dd3878a045dd688105b3cec87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1418747777c58136973ee99798a4b973"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a1418747777c58136973ee99798a4b973">microhil_spi_write_n_bytes</a> (uint8_t *data, uint32_t len)</td></tr>
+<tr class="memdesc:a1418747777c58136973ee99798a4b973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write n bytes to an SPI device (blocking)  <a href="../../df/df1/io__config_8c.html#a1418747777c58136973ee99798a4b973">More...</a><br /></td></tr>
 <tr class="separator:a1418747777c58136973ee99798a4b973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e642c83232f265324b36ec5e4130d6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a9e642c83232f265324b36ec5e4130d6f">microhil_i2c_write_byte</a> (uint8_t addr, uint8_t reg, uint8_t value)</td></tr>
+<tr class="memdesc:a9e642c83232f265324b36ec5e4130d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send byte to i2c device.  <a href="../../df/df1/io__config_8c.html#a9e642c83232f265324b36ec5e4130d6f">More...</a><br /></td></tr>
 <tr class="separator:a9e642c83232f265324b36ec5e4130d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a961de8697a10bcf699854f6f92fcaa40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a961de8697a10bcf699854f6f92fcaa40">microhil_i2c_write_n_bytes</a> (uint8_t addr, uint8_t *data, uint32_t len)</td></tr>
+<tr class="memdesc:a961de8697a10bcf699854f6f92fcaa40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send n bytes to i2c device.  <a href="../../df/df1/io__config_8c.html#a961de8697a10bcf699854f6f92fcaa40">More...</a><br /></td></tr>
 <tr class="separator:a961de8697a10bcf699854f6f92fcaa40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa943320358befee6a57d0cbb1e629d8d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#aa943320358befee6a57d0cbb1e629d8d">microhil_i2c_read_byte</a> (uint8_t addr, uint8_t reg)</td></tr>
+<tr class="memdesc:aa943320358befee6a57d0cbb1e629d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read byte from i2c bus device.  <a href="../../df/df1/io__config_8c.html#aa943320358befee6a57d0cbb1e629d8d">More...</a><br /></td></tr>
 <tr class="separator:aa943320358befee6a57d0cbb1e629d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec63a111fed6b8b5e445df0a4bf61ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a> (uint16_t pin, uint16_t mode)</td></tr>
-<tr class="separator:aec63a111fed6b8b5e445df0a4bf61ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ef44932b760b841af69bd38bc66ffe0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0">microhil_delay_ms</a> (uint32_t ms)</td></tr>
+<tr class="memdesc:a8ef44932b760b841af69bd38bc66ffe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay in miliseconds.  <a href="../../df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0">More...</a><br /></td></tr>
 <tr class="separator:a8ef44932b760b841af69bd38bc66ffe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae08dc066d13c0d0459fd04cade80dbd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#ae08dc066d13c0d0459fd04cade80dbd4">microhil_delay_us</a> (uint32_t us)</td></tr>
+<tr class="memdesc:ae08dc066d13c0d0459fd04cade80dbd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay in microseconds.  <a href="../../df/df1/io__config_8c.html#ae08dc066d13c0d0459fd04cade80dbd4">More...</a><br /></td></tr>
 <tr class="separator:ae08dc066d13c0d0459fd04cade80dbd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa690b64244140ec6b5ac0266f8cb556b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b">microhil_gpio_init</a> ()</td></tr>
+<tr class="memdesc:aa690b64244140ec6b5ac0266f8cb556b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private function for initialization reserved pins.  <a href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b">More...</a><br /></td></tr>
 <tr class="separator:aa690b64244140ec6b5ac0266f8cb556b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6e2931cf076c56e94f0ff44a2b401ec"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#af6e2931cf076c56e94f0ff44a2b401ec">microhil_module_init</a> ()</td></tr>
-<tr class="separator:af6e2931cf076c56e94f0ff44a2b401ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d02c5ddc7ce26e1aed4bd1097cd37fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a3d02c5ddc7ce26e1aed4bd1097cd37fe">microhil_set_pwm_1</a> (uint8_t value)</td></tr>
+<tr class="memdesc:a3d02c5ddc7ce26e1aed4bd1097cd37fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current PWM counter compare value for one channel.  <a href="../../df/df1/io__config_8c.html#a3d02c5ddc7ce26e1aed4bd1097cd37fe">More...</a><br /></td></tr>
 <tr class="separator:a3d02c5ddc7ce26e1aed4bd1097cd37fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa54d51fe3736245ee1facd505e91a502"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#aa54d51fe3736245ee1facd505e91a502">microhil_module_exit</a> ()</td></tr>
-<tr class="separator:aa54d51fe3736245ee1facd505e91a502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2bf568b529a4e27411ffd7d9445e2a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#ad2bf568b529a4e27411ffd7d9445e2a2">microhil_module_init</a> ()</td></tr>
+<tr class="memdesc:ad2bf568b529a4e27411ffd7d9445e2a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM, I2C, SPI modules initialization.  <a href="../../df/df1/io__config_8c.html#ad2bf568b529a4e27411ffd7d9445e2a2">More...</a><br /></td></tr>
+<tr class="separator:ad2bf568b529a4e27411ffd7d9445e2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab42032f9eb992b156905434b5b588254"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#ab42032f9eb992b156905434b5b588254">microhil_module_exit</a> ()</td></tr>
+<tr class="memdesc:ab42032f9eb992b156905434b5b588254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform actions on exit.  <a href="../../df/df1/io__config_8c.html#ab42032f9eb992b156905434b5b588254">More...</a><br /></td></tr>
+<tr class="separator:ab42032f9eb992b156905434b5b588254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:abf07dc5aa88c6d4a600fe7d59a0eef9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#abf07dc5aa88c6d4a600fe7d59a0eef9b">EPD_RST_PIN</a></td></tr>
-<tr class="separator:abf07dc5aa88c6d4a600fe7d59a0eef9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5115807d46ade29998cff07d48f0fc0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a5115807d46ade29998cff07d48f0fc0b">EPD_DC_PIN</a></td></tr>
-<tr class="separator:a5115807d46ade29998cff07d48f0fc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f1df78d406d79a1083a8ae913a3b530"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a9f1df78d406d79a1083a8ae913a3b530">EPD_CS_PIN</a></td></tr>
-<tr class="separator:a9f1df78d406d79a1083a8ae913a3b530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71192829bb00c9dfe688b6438cb98713"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713">EPD_BL_PIN</a></td></tr>
-<tr class="separator:a71192829bb00c9dfe688b6438cb98713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f4c6bbf4118330c31dedce8d67da371"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a5f4c6bbf4118330c31dedce8d67da371">EPD_CLK_PIN</a></td></tr>
-<tr class="separator:a5f4c6bbf4118330c31dedce8d67da371"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfb3cf65137d57b937817b3fc3e8fcff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#adfb3cf65137d57b937817b3fc3e8fcff">EPD_MOSI_PIN</a></td></tr>
-<tr class="separator:adfb3cf65137d57b937817b3fc3e8fcff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85ae6dc6cce2133da1981700887add40"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a85ae6dc6cce2133da1981700887add40">EPD_SCL_PIN</a></td></tr>
-<tr class="separator:a85ae6dc6cce2133da1981700887add40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79e5a0b947b7dd91e2b3cf3f0a9467db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a79e5a0b947b7dd91e2b3cf3f0a9467db">EPD_SDA_PIN</a></td></tr>
-<tr class="separator:a79e5a0b947b7dd91e2b3cf3f0a9467db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af50915b14c16ce532e4c7954340733f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#af50915b14c16ce532e4c7954340733f3">epd_rst_pin</a></td></tr>
+<tr class="memdesc:af50915b14c16ce532e4c7954340733f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO.  <a href="../../df/df1/io__config_8c.html#af50915b14c16ce532e4c7954340733f3">More...</a><br /></td></tr>
+<tr class="separator:af50915b14c16ce532e4c7954340733f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07fbce104759755a9af3f031f072e7ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a07fbce104759755a9af3f031f072e7ae">epd_dc_pin</a></td></tr>
+<tr class="memdesc:a07fbce104759755a9af3f031f072e7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO.  <a href="../../df/df1/io__config_8c.html#a07fbce104759755a9af3f031f072e7ae">More...</a><br /></td></tr>
+<tr class="separator:a07fbce104759755a9af3f031f072e7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e21540269b8186e8bd7375c3f89755"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a04e21540269b8186e8bd7375c3f89755">epd_cs_pin</a></td></tr>
+<tr class="memdesc:a04e21540269b8186e8bd7375c3f89755"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO.  <a href="../../df/df1/io__config_8c.html#a04e21540269b8186e8bd7375c3f89755">More...</a><br /></td></tr>
+<tr class="separator:a04e21540269b8186e8bd7375c3f89755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81952429bb1891f65026fcde00273a3d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d">epd_bl_pin</a></td></tr>
+<tr class="memdesc:a81952429bb1891f65026fcde00273a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO.  <a href="../../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d">More...</a><br /></td></tr>
+<tr class="separator:a81952429bb1891f65026fcde00273a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa00d6f6d6bb3f48dd27934809e73ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a5fa00d6f6d6bb3f48dd27934809e73ea">epd_clk_pin</a></td></tr>
+<tr class="memdesc:a5fa00d6f6d6bb3f48dd27934809e73ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO.  <a href="../../df/df1/io__config_8c.html#a5fa00d6f6d6bb3f48dd27934809e73ea">More...</a><br /></td></tr>
+<tr class="separator:a5fa00d6f6d6bb3f48dd27934809e73ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28014db4a427788c943cdb018000a9a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a28014db4a427788c943cdb018000a9a3">epd_mosi_pin</a></td></tr>
+<tr class="memdesc:a28014db4a427788c943cdb018000a9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO.  <a href="../../df/df1/io__config_8c.html#a28014db4a427788c943cdb018000a9a3">More...</a><br /></td></tr>
+<tr class="separator:a28014db4a427788c943cdb018000a9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae971234b436f1fe793e678732a3fa63a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#ae971234b436f1fe793e678732a3fa63a">epd_scl_pin</a></td></tr>
+<tr class="memdesc:ae971234b436f1fe793e678732a3fa63a"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO.  <a href="../../df/df1/io__config_8c.html#ae971234b436f1fe793e678732a3fa63a">More...</a><br /></td></tr>
+<tr class="separator:ae971234b436f1fe793e678732a3fa63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545f8db0161bfb841d93373e56fa19ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#a545f8db0161bfb841d93373e56fa19ff">epd_sda_pin</a></td></tr>
+<tr class="memdesc:a545f8db0161bfb841d93373e56fa19ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO.  <a href="../../df/df1/io__config_8c.html#a545f8db0161bfb841d93373e56fa19ff">More...</a><br /></td></tr>
+<tr class="separator:a545f8db0161bfb841d93373e56fa19ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8eb9cf9a6e9c4eea13d416da945f6ae"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a></td></tr>
+<tr class="memdesc:af8eb9cf9a6e9c4eea13d416da945f6ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">TODO.  <a href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">More...</a><br /></td></tr>
 <tr class="separator:af8eb9cf9a6e9c4eea13d416da945f6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -176,17 +203,19 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Delay in miliseconds. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ms</td><td></td></tr>
+    <tr><td class="paramname">ms</td><td>is number of miliseconds to sleep </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00150">150</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  151</span>{</div>
-<div class="line"><span class="lineno">  152</span>    sleep_ms(ms);</div>
-<div class="line"><span class="lineno">  153</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00152">152</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>{</div>
+<div class="line"><span class="lineno">  154</span>    sleep_ms(ms);</div>
+<div class="line"><span class="lineno">  155</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00058">microhil_all_channels_off()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00025">microhil_all_channels_on()</a>, and <a class="el" href="../../d4/d28/channel_8c_source.html#l00092">microhil_channel_switch()</a>.</p>
 <div class="dynheader">
@@ -194,7 +223,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/df1/io__config_8c_a8ef44932b760b841af69bd38bc66ffe0_icgraph.png" border="0" usemap="#adf/df1/io__config_8c_a8ef44932b760b841af69bd38bc66ffe0_icgraph" alt=""/></div>
 <map name="adf/df1/io__config_8c_a8ef44932b760b841af69bd38bc66ffe0_icgraph" id="adf/df1/io__config_8c_a8ef44932b760b841af69bd38bc66ffe0_icgraph">
-<area shape="rect" title=" " alt="" coords="573,56,719,83"/>
+<area shape="rect" title="Delay in miliseconds." alt="" coords="573,56,719,83"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#a4d0b5716356dbea2a25811b5cd894182" title="Set all channels to OFF." alt="" coords="339,5,525,32"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#a5e86a6713a5ab382af4f00fef013e63b" title="Switch channel state." alt="" coords="108,56,291,83"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#aed07b8a710efb4cd7a9d6b08d27b85e4" title="Set all channels to ON." alt="" coords="339,107,525,133"/>
@@ -219,17 +248,19 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Delay in microseconds. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">us</td><td></td></tr>
+    <tr><td class="paramname">us</td><td>is number of microseconds to sleep </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00158">158</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  159</span>{</div>
-<div class="line"><span class="lineno">  160</span>    sleep_us(us);</div>
-<div class="line"><span class="lineno">  161</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00160">160</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>{</div>
+<div class="line"><span class="lineno">  162</span>    sleep_us(us);</div>
+<div class="line"><span class="lineno">  163</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -248,18 +279,20 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get GPIO state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td></td></tr>
+    <tr><td class="paramname">pin</td><td>is GPIO pin number </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>state of GPIO pin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00070">70</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>{</div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">return</span> gpio_get(pin);</div>
-<div class="line"><span class="lineno">   73</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00090">90</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>{</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> gpio_get(pin);</div>
+<div class="line"><span class="lineno">   93</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -288,28 +321,30 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Drive GPIO pin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td></td></tr>
-    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">pin</td><td>is GPIO number </td></tr>
+    <tr><td class="paramname">value</td><td>is GPIO value (true - set | false - clear) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00061">61</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
-<div class="line"><span class="lineno">   63</span>    gpio_put(pin, value);</div>
-<div class="line"><span class="lineno">   64</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00081">81</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>{</div>
+<div class="line"><span class="lineno">   83</span>    gpio_put(pin, value);</div>
+<div class="line"><span class="lineno">   84</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00165">microhil_gpio_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00167">microhil_gpio_init()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/df1/io__config_8c_a6d8daad81a37e4c9414bf9b2972832b0_icgraph.png" border="0" usemap="#adf/df1/io__config_8c_a6d8daad81a37e4c9414bf9b2972832b0_icgraph" alt=""/></div>
 <map name="adf/df1/io__config_8c_a6d8daad81a37e4c9414bf9b2972832b0_icgraph" id="adf/df1/io__config_8c_a6d8daad81a37e4c9414bf9b2972832b0_icgraph">
-<area shape="rect" title=" " alt="" coords="399,5,561,32"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b" title=" " alt="" coords="212,5,351,32"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#af6e2931cf076c56e94f0ff44a2b401ec" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" title="Drive GPIO pin." alt="" coords="399,5,561,32"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b" title="Private function for initialization reserved pins." alt="" coords="212,5,351,32"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#ad2bf568b529a4e27411ffd7d9445e2a2" title="PWM, I2C, SPI modules initialization." alt="" coords="5,5,164,32"/>
 </map>
 </div>
 
@@ -330,36 +365,39 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00165">165</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>{</div>
-<div class="line"><span class="lineno">  167</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#abf07dc5aa88c6d4a600fe7d59a0eef9b">EPD_RST_PIN</a>, 1);</div>
-<div class="line"><span class="lineno">  168</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a5115807d46ade29998cff07d48f0fc0b">EPD_DC_PIN</a>, 1);</div>
-<div class="line"><span class="lineno">  169</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a9f1df78d406d79a1083a8ae913a3b530">EPD_CS_PIN</a>, 1);</div>
-<div class="line"><span class="lineno">  170</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713">EPD_BL_PIN</a>, 1);</div>
-<div class="line"><span class="lineno">  171</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a9f1df78d406d79a1083a8ae913a3b530">EPD_CS_PIN</a>, 1);</div>
-<div class="line"><span class="lineno">  172</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713">EPD_BL_PIN</a>, 1);</div>
-<div class="line"><span class="lineno">  173</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">microhil_digital_write</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a9f1df78d406d79a1083a8ae913a3b530">EPD_CS_PIN</a>, 1);</div>
-<div class="line"><span class="lineno">  174</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">microhil_digital_write</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a5115807d46ade29998cff07d48f0fc0b">EPD_DC_PIN</a>, 0);</div>
-<div class="line"><span class="lineno">  175</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">microhil_digital_write</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713">EPD_BL_PIN</a>, 1);</div>
-<div class="line"><span class="lineno">  176</span>}</div>
-<div class="ttc" id="aio__config_8c_html_a5115807d46ade29998cff07d48f0fc0b"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a5115807d46ade29998cff07d48f0fc0b">EPD_DC_PIN</a></div><div class="ttdeci">int EPD_DC_PIN</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00027">io_config.c:27</a></div></div>
-<div class="ttc" id="aio__config_8c_html_a6d8daad81a37e4c9414bf9b2972832b0"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">microhil_digital_write</a></div><div class="ttdeci">void microhil_digital_write(uint16_t pin, uint8_t value)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00061">io_config.c:61</a></div></div>
-<div class="ttc" id="aio__config_8c_html_a71192829bb00c9dfe688b6438cb98713"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713">EPD_BL_PIN</a></div><div class="ttdeci">int EPD_BL_PIN</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00035">io_config.c:35</a></div></div>
-<div class="ttc" id="aio__config_8c_html_a9f1df78d406d79a1083a8ae913a3b530"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a9f1df78d406d79a1083a8ae913a3b530">EPD_CS_PIN</a></div><div class="ttdeci">int EPD_CS_PIN</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00031">io_config.c:31</a></div></div>
-<div class="ttc" id="aio__config_8c_html_abf07dc5aa88c6d4a600fe7d59a0eef9b"><div class="ttname"><a href="../../df/df1/io__config_8c.html#abf07dc5aa88c6d4a600fe7d59a0eef9b">EPD_RST_PIN</a></div><div class="ttdeci">int EPD_RST_PIN</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00023">io_config.c:23</a></div></div>
-<div class="ttc" id="aio__config_8c_html_aec63a111fed6b8b5e445df0a4bf61ae9"><div class="ttname"><a href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a></div><div class="ttdeci">void microhil_gpio_mode(uint16_t pin, uint16_t mode)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00133">io_config.c:133</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/df1/io__config_8c_source.html#l00035">EPD_BL_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00031">EPD_CS_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00027">EPD_DC_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00023">EPD_RST_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00061">microhil_digital_write()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00133">microhil_gpio_mode()</a>.</p>
+<p>Private function for initialization reserved pins. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00167">167</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>{</div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af50915b14c16ce532e4c7954340733f3">epd_rst_pin</a>, 1);</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a07fbce104759755a9af3f031f072e7ae">epd_dc_pin</a>, 1);</div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a04e21540269b8186e8bd7375c3f89755">epd_cs_pin</a>, 1);</div>
+<div class="line"><span class="lineno">  172</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d">epd_bl_pin</a>, 1);</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a04e21540269b8186e8bd7375c3f89755">epd_cs_pin</a>, 1);</div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d">epd_bl_pin</a>, 1);</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">microhil_digital_write</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a04e21540269b8186e8bd7375c3f89755">epd_cs_pin</a>, 1);</div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">microhil_digital_write</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a07fbce104759755a9af3f031f072e7ae">epd_dc_pin</a>, 0);</div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">microhil_digital_write</a>(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d">epd_bl_pin</a>, 1);</div>
+<div class="line"><span class="lineno">  179</span>}</div>
+<div class="ttc" id="aio__config_8c_html_a04e21540269b8186e8bd7375c3f89755"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a04e21540269b8186e8bd7375c3f89755">epd_cs_pin</a></div><div class="ttdeci">int epd_cs_pin</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00033">io_config.c:33</a></div></div>
+<div class="ttc" id="aio__config_8c_html_a07fbce104759755a9af3f031f072e7ae"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a07fbce104759755a9af3f031f072e7ae">epd_dc_pin</a></div><div class="ttdeci">int epd_dc_pin</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00029">io_config.c:29</a></div></div>
+<div class="ttc" id="aio__config_8c_html_a6d8daad81a37e4c9414bf9b2972832b0"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0">microhil_digital_write</a></div><div class="ttdeci">void microhil_digital_write(uint16_t pin, uint8_t value)</div><div class="ttdoc">Drive GPIO pin.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00081">io_config.c:81</a></div></div>
+<div class="ttc" id="aio__config_8c_html_a81952429bb1891f65026fcde00273a3d"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d">epd_bl_pin</a></div><div class="ttdeci">int epd_bl_pin</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00037">io_config.c:37</a></div></div>
+<div class="ttc" id="aio__config_8c_html_aec63a111fed6b8b5e445df0a4bf61ae9"><div class="ttname"><a href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a></div><div class="ttdeci">void microhil_gpio_mode(uint16_t pin, uint16_t mode)</div><div class="ttdoc">Setting port pin configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00063">io_config.c:63</a></div></div>
+<div class="ttc" id="aio__config_8c_html_af50915b14c16ce532e4c7954340733f3"><div class="ttname"><a href="../../df/df1/io__config_8c.html#af50915b14c16ce532e4c7954340733f3">epd_rst_pin</a></div><div class="ttdeci">int epd_rst_pin</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00025">io_config.c:25</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/df1/io__config_8c_source.html#l00037">epd_bl_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00033">epd_cs_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00029">epd_dc_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00025">epd_rst_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00081">microhil_digital_write()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00063">microhil_gpio_mode()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/df1/io__config_8c_aa690b64244140ec6b5ac0266f8cb556b_cgraph.png" border="0" usemap="#adf/df1/io__config_8c_aa690b64244140ec6b5ac0266f8cb556b_cgraph" alt=""/></div>
 <map name="adf/df1/io__config_8c_aa690b64244140ec6b5ac0266f8cb556b_cgraph" id="adf/df1/io__config_8c_aa690b64244140ec6b5ac0266f8cb556b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,144,57"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0" title=" " alt="" coords="192,5,355,32"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9" title=" " alt="" coords="196,56,351,83"/>
+<area shape="rect" title="Private function for initialization reserved pins." alt="" coords="5,31,144,57"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0" title="Drive GPIO pin." alt="" coords="192,5,355,32"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9" title="Setting port pin configuration." alt="" coords="196,56,351,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -367,8 +405,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/df1/io__config_8c_aa690b64244140ec6b5ac0266f8cb556b_icgraph.png" border="0" usemap="#adf/df1/io__config_8c_aa690b64244140ec6b5ac0266f8cb556b_icgraph" alt=""/></div>
 <map name="adf/df1/io__config_8c_aa690b64244140ec6b5ac0266f8cb556b_icgraph" id="adf/df1/io__config_8c_aa690b64244140ec6b5ac0266f8cb556b_icgraph">
-<area shape="rect" title=" " alt="" coords="212,5,351,32"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#af6e2931cf076c56e94f0ff44a2b401ec" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" title="Private function for initialization reserved pins." alt="" coords="212,5,351,32"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#ad2bf568b529a4e27411ffd7d9445e2a2" title="PWM, I2C, SPI modules initialization." alt="" coords="5,5,164,32"/>
 </map>
 </div>
 
@@ -399,37 +437,39 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Setting port pin configuration. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td></td></tr>
-    <tr><td class="paramname">mode</td><td></td></tr>
+    <tr><td class="paramname">pin</td><td>is GPIO pin number </td></tr>
+    <tr><td class="paramname">mode</td><td>is GPIO pin direction (GPIO_IN | GPIO_OUT) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00133">133</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
-<div class="line"><span class="lineno">  135</span>    gpio_init(pin);</div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span> (mode == 0 || mode == GPIO_IN)</div>
-<div class="line"><span class="lineno">  138</span>    {</div>
-<div class="line"><span class="lineno">  139</span>        gpio_set_dir(pin, GPIO_IN);</div>
-<div class="line"><span class="lineno">  140</span>    }</div>
-<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  142</span>    {</div>
-<div class="line"><span class="lineno">  143</span>        gpio_set_dir(pin, GPIO_OUT);</div>
-<div class="line"><span class="lineno">  144</span>    }</div>
-<div class="line"><span class="lineno">  145</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00063">63</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>    gpio_init(pin);</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (mode == 0 || mode == GPIO_IN)</div>
+<div class="line"><span class="lineno">   68</span>    {</div>
+<div class="line"><span class="lineno">   69</span>        gpio_set_dir(pin, GPIO_IN);</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>        gpio_set_dir(pin, GPIO_OUT);</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00165">microhil_gpio_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00167">microhil_gpio_init()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/df1/io__config_8c_aec63a111fed6b8b5e445df0a4bf61ae9_icgraph.png" border="0" usemap="#adf/df1/io__config_8c_aec63a111fed6b8b5e445df0a4bf61ae9_icgraph" alt=""/></div>
 <map name="adf/df1/io__config_8c_aec63a111fed6b8b5e445df0a4bf61ae9_icgraph" id="adf/df1/io__config_8c_aec63a111fed6b8b5e445df0a4bf61ae9_icgraph">
-<area shape="rect" title=" " alt="" coords="399,5,553,32"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b" title=" " alt="" coords="212,5,351,32"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#af6e2931cf076c56e94f0ff44a2b401ec" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" title="Setting port pin configuration." alt="" coords="399,5,553,32"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b" title="Private function for initialization reserved pins." alt="" coords="212,5,351,32"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#ad2bf568b529a4e27411ffd7d9445e2a2" title="PWM, I2C, SPI modules initialization." alt="" coords="5,5,164,32"/>
 </map>
 </div>
 
@@ -460,25 +500,30 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read byte from i2c bus device. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">addr</td><td></td></tr>
-    <tr><td class="paramname">reg</td><td></td></tr>
+    <tr><td class="paramname">addr</td><td>is address of device </td></tr>
+    <tr><td class="paramname">reg</td><td>is data to send </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>byte from i2c device </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00119">119</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  120</span>{</div>
-<div class="line"><span class="lineno">  121</span>    uint8_t buf;</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>    i2c_write_blocking(i2c1, addr, &amp;reg, 1, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  124</span>    i2c_read_blocking(i2c1, addr, &amp;buf, 1, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> buf;</div>
-<div class="line"><span class="lineno">  127</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00139">139</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>{</div>
+<div class="line"><span class="lineno">  141</span>    uint8_t buffer;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    i2c_write_blocking(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#a156ca7042977d933787eefb05dc4a831">MICROHIL_I2C_PORT_1</a>, addr, &amp;reg, 1, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  144</span>    i2c_read_blocking(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#a156ca7042977d933787eefb05dc4a831">MICROHIL_I2C_PORT_1</a>, addr, &amp;buffer, 1, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">return</span> buffer;</div>
+<div class="line"><span class="lineno">  147</span>}</div>
+<div class="ttc" id="aio__config_8h_html_a156ca7042977d933787eefb05dc4a831"><div class="ttname"><a href="../../df/d6a/io__config_8h.html#a156ca7042977d933787eefb05dc4a831">MICROHIL_I2C_PORT_1</a></div><div class="ttdeci">#define MICROHIL_I2C_PORT_1</div><div class="ttdoc">I2C instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6a/io__config_8h_source.html#l00033">io_config.h:33</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d6a/io__config_8h_source.html#l00033">MICROHIL_I2C_PORT_1</a>.</p>
+
 </div>
 </div>
 <a id="a9e642c83232f265324b36ec5e4130d6f" name="a9e642c83232f265324b36ec5e4130d6f"></a>
@@ -512,22 +557,27 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Send byte to i2c device. </p>
+<p >Send data to i2c device.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">addr</td><td></td></tr>
-    <tr><td class="paramname">reg</td><td></td></tr>
-    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">addr</td><td>is address of device </td></tr>
+    <tr><td class="paramname">reg</td><td>is register destination </td></tr>
+    <tr><td class="paramname">value</td><td>is byte to send </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00097">97</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>{</div>
-<div class="line"><span class="lineno">   99</span>    uint8_t data[2] = {reg, value};</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    i2c_write_blocking(i2c1, addr, data, 2, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  102</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00117">117</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{</div>
+<div class="line"><span class="lineno">  119</span>    uint8_t data[2] = {reg, value};</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>    i2c_write_blocking(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#a156ca7042977d933787eefb05dc4a831">MICROHIL_I2C_PORT_1</a>, addr, data, 2, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  122</span>}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d6a/io__config_8h_source.html#l00033">MICROHIL_I2C_PORT_1</a>.</p>
+
 </div>
 </div>
 <a id="a961de8697a10bcf699854f6f92fcaa40" name="a961de8697a10bcf699854f6f92fcaa40"></a>
@@ -561,30 +611,34 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Send n bytes to i2c device. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">addr</td><td></td></tr>
-    <tr><td class="paramname">data</td><td></td></tr>
-    <tr><td class="paramname">len</td><td></td></tr>
+    <tr><td class="paramname">addr</td><td>is address of device </td></tr>
+    <tr><td class="paramname">data</td><td>to send </td></tr>
+    <tr><td class="paramname">len</td><td>is length of data to send </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00109">109</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>{</div>
-<div class="line"><span class="lineno">  111</span>    i2c_write_blocking(i2c1, addr, data, len, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  112</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00129">129</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>{</div>
+<div class="line"><span class="lineno">  131</span>    i2c_write_blocking(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#a156ca7042977d933787eefb05dc4a831">MICROHIL_I2C_PORT_1</a>, addr, data, len, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  132</span>}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d6a/io__config_8h_source.html#l00033">MICROHIL_I2C_PORT_1</a>.</p>
+
 </div>
 </div>
-<a id="aa54d51fe3736245ee1facd505e91a502" name="aa54d51fe3736245ee1facd505e91a502"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa54d51fe3736245ee1facd505e91a502">&#9670;&nbsp;</a></span>microhil_module_exit()</h2>
+<a id="ab42032f9eb992b156905434b5b588254" name="ab42032f9eb992b156905434b5b588254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab42032f9eb992b156905434b5b588254">&#9670;&nbsp;</a></span>microhil_module_exit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void microhil_module_exit </td>
+          <td class="memname">bool microhil_module_exit </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -592,80 +646,98 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00233">233</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  234</span>{</div>
-<div class="line"><span class="lineno">  235</span>}</div>
+<p>Perform actions on exit. </p>
+<dl class="section return"><dt>Returns</dt><dd>true for success else false </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00248">248</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  249</span>{</div>
+<div class="line"><span class="lineno">  250</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  251</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="af6e2931cf076c56e94f0ff44a2b401ec" name="af6e2931cf076c56e94f0ff44a2b401ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6e2931cf076c56e94f0ff44a2b401ec">&#9670;&nbsp;</a></span>microhil_module_init()</h2>
+<a id="ad2bf568b529a4e27411ffd7d9445e2a2" name="ad2bf568b529a4e27411ffd7d9445e2a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2bf568b529a4e27411ffd7d9445e2a2">&#9670;&nbsp;</a></span>microhil_module_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t microhil_module_init </td>
+          <td class="memname">bool microhil_module_init </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">181</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  182</span>{</div>
-<div class="line"><span class="lineno">  183</span>    stdio_init_all();</div>
-<div class="line"><span class="lineno">  184</span> </div>
-<div class="line"><span class="lineno">  185</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#abf07dc5aa88c6d4a600fe7d59a0eef9b">EPD_RST_PIN</a> = 12;</div>
-<div class="line"><span class="lineno">  186</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a5115807d46ade29998cff07d48f0fc0b">EPD_DC_PIN</a> = 8;</div>
-<div class="line"><span class="lineno">  187</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713">EPD_BL_PIN</a> = 6;</div>
-<div class="line"><span class="lineno">  188</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a9f1df78d406d79a1083a8ae913a3b530">EPD_CS_PIN</a> = 9;</div>
-<div class="line"><span class="lineno">  189</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a5f4c6bbf4118330c31dedce8d67da371">EPD_CLK_PIN</a> = 10;</div>
-<div class="line"><span class="lineno">  190</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#adfb3cf65137d57b937817b3fc3e8fcff">EPD_MOSI_PIN</a> = 11;</div>
-<div class="line"><span class="lineno">  191</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a85ae6dc6cce2133da1981700887add40">EPD_SCL_PIN</a> = 7;</div>
-<div class="line"><span class="lineno">  192</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a79e5a0b947b7dd91e2b3cf3f0a9467db">EPD_SDA_PIN</a> = 6;</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>    spi_init(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#a8112c985f7444e82198d7571ce0a9160">SPI_PORT</a>, 1000 * 1000);</div>
-<div class="line"><span class="lineno">  195</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a5f4c6bbf4118330c31dedce8d67da371">EPD_CLK_PIN</a>, GPIO_FUNC_SPI);</div>
-<div class="line"><span class="lineno">  196</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#adfb3cf65137d57b937817b3fc3e8fcff">EPD_MOSI_PIN</a>, GPIO_FUNC_SPI);</div>
-<div class="line"><span class="lineno">  197</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b">microhil_gpio_init</a>();</div>
-<div class="line"><span class="lineno">  198</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713">EPD_BL_PIN</a>, GPIO_FUNC_PWM);</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  200</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a> = pwm_gpio_to_slice_num(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713">EPD_BL_PIN</a>);</div>
-<div class="line"><span class="lineno">  201</span> </div>
-<div class="line"><span class="lineno">  202</span>    pwm_set_wrap(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 100);</div>
-<div class="line"><span class="lineno">  203</span>    pwm_set_chan_level(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, PWM_CHAN_B, 1);</div>
-<div class="line"><span class="lineno">  204</span>    pwm_set_clkdiv(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 50);</div>
-<div class="line"><span class="lineno">  205</span>    pwm_set_enabled(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  206</span>    i2c_init(i2c1, 100 * 1000);</div>
-<div class="line"><span class="lineno">  207</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a79e5a0b947b7dd91e2b3cf3f0a9467db">EPD_SDA_PIN</a>, GPIO_FUNC_I2C);</div>
-<div class="line"><span class="lineno">  208</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a85ae6dc6cce2133da1981700887add40">EPD_SCL_PIN</a>, GPIO_FUNC_I2C);</div>
-<div class="line"><span class="lineno">  209</span>    gpio_pull_up(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a79e5a0b947b7dd91e2b3cf3f0a9467db">EPD_SDA_PIN</a>);</div>
-<div class="line"><span class="lineno">  210</span>    gpio_pull_up(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a85ae6dc6cce2133da1981700887add40">EPD_SCL_PIN</a>);</div>
-<div class="line"><span class="lineno">  211</span>    printf(<span class="stringliteral">&quot;microhil_module_init OK \r\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  212</span> </div>
-<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  214</span>}</div>
-<div class="ttc" id="aio__config_8c_html_a5f4c6bbf4118330c31dedce8d67da371"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a5f4c6bbf4118330c31dedce8d67da371">EPD_CLK_PIN</a></div><div class="ttdeci">int EPD_CLK_PIN</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00039">io_config.c:39</a></div></div>
-<div class="ttc" id="aio__config_8c_html_a79e5a0b947b7dd91e2b3cf3f0a9467db"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a79e5a0b947b7dd91e2b3cf3f0a9467db">EPD_SDA_PIN</a></div><div class="ttdeci">int EPD_SDA_PIN</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00051">io_config.c:51</a></div></div>
-<div class="ttc" id="aio__config_8c_html_a85ae6dc6cce2133da1981700887add40"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a85ae6dc6cce2133da1981700887add40">EPD_SCL_PIN</a></div><div class="ttdeci">int EPD_SCL_PIN</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00047">io_config.c:47</a></div></div>
-<div class="ttc" id="aio__config_8c_html_aa690b64244140ec6b5ac0266f8cb556b"><div class="ttname"><a href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b">microhil_gpio_init</a></div><div class="ttdeci">void microhil_gpio_init()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00165">io_config.c:165</a></div></div>
-<div class="ttc" id="aio__config_8c_html_adfb3cf65137d57b937817b3fc3e8fcff"><div class="ttname"><a href="../../df/df1/io__config_8c.html#adfb3cf65137d57b937817b3fc3e8fcff">EPD_MOSI_PIN</a></div><div class="ttdeci">int EPD_MOSI_PIN</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00043">io_config.c:43</a></div></div>
-<div class="ttc" id="aio__config_8c_html_af8eb9cf9a6e9c4eea13d416da945f6ae"><div class="ttname"><a href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a></div><div class="ttdeci">uint slice_num</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00055">io_config.c:55</a></div></div>
-<div class="ttc" id="aio__config_8h_html_a8112c985f7444e82198d7571ce0a9160"><div class="ttname"><a href="../../df/d6a/io__config_8h.html#a8112c985f7444e82198d7571ce0a9160">SPI_PORT</a></div><div class="ttdeci">#define SPI_PORT</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6a/io__config_8h_source.html#l00029">io_config.h:29</a></div></div>
+<p>PWM, I2C, SPI modules initialization. </p>
+<dl class="section return"><dt>Returns</dt><dd>true for success else false </dd></dl>
+<p >Failed to perform initialization for stdio types</p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">199</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>{</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordtype">bool</span> status = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>    status = stdio_init_all();</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">if</span> (!status)</div>
+<div class="line"><span class="lineno">  206</span>    {</div>
+<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">  210</span>    }</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#af50915b14c16ce532e4c7954340733f3">epd_rst_pin</a> = 12;</div>
+<div class="line"><span class="lineno">  213</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a07fbce104759755a9af3f031f072e7ae">epd_dc_pin</a> = 8;</div>
+<div class="line"><span class="lineno">  214</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d">epd_bl_pin</a> = 6;</div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a04e21540269b8186e8bd7375c3f89755">epd_cs_pin</a> = 9;</div>
+<div class="line"><span class="lineno">  216</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a5fa00d6f6d6bb3f48dd27934809e73ea">epd_clk_pin</a> = 10;</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a28014db4a427788c943cdb018000a9a3">epd_mosi_pin</a> = 11;</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#ae971234b436f1fe793e678732a3fa63a">epd_scl_pin</a> = 7;</div>
+<div class="line"><span class="lineno">  219</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#a545f8db0161bfb841d93373e56fa19ff">epd_sda_pin</a> = 6;</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>    spi_init(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#acb7ea2efabc48fe39655e70fe9f1ff5e">MICROHIL_SPI_PORT_1</a>, 1000 * 1000);</div>
+<div class="line"><span class="lineno">  222</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a5fa00d6f6d6bb3f48dd27934809e73ea">epd_clk_pin</a>, GPIO_FUNC_SPI);</div>
+<div class="line"><span class="lineno">  223</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a28014db4a427788c943cdb018000a9a3">epd_mosi_pin</a>, GPIO_FUNC_SPI);</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b">microhil_gpio_init</a>();</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d">epd_bl_pin</a>, GPIO_FUNC_PWM);</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a> = pwm_gpio_to_slice_num(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d">epd_bl_pin</a>);</div>
+<div class="line"><span class="lineno">  229</span>    pwm_set_wrap(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 100);</div>
+<div class="line"><span class="lineno">  230</span>    pwm_set_chan_level(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, PWM_CHAN_B, 1);</div>
+<div class="line"><span class="lineno">  231</span>    pwm_set_clkdiv(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 50);</div>
+<div class="line"><span class="lineno">  232</span>    pwm_set_enabled(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>    i2c_init(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#a156ca7042977d933787eefb05dc4a831">MICROHIL_I2C_PORT_1</a>, 100 * 1000);</div>
+<div class="line"><span class="lineno">  235</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a545f8db0161bfb841d93373e56fa19ff">epd_sda_pin</a>, GPIO_FUNC_I2C);</div>
+<div class="line"><span class="lineno">  236</span>    gpio_set_function(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#ae971234b436f1fe793e678732a3fa63a">epd_scl_pin</a>, GPIO_FUNC_I2C);</div>
+<div class="line"><span class="lineno">  237</span>    gpio_pull_up(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#a545f8db0161bfb841d93373e56fa19ff">epd_sda_pin</a>);</div>
+<div class="line"><span class="lineno">  238</span>    gpio_pull_up(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#ae971234b436f1fe793e678732a3fa63a">epd_scl_pin</a>);</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>    printf(<span class="stringliteral">&quot;%s %s\n&quot;</span>, <a class="code hl_define" href="../../d7/d64/io__config__info_8h.html#ab1f40c7ff78b902bbebfd5896dbc9a0f">MICROHIL_IO_CONFIG_INFO</a>, <a class="code hl_define" href="../../d7/d64/io__config__info_8h.html#afebfb19a8b9d53dc66684e107a36b42b">MICROHIL_MODULE_INIT_OK</a>);</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">  243</span>}</div>
+<div class="ttc" id="aio__config_8c_html_a28014db4a427788c943cdb018000a9a3"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a28014db4a427788c943cdb018000a9a3">epd_mosi_pin</a></div><div class="ttdeci">int epd_mosi_pin</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00045">io_config.c:45</a></div></div>
+<div class="ttc" id="aio__config_8c_html_a545f8db0161bfb841d93373e56fa19ff"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a545f8db0161bfb841d93373e56fa19ff">epd_sda_pin</a></div><div class="ttdeci">int epd_sda_pin</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00053">io_config.c:53</a></div></div>
+<div class="ttc" id="aio__config_8c_html_a5fa00d6f6d6bb3f48dd27934809e73ea"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a5fa00d6f6d6bb3f48dd27934809e73ea">epd_clk_pin</a></div><div class="ttdeci">int epd_clk_pin</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00041">io_config.c:41</a></div></div>
+<div class="ttc" id="aio__config_8c_html_aa690b64244140ec6b5ac0266f8cb556b"><div class="ttname"><a href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b">microhil_gpio_init</a></div><div class="ttdeci">void microhil_gpio_init()</div><div class="ttdoc">Private function for initialization reserved pins.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00167">io_config.c:167</a></div></div>
+<div class="ttc" id="aio__config_8c_html_ae971234b436f1fe793e678732a3fa63a"><div class="ttname"><a href="../../df/df1/io__config_8c.html#ae971234b436f1fe793e678732a3fa63a">epd_scl_pin</a></div><div class="ttdeci">int epd_scl_pin</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00049">io_config.c:49</a></div></div>
+<div class="ttc" id="aio__config_8c_html_af8eb9cf9a6e9c4eea13d416da945f6ae"><div class="ttname"><a href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a></div><div class="ttdeci">uint slice_num</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00057">io_config.c:57</a></div></div>
+<div class="ttc" id="aio__config_8h_html_acb7ea2efabc48fe39655e70fe9f1ff5e"><div class="ttname"><a href="../../df/d6a/io__config_8h.html#acb7ea2efabc48fe39655e70fe9f1ff5e">MICROHIL_SPI_PORT_1</a></div><div class="ttdeci">#define MICROHIL_SPI_PORT_1</div><div class="ttdoc">SPI instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d6a/io__config_8h_source.html#l00029">io_config.h:29</a></div></div>
+<div class="ttc" id="aio__config__info_8h_html_ab1f40c7ff78b902bbebfd5896dbc9a0f"><div class="ttname"><a href="../../d7/d64/io__config__info_8h.html#ab1f40c7ff78b902bbebfd5896dbc9a0f">MICROHIL_IO_CONFIG_INFO</a></div><div class="ttdeci">#define MICROHIL_IO_CONFIG_INFO</div><div class="ttdoc">Prefix info message for IO modules.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d64/io__config__info_8h_source.html#l00023">io_config_info.h:23</a></div></div>
+<div class="ttc" id="aio__config__info_8h_html_afebfb19a8b9d53dc66684e107a36b42b"><div class="ttname"><a href="../../d7/d64/io__config__info_8h.html#afebfb19a8b9d53dc66684e107a36b42b">MICROHIL_MODULE_INIT_OK</a></div><div class="ttdeci">#define MICROHIL_MODULE_INIT_OK</div><div class="ttdoc">Info message for successfully initialized PWM module.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d64/io__config__info_8h_source.html#l00027">io_config_info.h:27</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/df1/io__config_8c_source.html#l00035">EPD_BL_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00039">EPD_CLK_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00031">EPD_CS_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00027">EPD_DC_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00043">EPD_MOSI_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00023">EPD_RST_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00047">EPD_SCL_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00051">EPD_SDA_PIN</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00165">microhil_gpio_init()</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00055">slice_num</a>, and <a class="el" href="../../df/d6a/io__config_8h_source.html#l00029">SPI_PORT</a>.</p>
+<p class="reference">References <a class="el" href="../../df/df1/io__config_8c_source.html#l00037">epd_bl_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00041">epd_clk_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00033">epd_cs_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00029">epd_dc_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00045">epd_mosi_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00025">epd_rst_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00049">epd_scl_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00053">epd_sda_pin</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00167">microhil_gpio_init()</a>, <a class="el" href="../../df/d6a/io__config_8h_source.html#l00033">MICROHIL_I2C_PORT_1</a>, <a class="el" href="../../d7/d64/io__config__info_8h_source.html#l00023">MICROHIL_IO_CONFIG_INFO</a>, <a class="el" href="../../d7/d64/io__config__info_8h_source.html#l00027">MICROHIL_MODULE_INIT_OK</a>, <a class="el" href="../../df/d6a/io__config_8h_source.html#l00029">MICROHIL_SPI_PORT_1</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00057">slice_num</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../df/df1/io__config_8c_af6e2931cf076c56e94f0ff44a2b401ec_cgraph.png" border="0" usemap="#adf/df1/io__config_8c_af6e2931cf076c56e94f0ff44a2b401ec_cgraph" alt=""/></div>
-<map name="adf/df1/io__config_8c_af6e2931cf076c56e94f0ff44a2b401ec_cgraph" id="adf/df1/io__config_8c_af6e2931cf076c56e94f0ff44a2b401ec_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,164,57"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b" title=" " alt="" coords="212,31,351,57"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0" title=" " alt="" coords="399,5,561,32"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9" title=" " alt="" coords="403,56,557,83"/>
+<div class="center"><img src="../../df/df1/io__config_8c_ad2bf568b529a4e27411ffd7d9445e2a2_cgraph.png" border="0" usemap="#adf/df1/io__config_8c_ad2bf568b529a4e27411ffd7d9445e2a2_cgraph" alt=""/></div>
+<map name="adf/df1/io__config_8c_ad2bf568b529a4e27411ffd7d9445e2a2_cgraph" id="adf/df1/io__config_8c_ad2bf568b529a4e27411ffd7d9445e2a2_cgraph">
+<area shape="rect" title="PWM, I2C, SPI modules initialization." alt="" coords="5,31,164,57"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#aa690b64244140ec6b5ac0266f8cb556b" title="Private function for initialization reserved pins." alt="" coords="212,31,351,57"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0" title="Drive GPIO pin." alt="" coords="399,5,561,32"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9" title="Setting port pin configuration." alt="" coords="403,56,557,83"/>
 </map>
 </div>
 
@@ -686,26 +758,30 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set the current PWM counter compare value for one channel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">value</td><td>is new value for selected output </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00219">219</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  220</span>{</div>
-<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">if</span> (value &lt; 0 || value &gt; 100)</div>
-<div class="line"><span class="lineno">  222</span>    {</div>
-<div class="line"><span class="lineno">  223</span>        printf(<span class="stringliteral">&quot;microhil_write_pwm Error \r\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  224</span>    }</div>
-<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  226</span>    {</div>
-<div class="line"><span class="lineno">  227</span>        pwm_set_chan_level(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, PWM_CHAN_B, value);</div>
-<div class="line"><span class="lineno">  228</span>    }</div>
-<div class="line"><span class="lineno">  229</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00184">184</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>{</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">if</span> (value &lt; 0 || value &gt; 100)</div>
+<div class="line"><span class="lineno">  187</span>    {</div>
+<div class="line"><span class="lineno">  188</span>        printf(<span class="stringliteral">&quot;%s %s\n&quot;</span>, <a class="code hl_define" href="../../df/d02/io__config__error_8h.html#ac8ee3202de3f7fd0b940c6817bdb27ff">MICROHIL_IO_CONFIG_ERROR</a>, <a class="code hl_define" href="../../df/d02/io__config__error_8h.html#a2c82654e4a618fd974fdab6bfd8f9c8b">MICROHIL_PWM_SET_ERROR</a>);</div>
+<div class="line"><span class="lineno">  189</span>    }</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  191</span>    {</div>
+<div class="line"><span class="lineno">  192</span>        pwm_set_chan_level(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, PWM_CHAN_B, value);</div>
+<div class="line"><span class="lineno">  193</span>    }</div>
+<div class="line"><span class="lineno">  194</span>}</div>
+<div class="ttc" id="aio__config__error_8h_html_a2c82654e4a618fd974fdab6bfd8f9c8b"><div class="ttname"><a href="../../df/d02/io__config__error_8h.html#a2c82654e4a618fd974fdab6bfd8f9c8b">MICROHIL_PWM_SET_ERROR</a></div><div class="ttdeci">#define MICROHIL_PWM_SET_ERROR</div><div class="ttdoc">Error message for.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d02/io__config__error_8h_source.html#l00027">io_config_error.h:27</a></div></div>
+<div class="ttc" id="aio__config__error_8h_html_ac8ee3202de3f7fd0b940c6817bdb27ff"><div class="ttname"><a href="../../df/d02/io__config__error_8h.html#ac8ee3202de3f7fd0b940c6817bdb27ff">MICROHIL_IO_CONFIG_ERROR</a></div><div class="ttdeci">#define MICROHIL_IO_CONFIG_ERROR</div><div class="ttdoc">Prefix error message for IO modules.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d02/io__config__error_8h_source.html#l00023">io_config_error.h:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/df1/io__config_8c_source.html#l00055">slice_num</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d02/io__config__error_8h_source.html#l00023">MICROHIL_IO_CONFIG_ERROR</a>, <a class="el" href="../../df/d02/io__config__error_8h_source.html#l00027">MICROHIL_PWM_SET_ERROR</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00057">slice_num</a>.</p>
 
 </div>
 </div>
@@ -724,19 +800,21 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write byte to an SPI device (blocking) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">value</td><td>is byte for write </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00078">78</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>{</div>
-<div class="line"><span class="lineno">   80</span>    spi_write_blocking(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#a8112c985f7444e82198d7571ce0a9160">SPI_PORT</a>, &amp;value, 1);</div>
-<div class="line"><span class="lineno">   81</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00098">98</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>{</div>
+<div class="line"><span class="lineno">  100</span>    spi_write_blocking(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#acb7ea2efabc48fe39655e70fe9f1ff5e">MICROHIL_SPI_PORT_1</a>, &amp;value, 1);</div>
+<div class="line"><span class="lineno">  101</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d6a/io__config_8h_source.html#l00029">SPI_PORT</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d6a/io__config_8h_source.html#l00029">MICROHIL_SPI_PORT_1</a>.</p>
 
 </div>
 </div>
@@ -765,165 +843,183 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write n bytes to an SPI device (blocking) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td></td></tr>
-    <tr><td class="paramname">len</td><td></td></tr>
+    <tr><td class="paramname">data</td><td>is buffer for write </td></tr>
+    <tr><td class="paramname">len</td><td>is length of buffer to write </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00087">87</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>{</div>
-<div class="line"><span class="lineno">   89</span>    spi_write_blocking(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#a8112c985f7444e82198d7571ce0a9160">SPI_PORT</a>, data, len);</div>
-<div class="line"><span class="lineno">   90</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00107">107</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
+<div class="line"><span class="lineno">  109</span>    spi_write_blocking(<a class="code hl_define" href="../../df/d6a/io__config_8h.html#acb7ea2efabc48fe39655e70fe9f1ff5e">MICROHIL_SPI_PORT_1</a>, data, len);</div>
+<div class="line"><span class="lineno">  110</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d6a/io__config_8h_source.html#l00029">SPI_PORT</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d6a/io__config_8h_source.html#l00029">MICROHIL_SPI_PORT_1</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a71192829bb00c9dfe688b6438cb98713" name="a71192829bb00c9dfe688b6438cb98713"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71192829bb00c9dfe688b6438cb98713">&#9670;&nbsp;</a></span>EPD_BL_PIN</h2>
+<a id="a81952429bb1891f65026fcde00273a3d" name="a81952429bb1891f65026fcde00273a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81952429bb1891f65026fcde00273a3d">&#9670;&nbsp;</a></span>epd_bl_pin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int EPD_BL_PIN</td>
+          <td class="memname">int epd_bl_pin</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00035">35</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<p>TODO. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00165">microhil_gpio_init()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00037">37</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00167">microhil_gpio_init()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>.</p>
 
 </div>
 </div>
-<a id="a5f4c6bbf4118330c31dedce8d67da371" name="a5f4c6bbf4118330c31dedce8d67da371"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f4c6bbf4118330c31dedce8d67da371">&#9670;&nbsp;</a></span>EPD_CLK_PIN</h2>
+<a id="a5fa00d6f6d6bb3f48dd27934809e73ea" name="a5fa00d6f6d6bb3f48dd27934809e73ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa00d6f6d6bb3f48dd27934809e73ea">&#9670;&nbsp;</a></span>epd_clk_pin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int EPD_CLK_PIN</td>
+          <td class="memname">int epd_clk_pin</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00039">39</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<p>TODO. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00041">41</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>.</p>
 
 </div>
 </div>
-<a id="a9f1df78d406d79a1083a8ae913a3b530" name="a9f1df78d406d79a1083a8ae913a3b530"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f1df78d406d79a1083a8ae913a3b530">&#9670;&nbsp;</a></span>EPD_CS_PIN</h2>
+<a id="a04e21540269b8186e8bd7375c3f89755" name="a04e21540269b8186e8bd7375c3f89755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e21540269b8186e8bd7375c3f89755">&#9670;&nbsp;</a></span>epd_cs_pin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int EPD_CS_PIN</td>
+          <td class="memname">int epd_cs_pin</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00031">31</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<p>TODO. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00165">microhil_gpio_init()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00033">33</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00167">microhil_gpio_init()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>.</p>
 
 </div>
 </div>
-<a id="a5115807d46ade29998cff07d48f0fc0b" name="a5115807d46ade29998cff07d48f0fc0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5115807d46ade29998cff07d48f0fc0b">&#9670;&nbsp;</a></span>EPD_DC_PIN</h2>
+<a id="a07fbce104759755a9af3f031f072e7ae" name="a07fbce104759755a9af3f031f072e7ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07fbce104759755a9af3f031f072e7ae">&#9670;&nbsp;</a></span>epd_dc_pin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int EPD_DC_PIN</td>
+          <td class="memname">int epd_dc_pin</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00027">27</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<p>TODO. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00165">microhil_gpio_init()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00029">29</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00167">microhil_gpio_init()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>.</p>
 
 </div>
 </div>
-<a id="adfb3cf65137d57b937817b3fc3e8fcff" name="adfb3cf65137d57b937817b3fc3e8fcff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfb3cf65137d57b937817b3fc3e8fcff">&#9670;&nbsp;</a></span>EPD_MOSI_PIN</h2>
+<a id="a28014db4a427788c943cdb018000a9a3" name="a28014db4a427788c943cdb018000a9a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28014db4a427788c943cdb018000a9a3">&#9670;&nbsp;</a></span>epd_mosi_pin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int EPD_MOSI_PIN</td>
+          <td class="memname">int epd_mosi_pin</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00043">43</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<p>TODO. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00045">45</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>.</p>
 
 </div>
 </div>
-<a id="abf07dc5aa88c6d4a600fe7d59a0eef9b" name="abf07dc5aa88c6d4a600fe7d59a0eef9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf07dc5aa88c6d4a600fe7d59a0eef9b">&#9670;&nbsp;</a></span>EPD_RST_PIN</h2>
+<a id="af50915b14c16ce532e4c7954340733f3" name="af50915b14c16ce532e4c7954340733f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af50915b14c16ce532e4c7954340733f3">&#9670;&nbsp;</a></span>epd_rst_pin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int EPD_RST_PIN</td>
+          <td class="memname">int epd_rst_pin</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00023">23</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<p>TODO. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00165">microhil_gpio_init()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00025">25</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00167">microhil_gpio_init()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>.</p>
 
 </div>
 </div>
-<a id="a85ae6dc6cce2133da1981700887add40" name="a85ae6dc6cce2133da1981700887add40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85ae6dc6cce2133da1981700887add40">&#9670;&nbsp;</a></span>EPD_SCL_PIN</h2>
+<a id="ae971234b436f1fe793e678732a3fa63a" name="ae971234b436f1fe793e678732a3fa63a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae971234b436f1fe793e678732a3fa63a">&#9670;&nbsp;</a></span>epd_scl_pin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int EPD_SCL_PIN</td>
+          <td class="memname">int epd_scl_pin</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00047">47</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<p>TODO. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00049">49</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>.</p>
 
 </div>
 </div>
-<a id="a79e5a0b947b7dd91e2b3cf3f0a9467db" name="a79e5a0b947b7dd91e2b3cf3f0a9467db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79e5a0b947b7dd91e2b3cf3f0a9467db">&#9670;&nbsp;</a></span>EPD_SDA_PIN</h2>
+<a id="a545f8db0161bfb841d93373e56fa19ff" name="a545f8db0161bfb841d93373e56fa19ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545f8db0161bfb841d93373e56fa19ff">&#9670;&nbsp;</a></span>epd_sda_pin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int EPD_SDA_PIN</td>
+          <td class="memname">int epd_sda_pin</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00051">51</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<p>TODO. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00053">53</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>.</p>
 
 </div>
 </div>
@@ -939,9 +1035,11 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00055">55</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<p>TODO. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d3f/channel__pwm_8c_source.html#l00026">microhil_init_pwm()</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00181">microhil_module_init()</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00219">microhil_set_pwm_1()</a>, and <a class="el" href="../../de/d3f/channel__pwm_8c_source.html#l00052">microhil_write_pwm()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00057">57</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d3f/channel__pwm_8c_source.html#l00026">microhil_init_pwm()</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00199">microhil_module_init()</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00184">microhil_set_pwm_1()</a>, and <a class="el" href="../../de/d3f/channel__pwm_8c_source.html#l00052">microhil_write_pwm()</a>.</p>
 
 </div>
 </div>
@@ -951,7 +1049,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_6c654ab24bac11ed71d410c3b57fea0f.html">io_config</a></li><li class="navelem"><a class="el" href="../../df/df1/io__config_8c.html">io_config.c</a></li>
-    <li class="footer">Generated on Fri Sep 8 2023 00:17:08 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Sep 8 2023 03:04:37 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>
