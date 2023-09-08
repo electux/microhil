@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['epd_5fbl_5fpin_0',['EPD_BL_PIN',['../df/df1/io__config_8c.html#a71192829bb00c9dfe688b6438cb98713',1,'EPD_BL_PIN():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a71192829bb00c9dfe688b6438cb98713',1,'EPD_BL_PIN():&#160;io_config.c']]],
-  ['epd_5fclk_5fpin_1',['EPD_CLK_PIN',['../df/df1/io__config_8c.html#a5f4c6bbf4118330c31dedce8d67da371',1,'EPD_CLK_PIN():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a5f4c6bbf4118330c31dedce8d67da371',1,'EPD_CLK_PIN():&#160;io_config.c']]],
-  ['epd_5fcs_5fpin_2',['EPD_CS_PIN',['../df/df1/io__config_8c.html#a9f1df78d406d79a1083a8ae913a3b530',1,'EPD_CS_PIN():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a9f1df78d406d79a1083a8ae913a3b530',1,'EPD_CS_PIN():&#160;io_config.c']]],
-  ['epd_5fdc_5fpin_3',['EPD_DC_PIN',['../df/df1/io__config_8c.html#a5115807d46ade29998cff07d48f0fc0b',1,'EPD_DC_PIN():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a5115807d46ade29998cff07d48f0fc0b',1,'EPD_DC_PIN():&#160;io_config.c']]],
-  ['epd_5fmosi_5fpin_4',['EPD_MOSI_PIN',['../df/df1/io__config_8c.html#adfb3cf65137d57b937817b3fc3e8fcff',1,'EPD_MOSI_PIN():&#160;io_config.c'],['../df/d6a/io__config_8h.html#adfb3cf65137d57b937817b3fc3e8fcff',1,'EPD_MOSI_PIN():&#160;io_config.c']]],
-  ['epd_5frst_5fpin_5',['EPD_RST_PIN',['../df/df1/io__config_8c.html#abf07dc5aa88c6d4a600fe7d59a0eef9b',1,'EPD_RST_PIN():&#160;io_config.c'],['../df/d6a/io__config_8h.html#abf07dc5aa88c6d4a600fe7d59a0eef9b',1,'EPD_RST_PIN():&#160;io_config.c']]],
-  ['epd_5fscl_5fpin_6',['EPD_SCL_PIN',['../df/df1/io__config_8c.html#a85ae6dc6cce2133da1981700887add40',1,'EPD_SCL_PIN():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a85ae6dc6cce2133da1981700887add40',1,'EPD_SCL_PIN():&#160;io_config.c']]],
-  ['epd_5fsda_5fpin_7',['EPD_SDA_PIN',['../df/df1/io__config_8c.html#a79e5a0b947b7dd91e2b3cf3f0a9467db',1,'EPD_SDA_PIN():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a79e5a0b947b7dd91e2b3cf3f0a9467db',1,'EPD_SDA_PIN():&#160;io_config.c']]]
+  ['epd_5fbl_5fpin_0',['epd_bl_pin',['../df/df1/io__config_8c.html#a81952429bb1891f65026fcde00273a3d',1,'epd_bl_pin():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a81952429bb1891f65026fcde00273a3d',1,'epd_bl_pin():&#160;io_config.c']]],
+  ['epd_5fclk_5fpin_1',['epd_clk_pin',['../df/df1/io__config_8c.html#a5fa00d6f6d6bb3f48dd27934809e73ea',1,'epd_clk_pin():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a5fa00d6f6d6bb3f48dd27934809e73ea',1,'epd_clk_pin():&#160;io_config.c']]],
+  ['epd_5fcs_5fpin_2',['epd_cs_pin',['../df/df1/io__config_8c.html#a04e21540269b8186e8bd7375c3f89755',1,'epd_cs_pin():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a04e21540269b8186e8bd7375c3f89755',1,'epd_cs_pin():&#160;io_config.c']]],
+  ['epd_5fdc_5fpin_3',['epd_dc_pin',['../df/df1/io__config_8c.html#a07fbce104759755a9af3f031f072e7ae',1,'epd_dc_pin():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a07fbce104759755a9af3f031f072e7ae',1,'epd_dc_pin():&#160;io_config.c']]],
+  ['epd_5fmosi_5fpin_4',['epd_mosi_pin',['../df/df1/io__config_8c.html#a28014db4a427788c943cdb018000a9a3',1,'epd_mosi_pin():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a28014db4a427788c943cdb018000a9a3',1,'epd_mosi_pin():&#160;io_config.c']]],
+  ['epd_5frst_5fpin_5',['epd_rst_pin',['../df/df1/io__config_8c.html#af50915b14c16ce532e4c7954340733f3',1,'epd_rst_pin():&#160;io_config.c'],['../df/d6a/io__config_8h.html#af50915b14c16ce532e4c7954340733f3',1,'epd_rst_pin():&#160;io_config.c']]],
+  ['epd_5fscl_5fpin_6',['epd_scl_pin',['../df/df1/io__config_8c.html#ae971234b436f1fe793e678732a3fa63a',1,'epd_scl_pin():&#160;io_config.c'],['../df/d6a/io__config_8h.html#ae971234b436f1fe793e678732a3fa63a',1,'epd_scl_pin():&#160;io_config.c']]],
+  ['epd_5fsda_5fpin_7',['epd_sda_pin',['../df/df1/io__config_8c.html#a545f8db0161bfb841d93373e56fa19ff',1,'epd_sda_pin():&#160;io_config.c'],['../df/d6a/io__config_8h.html#a545f8db0161bfb841d93373e56fa19ff',1,'epd_sda_pin():&#160;io_config.c']]]
 ];

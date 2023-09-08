@@ -41,7 +41,7 @@ bool microhil_init_pwm()
 
     status = true;
 
-    printf("%s %s\n", MICROHIL_INFO, MICROHIL_PWM_INIT_OK);
+    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_PWM_INIT_OK);
 
     return status;
 }
@@ -53,7 +53,7 @@ void microhil_write_pwm(uint8_t value)
 {
     if (value < 0 || value > 100)
     {
-        printf("%s %s\n", MICROHIL_ERROR, MICROHIL_PWM_WRITE_FAILED);
+        printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_PWM_WRITE_FAILED);
     }
     else
     {

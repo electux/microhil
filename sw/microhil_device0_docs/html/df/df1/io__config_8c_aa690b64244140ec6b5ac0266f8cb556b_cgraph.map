@@ -1,5 +1,5 @@
 <map id="microhil_gpio_init" name="microhil_gpio_init">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,144,57"/>
-<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0" title=" " alt="" coords="192,5,355,32"/>
-<area shape="rect" id="node3" href="$df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9" title=" " alt="" coords="196,56,351,83"/>
+<area shape="rect" id="node1" title="Private function for initialization reserved pins." alt="" coords="5,31,144,57"/>
+<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#a6d8daad81a37e4c9414bf9b2972832b0" title="Drive GPIO pin." alt="" coords="192,5,355,32"/>
+<area shape="rect" id="node3" href="$df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9" title="Setting port pin configuration." alt="" coords="196,56,351,83"/>
 </map>

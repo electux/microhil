@@ -150,26 +150,34 @@ Variables</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   29</span>{</div>
 <div class="line"><span class="lineno">   30</span>    <span class="keywordtype">bool</span> status = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   34</span>    PIO pio = pio0;</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">int</span> sm = 0;</div>
-<div class="line"><span class="lineno">   36</span>    uint offset = pio_add_program(pio, &amp;<a class="code hl_variable" href="../../d6/d69/ws2812_8pio_8h.html#a55e4cbdb9411683b8a5655f4454d000c">ws2812_program</a>);</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span>(offset == 0)</div>
-<div class="line"><span class="lineno">   39</span>    {</div>
-<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>    <a class="code hl_function" href="../../d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1">ws2812_program_init</a>(pio, sm, offset, <a class="code hl_variable" href="../../de/dab/channel__pio_8c.html#a1012967e69a813e72e15c51d7df57011">PIN_TX</a>, 800000, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    status = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">   50</span>}</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_struct" href="../../d7/d9d/struct__ws2812__init.html">ws2812_init</a> init = {</div>
+<div class="line"><span class="lineno">   35</span>        .<a class="code hl_variable" href="../../d7/d9d/struct__ws2812__init.html#abf1c83ba08ed53d7a1970f4bc4b4644c">pio</a> = pio0,</div>
+<div class="line"><span class="lineno">   36</span>        .sm = 0,</div>
+<div class="line"><span class="lineno">   37</span>        .offset = pio_add_program(pio0, &amp;<a class="code hl_variable" href="../../d6/d69/ws2812_8pio_8h.html#a55e4cbdb9411683b8a5655f4454d000c">ws2812_program</a>),</div>
+<div class="line"><span class="lineno">   38</span>        .pin = <a class="code hl_variable" href="../../de/dab/channel__pio_8c.html#a1012967e69a813e72e15c51d7df57011">PIN_TX</a>,</div>
+<div class="line"><span class="lineno">   39</span>        .freq = 800000,</div>
+<div class="line"><span class="lineno">   40</span>        .rgbw = <span class="keyword">true</span></div>
+<div class="line"><span class="lineno">   41</span>    };</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span>(init.<a class="code hl_variable" href="../../d7/d9d/struct__ws2812__init.html#a4a2f569505eaed1f05381121a5e730fb">offset</a> == 0)</div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_function" href="../../d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74">ws2812_program_init</a>(&amp;init);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    status = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 <div class="ttc" id="achannel__pio_8c_html_a1012967e69a813e72e15c51d7df57011"><div class="ttname"><a href="../../de/dab/channel__pio_8c.html#a1012967e69a813e72e15c51d7df57011">PIN_TX</a></div><div class="ttdeci">const int PIN_TX</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dab/channel__pio_8c_source.html#l00023">channel_pio.c:23</a></div></div>
-<div class="ttc" id="aws2812_8pio_8h_html_a55e4cbdb9411683b8a5655f4454d000c"><div class="ttname"><a href="../../d6/d69/ws2812_8pio_8h.html#a55e4cbdb9411683b8a5655f4454d000c">ws2812_program</a></div><div class="ttdeci">static const struct pio_program ws2812_program</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d69/ws2812_8pio_8h_source.html#l00062">ws2812.pio.h:62</a></div></div>
-<div class="ttc" id="aws2812_8pio_8h_html_a7cc3cfcf374474bf4515d9fe0fa27af1"><div class="ttname"><a href="../../d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1">ws2812_program_init</a></div><div class="ttdeci">static void ws2812_program_init(PIO pio, uint sm, uint offset, uint pin, float freq, bool rgbw)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d69/ws2812_8pio_8h_source.html#l00095">ws2812.pio.h:95</a></div></div>
+<div class="ttc" id="astruct__ws2812__init_html"><div class="ttname"><a href="../../d7/d9d/struct__ws2812__init.html">_ws2812_init</a></div><div class="ttdoc">WS2812 init structure.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d69/ws2812_8pio_8h_source.html#l00089">ws2812.pio.h:90</a></div></div>
+<div class="ttc" id="astruct__ws2812__init_html_a4a2f569505eaed1f05381121a5e730fb"><div class="ttname"><a href="../../d7/d9d/struct__ws2812__init.html#a4a2f569505eaed1f05381121a5e730fb">_ws2812_init::offset</a></div><div class="ttdeci">uint offset</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d69/ws2812_8pio_8h_source.html#l00093">ws2812.pio.h:93</a></div></div>
+<div class="ttc" id="astruct__ws2812__init_html_abf1c83ba08ed53d7a1970f4bc4b4644c"><div class="ttname"><a href="../../d7/d9d/struct__ws2812__init.html#abf1c83ba08ed53d7a1970f4bc4b4644c">_ws2812_init::pio</a></div><div class="ttdeci">PIO pio</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d69/ws2812_8pio_8h_source.html#l00091">ws2812.pio.h:91</a></div></div>
+<div class="ttc" id="aws2812_8pio_8h_html_a55e4cbdb9411683b8a5655f4454d000c"><div class="ttname"><a href="../../d6/d69/ws2812_8pio_8h.html#a55e4cbdb9411683b8a5655f4454d000c">ws2812_program</a></div><div class="ttdeci">static const struct pio_program ws2812_program</div><div class="ttdoc">TODO.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d69/ws2812_8pio_8h_source.html#l00062">ws2812.pio.h:62</a></div></div>
+<div class="ttc" id="aws2812_8pio_8h_html_aa8aedd32a0302060cbf7accca654cf74"><div class="ttname"><a href="../../d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74">ws2812_program_init</a></div><div class="ttdeci">static void ws2812_program_init(ws2812_init *init)</div><div class="ttdoc">Perform WS2812 program initialization.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d69/ws2812_8pio_8h_source.html#l00102">ws2812.pio.h:102</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/dab/channel__pio_8c_source.html#l00023">PIN_TX</a>, <a class="el" href="../../d6/d69/ws2812_8pio_8h_source.html#l00062">ws2812_program</a>, and <a class="el" href="../../d6/d69/ws2812_8pio_8h_source.html#l00095">ws2812_program_init()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d69/ws2812_8pio_8h_source.html#l00093">_ws2812_init::offset</a>, <a class="el" href="../../de/dab/channel__pio_8c_source.html#l00023">PIN_TX</a>, <a class="el" href="../../d6/d69/ws2812_8pio_8h_source.html#l00091">_ws2812_init::pio</a>, <a class="el" href="../../d6/d69/ws2812_8pio_8h_source.html#l00062">ws2812_program</a>, and <a class="el" href="../../d6/d69/ws2812_8pio_8h_source.html#l00102">ws2812_program_init()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00028">microhil_init()</a>.</p>
 <div class="dynheader">
@@ -178,8 +186,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="../../de/dab/channel__pio_8c_a1d894ba2c3fdf553fd6cf62d5f376ac4_cgraph.png" border="0" usemap="#ade/dab/channel__pio_8c_a1d894ba2c3fdf553fd6cf62d5f376ac4_cgraph" alt=""/></div>
 <map name="ade/dab/channel__pio_8c_a1d894ba2c3fdf553fd6cf62d5f376ac4_cgraph" id="ade/dab/channel__pio_8c_a1d894ba2c3fdf553fd6cf62d5f376ac4_cgraph">
 <area shape="rect" title="Initialization of PIO state machine." alt="" coords="5,13,136,39"/>
-<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html#a7cc3cfcf374474bf4515d9fe0fa27af1" title=" " alt="" coords="184,13,347,39"/>
-<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title=" " alt="" coords="395,5,557,47"/>
+<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Perform WS2812 program initialization." alt="" coords="184,13,347,39"/>
+<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title="TODO." alt="" coords="395,5,557,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -220,7 +228,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bbca32ae125625ab0d7554a76a48380c.html">channel</a></li><li class="navelem"><a class="el" href="../../de/dab/channel__pio_8c.html">channel_pio.c</a></li>
-    <li class="footer">Generated on Fri Sep 8 2023 00:17:08 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Sep 8 2023 03:04:37 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

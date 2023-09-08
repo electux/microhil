@@ -19,8 +19,8 @@
 #pragma once
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Prefix info message
-#define MICROHIL_INFO "[microHIL] INFO"
+/// @brief Prefix info message for channel modules
+#define MICROHIL_CHANNEL_INFO "[microHIL] INFO"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Info message for all channels ON

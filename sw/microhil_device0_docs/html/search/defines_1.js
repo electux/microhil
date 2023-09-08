@@ -1,4 +1,28 @@
 var searchData=
 [
-  ['i2c_5fport_0',['I2C_PORT',['../df/d6a/io__config_8h.html#ad9ecf80e1eac083d16ec47f9d3aeb39f',1,'io_config.h']]]
+  ['microhil_5fall_5fchannels_5foff_0',['MICROHIL_ALL_CHANNELS_OFF',['../d5/d7b/channel_8h.html#acf1d49511608e17f8b08e06953d85e8b',1,'channel.h']]],
+  ['microhil_5fall_5fchannels_5fon_1',['MICROHIL_ALL_CHANNELS_ON',['../d5/d7b/channel_8h.html#abc7b8c6af2084f717da6179c4d0fb671',1,'channel.h']]],
+  ['microhil_5fall_5foff_2',['MICROHIL_ALL_OFF',['../da/db9/channel__info_8h.html#a6e6edf863adfee71d0929fc36723ad84',1,'channel_info.h']]],
+  ['microhil_5fall_5fon_3',['MICROHIL_ALL_ON',['../da/db9/channel__info_8h.html#a19631df9e7427fcad9eace52af378b59',1,'channel_info.h']]],
+  ['microhil_5fchannel_5f1_4',['MICROHIL_CHANNEL_1',['../d5/d7b/channel_8h.html#a951f27c5222f0675e1426ee62374de2f',1,'channel.h']]],
+  ['microhil_5fchannel_5f2_5',['MICROHIL_CHANNEL_2',['../d5/d7b/channel_8h.html#a25f2304b1961cab0957c26e7d3cf5fa3',1,'channel.h']]],
+  ['microhil_5fchannel_5f3_6',['MICROHIL_CHANNEL_3',['../d5/d7b/channel_8h.html#ae0919ca3864ee12f24dc2f10655827c0',1,'channel.h']]],
+  ['microhil_5fchannel_5f4_7',['MICROHIL_CHANNEL_4',['../d5/d7b/channel_8h.html#ab9767a4105f32099b7761aaf4ae1aeed',1,'channel.h']]],
+  ['microhil_5fchannel_5f5_8',['MICROHIL_CHANNEL_5',['../d5/d7b/channel_8h.html#a9131a4361440d901414262f370060709',1,'channel.h']]],
+  ['microhil_5fchannel_5f6_9',['MICROHIL_CHANNEL_6',['../d5/d7b/channel_8h.html#ae97d195adcc74151c0704adce67fa497',1,'channel.h']]],
+  ['microhil_5fchannel_5f7_10',['MICROHIL_CHANNEL_7',['../d5/d7b/channel_8h.html#a138bc87a3ad9c3db3bd85b751fd5a6b1',1,'channel.h']]],
+  ['microhil_5fchannel_5f8_11',['MICROHIL_CHANNEL_8',['../d5/d7b/channel_8h.html#a5343a98c29151d6ec9133f7161224d68',1,'channel.h']]],
+  ['microhil_5fchannel_5ferror_12',['MICROHIL_CHANNEL_ERROR',['../d9/d14/channel__error_8h.html#ae056eb9c490aa43fc3ce7d47a3bb7d0c',1,'channel_error.h']]],
+  ['microhil_5fchannel_5finfo_13',['MICROHIL_CHANNEL_INFO',['../da/db9/channel__info_8h.html#aa02451346a3e9f392f9cac896e74c92d',1,'channel_info.h']]],
+  ['microhil_5fchannels_5ferror_14',['MICROHIL_CHANNELS_ERROR',['../d5/d7b/channel_8h.html#abc39911cf0804b7e25914876409fde8e',1,'channel.h']]],
+  ['microhil_5fi2c_5fport_5f1_15',['MICROHIL_I2C_PORT_1',['../df/d6a/io__config_8h.html#a156ca7042977d933787eefb05dc4a831',1,'io_config.h']]],
+  ['microhil_5fio_5fconfig_5ferror_16',['MICROHIL_IO_CONFIG_ERROR',['../df/d02/io__config__error_8h.html#ac8ee3202de3f7fd0b940c6817bdb27ff',1,'io_config_error.h']]],
+  ['microhil_5fio_5fconfig_5finfo_17',['MICROHIL_IO_CONFIG_INFO',['../d7/d64/io__config__info_8h.html#ab1f40c7ff78b902bbebfd5896dbc9a0f',1,'io_config_info.h']]],
+  ['microhil_5fmodule_5finit_5fok_18',['MICROHIL_MODULE_INIT_OK',['../d7/d64/io__config__info_8h.html#afebfb19a8b9d53dc66684e107a36b42b',1,'io_config_info.h']]],
+  ['microhil_5fno_5fsupport_19',['MICROHIL_NO_SUPPORT',['../d9/d14/channel__error_8h.html#acaf1b2a232dbefea39c08c54e383a303',1,'channel_error.h']]],
+  ['microhil_5fnumber_5fof_5fchannels_20',['MICROHIL_NUMBER_OF_CHANNELS',['../d5/d7b/channel_8h.html#ac54c73055d263f7697426070dc5c452a',1,'channel.h']]],
+  ['microhil_5fpwm_5finit_5fok_21',['MICROHIL_PWM_INIT_OK',['../da/db9/channel__info_8h.html#a1ac488341047c01d6ff8d1bb06603c45',1,'channel_info.h']]],
+  ['microhil_5fpwm_5fset_5ferror_22',['MICROHIL_PWM_SET_ERROR',['../df/d02/io__config__error_8h.html#a2c82654e4a618fd974fdab6bfd8f9c8b',1,'io_config_error.h']]],
+  ['microhil_5fpwm_5fwrite_5ffailed_23',['MICROHIL_PWM_WRITE_FAILED',['../d9/d14/channel__error_8h.html#a2f5f2ac3a16c8df02f509abcda43a0d6',1,'channel_error.h']]],
+  ['microhil_5fspi_5fport_5f1_24',['MICROHIL_SPI_PORT_1',['../df/d6a/io__config_8h.html#acb7ea2efabc48fe39655e70fe9f1ff5e',1,'io_config.h']]]
 ];

@@ -25,119 +25,120 @@
 #include "hardware/pwm.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define SPI_PORT spi1
+/// @brief SPI instance
+#define MICROHIL_SPI_PORT_1 spi1
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define I2C_PORT spi1
+/// @brief I2C instance
+#define MICROHIL_I2C_PORT_1 i2c1
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-extern int EPD_RST_PIN;
+/// @brief TODO
+extern int epd_rst_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-extern int EPD_DC_PIN;
+/// @brief TODO
+extern int epd_dc_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-extern int EPD_CS_PIN;
+/// @brief TODO
+extern int epd_cs_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-extern int EPD_BL_PIN;
+/// @brief TODO
+extern int epd_bl_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-extern int EPD_CLK_PIN;
+/// @brief TODO
+extern int epd_clk_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-extern int EPD_MOSI_PIN;
+/// @brief TODO
+extern int epd_mosi_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-extern int EPD_SCL_PIN;
+/// @brief TODO
+extern int epd_scl_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-extern int EPD_SDA_PIN;
+/// @brief TODO
+extern int epd_sda_pin;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief TODO
 extern uint slice_num;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param pin
-/// @param mode
+/// @brief Setting port pin configuration
+/// @param pin is GPIO pin number
+/// @param mode is GPIO pin direction (GPIO_IN | GPIO_OUT)
 void microhil_gpio_mode(uint16_t pin, uint16_t mode);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param pin
-/// @param value
+/// @brief Drive GPIO pin
+/// @param pin is GPIO number
+/// @param value is GPIO value (true - set | false - clear)
 void microhil_digital_write(uint16_t pin, uint8_t value);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param pin
-/// @return
+/// @brief Get GPIO state
+/// @param pin is GPIO pin number
+/// @return state of GPIO pin
 uint8_t microhil_digital_read(uint16_t pin);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param value
+/// @brief Write byte to an SPI device (blocking)
+/// @param value is byte for write
 void microhil_spi_write_byte(uint8_t value);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param data
-/// @param len
+/// @brief Write n bytes to an SPI device (blocking)
+/// @param data is buffer for write
+/// @param len is length of buffer to write
 void microhil_spi_write_n_bytes(uint8_t *data, uint32_t len);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param ms
+/// @brief Delay in miliseconds
+/// @param ms is number of miliseconds to sleep
 void microhil_delay_ms(uint32_t ms);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param us
+/// @brief Delay in microseconds
+/// @param us is number of microseconds to sleep
 void microhil_delay_us(uint32_t us);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param addr
-/// @param reg
-/// @param value
+/// @brief Send data to i2c device
+/// @param addr is address of device
+/// @param reg is register destination
+/// @param value is data to send
 void microhil_i2c_write_byte(uint8_t addr, uint8_t reg, uint8_t value);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param addr
-/// @param data
-/// @param len
+/// @brief Send n bytes to i2c device
+/// @param addr is address of device
+/// @param data to send
+/// @param len is length of data to send
 void microhil_i2c_write_n_bytes(uint8_t addr, uint8_t *data, uint32_t len);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param addr
-/// @param reg
-/// @return
+/// @brief Read byte from i2c bus device
+/// @param addr is address of device
+/// @param reg is data to send
+/// @return byte from i2c device
 uint8_t microhil_i2c_read_byte(uint8_t addr, uint8_t reg);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @param value
+/// @brief Set the current PWM counter compare value for one channel
+/// @param value is new value for selected output
 void microhil_set_pwm_1(uint8_t value);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-/// @return
-uint8_t microhil_module_init();
+/// @brief PWM, I2C, SPI modules initialization
+/// @return true for success else false
+bool microhil_module_init();
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-void microhil_module_exit();
+/// @brief Perform actions on exit
+/// @return true for success else false
+bool microhil_module_exit();
