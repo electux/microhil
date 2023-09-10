@@ -18,18 +18,48 @@
  */
 #include "channel.h"
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief Main entry point
+/// @return MICROHIL_SUCCESS for success else MICROHIL_FAILED
 int main()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Initialization of microHIL device
     bool status = microhil_init();
 
-    char *buffer = NULL;
-    int i = 1, count = -1;
+    if(!status)
+    {
+        ////////////////////////////////////////////////////////////////////
+        /// Failed to perform initialization of microHIL device
+        return MICROHIL_FAILED;
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Wait for USB connection
+    while(!stdio_usb_connected())
+        ;
 
     while(status)
     {
-        i = stdio_usb_in_chars(buffer, 10);
-        microhil_channel_switch(i);
+        //////////////////////////////////////////////////////////////////
+        /// Fetch channel command message
+        unsigned char *command = (char *)malloc(MICROHIL_CMD_LEN);
+        uint16_t received_bytes = microhil_fetch_command(command);
+
+        if(received_bytes > 0)
+        {
+            channel_gpio_num cmd_id = microhil_process_command(command);
+
+            if(cmd_id > 0)
+            {
+                ////////////////////////////////////////////////////////////
+                /// Request channel operation
+                microhil_channel_switch(cmd_id);
+            }
+        }
+
+        free(command);
     }
 
-    return 0;
+    return MICROHIL_SUCCESS;
 }

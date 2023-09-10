@@ -28,56 +28,53 @@
 #include "ws2812.pio.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
+/// @brief Return value for success state
+#define MICROHIL_SUCCESS 0
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Return value for failed state
+#define MICROHIL_FAILED 1
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Total number of supported channels
 #define MICROHIL_NUMBER_OF_CHANNELS 8
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_CHANNEL_1 21
+/// @brief GPIO ports and numbers for channels
+typedef enum _channel_gpio_num
+{
+    MICROHIL_ALL_CHANNELS_ON = 300,
+    MICROHIL_ALL_CHANNELS_OFF = 200,
+    MICROHIL_CHANNELS_ERROR = 127,
+    MICROHIL_CHANNEL_0 = 21,
+    MICROHIL_CHANNEL_1 = 20,
+    MICROHIL_CHANNEL_2 = 19,
+    MICROHIL_CHANNEL_3 = 18,
+    MICROHIL_CHANNEL_4 = 17,
+    MICROHIL_CHANNEL_5 = 16,
+    MICROHIL_CHANNEL_6 = 15,
+    MICROHIL_CHANNEL_7 = 14
+} channel_gpio_num;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_CHANNEL_2 20
+/// @brief GPIO port pin number for buzzer
+#define MICROHIL_BUZZER 6
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_CHANNEL_3 19
+/// @brief Command message length
+#define MICROHIL_CMD_LEN 13
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_CHANNEL_4 18
+/// @brief Command message prefix
+#define MICROHIL_CMD_PREFIX "mh#ch#"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_CHANNEL_5 17
+/// @brief Command message propery all ON
+#define MICROHIL_CMD_PROP_ALL_ON "all#on"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_CHANNEL_6 16
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_CHANNEL_7 15
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_CHANNEL_8 14
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_ALL_CHANNELS_OFF 0
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_ALL_CHANNELS_ON 1
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-#define MICROHIL_CHANNELS_ERROR 127
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief
-extern unsigned char channels[MICROHIL_NUMBER_OF_CHANNELS];
+/// @brief Command message propery all OFF
+#define MICROHIL_CMD_PROP_ALL_OFF "all#off"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Global initialization of microHIL device
@@ -90,14 +87,14 @@ bool microhil_init();
 bool microhil_pio_init();
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Initialization of PWM channel
-/// @return true for success else false
-bool microhil_init_pwm();
-
-////////////////////////////////////////////////////////////////////////////
 /// @brief Initializatio of relay channels
 /// @return true for success else false
 bool microhil_init_relay();
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Initializatio of buzzer channel
+/// @return true for success else false
+bool microhil_init_buzzer();
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Set all channels to ON
@@ -109,19 +106,13 @@ void microhil_all_channels_off();
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Switch channel state
-/// @param id of channel
-void microhil_channel_switch(int id);
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief Convert command id to GPIO number or global ON/OFF
-/// @param id of command received from serial port
-/// @return channel number | all on / all off | error
-unsigned int id_to_gpio(int id);
+/// @param id is GPIO port number
+void microhil_channel_switch(channel_gpio_num id);
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Write 32-bit RGB value to PIO state machine
 /// @param pixel_rgb is 32-bit RGB value
-void put_pixel(uint32_t pixel_rgb);
+void microhi_write_pixel(uint32_t pixel_rgb);
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Generate 32-bit RGB value
@@ -132,6 +123,25 @@ void put_pixel(uint32_t pixel_rgb);
 uint32_t urgb_u32(uint8_t red, uint8_t green, uint8_t blue);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Write value to PWM channel
-/// @param value for PWM channel
-void microhil_write_pwm(uint8_t value);
+/// @brief Fetch microHIL command messages from the serial port
+/// @param buffer storage for received message from the serial port
+/// @return number of received bytes from the serial port
+uint16_t microhil_fetch_command(uint8_t *buffer);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Extract command property
+/// @param cmd is whole command messsage for processing
+/// @return command property
+unsigned char *microhil_extract_command_property(unsigned char *cmd);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Process microHIL command messages from uart
+/// @param cmd is whole command for processing
+/// @return GPIO port number
+channel_gpio_num microhil_process_command(unsigned char *cmd);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Convert index to GPIO port number
+/// @param id is index
+/// @return GPIO port number
+channel_gpio_num index_to_gpio(int id);

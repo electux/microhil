@@ -1,4 +1,4 @@
 <map id="ws2812_parallel_program_get_default_config" name="ws2812_parallel_program_get_default_config">
-<area shape="rect" id="node1" title="TODO." alt="" coords="272,5,463,47"/>
+<area shape="rect" id="node1" title="Preparing default configuration (parallel)" alt="" coords="272,5,463,47"/>
 <area shape="rect" id="node2" href="$d6/d69/ws2812_8pio_8h.html#a5a3128927ffc7fe6d41edc7531ca97cc" title="Perform WS2812 parallel program initialization." alt="" coords="5,13,224,39"/>
 </map>

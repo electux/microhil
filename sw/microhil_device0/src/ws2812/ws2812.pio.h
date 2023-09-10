@@ -24,27 +24,27 @@
 #endif
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of instruction memory address wrap to
 #define WS2812_WRAP_TARGET 0
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of instruction memory address wrap to
 #define WS2812_WRAP 3
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of cycles for PIO SM clock
 #define WS2812_T1 2
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of cycles for PIO SM clock
 #define WS2812_T2 5
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of cycles for PIO SM clock
 #define WS2812_T3 3
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief PIO program instructions for WS2812
 static const uint16_t ws2812_program_instructions[] =
 {
             //     .wrap_target
@@ -58,7 +58,7 @@ static const uint16_t ws2812_program_instructions[] =
 #if !PICO_NO_HARDWARE
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief PIO program instruction structure for WS2812
 static const struct pio_program ws2812_program =
 {
     .instructions = ws2812_program_instructions,
@@ -67,9 +67,9 @@ static const struct pio_program ws2812_program =
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
-/// @param offset TODO
-/// @return TODO
+/// @brief Preparing default configuration
+/// @param offset for programm address
+/// @return PIO configuratio structure for WS2812
 static inline pio_sm_config ws2812_program_get_default_config(uint offset)
 {
     pio_sm_config config = pio_get_default_sm_config();
@@ -121,27 +121,27 @@ static inline void ws2812_program_init(ws2812_init* init)
 #endif
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of instruction memory address wrap to (parallel)
 #define WS2812_PARALLEL_WRAP_TARGET 0
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of instruction memory address wrap to (parallel)
 #define WS2812_PARALLEL_WRAP 3
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of cycles for PIO SM clock (parallel)
 #define WS2812_PARALLEL_T1 2
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of cycles for PIO SM clock (parallel)
 #define WS2812_PARALLEL_T2 5
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief Part of cycles for PIO SM clock (parallel)
 #define WS2812_PARALLEL_T3 3
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief PIO program instructions for WS2812 (parallel)
 static const uint16_t ws2812_parallel_program_instructions[] = 
 {
             //     .wrap_target
@@ -155,7 +155,7 @@ static const uint16_t ws2812_parallel_program_instructions[] =
 #if !PICO_NO_HARDWARE
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
+/// @brief PIO program instruction structure for WS2812 (parallel)
 static const struct pio_program ws2812_parallel_program =
 {
     .instructions = ws2812_parallel_program_instructions,
@@ -164,9 +164,9 @@ static const struct pio_program ws2812_parallel_program =
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief TODO
-/// @param offset TODO
-/// @return TODO
+/// @brief Preparing default configuration (parallel)
+/// @param offset for programm address
+/// @return PIO configuratio structure for WS2812
 static inline pio_sm_config ws2812_parallel_program_get_default_config(
     uint offset
 )
@@ -174,7 +174,6 @@ static inline pio_sm_config ws2812_parallel_program_get_default_config(
     pio_sm_config config = pio_get_default_sm_config();
     uint wrap_target = offset + WS2812_PARALLEL_WRAP_TARGET;
     uint wrap = offset + WS2812_PARALLEL_WRAP;
-
     sm_config_set_wrap(&config, wrap_target, wrap);
 
     return config;

@@ -110,9 +110,9 @@ $(document).ready(function(){initNavTree('db/d16/debug_8h_source.html','../../')
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#if DEBUG</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">    #define Debug(__info,...) printf(&quot;Debug: &quot;</span> __info,##__VA_ARGS__)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define Debug(__info, ...) printf(&quot;[microHIL] DEBUG&quot;</span> __info, ##__VA_ARGS__)</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../db/d16/debug_8h.html#a89d20a1ea9f624931bd9e37602212169">   26</a></span><span class="preprocessor">    #define Debug(__info,...)  </span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../db/d16/debug_8h.html#a89d20a1ea9f624931bd9e37602212169">   26</a></span><span class="preprocessor">#define Debug(__info,...)  </span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('db/d16/debug_8h_source.html','../../')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_6c654ab24bac11ed71d410c3b57fea0f.html">io_config</a></li><li class="navelem"><a class="el" href="../../db/d16/debug_8h.html">debug.h</a></li>
-    <li class="footer">Generated on Fri Sep 8 2023 03:04:37 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Sep 10 2023 21:15:28 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>
