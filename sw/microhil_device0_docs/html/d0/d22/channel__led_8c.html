@@ -115,22 +115,22 @@ Include dependency graph for channel_led.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab37825a07ffed31f0bf6acda6b17c9f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d22/channel__led_8c.html#ab37825a07ffed31f0bf6acda6b17c9f1">put_pixel</a> (uint32_t pixel_rgb)</td></tr>
-<tr class="memdesc:ab37825a07ffed31f0bf6acda6b17c9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 32-bit RGB value to PIO state machine.  <a href="../../d0/d22/channel__led_8c.html#ab37825a07ffed31f0bf6acda6b17c9f1">More...</a><br /></td></tr>
-<tr class="separator:ab37825a07ffed31f0bf6acda6b17c9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e9961a802d6c7f5660dd1c5ed4283c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d22/channel__led_8c.html#a48e9961a802d6c7f5660dd1c5ed4283c">microhi_write_pixel</a> (uint32_t pixel_rgb)</td></tr>
+<tr class="memdesc:a48e9961a802d6c7f5660dd1c5ed4283c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 32-bit RGB value to PIO state machine.  <a href="../../d0/d22/channel__led_8c.html#a48e9961a802d6c7f5660dd1c5ed4283c">More...</a><br /></td></tr>
+<tr class="separator:a48e9961a802d6c7f5660dd1c5ed4283c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f9aa8064d7f3cd8908b853c8a002253"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253">urgb_u32</a> (uint8_t red, uint8_t green, uint8_t blue)</td></tr>
 <tr class="memdesc:a6f9aa8064d7f3cd8908b853c8a002253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate 32-bit RGB value.  <a href="../../d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253">More...</a><br /></td></tr>
 <tr class="separator:a6f9aa8064d7f3cd8908b853c8a002253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab37825a07ffed31f0bf6acda6b17c9f1" name="ab37825a07ffed31f0bf6acda6b17c9f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab37825a07ffed31f0bf6acda6b17c9f1">&#9670;&nbsp;</a></span>put_pixel()</h2>
+<a id="a48e9961a802d6c7f5660dd1c5ed4283c" name="a48e9961a802d6c7f5660dd1c5ed4283c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e9961a802d6c7f5660dd1c5ed4283c">&#9670;&nbsp;</a></span>microhi_write_pixel()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void put_pixel </td>
+          <td class="memname">void microhi_write_pixel </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>pixel_rgb</em></td><td>)</td>
@@ -152,18 +152,18 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   26</span>    pio_sm_put_blocking(pio0, 0, pixel_rgb &lt;&lt; 8u);</div>
 <div class="line"><span class="lineno">   27</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00058">microhil_all_channels_off()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00025">microhil_all_channels_on()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00092">microhil_channel_switch()</a>, and <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00028">microhil_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00064">microhil_all_channels_off()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00029">microhil_all_channels_on()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00121">microhil_channel_switch()</a>, and <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00026">microhil_init()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d0/d22/channel__led_8c_ab37825a07ffed31f0bf6acda6b17c9f1_icgraph.png" border="0" usemap="#ad0/d22/channel__led_8c_ab37825a07ffed31f0bf6acda6b17c9f1_icgraph" alt=""/></div>
-<map name="ad0/d22/channel__led_8c_ab37825a07ffed31f0bf6acda6b17c9f1_icgraph" id="ad0/d22/channel__led_8c_ab37825a07ffed31f0bf6acda6b17c9f1_icgraph">
-<area shape="rect" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="573,81,655,108"/>
+<div class="center"><img src="../../d0/d22/channel__led_8c_a48e9961a802d6c7f5660dd1c5ed4283c_icgraph.png" border="0" usemap="#ad0/d22/channel__led_8c_a48e9961a802d6c7f5660dd1c5ed4283c_icgraph" alt=""/></div>
+<map name="ad0/d22/channel__led_8c_a48e9961a802d6c7f5660dd1c5ed4283c_icgraph" id="ad0/d22/channel__led_8c_a48e9961a802d6c7f5660dd1c5ed4283c_icgraph">
+<area shape="rect" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="573,81,723,108"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#a4d0b5716356dbea2a25811b5cd894182" title="Set all channels to OFF." alt="" coords="339,5,525,32"/>
-<area shape="rect" href="../../d4/d28/channel_8c.html#a5e86a6713a5ab382af4f00fef013e63b" title="Switch channel state." alt="" coords="108,69,291,96"/>
+<area shape="rect" href="../../d4/d28/channel_8c.html#a1826a2deaa766a00ea7c6b1042352cd7" title="Switch channel state." alt="" coords="108,69,291,96"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#aed07b8a710efb4cd7a9d6b08d27b85e4" title="Set all channels to ON." alt="" coords="339,107,525,133"/>
 <area shape="rect" href="../../d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global initialization of microHIL device." alt="" coords="148,132,251,159"/>
-<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,60,133"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,107,60,133"/>
 </map>
 </div>
 
@@ -219,7 +219,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   39</span>           (uint32_t)(blue);</div>
 <div class="line"><span class="lineno">   40</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00058">microhil_all_channels_off()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00025">microhil_all_channels_on()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00092">microhil_channel_switch()</a>, and <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00028">microhil_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00064">microhil_all_channels_off()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00029">microhil_all_channels_on()</a>, <a class="el" href="../../d4/d28/channel_8c_source.html#l00121">microhil_channel_switch()</a>, and <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00026">microhil_init()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -227,10 +227,10 @@ Here is the caller graph for this function:</div>
 <map name="ad0/d22/channel__led_8c_a6f9aa8064d7f3cd8908b853c8a002253_icgraph" id="ad0/d22/channel__led_8c_a6f9aa8064d7f3cd8908b853c8a002253_icgraph">
 <area shape="rect" title="Generate 32&#45;bit RGB value." alt="" coords="573,81,656,108"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#a4d0b5716356dbea2a25811b5cd894182" title="Set all channels to OFF." alt="" coords="339,5,525,32"/>
-<area shape="rect" href="../../d4/d28/channel_8c.html#a5e86a6713a5ab382af4f00fef013e63b" title="Switch channel state." alt="" coords="108,69,291,96"/>
+<area shape="rect" href="../../d4/d28/channel_8c.html#a1826a2deaa766a00ea7c6b1042352cd7" title="Switch channel state." alt="" coords="108,69,291,96"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#aed07b8a710efb4cd7a9d6b08d27b85e4" title="Set all channels to ON." alt="" coords="339,107,525,133"/>
 <area shape="rect" href="../../d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global initialization of microHIL device." alt="" coords="148,132,251,159"/>
-<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,60,133"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,107,60,133"/>
 </map>
 </div>
 
@@ -242,7 +242,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bbca32ae125625ab0d7554a76a48380c.html">channel</a></li><li class="navelem"><a class="el" href="../../d0/d22/channel__led_8c.html">channel_led.c</a></li>
-    <li class="footer">Generated on Fri Sep 8 2023 03:04:37 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Sep 10 2023 21:15:28 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

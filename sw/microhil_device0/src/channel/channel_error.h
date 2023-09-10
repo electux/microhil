@@ -23,9 +23,13 @@
 #define MICROHIL_CHANNEL_ERROR "[microHIL] ERROR"
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Error message for initialization failed
+#define MICROHIL_INIT_FAILED "initialization failed"
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Error message for not supported channel operation
 #define MICROHIL_NO_SUPPORT "not supported channel operation"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Error message for failing to write PWM value
-#define MICROHIL_PWM_WRITE_FAILED "failed to write PWM value"
+/// @brief Error message for extracting property from command message
+#define MICROHIL_EXT_PROP_FAILED "failed to extract property from message"

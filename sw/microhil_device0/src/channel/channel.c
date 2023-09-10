@@ -21,36 +21,42 @@
 #include "channel.h"
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Container for storing channels states
+static unsigned char channels[MICROHIL_NUMBER_OF_CHANNELS];
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Set all channels to ON
 void microhil_all_channels_on()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Set relay channels to ON
-    gpio_put(MICROHIL_CHANNEL_8, true);
-    gpio_put(MICROHIL_CHANNEL_7, true);
-    gpio_put(MICROHIL_CHANNEL_6, true);
-    gpio_put(MICROHIL_CHANNEL_5, true);
-    gpio_put(MICROHIL_CHANNEL_4, true);
-    gpio_put(MICROHIL_CHANNEL_3, true);
-    gpio_put(MICROHIL_CHANNEL_2, true);
-    gpio_put(MICROHIL_CHANNEL_1, true);
+    microhil_digital_write(MICROHIL_CHANNEL_7, true);
+    microhil_digital_write(MICROHIL_CHANNEL_6, true);
+    microhil_digital_write(MICROHIL_CHANNEL_5, true);
+    microhil_digital_write(MICROHIL_CHANNEL_4, true);
+    microhil_digital_write(MICROHIL_CHANNEL_3, true);
+    microhil_digital_write(MICROHIL_CHANNEL_2, true);
+    microhil_digital_write(MICROHIL_CHANNEL_1, true);
+    microhil_digital_write(MICROHIL_CHANNEL_0, true);
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Store channel states
     for(int i = 0; i < MICROHIL_NUMBER_OF_CHANNELS; i++)
     {
-        channels[i] = 0x0;
+        channels[i] = 0x1;
     }
 
     printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_ALL_ON);
 
     ////////////////////////////////////////////////////////////////////////
     /// Led notification
-    put_pixel(urgb_u32(255, 255, 255));
+    microhi_write_pixel(urgb_u32(255, 255, 255));
 
     ////////////////////////////////////////////////////////////////////////
     /// Buzzer notification
-    microhil_write_pwm(80);
+    microhil_write_pwm(80, PWM_CHAN_A);
     microhil_delay_ms(100);
-    microhil_write_pwm(0);
+    microhil_write_pwm(0, PWM_CHAN_A);
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -59,40 +65,61 @@ void microhil_all_channels_off()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Set relay channels to OFF
-    gpio_put(MICROHIL_CHANNEL_8, false);
-    gpio_put(MICROHIL_CHANNEL_7, false);
-    gpio_put(MICROHIL_CHANNEL_6, false);
-    gpio_put(MICROHIL_CHANNEL_5, false);
-    gpio_put(MICROHIL_CHANNEL_4, false);
-    gpio_put(MICROHIL_CHANNEL_3, false);
-    gpio_put(MICROHIL_CHANNEL_2, false);
-    gpio_put(MICROHIL_CHANNEL_1, false);
+    microhil_digital_write(MICROHIL_CHANNEL_7, false);
+    microhil_digital_write(MICROHIL_CHANNEL_6, false);
+    microhil_digital_write(MICROHIL_CHANNEL_5, false);
+    microhil_digital_write(MICROHIL_CHANNEL_4, false);
+    microhil_digital_write(MICROHIL_CHANNEL_3, false);
+    microhil_digital_write(MICROHIL_CHANNEL_2, false);
+    microhil_digital_write(MICROHIL_CHANNEL_1, false);
+    microhil_digital_write(MICROHIL_CHANNEL_0, false);
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Store channel states
     for(int i = 0; i < MICROHIL_NUMBER_OF_CHANNELS; i++)
     {
-        channels[i] = 0x1;
+        channels[i] = 0x0;
     }
 
     printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_ALL_OFF);
 
     ////////////////////////////////////////////////////////////////////////
     /// Led notification
-    put_pixel(urgb_u32(0, 0, 0));
+    microhi_write_pixel(urgb_u32(0, 0, 0));
 
     ////////////////////////////////////////////////////////////////////////
     /// Buzzer notification
-    microhil_write_pwm(80);
+    microhil_write_pwm(80, PWM_CHAN_A);
     microhil_delay_ms(100);
-    microhil_write_pwm(0);
+    microhil_write_pwm(0, PWM_CHAN_A);
+}
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Convert GPIO port number to index (private)
+/// @param id GPIO port number for serial port
+/// @return index of channel
+unsigned int gpio_to_index(channel_gpio_num id)
+{
+    switch (id)
+    {
+        case MICROHIL_CHANNEL_0: return 0;
+        case MICROHIL_CHANNEL_1: return 1;
+        case MICROHIL_CHANNEL_2: return 2;
+        case MICROHIL_CHANNEL_3: return 3;
+        case MICROHIL_CHANNEL_4: return 4;
+        case MICROHIL_CHANNEL_5: return 5;
+        case MICROHIL_CHANNEL_6: return 6;
+        case MICROHIL_CHANNEL_7: return 7;
+    }
+
+    return 127;
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Switch channel state
-/// @param id of channel
-void microhil_channel_switch(int id)
+/// @param id is GPIO port number
+void microhil_channel_switch(channel_gpio_num gpio)
 {
-    unsigned int gpio = id_to_gpio(id);
-
     switch(gpio)
     {
         case MICROHIL_ALL_CHANNELS_OFF:
@@ -105,40 +132,48 @@ void microhil_channel_switch(int id)
             printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_NO_SUPPORT);
             break;
         default:
-            gpio_put(gpio, channels[id - 1]);
+            unsigned int index = gpio_to_index(gpio);
 
-            if(channels[id - 1] == 1)
+            if(index == MICROHIL_CHANNELS_ERROR)
             {
-                printf("%s channel %d on\n", MICROHIL_CHANNEL_INFO, id - 1);
-            }
-            else if(channels[id - 1] == 0)
-            {
-                printf("%s channel %d off\n", MICROHIL_CHANNEL_INFO, id - 1);
+                printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_NO_SUPPORT);
+                break;
             }
 
-            channels[id - 1] = !channels[id - 1];
+            channels[index] = !channels[index];
+            microhil_digital_write(gpio, (bool)channels[index]);
+
+            if(channels[index] == 1)
+            {
+                printf("%s channel %d on\n", MICROHIL_CHANNEL_INFO, index);
+            }
+            else if(channels[index] == 0)
+            {
+                printf("%s channel %d off\n", MICROHIL_CHANNEL_INFO, index);
+            }
 
             ////////////////////////////////////////////////////////////////
             /// Led notification
-            put_pixel(urgb_u32(255, 0, 0));
+            microhi_write_pixel(urgb_u32(255, 0, 0));
 
             ////////////////////////////////////////////////////////////////
             /// Buzzer notification
-            microhil_write_pwm(80);
+            microhil_write_pwm(80, PWM_CHAN_A);
             microhil_delay_ms(100);
-            microhil_write_pwm(0);
+            microhil_write_pwm(0, PWM_CHAN_A);
             break;
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Convert command id to GPIO number or global ON/OFF
-/// @param id of command received from serial port
-/// @return channel number | all on / all off | error
-unsigned int id_to_gpio(int id)
+/// @brief Convert index to GPIO port number
+/// @param id is index
+/// @return GPIO port number
+channel_gpio_num index_to_gpio(int id)
 {
     switch(id)
     {
+        case 0: return MICROHIL_CHANNEL_0;
         case 1: return MICROHIL_CHANNEL_1;
         case 2: return MICROHIL_CHANNEL_2;
         case 3: return MICROHIL_CHANNEL_3;
@@ -146,9 +181,6 @@ unsigned int id_to_gpio(int id)
         case 5: return MICROHIL_CHANNEL_5;
         case 6: return MICROHIL_CHANNEL_6;
         case 7: return MICROHIL_CHANNEL_7;
-        case 8: return MICROHIL_CHANNEL_8;
-        case 9: return MICROHIL_ALL_CHANNELS_OFF;
-        case 10: return MICROHIL_ALL_CHANNELS_ON;
     }
 
     return MICROHIL_CHANNELS_ERROR;

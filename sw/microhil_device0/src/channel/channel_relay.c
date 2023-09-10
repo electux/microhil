@@ -17,6 +17,7 @@
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
 #include "channel.h"
+#include "io_config.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Initializatio of relay channels
@@ -27,25 +28,14 @@ bool microhil_init_relay()
 
     ////////////////////////////////////////////////////////////////////////
     /// Initialize channels
-    gpio_init(MICROHIL_CHANNEL_1);
-    gpio_init(MICROHIL_CHANNEL_2);
-    gpio_init(MICROHIL_CHANNEL_3);
-    gpio_init(MICROHIL_CHANNEL_4);
-    gpio_init(MICROHIL_CHANNEL_5);
-    gpio_init(MICROHIL_CHANNEL_6);
-    gpio_init(MICROHIL_CHANNEL_7);
-    gpio_init(MICROHIL_CHANNEL_8);
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Set channels as outputs
-    gpio_set_dir(MICROHIL_CHANNEL_1, GPIO_OUT);
-    gpio_set_dir(MICROHIL_CHANNEL_2, GPIO_OUT);
-    gpio_set_dir(MICROHIL_CHANNEL_3, GPIO_OUT);
-    gpio_set_dir(MICROHIL_CHANNEL_4, GPIO_OUT);
-    gpio_set_dir(MICROHIL_CHANNEL_5, GPIO_OUT);
-    gpio_set_dir(MICROHIL_CHANNEL_6, GPIO_OUT);
-    gpio_set_dir(MICROHIL_CHANNEL_7, GPIO_OUT);
-    gpio_set_dir(MICROHIL_CHANNEL_8, GPIO_OUT);
+    microhil_gpio_mode(MICROHIL_CHANNEL_0, GPIO_OUT);
+    microhil_gpio_mode(MICROHIL_CHANNEL_1, GPIO_OUT);
+    microhil_gpio_mode(MICROHIL_CHANNEL_2, GPIO_OUT);
+    microhil_gpio_mode(MICROHIL_CHANNEL_3, GPIO_OUT);
+    microhil_gpio_mode(MICROHIL_CHANNEL_4, GPIO_OUT);
+    microhil_gpio_mode(MICROHIL_CHANNEL_5, GPIO_OUT);
+    microhil_gpio_mode(MICROHIL_CHANNEL_6, GPIO_OUT);
+    microhil_gpio_mode(MICROHIL_CHANNEL_7, GPIO_OUT);
 
     ////////////////////////////////////////////////////////////////////////
     /// Relay port pins configuration done

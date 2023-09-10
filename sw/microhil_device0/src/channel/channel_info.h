@@ -23,13 +23,13 @@
 #define MICROHIL_CHANNEL_INFO "[microHIL] INFO"
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Info message for initialization done
+#define MICROHIL_INIT_DONE "initialization done"
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Info message for all channels ON
 #define MICROHIL_ALL_ON "all channels on"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Info message for all channels OFF
 #define MICROHIL_ALL_OFF "all channels off"
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief Info message for successfully initialized PWM channel
-#define MICROHIL_PWM_INIT_OK "successfully initialized PWM"

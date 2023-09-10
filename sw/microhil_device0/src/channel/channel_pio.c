@@ -19,8 +19,8 @@
 #include "channel.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief
-const int PIN_TX = 13;
+/// @brief WS2812 DIN pin mapped to GPIO pin
+const int MICROHIL_WS2812_DIN = 13;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Initialization of PIO state machine
@@ -35,7 +35,7 @@ bool microhil_pio_init()
         .pio = pio0,
         .sm = 0,
         .offset = pio_add_program(pio0, &ws2812_program),
-        .pin = PIN_TX,
+        .pin = MICROHIL_WS2812_DIN,
         .freq = 800000,
         .rgbw = true
     };
@@ -48,7 +48,6 @@ bool microhil_pio_init()
     }
 
     ws2812_program_init(&init);
-
     status = true;
 
     return status;
