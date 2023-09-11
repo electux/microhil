@@ -21,7 +21,7 @@
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Write 32-bit RGB value to PIO state machine
 /// @param pixel_rgb is 32-bit RGB value
-void microhi_write_pixel(uint32_t pixel_rgb)
+void microhil_write_pixel(uint32_t pixel_rgb)
 {
     pio_sm_put_blocking(pio0, 0, pixel_rgb << 8u);
 }

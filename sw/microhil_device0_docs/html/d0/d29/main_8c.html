@@ -141,41 +141,42 @@ Functions</h2></td></tr>
 <p >Failed to perform initialization of microHIL device</p>
 <p >Wait for USB connection</p>
 <p >Fetch channel command message</p>
+<p >Processing channel command message</p>
 <p >Request channel operation</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d29/main_8c_source.html#l00024">24</a> of file <a class="el" href="../../d0/d29/main_8c_source.html">main.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
 <div class="line"><span class="lineno">   28</span>    <span class="keywordtype">bool</span> status = <a class="code hl_function" href="../../d5/d7b/channel_8h.html#ad215bce0c7df0f50ffd866ae3316f76e">microhil_init</a>();</div>
 <div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span>(!status)</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!status)</div>
 <div class="line"><span class="lineno">   31</span>    {</div>
 <div class="line"><span class="lineno">   34</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="../../d5/d7b/channel_8h.html#a6f1aec742cf7bc4909865009ac8f502f">MICROHIL_FAILED</a>;</div>
 <div class="line"><span class="lineno">   35</span>    }</div>
 <div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">while</span>(!stdio_usb_connected())</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">while</span> (!stdio_usb_connected())</div>
 <div class="line"><span class="lineno">   40</span>        ;</div>
 <div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">while</span>(status)</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">while</span> (status)</div>
 <div class="line"><span class="lineno">   43</span>    {</div>
 <div class="line"><span class="lineno">   46</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *command = (<span class="keywordtype">char</span> *)malloc(<a class="code hl_define" href="../../d5/d7b/channel_8h.html#ab3e32c0b44a322e17a9b0130d6d254fa">MICROHIL_CMD_LEN</a>);</div>
 <div class="line"><span class="lineno">   47</span>        uint16_t received_bytes = <a class="code hl_function" href="../../d5/d7b/channel_8h.html#a46dc9b30a323f1cdcca540bcccfe9aec">microhil_fetch_command</a>(command);</div>
 <div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">if</span>(received_bytes &gt; 0)</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">if</span> (received_bytes &gt; 0)</div>
 <div class="line"><span class="lineno">   50</span>        {</div>
-<div class="line"><span class="lineno">   51</span>            <a class="code hl_typedef" href="../../d5/d7b/channel_8h.html#ad1bcc80c491c46554226d5345e4769b5">channel_gpio_num</a> cmd_id = <a class="code hl_function" href="../../d5/d7b/channel_8h.html#a67ae70ae40ff40631ec629d8e4a44e50">microhil_process_command</a>(command);</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">if</span>(cmd_id &gt; 0)</div>
-<div class="line"><span class="lineno">   54</span>            {</div>
-<div class="line"><span class="lineno">   57</span>                <a class="code hl_function" href="../../d4/d28/channel_8c.html#a1826a2deaa766a00ea7c6b1042352cd7">microhil_channel_switch</a>(cmd_id);</div>
-<div class="line"><span class="lineno">   58</span>            }</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>        free(command);</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="../../d5/d7b/channel_8h.html#addb47fce082e8df6a79830d06a9ec3ee">MICROHIL_SUCCESS</a>;</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-<div class="ttc" id="achannel_8c_html_a1826a2deaa766a00ea7c6b1042352cd7"><div class="ttname"><a href="../../d4/d28/channel_8c.html#a1826a2deaa766a00ea7c6b1042352cd7">microhil_channel_switch</a></div><div class="ttdeci">void microhil_channel_switch(channel_gpio_num gpio)</div><div class="ttdoc">Switch channel state.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d28/channel_8c_source.html#l00121">channel.c:121</a></div></div>
+<div class="line"><span class="lineno">   53</span>            <a class="code hl_typedef" href="../../d5/d7b/channel_8h.html#ad1bcc80c491c46554226d5345e4769b5">channel_gpio_num</a> cmd_id = <a class="code hl_function" href="../../d5/d7b/channel_8h.html#a67ae70ae40ff40631ec629d8e4a44e50">microhil_process_command</a>(command);</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">if</span> (cmd_id &gt; 0)</div>
+<div class="line"><span class="lineno">   56</span>            {</div>
+<div class="line"><span class="lineno">   59</span>                <a class="code hl_function" href="../../d4/d28/channel_8c.html#a1826a2deaa766a00ea7c6b1042352cd7">microhil_channel_switch</a>(cmd_id);</div>
+<div class="line"><span class="lineno">   60</span>            }</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>        free(command);</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="../../d5/d7b/channel_8h.html#addb47fce082e8df6a79830d06a9ec3ee">MICROHIL_SUCCESS</a>;</div>
+<div class="line"><span class="lineno">   67</span>}</div>
+<div class="ttc" id="achannel_8c_html_a1826a2deaa766a00ea7c6b1042352cd7"><div class="ttname"><a href="../../d4/d28/channel_8c.html#a1826a2deaa766a00ea7c6b1042352cd7">microhil_channel_switch</a></div><div class="ttdeci">void microhil_channel_switch(channel_gpio_num gpio)</div><div class="ttdoc">Switch channel state.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d28/channel_8c_source.html#l00142">channel.c:142</a></div></div>
 <div class="ttc" id="achannel_8h_html_a46dc9b30a323f1cdcca540bcccfe9aec"><div class="ttname"><a href="../../d5/d7b/channel_8h.html#a46dc9b30a323f1cdcca540bcccfe9aec">microhil_fetch_command</a></div><div class="ttdeci">uint16_t microhil_fetch_command(uint8_t *buffer)</div><div class="ttdoc">Fetch microHIL command messages from the serial port.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dfb/channel__uart_8c_source.html#l00028">channel_uart.c:28</a></div></div>
 <div class="ttc" id="achannel_8h_html_a67ae70ae40ff40631ec629d8e4a44e50"><div class="ttname"><a href="../../d5/d7b/channel_8h.html#a67ae70ae40ff40631ec629d8e4a44e50">microhil_process_command</a></div><div class="ttdeci">channel_gpio_num microhil_process_command(unsigned char *cmd)</div><div class="ttdoc">Process microHIL command messages from uart.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dfb/channel__uart_8c_source.html#l00145">channel_uart.c:145</a></div></div>
 <div class="ttc" id="achannel_8h_html_a6f1aec742cf7bc4909865009ac8f502f"><div class="ttname"><a href="../../d5/d7b/channel_8h.html#a6f1aec742cf7bc4909865009ac8f502f">MICROHIL_FAILED</a></div><div class="ttdeci">#define MICROHIL_FAILED</div><div class="ttdoc">Return value for failed state.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/channel_8h_source.html#l00036">channel.h:36</a></div></div>
@@ -184,7 +185,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="achannel_8h_html_ad215bce0c7df0f50ffd866ae3316f76e"><div class="ttname"><a href="../../d5/d7b/channel_8h.html#ad215bce0c7df0f50ffd866ae3316f76e">microhil_init</a></div><div class="ttdeci">bool microhil_init()</div><div class="ttdoc">Global initialization of microHIL device.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d88/channel__init_8c_source.html#l00026">channel_init.c:26</a></div></div>
 <div class="ttc" id="achannel_8h_html_addb47fce082e8df6a79830d06a9ec3ee"><div class="ttname"><a href="../../d5/d7b/channel_8h.html#addb47fce082e8df6a79830d06a9ec3ee">MICROHIL_SUCCESS</a></div><div class="ttdeci">#define MICROHIL_SUCCESS</div><div class="ttdoc">Return value for success state.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/channel_8h_source.html#l00032">channel.h:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d4/d28/channel_8c_source.html#l00121">microhil_channel_switch()</a>, <a class="el" href="../../d5/d7b/channel_8h_source.html#l00065">MICROHIL_CMD_LEN</a>, <a class="el" href="../../d5/d7b/channel_8h_source.html#l00036">MICROHIL_FAILED</a>, <a class="el" href="../../d3/dfb/channel__uart_8c_source.html#l00028">microhil_fetch_command()</a>, <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00026">microhil_init()</a>, <a class="el" href="../../d3/dfb/channel__uart_8c_source.html#l00145">microhil_process_command()</a>, and <a class="el" href="../../d5/d7b/channel_8h_source.html#l00032">MICROHIL_SUCCESS</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d28/channel_8c_source.html#l00142">microhil_channel_switch()</a>, <a class="el" href="../../d5/d7b/channel_8h_source.html#l00065">MICROHIL_CMD_LEN</a>, <a class="el" href="../../d5/d7b/channel_8h_source.html#l00036">MICROHIL_FAILED</a>, <a class="el" href="../../d3/dfb/channel__uart_8c_source.html#l00028">microhil_fetch_command()</a>, <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00026">microhil_init()</a>, <a class="el" href="../../d3/dfb/channel__uart_8c_source.html#l00145">microhil_process_command()</a>, and <a class="el" href="../../d5/d7b/channel_8h_source.html#l00032">MICROHIL_SUCCESS</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -196,10 +197,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="../../d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global initialization of microHIL device." alt="" coords="416,372,519,398"/>
 <area shape="rect" href="../../d3/dfb/channel__uart_8c.html#a67ae70ae40ff40631ec629d8e4a44e50" title="Process microHIL command messages from uart." alt="" coords="108,524,312,550"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#aa34e83cb258a7cf0c9a68b51b4aec5ba" title="Convert GPIO port number to index (private)" alt="" coords="411,220,524,246"/>
-<area shape="rect" href="../../d0/d22/channel__led_8c.html#a48e9961a802d6c7f5660dd1c5ed4283c" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="629,157,779,184"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#a4d0b5716356dbea2a25811b5cd894182" title="Set all channels to OFF." alt="" coords="374,68,561,94"/>
 <area shape="rect" href="../../df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title="Delay in miliseconds." alt="" coords="631,30,777,57"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#a2e0436b2f6452aaa7f00da9fd3292f2d" title="Drive GPIO pin." alt="" coords="623,208,785,234"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#a2e0436b2f6452aaa7f00da9fd3292f2d" title="Drive GPIO pin." alt="" coords="623,157,785,184"/>
+<area shape="rect" href="../../d0/d22/channel__led_8c.html#a5dced4e3f65945fd20e699b7b8d6b648" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="627,208,781,234"/>
 <area shape="rect" href="../../df/df1/io__config_8c.html#aded097c9c71f867ee67e7cf9d3f980ef" title="Write value to PWM channel." alt="" coords="627,81,781,108"/>
 <area shape="rect" href="../../d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253" title="Generate 32&#45;bit RGB value." alt="" coords="663,258,745,285"/>
 <area shape="rect" href="../../d4/d28/channel_8c.html#aed07b8a710efb4cd7a9d6b08d27b85e4" title="Set all channels to ON." alt="" coords="374,118,561,145"/>
@@ -227,7 +228,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d0/d29/main_8c.html">main.c</a></li>
-    <li class="footer">Generated on Sun Sep 10 2023 21:15:28 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Sep 11 2023 20:58:31 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

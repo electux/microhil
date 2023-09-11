@@ -40,13 +40,15 @@ bool microhil_pio_init()
         .rgbw = true
     };
 
-    if(init.offset == 0)
+    if (init.offset == 0)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to load PIO program
         return status;
     }
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Perform WS2812 program initialization
     ws2812_program_init(&init);
     status = true;
 

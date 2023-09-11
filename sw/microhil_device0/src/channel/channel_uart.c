@@ -29,11 +29,11 @@ uint16_t microhil_fetch_command(uint8_t *buffer)
 {
     uint16_t buffer_index = 0;
 
-    while(true)
+    while (true)
     {
         int byte = getchar_timeout_us(100);
 
-        if(byte != PICO_ERROR_TIMEOUT && buffer_index < MICROHIL_CMD_LEN)
+        if (byte != PICO_ERROR_TIMEOUT && buffer_index < MICROHIL_CMD_LEN)
         {
             buffer[buffer_index++] = (byte & 0xFF);
         }
@@ -61,7 +61,7 @@ unsigned char *microhil_extract_command_property(unsigned char *cmd)
     /// Sanity check for expected command message prefix
     int status = strncmp(cmd, MICROHIL_CMD_PREFIX, prefix_len);
 
-    if(status != 0)
+    if (status != 0)
     {
         ////////////////////////////////////////////////////////////////////
         /// Not matched expected command message prefix
@@ -105,12 +105,12 @@ int microhil_process_all_off(unsigned char *cmd_property)
 /// @return command id for channel
 int microhil_process_channel_on(unsigned char *cmd_property, int index)
 {
-    if(0 > index || index > 8)
+    if (0 > index || index > MICROHIL_NUMBER_OF_CHANNELS)
     {
-        return (int) MICROHIL_CHANNELS_ERROR;
+        return (int)MICROHIL_CHANNELS_ERROR;
     }
 
-    char *operation_on = (char *)malloc(4);
+    char *operation_on = (char *)malloc(MICROHIL_PROP_ON_RESERVE);
     sprintf(operation_on, "%d#on", index);
     int status = strncmp(cmd_property, operation_on, strlen(operation_on));
     free(operation_on);
@@ -125,12 +125,12 @@ int microhil_process_channel_on(unsigned char *cmd_property, int index)
 /// @return command id for channel
 int microhil_process_channel_off(unsigned char *cmd_property, int index)
 {
-    if(0 > index || index > 8)
+    if (0 > index || index > MICROHIL_NUMBER_OF_CHANNELS)
     {
         return (int)MICROHIL_CHANNELS_ERROR;
     }
 
-    char *operation_off = (char *)malloc(5);
+    char *operation_off = (char *)malloc(MICROHIL_PROP_OFF_RESERVE);
     sprintf(operation_off, "%d#off", index);
     int status = strncmp(cmd_property, operation_off, strlen(operation_off));
     free(operation_off);
@@ -146,7 +146,7 @@ channel_gpio_num microhil_process_command(unsigned char *cmd)
 {
     unsigned char *cmd_property = microhil_extract_command_property(cmd);
 
-    if(cmd_property == NULL)
+    if (cmd_property == NULL)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to extract command property
@@ -154,7 +154,7 @@ channel_gpio_num microhil_process_command(unsigned char *cmd)
         return MICROHIL_CHANNELS_ERROR;
     }
 
-    if(microhil_process_all_on(cmd_property) == 0)
+    if (microhil_process_all_on(cmd_property) == 0)
     {
         free(cmd_property);
         ////////////////////////////////////////////////////////////////////
@@ -162,7 +162,7 @@ channel_gpio_num microhil_process_command(unsigned char *cmd)
         return MICROHIL_ALL_CHANNELS_ON;
     }
 
-    if(microhil_process_all_off(cmd_property) == 0)
+    if (microhil_process_all_off(cmd_property) == 0)
     {
         free(cmd_property);
         ////////////////////////////////////////////////////////////////////
@@ -170,9 +170,9 @@ channel_gpio_num microhil_process_command(unsigned char *cmd)
         return MICROHIL_ALL_CHANNELS_OFF;
     }
 
-    for(int i = 0; i < MICROHIL_NUMBER_OF_CHANNELS; i++)
+    for (int i = 0; i < MICROHIL_NUMBER_OF_CHANNELS; i++)
     {
-        if(microhil_process_channel_on(cmd_property, i) == 0)
+        if (microhil_process_channel_on(cmd_property, i) == 0)
         {
             free(cmd_property);
             ////////////////////////////////////////////////////////////////
@@ -180,7 +180,7 @@ channel_gpio_num microhil_process_command(unsigned char *cmd)
             return index_to_gpio(i);
         }
 
-        if(microhil_process_channel_off(cmd_property, i) == 0)
+        if (microhil_process_channel_off(cmd_property, i) == 0)
         {
             free(cmd_property);
             ////////////////////////////////////////////////////////////////

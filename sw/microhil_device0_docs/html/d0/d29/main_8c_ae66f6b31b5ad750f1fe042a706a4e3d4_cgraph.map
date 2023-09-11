@@ -5,10 +5,10 @@
 <area shape="rect" id="node12" href="$d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global initialization of microHIL device." alt="" coords="416,372,519,398"/>
 <area shape="rect" id="node20" href="$d3/dfb/channel__uart_8c.html#a67ae70ae40ff40631ec629d8e4a44e50" title="Process microHIL command messages from uart." alt="" coords="108,524,312,550"/>
 <area shape="rect" id="node3" href="$d4/d28/channel_8c.html#aa34e83cb258a7cf0c9a68b51b4aec5ba" title="Convert GPIO port number to index (private)" alt="" coords="411,220,524,246"/>
-<area shape="rect" id="node4" href="$d0/d22/channel__led_8c.html#a48e9961a802d6c7f5660dd1c5ed4283c" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="629,157,779,184"/>
-<area shape="rect" id="node5" href="$d4/d28/channel_8c.html#a4d0b5716356dbea2a25811b5cd894182" title="Set all channels to OFF." alt="" coords="374,68,561,94"/>
-<area shape="rect" id="node6" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title="Delay in miliseconds." alt="" coords="631,30,777,57"/>
-<area shape="rect" id="node7" href="$df/df1/io__config_8c.html#a2e0436b2f6452aaa7f00da9fd3292f2d" title="Drive GPIO pin." alt="" coords="623,208,785,234"/>
+<area shape="rect" id="node4" href="$d4/d28/channel_8c.html#a4d0b5716356dbea2a25811b5cd894182" title="Set all channels to OFF." alt="" coords="374,68,561,94"/>
+<area shape="rect" id="node5" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title="Delay in miliseconds." alt="" coords="631,30,777,57"/>
+<area shape="rect" id="node6" href="$df/df1/io__config_8c.html#a2e0436b2f6452aaa7f00da9fd3292f2d" title="Drive GPIO pin." alt="" coords="623,157,785,184"/>
+<area shape="rect" id="node7" href="$d0/d22/channel__led_8c.html#a5dced4e3f65945fd20e699b7b8d6b648" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="627,208,781,234"/>
 <area shape="rect" id="node8" href="$df/df1/io__config_8c.html#aded097c9c71f867ee67e7cf9d3f980ef" title="Write value to PWM channel." alt="" coords="627,81,781,108"/>
 <area shape="rect" id="node9" href="$d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253" title="Generate 32&#45;bit RGB value." alt="" coords="663,258,745,285"/>
 <area shape="rect" id="node10" href="$d4/d28/channel_8c.html#aed07b8a710efb4cd7a9d6b08d27b85e4" title="Set all channels to ON." alt="" coords="374,118,561,145"/>

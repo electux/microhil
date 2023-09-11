@@ -16,6 +16,8 @@ var searchData=
   ['microhil_5fio_5fconfig_5ferror_13',['MICROHIL_IO_CONFIG_ERROR',['../df/d02/io__config__error_8h.html#ac8ee3202de3f7fd0b940c6817bdb27ff',1,'io_config_error.h']]],
   ['microhil_5fno_5fsupport_14',['MICROHIL_NO_SUPPORT',['../d9/d14/channel__error_8h.html#acaf1b2a232dbefea39c08c54e383a303',1,'channel_error.h']]],
   ['microhil_5fnumber_5fof_5fchannels_15',['MICROHIL_NUMBER_OF_CHANNELS',['../d5/d7b/channel_8h.html#ac54c73055d263f7697426070dc5c452a',1,'channel.h']]],
-  ['microhil_5fpwm_5fset_5ferror_16',['MICROHIL_PWM_SET_ERROR',['../df/d02/io__config__error_8h.html#a2c82654e4a618fd974fdab6bfd8f9c8b',1,'io_config_error.h']]],
-  ['microhil_5fsuccess_17',['MICROHIL_SUCCESS',['../d5/d7b/channel_8h.html#addb47fce082e8df6a79830d06a9ec3ee',1,'channel.h']]]
+  ['microhil_5fprop_5foff_5freserve_16',['MICROHIL_PROP_OFF_RESERVE',['../d5/d7b/channel_8h.html#ae907b63e55be142ff01225abf593f924',1,'channel.h']]],
+  ['microhil_5fprop_5fon_5freserve_17',['MICROHIL_PROP_ON_RESERVE',['../d5/d7b/channel_8h.html#a99d4690a112f56eaa627145f95043980',1,'channel.h']]],
+  ['microhil_5fpwm_5fset_5ferror_18',['MICROHIL_PWM_SET_ERROR',['../df/d02/io__config__error_8h.html#a2c82654e4a618fd974fdab6bfd8f9c8b',1,'io_config_error.h']]],
+  ['microhil_5fsuccess_19',['MICROHIL_SUCCESS',['../d5/d7b/channel_8h.html#addb47fce082e8df6a79830d06a9ec3ee',1,'channel.h']]]
 ];

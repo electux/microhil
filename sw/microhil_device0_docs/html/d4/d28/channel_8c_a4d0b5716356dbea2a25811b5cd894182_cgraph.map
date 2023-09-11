@@ -1,8 +1,8 @@
 <map id="microhil_all_channels_off" name="microhil_all_channels_off">
 <area shape="rect" id="node1" title="Set all channels to OFF." alt="" coords="5,107,192,133"/>
-<area shape="rect" id="node2" href="$d0/d22/channel__led_8c.html#a48e9961a802d6c7f5660dd1c5ed4283c" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="247,5,396,32"/>
-<area shape="rect" id="node3" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title="Delay in miliseconds." alt="" coords="249,56,394,83"/>
-<area shape="rect" id="node4" href="$df/df1/io__config_8c.html#a2e0436b2f6452aaa7f00da9fd3292f2d" title="Drive GPIO pin." alt="" coords="240,107,403,133"/>
+<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title="Delay in miliseconds." alt="" coords="249,5,394,32"/>
+<area shape="rect" id="node3" href="$df/df1/io__config_8c.html#a2e0436b2f6452aaa7f00da9fd3292f2d" title="Drive GPIO pin." alt="" coords="240,56,403,83"/>
+<area shape="rect" id="node4" href="$d0/d22/channel__led_8c.html#a5dced4e3f65945fd20e699b7b8d6b648" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="245,107,398,133"/>
 <area shape="rect" id="node5" href="$df/df1/io__config_8c.html#aded097c9c71f867ee67e7cf9d3f980ef" title="Write value to PWM channel." alt="" coords="244,157,399,184"/>
 <area shape="rect" id="node6" href="$d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253" title="Generate 32&#45;bit RGB value." alt="" coords="280,208,363,235"/>
 </map>

@@ -27,7 +27,7 @@ int main()
     /// Initialization of microHIL device
     bool status = microhil_init();
 
-    if(!status)
+    if (!status)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization of microHIL device
@@ -36,21 +36,23 @@ int main()
 
     ////////////////////////////////////////////////////////////////////////
     /// Wait for USB connection
-    while(!stdio_usb_connected())
+    while (!stdio_usb_connected())
         ;
 
-    while(status)
+    while (status)
     {
-        //////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////
         /// Fetch channel command message
         unsigned char *command = (char *)malloc(MICROHIL_CMD_LEN);
         uint16_t received_bytes = microhil_fetch_command(command);
 
-        if(received_bytes > 0)
+        if (received_bytes > 0)
         {
+            ////////////////////////////////////////////////////////////////
+            /// Processing channel command message
             channel_gpio_num cmd_id = microhil_process_command(command);
 
-            if(cmd_id > 0)
+            if (cmd_id > 0)
             {
                 ////////////////////////////////////////////////////////////
                 /// Request channel operation
