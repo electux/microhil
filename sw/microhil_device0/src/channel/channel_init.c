@@ -31,7 +31,7 @@ bool microhil_init()
     /// Perform initialization for stdio types
     status = stdio_init_all();
 
-    if(!status)
+    if (!status)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for stdio types
@@ -43,7 +43,7 @@ bool microhil_init()
     /// Perform initialization for stdio usb
     status = stdio_usb_init();
 
-    if(!status)
+    if (!status)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for stdio usb
@@ -55,7 +55,7 @@ bool microhil_init()
     /// Perform initialization for RELAY
     status = microhil_init_relay();
 
-    if(!status)
+    if (!status)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for RELAY
@@ -67,7 +67,7 @@ bool microhil_init()
     /// Perform initialization for PIO
     status = microhil_pio_init();
 
-    if(!status)
+    if (!status)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for PIO
@@ -91,7 +91,7 @@ bool microhil_init()
     /// Perform initialization for PWM channel of BUZZER
     status = microhil_init_pwm(MICROHIL_BUZZER, PWM_CHAN_A);
 
-    if(!status)
+    if (!status)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for PWM Buzzer
@@ -101,7 +101,7 @@ bool microhil_init()
 
     ////////////////////////////////////////////////////////////////////////
     /// Led notification
-    microhi_write_pixel(urgb_u32(0, 0, 0));
+    microhil_write_pixel(urgb_u32(0, 0, 0));
 
     ////////////////////////////////////////////////////////////////////////
     /// Buzzer notification

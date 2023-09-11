@@ -69,6 +69,14 @@ typedef enum _channel_gpio_num
 #define MICROHIL_CMD_PREFIX "mh#ch#"
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Prpperty channel ON length
+#define MICROHIL_PROP_ON_RESERVE 4
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Prpperty channel OFF length
+#define MICROHIL_PROP_OFF_RESERVE 5
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Command message propery all ON
 #define MICROHIL_CMD_PROP_ALL_ON "all#on"
 
@@ -112,7 +120,7 @@ void microhil_channel_switch(channel_gpio_num id);
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Write 32-bit RGB value to PIO state machine
 /// @param pixel_rgb is 32-bit RGB value
-void microhi_write_pixel(uint32_t pixel_rgb);
+void microhil_write_pixel(uint32_t pixel_rgb);
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Generate 32-bit RGB value
