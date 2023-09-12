@@ -65,10 +65,10 @@ void MicroHILSerialCom::setup(MHString device, MHSerialParams params)
 
 void MicroHILSerialCom::read(MHVecByte& data, size_t len, size_t timeout)
 {
-    // TODO
+    m_serialPort->Read(data, len, timeout);
 }
 
 void MicroHILSerialCom::write(MHVecByte& data)
 {
-    // TODO
+    m_serialPort->Write(data);
 }
