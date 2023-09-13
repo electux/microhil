@@ -18,34 +18,33 @@
  */
 #include "microhil_serial_com.h"
 
-MicroHILSerialCom::MicroHILSerialCom():
-    m_serialPort{MHmakeUPtr<SerialPort>()}
+MHSerialCom::MHSerialCom() : m_serialPort{MHmakeUPtr<SerialPort>()}
 {
     close();
 }
 
-MicroHILSerialCom::~MicroHILSerialCom()
+MHSerialCom::~MHSerialCom()
 {
     close();
 }
 
-void MicroHILSerialCom::open()
+void MHSerialCom::open()
 {
-    if(!m_serialPort->IsOpen())
+    if (!m_serialPort->IsOpen())
     {
         m_serialPort->Open(std::string(m_device));
     }
 }
 
-void MicroHILSerialCom::close()
+void MHSerialCom::close()
 {
-    if(m_serialPort->IsOpen())
+    if (m_serialPort->IsOpen())
     {
         m_serialPort->Close();
     }
 }
 
-void MicroHILSerialCom::setup(MHString device, MHVecUInt params)
+void MHSerialCom::setup(MHString device, MHVecUInt params)
 {
     m_serialPort->SetBaudRate(uintToBaudRate(params[0]));
     m_serialPort->SetCharacterSize(uintToDataBits(params[1]));
@@ -54,7 +53,7 @@ void MicroHILSerialCom::setup(MHString device, MHVecUInt params)
     m_device = device;
 }
 
-void MicroHILSerialCom::setup(MHString device, MHSerialParams params)
+void MHSerialCom::setup(MHString device, MHSerialParams params)
 {
     m_serialPort->SetBaudRate(params.baudRate);
     m_serialPort->SetCharacterSize(params.dataBits);
@@ -63,12 +62,12 @@ void MicroHILSerialCom::setup(MHString device, MHSerialParams params)
     m_device = device;
 }
 
-void MicroHILSerialCom::read(MHVecByte& data, size_t len, size_t timeout)
+void MHSerialCom::read(MHVecByte &data, size_t len, size_t timeout)
 {
     m_serialPort->Read(data, len, timeout);
 }
 
-void MicroHILSerialCom::write(MHVecByte& data)
+void MHSerialCom::write(MHVecByte &data)
 {
     m_serialPort->Write(data);
 }

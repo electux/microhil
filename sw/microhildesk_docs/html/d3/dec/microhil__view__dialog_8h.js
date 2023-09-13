@@ -1,4 +1,4 @@
 var microhil__view__dialog_8h =
 [
-    [ "MicroHILViewDialog", "da/dcd/classMicroHILViewDialog.html", "da/dcd/classMicroHILViewDialog" ]
+    [ "MHViewDialog", "dc/d3c/classMHViewDialog.html", "dc/d3c/classMHViewDialog" ]
 ];

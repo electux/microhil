@@ -18,23 +18,12 @@
  */
 #include "microhil_view_log.h"
 
-void MicroHILViewLog::mapping()
+void MHViewLog::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Map all widgets (signals and slots)
-    m_device->signal_changed().connect(
-        sigc::mem_fun(*this, &MicroHILViewLog::onLogFilePathChanged)
-    );
-
-    m_level->signal_changed().connect(
-        sigc::mem_fun(*this, &MicroHILViewLog::onLogLevelChanged)
-    );
-
-    m_cancel->signal_clicked().connect(
-        sigc::mem_fun(*this, &MicroHILViewLog::onCancelLogTriggered)
-    );
-
-    m_ok->signal_clicked().connect(
-        sigc::mem_fun(*this, &MicroHILViewLog::onOkLogTriggered)
-    );
+    m_device->signal_changed().connect(sigc::mem_fun(*this, &MHViewLog::onLogFilePathChanged));
+    m_level->signal_changed().connect(sigc::mem_fun(*this, &MHViewLog::onLogLevelChanged));
+    m_cancel->signal_clicked().connect(sigc::mem_fun(*this, &MHViewLog::onCancelLogTriggered));
+    m_ok->signal_clicked().connect(sigc::mem_fun(*this, &MHViewLog::onOkLogTriggered));
 }

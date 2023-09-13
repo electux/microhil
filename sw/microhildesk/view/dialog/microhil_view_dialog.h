@@ -25,21 +25,19 @@
 #include "microhil_view_dialog_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILViewDialog class declaration and definition 
-class MicroHILViewDialog: public AbMicroHILViewDialog, public Gtk::Dialog
+/// @brief MHViewDialog class declaration and definition
+class MHViewDialog : public AbMHViewDialog, public Gtk::Dialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewDialog constructor
+    /// @brief MHViewDialog constructor
     /// @param object base object type
     /// @param ui builder instance
-    MicroHILViewDialog(
-        BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
-    );
+    MHViewDialog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewDialog destructor
-    ~MicroHILViewDialog() = default;
+    /// @brief MHViewDialog destructor
+    ~MHViewDialog() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button

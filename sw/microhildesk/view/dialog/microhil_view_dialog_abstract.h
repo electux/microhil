@@ -31,8 +31,8 @@ enum class MessageType
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILViewDialog class declaration and definition
-class AbMicroHILViewDialog
+/// @brief AbMHViewDialog class declaration and definition
+class AbMHViewDialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
@@ -40,8 +40,8 @@ public:
     using SigHideDialog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILViewDialog destructor
-    virtual ~AbMicroHILViewDialog() = default;
+    /// @brief AbMHViewDialog destructor
+    virtual ~AbMHViewDialog() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button

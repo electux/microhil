@@ -1,48 +1,48 @@
 var hierarchy =
 [
-    [ "AbMicroHILCom", "d7/d8c/classAbMicroHILCom.html", [
-      [ "MicroHILSerialCom", "d5/dd0/classMicroHILSerialCom.html", null ]
+    [ "AbMHCom", "d2/d18/classAbMHCom.html", [
+      [ "MHSerialCom", "d1/dfa/classMHSerialCom.html", null ]
     ] ],
-    [ "AbMicroHILConfig", "d6/dac/classAbMicroHILConfig.html", [
-      [ "MicroHILConfig", "d0/df4/classMicroHILConfig.html", null ]
+    [ "AbMHConfig", "d7/db3/classAbMHConfig.html", [
+      [ "MHConfig", "d9/d79/classMHConfig.html", null ]
     ] ],
-    [ "AbMicroHILController", "de/dee/classAbMicroHILController.html", [
-      [ "MicroHILController", "dd/d47/classMicroHILController.html", null ]
+    [ "AbMHController", "d6/d9d/classAbMHController.html", [
+      [ "MHController", "d1/d75/classMHController.html", null ]
     ] ],
-    [ "AbMicroHILLog", "d9/de8/classAbMicroHILLog.html", [
-      [ "MicroHILLog", "d1/de3/classMicroHILLog.html", null ]
+    [ "AbMHLog", "db/d93/classAbMHLog.html", [
+      [ "MHLog", "d1/d7c/classMHLog.html", null ]
     ] ],
-    [ "AbMicroHILModel", "db/dda/classAbMicroHILModel.html", [
-      [ "MicroHILModel", "de/dce/classMicroHILModel.html", null ]
+    [ "AbMHModel", "d3/d38/classAbMHModel.html", [
+      [ "MHModel", "da/d3e/classMHModel.html", null ]
     ] ],
-    [ "AbMicroHILView", "d9/d4a/classAbMicroHILView.html", [
-      [ "MicroHILView", "d8/dee/classMicroHILView.html", null ]
+    [ "AbMHView", "dc/dff/classAbMHView.html", [
+      [ "MHView", "d1/dfc/classMHView.html", null ]
     ] ],
-    [ "AbMicroHILViewAbout", "d6/d7b/classAbMicroHILViewAbout.html", [
-      [ "MicroHILViewAbout", "d1/df8/classMicroHILViewAbout.html", null ]
+    [ "AbMHViewAbout", "d3/d19/classAbMHViewAbout.html", [
+      [ "MHViewAbout", "d5/d7b/classMHViewAbout.html", null ]
     ] ],
-    [ "AbMicroHILViewDialog", "d9/d02/classAbMicroHILViewDialog.html", [
-      [ "MicroHILViewDialog", "da/dcd/classMicroHILViewDialog.html", null ]
+    [ "AbMHViewDialog", "d9/da7/classAbMHViewDialog.html", [
+      [ "MHViewDialog", "dc/d3c/classMHViewDialog.html", null ]
     ] ],
-    [ "AbMicroHILViewHome", "d5/d72/classAbMicroHILViewHome.html", [
-      [ "MicroHILViewHome", "df/da5/classMicroHILViewHome.html", null ]
+    [ "AbMHViewHome", "d7/d4c/classAbMHViewHome.html", [
+      [ "MHViewHome", "dc/def/classMHViewHome.html", null ]
     ] ],
-    [ "AbMicroHILViewLog", "d1/d49/classAbMicroHILViewLog.html", [
-      [ "MicroHILViewLog", "d4/dc6/classMicroHILViewLog.html", null ]
+    [ "AbMHViewLog", "d9/d0c/classAbMHViewLog.html", [
+      [ "MHViewLog", "d1/d14/classMHViewLog.html", null ]
     ] ],
-    [ "AbMicroHILViewSerial", "df/dcb/classAbMicroHILViewSerial.html", [
-      [ "MicroHILViewSerial", "dd/dde/classMicroHILViewSerial.html", null ]
+    [ "AbMHViewSerial", "d6/d87/classAbMHViewSerial.html", [
+      [ "MHViewSerial", "d2/dd5/classMHViewSerial.html", null ]
     ] ],
     [ "Gtk::AboutDialog", null, [
-      [ "MicroHILViewAbout", "d1/df8/classMicroHILViewAbout.html", null ]
+      [ "MHViewAbout", "d5/d7b/classMHViewAbout.html", null ]
     ] ],
     [ "Application", "d5/d4c/classApplication.html", null ],
     [ "Gtk::ApplicationWindow", null, [
-      [ "MicroHILViewHome", "df/da5/classMicroHILViewHome.html", null ]
+      [ "MHViewHome", "dc/def/classMHViewHome.html", null ]
     ] ],
     [ "Gtk::Dialog", null, [
-      [ "MicroHILViewDialog", "da/dcd/classMicroHILViewDialog.html", null ],
-      [ "MicroHILViewLog", "d4/dc6/classMicroHILViewLog.html", null ],
-      [ "MicroHILViewSerial", "dd/dde/classMicroHILViewSerial.html", null ]
+      [ "MHViewDialog", "dc/d3c/classMHViewDialog.html", null ],
+      [ "MHViewLog", "d1/d14/classMHViewLog.html", null ],
+      [ "MHViewSerial", "d2/dd5/classMHViewSerial.html", null ]
     ] ]
 ];

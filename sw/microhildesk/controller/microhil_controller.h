@@ -26,19 +26,19 @@
 #include "microhil_controller_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILController class declaration and definition 
-class MicroHILController: public AbMicroHILController
+/// @brief MHController class declaration and definition
+class MHController : public AbMHController
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILController constructor
+    /// @brief MHController constructor
     /// @param model instance
     /// @param view instance
-    MicroHILController(MHSPtr<MicroHILModel> model, MHSPtr<MicroHILView> view);
+    MHController(MHSPtr<MHModel> model, MHSPtr<MHView> view);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILController destructor
-    ~MicroHILController() = default;
+    /// @brief MHController destructor
+    ~MHController() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Enable controller (enable/disable communication)
@@ -85,21 +85,21 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Model instance
-    MHSPtr<MicroHILModel> m_model{nullptr};
+    MHSPtr<MHModel> m_model{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief View instance
-    MHSPtr<MicroHILView> m_view{nullptr};
+    MHSPtr<MHView> m_view{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration instance
-    MHUPtr<MicroHILConfig> m_config{nullptr};
+    MHUPtr<MHConfig> m_config{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Log instance 
-    MHUPtr<MicroHILLog> m_log{nullptr};
+    /// @brief Log instance
+    MHUPtr<MHLog> m_log{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Serial port instance
-    MHUPtr<MicroHILSerialCom> m_serial{nullptr};
+    MHUPtr<MHSerialCom> m_serial{nullptr};
 };

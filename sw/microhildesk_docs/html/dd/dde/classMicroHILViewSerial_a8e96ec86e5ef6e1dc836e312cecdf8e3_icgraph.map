@@ -1,5 +1,0 @@
-<map id="MicroHILViewSerial::onSerialBaudRateChanged" name="MicroHILViewSerial::onSerialBaudRateChanged">
-<area shape="rect" id="node1" title="Slot for processing baud&#45;rate combobox." alt="" coords="403,5,605,47"/>
-<area shape="rect" id="node2" href="$dd/dde/classMicroHILViewSerial.html#ac3180885e01d13d32a6305cb4af6feb7" title="Map all widgets (signals and slots)" alt="" coords="208,5,355,47"/>
-<area shape="rect" id="node3" href="$dd/dde/classMicroHILViewSerial.html#a376ce9b0be837e7f576e37fe68c4e5a2" title="MicroHILViewSerial constructor." alt="" coords="5,5,160,47"/>
-</map>

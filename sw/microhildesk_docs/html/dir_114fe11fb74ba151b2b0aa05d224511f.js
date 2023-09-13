@@ -6,5 +6,6 @@ var dir_114fe11fb74ba151b2b0aa05d224511f =
     [ "microhil_view_home_map.cc", "d5/d63/microhil__view__home__map_8cc.html", null ],
     [ "microhil_view_home_mode.cc", "d6/d9d/microhil__view__home__mode_8cc.html", null ],
     [ "microhil_view_home_signals.cc", "d0/d59/microhil__view__home__signals_8cc.html", null ],
-    [ "microhil_view_home_slots.cc", "d4/d1c/microhil__view__home__slots_8cc.html", null ]
+    [ "microhil_view_home_slots.cc", "d4/d1c/microhil__view__home__slots_8cc.html", null ],
+    [ "microhil_view_home_utils.cc", "de/db2/microhil__view__home__utils_8cc.html", null ]
 ];

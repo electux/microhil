@@ -1,5 +1,0 @@
-<map id="MicroHILViewLog::onLogFilePathChanged" name="MicroHILViewLog::onLogFilePathChanged">
-<area shape="rect" id="node1" title="Slot for processing log file path input." alt="" coords="552,5,755,47"/>
-<area shape="rect" id="node2" href="$d4/dc6/classMicroHILViewLog.html#a00b8e12d4c3b5e1faf03cdafa685dcc9" title="Map all widgets (signals and slots)" alt="" coords="305,13,504,39"/>
-<area shape="rect" id="node3" href="$d4/dc6/classMicroHILViewLog.html#a59ea4ad3bfa3df105cbb0587e817543b" title="MicroHILViewLog constructor." alt="" coords="5,13,257,39"/>
-</map>

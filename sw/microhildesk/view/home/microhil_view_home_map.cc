@@ -25,81 +25,40 @@ namespace
     constexpr int kNumberOfMapChannels{8};
 }
 
-void MicroHILViewHome::mapping()
+void MHViewHome::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Map Connect menu-item signal slot
-    m_connect->signal_activate().connect(
-        sigc::mem_fun(*this, &MicroHILViewHome::onConnectClicked)
-    );
+    m_connect->signal_activate().connect(sigc::mem_fun(*this, &MHViewHome::onConnectClicked));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map Disconnect menu-item signal slot
-    m_disconnect->signal_activate().connect(
-        sigc::mem_fun(*this, &MicroHILViewHome::onDisconnectClicked)
-    );
+    m_disconnect->signal_activate().connect(sigc::mem_fun(*this, &MHViewHome::onDisconnectClicked));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map Quit menu-item signal slot
-    m_quit->signal_activate().connect(
-        sigc::mem_fun(*this, &MicroHILViewHome::onQuitClicked)
-    );
+    m_quit->signal_activate().connect(sigc::mem_fun(*this, &MHViewHome::onQuitClicked));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map Serial Settings menu-item signal slot
-    m_serialSettings->signal_activate().connect(
-        sigc::mem_fun(*this, &MicroHILViewHome::onSerialSettingsClicked)
-    );
+    m_serialSettings->signal_activate().connect(sigc::mem_fun(*this, &MHViewHome::onSerialSettingsClicked));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map Log Settings menu-item signal slot
-    m_logSettings->signal_activate().connect(
-        sigc::mem_fun(*this, &MicroHILViewHome::onLogSettingsClicked)
-    );
+    m_logSettings->signal_activate().connect(sigc::mem_fun(*this, &MHViewHome::onLogSettingsClicked));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map About menu-item signal slot
-    m_about->signal_activate().connect(
-        sigc::mem_fun(*this, &MicroHILViewHome::onAboutClicked)
-    );
+    m_about->signal_activate().connect(sigc::mem_fun(*this, &MHViewHome::onAboutClicked));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map channels (signals and slots)
     for (int i = 0; i < kNumberOfMapChannels; i++)
     {
-        m_enableChannels[i]->signal_toggled().connect(
-            sigc::bind<Channel>(
-                sigc::mem_fun(*this, &MicroHILViewHome::onChannelChanged),
-                static_cast<Channel>(i)
-            )
-        );
-
-        m_selectControlChannels[i]->signal_changed().connect(
-            sigc::bind<Channel>(
-                sigc::mem_fun(*this, &MicroHILViewHome::onTypeSelected),
-                static_cast<Channel>(i)
-            )
-        );
-
-        m_toggleChannels[i]->signal_toggled().connect(
-            sigc::bind<Channel>(
-                sigc::mem_fun(*this, &MicroHILViewHome::onToggled),
-                static_cast<Channel>(i)
-            )
-        );
-
-        m_spinTimerChannels[i]->signal_changed().connect(
-            sigc::bind<Channel>(
-                sigc::mem_fun(*this, &MicroHILViewHome::onSpinTimerChanged),
-                static_cast<Channel>(i)
-            )
-        );
-
-        m_toggleTimerChannels[i]->signal_toggled().connect(
-            sigc::bind<Channel>(
-                sigc::mem_fun(*this, &MicroHILViewHome::onToggleTimerChanged),
-                static_cast<Channel>(i)
-            )
-        );
+        m_enableChannels[i]->signal_toggled().connect(sigc::bind<Channel>(sigc::mem_fun(*this, &MHViewHome::onChannelChanged), static_cast<Channel>(i)));
+        m_selectControlChannels[i]->signal_changed().connect(sigc::bind<Channel>(sigc::mem_fun(*this, &MHViewHome::onTypeSelected), static_cast<Channel>(i)));
+        m_toggleChannels[i]->signal_toggled().connect(sigc::bind<Channel>(sigc::mem_fun(*this, &MHViewHome::onToggled), static_cast<Channel>(i)));
+        m_spinTimerChannels[i]->signal_changed().connect(sigc::bind<Channel>(sigc::mem_fun(*this, &MHViewHome::onSpinTimerChanged), static_cast<Channel>(i)));
+        m_toggleTimerChannels[i]->signal_toggled().connect(sigc::bind<Channel>(sigc::mem_fun(*this, &MHViewHome::onToggleTimerChanged), static_cast<Channel>(i)));
     }
 }

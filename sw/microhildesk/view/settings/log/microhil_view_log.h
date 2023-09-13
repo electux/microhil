@@ -26,21 +26,19 @@
 #include "microhil_view_log_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILViewLog class declaration and definition 
-class MicroHILViewLog: public AbMicroHILViewLog, public Gtk::Dialog
+/// @brief MHViewLog class declaration and definition
+class MHViewLog : public AbMHViewLog, public Gtk::Dialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewLog constructor
+    /// @brief MHViewLog constructor
     /// @param object base object instance
     /// @param ui bulder instance
-    MicroHILViewLog(
-        BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
-    );
+    MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewLog destructor
-    ~MicroHILViewLog() = default;
+    /// @brief MHViewLog destructor
+    ~MHViewLog() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings
@@ -53,12 +51,12 @@ public:
     SigLogFilePath logFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing log file path input 
+    /// @brief Slot for processing log file path input
     void onLogFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log level combobox
-    /// @return Signal for selected log level combobox 
+    /// @return Signal for selected log level combobox
     SigSelectLogLevel logLevelChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -71,7 +69,7 @@ public:
     SigCancelLog cancelLogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for Ok button 
+    /// @brief Signal for Ok button
     /// @return Signal for clicked Ok button
     SigOkLog okLogTriggered() final;
 

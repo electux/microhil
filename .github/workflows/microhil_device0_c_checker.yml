@@ -1,0 +1,19 @@
+name: microhil_device0 C checker
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'sw/microhil_device0/src/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check length of line in modules
+        id: long_line_checker
+        run: |
+          echo Checking length of line in modules
+          modules_ok=0
+          modules=($(find sw/microhil_device0/src/ -type f -name '*.c' -exec echo '{}' \;))
+          for mod in "${modules[@]}"; do line_length=$(wc -L < "${mod}"); [[ $line_length -gt 80 ]] && modules_ok=1; done
+          [[ $modules_ok -eq 0 ]] && exit 0 || exit 1

@@ -18,14 +18,11 @@
  */
 #include "microhil_controller.h"
 
-MicroHILController::MicroHILController(
-    MHSPtr<MicroHILModel> model, MHSPtr<MicroHILView> view
-):
-    m_model{model},
-    m_view{view},
-    m_config{MHmakeUPtr<MicroHILConfig>()},
-    m_log{MHmakeUPtr<MicroHILLog>()},
-    m_serial{MHmakeUPtr<MicroHILSerialCom>()}
+MHController::MHController(MHSPtr<MHModel> model, MHSPtr<MHView> view) : m_model{model},
+                                                                         m_view{view},
+                                                                         m_config{MHmakeUPtr<MHConfig>()},
+                                                                         m_log{MHmakeUPtr<MHLog>()},
+                                                                         m_serial{MHmakeUPtr<MHSerialCom>()}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Mapping views and backend (signals and slots)
@@ -33,7 +30,7 @@ MicroHILController::MicroHILController(
 
     ////////////////////////////////////////////////////////////////////////
     /// Checking existance of configuration
-    if(!m_config->isPreValid())
+    if (!m_config->isPreValid())
     {
         // TODO
         // Emit signal for error handler
@@ -41,7 +38,7 @@ MicroHILController::MicroHILController(
 
     ////////////////////////////////////////////////////////////////////////
     /// Loading configuration from file
-    if(!m_config->load())
+    if (!m_config->load())
     {
         // TODO
         // Emit signal for error handler
@@ -55,19 +52,19 @@ MicroHILController::MicroHILController(
     /// Setup log level from configuration
     m_log->setLogLevel(m_config->getLogLevel());
 
-    if(!m_log->open())
+    if (!m_log->open())
     {
         // TODO
         // Emit signal for error handler
     }
 }
 
-void MicroHILController::setEnabled(bool switchController)
+void MHController::setEnabled(bool switchController)
 {
     m_enabled = switchController;
 }
 
-bool MicroHILController::isEnabled() const
+bool MHController::isEnabled() const
 {
     return m_enabled;
 }

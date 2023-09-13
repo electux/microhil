@@ -1,0 +1,5 @@
+<map id="MHSerialCom::close" name="MHSerialCom::close">
+<area shape="rect" id="node1" title="Close the serial communication channel." alt="" coords="272,31,425,57"/>
+<area shape="rect" id="node2" href="$d1/dfa/classMHSerialCom.html#a4534dd62bb96d7baa0cdbd6758a9c117" title="MicroHILCom constructor." alt="" coords="11,5,219,32"/>
+<area shape="rect" id="node3" href="$d1/dfa/classMHSerialCom.html#ac4435ccab6e43055eb2c90943b835afe" title="MicroHILCom destructor." alt="" coords="5,56,224,83"/>
+</map>

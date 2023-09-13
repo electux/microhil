@@ -18,9 +18,7 @@
  */
 #include "microhil_view_dialog.h"
 
-void MicroHILViewDialog::mapping()
+void MHViewDialog::mapping()
 {
-    m_close->signal_clicked().connect(
-        sigc::mem_fun(*this, &MicroHILViewDialog::onHideDialogTriggered)
-    );
+    m_close->signal_clicked().connect(sigc::mem_fun(*this, &MHViewDialog::onHideDialogTriggered));
 }

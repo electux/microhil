@@ -22,7 +22,7 @@
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for View IDs
-enum class ViewId: int
+enum class ViewId : int
 {
     MICROHIL_CONNECT = 0,
     MICROHIL_DISCONNECT = 1,
@@ -35,7 +35,7 @@ enum class ViewId: int
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for channel IDs
-enum class Channel: int
+enum class Channel : int
 {
     MICROHIL_ID0 = 0,
     MICROHIL_ID1 = 1,
@@ -45,19 +45,19 @@ enum class Channel: int
     MICROHIL_ID5 = 5,
     MICROHIL_ID6 = 6,
     MICROHIL_ID7 = 7
-}; 
+};
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for channel control types
-enum class channelControlType: int
+enum class channelControlType : int
 {
     MICROHIL_TOGGLE_BUTTON = 0,
     MICROHIL_TIMER_BUTTON = 1
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILViewHome class declaration and definition 
-class AbMicroHILViewHome
+/// @brief AbMHViewHome class declaration and definition
+class AbMHViewHome
 {
 public:
     ////////////////////////////////////////////////////////////////////////
@@ -85,8 +85,8 @@ public:
     using SigChannelTimerToggled = sigc::signal<void(Channel, bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILViewHome destructor
-    virtual ~AbMicroHILViewHome() = default;
+    /// @brief AbMHViewHome destructor
+    virtual ~AbMHViewHome() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (changed view)

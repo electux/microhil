@@ -1,5 +1,0 @@
-<map id="MicroHILViewAbout::onHideAboutTriggered" name="MicroHILViewAbout::onHideAboutTriggered">
-<area shape="rect" id="node1" title="Slot for processing Ok button (self hide AboutDialog)" alt="" coords="413,5,580,47"/>
-<area shape="rect" id="node2" href="$d1/df8/classMicroHILViewAbout.html#a1916cb6515d36133bd4f9f5fc68be2e0" title="Map Ok button (signal and slot)" alt="" coords="209,5,365,47"/>
-<area shape="rect" id="node3" href="$d1/df8/classMicroHILViewAbout.html#a606ecc41b5f8f048fa72d79c4c126d88" title="MicroHILViewAbout constructor." alt="" coords="5,5,161,47"/>
-</map>

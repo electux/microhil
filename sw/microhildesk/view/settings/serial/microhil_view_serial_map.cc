@@ -18,35 +18,15 @@
  */
 #include "microhil_view_serial.h"
 
-void MicroHILViewSerial::mapping()
+void MHViewSerial::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Map all widgets (signals and slots)
-    m_device->signal_changed().connect(
-        sigc::mem_fun(*this, &MicroHILViewSerial::onSerialFilePathChanged)
-    );
-
-    m_baudRate->signal_changed().connect(
-        sigc::mem_fun(*this, &MicroHILViewSerial::onSerialBaudRateChanged)
-    );
-
-    m_dataBits->signal_changed().connect(
-        sigc::mem_fun(*this, &MicroHILViewSerial::onSerialDataBitsChanged)
-    );
-
-    m_parity->signal_changed().connect(
-        sigc::mem_fun(*this, &MicroHILViewSerial::onSerialParityChanged)
-    );
-
-    m_stopBits->signal_changed().connect(
-        sigc::mem_fun(*this, &MicroHILViewSerial::onSerialStopBitsChanged)
-    );
-
-    m_cancel->signal_clicked().connect(
-        sigc::mem_fun(*this, &MicroHILViewSerial::onCancelSerialTriggered)
-    );
-
-    m_ok->signal_clicked().connect(
-        sigc::mem_fun(*this, &MicroHILViewSerial::onOkSerialTriggered)
-    );
+    m_device->signal_changed().connect(sigc::mem_fun(*this, &MHViewSerial::onSerialFilePathChanged));
+    m_baudRate->signal_changed().connect(sigc::mem_fun(*this, &MHViewSerial::onSerialBaudRateChanged));
+    m_dataBits->signal_changed().connect(sigc::mem_fun(*this, &MHViewSerial::onSerialDataBitsChanged));
+    m_parity->signal_changed().connect(sigc::mem_fun(*this, &MHViewSerial::onSerialParityChanged));
+    m_stopBits->signal_changed().connect(sigc::mem_fun(*this, &MHViewSerial::onSerialStopBitsChanged));
+    m_cancel->signal_clicked().connect(sigc::mem_fun(*this, &MHViewSerial::onCancelSerialTriggered));
+    m_ok->signal_clicked().connect(sigc::mem_fun(*this, &MHViewSerial::onOkSerialTriggered));
 }

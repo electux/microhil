@@ -1,0 +1,7 @@
+<map id="MHSerialCom::setup" name="MHSerialCom::setup">
+<area shape="rect" id="node1" title="Setup the serial port parameters." alt="" coords="5,81,160,108"/>
+<area shape="rect" id="node2" href="$d1/dfa/classMHSerialCom.html#adff7b2eff22fb5a03151a8a03611178f" title="Convert baud&#45;rate from unsigned int to scopped enumerator." alt="" coords="208,5,429,32"/>
+<area shape="rect" id="node3" href="$d1/dfa/classMHSerialCom.html#a46d3089eaed07a16d94fc00689308c69" title="Convert data&#45;bits from unsigned int to scopped enumerator." alt="" coords="211,56,426,83"/>
+<area shape="rect" id="node4" href="$d1/dfa/classMHSerialCom.html#a28c80a551c5f8c82187f987abc836b1b" title="Convert parity from unsigned int to scopped enumerator." alt="" coords="221,107,416,133"/>
+<area shape="rect" id="node5" href="$d1/dfa/classMHSerialCom.html#ab7d52324128fc03889ec7ca895ffca24" title="Convert stop&#45;bits from unsigned int to scopped enumerator." alt="" coords="213,157,425,184"/>
+</map>

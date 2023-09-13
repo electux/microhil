@@ -18,7 +18,7 @@
  */
 #include "microhil_view_home.h"
 
-void MicroHILViewHome::disableChannel(Channel id)
+void MHViewHome::disableChannel(Channel id)
 {
     auto ix = static_cast<int>(id);
     m_selectControlChannels[ix]->set_sensitive(false);
@@ -28,7 +28,7 @@ void MicroHILViewHome::disableChannel(Channel id)
     m_stautsTimerChannels[ix]->set_sensitive(false);
 }
 
-void MicroHILViewHome::enableChannel(Channel id)
+void MHViewHome::enableChannel(Channel id)
 {
     auto ix = static_cast<int>(id);
     m_selectControlChannels[ix]->set_sensitive(true);
@@ -38,7 +38,7 @@ void MicroHILViewHome::enableChannel(Channel id)
     m_stautsTimerChannels[ix]->set_sensitive(false);
 }
 
-void MicroHILViewHome::toggleModeChannel(Channel id)
+void MHViewHome::toggleModeChannel(Channel id)
 {
     auto ix = static_cast<int>(id);
     m_toggleChannels[ix]->set_sensitive(true);
@@ -47,7 +47,7 @@ void MicroHILViewHome::toggleModeChannel(Channel id)
     m_stautsTimerChannels[ix]->set_sensitive(true);
 }
 
-void MicroHILViewHome::timerModeChannel(Channel id)
+void MHViewHome::timerModeChannel(Channel id)
 {
     auto ix = static_cast<int>(id);
     m_toggleChannels[ix]->set_sensitive(false);

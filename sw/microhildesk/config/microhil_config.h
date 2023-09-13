@@ -22,17 +22,17 @@
 #include "microhil_config_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILConfig class declaration and definition 
-class MicroHILConfig : public AbMicroHILConfig
+/// @brief MHConfig class declaration and definition
+class MHConfig : public AbMHConfig
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILConfig constructor
-    MicroHILConfig();
+    /// @brief MHConfig constructor
+    MHConfig();
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILConfig destructor
-    ~MicroHILConfig() = default;
+    /// @brief MHConfig destructor
+    ~MHConfig() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for loaded log configuration
@@ -210,7 +210,7 @@ private:
     std::string m_homePath{};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Configuration file path 
+    /// @brief Configuration file path
     std::string m_configFilePath{};
 
     ////////////////////////////////////////////////////////////////////////

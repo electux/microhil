@@ -1,4 +1,4 @@
 var microhil__view__serial_8h =
 [
-    [ "MicroHILViewSerial", "dd/dde/classMicroHILViewSerial.html", "dd/dde/classMicroHILViewSerial" ]
+    [ "MHViewSerial", "d2/dd5/classMHViewSerial.html", "d2/dd5/classMHViewSerial" ]
 ];

@@ -58,137 +58,201 @@ namespace
     constexpr const unsigned int kInvalidParameter = 127;
 }
 
-unsigned int MicroHILSerialCom::baudRateToUInt(const BaudRate baudRate)
+unsigned int MHSerialCom::baudRateToUInt(const BaudRate baudRate)
 {
-    switch(baudRate)
+    switch (baudRate)
     {
-        case BaudRate::BAUD_50: return kInvalidParameter;
-        case BaudRate::BAUD_75: return kInvalidParameter;
-        case BaudRate::BAUD_110: return kBaud110;
-        case BaudRate::BAUD_134: return kInvalidParameter;
-        case BaudRate::BAUD_150: return kInvalidParameter;
-        case BaudRate::BAUD_200: return kInvalidParameter;
-        case BaudRate::BAUD_300: return kBaud300;
-        case BaudRate::BAUD_600: return kBaud600;
-        case BaudRate::BAUD_1200: return kBaud1200;
-        case BaudRate::BAUD_1800: return kInvalidParameter;
-        case BaudRate::BAUD_2400: return kBaud2400;
-        case BaudRate::BAUD_4800: return kBaud4800;
-        case BaudRate::BAUD_9600: return kBaud9600;
-        case BaudRate::BAUD_19200: return kBaud19200;
-        case BaudRate::BAUD_38400: return kBaud38400;
-        case BaudRate::BAUD_57600: return kBaud57600;
-        case BaudRate::BAUD_115200: return kBaud115200;
-        case BaudRate::BAUD_230400: return kBaud230400;
-        case BaudRate::BAUD_460800: return kInvalidParameter;
-        case BaudRate::BAUD_500000: return kInvalidParameter;
-        case BaudRate::BAUD_576000: return kInvalidParameter;
-        case BaudRate::BAUD_921600: return kInvalidParameter;
-        case BaudRate::BAUD_1000000: return kInvalidParameter;
-        case BaudRate::BAUD_1152000: return kInvalidParameter;
-        case BaudRate::BAUD_1500000: return kInvalidParameter;
-        case BaudRate::BAUD_2000000: return kInvalidParameter;
-        case BaudRate::BAUD_2500000: return kInvalidParameter;
-        case BaudRate::BAUD_3000000: return kInvalidParameter;
-        case BaudRate::BAUD_3500000: return kInvalidParameter;
-        case BaudRate::BAUD_4000000: return kInvalidParameter;
-        case BaudRate::BAUD_INVALID: return kInvalidParameter;
+    case BaudRate::BAUD_50:
+        return kInvalidParameter;
+    case BaudRate::BAUD_75:
+        return kInvalidParameter;
+    case BaudRate::BAUD_110:
+        return kBaud110;
+    case BaudRate::BAUD_134:
+        return kInvalidParameter;
+    case BaudRate::BAUD_150:
+        return kInvalidParameter;
+    case BaudRate::BAUD_200:
+        return kInvalidParameter;
+    case BaudRate::BAUD_300:
+        return kBaud300;
+    case BaudRate::BAUD_600:
+        return kBaud600;
+    case BaudRate::BAUD_1200:
+        return kBaud1200;
+    case BaudRate::BAUD_1800:
+        return kInvalidParameter;
+    case BaudRate::BAUD_2400:
+        return kBaud2400;
+    case BaudRate::BAUD_4800:
+        return kBaud4800;
+    case BaudRate::BAUD_9600:
+        return kBaud9600;
+    case BaudRate::BAUD_19200:
+        return kBaud19200;
+    case BaudRate::BAUD_38400:
+        return kBaud38400;
+    case BaudRate::BAUD_57600:
+        return kBaud57600;
+    case BaudRate::BAUD_115200:
+        return kBaud115200;
+    case BaudRate::BAUD_230400:
+        return kBaud230400;
+    case BaudRate::BAUD_460800:
+        return kInvalidParameter;
+    case BaudRate::BAUD_500000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_576000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_921600:
+        return kInvalidParameter;
+    case BaudRate::BAUD_1000000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_1152000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_1500000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_2000000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_2500000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_3000000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_3500000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_4000000:
+        return kInvalidParameter;
+    case BaudRate::BAUD_INVALID:
+        return kInvalidParameter;
     }
 
     return kInvalidParameter;
 }
 
-BaudRate MicroHILSerialCom::uintToBaudRate(const unsigned int baudRate)
+BaudRate MHSerialCom::uintToBaudRate(const unsigned int baudRate)
 {
-    switch(baudRate)
+    switch (baudRate)
     {
-        case kBaud110: return BaudRate::BAUD_110;
-        case kBaud300: return BaudRate::BAUD_300;
-        case kBaud600: return BaudRate::BAUD_600;
-        case kBaud1200: return BaudRate::BAUD_1200;
-        case kBaud2400: return BaudRate::BAUD_2400;
-        case kBaud4800: return BaudRate::BAUD_4800;
-        case kBaud9600: return BaudRate::BAUD_9600;
-        case kBaud19200: return BaudRate::BAUD_19200;
-        case kBaud38400: return BaudRate::BAUD_38400;
-        case kBaud57600: return BaudRate::BAUD_57600;
-        case kBaud115200: return BaudRate::BAUD_115200;
-        case kBaud230400: return BaudRate::BAUD_230400;
+    case kBaud110:
+        return BaudRate::BAUD_110;
+    case kBaud300:
+        return BaudRate::BAUD_300;
+    case kBaud600:
+        return BaudRate::BAUD_600;
+    case kBaud1200:
+        return BaudRate::BAUD_1200;
+    case kBaud2400:
+        return BaudRate::BAUD_2400;
+    case kBaud4800:
+        return BaudRate::BAUD_4800;
+    case kBaud9600:
+        return BaudRate::BAUD_9600;
+    case kBaud19200:
+        return BaudRate::BAUD_19200;
+    case kBaud38400:
+        return BaudRate::BAUD_38400;
+    case kBaud57600:
+        return BaudRate::BAUD_57600;
+    case kBaud115200:
+        return BaudRate::BAUD_115200;
+    case kBaud230400:
+        return BaudRate::BAUD_230400;
     }
 
     return BaudRate::BAUD_INVALID;
 }
 
-unsigned int MicroHILSerialCom::dataBitsToUInt(const CharacterSize dataBits)
+unsigned int MHSerialCom::dataBitsToUInt(const CharacterSize dataBits)
 {
-    switch(dataBits)
+    switch (dataBits)
     {
-        case CharacterSize::CHAR_SIZE_5: return kDataBits5;
-        case CharacterSize::CHAR_SIZE_6: return kDataBits6;
-        case CharacterSize::CHAR_SIZE_7: return kDataBits7;
-        case CharacterSize::CHAR_SIZE_8: return kDataBits8;
-        case CharacterSize::CHAR_SIZE_INVALID: return kInvalidParameter;
+    case CharacterSize::CHAR_SIZE_5:
+        return kDataBits5;
+    case CharacterSize::CHAR_SIZE_6:
+        return kDataBits6;
+    case CharacterSize::CHAR_SIZE_7:
+        return kDataBits7;
+    case CharacterSize::CHAR_SIZE_8:
+        return kDataBits8;
+    case CharacterSize::CHAR_SIZE_INVALID:
+        return kInvalidParameter;
     }
 
     return kInvalidParameter;
 }
 
-CharacterSize MicroHILSerialCom::uintToDataBits(const unsigned int dataBits)
+CharacterSize MHSerialCom::uintToDataBits(const unsigned int dataBits)
 {
-    switch(dataBits)
+    switch (dataBits)
     {
-        case kDataBits5: return CharacterSize::CHAR_SIZE_5;
-        case kDataBits6: return CharacterSize::CHAR_SIZE_6;
-        case kDataBits7: return CharacterSize::CHAR_SIZE_7;
-        case kDataBits8: return CharacterSize::CHAR_SIZE_8;
+    case kDataBits5:
+        return CharacterSize::CHAR_SIZE_5;
+    case kDataBits6:
+        return CharacterSize::CHAR_SIZE_6;
+    case kDataBits7:
+        return CharacterSize::CHAR_SIZE_7;
+    case kDataBits8:
+        return CharacterSize::CHAR_SIZE_8;
     }
 
     return CharacterSize::CHAR_SIZE_INVALID;
 }
 
-unsigned int MicroHILSerialCom::parityToUInt(const Parity parity)
+unsigned int MHSerialCom::parityToUInt(const Parity parity)
 {
-    switch(parity)
+    switch (parity)
     {
-        case Parity::PARITY_EVEN: return kParityEven;
-        case Parity::PARITY_ODD: return kParityOdd;
-        case Parity::PARITY_NONE: return kParityNone;
-        case Parity::PARITY_INVALID: return kInvalidParameter;
+    case Parity::PARITY_EVEN:
+        return kParityEven;
+    case Parity::PARITY_ODD:
+        return kParityOdd;
+    case Parity::PARITY_NONE:
+        return kParityNone;
+    case Parity::PARITY_INVALID:
+        return kInvalidParameter;
     }
 
     return kInvalidParameter;
 }
 
-Parity MicroHILSerialCom::uintToParity(const unsigned int parity)
+Parity MHSerialCom::uintToParity(const unsigned int parity)
 {
-    switch(parity)
+    switch (parity)
     {
-        case kParityEven: return Parity::PARITY_EVEN;
-        case kParityOdd: return Parity::PARITY_ODD;
-        case kParityNone: return Parity::PARITY_NONE;
+    case kParityEven:
+        return Parity::PARITY_EVEN;
+    case kParityOdd:
+        return Parity::PARITY_ODD;
+    case kParityNone:
+        return Parity::PARITY_NONE;
     }
 
     return Parity::PARITY_INVALID;
 }
 
-unsigned int MicroHILSerialCom::stopBitsToUInt(const StopBits stopBits)
+unsigned int MHSerialCom::stopBitsToUInt(const StopBits stopBits)
 {
-    switch(stopBits)
+    switch (stopBits)
     {
-        case StopBits::STOP_BITS_1: return kStopBits1;
-        case StopBits::STOP_BITS_2: return kStopBits2;
-        case StopBits::STOP_BITS_INVALID: return kInvalidParameter;
+    case StopBits::STOP_BITS_1:
+        return kStopBits1;
+    case StopBits::STOP_BITS_2:
+        return kStopBits2;
+    case StopBits::STOP_BITS_INVALID:
+        return kInvalidParameter;
     }
 
     return kInvalidParameter;
 }
 
-StopBits MicroHILSerialCom::uintToStopBits(const unsigned int stopBits)
+StopBits MHSerialCom::uintToStopBits(const unsigned int stopBits)
 {
-    switch(stopBits)
+    switch (stopBits)
     {
-        case kStopBits1: return StopBits::STOP_BITS_1;
-        case kStopBits2: return StopBits::STOP_BITS_2;
+    case kStopBits1:
+        return StopBits::STOP_BITS_1;
+    case kStopBits2:
+        return StopBits::STOP_BITS_2;
     }
 
     return StopBits::STOP_BITS_INVALID;

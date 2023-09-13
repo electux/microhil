@@ -22,8 +22,8 @@
 #include "../../../utils/microhil_types.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILViewLog class declaration and definition 
-class AbMicroHILViewLog
+/// @brief AbMHViewLog class declaration and definition
+class AbMHViewLog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
@@ -47,8 +47,8 @@ public:
     using SigOkLog = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILViewLog destructor
-    virtual ~AbMicroHILViewLog() = default;
+    /// @brief AbMHViewLog destructor
+    virtual ~AbMHViewLog() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings
@@ -61,12 +61,12 @@ public:
     virtual SigLogFilePath logFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing log file path input 
+    /// @brief Slot for processing log file path input
     virtual void onLogFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log level combobox
-    /// @return Signal for selected log level combobox 
+    /// @return Signal for selected log level combobox
     virtual SigSelectLogLevel logLevelChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
@@ -79,7 +79,7 @@ public:
     virtual SigCancelLog cancelLogTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for Ok button 
+    /// @brief Signal for Ok button
     /// @return Signal for clicked Ok button
     virtual SigOkLog okLogTriggered() = 0;
 

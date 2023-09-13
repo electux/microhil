@@ -27,13 +27,13 @@ enum class ChannelState: bool
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILModel class declaration and definition
-class AbMicroHILModel
+/// @brief AbMHModel class declaration and definition
+class AbMHModel
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILModel destructor
-    virtual ~AbMicroHILModel() = default;
+    /// @brief AbMHModel destructor
+    virtual ~AbMHModel() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Set channel #0 state (ON/OFF)

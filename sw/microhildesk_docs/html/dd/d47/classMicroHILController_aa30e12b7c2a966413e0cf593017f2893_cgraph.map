@@ -1,8 +1,0 @@
-<map id="MicroHILController::MicroHILController" name="MicroHILController::MicroHILController">
-<area shape="rect" id="node1" title="MicroHILController constructor." alt="" coords="5,104,156,145"/>
-<area shape="rect" id="node2" href="$dd/d47/classMicroHILController.html#a3ac3ba533de57c106246a7067a870ac8" title="Mapping views and backend (signals and slots)" alt="" coords="204,104,347,145"/>
-<area shape="rect" id="node3" href="$dd/d47/classMicroHILController.html#a4447dbdd8cfca5210e9215308585d858" title="Slot for processing log settings changes." alt="" coords="402,5,581,47"/>
-<area shape="rect" id="node4" href="$dd/d47/classMicroHILController.html#a3eefe31c1b20787d2b9e438a2bca8e2c" title="Slot for processing log settings loaded." alt="" coords="407,71,576,112"/>
-<area shape="rect" id="node5" href="$dd/d47/classMicroHILController.html#a1f5684b802663aefb7891a393541bea0" title="Slot for processing serial settings changes." alt="" coords="395,136,588,177"/>
-<area shape="rect" id="node6" href="$dd/d47/classMicroHILController.html#a6c3d2dcc6b0cde4770b998e0201e04cf" title="Slot for processing serial settings changes." alt="" coords="400,201,583,243"/>
-</map>

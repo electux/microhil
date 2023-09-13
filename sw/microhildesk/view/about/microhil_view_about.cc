@@ -21,19 +21,15 @@
 namespace
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Ok button id 
+    /// Ok button id
     constexpr const char kOkButtonId[]{"AboutOk"};
 }
 
-MicroHILViewAbout::MicroHILViewAbout(
-    BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
-): Gtk::AboutDialog(object), m_ui{ui}
+MHViewAbout::MHViewAbout(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui) : Gtk::AboutDialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Bind Ok button
-    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(
-        m_ui->get_object(kOkButtonId)
-    );
+    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map Ok button (signal and slot)

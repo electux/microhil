@@ -30,13 +30,13 @@ enum class LogLevel: int
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILLog class declaration and definition
-class AbMicroHILLog
+/// @brief AbMHLog class declaration and definition
+class AbMHLog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILLog destructor
-    virtual ~AbMicroHILLog() = default;
+    /// @brief AbMHLog destructor
+    virtual ~AbMHLog() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Open storage for collecting log messages

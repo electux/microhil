@@ -21,13 +21,13 @@
 #include "../utils/microhil_types.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILCom class declaration and definition
-class AbMicroHILCom
+/// @brief AbMHCom class declaration and definition
+class AbMHCom
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILCom destructor
-    virtual ~AbMicroHILCom() = default;
+    /// @brief AbMHCom destructor
+    virtual ~AbMHCom() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Open communication channel
@@ -42,10 +42,10 @@ public:
     /// @param data buffer to be placed to after reading channel
     /// @param len length of data to read before returning
     /// @param timeout timeout period in miliseconds
-    virtual void read(MHVecByte& data, size_t len, size_t timeout) = 0;
+    virtual void read(MHVecByte &data, size_t len, size_t timeout) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Write to communication channel
     /// @param data to be written to channel
-    virtual void write(MHVecByte& data) = 0;
+    virtual void write(MHVecByte &data) = 0;
 };

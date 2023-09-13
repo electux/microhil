@@ -45,45 +45,44 @@ namespace
     constexpr char kAboutId[]{"AboutDialog"};
 }
 
-MicroHILView::MicroHILView():
-    m_builder{Gtk::Builder::create_from_resource(kHomeUI)}
+MHView::MHView() : m_builder{Gtk::Builder::create_from_resource(kHomeUI)}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Setup builder and home view
-    m_builder->get_widget_derived(kWindowId, (MicroHILViewHome*&)m_home);
+    m_builder->get_widget_derived(kWindowId, (MHViewHome *&)m_home);
 
     ////////////////////////////////////////////////////////////////////////
     /// Setup builder and dialog view
-    m_builder->get_widget_derived(kDialogId, (MicroHILViewDialog*&)m_dialog);
+    m_builder->get_widget_derived(kDialogId, (MHViewDialog *&)m_dialog);
 
     ////////////////////////////////////////////////////////////////////////
     /// Setup builder and Log Settings view
-    m_builder->get_widget_derived(kLogId, (MicroHILViewLog*&)m_log);
+    m_builder->get_widget_derived(kLogId, (MHViewLog *&)m_log);
 
     ////////////////////////////////////////////////////////////////////////
     /// Setup builder and Serial Settings view
-    m_builder->get_widget_derived(kSerialId, (MicroHILViewSerial*&)m_serial);
+    m_builder->get_widget_derived(kSerialId, (MHViewSerial *&)m_serial);
 
     ////////////////////////////////////////////////////////////////////////
     /// Setup builder and About view
-    m_builder->get_widget_derived(kAboutId, (MicroHILViewAbout*&)m_about);
+    m_builder->get_widget_derived(kAboutId, (MHViewAbout *&)m_about);
 
     ////////////////////////////////////////////////////////////////////////
     /// Mapping views (signals and slots)
     mapping();
 }
 
-MHRPtr<MicroHILViewHome> MicroHILView::getHome()
+MHRPtr<MHViewHome> MHView::getHome()
 {
     return m_home;
 }
 
-MHRPtr<MicroHILViewLog> MicroHILView::getLogSettings()
+MHRPtr<MHViewLog> MHView::getLogSettings()
 {
     return m_log;
 }
 
-MHRPtr<MicroHILViewSerial> MicroHILView::getSerialSettings()
+MHRPtr<MHViewSerial> MHView::getSerialSettings()
 {
     return m_serial;
 }

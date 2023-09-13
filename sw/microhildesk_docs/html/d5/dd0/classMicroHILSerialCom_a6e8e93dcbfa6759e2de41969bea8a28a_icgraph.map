@@ -1,4 +1,0 @@
-<map id="MicroHILSerialCom::uintToParity" name="MicroHILSerialCom::uintToParity">
-<area shape="rect" id="node1" title="Convert parity from unsigned int to scopped enumerator." alt="" coords="208,5,363,47"/>
-<area shape="rect" id="node2" href="$d5/dd0/classMicroHILSerialCom.html#a9a73f95c24d36450fb7fb46e012235f5" title="Setup the serial port parameters." alt="" coords="5,5,160,47"/>
-</map>

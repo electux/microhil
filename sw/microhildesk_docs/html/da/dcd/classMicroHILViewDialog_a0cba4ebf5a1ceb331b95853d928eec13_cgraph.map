@@ -1,4 +1,0 @@
-<map id="MicroHILViewDialog::mapping" name="MicroHILViewDialog::mapping">
-<area shape="rect" id="node1" title="Map Close button (signal and slot)" alt="" coords="5,5,157,47"/>
-<area shape="rect" id="node2" href="$da/dcd/classMicroHILViewDialog.html#aa414dd12b8bb14fd06bb3e6ad6f60308" title="Slot for processing Close button (self hide Dialog)" alt="" coords="205,5,384,47"/>
-</map>

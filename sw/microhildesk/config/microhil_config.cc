@@ -38,8 +38,7 @@ namespace
 
     ////////////////////////////////////////////////////////////////////////
     /// Default configuration
-    constexpr const char* kConfigSerialDefault[]
-    {
+    constexpr const char *kConfigSerialDefault[]{
         "[log]",
         "level=INFO",
         "file=/tmp/microhil.log",
@@ -48,30 +47,28 @@ namespace
         "baud_rate=115200",
         "data_bits=8",
         "parity=None",
-        "stop_bits=1"
-    };
+        "stop_bits=1"};
 }
 
-MicroHILConfig::MicroHILConfig():
-    m_homePath{Glib::get_home_dir() + kHomeDirName},
-    m_configFilePath{m_homePath + kConfigFileName}
+MHConfig::MHConfig() : m_homePath{Glib::get_home_dir() + kHomeDirName},
+                       m_configFilePath{m_homePath + kConfigFileName}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-validation of configuration path
     setPreValid(checkConfigPath());
 }
 
-bool MicroHILConfig::load()
+bool MHConfig::load()
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Load configuration from file 
+    /// Load configuration from file
     auto loadedConfig = m_config.load_from_file(m_configFilePath);
 
     ////////////////////////////////////////////////////////////////////////
     /// Validation of loaded configuration
     auto validatedConfig = validate();
 
-    if(!loadedConfig || !validatedConfig)
+    if (!loadedConfig || !validatedConfig)
     {
         ////////////////////////////////////////////////////////////////////
         /// Configuration file corrupted
@@ -95,14 +92,14 @@ bool MicroHILConfig::load()
     return true;
 }
 
-bool MicroHILConfig::store()
+bool MHConfig::store()
 {
     return m_config.save_to_file(m_configFilePath);
 }
 
-bool MicroHILConfig::validate()
+bool MHConfig::validate()
 {
-    if(!isPreValid())
+    if (!isPreValid())
     {
         return false;
     }
@@ -112,7 +109,7 @@ bool MicroHILConfig::validate()
     auto configLogCheck = validateLogSettings();
     auto configSerialCheck = validateSerialSettings();
 
-    if(!configLogCheck || !configSerialCheck)
+    if (!configLogCheck || !configSerialCheck)
     {
         ////////////////////////////////////////////////////////////////////
         /// Configuration file corrupted
@@ -122,16 +119,16 @@ bool MicroHILConfig::validate()
     return true;
 }
 
-bool MicroHILConfig::checkConfigPath()
+bool MHConfig::checkConfigPath()
 {
     ////////////////////////////////////////////////////////////////////////
     // Check home directory /home/<username>/.microhil/
     std::filesystem::directory_entry homeDirEntry{m_homePath};
     auto homeDirExists = homeDirEntry.exists();
 
-    if(!homeDirExists)
+    if (!homeDirExists)
     {
-        if(!std::filesystem::create_directory(m_homePath))
+        if (!std::filesystem::create_directory(m_homePath))
         {
             ////////////////////////////////////////////////////////////////
             /// Failed to create home configuration directory
@@ -144,11 +141,11 @@ bool MicroHILConfig::checkConfigPath()
     // Configuration file location: /home/<username>/.microhil/config
     auto configFileExists = std::filesystem::exists(m_configFilePath);
 
-    if(!configFileExists)
+    if (!configFileExists)
     {
         std::ofstream defaultConfig(m_configFilePath);
 
-        for(int i = 0; i < kConfigLength; i++)
+        for (int i = 0; i < kConfigLength; i++)
         {
             defaultConfig << kConfigSerialDefault[i] << "\n";
         }

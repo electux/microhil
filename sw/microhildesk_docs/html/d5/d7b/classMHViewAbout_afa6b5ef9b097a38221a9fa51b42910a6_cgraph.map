@@ -1,0 +1,4 @@
+<map id="MHViewAbout::mapping" name="MHViewAbout::mapping">
+<area shape="rect" id="node1" title="Map Ok button (signal and slot)" alt="" coords="5,13,184,39"/>
+<area shape="rect" id="node2" href="$d5/d7b/classMHViewAbout.html#ae3171ca8a132b1cfef3bc895dbaa0f26" title="Slot for processing Ok button (self hide AboutDialog)" alt="" coords="232,5,439,47"/>
+</map>

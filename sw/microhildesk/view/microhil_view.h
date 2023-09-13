@@ -27,32 +27,32 @@
 #include "microhil_view_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILView class declaration and definition 
-class MicroHILView: public AbMicroHILView
+/// @brief MHView class declaration and definition 
+class MHView: public AbMHView
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILView constructor
-    MicroHILView();
+    /// @brief MHView constructor
+    MHView();
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILView destructor
-    ~MicroHILView() = default;
+    /// @brief MHView destructor
+    ~MHView() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting home view
     /// @return Home view instance
-    MHRPtr<MicroHILViewHome> getHome();
+    MHRPtr<MHViewHome> getHome();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log settings
     /// @return Log settings instance
-    MHRPtr<MicroHILViewLog> getLogSettings();
+    MHRPtr<MHViewLog> getLogSettings();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial settings
     /// @return Serial settings instance
-    MHRPtr<MicroHILViewSerial> getSerialSettings();
+    MHRPtr<MHViewSerial> getSerialSettings();
 
 private:
     ////////////////////////////////////////////////////////////////////////
@@ -70,21 +70,21 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Home view instance
-    MHRPtr<MicroHILViewHome> m_home{nullptr};
+    MHRPtr<MHViewHome> m_home{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Dialog view instance
-    MHRPtr<MicroHILViewDialog> m_dialog{nullptr};
+    MHRPtr<MHViewDialog> m_dialog{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log Settings view instance
-    MHRPtr<MicroHILViewLog> m_log{nullptr};
+    MHRPtr<MHViewLog> m_log{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Serial Settings view instance
-    MHRPtr<MicroHILViewSerial> m_serial{nullptr};
+    MHRPtr<MHViewSerial> m_serial{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief About view instance
-    MHRPtr<MicroHILViewAbout> m_about{nullptr};
+    MHRPtr<MHViewAbout> m_about{nullptr};
 };

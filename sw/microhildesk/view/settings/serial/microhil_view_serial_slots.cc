@@ -18,37 +18,37 @@
  */
 #include "microhil_view_serial.h"
 
-void MicroHILViewSerial::onSerialFilePathChanged()
+void MHViewSerial::onSerialFilePathChanged()
 {
     // TODO
 }
 
-void MicroHILViewSerial::onSerialBaudRateChanged()
+void MHViewSerial::onSerialBaudRateChanged()
 {
     // TODO
 }
 
-void MicroHILViewSerial::onSerialDataBitsChanged()
+void MHViewSerial::onSerialDataBitsChanged()
 {
     // TODO
 }
 
-void MicroHILViewSerial::onSerialParityChanged()
+void MHViewSerial::onSerialParityChanged()
 {
     // TODO
 }
 
-void MicroHILViewSerial::onSerialStopBitsChanged()
+void MHViewSerial::onSerialStopBitsChanged()
 {
     // TODO
 }
 
-void MicroHILViewSerial::onCancelSerialTriggered()
+void MHViewSerial::onCancelSerialTriggered()
 {
     this->hide();
 }
 
-void MicroHILViewSerial::onOkSerialTriggered()
+void MHViewSerial::onOkSerialTriggered()
 {
     auto devicePath = m_device->get_text();
 

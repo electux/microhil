@@ -1,4 +1,0 @@
-<map id="MicroHILConfig::logLevelStringToInt" name="MicroHILConfig::logLevelStringToInt">
-<area shape="rect" id="node1" title="Convert log level in strong format to integer." alt="" coords="209,5,392,47"/>
-<area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#af1a33f30981c1bf928e0e39c1bec5e88" title="Load configuration from file." alt="" coords="5,13,161,39"/>
-</map>

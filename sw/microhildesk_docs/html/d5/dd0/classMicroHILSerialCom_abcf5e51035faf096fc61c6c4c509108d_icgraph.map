@@ -1,5 +1,0 @@
-<map id="MicroHILSerialCom::close" name="MicroHILSerialCom::close">
-<area shape="rect" id="node1" title="Close the serial communication channel." alt="" coords="211,39,365,80"/>
-<area shape="rect" id="node2" href="$d5/dd0/classMicroHILSerialCom.html#a620a05edf19214528201747c6507bc08" title="MicroHILCom constructor." alt="" coords="7,5,161,47"/>
-<area shape="rect" id="node3" href="$d5/dd0/classMicroHILSerialCom.html#a065f8807f98f6290a72037a66b974878" title="MicroHILCom destructor." alt="" coords="5,71,163,112"/>
-</map>

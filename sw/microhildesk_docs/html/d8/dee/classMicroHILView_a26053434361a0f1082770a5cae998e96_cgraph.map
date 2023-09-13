@@ -1,5 +1,0 @@
-<map id="MicroHILView::MicroHILView" name="MicroHILView::MicroHILView">
-<area shape="rect" id="node1" title="MicroHILView constructor." alt="" coords="5,5,211,32"/>
-<area shape="rect" id="node2" href="$d8/dee/classMicroHILView.html#ab19711c44af35d0969e226a9f4cad99e" title="Mapping views (signal and slots)" alt="" coords="259,5,433,32"/>
-<area shape="rect" id="node3" href="$d8/dee/classMicroHILView.html#acdc64167bae5e0a40ffc08093f468279" title="Slot for processing requests for triggering view." alt="" coords="481,5,704,32"/>
-</map>
