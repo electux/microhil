@@ -25,17 +25,17 @@
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILLog class declaration and definition 
-class MicroHILLog: public AbMicroHILLog
+/// @brief MHLog class declaration and definition
+class MHLog : public AbMHLog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILLog constructor
-    MicroHILLog();
+    /// @brief MHLog constructor
+    MHLog();
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILLog destructor (needed for closing file)
-    ~MicroHILLog();
+    /// @brief MHLog destructor (needed for closing file)
+    ~MHLog();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting file path for logger

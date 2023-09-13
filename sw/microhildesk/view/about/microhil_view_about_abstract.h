@@ -21,8 +21,8 @@
 #include <sigc++/sigc++.h>
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILViewAbout class declaration and definition 
-class AbMicroHILViewAbout
+/// @brief AbMHViewAbout class declaration and definition
+class AbMHViewAbout
 {
 public:
     ////////////////////////////////////////////////////////////////////////
@@ -30,8 +30,8 @@ public:
     using SigHideAbout = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILViewAbout destructor
-    virtual ~AbMicroHILViewAbout() = default;
+    /// @brief AbMHViewAbout destructor
+    virtual ~AbMHViewAbout() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button

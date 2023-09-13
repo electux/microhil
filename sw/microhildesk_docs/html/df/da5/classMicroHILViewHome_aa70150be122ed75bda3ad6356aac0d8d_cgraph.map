@@ -1,5 +1,0 @@
-<map id="MicroHILViewHome::onChannelChanged" name="MicroHILViewHome::onChannelChanged">
-<area shape="rect" id="node1" title="Slot for processing check buttons (enable/disable channel)" alt="" coords="5,39,232,80"/>
-<area shape="rect" id="node2" href="$df/da5/classMicroHILViewHome.html#aec5801a38d8e7fbf5426237fbb3738e5" title="Disable complete channel." alt="" coords="280,5,484,47"/>
-<area shape="rect" id="node3" href="$df/da5/classMicroHILViewHome.html#a9554ab9c33b6b8bb2ece4d7df32b3d25" title="Enable complete channel." alt="" coords="281,71,483,112"/>
-</map>

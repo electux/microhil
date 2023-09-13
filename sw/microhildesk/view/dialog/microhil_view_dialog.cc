@@ -41,21 +41,15 @@ namespace
     constexpr const char kErrorMessage[]{" ERROR "};
 }
 
-MicroHILViewDialog::MicroHILViewDialog(
-    BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
-): Gtk::Dialog(object), m_ui{ui}
+MHViewDialog::MHViewDialog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui) : Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Bind Dialog message
-    m_text = MHRPtr<Gtk::Label>::cast_dynamic(
-        m_ui->get_object(kDialogMessage)
-    );
+    m_text = MHRPtr<Gtk::Label>::cast_dynamic(m_ui->get_object(kDialogMessage));
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Close button
-    m_close = MHRPtr<Gtk::Button>::cast_dynamic(
-        m_ui->get_object(kCloseButtonId)
-    );
+    m_close = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kCloseButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map Close button (signal and slot)
@@ -66,25 +60,23 @@ MicroHILViewDialog::MicroHILViewDialog(
     this->hide();
 }
 
-void MicroHILViewDialog::setMessage(
-    const MHString message, const MessageType type
-)
+void MHViewDialog::setMessage(const MHString message, const MessageType type)
 {
     const auto messageType = toUnicodeStringMessageType(type);
     this->set_title(messageType);
     m_text->set_text(message);
 }
 
-MHString MicroHILViewDialog::toUnicodeStringMessageType(const MessageType type)
+MHString MHViewDialog::toUnicodeStringMessageType(const MessageType type)
 {
-    switch(type)
+    switch (type)
     {
-        case MessageType::MICROHIL_INFO:
-            return kInfoMessage;
-        case MessageType::MICROHIL_WARNING:
-            return kWarningMessage;
-        case MessageType::MICROHIL_ERROR:
-            return kErrorMessage;
+    case MessageType::MICROHIL_INFO:
+        return kInfoMessage;
+    case MessageType::MICROHIL_WARNING:
+        return kWarningMessage;
+    case MessageType::MICROHIL_ERROR:
+        return kErrorMessage;
     }
 
     return kInfoMessage;

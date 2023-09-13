@@ -1,4 +1,0 @@
-<map id="MicroHILConfig::setStopBits" name="MicroHILConfig::setStopBits">
-<area shape="rect" id="node1" title="Setting stop bits for serial port to configuration." alt="" coords="5,5,208,32"/>
-<area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#a5e91578e1e9c82cd32578c5ae2dc91f7" title="Convert combobox index to data&#45;bits (to config file)" alt="" coords="256,5,469,32"/>
-</map>

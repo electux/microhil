@@ -1,4 +1,0 @@
-<map id="MicroHILConfig::intToBaudRate" name="MicroHILConfig::intToBaudRate">
-<area shape="rect" id="node1" title="Process and prepare baud rate (to config file)" alt="" coords="264,5,487,32"/>
-<area shape="rect" id="node2" href="$d0/df4/classMicroHILConfig.html#af8b63193025e9aa39f35121174376e9c" title="Setting baud rate for serial port to configuration." alt="" coords="5,5,216,32"/>
-</map>

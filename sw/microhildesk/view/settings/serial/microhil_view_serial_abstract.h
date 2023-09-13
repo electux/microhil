@@ -22,8 +22,8 @@
 #include "../../../utils/microhil_types.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILViewSerial class declaration and definition 
-class AbMicroHILViewSerial
+/// @brief AbMHViewSerial class declaration and definition
+class AbMHViewSerial
 {
 public:
     ////////////////////////////////////////////////////////////////////////
@@ -59,8 +59,8 @@ public:
     using SigOkSerial = sigc::signal<void(bool)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILViewLog destructor
-    virtual ~AbMicroHILViewSerial() = default;
+    /// @brief AbMHViewLog destructor
+    virtual ~AbMHViewSerial() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for serial settings
@@ -73,7 +73,7 @@ public:
     virtual SigSerialDevicePath serialFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing device file path input 
+    /// @brief Slot for processing device file path input
     virtual void onSerialFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////

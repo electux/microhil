@@ -19,34 +19,34 @@
 #include <filesystem>
 #include "microhil_view_log.h"
 
-void MicroHILViewLog::onLogFilePathChanged()
+void MHViewLog::onLogFilePathChanged()
 {
     auto logPath = m_device->get_text();
     auto logPathExists = std::filesystem::exists(std::string(logPath));
 
-    if(logPathExists)
+    if (logPathExists)
     {
         // TODO Dialog message box with confirmation
     }
 }
 
-void MicroHILViewLog::onLogLevelChanged()
+void MHViewLog::onLogLevelChanged()
 {
     // TODO
 }
 
-void MicroHILViewLog::onCancelLogTriggered()
+void MHViewLog::onCancelLogTriggered()
 {
     this->hide();
 }
 
-void MicroHILViewLog::onOkLogTriggered()
+void MHViewLog::onOkLogTriggered()
 {
     auto logPath = m_device->get_text();
     auto logLevel = m_level->get_active_row_number();
 
     ////////////////////////////////////////////////////////////////////////
-    /// Emit new log settings 
+    /// Emit new log settings
     m_logSetup.emit(logPath, logLevel);
 
     this->hide();

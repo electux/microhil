@@ -1,0 +1,10 @@
+<map id="MHViewSerial::mapping" name="MHViewSerial::mapping">
+<area shape="rect" id="node1" title="Map all widgets (signals and slots)" alt="" coords="5,209,184,235"/>
+<area shape="rect" id="node2" href="$d2/dd5/classMHViewSerial.html#a62588bc9c5744c4ba66112bc3d2b17a3" title="Slot for processing Cancel button (dismiss)" alt="" coords="232,5,451,47"/>
+<area shape="rect" id="node3" href="$d2/dd5/classMHViewSerial.html#a1c8f81161c117b434b7aa0a8e59e243e" title="Slot for processing Ok button (confirm)" alt="" coords="245,71,437,112"/>
+<area shape="rect" id="node4" href="$d2/dd5/classMHViewSerial.html#a4f024291aa019f58a03898b83f1dc19a" title="Slot for processing baud&#45;rate combobox." alt="" coords="238,136,445,177"/>
+<area shape="rect" id="node5" href="$d2/dd5/classMHViewSerial.html#a806a19516f0aabb69976670f93e0b717" title="Slot for processing data&#45;bits combobox." alt="" coords="239,201,444,243"/>
+<area shape="rect" id="node6" href="$d2/dd5/classMHViewSerial.html#a827e5a1acedd26cb9d466b9fd3e9307a" title="Slot for processing device file path input." alt="" coords="243,267,440,308"/>
+<area shape="rect" id="node7" href="$d2/dd5/classMHViewSerial.html#ad5ab6fd5e6299276bfe58635f7de71e6" title="Slot for processing parity combobox." alt="" coords="236,332,447,373"/>
+<area shape="rect" id="node8" href="$d2/dd5/classMHViewSerial.html#a32125d3637288a6237535473fff31e69" title="Slot for processing stop&#45;bits combobox." alt="" coords="240,397,443,439"/>
+</map>

@@ -1,4 +1,4 @@
 var microhil__controller_8h =
 [
-    [ "MicroHILController", "dd/d47/classMicroHILController.html", "dd/d47/classMicroHILController" ]
+    [ "MHController", "d1/d75/classMHController.html", "d1/d75/classMHController" ]
 ];

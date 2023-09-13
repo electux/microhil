@@ -1,4 +1,4 @@
 var microhil__view__about__abstract_8h =
 [
-    [ "AbMicroHILViewAbout", "d6/d7b/classAbMicroHILViewAbout.html", "d6/d7b/classAbMicroHILViewAbout" ]
+    [ "AbMHViewAbout", "d3/d19/classAbMHViewAbout.html", "d3/d19/classAbMHViewAbout" ]
 ];

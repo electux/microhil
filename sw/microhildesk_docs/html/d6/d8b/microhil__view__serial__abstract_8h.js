@@ -1,4 +1,4 @@
 var microhil__view__serial__abstract_8h =
 [
-    [ "AbMicroHILViewSerial", "df/dcb/classAbMicroHILViewSerial.html", "df/dcb/classAbMicroHILViewSerial" ]
+    [ "AbMHViewSerial", "d6/d87/classAbMHViewSerial.html", "d6/d87/classAbMHViewSerial" ]
 ];

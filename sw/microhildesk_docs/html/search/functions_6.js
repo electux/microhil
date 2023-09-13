@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hideabouttriggered_0',['hideAboutTriggered',['../d1/df8/classMicroHILViewAbout.html#a76a9e11ec216d6cf2a2eb011800eb8bb',1,'MicroHILViewAbout::hideAboutTriggered()'],['../d6/d7b/classAbMicroHILViewAbout.html#a44bcca76ac5b2d5c5d3bbdcdec2a898c',1,'AbMicroHILViewAbout::hideAboutTriggered()']]],
-  ['hidedialogtrigered_1',['hideDialogTrigered',['../da/dcd/classMicroHILViewDialog.html#aa0a79f6d976eb9ce228db5bf7a0ab2ac',1,'MicroHILViewDialog::hideDialogTrigered()'],['../d9/d02/classAbMicroHILViewDialog.html#afb15382936db3aec296c5331f2762684',1,'AbMicroHILViewDialog::hideDialogTrigered()']]]
+  ['hideabouttriggered_0',['hideAboutTriggered',['../d5/d7b/classMHViewAbout.html#a85e697512dc318b5d6ca709dfcfe6dec',1,'MHViewAbout::hideAboutTriggered()'],['../d3/d19/classAbMHViewAbout.html#adc82a5adefa55d5569782dd7da0791e3',1,'AbMHViewAbout::hideAboutTriggered()']]],
+  ['hidedialogtrigered_1',['hideDialogTrigered',['../dc/d3c/classMHViewDialog.html#a0326d6156b84d67d34050c7b8b2dc2a0',1,'MHViewDialog::hideDialogTrigered()'],['../d9/da7/classAbMHViewDialog.html#a4198f0fc50a919ffecf1b8a5ed8eeb83',1,'AbMHViewDialog::hideDialogTrigered()']]]
 ];

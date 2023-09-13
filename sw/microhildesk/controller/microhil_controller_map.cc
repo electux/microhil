@@ -18,29 +18,21 @@
  */
 #include "microhil_controller.h"
 
-void MicroHILController::mapping()
+void MHController::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Map log settings signal from configuration with controller slot
-    m_config->LogConfigLoaded().connect(
-        sigc::mem_fun(*this, &MicroHILController::onLogSettingsLoaded)
-    );
+    m_config->LogConfigLoaded().connect(sigc::mem_fun(*this, &MHController::onLogSettingsLoaded));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map serial settings signal from configuration with controller slot
-    m_config->SerialConfigLoaded().connect(
-        sigc::mem_fun(*this, &MicroHILController::onSerialSettingsLoaded)
-    );
+    m_config->SerialConfigLoaded().connect(sigc::mem_fun(*this, &MHController::onSerialSettingsLoaded));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map log view signal with controller slot
-    m_view->getLogSettings()->logSetupChanged().connect(
-        sigc::mem_fun(*this, &MicroHILController::onLogSettingsChanged)
-    );
+    m_view->getLogSettings()->logSetupChanged().connect(sigc::mem_fun(*this, &MHController::onLogSettingsChanged));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map serial view signal with controller slot
-    m_view->getSerialSettings()->serialSetupChanged().connect(
-        sigc::mem_fun(*this, &MicroHILController::onSerialSettingsChanged)
-    );
+    m_view->getSerialSettings()->serialSetupChanged().connect(sigc::mem_fun(*this, &MHController::onSerialSettingsChanged));
 }

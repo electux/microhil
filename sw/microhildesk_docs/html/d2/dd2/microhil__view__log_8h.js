@@ -1,4 +1,4 @@
 var microhil__view__log_8h =
 [
-    [ "MicroHILViewLog", "d4/dc6/classMicroHILViewLog.html", "d4/dc6/classMicroHILViewLog" ]
+    [ "MHViewLog", "d1/d14/classMHViewLog.html", "d1/d14/classMHViewLog" ]
 ];

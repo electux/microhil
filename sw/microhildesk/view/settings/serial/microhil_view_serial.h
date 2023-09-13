@@ -26,21 +26,19 @@
 #include "microhil_view_serial_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILViewSerial class declaration and definition 
-class MicroHILViewSerial: public AbMicroHILViewSerial, public Gtk::Dialog
+/// @brief MHViewSerial class declaration and definition
+class MHViewSerial : public AbMHViewSerial, public Gtk::Dialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewSerial constructor
+    /// @brief MHViewSerial constructor
     /// @param object base object instance
     /// @param ui buider instance
-    MicroHILViewSerial(
-        BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
-    );
+    MHViewSerial(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewSerial destructor
-    ~MicroHILViewSerial() = default;
+    /// @brief MHViewSerial destructor
+    ~MHViewSerial() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for serial settings

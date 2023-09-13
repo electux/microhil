@@ -23,7 +23,7 @@
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for serial port parity
-enum class ParityConfig: int
+enum class ParityConfig : int
 {
     MICROHIL_NONE_CONFIG = 0,
     MICROHIL_ODD_CONFIG = 1,
@@ -34,7 +34,7 @@ enum class ParityConfig: int
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for log levels
-enum class LogLevelConfig: int
+enum class LogLevelConfig : int
 {
     MICROHIL_INFO_CONFIG = 0,
     MICROHIL_WARNING_CONFIG = 1,
@@ -42,8 +42,8 @@ enum class LogLevelConfig: int
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILConfig class declaration and definition
-class AbMicroHILConfig
+/// @brief AbMHConfig class declaration and definition
+class AbMHConfig
 {
 public:
     ////////////////////////////////////////////////////////////////////////
@@ -55,8 +55,8 @@ public:
     using SigSerialConfig = sigc::signal<void(MHString, MHVecUInt)>;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILConfig destructor
-    virtual ~AbMicroHILConfig() = default;
+    /// @brief AbMHConfig destructor
+    virtual ~AbMHConfig() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for loaded log configuration
@@ -86,12 +86,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Set pre-validation state (existing configuration)
     /// @param configValid boolean indicator for existing configuration
-    void setPreValid(bool configValid) {m_configPreValidate = configValid;}
+    void setPreValid(bool configValid) { m_configPreValidate = configValid; }
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Check is pre-validation state (existing configuration)
     /// @return boolean status true for valid else false
-    bool isPreValid() const {return m_configPreValidate;};
+    bool isPreValid() const { return m_configPreValidate; };
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting serial device file path to configuration

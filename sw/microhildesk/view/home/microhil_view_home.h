@@ -32,21 +32,19 @@
 #include "microhil_view_home_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILViewHome class declaration and definition
-class MicroHILViewHome: public AbMicroHILViewHome, public Gtk::ApplicationWindow
+/// @brief MHViewHome class declaration and definition
+class MHViewHome : public AbMHViewHome, public Gtk::ApplicationWindow
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewHome constructor
+    /// @brief MHViewHome constructor
     /// @param object base object instance
     /// @param ui builder instance
-    MicroHILViewHome(
-        BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
-    );
+    MHViewHome(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewHome destructor
-    ~MicroHILViewHome() = default;
+    /// @brief MHViewHome destructor
+    ~MHViewHome() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (changed view)
@@ -153,6 +151,18 @@ private:
     void timerModeChannel(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert channel id to integer value
+    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @return integer value of channel id
+    int channelToInt(Channel id);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Convert channel control type to integer value
+    /// @param controlType (MICROHIL_TOGGLE_BUTTON | MICROHIL_TIMER_BUTTON)
+    /// @return integer value of channel control type
+    int controlTypeToInt(channelControlType controlType);
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
     MHRPtr<Gtk::Builder> m_ui{nullptr};
 
@@ -202,7 +212,7 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Visual status for channels
-    std::vector<MHRPtr<Gtk::ProgressBar>> m_stautsTimerChannels{}; 
+    std::vector<MHRPtr<Gtk::ProgressBar>> m_stautsTimerChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Adjustment setup for channel visual status

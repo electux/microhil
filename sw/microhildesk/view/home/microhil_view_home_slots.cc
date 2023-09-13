@@ -16,15 +16,14 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <iostream>
 #include "microhil_view_home.h"
 
-void MicroHILViewHome::onChannelChanged(Channel id)
+void MHViewHome::onChannelChanged(Channel id)
 {
-    auto ix = static_cast<int>(id);
+    auto ix = channelToInt(id);
     bool status = m_enableChannels[ix]->get_active();
 
-    if(status)
+    if (status)
     {
         enableChannel(id);
     }
@@ -36,86 +35,87 @@ void MicroHILViewHome::onChannelChanged(Channel id)
     m_channelEnabled.emit(id, status);
 }
 
-void MicroHILViewHome::onTypeSelected(Channel id)
+void MHViewHome::onTypeSelected(Channel id)
 {
-    auto ix = static_cast<int>(id);
+    auto ix = channelToInt(id);
 
-    if(m_enableChannels[ix]->get_active())
+    if (m_enableChannels[ix]->get_active())
     {
         int controlType = m_selectControlChannels[ix]->get_active_row_number();
-        switch(controlType)
+
+        if (controlTypeToInt(channelControlType::MICROHIL_TOGGLE_BUTTON) == 0)
         {
-            case static_cast<int>(channelControlType::MICROHIL_TOGGLE_BUTTON):
-                toggleModeChannel(id);
-                break;
-            case static_cast<int>(channelControlType::MICROHIL_TIMER_BUTTON):
-                timerModeChannel(id);
-                break;
+            toggleModeChannel(id);
+        }
+
+        if (controlTypeToInt(channelControlType::MICROHIL_TIMER_BUTTON) == 1)
+        {
+            timerModeChannel(id);
         }
 
         m_channelControlType.emit(id, controlType);
     }
 }
 
-void MicroHILViewHome::onToggled(Channel id)
+void MHViewHome::onToggled(Channel id)
 {
-    auto ix = static_cast<int>(id);
+    auto ix = channelToInt(id);
 
-    if(m_enableChannels[ix]->get_active())
+    if (m_enableChannels[ix]->get_active())
     {
         bool status = m_toggleChannels[ix]->get_active();
         m_channelToggled.emit(id, status);
     }
 }
 
-void MicroHILViewHome::onSpinTimerChanged(Channel id)
+void MHViewHome::onSpinTimerChanged(Channel id)
 {
-    auto ix = static_cast<int>(id);
+    auto ix = channelToInt(id);
 
-    if(m_enableChannels[ix]->get_active())
+    if (m_enableChannels[ix]->get_active())
     {
         int value = m_spinTimerChannels[ix]->get_value_as_int();
         m_channelSpinTimerChanged.emit(id, value);
     }
 }
 
-void MicroHILViewHome::onToggleTimerChanged(Channel id)
+void MHViewHome::onToggleTimerChanged(Channel id)
 {
-    auto ix = static_cast<int>(id);
+    auto ix = channelToInt(id);
 
-    if(m_enableChannels[ix]->get_active())
+    if (m_enableChannels[ix]->get_active())
     {
         bool status = m_toggleTimerChannels[ix]->get_active();
         m_channelTimerToggled.emit(id, status);
     }
 }
 
-void MicroHILViewHome::onConnectClicked()
+void MHViewHome::onConnectClicked()
 {
     m_actionViewTriggered.emit(ViewId::MICROHIL_CONNECT);
 }
 
-void MicroHILViewHome::onDisconnectClicked()
+void MHViewHome::onDisconnectClicked()
 {
     m_actionViewTriggered.emit(ViewId::MICROHIL_DISCONNECT);
 }
 
-void MicroHILViewHome::onQuitClicked()
+void MHViewHome::onQuitClicked()
 {
     m_actionViewTriggered.emit(ViewId::MICROHIL_QUIT);
 }
 
-void MicroHILViewHome::onSerialSettingsClicked()
+void MHViewHome::onSerialSettingsClicked()
 {
     m_actionViewTriggered.emit(ViewId::MICROHIL_SERIAL_SETTINGS);
 }
 
-void MicroHILViewHome::onLogSettingsClicked()
+void MHViewHome::onLogSettingsClicked()
 {
     m_actionViewTriggered.emit(ViewId::MICROHIL_LOG_SETTINGS);
 }
 
-void MicroHILViewHome::onAboutClicked()
+void MHViewHome::onAboutClicked()
 {
     m_actionViewTriggered.emit(ViewId::MICROHIL_ABOUT);
 }

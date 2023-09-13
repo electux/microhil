@@ -1,0 +1,4 @@
+<map id="MHConfig::setDataBits" name="MHConfig::setDataBits">
+<area shape="rect" id="node1" title="Setting data bits for serial port to configuration." alt="" coords="5,5,175,32"/>
+<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a13518377b9431debb826d6d2e8853b08" title="Convert combobox index to data bits (to config file)" alt="" coords="223,5,403,32"/>
+</map>

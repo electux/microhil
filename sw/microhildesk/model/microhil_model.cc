@@ -25,27 +25,27 @@ namespace
     constexpr const int kNumberOfChannels{8};
 }
 
-MicroHILModel::MicroHILModel()
+MHModel::MHModel()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Set all channels in model to OFF by default
-    for(int i = 0; i < kNumberOfChannels; i++)
+    for (int i = 0; i < kNumberOfChannels; i++)
     {
         m_channels.push_back(ChannelState::MICROHIL_OFF);
     }
 }
 
-void MicroHILModel::setChannel(const int id, const ChannelState state)
+void MHModel::setChannel(const int id, const ChannelState state)
 {
     m_channels[id] = state;
 }
 
-ChannelState MicroHILModel::getChannel(const int id) const
+ChannelState MHModel::getChannel(const int id) const
 {
     return m_channels[id];
 }
 
-bool MicroHILModel::isOnChannel(const int id) const
+bool MHModel::isOnChannel(const int id) const
 {
     return m_channels[id] == ChannelState::MICROHIL_ON;
 }

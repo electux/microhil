@@ -1,7 +1,0 @@
-<map id="MicroHILSerialCom::setup" name="MicroHILSerialCom::setup">
-<area shape="rect" id="node1" title="Setup the serial port parameters." alt="" coords="5,104,160,145"/>
-<area shape="rect" id="node2" href="$d5/dd0/classMicroHILSerialCom.html#a3eb8e29066181dce3cc8a1cd8b0626e1" title="Convert baud&#45;rate from unsigned int to scopped enumerator." alt="" coords="208,5,363,47"/>
-<area shape="rect" id="node3" href="$d5/dd0/classMicroHILSerialCom.html#a26bd26e1a82cf38aca7c6337235b31b8" title="Convert data&#45;bits from unsigned int to scopped enumerator." alt="" coords="208,71,363,112"/>
-<area shape="rect" id="node4" href="$d5/dd0/classMicroHILSerialCom.html#a6e8e93dcbfa6759e2de41969bea8a28a" title="Convert parity from unsigned int to scopped enumerator." alt="" coords="208,136,363,177"/>
-<area shape="rect" id="node5" href="$d5/dd0/classMicroHILSerialCom.html#a0464d9a8460ae6abebe44bafab683a44" title="Convert stop&#45;bits from unsigned int to scopped enumerator." alt="" coords="208,201,363,243"/>
-</map>

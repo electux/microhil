@@ -1,0 +1,10 @@
+<map id="MHViewHome::channelToInt" name="MHViewHome::channelToInt">
+<area shape="rect" id="node1" title="Convert channel id to integer value." alt="" coords="808,107,1013,133"/>
+<area shape="rect" id="node2" href="$dc/def/classMHViewHome.html#a05eaf4bcb838b6b4cd6296eb2a4c9d83" title="Slot for processing check buttons (enable/disable channel)" alt="" coords="504,5,753,32"/>
+<area shape="rect" id="node5" href="$dc/def/classMHViewHome.html#ad3dcf0efb37d0818226d57d9f13d963a" title="Slot for processing spin buttons (based on timer)" alt="" coords="497,56,760,83"/>
+<area shape="rect" id="node6" href="$dc/def/classMHViewHome.html#ad701959c37ca33f1d4cb06b55d043728" title="Slot for processing toggle buttons (turn on/turn off channel)" alt="" coords="534,107,723,133"/>
+<area shape="rect" id="node7" href="$dc/def/classMHViewHome.html#a4ac89c35046135b481ea3af5acb8f9a3" title="Slot for processing toggle buttons (turn on/turn off timer)" alt="" coords="519,158,738,199"/>
+<area shape="rect" id="node8" href="$dc/def/classMHViewHome.html#ade17405d5e1562f05acdbcd52cabee61" title="Slot for processing comboboxes (control type)" alt="" coords="516,224,741,251"/>
+<area shape="rect" id="node3" href="$dc/def/classMHViewHome.html#a4ccccb1d79d8b65d11371f6c897606ea" title="Map channels (signals and slots)" alt="" coords="269,107,449,133"/>
+<area shape="rect" id="node4" href="$dc/def/classMHViewHome.html#aa03cc4831aff517c835fc5e4f6705612" title="MHViewHome constructor." alt="" coords="5,107,221,133"/>
+</map>

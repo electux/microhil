@@ -1,4 +1,4 @@
 var microhil__model_8h =
 [
-    [ "MicroHILModel", "de/dce/classMicroHILModel.html", "de/dce/classMicroHILModel" ]
+    [ "MHModel", "da/d3e/classMHModel.html", "da/d3e/classMHModel" ]
 ];

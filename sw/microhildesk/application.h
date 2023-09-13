@@ -50,13 +50,13 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Model instance
-    MHSPtr<MicroHILModel> m_model{nullptr};
+    MHSPtr<MHModel> m_model{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief View instance
-    MHSPtr<MicroHILView> m_view{nullptr};
+    MHSPtr<MHView> m_view{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Controller instance
-    MHUPtr<MicroHILController> m_controller{nullptr};
+    MHUPtr<MHController> m_controller{nullptr};
 };

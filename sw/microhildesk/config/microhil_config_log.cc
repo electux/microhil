@@ -33,7 +33,7 @@ namespace
     constexpr const char kConfigLogFile[]{"file"};
 }
 
-void MicroHILConfig::setLogLevel(int level)
+void MHConfig::setLogLevel(int level)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Convert integer log level to string format
@@ -42,31 +42,29 @@ void MicroHILConfig::setLogLevel(int level)
     m_config.set_string(kConfigLogSection, kConfigLogLevel, logLevel);
 }
 
-MHString MicroHILConfig::getLogLevel()
+MHString MHConfig::getLogLevel()
 {
     return m_config.get_string(kConfigLogSection, kConfigLogLevel);
 }
 
-void MicroHILConfig::setLogPath(MHString path)
+void MHConfig::setLogPath(MHString path)
 {
     m_config.set_string(kConfigLogSection, kConfigLogFile, path);
 }
 
-MHString MicroHILConfig::getLogPath()
+MHString MHConfig::getLogPath()
 {
     return m_config.get_string(kConfigLogSection, kConfigLogFile);
 }
 
-bool MicroHILConfig::validateLogSettings()
+bool MHConfig::validateLogSettings()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Checking log configuration parameters from config file
-    auto configCheck = (
-        m_config.has_key(kConfigLogSection, kConfigLogLevel) &&
-        m_config.has_key(kConfigLogSection, kConfigLogFile)
-    );
+    auto configCheck = (m_config.has_key(kConfigLogSection, kConfigLogLevel) &&
+                        m_config.has_key(kConfigLogSection, kConfigLogFile));
 
-    if(!configCheck)
+    if (!configCheck)
     {
         ////////////////////////////////////////////////////////////////////
         /// Configuration file, log section corrupted

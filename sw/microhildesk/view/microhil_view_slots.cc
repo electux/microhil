@@ -18,20 +18,20 @@
  */
 #include "microhil_view.h"
 
-void MicroHILView::onViewChanged(ViewId id)
+void MHView::onViewChanged(ViewId id)
 {
     int viewId = static_cast<int>(id);
 
-    switch(viewId)
+    switch (viewId)
     {
-        case static_cast<int>(ViewId::MICROHIL_SERIAL_SETTINGS):
-            m_serial->show();
-            break;
-        case static_cast<int>(ViewId::MICROHIL_LOG_SETTINGS):
-            m_log->show();
-            break;
-        case static_cast<int>(ViewId::MICROHIL_ABOUT):
-            m_about->show();
-            break;
+    case static_cast<int>(ViewId::MICROHIL_SERIAL_SETTINGS):
+        m_serial->show();
+        break;
+    case static_cast<int>(ViewId::MICROHIL_LOG_SETTINGS):
+        m_log->show();
+        break;
+    case static_cast<int>(ViewId::MICROHIL_ABOUT):
+        m_about->show();
+        break;
     }
 }

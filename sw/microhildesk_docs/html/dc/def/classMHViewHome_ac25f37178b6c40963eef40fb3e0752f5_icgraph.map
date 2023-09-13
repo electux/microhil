@@ -1,0 +1,5 @@
+<map id="MHViewHome::onSerialSettingsClicked" name="MHViewHome::onSerialSettingsClicked">
+<area shape="rect" id="node1" title="Slot for processing Serial Settings meni&#45;item." alt="" coords="497,5,727,47"/>
+<area shape="rect" id="node2" href="$dc/def/classMHViewHome.html#a4ccccb1d79d8b65d11371f6c897606ea" title="Map channels (signals and slots)" alt="" coords="269,13,449,39"/>
+<area shape="rect" id="node3" href="$dc/def/classMHViewHome.html#aa03cc4831aff517c835fc5e4f6705612" title="MHViewHome constructor." alt="" coords="5,13,221,39"/>
+</map>

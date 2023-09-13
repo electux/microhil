@@ -1,5 +1,0 @@
-<map id="MicroHILViewDialog::onHideDialogTriggered" name="MicroHILViewDialog::onHideDialogTriggered">
-<area shape="rect" id="node1" title="Slot for processing Close button (self hide Dialog)" alt="" coords="413,5,592,47"/>
-<area shape="rect" id="node2" href="$da/dcd/classMicroHILViewDialog.html#a0cba4ebf5a1ceb331b95853d928eec13" title="Map Close button (signal and slot)" alt="" coords="213,5,365,47"/>
-<area shape="rect" id="node3" href="$da/dcd/classMicroHILViewDialog.html#a961efe7b3db7edf0098295785d1e4896" title="MicroHILViewDialog constructor." alt="" coords="5,5,165,47"/>
-</map>

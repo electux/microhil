@@ -25,21 +25,19 @@
 #include "microhil_view_about_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILViewAbout class declaration and definition 
-class MicroHILViewAbout: public AbMicroHILViewAbout, public Gtk::AboutDialog
+/// @brief MHViewAbout class declaration and definition 
+class MHViewAbout: public AbMHViewAbout, public Gtk::AboutDialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewAbout constructor
+    /// @brief MHViewAbout constructor
     /// @param object base object type
     /// @param ui builder instance
-    MicroHILViewAbout(
-        BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
-    );
+    MHViewAbout(BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILViewAbout destructor
-    ~MicroHILViewAbout() = default;
+    /// @brief MHViewAbout destructor
+    ~MHViewAbout() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button

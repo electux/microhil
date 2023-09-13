@@ -18,11 +18,9 @@
  */
 #include "microhil_view_about.h"
 
-void MicroHILViewAbout::mapping()
+void MHViewAbout::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Map Ok button (signal and slot)
-    m_ok->signal_clicked().connect(
-        sigc::mem_fun(*this, &MicroHILViewAbout::onHideAboutTriggered)
-    );
+    m_ok->signal_clicked().connect(sigc::mem_fun(*this, &MHViewAbout::onHideAboutTriggered));
 }

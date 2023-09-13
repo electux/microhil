@@ -22,17 +22,17 @@
 #include "microhil_model_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILModel class declaration and definition 
-class MicroHILModel: public AbMicroHILModel
+/// @brief MHModel class declaration and definition
+class MHModel : public AbMHModel
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILModel constructor
-    MicroHILModel();
+    /// @brief MHModel constructor
+    MHModel();
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILModel destructor
-    ~MicroHILModel() = default;
+    /// @brief MHModel destructor
+    ~MHModel() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Set channel #0 state (ON/OFF)

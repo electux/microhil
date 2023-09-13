@@ -34,52 +34,52 @@ namespace
     constexpr const char kErrorLogLevel[]{" ERROR "};
 }
 
-MicroHILLog::MicroHILLog(): m_fileOpened{false} {}
+MHLog::MHLog() : m_fileOpened{false} {}
 
-MicroHILLog::~MicroHILLog()
+MHLog::~MHLog()
 {
-    if(m_logFile.is_open() && m_fileOpened)
+    if (m_logFile.is_open() && m_fileOpened)
     {
         m_logFile.close();
         m_fileOpened = false;
     }
 }
 
-void MicroHILLog::setFilePath(const MHString logFilePath)
+void MHLog::setFilePath(const MHString logFilePath)
 {
     m_logFilePath = logFilePath;
 }
 
-MHString MicroHILLog::getFilePath() const
+MHString MHLog::getFilePath() const
 {
     return m_logFilePath;
 }
 
-void MicroHILLog::setLogLevel(const MHString level)
+void MHLog::setLogLevel(const MHString level)
 {
     auto logLevelPrepared = toLogType(level);
 
     m_logLevel = logLevelPrepared;
 }
 
-void MicroHILLog::setLogLevel(const int level)
+void MHLog::setLogLevel(const int level)
 {
     m_logLevel = static_cast<LogLevel>(level);
 }
 
-void MicroHILLog::setLogLevel(const LogLevel level)
+void MHLog::setLogLevel(const LogLevel level)
 {
     m_logLevel = level;
 }
 
-LogLevel MicroHILLog::getLogLevel() const
+LogLevel MHLog::getLogLevel() const
 {
     return m_logLevel;
 }
 
-bool MicroHILLog::open()
+bool MHLog::open()
 {
-    if(!m_logFile.is_open() && !m_fileOpened)
+    if (!m_logFile.is_open() && !m_fileOpened)
     {
         m_logFile.open(m_logFilePath, ios::out);
         m_fileOpened = true;
@@ -88,21 +88,21 @@ bool MicroHILLog::open()
     return m_fileOpened;
 }
 
-void MicroHILLog::write(const MHString message, const LogLevel level)
+void MHLog::write(const MHString message, const LogLevel level)
 {
     const auto currentTime = getCurrentDateTime();
     const auto prefixLogLevel = toStringLogType(level);
     MHString logMessage = currentTime + prefixLogLevel + message;
 
-    if(m_logFile.is_open() && m_fileOpened)
+    if (m_logFile.is_open() && m_fileOpened)
     {
         m_logFile << logMessage;
     }
 }
 
-bool MicroHILLog::close()
+bool MHLog::close()
 {
-    if(m_logFile.is_open() && m_fileOpened)
+    if (m_logFile.is_open() && m_fileOpened)
     {
         m_logFile.close();
         m_fileOpened = false;
@@ -111,38 +111,41 @@ bool MicroHILLog::close()
     return !m_fileOpened;
 }
 
-MHString MicroHILLog::getCurrentDateTime() const
+MHString MHLog::getCurrentDateTime() const
 {
     time_t rawTime;
     char buffer[80];
 
     time(&rawTime);
-    const struct tm* timeInfo = localtime(&rawTime);
+    const struct tm *timeInfo = localtime(&rawTime);
     strftime(buffer, 80, "%d-%m-%Y %I:%M:%S", timeInfo);
 
     return MHString(buffer);
 }
 
-MHString MicroHILLog::toStringLogType(const LogLevel level) const
+MHString MHLog::toStringLogType(const LogLevel level) const
 {
-    switch(level)
+    switch (level)
     {
-        case LogLevel::MICROHIL_INFO: return kInfoLogLevel;
-        case LogLevel::MICROHIL_WARNING: return kWarningLogLevel;
-        case LogLevel::MICROHIL_ERROR: return kErrorLogLevel;
+    case LogLevel::MICROHIL_INFO:
+        return kInfoLogLevel;
+    case LogLevel::MICROHIL_WARNING:
+        return kWarningLogLevel;
+    case LogLevel::MICROHIL_ERROR:
+        return kErrorLogLevel;
     }
 
     return kInfoLogLevel;
 }
 
-LogLevel MicroHILLog::toLogType(const MHString level) const
+LogLevel MHLog::toLogType(const MHString level) const
 {
-    if(level == kWarningLogLevel)
+    if (level == kWarningLogLevel)
     {
         return LogLevel::MICROHIL_WARNING;
     }
 
-    if(level == kErrorLogLevel)
+    if (level == kErrorLogLevel)
     {
         return LogLevel::MICROHIL_ERROR;
     }

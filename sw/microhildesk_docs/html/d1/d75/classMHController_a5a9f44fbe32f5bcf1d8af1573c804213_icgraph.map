@@ -1,0 +1,5 @@
+<map id="MHController::onSerialSettingsChanged" name="MHController::onSerialSettingsChanged">
+<area shape="rect" id="node1" title="Slot for processing serial settings changes." alt="" coords="477,5,700,47"/>
+<area shape="rect" id="node2" href="$d1/d75/classMHController.html#a3f71ae3e7095f9df502967aea370b2c4" title="Mapping views and backend (signals and slots)" alt="" coords="256,13,429,39"/>
+<area shape="rect" id="node3" href="$d1/d75/classMHController.html#ad150b3d16074832420275e900e2da0fb" title="MHController constructor." alt="" coords="5,13,208,39"/>
+</map>

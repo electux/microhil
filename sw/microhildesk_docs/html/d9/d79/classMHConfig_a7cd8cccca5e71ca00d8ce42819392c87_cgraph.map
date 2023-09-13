@@ -1,0 +1,6 @@
+<map id="MHConfig::validate" name="MHConfig::validate">
+<area shape="rect" id="node1" title="Validate configuration (existing all expected parameters)" alt="" coords="5,56,152,83"/>
+<area shape="rect" id="node2" href="$d7/db3/classAbMHConfig.html#a839fa8fbba7ba29e960eff7664b45a62" title="Check is pre&#45;validation state (existing configuration)" alt="" coords="224,5,399,32"/>
+<area shape="rect" id="node3" href="$d9/d79/classMHConfig.html#a48accce3d9a67670a234ba8a3f3077be" title="Validate log configuration (existing expected parameters)" alt="" coords="200,56,423,83"/>
+<area shape="rect" id="node4" href="$d9/d79/classMHConfig.html#a80e18ab1a54fc412c3415f87f83b336d" title="Validate serial configuration (existing expected parameters)" alt="" coords="220,107,403,149"/>
+</map>

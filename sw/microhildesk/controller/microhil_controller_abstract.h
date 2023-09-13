@@ -19,13 +19,13 @@
 #pragma once
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMicroHILController class declaration and definition 
-class AbMicroHILController
+/// @brief AbMHController class declaration and definition
+class AbMHController
 {
 public:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief AbMicroHILController destructor
-    virtual ~AbMicroHILController() = default;
+    /// @brief AbMHController destructor
+    virtual ~AbMHController() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Enable controller (enable/disable communication)

@@ -21,10 +21,10 @@
 #include <libserial/SerialPort.h>
 #include "microhil_com_abstract.h"
 
-using LibSerial::SerialPort;
 using LibSerial::BaudRate;
 using LibSerial::CharacterSize;
 using LibSerial::Parity;
+using LibSerial::SerialPort;
 using LibSerial::StopBits;
 
 ////////////////////////////////////////////////////////////////////////////
@@ -38,17 +38,17 @@ using MHSerialParams = struct
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MicroHILSerialCom class declaration and definition
-class MicroHILSerialCom: public AbMicroHILCom
+/// @brief MHSerialCom class declaration and definition
+class MHSerialCom : public AbMHCom
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MicroHILCom constructor
-    MicroHILSerialCom();
+    MHSerialCom();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief MicroHILCom destructor
-    ~MicroHILSerialCom();
+    ~MHSerialCom();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Open the serial communication channel
@@ -59,49 +59,49 @@ public:
     void close() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert baud-rate from scopped enumerator to unsigned int 
+    /// @brief Convert baud-rate from scopped enumerator to unsigned int
     /// @param baudRate in scoped enumerator value
     /// @return unsigned integer format of baud-rate
     unsigned int baudRateToUInt(const BaudRate baudRate);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert baud-rate from unsigned int to scopped enumerator 
+    /// @brief Convert baud-rate from unsigned int to scopped enumerator
     /// @param baudRate in unsigned integer value
     /// @return scoped enumerator format of baud-rate
     BaudRate uintToBaudRate(const unsigned int);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert data-bits from scopped enumerator to unsigned int 
+    /// @brief Convert data-bits from scopped enumerator to unsigned int
     /// @param dataBits in scoped enumerator value
     /// @return unsigned integer format of data-bits
     unsigned int dataBitsToUInt(const CharacterSize dataBits);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert data-bits from unsigned int to scopped enumerator 
+    /// @brief Convert data-bits from unsigned int to scopped enumerator
     /// @param dataBits in unsigned integer format
     /// @return scoped enumerator format of data-bits
     CharacterSize uintToDataBits(const unsigned int dataBits);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert parity from scopped enumerator to unsigned int 
+    /// @brief Convert parity from scopped enumerator to unsigned int
     /// @param parity in scoped enumerator value
     /// @return unsigned integer format of parity
     unsigned int parityToUInt(const Parity parity);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert parity from unsigned int to scopped enumerator 
+    /// @brief Convert parity from unsigned int to scopped enumerator
     /// @param parity in unsigned integer format
     /// @return scoped enumerator format of parity
     Parity uintToParity(const unsigned int parity);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert stop-bits from scopped enumerator to unsigned int 
+    /// @brief Convert stop-bits from scopped enumerator to unsigned int
     /// @param stopBits in scoped enumerator value
     /// @return unsigned integer format of stop-bits
     unsigned int stopBitsToUInt(const StopBits stopBits);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert stop-bits from unsigned int to scopped enumerator 
+    /// @brief Convert stop-bits from unsigned int to scopped enumerator
     /// @param stopBits in unsigned integer format
     /// @return scoped enumerator format of stop-bits
     StopBits uintToStopBits(const unsigned int stopBits);
@@ -123,12 +123,12 @@ public:
     /// @param data buffer to be placed to after reading the serial port
     /// @param len length of data to read before returning
     /// @param timeout timeout period in miliseconds
-    void read(MHVecByte& data, size_t len, size_t timeout) final;
+    void read(MHVecByte &data, size_t len, size_t timeout) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Write data to the serial communication channel
     /// @param data to be written to the serial port
-    void write(MHVecByte& data) final;
+    void write(MHVecByte &data) final;
 
 private:
     ////////////////////////////////////////////////////////////////////////

@@ -23,7 +23,7 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// @brief Entry id
     constexpr const char kLogDevicePathId[]{"LogFilePathInput"};
-    
+
     ////////////////////////////////////////////////////////////////////////
     /// @brief Combobox id
     constexpr const char kLogLevelSelectorId[]{"LogLevelSelector"};
@@ -37,33 +37,23 @@ namespace
     constexpr const char kOkButtonId[]{"LogOk"};
 }
 
-MicroHILViewLog::MicroHILViewLog(
-    BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui
-): Gtk::Dialog(object), m_ui{ui}
+MHViewLog::MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui) : Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Bind Log file path entry
-    m_device = MHRPtr<Gtk::Entry>::cast_dynamic(
-        m_ui->get_object(kLogDevicePathId)
-    );
+    m_device = MHRPtr<Gtk::Entry>::cast_dynamic(m_ui->get_object(kLogDevicePathId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Log level combobox
-    m_level = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
-        m_ui->get_object(kLogLevelSelectorId)
-    );
+    m_level = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(m_ui->get_object(kLogLevelSelectorId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Cancel button
-    m_cancel = MHRPtr<Gtk::Button>::cast_dynamic(
-        m_ui->get_object(kCancelButtonId)
-    );
+    m_cancel = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kCancelButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Bind Ok button
-    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(
-        m_ui->get_object(kOkButtonId)
-    );
+    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Map all widgets (signals and slots)
@@ -71,10 +61,10 @@ MicroHILViewLog::MicroHILViewLog(
 
     ////////////////////////////////////////////////////////////////////////
     /// Hide Log Settings by default
-    this->hide(); 
+    this->hide();
 }
 
-void MicroHILViewLog::logSettingsLoaded(MHString filePath, int logLevel)
+void MHViewLog::logSettingsLoaded(MHString filePath, int logLevel)
 {
     m_device->set_text(filePath);
     m_level->set_active(logLevel);

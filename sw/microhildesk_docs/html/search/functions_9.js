@@ -1,18 +1,18 @@
 var searchData=
 [
   ['main_0',['main',['../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cc']]],
-  ['mapping_1',['mapping',['../d1/df8/classMicroHILViewAbout.html#a1916cb6515d36133bd4f9f5fc68be2e0',1,'MicroHILViewAbout::mapping()'],['../da/dcd/classMicroHILViewDialog.html#a0cba4ebf5a1ceb331b95853d928eec13',1,'MicroHILViewDialog::mapping()'],['../df/da5/classMicroHILViewHome.html#a95b95333e5690868abe65075d1f41c20',1,'MicroHILViewHome::mapping()'],['../d8/dee/classMicroHILView.html#ab19711c44af35d0969e226a9f4cad99e',1,'MicroHILView::mapping()'],['../d4/dc6/classMicroHILViewLog.html#a00b8e12d4c3b5e1faf03cdafa685dcc9',1,'MicroHILViewLog::mapping()'],['../dd/dde/classMicroHILViewSerial.html#ac3180885e01d13d32a6305cb4af6feb7',1,'MicroHILViewSerial::mapping()'],['../dd/d47/classMicroHILController.html#a3ac3ba533de57c106246a7067a870ac8',1,'MicroHILController::mapping()']]],
-  ['mhmakesptr_2',['MHmakeSPtr',['../db/db9/microhil__types_8h.html#aa2d30084857632ec18a746f2b6ba8796',1,'microhil_types.h']]],
-  ['mhmakeuptr_3',['MHmakeUPtr',['../db/db9/microhil__types_8h.html#a0f965789a5c32b4f273abd7637aa5fee',1,'microhil_types.h']]],
-  ['microhilconfig_4',['MicroHILConfig',['../d0/df4/classMicroHILConfig.html#a306bb65530ec104babc1832209756664',1,'MicroHILConfig']]],
-  ['microhilcontroller_5',['MicroHILController',['../dd/d47/classMicroHILController.html#aa30e12b7c2a966413e0cf593017f2893',1,'MicroHILController']]],
-  ['microhillog_6',['MicroHILLog',['../d1/de3/classMicroHILLog.html#aba0d4eda72475fcc5f148c686b497edb',1,'MicroHILLog']]],
-  ['microhilmodel_7',['MicroHILModel',['../de/dce/classMicroHILModel.html#a5aa7958d760aab08bb1ca35f0a5e1f9a',1,'MicroHILModel']]],
-  ['microhilserialcom_8',['MicroHILSerialCom',['../d5/dd0/classMicroHILSerialCom.html#a620a05edf19214528201747c6507bc08',1,'MicroHILSerialCom']]],
-  ['microhilview_9',['MicroHILView',['../d8/dee/classMicroHILView.html#a26053434361a0f1082770a5cae998e96',1,'MicroHILView']]],
-  ['microhilviewabout_10',['MicroHILViewAbout',['../d1/df8/classMicroHILViewAbout.html#a606ecc41b5f8f048fa72d79c4c126d88',1,'MicroHILViewAbout']]],
-  ['microhilviewdialog_11',['MicroHILViewDialog',['../da/dcd/classMicroHILViewDialog.html#a961efe7b3db7edf0098295785d1e4896',1,'MicroHILViewDialog']]],
-  ['microhilviewhome_12',['MicroHILViewHome',['../df/da5/classMicroHILViewHome.html#a2af02c3861d8746033c79c72579f201b',1,'MicroHILViewHome']]],
-  ['microhilviewlog_13',['MicroHILViewLog',['../d4/dc6/classMicroHILViewLog.html#a59ea4ad3bfa3df105cbb0587e817543b',1,'MicroHILViewLog']]],
-  ['microhilviewserial_14',['MicroHILViewSerial',['../dd/dde/classMicroHILViewSerial.html#a376ce9b0be837e7f576e37fe68c4e5a2',1,'MicroHILViewSerial']]]
+  ['mapping_1',['mapping',['../d5/d7b/classMHViewAbout.html#afa6b5ef9b097a38221a9fa51b42910a6',1,'MHViewAbout::mapping()'],['../dc/d3c/classMHViewDialog.html#ae2e9e085b92b2ae74d39355037101dac',1,'MHViewDialog::mapping()'],['../dc/def/classMHViewHome.html#a4ccccb1d79d8b65d11371f6c897606ea',1,'MHViewHome::mapping()'],['../d1/dfc/classMHView.html#a3215b6f346bef469124673887a15bb42',1,'MHView::mapping()'],['../d1/d14/classMHViewLog.html#aefa7c638ba5f26cf2a3d1389194200b6',1,'MHViewLog::mapping()'],['../d2/dd5/classMHViewSerial.html#a427a482ecec15d3eb92e4efe06b51398',1,'MHViewSerial::mapping()'],['../d1/d75/classMHController.html#a3f71ae3e7095f9df502967aea370b2c4',1,'MHController::mapping()']]],
+  ['mhconfig_2',['MHConfig',['../d9/d79/classMHConfig.html#a21227a66402be020ed5c0c45a200ba33',1,'MHConfig']]],
+  ['mhcontroller_3',['MHController',['../d1/d75/classMHController.html#ad150b3d16074832420275e900e2da0fb',1,'MHController']]],
+  ['mhlog_4',['MHLog',['../d1/d7c/classMHLog.html#a10b0c31d5d39c1a7b531dd96e8e7d1b6',1,'MHLog']]],
+  ['mhmakesptr_5',['MHmakeSPtr',['../db/db9/microhil__types_8h.html#aa2d30084857632ec18a746f2b6ba8796',1,'microhil_types.h']]],
+  ['mhmakeuptr_6',['MHmakeUPtr',['../db/db9/microhil__types_8h.html#a0f965789a5c32b4f273abd7637aa5fee',1,'microhil_types.h']]],
+  ['mhmodel_7',['MHModel',['../da/d3e/classMHModel.html#a6c0f221b3a7af2ea473120047fff4503',1,'MHModel']]],
+  ['mhserialcom_8',['MHSerialCom',['../d1/dfa/classMHSerialCom.html#a4534dd62bb96d7baa0cdbd6758a9c117',1,'MHSerialCom']]],
+  ['mhview_9',['MHView',['../d1/dfc/classMHView.html#a5288fc0383c58f06d80eb402890397d4',1,'MHView']]],
+  ['mhviewabout_10',['MHViewAbout',['../d5/d7b/classMHViewAbout.html#aa7a9b550256d407fe72833b0a1f558e9',1,'MHViewAbout']]],
+  ['mhviewdialog_11',['MHViewDialog',['../dc/d3c/classMHViewDialog.html#ac8226e28456c385bad61695318082504',1,'MHViewDialog']]],
+  ['mhviewhome_12',['MHViewHome',['../dc/def/classMHViewHome.html#aa03cc4831aff517c835fc5e4f6705612',1,'MHViewHome']]],
+  ['mhviewlog_13',['MHViewLog',['../d1/d14/classMHViewLog.html#aced08a94f10af65fa22d586d21600890',1,'MHViewLog']]],
+  ['mhviewserial_14',['MHViewSerial',['../d2/dd5/classMHViewSerial.html#a9045966e47a5a3edbba4b0874b99eb02',1,'MHViewSerial']]]
 ];
