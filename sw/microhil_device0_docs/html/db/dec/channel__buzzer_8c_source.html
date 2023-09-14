@@ -105,29 +105,31 @@ $(document).ready(function(){initNavTree('db/dec/channel__buzzer_8c_source.html'
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * You should have received a copy of the GNU General Public License along</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * with this program_name. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d7b/channel_8h.html">channel.h</a>&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d5/d7b/channel_8h.html#a87cbe1a7290a456849d341b77d38c9df">   24</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df">microhil_init_buzzer</a>()</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">bool</span> status = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_define" href="../../d5/d7b/channel_8h.html#af97c040baccc5a803205a07e85e64bdb">MICROHIL_BUZZER</a>, GPIO_OUT);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    status = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="../../df/d6a/io__config_8h.html">io_config.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d7b/channel_8h.html">channel.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d5/d7b/channel_8h.html#a87cbe1a7290a456849d341b77d38c9df">   25</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df">microhil_init_buzzer</a>()</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">bool</span> status = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_define" href="../../d5/d7b/channel_8h.html#af97c040baccc5a803205a07e85e64bdb">MICROHIL_BUZZER</a>, GPIO_OUT);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    status = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
 <div class="ttc" id="achannel_8h_html"><div class="ttname"><a href="../../d5/d7b/channel_8h.html">channel.h</a></div></div>
-<div class="ttc" id="achannel_8h_html_af97c040baccc5a803205a07e85e64bdb"><div class="ttname"><a href="../../d5/d7b/channel_8h.html#af97c040baccc5a803205a07e85e64bdb">MICROHIL_BUZZER</a></div><div class="ttdeci">#define MICROHIL_BUZZER</div><div class="ttdoc">GPIO port pin number for buzzer.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/channel_8h_source.html#l00061">channel.h:61</a></div></div>
-<div class="ttc" id="achannel__buzzer_8c_html_a87cbe1a7290a456849d341b77d38c9df"><div class="ttname"><a href="../../db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df">microhil_init_buzzer</a></div><div class="ttdeci">bool microhil_init_buzzer()</div><div class="ttdoc">Initializatio of buzzer channel.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dec/channel__buzzer_8c_source.html#l00024">channel_buzzer.c:24</a></div></div>
+<div class="ttc" id="achannel_8h_html_af97c040baccc5a803205a07e85e64bdb"><div class="ttname"><a href="../../d5/d7b/channel_8h.html#af97c040baccc5a803205a07e85e64bdb">MICROHIL_BUZZER</a></div><div class="ttdeci">#define MICROHIL_BUZZER</div><div class="ttdoc">GPIO port pin number for buzzer.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/channel_8h_source.html#l00057">channel.h:57</a></div></div>
+<div class="ttc" id="achannel__buzzer_8c_html_a87cbe1a7290a456849d341b77d38c9df"><div class="ttname"><a href="../../db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df">microhil_init_buzzer</a></div><div class="ttdeci">bool microhil_init_buzzer()</div><div class="ttdoc">Initializatio of buzzer channel.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dec/channel__buzzer_8c_source.html#l00025">channel_buzzer.c:25</a></div></div>
 <div class="ttc" id="aio__config_8c_html_aec63a111fed6b8b5e445df0a4bf61ae9"><div class="ttname"><a href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a></div><div class="ttdeci">void microhil_gpio_mode(uint16_t pin, uint16_t mode)</div><div class="ttdoc">Setting port pin configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00030">io_config.c:30</a></div></div>
+<div class="ttc" id="aio__config_8h_html"><div class="ttname"><a href="../../df/d6a/io__config_8h.html">io_config.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bbca32ae125625ab0d7554a76a48380c.html">channel</a></li><li class="navelem"><a class="el" href="../../db/dec/channel__buzzer_8c.html">channel_buzzer.c</a></li>
-    <li class="footer">Generated on Mon Sep 11 2023 20:58:31 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Sep 14 2023 04:56:05 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -107,25 +107,23 @@ $(document).ready(function(){initNavTree('df/d6a/io__config_8h_source.html','../
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;pico/stdlib.h&quot;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;hardware/spi.h&quot;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;stdio.h&quot;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;hardware/i2c.h&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;hardware/pwm.h&quot;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(uint16_t pin, uint16_t mode);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#a2e0436b2f6452aaa7f00da9fd3292f2d">microhil_digital_write</a>(uint16_t pin, <span class="keywordtype">bool</span> value);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>uint8_t <a class="code hl_function" href="../../df/d6a/io__config_8h.html#af91ef9c739725b4065fc59972780c45e">microhil_digital_read</a>(uint16_t pin);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#a8ef44932b760b841af69bd38bc66ffe0">microhil_delay_ms</a>(uint32_t ms);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#ae08dc066d13c0d0459fd04cade80dbd4">microhil_delay_us</a>(uint32_t us);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4">microhil_init_pwm</a>(uint gpio, <span class="keyword">enum</span> pwm_chan channel);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#aded097c9c71f867ee67e7cf9d3f980ef">microhil_write_pwm</a>(<span class="keyword">enum</span> pwm_chan channel, uint8_t value);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;stdio.h&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;pico/stdlib.h&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;hardware/pwm.h&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(uint16_t pin, uint16_t mode);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#a2e0436b2f6452aaa7f00da9fd3292f2d">microhil_digital_write</a>(uint16_t pin, <span class="keywordtype">bool</span> value);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>uint8_t <a class="code hl_function" href="../../df/d6a/io__config_8h.html#af91ef9c739725b4065fc59972780c45e">microhil_digital_read</a>(uint16_t pin);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#a8ef44932b760b841af69bd38bc66ffe0">microhil_delay_ms</a>(uint32_t ms);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#ae08dc066d13c0d0459fd04cade80dbd4">microhil_delay_us</a>(uint32_t us);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4">microhil_init_pwm</a>(uint gpio, <span class="keyword">enum</span> pwm_chan channel);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d6a/io__config_8h.html#aded097c9c71f867ee67e7cf9d3f980ef">microhil_write_pwm</a>(<span class="keyword">enum</span> pwm_chan channel, uint8_t value);</div>
 <div class="ttc" id="aio__config_8h_html_a2e0436b2f6452aaa7f00da9fd3292f2d"><div class="ttname"><a href="../../df/d6a/io__config_8h.html#a2e0436b2f6452aaa7f00da9fd3292f2d">microhil_digital_write</a></div><div class="ttdeci">void microhil_digital_write(uint16_t pin, bool value)</div><div class="ttdoc">Drive GPIO pin.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00048">io_config.c:48</a></div></div>
 <div class="ttc" id="aio__config_8h_html_a8ef44932b760b841af69bd38bc66ffe0"><div class="ttname"><a href="../../df/d6a/io__config_8h.html#a8ef44932b760b841af69bd38bc66ffe0">microhil_delay_ms</a></div><div class="ttdeci">void microhil_delay_ms(uint32_t ms)</div><div class="ttdoc">Delay in miliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00065">io_config.c:65</a></div></div>
 <div class="ttc" id="aio__config_8h_html_a9ea5c0e25cbbf50dd5dc2c8515a27ce4"><div class="ttname"><a href="../../df/d6a/io__config_8h.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4">microhil_init_pwm</a></div><div class="ttdeci">bool microhil_init_pwm(uint gpio, enum pwm_chan channel)</div><div class="ttdoc">Initialization of PWM channel.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00083">io_config.c:83</a></div></div>
@@ -139,7 +137,7 @@ $(document).ready(function(){initNavTree('df/d6a/io__config_8h_source.html','../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_6c654ab24bac11ed71d410c3b57fea0f.html">io_config</a></li><li class="navelem"><a class="el" href="../../df/d6a/io__config_8h.html">io_config.h</a></li>
-    <li class="footer">Generated on Mon Sep 11 2023 20:58:31 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Sep 14 2023 04:56:05 for microhil-device0 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

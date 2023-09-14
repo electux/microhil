@@ -7,6 +7,8 @@
 
 # Setup CMake version and RPI Pico SDK import
 cmake_minimum_required(VERSION 3.12)
+
+# Pico SDK import setup
 include(pico_sdk_import.cmake)
 
 # Setup project info
@@ -15,6 +17,7 @@ set(CMAKE_PROJECT_VERSION 1.0.0)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 set(PRO_PATH ${PROJECT_SOURCE_DIR})
+set(PICO_BOARD "pico")
 
 # Initialize the SDK
 pico_sdk_init()

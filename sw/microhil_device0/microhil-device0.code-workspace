@@ -26,7 +26,8 @@
 			"channel.h": "c",
 			"channel_error.h": "c",
 			"channel_info.h": "c",
-			"io_config_error.h": "c"
+			"io_config_error.h": "c",
+			"pwm.h": "c"
 		}
 	}
 }

@@ -16,6 +16,8 @@
  * You should have received a copy of the GNU General Public License along
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
+#include "hardware/pwm.h"
+#include "io_config.h"
 #include "channel_info.h"
 #include "channel_error.h"
 #include "channel.h"

@@ -20,7 +20,7 @@
 
 #if !PICO_NO_HARDWARE
 #include "hardware/pio.h"
-#include "io_config.h"
+#include "hardware/clocks.h"
 #endif
 
 ////////////////////////////////////////////////////////////////////////////
@@ -81,8 +81,6 @@ static inline pio_sm_config ws2812_program_get_default_config(uint offset)
 
     return config;
 }
-
-#include "hardware/clocks.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief WS2812 init structure
@@ -178,8 +176,6 @@ static inline pio_sm_config ws2812_parallel_program_get_default_config(
 
     return config;
 }
-
-#include "hardware/clocks.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief WS2812 parallel init structure
