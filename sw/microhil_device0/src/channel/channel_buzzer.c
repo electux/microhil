@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
+#include "io_config.h"
 #include "channel.h"
 
 ////////////////////////////////////////////////////////////////////////////

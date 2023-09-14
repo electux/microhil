@@ -1,14 +1,9 @@
 <map id="src/channel/channel.h" name="src/channel/channel.h">
-<area shape="rect" id="node1" title=" " alt="" coords="249,5,412,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,229,72,256"/>
-<area shape="rect" id="node3" title=" " alt="" coords="70,80,141,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="144,229,245,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="217,80,343,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="226,155,345,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="485,155,625,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="591,229,721,256"/>
-<area shape="rect" id="node9" href="$d6/d69/ws2812_8pio_8h.html" title=" " alt="" coords="419,80,527,107"/>
-<area shape="rect" id="node10" href="$df/d6a/io__config_8h.html" title=" " alt="" coords="369,155,461,181"/>
-<area shape="rect" id="node11" title=" " alt="" coords="437,229,555,256"/>
-<area shape="rect" id="node12" title=" " alt="" coords="294,229,413,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="105,5,268,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,72,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="97,80,167,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="192,80,293,107"/>
+<area shape="rect" id="node5" href="$d6/d69/ws2812_8pio_8h.html" title=" " alt="" coords="318,80,426,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="235,155,354,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="378,155,518,181"/>
 </map>
