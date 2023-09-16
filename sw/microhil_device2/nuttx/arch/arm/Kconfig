@@ -1,0 +1,406 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+if ARCH_ARM
+comment "ARM Options"
+
+choice
+	prompt "ARM Toolchain Selection"
+	default ARM_TOOLCHAIN_GNU_EABI
+
+config ARM_TOOLCHAIN_IAR
+	bool "IAR ANSI C/C++ toolchain"
+	select CYGWIN_WINTOOL if WINDOWS_CYGWIN
+
+config ARM_TOOLCHAIN_BUILDROOT
+	bool "Buildroot (Cygwin or Linux)"
+	depends on !WINDOWS_NATIVE
+	select ARCH_TOOLCHAIN_GNU
+
+config ARM_TOOLCHAIN_BUILDROOT_OABI
+	bool "OABI (vs EABI)"
+	depends on !WINDOWS_NATIVE
+	select ARCH_TOOLCHAIN_GNU
+	---help---
+		Most of the older buildroot toolchains are OABI
+
+config ARM_TOOLCHAIN_GNU_EABI
+	bool "Generic GNU EABI toolchain"
+	select ARCH_TOOLCHAIN_GNU
+	---help---
+		This option should work for any modern GNU toolchain (GCC 4.5 or newer)
+
+config ARM_TOOLCHAIN_GNU_OABI
+	bool "Generic GNU OABI toolchain"
+	select ARCH_TOOLCHAIN_GNU
+	---help---
+		This option should work for any GNU toolchain.
+
+config ARM_TOOLCHAIN_CLANG
+	bool "LLVM Clang toolchain"
+	select ARCH_TOOLCHAIN_CLANG
+
+config ARM_TOOLCHAIN_ARMCLANG
+	bool "ARM Compiler Clang toolchain"
+	select ARCH_TOOLCHAIN_CLANG
+
+endchoice # ARM Toolchain Selection
+
+choice
+	prompt "ARM MCU selection"
+	default ARCH_CHIP_RP2040
+
+config ARCH_CHIP_RP2040
+	bool "Raspberry Pi RP2040"
+	select ARCH_CORTEXM0
+	select ARCH_HAVE_RAMVECTORS
+	select ARCH_HAVE_MULTICPU
+	select ARCH_HAVE_TESTSET
+	select ARCH_HAVE_I2CRESET
+	select ARM_HAVE_WFE_SEV
+	select LIBC_ARCH_ATOMIC
+	select ARCH_HAVE_PWM_MULTICHAN
+	select ARCH_BOARD_COMMON
+	---help---
+		Raspberry Pi RP2040 architectures (ARM dual Cortex-M0+).
+
+config ARCH_CHIP_ARM_CUSTOM
+	bool "Custom ARM chip"
+	select ARCH_CHIP_CUSTOM
+	---help---
+		Select this option if there is no directory for the chip under arch/arm/src/.
+
+endchoice # ARM MCU selection
+
+config ARCH_ARMV6M
+	bool
+	default n
+	select ARCH_HAVE_CPUINFO
+
+config ARCH_CORTEXM0
+	bool
+	default n
+	select ARM_THUMB
+	select ARCH_ARMV6M
+	select ARCH_HAVE_IRQPRIO
+	select ARCH_HAVE_RESET
+	select ARCH_HAVE_HARDFAULT_DEBUG
+
+config ARCH_FAMILY
+	string
+	default "armv6-m"	if ARCH_ARMV6M
+
+config ARCH_CHIP
+	string
+	default "rp2040"	if ARCH_CHIP_RP2040
+	default "qemu"		if ARCH_CHIP_QEMU_ARM
+
+config ARM_THUMB
+	bool "Thumb Mode"
+	default n
+
+config ARCH_HAVE_PSCI
+	bool "ARM PCSI (Power State Coordination Interface) Support"
+	default n
+	---help---
+		This Power State Coordination Interface (PSCI) defines
+		a standard interface for power management. the PCSI need
+		to implement handling firmware at EL2 or EL3. The option
+		maybe not applicable for arm core without PCSI firmware
+		interface implement
+
+config ARM_HAVE_WFE_SEV
+	bool
+	default n
+	---help---
+		Use WFE and SEV instructions for spinlock to reduce power consumption
+
+config ARM_HAVE_DPFPU32
+	bool
+	select ARCH_HAVE_DPFPU
+	default n
+	---help---
+		FPU implemented in the VFPv[3|4]-D32 format that supports
+		32 double-precision floating-point registers.
+
+config ARM_HAVE_NEON
+	bool
+	default n
+	select ARM_HAVE_DPFPU32
+	---help---
+		Decide whether support NEON instruction
+
+config ARM_HAVE_DSP
+	bool
+	default n
+	---help---
+		Decide whether support DSP instruction
+
+config ARM_HAVE_MVE
+	bool
+	default n
+	---help---
+		Decide whether support MVE instruction
+
+config ARM_HAVE_PACBTI
+	bool
+	default n
+	---help---
+		Decide whether support PACBTI(Pointer Authentication and Branch Target Identification) Extension
+
+config ARM_FPU_ABI_SOFT
+	bool "Soft Float ABI"
+	default n
+	depends on ARCH_HAVE_FPU
+	---help---
+		Pass float value via integer register (-mfloat-abi=softfp)
+
+config ARM_DPFPU32
+	bool "FPU with 32 double-precision register"
+	default y
+	depends on ARCH_DPFPU && ARM_HAVE_DPFPU32
+
+config ARM_NEON
+	bool "Advanced SIMD (NEON) Extension"
+	default y
+	depends on ARM_HAVE_NEON && ARM_DPFPU32
+
+config ARM_DSP
+	bool "Advanced DSP Extension"
+	default y
+	depends on ARM_HAVE_DSP
+	---help---
+		Enables DSP Extension
+
+config ARM_PACBTI
+	bool "Advanced PACBTI Extension"
+	default y
+	depends on ARM_HAVE_PACBTI
+	---help---
+		Enables PACBTI(Pointer Authentication and Branch Target Identification) Extension
+
+config ARM_HAVE_MPU_UNIFIED
+	bool
+	default n
+	---help---
+		Automatically selected to indicate that the CPU supports a
+		unified MPU for both instruction and data addresses.
+
+config ARM_HAVE_MPCORE
+	bool
+	default n
+	---help---
+		Decide whether support MPCore extension
+
+config ARM_MPU
+	bool "MPU support"
+	default n
+	depends on ARCH_HAVE_MPU
+	select ARCH_USE_MPU
+	---help---
+		Build in support for the ARM Cortex-M3/4/7 Memory Protection Unit (MPU).
+		Check your chip specifications first; not all Cortex-M3/4/7 chips
+		support the MPU.
+
+config ARM_MPU_NREGIONS
+	int "Number of MPU regions"
+	default 16 if ARCH_CORTEXM7
+	default 8 if !ARCH_CORTEXM7
+	depends on ARM_MPU
+	---help---
+		This is the number of protection regions supported by the MPU.
+
+config ARM_MPU_RESET
+	bool "MPU Reset before MPU initialization"
+	default n
+	depends on ARM_MPU
+	---help---
+		Configures the MPU initialization sequence to disable the MPU
+		before configuring it.
+
+		This may be needed in a system with a bootloader that has
+		configured the MPU prior to running NuttX. This may be all that is
+		needed to allow booting if the previous MPU configuration allow
+		the system to execute the MPU initialization code. If not use
+		ARM_MPU_EARLY_RESET.
+
+config ARM_MPU_EARLY_RESET
+	bool "MPU Early Reset"
+	default n
+	depends on ARCH_HAVE_MPU
+	---help---
+		Configures the early system initialization sequence to disable the MPU.
+
+		This may be needed in a system with a bootloader that has
+		configured the MPU prior to running NuttX. This is useful if the system
+		faults during bbs, or data initialization or before the
+		stm32_mpuinitialize can be called.
+
+		Note: This can be used without MPU Support enabled.
+
+config ARCH_HAVE_LOWVECTORS
+	bool
+
+config ARCH_LOWVECTORS
+	bool "Vectors in low memory"
+	default n
+	depends on ARCH_HAVE_LOWVECTORS
+	---help---
+		Support ARM vectors in low memory.
+
+config ARCH_ROMPGTABLE
+	bool "ROM page table"
+	default n
+	depends on ARCH_USE_MMU
+	---help---
+		Support a fixed memory mapping use a (read-only) page table in
+		ROM/FLASH.
+
+config ARCH_HAVE_HARDFAULT_DEBUG
+	bool
+	default n
+
+config DEBUG_HARDFAULT_ALERT
+	bool "Hard-Fault Alert Debug"
+	default n
+	depends on ARCH_HAVE_HARDFAULT_DEBUG && DEBUG_ALERT
+	---help---
+		Enables debug alert output to the SYSLOG when a hard fault
+		occurs.  This output is sometimes helpful when debugging difficult
+		hard fault problems.
+
+config DEBUG_HARDFAULT_INFO
+	bool "Hard-Fault Informational Output"
+	default n
+	depends on ARCH_HAVE_HARDFAULT_DEBUG && DEBUG_INFO
+	---help---
+		Enables informational alert output to the SYSLOG when a hard fault
+		occurs.  This output is sometimes helpful when debugging difficult
+		hard fault problems but may be more than you want to see in some
+		cases.
+
+config ARCH_HAVE_MEMFAULT_DEBUG
+	bool
+	default n
+
+config DEBUG_MEMFAULT
+	bool "Verbose Mem-Fault Debug"
+	default n
+	depends on ARCH_HAVE_MEMFAULT_DEBUG && DEBUG_ALERT && ARCH_USE_MPU
+	---help---
+		Enables verbose debug output when a mem fault occurs.  This verbose
+		output is sometimes helpful when debugging difficult mem fault problems,
+		but may be more than you typically want to see.
+
+config ARCH_HAVE_BUSFAULT_DEBUG
+	bool
+	default n
+
+config DEBUG_BUSFAULT
+	bool "Verbose Bus-Fault Debug"
+	default n
+	depends on ARCH_HAVE_BUSFAULT_DEBUG && DEBUG_ALERT
+	---help---
+		Enables verbose debug output when a bus fault occurs.  This verbose
+		output is sometimes helpful when debugging difficult bus fault problems,
+		but may be more than you typically want to see.
+
+config ARCH_HAVE_USAGEFAULT_DEBUG
+	bool
+	default n
+
+config DEBUG_USAGEFAULT
+	bool "Verbose Usage-Fault Debug"
+	default n
+	depends on ARCH_HAVE_USAGEFAULT_DEBUG && DEBUG_ALERT
+	---help---
+		Enables verbose debug output when a usage fault occurs.  This verbose
+		output is sometimes helpful when debugging difficult usage fault problems,
+		but may be more than you typically want to see.
+
+config ARCH_HAVE_SECUREFAULT_DEBUG
+	bool
+	default n
+
+config DEBUG_SECUREFAULT
+	bool "Verbose Secure-Fault Debug"
+	default n
+	depends on ARCH_HAVE_SECUREFAULT_DEBUG && DEBUG_ALERT
+	---help---
+		Enables verbose debug output when a usage fault is occurs.  This verbose
+		output is sometimes helpful when debugging difficult usage fault problems,
+		but may be more than you typically want to see.
+
+config ARM_SEMIHOSTING_SYSLOG
+	bool "Semihosting SYSLOG support"
+	select ARCH_SYSLOG
+	---help---
+		Enable hooks to support semihosting syslog output.
+
+config ARM_SEMIHOSTING_HOSTFS
+	bool "Semihosting HostFS"
+	depends on FS_HOSTFS
+	---help---
+		Mount HostFS through semihosting.
+
+		This doesn't support some directory operations like readdir because
+		of the limitations of semihosting mechanism.
+
+if ARM_SEMIHOSTING_HOSTFS
+
+config ARM_SEMIHOSTING_HOSTFS_CACHE_COHERENCE
+	bool "Cache coherence in semihosting hostfs"
+	depends on ARCH_DCACHE
+	---help---
+		Flush & Invalidte cache before & after bkpt instruction.
+
+endif
+
+if SCHED_BACKTRACE
+
+choice
+	prompt "Choose ARM unwinder"
+	default UNWINDER_ARM
+	---help---
+		This determines which method will be used for unwinding nuttx stack
+		traces for debug.
+
+config UNWINDER_FRAME_POINTER
+	bool "Frame pointer unwinder"
+	select FRAME_POINTER
+	---help---
+		This option enables the frame pointer unwinder for unwinding
+		nuttx stack traces.
+
+config UNWINDER_STACK_POINTER
+	bool "Stack pointer unwinder"
+	---help---
+		This option enables the stack pointer unwinder for unwinding
+		nuttx stack traces.
+
+config UNWINDER_ARM
+	bool "ARM EHABI stack unwinder"
+	select FRAME_POINTER
+	---help---
+		This option enables stack unwinding support in the nuttx
+		using the information automatically generated by the
+		compiler. The resulting nuttx image is slightly bigger but
+		the performance is not affected. Currently, this feature
+		only works with EABI compilers.
+
+endchoice # Choose ARM unwinder
+
+endif
+
+if ARCH_ARMV6M
+source "arch/arm/src/armv6-m/Kconfig"
+endif
+if ARCH_CHIP_RP2040
+source "arch/arm/src/rp2040/Kconfig"
+endif
+if ARCH_CHIP_QEMU_ARM
+source "arch/arm/src/qemu/Kconfig"
+endif
+endif # ARCH_ARM
