@@ -143,12 +143,6 @@ cat >${GLOBALS} <<__EOF__
 	.endm
 # define ALIGN 4
 #endif
-#ifdef __ARM_ARCH_ISA_THUMB2
-# ifdef __ARM_ARCH_7M__
-	.arch armv7e-m
-# elif defined ___ARM_ARCH 8
-	.arch armv8-m.base
-#endif
 #ifdef __ARM_ASM_SYNTAX_UNIFIED__
 	.syntax	unified
 #endif
