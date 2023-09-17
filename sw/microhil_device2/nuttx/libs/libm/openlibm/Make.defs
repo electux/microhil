@@ -45,8 +45,6 @@ endif
 ifeq ($(CONFIG_ARCH),sim)
   ifeq ($(CONFIG_SIM_M32),y)
     ARCH = i387
-  else ifeq ($(CONFIG_HOST_ARM64),y)
-    ARCH = aarch64
   else ifeq ($(CONFIG_HOST_ARM),y)
     ARCH = arm
   else ifeq ($(CONFIG_HOST_X86),y)
@@ -54,12 +52,8 @@ ifeq ($(CONFIG_ARCH),sim)
   else
     ARCH = amd64
   endif
-else ifeq ($(CONFIG_ARCH),risc-v)
-  ARCH = riscv64
 else ifeq ($(CONFIG_ARCH),arm)
   ARCH = arm
-else ifeq ($(CONFIG_ARCH),arm64)
-  ARCH = arm64
 else ifeq ($(CONFIG_ARCH),x86)
   ARCH = i387
 else ifeq ($(CONFIG_ARCH),x86_64)

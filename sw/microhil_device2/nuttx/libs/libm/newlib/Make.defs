@@ -18,17 +18,10 @@
 #
 ############################################################################
 
-ifeq ($(CONFIG_ARCH_CHIP_ESP32),y)
-  NEWLIB_VERSION=esp-4.1.0_20230425
-  NEWLIB_BASENAME=newlib-esp32
-  NEWLIB_URL_BASE=https://github.com/espressif/newlib-esp32/archive
-  NEWLIB_TARBALL=$(NEWLIB_VERSION).tar.gz
-else
-  NEWLIB_VERSION=4.3.0.20230120
-  NEWLIB_BASENAME=newlib
-  NEWLIB_URL_BASE=ftp://sourceware.org/pub/newlib
-  NEWLIB_TARBALL=$(NEWLIB_BASENAME)-$(NEWLIB_VERSION).tar.gz
-endif
+NEWLIB_VERSION=4.3.0.20230120
+NEWLIB_BASENAME=newlib
+NEWLIB_URL_BASE=ftp://sourceware.org/pub/newlib
+NEWLIB_TARBALL=$(NEWLIB_BASENAME)-$(NEWLIB_VERSION).tar.gz
 
 $(NEWLIB_BASENAME)-$(NEWLIB_VERSION).tar.gz:
 	$(call DOWNLOAD,$(NEWLIB_URL_BASE),$(NEWLIB_TARBALL),$(NEWLIB_BASENAME)-$(NEWLIB_VERSION).tar.gz)
@@ -59,18 +52,10 @@ VPATH += :newlib/newlib/newlib/libm/complex
 
 ifeq ($(CONFIG_ARCH_ARM),y)
   ARCH = arm
-else ifeq ($(CONFIG_ARCH_ARM64),y)
-  ARCH = aarch64
-else ifeq ($(CONFIG_ARCH_RISCV),y)
-  ARCH = riscv
 else ifeq ($(CONFIG_ARCH_X86),y)
   ARCH = i386
 else ifeq ($(CONFIG_ARCH_X86_64),y)
   ARCH = x86_64
-else ifeq ($(CONFIG_ARCH_SPARC),y)
-  ARCH = sparc
-else ifeq ($(CONFIG_ARCH_MIPS),y)
-  ARCH = mips
 else
   ARCH = $(CONFIG_ARCH)
 endif
