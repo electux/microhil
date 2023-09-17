@@ -340,7 +340,7 @@ cp -f "${ARCHDIR}"/*.h "${EXPORTDIR}"/arch/. 2>/dev/null
 # those directories into the EXPORTDIR
 
 if [ "X${USRONLY}" != "Xy" ]; then
-  ARCH_HDRDIRS="arm armv7-m avr avr32 board common chip mips32"
+  ARCH_HDRDIRS="arm board common chip"
   for hdir in $ARCH_HDRDIRS; do
 
     # Does the directory (or symbolic link) exist?
