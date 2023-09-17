@@ -46,17 +46,7 @@
  * save structure and up_irq_save()/up_irq_restore() functions)
  */
 
-#if defined(CONFIG_ARCH_ARMV7A)
-#  include <arch/armv7-a/irq.h>
-#elif defined(CONFIG_ARCH_ARMV7R)
-#  include <arch/armv7-r/irq.h>
-#elif defined(CONFIG_ARCH_ARMV8R)
-#  include <arch/armv8-r/irq.h>
-#elif defined(CONFIG_ARCH_ARMV7M)
-#  include <arch/armv7-m/irq.h>
-#elif defined(CONFIG_ARCH_ARMV8M)
-#  include <arch/armv8-m/irq.h>
-#elif defined(CONFIG_ARCH_ARMV6M)
+#if defined(CONFIG_ARCH_ARMV6M)
 #  include <arch/armv6-m/irq.h>
 #else
 #  include <arch/arm/irq.h>

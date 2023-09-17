@@ -595,8 +595,6 @@ ide_exporter.py
             - Select the MCU for main and lib project
             - Correct the path to ld script if needed
         2) iar:
-            - Check if the arch supports IAR (only armv7-m is support IAR
-              now)
             - Select the MCU for main and lib project
             - Add new ld script file for IAR
 

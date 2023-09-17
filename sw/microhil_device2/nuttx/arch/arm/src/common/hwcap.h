@@ -59,12 +59,4 @@
 #define HWCAP_FPV5      "fpv5"      /* Floating-point extension version */
 #define HWCAP_MVE       "mve"       /* M-profile vector extension */
 
-/* Hardware capabilities added form armv8 */
-
-#define HWCAP2_AES      "aes"
-#define HWCAP2_PMULL    "pmull"
-#define HWCAP2_SHA1     "sha1"
-#define HWCAP2_SHA2     "sha2"
-#define HWCAP2_CRC32    "crc32"
-
 #endif /* __ARCH_ARM_SRC_COMMON_HWCAP_H */
