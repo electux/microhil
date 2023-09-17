@@ -20,28 +20,8 @@
 
 set(SRCS)
 
-if(CONFIG_ARCH_ARM7TDMI) # ARM7TDMI is ARMv4T
-  add_subdirectory(arm)
-elseif(CONFIG_ARCH_ARM920T) # ARM920T is ARMv4T
-  add_subdirectory(arm)
-elseif(CONFIG_ARCH_ARM926EJS) # ARM926EJS is ARMv5TEJ
-  add_subdirectory(arm)
-elseif(CONFIG_ARCH_ARM1136J) # ARM1136J is ARMv6
-  add_subdirectory(arm)
-elseif(CONFIG_ARCH_ARM1156T2) # ARM1156T2 is ARMv6T2
-  add_subdirectory(arm)
-elseif(CONFIG_ARCH_ARM1176JZ) # ARM1176JZ is ARMv6Z
-  add_subdirectory(arm)
-elseif(CONFIG_ARCH_ARMV7A) # All ARMv7-A
-  add_subdirectory(armv7-a)
-elseif(CONFIG_ARCH_ARMV7R) # All ARMv7-R
-  add_subdirectory(armv7-r)
-elseif(CONFIG_ARCH_ARMV6M) # All ARMv6-M
+if(CONFIG_ARCH_ARMV6M) # All ARMv6-M
   add_subdirectory(armv6-m)
-elseif(CONFIG_ARCH_ARMV7M) # All ARMv7-M
-  add_subdirectory(armv7-m)
-elseif(CONFIG_ARCH_ARMV8M) # All ARMv8-M
-  add_subdirectory(armv8-m)
 endif()
 
 if(NOT CONFIG_LIBSUPCXX)

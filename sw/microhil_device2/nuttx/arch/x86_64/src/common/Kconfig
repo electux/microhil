@@ -4,6 +4,7 @@
 #
 
 if ARCH_X86_64
+
 comment "Common Configuration Options"
 
 endif

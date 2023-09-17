@@ -162,8 +162,6 @@ config ARCH_BOARD
 	default "adafruit-kb2040"           if ARCH_BOARD_ADAFRUIT_KB2040
 	default "adafruit-qt-py-rp2040"     if ARCH_BOARD_ADAFRUIT_QT_PY_RP2040
 	default "waveshare-rp2040-lcd-1.28" if ARCH_BOARD_WAVESHARE_RP2040_LCD_1_28
-	default "qemu-armv7a"               if ARCH_BOARD_QEMU_ARMV7A
-	default "qemu-armv8a"               if ARCH_BOARD_QEMU_ARMV8A
 	default "sim"                       if ARCH_BOARD_SIM
 
 comment "Common Board Options"
