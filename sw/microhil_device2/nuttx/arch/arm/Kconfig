@@ -400,7 +400,4 @@ endif
 if ARCH_CHIP_RP2040
 source "arch/arm/src/rp2040/Kconfig"
 endif
-if ARCH_CHIP_QEMU_ARM
-source "arch/arm/src/qemu/Kconfig"
-endif
 endif # ARCH_ARM
