@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "microhildesk build",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "make",
+                "--directory=${workspaceFolder}/build"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "microhildesk clean",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "make",
+                "--directory=${workspaceFolder}/build",
+                "clean"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
