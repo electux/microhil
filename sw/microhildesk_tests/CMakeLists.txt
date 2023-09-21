@@ -22,20 +22,26 @@ include_directories(googletest/include)
 # Add sources and includes for microhil_config and microhil_config_tests
 include(${PROJECT_SOURCE_DIR}/com/pack.cmake)
 include(${PROJECT_SOURCE_DIR}/config/pack.cmake)
+include(${PROJECT_SOURCE_DIR}/log/pack.cmake)
 include_directories(com)
 include_directories(config)
+include_directories(log)
 include_directories(${MICROHIL_COM_HEADERS})
 include_directories(${MICROHIL_CONFIG_HEADERS})
+include_directories(${MICROHIL_LOG_HEADERS})
 
 add_executable(
     microhil_tests
     main.cc
     ${MICROHIL_COM_TESTS}
     ${MICROHIL_CONFIG_TESTS}
+    ${MICROHIL_LOG_TESTS}
     ${MICROHIL_COM_SOURCES}
     ${MICROHIL_CONFIG_SOURCES}
+    ${MICROHIL_LOG_SOURCES}
 )
 
+# Link libraries
 target_link_libraries(microhil_tests PUBLIC gtest gtest_main PkgConfig::gtkmm)
 include(GoogleTest)
 gtest_discover_tests(microhil_tests)
