@@ -3,8 +3,8 @@
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Test the store function
 /// @param MHConfigTest is test fixture
-/// @param LoadTest is test name
+/// @param StoreTest is test name
 // TEST_F(MHConfigTest, StoreTest)
 // {
-//     ASSERT_TRUE(m_config.store());
+//     EXPECT_TRUE(m_config.store() == true);
 // }
