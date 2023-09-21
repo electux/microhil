@@ -19,16 +19,18 @@ pkg_check_modules(gtkmm REQUIRED IMPORTED_TARGET gtkmm-3.0 glibmm-2.4)
 add_subdirectory(googletest)
 include_directories(googletest/include)
 
-# Add sources and includes for microhil_config and microhil_config_tests
+# Add sources and includes
 include(${PROJECT_SOURCE_DIR}/com/pack.cmake)
 include(${PROJECT_SOURCE_DIR}/config/pack.cmake)
 include(${PROJECT_SOURCE_DIR}/log/pack.cmake)
 include_directories(com)
 include_directories(config)
 include_directories(log)
+include_directories(model)
 include_directories(${MICROHIL_COM_HEADERS})
 include_directories(${MICROHIL_CONFIG_HEADERS})
 include_directories(${MICROHIL_LOG_HEADERS})
+include_directories(${MICROHIL_MODEL_HEADERS})
 
 add_executable(
     microhil_tests
@@ -36,9 +38,11 @@ add_executable(
     ${MICROHIL_COM_TESTS}
     ${MICROHIL_CONFIG_TESTS}
     ${MICROHIL_LOG_TESTS}
+    ${MICROHIL_MODEL_TESTS}
     ${MICROHIL_COM_SOURCES}
     ${MICROHIL_CONFIG_SOURCES}
     ${MICROHIL_LOG_SOURCES}
+    ${MICROHIL_MODEL_SOURCES}
 )
 
 # Link libraries
