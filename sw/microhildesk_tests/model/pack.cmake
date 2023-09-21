@@ -13,10 +13,9 @@ set(
 set(
     MICROHIL_MODEL_SOURCES
     ${PROJECT_SOURCE_DIR}/../microhildesk/model/microhil_model.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/model/microhil_model_<TODO>.cc
 )
 
 set(
     MICROHIL_MODEL_TESTS
-    ${PROJECT_SOURCE_DIR}/model/test_mhmodel_<TODO>.cc
+    ${PROJECT_SOURCE_DIR}/model/test_mhmodel_channel.cc
 )
