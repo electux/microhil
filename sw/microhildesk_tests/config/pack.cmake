@@ -23,4 +23,13 @@ set(
 set(
     MICROHIL_CONFIG_TESTS
     ${PROJECT_SOURCE_DIR}/config/test_mhconfig_baud_rate.cc
+    ${PROJECT_SOURCE_DIR}/config/test_mhconfig_data_bits.cc
+    ${PROJECT_SOURCE_DIR}/config/test_mhconfig_device.cc
+    ${PROJECT_SOURCE_DIR}/config/test_mhconfig_file.cc
+    ${PROJECT_SOURCE_DIR}/config/test_mhconfig_level.cc
+    ${PROJECT_SOURCE_DIR}/config/test_mhconfig_load.cc
+    ${PROJECT_SOURCE_DIR}/config/test_mhconfig_parity.cc
+    ${PROJECT_SOURCE_DIR}/config/test_mhconfig_pre_valid.cc
+    ${PROJECT_SOURCE_DIR}/config/test_mhconfig_stop_bits.cc
+    ${PROJECT_SOURCE_DIR}/config/test_mhconfig_store.cc
 )

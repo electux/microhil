@@ -20,14 +20,19 @@ add_subdirectory(googletest)
 include_directories(googletest/include)
 
 # Add sources and includes for microhil_config and microhil_config_tests
+include(${PROJECT_SOURCE_DIR}/com/pack.cmake)
 include(${PROJECT_SOURCE_DIR}/config/pack.cmake)
+include_directories(com)
 include_directories(config)
+include_directories(${MICROHIL_COM_HEADERS})
 include_directories(${MICROHIL_CONFIG_HEADERS})
 
 add_executable(
     microhil_tests
     main.cc
+    ${MICROHIL_COM_TESTS}
     ${MICROHIL_CONFIG_TESTS}
+    ${MICROHIL_COM_SOURCES}
     ${MICROHIL_CONFIG_SOURCES}
 )
 
