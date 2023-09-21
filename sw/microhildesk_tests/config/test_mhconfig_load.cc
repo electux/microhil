@@ -6,5 +6,5 @@
 /// @param LoadTest is test name
 // TEST_F(MHConfigTest, LoadTest)
 // {
-//     ASSERT_TRUE(m_config.load());
+//     EXPECT_TRUE(m_config.load() == true);
 // }

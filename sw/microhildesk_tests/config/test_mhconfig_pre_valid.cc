@@ -6,5 +6,5 @@
 /// @param ValidTest is test name
 // TEST_F(MHConfigTest, ValidTest)
 // {
-//     ASSERT_TRUE(m_config.isPreValid());
+//     EXPECT_TRUE(m_config.isPreValid() == true);
 // }
