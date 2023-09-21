@@ -18,5 +18,9 @@ set(
 
 set(
     MICROHIL_LOG_TESTS
-    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_<TODO>.cc
+    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_file_path.cc
+    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_log_level.cc
+    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_open.cc
+    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_write.cc
+    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_close.cc
 )
