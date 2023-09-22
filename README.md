@@ -8,7 +8,12 @@ The README is used to introduce the tool and provide instructions on
 how to install the tool, any machine dependencies it may have and any
 other information that should be provided before the tool is installed.
 
-[![microhil-desktop C++ CI](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml) [![GitHub issues open](https://img.shields.io/github/issues/electux/microhil.svg)](https://github.com/electux/microhil/issues) [![GitHub contributors](https://img.shields.io/github/contributors/electux/microhil.svg)](https://github.com/electux/microhil/graphs/contributors)
+[![GitHub issues open](https://img.shields.io/github/issues/electux/microhil.svg)](https://github.com/electux/microhil/issues) [![GitHub contributors](https://img.shields.io/github/contributors/electux/microhil.svg)](https://github.com/electux/microhil/graphs/contributors)
+
+[![microhil_base C checker](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml) [![microhil_nuttx C checker](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml) [![microhil_upy C checker](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml)
+
+[![microhil-desktop build checker](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml)
+
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
