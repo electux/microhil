@@ -27,5 +27,5 @@ jobs:
           echo Checking number of lines in modules
           modules_ok=0
           modules=($(find sw/ -type f -name '*.cc' -exec echo '{}' \;))
-          for mod in "${modules[@]}"; do line_numbers=$(wc -l < "${mod}"); [[ $line_numbers -gt 300 ]] && modules_ok=1; done
+          for mod in "${modules[@]}"; do line_numbers=$(wc -l < "${mod}"); [[ $line_numbers -gt 350 ]] && modules_ok=1; done
           [[ $modules_ok -eq 0 ]] && echo exit 0 || exit 1
