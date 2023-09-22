@@ -1,4 +1,4 @@
-name: microhildesk C++ CI
+name: microhildesk build checker
 on:
   push:
     branches: [ master ]
