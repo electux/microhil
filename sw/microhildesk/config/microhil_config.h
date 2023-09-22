@@ -62,12 +62,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting serial device file path to configuration
     /// @param device file path
-    void setDevice(const MHString device) final;
+    void setDevice(const MHString &device) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial device file path from configuration
     /// @return file path for serial device
-    MHString getDevice() final;
+    MHString getDevice() const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting baud rate for serial port to configuration
@@ -97,7 +97,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
     /// @return parity type for the serial port
-    MHString getParity() final;
+    MHString getParity() const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting stop bits for serial port to configuration
@@ -117,23 +117,23 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
     /// @return log level
-    MHString getLogLevel() final;
+    MHString getLogLevel() const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log path
     /// @param path for log messages
-    void setLogPath(const MHString path) final;
+    void setLogPath(const MHString &path) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log path
     /// @return log path
-    MHString getLogPath() final;
+    MHString getLogPath() const final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Checking existence of configuration file
     /// @return boolean status true for existing else false
-    bool checkConfigPath();
+    bool checkConfigPath() const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert integer log level to string format
@@ -145,31 +145,31 @@ private:
     /// @brief Convert log level in strong format to integer
     /// @param level in string format
     /// @return log level in integer format
-    int logLevelStringToInt(const MHString level);
+    int logLevelStringToInt(const MHString &level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Process and prepare baud rate (to config file)
     /// @param baudRate for serial port (combobox index)
     /// @return baud rate for serial port in integer format
-    int intToBaudRate(const int baudRate);
+    int intToBaudRate(int baudRate);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Process and prepare baud rate (from config file)
     /// @param baudRate value from config file
     /// @return index for combobox
-    int baudRateToInt(const int baudRate);
+    int baudRateToInt(int baudRate);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Process and prepare data bits (from config file)
     /// @param dataBits value from config file
     /// @return index for combobox
-    int dataBitsToInt(const int dataBits);
+    int dataBitsToInt(int dataBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert combobox index to data bits (to config file)
     /// @param dataBits for serial port (index combobox)
     /// @return data bits for serial port in integer format
-    int intToDataBits(const int dataBits);
+    int intToDataBits(int dataBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert integer parity to string format (to config file)
@@ -181,19 +181,19 @@ private:
     /// @brief Convert parity to integer format (from config file)
     /// @param parity in string format (from config file)
     /// @return parity in integer format (to combobox index)
-    int parityUnicodeStringToInt(const MHString parity);
+    int parityUnicodeStringToInt(const MHString &parity);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert stop-bits to integer (from config file)
     /// @param dataBits from config file
     /// @return stop-bits in integer format (index combobox)
-    int stopBitsToInt(const int stopBits);
+    int stopBitsToInt(int stopBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert combobox index to data-bits (to config file)
     /// @param dataBits index from combobox
     /// @return data-bits in integer format
-    int intToStopBits(const int stopBits);
+    int intToStopBits(int stopBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Validate log configuration (existing expected parameters)

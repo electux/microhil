@@ -24,12 +24,19 @@
 /// @brief Scoped class enumerator for View IDs
 enum class ViewId : int
 {
+    /// @brief Connect view id
     MICROHIL_CONNECT = 0,
+    /// @brief Disconnect view id
     MICROHIL_DISCONNECT = 1,
+    /// @brief Quit view id
     MICROHIL_QUIT = 2,
+    /// @brief Message view id
     MICROHIL_MESSAGE = 3,
+    /// @brief Serial settings view id
     MICROHIL_SERIAL_SETTINGS = 4,
+    /// @brief Log settings view id
     MICROHIL_LOG_SETTINGS = 5,
+    /// @brief About view id
     MICROHIL_ABOUT = 6
 };
 
@@ -37,13 +44,21 @@ enum class ViewId : int
 /// @brief Scoped class enumerator for channel IDs
 enum class Channel : int
 {
+    /// @brief Channel 0 id
     MICROHIL_ID0 = 0,
+    /// @brief Channel 1 id
     MICROHIL_ID1 = 1,
+    /// @brief Channel 2 id
     MICROHIL_ID2 = 2,
+    /// @brief Channel 3 id
     MICROHIL_ID3 = 3,
+    /// @brief Channel 4 id
     MICROHIL_ID4 = 4,
+    /// @brief Channel 5 id
     MICROHIL_ID5 = 5,
+    /// @brief Channel 6 id
     MICROHIL_ID6 = 6,
+    /// @brief Channel 7 id
     MICROHIL_ID7 = 7
 };
 
@@ -51,7 +66,9 @@ enum class Channel : int
 /// @brief Scoped class enumerator for channel control types
 enum class channelControlType : int
 {
+    /// @brief Toogle button control type
     MICROHIL_TOGGLE_BUTTON = 0,
+    /// @brief Timer button control type
     MICROHIL_TIMER_BUTTON = 1
 };
 

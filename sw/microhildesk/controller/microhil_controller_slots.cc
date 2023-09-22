@@ -19,7 +19,7 @@
 #include <iostream>
 #include "microhil_controller.h"
 
-void MHController::onLogSettingsChanged(MHString path, int level)
+void MHController::onLogSettingsChanged(MHString &path, int level)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Update the log configuration
@@ -41,12 +41,12 @@ void MHController::onLogSettingsChanged(MHString path, int level)
     // TODO logging
 }
 
-void MHController::onLogSettingsLoaded(MHString path, int level)
+void MHController::onLogSettingsLoaded(MHString &path, int level)
 {
     m_view->getLogSettings()->logSettingsLoaded(path, level);
 }
 
-void MHController::onSerialSettingsChanged(MHString dev, MHVecUInt params)
+void MHController::onSerialSettingsChanged(MHString &dev, MHVecUInt &params)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Update the serial port configuration
@@ -72,7 +72,7 @@ void MHController::onSerialSettingsChanged(MHString dev, MHVecUInt params)
     // TODO logging
 }
 
-void MHController::onSerialSettingsLoaded(MHString dev, MHVecUInt params)
+void MHController::onSerialSettingsLoaded(MHString &dev, MHVecUInt &params)
 {
     m_view->getSerialSettings()->serialSettingsLoaded(dev, params);
 }

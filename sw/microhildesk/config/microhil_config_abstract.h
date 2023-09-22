@@ -25,10 +25,15 @@
 /// @brief Scoped class enumerator for serial port parity
 enum class ParityConfig : int
 {
+    /// @brief Parity None
     MICROHIL_NONE_CONFIG = 0,
+    /// @brief Parity Odd
     MICROHIL_ODD_CONFIG = 1,
+    /// @brief Parity Even
     MICROHIL_EVEN_CONFIG = 2,
+    /// @brief Parity Mark
     MICROHIL_MARK_CONFIG = 3,
+    /// @brief Parity Space
     MICROHIL_SPACE_CONFIG = 4
 };
 
@@ -36,8 +41,11 @@ enum class ParityConfig : int
 /// @brief Scoped class enumerator for log levels
 enum class LogLevelConfig : int
 {
+    /// @brief Log level info
     MICROHIL_INFO_CONFIG = 0,
+    /// @brief Log level warning
     MICROHIL_WARNING_CONFIG = 1,
+    /// @brief Log level error
     MICROHIL_ERROR_CONFIG = 2
 };
 
@@ -48,11 +56,11 @@ class AbMHConfig
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for loaded log configuration from file
-    using SigLogConfig = sigc::signal<void(MHString, int)>;
+    using SigLogConfig = sigc::signal<void(MHString&, int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for loaded serial configuration from file
-    using SigSerialConfig = sigc::signal<void(MHString, MHVecUInt)>;
+    using SigSerialConfig = sigc::signal<void(MHString&, MHVecUInt&)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHConfig destructor
@@ -96,12 +104,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting serial device file path to configuration
     /// @param device file path
-    virtual void setDevice(const MHString device) = 0;
+    virtual void setDevice(const MHString &device) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting serial device file path from configuration
     /// @return file path for serial device
-    virtual MHString getDevice() = 0;
+    virtual MHString getDevice() const = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting baud rate for serial port to configuration
@@ -131,7 +139,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting parity for serial port from configuration
     /// @return parity type for the serial port
-    virtual MHString getParity() = 0;
+    virtual MHString getParity() const = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting stop bits for serial port to configuration
@@ -151,17 +159,17 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log level
     /// @return log level
-    virtual MHString getLogLevel() = 0;
+    virtual MHString getLogLevel() const = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting log path
     /// @param path for log messages
-    virtual void setLogPath(const MHString path) = 0;
+    virtual void setLogPath(const MHString &path) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting log path
     /// @return log path
-    virtual MHString getLogPath() = 0;
+    virtual MHString getLogPath() const = 0;
 
 private:
     ////////////////////////////////////////////////////////////////////////

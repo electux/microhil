@@ -22,10 +22,13 @@
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for log levels
-enum class LogLevel: int
+enum class LogLevel : int
 {
+    /// @brief Log level info
     MICROHIL_INFO = 0,
+    /// @brief Log level warning
     MICROHIL_WARNING = 1,
+    /// @brief Log level error
     MICROHIL_ERROR = 2
 };
 
@@ -47,7 +50,7 @@ public:
     /// @brief Write log message
     /// @param message log message to be stored
     /// @param level log level
-    virtual void write(const MHString message, const LogLevel level) = 0;
+    virtual void write(const MHString &message, const LogLevel level) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Close log storage

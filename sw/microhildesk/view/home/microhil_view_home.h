@@ -18,7 +18,6 @@
  */
 #pragma once
 
-#include <vector>
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/builder.h>
 #include <giomm/resource.h>

@@ -6,8 +6,8 @@ var searchData=
   ['loglevel_3',['LogLevel',['../d5/d0c/microhil__log__abstract_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94',1,'microhil_log_abstract.h']]],
   ['loglevelchanged_4',['logLevelChanged',['../d1/d14/classMHViewLog.html#a670da881ab10e30d725dab284e7236ac',1,'MHViewLog::logLevelChanged()'],['../d9/d0c/classAbMHViewLog.html#aa3bf4f8e0d32c80b4470d120e662a034',1,'AbMHViewLog::logLevelChanged()']]],
   ['loglevelconfig_5',['LogLevelConfig',['../d8/d3b/microhil__config__abstract_8h.html#a3fc630a93082b538c6bfdc552440e183',1,'microhil_config_abstract.h']]],
-  ['loglevelstringtoint_6',['logLevelStringToInt',['../d9/d79/classMHConfig.html#adc8af462212c133aaf03b0a079d3d6ee',1,'MHConfig']]],
+  ['loglevelstringtoint_6',['logLevelStringToInt',['../d9/d79/classMHConfig.html#a558bfccb7ecc54ff4a9f1286c1c73d81',1,'MHConfig']]],
   ['logleveltounicodestring_7',['logLevelToUnicodeString',['../d9/d79/classMHConfig.html#a13fd998f25828610f1103c5292648b64',1,'MHConfig']]],
-  ['logsettingsloaded_8',['logSettingsLoaded',['../d1/d14/classMHViewLog.html#a7506e29d7f7e613971a9a86c332908dc',1,'MHViewLog']]],
+  ['logsettingsloaded_8',['logSettingsLoaded',['../d1/d14/classMHViewLog.html#af184849623af693d43c146012dbe276c',1,'MHViewLog']]],
   ['logsetupchanged_9',['logSetupChanged',['../d1/d14/classMHViewLog.html#af227b91bba191abb78ab360b6600e02b',1,'MHViewLog::logSetupChanged()'],['../d9/d0c/classAbMHViewLog.html#a0703647455c46eea8f96f54dc20e5358',1,'AbMHViewLog::logSetupChanged()']]]
 ];

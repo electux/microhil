@@ -5,7 +5,7 @@ var classMHViewLog =
     [ "cancelLogTriggered", "d1/d14/classMHViewLog.html#ae85db28d775da97918e82c0f910030cb", null ],
     [ "logFilePathChanged", "d1/d14/classMHViewLog.html#a99ea79e29558658b891b71e852c19b79", null ],
     [ "logLevelChanged", "d1/d14/classMHViewLog.html#a670da881ab10e30d725dab284e7236ac", null ],
-    [ "logSettingsLoaded", "d1/d14/classMHViewLog.html#a7506e29d7f7e613971a9a86c332908dc", null ],
+    [ "logSettingsLoaded", "d1/d14/classMHViewLog.html#af184849623af693d43c146012dbe276c", null ],
     [ "logSetupChanged", "d1/d14/classMHViewLog.html#af227b91bba191abb78ab360b6600e02b", null ],
     [ "mapping", "d1/d14/classMHViewLog.html#aefa7c638ba5f26cf2a3d1389194200b6", null ],
     [ "okLogTriggered", "d1/d14/classMHViewLog.html#aacadc46dfc1b8474ea8467de7546cac5", null ],

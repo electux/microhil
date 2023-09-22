@@ -44,7 +44,7 @@ void MHSerialCom::close()
     }
 }
 
-void MHSerialCom::setup(MHString device, MHVecUInt params)
+void MHSerialCom::setup(const MHString &device, const MHVecUInt &params)
 {
     m_serialPort->SetBaudRate(uintToBaudRate(params[0]));
     m_serialPort->SetCharacterSize(uintToDataBits(params[1]));
@@ -53,7 +53,7 @@ void MHSerialCom::setup(MHString device, MHVecUInt params)
     m_device = device;
 }
 
-void MHSerialCom::setup(MHString device, MHSerialParams params)
+void MHSerialCom::setup(const MHString &device, const MHSerialParams &params)
 {
     m_serialPort->SetBaudRate(params.baudRate);
     m_serialPort->SetCharacterSize(params.dataBits);
@@ -67,7 +67,7 @@ void MHSerialCom::read(MHVecByte &data, size_t len, size_t timeout)
     m_serialPort->Read(data, len, timeout);
 }
 
-void MHSerialCom::write(MHVecByte &data)
+void MHSerialCom::write(const MHVecByte &data)
 {
     m_serialPort->Write(data);
 }

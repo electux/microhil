@@ -88,7 +88,7 @@ MHViewSerial::MHViewSerial(BaseObjectType *object, MHRPtr<Gtk::Builder> const &u
     this->hide();
 }
 
-void MHViewSerial::serialSettingsLoaded(MHString device, MHVecUInt params)
+void MHViewSerial::serialSettingsLoaded(MHString &device, MHVecUInt &params)
 {
     m_device->set_text(device);
     m_baudRate->set_active(params[0]);

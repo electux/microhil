@@ -47,5 +47,5 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Write to communication channel
     /// @param data to be written to channel
-    virtual void write(MHVecByte &data) = 0;
+    virtual void write(const MHVecByte &data) = 0;
 };

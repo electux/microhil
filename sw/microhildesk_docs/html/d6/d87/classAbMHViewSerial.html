@@ -116,12 +116,12 @@ Collaboration diagram for AbMHViewSerial:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ac18bce6811c85045578bd788e85b9885"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#ac18bce6811c85045578bd788e85b9885">SigSerialSetup</a> = sigc::signal&lt; void(<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a>, <a class="el" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a>)&gt;</td></tr>
-<tr class="memdesc:ac18bce6811c85045578bd788e85b9885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial settings.  <a href="../../d6/d87/classAbMHViewSerial.html#ac18bce6811c85045578bd788e85b9885">More...</a><br /></td></tr>
-<tr class="separator:ac18bce6811c85045578bd788e85b9885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb3695949a771290ffb315c5379b4ddc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#abb3695949a771290ffb315c5379b4ddc">SigSerialDevicePath</a> = sigc::signal&lt; void(<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a>)&gt;</td></tr>
-<tr class="memdesc:abb3695949a771290ffb315c5379b4ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial device file path input.  <a href="../../d6/d87/classAbMHViewSerial.html#abb3695949a771290ffb315c5379b4ddc">More...</a><br /></td></tr>
-<tr class="separator:abb3695949a771290ffb315c5379b4ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ef94d74bfbe4cac37afa48e4c914b20"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#a4ef94d74bfbe4cac37afa48e4c914b20">SigSerialSetup</a> = sigc::signal&lt; void(<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;, <a class="el" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:a4ef94d74bfbe4cac37afa48e4c914b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial settings.  <a href="../../d6/d87/classAbMHViewSerial.html#a4ef94d74bfbe4cac37afa48e4c914b20">More...</a><br /></td></tr>
+<tr class="separator:a4ef94d74bfbe4cac37afa48e4c914b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d64b8fe6a8d3cdfc1ac28f039de71cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#a7d64b8fe6a8d3cdfc1ac28f039de71cc">SigSerialDevicePath</a> = sigc::signal&lt; void(<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:a7d64b8fe6a8d3cdfc1ac28f039de71cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial device file path input.  <a href="../../d6/d87/classAbMHViewSerial.html#a7d64b8fe6a8d3cdfc1ac28f039de71cc">More...</a><br /></td></tr>
+<tr class="separator:a7d64b8fe6a8d3cdfc1ac28f039de71cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd517bd30e5551a8b8c02267f8ccde7e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#abd517bd30e5551a8b8c02267f8ccde7e">SigSerialBaudRate</a> = sigc::signal&lt; void(int)&gt;</td></tr>
 <tr class="memdesc:abd517bd30e5551a8b8c02267f8ccde7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for serial baud rate combobox.  <a href="../../d6/d87/classAbMHViewSerial.html#abd517bd30e5551a8b8c02267f8ccde7e">More...</a><br /></td></tr>
 <tr class="separator:abd517bd30e5551a8b8c02267f8ccde7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,10 +146,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0b5ff0f5d9e2e0c5f287ea7b5e0f2d54"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#a0b5ff0f5d9e2e0c5f287ea7b5e0f2d54">~AbMHViewSerial</a> ()=default</td></tr>
 <tr class="memdesc:a0b5ff0f5d9e2e0c5f287ea7b5e0f2d54"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/d0c/classAbMHViewLog.html" title="AbMHViewLog class declaration and definition.">AbMHViewLog</a> destructor.  <a href="../../d6/d87/classAbMHViewSerial.html#a0b5ff0f5d9e2e0c5f287ea7b5e0f2d54">More...</a><br /></td></tr>
 <tr class="separator:a0b5ff0f5d9e2e0c5f287ea7b5e0f2d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ed2f8161d25585e0c6e21ffe54b814c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d6/d87/classAbMHViewSerial.html#ac18bce6811c85045578bd788e85b9885">SigSerialSetup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#a7ed2f8161d25585e0c6e21ffe54b814c">serialSetupChanged</a> ()=0</td></tr>
+<tr class="memitem:a7ed2f8161d25585e0c6e21ffe54b814c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d6/d87/classAbMHViewSerial.html#a4ef94d74bfbe4cac37afa48e4c914b20">SigSerialSetup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#a7ed2f8161d25585e0c6e21ffe54b814c">serialSetupChanged</a> ()=0</td></tr>
 <tr class="memdesc:a7ed2f8161d25585e0c6e21ffe54b814c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for serial settings.  <a href="../../d6/d87/classAbMHViewSerial.html#a7ed2f8161d25585e0c6e21ffe54b814c">More...</a><br /></td></tr>
 <tr class="separator:a7ed2f8161d25585e0c6e21ffe54b814c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1c22e438341c5e8d6cc35a89c9c4c41"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d6/d87/classAbMHViewSerial.html#abb3695949a771290ffb315c5379b4ddc">SigSerialDevicePath</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#aa1c22e438341c5e8d6cc35a89c9c4c41">serialFilePathChanged</a> ()=0</td></tr>
+<tr class="memitem:aa1c22e438341c5e8d6cc35a89c9c4c41"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d6/d87/classAbMHViewSerial.html#a7d64b8fe6a8d3cdfc1ac28f039de71cc">SigSerialDevicePath</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#aa1c22e438341c5e8d6cc35a89c9c4c41">serialFilePathChanged</a> ()=0</td></tr>
 <tr class="memdesc:aa1c22e438341c5e8d6cc35a89c9c4c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for device file path input.  <a href="../../d6/d87/classAbMHViewSerial.html#aa1c22e438341c5e8d6cc35a89c9c4c41">More...</a><br /></td></tr>
 <tr class="separator:aa1c22e438341c5e8d6cc35a89c9c4c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21ce6928a491fec79a0459290446a1c6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d87/classAbMHViewSerial.html#a21ce6928a491fec79a0459290446a1c6">onSerialFilePathChanged</a> ()=0</td></tr>
@@ -269,14 +269,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abb3695949a771290ffb315c5379b4ddc" name="abb3695949a771290ffb315c5379b4ddc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb3695949a771290ffb315c5379b4ddc">&#9670;&nbsp;</a></span>SigSerialDevicePath</h2>
+<a id="a7d64b8fe6a8d3cdfc1ac28f039de71cc" name="a7d64b8fe6a8d3cdfc1ac28f039de71cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d64b8fe6a8d3cdfc1ac28f039de71cc">&#9670;&nbsp;</a></span>SigSerialDevicePath</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d6/d87/classAbMHViewSerial.html#abb3695949a771290ffb315c5379b4ddc">AbMHViewSerial::SigSerialDevicePath</a> =  sigc::signal&lt;void(<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a>)&gt;</td>
+          <td class="memname">using <a class="el" href="../../d6/d87/classAbMHViewSerial.html#a7d64b8fe6a8d3cdfc1ac28f039de71cc">AbMHViewSerial::SigSerialDevicePath</a> =  sigc::signal&lt;void(<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a>&amp;)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -305,14 +305,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac18bce6811c85045578bd788e85b9885" name="ac18bce6811c85045578bd788e85b9885"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac18bce6811c85045578bd788e85b9885">&#9670;&nbsp;</a></span>SigSerialSetup</h2>
+<a id="a4ef94d74bfbe4cac37afa48e4c914b20" name="a4ef94d74bfbe4cac37afa48e4c914b20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ef94d74bfbe4cac37afa48e4c914b20">&#9670;&nbsp;</a></span>SigSerialSetup</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d6/d87/classAbMHViewSerial.html#ac18bce6811c85045578bd788e85b9885">AbMHViewSerial::SigSerialSetup</a> =  sigc::signal&lt;void(<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a>, <a class="el" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a>)&gt;</td>
+          <td class="memname">using <a class="el" href="../../d6/d87/classAbMHViewSerial.html#a4ef94d74bfbe4cac37afa48e4c914b20">AbMHViewSerial::SigSerialSetup</a> =  sigc::signal&lt;void(<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a>&amp;, <a class="el" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a>&amp;)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -703,7 +703,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d6/d87/classAbMHViewSerial.html#abb3695949a771290ffb315c5379b4ddc">SigSerialDevicePath</a> AbMHViewSerial::serialFilePathChanged </td>
+          <td class="memname">virtual <a class="el" href="../../d6/d87/classAbMHViewSerial.html#a7d64b8fe6a8d3cdfc1ac28f039de71cc">SigSerialDevicePath</a> AbMHViewSerial::serialFilePathChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -763,7 +763,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d6/d87/classAbMHViewSerial.html#ac18bce6811c85045578bd788e85b9885">SigSerialSetup</a> AbMHViewSerial::serialSetupChanged </td>
+          <td class="memname">virtual <a class="el" href="../../d6/d87/classAbMHViewSerial.html#a4ef94d74bfbe4cac37afa48e4c914b20">SigSerialSetup</a> AbMHViewSerial::serialSetupChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -822,7 +822,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d87/classAbMHViewSerial.html">AbMHViewSerial</a></li>
-    <li class="footer">Generated on Wed Sep 13 2023 22:08:08 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Sep 22 2023 06:01:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

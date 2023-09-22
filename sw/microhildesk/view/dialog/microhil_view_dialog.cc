@@ -60,7 +60,7 @@ MHViewDialog::MHViewDialog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &u
     this->hide();
 }
 
-void MHViewDialog::setMessage(const MHString message, const MessageType type)
+void MHViewDialog::setMessage(const MHString &message, const MessageType type)
 {
     const auto messageType = toUnicodeStringMessageType(type);
     this->set_title(messageType);

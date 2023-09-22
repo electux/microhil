@@ -68,7 +68,7 @@ public:
     /// @brief Convert baud-rate from unsigned int to scopped enumerator
     /// @param baudRate in unsigned integer value
     /// @return scoped enumerator format of baud-rate
-    BaudRate uintToBaudRate(const unsigned int);
+    BaudRate uintToBaudRate(const unsigned int baudRate);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Convert data-bits from scopped enumerator to unsigned int
@@ -110,13 +110,13 @@ public:
     /// @brief Setup the serial port parameters
     /// @param device file path for serial port
     /// @param params for serial port
-    void setup(MHString device, MHVecUInt params);
+    void setup(const MHString &device, const MHVecUInt &params);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup the serial port parameters
     /// @param device file path for the serial port
     /// @param params for the serial port
-    void setup(MHString device, MHSerialParams params);
+    void setup(const MHString &device, const MHSerialParams &params);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Read from serial communication channel
@@ -128,7 +128,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Write data to the serial communication channel
     /// @param data to be written to the serial port
-    void write(MHVecByte &data) final;
+    void write(const MHVecByte &data) final;
 
 private:
     ////////////////////////////////////////////////////////////////////////

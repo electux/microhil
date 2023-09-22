@@ -40,7 +40,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setting file path for logger
     /// @param logFilePath file path for storing log messages
-    void setFilePath(const MHString logFilePath);
+    void setFilePath(const MHString &logFilePath);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Getting file path for logger
@@ -50,7 +50,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup log level
     /// @param level of logging
-    void setLogLevel(const MHString level);
+    void setLogLevel(const MHString &level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup log level
@@ -76,7 +76,7 @@ public:
     /// @brief Write log message
     /// @param message log message to be stored
     /// @param level log level
-    void write(const MHString message, const LogLevel level) final;
+    void write(const MHString &message, const LogLevel level) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Close log storage
@@ -99,7 +99,7 @@ private:
     /// @brief Convert log level string to level type
     /// @param level type in string format
     /// @return log level type
-    LogLevel toLogType(const MHString level) const;
+    LogLevel toLogType(const MHString &level) const;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log file path
