@@ -59,25 +59,25 @@ private:
     /// @brief Slot for processing log settings changes
     /// @param path is absolute path of log file
     /// @param level is level for logging messages
-    void onLogSettingsChanged(MHString path, int level);
+    void onLogSettingsChanged(MHString &path, int level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing log settings loaded
     /// @param path is absolute path of log file
     /// @param logLevel is level for logging messages
-    void onLogSettingsLoaded(MHString path, int level);
+    void onLogSettingsLoaded(MHString &path, int level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
     /// @param dev file path for serial device
     /// @param params set of serial parameters
-    void onSerialSettingsChanged(MHString dev, MHVecUInt params);
+    void onSerialSettingsChanged(MHString &dev, MHVecUInt &params);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
     /// @param dev file path for serial device
     /// @param params set of serial parameters
-    void onSerialSettingsLoaded(MHString dev, MHVecUInt params);
+    void onSerialSettingsLoaded(MHString &dev, MHVecUInt &params);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Enable/Disable state of controller

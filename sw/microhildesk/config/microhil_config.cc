@@ -77,7 +77,9 @@ bool MHConfig::load()
 
     ////////////////////////////////////////////////////////////////////////
     /// Emit signal for loaded log configuration
-    m_logConfig.emit(getLogPath(), logLevelStringToInt(getLogLevel()));
+    auto logPath = getLogPath();
+    auto logLevel = logLevelStringToInt(getLogLevel());
+    m_logConfig.emit(logPath, logLevel);
 
     MHVecUInt serialParams{};
     serialParams.push_back(getBaudRate());
@@ -87,7 +89,8 @@ bool MHConfig::load()
 
     ////////////////////////////////////////////////////////////////////////
     /// Emit signal for loaded serial configuration
-    m_serialConfig.emit(getDevice(), serialParams);
+    auto device = getDevice();
+    m_serialConfig.emit(device, serialParams);
 
     return true;
 }
@@ -119,12 +122,12 @@ bool MHConfig::validate()
     return true;
 }
 
-bool MHConfig::checkConfigPath()
+bool MHConfig::checkConfigPath() const
 {
     ////////////////////////////////////////////////////////////////////////
     // Check home directory /home/<username>/.microhil/
     std::filesystem::directory_entry homeDirEntry{m_homePath};
-    auto homeDirExists = homeDirEntry.exists();
+    const auto homeDirExists = homeDirEntry.exists();
 
     if (!homeDirExists)
     {
@@ -139,7 +142,7 @@ bool MHConfig::checkConfigPath()
     ////////////////////////////////////////////////////////////////////////
     // Check config file in case of missing generate new with default setup
     // Configuration file location: /home/<username>/.microhil/config
-    auto configFileExists = std::filesystem::exists(m_configFilePath);
+    const auto configFileExists = std::filesystem::exists(m_configFilePath);
 
     if (!configFileExists)
     {

@@ -25,8 +25,11 @@
 /// @brief Scoped class enumerator for dialog message types
 enum class MessageType
 {
+    /// @brief Message type info
     MICROHIL_INFO = 0,
+    /// @brief Message type warning
     MICROHIL_WARNING = 1,
+    /// @brief Message type error
     MICROHIL_ERROR = 2
 };
 
@@ -56,5 +59,5 @@ public:
     /// @brief Set message for dialog
     /// @param message with information for user
     /// @param type of dialog message
-    virtual void setMessage(const MHString message, const MessageType type) = 0;
+    virtual void setMessage(const MHString &message, const MessageType type) = 0;
 };

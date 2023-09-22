@@ -33,7 +33,7 @@ MHUPtr<Application> create(int argc, char *argv[]);
 int main(int argc, char *argv[])
 {
     auto app = create(argc, argv);
-    int status{EXIT_FAILURE};
+    auto status{EXIT_FAILURE};
 
     if (app)
     {

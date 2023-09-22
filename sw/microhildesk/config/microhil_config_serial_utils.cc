@@ -69,7 +69,7 @@ namespace
     constexpr const int kConfigParitySpaceId{4};
 }
 
-int MHConfig::baudRateToInt(const int baudRate)
+int MHConfig::baudRateToInt(int baudRate)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Convert baud-rate to index item for combobox
@@ -108,7 +108,7 @@ int MHConfig::baudRateToInt(const int baudRate)
     return 115200;
 }
 
-int MHConfig::intToBaudRate(const int baudRate)
+int MHConfig::intToBaudRate(int baudRate)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Convert index item of combobox to baud-rate
@@ -147,14 +147,14 @@ int MHConfig::intToBaudRate(const int baudRate)
     return 115200;
 }
 
-int MHConfig::dataBitsToInt(const int dataBits)
+int MHConfig::dataBitsToInt(int dataBits)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process data-bits to index item of combobox
     return (dataBits - kConfigDataBitsOffset);
 }
 
-int MHConfig::intToDataBits(const int dataBits)
+int MHConfig::intToDataBits(int dataBits)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process index item of combobox to data-bits
@@ -184,7 +184,7 @@ MHString MHConfig::parityToUnicodeString(const int parity)
     return kConfigParityNone;
 }
 
-int MHConfig::parityUnicodeStringToInt(const MHString parity)
+int MHConfig::parityUnicodeStringToInt(const MHString &parity)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Convert string format of parity to index item for combobox
@@ -211,14 +211,14 @@ int MHConfig::parityUnicodeStringToInt(const MHString parity)
     return kConfigParityNoneId;
 }
 
-int MHConfig::stopBitsToInt(const int stopBits)
+int MHConfig::stopBitsToInt(int stopBits)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process stop-bits to index item for combobox
     return (stopBits - kConfigStopBitsOffset);
 }
 
-int MHConfig::intToStopBits(const int stopBits)
+int MHConfig::intToStopBits(int stopBits)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process index item from combobox to stop-bits

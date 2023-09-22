@@ -112,7 +112,7 @@ public:
     /// @brief Set loaded parameters for serial settings view
     /// @param device is absolute path for serial device
     /// @param params for serial port parameters
-    void serialSettingsLoaded(MHString device, MHVecUInt params);
+    void serialSettingsLoaded(MHString &device, MHVecUInt &params);
 
 private:
     ////////////////////////////////////////////////////////////////////////

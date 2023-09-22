@@ -16,7 +16,7 @@ var classMHViewSerial =
     [ "serialDataBitsChanged", "d2/dd5/classMHViewSerial.html#a6bc03aa335db66934c57f2d7ccdebb22", null ],
     [ "serialFilePathChanged", "d2/dd5/classMHViewSerial.html#a5bad4420e5d5ee6eb528e0684a8b8223", null ],
     [ "serialParityChanged", "d2/dd5/classMHViewSerial.html#a65309cabc8e7dd38564174605e41cca5", null ],
-    [ "serialSettingsLoaded", "d2/dd5/classMHViewSerial.html#aa513e3a8e185b0377546ca5856360cc4", null ],
+    [ "serialSettingsLoaded", "d2/dd5/classMHViewSerial.html#a4a538a3348621727f1a9b67e0de00c8e", null ],
     [ "serialSetupChanged", "d2/dd5/classMHViewSerial.html#ad8f26cb79c2cf14be77bd9d45471f55a", null ],
     [ "serialStopBitsChanged", "d2/dd5/classMHViewSerial.html#a7aa7fdf976f672804371ab128ee7cbaa", null ],
     [ "m_baudRate", "d2/dd5/classMHViewSerial.html#a029e8f491c766e590c3fa967c5b4d611", null ],

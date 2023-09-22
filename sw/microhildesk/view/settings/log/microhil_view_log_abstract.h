@@ -28,11 +28,11 @@ class AbMHViewLog
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log settings
-    using SigLogSetup = sigc::signal<void(MHString, int)>;
+    using SigLogSetup = sigc::signal<void(MHString&, int)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log file path input
-    using SigLogFilePath = sigc::signal<void(MHString)>;
+    using SigLogFilePath = sigc::signal<void(MHString&)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for log level combobox

@@ -35,7 +35,7 @@ Application::Application(int argc, char *argv[]) : m_app{Gtk::Application::creat
 
 int Application::run()
 {
-    int status{EXIT_FAILURE};
+    auto status{EXIT_FAILURE};
 
     if (m_app && m_view)
     {

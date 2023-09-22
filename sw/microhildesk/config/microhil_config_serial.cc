@@ -45,12 +45,12 @@ namespace
     constexpr const char kConfigSerialStopBits[]{"stop_bits"};
 }
 
-void MHConfig::setDevice(const MHString device)
+void MHConfig::setDevice(const MHString &device)
 {
     m_config.set_string(kConfigSerialSection, kConfigSerialDevice, device);
 }
 
-MHString MHConfig::getDevice()
+MHString MHConfig::getDevice() const
 {
     return m_config.get_string(kConfigSerialSection, kConfigSerialDevice);
 }
@@ -100,7 +100,7 @@ void MHConfig::setParity(const int parity)
     m_config.set_string(kConfigSerialSection, kConfigSerialParity, parityPrepared);
 }
 
-MHString MHConfig::getParity()
+MHString MHConfig::getParity() const
 {
     return m_config.get_string(kConfigSerialSection, kConfigSerialParity);
 }
@@ -109,7 +109,7 @@ void MHConfig::setStopBits(const int stopBits)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process stop-bits for configuration file
-    auto stopBitsPrepared = intToStopBits(stopBits);
+    const auto stopBitsPrepared = intToStopBits(stopBits);
 
     m_config.set_integer(kConfigSerialSection, kConfigSerialStopBits, stopBitsPrepared);
 }
@@ -127,11 +127,11 @@ bool MHConfig::validateSerialSettings()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Checking serial configuration parameters from config file
-    auto configCheck = (m_config.has_key(kConfigSerialSection, kConfigSerialDevice) &&
-                        m_config.has_key(kConfigSerialSection, kConfigSerialBaudRate) &&
-                        m_config.has_key(kConfigSerialSection, kConfigSerialDataBits) &&
-                        m_config.has_key(kConfigSerialSection, kConfigSerialParity) &&
-                        m_config.has_key(kConfigSerialSection, kConfigSerialStopBits));
+    const auto configCheck = (m_config.has_key(kConfigSerialSection, kConfigSerialDevice) &&
+                              m_config.has_key(kConfigSerialSection, kConfigSerialBaudRate) &&
+                              m_config.has_key(kConfigSerialSection, kConfigSerialDataBits) &&
+                              m_config.has_key(kConfigSerialSection, kConfigSerialParity) &&
+                              m_config.has_key(kConfigSerialSection, kConfigSerialStopBits));
 
     if (!configCheck)
     {

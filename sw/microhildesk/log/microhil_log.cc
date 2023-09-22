@@ -45,7 +45,7 @@ MHLog::~MHLog()
     }
 }
 
-void MHLog::setFilePath(const MHString logFilePath)
+void MHLog::setFilePath(const MHString &logFilePath)
 {
     m_logFilePath = logFilePath;
 }
@@ -55,7 +55,7 @@ MHString MHLog::getFilePath() const
     return m_logFilePath;
 }
 
-void MHLog::setLogLevel(const MHString level)
+void MHLog::setLogLevel(const MHString &level)
 {
     auto logLevelPrepared = toLogType(level);
 
@@ -88,7 +88,7 @@ bool MHLog::open()
     return m_fileOpened;
 }
 
-void MHLog::write(const MHString message, const LogLevel level)
+void MHLog::write(const MHString &message, const LogLevel level)
 {
     const auto currentTime = getCurrentDateTime();
     const auto prefixLogLevel = toStringLogType(level);
@@ -138,7 +138,7 @@ MHString MHLog::toStringLogType(const LogLevel level) const
     return kInfoLogLevel;
 }
 
-LogLevel MHLog::toLogType(const MHString level) const
+LogLevel MHLog::toLogType(const MHString &level) const
 {
     if (level == kWarningLogLevel)
     {

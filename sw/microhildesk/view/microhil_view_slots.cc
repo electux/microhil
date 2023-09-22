@@ -20,9 +20,7 @@
 
 void MHView::onViewChanged(ViewId id)
 {
-    int viewId = static_cast<int>(id);
-
-    switch (viewId)
+    switch (static_cast<int>(id))
     {
     case static_cast<int>(ViewId::MICROHIL_SERIAL_SETTINGS):
         m_serial->show();

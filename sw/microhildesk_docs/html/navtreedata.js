@@ -52,7 +52,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d6/d87/classAbMHViewSerial.html#ac18bce6811c85045578bd788e85b9885",
+"d6/d87/classAbMHViewSerial.html#abf98c1f2ea9cf719babe92bd7889d2bb",
 "dc/def/classMHViewHome.html#ad3dcf0efb37d0818226d57d9f13d963a"
 ];
 

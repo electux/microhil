@@ -52,7 +52,7 @@ public:
     /// @brief Set message for dialog
     /// @param message with information for user
     /// @param type of dialog message
-    void setMessage(const MHString message, const MessageType type) final;
+    void setMessage(const MHString &message, const MessageType type) final;
 
 private:
     ////////////////////////////////////////////////////////////////////////

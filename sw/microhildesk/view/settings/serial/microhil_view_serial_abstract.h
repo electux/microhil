@@ -28,11 +28,11 @@ class AbMHViewSerial
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial settings
-    using SigSerialSetup = sigc::signal<void(MHString, MHVecUInt)>;
+    using SigSerialSetup = sigc::signal<void(MHString&, MHVecUInt&)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial device file path input
-    using SigSerialDevicePath = sigc::signal<void(MHString)>;
+    using SigSerialDevicePath = sigc::signal<void(MHString&)>;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal type for serial baud rate combobox

@@ -64,7 +64,7 @@ MHString MHConfig::logLevelToUnicodeString(const int logLevel)
     return kConfigLogLevelInfo;
 }
 
-int MHConfig::logLevelStringToInt(const MHString level)
+int MHConfig::logLevelStringToInt(const MHString &level)
 {
     if (level == kConfigLogLevelWarning)
     {

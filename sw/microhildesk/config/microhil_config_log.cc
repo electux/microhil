@@ -42,17 +42,17 @@ void MHConfig::setLogLevel(int level)
     m_config.set_string(kConfigLogSection, kConfigLogLevel, logLevel);
 }
 
-MHString MHConfig::getLogLevel()
+MHString MHConfig::getLogLevel() const
 {
     return m_config.get_string(kConfigLogSection, kConfigLogLevel);
 }
 
-void MHConfig::setLogPath(MHString path)
+void MHConfig::setLogPath(const MHString &path)
 {
     m_config.set_string(kConfigLogSection, kConfigLogFile, path);
 }
 
-MHString MHConfig::getLogPath()
+MHString MHConfig::getLogPath() const
 {
     return m_config.get_string(kConfigLogSection, kConfigLogFile);
 }
@@ -61,8 +61,8 @@ bool MHConfig::validateLogSettings()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Checking log configuration parameters from config file
-    auto configCheck = (m_config.has_key(kConfigLogSection, kConfigLogLevel) &&
-                        m_config.has_key(kConfigLogSection, kConfigLogFile));
+    const auto configCheck = (m_config.has_key(kConfigLogSection, kConfigLogLevel) &&
+                              m_config.has_key(kConfigLogSection, kConfigLogFile));
 
     if (!configCheck)
     {

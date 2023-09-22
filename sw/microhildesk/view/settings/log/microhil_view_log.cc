@@ -64,7 +64,7 @@ MHViewLog::MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui) : G
     this->hide();
 }
 
-void MHViewLog::logSettingsLoaded(MHString filePath, int logLevel)
+void MHViewLog::logSettingsLoaded(MHString &filePath, int logLevel)
 {
     m_device->set_text(filePath);
     m_level->set_active(logLevel);
