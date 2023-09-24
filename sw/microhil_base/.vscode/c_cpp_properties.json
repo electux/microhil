@@ -27,7 +27,8 @@
                 "/opt/pico/pico-sdk/src/rp2_common/hardware_clocks/include",
                 "/opt/pico/pico-sdk/src/rp2_common/hardware_pwm/include",
                 "/opt/pico/pico-sdk/src/rp2_common/hardware_spi/include",
-                "/opt/pico/pico-sdk/src/rp2_common/hardware_i2c/include"
+                "/opt/pico/pico-sdk/src/rp2_common/hardware_i2c/include",
+                "/opt/pico/pico-sdk/lib/tinyusb/src"
             ],
             "defines": [],
             "cStandard": "c11",

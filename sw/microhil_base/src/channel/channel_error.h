@@ -27,9 +27,5 @@
 #define MICROHIL_INIT_FAILED "initialization failed"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Error message for not supported channel operation
-#define MICROHIL_NO_SUPPORT "not supported channel operation"
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief Error message for extracting property from command message
-#define MICROHIL_EXT_PROP_FAILED "failed to extract property from message"
+/// @brief Error message for failed to process request
+#define MICROHIL_FAILED_TO_PROCESS "failed to process request"

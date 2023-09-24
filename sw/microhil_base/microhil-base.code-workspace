@@ -27,7 +27,11 @@
 			"channel_error.h": "c",
 			"channel_info.h": "c",
 			"io_config_error.h": "c",
-			"pwm.h": "c"
+			"pwm.h": "c",
+			"stdio.h": "c",
+			"mem_ops.h": "c",
+			"stddef.h": "c",
+			"stdint.h": "c"
 		}
 	}
 }

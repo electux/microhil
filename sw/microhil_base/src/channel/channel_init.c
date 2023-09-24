@@ -17,22 +17,25 @@
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
 #include "pico/stdio_usb.h"
-#include "hardware/pwm.h"
 #include "io_config.h"
 #include "channel_info.h"
 #include "channel_error.h"
 #include "channel.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Global initialization of microHIL device
+/// @brief Global device initialization
 /// @return true for success else false
 bool microhil_init()
 {
     bool status = false;
 
     ////////////////////////////////////////////////////////////////////////
-    /// Perform initialization for stdio types
+    /// Performs initialization for stdio types
     status = stdio_init_all();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Disables convertion of LF to CR
+    stdio_set_translate_crlf(&stdio_usb, false);
 
     if (!status)
     {
@@ -42,8 +45,10 @@ bool microhil_init()
         return status;
     }
 
+    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_STDIO_DONE);
+
     ////////////////////////////////////////////////////////////////////////
-    /// Perform initialization for stdio usb
+    /// Performs initialization for stdio usb
     status = stdio_usb_init();
 
     if (!status)
@@ -54,20 +59,24 @@ bool microhil_init()
         return status;
     }
 
+    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_USB_DONE);
+
     ////////////////////////////////////////////////////////////////////////
-    /// Perform initialization for RELAY
+    /// Performs initialization for RELAY chanels
     status = microhil_init_relay();
 
     if (!status)
     {
         ////////////////////////////////////////////////////////////////////
-        /// Failed to perform initialization for RELAY
+        /// Failed to perform initialization for RELAY channels
         printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_INIT_FAILED);
         return status;
     }
 
+    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_RELAY_DONE);
+
     ////////////////////////////////////////////////////////////////////////
-    /// Perform initialization for PIO
+    /// Performs initialization for PIO state machine
     status = microhil_pio_init();
 
     if (!status)
@@ -78,37 +87,29 @@ bool microhil_init()
         return status;
     }
 
+    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_PIO_DONE);
+
     ////////////////////////////////////////////////////////////////////////
-    /// Perform initialization for port pin configuration of BUZZER
+    /// Performs initialization for BUZZER
     status = microhil_init_buzzer();
 
     if (!status)
     {
         ////////////////////////////////////////////////////////////////////
-        /// Failed to perform initialization for pin configuration Buzzer
+        /// Failed to perform initialization for BUZZER
         printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_INIT_FAILED);
         return status;
     }
 
-    ////////////////////////////////////////////////////////////////////////
-    /// Perform initialization for PWM channel of BUZZER
-    status = microhil_init_pwm(MICROHIL_BUZZER, PWM_CHAN_A);
-
-    if (!status)
-    {
-        ////////////////////////////////////////////////////////////////////
-        /// Failed to perform initialization for PWM Buzzer
-        printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_INIT_FAILED);
-        return status;
-    }
-
-    ////////////////////////////////////////////////////////////////////////
-    /// Led notification
-    microhil_write_pixel(urgb_u32(0, 0, 0));
+    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_BUZZER_DONE);
 
     ////////////////////////////////////////////////////////////////////////
     /// Buzzer notification
-    microhil_digital_write(MICROHIL_BUZZER, true);
+    microhil_write_buzzer(true);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Led notification
+    microhil_write_pixel(0, 0, 0);
 
     printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_INIT_DONE);
 
