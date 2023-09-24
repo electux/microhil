@@ -12,10 +12,14 @@ other information that should be provided before the tool is installed.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [Installation](#installation)
-- [Dependencies](#dependencies)
-- [Docs](#docs)
-- [Copyright and licence](#copyright-and-licence)
+- [Statistics](#statistics)
+    - [Contributing activities](#contributing-activities)
+    - [SW Firmware checks](#sw-firmware-checks)
+    - [SW Desktop checks](#sw-desktop-checks)
+    - [Installation](#installation)
+    - [Dependencies](#dependencies)
+    - [Docs](#docs)
+    - [Copyright and licence](#copyright-and-licence)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
