@@ -1,5 +1,0 @@
-<map id="microhil_extract_command_property" name="microhil_extract_command_property">
-<area shape="rect" id="node1" title="Extract command property." alt="" coords="360,5,560,47"/>
-<area shape="rect" id="node2" href="$d3/dfb/channel__uart_8c.html#a67ae70ae40ff40631ec629d8e4a44e50" title="Process microHIL command messages from uart." alt="" coords="108,13,312,39"/>
-<area shape="rect" id="node3" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,13,60,39"/>
-</map>

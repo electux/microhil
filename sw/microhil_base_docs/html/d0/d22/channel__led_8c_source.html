@@ -107,27 +107,22 @@ $(document).ready(function(){initNavTree('d0/d22/channel__led_8c_source.html','.
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d7b/channel_8h.html">channel.h</a>&quot;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d5/d7b/channel_8h.html#a5dced4e3f65945fd20e699b7b8d6b648">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/d22/channel__led_8c.html#a5dced4e3f65945fd20e699b7b8d6b648">microhil_write_pixel</a>(uint32_t pixel_rgb)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    pio_sm_put_blocking(pio0, 0, pixel_rgb &lt;&lt; 8u);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d5/d7b/channel_8h.html#a6f9aa8064d7f3cd8908b853c8a002253">   35</a></span>uint32_t <a class="code hl_function" href="../../d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253">urgb_u32</a>(uint8_t red, uint8_t green, uint8_t blue)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> ((uint32_t)(red) &lt;&lt; 8) |</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>           ((uint32_t)(green) &lt;&lt; 16) |</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>           (uint32_t)(blue);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d5/d7b/channel_8h.html#a3430b478fd2601c716cf936f321c10c3">   26</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/d22/channel__led_8c.html#a3430b478fd2601c716cf936f321c10c3">microhil_write_pixel</a>(uint8_t red, uint8_t green, uint8_t blue)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    uint pixel_rgb = ((uint)(red) &lt;&lt; 8) |</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                     ((uint)(green) &lt;&lt; 16) |</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                     ((uint)(blue));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    pio_sm_put_blocking(pio0, 0, pixel_rgb &lt;&lt; 8u);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 <div class="ttc" id="achannel_8h_html"><div class="ttname"><a href="../../d5/d7b/channel_8h.html">channel.h</a></div></div>
-<div class="ttc" id="achannel__led_8c_html_a5dced4e3f65945fd20e699b7b8d6b648"><div class="ttname"><a href="../../d0/d22/channel__led_8c.html#a5dced4e3f65945fd20e699b7b8d6b648">microhil_write_pixel</a></div><div class="ttdeci">void microhil_write_pixel(uint32_t pixel_rgb)</div><div class="ttdoc">Write 32-bit RGB value to PIO state machine.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d22/channel__led_8c_source.html#l00024">channel_led.c:24</a></div></div>
-<div class="ttc" id="achannel__led_8c_html_a6f9aa8064d7f3cd8908b853c8a002253"><div class="ttname"><a href="../../d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253">urgb_u32</a></div><div class="ttdeci">uint32_t urgb_u32(uint8_t red, uint8_t green, uint8_t blue)</div><div class="ttdoc">Generate 32-bit RGB value.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d22/channel__led_8c_source.html#l00035">channel_led.c:35</a></div></div>
+<div class="ttc" id="achannel__led_8c_html_a3430b478fd2601c716cf936f321c10c3"><div class="ttname"><a href="../../d0/d22/channel__led_8c.html#a3430b478fd2601c716cf936f321c10c3">microhil_write_pixel</a></div><div class="ttdeci">void microhil_write_pixel(uint8_t red, uint8_t green, uint8_t blue)</div><div class="ttdoc">Writes 32-bit RGB value to PIO state machine.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d22/channel__led_8c_source.html#l00026">channel_led.c:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bbca32ae125625ab0d7554a76a48380c.html">channel</a></li><li class="navelem"><a class="el" href="../../d0/d22/channel__led_8c.html">channel_led.c</a></li>
-    <li class="footer">Generated on Sun Sep 17 2023 23:21:11 for microhil-base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Sep 24 2023 13:07:58 for microhil-base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -1,0 +1,4 @@
+<map id="microhil_channel_switch" name="microhil_channel_switch">
+<area shape="rect" id="node1" title="Switches channel by command request." alt="" coords="5,5,188,32"/>
+<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#a1b8d260a9aae64f4702d92383ea65091" title="Compare request with candidates from request table." alt="" coords="236,5,371,32"/>
+</map>

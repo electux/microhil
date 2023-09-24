@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['offset_0',['offset',['../d7/d9d/struct__ws2812__init.html#a4a2f569505eaed1f05381121a5e730fb',1,'_ws2812_init::offset()'],['../d1/dc2/struct__ws2812__parallel__init.html#ae24a4ba14e803f45abb70408b0d298fd',1,'_ws2812_parallel_init::offset()']]]
+  ['microhil_5fbuzzer_0',['microhil_buzzer',['../db/dec/channel__buzzer_8c.html#a4e8c43500f71ed91ea241cfecf284133',1,'channel_buzzer.c']]],
+  ['microhil_5fws2812_5fdin_1',['microhil_ws2812_din',['../de/dab/channel__pio_8c.html#ac66a9c3473ad3ceb08cec9135d487d4d',1,'channel_pio.c']]]
 ];

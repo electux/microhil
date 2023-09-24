@@ -1,5 +1,0 @@
-<map id="microhil_all_channels_off" name="microhil_all_channels_off">
-<area shape="rect" id="node1" title="Set all channels to OFF." alt="" coords="339,5,525,32"/>
-<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#a1826a2deaa766a00ea7c6b1042352cd7" title="Switch channel state." alt="" coords="108,5,291,32"/>
-<area shape="rect" id="node3" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,5,60,32"/>
-</map>
