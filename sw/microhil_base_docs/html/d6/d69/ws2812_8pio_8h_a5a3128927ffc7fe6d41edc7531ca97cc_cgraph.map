@@ -1,4 +1,4 @@
 <map id="ws2812_parallel_program_init" name="ws2812_parallel_program_init">
-<area shape="rect" id="node1" title="Perform WS2812 parallel program initialization." alt="" coords="5,13,224,39"/>
-<area shape="rect" id="node2" href="$d6/d69/ws2812_8pio_8h.html#add870a68b6c5369f320512429ed17887" title="Preparing default configuration (parallel)" alt="" coords="272,5,463,47"/>
+<area shape="rect" id="node1" title="Performs WS2812 parallel program initialization." alt="" coords="5,13,224,39"/>
+<area shape="rect" id="node2" href="$d6/d69/ws2812_8pio_8h.html#add870a68b6c5369f320512429ed17887" title="Prepares default configuration (parallel)" alt="" coords="272,5,463,47"/>
 </map>

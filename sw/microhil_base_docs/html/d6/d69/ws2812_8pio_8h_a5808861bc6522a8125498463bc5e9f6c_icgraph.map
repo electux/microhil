@@ -1,7 +1,7 @@
 <map id="ws2812_program_get_default_config" name="ws2812_program_get_default_config">
-<area shape="rect" id="node1" title="Preparing default configuration." alt="" coords="648,5,811,47"/>
-<area shape="rect" id="node2" href="$d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Perform WS2812 program initialization." alt="" coords="437,13,600,39"/>
+<area shape="rect" id="node1" title="Prepares default configuration." alt="" coords="648,5,811,47"/>
+<area shape="rect" id="node2" href="$d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Performs WS2812 program initialization." alt="" coords="437,13,600,39"/>
 <area shape="rect" id="node3" href="$de/dab/channel__pio_8c.html#a1d894ba2c3fdf553fd6cf62d5f376ac4" title="Performs initialization for PIO state machine." alt="" coords="259,13,389,39"/>
 <area shape="rect" id="node4" href="$d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global device initialization." alt="" coords="108,13,211,39"/>
-<area shape="rect" id="node5" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,13,60,39"/>
+<area shape="rect" id="node5" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point for microhil&#45;base." alt="" coords="5,13,60,39"/>
 </map>

@@ -5,14 +5,14 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-# Add sources
+# Adds sources
 aux_source_directory(. DIR_WS2812_SRCS)
 
-# Add dependecy includes
+# Adds dependecy includes
 include_directories(../io_config)
 
-# Add WS2812 target library
+# Adds WS2812 target library
 add_library(ws2812 ${DIR_WS2812_SRCS})
 
-# Link dependecy library
+# Links dependecy library
 target_link_libraries(ws2812 PUBLIC io_config)

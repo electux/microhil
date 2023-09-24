@@ -1,4 +1,4 @@
 <map id="microhil_relay" name="microhil_relay">
 <area shape="rect" id="node1" title="Turns relay to ON/OFF." alt="" coords="187,5,301,32"/>
-<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#a4fca939f579d8c8474e9ac4a5b2d7d36" title=" " alt="" coords="5,5,139,32"/>
+<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#aa3e191afa4af03ae49123f8b68e629e8" title="Performs channel operation (single channel)" alt="" coords="5,5,139,32"/>
 </map>

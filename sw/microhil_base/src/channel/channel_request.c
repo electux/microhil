@@ -19,7 +19,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "channel_error.h"
 #include "channel.h"
 
 ////////////////////////////////////////////////////////////////////////////
@@ -32,8 +31,8 @@ const char end = '>';
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Fetches microHIL command requests from the serial port
-/// @param buffer storage for received requests from the serial port
-void microhil_fetch_request(uint8_t *buffer)
+/// @param request storage for received request from the serial port
+void microhil_fetch_request(uint8_t *request)
 {
     static uint8_t index = 0;
     int16_t rc = getchar_timeout_us(1);
@@ -53,7 +52,7 @@ void microhil_fetch_request(uint8_t *buffer)
             {
                 ////////////////////////////////////////////////////////////
                 // End of the microHIL request
-                buffer[index] = '\0';
+                request[index] = '\0';
                 receive_in_progress = false;
                 index = 0;
                 new_request = true;
@@ -62,7 +61,7 @@ void microhil_fetch_request(uint8_t *buffer)
             {
                 ////////////////////////////////////////////////////////////
                 // Append any data between start and end markers
-                buffer[index] = (char)rc;
+                request[index] = (char)rc;
                 index++;
 
                 if (index >= MICROHIL_REQ_LEN)

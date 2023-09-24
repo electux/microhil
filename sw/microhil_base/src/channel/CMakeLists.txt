@@ -5,17 +5,17 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-# Add sources
+# Adds sources
 aux_source_directory(. DIR_CHANNEL_SRCS)
 
-# Add dependecy includes
+# Adds dependecy includes
 include_directories(../ws2812)
 include_directories(../io_config)
 
-# Add channel target library
+# Adds channel target library
 add_library(channel ${DIR_CHANNEL_SRCS})
 
-# Link dependecy libraries
+# Links dependecy libraries
 target_link_libraries(
     channel PUBLIC pico_stdlib pico_stdio_usb hardware_pio hardware_pwm
 )

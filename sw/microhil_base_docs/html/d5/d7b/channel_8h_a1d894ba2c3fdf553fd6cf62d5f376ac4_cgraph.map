@@ -1,5 +1,5 @@
 <map id="microhil_pio_init" name="microhil_pio_init">
 <area shape="rect" id="node1" title="Performs initialization for PIO state machine." alt="" coords="5,13,136,39"/>
-<area shape="rect" id="node2" href="$d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Perform WS2812 program initialization." alt="" coords="184,13,347,39"/>
-<area shape="rect" id="node3" href="$d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title="Preparing default configuration." alt="" coords="395,5,557,47"/>
+<area shape="rect" id="node2" href="$d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Performs WS2812 program initialization." alt="" coords="184,13,347,39"/>
+<area shape="rect" id="node3" href="$d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title="Prepares default configuration." alt="" coords="395,5,557,47"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="microhil_write_pixel" name="microhil_write_pixel">
 <area shape="rect" id="node1" title="Writes 32&#45;bit RGB value to PIO state machine." alt="" coords="319,31,472,57"/>
-<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#aa2c8a449334ea11d2135c6d0dcf37f70" title=" " alt="" coords="108,5,271,32"/>
+<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#af334e99989414c68dff3a1f190aafc40" title="Performs operations over all channels." alt="" coords="108,5,271,32"/>
 <area shape="rect" id="node3" href="$d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global device initialization." alt="" coords="138,56,241,83"/>
-<area shape="rect" id="node4" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,56,60,83"/>
+<area shape="rect" id="node4" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point for microhil&#45;base." alt="" coords="5,56,60,83"/>
 </map>

@@ -31,7 +31,8 @@
 			"stdio.h": "c",
 			"mem_ops.h": "c",
 			"stddef.h": "c",
-			"stdint.h": "c"
+			"stdint.h": "c",
+			"tusb.h": "c"
 		}
 	}
 }

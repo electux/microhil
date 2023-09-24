@@ -67,9 +67,9 @@ static const struct pio_program ws2812_program =
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Preparing default configuration
-/// @param offset for programm address
-/// @return PIO configuratio structure for WS2812
+/// @brief Prepares default configuration
+/// @param offset represents programm address
+/// @return PIO configuration structure for WS2812
 static inline pio_sm_config ws2812_program_get_default_config(uint offset)
 {
     pio_sm_config config = pio_get_default_sm_config();
@@ -95,8 +95,8 @@ typedef struct _ws2812_init
 } ws2812_init;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Perform WS2812 program initialization
-/// @param init is pointer to WS2812 init structure
+/// @brief Performs WS2812 program initialization
+/// @param init represents pointer to WS2812 init structure
 static inline void ws2812_program_init(ws2812_init* init)
 {
     pio_gpio_init(init->pio, init->pin);
@@ -162,9 +162,9 @@ static const struct pio_program ws2812_parallel_program =
 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Preparing default configuration (parallel)
-/// @param offset for programm address
-/// @return PIO configuratio structure for WS2812
+/// @brief Prepares default configuration (parallel)
+/// @param offset represents program address
+/// @return PIO configuration structure for WS2812
 static inline pio_sm_config ws2812_parallel_program_get_default_config(
     uint offset
 )
@@ -190,8 +190,8 @@ typedef struct _ws2812_parallel_init
 } ws2812_parallel_init;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Perform WS2812 parallel program initialization
-/// @param init is pointer to WS2812 parallel init structure
+/// @brief Performs WS2812 parallel program initialization
+/// @param init represents pointer to WS2812 parallel init structure
 static inline void ws2812_parallel_program_init(ws2812_parallel_init* init)
 {
     uint max_pin_count = init->pin_base + init->pin_count;

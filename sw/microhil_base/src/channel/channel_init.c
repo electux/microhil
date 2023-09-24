@@ -18,8 +18,6 @@
  */
 #include "pico/stdio_usb.h"
 #include "io_config.h"
-#include "channel_info.h"
-#include "channel_error.h"
 #include "channel.h"
 
 ////////////////////////////////////////////////////////////////////////////
@@ -33,19 +31,16 @@ bool microhil_init()
     /// Performs initialization for stdio types
     status = stdio_init_all();
 
-    ////////////////////////////////////////////////////////////////////////
-    /// Disables convertion of LF to CR
-    stdio_set_translate_crlf(&stdio_usb, false);
-
     if (!status)
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for stdio types
-        printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_INIT_FAILED);
         return status;
     }
 
-    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_STDIO_DONE);
+    ////////////////////////////////////////////////////////////////////////
+    /// Disables convertion of LF to CR
+    stdio_set_translate_crlf(&stdio_usb, false);
 
     ////////////////////////////////////////////////////////////////////////
     /// Performs initialization for stdio usb
@@ -55,11 +50,8 @@ bool microhil_init()
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for stdio usb
-        printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_INIT_FAILED);
         return status;
     }
-
-    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_USB_DONE);
 
     ////////////////////////////////////////////////////////////////////////
     /// Performs initialization for RELAY chanels
@@ -69,11 +61,8 @@ bool microhil_init()
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for RELAY channels
-        printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_INIT_FAILED);
         return status;
     }
-
-    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_RELAY_DONE);
 
     ////////////////////////////////////////////////////////////////////////
     /// Performs initialization for PIO state machine
@@ -83,11 +72,8 @@ bool microhil_init()
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for PIO
-        printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_INIT_FAILED);
         return status;
     }
-
-    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_PIO_DONE);
 
     ////////////////////////////////////////////////////////////////////////
     /// Performs initialization for BUZZER
@@ -97,11 +83,8 @@ bool microhil_init()
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to perform initialization for BUZZER
-        printf("%s %s\n", MICROHIL_CHANNEL_ERROR, MICROHIL_INIT_FAILED);
         return status;
     }
-
-    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_BUZZER_DONE);
 
     ////////////////////////////////////////////////////////////////////////
     /// Buzzer notification
@@ -110,8 +93,6 @@ bool microhil_init()
     ////////////////////////////////////////////////////////////////////////
     /// Led notification
     microhil_write_pixel(0, 0, 0);
-
-    printf("%s %s\n", MICROHIL_CHANNEL_INFO, MICROHIL_INIT_DONE);
 
     return status;
 }
