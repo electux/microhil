@@ -13,29 +13,62 @@ other information that should be provided before the tool is installed.
 **Table of Contents**
 
 - [Statistics](#statistics)
-    - [Contributing activities](#contributing-activities)
-    - [SW Firmware checks](#sw-firmware-checks)
-    - [SW Desktop checks](#sw-desktop-checks)
-    - [Installation](#installation)
-    - [Dependencies](#dependencies)
-    - [Docs](#docs)
-    - [Copyright and licence](#copyright-and-licence)
+  - [Contributing activities](#contributing-activities)
+  - [SW Firmware checks](#sw-firmware-checks)
+  - [SW Desktop checks](#sw-desktop-checks)
+- [Development](#development)
+  - [SW Firmware Application](#sw-firmware-application)
+  - [SW Desktop Application](#sw-desktop-application)
+- [Installation](#installation)
+  - [SW Firmware Application installation](#sw-firmware-application-installation)
+  - [SW Desktop Application installation](#sw-desktop-application-installation)
+- [Dependencies](#dependencies)
+  - [SW Firmware Application dependencies](#sw-firmware-application-dependencies)
+  - [SW Desktop Application dependencies](#sw-desktop-application-dependencies)
+- [Docs](#docs)
+- [Copyright and licence](#copyright-and-licence)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Statistics
+### Statistics
 
-### Contributing activities
+#### Contributing activities
 
 [![GitHub issues open](https://img.shields.io/github/issues/electux/microhil.svg)](https://github.com/electux/microhil/issues) [![GitHub contributors](https://img.shields.io/github/contributors/electux/microhil.svg)](https://github.com/electux/microhil/graphs/contributors)
 
-### SW Firmware checks
+#### SW Firmware checks
 
 [![microhil_base C checker](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml) [![microhil_nuttx C checker](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml) [![microhil_upy C checker](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml)
 
-### SW Desktop checks
+#### SW Desktop checks
 
 [![microhil-desktop build checker](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml)
+
+### Development
+
+#### SW Firmware Application
+
+**microhil-base**
+```
+TODO
+```
+
+**microhil-nuttx**
+```
+TODO
+```
+
+**microhil-upy**
+```
+TODO
+```
+
+#### SW Desktop Application
+
+**microhildesk**
+```
+TODO
+```
 
 ### Installation
 
@@ -43,14 +76,55 @@ other information that should be provided before the tool is installed.
 
 Navigate to release **[page](https://github.com/electux/microhil/releases)** download and extract release archive.
 
-To install **microhil** type the following
+#### SW Firmware Application installation
+
+To install **microhil-base** type the following
+```
+TODO
 ```
 
+To install **microhil-nuttx** type the following
+```
+TODO
+```
+
+To install **microhil-upy** type the following
+```
+TODO
+```
+
+#### SW Desktop Application installation
+
+To install **microhildesk** type the following
+```
+TODO
 ```
 
 ### Dependencies
 
-**microhil** requires next modules and libraries
+#### SW Firmware Application dependencies
+
+**microhil-base** requires next modules and libraries
+```
+TODO
+```
+
+**microhil-nuttx** requires next modules and libraries
+```
+TODO
+```
+
+**microhil-upy** requires next modules and libraries
+```
+TODO
+```
+
+#### SW Desktop Application dependencies
+
+**microhildesk** requires next modules and libraries
+```
+TODO
+```
 
 ### Docs
 
@@ -75,4 +149,3 @@ Lets help and support Raspberry PI && GNOME.
 </a> <a href="https://www.gnome.org/support-gnome/donate/">
 <img src="https://raw.githubusercontent.com/electux/microhil/master/docs/GNOME.png" alt="GNOME" width="327" height="115">
 </a>
-
