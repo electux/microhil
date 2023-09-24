@@ -1,28 +1,17 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="Main entry point." alt="" coords="5,397,60,424"/>
-<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#a1826a2deaa766a00ea7c6b1042352cd7" title="Switch channel state." alt="" coords="119,169,301,196"/>
-<area shape="rect" id="node11" href="$d3/dfb/channel__uart_8c.html#a46dc9b30a323f1cdcca540bcccfe9aec" title="Fetch microHIL command messages from the serial port." alt="" coords="117,422,303,449"/>
-<area shape="rect" id="node12" href="$d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global initialization of microHIL device." alt="" coords="416,372,519,398"/>
-<area shape="rect" id="node20" href="$d3/dfb/channel__uart_8c.html#a67ae70ae40ff40631ec629d8e4a44e50" title="Process microHIL command messages from uart." alt="" coords="108,524,312,550"/>
-<area shape="rect" id="node3" href="$d4/d28/channel_8c.html#aa34e83cb258a7cf0c9a68b51b4aec5ba" title="Convert GPIO port number to index (private)" alt="" coords="411,220,524,246"/>
-<area shape="rect" id="node4" href="$d4/d28/channel_8c.html#a4d0b5716356dbea2a25811b5cd894182" title="Set all channels to OFF." alt="" coords="374,68,561,94"/>
-<area shape="rect" id="node5" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title="Delay in miliseconds." alt="" coords="631,30,777,57"/>
-<area shape="rect" id="node6" href="$df/df1/io__config_8c.html#a2e0436b2f6452aaa7f00da9fd3292f2d" title="Drive GPIO pin." alt="" coords="623,157,785,184"/>
-<area shape="rect" id="node7" href="$d0/d22/channel__led_8c.html#a5dced4e3f65945fd20e699b7b8d6b648" title="Write 32&#45;bit RGB value to PIO state machine." alt="" coords="627,208,781,234"/>
-<area shape="rect" id="node8" href="$df/df1/io__config_8c.html#aded097c9c71f867ee67e7cf9d3f980ef" title="Write value to PWM channel." alt="" coords="627,81,781,108"/>
-<area shape="rect" id="node9" href="$d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253" title="Generate 32&#45;bit RGB value." alt="" coords="663,258,745,285"/>
-<area shape="rect" id="node10" href="$d4/d28/channel_8c.html#aed07b8a710efb4cd7a9d6b08d27b85e4" title="Set all channels to ON." alt="" coords="374,118,561,145"/>
-<area shape="rect" id="node13" href="$db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df" title="Initializatio of buzzer channel." alt="" coords="627,316,781,342"/>
-<area shape="rect" id="node15" href="$df/df1/io__config_8c.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4" title="Initialization of PWM channel." alt="" coords="633,366,775,393"/>
-<area shape="rect" id="node16" href="$d0/d6b/channel__relay_8c.html#a2b038c609ce91d186f79899abb3a9356" title="Initializatio of relay channels." alt="" coords="633,417,775,444"/>
-<area shape="rect" id="node17" href="$de/dab/channel__pio_8c.html#a1d894ba2c3fdf553fd6cf62d5f376ac4" title="Initialization of PIO state machine." alt="" coords="639,468,769,494"/>
-<area shape="rect" id="node14" href="$df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9" title="Setting port pin configuration." alt="" coords="837,366,992,393"/>
-<area shape="rect" id="node18" href="$d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Perform WS2812 program initialization." alt="" coords="833,468,996,494"/>
-<area shape="rect" id="node19" href="$d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title="Preparing default configuration." alt="" coords="1044,460,1207,502"/>
-<area shape="rect" id="node21" href="$d4/d28/channel_8c.html#a5cca2c8fd7f5e49cc5ba7a0813d1811f" title="Convert index to GPIO port number." alt="" coords="411,574,524,601"/>
-<area shape="rect" id="node22" href="$d3/dfb/channel__uart_8c.html#a7bdd6142027a49d0d3810e62fa94d2a7" title="Extract command property (private)" alt="" coords="367,626,567,667"/>
-<area shape="rect" id="node23" href="$d3/dfb/channel__uart_8c.html#a33f89475c0998faf55dcc079fe41b3b5" title="Process command property for all channels OFF (private)" alt="" coords="378,692,557,718"/>
-<area shape="rect" id="node24" href="$d3/dfb/channel__uart_8c.html#ac5bebb4bf72745438f981e95f25c2f02" title="Process command property for all channels ON (private)" alt="" coords="378,422,557,449"/>
-<area shape="rect" id="node25" href="$d3/dfb/channel__uart_8c.html#a70973275b6f832aac0522984438491e5" title="Process command property for channel (private)" alt="" coords="360,473,575,500"/>
-<area shape="rect" id="node26" href="$d3/dfb/channel__uart_8c.html#a3cbbcd408f6cc8fa79657423340cf85c" title="Process command property for channel (private)" alt="" coords="361,524,574,550"/>
+<area shape="rect" id="node1" title="Main entry point." alt="" coords="5,69,60,96"/>
+<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#ae89870b3cc140dc30ee5a7cc0239f695" title="Switches channel by command request." alt="" coords="108,12,291,39"/>
+<area shape="rect" id="node4" href="$d9/d0a/channel__request_8c.html#a9bc4d88d24a1721009b5324e3b468648" title="Fetches microHIL command requests from the serial port." alt="" coords="114,69,285,96"/>
+<area shape="rect" id="node5" href="$d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global device initialization." alt="" coords="148,132,251,159"/>
+<area shape="rect" id="node3" href="$d4/d28/channel_8c.html#a1b8d260a9aae64f4702d92383ea65091" title="Compare request with candidates from request table." alt="" coords="354,5,489,32"/>
+<area shape="rect" id="node6" href="$db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df" title="Performs initialization for buzzer channel." alt="" coords="345,56,498,83"/>
+<area shape="rect" id="node9" href="$d0/d6b/channel__relay_8c.html#a2b038c609ce91d186f79899abb3a9356" title="Performs initialization for relay channels." alt="" coords="350,107,493,133"/>
+<area shape="rect" id="node11" href="$de/dab/channel__pio_8c.html#a1d894ba2c3fdf553fd6cf62d5f376ac4" title="Performs initialization for PIO state machine." alt="" coords="356,208,487,235"/>
+<area shape="rect" id="node14" href="$db/dec/channel__buzzer_8c.html#a5b96a586b9de57e5d85dcc3beb9f9a4c" title="Turns buzzer on/off." alt="" coords="339,157,504,184"/>
+<area shape="rect" id="node15" href="$d0/d22/channel__led_8c.html#a3430b478fd2601c716cf936f321c10c3" title="Writes 32&#45;bit RGB value to PIO state machine." alt="" coords="345,259,498,285"/>
+<area shape="rect" id="node7" href="$df/df1/io__config_8c.html#ace6e2881cfde444df4f62cc352888df6" title="Setting port pin configuration." alt="" coords="556,107,711,133"/>
+<area shape="rect" id="node8" href="$df/df1/io__config_8c.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4" title="Initialization of PWM channel." alt="" coords="562,56,705,83"/>
+<area shape="rect" id="node10" href="$df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0" title="Drive GPIO pin." alt="" coords="552,157,715,184"/>
+<area shape="rect" id="node12" href="$d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Perform WS2812 program initialization." alt="" coords="552,208,715,235"/>
+<area shape="rect" id="node13" href="$d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title="Preparing default configuration." alt="" coords="763,201,925,242"/>
 </map>

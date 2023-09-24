@@ -1,0 +1,4 @@
+<map id="microhil_write_buzzer" name="microhil_write_buzzer">
+<area shape="rect" id="node1" title="Turns buzzer on/off." alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0" title="Drive GPIO pin." alt="" coords="219,5,381,32"/>
+</map>

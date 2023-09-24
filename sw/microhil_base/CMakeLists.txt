@@ -22,6 +22,9 @@ set(PICO_BOARD "pico")
 # Initialize the SDK
 pico_sdk_init()
 
+# Print memory usage 
+add_link_options(-Wl,-gc-sections,--print-memory-usage)
+
 # Setup project url
 include(pro_auto_set_url.cmake)
 

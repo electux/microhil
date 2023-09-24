@@ -1,9 +1,0 @@
-<map id="microhil_process_command" name="microhil_process_command">
-<area shape="rect" id="node1" title="Process microHIL command messages from uart." alt="" coords="5,148,209,175"/>
-<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#a5cca2c8fd7f5e49cc5ba7a0813d1811f" title="Convert index to GPIO port number." alt="" coords="308,5,421,32"/>
-<area shape="rect" id="node3" href="$d3/dfb/channel__uart_8c.html#a7bdd6142027a49d0d3810e62fa94d2a7" title="Extract command property (private)" alt="" coords="265,57,465,98"/>
-<area shape="rect" id="node4" href="$d3/dfb/channel__uart_8c.html#a33f89475c0998faf55dcc079fe41b3b5" title="Process command property for all channels OFF (private)" alt="" coords="275,123,454,149"/>
-<area shape="rect" id="node5" href="$d3/dfb/channel__uart_8c.html#ac5bebb4bf72745438f981e95f25c2f02" title="Process command property for all channels ON (private)" alt="" coords="275,173,454,200"/>
-<area shape="rect" id="node6" href="$d3/dfb/channel__uart_8c.html#a70973275b6f832aac0522984438491e5" title="Process command property for channel (private)" alt="" coords="257,224,472,251"/>
-<area shape="rect" id="node7" href="$d3/dfb/channel__uart_8c.html#a3cbbcd408f6cc8fa79657423340cf85c" title="Process command property for channel (private)" alt="" coords="258,275,471,301"/>
-</map>

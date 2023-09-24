@@ -1,5 +1,6 @@
 <map id="microhil_init_pwm" name="microhil_init_pwm">
-<area shape="rect" id="node1" title="Initialization of PWM channel." alt="" coords="259,5,401,32"/>
-<area shape="rect" id="node2" href="$d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global initialization of microHIL device." alt="" coords="108,5,211,32"/>
-<area shape="rect" id="node3" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,5,60,32"/>
+<area shape="rect" id="node1" title="Initialization of PWM channel." alt="" coords="460,5,603,32"/>
+<area shape="rect" id="node2" href="$db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df" title="Performs initialization for buzzer channel." alt="" coords="259,5,412,32"/>
+<area shape="rect" id="node3" href="$d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global device initialization." alt="" coords="108,5,211,32"/>
+<area shape="rect" id="node4" href="$d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,5,60,32"/>
 </map>

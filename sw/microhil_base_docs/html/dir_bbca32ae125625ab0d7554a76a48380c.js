@@ -9,5 +9,5 @@ var dir_bbca32ae125625ab0d7554a76a48380c =
     [ "channel_led.c", "d0/d22/channel__led_8c.html", "d0/d22/channel__led_8c" ],
     [ "channel_pio.c", "de/dab/channel__pio_8c.html", "de/dab/channel__pio_8c" ],
     [ "channel_relay.c", "d0/d6b/channel__relay_8c.html", "d0/d6b/channel__relay_8c" ],
-    [ "channel_uart.c", "d3/dfb/channel__uart_8c.html", "d3/dfb/channel__uart_8c" ]
+    [ "channel_request.c", "d9/d0a/channel__request_8c.html", "d9/d0a/channel__request_8c" ]
 ];

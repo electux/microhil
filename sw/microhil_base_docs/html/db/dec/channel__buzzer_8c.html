@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('db/dec/channel__buzzer_8c.html','../..
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">channel_buzzer.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -96,16 +97,16 @@ Include dependency graph for channel_buzzer.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/d83/channel__buzzer_8c__incl.png" border="0" usemap="#asrc_2channel_2channel__buzzer_8c" alt=""/></div>
 <map name="asrc_2channel_2channel__buzzer_8c" id="asrc_2channel_2channel__buzzer_8c">
-<area shape="rect" title=" " alt="" coords="191,5,342,47"/>
-<area shape="rect" href="../../df/d6a/io__config_8h.html" title=" " alt="" coords="165,95,257,121"/>
-<area shape="rect" href="../../d5/d7b/channel_8h.html" title=" " alt="" coords="281,95,367,121"/>
-<area shape="rect" title=" " alt="" coords="285,169,352,196"/>
-<area shape="rect" title=" " alt="" coords="160,169,261,196"/>
-<area shape="rect" title=" " alt="" coords="5,169,136,196"/>
-<area shape="rect" title=" " alt="" coords="509,169,579,196"/>
-<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html" title=" " alt="" coords="377,169,485,196"/>
-<area shape="rect" title=" " alt="" coords="294,244,413,271"/>
-<area shape="rect" title=" " alt="" coords="437,244,577,271"/>
+<area shape="rect" title=" " alt="" coords="210,5,361,47"/>
+<area shape="rect" href="../../df/d6a/io__config_8h.html" title=" " alt="" coords="183,95,275,121"/>
+<area shape="rect" href="../../d5/d7b/channel_8h.html" title=" " alt="" coords="313,95,399,121"/>
+<area shape="rect" title=" " alt="" coords="5,169,72,196"/>
+<area shape="rect" title=" " alt="" coords="251,169,352,196"/>
+<area shape="rect" title=" " alt="" coords="96,169,227,196"/>
+<area shape="rect" title=" " alt="" coords="377,169,447,196"/>
+<area shape="rect" href="../../d6/d69/ws2812_8pio_8h.html" title=" " alt="" coords="471,169,579,196"/>
+<area shape="rect" title=" " alt="" coords="389,244,507,271"/>
+<area shape="rect" title=" " alt="" coords="531,244,671,271"/>
 </map>
 </div>
 </div>
@@ -114,8 +115,17 @@ Include dependency graph for channel_buzzer.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a87cbe1a7290a456849d341b77d38c9df"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df">microhil_init_buzzer</a> ()</td></tr>
-<tr class="memdesc:a87cbe1a7290a456849d341b77d38c9df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializatio of buzzer channel.  <a href="../../db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df">More...</a><br /></td></tr>
+<tr class="memdesc:a87cbe1a7290a456849d341b77d38c9df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs initialization for buzzer channel.  <a href="../../db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df">More...</a><br /></td></tr>
 <tr class="separator:a87cbe1a7290a456849d341b77d38c9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b96a586b9de57e5d85dcc3beb9f9a4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dec/channel__buzzer_8c.html#a5b96a586b9de57e5d85dcc3beb9f9a4c">microhil_write_buzzer</a> (bool value)</td></tr>
+<tr class="memdesc:a5b96a586b9de57e5d85dcc3beb9f9a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns buzzer on/off.  <a href="../../db/dec/channel__buzzer_8c.html#a5b96a586b9de57e5d85dcc3beb9f9a4c">More...</a><br /></td></tr>
+<tr class="separator:a5b96a586b9de57e5d85dcc3beb9f9a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a4e8c43500f71ed91ea241cfecf284133"><td class="memItemLeft" align="right" valign="top">const uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dec/channel__buzzer_8c.html#a4e8c43500f71ed91ea241cfecf284133">microhil_buzzer</a> = 6</td></tr>
+<tr class="memdesc:a4e8c43500f71ed91ea241cfecf284133"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port pin number for buzzer.  <a href="../../db/dec/channel__buzzer_8c.html#a4e8c43500f71ed91ea241cfecf284133">More...</a><br /></td></tr>
+<tr class="separator:a4e8c43500f71ed91ea241cfecf284133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a87cbe1a7290a456849d341b77d38c9df" name="a87cbe1a7290a456849d341b77d38c9df"></a>
@@ -133,34 +143,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializatio of buzzer channel. </p>
+<p>Performs initialization for buzzer channel. </p>
 <dl class="section return"><dt>Returns</dt><dd>true for success else false </dd></dl>
-<p >Initialize channel for buzzer</p>
-<p >Buzzer port pin configuration done</p>
+<p >Performs initialization for buzzer channel to be out</p>
+<p >Performs initialization for buzzer channel to PWM 0</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00025">25</a> of file <a class="el" href="../../db/dec/channel__buzzer_8c_source.html">channel_buzzer.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">bool</span> status = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a>(<a class="code hl_define" href="../../d5/d7b/channel_8h.html#af97c040baccc5a803205a07e85e64bdb">MICROHIL_BUZZER</a>, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   35</span>    status = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> status;</div>
+<p class="definition">Definition at line <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00029">29</a> of file <a class="el" href="../../db/dec/channel__buzzer_8c_source.html">channel_buzzer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#ace6e2881cfde444df4f62cc352888df6">microhil_gpio_mode</a>(<a class="code hl_variable" href="../../db/dec/channel__buzzer_8c.html#a4e8c43500f71ed91ea241cfecf284133">microhil_buzzer</a>, GPIO_OUT);</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../df/df1/io__config_8c.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4">microhil_init_pwm</a>(<a class="code hl_variable" href="../../db/dec/channel__buzzer_8c.html#a4e8c43500f71ed91ea241cfecf284133">microhil_buzzer</a>, PWM_CHAN_A);</div>
 <div class="line"><span class="lineno">   38</span>}</div>
-<div class="ttc" id="achannel_8h_html_af97c040baccc5a803205a07e85e64bdb"><div class="ttname"><a href="../../d5/d7b/channel_8h.html#af97c040baccc5a803205a07e85e64bdb">MICROHIL_BUZZER</a></div><div class="ttdeci">#define MICROHIL_BUZZER</div><div class="ttdoc">GPIO port pin number for buzzer.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d7b/channel_8h_source.html#l00057">channel.h:57</a></div></div>
-<div class="ttc" id="aio__config_8c_html_aec63a111fed6b8b5e445df0a4bf61ae9"><div class="ttname"><a href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9">microhil_gpio_mode</a></div><div class="ttdeci">void microhil_gpio_mode(uint16_t pin, uint16_t mode)</div><div class="ttdoc">Setting port pin configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00030">io_config.c:30</a></div></div>
+<div class="ttc" id="achannel__buzzer_8c_html_a4e8c43500f71ed91ea241cfecf284133"><div class="ttname"><a href="../../db/dec/channel__buzzer_8c.html#a4e8c43500f71ed91ea241cfecf284133">microhil_buzzer</a></div><div class="ttdeci">const uint microhil_buzzer</div><div class="ttdoc">GPIO port pin number for buzzer.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dec/channel__buzzer_8c_source.html#l00024">channel_buzzer.c:24</a></div></div>
+<div class="ttc" id="aio__config_8c_html_a9ea5c0e25cbbf50dd5dc2c8515a27ce4"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4">microhil_init_pwm</a></div><div class="ttdeci">bool microhil_init_pwm(uint gpio, enum pwm_chan channel)</div><div class="ttdoc">Initialization of PWM channel.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00083">io_config.c:83</a></div></div>
+<div class="ttc" id="aio__config_8c_html_ace6e2881cfde444df4f62cc352888df6"><div class="ttname"><a href="../../df/df1/io__config_8c.html#ace6e2881cfde444df4f62cc352888df6">microhil_gpio_mode</a></div><div class="ttdeci">void microhil_gpio_mode(uint pin, uint16_t mode)</div><div class="ttdoc">Setting port pin configuration.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00030">io_config.c:30</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/d7b/channel_8h_source.html#l00057">MICROHIL_BUZZER</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00030">microhil_gpio_mode()</a>.</p>
+<p class="reference">References <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00024">microhil_buzzer</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00030">microhil_gpio_mode()</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00083">microhil_init_pwm()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00029">microhil_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00028">microhil_init()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/dec/channel__buzzer_8c_a87cbe1a7290a456849d341b77d38c9df_cgraph.png" border="0" usemap="#adb/dec/channel__buzzer_8c_a87cbe1a7290a456849d341b77d38c9df_cgraph" alt=""/></div>
 <map name="adb/dec/channel__buzzer_8c_a87cbe1a7290a456849d341b77d38c9df_cgraph" id="adb/dec/channel__buzzer_8c_a87cbe1a7290a456849d341b77d38c9df_cgraph">
-<area shape="rect" title="Initializatio of buzzer channel." alt="" coords="5,5,159,32"/>
-<area shape="rect" href="../../df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9" title="Setting port pin configuration." alt="" coords="207,5,361,32"/>
+<area shape="rect" title="Performs initialization for buzzer channel." alt="" coords="5,31,159,57"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#ace6e2881cfde444df4f62cc352888df6" title="Setting port pin configuration." alt="" coords="207,5,361,32"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4" title="Initialization of PWM channel." alt="" coords="213,56,355,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -168,11 +176,87 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/dec/channel__buzzer_8c_a87cbe1a7290a456849d341b77d38c9df_icgraph.png" border="0" usemap="#adb/dec/channel__buzzer_8c_a87cbe1a7290a456849d341b77d38c9df_icgraph" alt=""/></div>
 <map name="adb/dec/channel__buzzer_8c_a87cbe1a7290a456849d341b77d38c9df_icgraph" id="adb/dec/channel__buzzer_8c_a87cbe1a7290a456849d341b77d38c9df_icgraph">
-<area shape="rect" title="Initializatio of buzzer channel." alt="" coords="259,5,412,32"/>
-<area shape="rect" href="../../d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global initialization of microHIL device." alt="" coords="108,5,211,32"/>
+<area shape="rect" title="Performs initialization for buzzer channel." alt="" coords="259,5,412,32"/>
+<area shape="rect" href="../../d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global device initialization." alt="" coords="108,5,211,32"/>
 <area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,5,60,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a5b96a586b9de57e5d85dcc3beb9f9a4c" name="a5b96a586b9de57e5d85dcc3beb9f9a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b96a586b9de57e5d85dcc3beb9f9a4c">&#9670;&nbsp;</a></span>microhil_write_buzzer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void microhil_write_buzzer </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turns buzzer on/off. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>represents value for buzzer (true - on | false - off) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00043">43</a> of file <a class="el" href="../../db/dec/channel__buzzer_8c_source.html">channel_buzzer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_function" href="../../df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0">microhil_digital_write</a>(<a class="code hl_variable" href="../../db/dec/channel__buzzer_8c.html#a4e8c43500f71ed91ea241cfecf284133">microhil_buzzer</a>, value);</div>
+<div class="line"><span class="lineno">   46</span>}</div>
+<div class="ttc" id="aio__config_8c_html_ad4518cdd949730f34eb04c35354a3df0"><div class="ttname"><a href="../../df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0">microhil_digital_write</a></div><div class="ttdeci">void microhil_digital_write(uint pin, bool value)</div><div class="ttdoc">Drive GPIO pin.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00048">io_config.c:48</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00024">microhil_buzzer</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00048">microhil_digital_write()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d88/channel__init_8c_source.html#l00028">microhil_init()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/dec/channel__buzzer_8c_a5b96a586b9de57e5d85dcc3beb9f9a4c_cgraph.png" border="0" usemap="#adb/dec/channel__buzzer_8c_a5b96a586b9de57e5d85dcc3beb9f9a4c_cgraph" alt=""/></div>
+<map name="adb/dec/channel__buzzer_8c_a5b96a586b9de57e5d85dcc3beb9f9a4c_cgraph" id="adb/dec/channel__buzzer_8c_a5b96a586b9de57e5d85dcc3beb9f9a4c_cgraph">
+<area shape="rect" title="Turns buzzer on/off." alt="" coords="5,5,171,32"/>
+<area shape="rect" href="../../df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0" title="Drive GPIO pin." alt="" coords="219,5,381,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/dec/channel__buzzer_8c_a5b96a586b9de57e5d85dcc3beb9f9a4c_icgraph.png" border="0" usemap="#adb/dec/channel__buzzer_8c_a5b96a586b9de57e5d85dcc3beb9f9a4c_icgraph" alt=""/></div>
+<map name="adb/dec/channel__buzzer_8c_a5b96a586b9de57e5d85dcc3beb9f9a4c_icgraph" id="adb/dec/channel__buzzer_8c_a5b96a586b9de57e5d85dcc3beb9f9a4c_icgraph">
+<area shape="rect" title="Turns buzzer on/off." alt="" coords="259,5,424,32"/>
+<area shape="rect" href="../../d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global device initialization." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a4e8c43500f71ed91ea241cfecf284133" name="a4e8c43500f71ed91ea241cfecf284133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e8c43500f71ed91ea241cfecf284133">&#9670;&nbsp;</a></span>microhil_buzzer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint microhil_buzzer = 6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO port pin number for buzzer. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00024">24</a> of file <a class="el" href="../../db/dec/channel__buzzer_8c_source.html">channel_buzzer.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00029">microhil_init_buzzer()</a>, and <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00043">microhil_write_buzzer()</a>.</p>
 
 </div>
 </div>
@@ -182,7 +266,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_bbca32ae125625ab0d7554a76a48380c.html">channel</a></li><li class="navelem"><a class="el" href="../../db/dec/channel__buzzer_8c.html">channel_buzzer.c</a></li>
-    <li class="footer">Generated on Sun Sep 17 2023 23:21:11 for microhil-base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Sep 24 2023 13:07:58 for microhil-base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

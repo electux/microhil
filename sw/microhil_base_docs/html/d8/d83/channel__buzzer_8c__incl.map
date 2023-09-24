@@ -1,12 +1,12 @@
 <map id="src/channel/channel_buzzer.c" name="src/channel/channel_buzzer.c">
-<area shape="rect" id="node1" title=" " alt="" coords="191,5,342,47"/>
-<area shape="rect" id="node2" href="$df/d6a/io__config_8h.html" title=" " alt="" coords="165,95,257,121"/>
-<area shape="rect" id="node6" href="$d5/d7b/channel_8h.html" title=" " alt="" coords="281,95,367,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="285,169,352,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="160,169,261,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,169,136,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="509,169,579,196"/>
-<area shape="rect" id="node8" href="$d6/d69/ws2812_8pio_8h.html" title=" " alt="" coords="377,169,485,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="294,244,413,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="437,244,577,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="210,5,361,47"/>
+<area shape="rect" id="node2" href="$df/d6a/io__config_8h.html" title=" " alt="" coords="183,95,275,121"/>
+<area shape="rect" id="node6" href="$d5/d7b/channel_8h.html" title=" " alt="" coords="313,95,399,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,72,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="251,169,352,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="96,169,227,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="377,169,447,196"/>
+<area shape="rect" id="node8" href="$d6/d69/ws2812_8pio_8h.html" title=" " alt="" coords="471,169,579,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="389,244,507,271"/>
+<area shape="rect" id="node10" title=" " alt="" coords="531,244,671,271"/>
 </map>

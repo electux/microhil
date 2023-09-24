@@ -1,12 +1,12 @@
 <map id="src/channel/channel_relay.c" name="src/channel/channel_relay.c">
-<area shape="rect" id="node1" title=" " alt="" coords="191,5,342,47"/>
-<area shape="rect" id="node2" href="$d5/d7b/channel_8h.html" title=" " alt="" coords="281,95,367,121"/>
-<area shape="rect" id="node9" href="$df/d6a/io__config_8h.html" title=" " alt="" coords="165,95,257,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="285,169,352,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="509,169,579,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="160,169,261,196"/>
-<area shape="rect" id="node6" href="$d6/d69/ws2812_8pio_8h.html" title=" " alt="" coords="377,169,485,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="294,244,413,271"/>
-<area shape="rect" id="node8" title=" " alt="" coords="437,244,577,271"/>
-<area shape="rect" id="node10" title=" " alt="" coords="5,169,136,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="196,5,347,47"/>
+<area shape="rect" id="node2" href="$d5/d7b/channel_8h.html" title=" " alt="" coords="173,95,258,121"/>
+<area shape="rect" id="node8" href="$df/d6a/io__config_8h.html" title=" " alt="" coords="291,95,383,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="233,169,334,196"/>
+<area shape="rect" id="node5" href="$d6/d69/ws2812_8pio_8h.html" title=" " alt="" coords="100,169,208,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="17,244,136,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="160,244,300,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="358,169,425,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="449,169,579,196"/>
 </map>

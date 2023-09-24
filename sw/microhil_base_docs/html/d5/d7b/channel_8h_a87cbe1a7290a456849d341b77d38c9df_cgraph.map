@@ -1,4 +1,5 @@
 <map id="microhil_init_buzzer" name="microhil_init_buzzer">
-<area shape="rect" id="node1" title="Initializatio of buzzer channel." alt="" coords="5,5,159,32"/>
-<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#aec63a111fed6b8b5e445df0a4bf61ae9" title="Setting port pin configuration." alt="" coords="207,5,361,32"/>
+<area shape="rect" id="node1" title="Performs initialization for buzzer channel." alt="" coords="5,31,159,57"/>
+<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#ace6e2881cfde444df4f62cc352888df6" title="Setting port pin configuration." alt="" coords="207,5,361,32"/>
+<area shape="rect" id="node3" href="$df/df1/io__config_8c.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4" title="Initialization of PWM channel." alt="" coords="213,56,355,83"/>
 </map>

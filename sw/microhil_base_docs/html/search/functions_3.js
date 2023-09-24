@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['urgb_5fu32_0',['urgb_u32',['../d5/d7b/channel_8h.html#a6f9aa8064d7f3cd8908b853c8a002253',1,'urgb_u32(uint8_t red, uint8_t green, uint8_t blue):&#160;channel_led.c'],['../d0/d22/channel__led_8c.html#a6f9aa8064d7f3cd8908b853c8a002253',1,'urgb_u32(uint8_t red, uint8_t green, uint8_t blue):&#160;channel_led.c']]]
+  ['ws2812_5fparallel_5fprogram_5fget_5fdefault_5fconfig_0',['ws2812_parallel_program_get_default_config',['../d6/d69/ws2812_8pio_8h.html#add870a68b6c5369f320512429ed17887',1,'ws2812.pio.h']]],
+  ['ws2812_5fparallel_5fprogram_5finit_1',['ws2812_parallel_program_init',['../d6/d69/ws2812_8pio_8h.html#a5a3128927ffc7fe6d41edc7531ca97cc',1,'ws2812.pio.h']]],
+  ['ws2812_5fprogram_5fget_5fdefault_5fconfig_2',['ws2812_program_get_default_config',['../d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c',1,'ws2812.pio.h']]],
+  ['ws2812_5fprogram_5finit_3',['ws2812_program_init',['../d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74',1,'ws2812.pio.h']]]
 ];
