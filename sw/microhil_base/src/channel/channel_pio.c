@@ -20,10 +20,10 @@
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief WS2812 DIN pin mapped to GPIO pin
-const int MICROHIL_WS2812_DIN = 13;
+const uint microhil_ws2812_din = 13;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Initialization of PIO state machine
+/// @brief Performs initialization for PIO state machine
 /// @return true for success else false
 bool microhil_pio_init()
 {
@@ -31,11 +31,12 @@ bool microhil_pio_init()
 
     ////////////////////////////////////////////////////////////////////////
     /// Add PIO program
-    ws2812_init init = {
+    ws2812_init init =
+    {
         .pio = pio0,
         .sm = 0,
         .offset = pio_add_program(pio0, &ws2812_program),
-        .pin = MICROHIL_WS2812_DIN,
+        .pin = microhil_ws2812_din,
         .freq = 800000,
         .rgbw = true
     };
@@ -48,7 +49,7 @@ bool microhil_pio_init()
     }
 
     ////////////////////////////////////////////////////////////////////////
-    /// Perform WS2812 program initialization
+    /// Performs WS2812 program initialization
     ws2812_program_init(&init);
     status = true;
 

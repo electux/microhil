@@ -16,53 +16,61 @@
  * You should have received a copy of the GNU General Public License along
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <string.h>
 #include "pico/stdio_usb.h"
 #include "channel.h"
+#include <tusb.h>
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Flag for received new request from the serial port
+bool new_request = false;
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Flog for receiving in progress
+bool receive_in_progress = false;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Main entry point
-/// @return MICROHIL_SUCCESS for success else MICROHIL_FAILED
+/// @return 0 for success else 1
 int main()
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Initialization of microHIL device
+    /// Performs device initialization
     bool status = microhil_init();
 
     if (!status)
     {
         ////////////////////////////////////////////////////////////////////
-        /// Failed to perform initialization of microHIL device
-        return MICROHIL_FAILED;
+        /// Failed to perform device initialization
+        return 1;
     }
 
     ////////////////////////////////////////////////////////////////////////
-    /// Wait for USB connection
-    while (!stdio_usb_connected())
-        ;
+    /// Waits for USB connection
+    while (!tud_cdc_connected())
+    {
+        sleep_ms(100);
+    }
+
+    ////////////////////////////////////////////////////////////////////
+    /// Command buffer for receiving requests
+    uint8_t request[MICROHIL_REQ_LEN] = {0};
 
     while (status)
     {
         ////////////////////////////////////////////////////////////////////
-        /// Fetch channel command message
-        unsigned char *command = (char *)malloc(MICROHIL_CMD_LEN);
-        uint16_t received_bytes = microhil_fetch_command(command);
+        /// Fetches channel command requests
+        microhil_fetch_request(request);
 
-        if (received_bytes > 0)
+        if (!receive_in_progress && new_request)
         {
-            ////////////////////////////////////////////////////////////////
-            /// Processing channel command message
-            channel_gpio_num cmd_id = microhil_process_command(command);
-
-            if (cmd_id > 0)
-            {
-                ////////////////////////////////////////////////////////////
-                /// Request channel operation
-                microhil_channel_switch(cmd_id);
-            }
+            ////////////////////////////////////////////////////////
+            /// Clean up command buffer and flag for new request
+            microhil_channel_switch(request);
+            memset(request, 0, MICROHIL_REQ_LEN * sizeof(uint8_t));
+            new_request = false;
         }
-
-        free(command);
     }
 
-    return MICROHIL_SUCCESS;
+    return 0;
 }

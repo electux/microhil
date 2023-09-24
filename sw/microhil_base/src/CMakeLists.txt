@@ -24,8 +24,8 @@ add_executable("${CMAKE_PROJECT_NAME}" main.c)
 # Enable USB output
 pico_enable_stdio_usb("${CMAKE_PROJECT_NAME}" 1)
 
-# Enable UART output
-pico_enable_stdio_uart("${CMAKE_PROJECT_NAME}" 1)
+# Disable UART output
+pico_enable_stdio_uart("${CMAKE_PROJECT_NAME}" 0)
 
 # Link all libraries
 target_link_libraries("${CMAKE_PROJECT_NAME}" channel ws2812 io_config)

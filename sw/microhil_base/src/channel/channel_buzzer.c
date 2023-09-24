@@ -20,19 +20,27 @@
 #include "channel.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Initializatio of buzzer channel
+/// @brief GPIO port pin number for buzzer
+const uint microhil_buzzer = 6;
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Performs initialization for buzzer channel
 /// @return true for success else false
 bool microhil_init_buzzer()
 {
-    bool status = false;
+    ////////////////////////////////////////////////////////////////////////
+    /// Performs initialization for buzzer channel to be out
+    microhil_gpio_mode(microhil_buzzer, GPIO_OUT);
 
     ////////////////////////////////////////////////////////////////////////
-    /// Initialize channel for buzzer
-    microhil_gpio_mode(MICROHIL_BUZZER, GPIO_OUT);
+    /// Performs initialization for buzzer channel to PWM 0
+    return microhil_init_pwm(microhil_buzzer, PWM_CHAN_A);
+}
 
-    ////////////////////////////////////////////////////////////////////////
-    /// Buzzer port pin configuration done
-    status = true;
-
-    return status;
+////////////////////////////////////////////////////////////////////////////
+/// @brief Turns buzzer on/off
+/// @param value represents value for buzzer (true - on | false - off)
+void microhil_write_buzzer(bool value)
+{
+    microhil_digital_write(microhil_buzzer, value);
 }

@@ -19,22 +19,14 @@
 #include "channel.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Write 32-bit RGB value to PIO state machine
-/// @param pixel_rgb is 32-bit RGB value
-void microhil_write_pixel(uint32_t pixel_rgb)
+/// @brief Writes 32-bit RGB value to PIO state machine
+/// @param red represents red color value
+/// @param green represents green color value
+/// @param blue represents blue color value
+void microhil_write_pixel(uint8_t red, uint8_t green, uint8_t blue)
 {
+    uint pixel_rgb = ((uint)(red) << 8) |
+                     ((uint)(green) << 16) |
+                     ((uint)(blue));
     pio_sm_put_blocking(pio0, 0, pixel_rgb << 8u);
-}
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief Generate 32-bit RGB value
-/// @param red color value
-/// @param green color value
-/// @param blue color value
-/// @return 32-bit RGB value
-uint32_t urgb_u32(uint8_t red, uint8_t green, uint8_t blue)
-{
-    return ((uint32_t)(red) << 8) |
-           ((uint32_t)(green) << 16) |
-           (uint32_t)(blue);
 }

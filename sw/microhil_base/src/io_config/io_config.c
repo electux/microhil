@@ -27,7 +27,7 @@ static uint slice_num;
 /// @brief Setting port pin configuration
 /// @param pin is GPIO pin number
 /// @param mode is GPIO pin direction (GPIO_IN | GPIO_OUT)
-void microhil_gpio_mode(uint16_t pin, uint16_t mode)
+void microhil_gpio_mode(uint pin, uint16_t mode)
 {
     gpio_init(pin);
 
@@ -45,7 +45,7 @@ void microhil_gpio_mode(uint16_t pin, uint16_t mode)
 /// @brief Drive GPIO pin
 /// @param pin is GPIO number
 /// @param value is GPIO value (true - set | false - clear)
-void microhil_digital_write(uint16_t pin, bool value)
+void microhil_digital_write(uint pin, bool value)
 {
     gpio_put(pin, value);
 }
@@ -53,8 +53,8 @@ void microhil_digital_write(uint16_t pin, bool value)
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Get GPIO state
 /// @param pin is GPIO pin number
-/// @return state of GPIO pin
-uint8_t microhil_digital_read(uint16_t pin)
+/// @return state of GPIO pin (true | false)
+bool microhil_digital_read(uint pin)
 {
     return gpio_get(pin);
 }
@@ -70,15 +70,15 @@ void microhil_delay_ms(uint32_t ms)
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Delay in microseconds
 /// @param us is number of microseconds to sleep
-void microhil_delay_us(uint32_t us)
+void microhil_delay_us(uint64_t us)
 {
     sleep_us(us);
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Initialization of PWM channel
-/// @param gpio
-/// @param channel
+/// @param gpio pin number
+/// @param channel channel
 /// @return true for success else false
 bool microhil_init_pwm(uint gpio, enum pwm_chan channel)
 {
@@ -104,7 +104,7 @@ bool microhil_init_pwm(uint gpio, enum pwm_chan channel)
 /// @brief Write value to PWM channel
 /// @param channel is PWM channel (PWM_CHAN_A | PWM_CHAN_B)
 /// @param value is new value for selected output
-void microhil_write_pwm(enum pwm_chan channel, uint8_t value)
+void microhil_write_pwm(enum pwm_chan channel, uint16_t value)
 {
     if (value < 0 || value > 100)
     {
