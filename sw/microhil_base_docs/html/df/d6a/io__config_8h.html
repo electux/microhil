@@ -140,7 +140,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a9ea5c0e25cbbf50dd5dc2c8515a27ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of PWM channel.  <a href="../../df/d6a/io__config_8h.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4">More...</a><br /></td></tr>
 <tr class="separator:a9ea5c0e25cbbf50dd5dc2c8515a27ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8e053bfd54b08b6b4a4b7813e0f6ebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d6a/io__config_8h.html#aa8e053bfd54b08b6b4a4b7813e0f6ebf">microhil_write_pwm</a> (enum pwm_chan channel, uint16_t value)</td></tr>
-<tr class="memdesc:aa8e053bfd54b08b6b4a4b7813e0f6ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write value to PWM channel.  <a href="../../df/d6a/io__config_8h.html#aa8e053bfd54b08b6b4a4b7813e0f6ebf">More...</a><br /></td></tr>
+<tr class="memdesc:aa8e053bfd54b08b6b4a4b7813e0f6ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes value to PWM channel.  <a href="../../df/d6a/io__config_8h.html#aa8e053bfd54b08b6b4a4b7813e0f6ebf">More...</a><br /></td></tr>
 <tr class="separator:aa8e053bfd54b08b6b4a4b7813e0f6ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -163,24 +163,24 @@ Functions</h2></td></tr>
 <p>Delay in miliseconds. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ms</td><td>is number of miliseconds to sleep </td></tr>
+    <tr><td class="paramname">ms</td><td>represents number of miliseconds to sleep </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00065">65</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
-<div class="line"><span class="lineno">   67</span>    sleep_ms(ms);</div>
-<div class="line"><span class="lineno">   68</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00072">72</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
+<div class="line"><span class="lineno">   74</span>    sleep_ms(ms);</div>
+<div class="line"><span class="lineno">   75</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00152">microhil_all_channels()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00186">microhil_all_channels()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/d6a/io__config_8h_a8ef44932b760b841af69bd38bc66ffe0_icgraph.png" border="0" usemap="#adf/d6a/io__config_8h_a8ef44932b760b841af69bd38bc66ffe0_icgraph" alt=""/></div>
 <map name="adf/d6a/io__config_8h_a8ef44932b760b841af69bd38bc66ffe0_icgraph" id="adf/d6a/io__config_8h_a8ef44932b760b841af69bd38bc66ffe0_icgraph">
 <area shape="rect" title="Delay in miliseconds." alt="" coords="216,5,361,32"/>
-<area shape="rect" href="../../d4/d28/channel_8c.html#aa2c8a449334ea11d2135c6d0dcf37f70" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" href="../../d4/d28/channel_8c.html#af334e99989414c68dff3a1f190aafc40" title="Performs operations over all channels." alt="" coords="5,5,168,32"/>
 </map>
 </div>
 
@@ -205,15 +205,15 @@ Here is the caller graph for this function:</div>
 <p>Delay in microseconds. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">us</td><td>is number of microseconds to sleep </td></tr>
+    <tr><td class="paramname">us</td><td>represents number of microseconds to sleep </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00073">73</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
-<div class="line"><span class="lineno">   75</span>    sleep_us(us);</div>
-<div class="line"><span class="lineno">   76</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00080">80</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
+<div class="line"><span class="lineno">   82</span>    sleep_us(us);</div>
+<div class="line"><span class="lineno">   83</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -236,23 +236,16 @@ Here is the caller graph for this function:</div>
 <p>Get GPIO state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td>is GPIO pin number </td></tr>
+    <tr><td class="paramname">pin</td><td>represents GPIO pin number </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>state of GPIO pin</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pin</td><td>is GPIO pin number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>state of GPIO pin (true | false) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>state of GPIO pin </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00057">57</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>{</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> gpio_get(pin);</div>
-<div class="line"><span class="lineno">   60</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00064">64</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span> gpio_get(pin);</div>
+<div class="line"><span class="lineno">   67</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -285,16 +278,16 @@ Here is the caller graph for this function:</div>
 <p>Drive GPIO pin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td>is GPIO number </td></tr>
-    <tr><td class="paramname">value</td><td>is GPIO value (true - set | false - clear) </td></tr>
+    <tr><td class="paramname">pin</td><td>represents GPIO number </td></tr>
+    <tr><td class="paramname">value</td><td>represents GPIO value (true - set | false - clear) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00048">48</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
-<div class="line"><span class="lineno">   50</span>    gpio_put(pin, value);</div>
-<div class="line"><span class="lineno">   51</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00055">55</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    gpio_put(pin, value);</div>
+<div class="line"><span class="lineno">   58</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../d0/d6b/channel__relay_8c_source.html#l00025">microhil_init_relay()</a>, <a class="el" href="../../d0/d6b/channel__relay_8c_source.html#l00062">microhil_relay()</a>, <a class="el" href="../../d0/d6b/channel__relay_8c_source.html#l00069">microhil_relay_all()</a>, and <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00043">microhil_write_buzzer()</a>.</p>
 <div class="dynheader">
@@ -306,11 +299,11 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="../../d0/d6b/channel__relay_8c.html#a2b038c609ce91d186f79899abb3a9356" title="Performs initialization for relay channels." alt="" coords="330,5,473,32"/>
 <area shape="rect" href="../../d0/d6b/channel__relay_8c.html#ab0d0115d875d4b895b98d642ccbe1874" title="Turns relay to ON/OFF." alt="" coords="344,107,459,133"/>
 <area shape="rect" href="../../d0/d6b/channel__relay_8c.html#af309aa839242c2aead1ceecb9880b40a" title="Turns all relays to ON/OFF." alt="" coords="332,157,471,184"/>
-<area shape="rect" href="../../db/dec/channel__buzzer_8c.html#a5b96a586b9de57e5d85dcc3beb9f9a4c" title="Turns buzzer on/off." alt="" coords="319,56,484,83"/>
+<area shape="rect" href="../../db/dec/channel__buzzer_8c.html#a5b96a586b9de57e5d85dcc3beb9f9a4c" title="Turns buzzer state on/off." alt="" coords="319,56,484,83"/>
 <area shape="rect" href="../../d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global device initialization." alt="" coords="138,31,241,57"/>
-<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,31,60,57"/>
-<area shape="rect" href="../../d4/d28/channel_8c.html#a4fca939f579d8c8474e9ac4a5b2d7d36" title=" " alt="" coords="123,107,256,133"/>
-<area shape="rect" href="../../d4/d28/channel_8c.html#aa2c8a449334ea11d2135c6d0dcf37f70" title=" " alt="" coords="108,157,271,184"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point for microhil&#45;base." alt="" coords="5,31,60,57"/>
+<area shape="rect" href="../../d4/d28/channel_8c.html#aa3e191afa4af03ae49123f8b68e629e8" title="Performs channel operation (single channel)" alt="" coords="123,107,256,133"/>
+<area shape="rect" href="../../d4/d28/channel_8c.html#af334e99989414c68dff3a1f190aafc40" title="Performs operations over all channels." alt="" coords="108,157,271,184"/>
 </map>
 </div>
 
@@ -345,25 +338,25 @@ Here is the caller graph for this function:</div>
 <p>Setting port pin configuration. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td>is GPIO pin number </td></tr>
-    <tr><td class="paramname">mode</td><td>is GPIO pin direction (GPIO_IN | GPIO_OUT) </td></tr>
+    <tr><td class="paramname">pin</td><td>represents GPIO pin number </td></tr>
+    <tr><td class="paramname">mode</td><td>represents GPIO pin direction (GPIO_IN | GPIO_OUT) </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00030">30</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
-<div class="line"><span class="lineno">   32</span>    gpio_init(pin);</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (mode == 0 || mode == GPIO_IN)</div>
-<div class="line"><span class="lineno">   35</span>    {</div>
-<div class="line"><span class="lineno">   36</span>        gpio_set_dir(pin, GPIO_IN);</div>
-<div class="line"><span class="lineno">   37</span>    }</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   39</span>    {</div>
-<div class="line"><span class="lineno">   40</span>        gpio_set_dir(pin, GPIO_OUT);</div>
-<div class="line"><span class="lineno">   41</span>    }</div>
-<div class="line"><span class="lineno">   42</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00037">37</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
+<div class="line"><span class="lineno">   39</span>    gpio_init(pin);</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (mode == 0 || mode == GPIO_IN)</div>
+<div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>        gpio_set_dir(pin, GPIO_IN);</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        gpio_set_dir(pin, GPIO_OUT);</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00029">microhil_init_buzzer()</a>, and <a class="el" href="../../d0/d6b/channel__relay_8c_source.html#l00025">microhil_init_relay()</a>.</p>
 <div class="dynheader">
@@ -375,7 +368,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="../../db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df" title="Performs initialization for buzzer channel." alt="" coords="259,5,412,32"/>
 <area shape="rect" href="../../d0/d6b/channel__relay_8c.html#a2b038c609ce91d186f79899abb3a9356" title="Performs initialization for relay channels." alt="" coords="264,56,407,83"/>
 <area shape="rect" href="../../d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global device initialization." alt="" coords="108,31,211,57"/>
-<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,31,60,57"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point for microhil&#45;base." alt="" coords="5,31,60,57"/>
 </map>
 </div>
 
@@ -410,16 +403,8 @@ Here is the caller graph for this function:</div>
 <p>Initialization of PWM channel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">gpio</td><td></td></tr>
-    <tr><td class="paramname">channel</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true for success else false</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">gpio</td><td>pin number </td></tr>
-    <tr><td class="paramname">channel</td><td>channel </td></tr>
+    <tr><td class="paramname">gpio</td><td>represents GPIO pin </td></tr>
+    <tr><td class="paramname">channel</td><td>represents channel number </td></tr>
   </table>
   </dd>
 </dl>
@@ -427,24 +412,24 @@ Here is the caller graph for this function:</div>
 <p >Set PWM pin configuration</p>
 <p >Init PWM channel</p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00083">83</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>{</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordtype">bool</span> status = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   89</span>    gpio_set_function(gpio, GPIO_FUNC_PWM);</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   93</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a> = pwm_gpio_to_slice_num(gpio);</div>
-<div class="line"><span class="lineno">   94</span>    pwm_set_wrap(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 500);</div>
-<div class="line"><span class="lineno">   95</span>    pwm_set_chan_level(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, channel, 1);</div>
-<div class="line"><span class="lineno">   96</span>    pwm_set_clkdiv(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 50);</div>
-<div class="line"><span class="lineno">   97</span>    pwm_set_enabled(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   98</span>    status = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">  101</span>}</div>
-<div class="ttc" id="aio__config_8c_html_af8eb9cf9a6e9c4eea13d416da945f6ae"><div class="ttname"><a href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a></div><div class="ttdeci">static uint slice_num</div><div class="ttdoc">PWM slice number.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00024">io_config.c:24</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00090">90</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>{</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordtype">bool</span> status = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   96</span>    gpio_set_function(gpio, GPIO_FUNC_PWM);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a> = pwm_gpio_to_slice_num(gpio);</div>
+<div class="line"><span class="lineno">  101</span>    pwm_set_wrap(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 500);</div>
+<div class="line"><span class="lineno">  102</span>    pwm_set_chan_level(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, channel, 1);</div>
+<div class="line"><span class="lineno">  103</span>    pwm_set_clkdiv(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, 50);</div>
+<div class="line"><span class="lineno">  104</span>    pwm_set_enabled(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  105</span>    status = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">  108</span>}</div>
+<div class="ttc" id="aio__config_8c_html_af8eb9cf9a6e9c4eea13d416da945f6ae"><div class="ttname"><a href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a></div><div class="ttdeci">static uint slice_num</div><div class="ttdoc">PWM slice number.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00031">io_config.c:31</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/df1/io__config_8c_source.html#l00024">slice_num</a>.</p>
+<p class="reference">References <a class="el" href="../../df/df1/io__config_8c_source.html#l00031">slice_num</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/dec/channel__buzzer_8c_source.html#l00029">microhil_init_buzzer()</a>.</p>
 <div class="dynheader">
@@ -455,7 +440,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Initialization of PWM channel." alt="" coords="460,5,603,32"/>
 <area shape="rect" href="../../db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df" title="Performs initialization for buzzer channel." alt="" coords="259,5,412,32"/>
 <area shape="rect" href="../../d3/d88/channel__init_8c.html#ad215bce0c7df0f50ffd866ae3316f76e" title="Global device initialization." alt="" coords="108,5,211,32"/>
-<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point." alt="" coords="5,5,60,32"/>
+<area shape="rect" href="../../d0/d29/main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point for microhil&#45;base." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -487,39 +472,39 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Write value to PWM channel. </p>
+<p>Writes value to PWM channel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">channel</td><td>is PWM channel (PWM_CHAN_A | PWM_CHAN_B) </td></tr>
-    <tr><td class="paramname">value</td><td>is new value for selected output </td></tr>
+    <tr><td class="paramname">channel</td><td>represents PWM channel (PWM_CHAN_A | PWM_CHAN_B) </td></tr>
+    <tr><td class="paramname">value</td><td>represents new value for selected output </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00107">107</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
-<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (value &lt; 0 || value &gt; 100)</div>
-<div class="line"><span class="lineno">  110</span>    {</div>
-<div class="line"><span class="lineno">  111</span>        printf(<span class="stringliteral">&quot;%s %s\n&quot;</span>, <a class="code hl_define" href="../../df/d02/io__config__error_8h.html#ac8ee3202de3f7fd0b940c6817bdb27ff">MICROHIL_IO_CONFIG_ERROR</a>, <a class="code hl_define" href="../../df/d02/io__config__error_8h.html#a2c82654e4a618fd974fdab6bfd8f9c8b">MICROHIL_PWM_SET_ERROR</a>);</div>
-<div class="line"><span class="lineno">  112</span>    }</div>
-<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  114</span>    {</div>
-<div class="line"><span class="lineno">  115</span>        pwm_set_chan_level(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, channel, value);</div>
-<div class="line"><span class="lineno">  116</span>    }</div>
-<div class="line"><span class="lineno">  117</span>}</div>
-<div class="ttc" id="aio__config__error_8h_html_a2c82654e4a618fd974fdab6bfd8f9c8b"><div class="ttname"><a href="../../df/d02/io__config__error_8h.html#a2c82654e4a618fd974fdab6bfd8f9c8b">MICROHIL_PWM_SET_ERROR</a></div><div class="ttdeci">#define MICROHIL_PWM_SET_ERROR</div><div class="ttdoc">Error message for.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d02/io__config__error_8h_source.html#l00027">io_config_error.h:27</a></div></div>
-<div class="ttc" id="aio__config__error_8h_html_ac8ee3202de3f7fd0b940c6817bdb27ff"><div class="ttname"><a href="../../df/d02/io__config__error_8h.html#ac8ee3202de3f7fd0b940c6817bdb27ff">MICROHIL_IO_CONFIG_ERROR</a></div><div class="ttdeci">#define MICROHIL_IO_CONFIG_ERROR</div><div class="ttdoc">Prefix error message for IO modules.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d02/io__config__error_8h_source.html#l00023">io_config_error.h:23</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../df/df1/io__config_8c_source.html#l00114">114</a> of file <a class="el" href="../../df/df1/io__config_8c_source.html">io_config.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>{</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (value &lt; 0 || value &gt; 100)</div>
+<div class="line"><span class="lineno">  117</span>    {</div>
+<div class="line"><span class="lineno">  118</span>        printf(<span class="stringliteral">&quot;%s %s\n&quot;</span>, <a class="code hl_define" href="../../df/df1/io__config_8c.html#ac8ee3202de3f7fd0b940c6817bdb27ff">MICROHIL_IO_CONFIG_ERROR</a>, <a class="code hl_define" href="../../df/df1/io__config_8c.html#a2c82654e4a618fd974fdab6bfd8f9c8b">MICROHIL_PWM_SET_ERROR</a>);</div>
+<div class="line"><span class="lineno">  119</span>    }</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  121</span>    {</div>
+<div class="line"><span class="lineno">  122</span>        pwm_set_chan_level(<a class="code hl_variable" href="../../df/df1/io__config_8c.html#af8eb9cf9a6e9c4eea13d416da945f6ae">slice_num</a>, channel, value);</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+<div class="line"><span class="lineno">  124</span>}</div>
+<div class="ttc" id="aio__config_8c_html_a2c82654e4a618fd974fdab6bfd8f9c8b"><div class="ttname"><a href="../../df/df1/io__config_8c.html#a2c82654e4a618fd974fdab6bfd8f9c8b">MICROHIL_PWM_SET_ERROR</a></div><div class="ttdeci">#define MICROHIL_PWM_SET_ERROR</div><div class="ttdoc">Error message for.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00027">io_config.c:27</a></div></div>
+<div class="ttc" id="aio__config_8c_html_ac8ee3202de3f7fd0b940c6817bdb27ff"><div class="ttname"><a href="../../df/df1/io__config_8c.html#ac8ee3202de3f7fd0b940c6817bdb27ff">MICROHIL_IO_CONFIG_ERROR</a></div><div class="ttdeci">#define MICROHIL_IO_CONFIG_ERROR</div><div class="ttdoc">Prefix error message for IO modules.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/df1/io__config_8c_source.html#l00023">io_config.c:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d02/io__config__error_8h_source.html#l00023">MICROHIL_IO_CONFIG_ERROR</a>, <a class="el" href="../../df/d02/io__config__error_8h_source.html#l00027">MICROHIL_PWM_SET_ERROR</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00024">slice_num</a>.</p>
+<p class="reference">References <a class="el" href="../../df/df1/io__config_8c_source.html#l00023">MICROHIL_IO_CONFIG_ERROR</a>, <a class="el" href="../../df/df1/io__config_8c_source.html#l00027">MICROHIL_PWM_SET_ERROR</a>, and <a class="el" href="../../df/df1/io__config_8c_source.html#l00031">slice_num</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00152">microhil_all_channels()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d28/channel_8c_source.html#l00186">microhil_all_channels()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/d6a/io__config_8h_aa8e053bfd54b08b6b4a4b7813e0f6ebf_icgraph.png" border="0" usemap="#adf/d6a/io__config_8h_aa8e053bfd54b08b6b4a4b7813e0f6ebf_icgraph" alt=""/></div>
 <map name="adf/d6a/io__config_8h_aa8e053bfd54b08b6b4a4b7813e0f6ebf_icgraph" id="adf/d6a/io__config_8h_aa8e053bfd54b08b6b4a4b7813e0f6ebf_icgraph">
-<area shape="rect" title="Write value to PWM channel." alt="" coords="216,5,371,32"/>
-<area shape="rect" href="../../d4/d28/channel_8c.html#aa2c8a449334ea11d2135c6d0dcf37f70" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" title="Writes value to PWM channel." alt="" coords="216,5,371,32"/>
+<area shape="rect" href="../../d4/d28/channel_8c.html#af334e99989414c68dff3a1f190aafc40" title="Performs operations over all channels." alt="" coords="5,5,168,32"/>
 </map>
 </div>
 
@@ -531,7 +516,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_6c654ab24bac11ed71d410c3b57fea0f.html">io_config</a></li><li class="navelem"><a class="el" href="../../df/d6a/io__config_8h.html">io_config.h</a></li>
-    <li class="footer">Generated on Sun Sep 24 2023 13:07:58 for microhil-base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Sep 24 2023 22:31:41 for microhil-base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

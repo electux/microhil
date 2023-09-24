@@ -5,11 +5,11 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-# Add sources
+# Adds sources
 aux_source_directory(. DIR_CONFIG_SRCS)
 
-# Add io_config target library
+# Adds io_config target library
 add_library(io_config ${DIR_CONFIG_SRCS})
 
-# Link dependecy libraries
+# Links dependecy libraries
 target_link_libraries(io_config PUBLIC pico_stdlib hardware_pwm)

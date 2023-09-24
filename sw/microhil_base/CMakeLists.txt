@@ -5,13 +5,13 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-# Setup CMake version and RPI Pico SDK import
+# Sets CMake version
 cmake_minimum_required(VERSION 3.12)
 
 # Pico SDK import setup
 include(pico_sdk_import.cmake)
 
-# Setup project info
+# Sets project info
 project(microhil-base C CXX ASM)
 set(CMAKE_PROJECT_VERSION 1.0.0)
 set(CMAKE_C_STANDARD 11)
@@ -19,14 +19,14 @@ set(CMAKE_CXX_STANDARD 17)
 set(PRO_PATH ${PROJECT_SOURCE_DIR})
 set(PICO_BOARD "pico")
 
-# Initialize the SDK
+# Initializes the SDK
 pico_sdk_init()
 
-# Print memory usage 
+# Adds linker flags 
 add_link_options(-Wl,-gc-sections,--print-memory-usage)
 
-# Setup project url
+# Sets project url
 include(pro_auto_set_url.cmake)
 
-# Add source directory
+# Adds source directory
 add_subdirectory(src)

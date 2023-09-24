@@ -1,9 +1,11 @@
 var channel_8h =
 [
-    [ "_microhil_command", "d9/d04/struct__microhil__command.html", "d9/d04/struct__microhil__command" ],
+    [ "_microhil_req", "de/d8e/struct__microhil__req.html", "de/d8e/struct__microhil__req" ],
+    [ "MICROHIL_BOARD_ID", "d5/d7b/channel_8h.html#a72f6995284cef7cc78fd9aa18cbd7e87", null ],
     [ "MICROHIL_REQ_LEN", "d5/d7b/channel_8h.html#abd41ca04100d04937561a4bd2ed1ecff", null ],
+    [ "MICROHIL_VERSION", "d5/d7b/channel_8h.html#a34070488daf729caca5bfd7109f73873", null ],
     [ "microhil_channel_gpio", "d5/d7b/channel_8h.html#ad93b8e758c991e76913797d2ead0e7ea", null ],
-    [ "microhil_req", "d5/d7b/channel_8h.html#a2df60983626d2d5a6587e0c7540c8188", null ],
+    [ "microhil_req", "d5/d7b/channel_8h.html#a06685698188d03b331292e5e11230772", null ],
     [ "_microhil_channel_gpio", "d5/d7b/channel_8h.html#a4a32fd8ca21f9cbcf2f45836744ca803", [
       [ "MICROHIL_CHANNEL_0", "d5/d7b/channel_8h.html#a4a32fd8ca21f9cbcf2f45836744ca803a6a550250338e1d910a3b67cf493b08d1", null ],
       [ "MICROHIL_CHANNEL_1", "d5/d7b/channel_8h.html#a4a32fd8ca21f9cbcf2f45836744ca803a970f104dc99b96d84226b88f38c78430", null ],
@@ -15,7 +17,7 @@ var channel_8h =
       [ "MICROHIL_CHANNEL_7", "d5/d7b/channel_8h.html#a4a32fd8ca21f9cbcf2f45836744ca803a640e642823666ddd2f3537838b611438", null ]
     ] ],
     [ "microhil_channel_switch", "d5/d7b/channel_8h.html#ae89870b3cc140dc30ee5a7cc0239f695", null ],
-    [ "microhil_fetch_request", "d5/d7b/channel_8h.html#a9bc4d88d24a1721009b5324e3b468648", null ],
+    [ "microhil_fetch_request", "d5/d7b/channel_8h.html#a41ae571b22fee6832766d7938acfc301", null ],
     [ "microhil_init", "d5/d7b/channel_8h.html#ad215bce0c7df0f50ffd866ae3316f76e", null ],
     [ "microhil_init_buzzer", "d5/d7b/channel_8h.html#a87cbe1a7290a456849d341b77d38c9df", null ],
     [ "microhil_init_relay", "d5/d7b/channel_8h.html#a2b038c609ce91d186f79899abb3a9356", null ],

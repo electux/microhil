@@ -5,33 +5,33 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-# Prepare PIO target for WS2812 (headers and implementation)
+# Prepares PIO target for WS2812 (headers and implementation)
 pico_simple_hardware_target(pio)
 
-# Add sub-structure sources
+# Adds sub-structure sources
 add_subdirectory(io_config)
 add_subdirectory(ws2812)
 add_subdirectory(channel)
 
-# Add sub-structure includes
+# Adds sub-structure includes
 include_directories(channel)
 include_directories(ws2812)
 include_directories(io_config)
 
-# Create executable
+# Sets executable
 add_executable("${CMAKE_PROJECT_NAME}" main.c)
 
-# Enable USB output
+# Enables USB output
 pico_enable_stdio_usb("${CMAKE_PROJECT_NAME}" 1)
 
-# Disable UART output
+# Disables UART output
 pico_enable_stdio_uart("${CMAKE_PROJECT_NAME}" 0)
 
-# Link all libraries
+# Links all libraries
 target_link_libraries("${CMAKE_PROJECT_NAME}" channel ws2812 io_config)
 
-# Create extra output files map/bin/hex
+# Creates extra output files map/bin/hex
 pico_add_extra_outputs("${CMAKE_PROJECT_NAME}")
 
-# Add URL via pico_set_program_url
+# Adds URL via pico_set_program_url
 pro_auto_set_url("${CMAKE_PROJECT_NAME}")

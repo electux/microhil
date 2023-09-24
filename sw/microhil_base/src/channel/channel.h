@@ -23,6 +23,14 @@
 #include "ws2812.pio.h"
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief microHIL version
+#define MICROHIL_VERSION "microHIL v1.0.0"
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief microHIL board id
+#define MICROHIL_BOARD_ID "mh:333:2023:0"
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Command request length
 #define MICROHIL_REQ_LEN 32
 
@@ -49,8 +57,8 @@ typedef enum _microhil_channel_gpio
 } microhil_channel_gpio;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Command structure for mapping name and requst operation
-typedef struct _microhil_command
+/// @brief Structure for mapping name and requst operation
+typedef struct _microhil_req
 {
     uint8_t *name;
     void (*req_operation)(uint8_t *args);
@@ -87,7 +95,7 @@ bool microhil_pio_init();
 bool microhil_init_buzzer();
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Turns buzzer on/off
+/// @brief Turns buzzer state on/off
 /// @param value represents value for buzzer (true - on | false - off)
 void microhil_write_buzzer(bool value);
 
@@ -100,10 +108,10 @@ void microhil_write_pixel(uint8_t red, uint8_t green, uint8_t blue);
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Fetches microHIL command requests from the serial port
-/// @param buffer storage for received requests from the serial port
-void microhil_fetch_request(uint8_t *buffer);
+/// @param request storage for received request from the serial port
+void microhil_fetch_request(uint8_t *request);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Switches channel by command request
+/// @brief Switches channels by command request
 /// @param request represents command request
 void microhil_channel_switch(uint8_t *request);

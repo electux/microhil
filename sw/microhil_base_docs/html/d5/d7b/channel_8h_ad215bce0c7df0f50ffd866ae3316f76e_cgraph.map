@@ -3,11 +3,11 @@
 <area shape="rect" id="node2" href="$db/dec/channel__buzzer_8c.html#a87cbe1a7290a456849d341b77d38c9df" title="Performs initialization for buzzer channel." alt="" coords="162,5,315,32"/>
 <area shape="rect" id="node5" href="$d0/d6b/channel__relay_8c.html#a2b038c609ce91d186f79899abb3a9356" title="Performs initialization for relay channels." alt="" coords="167,56,310,83"/>
 <area shape="rect" id="node7" href="$de/dab/channel__pio_8c.html#a1d894ba2c3fdf553fd6cf62d5f376ac4" title="Performs initialization for PIO state machine." alt="" coords="173,157,304,184"/>
-<area shape="rect" id="node10" href="$db/dec/channel__buzzer_8c.html#a5b96a586b9de57e5d85dcc3beb9f9a4c" title="Turns buzzer on/off." alt="" coords="156,107,321,133"/>
+<area shape="rect" id="node10" href="$db/dec/channel__buzzer_8c.html#a5b96a586b9de57e5d85dcc3beb9f9a4c" title="Turns buzzer state on/off." alt="" coords="156,107,321,133"/>
 <area shape="rect" id="node11" href="$d0/d22/channel__led_8c.html#a3430b478fd2601c716cf936f321c10c3" title="Writes 32&#45;bit RGB value to PIO state machine." alt="" coords="162,208,315,235"/>
 <area shape="rect" id="node3" href="$df/df1/io__config_8c.html#ace6e2881cfde444df4f62cc352888df6" title="Setting port pin configuration." alt="" coords="373,56,528,83"/>
 <area shape="rect" id="node4" href="$df/df1/io__config_8c.html#a9ea5c0e25cbbf50dd5dc2c8515a27ce4" title="Initialization of PWM channel." alt="" coords="379,5,522,32"/>
 <area shape="rect" id="node6" href="$df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0" title="Drive GPIO pin." alt="" coords="369,107,532,133"/>
-<area shape="rect" id="node8" href="$d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Perform WS2812 program initialization." alt="" coords="369,157,532,184"/>
-<area shape="rect" id="node9" href="$d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title="Preparing default configuration." alt="" coords="580,150,743,191"/>
+<area shape="rect" id="node8" href="$d6/d69/ws2812_8pio_8h.html#aa8aedd32a0302060cbf7accca654cf74" title="Performs WS2812 program initialization." alt="" coords="369,157,532,184"/>
+<area shape="rect" id="node9" href="$d6/d69/ws2812_8pio_8h.html#a5808861bc6522a8125498463bc5e9f6c" title="Prepares default configuration." alt="" coords="580,150,743,191"/>
 </map>

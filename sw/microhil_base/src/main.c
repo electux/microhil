@@ -17,21 +17,21 @@
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <string.h>
+#include "tusb.h"
 #include "pico/stdio_usb.h"
 #include "channel.h"
-#include <tusb.h>
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Flag for received new request from the serial port
 bool new_request = false;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Flog for receiving in progress
+/// @brief Flag for marking receive in progress
 bool receive_in_progress = false;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Main entry point
-/// @return 0 for success else 1
+/// @brief Main entry point for microhil-base
+/// @return 0 for success exit else 1 for failed exit
 int main()
 {
     ////////////////////////////////////////////////////////////////////////
@@ -53,13 +53,13 @@ int main()
     }
 
     ////////////////////////////////////////////////////////////////////
-    /// Command buffer for receiving requests
+    /// Command buffer for received request
     uint8_t request[MICROHIL_REQ_LEN] = {0};
 
     while (status)
     {
         ////////////////////////////////////////////////////////////////////
-        /// Fetches channel command requests
+        /// Fetching channel command request
         microhil_fetch_request(request);
 
         if (!receive_in_progress && new_request)

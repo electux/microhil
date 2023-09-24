@@ -1,5 +1,7 @@
 var io__config_8c =
 [
+    [ "MICROHIL_IO_CONFIG_ERROR", "df/df1/io__config_8c.html#ac8ee3202de3f7fd0b940c6817bdb27ff", null ],
+    [ "MICROHIL_PWM_SET_ERROR", "df/df1/io__config_8c.html#a2c82654e4a618fd974fdab6bfd8f9c8b", null ],
     [ "microhil_delay_ms", "df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0", null ],
     [ "microhil_delay_us", "df/df1/io__config_8c.html#a6fe6aee24d5f511a7aa70ef44d48e7a4", null ],
     [ "microhil_digital_read", "df/df1/io__config_8c.html#a7e818d8a422afa4812dcd34cd50d4cff", null ],

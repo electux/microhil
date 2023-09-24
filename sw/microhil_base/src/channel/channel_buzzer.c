@@ -38,7 +38,7 @@ bool microhil_init_buzzer()
 }
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Turns buzzer on/off
+/// @brief Turns buzzer state on/off
 /// @param value represents value for buzzer (true - on | false - off)
 void microhil_write_buzzer(bool value)
 {

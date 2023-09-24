@@ -1,4 +1,4 @@
 <map id="microhil_write_pwm" name="microhil_write_pwm">
-<area shape="rect" id="node1" title="Write value to PWM channel." alt="" coords="216,5,371,32"/>
-<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#aa2c8a449334ea11d2135c6d0dcf37f70" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node1" title="Writes value to PWM channel." alt="" coords="216,5,371,32"/>
+<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#af334e99989414c68dff3a1f190aafc40" title="Performs operations over all channels." alt="" coords="5,5,168,32"/>
 </map>
