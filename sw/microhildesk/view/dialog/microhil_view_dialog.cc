@@ -41,22 +41,28 @@ namespace
     constexpr const char kErrorMessage[]{" ERROR "};
 }
 
-MHViewDialog::MHViewDialog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui) : Gtk::Dialog(object), m_ui{ui}
+MHViewDialog::MHViewDialog(
+    BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui
+) : Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Dialog message
-    m_text = MHRPtr<Gtk::Label>::cast_dynamic(m_ui->get_object(kDialogMessage));
+    /// Binds Dialog message
+    m_text = MHRPtr<Gtk::Label>::cast_dynamic(
+        m_ui->get_object(kDialogMessage)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Close button
-    m_close = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kCloseButtonId));
+    /// Binds Close button
+    m_close = MHRPtr<Gtk::Button>::cast_dynamic(
+        m_ui->get_object(kCloseButtonId)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map Close button (signal and slot)
+    /// Maps Close button (signal and slot)
     mapping();
 
     ////////////////////////////////////////////////////////////////////////
-    /// Hide Dialog by default
+    /// Hides Dialog by default
     this->hide();
 }
 

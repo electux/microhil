@@ -1,4 +1,4 @@
 <map id="MHConfig::intToBaudRate" name="MHConfig::intToBaudRate">
-<area shape="rect" id="node1" title="Process and prepare baud rate (to config file)" alt="" coords="229,5,416,32"/>
-<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#ad1961dbb0629818d74f1a6a04793f660" title="Setting baud rate for serial port to configuration." alt="" coords="5,5,181,32"/>
+<area shape="rect" id="node1" title="Processes and prepares baud&#45;rate (to config file)" alt="" coords="229,5,416,32"/>
+<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#ad1961dbb0629818d74f1a6a04793f660" title="Sets baud&#45;rate for serial port to configuration." alt="" coords="5,5,181,32"/>
 </map>

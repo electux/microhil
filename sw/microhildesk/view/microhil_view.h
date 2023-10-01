@@ -19,16 +19,13 @@
 #pragma once
 
 #include <gtkmm/builder.h>
-#include "home/microhil_view_home.h"
 #include "dialog/microhil_view_dialog.h"
-#include "settings/log/microhil_view_log.h"
-#include "settings/serial/microhil_view_serial.h"
 #include "about/microhil_view_about.h"
-#include "microhil_view_abstract.h"
+#include "microhil_iview.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MHView class declaration and definition 
-class MHView: public AbMHView
+/// @brief MHView class is implementation of view 
+class MHView: public IMHView
 {
 public:
     ////////////////////////////////////////////////////////////////////////
@@ -36,34 +33,30 @@ public:
     MHView();
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MHView destructor
-    ~MHView() = default;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting home view
+    /// @brief Gets home view
     /// @return Home view instance
-    MHRPtr<MHViewHome> getHome();
+    MHRPtr<MHViewHome> getHome() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting log settings
-    /// @return Log settings instance
-    MHRPtr<MHViewLog> getLogSettings();
+    /// @brief Gets log settings view
+    /// @return Log view settings instance
+    MHRPtr<MHViewLog> getLogSettings() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting serial settings
-    /// @return Serial settings instance
-    MHRPtr<MHViewSerial> getSerialSettings();
+    /// @brief Gets serial settings view
+    /// @return Serial view settings instance
+    MHRPtr<MHViewSerial> getSerialSettings() final;
 
-private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Mapping views (signal and slots)
-    void mapping();
+    /// @brief Maps views (signal and slots)
+    void mapping() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing requests for triggering view
-    /// @param id of requested view
-    void onViewChanged(ViewId id);
+    /// @param id represents id of requested view
+    void onViewChanged(ViewId id) final;
 
+private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
     MHRPtr<Gtk::Builder> m_builder{nullptr};

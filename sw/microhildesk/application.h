@@ -24,14 +24,14 @@
 #include "controller/microhil_controller.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Application entry class declaration and definition
+/// @brief Application entry class for microHIL system
 class Application
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application constructor
-    /// @param argc is the number of arguments for the application
-    /// @param argv is the array of arguments for the application
+    /// @param argc represents the number of arguments for the application
+    /// @param argv represents the array of arguments for the application
     Application(int argc, char *argv[]);
 
     ////////////////////////////////////////////////////////////////////////
@@ -50,13 +50,13 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Model instance
-    MHSPtr<MHModel> m_model{nullptr};
+    MHSPtr<IMHModel> m_model{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief View instance
-    MHSPtr<MHView> m_view{nullptr};
+    MHSPtr<IMHView> m_view{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Controller instance
-    MHUPtr<MHController> m_controller{nullptr};
+    MHSPtr<IMHController> m_controller{nullptr};
 };

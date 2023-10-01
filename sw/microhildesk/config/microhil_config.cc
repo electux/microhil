@@ -50,8 +50,10 @@ namespace
         "stop_bits=1"};
 }
 
-MHConfig::MHConfig() : m_homePath{Glib::get_home_dir() + kHomeDirName},
-                       m_configFilePath{m_homePath + kConfigFileName}
+MHConfig::MHConfig()
+    :
+        m_homePath{Glib::get_home_dir() + kHomeDirName},
+        m_configFilePath{m_homePath + kConfigFileName}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-validation of configuration path
@@ -76,7 +78,7 @@ bool MHConfig::load()
     }
 
     ////////////////////////////////////////////////////////////////////////
-    /// Emit signal for loaded log configuration
+    /// Emits signal for loaded log configuration
     auto logPath = getLogPath();
     auto logLevel = logLevelStringToInt(getLogLevel());
     m_logConfig.emit(logPath, logLevel);
@@ -88,7 +90,7 @@ bool MHConfig::load()
     serialParams.push_back(getStopBits());
 
     ////////////////////////////////////////////////////////////////////////
-    /// Emit signal for loaded serial configuration
+    /// Emits signal for loaded serial configuration
     auto device = getDevice();
     m_serialConfig.emit(device, serialParams);
 
@@ -125,7 +127,7 @@ bool MHConfig::validate()
 bool MHConfig::checkConfigPath() const
 {
     ////////////////////////////////////////////////////////////////////////
-    // Check home directory /home/<username>/.microhil/
+    // Checks home directory /home/<username>/.microhil/
     std::filesystem::directory_entry homeDirEntry{m_homePath};
     const auto homeDirExists = homeDirEntry.exists();
 
@@ -140,7 +142,7 @@ bool MHConfig::checkConfigPath() const
     }
 
     ////////////////////////////////////////////////////////////////////////
-    // Check config file in case of missing generate new with default setup
+    // Checks config file in case of missing generate new with default setup
     // Configuration file location: /home/<username>/.microhil/config
     const auto configFileExists = std::filesystem::exists(m_configFilePath);
 
@@ -158,3 +160,13 @@ bool MHConfig::checkConfigPath() const
 
     return true;
 }
+
+void MHConfig::setPreValid(bool configValid)
+{ 
+    m_configPreValidate = configValid; 
+}
+
+bool MHConfig::isPreValid() const
+{ 
+    return m_configPreValidate; 
+};

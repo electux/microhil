@@ -21,6 +21,8 @@
 void MHViewAbout::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Map Ok button (signal and slot)
-    m_ok->signal_clicked().connect(sigc::mem_fun(*this, &MHViewAbout::onHideAboutTriggered));
+    /// Maps Ok button (signal and slot)
+    m_ok->signal_clicked().connect(
+        sigc::mem_fun(*this, &MHViewAbout::onHideAboutTriggered)
+    );
 }

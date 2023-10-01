@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('d9/d08/microhil__view__dialog__abstrac
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">microhil_view_dialog_abstract.h File Reference</div></div>
 </div><!--header-->
@@ -137,8 +138,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da7/classAbMHViewDialog.html">AbMHViewDialog</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/da7/classAbMHViewDialog.html" title="AbMHViewDialog class declaration and definition.">AbMHViewDialog</a> class declaration and definition.  <a href="../../d9/da7/classAbMHViewDialog.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/da7/classAbMHViewDialog.html" title="AbMHViewDialog class is abstract setup of dialog view.">AbMHViewDialog</a> class is abstract setup of dialog view.  <a href="../../d9/da7/classAbMHViewDialog.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8ad401f9ab89f70521bd89aef2e92198"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#a8ad401f9ab89f70521bd89aef2e92198">SigHideDialog</a> = sigc::signal&lt; void(bool)&gt;</td></tr>
+<tr class="memdesc:a8ad401f9ab89f70521bd89aef2e92198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for Close button (self hide Dialog signal)  <a href="../../d9/d08/microhil__view__dialog__abstract_8h.html#a8ad401f9ab89f70521bd89aef2e92198">More...</a><br /></td></tr>
+<tr class="separator:a8ad401f9ab89f70521bd89aef2e92198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -149,6 +156,25 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:ac6606ebe91c8ac66a2c314c79f5ab013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scoped class enumerator for dialog message types.  <a href="../../d9/d08/microhil__view__dialog__abstract_8h.html#ac6606ebe91c8ac66a2c314c79f5ab013">More...</a><br /></td></tr>
 <tr class="separator:ac6606ebe91c8ac66a2c314c79f5ab013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a8ad401f9ab89f70521bd89aef2e92198" name="a8ad401f9ab89f70521bd89aef2e92198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ad401f9ab89f70521bd89aef2e92198">&#9670;&nbsp;</a></span>SigHideDialog</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html#a8ad401f9ab89f70521bd89aef2e92198">SigHideDialog</a> =  sigc::signal&lt;void(bool)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Signal type for Close button (self hide Dialog signal) </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html#l00038">38</a> of file <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html">microhil_view_dialog_abstract.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ac6606ebe91c8ac66a2c314c79f5ab013" name="ac6606ebe91c8ac66a2c314c79f5ab013"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6606ebe91c8ac66a2c314c79f5ab013">&#9670;&nbsp;</a></span>MessageType</h2>
@@ -182,13 +208,13 @@ Enumerations</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html#l00026">26</a> of file <a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h_source.html">microhil_view_dialog_abstract.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_enumvalue" href="../../d5/d0c/microhil__log__abstract_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94a5c275391c03b613d150162fb88b43675">MICROHIL_INFO</a> = 0,</div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_enumvalue" href="../../d5/d0c/microhil__log__abstract_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94aa4dd09d3ec446e8317a230e3c5eed791">MICROHIL_WARNING</a> = 1,</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_enumvalue" href="../../d5/d0c/microhil__log__abstract_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94ac2632392c1fd9eae2206c224f13ee03e">MICROHIL_ERROR</a> = 2</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_enumvalue" href="../../d7/db9/microhil__ilog_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94a5c275391c03b613d150162fb88b43675">MICROHIL_INFO</a> = 0,</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_enumvalue" href="../../d7/db9/microhil__ilog_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94aa4dd09d3ec446e8317a230e3c5eed791">MICROHIL_WARNING</a> = 1,</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_enumvalue" href="../../d7/db9/microhil__ilog_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94ac2632392c1fd9eae2206c224f13ee03e">MICROHIL_ERROR</a> = 2</div>
 <div class="line"><span class="lineno">   34</span>};</div>
-<div class="ttc" id="amicrohil__log__abstract_8h_html_a9cf4d2a890c8688e0fe1bc38fa88de94a5c275391c03b613d150162fb88b43675"><div class="ttname"><a href="../../d5/d0c/microhil__log__abstract_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94a5c275391c03b613d150162fb88b43675">LogLevel::MICROHIL_INFO</a></div><div class="ttdeci">@ MICROHIL_INFO</div><div class="ttdoc">Log level info.</div></div>
-<div class="ttc" id="amicrohil__log__abstract_8h_html_a9cf4d2a890c8688e0fe1bc38fa88de94aa4dd09d3ec446e8317a230e3c5eed791"><div class="ttname"><a href="../../d5/d0c/microhil__log__abstract_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94aa4dd09d3ec446e8317a230e3c5eed791">LogLevel::MICROHIL_WARNING</a></div><div class="ttdeci">@ MICROHIL_WARNING</div><div class="ttdoc">Log level warning.</div></div>
-<div class="ttc" id="amicrohil__log__abstract_8h_html_a9cf4d2a890c8688e0fe1bc38fa88de94ac2632392c1fd9eae2206c224f13ee03e"><div class="ttname"><a href="../../d5/d0c/microhil__log__abstract_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94ac2632392c1fd9eae2206c224f13ee03e">LogLevel::MICROHIL_ERROR</a></div><div class="ttdeci">@ MICROHIL_ERROR</div><div class="ttdoc">Log level error.</div></div>
+<div class="ttc" id="amicrohil__ilog_8h_html_a9cf4d2a890c8688e0fe1bc38fa88de94a5c275391c03b613d150162fb88b43675"><div class="ttname"><a href="../../d7/db9/microhil__ilog_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94a5c275391c03b613d150162fb88b43675">LogLevel::MICROHIL_INFO</a></div><div class="ttdeci">@ MICROHIL_INFO</div><div class="ttdoc">Log level info.</div></div>
+<div class="ttc" id="amicrohil__ilog_8h_html_a9cf4d2a890c8688e0fe1bc38fa88de94aa4dd09d3ec446e8317a230e3c5eed791"><div class="ttname"><a href="../../d7/db9/microhil__ilog_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94aa4dd09d3ec446e8317a230e3c5eed791">LogLevel::MICROHIL_WARNING</a></div><div class="ttdeci">@ MICROHIL_WARNING</div><div class="ttdoc">Log level warning.</div></div>
+<div class="ttc" id="amicrohil__ilog_8h_html_a9cf4d2a890c8688e0fe1bc38fa88de94ac2632392c1fd9eae2206c224f13ee03e"><div class="ttname"><a href="../../d7/db9/microhil__ilog_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94ac2632392c1fd9eae2206c224f13ee03e">LogLevel::MICROHIL_ERROR</a></div><div class="ttdeci">@ MICROHIL_ERROR</div><div class="ttdoc">Log level error.</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -198,7 +224,7 @@ Enumerations</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_b2f003339c516cc00c8cadcafbe82f13.html">view</a></li><li class="navelem"><a class="el" href="../../dir_e69691206df1014c6b36bcaed7c2a319.html">dialog</a></li><li class="navelem"><a class="el" href="../../d9/d08/microhil__view__dialog__abstract_8h.html">microhil_view_dialog_abstract.h</a></li>
-    <li class="footer">Generated on Fri Sep 22 2023 06:01:45 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Oct 1 2023 22:41:06 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

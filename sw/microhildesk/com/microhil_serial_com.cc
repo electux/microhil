@@ -23,11 +23,6 @@ MHSerialCom::MHSerialCom() : m_serialPort{MHmakeUPtr<SerialPort>()}
     close();
 }
 
-MHSerialCom::~MHSerialCom()
-{
-    close();
-}
-
 void MHSerialCom::open()
 {
     if (!m_serialPort->IsOpen())

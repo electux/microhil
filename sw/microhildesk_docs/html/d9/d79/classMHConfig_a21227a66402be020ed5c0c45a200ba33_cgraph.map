@@ -1,5 +1,5 @@
 <map id="MHConfig::MHConfig" name="MHConfig::MHConfig">
 <area shape="rect" id="node1" title="MHConfig constructor." alt="" coords="5,31,161,57"/>
-<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#afd393ff41de11967b3c39b7f6dff8bab" title="Checking existence of configuration file." alt="" coords="209,5,409,32"/>
-<area shape="rect" id="node3" href="$d7/db3/classAbMHConfig.html#afea76f0aadb19a91c55d6b95a944d33f" title="Set pre&#45;validation state (existing configuration)" alt="" coords="218,56,401,83"/>
+<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#afd393ff41de11967b3c39b7f6dff8bab" title="Checks existence of configuration file." alt="" coords="209,5,409,32"/>
+<area shape="rect" id="node3" href="$d9/d79/classMHConfig.html#a839d655d312a5d87c3ac3a3e2974778e" title="Sets pre&#45;validation state (existing configuration)" alt="" coords="226,56,393,83"/>
 </map>

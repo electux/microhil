@@ -31,19 +31,15 @@
 #include "microhil_view_home_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MHViewHome class declaration and definition
+/// @brief MHViewHome class is implementation of home view
 class MHViewHome : public AbMHViewHome, public Gtk::ApplicationWindow
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewHome constructor
-    /// @param object base object instance
-    /// @param ui builder instance
+    /// @param object represents base object instance
+    /// @param ui represents builder instance
     MHViewHome(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief MHViewHome destructor
-    ~MHViewHome() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (changed view)
@@ -57,7 +53,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing check buttons (enable/disable channel)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
     void onChannelChanged(Channel id) final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -67,7 +63,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing comboboxes (control type)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
     void onTypeSelected(Channel id) final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -77,7 +73,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off channel)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
     void onToggled(Channel id) final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -87,7 +83,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing spin buttons (based on timer)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
     void onSpinTimerChanged(Channel id) final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -97,7 +93,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off timer)
-    /// @param id for channel (Channel::ID0 .. Channel::ID7)
+    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
     void onToggleTimerChanged(Channel id) final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -126,38 +122,38 @@ public:
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Map channels (signals and slots)
+    /// @brief Maps channels (signals and slots)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Enable complete channel
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @brief Enables complete channel
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     void enableChannel(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Disable complete channel
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @brief Disables complete channel
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     void disableChannel(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setup channel in toggle mode
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @brief Sets channel in toggle mode
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     void toggleModeChannel(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setup channel timer mode
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @brief Sets channel timer mode
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     void timerModeChannel(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert channel id to integer value
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @brief Converts channel id to integer value
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     /// @return integer value of channel id
     int channelToInt(Channel id);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert channel control type to integer value
-    /// @param controlType (MICROHIL_TOGGLE_BUTTON | MICROHIL_TIMER_BUTTON)
+    /// @brief Converts channel control type to integer value
+    /// @param controlType represents control type
     /// @return integer value of channel control type
     int controlTypeToInt(channelControlType controlType);
 

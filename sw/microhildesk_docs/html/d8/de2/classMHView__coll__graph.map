@@ -1,10 +1,10 @@
 <map id="MHView" name="MHView">
-<area shape="rect" id="node1" title="MHView class declaration and definition." alt="" coords="600,145,759,311"/>
-<area shape="rect" id="node2" href="$dc/dff/classAbMHView.html" title="AbMHView class declaration and definition." alt="" coords="5,5,135,83"/>
-<area shape="rect" id="node3" title=" " alt="" coords="159,5,338,83"/>
-<area shape="rect" id="node4" title=" " alt="" coords="362,5,557,83"/>
-<area shape="rect" id="node5" title=" " alt="" coords="581,5,778,83"/>
-<area shape="rect" id="node6" title=" " alt="" coords="802,5,981,83"/>
-<area shape="rect" id="node7" title=" " alt="" coords="1005,5,1197,83"/>
-<area shape="rect" id="node8" title=" " alt="" coords="1221,5,1415,83"/>
+<area shape="rect" id="node1" title="MHView class is implementation of view." alt="" coords="629,219,788,369"/>
+<area shape="rect" id="node2" href="$df/d0c/classIMHView.html" title="IMHView class is interface set for view." alt="" coords="5,5,164,156"/>
+<area shape="rect" id="node3" title=" " alt="" coords="189,42,367,119"/>
+<area shape="rect" id="node4" title=" " alt="" coords="391,42,586,119"/>
+<area shape="rect" id="node5" title=" " alt="" coords="610,42,807,119"/>
+<area shape="rect" id="node6" title=" " alt="" coords="831,42,1010,119"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1034,42,1226,119"/>
+<area shape="rect" id="node8" title=" " alt="" coords="1251,42,1444,119"/>
 </map>

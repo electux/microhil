@@ -25,19 +25,15 @@
 #include "microhil_view_dialog_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MHViewDialog class declaration and definition
+/// @brief MHViewDialog class is implementation of dialog view
 class MHViewDialog : public AbMHViewDialog, public Gtk::Dialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewDialog constructor
-    /// @param object base object type
-    /// @param ui builder instance
+    /// @param object represents base object type
+    /// @param ui represents builder instance
     MHViewDialog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief MHViewDialog destructor
-    ~MHViewDialog() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button
@@ -49,20 +45,20 @@ public:
     void onHideDialogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Set message for dialog
-    /// @param message with information for user
-    /// @param type of dialog message
+    /// @brief Sets message for dialog
+    /// @param message represents message with information for user
+    /// @param type represents type of dialog message
     void setMessage(const MHString &message, const MessageType type) final;
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Conversion of message type to unicode string
-    /// @param type of dialog message
+    /// @brief Converts message type to unicode string
+    /// @param type represents type of dialog message
     /// @return string representation of dialog message type
     MHString toUnicodeStringMessageType(const MessageType type);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Map Close button (signal and slot)
+    /// @brief Maps Close button (signal and slot)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////

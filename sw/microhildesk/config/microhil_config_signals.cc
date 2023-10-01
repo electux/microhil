@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_config.cc
+ * microhil_config_signals.cc
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -18,12 +18,12 @@
  */
 #include "microhil_config.h"
 
-MHConfig::SigLogConfig MHConfig::LogConfigLoaded()
+SigLogConfig MHConfig::LogConfigLoaded()
 {
     return m_logConfig;
 }
 
-MHConfig::SigSerialConfig MHConfig::SerialConfigLoaded()
+SigSerialConfig MHConfig::SerialConfigLoaded()
 {
     return m_serialConfig;
 }

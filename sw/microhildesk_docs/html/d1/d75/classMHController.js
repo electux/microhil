@@ -1,18 +1,17 @@
 var classMHController =
 [
-    [ "MHController", "d1/d75/classMHController.html#ad150b3d16074832420275e900e2da0fb", null ],
-    [ "~MHController", "d1/d75/classMHController.html#af41962260d6caa05e0d5ae921b78f82a", null ],
+    [ "MHController", "d1/d75/classMHController.html#a8f66d2746244a191b94c6e7aab9f1a77", null ],
     [ "isEnabled", "d1/d75/classMHController.html#a835a02358953d559f0b830915496319d", null ],
-    [ "mapping", "d1/d75/classMHController.html#a3f71ae3e7095f9df502967aea370b2c4", null ],
-    [ "onLogSettingsChanged", "d1/d75/classMHController.html#a93349e277d61c7637c79572d13230ac0", null ],
-    [ "onLogSettingsLoaded", "d1/d75/classMHController.html#ad3f88dda4e7abb9524316cfc69b62aee", null ],
-    [ "onSerialSettingsChanged", "d1/d75/classMHController.html#a9e56cdd7a84490f977122ddfcd59981a", null ],
-    [ "onSerialSettingsLoaded", "d1/d75/classMHController.html#a07c7aeb57fe502a68ec45187e076b94b", null ],
+    [ "mapping", "d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f", null ],
+    [ "onLogSettingsChanged", "d1/d75/classMHController.html#ad6f3e6c35f58ee02b13b19a9999a3703", null ],
+    [ "onLogSettingsLoaded", "d1/d75/classMHController.html#a894230eda2339035729894ef57a6e675", null ],
+    [ "onSerialSettingsChanged", "d1/d75/classMHController.html#a1bda7b5726e5affa27dccbe6b2879ffc", null ],
+    [ "onSerialSettingsLoaded", "d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77", null ],
     [ "setEnabled", "d1/d75/classMHController.html#ac8cec1ec08eaa76daf34a7c94e8019a2", null ],
-    [ "m_config", "d1/d75/classMHController.html#a90d37482e82d5e58a00bc49ca580bd8b", null ],
+    [ "m_config", "d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5", null ],
     [ "m_enabled", "d1/d75/classMHController.html#a1546c7844387b532cd1d86770fe42d9d", null ],
-    [ "m_log", "d1/d75/classMHController.html#a25d894deb97e33c01a6c1be043f722d9", null ],
-    [ "m_model", "d1/d75/classMHController.html#a7f0c0c1a3d77b8c7caf0d469907475fd", null ],
-    [ "m_serial", "d1/d75/classMHController.html#a113e95fc71174b52808491c98444b599", null ],
-    [ "m_view", "d1/d75/classMHController.html#a0c9e182dae16951126b0a0a67dc41b94", null ]
+    [ "m_log", "d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db", null ],
+    [ "m_model", "d1/d75/classMHController.html#ad13d88fbe6ad3fabf1d8dfcbca5ccff5", null ],
+    [ "m_serial", "d1/d75/classMHController.html#a1fa50bd7ea903c3e18a10b97bfe31c61", null ],
+    [ "m_view", "d1/d75/classMHController.html#a82808cfcc7fd3a0ec8d5ddb683932506", null ]
 ];

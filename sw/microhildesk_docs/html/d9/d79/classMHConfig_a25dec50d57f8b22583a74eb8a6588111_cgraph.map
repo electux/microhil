@@ -1,4 +1,4 @@
 <map id="MHConfig::getStopBits" name="MHConfig::getStopBits">
-<area shape="rect" id="node1" title="Getting stop bits for serial port from configuration." alt="" coords="5,5,173,32"/>
-<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a3a192ed849098102d001d3afcffa50b0" title="Convert stop&#45;bits to integer (from config file)" alt="" coords="221,5,399,32"/>
+<area shape="rect" id="node1" title="Gets stop&#45;bits for serial port from configuration." alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a3a192ed849098102d001d3afcffa50b0" title="Converts stop&#45;bits to integer (from config file)" alt="" coords="221,5,399,32"/>
 </map>

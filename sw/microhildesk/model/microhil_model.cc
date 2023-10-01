@@ -28,7 +28,7 @@ namespace
 MHModel::MHModel()
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Set all channels in model to OFF by default
+    /// Sets all channels in model to OFF by default
     for (int i = 0; i < kNumberOfChannels; i++)
     {
         m_channels.push_back(ChannelState::MICROHIL_OFF);

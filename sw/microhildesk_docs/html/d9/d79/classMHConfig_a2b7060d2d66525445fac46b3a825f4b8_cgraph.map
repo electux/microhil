@@ -1,4 +1,4 @@
 <map id="MHConfig::setStopBits" name="MHConfig::setStopBits">
-<area shape="rect" id="node1" title="Setting stop bits for serial port to configuration." alt="" coords="5,5,172,32"/>
-<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a0411156a89e4f60341053b0f2d10d4de" title="Convert combobox index to data&#45;bits (to config file)" alt="" coords="220,5,399,32"/>
+<area shape="rect" id="node1" title="Sets stop&#45;bits for the serial port to configuration." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a0411156a89e4f60341053b0f2d10d4de" title="Converts combobox index to data&#45;bits (to config file)" alt="" coords="220,5,399,32"/>
 </map>

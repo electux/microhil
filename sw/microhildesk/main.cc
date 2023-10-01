@@ -20,15 +20,15 @@
 
 ////////////////////////////////////////////////////////////////////////
 /// @brief Create an application instance
-/// @param argc is the number of arguments for the application
-/// @param argv is the array of arguments for the application
+/// @param argc represents the number of arguments for the application
+/// @param argv represents the array of arguments for the application
 /// @return Unique pointer for application
 MHUPtr<Application> create(int argc, char *argv[]);
 
 ////////////////////////////////////////////////////////////////////////
 /// @brief Main entry point for application
-/// @param argc is the number of arguments for the application
-/// @param argv is the array of arguments for the application
+/// @param argc represents the number of arguments for the application
+/// @param argv represents the array of arguments for the application
 /// @return integer exit status (exit failure value is 1)
 int main(int argc, char *argv[])
 {

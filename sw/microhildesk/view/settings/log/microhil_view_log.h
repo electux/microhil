@@ -26,19 +26,15 @@
 #include "microhil_view_log_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MHViewLog class declaration and definition
+/// @brief MHViewLog class is implementation of  log settings view
 class MHViewLog : public AbMHViewLog, public Gtk::Dialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewLog constructor
-    /// @param object base object instance
-    /// @param ui bulder instance
+    /// @param object represents base object instance
+    /// @param ui represents bulder instance
     MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief MHViewLog destructor
-    ~MHViewLog() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings
@@ -83,13 +79,13 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Set loaded parameters for log settings view
-    /// @param filePath is absolute log file path
-    /// @param logLevel is level for logging
+    /// @param filePath represents absolute log file path
+    /// @param logLevel represents level for logging
     void logSettingsLoaded(MHString &filePath, int logLevel);
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Map all widgets (signals and slots)
+    /// @brief Maps all widgets (signals and slots)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////

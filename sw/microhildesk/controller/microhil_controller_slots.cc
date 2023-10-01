@@ -22,23 +22,25 @@
 void MHController::onLogSettingsChanged(MHString &path, int level)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Update the log configuration
+    /// Updates the log configuration
     m_config->setLogPath(path);
     m_config->setLogLevel(level);
 
     if(!m_config->store())
     {
-        // TODO error handler
-        // TODO logging
+        // TODO
+        // Emit signal for error handler
     }
 
     ////////////////////////////////////////////////////////////////////////
-    /// Update log handler
+    /// Updates log handler
     m_log->close();
     m_log->setFilePath(path);
     m_log->setLogLevel(level);
     m_log->open();
-    // TODO logging
+
+    // TODO
+    // logging
 }
 
 void MHController::onLogSettingsLoaded(MHString &path, int level)
@@ -49,7 +51,7 @@ void MHController::onLogSettingsLoaded(MHString &path, int level)
 void MHController::onSerialSettingsChanged(MHString &dev, MHVecUInt &params)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Update the serial port configuration
+    /// Updates the serial port configuration
     /// Note: Glib::KeyFile store only signed integers
     m_config->setDevice(dev);
     m_config->setBaudRate(static_cast<int>(params[0]));
@@ -59,17 +61,19 @@ void MHController::onSerialSettingsChanged(MHString &dev, MHVecUInt &params)
 
     if(!m_config->store())
     {
-        // TODO error handler
-        // TODO logging
+        // TODO
+        // Emit signal for error handler
+        // TODO
+        // logging
     }
 
     ////////////////////////////////////////////////////////////////////////
-    /// Update serial handler
+    /// Updates serial handler
     m_serial->close();
     // m_serial->setup(device, params);
-    // TODO dialog message to open port?
     // m_serial->open();
-    // TODO logging
+    // TODO
+    // logging
 }
 
 void MHController::onSerialSettingsLoaded(MHString &dev, MHVecUInt &params)

@@ -1,23 +1,5 @@
 var hierarchy =
 [
-    [ "AbMHCom", "d2/d18/classAbMHCom.html", [
-      [ "MHSerialCom", "d1/dfa/classMHSerialCom.html", null ]
-    ] ],
-    [ "AbMHConfig", "d7/db3/classAbMHConfig.html", [
-      [ "MHConfig", "d9/d79/classMHConfig.html", null ]
-    ] ],
-    [ "AbMHController", "d6/d9d/classAbMHController.html", [
-      [ "MHController", "d1/d75/classMHController.html", null ]
-    ] ],
-    [ "AbMHLog", "db/d93/classAbMHLog.html", [
-      [ "MHLog", "d1/d7c/classMHLog.html", null ]
-    ] ],
-    [ "AbMHModel", "d3/d38/classAbMHModel.html", [
-      [ "MHModel", "da/d3e/classMHModel.html", null ]
-    ] ],
-    [ "AbMHView", "dc/dff/classAbMHView.html", [
-      [ "MHView", "d1/dfc/classMHView.html", null ]
-    ] ],
     [ "AbMHViewAbout", "d3/d19/classAbMHViewAbout.html", [
       [ "MHViewAbout", "d5/d7b/classMHViewAbout.html", null ]
     ] ],
@@ -44,5 +26,23 @@ var hierarchy =
       [ "MHViewDialog", "dc/d3c/classMHViewDialog.html", null ],
       [ "MHViewLog", "d1/d14/classMHViewLog.html", null ],
       [ "MHViewSerial", "d2/dd5/classMHViewSerial.html", null ]
+    ] ],
+    [ "IMHCom", "de/d55/classIMHCom.html", [
+      [ "MHSerialCom", "d1/dfa/classMHSerialCom.html", null ]
+    ] ],
+    [ "IMHConfig", "d5/d1b/classIMHConfig.html", [
+      [ "MHConfig", "d9/d79/classMHConfig.html", null ]
+    ] ],
+    [ "IMHController", "d2/ddd/classIMHController.html", [
+      [ "MHController", "d1/d75/classMHController.html", null ]
+    ] ],
+    [ "IMHLog", "de/d0f/classIMHLog.html", [
+      [ "MHLog", "d1/d7c/classMHLog.html", null ]
+    ] ],
+    [ "IMHModel", "dd/db2/classIMHModel.html", [
+      [ "MHModel", "da/d3e/classMHModel.html", null ]
+    ] ],
+    [ "IMHView", "df/d0c/classIMHView.html", [
+      [ "MHView", "d1/dfc/classMHView.html", null ]
     ] ]
 ];

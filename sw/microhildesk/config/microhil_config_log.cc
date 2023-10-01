@@ -36,7 +36,7 @@ namespace
 void MHConfig::setLogLevel(int level)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert integer log level to string format
+    /// Converts integer log level to string format
     auto logLevel = logLevelToUnicodeString(level);
 
     m_config.set_string(kConfigLogSection, kConfigLogLevel, logLevel);
@@ -60,9 +60,11 @@ MHString MHConfig::getLogPath() const
 bool MHConfig::validateLogSettings()
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Checking log configuration parameters from config file
-    const auto configCheck = (m_config.has_key(kConfigLogSection, kConfigLogLevel) &&
-                              m_config.has_key(kConfigLogSection, kConfigLogFile));
+    /// Checks log configuration parameters from config file
+    const auto configCheck = (
+        m_config.has_key(kConfigLogSection, kConfigLogLevel) &&
+        m_config.has_key(kConfigLogSection, kConfigLogFile)
+    );
 
     if (!configCheck)
     {

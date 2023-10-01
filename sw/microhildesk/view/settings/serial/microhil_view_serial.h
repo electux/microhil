@@ -26,19 +26,15 @@
 #include "microhil_view_serial_abstract.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MHViewSerial class declaration and definition
+/// @brief MHViewSerial class is implementation of serial settings view
 class MHViewSerial : public AbMHViewSerial, public Gtk::Dialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewSerial constructor
-    /// @param object base object instance
-    /// @param ui buider instance
+    /// @param object repreesnts base object instance
+    /// @param ui repreesnts buider instance
     MHViewSerial(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief MHViewSerial destructor
-    ~MHViewSerial() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for serial settings
@@ -109,14 +105,14 @@ public:
     void onOkSerialTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Set loaded parameters for serial settings view
-    /// @param device is absolute path for serial device
-    /// @param params for serial port parameters
+    /// @brief Sets loaded parameters for serial settings view
+    /// @param device represents device absolute path for the serial device
+    /// @param params represents parameters for the serial port parameters
     void serialSettingsLoaded(MHString &device, MHVecUInt &params);
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Map all widgets (signals and slots)
+    /// @brief Maps all widgets (signals and slots)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
@@ -124,7 +120,7 @@ private:
     MHRPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Set device file path
+    /// @brief Entry device file path
     MHRPtr<Gtk::Entry> m_device{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
@@ -152,7 +148,7 @@ private:
     MHRPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief ignal for serial settings
+    /// @brief Signal for the serial settings
     SigSerialSetup m_serialSetup{};
 
     ////////////////////////////////////////////////////////////////////////

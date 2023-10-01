@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_serial_com.cc
+ * microhil_serial_com_utils.cc
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it

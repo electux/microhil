@@ -70,12 +70,18 @@ var menudata={children:[
 {text:"w",url:"functions_func_w.html#index_w"},
 {text:"~",url:"functions_func_~.html#index__7E"}]},
 {text:"Variables",url:"functions_vars.html",children:[
-{text:"m",url:"functions_vars.html#index_m"}]},
-{text:"Typedefs",url:"functions_type.html"}]}]},
+{text:"m",url:"functions_vars.html#index_m"}]}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
-{text:"All",url:"globals.html"},
+{text:"All",url:"globals.html",children:[
+{text:"c",url:"globals.html#index_c"},
+{text:"d",url:"globals.html#index_d"},
+{text:"l",url:"globals.html#index_l"},
+{text:"m",url:"globals.html#index_m"},
+{text:"p",url:"globals.html#index_p"},
+{text:"s",url:"globals.html#index_s"},
+{text:"v",url:"globals.html#index_v"}]},
 {text:"Functions",url:"globals_func.html"},
 {text:"Variables",url:"globals_vars.html"},
 {text:"Typedefs",url:"globals_type.html"},

@@ -1,5 +1,5 @@
 <map id="MHViewSerial::onSerialStopBitsChanged" name="MHViewSerial::onSerialStopBitsChanged">
 <area shape="rect" id="node1" title="Slot for processing stop&#45;bits combobox." alt="" coords="492,5,695,47"/>
-<area shape="rect" id="node2" href="$d2/dd5/classMHViewSerial.html#a427a482ecec15d3eb92e4efe06b51398" title="Map all widgets (signals and slots)" alt="" coords="265,13,444,39"/>
+<area shape="rect" id="node2" href="$d2/dd5/classMHViewSerial.html#a427a482ecec15d3eb92e4efe06b51398" title="Maps all widgets (signals and slots)" alt="" coords="265,13,444,39"/>
 <area shape="rect" id="node3" href="$d2/dd5/classMHViewSerial.html#a9045966e47a5a3edbba4b0874b99eb02" title="MHViewSerial constructor." alt="" coords="5,13,217,39"/>
 </map>

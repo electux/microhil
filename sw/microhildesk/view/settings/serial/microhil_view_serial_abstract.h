@@ -21,43 +21,43 @@
 #include <sigc++/sigc++.h>
 #include "../../../utils/microhil_types.h"
 
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for serial settings
+using SigSerialSetup = sigc::signal<void(MHString &, MHVecUInt &)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for serial device file path input
+using SigSerialDevicePath = sigc::signal<void(MHString &)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for serial baud rate combobox
+using SigSerialBaudRate = sigc::signal<void(int)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for serial data bits combobox
+using SigSerialDataBits = sigc::signal<void(int)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for serial parity combobox
+using SigSerialParity = sigc::signal<void(int)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for serial stop bits combobox
+using SigSerialStopBits = sigc::signal<void(int)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for Cancel button
+using SigCancelSerial = sigc::signal<void(bool)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for Ok button
+using SigOkSerial = sigc::signal<void(bool)>;
+
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMHViewSerial class declaration and definition
+/// @brief AbMHViewSerial class is abstract setup gfor serial settings view
 class AbMHViewSerial
 {
 public:
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for serial settings
-    using SigSerialSetup = sigc::signal<void(MHString&, MHVecUInt&)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for serial device file path input
-    using SigSerialDevicePath = sigc::signal<void(MHString&)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for serial baud rate combobox
-    using SigSerialBaudRate = sigc::signal<void(int)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for serial data bits combobox
-    using SigSerialDataBits = sigc::signal<void(int)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for serial parity combobox
-    using SigSerialParity = sigc::signal<void(int)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for serial stop bits combobox
-    using SigSerialStopBits = sigc::signal<void(int)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for Cancel button
-    using SigCancelSerial = sigc::signal<void(bool)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for Ok button
-    using SigOkSerial = sigc::signal<void(bool)>;
-
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewLog destructor
     virtual ~AbMHViewSerial() = default;

@@ -20,15 +20,15 @@
 
 #include <sigc++/sigc++.h>
 
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for Ok button (self hide AboutDialog signal)
+using SigHideAbout = sigc::signal<void(bool)>;
+
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMHViewAbout class declaration and definition
+/// @brief AbMHViewAbout class is abstract setup of about view
 class AbMHViewAbout
 {
 public:
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for Ok button (self hide AboutDialog signal)
-    using SigHideAbout = sigc::signal<void(bool)>;
-
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewAbout destructor
     virtual ~AbMHViewAbout() = default;

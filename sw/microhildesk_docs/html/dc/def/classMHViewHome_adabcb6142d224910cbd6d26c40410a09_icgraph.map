@@ -1,6 +1,6 @@
 <map id="MHViewHome::enableChannel" name="MHViewHome::enableChannel">
-<area shape="rect" id="node1" title="Enable complete channel." alt="" coords="795,5,1015,32"/>
+<area shape="rect" id="node1" title="Enables complete channel." alt="" coords="795,5,1015,32"/>
 <area shape="rect" id="node2" href="$dc/def/classMHViewHome.html#a05eaf4bcb838b6b4cd6296eb2a4c9d83" title="Slot for processing check buttons (enable/disable channel)" alt="" coords="497,5,747,32"/>
-<area shape="rect" id="node3" href="$dc/def/classMHViewHome.html#a4ccccb1d79d8b65d11371f6c897606ea" title="Map channels (signals and slots)" alt="" coords="269,5,449,32"/>
+<area shape="rect" id="node3" href="$dc/def/classMHViewHome.html#a4ccccb1d79d8b65d11371f6c897606ea" title="Maps channels (signals and slots)" alt="" coords="269,5,449,32"/>
 <area shape="rect" id="node4" href="$dc/def/classMHViewHome.html#aa03cc4831aff517c835fc5e4f6705612" title="MHViewHome constructor." alt="" coords="5,5,221,32"/>
 </map>

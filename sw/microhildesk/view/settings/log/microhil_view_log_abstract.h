@@ -21,31 +21,31 @@
 #include <sigc++/sigc++.h>
 #include "../../../utils/microhil_types.h"
 
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for log settings
+using SigLogSetup = sigc::signal<void(MHString &, int)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for log file path input
+using SigLogFilePath = sigc::signal<void(MHString &)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for log level combobox
+using SigSelectLogLevel = sigc::signal<void(int)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for Cancel button (dismiss)
+using SigCancelLog = sigc::signal<void(bool)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for Ok button (confirm)
+using SigOkLog = sigc::signal<void(bool)>;
+
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMHViewLog class declaration and definition
+/// @brief AbMHViewLog class is abstract setup for log settings view
 class AbMHViewLog
 {
 public:
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for log settings
-    using SigLogSetup = sigc::signal<void(MHString&, int)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for log file path input
-    using SigLogFilePath = sigc::signal<void(MHString&)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for log level combobox
-    using SigSelectLogLevel = sigc::signal<void(int)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for Cancel button (dismiss)
-    using SigCancelLog = sigc::signal<void(bool)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for Ok button (confirm)
-    using SigOkLog = sigc::signal<void(bool)>;
-
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewLog destructor
     virtual ~AbMHViewLog() = default;

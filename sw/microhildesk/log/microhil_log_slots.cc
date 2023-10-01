@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_log.cc
+ * microhil_log_slots.cc
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -17,3 +17,5 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include "microhil_log.h"
+
+// TODO

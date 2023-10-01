@@ -18,18 +18,20 @@
  */
 #include "microhil_controller.h"
 
-MHController::MHController(MHSPtr<MHModel> model, MHSPtr<MHView> view) : m_model{model},
-                                                                         m_view{view},
-                                                                         m_config{MHmakeUPtr<MHConfig>()},
-                                                                         m_log{MHmakeUPtr<MHLog>()},
-                                                                         m_serial{MHmakeUPtr<MHSerialCom>()}
+MHController::MHController(MHSPtr<IMHModel> model, MHSPtr<IMHView> view)
+    :
+        m_model{model},
+        m_view{view},
+        m_config{MHmakeSPtr<MHConfig>()},
+        m_log{MHmakeSPtr<MHLog>()},
+        m_serial{MHmakeSPtr<MHSerialCom>()}
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Mapping views and backend (signals and slots)
+    /// Maps views and backend (signals and slots)
     mapping();
 
     ////////////////////////////////////////////////////////////////////////
-    /// Checking existance of configuration
+    /// Checks existance of configuration
     if (!m_config->isPreValid())
     {
         // TODO
@@ -37,7 +39,7 @@ MHController::MHController(MHSPtr<MHModel> model, MHSPtr<MHView> view) : m_model
     }
 
     ////////////////////////////////////////////////////////////////////////
-    /// Loading configuration from file
+    /// Loads configuration from file
     if (!m_config->load())
     {
         // TODO
@@ -45,11 +47,11 @@ MHController::MHController(MHSPtr<MHModel> model, MHSPtr<MHView> view) : m_model
     }
 
     ////////////////////////////////////////////////////////////////////////
-    /// Setup log file destination from configuration
+    /// Sets log file destination from configuration
     m_log->setFilePath(m_config->getLogPath());
 
     ////////////////////////////////////////////////////////////////////////
-    /// Setup log level from configuration
+    /// Sets log level from configuration
     m_log->setLogLevel(m_config->getLogLevel());
 
     if (!m_log->open())

@@ -31,13 +31,9 @@ class MHViewAbout: public AbMHViewAbout, public Gtk::AboutDialog
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewAbout constructor
-    /// @param object base object type
-    /// @param ui builder instance
+    /// @param object represents base object type
+    /// @param ui represents builder instance
     MHViewAbout(BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui);
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief MHViewAbout destructor
-    ~MHViewAbout() = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button
@@ -50,7 +46,7 @@ public:
 
 private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Map Ok button (signal and slot)
+    /// @brief Maps Ok button (signal and slot)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////

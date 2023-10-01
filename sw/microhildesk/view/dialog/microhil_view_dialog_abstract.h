@@ -33,15 +33,15 @@ enum class MessageType
     MICROHIL_ERROR = 2
 };
 
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for Close button (self hide Dialog signal)
+using SigHideDialog = sigc::signal<void(bool)>;
+
 ////////////////////////////////////////////////////////////////////////////
-/// @brief AbMHViewDialog class declaration and definition
+/// @brief AbMHViewDialog class is abstract setup of dialog view
 class AbMHViewDialog
 {
 public:
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for Close button (self hide Dialog signal)
-    using SigHideDialog = sigc::signal<void(bool)>;
-
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewDialog destructor
     virtual ~AbMHViewDialog() = default;
@@ -56,8 +56,8 @@ public:
     virtual void onHideDialogTriggered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Set message for dialog
-    /// @param message with information for user
-    /// @param type of dialog message
+    /// @brief Sets message for dialog
+    /// @param message represents message with information for user
+    /// @param type represents type of dialog message
     virtual void setMessage(const MHString &message, const MessageType type) = 0;
 };

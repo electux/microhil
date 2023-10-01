@@ -19,20 +19,16 @@
 #pragma once
 
 #include <glibmm/keyfile.h>
-#include "microhil_config_abstract.h"
+#include "microhil_iconfig.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief MHConfig class declaration and definition
-class MHConfig : public AbMHConfig
+class MHConfig : public IMHConfig
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHConfig constructor
-    MHConfig();
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief MHConfig destructor
-    ~MHConfig() = default;
+    explicit MHConfig();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for loaded log configuration
@@ -45,173 +41,187 @@ public:
     SigSerialConfig SerialConfigLoaded() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Load configuration from file
+    /// @brief Sets pre-validation state (existing configuration)
+    /// @param configValid represents indicator for existing configuration
+    void setPreValid(bool configValid) final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Checks is pre-validation state (existing configuration)
+    /// @return boolean status true for valid else false
+    bool isPreValid() const final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Loads configuration
     /// @return boolean status true for success else false
     bool load() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Store configuration
+    /// @brief Stores configuration
     /// @return boolean status true for success else false
     bool store() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Validate configuration (existing all expected parameters)
+    /// @brief Validates configuration (existing all expected parameters)
     /// @return boolean status true for success else false
     bool validate() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setting serial device file path to configuration
-    /// @param device file path
+    /// @brief Sets serial device file path to configuration
+    /// @param device represents file path
     void setDevice(const MHString &device) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting serial device file path from configuration
-    /// @return file path for serial device
+    /// @brief Gets serial device file path from configuration
+    /// @return file path for the serial device
     MHString getDevice() const final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setting baud rate for serial port to configuration
-    /// @param baudRate for serial port
+    /// @brief Sets baud-rate for serial port to configuration
+    /// @param baudRate represents baud-rate for the serial port
     void setBaudRate(const int baudRate) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting baud rate for serial port from configuration
-    /// @return integer value for serial port baud rate
+    /// @brief Gets baud-rate for serial port from configuration
+    /// @return integer value for serial port baud-rate
     int getBaudRate() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setting data bits for serial port to configuration
-    /// @param dataBits for serial port
+    /// @brief Sets data-bits for the serial port to configuration
+    /// @param dataBits represents data-bits for the serial port
     void setDataBits(const int dataBits) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting data bits for serial port from configuration
-    /// @return integer value for data bits for charachter
+    /// @brief Gets data-bits for the serial port from configuration
+    /// @return integer value for data-bits for charachter
     int getDataBits() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setting parity for serial port to configuration
-    /// @param parity for serial port
+    /// @brief Sets parity for the serial port to configuration
+    /// @param parity represents parity for the serial port
     void setParity(const int parity) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting parity for serial port from configuration
+    /// @brief Gets parity for the serial port from configuration
     /// @return parity type for the serial port
     MHString getParity() const final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setting stop bits for serial port to configuration
-    /// @param stopBits for serial port
+    /// @brief Sets stop-bits for the serial port to configuration
+    /// @param stopBits represents stop-bits for the serial port
     void setStopBits(const int stopBits) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting stop bits for serial port from configuration
-    /// @return integer number of stop bits for the serial port
+    /// @brief Gets stop-bits for serial port from configuration
+    /// @return integer number of stop-bits for the serial port
     int getStopBits() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setting log level
-    /// @param level for log settings
+    /// @brief Sets log level
+    /// @param level represents log level for log settings
     void setLogLevel(const int level) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting log level
+    /// @brief Gets log level
     /// @return log level
     MHString getLogLevel() const final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setting log path
-    /// @param path for log messages
+    /// @brief Sets log path
+    /// @param path represents log file path for log messages
     void setLogPath(const MHString &path) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Getting log path
+    /// @brief Gets log path
     /// @return log path
     MHString getLogPath() const final;
 
-private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Checking existence of configuration file
-    /// @return boolean status true for existing else false
+    /// @brief Checks existence of configuration file
+    /// @return status true for existing else false
     bool checkConfigPath() const;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert integer log level to string format
-    /// @param logLevel in integer format
+    /// @brief Converts integer log level to string format
+    /// @param logLevel represents log level in integer format
     /// @return string format of log level
     MHString logLevelToUnicodeString(const int logLevel);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert log level in strong format to integer
-    /// @param level in string format
+    /// @brief Converts log level in strong format to integer
+    /// @param level represents log level in string format
     /// @return log level in integer format
     int logLevelStringToInt(const MHString &level);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Process and prepare baud rate (to config file)
-    /// @param baudRate for serial port (combobox index)
-    /// @return baud rate for serial port in integer format
+    /// @brief Processes and prepares baud-rate (to config file)
+    /// @param baudRate represents baud-rate for serial port (combobox index)
+    /// @return baud-rate for the serial port in integer format
     int intToBaudRate(int baudRate);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Process and prepare baud rate (from config file)
-    /// @param baudRate value from config file
+    /// @brief Processes and prepares baud-rate (from config file)
+    /// @param baudRate represents baud-rate from config file
     /// @return index for combobox
     int baudRateToInt(int baudRate);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Process and prepare data bits (from config file)
-    /// @param dataBits value from config file
+    /// @brief Processes and prepares data-bits (from config file)
+    /// @param dataBits represents data-bits from config file
     /// @return index for combobox
     int dataBitsToInt(int dataBits);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert combobox index to data bits (to config file)
-    /// @param dataBits for serial port (index combobox)
-    /// @return data bits for serial port in integer format
+    /// @brief Converts combobox index to data-bits (to config file)
+    /// @param dataBits represents data-bits for serial port (index combobox)
+    /// @return data-bits for the serial port in integer format
     int intToDataBits(int dataBits);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert integer parity to string format (to config file)
-    /// @param parity index combobox
+    /// @brief Converts integer parity to string format (to config file)
+    /// @param parity represents index combobox
     /// @return string format of parity in string format
     MHString parityToUnicodeString(const int parity);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert parity to integer format (from config file)
-    /// @param parity in string format (from config file)
+    /// @brief Converts parity to integer format (from config file)
+    /// @param parity represents parity in string format (from config file)
     /// @return parity in integer format (to combobox index)
     int parityUnicodeStringToInt(const MHString &parity);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert stop-bits to integer (from config file)
-    /// @param dataBits from config file
+    /// @brief Converts stop-bits to integer (from config file)
+    /// @param dataBits represents data-bits from config file
     /// @return stop-bits in integer format (index combobox)
     int stopBitsToInt(int stopBits);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert combobox index to data-bits (to config file)
-    /// @param dataBits index from combobox
+    /// @brief Converts combobox index to data-bits (to config file)
+    /// @param dataBits represents data-bits index from combobox
     /// @return data-bits in integer format
     int intToStopBits(int stopBits);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Validate log configuration (existing expected parameters)
-    /// @return boolean status true for success else false
+    /// @brief Validates log configuration (existing expected parameters)
+    /// @return status true for success else false
     bool validateLogSettings();
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Validate serial configuration (existing expected parameters)
-    /// @return boolean status true for success else false
+    /// @brief Validates serial configuration (existing expected parameters)
+    /// @return status true for success else false
     bool validateSerialSettings();
 
+private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Home directory path
+    /// @brief Configuration home directory path
     std::string m_homePath{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration file path
     std::string m_configFilePath{};
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Pre-validation flag for checking configuration
+    bool m_configPreValidate{false};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration instance

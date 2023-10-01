@@ -1,5 +1,5 @@
 <map id="MHViewDialog::onHideDialogTriggered" name="MHViewDialog::onHideDialogTriggered">
 <area shape="rect" id="node1" title="Slot for processing Close button (self hide Dialog)" alt="" coords="507,5,721,47"/>
-<area shape="rect" id="node2" href="$dc/d3c/classMHViewDialog.html#ae2e9e085b92b2ae74d39355037101dac" title="Map Close button (signal and slot)" alt="" coords="276,13,459,39"/>
+<area shape="rect" id="node2" href="$dc/d3c/classMHViewDialog.html#ae2e9e085b92b2ae74d39355037101dac" title="Maps Close button (signal and slot)" alt="" coords="276,13,459,39"/>
 <area shape="rect" id="node3" href="$dc/d3c/classMHViewDialog.html#ac8226e28456c385bad61695318082504" title="MHViewDialog constructor." alt="" coords="5,13,228,39"/>
 </map>

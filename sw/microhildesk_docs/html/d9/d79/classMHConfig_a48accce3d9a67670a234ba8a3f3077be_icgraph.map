@@ -1,5 +1,5 @@
 <map id="MHConfig::validateLogSettings" name="MHConfig::validateLogSettings">
-<area shape="rect" id="node1" title="Validate log configuration (existing expected parameters)" alt="" coords="369,5,592,32"/>
-<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a7cd8cccca5e71ca00d8ce42819392c87" title="Validate configuration (existing all expected parameters)" alt="" coords="175,5,321,32"/>
-<area shape="rect" id="node3" href="$d9/d79/classMHConfig.html#a9c26478ceec782516fe6741522a4637f" title="Load configuration from file." alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node1" title="Validates log configuration (existing expected parameters)" alt="" coords="369,5,592,32"/>
+<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a7cd8cccca5e71ca00d8ce42819392c87" title="Validates configuration (existing all expected parameters)" alt="" coords="175,5,321,32"/>
+<area shape="rect" id="node3" href="$d9/d79/classMHConfig.html#a9c26478ceec782516fe6741522a4637f" title="Loads configuration." alt="" coords="5,5,127,32"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="MHView" name="MHView">
-<area shape="rect" id="node1" title="MHView class declaration and definition." alt="" coords="5,131,164,369"/>
-<area shape="rect" id="node2" href="$dc/dff/classAbMHView.html" title="AbMHView class declaration and definition." alt="" coords="20,5,149,83"/>
+<area shape="rect" id="node1" title="MHView class is implementation of view." alt="" coords="5,204,164,428"/>
+<area shape="rect" id="node2" href="$df/d0c/classIMHView.html" title="IMHView class is interface set for view." alt="" coords="5,5,164,156"/>
 </map>
