@@ -1,12 +1,11 @@
 var classMHView =
 [
     [ "MHView", "d1/dfc/classMHView.html#a5288fc0383c58f06d80eb402890397d4", null ],
-    [ "~MHView", "d1/dfc/classMHView.html#ad4d8ae04b597701e86e62d0b2ed92f6b", null ],
-    [ "getHome", "d1/dfc/classMHView.html#a8d590eb215fb9320417a3dda690bf4dc", null ],
-    [ "getLogSettings", "d1/dfc/classMHView.html#a388dcd4848c9290f75af450927683bf9", null ],
-    [ "getSerialSettings", "d1/dfc/classMHView.html#a964065b617d1f12212b1f3611fa9f251", null ],
-    [ "mapping", "d1/dfc/classMHView.html#a3215b6f346bef469124673887a15bb42", null ],
-    [ "onViewChanged", "d1/dfc/classMHView.html#a8255472aa4de4cd27922ffdbfc966352", null ],
+    [ "getHome", "d1/dfc/classMHView.html#ae26dc08c053aedad19726a30b97a012e", null ],
+    [ "getLogSettings", "d1/dfc/classMHView.html#a9e1376978625d269c291b8e104ae822a", null ],
+    [ "getSerialSettings", "d1/dfc/classMHView.html#a3dd70a065bcb23012cf27a08f53b797a", null ],
+    [ "mapping", "d1/dfc/classMHView.html#a1ea3cc8b81bb27f0fc00a48f2398c7bc", null ],
+    [ "onViewChanged", "d1/dfc/classMHView.html#a91f0dec5d272fee87be3c74fb6aa7055", null ],
     [ "m_about", "d1/dfc/classMHView.html#a55234cc371cdb41315322e94046031c6", null ],
     [ "m_builder", "d1/dfc/classMHView.html#abfd5a2ed58ca9a286481985cf2d06c0d", null ],
     [ "m_dialog", "d1/dfc/classMHView.html#aacf0c6cf08764a11454d6e60e05cc152", null ],

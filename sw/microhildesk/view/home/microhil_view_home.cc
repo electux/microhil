@@ -59,7 +59,8 @@ namespace
         "EnableChannel4",
         "EnableChannel5",
         "EnableChannel6",
-        "EnableChannel7"};
+        "EnableChannel7"
+    };
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toggle buttons (UI ids)
@@ -71,7 +72,8 @@ namespace
         "Channel4ToggleButton",
         "Channel5ToggleButton",
         "Channel6ToggleButton",
-        "Channel7ToggleButton"};
+        "Channel7ToggleButton"
+    };
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Comboboxes (UI ids)
@@ -83,7 +85,8 @@ namespace
         "Channel4Selector",
         "Channel5Selector",
         "Channel6Selector",
-        "Channel7Selector"};
+        "Channel7Selector"
+    };
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Spin buttons (UI ids)
@@ -95,7 +98,8 @@ namespace
         "Channel4TimerSpin",
         "Channel5TimerSpin",
         "Channel6TimerSpin",
-        "Channel7TimerSpin"};
+        "Channel7TimerSpin"
+    };
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toogle buttons (UI ids)
@@ -107,7 +111,8 @@ namespace
         "Channel4TimerButton",
         "Channel5TimerButton",
         "Channel6TimerButton",
-        "Channel7TimerButton"};
+        "Channel7TimerButton"
+    };
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Status bars (UI ids)
@@ -119,53 +124,85 @@ namespace
         "Channel4TimerStatus",
         "Channel5TimerStatus",
         "Channel6TimerStatus",
-        "Channel7TimerStatus"};
+        "Channel7TimerStatus"
+    };
 }
 
-MHViewHome::MHViewHome(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui) : Gtk::ApplicationWindow(object), m_ui{ui}
+MHViewHome::MHViewHome(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui)
+    : Gtk::ApplicationWindow(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
-    // Bind Connect menu-item
-    m_connect = MHRPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kConnectId));
+    // Binds Connect menu-item
+    m_connect = MHRPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kConnectId)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind Disconnect menu-item
-    m_disconnect = MHRPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kDisconnectId));
+    // Binds Disconnect menu-item
+    m_disconnect = MHRPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kDisconnectId)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind Quit menu-item
+    // Binds Quit menu-item
     m_quit = MHRPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kQuitId));
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind Serial Settings menu-item
-    m_serialSettings = MHRPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kSerialSettingsId));
+    // Binds Serial Settings menu-item
+    m_serialSettings = MHRPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kSerialSettingsId)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind Log Settings menu-item
-    m_logSettings = MHRPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kLogSettingsId));
+    // Binds Log Settings menu-item
+    m_logSettings = MHRPtr<Gtk::MenuItem>::cast_dynamic(
+        m_ui->get_object(kLogSettingsId)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind About menu-item
+    // Binds About menu-item
     m_about = MHRPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kAboutId));
 
     ////////////////////////////////////////////////////////////////////////
-    // Bind channels widgets
+    // Binds channels widgets
     for (int i = 0; i < kNumberOfViewChannels; i++)
     {
-        m_enableChannels.push_back(MHRPtr<Gtk::CheckButton>::cast_dynamic(m_ui->get_object(kCheckButtonsId[i])));
-        m_selectControlChannels.push_back(MHRPtr<Gtk::ComboBoxText>::cast_dynamic(m_ui->get_object(kComboBoxTextsId[i])));
-        m_toggleChannels.push_back(MHRPtr<Gtk::ToggleButton>::cast_dynamic(m_ui->get_object(kToggleButtonsId[i])));
-        m_spinTimerChannels.push_back(MHRPtr<Gtk::SpinButton>::cast_dynamic(m_ui->get_object(kTimerSpinButtonsId[i])));
-        m_toggleTimerChannels.push_back(MHRPtr<Gtk::ToggleButton>::cast_dynamic(m_ui->get_object(kTimerToggleButtonsId[i])));
-        m_stautsTimerChannels.push_back(MHRPtr<Gtk::ProgressBar>::cast_dynamic(m_ui->get_object(kTimerProgressBarStatus0Id[i])));
+        m_enableChannels.push_back(MHRPtr<Gtk::CheckButton>::cast_dynamic(
+            m_ui->get_object(kCheckButtonsId[i]))
+        );
+        m_selectControlChannels.push_back(
+            MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
+                m_ui->get_object(kComboBoxTextsId[i])
+            )
+        );
+        m_toggleChannels.push_back(
+            MHRPtr<Gtk::ToggleButton>::cast_dynamic(
+                m_ui->get_object(kToggleButtonsId[i])
+            )
+        );
+        m_spinTimerChannels.push_back(
+            MHRPtr<Gtk::SpinButton>::cast_dynamic(
+                m_ui->get_object(kTimerSpinButtonsId[i])
+            )
+        );
+        m_toggleTimerChannels.push_back(
+            MHRPtr<Gtk::ToggleButton>::cast_dynamic(
+                m_ui->get_object(kTimerToggleButtonsId[i])
+            )
+        );
+        m_stautsTimerChannels.push_back(
+            MHRPtr<Gtk::ProgressBar>::cast_dynamic(
+                m_ui->get_object(kTimerProgressBarStatus0Id[i])
+            )
+        );
     }
 
     ////////////////////////////////////////////////////////////////////////
-    // Map channels (signals and slots)
+    // Maps channels (signals and slots)
     mapping();
 
     ////////////////////////////////////////////////////////////////////////
-    // Disabled all channels by default
+    // Disables all channels by default
     for (int i = 0; i < kNumberOfViewChannels; i++)
     {
         disableChannel(static_cast<Channel>(i));

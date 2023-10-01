@@ -1,6 +1,12 @@
 var microhil__view__home__abstract_8h =
 [
     [ "AbMHViewHome", "d7/d4c/classAbMHViewHome.html", "d7/d4c/classAbMHViewHome" ],
+    [ "SigActionViewTriggered", "de/d3d/microhil__view__home__abstract_8h.html#a97dbfa002f1478185848a7432044e1eb", null ],
+    [ "SigChannelChanged", "de/d3d/microhil__view__home__abstract_8h.html#a27565e32352b6d64a17e49e3016b55da", null ],
+    [ "SigChannelSpinTimerChanged", "de/d3d/microhil__view__home__abstract_8h.html#a819bd212bbee0e1db59ca70a64b1091c", null ],
+    [ "SigChannelTimerToggled", "de/d3d/microhil__view__home__abstract_8h.html#ab650213bbb203157192e08abf321dac6", null ],
+    [ "SigChannelToggled", "de/d3d/microhil__view__home__abstract_8h.html#a9fa1bb0cb9ce8a43ec66c5d52a6c30af", null ],
+    [ "SigSelectChanged", "de/d3d/microhil__view__home__abstract_8h.html#aa8f12be614fecf7d029d597dfc0770f8", null ],
     [ "Channel", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109", [
       [ "MICROHIL_ID0", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de", null ],
       [ "MICROHIL_ID1", "de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a8ec09b5dd8e26cf2acb2cd70175893de", null ],

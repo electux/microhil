@@ -1,5 +1,5 @@
 <map id="MHView::MHView" name="MHView::MHView">
 <area shape="rect" id="node1" title="MHView constructor." alt="" coords="5,5,143,32"/>
-<area shape="rect" id="node2" href="$d1/dfc/classMHView.html#a3215b6f346bef469124673887a15bb42" title="Mapping views (signal and slots)" alt="" coords="191,5,331,32"/>
-<area shape="rect" id="node3" href="$d1/dfc/classMHView.html#a8255472aa4de4cd27922ffdbfc966352" title="Slot for processing requests for triggering view." alt="" coords="379,5,567,32"/>
+<area shape="rect" id="node2" href="$d1/dfc/classMHView.html#a1ea3cc8b81bb27f0fc00a48f2398c7bc" title="Maps views (signal and slots)" alt="" coords="191,5,331,32"/>
+<area shape="rect" id="node3" href="$d1/dfc/classMHView.html#a91f0dec5d272fee87be3c74fb6aa7055" title="Slot for processing requests for triggering view." alt="" coords="379,5,567,32"/>
 </map>

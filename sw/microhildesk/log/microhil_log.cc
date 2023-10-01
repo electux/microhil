@@ -36,15 +36,6 @@ namespace
 
 MHLog::MHLog() : m_fileOpened{false} {}
 
-MHLog::~MHLog()
-{
-    if (m_logFile.is_open() && m_fileOpened)
-    {
-        m_logFile.close();
-        m_fileOpened = false;
-    }
-}
-
 void MHLog::setFilePath(const MHString &logFilePath)
 {
     m_logFilePath = logFilePath;

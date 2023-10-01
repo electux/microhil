@@ -1,5 +1,5 @@
 <map id="MHViewHome::mapping" name="MHViewHome::mapping">
-<area shape="rect" id="node1" title="Map channels (signals and slots)" alt="" coords="5,289,185,316"/>
+<area shape="rect" id="node1" title="Maps channels (signals and slots)" alt="" coords="5,289,185,316"/>
 <area shape="rect" id="node2" href="$dc/def/classMHViewHome.html#a810fd98616c339a7eb1d24efc5e62046" title="Slot for processing About meni&#45;item." alt="" coords="253,5,477,32"/>
 <area shape="rect" id="node3" href="$dc/def/classMHViewHome.html#a05eaf4bcb838b6b4cd6296eb2a4c9d83" title="Slot for processing check buttons (enable/disable channel)" alt="" coords="240,56,489,83"/>
 <area shape="rect" id="node7" href="$dc/def/classMHViewHome.html#abbb2b0ac5cd3b3dfdf86d30046a936c9" title="Slot for processing Connect meni&#45;item." alt="" coords="245,107,484,133"/>
@@ -11,10 +11,10 @@
 <area shape="rect" id="node13" href="$dc/def/classMHViewHome.html#ad701959c37ca33f1d4cb06b55d043728" title="Slot for processing toggle buttons (turn on/turn off channel)" alt="" coords="270,457,459,484"/>
 <area shape="rect" id="node14" href="$dc/def/classMHViewHome.html#a4ac89c35046135b481ea3af5acb8f9a3" title="Slot for processing toggle buttons (turn on/turn off timer)" alt="" coords="255,509,474,550"/>
 <area shape="rect" id="node15" href="$dc/def/classMHViewHome.html#ade17405d5e1562f05acdbcd52cabee61" title="Slot for processing comboboxes (control type)" alt="" coords="252,575,477,601"/>
-<area shape="rect" id="node4" href="$dc/def/classMHViewHome.html#a4f8fe83900f485ef446fdbb8866f25cb" title="Convert channel id to integer value." alt="" coords="568,457,773,484"/>
-<area shape="rect" id="node5" href="$dc/def/classMHViewHome.html#a85eaeba794f77bfbdd6b0567076689f0" title="Disable complete channel." alt="" coords="559,31,782,57"/>
-<area shape="rect" id="node6" href="$dc/def/classMHViewHome.html#adabcb6142d224910cbd6d26c40410a09" title="Enable complete channel." alt="" coords="561,81,781,108"/>
-<area shape="rect" id="node16" href="$dc/def/classMHViewHome.html#aeda516269ab3e404d0315ea4ec68f9d8" title="Convert channel control type to integer value." alt="" coords="556,524,785,551"/>
-<area shape="rect" id="node17" href="$dc/def/classMHViewHome.html#a1d9173171c351002093e6d00b14aed97" title="Setup channel timer mode." alt="" coords="547,575,794,601"/>
-<area shape="rect" id="node18" href="$dc/def/classMHViewHome.html#aed2967871b58f3eb3f7c145feaf614d8" title="Setup channel in toggle mode." alt="" coords="544,625,797,652"/>
+<area shape="rect" id="node4" href="$dc/def/classMHViewHome.html#a4f8fe83900f485ef446fdbb8866f25cb" title="Converts channel id to integer value." alt="" coords="568,457,773,484"/>
+<area shape="rect" id="node5" href="$dc/def/classMHViewHome.html#a85eaeba794f77bfbdd6b0567076689f0" title="Disables complete channel." alt="" coords="559,31,782,57"/>
+<area shape="rect" id="node6" href="$dc/def/classMHViewHome.html#adabcb6142d224910cbd6d26c40410a09" title="Enables complete channel." alt="" coords="561,81,781,108"/>
+<area shape="rect" id="node16" href="$dc/def/classMHViewHome.html#aeda516269ab3e404d0315ea4ec68f9d8" title="Converts channel control type to integer value." alt="" coords="556,524,785,551"/>
+<area shape="rect" id="node17" href="$dc/def/classMHViewHome.html#a1d9173171c351002093e6d00b14aed97" title="Sets channel timer mode." alt="" coords="547,575,794,601"/>
+<area shape="rect" id="node18" href="$dc/def/classMHViewHome.html#aed2967871b58f3eb3f7c145feaf614d8" title="Sets channel in toggle mode." alt="" coords="544,625,797,652"/>
 </map>

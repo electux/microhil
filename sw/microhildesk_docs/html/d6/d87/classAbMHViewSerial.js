@@ -1,13 +1,5 @@
 var classAbMHViewSerial =
 [
-    [ "SigCancelSerial", "d6/d87/classAbMHViewSerial.html#a094b1c1145bc0a25af94025e1962fe25", null ],
-    [ "SigOkSerial", "d6/d87/classAbMHViewSerial.html#ab3a69478822805b3de5123482016d25d", null ],
-    [ "SigSerialBaudRate", "d6/d87/classAbMHViewSerial.html#abd517bd30e5551a8b8c02267f8ccde7e", null ],
-    [ "SigSerialDataBits", "d6/d87/classAbMHViewSerial.html#abf98c1f2ea9cf719babe92bd7889d2bb", null ],
-    [ "SigSerialDevicePath", "d6/d87/classAbMHViewSerial.html#a7d64b8fe6a8d3cdfc1ac28f039de71cc", null ],
-    [ "SigSerialParity", "d6/d87/classAbMHViewSerial.html#a9b0f9298edf5286e1e74037104f052ce", null ],
-    [ "SigSerialSetup", "d6/d87/classAbMHViewSerial.html#a4ef94d74bfbe4cac37afa48e4c914b20", null ],
-    [ "SigSerialStopBits", "d6/d87/classAbMHViewSerial.html#a674ef79ce6beed9a0511624e657e26a8", null ],
     [ "~AbMHViewSerial", "d6/d87/classAbMHViewSerial.html#a0b5ff0f5d9e2e0c5f287ea7b5e0f2d54", null ],
     [ "cancelSerialTriggered", "d6/d87/classAbMHViewSerial.html#aec45412d9c1517d8025b0acdff533b1c", null ],
     [ "okSerialTriggered", "d6/d87/classAbMHViewSerial.html#a5337eb011048223f39fdfb070233cecd", null ],

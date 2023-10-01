@@ -1,8 +1,0 @@
-<map id="MHController::MHController" name="MHController::MHController">
-<area shape="rect" id="node1" title="MHController constructor." alt="" coords="5,111,208,138"/>
-<area shape="rect" id="node2" href="$d1/d75/classMHController.html#a3f71ae3e7095f9df502967aea370b2c4" title="Mapping views and backend (signals and slots)" alt="" coords="256,111,429,138"/>
-<area shape="rect" id="node3" href="$d1/d75/classMHController.html#a93349e277d61c7637c79572d13230ac0" title="Slot for processing log settings changes." alt="" coords="485,5,693,47"/>
-<area shape="rect" id="node4" href="$d1/d75/classMHController.html#ad3f88dda4e7abb9524316cfc69b62aee" title="Slot for processing log settings loaded." alt="" coords="485,71,693,112"/>
-<area shape="rect" id="node5" href="$d1/d75/classMHController.html#a9e56cdd7a84490f977122ddfcd59981a" title="Slot for processing serial settings changes." alt="" coords="477,136,700,177"/>
-<area shape="rect" id="node6" href="$d1/d75/classMHController.html#a07c7aeb57fe502a68ec45187e076b94b" title="Slot for processing serial settings changes." alt="" coords="477,201,700,243"/>
-</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stopbits_0',['stopBits',['../d1/d90/microhil__serial__com_8h.html#a6e35cdcc10724ded511ff54120c908e9',1,'microhil_serial_com.h']]]
+  ['stopbits_0',['stopBits',['../d4/dfd/microhil__icom_8h.html#a6e35cdcc10724ded511ff54120c908e9',1,'microhil_icom.h']]]
 ];

@@ -48,27 +48,27 @@ namespace
 MHView::MHView() : m_builder{Gtk::Builder::create_from_resource(kHomeUI)}
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Setup builder and home view
+    /// Sets builder and home view
     m_builder->get_widget_derived(kWindowId, (MHViewHome *&)m_home);
 
     ////////////////////////////////////////////////////////////////////////
-    /// Setup builder and dialog view
+    /// Sets builder and dialog view
     m_builder->get_widget_derived(kDialogId, (MHViewDialog *&)m_dialog);
 
     ////////////////////////////////////////////////////////////////////////
-    /// Setup builder and Log Settings view
+    /// Sets builder and Log Settings view
     m_builder->get_widget_derived(kLogId, (MHViewLog *&)m_log);
 
     ////////////////////////////////////////////////////////////////////////
-    /// Setup builder and Serial Settings view
+    /// Sets builder and Serial Settings view
     m_builder->get_widget_derived(kSerialId, (MHViewSerial *&)m_serial);
 
     ////////////////////////////////////////////////////////////////////////
-    /// Setup builder and About view
+    /// Sets builder and About view
     m_builder->get_widget_derived(kAboutId, (MHViewAbout *&)m_about);
 
     ////////////////////////////////////////////////////////////////////////
-    /// Mapping views (signals and slots)
+    /// Maps views (signals and slots)
     mapping();
 }
 

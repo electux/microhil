@@ -18,116 +18,95 @@
  */
 #pragma once
 
-#include <libserial/SerialPort.h>
-#include "microhil_com_abstract.h"
-
-using LibSerial::BaudRate;
-using LibSerial::CharacterSize;
-using LibSerial::Parity;
-using LibSerial::SerialPort;
-using LibSerial::StopBits;
+#include "microhil_icom.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Declaration of serial parameters structure
-using MHSerialParams = struct
-{
-    BaudRate baudRate;
-    CharacterSize dataBits;
-    Parity parity;
-    StopBits stopBits;
-};
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief MHSerialCom class declaration and definition
-class MHSerialCom : public AbMHCom
+/// @brief MHSerialCom class is implementation of serial communication
+class MHSerialCom : public IMHCom
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MicroHILCom constructor
-    MHSerialCom();
+    explicit MHSerialCom();
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MicroHILCom destructor
-    ~MHSerialCom();
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Open the serial communication channel
+    /// @brief Opens the serial communication channel
     void open() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Close the serial communication channel
+    /// @brief Closes the serial communication channel
     void close() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert baud-rate from scopped enumerator to unsigned int
-    /// @param baudRate in scoped enumerator value
+    /// @brief Converts baud-rate from scopped enumerator to unsigned int
+    /// @param baudRate represents scoped enumerator value
     /// @return unsigned integer format of baud-rate
-    unsigned int baudRateToUInt(const BaudRate baudRate);
+    unsigned int baudRateToUInt(const BaudRate baudRate) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert baud-rate from unsigned int to scopped enumerator
-    /// @param baudRate in unsigned integer value
+    /// @brief Converts baud-rate from unsigned int to scopped enumerator
+    /// @param baudRate represents unsigned integer value
     /// @return scoped enumerator format of baud-rate
-    BaudRate uintToBaudRate(const unsigned int baudRate);
+    BaudRate uintToBaudRate(const unsigned int baudRate) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert data-bits from scopped enumerator to unsigned int
-    /// @param dataBits in scoped enumerator value
+    /// @brief Converts data-bits from scopped enumerator to unsigned int
+    /// @param dataBits represents scoped enumerator value
     /// @return unsigned integer format of data-bits
-    unsigned int dataBitsToUInt(const CharacterSize dataBits);
+    unsigned int dataBitsToUInt(const CharacterSize dataBits) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert data-bits from unsigned int to scopped enumerator
-    /// @param dataBits in unsigned integer format
+    /// @brief Converts data-bits from unsigned int to scopped enumerator
+    /// @param dataBits represents unsigned integer format
     /// @return scoped enumerator format of data-bits
-    CharacterSize uintToDataBits(const unsigned int dataBits);
+    CharacterSize uintToDataBits(const unsigned int dataBits) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert parity from scopped enumerator to unsigned int
-    /// @param parity in scoped enumerator value
+    /// @brief Converts parity from scopped enumerator to unsigned int
+    /// @param parity represents scoped enumerator value
     /// @return unsigned integer format of parity
-    unsigned int parityToUInt(const Parity parity);
+    unsigned int parityToUInt(const Parity parity) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert parity from unsigned int to scopped enumerator
-    /// @param parity in unsigned integer format
+    /// @brief Converts parity from unsigned int to scopped enumerator
+    /// @param parity represents unsigned integer format
     /// @return scoped enumerator format of parity
-    Parity uintToParity(const unsigned int parity);
+    Parity uintToParity(const unsigned int parity) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert stop-bits from scopped enumerator to unsigned int
-    /// @param stopBits in scoped enumerator value
+    /// @brief Converts stop-bits from scopped enumerator to unsigned int
+    /// @param stopBits represents scoped enumerator value
     /// @return unsigned integer format of stop-bits
-    unsigned int stopBitsToUInt(const StopBits stopBits);
+    unsigned int stopBitsToUInt(const StopBits stopBits) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Convert stop-bits from unsigned int to scopped enumerator
-    /// @param stopBits in unsigned integer format
+    /// @brief Converts stop-bits from unsigned int to scopped enumerator
+    /// @param stopBits represents unsigned integer format
     /// @return scoped enumerator format of stop-bits
-    StopBits uintToStopBits(const unsigned int stopBits);
+    StopBits uintToStopBits(const unsigned int stopBits) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup the serial port parameters
-    /// @param device file path for serial port
-    /// @param params for serial port
-    void setup(const MHString &device, const MHVecUInt &params);
+    /// @param device represents file path for the serial port
+    /// @param params represents parameters for the serial port
+    void setup(const MHString &device, const MHVecUInt &params) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Setup the serial port parameters
-    /// @param device file path for the serial port
-    /// @param params for the serial port
-    void setup(const MHString &device, const MHSerialParams &params);
+    /// @param device represents file path for the serial port
+    /// @param params represents parameters for the serial port
+    void setup(const MHString &device, const MHSerialParams &params) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Read from serial communication channel
-    /// @param data buffer to be placed to after reading the serial port
-    /// @param len length of data to read before returning
-    /// @param timeout timeout period in miliseconds
+    /// @param data represents data to be placed to after reading
+    /// @param len represents length of data to read before returning
+    /// @param timeout represents timeout period in miliseconds
     void read(MHVecByte &data, size_t len, size_t timeout) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Write data to the serial communication channel
-    /// @param data to be written to the serial port
+    /// @brief Writes data to the serial communication channel
+    /// @param data represents data to be written to the serial port
     void write(const MHVecByte &data) final;
 
 private:

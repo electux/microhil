@@ -85,7 +85,6 @@ $(document).ready(function(){initNavTree('d7/d4c/classAbMHViewHome.html','../../
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../da/d5a/classAbMHViewHome-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">AbMHViewHome Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
@@ -102,7 +101,7 @@ Inheritance diagram for AbMHViewHome:</div>
 <div class="center"><img src="../../d0/d65/classAbMHViewHome__inherit__graph.png" border="0" usemap="#aAbMHViewHome_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAbMHViewHome_inherit__map" id="aAbMHViewHome_inherit__map">
 <area shape="rect" title="AbMHViewHome class declaration and definition." alt="" coords="5,5,237,244"/>
-<area shape="rect" href="../../dc/def/classMHViewHome.html" title="MHViewHome class declaration and definition." alt="" coords="5,292,237,765"/>
+<area shape="rect" href="../../dc/def/classMHViewHome.html" title="MHViewHome class is implementation of home view." alt="" coords="5,292,237,765"/>
 </map>
 </div>
 <div class="dynheader">
@@ -114,60 +113,39 @@ Collaboration diagram for AbMHViewHome:</div>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a628420cbbd3569d451b381e996f84ac4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a628420cbbd3569d451b381e996f84ac4">SigActionViewTriggered</a> = sigc::signal&lt; void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411">ViewId</a>)&gt;</td></tr>
-<tr class="memdesc:a628420cbbd3569d451b381e996f84ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for menu itmes (trigger another view)  <a href="../../d7/d4c/classAbMHViewHome.html#a628420cbbd3569d451b381e996f84ac4">More...</a><br /></td></tr>
-<tr class="separator:a628420cbbd3569d451b381e996f84ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7667e31c279026f3cd14c851491e599b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a7667e31c279026f3cd14c851491e599b">SigChannelChanged</a> = sigc::signal&lt; void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, bool)&gt;</td></tr>
-<tr class="memdesc:a7667e31c279026f3cd14c851491e599b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for check buttons (enable/disable channel)  <a href="../../d7/d4c/classAbMHViewHome.html#a7667e31c279026f3cd14c851491e599b">More...</a><br /></td></tr>
-<tr class="separator:a7667e31c279026f3cd14c851491e599b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a310c6e0e30058fa31cf7f5ba2fe51d4d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a310c6e0e30058fa31cf7f5ba2fe51d4d">SigSelectChanged</a> = sigc::signal&lt; void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, int)&gt;</td></tr>
-<tr class="memdesc:a310c6e0e30058fa31cf7f5ba2fe51d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for comboboxes (toogle/timer type control)  <a href="../../d7/d4c/classAbMHViewHome.html#a310c6e0e30058fa31cf7f5ba2fe51d4d">More...</a><br /></td></tr>
-<tr class="separator:a310c6e0e30058fa31cf7f5ba2fe51d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac75ecea7df1199b5b7f7d4f3782fa931"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#ac75ecea7df1199b5b7f7d4f3782fa931">SigChannelToggled</a> = sigc::signal&lt; void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, bool)&gt;</td></tr>
-<tr class="memdesc:ac75ecea7df1199b5b7f7d4f3782fa931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for toogle buttons (turn on/turn off channel)  <a href="../../d7/d4c/classAbMHViewHome.html#ac75ecea7df1199b5b7f7d4f3782fa931">More...</a><br /></td></tr>
-<tr class="separator:ac75ecea7df1199b5b7f7d4f3782fa931"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2cf8f54a2f61d645e571e0aa7748b93"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#ad2cf8f54a2f61d645e571e0aa7748b93">SigChannelSpinTimerChanged</a> = sigc::signal&lt; void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, int)&gt;</td></tr>
-<tr class="memdesc:ad2cf8f54a2f61d645e571e0aa7748b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for spin buttons (based on timer setup)  <a href="../../d7/d4c/classAbMHViewHome.html#ad2cf8f54a2f61d645e571e0aa7748b93">More...</a><br /></td></tr>
-<tr class="separator:ad2cf8f54a2f61d645e571e0aa7748b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeadb62726843fd10a22e96543e9c90d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#afeadb62726843fd10a22e96543e9c90d">SigChannelTimerToggled</a> = sigc::signal&lt; void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, bool)&gt;</td></tr>
-<tr class="memdesc:afeadb62726843fd10a22e96543e9c90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal type for toogle buttons (based on timer setup)  <a href="../../d7/d4c/classAbMHViewHome.html#afeadb62726843fd10a22e96543e9c90d">More...</a><br /></td></tr>
-<tr class="separator:afeadb62726843fd10a22e96543e9c90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a29257fb59c55e072589ec9a85459ca1a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a29257fb59c55e072589ec9a85459ca1a">~AbMHViewHome</a> ()=default</td></tr>
 <tr class="memdesc:a29257fb59c55e072589ec9a85459ca1a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d7/d4c/classAbMHViewHome.html" title="AbMHViewHome class declaration and definition.">AbMHViewHome</a> destructor.  <a href="../../d7/d4c/classAbMHViewHome.html#a29257fb59c55e072589ec9a85459ca1a">More...</a><br /></td></tr>
 <tr class="separator:a29257fb59c55e072589ec9a85459ca1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3a0c9833df9ad7994fe757acc715ab9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#a628420cbbd3569d451b381e996f84ac4">SigActionViewTriggered</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#ab3a0c9833df9ad7994fe757acc715ab9">viewChanged</a> ()=0</td></tr>
+<tr class="memitem:ab3a0c9833df9ad7994fe757acc715ab9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a97dbfa002f1478185848a7432044e1eb">SigActionViewTriggered</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#ab3a0c9833df9ad7994fe757acc715ab9">viewChanged</a> ()=0</td></tr>
 <tr class="memdesc:ab3a0c9833df9ad7994fe757acc715ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for menu items (changed view)  <a href="../../d7/d4c/classAbMHViewHome.html#ab3a0c9833df9ad7994fe757acc715ab9">More...</a><br /></td></tr>
 <tr class="separator:ab3a0c9833df9ad7994fe757acc715ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada01b3b8581066ee648e3004d68541dd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#a7667e31c279026f3cd14c851491e599b">SigChannelChanged</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#ada01b3b8581066ee648e3004d68541dd">channelIsChanged</a> ()=0</td></tr>
+<tr class="memitem:ada01b3b8581066ee648e3004d68541dd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a27565e32352b6d64a17e49e3016b55da">SigChannelChanged</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#ada01b3b8581066ee648e3004d68541dd">channelIsChanged</a> ()=0</td></tr>
 <tr class="memdesc:ada01b3b8581066ee648e3004d68541dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for check buttons (enable/disable channel)  <a href="../../d7/d4c/classAbMHViewHome.html#ada01b3b8581066ee648e3004d68541dd">More...</a><br /></td></tr>
 <tr class="separator:ada01b3b8581066ee648e3004d68541dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec67fc51c35d98bca412e30e4952e10e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#aec67fc51c35d98bca412e30e4952e10e">onChannelChanged</a> (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a> id)=0</td></tr>
 <tr class="memdesc:aec67fc51c35d98bca412e30e4952e10e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing check buttons (enable/disable channel)  <a href="../../d7/d4c/classAbMHViewHome.html#aec67fc51c35d98bca412e30e4952e10e">More...</a><br /></td></tr>
 <tr class="separator:aec67fc51c35d98bca412e30e4952e10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59fe8873a2a8d2aba0a1da29913b931c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#a310c6e0e30058fa31cf7f5ba2fe51d4d">SigSelectChanged</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a59fe8873a2a8d2aba0a1da29913b931c">channelIsSelected</a> ()=0</td></tr>
+<tr class="memitem:a59fe8873a2a8d2aba0a1da29913b931c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#aa8f12be614fecf7d029d597dfc0770f8">SigSelectChanged</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a59fe8873a2a8d2aba0a1da29913b931c">channelIsSelected</a> ()=0</td></tr>
 <tr class="memdesc:a59fe8873a2a8d2aba0a1da29913b931c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for comboboxes (control type)  <a href="../../d7/d4c/classAbMHViewHome.html#a59fe8873a2a8d2aba0a1da29913b931c">More...</a><br /></td></tr>
 <tr class="separator:a59fe8873a2a8d2aba0a1da29913b931c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2f5f5479104627bf3101b79e6f75c9d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#ac2f5f5479104627bf3101b79e6f75c9d">onTypeSelected</a> (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a> id)=0</td></tr>
 <tr class="memdesc:ac2f5f5479104627bf3101b79e6f75c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing comboboxes (control type)  <a href="../../d7/d4c/classAbMHViewHome.html#ac2f5f5479104627bf3101b79e6f75c9d">More...</a><br /></td></tr>
 <tr class="separator:ac2f5f5479104627bf3101b79e6f75c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af857d1df148124baac3ab268f0b34aeb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#ac75ecea7df1199b5b7f7d4f3782fa931">SigChannelToggled</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#af857d1df148124baac3ab268f0b34aeb">channelIsToggled</a> ()=0</td></tr>
+<tr class="memitem:af857d1df148124baac3ab268f0b34aeb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a9fa1bb0cb9ce8a43ec66c5d52a6c30af">SigChannelToggled</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#af857d1df148124baac3ab268f0b34aeb">channelIsToggled</a> ()=0</td></tr>
 <tr class="memdesc:af857d1df148124baac3ab268f0b34aeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for toggling buttons (turn on/turn off channel)  <a href="../../d7/d4c/classAbMHViewHome.html#af857d1df148124baac3ab268f0b34aeb">More...</a><br /></td></tr>
 <tr class="separator:af857d1df148124baac3ab268f0b34aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2801e9b05ab6622f3914940dc220d1c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#ab2801e9b05ab6622f3914940dc220d1c">onToggled</a> (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a> id)=0</td></tr>
 <tr class="memdesc:ab2801e9b05ab6622f3914940dc220d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing toggle buttons (turn on/turn off channel)  <a href="../../d7/d4c/classAbMHViewHome.html#ab2801e9b05ab6622f3914940dc220d1c">More...</a><br /></td></tr>
 <tr class="separator:ab2801e9b05ab6622f3914940dc220d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fe6a86521a92753aa8b8d3e03a90ed1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#ad2cf8f54a2f61d645e571e0aa7748b93">SigChannelSpinTimerChanged</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a9fe6a86521a92753aa8b8d3e03a90ed1">channelIsSpinTimerChanged</a> ()=0</td></tr>
+<tr class="memitem:a9fe6a86521a92753aa8b8d3e03a90ed1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a819bd212bbee0e1db59ca70a64b1091c">SigChannelSpinTimerChanged</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a9fe6a86521a92753aa8b8d3e03a90ed1">channelIsSpinTimerChanged</a> ()=0</td></tr>
 <tr class="memdesc:a9fe6a86521a92753aa8b8d3e03a90ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for spin buttons (based on timer)  <a href="../../d7/d4c/classAbMHViewHome.html#a9fe6a86521a92753aa8b8d3e03a90ed1">More...</a><br /></td></tr>
 <tr class="separator:a9fe6a86521a92753aa8b8d3e03a90ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7798f012e3e1874ed0a553533b7f4b41"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a7798f012e3e1874ed0a553533b7f4b41">onSpinTimerChanged</a> (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a> id)=0</td></tr>
 <tr class="memdesc:a7798f012e3e1874ed0a553533b7f4b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing spin buttons (based on timer)  <a href="../../d7/d4c/classAbMHViewHome.html#a7798f012e3e1874ed0a553533b7f4b41">More...</a><br /></td></tr>
 <tr class="separator:a7798f012e3e1874ed0a553533b7f4b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09502ce1e6adb183fb80d21ad4b33a20"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#afeadb62726843fd10a22e96543e9c90d">SigChannelTimerToggled</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a09502ce1e6adb183fb80d21ad4b33a20">channelIsTimerChanged</a> ()=0</td></tr>
+<tr class="memitem:a09502ce1e6adb183fb80d21ad4b33a20"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ab650213bbb203157192e08abf321dac6">SigChannelTimerToggled</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a09502ce1e6adb183fb80d21ad4b33a20">channelIsTimerChanged</a> ()=0</td></tr>
 <tr class="memdesc:a09502ce1e6adb183fb80d21ad4b33a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for toggle buttons (based on timer)  <a href="../../d7/d4c/classAbMHViewHome.html#a09502ce1e6adb183fb80d21ad4b33a20">More...</a><br /></td></tr>
 <tr class="separator:a09502ce1e6adb183fb80d21ad4b33a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32d9d6ff8bb53b46acc19b3c1527f420"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a32d9d6ff8bb53b46acc19b3c1527f420">onToggleTimerChanged</a> (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a> id)=0</td></tr>
@@ -177,117 +155,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="../../d7/d4c/classAbMHViewHome.html" title="AbMHViewHome class declaration and definition.">AbMHViewHome</a> class declaration and definition. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html#l00077">77</a> of file <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html">microhil_view_home_abstract.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a628420cbbd3569d451b381e996f84ac4" name="a628420cbbd3569d451b381e996f84ac4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a628420cbbd3569d451b381e996f84ac4">&#9670;&nbsp;</a></span>SigActionViewTriggered</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d7/d4c/classAbMHViewHome.html#a628420cbbd3569d451b381e996f84ac4">AbMHViewHome::SigActionViewTriggered</a> =  sigc::signal&lt;void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411">ViewId</a>)&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Signal type for menu itmes (trigger another view) </p>
-
-<p class="definition">Definition at line <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html#l00082">82</a> of file <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html">microhil_view_home_abstract.h</a>.</p>
-
-</div>
-</div>
-<a id="a7667e31c279026f3cd14c851491e599b" name="a7667e31c279026f3cd14c851491e599b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7667e31c279026f3cd14c851491e599b">&#9670;&nbsp;</a></span>SigChannelChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d7/d4c/classAbMHViewHome.html#a7667e31c279026f3cd14c851491e599b">AbMHViewHome::SigChannelChanged</a> =  sigc::signal&lt;void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, bool)&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Signal type for check buttons (enable/disable channel) </p>
-
-<p class="definition">Definition at line <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html#l00086">86</a> of file <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html">microhil_view_home_abstract.h</a>.</p>
-
-</div>
-</div>
-<a id="ad2cf8f54a2f61d645e571e0aa7748b93" name="ad2cf8f54a2f61d645e571e0aa7748b93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2cf8f54a2f61d645e571e0aa7748b93">&#9670;&nbsp;</a></span>SigChannelSpinTimerChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d7/d4c/classAbMHViewHome.html#ad2cf8f54a2f61d645e571e0aa7748b93">AbMHViewHome::SigChannelSpinTimerChanged</a> =  sigc::signal&lt;void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, int)&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Signal type for spin buttons (based on timer setup) </p>
-
-<p class="definition">Definition at line <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html#l00098">98</a> of file <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html">microhil_view_home_abstract.h</a>.</p>
-
-</div>
-</div>
-<a id="afeadb62726843fd10a22e96543e9c90d" name="afeadb62726843fd10a22e96543e9c90d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afeadb62726843fd10a22e96543e9c90d">&#9670;&nbsp;</a></span>SigChannelTimerToggled</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d7/d4c/classAbMHViewHome.html#afeadb62726843fd10a22e96543e9c90d">AbMHViewHome::SigChannelTimerToggled</a> =  sigc::signal&lt;void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, bool)&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Signal type for toogle buttons (based on timer setup) </p>
-
-<p class="definition">Definition at line <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html#l00102">102</a> of file <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html">microhil_view_home_abstract.h</a>.</p>
-
-</div>
-</div>
-<a id="ac75ecea7df1199b5b7f7d4f3782fa931" name="ac75ecea7df1199b5b7f7d4f3782fa931"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac75ecea7df1199b5b7f7d4f3782fa931">&#9670;&nbsp;</a></span>SigChannelToggled</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d7/d4c/classAbMHViewHome.html#ac75ecea7df1199b5b7f7d4f3782fa931">AbMHViewHome::SigChannelToggled</a> =  sigc::signal&lt;void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, bool)&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Signal type for toogle buttons (turn on/turn off channel) </p>
-
-<p class="definition">Definition at line <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html#l00094">94</a> of file <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html">microhil_view_home_abstract.h</a>.</p>
-
-</div>
-</div>
-<a id="a310c6e0e30058fa31cf7f5ba2fe51d4d" name="a310c6e0e30058fa31cf7f5ba2fe51d4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a310c6e0e30058fa31cf7f5ba2fe51d4d">&#9670;&nbsp;</a></span>SigSelectChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d7/d4c/classAbMHViewHome.html#a310c6e0e30058fa31cf7f5ba2fe51d4d">AbMHViewHome::SigSelectChanged</a> =  sigc::signal&lt;void(<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a>, int)&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Signal type for comboboxes (toogle/timer type control) </p>
-
-<p class="definition">Definition at line <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html#l00090">90</a> of file <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html">microhil_view_home_abstract.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html#l00101">101</a> of file <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h_source.html">microhil_view_home_abstract.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a29257fb59c55e072589ec9a85459ca1a" name="a29257fb59c55e072589ec9a85459ca1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29257fb59c55e072589ec9a85459ca1a">&#9670;&nbsp;</a></span>~AbMHViewHome()</h2>
 
@@ -326,7 +195,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#a7667e31c279026f3cd14c851491e599b">SigChannelChanged</a> AbMHViewHome::channelIsChanged </td>
+          <td class="memname">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a27565e32352b6d64a17e49e3016b55da">SigChannelChanged</a> AbMHViewHome::channelIsChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -342,7 +211,7 @@ Public Member Functions</h2></td></tr>
 <p>Signal for check buttons (enable/disable channel) </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for clicked button </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#afec23f5386d10db04d130cac5769c30f">MHViewHome</a>.</p>
+<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#ab7ec194de1a3b46061ea141eb228df0f">MHViewHome</a>.</p>
 
 </div>
 </div>
@@ -356,7 +225,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#a310c6e0e30058fa31cf7f5ba2fe51d4d">SigSelectChanged</a> AbMHViewHome::channelIsSelected </td>
+          <td class="memname">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#aa8f12be614fecf7d029d597dfc0770f8">SigSelectChanged</a> AbMHViewHome::channelIsSelected </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -372,7 +241,7 @@ Public Member Functions</h2></td></tr>
 <p>Signal for comboboxes (control type) </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for changed channel state combobox </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#a80d7ad3114a80ccc90122e598ff7a84c">MHViewHome</a>.</p>
+<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#a307bcd2fa2a02c283defe7ba19e8988b">MHViewHome</a>.</p>
 
 </div>
 </div>
@@ -386,7 +255,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#ad2cf8f54a2f61d645e571e0aa7748b93">SigChannelSpinTimerChanged</a> AbMHViewHome::channelIsSpinTimerChanged </td>
+          <td class="memname">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a819bd212bbee0e1db59ca70a64b1091c">SigChannelSpinTimerChanged</a> AbMHViewHome::channelIsSpinTimerChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -402,7 +271,7 @@ Public Member Functions</h2></td></tr>
 <p>Signal for spin buttons (based on timer) </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for changed spin button </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#a898ed8cee7b9c0793a1b47d5ef9f0096">MHViewHome</a>.</p>
+<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#a2085b82e8051c840923f8b416ac6b421">MHViewHome</a>.</p>
 
 </div>
 </div>
@@ -416,7 +285,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#afeadb62726843fd10a22e96543e9c90d">SigChannelTimerToggled</a> AbMHViewHome::channelIsTimerChanged </td>
+          <td class="memname">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ab650213bbb203157192e08abf321dac6">SigChannelTimerToggled</a> AbMHViewHome::channelIsTimerChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -432,7 +301,7 @@ Public Member Functions</h2></td></tr>
 <p>Signal for toggle buttons (based on timer) </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for toggled button </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#abbf790a61c033a566cd1fca767c0db15">MHViewHome</a>.</p>
+<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#a2ebe6fad3a7e2f44c967b0b2bf07c222">MHViewHome</a>.</p>
 
 </div>
 </div>
@@ -446,7 +315,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#ac75ecea7df1199b5b7f7d4f3782fa931">SigChannelToggled</a> AbMHViewHome::channelIsToggled </td>
+          <td class="memname">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a9fa1bb0cb9ce8a43ec66c5d52a6c30af">SigChannelToggled</a> AbMHViewHome::channelIsToggled </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -462,7 +331,7 @@ Public Member Functions</h2></td></tr>
 <p>Signal for toggling buttons (turn on/turn off channel) </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for toggled button </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#a1f02e1691f0731163da4fa48815f5012">MHViewHome</a>.</p>
+<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#a861b292ba38490f2a2b8e91b8c798c6b">MHViewHome</a>.</p>
 
 </div>
 </div>
@@ -493,7 +362,7 @@ Public Member Functions</h2></td></tr>
 <p>Slot for processing check buttons (enable/disable channel) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
+    <tr><td class="paramname">id</td><td>represents id for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
   </table>
   </dd>
 </dl>
@@ -529,7 +398,7 @@ Public Member Functions</h2></td></tr>
 <p>Slot for processing spin buttons (based on timer) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
+    <tr><td class="paramname">id</td><td>repreesnts id for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
   </table>
   </dd>
 </dl>
@@ -565,7 +434,7 @@ Public Member Functions</h2></td></tr>
 <p>Slot for processing toggle buttons (turn on/turn off channel) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
+    <tr><td class="paramname">id</td><td>represents id for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
   </table>
   </dd>
 </dl>
@@ -601,7 +470,7 @@ Public Member Functions</h2></td></tr>
 <p>Slot for processing toggle buttons (turn on/turn off timer) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
+    <tr><td class="paramname">id</td><td>represents id for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
   </table>
   </dd>
 </dl>
@@ -637,7 +506,7 @@ Public Member Functions</h2></td></tr>
 <p>Slot for processing comboboxes (control type) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
+    <tr><td class="paramname">id</td><td>represents id for channel (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109a1030f4a6280281ea1f2a0e758b8851de" title="Channel 0 id.">Channel::MICROHIL_ID0</a> .. 7) </td></tr>
   </table>
   </dd>
 </dl>
@@ -656,7 +525,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d7/d4c/classAbMHViewHome.html#a628420cbbd3569d451b381e996f84ac4">SigActionViewTriggered</a> AbMHViewHome::viewChanged </td>
+          <td class="memname">virtual <a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a97dbfa002f1478185848a7432044e1eb">SigActionViewTriggered</a> AbMHViewHome::viewChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -672,7 +541,7 @@ Public Member Functions</h2></td></tr>
 <p>Signal for menu items (changed view) </p>
 <dl class="section return"><dt>Returns</dt><dd>Signal for clicked menu item </dd></dl>
 
-<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#aa8ff5fdc50134723fea93f88e1c0c292">MHViewHome</a>.</p>
+<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#a84e496696caca67024f824714e7af34a">MHViewHome</a>.</p>
 
 </div>
 </div>
@@ -685,7 +554,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d4c/classAbMHViewHome.html">AbMHViewHome</a></li>
-    <li class="footer">Generated on Fri Sep 22 2023 06:01:46 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Oct 1 2023 22:41:06 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

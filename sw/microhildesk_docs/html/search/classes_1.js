@@ -1,14 +1,9 @@
 var searchData=
 [
-  ['mhconfig_0',['MHConfig',['../d9/d79/classMHConfig.html',1,'']]],
-  ['mhcontroller_1',['MHController',['../d1/d75/classMHController.html',1,'']]],
-  ['mhlog_2',['MHLog',['../d1/d7c/classMHLog.html',1,'']]],
-  ['mhmodel_3',['MHModel',['../da/d3e/classMHModel.html',1,'']]],
-  ['mhserialcom_4',['MHSerialCom',['../d1/dfa/classMHSerialCom.html',1,'']]],
-  ['mhview_5',['MHView',['../d1/dfc/classMHView.html',1,'']]],
-  ['mhviewabout_6',['MHViewAbout',['../d5/d7b/classMHViewAbout.html',1,'']]],
-  ['mhviewdialog_7',['MHViewDialog',['../dc/d3c/classMHViewDialog.html',1,'']]],
-  ['mhviewhome_8',['MHViewHome',['../dc/def/classMHViewHome.html',1,'']]],
-  ['mhviewlog_9',['MHViewLog',['../d1/d14/classMHViewLog.html',1,'']]],
-  ['mhviewserial_10',['MHViewSerial',['../d2/dd5/classMHViewSerial.html',1,'']]]
+  ['imhcom_0',['IMHCom',['../de/d55/classIMHCom.html',1,'']]],
+  ['imhconfig_1',['IMHConfig',['../d5/d1b/classIMHConfig.html',1,'']]],
+  ['imhcontroller_2',['IMHController',['../d2/ddd/classIMHController.html',1,'']]],
+  ['imhlog_3',['IMHLog',['../de/d0f/classIMHLog.html',1,'']]],
+  ['imhmodel_4',['IMHModel',['../dd/db2/classIMHModel.html',1,'']]],
+  ['imhview_5',['IMHView',['../df/d0c/classIMHView.html',1,'']]]
 ];

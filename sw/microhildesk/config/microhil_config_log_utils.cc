@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_config_log.cc
+ * microhil_config_log_utils.cc
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -48,7 +48,7 @@ namespace
 MHString MHConfig::logLevelToUnicodeString(const int logLevel)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert integer log level to scopped enumerator class
+    /// Converts integer log level to scopped enumerator class
     auto logLevelType = static_cast<LogLevelConfig>(logLevel);
 
     switch (logLevelType)

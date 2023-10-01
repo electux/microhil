@@ -23,83 +23,79 @@
 #include "../com/microhil_serial_com.h"
 #include "../model/microhil_model.h"
 #include "../view/microhil_view.h"
-#include "microhil_controller_abstract.h"
+#include "microhil_icontroller.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MHController class declaration and definition
-class MHController : public AbMHController
+/// @brief MHController class is implementation of controller
+class MHController : public IMHController
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHController constructor
-    /// @param model instance
-    /// @param view instance
-    MHController(MHSPtr<MHModel> model, MHSPtr<MHView> view);
+    /// @param model represents model instance
+    /// @param view represents view instance
+    explicit MHController(MHSPtr<IMHModel> model, MHSPtr<IMHView> view);
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MHController destructor
-    ~MHController() = default;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Enable controller (enable/disable communication)
-    /// @param switchController request value
+    /// @brief Enables controller (enable/disable communication)
+    /// @param switchController represents requested enable value
     void setEnabled(bool switchController) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Check is controller enabled (is serial communication enabled)
-    /// @return boolean status true for enabled else false
+    /// @brief Checks is controller enabled (is serial communication enabled)
+    /// @return status true for enabled else false
     bool isEnabled() const final;
 
-private:
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Mapping views and backend (signals and slots)
-    void mapping();
+    /// @brief Maps views and backend (signals and slots)
+    void mapping() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing log settings changes
-    /// @param path is absolute path of log file
-    /// @param level is level for logging messages
-    void onLogSettingsChanged(MHString &path, int level);
+    /// @param path represents absolute path of log file
+    /// @param level represents level for logging messages
+    void onLogSettingsChanged(MHString &path, int level) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing log settings loaded
-    /// @param path is absolute path of log file
-    /// @param logLevel is level for logging messages
-    void onLogSettingsLoaded(MHString &path, int level);
+    /// @param path represents absolute path of log file
+    /// @param logLevel represents level for logging messages
+    void onLogSettingsLoaded(MHString &path, int level) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
-    /// @param dev file path for serial device
-    /// @param params set of serial parameters
-    void onSerialSettingsChanged(MHString &dev, MHVecUInt &params);
+    /// @param dev represents file path for serial device
+    /// @param params represents set of serial parameters
+    void onSerialSettingsChanged(MHString &dev, MHVecUInt &params) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
-    /// @param dev file path for serial device
-    /// @param params set of serial parameters
-    void onSerialSettingsLoaded(MHString &dev, MHVecUInt &params);
+    /// @param dev represents file path for serial device
+    /// @param params represents set of serial parameters
+    void onSerialSettingsLoaded(MHString &dev, MHVecUInt &params) final;
 
+private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Enable/Disable state of controller
     bool m_enabled{false};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Model instance
-    MHSPtr<MHModel> m_model{nullptr};
+    MHSPtr<IMHModel> m_model{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief View instance
-    MHSPtr<MHView> m_view{nullptr};
+    MHSPtr<IMHView> m_view{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration instance
-    MHUPtr<MHConfig> m_config{nullptr};
+    MHSPtr<IMHConfig> m_config{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log instance
-    MHUPtr<MHLog> m_log{nullptr};
+    MHSPtr<IMHLog> m_log{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Serial port instance
-    MHUPtr<MHSerialCom> m_serial{nullptr};
+    MHSPtr<IMHCom> m_serial{nullptr};
 };

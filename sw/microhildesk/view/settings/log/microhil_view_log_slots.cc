@@ -46,7 +46,7 @@ void MHViewLog::onOkLogTriggered()
     auto logLevel = m_level->get_active_row_number();
 
     ////////////////////////////////////////////////////////////////////////
-    /// Emit new log settings
+    /// Emits new log settings
     m_logSetup.emit(logPath, logLevel);
 
     this->hide();

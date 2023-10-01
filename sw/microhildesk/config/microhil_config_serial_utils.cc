@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_config_serial.cc
+ * microhil_config_serial_utils.cc
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -72,7 +72,7 @@ namespace
 int MHConfig::baudRateToInt(int baudRate)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert baud-rate to index item for combobox
+    /// Converts baud-rate to index item for combobox
     switch (baudRate)
     {
     case 110:
@@ -111,7 +111,7 @@ int MHConfig::baudRateToInt(int baudRate)
 int MHConfig::intToBaudRate(int baudRate)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert index item of combobox to baud-rate
+    /// Converts index item of combobox to baud-rate
     switch (baudRate)
     {
     case 0:
@@ -164,7 +164,7 @@ int MHConfig::intToDataBits(int dataBits)
 MHString MHConfig::parityToUnicodeString(const int parity)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert integer parity to scopped enumerator class
+    /// Converts integer parity to scopped enumerator class
     auto parityPrepared = static_cast<ParityConfig>(parity);
 
     switch (parityPrepared)
@@ -187,7 +187,7 @@ MHString MHConfig::parityToUnicodeString(const int parity)
 int MHConfig::parityUnicodeStringToInt(const MHString &parity)
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Convert string format of parity to index item for combobox
+    /// Converts string format of parity to index item for combobox
     if (parity == kConfigParityOdd)
     {
         return kConfigParityOddId;

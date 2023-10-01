@@ -1,6 +1,6 @@
 <map id="MHViewSerial::MHViewSerial" name="MHViewSerial::MHViewSerial">
 <area shape="rect" id="node1" title="MHViewSerial constructor." alt="" coords="5,209,217,235"/>
-<area shape="rect" id="node2" href="$d2/dd5/classMHViewSerial.html#a427a482ecec15d3eb92e4efe06b51398" title="Map all widgets (signals and slots)" alt="" coords="265,209,444,235"/>
+<area shape="rect" id="node2" href="$d2/dd5/classMHViewSerial.html#a427a482ecec15d3eb92e4efe06b51398" title="Maps all widgets (signals and slots)" alt="" coords="265,209,444,235"/>
 <area shape="rect" id="node3" href="$d2/dd5/classMHViewSerial.html#a62588bc9c5744c4ba66112bc3d2b17a3" title="Slot for processing Cancel button (dismiss)" alt="" coords="492,5,711,47"/>
 <area shape="rect" id="node4" href="$d2/dd5/classMHViewSerial.html#a1c8f81161c117b434b7aa0a8e59e243e" title="Slot for processing Ok button (confirm)" alt="" coords="505,71,697,112"/>
 <area shape="rect" id="node5" href="$d2/dd5/classMHViewSerial.html#a4f024291aa019f58a03898b83f1dc19a" title="Slot for processing baud&#45;rate combobox." alt="" coords="498,136,705,177"/>

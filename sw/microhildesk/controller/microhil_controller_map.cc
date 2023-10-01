@@ -1,6 +1,6 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * microhil_controller.cc
+ * microhil_controller_map.cc
  * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -21,18 +21,26 @@
 void MHController::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Map log settings signal from configuration with controller slot
-    m_config->LogConfigLoaded().connect(sigc::mem_fun(*this, &MHController::onLogSettingsLoaded));
+    /// Maps log settings signal from configuration with controller slot
+    m_config->LogConfigLoaded().connect(
+        sigc::mem_fun(*this, &MHController::onLogSettingsLoaded)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map serial settings signal from configuration with controller slot
-    m_config->SerialConfigLoaded().connect(sigc::mem_fun(*this, &MHController::onSerialSettingsLoaded));
+    /// Maps serial settings signal from configuration with controller slot
+    m_config->SerialConfigLoaded().connect(
+        sigc::mem_fun(*this, &MHController::onSerialSettingsLoaded)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map log view signal with controller slot
-    m_view->getLogSettings()->logSetupChanged().connect(sigc::mem_fun(*this, &MHController::onLogSettingsChanged));
+    /// Maps log view signal with controller slot
+    m_view->getLogSettings()->logSetupChanged().connect(
+        sigc::mem_fun(*this, &MHController::onLogSettingsChanged)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map serial view signal with controller slot
-    m_view->getSerialSettings()->serialSetupChanged().connect(sigc::mem_fun(*this, &MHController::onSerialSettingsChanged));
+    /// Maps serial view signal with controller slot
+    m_view->getSerialSettings()->serialSetupChanged().connect(
+        sigc::mem_fun(*this, &MHController::onSerialSettingsChanged)
+    );
 }

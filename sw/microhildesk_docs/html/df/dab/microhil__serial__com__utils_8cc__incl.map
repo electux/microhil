@@ -1,12 +1,12 @@
 <map id="com/microhil_serial_com_utils.cc" name="com/microhil_serial_com_utils.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="103,5,253,47"/>
-<area shape="rect" id="node2" href="$d1/d90/microhil__serial__com_8h.html" title=" " alt="" coords="95,95,261,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,169,159,196"/>
-<area shape="rect" id="node4" href="$d3/d72/microhil__com__abstract_8h.html" title=" " alt="" coords="183,169,365,196"/>
-<area shape="rect" id="node5" href="$db/db9/microhil__types_8h.html" title=" " alt="" coords="187,244,361,271"/>
-<area shape="rect" id="node6" title=" " alt="" coords="50,319,127,345"/>
-<area shape="rect" id="node7" title=" " alt="" coords="151,319,218,345"/>
-<area shape="rect" id="node8" title=" " alt="" coords="243,319,305,345"/>
-<area shape="rect" id="node9" title=" " alt="" coords="330,319,453,345"/>
-<area shape="rect" id="node10" title=" " alt="" coords="477,319,610,345"/>
+<area shape="rect" id="node1" title=" " alt="" coords="100,5,251,47"/>
+<area shape="rect" id="node2" href="$d1/d90/microhil__serial__com_8h.html" title=" " alt="" coords="93,95,258,121"/>
+<area shape="rect" id="node3" href="$d4/dfd/microhil__icom_8h.html" title=" " alt="" coords="112,169,239,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,244,159,271"/>
+<area shape="rect" id="node5" href="$db/db9/microhil__types_8h.html" title=" " alt="" coords="183,244,357,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="46,319,123,345"/>
+<area shape="rect" id="node7" title=" " alt="" coords="147,319,214,345"/>
+<area shape="rect" id="node8" title=" " alt="" coords="239,319,301,345"/>
+<area shape="rect" id="node9" title=" " alt="" coords="326,319,449,345"/>
+<area shape="rect" id="node10" title=" " alt="" coords="473,319,606,345"/>
 </map>

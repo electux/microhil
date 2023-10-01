@@ -1,10 +1,5 @@
 var classAbMHViewLog =
 [
-    [ "SigCancelLog", "d9/d0c/classAbMHViewLog.html#aa903f040765cdd35a8ed134689ac191f", null ],
-    [ "SigLogFilePath", "d9/d0c/classAbMHViewLog.html#a59665d91bec3c628cda3921733fdd08d", null ],
-    [ "SigLogSetup", "d9/d0c/classAbMHViewLog.html#a7fb9c2c60ca7a192ce1632195b4ea849", null ],
-    [ "SigOkLog", "d9/d0c/classAbMHViewLog.html#a6adb9f8a76b59b6a3bf7fc31f4f7475d", null ],
-    [ "SigSelectLogLevel", "d9/d0c/classAbMHViewLog.html#a1fd89116aaee7075bce7f176ae8d1fed", null ],
     [ "~AbMHViewLog", "d9/d0c/classAbMHViewLog.html#a27b836a207a9cba5f29283e634bcd4b6", null ],
     [ "cancelLogTriggered", "d9/d0c/classAbMHViewLog.html#abf11fa0f4c14a09ce6f281ca50ab37e8", null ],
     [ "logFilePathChanged", "d9/d0c/classAbMHViewLog.html#ae147804b092e3443324d5324e10228df", null ],

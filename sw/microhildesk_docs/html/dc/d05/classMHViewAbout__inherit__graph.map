@@ -1,5 +1,5 @@
 <map id="MHViewAbout" name="MHViewAbout">
-<area shape="rect" id="node1" title="MHViewAbout class declaration and definition." alt="" coords="99,160,289,325"/>
-<area shape="rect" id="node2" href="$d3/d19/classAbMHViewAbout.html" title="AbMHViewAbout class declaration and definition." alt="" coords="5,5,196,112"/>
+<area shape="rect" id="node1" title="MHViewAbout class declaration and definition." alt="" coords="99,160,289,311"/>
+<area shape="rect" id="node2" href="$d3/d19/classAbMHViewAbout.html" title="AbMHViewAbout class is abstract setup of about view." alt="" coords="5,5,196,112"/>
 <area shape="rect" id="node3" title=" " alt="" coords="221,20,354,97"/>
 </map>

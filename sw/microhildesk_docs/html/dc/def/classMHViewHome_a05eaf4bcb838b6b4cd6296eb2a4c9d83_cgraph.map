@@ -1,6 +1,6 @@
 <map id="MHViewHome::onChannelChanged" name="MHViewHome::onChannelChanged">
 <area shape="rect" id="node1" title="Slot for processing check buttons (enable/disable channel)" alt="" coords="5,56,255,83"/>
-<area shape="rect" id="node2" href="$dc/def/classMHViewHome.html#a4f8fe83900f485ef446fdbb8866f25cb" title="Convert channel id to integer value." alt="" coords="311,5,517,32"/>
-<area shape="rect" id="node3" href="$dc/def/classMHViewHome.html#a85eaeba794f77bfbdd6b0567076689f0" title="Disable complete channel." alt="" coords="303,56,525,83"/>
-<area shape="rect" id="node4" href="$dc/def/classMHViewHome.html#adabcb6142d224910cbd6d26c40410a09" title="Enable complete channel." alt="" coords="304,107,524,133"/>
+<area shape="rect" id="node2" href="$dc/def/classMHViewHome.html#a4f8fe83900f485ef446fdbb8866f25cb" title="Converts channel id to integer value." alt="" coords="311,5,517,32"/>
+<area shape="rect" id="node3" href="$dc/def/classMHViewHome.html#a85eaeba794f77bfbdd6b0567076689f0" title="Disables complete channel." alt="" coords="303,56,525,83"/>
+<area shape="rect" id="node4" href="$dc/def/classMHViewHome.html#adabcb6142d224910cbd6d26c40410a09" title="Enables complete channel." alt="" coords="304,107,524,133"/>
 </map>

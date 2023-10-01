@@ -19,37 +19,33 @@
 #pragma once
 
 #include <vector>
-#include "microhil_model_abstract.h"
+#include "microhil_imodel.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MHModel class declaration and definition
-class MHModel : public AbMHModel
+/// @brief MHModel class is implementation of model mechanism
+class MHModel : public IMHModel
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHModel constructor
-    MHModel();
+    explicit MHModel();
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief MHModel destructor
-    ~MHModel() = default;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Set channel #0 state (ON/OFF)
-    /// @param id request channel by id
-    /// @param state request for channel #0 (ON | OFF)
+    /// @brief Sets channel #0 state (ON/OFF)
+    /// @param id represents request channel by id
+    /// @param state represents request for channel #0 (ON | OFF)
     void setChannel(const int id, const ChannelState state) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Get channel #0 state (ON/OFF)
-    /// @param id request channel by id
+    /// @brief Gets channel #0 state (ON/OFF)
+    /// @param id represents request channel by id
     /// @return channel state in enumerator format (ON | OFF)
     ChannelState getChannel(const int id) const final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Check is channel #0 ON (true) or OFF (false)
-    /// @param id request channel by id
-    /// @return boolean status true for open else false
+    /// @brief Checks is channel #0 ON (true) or OFF (false)
+    /// @param id represents request channel by id
+    /// @return status true for open else false
     bool isOnChannel(const int id) const final;
 
 private:

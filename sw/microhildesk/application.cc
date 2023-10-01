@@ -25,13 +25,13 @@ namespace
     constexpr const char kAppId[]{"org.electux.microhildesk"};
 }
 
-Application::Application(int argc, char *argv[]) : m_app{Gtk::Application::create(argc, argv, kAppId)},
-                                                   m_model{MHmakeSPtr<MHModel>()},
-                                                   m_view{MHmakeSPtr<MHView>()},
-                                                   m_controller{MHmakeUPtr<MHController>(m_model, m_view)}
-{
-    // TODO
-}
+Application::Application(int argc, char *argv[])
+    :
+        m_app{Gtk::Application::create(argc, argv, kAppId)},
+        m_model{MHmakeSPtr<MHModel>()},
+        m_view{MHmakeSPtr<MHView>()},
+        m_controller{MHmakeSPtr<MHController>(m_model, m_view)}
+{}
 
 int Application::run()
 {

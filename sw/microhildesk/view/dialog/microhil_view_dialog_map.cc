@@ -20,5 +20,7 @@
 
 void MHViewDialog::mapping()
 {
-    m_close->signal_clicked().connect(sigc::mem_fun(*this, &MHViewDialog::onHideDialogTriggered));
+    m_close->signal_clicked().connect(
+        sigc::mem_fun(*this, &MHViewDialog::onHideDialogTriggered)
+    );
 }

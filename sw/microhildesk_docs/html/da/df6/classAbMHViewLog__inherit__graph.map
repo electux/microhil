@@ -1,4 +1,4 @@
 <map id="AbMHViewLog" name="AbMHViewLog">
-<area shape="rect" id="node1" title="AbMHViewLog class declaration and definition." alt="" coords="5,5,200,215"/>
-<area shape="rect" id="node2" href="$d1/d14/classMHViewLog.html" title="MHViewLog class declaration and definition." alt="" coords="5,263,200,648"/>
+<area shape="rect" id="node1" title="AbMHViewLog class is abstract setup for log settings view." alt="" coords="5,5,200,215"/>
+<area shape="rect" id="node2" href="$d1/d14/classMHViewLog.html" title="MHViewLog class is implementation of log settings view." alt="" coords="5,263,200,633"/>
 </map>

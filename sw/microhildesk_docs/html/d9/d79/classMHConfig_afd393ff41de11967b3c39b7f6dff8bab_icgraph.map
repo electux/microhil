@@ -1,4 +1,4 @@
 <map id="MHConfig::checkConfigPath" name="MHConfig::checkConfigPath">
-<area shape="rect" id="node1" title="Checking existence of configuration file." alt="" coords="209,5,409,32"/>
+<area shape="rect" id="node1" title="Checks existence of configuration file." alt="" coords="209,5,409,32"/>
 <area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a21227a66402be020ed5c0c45a200ba33" title="MHConfig constructor." alt="" coords="5,5,161,32"/>
 </map>

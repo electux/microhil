@@ -1,4 +1,4 @@
 <map id="MHViewDialog::setMessage" name="MHViewDialog::setMessage">
-<area shape="rect" id="node1" title="Set message for dialog." alt="" coords="5,13,209,39"/>
-<area shape="rect" id="node2" href="$dc/d3c/classMHViewDialog.html#a1367f73fca3312702b70bfb5eb74ae5d" title="Conversion of message type to unicode string." alt="" coords="257,5,488,47"/>
+<area shape="rect" id="node1" title="Sets message for dialog." alt="" coords="5,13,209,39"/>
+<area shape="rect" id="node2" href="$dc/d3c/classMHViewDialog.html#a1367f73fca3312702b70bfb5eb74ae5d" title="Converts message type to unicode string." alt="" coords="257,5,488,47"/>
 </map>

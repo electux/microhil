@@ -1,4 +1,4 @@
 <map id="MHConfig::getDataBits" name="MHConfig::getDataBits">
-<area shape="rect" id="node1" title="Getting data bits for serial port from configuration." alt="" coords="5,5,176,32"/>
-<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a2c79435ada85d51feb668c7f6050e2c4" title="Process and prepare data bits (from config file)" alt="" coords="224,5,403,32"/>
+<area shape="rect" id="node1" title="Gets data&#45;bits for the serial port from configuration." alt="" coords="5,5,176,32"/>
+<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a2c79435ada85d51feb668c7f6050e2c4" title="Processes and prepares data&#45;bits (from config file)" alt="" coords="224,5,403,32"/>
 </map>

@@ -1,4 +1,0 @@
-<map id="MHSerialCom::uintToDataBits" name="MHSerialCom::uintToDataBits">
-<area shape="rect" id="node1" title="Convert data&#45;bits from unsigned int to scopped enumerator." alt="" coords="208,5,423,32"/>
-<area shape="rect" id="node2" href="$d1/dfa/classMHSerialCom.html#a6e59a9dab3b39e55eb811f60a5428877" title="Setup the serial port parameters." alt="" coords="5,5,160,32"/>
-</map>

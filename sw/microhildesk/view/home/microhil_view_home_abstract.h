@@ -72,35 +72,35 @@ enum class channelControlType : int
     MICROHIL_TIMER_BUTTON = 1
 };
 
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for menu itmes (trigger another view)
+using SigActionViewTriggered = sigc::signal<void(ViewId)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for check buttons (enable/disable channel)
+using SigChannelChanged = sigc::signal<void(Channel, bool)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for comboboxes (toogle/timer type control)
+using SigSelectChanged = sigc::signal<void(Channel, int)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for toogle buttons (turn on/turn off channel)
+using SigChannelToggled = sigc::signal<void(Channel, bool)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for spin buttons (based on timer setup)
+using SigChannelSpinTimerChanged = sigc::signal<void(Channel, int)>;
+
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for toogle buttons (based on timer setup)
+using SigChannelTimerToggled = sigc::signal<void(Channel, bool)>;
+
 ////////////////////////////////////////////////////////////////////////////
 /// @brief AbMHViewHome class declaration and definition
 class AbMHViewHome
 {
 public:
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for menu itmes (trigger another view)
-    using SigActionViewTriggered = sigc::signal<void(ViewId)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for check buttons (enable/disable channel)
-    using SigChannelChanged = sigc::signal<void(Channel, bool)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for comboboxes (toogle/timer type control)
-    using SigSelectChanged = sigc::signal<void(Channel, int)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for toogle buttons (turn on/turn off channel)
-    using SigChannelToggled = sigc::signal<void(Channel, bool)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for spin buttons (based on timer setup)
-    using SigChannelSpinTimerChanged = sigc::signal<void(Channel, int)>;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for toogle buttons (based on timer setup)
-    using SigChannelTimerToggled = sigc::signal<void(Channel, bool)>;
-
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewHome destructor
     virtual ~AbMHViewHome() = default;
@@ -117,7 +117,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing check buttons (enable/disable channel)
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onChannelChanged(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
@@ -127,7 +127,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing comboboxes (control type)
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onTypeSelected(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
@@ -137,7 +137,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off channel)
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onToggled(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
@@ -147,7 +147,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing spin buttons (based on timer)
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @param id repreesnts id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onSpinTimerChanged(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
@@ -157,6 +157,6 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off timer)
-    /// @param id for channel (Channel::MICROHIL_ID0 .. 7)
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onToggleTimerChanged(Channel id) = 0;
 };

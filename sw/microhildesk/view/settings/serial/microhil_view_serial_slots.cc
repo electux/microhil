@@ -59,7 +59,7 @@ void MHViewSerial::onOkSerialTriggered()
     serialParams.push_back(m_stopBits->get_active_row_number());
 
     ////////////////////////////////////////////////////////////////////////
-    /// Emit new serial settings
+    /// Emits new serial settings
     m_serialSetup.emit(devicePath, serialParams);
 
     this->hide();

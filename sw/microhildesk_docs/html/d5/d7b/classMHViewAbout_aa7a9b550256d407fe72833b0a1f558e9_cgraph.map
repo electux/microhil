@@ -1,5 +1,5 @@
 <map id="MHViewAbout::MHViewAbout" name="MHViewAbout::MHViewAbout">
 <area shape="rect" id="node1" title="MHViewAbout constructor." alt="" coords="5,13,220,39"/>
-<area shape="rect" id="node2" href="$d5/d7b/classMHViewAbout.html#afa6b5ef9b097a38221a9fa51b42910a6" title="Map Ok button (signal and slot)" alt="" coords="268,13,447,39"/>
+<area shape="rect" id="node2" href="$d5/d7b/classMHViewAbout.html#afa6b5ef9b097a38221a9fa51b42910a6" title="Maps Ok button (signal and slot)" alt="" coords="268,13,447,39"/>
 <area shape="rect" id="node3" href="$d5/d7b/classMHViewAbout.html#ae3171ca8a132b1cfef3bc895dbaa0f26" title="Slot for processing Ok button (self hide AboutDialog)" alt="" coords="495,5,701,47"/>
 </map>

@@ -37,30 +37,37 @@ namespace
     constexpr const char kOkButtonId[]{"LogOk"};
 }
 
-MHViewLog::MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui) : Gtk::Dialog(object), m_ui{ui}
+MHViewLog::MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui)
+    : Gtk::Dialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Log file path entry
-    m_device = MHRPtr<Gtk::Entry>::cast_dynamic(m_ui->get_object(kLogDevicePathId));
+    /// Binds Log file path entry
+    m_device = MHRPtr<Gtk::Entry>::cast_dynamic(
+        m_ui->get_object(kLogDevicePathId)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Log level combobox
-    m_level = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(m_ui->get_object(kLogLevelSelectorId));
+    /// Binds Log level combobox
+    m_level = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
+        m_ui->get_object(kLogLevelSelectorId)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Cancel button
-    m_cancel = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kCancelButtonId));
+    /// Binds Cancel button
+    m_cancel = MHRPtr<Gtk::Button>::cast_dynamic(
+        m_ui->get_object(kCancelButtonId)
+    );
 
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Ok button
+    /// Binds Ok button
     m_ok = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map all widgets (signals and slots)
+    /// Maps all widgets (signals and slots)
     mapping();
 
     ////////////////////////////////////////////////////////////////////////
-    /// Hide Log Settings by default
+    /// Hides Log Settings by default
     this->hide();
 }
 

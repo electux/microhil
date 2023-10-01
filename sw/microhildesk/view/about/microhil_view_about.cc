@@ -25,17 +25,19 @@ namespace
     constexpr const char kOkButtonId[]{"AboutOk"};
 }
 
-MHViewAbout::MHViewAbout(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui) : Gtk::AboutDialog(object), m_ui{ui}
+MHViewAbout::MHViewAbout(
+    BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui
+) : Gtk::AboutDialog(object), m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
-    /// Bind Ok button
+    /// Binds Ok button
     m_ok = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
 
     ////////////////////////////////////////////////////////////////////////
-    /// Map Ok button (signal and slot)
+    /// Maps Ok button (signal and slot)
     mapping();
 
     ////////////////////////////////////////////////////////////////////////
-    /// Hide About dialog by default
+    /// Hides About dialog by default
     this->hide();
 }
