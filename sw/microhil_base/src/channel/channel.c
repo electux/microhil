@@ -20,6 +20,8 @@
 #include "io_config.h"
 #include "channel.h"
 
+#define VERBOSE
+
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Marks private functions
 #define MICROHIL_PRIVATE

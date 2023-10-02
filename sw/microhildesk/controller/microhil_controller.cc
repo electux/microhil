@@ -19,12 +19,11 @@
 #include "microhil_controller.h"
 
 MHController::MHController(MHSPtr<IMHModel> model, MHSPtr<IMHView> view)
-    :
-        m_model{model},
-        m_view{view},
-        m_config{MHmakeSPtr<MHConfig>()},
-        m_log{MHmakeSPtr<MHLog>()},
-        m_serial{MHmakeSPtr<MHSerialCom>()}
+    : m_model{model},
+      m_view{view},
+      m_config{MHmakeSPtr<MHConfig>()},
+      m_log{MHmakeSPtr<MHLog>()},
+      m_serial{MHmakeSPtr<MHSerialCom>()}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Maps views and backend (signals and slots)

@@ -74,6 +74,11 @@ public:
     /// @param params represents set of serial parameters
     void onSerialSettingsLoaded(MHString &dev, MHVecUInt &params) final;
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing serial port changes
+    /// @param state true for enable port, else false
+    void onSerialControlChanged(bool state) final;
+
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Enable/Disable state of controller

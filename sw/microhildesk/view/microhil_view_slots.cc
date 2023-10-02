@@ -22,13 +22,31 @@ void MHView::onViewChanged(ViewId id)
 {
     switch (static_cast<int>(id))
     {
+    case static_cast<int>(ViewId::MICROHIL_CONNECT):
+        ////////////////////////////////////////////////////////////////////
+        /// Enables and opens the serial port
+        m_serialPortChanged.emit(true);
+        break;
+    case static_cast<int>(ViewId::MICROHIL_DISCONNECT):
+        ////////////////////////////////////////////////////////////////////
+        /// Disables and closes the serial port
+        m_serialPortChanged.emit(false);
+        break;
+    case static_cast<int>(ViewId::MICROHIL_QUIT):
+        break;
     case static_cast<int>(ViewId::MICROHIL_SERIAL_SETTINGS):
+        ////////////////////////////////////////////////////////////////////
+        /// Activate serial settings view
         m_serial->show();
         break;
     case static_cast<int>(ViewId::MICROHIL_LOG_SETTINGS):
+        ////////////////////////////////////////////////////////////////////
+        /// Activate log settings view
         m_log->show();
         break;
     case static_cast<int>(ViewId::MICROHIL_ABOUT):
+        ////////////////////////////////////////////////////////////////////
+        /// Activate about view
         m_about->show();
         break;
     }

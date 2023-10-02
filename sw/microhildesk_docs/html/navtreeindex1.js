@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"d5/d63/microhil__view__home__map_8cc_source.html":[1,0,6,2,3],
+"d5/d7b/classMHViewAbout.html":[0,0,18],
+"d5/d7b/classMHViewAbout.html#a0789d2abb8f5f785a264bce57130bf5b":[0,0,18,6],
+"d5/d7b/classMHViewAbout.html#a1293fd8715f0f25076fbd3db82dd41df":[0,0,18,4],
 "d5/d7b/classMHViewAbout.html#a9a4fd3d6b533d256dd055acdbb12e0ec":[0,0,18,1],
 "d5/d7b/classMHViewAbout.html#aa7a9b550256d407fe72833b0a1f558e9":[0,0,18,0],
 "d5/d7b/classMHViewAbout.html#ad838d9162bea596999a43b0ef2fb5c4e":[0,0,18,5],
@@ -169,6 +173,7 @@ var NAVTREEINDEX1 =
 "da/d3e/classMHModel.html#a9931717f2f94699409fe23f2939b3399":[0,0,15,3],
 "da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660":[0,0,15,4],
 "da/db1/microhil__iview_8h.html":[1,0,6,4],
+"da/db1/microhil__iview_8h.html#af02e449f1c8133102a7d5b97286770e3":[1,0,6,4,1],
 "da/db1/microhil__iview_8h_source.html":[1,0,6,4],
 "da/dc9/microhil__view__dialog__slots_8cc.html":[1,0,6,1,5],
 "da/dc9/microhil__view__dialog__slots_8cc_source.html":[1,0,6,1,5],
@@ -244,10 +249,5 @@ var NAVTREEINDEX1 =
 "dc/def/classMHViewHome.html#ab7ec194de1a3b46061ea141eb228df0f":[0,0,20,1],
 "dc/def/classMHViewHome.html#abbb2b0ac5cd3b3dfdf86d30046a936c9":[0,0,20,13],
 "dc/def/classMHViewHome.html#ac08179ca721b6af648c0eabce68cd0cc":[0,0,20,27],
-"dc/def/classMHViewHome.html#ac25f37178b6c40963eef40fb3e0752f5":[0,0,20,17],
-"dc/def/classMHViewHome.html#ad3dcf0efb37d0818226d57d9f13d963a":[0,0,20,18],
-"dc/def/classMHViewHome.html#ad701959c37ca33f1d4cb06b55d043728":[0,0,20,19],
-"dc/def/classMHViewHome.html#adabcb6142d224910cbd6d26c40410a09":[0,0,20,9],
-"dc/def/classMHViewHome.html#ade17405d5e1562f05acdbcd52cabee61":[0,0,20,21],
-"dc/def/classMHViewHome.html#ade6aeaa6c8d62aec1d8ee3327e9f78bf":[0,0,20,44]
+"dc/def/classMHViewHome.html#ac25f37178b6c40963eef40fb3e0752f5":[0,0,20,17]
 };

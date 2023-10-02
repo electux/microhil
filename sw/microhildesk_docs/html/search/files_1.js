@@ -62,5 +62,6 @@ var searchData=
   ['microhil_5fview_5fserial_5fmap_2ecc_59',['microhil_view_serial_map.cc',['../da/d14/microhil__view__serial__map_8cc.html',1,'']]],
   ['microhil_5fview_5fserial_5fsignals_2ecc_60',['microhil_view_serial_signals.cc',['../d1/d99/microhil__view__serial__signals_8cc.html',1,'']]],
   ['microhil_5fview_5fserial_5fslots_2ecc_61',['microhil_view_serial_slots.cc',['../d4/df5/microhil__view__serial__slots_8cc.html',1,'']]],
-  ['microhil_5fview_5fslots_2ecc_62',['microhil_view_slots.cc',['../d4/d7c/microhil__view__slots_8cc.html',1,'']]]
+  ['microhil_5fview_5fsignals_2ecc_62',['microhil_view_signals.cc',['../df/d6c/microhil__view__signals_8cc.html',1,'']]],
+  ['microhil_5fview_5fslots_2ecc_63',['microhil_view_slots.cc',['../d4/d7c/microhil__view__slots_8cc.html',1,'']]]
 ];

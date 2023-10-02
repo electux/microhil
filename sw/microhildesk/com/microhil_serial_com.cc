@@ -41,20 +41,44 @@ void MHSerialCom::close()
 
 void MHSerialCom::setup(const MHString &device, const MHVecUInt &params)
 {
+    if (m_serialPort->IsOpen())
+    {
+        m_serialPort->Close();
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets serial port device path
+    m_device = device;
+
+    open();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets serial port parameters
     m_serialPort->SetBaudRate(uintToBaudRate(params[0]));
     m_serialPort->SetCharacterSize(uintToDataBits(params[1]));
     m_serialPort->SetParity(uintToParity(params[2]));
     m_serialPort->SetStopBits(uintToStopBits(params[3]));
-    m_device = device;
 }
 
 void MHSerialCom::setup(const MHString &device, const MHSerialParams &params)
 {
+    if (m_serialPort->IsOpen())
+    {
+        m_serialPort->Close();
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets serial port device path 
+    m_device = device;
+
+    open();
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets serial port parameters
     m_serialPort->SetBaudRate(params.baudRate);
     m_serialPort->SetCharacterSize(params.dataBits);
     m_serialPort->SetParity(params.parity);
     m_serialPort->SetStopBits(params.stopBits);
-    m_device = device;
 }
 
 void MHSerialCom::read(MHVecByte &data, size_t len, size_t timeout)

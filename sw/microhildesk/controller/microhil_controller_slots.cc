@@ -26,7 +26,7 @@ void MHController::onLogSettingsChanged(MHString &path, int level)
     m_config->setLogPath(path);
     m_config->setLogLevel(level);
 
-    if(!m_config->store())
+    if (!m_config->store())
     {
         // TODO
         // Emit signal for error handler
@@ -59,19 +59,19 @@ void MHController::onSerialSettingsChanged(MHString &dev, MHVecUInt &params)
     m_config->setParity(static_cast<int>(params[2]));
     m_config->setStopBits(static_cast<int>(params[3]));
 
-    if(!m_config->store())
+    if (!m_config->store())
     {
         // TODO
         // Emit signal for error handler
+
         // TODO
         // logging
     }
 
     ////////////////////////////////////////////////////////////////////////
     /// Updates serial handler
-    m_serial->close();
-    // m_serial->setup(device, params);
-    // m_serial->open();
+    m_serial->setup(dev, params);
+
     // TODO
     // logging
 }
@@ -79,4 +79,23 @@ void MHController::onSerialSettingsChanged(MHString &dev, MHVecUInt &params)
 void MHController::onSerialSettingsLoaded(MHString &dev, MHVecUInt &params)
 {
     m_view->getSerialSettings()->serialSettingsLoaded(dev, params);
+}
+
+void MHController::onSerialControlChanged(bool state)
+{
+    if (state)
+    {
+        MHVecUInt serialParams{};
+        serialParams.push_back(m_config->getBaudRate());
+        serialParams.push_back(m_config->getDataBits());
+        serialParams.push_back(
+            m_config->parityUnicodeStringToInt(m_config->getParity())
+        );
+        serialParams.push_back(m_config->getStopBits());
+        m_serial->setup(m_config->getDevice(), serialParams);
+    }
+    else
+    {
+        m_serial->close();
+    }
 }

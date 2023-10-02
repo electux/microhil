@@ -23,6 +23,10 @@
 #include "settings/serial/microhil_view_serial.h"
 #include "../utils/microhil_types.h"
 
+////////////////////////////////////////////////////////////////////////
+/// @brief Signal type for enable/disable serial communication channel
+using SigSerialControl = sigc::signal<void(bool)>;
+
 ////////////////////////////////////////////////////////////////////////////
 /// @brief IMHView class is interface set for view
 class IMHView
@@ -31,6 +35,11 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief IMHView destructor
     virtual ~IMHView() = default;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Signal for controling serial port
+    /// @return Signal for clicked Connect/Disconnect
+    virtual SigSerialControl serialControlChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets home view

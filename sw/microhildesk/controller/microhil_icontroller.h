@@ -66,4 +66,9 @@ public:
     /// @param dev represents file path for serial device
     /// @param params represents set of serial parameters
     virtual void onSerialSettingsLoaded(MHString &dev, MHVecUInt &params) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing serial port changes
+    /// @param state true for enable port, else false
+    virtual void onSerialControlChanged(bool state) = 0;
 };

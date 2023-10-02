@@ -101,8 +101,8 @@ Inheritance diagram for MHController:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/d01/classMHController__inherit__graph.png" border="0" usemap="#aMHController_inherit__map" alt="Inheritance graph"/></div>
 <map name="aMHController_inherit__map" id="aMHController_inherit__map">
-<area shape="rect" title="MHController class is implementation of controller." alt="" coords="5,233,216,487"/>
-<area shape="rect" href="../../d2/ddd/classIMHController.html" title="IMHController class is interface set for controller." alt="" coords="5,5,216,185"/>
+<area shape="rect" title="MHController class is implementation of controller." alt="" coords="5,248,216,516"/>
+<area shape="rect" href="../../d2/ddd/classIMHController.html" title="IMHController class is interface set for controller." alt="" coords="5,5,216,200"/>
 </map>
 </div>
 <div class="dynheader">
@@ -110,14 +110,14 @@ Collaboration diagram for MHController:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d7b/classMHController__coll__graph.png" border="0" usemap="#aMHController_coll__map" alt="Collaboration graph"/></div>
 <map name="aMHController_coll__map" id="aMHController_coll__map">
-<area shape="rect" title="MHController class is implementation of controller." alt="" coords="480,248,691,428"/>
-<area shape="rect" href="../../d2/ddd/classIMHController.html" title="IMHController class is interface set for controller." alt="" coords="5,5,216,185"/>
-<area shape="rect" title=" " alt="" coords="240,57,291,134"/>
-<area shape="rect" title=" " alt="" coords="315,57,482,134"/>
-<area shape="rect" title=" " alt="" coords="506,57,665,134"/>
-<area shape="rect" title=" " alt="" coords="689,57,855,134"/>
-<area shape="rect" title=" " alt="" coords="880,57,1029,134"/>
-<area shape="rect" title=" " alt="" coords="1054,57,1210,134"/>
+<area shape="rect" title="MHController class is implementation of controller." alt="" coords="480,263,691,457"/>
+<area shape="rect" href="../../d2/ddd/classIMHController.html" title="IMHController class is interface set for controller." alt="" coords="5,5,216,200"/>
+<area shape="rect" title=" " alt="" coords="240,64,291,141"/>
+<area shape="rect" title=" " alt="" coords="315,64,482,141"/>
+<area shape="rect" title=" " alt="" coords="506,64,665,141"/>
+<area shape="rect" title=" " alt="" coords="689,64,855,141"/>
+<area shape="rect" title=" " alt="" coords="880,64,1029,141"/>
+<area shape="rect" title=" " alt="" coords="1054,64,1210,141"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -147,6 +147,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a386e969734824a32513b94cf4a346e77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77">onSerialSettingsLoaded</a> (<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;dev, <a class="el" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a> &amp;params) final</td></tr>
 <tr class="memdesc:a386e969734824a32513b94cf4a346e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing serial settings changes.  <a href="../../d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77">More...</a><br /></td></tr>
 <tr class="separator:a386e969734824a32513b94cf4a346e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe4990a6b9274f12e6efbef0be293fdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d75/classMHController.html#afe4990a6b9274f12e6efbef0be293fdd">onSerialControlChanged</a> (bool state) final</td></tr>
+<tr class="memdesc:afe4990a6b9274f12e6efbef0be293fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing serial port changes.  <a href="../../d1/d75/classMHController.html#afe4990a6b9274f12e6efbef0be293fdd">More...</a><br /></td></tr>
+<tr class="separator:afe4990a6b9274f12e6efbef0be293fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -223,56 +226,56 @@ Private Attributes</h2></td></tr>
 <p >Sets log level from configuration</p>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00021">21</a> of file <a class="el" href="../../db/d49/microhil__controller_8cc_source.html">microhil_controller.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>    :</div>
-<div class="line"><span class="lineno">   23</span>        <a class="code hl_variable" href="../../d1/d75/classMHController.html#ad13d88fbe6ad3fabf1d8dfcbca5ccff5">m_model</a>{model},</div>
-<div class="line"><span class="lineno">   24</span>        <a class="code hl_variable" href="../../d1/d75/classMHController.html#a82808cfcc7fd3a0ec8d5ddb683932506">m_view</a>{view},</div>
-<div class="line"><span class="lineno">   25</span>        <a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>{MHmakeSPtr&lt;MHConfig&gt;()},</div>
-<div class="line"><span class="lineno">   26</span>        <a class="code hl_variable" href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">m_log</a>{MHmakeSPtr&lt;MHLog&gt;()},</div>
-<div class="line"><span class="lineno">   27</span>        <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1fa50bd7ea903c3e18a10b97bfe31c61">m_serial</a>{MHmakeSPtr&lt;MHSerialCom&gt;()}</div>
-<div class="line"><span class="lineno">   28</span>{</div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_function" href="../../d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f">mapping</a>();</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;isPreValid())</div>
-<div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        <span class="comment">// TODO</span></div>
-<div class="line"><span class="lineno">   38</span>        <span class="comment">// Emit signal for error handler</span></div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;load())</div>
-<div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>        <span class="comment">// TODO</span></div>
-<div class="line"><span class="lineno">   46</span>        <span class="comment">// Emit signal for error handler</span></div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">m_log</a>-&gt;setFilePath(<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;getLogPath());</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">m_log</a>-&gt;setLogLevel(<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;getLogLevel());</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">m_log</a>-&gt;open())</div>
-<div class="line"><span class="lineno">   58</span>    {</div>
-<div class="line"><span class="lineno">   59</span>        <span class="comment">// TODO</span></div>
-<div class="line"><span class="lineno">   60</span>        <span class="comment">// Emit signal for error handler</span></div>
-<div class="line"><span class="lineno">   61</span>    }</div>
-<div class="line"><span class="lineno">   62</span>}</div>
-<div class="ttc" id="aclassMHController_html_a1fa50bd7ea903c3e18a10b97bfe31c61"><div class="ttname"><a href="../../d1/d75/classMHController.html#a1fa50bd7ea903c3e18a10b97bfe31c61">MHController::m_serial</a></div><div class="ttdeci">MHSPtr&lt; IMHCom &gt; m_serial</div><div class="ttdoc">Serial port instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00100">microhil_controller.h:100</a></div></div>
-<div class="ttc" id="aclassMHController_html_a20f549e1c36434fea453e975899479db"><div class="ttname"><a href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">MHController::m_log</a></div><div class="ttdeci">MHSPtr&lt; IMHLog &gt; m_log</div><div class="ttdoc">Log instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00096">microhil_controller.h:96</a></div></div>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>    : <a class="code hl_variable" href="../../d1/d75/classMHController.html#ad13d88fbe6ad3fabf1d8dfcbca5ccff5">m_model</a>{model},</div>
+<div class="line"><span class="lineno">   23</span>      <a class="code hl_variable" href="../../d1/d75/classMHController.html#a82808cfcc7fd3a0ec8d5ddb683932506">m_view</a>{view},</div>
+<div class="line"><span class="lineno">   24</span>      <a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>{MHmakeSPtr&lt;MHConfig&gt;()},</div>
+<div class="line"><span class="lineno">   25</span>      <a class="code hl_variable" href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">m_log</a>{MHmakeSPtr&lt;MHLog&gt;()},</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1fa50bd7ea903c3e18a10b97bfe31c61">m_serial</a>{MHmakeSPtr&lt;MHSerialCom&gt;()}</div>
+<div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_function" href="../../d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f">mapping</a>();</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;isPreValid())</div>
+<div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>        <span class="comment">// TODO</span></div>
+<div class="line"><span class="lineno">   37</span>        <span class="comment">// Emit signal for error handler</span></div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;load())</div>
+<div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>        <span class="comment">// TODO</span></div>
+<div class="line"><span class="lineno">   45</span>        <span class="comment">// Emit signal for error handler</span></div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">m_log</a>-&gt;setFilePath(<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;getLogPath());</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">m_log</a>-&gt;setLogLevel(<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;getLogLevel());</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">m_log</a>-&gt;open())</div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="comment">// TODO</span></div>
+<div class="line"><span class="lineno">   59</span>        <span class="comment">// Emit signal for error handler</span></div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span>}</div>
+<div class="ttc" id="aclassMHController_html_a1fa50bd7ea903c3e18a10b97bfe31c61"><div class="ttname"><a href="../../d1/d75/classMHController.html#a1fa50bd7ea903c3e18a10b97bfe31c61">MHController::m_serial</a></div><div class="ttdeci">MHSPtr&lt; IMHCom &gt; m_serial</div><div class="ttdoc">Serial port instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00105">microhil_controller.h:105</a></div></div>
+<div class="ttc" id="aclassMHController_html_a20f549e1c36434fea453e975899479db"><div class="ttname"><a href="../../d1/d75/classMHController.html#a20f549e1c36434fea453e975899479db">MHController::m_log</a></div><div class="ttdeci">MHSPtr&lt; IMHLog &gt; m_log</div><div class="ttdoc">Log instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00101">microhil_controller.h:101</a></div></div>
 <div class="ttc" id="aclassMHController_html_a66e872754df9449a312d014e6055f76f"><div class="ttname"><a href="../../d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f">MHController::mapping</a></div><div class="ttdeci">void mapping() final</div><div class="ttdoc">Maps views and backend (signals and slots)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">microhil_controller_map.cc:21</a></div></div>
-<div class="ttc" id="aclassMHController_html_a82808cfcc7fd3a0ec8d5ddb683932506"><div class="ttname"><a href="../../d1/d75/classMHController.html#a82808cfcc7fd3a0ec8d5ddb683932506">MHController::m_view</a></div><div class="ttdeci">MHSPtr&lt; IMHView &gt; m_view</div><div class="ttdoc">View instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00088">microhil_controller.h:88</a></div></div>
-<div class="ttc" id="aclassMHController_html_aceac95e6f436abbe58061523e69511d5"><div class="ttname"><a href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">MHController::m_config</a></div><div class="ttdeci">MHSPtr&lt; IMHConfig &gt; m_config</div><div class="ttdoc">Configuration instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00092">microhil_controller.h:92</a></div></div>
-<div class="ttc" id="aclassMHController_html_ad13d88fbe6ad3fabf1d8dfcbca5ccff5"><div class="ttname"><a href="../../d1/d75/classMHController.html#ad13d88fbe6ad3fabf1d8dfcbca5ccff5">MHController::m_model</a></div><div class="ttdeci">MHSPtr&lt; IMHModel &gt; m_model</div><div class="ttdoc">Model instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00084">microhil_controller.h:84</a></div></div>
+<div class="ttc" id="aclassMHController_html_a82808cfcc7fd3a0ec8d5ddb683932506"><div class="ttname"><a href="../../d1/d75/classMHController.html#a82808cfcc7fd3a0ec8d5ddb683932506">MHController::m_view</a></div><div class="ttdeci">MHSPtr&lt; IMHView &gt; m_view</div><div class="ttdoc">View instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00093">microhil_controller.h:93</a></div></div>
+<div class="ttc" id="aclassMHController_html_aceac95e6f436abbe58061523e69511d5"><div class="ttname"><a href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">MHController::m_config</a></div><div class="ttdeci">MHSPtr&lt; IMHConfig &gt; m_config</div><div class="ttdoc">Configuration instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00097">microhil_controller.h:97</a></div></div>
+<div class="ttc" id="aclassMHController_html_ad13d88fbe6ad3fabf1d8dfcbca5ccff5"><div class="ttname"><a href="../../d1/d75/classMHController.html#ad13d88fbe6ad3fabf1d8dfcbca5ccff5">MHController::m_model</a></div><div class="ttdeci">MHSPtr&lt; IMHModel &gt; m_model</div><div class="ttdoc">Model instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00089">microhil_controller.h:89</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00092">m_config</a>, <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00096">m_log</a>, and <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00097">m_config</a>, <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00101">m_log</a>, and <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/d75/classMHController_a8f66d2746244a191b94c6e7aab9f1a77_cgraph.png" border="0" usemap="#ad1/d75/classMHController_a8f66d2746244a191b94c6e7aab9f1a77_cgraph" alt=""/></div>
 <map name="ad1/d75/classMHController_a8f66d2746244a191b94c6e7aab9f1a77_cgraph" id="ad1/d75/classMHController_a8f66d2746244a191b94c6e7aab9f1a77_cgraph">
-<area shape="rect" title="MHController constructor." alt="" coords="5,111,208,138"/>
-<area shape="rect" href="../../d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f" title="Maps views and backend (signals and slots)" alt="" coords="256,111,429,138"/>
+<area shape="rect" title="MHController constructor." alt="" coords="5,143,208,170"/>
+<area shape="rect" href="../../d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f" title="Maps views and backend (signals and slots)" alt="" coords="256,143,429,170"/>
 <area shape="rect" href="../../d1/d75/classMHController.html#ad6f3e6c35f58ee02b13b19a9999a3703" title="Slot for processing log settings changes." alt="" coords="485,5,693,47"/>
 <area shape="rect" href="../../d1/d75/classMHController.html#a894230eda2339035729894ef57a6e675" title="Slot for processing log settings loaded." alt="" coords="485,71,693,112"/>
-<area shape="rect" href="../../d1/d75/classMHController.html#a1bda7b5726e5affa27dccbe6b2879ffc" title="Slot for processing serial settings changes." alt="" coords="477,136,700,177"/>
-<area shape="rect" href="../../d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77" title="Slot for processing serial settings changes." alt="" coords="477,201,700,243"/>
+<area shape="rect" href="../../d1/d75/classMHController.html#afe4990a6b9274f12e6efbef0be293fdd" title="Slot for processing serial port changes." alt="" coords="481,136,697,177"/>
+<area shape="rect" href="../../d1/d75/classMHController.html#a1bda7b5726e5affa27dccbe6b2879ffc" title="Slot for processing serial settings changes." alt="" coords="477,201,700,243"/>
+<area shape="rect" href="../../d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77" title="Slot for processing serial settings changes." alt="" coords="477,267,700,308"/>
 </map>
 </div>
 
@@ -307,13 +310,13 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d2/ddd/classIMHController.html#a7eb18a71c63c7fafe0735087af0bbdbe">IMHController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00069">69</a> of file <a class="el" href="../../db/d49/microhil__controller_8cc_source.html">microhil_controller.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>{</div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1546c7844387b532cd1d86770fe42d9d">m_enabled</a>;</div>
-<div class="line"><span class="lineno">   72</span>}</div>
-<div class="ttc" id="aclassMHController_html_a1546c7844387b532cd1d86770fe42d9d"><div class="ttname"><a href="../../d1/d75/classMHController.html#a1546c7844387b532cd1d86770fe42d9d">MHController::m_enabled</a></div><div class="ttdeci">bool m_enabled</div><div class="ttdoc">Enable/Disable state of controller.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00080">microhil_controller.h:80</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00068">68</a> of file <a class="el" href="../../db/d49/microhil__controller_8cc_source.html">microhil_controller.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1546c7844387b532cd1d86770fe42d9d">m_enabled</a>;</div>
+<div class="line"><span class="lineno">   71</span>}</div>
+<div class="ttc" id="aclassMHController_html_a1546c7844387b532cd1d86770fe42d9d"><div class="ttname"><a href="../../d1/d75/classMHController.html#a1546c7844387b532cd1d86770fe42d9d">MHController::m_enabled</a></div><div class="ttdeci">bool m_enabled</div><div class="ttdoc">Enable/Disable state of controller.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da2/microhil__controller_8h_source.html#l00085">microhil_controller.h:85</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00080">m_enabled</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00085">m_enabled</a>.</p>
 
 </div>
 </div>
@@ -345,6 +348,7 @@ Here is the call graph for this function:</div>
 <p >Maps serial settings signal from configuration with controller slot</p>
 <p >Maps log view signal with controller slot</p>
 <p >Maps serial view signal with controller slot</p>
+<p >Maps view signal and controller slot</p>
 
 <p>Implements <a class="el" href="../../d2/ddd/classIMHController.html#adc79977ac31ee14cb653d5ed7298c406">IMHController</a>.</p>
 
@@ -365,13 +369,18 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a82808cfcc7fd3a0ec8d5ddb683932506">m_view</a>-&gt;getSerialSettings()-&gt;serialSetupChanged().connect(</div>
 <div class="line"><span class="lineno">   44</span>        sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d1/d75/classMHController.html#a1bda7b5726e5affa27dccbe6b2879ffc">MHController::onSerialSettingsChanged</a>)</div>
 <div class="line"><span class="lineno">   45</span>    );</div>
-<div class="line"><span class="lineno">   46</span>}</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a82808cfcc7fd3a0ec8d5ddb683932506">m_view</a>-&gt;serialControlChanged().connect(</div>
+<div class="line"><span class="lineno">   50</span>        sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d1/d75/classMHController.html#afe4990a6b9274f12e6efbef0be293fdd">MHController::onSerialControlChanged</a>)</div>
+<div class="line"><span class="lineno">   51</span>    );</div>
+<div class="line"><span class="lineno">   52</span>}</div>
 <div class="ttc" id="aclassMHController_html_a1bda7b5726e5affa27dccbe6b2879ffc"><div class="ttname"><a href="../../d1/d75/classMHController.html#a1bda7b5726e5affa27dccbe6b2879ffc">MHController::onSerialSettingsChanged</a></div><div class="ttdeci">void onSerialSettingsChanged(MHString &amp;dev, MHVecUInt &amp;params) final</div><div class="ttdoc">Slot for processing serial settings changes.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00051">microhil_controller_slots.cc:51</a></div></div>
 <div class="ttc" id="aclassMHController_html_a386e969734824a32513b94cf4a346e77"><div class="ttname"><a href="../../d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77">MHController::onSerialSettingsLoaded</a></div><div class="ttdeci">void onSerialSettingsLoaded(MHString &amp;dev, MHVecUInt &amp;params) final</div><div class="ttdoc">Slot for processing serial settings changes.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00079">microhil_controller_slots.cc:79</a></div></div>
 <div class="ttc" id="aclassMHController_html_a894230eda2339035729894ef57a6e675"><div class="ttname"><a href="../../d1/d75/classMHController.html#a894230eda2339035729894ef57a6e675">MHController::onLogSettingsLoaded</a></div><div class="ttdeci">void onLogSettingsLoaded(MHString &amp;path, int level) final</div><div class="ttdoc">Slot for processing log settings loaded.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00046">microhil_controller_slots.cc:46</a></div></div>
 <div class="ttc" id="aclassMHController_html_ad6f3e6c35f58ee02b13b19a9999a3703"><div class="ttname"><a href="../../d1/d75/classMHController.html#ad6f3e6c35f58ee02b13b19a9999a3703">MHController::onLogSettingsChanged</a></div><div class="ttdeci">void onLogSettingsChanged(MHString &amp;path, int level) final</div><div class="ttdoc">Slot for processing log settings changes.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00022">microhil_controller_slots.cc:22</a></div></div>
+<div class="ttc" id="aclassMHController_html_afe4990a6b9274f12e6efbef0be293fdd"><div class="ttname"><a href="../../d1/d75/classMHController.html#afe4990a6b9274f12e6efbef0be293fdd">MHController::onSerialControlChanged</a></div><div class="ttdeci">void onSerialControlChanged(bool state) final</div><div class="ttdoc">Slot for processing serial port changes.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00084">microhil_controller_slots.cc:84</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00092">m_config</a>, <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00088">m_view</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00022">onLogSettingsChanged()</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00046">onLogSettingsLoaded()</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00051">onSerialSettingsChanged()</a>, and <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00079">onSerialSettingsLoaded()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00097">m_config</a>, <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00093">m_view</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00022">onLogSettingsChanged()</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00046">onLogSettingsLoaded()</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00084">onSerialControlChanged()</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00051">onSerialSettingsChanged()</a>, and <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00079">onSerialSettingsLoaded()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00021">MHController()</a>.</p>
 <div class="dynheader">
@@ -379,11 +388,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/d75/classMHController_a66e872754df9449a312d014e6055f76f_cgraph.png" border="0" usemap="#ad1/d75/classMHController_a66e872754df9449a312d014e6055f76f_cgraph" alt=""/></div>
 <map name="ad1/d75/classMHController_a66e872754df9449a312d014e6055f76f_cgraph" id="ad1/d75/classMHController_a66e872754df9449a312d014e6055f76f_cgraph">
-<area shape="rect" title="Maps views and backend (signals and slots)" alt="" coords="5,111,179,138"/>
+<area shape="rect" title="Maps views and backend (signals and slots)" alt="" coords="5,143,179,170"/>
 <area shape="rect" href="../../d1/d75/classMHController.html#ad6f3e6c35f58ee02b13b19a9999a3703" title="Slot for processing log settings changes." alt="" coords="234,5,442,47"/>
 <area shape="rect" href="../../d1/d75/classMHController.html#a894230eda2339035729894ef57a6e675" title="Slot for processing log settings loaded." alt="" coords="234,71,442,112"/>
-<area shape="rect" href="../../d1/d75/classMHController.html#a1bda7b5726e5affa27dccbe6b2879ffc" title="Slot for processing serial settings changes." alt="" coords="227,136,449,177"/>
-<area shape="rect" href="../../d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77" title="Slot for processing serial settings changes." alt="" coords="227,201,449,243"/>
+<area shape="rect" href="../../d1/d75/classMHController.html#afe4990a6b9274f12e6efbef0be293fdd" title="Slot for processing serial port changes." alt="" coords="230,136,446,177"/>
+<area shape="rect" href="../../d1/d75/classMHController.html#a1bda7b5726e5affa27dccbe6b2879ffc" title="Slot for processing serial settings changes." alt="" coords="227,201,449,243"/>
+<area shape="rect" href="../../d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77" title="Slot for processing serial settings changes." alt="" coords="227,267,449,308"/>
 </map>
 </div>
 <div class="dynheader">
@@ -450,7 +460,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;setLogPath(path);</div>
 <div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;setLogLevel(level);</div>
 <div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;store())</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;store())</div>
 <div class="line"><span class="lineno">   30</span>    {</div>
 <div class="line"><span class="lineno">   31</span>        <span class="comment">// TODO</span></div>
 <div class="line"><span class="lineno">   32</span>        <span class="comment">// Emit signal for error handler</span></div>
@@ -465,7 +475,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   43</span>    <span class="comment">// logging</span></div>
 <div class="line"><span class="lineno">   44</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00092">m_config</a>, and <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00096">m_log</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00097">m_config</a>, and <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00101">m_log</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>.</p>
 <div class="dynheader">
@@ -531,7 +541,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   48</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a82808cfcc7fd3a0ec8d5ddb683932506">m_view</a>-&gt;getLogSettings()-&gt;logSettingsLoaded(path, level);</div>
 <div class="line"><span class="lineno">   49</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00088">m_view</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00093">m_view</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>.</p>
 <div class="dynheader">
@@ -540,6 +550,76 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="../../d1/d75/classMHController_a894230eda2339035729894ef57a6e675_icgraph.png" border="0" usemap="#ad1/d75/classMHController_a894230eda2339035729894ef57a6e675_icgraph" alt=""/></div>
 <map name="ad1/d75/classMHController_a894230eda2339035729894ef57a6e675_icgraph" id="ad1/d75/classMHController_a894230eda2339035729894ef57a6e675_icgraph">
 <area shape="rect" title="Slot for processing log settings loaded." alt="" coords="477,5,685,47"/>
+<area shape="rect" href="../../d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f" title="Maps views and backend (signals and slots)" alt="" coords="256,13,429,39"/>
+<area shape="rect" href="../../d1/d75/classMHController.html#a8f66d2746244a191b94c6e7aab9f1a77" title="MHController constructor." alt="" coords="5,13,208,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afe4990a6b9274f12e6efbef0be293fdd" name="afe4990a6b9274f12e6efbef0be293fdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe4990a6b9274f12e6efbef0be293fdd">&#9670;&nbsp;</a></span>onSerialControlChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MHController::onSerialControlChanged </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for processing serial port changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>true for enable port, else false </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="../../d2/ddd/classIMHController.html#ae1e2b3766232bb224e5cfb44897dc0ff">IMHController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00084">84</a> of file <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html">microhil_controller_slots.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (state)</div>
+<div class="line"><span class="lineno">   87</span>    {</div>
+<div class="line"><span class="lineno">   88</span>        <a class="code hl_typedef" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a> serialParams{};</div>
+<div class="line"><span class="lineno">   89</span>        serialParams.push_back(<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;getBaudRate());</div>
+<div class="line"><span class="lineno">   90</span>        serialParams.push_back(<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;getDataBits());</div>
+<div class="line"><span class="lineno">   91</span>        serialParams.push_back(</div>
+<div class="line"><span class="lineno">   92</span>            <a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;parityUnicodeStringToInt(<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;getParity())</div>
+<div class="line"><span class="lineno">   93</span>        );</div>
+<div class="line"><span class="lineno">   94</span>        serialParams.push_back(<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;getStopBits());</div>
+<div class="line"><span class="lineno">   95</span>        <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1fa50bd7ea903c3e18a10b97bfe31c61">m_serial</a>-&gt;setup(<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;getDevice(), serialParams);</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   98</span>    {</div>
+<div class="line"><span class="lineno">   99</span>        <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1fa50bd7ea903c3e18a10b97bfe31c61">m_serial</a>-&gt;close();</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>}</div>
+<div class="ttc" id="amicrohil__types_8h_html_a2918554c846c4149ce02029e00920b89"><div class="ttname"><a href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; MHVecUInt</div><div class="ttdoc">Declared type vector of int elements.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/db9/microhil__types_8h_source.html#l00060">microhil_types.h:60</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00097">m_config</a>, and <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00105">m_serial</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d75/classMHController_afe4990a6b9274f12e6efbef0be293fdd_icgraph.png" border="0" usemap="#ad1/d75/classMHController_afe4990a6b9274f12e6efbef0be293fdd_icgraph" alt=""/></div>
+<map name="ad1/d75/classMHController_afe4990a6b9274f12e6efbef0be293fdd_icgraph" id="ad1/d75/classMHController_afe4990a6b9274f12e6efbef0be293fdd_icgraph">
+<area shape="rect" title="Slot for processing serial port changes." alt="" coords="477,5,693,47"/>
 <area shape="rect" href="../../d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f" title="Maps views and backend (signals and slots)" alt="" coords="256,13,429,39"/>
 <area shape="rect" href="../../d1/d75/classMHController.html#a8f66d2746244a191b94c6e7aab9f1a77" title="MHController constructor." alt="" coords="5,13,208,39"/>
 </map>
@@ -602,22 +682,22 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;setParity(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(params[2]));</div>
 <div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;setStopBits(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(params[3]));</div>
 <div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;store())</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/d75/classMHController.html#aceac95e6f436abbe58061523e69511d5">m_config</a>-&gt;store())</div>
 <div class="line"><span class="lineno">   63</span>    {</div>
 <div class="line"><span class="lineno">   64</span>        <span class="comment">// TODO</span></div>
 <div class="line"><span class="lineno">   65</span>        <span class="comment">// Emit signal for error handler</span></div>
-<div class="line"><span class="lineno">   66</span>        <span class="comment">// TODO</span></div>
-<div class="line"><span class="lineno">   67</span>        <span class="comment">// logging</span></div>
-<div class="line"><span class="lineno">   68</span>    }</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   72</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1fa50bd7ea903c3e18a10b97bfe31c61">m_serial</a>-&gt;close();</div>
-<div class="line"><span class="lineno">   73</span>    <span class="comment">// m_serial-&gt;setup(device, params);</span></div>
-<div class="line"><span class="lineno">   74</span>    <span class="comment">// m_serial-&gt;open();</span></div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>        <span class="comment">// TODO</span></div>
+<div class="line"><span class="lineno">   68</span>        <span class="comment">// logging</span></div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1fa50bd7ea903c3e18a10b97bfe31c61">m_serial</a>-&gt;setup(dev, params);</div>
+<div class="line"><span class="lineno">   74</span> </div>
 <div class="line"><span class="lineno">   75</span>    <span class="comment">// TODO</span></div>
 <div class="line"><span class="lineno">   76</span>    <span class="comment">// logging</span></div>
 <div class="line"><span class="lineno">   77</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00092">m_config</a>, and <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00100">m_serial</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00097">m_config</a>, and <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00105">m_serial</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>.</p>
 <div class="dynheader">
@@ -683,7 +763,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a82808cfcc7fd3a0ec8d5ddb683932506">m_view</a>-&gt;getSerialSettings()-&gt;serialSettingsLoaded(dev, params);</div>
 <div class="line"><span class="lineno">   82</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00088">m_view</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00093">m_view</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>.</p>
 <div class="dynheader">
@@ -733,12 +813,12 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d2/ddd/classIMHController.html#a0698195751a08fabd25869daeb5ec372">IMHController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00064">64</a> of file <a class="el" href="../../db/d49/microhil__controller_8cc_source.html">microhil_controller.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
-<div class="line"><span class="lineno">   66</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1546c7844387b532cd1d86770fe42d9d">m_enabled</a> = switchController;</div>
-<div class="line"><span class="lineno">   67</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00063">63</a> of file <a class="el" href="../../db/d49/microhil__controller_8cc_source.html">microhil_controller.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_variable" href="../../d1/d75/classMHController.html#a1546c7844387b532cd1d86770fe42d9d">m_enabled</a> = switchController;</div>
+<div class="line"><span class="lineno">   66</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00080">m_enabled</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00085">m_enabled</a>.</p>
 
 </div>
 </div>
@@ -765,9 +845,9 @@ Here is the caller graph for this function:</div>
 
 <p>Configuration instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00092">92</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00097">97</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>, <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00021">MHController()</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00022">onLogSettingsChanged()</a>, and <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00051">onSerialSettingsChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>, <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00021">MHController()</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00022">onLogSettingsChanged()</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00084">onSerialControlChanged()</a>, and <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00051">onSerialSettingsChanged()</a>.</p>
 
 </div>
 </div>
@@ -793,9 +873,9 @@ Here is the caller graph for this function:</div>
 
 <p>Enable/Disable state of controller. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00080">80</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00085">85</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00069">isEnabled()</a>, and <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00064">setEnabled()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00068">isEnabled()</a>, and <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00063">setEnabled()</a>.</p>
 
 </div>
 </div>
@@ -821,7 +901,7 @@ Here is the caller graph for this function:</div>
 
 <p>Log instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00096">96</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00101">101</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d49/microhil__controller_8cc_source.html#l00021">MHController()</a>, and <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00022">onLogSettingsChanged()</a>.</p>
 
@@ -849,7 +929,7 @@ Here is the caller graph for this function:</div>
 
 <p>Model instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00084">84</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00089">89</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
 </div>
 </div>
@@ -875,9 +955,9 @@ Here is the caller graph for this function:</div>
 
 <p>Serial port instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00100">100</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00105">105</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00051">onSerialSettingsChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00084">onSerialControlChanged()</a>, and <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00051">onSerialSettingsChanged()</a>.</p>
 
 </div>
 </div>
@@ -903,7 +983,7 @@ Here is the caller graph for this function:</div>
 
 <p>View instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00088">88</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/da2/microhil__controller_8h_source.html#l00093">93</a> of file <a class="el" href="../../d6/da2/microhil__controller_8h_source.html">microhil_controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/dab/microhil__controller__map_8cc_source.html#l00021">mapping()</a>, <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00046">onLogSettingsLoaded()</a>, and <a class="el" href="../../d2/df4/microhil__controller__slots_8cc_source.html#l00079">onSerialSettingsLoaded()</a>.</p>
 
@@ -921,7 +1001,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d75/classMHController.html">MHController</a></li>
-    <li class="footer">Generated on Sun Oct 1 2023 22:41:06 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Oct 2 2023 23:24:13 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

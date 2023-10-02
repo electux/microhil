@@ -481,6 +481,17 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00119">m_device</a>, and <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00115">m_serialPort</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00042">setup()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dfa/classMHSerialCom_a83c555262b95534c45d205cd44b8881c_icgraph.png" border="0" usemap="#ad1/dfa/classMHSerialCom_a83c555262b95534c45d205cd44b8881c_icgraph" alt=""/></div>
+<map name="ad1/dfa/classMHSerialCom_a83c555262b95534c45d205cd44b8881c_icgraph" id="ad1/dfa/classMHSerialCom_a83c555262b95534c45d205cd44b8881c_icgraph">
+<area shape="rect" title="Opens the serial communication channel." alt="" coords="208,5,359,32"/>
+<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#a495181294d1fda5fc1ed26ba2b9f3e3e" title="Setup the serial port parameters." alt="" coords="5,5,160,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a88936d4ee969b6cdbd91ff063638c0cd" name="a88936d4ee969b6cdbd91ff063638c0cd"></a>
@@ -592,10 +603,10 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../de/d55/classIMHCom.html#ad3051f9446987a1e85dc48958882af1d">IMHCom</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00060">60</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
-<div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;Read(data, len, timeout);</div>
-<div class="line"><span class="lineno">   63</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00084">84</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;Read(data, len, timeout);</div>
+<div class="line"><span class="lineno">   87</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00115">m_serialPort</a>.</p>
 
@@ -643,19 +654,39 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
+<p >Sets serial port device path</p>
+<p >Sets serial port parameters</p>
 
 <p>Implements <a class="el" href="../../de/d55/classIMHCom.html#a13a883d3fe63c38ab56463115fc49c06">IMHCom</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00051">51</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>{</div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetBaudRate(params.baudRate);</div>
-<div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetCharacterSize(params.dataBits);</div>
-<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetParity(params.parity);</div>
-<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetStopBits(params.stopBits);</div>
-<div class="line"><span class="lineno">   57</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#addda174aa44175a3999d2b4ecb25cea4">m_device</a> = device;</div>
-<div class="line"><span class="lineno">   58</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00063">63</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;IsOpen())</div>
+<div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;Close();</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#addda174aa44175a3999d2b4ecb25cea4">m_device</a> = device;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#a83c555262b95534c45d205cd44b8881c">open</a>();</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetBaudRate(params.baudRate);</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetCharacterSize(params.dataBits);</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetParity(params.parity);</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetStopBits(params.stopBits);</div>
+<div class="line"><span class="lineno">   82</span>}</div>
+<div class="ttc" id="aclassMHSerialCom_html_a83c555262b95534c45d205cd44b8881c"><div class="ttname"><a href="../../d1/dfa/classMHSerialCom.html#a83c555262b95534c45d205cd44b8881c">MHSerialCom::open</a></div><div class="ttdeci">void open() final</div><div class="ttdoc">Opens the serial communication channel.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d72/microhil__serial__com_8cc_source.html#l00026">microhil_serial_com.cc:26</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00119">m_device</a>, and <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00115">m_serialPort</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00119">m_device</a>, <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00115">m_serialPort</a>, and <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00026">open()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dfa/classMHSerialCom_a32faaa9042ffa66de67ee7fcc63eabd5_cgraph.png" border="0" usemap="#ad1/dfa/classMHSerialCom_a32faaa9042ffa66de67ee7fcc63eabd5_cgraph" alt=""/></div>
+<map name="ad1/dfa/classMHSerialCom_a32faaa9042ffa66de67ee7fcc63eabd5_cgraph" id="ad1/dfa/classMHSerialCom_a32faaa9042ffa66de67ee7fcc63eabd5_cgraph">
+<area shape="rect" title="Setup the serial port parameters." alt="" coords="5,5,160,32"/>
+<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#a83c555262b95534c45d205cd44b8881c" title="Opens the serial communication channel." alt="" coords="208,5,359,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -701,33 +732,44 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
+<p >Sets serial port device path</p>
+<p >Sets serial port parameters</p>
 
 <p>Implements <a class="el" href="../../de/d55/classIMHCom.html#a714fe94b30a5eb5e481ac5286bad7063">IMHCom</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00042">42</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetBaudRate(<a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#a38675f1b0e00b8dfc12ba89cec2ee6fd">uintToBaudRate</a>(params[0]));</div>
-<div class="line"><span class="lineno">   45</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetCharacterSize(<a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#a273bd1ed6d29b7a33628fead72e91ea1">uintToDataBits</a>(params[1]));</div>
-<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetParity(<a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#a82092dd64329d13b91be9d933f8816e5">uintToParity</a>(params[2]));</div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetStopBits(<a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#ab7420ff6ab778127176a5db34a79c296">uintToStopBits</a>(params[3]));</div>
-<div class="line"><span class="lineno">   48</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#addda174aa44175a3999d2b4ecb25cea4">m_device</a> = device;</div>
-<div class="line"><span class="lineno">   49</span>}</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;IsOpen())</div>
+<div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;Close();</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#addda174aa44175a3999d2b4ecb25cea4">m_device</a> = device;</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#a83c555262b95534c45d205cd44b8881c">open</a>();</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetBaudRate(<a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#a38675f1b0e00b8dfc12ba89cec2ee6fd">uintToBaudRate</a>(params[0]));</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetCharacterSize(<a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#a273bd1ed6d29b7a33628fead72e91ea1">uintToDataBits</a>(params[1]));</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetParity(<a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#a82092dd64329d13b91be9d933f8816e5">uintToParity</a>(params[2]));</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;SetStopBits(<a class="code hl_function" href="../../d1/dfa/classMHSerialCom.html#ab7420ff6ab778127176a5db34a79c296">uintToStopBits</a>(params[3]));</div>
+<div class="line"><span class="lineno">   61</span>}</div>
 <div class="ttc" id="aclassMHSerialCom_html_a273bd1ed6d29b7a33628fead72e91ea1"><div class="ttname"><a href="../../d1/dfa/classMHSerialCom.html#a273bd1ed6d29b7a33628fead72e91ea1">MHSerialCom::uintToDataBits</a></div><div class="ttdeci">CharacterSize uintToDataBits(const unsigned int dataBits) final</div><div class="ttdoc">Converts data-bits from unsigned int to scopped enumerator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00184">microhil_serial_com_utils.cc:184</a></div></div>
 <div class="ttc" id="aclassMHSerialCom_html_a38675f1b0e00b8dfc12ba89cec2ee6fd"><div class="ttname"><a href="../../d1/dfa/classMHSerialCom.html#a38675f1b0e00b8dfc12ba89cec2ee6fd">MHSerialCom::uintToBaudRate</a></div><div class="ttdeci">BaudRate uintToBaudRate(const unsigned int baudRate) final</div><div class="ttdoc">Converts baud-rate from unsigned int to scopped enumerator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00132">microhil_serial_com_utils.cc:132</a></div></div>
 <div class="ttc" id="aclassMHSerialCom_html_a82092dd64329d13b91be9d933f8816e5"><div class="ttname"><a href="../../d1/dfa/classMHSerialCom.html#a82092dd64329d13b91be9d933f8816e5">MHSerialCom::uintToParity</a></div><div class="ttdeci">Parity uintToParity(const unsigned int parity) final</div><div class="ttdoc">Converts parity from unsigned int to scopped enumerator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00218">microhil_serial_com_utils.cc:218</a></div></div>
 <div class="ttc" id="aclassMHSerialCom_html_ab7420ff6ab778127176a5db34a79c296"><div class="ttname"><a href="../../d1/dfa/classMHSerialCom.html#ab7420ff6ab778127176a5db34a79c296">MHSerialCom::uintToStopBits</a></div><div class="ttdeci">StopBits uintToStopBits(const unsigned int stopBits) final</div><div class="ttdoc">Converts stop-bits from unsigned int to scopped enumerator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00248">microhil_serial_com_utils.cc:248</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00119">m_device</a>, <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00115">m_serialPort</a>, <a class="el" href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00132">uintToBaudRate()</a>, <a class="el" href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00184">uintToDataBits()</a>, <a class="el" href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00218">uintToParity()</a>, and <a class="el" href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00248">uintToStopBits()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00119">m_device</a>, <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00115">m_serialPort</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00026">open()</a>, <a class="el" href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00132">uintToBaudRate()</a>, <a class="el" href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00184">uintToDataBits()</a>, <a class="el" href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00218">uintToParity()</a>, and <a class="el" href="../../d3/df3/microhil__serial__com__utils_8cc_source.html#l00248">uintToStopBits()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/dfa/classMHSerialCom_a495181294d1fda5fc1ed26ba2b9f3e3e_cgraph.png" border="0" usemap="#ad1/dfa/classMHSerialCom_a495181294d1fda5fc1ed26ba2b9f3e3e_cgraph" alt=""/></div>
 <map name="ad1/dfa/classMHSerialCom_a495181294d1fda5fc1ed26ba2b9f3e3e_cgraph" id="ad1/dfa/classMHSerialCom_a495181294d1fda5fc1ed26ba2b9f3e3e_cgraph">
-<area shape="rect" title="Setup the serial port parameters." alt="" coords="5,81,160,108"/>
-<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#a38675f1b0e00b8dfc12ba89cec2ee6fd" title="Converts baud&#45;rate from unsigned int to scopped enumerator." alt="" coords="208,5,429,32"/>
-<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#a273bd1ed6d29b7a33628fead72e91ea1" title="Converts data&#45;bits from unsigned int to scopped enumerator." alt="" coords="211,56,426,83"/>
-<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#a82092dd64329d13b91be9d933f8816e5" title="Converts parity from unsigned int to scopped enumerator." alt="" coords="221,107,416,133"/>
-<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#ab7420ff6ab778127176a5db34a79c296" title="Converts stop&#45;bits from unsigned int to scopped enumerator." alt="" coords="213,157,425,184"/>
+<area shape="rect" title="Setup the serial port parameters." alt="" coords="5,107,160,133"/>
+<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#a83c555262b95534c45d205cd44b8881c" title="Opens the serial communication channel." alt="" coords="243,5,394,32"/>
+<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#a38675f1b0e00b8dfc12ba89cec2ee6fd" title="Converts baud&#45;rate from unsigned int to scopped enumerator." alt="" coords="208,56,429,83"/>
+<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#a273bd1ed6d29b7a33628fead72e91ea1" title="Converts data&#45;bits from unsigned int to scopped enumerator." alt="" coords="211,107,426,133"/>
+<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#a82092dd64329d13b91be9d933f8816e5" title="Converts parity from unsigned int to scopped enumerator." alt="" coords="221,157,416,184"/>
+<area shape="rect" href="../../d1/dfa/classMHSerialCom.html#ab7420ff6ab778127176a5db34a79c296" title="Converts stop&#45;bits from unsigned int to scopped enumerator." alt="" coords="213,208,425,235"/>
 </map>
 </div>
 
@@ -1098,10 +1140,10 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../de/d55/classIMHCom.html#aeddcf202ed06285fd5ca38a7a7af5a96">IMHCom</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00065">65</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;Write(data);</div>
-<div class="line"><span class="lineno">   68</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00089">89</a> of file <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html">microhil_serial_com.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>{</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_variable" href="../../d1/dfa/classMHSerialCom.html#aa7dc2f3034b7b77dfdc05f8def90b828">m_serialPort</a>-&gt;Write(data);</div>
+<div class="line"><span class="lineno">   92</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00115">m_serialPort</a>.</p>
 
@@ -1160,7 +1202,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html#l00115">115</a> of file <a class="el" href="../../d1/d90/microhil__serial__com_8h_source.html">microhil_serial_com.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00034">close()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00026">open()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00060">read()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00042">setup()</a>, and <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00065">write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00034">close()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00026">open()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00084">read()</a>, <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00042">setup()</a>, and <a class="el" href="../../d7/d72/microhil__serial__com_8cc_source.html#l00089">write()</a>.</p>
 
 </div>
 </div>
@@ -1175,7 +1217,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/dfa/classMHSerialCom.html">MHSerialCom</a></li>
-    <li class="footer">Generated on Sun Oct 1 2023 22:41:06 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Oct 2 2023 23:24:13 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

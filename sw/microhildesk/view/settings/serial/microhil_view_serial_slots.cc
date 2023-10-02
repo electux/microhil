@@ -62,5 +62,9 @@ void MHViewSerial::onOkSerialTriggered()
     /// Emits new serial settings
     m_serialSetup.emit(devicePath, serialParams);
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Emits signal for disabling Connect menu-item in home view
+    // TODO
+
     this->hide();
 }
