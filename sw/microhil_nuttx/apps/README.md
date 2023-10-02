@@ -117,6 +117,9 @@ This will select the `apps/examples/hello` in the following way:
   endif
 ```
 
+## Prepare microHIL section
+
+
 ## Example Built-In Application
 
 An example application skeleton can be found under the `examples/hello`

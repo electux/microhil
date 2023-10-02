@@ -23,30 +23,30 @@
 #include "hardware/pwm.h"
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Setting port pin configuration
+/// @brief Sets port pin configuration
 /// @param pin represents GPIO pin number
 /// @param mode represents GPIO pin direction (GPIO_IN | GPIO_OUT)
 void microhil_gpio_mode(uint pin, uint16_t mode);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Drive GPIO pin
+/// @brief Drives GPIO pin
 /// @param pin represents GPIO number
 /// @param value represents GPIO value (true - set | false - clear)
 void microhil_digital_write(uint pin, bool value);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Get GPIO state
+/// @brief Gets GPIO state
 /// @param pin represents GPIO pin number
 /// @return state of GPIO pin
 bool microhil_digital_read(uint pin);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Delay in miliseconds
+/// @brief Sets delay in miliseconds
 /// @param ms represents number of miliseconds to sleep
 void microhil_delay_ms(uint32_t ms);
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Delay in microseconds
+/// @brief Sets delay in microseconds
 /// @param us represents number of microseconds to sleep
 void microhil_delay_us(uint64_t us);
 

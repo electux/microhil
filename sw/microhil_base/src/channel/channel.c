@@ -213,7 +213,7 @@ MICROHIL_PRIVATE void microhil_all_channels(uint8_t *args)
         microhil_relay_all(false);
 
         ////////////////////////////////////////////////////////////////////
-        /// Store channel states
+        /// Stores channel states
         memset(channels, 0, MICROHIL_NUMBER_OF_CHANNELS * sizeof(uint8_t));
 #ifdef VERBOSE
         printf("%s %s\n", MICROHIL_VERBOSE, MICROHIL_ALL_OFF);
