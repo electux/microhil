@@ -8,5 +8,6 @@ var dir_b2f003339c516cc00c8cadcafbe82f13 =
     [ "microhil_view.cc", "d6/dd3/microhil__view_8cc.html", null ],
     [ "microhil_view.h", "d5/d3e/microhil__view_8h.html", "d5/d3e/microhil__view_8h" ],
     [ "microhil_view_map.cc", "d2/df9/microhil__view__map_8cc.html", null ],
+    [ "microhil_view_signals.cc", "df/d6c/microhil__view__signals_8cc.html", null ],
     [ "microhil_view_slots.cc", "d4/d7c/microhil__view__slots_8cc.html", null ]
 ];

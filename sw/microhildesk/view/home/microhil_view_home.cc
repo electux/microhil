@@ -207,4 +207,8 @@ MHViewHome::MHViewHome(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui)
     {
         disableChannel(static_cast<Channel>(i));
     }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Disables Serial settings (enabled if serial port is active)
+    m_serialSettings->set_sensitive(false);
 }

@@ -51,9 +51,8 @@ namespace
 }
 
 MHConfig::MHConfig()
-    :
-        m_homePath{Glib::get_home_dir() + kHomeDirName},
-        m_configFilePath{m_homePath + kConfigFileName}
+    : m_homePath{Glib::get_home_dir() + kHomeDirName},
+      m_configFilePath{m_homePath + kConfigFileName}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-validation of configuration path

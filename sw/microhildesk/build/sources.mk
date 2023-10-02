@@ -18,6 +18,7 @@ SOURCES = \
 	../com/microhil_serial_com_utils.cc \
 	../com/microhil_serial_com.cc \
 	../model/microhil_model.cc \
+	../view/microhil_view_signals.cc \
 	../view/microhil_view_slots.cc \
 	../view/microhil_view_map.cc \
 	../view/microhil_view.cc \

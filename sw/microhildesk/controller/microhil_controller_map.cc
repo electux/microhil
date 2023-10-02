@@ -43,4 +43,10 @@ void MHController::mapping()
     m_view->getSerialSettings()->serialSetupChanged().connect(
         sigc::mem_fun(*this, &MHController::onSerialSettingsChanged)
     );
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Maps view signal and controller slot
+    m_view->serialControlChanged().connect(
+        sigc::mem_fun(*this, &MHController::onSerialControlChanged)
+    );
 }

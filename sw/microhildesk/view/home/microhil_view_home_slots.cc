@@ -93,11 +93,17 @@ void MHViewHome::onToggleTimerChanged(Channel id)
 void MHViewHome::onConnectClicked()
 {
     m_actionViewTriggered.emit(ViewId::MICROHIL_CONNECT);
+    m_connect->set_sensitive(false);
+    m_disconnect->set_sensitive(true);
+    m_serialSettings->set_sensitive(true);
 }
 
 void MHViewHome::onDisconnectClicked()
 {
     m_actionViewTriggered.emit(ViewId::MICROHIL_DISCONNECT);
+    m_connect->set_sensitive(true);
+    m_disconnect->set_sensitive(false);
+    m_serialSettings->set_sensitive(true);
 }
 
 void MHViewHome::onQuitClicked()

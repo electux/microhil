@@ -5,6 +5,7 @@ var classMHController =
     [ "mapping", "d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f", null ],
     [ "onLogSettingsChanged", "d1/d75/classMHController.html#ad6f3e6c35f58ee02b13b19a9999a3703", null ],
     [ "onLogSettingsLoaded", "d1/d75/classMHController.html#a894230eda2339035729894ef57a6e675", null ],
+    [ "onSerialControlChanged", "d1/d75/classMHController.html#afe4990a6b9274f12e6efbef0be293fdd", null ],
     [ "onSerialSettingsChanged", "d1/d75/classMHController.html#a1bda7b5726e5affa27dccbe6b2879ffc", null ],
     [ "onSerialSettingsLoaded", "d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77", null ],
     [ "setEnabled", "d1/d75/classMHController.html#ac8cec1ec08eaa76daf34a7c94e8019a2", null ],
