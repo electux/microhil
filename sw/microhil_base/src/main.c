@@ -52,20 +52,20 @@ int main()
         sleep_ms(100);
     }
 
-    ////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     /// Command buffer for received request
     uint8_t request[MICROHIL_REQ_LEN] = {0};
 
     while (status)
     {
         ////////////////////////////////////////////////////////////////////
-        /// Fetching channel command request
+        /// Fetch channel command request
         microhil_fetch_request(request);
 
         if (!receive_in_progress && new_request)
         {
-            ////////////////////////////////////////////////////////
-            /// Clean up command buffer and flag for new request
+            ////////////////////////////////////////////////////////////////
+            /// Cleans the command buffer and flag
             microhil_channel_switch(request);
             memset(request, 0, MICROHIL_REQ_LEN * sizeof(uint8_t));
             new_request = false;
