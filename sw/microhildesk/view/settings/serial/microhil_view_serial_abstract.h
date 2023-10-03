@@ -40,7 +40,7 @@ class AbMHViewSerial
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewLog destructor
-    virtual ~AbMHViewSerial() = default;
+    inline virtual ~AbMHViewSerial() noexcept = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for serial settings

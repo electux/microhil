@@ -31,6 +31,10 @@ public:
     explicit MHModel();
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHModel destructor
+    inline ~MHModel() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Sets channel #0 state (ON/OFF)
     /// @param id represents request channel by id
     /// @param state represents request for channel #0 (ON | OFF)

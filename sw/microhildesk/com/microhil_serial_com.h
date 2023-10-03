@@ -30,6 +30,10 @@ public:
     explicit MHSerialCom();
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHSerialCom destructor
+    inline ~MHSerialCom() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Opens the serial communication channel
     void open() final;
 

@@ -31,7 +31,7 @@ class AbMHViewAbout
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewAbout destructor
-    virtual ~AbMHViewAbout() = default;
+    inline virtual ~AbMHViewAbout() noexcept = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button

@@ -48,7 +48,7 @@ class AbMHViewLog
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewLog destructor
-    virtual ~AbMHViewLog() = default;
+    inline virtual ~AbMHViewLog() noexcept = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings

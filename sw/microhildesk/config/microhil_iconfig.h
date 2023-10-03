@@ -64,7 +64,7 @@ class IMHConfig
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief IMHConfig destructor
-    virtual ~IMHConfig() = default;
+    inline virtual ~IMHConfig() noexcept = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for loaded log configuration

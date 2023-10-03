@@ -42,6 +42,10 @@ public:
     MHViewHome(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHViewHome destructor
+    inline ~MHViewHome() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (changed view)
     /// @return Signal for clicked menu item
     SigActionViewTriggered viewChanged() final;

@@ -34,6 +34,10 @@ public:
     explicit MHLog();
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHLog destructor
+    inline virtual ~MHLog() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Sets file path for logger
     /// @param logFilePath represents file path for storing log messages
     void setFilePath(const MHString &logFilePath) final;

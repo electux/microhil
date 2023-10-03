@@ -33,6 +33,10 @@ public:
     MHView();
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHView destructor
+    inline ~MHView() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for controling serial port
     /// @return Signal for clicked Connect/Disconnect
     SigSerialControl serialControlChanged() final;

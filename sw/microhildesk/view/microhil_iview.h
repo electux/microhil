@@ -34,7 +34,7 @@ class IMHView
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief IMHView destructor
-    virtual ~IMHView() = default;
+    inline virtual ~IMHView() noexcept = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for controling serial port
