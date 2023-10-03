@@ -16,12 +16,7 @@ var searchData=
   ['sigokserial_13',['SigOkSerial',['../d6/d8b/microhil__view__serial__abstract_8h.html#a12e4eae83c58d812b37c28a36a33fb11',1,'microhil_view_serial_abstract.h']]],
   ['sigselectchanged_14',['SigSelectChanged',['../de/d3d/microhil__view__home__abstract_8h.html#aa8f12be614fecf7d029d597dfc0770f8',1,'microhil_view_home_abstract.h']]],
   ['sigselectloglevel_15',['SigSelectLogLevel',['../dc/d95/microhil__view__log__abstract_8h.html#a22aa0628cda1b5b2356878b946d3bd58',1,'microhil_view_log_abstract.h']]],
-  ['sigserialbaudrate_16',['SigSerialBaudRate',['../d6/d8b/microhil__view__serial__abstract_8h.html#a03734c504ca72dd036a7afb3f441c28b',1,'microhil_view_serial_abstract.h']]],
-  ['sigserialconfig_17',['SigSerialConfig',['../d8/d9b/microhil__iconfig_8h.html#af784f73e1c82e741627ddfd6d8ea8d50',1,'microhil_iconfig.h']]],
-  ['sigserialcontrol_18',['SigSerialControl',['../da/db1/microhil__iview_8h.html#af02e449f1c8133102a7d5b97286770e3',1,'microhil_iview.h']]],
-  ['sigserialdatabits_19',['SigSerialDataBits',['../d6/d8b/microhil__view__serial__abstract_8h.html#a6cd188647302be1df4a62804aa619c4a',1,'microhil_view_serial_abstract.h']]],
-  ['sigserialdevicepath_20',['SigSerialDevicePath',['../d6/d8b/microhil__view__serial__abstract_8h.html#a380fbdaba29a5262c51d29ac37566195',1,'microhil_view_serial_abstract.h']]],
-  ['sigserialparity_21',['SigSerialParity',['../d6/d8b/microhil__view__serial__abstract_8h.html#a5ae22ea3d63da5f4295988fd4870d07b',1,'microhil_view_serial_abstract.h']]],
-  ['sigserialsetup_22',['SigSerialSetup',['../d6/d8b/microhil__view__serial__abstract_8h.html#a35e792ee97d9458fac3b1c4f2a270197',1,'microhil_view_serial_abstract.h']]],
-  ['sigserialstopbits_23',['SigSerialStopBits',['../d6/d8b/microhil__view__serial__abstract_8h.html#ab4477e92e1e322b6c1314baa166b967c',1,'microhil_view_serial_abstract.h']]]
+  ['sigserialconfig_16',['SigSerialConfig',['../d8/d9b/microhil__iconfig_8h.html#af784f73e1c82e741627ddfd6d8ea8d50',1,'microhil_iconfig.h']]],
+  ['sigserialcontrol_17',['SigSerialControl',['../da/db1/microhil__iview_8h.html#af02e449f1c8133102a7d5b97286770e3',1,'microhil_iview.h']]],
+  ['sigserialsetup_18',['SigSerialSetup',['../d6/d8b/microhil__view__serial__abstract_8h.html#a35e792ee97d9458fac3b1c4f2a270197',1,'microhil_view_serial_abstract.h']]]
 ];

@@ -100,8 +100,8 @@ Inheritance diagram for IMHView:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/dd4/classIMHView__inherit__graph.png" border="0" usemap="#aIMHView_inherit__map" alt="Inheritance graph"/></div>
 <map name="aIMHView_inherit__map" id="aIMHView_inherit__map">
-<area shape="rect" title="IMHView class is interface set for view." alt="" coords="5,5,192,171"/>
-<area shape="rect" href="../../d1/dfc/classMHView.html" title="MHView class is implementation of view." alt="" coords="5,219,192,472"/>
+<area shape="rect" title="IMHView class is interface set for view." alt="" coords="5,5,209,185"/>
+<area shape="rect" href="../../d1/dfc/classMHView.html" title="MHView class is implementation of view." alt="" coords="5,233,209,501"/>
 </map>
 </div>
 <div class="dynheader">
@@ -109,7 +109,7 @@ Collaboration diagram for IMHView:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/d90/classIMHView__coll__graph.png" border="0" usemap="#aIMHView_coll__map" alt="Collaboration graph"/></div>
 <map name="aIMHView_coll__map" id="aIMHView_coll__map">
-<area shape="rect" title="IMHView class is interface set for view." alt="" coords="5,5,192,171"/>
+<area shape="rect" title="IMHView class is interface set for view." alt="" coords="5,5,209,185"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -136,6 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a41b26d117dbf3646cb0443d0a70c0371"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#a41b26d117dbf3646cb0443d0a70c0371">onViewChanged</a> (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#a5adc68ab32ef675a03c3c79673926411">ViewId</a> id)=0</td></tr>
 <tr class="memdesc:a41b26d117dbf3646cb0443d0a70c0371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing requests for triggering view.  <a href="../../df/d0c/classIMHView.html#a41b26d117dbf3646cb0443d0a70c0371">More...</a><br /></td></tr>
 <tr class="separator:a41b26d117dbf3646cb0443d0a70c0371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74208900e03b3a36e6a20dc00af8b087"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#a74208900e03b3a36e6a20dc00af8b087">onConfirmSerialSettings</a> (bool state)=0</td></tr>
+<tr class="memdesc:a74208900e03b3a36e6a20dc00af8b087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing Ok request for serial port changes.  <a href="../../df/d0c/classIMHView.html#a74208900e03b3a36e6a20dc00af8b087">More...</a><br /></td></tr>
+<tr class="separator:a74208900e03b3a36e6a20dc00af8b087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="../../df/d0c/classIMHView.html" title="IMHView class is interface set for view.">IMHView</a> class is interface set for view. </p>
@@ -289,6 +292,42 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a74208900e03b3a36e6a20dc00af8b087" name="a74208900e03b3a36e6a20dc00af8b087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74208900e03b3a36e6a20dc00af8b087">&#9670;&nbsp;</a></span>onConfirmSerialSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IMHView::onConfirmSerialSettings </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for processing Ok request for serial port changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>true for confirm operation, else false </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../d1/dfc/classMHView.html#a891ac056d218dc037bb7e2de15c97cbd">MHView</a>.</p>
+
+</div>
+</div>
 <a id="a41b26d117dbf3646cb0443d0a70c0371" name="a41b26d117dbf3646cb0443d0a70c0371"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41b26d117dbf3646cb0443d0a70c0371">&#9670;&nbsp;</a></span>onViewChanged()</h2>
 
@@ -364,7 +403,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d0c/classIMHView.html">IMHView</a></li>
-    <li class="footer">Generated on Mon Oct 2 2023 23:24:13 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Oct 3 2023 20:01:04 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

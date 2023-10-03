@@ -26,26 +26,6 @@
 using SigSerialSetup = sigc::signal<void(MHString &, MHVecUInt &)>;
 
 ////////////////////////////////////////////////////////////////////////
-/// @brief Signal type for serial device file path input
-using SigSerialDevicePath = sigc::signal<void(MHString &)>;
-
-////////////////////////////////////////////////////////////////////////
-/// @brief Signal type for serial baud rate combobox
-using SigSerialBaudRate = sigc::signal<void(int)>;
-
-////////////////////////////////////////////////////////////////////////
-/// @brief Signal type for serial data bits combobox
-using SigSerialDataBits = sigc::signal<void(int)>;
-
-////////////////////////////////////////////////////////////////////////
-/// @brief Signal type for serial parity combobox
-using SigSerialParity = sigc::signal<void(int)>;
-
-////////////////////////////////////////////////////////////////////////
-/// @brief Signal type for serial stop bits combobox
-using SigSerialStopBits = sigc::signal<void(int)>;
-
-////////////////////////////////////////////////////////////////////////
 /// @brief Signal type for Cancel button
 using SigCancelSerial = sigc::signal<void(bool)>;
 
@@ -66,51 +46,6 @@ public:
     /// @brief Signal for serial settings
     /// @return Signal for changed serial settings
     virtual SigSerialSetup serialSetupChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for device file path input
-    /// @return Signal for changed device file path entry
-    virtual SigSerialDevicePath serialFilePathChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing device file path input
-    virtual void onSerialFilePathChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for baud rate combobox
-    /// @return Signal for selected baud rate combobox
-    virtual SigSerialBaudRate serialBaudRateChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing baud rate combobox
-    virtual void onSerialBaudRateChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for data bits combobox
-    /// @return Signal for selected data bits combobox
-    virtual SigSerialDataBits serialDataBitsChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing data bits combobox
-    virtual void onSerialDataBitsChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for parity combobox
-    /// @return Signal for selected parity combobox
-    virtual SigSerialParity serialParityChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing parity combobox
-    virtual void onSerialParityChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for stop bits combobox
-    /// @return Signal for selected stop bits combobox
-    virtual SigSerialStopBits serialStopBitsChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing stop bits combobox
-    virtual void onSerialStopBitsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button

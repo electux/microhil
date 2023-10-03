@@ -100,8 +100,8 @@ Inheritance diagram for AbMHViewHome:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d65/classAbMHViewHome__inherit__graph.png" border="0" usemap="#aAbMHViewHome_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAbMHViewHome_inherit__map" id="aAbMHViewHome_inherit__map">
-<area shape="rect" title="AbMHViewHome class declaration and definition." alt="" coords="5,5,237,244"/>
-<area shape="rect" href="../../dc/def/classMHViewHome.html" title="MHViewHome class is implementation of home view." alt="" coords="5,292,237,765"/>
+<area shape="rect" title="AbMHViewHome class declaration and definition." alt="" coords="5,5,237,259"/>
+<area shape="rect" href="../../dc/def/classMHViewHome.html" title="MHViewHome class is implementation of home view." alt="" coords="5,307,237,780"/>
 </map>
 </div>
 <div class="dynheader">
@@ -109,7 +109,7 @@ Collaboration diagram for AbMHViewHome:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d09/classAbMHViewHome__coll__graph.png" border="0" usemap="#aAbMHViewHome_coll__map" alt="Collaboration graph"/></div>
 <map name="aAbMHViewHome_coll__map" id="aAbMHViewHome_coll__map">
-<area shape="rect" title="AbMHViewHome class declaration and definition." alt="" coords="5,5,237,244"/>
+<area shape="rect" title="AbMHViewHome class declaration and definition." alt="" coords="5,5,237,259"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -151,6 +151,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a32d9d6ff8bb53b46acc19b3c1527f420"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#a32d9d6ff8bb53b46acc19b3c1527f420">onToggleTimerChanged</a> (<a class="el" href="../../de/d3d/microhil__view__home__abstract_8h.html#ad5af43d459a28efceb4158ceb3284109">Channel</a> id)=0</td></tr>
 <tr class="memdesc:a32d9d6ff8bb53b46acc19b3c1527f420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing toggle buttons (turn on/turn off timer)  <a href="../../d7/d4c/classAbMHViewHome.html#a32d9d6ff8bb53b46acc19b3c1527f420">More...</a><br /></td></tr>
 <tr class="separator:a32d9d6ff8bb53b46acc19b3c1527f420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add330d2fd256ed4bf6b9fab4d3bb24c5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4c/classAbMHViewHome.html#add330d2fd256ed4bf6b9fab4d3bb24c5">serialSettingsConfirm</a> (bool state)=0</td></tr>
+<tr class="memdesc:add330d2fd256ed4bf6b9fab4d3bb24c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets widgets after confirming changes for the serial port.  <a href="../../d7/d4c/classAbMHViewHome.html#add330d2fd256ed4bf6b9fab4d3bb24c5">More...</a><br /></td></tr>
+<tr class="separator:add330d2fd256ed4bf6b9fab4d3bb24c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="../../d7/d4c/classAbMHViewHome.html" title="AbMHViewHome class declaration and definition.">AbMHViewHome</a> class declaration and definition. </p>
@@ -515,6 +518,42 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="add330d2fd256ed4bf6b9fab4d3bb24c5" name="add330d2fd256ed4bf6b9fab4d3bb24c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add330d2fd256ed4bf6b9fab4d3bb24c5">&#9670;&nbsp;</a></span>serialSettingsConfirm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void AbMHViewHome::serialSettingsConfirm </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets widgets after confirming changes for the serial port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>true for confirmed changes, else false </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../dc/def/classMHViewHome.html#a694f6f096e78aedc7119e994c68b1057">MHViewHome</a>.</p>
+
+</div>
+</div>
 <a id="ab3a0c9833df9ad7994fe757acc715ab9" name="ab3a0c9833df9ad7994fe757acc715ab9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab3a0c9833df9ad7994fe757acc715ab9">&#9670;&nbsp;</a></span>viewChanged()</h2>
 
@@ -554,7 +593,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d4c/classAbMHViewHome.html">AbMHViewHome</a></li>
-    <li class="footer">Generated on Mon Oct 2 2023 23:24:13 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Oct 3 2023 20:01:04 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -120,6 +120,11 @@ public:
     /// @brief Slot for processing About meni-item
     void onAboutClicked();
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Sets widgets after confirming changes for the serial port
+    /// @param state true for confirmed changes, else false
+    void serialSettingsConfirm(bool state) final;
+
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Maps channels (signals and slots)

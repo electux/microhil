@@ -18,33 +18,12 @@
  */
 #include "microhil_view_serial.h"
 
-void MHViewSerial::onSerialFilePathChanged()
-{
-    // TODO
-}
-
-void MHViewSerial::onSerialBaudRateChanged()
-{
-    // TODO
-}
-
-void MHViewSerial::onSerialDataBitsChanged()
-{
-    // TODO
-}
-
-void MHViewSerial::onSerialParityChanged()
-{
-    // TODO
-}
-
-void MHViewSerial::onSerialStopBitsChanged()
-{
-    // TODO
-}
-
 void MHViewSerial::onCancelSerialTriggered()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Emits signal for cancel serial port setings changes
+    m_cancelSerial.emit(true);
+
     this->hide();
 }
 
@@ -64,7 +43,7 @@ void MHViewSerial::onOkSerialTriggered()
 
     ////////////////////////////////////////////////////////////////////////
     /// Emits signal for disabling Connect menu-item in home view
-    // TODO
+    m_okSerial.emit(true);
 
     this->hide();
 }

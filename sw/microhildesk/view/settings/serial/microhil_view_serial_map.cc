@@ -22,26 +22,6 @@ void MHViewSerial::mapping()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Maps all widgets (signals and slots)
-    m_device->signal_changed().connect(
-        sigc::mem_fun(*this, &MHViewSerial::onSerialFilePathChanged)
-    );
-    
-    m_baudRate->signal_changed().connect(
-        sigc::mem_fun(*this, &MHViewSerial::onSerialBaudRateChanged)
-    );
-    
-    m_dataBits->signal_changed().connect(
-        sigc::mem_fun(*this, &MHViewSerial::onSerialDataBitsChanged)
-    );
-    
-    m_parity->signal_changed().connect(
-        sigc::mem_fun(*this, &MHViewSerial::onSerialParityChanged)
-    );
-    
-    m_stopBits->signal_changed().connect(
-        sigc::mem_fun(*this, &MHViewSerial::onSerialStopBitsChanged)
-    );
-    
     m_cancel->signal_clicked().connect(
         sigc::mem_fun(*this, &MHViewSerial::onCancelSerialTriggered)
     );

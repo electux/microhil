@@ -5,6 +5,7 @@ var classMHView =
     [ "getLogSettings", "d1/dfc/classMHView.html#a9e1376978625d269c291b8e104ae822a", null ],
     [ "getSerialSettings", "d1/dfc/classMHView.html#a3dd70a065bcb23012cf27a08f53b797a", null ],
     [ "mapping", "d1/dfc/classMHView.html#a1ea3cc8b81bb27f0fc00a48f2398c7bc", null ],
+    [ "onConfirmSerialSettings", "d1/dfc/classMHView.html#a891ac056d218dc037bb7e2de15c97cbd", null ],
     [ "onViewChanged", "d1/dfc/classMHView.html#a91f0dec5d272fee87be3c74fb6aa7055", null ],
     [ "serialControlChanged", "d1/dfc/classMHView.html#a4f430c326a9a3818eab38556108771c1", null ],
     [ "m_about", "d1/dfc/classMHView.html#a55234cc371cdb41315322e94046031c6", null ],

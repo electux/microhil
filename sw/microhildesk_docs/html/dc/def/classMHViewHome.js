@@ -22,6 +22,7 @@ var classMHViewHome =
     [ "onToggled", "dc/def/classMHViewHome.html#ad701959c37ca33f1d4cb06b55d043728", null ],
     [ "onToggleTimerChanged", "dc/def/classMHViewHome.html#a4ac89c35046135b481ea3af5acb8f9a3", null ],
     [ "onTypeSelected", "dc/def/classMHViewHome.html#ade17405d5e1562f05acdbcd52cabee61", null ],
+    [ "serialSettingsConfirm", "dc/def/classMHViewHome.html#a694f6f096e78aedc7119e994c68b1057", null ],
     [ "timerModeChannel", "dc/def/classMHViewHome.html#a1d9173171c351002093e6d00b14aed97", null ],
     [ "toggleModeChannel", "dc/def/classMHViewHome.html#aed2967871b58f3eb3f7c145feaf614d8", null ],
     [ "viewChanged", "dc/def/classMHViewHome.html#a84e496696caca67024f824714e7af34a", null ],
