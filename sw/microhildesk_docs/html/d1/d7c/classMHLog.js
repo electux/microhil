@@ -1,6 +1,7 @@
 var classMHLog =
 [
     [ "MHLog", "d1/d7c/classMHLog.html#a10b0c31d5d39c1a7b531dd96e8e7d1b6", null ],
+    [ "~MHLog", "d1/d7c/classMHLog.html#a1f586068bddff9cef9653a2bef81a560", null ],
     [ "close", "d1/d7c/classMHLog.html#a93a42fbf4d901d0845fab40bfb4a08bd", null ],
     [ "getCurrentDateTime", "d1/d7c/classMHLog.html#a715a219accbbfbc9602404cfcdf05846", null ],
     [ "getFilePath", "d1/d7c/classMHLog.html#ac885cd7e3ebf749b36f880f8942829c5", null ],

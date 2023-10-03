@@ -1,6 +1,7 @@
 var classMHController =
 [
     [ "MHController", "d1/d75/classMHController.html#a8f66d2746244a191b94c6e7aab9f1a77", null ],
+    [ "~MHController", "d1/d75/classMHController.html#aa1dcb6c7fcb91901e43c5d4b7077a3d4", null ],
     [ "isEnabled", "d1/d75/classMHController.html#a835a02358953d559f0b830915496319d", null ],
     [ "mapping", "d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f", null ],
     [ "onLogSettingsChanged", "d1/d75/classMHController.html#ad6f3e6c35f58ee02b13b19a9999a3703", null ],

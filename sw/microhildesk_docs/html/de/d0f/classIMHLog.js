@@ -1,6 +1,6 @@
 var classIMHLog =
 [
-    [ "~IMHLog", "de/d0f/classIMHLog.html#a7640d1cd1dd4a3c2bd1f056bb91ef704", null ],
+    [ "~IMHLog", "de/d0f/classIMHLog.html#a18155b6a2a15821125eca6193b4a4ae2", null ],
     [ "close", "de/d0f/classIMHLog.html#a51d956133ac9d02e56e53268930e59fc", null ],
     [ "getCurrentDateTime", "de/d0f/classIMHLog.html#aba84e9952b0a5f86cf7d9429ab78d57a", null ],
     [ "getFilePath", "de/d0f/classIMHLog.html#a666b56e535561c48ef3a28a52d9660ca", null ],

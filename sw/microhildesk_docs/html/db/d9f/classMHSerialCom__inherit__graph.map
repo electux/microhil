@@ -1,4 +1,4 @@
 <map id="MHSerialCom" name="MHSerialCom">
-<area shape="rect" id="node1" title="MHSerialCom class is implementation of serial communication." alt="" coords="5,336,156,633"/>
+<area shape="rect" id="node1" title="MHSerialCom class is implementation of serial communication." alt="" coords="5,336,156,575"/>
 <area shape="rect" id="node2" href="$de/d55/classIMHCom.html" title="IMHCom class is interface set for serial communication." alt="" coords="5,5,156,288"/>
 </map>

@@ -101,7 +101,7 @@ Inheritance diagram for MHLog:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/d3e/classMHLog__inherit__graph.png" border="0" usemap="#aMHLog_inherit__map" alt="Inheritance graph"/></div>
 <map name="aMHLog_inherit__map" id="aMHLog_inherit__map">
-<area shape="rect" title="MHLog class is implementation of log mechanism." alt="" coords="5,307,185,604"/>
+<area shape="rect" title="MHLog class is implementation of log mechanism." alt="" coords="5,307,185,619"/>
 <area shape="rect" href="../../de/d0f/classIMHLog.html" title="IMHLog class is interface set for log mechanism." alt="" coords="5,5,185,259"/>
 </map>
 </div>
@@ -110,7 +110,7 @@ Collaboration diagram for MHLog:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d27/classMHLog__coll__graph.png" border="0" usemap="#aMHLog_coll__map" alt="Collaboration graph"/></div>
 <map name="aMHLog_coll__map" id="aMHLog_coll__map">
-<area shape="rect" title="MHLog class is implementation of log mechanism." alt="" coords="285,321,465,575"/>
+<area shape="rect" title="MHLog class is implementation of log mechanism." alt="" coords="285,321,465,589"/>
 <area shape="rect" href="../../de/d0f/classIMHLog.html" title="IMHLog class is interface set for log mechanism." alt="" coords="5,5,185,259"/>
 <area shape="rect" title=" " alt="" coords="210,93,277,171"/>
 <area shape="rect" title=" " alt="" coords="335,93,416,171"/>
@@ -124,6 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a10b0c31d5d39c1a7b531dd96e8e7d1b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7c/classMHLog.html#a10b0c31d5d39c1a7b531dd96e8e7d1b6">MHLog</a> ()</td></tr>
 <tr class="memdesc:a10b0c31d5d39c1a7b531dd96e8e7d1b6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d7c/classMHLog.html" title="MHLog class is implementation of log mechanism.">MHLog</a> constructor.  <a href="../../d1/d7c/classMHLog.html#a10b0c31d5d39c1a7b531dd96e8e7d1b6">More...</a><br /></td></tr>
 <tr class="separator:a10b0c31d5d39c1a7b531dd96e8e7d1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f586068bddff9cef9653a2bef81a560"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7c/classMHLog.html#a1f586068bddff9cef9653a2bef81a560">~MHLog</a> () noexcept=default</td></tr>
+<tr class="memdesc:a1f586068bddff9cef9653a2bef81a560"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d7c/classMHLog.html" title="MHLog class is implementation of log mechanism.">MHLog</a> destructor.  <a href="../../d1/d7c/classMHLog.html#a1f586068bddff9cef9653a2bef81a560">More...</a><br /></td></tr>
+<tr class="separator:a1f586068bddff9cef9653a2bef81a560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bdf74a73c9d2633aed34b1755c71e2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7c/classMHLog.html#a3bdf74a73c9d2633aed34b1755c71e2a">setFilePath</a> (const <a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;logFilePath) final</td></tr>
 <tr class="memdesc:a3bdf74a73c9d2633aed34b1755c71e2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets file path for logger.  <a href="../../d1/d7c/classMHLog.html#a3bdf74a73c9d2633aed34b1755c71e2a">More...</a><br /></td></tr>
 <tr class="separator:a3bdf74a73c9d2633aed34b1755c71e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,8 +211,35 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00037">37</a> of file <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html">microhil_log.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   37</span>: <a class="code hl_variable" href="../../d1/d7c/classMHLog.html#ae5d7580df48261d593446a9364f5d614">m_fileOpened</a>{<span class="keyword">false</span>} {}</div>
-<div class="ttc" id="aclassMHLog_html_ae5d7580df48261d593446a9364f5d614"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#ae5d7580df48261d593446a9364f5d614">MHLog::m_fileOpened</a></div><div class="ttdeci">bool m_fileOpened</div><div class="ttdoc">Flag for checking log file state.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/microhil__log_8h_source.html#l00114">microhil_log.h:114</a></div></div>
+<div class="ttc" id="aclassMHLog_html_ae5d7580df48261d593446a9364f5d614"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#ae5d7580df48261d593446a9364f5d614">MHLog::m_fileOpened</a></div><div class="ttdeci">bool m_fileOpened</div><div class="ttdoc">Flag for checking log file state.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/microhil__log_8h_source.html#l00118">microhil_log.h:118</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a1f586068bddff9cef9653a2bef81a560" name="a1f586068bddff9cef9653a2bef81a560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f586068bddff9cef9653a2bef81a560">&#9670;&nbsp;</a></span>~MHLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual MHLog::~MHLog </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d1/d7c/classMHLog.html" title="MHLog class is implementation of log mechanism.">MHLog</a> destructor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -251,9 +281,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  101</span> </div>
 <div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> !<a class="code hl_variable" href="../../d1/d7c/classMHLog.html#ae5d7580df48261d593446a9364f5d614">m_fileOpened</a>;</div>
 <div class="line"><span class="lineno">  103</span>}</div>
-<div class="ttc" id="aclassMHLog_html_a184c23028eeb9d0603228aadff91bb7f"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#a184c23028eeb9d0603228aadff91bb7f">MHLog::m_logFile</a></div><div class="ttdeci">ofstream m_logFile</div><div class="ttdoc">Log file instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/microhil__log_8h_source.html#l00106">microhil_log.h:106</a></div></div>
+<div class="ttc" id="aclassMHLog_html_a184c23028eeb9d0603228aadff91bb7f"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#a184c23028eeb9d0603228aadff91bb7f">MHLog::m_logFile</a></div><div class="ttdeci">ofstream m_logFile</div><div class="ttdoc">Log file instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/microhil__log_8h_source.html#l00110">microhil_log.h:110</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00114">m_fileOpened</a>, and <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00106">m_logFile</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00118">m_fileOpened</a>, and <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00110">m_logFile</a>.</p>
 
 </div>
 </div>
@@ -343,9 +373,9 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
 <div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d7c/classMHLog.html#acb7c406b9c0f1b606ad3c8531f53d77f">m_logFilePath</a>;</div>
 <div class="line"><span class="lineno">   47</span>}</div>
-<div class="ttc" id="aclassMHLog_html_acb7c406b9c0f1b606ad3c8531f53d77f"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#acb7c406b9c0f1b606ad3c8531f53d77f">MHLog::m_logFilePath</a></div><div class="ttdeci">MHString m_logFilePath</div><div class="ttdoc">Log file path.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/microhil__log_8h_source.html#l00102">microhil_log.h:102</a></div></div>
+<div class="ttc" id="aclassMHLog_html_acb7c406b9c0f1b606ad3c8531f53d77f"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#acb7c406b9c0f1b606ad3c8531f53d77f">MHLog::m_logFilePath</a></div><div class="ttdeci">MHString m_logFilePath</div><div class="ttdoc">Log file path.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/microhil__log_8h_source.html#l00106">microhil_log.h:106</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00102">m_logFilePath</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00106">m_logFilePath</a>.</p>
 
 </div>
 </div>
@@ -381,9 +411,9 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   67</span>{</div>
 <div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d7c/classMHLog.html#a3dce0cb36ba569a237b01a1f5e49c67e">m_logLevel</a>;</div>
 <div class="line"><span class="lineno">   69</span>}</div>
-<div class="ttc" id="aclassMHLog_html_a3dce0cb36ba569a237b01a1f5e49c67e"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#a3dce0cb36ba569a237b01a1f5e49c67e">MHLog::m_logLevel</a></div><div class="ttdeci">LogLevel m_logLevel</div><div class="ttdoc">Type of log level.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/microhil__log_8h_source.html#l00110">microhil_log.h:110</a></div></div>
+<div class="ttc" id="aclassMHLog_html_a3dce0cb36ba569a237b01a1f5e49c67e"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#a3dce0cb36ba569a237b01a1f5e49c67e">MHLog::m_logLevel</a></div><div class="ttdeci">LogLevel m_logLevel</div><div class="ttdoc">Type of log level.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d52/microhil__log_8h_source.html#l00114">microhil_log.h:114</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00110">m_logLevel</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00114">m_logLevel</a>.</p>
 
 </div>
 </div>
@@ -426,7 +456,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d7c/classMHLog.html#ae5d7580df48261d593446a9364f5d614">m_fileOpened</a>;</div>
 <div class="line"><span class="lineno">   80</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00114">m_fileOpened</a>, <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00106">m_logFile</a>, and <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00102">m_logFilePath</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00118">m_fileOpened</a>, <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00110">m_logFile</a>, and <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00106">m_logFilePath</a>.</p>
 
 </div>
 </div>
@@ -469,7 +499,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="../../d1/d7c/classMHLog.html#acb7c406b9c0f1b606ad3c8531f53d77f">m_logFilePath</a> = logFilePath;</div>
 <div class="line"><span class="lineno">   42</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00102">m_logFilePath</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00106">m_logFilePath</a>.</p>
 
 </div>
 </div>
@@ -513,7 +543,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   59</span>}</div>
 <div class="ttc" id="amicrohil__ilog_8h_html_a9cf4d2a890c8688e0fe1bc38fa88de94"><div class="ttname"><a href="../../d7/db9/microhil__ilog_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94">LogLevel</a></div><div class="ttdeci">LogLevel</div><div class="ttdoc">Scoped class enumerator for log levels.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/db9/microhil__ilog_8h_source.html#l00025">microhil_ilog.h:26</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00110">m_logLevel</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00114">m_logLevel</a>.</p>
 
 </div>
 </div>
@@ -556,7 +586,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   63</span>    <a class="code hl_variable" href="../../d1/d7c/classMHLog.html#a3dce0cb36ba569a237b01a1f5e49c67e">m_logLevel</a> = level;</div>
 <div class="line"><span class="lineno">   64</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00110">m_logLevel</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00114">m_logLevel</a>.</p>
 
 </div>
 </div>
@@ -602,7 +632,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   54</span>}</div>
 <div class="ttc" id="aclassMHLog_html_a176efed5e930522dc62d374397dd1962"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#a176efed5e930522dc62d374397dd1962">MHLog::toLogType</a></div><div class="ttdeci">LogLevel toLogType(const MHString &amp;level) const final</div><div class="ttdoc">Converts log level string to level type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd6/microhil__log_8cc_source.html#l00132">microhil_log.cc:132</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00110">m_logLevel</a>, and <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00132">toLogType()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00114">m_logLevel</a>, and <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00132">toLogType()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -807,7 +837,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassMHLog_html_a37783e3fd8aadf47c1fd96d30a84bba1"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#a37783e3fd8aadf47c1fd96d30a84bba1">MHLog::toStringLogType</a></div><div class="ttdeci">MHString toStringLogType(const LogLevel level) const final</div><div class="ttdoc">Converts log level type to human readable string.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd6/microhil__log_8cc_source.html#l00117">microhil_log.cc:117</a></div></div>
 <div class="ttc" id="aclassMHLog_html_a715a219accbbfbc9602404cfcdf05846"><div class="ttname"><a href="../../d1/d7c/classMHLog.html#a715a219accbbfbc9602404cfcdf05846">MHLog::getCurrentDateTime</a></div><div class="ttdeci">MHString getCurrentDateTime() const final</div><div class="ttdoc">Gets current date and time.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd6/microhil__log_8cc_source.html#l00105">microhil_log.cc:105</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00105">getCurrentDateTime()</a>, <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00114">m_fileOpened</a>, <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00106">m_logFile</a>, and <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00117">toStringLogType()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00105">getCurrentDateTime()</a>, <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00118">m_fileOpened</a>, <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00110">m_logFile</a>, and <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00117">toStringLogType()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -844,7 +874,7 @@ Here is the call graph for this function:</div>
 
 <p>Flag for checking log file state. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00114">114</a> of file <a class="el" href="../../df/d52/microhil__log_8h_source.html">microhil_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00118">118</a> of file <a class="el" href="../../df/d52/microhil__log_8h_source.html">microhil_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00094">close()</a>, <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00071">open()</a>, and <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00082">write()</a>.</p>
 
@@ -872,7 +902,7 @@ Here is the call graph for this function:</div>
 
 <p>Log file instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00106">106</a> of file <a class="el" href="../../df/d52/microhil__log_8h_source.html">microhil_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00110">110</a> of file <a class="el" href="../../df/d52/microhil__log_8h_source.html">microhil_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00094">close()</a>, <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00071">open()</a>, and <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00082">write()</a>.</p>
 
@@ -900,7 +930,7 @@ Here is the call graph for this function:</div>
 
 <p>Log file path. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00102">102</a> of file <a class="el" href="../../df/d52/microhil__log_8h_source.html">microhil_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00106">106</a> of file <a class="el" href="../../df/d52/microhil__log_8h_source.html">microhil_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00044">getFilePath()</a>, <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00071">open()</a>, and <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00039">setFilePath()</a>.</p>
 
@@ -928,7 +958,7 @@ Here is the call graph for this function:</div>
 
 <p>Type of log level. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00110">110</a> of file <a class="el" href="../../df/d52/microhil__log_8h_source.html">microhil_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d52/microhil__log_8h_source.html#l00114">114</a> of file <a class="el" href="../../df/d52/microhil__log_8h_source.html">microhil_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00066">getLogLevel()</a>, and <a class="el" href="../../d5/dd6/microhil__log_8cc_source.html#l00049">setLogLevel()</a>.</p>
 
@@ -944,7 +974,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d7c/classMHLog.html">MHLog</a></li>
-    <li class="footer">Generated on Tue Oct 3 2023 20:01:04 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Oct 3 2023 23:38:28 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -1,6 +1,7 @@
 var classMHViewLog =
 [
     [ "MHViewLog", "d1/d14/classMHViewLog.html#aced08a94f10af65fa22d586d21600890", null ],
+    [ "~MHViewLog", "d1/d14/classMHViewLog.html#af8c93c5b64947f685d25d76f8dbdc863", null ],
     [ "cancelLogTriggered", "d1/d14/classMHViewLog.html#a2655f2e5bcf4c9833923ede98c5812a5", null ],
     [ "logFilePathChanged", "d1/d14/classMHViewLog.html#a2675eb2d7d08a926ad83e91208c92a6e", null ],
     [ "logLevelChanged", "d1/d14/classMHViewLog.html#af2ffe9cbd4bb57df4dcd2baaafdc0f88", null ],

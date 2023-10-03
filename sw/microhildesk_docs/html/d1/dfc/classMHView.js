@@ -1,6 +1,7 @@
 var classMHView =
 [
     [ "MHView", "d1/dfc/classMHView.html#a5288fc0383c58f06d80eb402890397d4", null ],
+    [ "~MHView", "d1/dfc/classMHView.html#a6c2f3b4758d552825798e02a9fdc38c4", null ],
     [ "getHome", "d1/dfc/classMHView.html#ae26dc08c053aedad19726a30b97a012e", null ],
     [ "getLogSettings", "d1/dfc/classMHView.html#a9e1376978625d269c291b8e104ae822a", null ],
     [ "getSerialSettings", "d1/dfc/classMHView.html#a3dd70a065bcb23012cf27a08f53b797a", null ],

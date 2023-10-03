@@ -1,6 +1,6 @@
 var classAbMHViewLog =
 [
-    [ "~AbMHViewLog", "d9/d0c/classAbMHViewLog.html#a27b836a207a9cba5f29283e634bcd4b6", null ],
+    [ "~AbMHViewLog", "d9/d0c/classAbMHViewLog.html#abba99464c86810a6543f49117028646f", null ],
     [ "cancelLogTriggered", "d9/d0c/classAbMHViewLog.html#abf11fa0f4c14a09ce6f281ca50ab37e8", null ],
     [ "logFilePathChanged", "d9/d0c/classAbMHViewLog.html#ae147804b092e3443324d5324e10228df", null ],
     [ "logLevelChanged", "d9/d0c/classAbMHViewLog.html#aa3bf4f8e0d32c80b4470d120e662a034", null ],

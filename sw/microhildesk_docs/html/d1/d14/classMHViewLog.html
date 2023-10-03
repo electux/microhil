@@ -102,7 +102,7 @@ Inheritance diagram for MHViewLog:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/da8/classMHViewLog__inherit__graph.png" border="0" usemap="#aMHViewLog_inherit__map" alt="Inheritance graph"/></div>
 <map name="aMHViewLog_inherit__map" id="aMHViewLog_inherit__map">
-<area shape="rect" title="MHViewLog class is implementation of log settings view." alt="" coords="89,263,284,633"/>
+<area shape="rect" title="MHViewLog class is implementation of log settings view." alt="" coords="89,263,284,648"/>
 <area shape="rect" href="../../d9/d0c/classAbMHViewLog.html" title="AbMHViewLog class is abstract setup for log settings view." alt="" coords="5,5,200,215"/>
 <area shape="rect" title=" " alt="" coords="225,71,319,149"/>
 </map>
@@ -112,7 +112,7 @@ Collaboration diagram for MHViewLog:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/dc0/classMHViewLog__coll__graph.png" border="0" usemap="#aMHViewLog_coll__map" alt="Collaboration graph"/></div>
 <map name="aMHViewLog_coll__map" id="aMHViewLog_coll__map">
-<area shape="rect" title="MHViewLog class is implementation of log settings view." alt="" coords="869,292,1064,531"/>
+<area shape="rect" title="MHViewLog class is implementation of log settings view." alt="" coords="869,292,1064,545"/>
 <area shape="rect" href="../../d9/d0c/classAbMHViewLog.html" title="AbMHViewLog class is abstract setup for log settings view." alt="" coords="5,5,200,215"/>
 <area shape="rect" title=" " alt="" coords="225,71,319,149"/>
 <area shape="rect" title=" " alt="" coords="344,71,523,149"/>
@@ -131,6 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aced08a94f10af65fa22d586d21600890"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d14/classMHViewLog.html#aced08a94f10af65fa22d586d21600890">MHViewLog</a> (BaseObjectType *object, <a class="el" href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a>&lt; Gtk::Builder &gt; const &amp;ui)</td></tr>
 <tr class="memdesc:aced08a94f10af65fa22d586d21600890"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d14/classMHViewLog.html" title="MHViewLog class is implementation of log settings view.">MHViewLog</a> constructor.  <a href="../../d1/d14/classMHViewLog.html#aced08a94f10af65fa22d586d21600890">More...</a><br /></td></tr>
 <tr class="separator:aced08a94f10af65fa22d586d21600890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c93c5b64947f685d25d76f8dbdc863"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d14/classMHViewLog.html#af8c93c5b64947f685d25d76f8dbdc863">~MHViewLog</a> () noexcept=default</td></tr>
+<tr class="memdesc:af8c93c5b64947f685d25d76f8dbdc863"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d14/classMHViewLog.html" title="MHViewLog class is implementation of log settings view.">MHViewLog</a> destructor.  <a href="../../d1/d14/classMHViewLog.html#af8c93c5b64947f685d25d76f8dbdc863">More...</a><br /></td></tr>
+<tr class="separator:af8c93c5b64947f685d25d76f8dbdc863"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add01e9eebba8892e3159025e042ce042"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d95/microhil__view__log__abstract_8h.html#a986e738e2ff473bec6ff1620aacf9d20">SigLogSetup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d14/classMHViewLog.html#add01e9eebba8892e3159025e042ce042">logSetupChanged</a> () final</td></tr>
 <tr class="memdesc:add01e9eebba8892e3159025e042ce042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for log settings.  <a href="../../d1/d14/classMHViewLog.html#add01e9eebba8892e3159025e042ce042">More...</a><br /></td></tr>
 <tr class="separator:add01e9eebba8892e3159025e042ce042"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -268,15 +271,15 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   68</span> </div>
 <div class="line"><span class="lineno">   71</span>    this-&gt;hide();</div>
 <div class="line"><span class="lineno">   72</span>}</div>
-<div class="ttc" id="aclassMHViewLog_html_a06aa5ad06a13aee565ffba263911142b"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a06aa5ad06a13aee565ffba263911142b">MHViewLog::m_cancel</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Button &gt; m_cancel</div><div class="ttdoc">Cancel button.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">microhil_view_log.h:105</a></div></div>
-<div class="ttc" id="aclassMHViewLog_html_a3d135a29e8cfd34b0cd7c6b5e2f8270e"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a3d135a29e8cfd34b0cd7c6b5e2f8270e">MHViewLog::m_device</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Entry &gt; m_device</div><div class="ttdoc">UI entry for setting file log path.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">microhil_view_log.h:97</a></div></div>
-<div class="ttc" id="aclassMHViewLog_html_a520136cffe33f81eb7749576878d3843"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a520136cffe33f81eb7749576878d3843">MHViewLog::m_ui</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Builder &gt; m_ui</div><div class="ttdoc">UI builder instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00093">microhil_view_log.h:93</a></div></div>
-<div class="ttc" id="aclassMHViewLog_html_a9f700f71670fcbe4b97905fe6c8300c0"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a9f700f71670fcbe4b97905fe6c8300c0">MHViewLog::m_level</a></div><div class="ttdeci">MHRPtr&lt; Gtk::ComboBoxText &gt; m_level</div><div class="ttdoc">Combobox for selecting log level type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">microhil_view_log.h:101</a></div></div>
-<div class="ttc" id="aclassMHViewLog_html_add88682ebbf425b1b83ed97d30aedef9"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#add88682ebbf425b1b83ed97d30aedef9">MHViewLog::m_ok</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Button &gt; m_ok</div><div class="ttdoc">Confirm button.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00109">microhil_view_log.h:109</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_a06aa5ad06a13aee565ffba263911142b"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a06aa5ad06a13aee565ffba263911142b">MHViewLog::m_cancel</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Button &gt; m_cancel</div><div class="ttdoc">Cancel button.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00109">microhil_view_log.h:109</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_a3d135a29e8cfd34b0cd7c6b5e2f8270e"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a3d135a29e8cfd34b0cd7c6b5e2f8270e">MHViewLog::m_device</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Entry &gt; m_device</div><div class="ttdoc">UI entry for setting file log path.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">microhil_view_log.h:101</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_a520136cffe33f81eb7749576878d3843"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a520136cffe33f81eb7749576878d3843">MHViewLog::m_ui</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Builder &gt; m_ui</div><div class="ttdoc">UI builder instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">microhil_view_log.h:97</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_a9f700f71670fcbe4b97905fe6c8300c0"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a9f700f71670fcbe4b97905fe6c8300c0">MHViewLog::m_level</a></div><div class="ttdeci">MHRPtr&lt; Gtk::ComboBoxText &gt; m_level</div><div class="ttdoc">Combobox for selecting log level type.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">microhil_view_log.h:105</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_add88682ebbf425b1b83ed97d30aedef9"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#add88682ebbf425b1b83ed97d30aedef9">MHViewLog::m_ok</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Button &gt; m_ok</div><div class="ttdoc">Confirm button.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00113">microhil_view_log.h:113</a></div></div>
 <div class="ttc" id="aclassMHViewLog_html_aefa7c638ba5f26cf2a3d1389194200b6"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#aefa7c638ba5f26cf2a3d1389194200b6">MHViewLog::mapping</a></div><div class="ttdeci">void mapping()</div><div class="ttdoc">Maps all widgets (signals and slots)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dcf/microhil__view__log__map_8cc_source.html#l00021">microhil_view_log_map.cc:21</a></div></div>
 <div class="ttc" id="amicrohil__types_8h_html_a995fcf67a347673a77ad94b3403bbea6"><div class="ttname"><a href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a></div><div class="ttdeci">Glib::RefPtr&lt; T &gt; MHRPtr</div><div class="ttdoc">Shortest shared pointer declaration.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/db9/microhil__types_8h_source.html#l00030">microhil_types.h:30</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">m_cancel</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">m_device</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">m_level</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00109">m_ok</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00093">m_ui</a>, and <a class="el" href="../../dd/dcf/microhil__view__log__map_8cc_source.html#l00021">mapping()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00109">m_cancel</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">m_device</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">m_level</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00113">m_ok</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">m_ui</a>, and <a class="el" href="../../dd/dcf/microhil__view__log__map_8cc_source.html#l00021">mapping()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -290,6 +293,33 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="../../d1/d14/classMHViewLog.html#aef806bb48373e882d983439eb18300b3" title="Slot for processing Ok button." alt="" coords="463,173,687,200"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="af8c93c5b64947f685d25d76f8dbdc863" name="af8c93c5b64947f685d25d76f8dbdc863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c93c5b64947f685d25d76f8dbdc863">&#9670;&nbsp;</a></span>~MHViewLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MHViewLog::~MHViewLog </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d1/d14/classMHViewLog.html" title="MHViewLog class is implementation of log settings view.">MHViewLog</a> destructor. </p>
 
 </div>
 </div>
@@ -326,9 +356,9 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
 <div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d14/classMHViewLog.html#aae7eadb47bcc2e498b24c0d4d18db32f">m_cancelLog</a>;</div>
 <div class="line"><span class="lineno">   39</span>}</div>
-<div class="ttc" id="aclassMHViewLog_html_aae7eadb47bcc2e498b24c0d4d18db32f"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#aae7eadb47bcc2e498b24c0d4d18db32f">MHViewLog::m_cancelLog</a></div><div class="ttdeci">SigCancelLog m_cancelLog</div><div class="ttdoc">Signal for Cancel button (dismiss)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00125">microhil_view_log.h:125</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_aae7eadb47bcc2e498b24c0d4d18db32f"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#aae7eadb47bcc2e498b24c0d4d18db32f">MHViewLog::m_cancelLog</a></div><div class="ttdeci">SigCancelLog m_cancelLog</div><div class="ttdoc">Signal for Cancel button (dismiss)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00129">microhil_view_log.h:129</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00125">m_cancelLog</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00129">m_cancelLog</a>.</p>
 
 </div>
 </div>
@@ -364,9 +394,9 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
 <div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d14/classMHViewLog.html#a441f7e117a9415bf4c226f05be9c297d">m_logFilePath</a>;</div>
 <div class="line"><span class="lineno">   29</span>}</div>
-<div class="ttc" id="aclassMHViewLog_html_a441f7e117a9415bf4c226f05be9c297d"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a441f7e117a9415bf4c226f05be9c297d">MHViewLog::m_logFilePath</a></div><div class="ttdeci">SigLogFilePath m_logFilePath</div><div class="ttdoc">Signal for log file path input.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00117">microhil_view_log.h:117</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_a441f7e117a9415bf4c226f05be9c297d"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a441f7e117a9415bf4c226f05be9c297d">MHViewLog::m_logFilePath</a></div><div class="ttdeci">SigLogFilePath m_logFilePath</div><div class="ttdoc">Signal for log file path input.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00121">microhil_view_log.h:121</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00117">m_logFilePath</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00121">m_logFilePath</a>.</p>
 
 </div>
 </div>
@@ -402,9 +432,9 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
 <div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d14/classMHViewLog.html#abcbfe38f297717013d5100e2a13ff575">m_logLevel</a>;</div>
 <div class="line"><span class="lineno">   34</span>}</div>
-<div class="ttc" id="aclassMHViewLog_html_abcbfe38f297717013d5100e2a13ff575"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#abcbfe38f297717013d5100e2a13ff575">MHViewLog::m_logLevel</a></div><div class="ttdeci">SigSelectLogLevel m_logLevel</div><div class="ttdoc">Signal for log level combobox.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00121">microhil_view_log.h:121</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_abcbfe38f297717013d5100e2a13ff575"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#abcbfe38f297717013d5100e2a13ff575">MHViewLog::m_logLevel</a></div><div class="ttdeci">SigSelectLogLevel m_logLevel</div><div class="ttdoc">Signal for log level combobox.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00125">microhil_view_log.h:125</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00121">m_logLevel</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00125">m_logLevel</a>.</p>
 
 </div>
 </div>
@@ -449,7 +479,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   77</span>    <a class="code hl_variable" href="../../d1/d14/classMHViewLog.html#a9f700f71670fcbe4b97905fe6c8300c0">m_level</a>-&gt;set_active(logLevel);</div>
 <div class="line"><span class="lineno">   78</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">m_device</a>, and <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">m_level</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">m_device</a>, and <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">m_level</a>.</p>
 
 </div>
 </div>
@@ -485,9 +515,9 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
 <div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d14/classMHViewLog.html#a3333f7ba8d70aee09107b7822b335c31">m_logSetup</a>;</div>
 <div class="line"><span class="lineno">   24</span>}</div>
-<div class="ttc" id="aclassMHViewLog_html_a3333f7ba8d70aee09107b7822b335c31"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a3333f7ba8d70aee09107b7822b335c31">MHViewLog::m_logSetup</a></div><div class="ttdeci">SigLogSetup m_logSetup</div><div class="ttdoc">Signal for log settings.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00113">microhil_view_log.h:113</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_a3333f7ba8d70aee09107b7822b335c31"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a3333f7ba8d70aee09107b7822b335c31">MHViewLog::m_logSetup</a></div><div class="ttdeci">SigLogSetup m_logSetup</div><div class="ttdoc">Signal for log settings.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00117">microhil_view_log.h:117</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00113">m_logSetup</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00117">m_logSetup</a>.</p>
 
 </div>
 </div>
@@ -540,7 +570,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassMHViewLog_html_ae060f380bf2f0050289f718338685d37"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#ae060f380bf2f0050289f718338685d37">MHViewLog::onLogLevelChanged</a></div><div class="ttdeci">void onLogLevelChanged() final</div><div class="ttdoc">Slot for processing log level combobox.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00033">microhil_view_log_slots.cc:33</a></div></div>
 <div class="ttc" id="aclassMHViewLog_html_aef806bb48373e882d983439eb18300b3"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#aef806bb48373e882d983439eb18300b3">MHViewLog::onOkLogTriggered</a></div><div class="ttdeci">void onOkLogTriggered() final</div><div class="ttdoc">Slot for processing Ok button.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00043">microhil_view_log_slots.cc:43</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">m_cancel</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">m_device</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">m_level</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00109">m_ok</a>, <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00038">onCancelLogTriggered()</a>, <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00022">onLogFilePathChanged()</a>, <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00033">onLogLevelChanged()</a>, and <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00043">onOkLogTriggered()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00109">m_cancel</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">m_device</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">m_level</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00113">m_ok</a>, <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00038">onCancelLogTriggered()</a>, <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00022">onLogFilePathChanged()</a>, <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00033">onLogLevelChanged()</a>, and <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00043">onOkLogTriggered()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d3/dd6/microhil__view__log_8cc_source.html#l00040">MHViewLog()</a>.</p>
 <div class="dynheader">
@@ -599,9 +629,9 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
 <div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d14/classMHViewLog.html#a7aff1fae0997567b81444b4993030acb">m_okLog</a>;</div>
 <div class="line"><span class="lineno">   44</span>}</div>
-<div class="ttc" id="aclassMHViewLog_html_a7aff1fae0997567b81444b4993030acb"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a7aff1fae0997567b81444b4993030acb">MHViewLog::m_okLog</a></div><div class="ttdeci">SigOkLog m_okLog</div><div class="ttdoc">Signal for Ok button (confirm)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00129">microhil_view_log.h:129</a></div></div>
+<div class="ttc" id="aclassMHViewLog_html_a7aff1fae0997567b81444b4993030acb"><div class="ttname"><a href="../../d1/d14/classMHViewLog.html#a7aff1fae0997567b81444b4993030acb">MHViewLog::m_okLog</a></div><div class="ttdeci">SigOkLog m_okLog</div><div class="ttdoc">Signal for Ok button (confirm)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd2/microhil__view__log_8h_source.html#l00133">microhil_view_log.h:133</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00129">m_okLog</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00133">m_okLog</a>.</p>
 
 </div>
 </div>
@@ -689,7 +719,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   30</span>    }</div>
 <div class="line"><span class="lineno">   31</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">m_device</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">m_device</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/dcf/microhil__view__log__map_8cc_source.html#l00021">mapping()</a>.</p>
 <div class="dynheader">
@@ -789,7 +819,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   52</span>    this-&gt;hide();</div>
 <div class="line"><span class="lineno">   53</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">m_device</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">m_level</a>, and <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00113">m_logSetup</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">m_device</a>, <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">m_level</a>, and <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00117">m_logSetup</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/dcf/microhil__view__log__map_8cc_source.html#l00021">mapping()</a>.</p>
 <div class="dynheader">
@@ -828,7 +858,7 @@ Here is the caller graph for this function:</div>
 
 <p>Cancel button. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">105</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00109">109</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/dcf/microhil__view__log__map_8cc_source.html#l00021">mapping()</a>, and <a class="el" href="../../d3/dd6/microhil__view__log_8cc_source.html#l00040">MHViewLog()</a>.</p>
 
@@ -856,7 +886,7 @@ Here is the caller graph for this function:</div>
 
 <p>Signal for Cancel button (dismiss) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00125">125</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00129">129</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/dd1/microhil__view__log__signals_8cc_source.html#l00036">cancelLogTriggered()</a>.</p>
 
@@ -884,7 +914,7 @@ Here is the caller graph for this function:</div>
 
 <p>UI entry for setting file log path. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">97</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">101</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d3/dd6/microhil__view__log_8cc_source.html#l00074">logSettingsLoaded()</a>, <a class="el" href="../../dd/dcf/microhil__view__log__map_8cc_source.html#l00021">mapping()</a>, <a class="el" href="../../d3/dd6/microhil__view__log_8cc_source.html#l00040">MHViewLog()</a>, <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00022">onLogFilePathChanged()</a>, and <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00043">onOkLogTriggered()</a>.</p>
 
@@ -912,7 +942,7 @@ Here is the caller graph for this function:</div>
 
 <p>Combobox for selecting log level type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00101">101</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00105">105</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d3/dd6/microhil__view__log_8cc_source.html#l00074">logSettingsLoaded()</a>, <a class="el" href="../../dd/dcf/microhil__view__log__map_8cc_source.html#l00021">mapping()</a>, <a class="el" href="../../d3/dd6/microhil__view__log_8cc_source.html#l00040">MHViewLog()</a>, and <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00043">onOkLogTriggered()</a>.</p>
 
@@ -940,7 +970,7 @@ Here is the caller graph for this function:</div>
 
 <p>Signal for log file path input. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00117">117</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00121">121</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/dd1/microhil__view__log__signals_8cc_source.html#l00026">logFilePathChanged()</a>.</p>
 
@@ -968,7 +998,7 @@ Here is the caller graph for this function:</div>
 
 <p>Signal for log level combobox. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00121">121</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00125">125</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/dd1/microhil__view__log__signals_8cc_source.html#l00031">logLevelChanged()</a>.</p>
 
@@ -996,7 +1026,7 @@ Here is the caller graph for this function:</div>
 
 <p>Signal for log settings. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00113">113</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00117">117</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/dd1/microhil__view__log__signals_8cc_source.html#l00021">logSetupChanged()</a>, and <a class="el" href="../../db/d53/microhil__view__log__slots_8cc_source.html#l00043">onOkLogTriggered()</a>.</p>
 
@@ -1024,7 +1054,7 @@ Here is the caller graph for this function:</div>
 
 <p>Confirm button. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00109">109</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00113">113</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/dcf/microhil__view__log__map_8cc_source.html#l00021">mapping()</a>, and <a class="el" href="../../d3/dd6/microhil__view__log_8cc_source.html#l00040">MHViewLog()</a>.</p>
 
@@ -1052,7 +1082,7 @@ Here is the caller graph for this function:</div>
 
 <p>Signal for Ok button (confirm) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00129">129</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00133">133</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/dd1/microhil__view__log__signals_8cc_source.html#l00041">okLogTriggered()</a>.</p>
 
@@ -1080,7 +1110,7 @@ Here is the caller graph for this function:</div>
 
 <p>UI builder instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00093">93</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html#l00097">97</a> of file <a class="el" href="../../d2/dd2/microhil__view__log_8h_source.html">microhil_view_log.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d3/dd6/microhil__view__log_8cc_source.html#l00040">MHViewLog()</a>.</p>
 
@@ -1099,7 +1129,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d14/classMHViewLog.html">MHViewLog</a></li>
-    <li class="footer">Generated on Tue Oct 3 2023 20:01:04 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Oct 3 2023 23:38:28 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>
