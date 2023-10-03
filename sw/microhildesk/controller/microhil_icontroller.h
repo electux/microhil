@@ -27,7 +27,7 @@ class IMHController
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief IMHController destructor
-    virtual ~IMHController() = default;
+    inline virtual ~IMHController() noexcept = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Enables controller (enable/disable communication)

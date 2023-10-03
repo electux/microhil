@@ -36,6 +36,10 @@ public:
     MHViewAbout(BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui);
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHViewAbout destructor
+    inline ~MHViewAbout() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button
     /// @return Signal for clicked Ok button
     SigHideAbout hideAboutTriggered() final;

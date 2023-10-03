@@ -37,6 +37,10 @@ public:
     MHViewSerial(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHViewSerial destructor
+    inline ~MHViewSerial() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for serial settings
     /// @return Signal for changed serial settings
     SigSerialSetup serialSetupChanged() final;

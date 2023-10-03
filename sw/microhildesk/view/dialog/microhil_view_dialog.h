@@ -36,6 +36,10 @@ public:
     MHViewDialog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHViewDialog destructor
+    inline ~MHViewDialog() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button
     /// @return Signal for clicked Close button
     SigHideDialog hideDialogTrigered() final;

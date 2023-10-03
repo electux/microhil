@@ -35,7 +35,7 @@ class IMHModel
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief IMHModel destructor
-    virtual ~IMHModel() = default;
+    inline virtual ~IMHModel() noexcept = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets channel #0 state (ON/OFF)

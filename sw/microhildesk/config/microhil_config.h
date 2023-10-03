@@ -31,6 +31,10 @@ public:
     explicit MHConfig();
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHConfig destructor
+    inline ~MHConfig() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for loaded log configuration
     /// @return Signal for loaded log configuration
     SigLogConfig LogConfigLoaded() final;

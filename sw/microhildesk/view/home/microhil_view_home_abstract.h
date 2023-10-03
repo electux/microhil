@@ -103,7 +103,7 @@ class AbMHViewHome
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewHome destructor
-    virtual ~AbMHViewHome() = default;
+    inline virtual ~AbMHViewHome() noexcept = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (changed view)

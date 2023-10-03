@@ -37,6 +37,10 @@ public:
     explicit MHController(MHSPtr<IMHModel> model, MHSPtr<IMHView> view);
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHController destructor
+    inline ~MHController() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Enables controller (enable/disable communication)
     /// @param switchController represents requested enable value
     void setEnabled(bool switchController) final;

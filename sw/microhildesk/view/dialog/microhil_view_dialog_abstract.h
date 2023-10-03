@@ -44,7 +44,7 @@ class AbMHViewDialog
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief AbMHViewDialog destructor
-    virtual ~AbMHViewDialog() = default;
+    inline virtual ~AbMHViewDialog() noexcept = default;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button

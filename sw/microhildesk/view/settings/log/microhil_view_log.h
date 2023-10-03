@@ -37,6 +37,10 @@ public:
     MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief MHViewLog destructor
+    inline ~MHViewLog() noexcept = default;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings
     /// @return Signal for changed log settings
     SigLogSetup logSetupChanged() final;
