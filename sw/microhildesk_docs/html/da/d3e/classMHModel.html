@@ -101,7 +101,7 @@ Inheritance diagram for MHModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d9/d95/classMHModel__inherit__graph.png" border="0" usemap="#aMHModel_inherit__map" alt="Inheritance graph"/></div>
 <map name="aMHModel_inherit__map" id="aMHModel_inherit__map">
-<area shape="rect" title="MHModel class is implementation of model mechanism." alt="" coords="5,175,135,296"/>
+<area shape="rect" title="MHModel class is implementation of model mechanism." alt="" coords="5,175,135,311"/>
 <area shape="rect" href="../../dd/db2/classIMHModel.html" title="IMHModel class is interface set for model." alt="" coords="5,5,135,127"/>
 </map>
 </div>
@@ -110,7 +110,7 @@ Collaboration diagram for MHModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dc/dad/classMHModel__coll__graph.png" border="0" usemap="#aMHModel_coll__map" alt="Collaboration graph"/></div>
 <map name="aMHModel_coll__map" id="aMHModel_coll__map">
-<area shape="rect" title="MHModel class is implementation of model mechanism." alt="" coords="95,189,224,311"/>
+<area shape="rect" title="MHModel class is implementation of model mechanism." alt="" coords="95,189,224,325"/>
 <area shape="rect" href="../../dd/db2/classIMHModel.html" title="IMHModel class is interface set for model." alt="" coords="5,5,135,127"/>
 <area shape="rect" title=" " alt="" coords="159,27,339,105"/>
 </map>
@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c0f221b3a7af2ea473120047fff4503"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3e/classMHModel.html#a6c0f221b3a7af2ea473120047fff4503">MHModel</a> ()</td></tr>
 <tr class="memdesc:a6c0f221b3a7af2ea473120047fff4503"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../da/d3e/classMHModel.html" title="MHModel class is implementation of model mechanism.">MHModel</a> constructor.  <a href="../../da/d3e/classMHModel.html#a6c0f221b3a7af2ea473120047fff4503">More...</a><br /></td></tr>
 <tr class="separator:a6c0f221b3a7af2ea473120047fff4503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc0fe235dc40d508c1e67c503e66185"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3e/classMHModel.html#a9fc0fe235dc40d508c1e67c503e66185">~MHModel</a> () noexcept=default</td></tr>
+<tr class="memdesc:a9fc0fe235dc40d508c1e67c503e66185"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../da/d3e/classMHModel.html" title="MHModel class is implementation of model mechanism.">MHModel</a> destructor.  <a href="../../da/d3e/classMHModel.html#a9fc0fe235dc40d508c1e67c503e66185">More...</a><br /></td></tr>
+<tr class="separator:a9fc0fe235dc40d508c1e67c503e66185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9931717f2f94699409fe23f2939b3399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3e/classMHModel.html#a9931717f2f94699409fe23f2939b3399">setChannel</a> (const int id, const <a class="el" href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05">ChannelState</a> state) final</td></tr>
 <tr class="memdesc:a9931717f2f94699409fe23f2939b3399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets channel #0 state (ON/OFF)  <a href="../../da/d3e/classMHModel.html#a9931717f2f94699409fe23f2939b3399">More...</a><br /></td></tr>
 <tr class="separator:a9931717f2f94699409fe23f2939b3399"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,10 +178,37 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   34</span>        <a class="code hl_variable" href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">m_channels</a>.push_back(<a class="code hl_enumvalue" href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a3c76c41f1fd2cbc13411d21e5a4e9dbf">ChannelState::MICROHIL_OFF</a>);</div>
 <div class="line"><span class="lineno">   35</span>    }</div>
 <div class="line"><span class="lineno">   36</span>}</div>
-<div class="ttc" id="aclassMHModel_html_af3c3208fda658163b42d2df2987e2660"><div class="ttname"><a href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">MHModel::m_channels</a></div><div class="ttdeci">std::vector&lt; ChannelState &gt; m_channels</div><div class="ttdoc">Channel states.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d57/microhil__model_8h_source.html#l00054">microhil_model.h:54</a></div></div>
+<div class="ttc" id="aclassMHModel_html_af3c3208fda658163b42d2df2987e2660"><div class="ttname"><a href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">MHModel::m_channels</a></div><div class="ttdeci">std::vector&lt; ChannelState &gt; m_channels</div><div class="ttdoc">Channel states.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d57/microhil__model_8h_source.html#l00058">microhil_model.h:58</a></div></div>
 <div class="ttc" id="amicrohil__imodel_8h_html_af01e337765f2caf3f5f9e88d5fc19b05a3c76c41f1fd2cbc13411d21e5a4e9dbf"><div class="ttname"><a href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a3c76c41f1fd2cbc13411d21e5a4e9dbf">ChannelState::MICROHIL_OFF</a></div><div class="ttdeci">@ MICROHIL_OFF</div><div class="ttdoc">Channel state off.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00054">m_channels</a>, and <a class="el" href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a3c76c41f1fd2cbc13411d21e5a4e9dbf">MICROHIL_OFF</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>, and <a class="el" href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a3c76c41f1fd2cbc13411d21e5a4e9dbf">MICROHIL_OFF</a>.</p>
+
+</div>
+</div>
+<a id="a9fc0fe235dc40d508c1e67c503e66185" name="a9fc0fe235dc40d508c1e67c503e66185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc0fe235dc40d508c1e67c503e66185">&#9670;&nbsp;</a></span>~MHModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MHModel::~MHModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../da/d3e/classMHModel.html" title="MHModel class is implementation of model mechanism.">MHModel</a> destructor. </p>
 
 </div>
 </div>
@@ -223,7 +253,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">m_channels</a>[id];</div>
 <div class="line"><span class="lineno">   46</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00054">m_channels</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>.</p>
 
 </div>
 </div>
@@ -268,7 +298,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   51</span>}</div>
 <div class="ttc" id="amicrohil__imodel_8h_html_af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae"><div class="ttname"><a href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">ChannelState::MICROHIL_ON</a></div><div class="ttdeci">@ MICROHIL_ON</div><div class="ttdoc">Channel state on.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00054">m_channels</a>, and <a class="el" href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">MICROHIL_ON</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>, and <a class="el" href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">MICROHIL_ON</a>.</p>
 
 </div>
 </div>
@@ -322,7 +352,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">m_channels</a>[id] = state;</div>
 <div class="line"><span class="lineno">   41</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00054">m_channels</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>.</p>
 
 </div>
 </div>
@@ -349,7 +379,7 @@ Private Attributes</h2></td></tr>
 
 <p>Channel states. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00054">54</a> of file <a class="el" href="../../d3/d57/microhil__model_8h_source.html">microhil_model.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">58</a> of file <a class="el" href="../../d3/d57/microhil__model_8h_source.html">microhil_model.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00043">getChannel()</a>, <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00048">isOnChannel()</a>, <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00028">MHModel()</a>, and <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00038">setChannel()</a>.</p>
 
@@ -365,7 +395,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d3e/classMHModel.html">MHModel</a></li>
-    <li class="footer">Generated on Tue Oct 3 2023 20:01:04 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Oct 3 2023 23:38:28 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

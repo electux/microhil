@@ -1,6 +1,7 @@
 var classMHViewDialog =
 [
     [ "MHViewDialog", "dc/d3c/classMHViewDialog.html#ac8226e28456c385bad61695318082504", null ],
+    [ "~MHViewDialog", "dc/d3c/classMHViewDialog.html#a4f2d307af407d1c48727868bfa158481", null ],
     [ "hideDialogTrigered", "dc/d3c/classMHViewDialog.html#aa13e2d2b829deee0b5b7a96668df8606", null ],
     [ "mapping", "dc/d3c/classMHViewDialog.html#ae2e9e085b92b2ae74d39355037101dac", null ],
     [ "onHideDialogTriggered", "dc/d3c/classMHViewDialog.html#aa1b850e8af584b79947f1cd11d9aefea", null ],

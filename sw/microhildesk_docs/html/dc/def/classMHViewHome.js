@@ -1,6 +1,7 @@
 var classMHViewHome =
 [
     [ "MHViewHome", "dc/def/classMHViewHome.html#aa03cc4831aff517c835fc5e4f6705612", null ],
+    [ "~MHViewHome", "dc/def/classMHViewHome.html#a24b0045d497e06b69e83de07dd3f62fa", null ],
     [ "channelIsChanged", "dc/def/classMHViewHome.html#ab7ec194de1a3b46061ea141eb228df0f", null ],
     [ "channelIsSelected", "dc/def/classMHViewHome.html#a307bcd2fa2a02c283defe7ba19e8988b", null ],
     [ "channelIsSpinTimerChanged", "dc/def/classMHViewHome.html#a2085b82e8051c840923f8b416ac6b421", null ],

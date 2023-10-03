@@ -1,6 +1,7 @@
 var classMHConfig =
 [
     [ "MHConfig", "d9/d79/classMHConfig.html#a21227a66402be020ed5c0c45a200ba33", null ],
+    [ "~MHConfig", "d9/d79/classMHConfig.html#a35d88e2d686153695d0173a82a8c6100", null ],
     [ "baudRateToInt", "d9/d79/classMHConfig.html#a4b7ddf0005e0b97fe51eaf70bd30ae0b", null ],
     [ "checkConfigPath", "d9/d79/classMHConfig.html#afd393ff41de11967b3c39b7f6dff8bab", null ],
     [ "dataBitsToInt", "d9/d79/classMHConfig.html#a2c79435ada85d51feb668c7f6050e2c4", null ],

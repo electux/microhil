@@ -1,6 +1,7 @@
 var classMHViewSerial =
 [
     [ "MHViewSerial", "d2/dd5/classMHViewSerial.html#a9045966e47a5a3edbba4b0874b99eb02", null ],
+    [ "~MHViewSerial", "d2/dd5/classMHViewSerial.html#a2ecc50e431d8003cb48e4d9c28161aca", null ],
     [ "cancelSerialTriggered", "d2/dd5/classMHViewSerial.html#a1ed8b636d92dcb849c313c74d483cce7", null ],
     [ "mapping", "d2/dd5/classMHViewSerial.html#a427a482ecec15d3eb92e4efe06b51398", null ],
     [ "okSerialTriggered", "d2/dd5/classMHViewSerial.html#afa9e442f5742875047395b22241c5158", null ],

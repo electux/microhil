@@ -1,6 +1,6 @@
 var classIMHCom =
 [
-    [ "~IMHCom", "de/d55/classIMHCom.html#a6ea75d6fe7a3b85c9c889caf036755dd", null ],
+    [ "~IMHCom", "de/d55/classIMHCom.html#a1ce94c29541dcd036e73625b39d3f3f8", null ],
     [ "baudRateToUInt", "de/d55/classIMHCom.html#ad4c5dec8ac600e16de647dd37f7e998e", null ],
     [ "close", "de/d55/classIMHCom.html#a1a11ffd397195b7c0551f229d8bacadd", null ],
     [ "dataBitsToUInt", "de/d55/classIMHCom.html#a2aba2dda2e37991dde7ea8259ea8b844", null ],

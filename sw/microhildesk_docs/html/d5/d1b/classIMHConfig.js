@@ -1,6 +1,6 @@
 var classIMHConfig =
 [
-    [ "~IMHConfig", "d5/d1b/classIMHConfig.html#a8f199a8775d8492596cd67fcaeea00bd", null ],
+    [ "~IMHConfig", "d5/d1b/classIMHConfig.html#a7d676c8b325a944c93527e7cbb7da81c", null ],
     [ "baudRateToInt", "d5/d1b/classIMHConfig.html#a98b47790a0816067091432fa133db9bd", null ],
     [ "checkConfigPath", "d5/d1b/classIMHConfig.html#aa83074a89ef343829483567ab81cb643", null ],
     [ "dataBitsToInt", "d5/d1b/classIMHConfig.html#aa70d8c829f4b504cfa19c558803c5b1f", null ],

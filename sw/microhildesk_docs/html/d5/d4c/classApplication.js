@@ -1,7 +1,7 @@
 var classApplication =
 [
     [ "Application", "d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329", null ],
-    [ "~Application", "d5/d4c/classApplication.html#a062db49b40383051e3d3c2bd50ec9670", null ],
+    [ "~Application", "d5/d4c/classApplication.html#a75563a0545585bea76d7721c3a100fb4", null ],
     [ "run", "d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4", null ],
     [ "m_app", "d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388", null ],
     [ "m_controller", "d5/d4c/classApplication.html#a7091b4401f69ba561c652cab4a9ae531", null ],

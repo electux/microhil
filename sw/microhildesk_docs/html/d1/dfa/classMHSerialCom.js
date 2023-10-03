@@ -1,6 +1,7 @@
 var classMHSerialCom =
 [
     [ "MHSerialCom", "d1/dfa/classMHSerialCom.html#a4534dd62bb96d7baa0cdbd6758a9c117", null ],
+    [ "~MHSerialCom", "d1/dfa/classMHSerialCom.html#a6208636bf7e28cf29f8c146f7333d5a0", null ],
     [ "baudRateToUInt", "d1/dfa/classMHSerialCom.html#a7f9960a69c3a04f19f0102f9c53f5f5a", null ],
     [ "close", "d1/dfa/classMHSerialCom.html#afc7151bfd198f001b217a48afc699bff", null ],
     [ "dataBitsToUInt", "d1/dfa/classMHSerialCom.html#a8e02bed549d80e05ed80c46ff981b9a2", null ],

@@ -114,9 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f945a7f8d003a3b8f716f7128206329"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329">Application</a> (int argc, char *argv[])</td></tr>
 <tr class="memdesc:a4f945a7f8d003a3b8f716f7128206329"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d5/d4c/classApplication.html" title="Application entry class for microHIL system.">Application</a> constructor.  <a href="../../d5/d4c/classApplication.html#a4f945a7f8d003a3b8f716f7128206329">More...</a><br /></td></tr>
 <tr class="separator:a4f945a7f8d003a3b8f716f7128206329"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a062db49b40383051e3d3c2bd50ec9670"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4c/classApplication.html#a062db49b40383051e3d3c2bd50ec9670">~Application</a> ()=default</td></tr>
-<tr class="memdesc:a062db49b40383051e3d3c2bd50ec9670"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d5/d4c/classApplication.html" title="Application entry class for microHIL system.">Application</a> destructor.  <a href="../../d5/d4c/classApplication.html#a062db49b40383051e3d3c2bd50ec9670">More...</a><br /></td></tr>
-<tr class="separator:a062db49b40383051e3d3c2bd50ec9670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75563a0545585bea76d7721c3a100fb4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4c/classApplication.html#a75563a0545585bea76d7721c3a100fb4">~Application</a> () noexcept=default</td></tr>
+<tr class="memdesc:a75563a0545585bea76d7721c3a100fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d5/d4c/classApplication.html" title="Application entry class for microHIL system.">Application</a> destructor.  <a href="../../d5/d4c/classApplication.html#a75563a0545585bea76d7721c3a100fb4">More...</a><br /></td></tr>
+<tr class="separator:a75563a0545585bea76d7721c3a100fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cf8941c8db90117d3735bce5ae1fdf4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">run</a> ()</td></tr>
 <tr class="memdesc:a8cf8941c8db90117d3735bce5ae1fdf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the application (run main loop)  <a href="../../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4">More...</a><br /></td></tr>
 <tr class="separator:a8cf8941c8db90117d3735bce5ae1fdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,12 +177,11 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d16/application_8cc_source.html#l00028">28</a> of file <a class="el" href="../../dc/d16/application_8cc_source.html">application.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>    :</div>
-<div class="line"><span class="lineno">   30</span>        <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a>{<a class="code hl_function" href="../../d9/d0f/main_8cc.html#a692a7f9ca2ecd9c46e94768758900b39">Gtk::Application::create</a>(argc, argv, kAppId)},</div>
-<div class="line"><span class="lineno">   31</span>        <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a15bf260b04117b81cf630d0ad8e709f9">m_model</a>{MHmakeSPtr&lt;MHModel&gt;()},</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_variable" href="../../d5/d4c/classApplication.html#aba2a1ca1df9136f8619fd932c4371ed3">m_view</a>{MHmakeSPtr&lt;MHView&gt;()},</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a7091b4401f69ba561c652cab4a9ae531">m_controller</a>{MHmakeSPtr&lt;MHController&gt;(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#a15bf260b04117b81cf630d0ad8e709f9">m_model</a>, <a class="code hl_variable" href="../../d5/d4c/classApplication.html#aba2a1ca1df9136f8619fd932c4371ed3">m_view</a>)}</div>
-<div class="line"><span class="lineno">   34</span>{}</div>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    : <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a>{<a class="code hl_function" href="../../d9/d0f/main_8cc.html#a692a7f9ca2ecd9c46e94768758900b39">Gtk::Application::create</a>(argc, argv, kAppId)},</div>
+<div class="line"><span class="lineno">   30</span>      <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a15bf260b04117b81cf630d0ad8e709f9">m_model</a>{MHmakeSPtr&lt;MHModel&gt;()},</div>
+<div class="line"><span class="lineno">   31</span>      <a class="code hl_variable" href="../../d5/d4c/classApplication.html#aba2a1ca1df9136f8619fd932c4371ed3">m_view</a>{MHmakeSPtr&lt;MHView&gt;()},</div>
+<div class="line"><span class="lineno">   32</span>      <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a7091b4401f69ba561c652cab4a9ae531">m_controller</a>{MHmakeSPtr&lt;MHController&gt;(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#a15bf260b04117b81cf630d0ad8e709f9">m_model</a>, <a class="code hl_variable" href="../../d5/d4c/classApplication.html#aba2a1ca1df9136f8619fd932c4371ed3">m_view</a>)}</div>
+<div class="line"><span class="lineno">   33</span>{}</div>
 <div class="ttc" id="aclassApplication_html_a15bf260b04117b81cf630d0ad8e709f9"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a15bf260b04117b81cf630d0ad8e709f9">Application::m_model</a></div><div class="ttdeci">MHSPtr&lt; IMHModel &gt; m_model</div><div class="ttdoc">Model instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00053">application.h:53</a></div></div>
 <div class="ttc" id="aclassApplication_html_a7091b4401f69ba561c652cab4a9ae531"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a7091b4401f69ba561c652cab4a9ae531">Application::m_controller</a></div><div class="ttdeci">MHSPtr&lt; IMHController &gt; m_controller</div><div class="ttdoc">Controller instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00061">application.h:61</a></div></div>
 <div class="ttc" id="aclassApplication_html_a85af3d477ff967c425a0154d6325c388"><div class="ttname"><a href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">Application::m_app</a></div><div class="ttdeci">MHRPtr&lt; Gtk::Application &gt; m_app</div><div class="ttdoc">Application instance.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d32/application_8h_source.html#l00049">application.h:49</a></div></div>
@@ -191,8 +190,8 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a062db49b40383051e3d3c2bd50ec9670" name="a062db49b40383051e3d3c2bd50ec9670"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a062db49b40383051e3d3c2bd50ec9670">&#9670;&nbsp;</a></span>~Application()</h2>
+<a id="a75563a0545585bea76d7721c3a100fb4" name="a75563a0545585bea76d7721c3a100fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75563a0545585bea76d7721c3a100fb4">&#9670;&nbsp;</a></span>~Application()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +208,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -238,17 +237,17 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>integer exit status (exit failure value is 1) </dd></dl>
 <p >Starts the MicroHIL application</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d16/application_8cc_source.html#l00036">36</a> of file <a class="el" href="../../dc/d16/application_8cc_source.html">application.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keyword">auto</span> status{EXIT_FAILURE};</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a> &amp;&amp; <a class="code hl_variable" href="../../d5/d4c/classApplication.html#aba2a1ca1df9136f8619fd932c4371ed3">m_view</a>)</div>
-<div class="line"><span class="lineno">   41</span>    {</div>
-<div class="line"><span class="lineno">   44</span>        status = <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a>-&gt;run(*(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#aba2a1ca1df9136f8619fd932c4371ed3">m_view</a>-&gt;getHome().get()));</div>
-<div class="line"><span class="lineno">   45</span>    }</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><span class="lineno">   48</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../dc/d16/application_8cc_source.html#l00035">35</a> of file <a class="el" href="../../dc/d16/application_8cc_source.html">application.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keyword">auto</span> status{EXIT_FAILURE};</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a> &amp;&amp; <a class="code hl_variable" href="../../d5/d4c/classApplication.html#aba2a1ca1df9136f8619fd932c4371ed3">m_view</a>)</div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   43</span>        status = <a class="code hl_variable" href="../../d5/d4c/classApplication.html#a85af3d477ff967c425a0154d6325c388">m_app</a>-&gt;run(*(<a class="code hl_variable" href="../../d5/d4c/classApplication.html#aba2a1ca1df9136f8619fd932c4371ed3">m_view</a>-&gt;getHome().get()));</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><span class="lineno">   47</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../db/d32/application_8h_source.html#l00049">m_app</a>, and <a class="el" href="../../db/d32/application_8h_source.html#l00057">m_view</a>.</p>
 
@@ -279,7 +278,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d32/application_8h_source.html#l00049">49</a> of file <a class="el" href="../../db/d32/application_8h_source.html">application.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d16/application_8cc_source.html#l00036">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d16/application_8cc_source.html#l00035">run()</a>.</p>
 
 </div>
 </div>
@@ -359,7 +358,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d32/application_8h_source.html#l00057">57</a> of file <a class="el" href="../../db/d32/application_8h_source.html">application.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d16/application_8cc_source.html#l00036">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d16/application_8cc_source.html#l00035">run()</a>.</p>
 
 </div>
 </div>
@@ -373,7 +372,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d4c/classApplication.html">Application</a></li>
-    <li class="footer">Generated on Tue Oct 3 2023 20:01:04 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Oct 3 2023 23:38:28 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>
