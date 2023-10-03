@@ -21,4 +21,8 @@
 void MHView::mapping()
 {
     m_home->viewChanged().connect(sigc::mem_fun(*this, &MHView::onViewChanged));
+
+    m_serial->okSerialTriggered().connect(
+        sigc::mem_fun(*this, &MHView::onConfirmSerialSettings)
+    );
 }

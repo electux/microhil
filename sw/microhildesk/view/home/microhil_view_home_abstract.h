@@ -159,4 +159,9 @@ public:
     /// @brief Slot for processing toggle buttons (turn on/turn off timer)
     /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
     virtual void onToggleTimerChanged(Channel id) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Sets widgets after confirming changes for the serial port
+    /// @param state true for confirmed changes, else false
+    virtual void serialSettingsConfirm(bool state) = 0;
 };

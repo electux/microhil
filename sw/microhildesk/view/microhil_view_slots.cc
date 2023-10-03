@@ -51,3 +51,8 @@ void MHView::onViewChanged(ViewId id)
         break;
     }
 }
+
+void MHView::onConfirmSerialSettings(bool state)
+{
+    m_home->serialSettingsConfirm(state);
+}

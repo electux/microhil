@@ -11,5 +11,6 @@ var classAbMHViewHome =
     [ "onToggled", "d7/d4c/classAbMHViewHome.html#ab2801e9b05ab6622f3914940dc220d1c", null ],
     [ "onToggleTimerChanged", "d7/d4c/classAbMHViewHome.html#a32d9d6ff8bb53b46acc19b3c1527f420", null ],
     [ "onTypeSelected", "d7/d4c/classAbMHViewHome.html#ac2f5f5479104627bf3101b79e6f75c9d", null ],
+    [ "serialSettingsConfirm", "d7/d4c/classAbMHViewHome.html#add330d2fd256ed4bf6b9fab4d3bb24c5", null ],
     [ "viewChanged", "d7/d4c/classAbMHViewHome.html#ab3a0c9833df9ad7994fe757acc715ab9", null ]
 ];

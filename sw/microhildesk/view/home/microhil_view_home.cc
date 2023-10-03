@@ -209,6 +209,12 @@ MHViewHome::MHViewHome(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui)
     }
 
     ////////////////////////////////////////////////////////////////////////
-    /// Disables Serial settings (enabled if serial port is active)
-    m_serialSettings->set_sensitive(false);
+    /// Disables disconnect menu-item by default
+    m_disconnect->set_sensitive(false);
+}
+
+void MHViewHome::serialSettingsConfirm(bool state)
+{
+    m_connect->set_sensitive(!state);
+    m_disconnect->set_sensitive(state);
 }

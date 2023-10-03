@@ -23,31 +23,6 @@ SigSerialSetup MHViewSerial::serialSetupChanged()
     return m_serialSetup;
 }
 
-SigSerialDevicePath MHViewSerial::serialFilePathChanged()
-{
-    return m_serialDevicePath;
-}
-
-SigSerialBaudRate MHViewSerial::serialBaudRateChanged()
-{
-    return m_serialBaudeRate;
-}
-
-SigSerialDataBits MHViewSerial::serialDataBitsChanged()
-{
-    return m_serialDataBits;
-}
-
-SigSerialParity MHViewSerial::serialParityChanged()
-{
-    return m_serialParity;
-}
-
-SigSerialStopBits MHViewSerial::serialStopBitsChanged()
-{
-    return m_serialStopBits;
-}
-
 SigCancelSerial MHViewSerial::cancelSerialTriggered()
 {
     return m_cancelSerial;

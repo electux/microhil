@@ -64,4 +64,9 @@ public:
     /// @brief Slot for processing requests for triggering view
     /// @param id represents id of requested view
     virtual void onViewChanged(ViewId id) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Ok request for serial port changes
+    /// @param state true for confirm operation, else false
+    virtual void onConfirmSerialSettings(bool state) = 0;
 };

@@ -61,6 +61,11 @@ public:
     /// @param id represents id of requested view
     void onViewChanged(ViewId id) final;
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Ok request for serial port changes
+    /// @param state true for confirm operation, else false
+    void onConfirmSerialSettings(bool state) final;
+
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance

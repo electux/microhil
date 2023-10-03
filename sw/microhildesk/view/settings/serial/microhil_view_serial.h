@@ -42,51 +42,6 @@ public:
     SigSerialSetup serialSetupChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for device file path input
-    /// @return Signal for changed device file path entry
-    SigSerialDevicePath serialFilePathChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing device file path input
-    void onSerialFilePathChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for baud-rate combobox
-    /// @return Signal for selected baud-rate combobox
-    SigSerialBaudRate serialBaudRateChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing baud-rate combobox
-    void onSerialBaudRateChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for data-bits combobox
-    /// @return Signal for selected data-bits combobox
-    SigSerialDataBits serialDataBitsChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing data-bits combobox
-    void onSerialDataBitsChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for parity combobox
-    /// @return Signal for selected parity combobox
-    SigSerialParity serialParityChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing parity combobox
-    void onSerialParityChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for stop-bits combobox
-    /// @return Signal for selected stop-bits combobox
-    SigSerialStopBits serialStopBitsChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing stop-bits combobox
-    void onSerialStopBitsChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button
     /// @return Signal for clicked Cancel button
     SigCancelSerial cancelSerialTriggered() final;
@@ -150,26 +105,6 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for the serial settings
     SigSerialSetup m_serialSetup{};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for device path input
-    SigSerialDevicePath m_serialDevicePath{};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for baud-rate combobox
-    SigSerialBaudRate m_serialBaudeRate{};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for data-bits combobox
-    SigSerialDataBits m_serialDataBits{};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for parity combobox
-    SigSerialParity m_serialParity{};
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Signal for stop-bits combobox
-    SigSerialStopBits m_serialStopBits{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button (dismiss)
