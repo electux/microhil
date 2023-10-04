@@ -69,7 +69,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Opens storage for collecting log messages
-    /// @return status true for success else false
+    /// @return status true for success open operation else false
     bool open() final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -97,7 +97,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Closes log storage
-    /// @return status true for success else false
+    /// @return status true for success close operation else false
     bool close() final;
 
 private:

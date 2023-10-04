@@ -73,7 +73,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Opens storage for collecting log messages
-    /// @return status true for success else false
+    /// @return status true for success open operation else false
     virtual bool open() = 0;
 
     ////////////////////////////////////////////////////////////////////////
@@ -101,6 +101,6 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Closes log storage
-    /// @return status true for success else false
+    /// @return status true for success close operation else false
     virtual bool close() = 0;
 };
