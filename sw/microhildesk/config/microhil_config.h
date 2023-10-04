@@ -51,27 +51,27 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Checks is pre-validation state (existing configuration)
-    /// @return boolean status true for valid else false
+    /// @return status true for success pre-validation else false
     bool isPreValid() const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Loads configuration
-    /// @return boolean status true for success else false
+    /// @return status true for success load configuration else false
     bool load() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Stores configuration
-    /// @return boolean status true for success else false
+    /// @return status true for success store configuration else false
     bool store() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Validates configuration (existing all expected parameters)
-    /// @return boolean status true for success else false
+    /// @return status true for success configuration validation else false
     bool validate() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets serial device file path to configuration
-    /// @param device represents file path
+    /// @param device represents file path for the serial device
     void setDevice(const MHString &device) final;
 
     ////////////////////////////////////////////////////////////////////////
@@ -141,7 +141,7 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Checks existence of configuration file
-    /// @return status true for existing else false
+    /// @return status true for existing configuration else false
     bool checkConfigPath() const;
 
     ////////////////////////////////////////////////////////////////////////
@@ -206,12 +206,12 @@ public:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Validates log configuration (existing expected parameters)
-    /// @return status true for success else false
+    /// @return status true for success validation else false
     bool validateLogSettings();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Validates serial configuration (existing expected parameters)
-    /// @return status true for success else false
+    /// @return status true for success validation else false
     bool validateSerialSettings();
 
 private:

@@ -52,6 +52,6 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Checks is channel #0 ON (true) or OFF (false)
     /// @param id represents request channel by id
-    /// @return status true for open else false
+    /// @return status true for ON channel else false for OFF channel
     virtual bool isOnChannel(const int id) const = 0;
 };
