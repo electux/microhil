@@ -20,5 +20,7 @@
 
 SigSerialControl MHView::serialControlChanged()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Signal for tracking serial control changes
     return m_serialPortChanged;
 }

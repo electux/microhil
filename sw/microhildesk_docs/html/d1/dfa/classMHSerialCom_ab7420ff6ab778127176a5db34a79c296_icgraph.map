@@ -1,4 +1,4 @@
 <map id="MHSerialCom::uintToStopBits" name="MHSerialCom::uintToStopBits">
 <area shape="rect" id="node1" title="Converts stop&#45;bits from unsigned int to scopped enumerator." alt="" coords="208,5,420,32"/>
-<area shape="rect" id="node2" href="$d1/dfa/classMHSerialCom.html#a495181294d1fda5fc1ed26ba2b9f3e3e" title="Setup the serial port parameters." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$d1/dfa/classMHSerialCom.html#ac5b29ee3fb1fd01490e63dda93095c43" title="Setup the serial port parameters." alt="" coords="5,5,160,32"/>
 </map>

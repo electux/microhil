@@ -1,8 +1,8 @@
 var microhil__iconfig_8h =
 [
     [ "IMHConfig", "d5/d1b/classIMHConfig.html", "d5/d1b/classIMHConfig" ],
-    [ "SigLogConfig", "d8/d9b/microhil__iconfig_8h.html#a63375ee0a5bf3dae57d4226e204d7556", null ],
-    [ "SigSerialConfig", "d8/d9b/microhil__iconfig_8h.html#af784f73e1c82e741627ddfd6d8ea8d50", null ],
+    [ "SigLogConfig", "d8/d9b/microhil__iconfig_8h.html#aded40d2009c52c2e65b2c760d8bc86a5", null ],
+    [ "SigSerialConfig", "d8/d9b/microhil__iconfig_8h.html#a14697fbd4b10a45dd3388d04cb38a559", null ],
     [ "LogLevelConfig", "d8/d9b/microhil__iconfig_8h.html#a3fc630a93082b538c6bfdc552440e183", [
       [ "MICROHIL_INFO_CONFIG", "d8/d9b/microhil__iconfig_8h.html#a3fc630a93082b538c6bfdc552440e183ab9d9841aa815a204774ba7f6f3a12e6e", null ],
       [ "MICROHIL_WARNING_CONFIG", "d8/d9b/microhil__iconfig_8h.html#a3fc630a93082b538c6bfdc552440e183a2fa35708ed9ffcaef12e6b63333e6434", null ],

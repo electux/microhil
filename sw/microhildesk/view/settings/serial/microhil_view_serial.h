@@ -18,12 +18,12 @@
  */
 #pragma once
 
+#include "microhil_view_serial_abstract.h"
 #include <gtkmm/builder.h>
-#include <gtkmm/entry.h>
 #include <gtkmm/button.h>
 #include <gtkmm/comboboxtext.h>
 #include <gtkmm/dialog.h>
-#include "microhil_view_serial_abstract.h"
+#include <gtkmm/entry.h>
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief MHViewSerial class is implementation of serial settings view
@@ -34,7 +34,7 @@ public:
     /// @brief MHViewSerial constructor
     /// @param object repreesnts base object instance
     /// @param ui repreesnts buider instance
-    MHViewSerial(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
+    MHViewSerial(BaseObjectType *object, RPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewSerial destructor
@@ -56,6 +56,13 @@ public:
     SigOkSerial okSerialTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Sets loaded parameters for serial settings view
+    /// @param device represents device absolute path for the serial device
+    /// @param params represents parameters for the serial port parameters
+    void serialSettingsLoaded(UString &device, VecUInt &params);
+
+private:
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Cancel button (dismiss)
     void onCancelSerialTriggered() final;
 
@@ -64,47 +71,40 @@ public:
     void onOkSerialTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Sets loaded parameters for serial settings view
-    /// @param device represents device absolute path for the serial device
-    /// @param params represents parameters for the serial port parameters
-    void serialSettingsLoaded(MHString &device, MHVecUInt &params);
-
-private:
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Maps all widgets (signals and slots)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    MHRPtr<Gtk::Builder> m_ui{nullptr};
+    RPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Entry device file path
-    MHRPtr<Gtk::Entry> m_device{nullptr};
+    RPtr<Gtk::Entry> m_device{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select baud-rate
-    MHRPtr<Gtk::ComboBoxText> m_baudRate{nullptr};
+    RPtr<Gtk::ComboBoxText> m_baudRate{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select data-bits
-    MHRPtr<Gtk::ComboBoxText> m_dataBits{nullptr};
+    RPtr<Gtk::ComboBoxText> m_dataBits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select parity
-    MHRPtr<Gtk::ComboBoxText> m_parity{nullptr};
+    RPtr<Gtk::ComboBoxText> m_parity{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Select stop-bits
-    MHRPtr<Gtk::ComboBoxText> m_stopBits{nullptr};
+    RPtr<Gtk::ComboBoxText> m_stopBits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Dismiss button
-    MHRPtr<Gtk::Button> m_cancel{nullptr};
+    RPtr<Gtk::Button> m_cancel{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Confirm button
-    MHRPtr<Gtk::Button> m_ok{nullptr};
+    RPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for the serial settings

@@ -18,11 +18,11 @@
  */
 #pragma once
 
-#include <glibmm/keyfile.h>
 #include "microhil_iconfig.h"
+#include <glibmm/keyfile.h>
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MHConfig class declaration and definition
+/// @brief MHConfig class is implementation for configuration mechanism
 class MHConfig : public IMHConfig
 {
 public:
@@ -43,11 +43,6 @@ public:
     /// @brief Signal for loaded serial configuration
     /// @return Signal for loaded serial configuration
     SigSerialConfig SerialConfigLoaded() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Sets pre-validation state (existing configuration)
-    /// @param configValid represents indicator for existing configuration
-    void setPreValid(bool configValid) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Checks is pre-validation state (existing configuration)
@@ -72,12 +67,12 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets serial device file path to configuration
     /// @param device represents file path for the serial device
-    void setDevice(const MHString &device) final;
+    void setDevice(const UString &device) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets serial device file path from configuration
     /// @return file path for the serial device
-    MHString getDevice() const final;
+    UString getDevice() const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets baud-rate for serial port to configuration
@@ -107,7 +102,7 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets parity for the serial port from configuration
     /// @return parity type for the serial port
-    MHString getParity() const final;
+    UString getParity() const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets stop-bits for the serial port to configuration
@@ -127,17 +122,29 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets log level
     /// @return log level
-    MHString getLogLevel() const final;
+    UString getLogLevel() const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets log path
     /// @param path represents log file path for log messages
-    void setLogPath(const MHString &path) final;
+    void setLogPath(const UString &path) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets log path
     /// @return log path
-    MHString getLogPath() const final;
+    UString getLogPath() const final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Converts parity to integer format (from config file)
+    /// @param parity represents parity in string format (from config file)
+    /// @return parity in integer format (to combobox index)
+    int parityUnicodeStringToInt(const UString &parity);
+
+private:
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Sets pre-validation state (existing configuration)
+    /// @param configValid represents indicator for existing configuration
+    void setPreValid(bool configValid) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Checks existence of configuration file
@@ -148,13 +155,13 @@ public:
     /// @brief Converts integer log level to string format
     /// @param logLevel represents log level in integer format
     /// @return string format of log level
-    MHString logLevelToUnicodeString(const int logLevel);
+    UString logLevelToUnicodeString(const int logLevel);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Converts log level in strong format to integer
     /// @param level represents log level in string format
     /// @return log level in integer format
-    int logLevelStringToInt(const MHString &level);
+    int logLevelStringToInt(const UString &level);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Processes and prepares baud-rate (to config file)
@@ -184,13 +191,7 @@ public:
     /// @brief Converts integer parity to string format (to config file)
     /// @param parity represents index combobox
     /// @return string format of parity in string format
-    MHString parityToUnicodeString(const int parity);
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Converts parity to integer format (from config file)
-    /// @param parity represents parity in string format (from config file)
-    /// @return parity in integer format (to combobox index)
-    int parityUnicodeStringToInt(const MHString &parity);
+    UString parityToUnicodeString(const int parity);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Converts stop-bits to integer (from config file)
@@ -214,7 +215,6 @@ public:
     /// @return status true for success validation else false
     bool validateSerialSettings();
 
-private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration home directory path
     std::string m_homePath{};

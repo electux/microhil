@@ -22,30 +22,30 @@ namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// Log level configuration parameter info
-    constexpr const char kConfigLogLevelInfo[]{"INFO"};
+    constexpr const char kConfigLevelInfo[]{"INFO"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Log level configuration parameter warning
-    constexpr const char kConfigLogLevelWarning[]{"WARNING"};
+    constexpr const char kConfigLevelWarning[]{"WARNING"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Log level configuration parameter error
-    constexpr const char kConfigLogLevelError[]{"ERROR"};
+    constexpr const char kConfigLevelError[]{"ERROR"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Log level configuration info index id
-    constexpr const int kConfigLogLevelInfoId{0};
+    constexpr const int kConfigLevelInfoId{0};
 
     ////////////////////////////////////////////////////////////////////////
     /// Log level configuration warning index id
-    constexpr const int kConfigLogLevelWarningId{1};
+    constexpr const int kConfigLevelWarningId{1};
 
     ////////////////////////////////////////////////////////////////////////
     /// Log level configuration error index id
-    constexpr const int kConfigLogLevelErrorId{2};
-}
+    constexpr const int kConfigLevelErrorId{2};
+} // namespace
 
-MHString MHConfig::logLevelToUnicodeString(const int logLevel)
+UString MHConfig::logLevelToUnicodeString(const int logLevel)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Converts integer log level to scopped enumerator class
@@ -54,27 +54,27 @@ MHString MHConfig::logLevelToUnicodeString(const int logLevel)
     switch (logLevelType)
     {
     case LogLevelConfig::MICROHIL_INFO_CONFIG:
-        return kConfigLogLevelInfo;
+        return kConfigLevelInfo;
     case LogLevelConfig::MICROHIL_WARNING_CONFIG:
-        return kConfigLogLevelWarning;
+        return kConfigLevelWarning;
     case LogLevelConfig::MICROHIL_ERROR_CONFIG:
-        return kConfigLogLevelError;
+        return kConfigLevelError;
     }
 
-    return kConfigLogLevelInfo;
+    return kConfigLevelInfo;
 }
 
-int MHConfig::logLevelStringToInt(const MHString &level)
+int MHConfig::logLevelStringToInt(const UString &level)
 {
-    if (level == kConfigLogLevelWarning)
+    if (level == kConfigLevelWarning)
     {
-        return kConfigLogLevelWarningId;
+        return kConfigLevelWarningId;
     }
 
-    if (level == kConfigLogLevelError)
+    if (level == kConfigLevelError)
     {
-        return kConfigLogLevelErrorId;
+        return kConfigLevelErrorId;
     }
 
-    return kConfigLogLevelInfoId;
+    return kConfigLevelInfoId;
 }

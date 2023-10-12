@@ -35,32 +35,31 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// @brief Ok button id
     constexpr const char kOkButtonId[]{"LogOk"};
-}
+} // namespace
 
-MHViewLog::MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui)
-    : Gtk::Dialog(object), m_ui{ui}
+MHViewLog::MHViewLog(BaseObjectType *object, RPtr<Gtk::Builder> const &ui)
+    : Gtk::Dialog(object)
+    , m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Binds Log file path entry
-    m_device = MHRPtr<Gtk::Entry>::cast_dynamic(
-        m_ui->get_object(kLogDevicePathId)
-    );
+    m_device =
+        RPtr<Gtk::Entry>::cast_dynamic(m_ui->get_object(kLogDevicePathId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds Log level combobox
-    m_level = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
+    m_level = RPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kLogLevelSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds Cancel button
-    m_cancel = MHRPtr<Gtk::Button>::cast_dynamic(
-        m_ui->get_object(kCancelButtonId)
-    );
+    m_cancel =
+        RPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kCancelButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds Ok button
-    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
+    m_ok = RPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Maps all widgets (signals and slots)
@@ -71,7 +70,7 @@ MHViewLog::MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui)
     this->hide();
 }
 
-void MHViewLog::logSettingsLoaded(MHString &filePath, int logLevel)
+void MHViewLog::logSettingsLoaded(UString &filePath, int logLevel)
 {
     m_device->set_text(filePath);
     m_level->set_active(logLevel);

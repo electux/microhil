@@ -20,5 +20,7 @@
 
 void MHViewDialog::onHideDialogTriggered()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Slot for closing dialog view
     this->hide();
 }

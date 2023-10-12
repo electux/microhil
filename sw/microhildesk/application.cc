@@ -23,14 +23,15 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// MicroHIL application ID
     constexpr const char kAppId[]{"org.electux.microhildesk"};
-}
+} // namespace
 
 Application::Application(int argc, char *argv[])
-    : m_app{Gtk::Application::create(argc, argv, kAppId)},
-      m_model{MHmakeSPtr<MHModel>()},
-      m_view{MHmakeSPtr<MHView>()},
-      m_controller{MHmakeSPtr<MHController>(m_model, m_view)}
-{}
+    : m_app{Gtk::Application::create(argc, argv, kAppId)}
+    , m_model{makeSPtr<MHModel>()}
+    , m_view{makeSPtr<MHView>()}
+    , m_controller{makeSPtr<MHController>(m_model, m_view)}
+{
+}
 
 int Application::run()
 {

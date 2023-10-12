@@ -18,9 +18,9 @@
  */
 #pragma once
 
-#include <iostream>
-#include <fstream>
 #include "microhil_ilog.h"
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -40,17 +40,17 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets file path for logger
     /// @param logFilePath represents file path for storing log messages
-    void setFilePath(const MHString &logFilePath) final;
+    void setFilePath(const UString &logFilePath) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets file path for logger
     /// @return Log file path
-    MHString getFilePath() const final;
+    UString getFilePath() const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets log level
     /// @param level represent level for logging
-    void setLogLevel(const MHString &level) final;
+    void setLogLevel(const UString &level) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets log level
@@ -73,27 +73,10 @@ public:
     bool open() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Gets current date and time
-    /// @return current date time in string format (18-08-2023 22:52:06)
-    MHString getCurrentDateTime() const final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Converts log level type to human readable string
-    /// @param level represents log level
-    /// @return string representation of log level
-    MHString toStringLogType(const LogLevel level) const final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Converts log level string to level type
-    /// @param level represents level type in string format
-    /// @return log level type
-    LogLevel toLogType(const MHString &level) const final;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Writes log message
     /// @param message represents log message to be stored
     /// @param level represents log level
-    void write(const MHString &message, const LogLevel level) final;
+    void write(const UString &message, const LogLevel level) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Closes log storage
@@ -102,8 +85,25 @@ public:
 
 private:
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Gets current date and time
+    /// @return current date time in string format (18-08-2023 22:52:06)
+    UString getCurrentDateTime() const final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Converts log level type to human readable string
+    /// @param level represents log level
+    /// @return string representation of log level
+    UString toStringLogType(const LogLevel level) const final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Converts log level string to level type
+    /// @param level represents level type in string format
+    /// @return log level type
+    LogLevel toLogType(const UString &level) const final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Log file path
-    MHString m_logFilePath{};
+    UString m_logFilePath{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log file instance

@@ -18,11 +18,11 @@
  */
 #pragma once
 
+#include "microhil_view_dialog_abstract.h"
 #include <gtkmm/builder.h>
 #include <gtkmm/button.h>
-#include <gtkmm/label.h>
 #include <gtkmm/dialog.h>
-#include "microhil_view_dialog_abstract.h"
+#include <gtkmm/label.h>
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief MHViewDialog class is implementation of dialog view
@@ -33,7 +33,7 @@ public:
     /// @brief MHViewDialog constructor
     /// @param object represents base object type
     /// @param ui represents builder instance
-    MHViewDialog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
+    MHViewDialog(BaseObjectType *object, RPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewDialog destructor
@@ -45,21 +45,21 @@ public:
     SigHideDialog hideDialogTrigered() final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Sets message for dialog
+    /// @param message represents message with information for user
+    /// @param type represents type of dialog message
+    void setMessage(const UString &message, const MessageType type) final;
+
+private:
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Close button (self hide Dialog)
     void onHideDialogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Sets message for dialog
-    /// @param message represents message with information for user
-    /// @param type represents type of dialog message
-    void setMessage(const MHString &message, const MessageType type) final;
-
-private:
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Converts message type to unicode string
     /// @param type represents type of dialog message
     /// @return string representation of dialog message type
-    MHString toUnicodeStringMessageType(const MessageType type);
+    UString toUnicodeStringMessageType(const MessageType type);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Maps Close button (signal and slot)
@@ -67,15 +67,15 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    MHRPtr<Gtk::Builder> m_ui{nullptr};
+    RPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Dialog message text filed
-    MHRPtr<Gtk::Label> m_text{nullptr};
+    RPtr<Gtk::Label> m_text{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Close button for dialog message
-    MHRPtr<Gtk::Button> m_close{nullptr};
+    RPtr<Gtk::Button> m_close{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Close button (self hide Dialog)

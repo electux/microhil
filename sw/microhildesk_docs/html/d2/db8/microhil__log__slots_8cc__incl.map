@@ -1,13 +1,13 @@
 <map id="log/microhil_log_slots.cc" name="log/microhil_log_slots.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="55,5,238,32"/>
-<area shape="rect" id="node2" href="$df/d52/microhil__log_8h.html" title=" " alt="" coords="89,80,204,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,85,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="110,155,183,181"/>
-<area shape="rect" id="node5" href="$d7/db9/microhil__ilog_8h.html" title=" " alt="" coords="207,155,326,181"/>
-<area shape="rect" id="node6" href="$db/db9/microhil__types_8h.html" title=" " alt="" coords="179,229,354,256"/>
-<area shape="rect" id="node7" title=" " alt="" coords="43,304,120,331"/>
-<area shape="rect" id="node8" title=" " alt="" coords="144,304,211,331"/>
-<area shape="rect" id="node9" title=" " alt="" coords="235,304,298,331"/>
-<area shape="rect" id="node10" title=" " alt="" coords="323,304,445,331"/>
-<area shape="rect" id="node11" title=" " alt="" coords="469,304,603,331"/>
+<area shape="rect" id="node1" title=" " alt="" coords="338,5,521,32"/>
+<area shape="rect" id="node2" href="$df/d52/microhil__log_8h.html" title=" " alt="" coords="372,80,487,107"/>
+<area shape="rect" id="node3" href="$d7/db9/microhil__ilog_8h.html" title=" " alt="" coords="250,155,369,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="393,155,466,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="491,155,571,181"/>
+<area shape="rect" id="node4" href="$db/db9/microhil__types_8h.html" title=" " alt="" coords="222,229,397,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,304,72,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="96,304,219,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="243,304,376,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="400,304,477,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="502,304,565,331"/>
 </map>

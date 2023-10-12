@@ -18,10 +18,10 @@
  */
 #pragma once
 
-#include <gtkmm/builder.h>
-#include "dialog/microhil_view_dialog.h"
 #include "about/microhil_view_about.h"
+#include "dialog/microhil_view_dialog.h"
 #include "microhil_iview.h"
+#include <gtkmm/builder.h>
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief MHView class is implementation of view
@@ -30,7 +30,7 @@ class MHView : public IMHView
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHView constructor
-    MHView();
+    explicit MHView();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHView destructor
@@ -44,18 +44,19 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets home view
     /// @return Home view instance
-    MHRPtr<MHViewHome> getHome() final;
+    RPtr<MHViewHome> getHome() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets log settings view
     /// @return Log view settings instance
-    MHRPtr<MHViewLog> getLogSettings() final;
+    RPtr<MHViewLog> getLogSettings() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets serial settings view
     /// @return Serial view settings instance
-    MHRPtr<MHViewSerial> getSerialSettings() final;
+    RPtr<MHViewSerial> getSerialSettings() final;
 
+private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Maps views (signal and slots)
     void mapping() final;
@@ -70,10 +71,9 @@ public:
     /// @param state true for confirm operation, else false
     void onConfirmSerialSettings(bool state) final;
 
-private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    MHRPtr<Gtk::Builder> m_builder{nullptr};
+    RPtr<Gtk::Builder> m_builder{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Connect/Disconnect the serial port
@@ -81,21 +81,21 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Home view instance
-    MHRPtr<MHViewHome> m_home{nullptr};
+    RPtr<MHViewHome> m_home{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Dialog view instance
-    MHRPtr<MHViewDialog> m_dialog{nullptr};
+    RPtr<MHViewDialog> m_dialog{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Log Settings view instance
-    MHRPtr<MHViewLog> m_log{nullptr};
+    RPtr<MHViewLog> m_log{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Serial Settings view instance
-    MHRPtr<MHViewSerial> m_serial{nullptr};
+    RPtr<MHViewSerial> m_serial{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief About view instance
-    MHRPtr<MHViewAbout> m_about{nullptr};
+    RPtr<MHViewAbout> m_about{nullptr};
 };

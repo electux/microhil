@@ -16,8 +16,8 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <ctime>
 #include "microhil_log.h"
+#include <ctime>
 
 namespace
 {
@@ -32,39 +32,56 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// String representation of error log level
     constexpr const char kErrorLogLevel[]{" ERROR "};
+} // namespace
+
+MHLog::MHLog()
+    : m_fileOpened{false}
+{
 }
 
-MHLog::MHLog() : m_fileOpened{false} {}
-
-void MHLog::setFilePath(const MHString &logFilePath)
+void MHLog::setFilePath(const UString &logFilePath)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets file path for logger
     m_logFilePath = logFilePath;
 }
 
-MHString MHLog::getFilePath() const
+UString MHLog::getFilePath() const
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets file path for logger
     return m_logFilePath;
 }
 
-void MHLog::setLogLevel(const MHString &level)
+void MHLog::setLogLevel(const UString &level)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Converts log level from string to scoped enum
     auto logLevelPrepared = toLogType(level);
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets log level for logger
     m_logLevel = logLevelPrepared;
 }
 
 void MHLog::setLogLevel(const int level)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets log level for logger
     m_logLevel = static_cast<LogLevel>(level);
 }
 
 void MHLog::setLogLevel(const LogLevel level)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets log level for logger
     m_logLevel = level;
 }
 
 LogLevel MHLog::getLogLevel() const
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets log level for logger
     return m_logLevel;
 }
 
@@ -79,11 +96,11 @@ bool MHLog::open()
     return m_fileOpened;
 }
 
-void MHLog::write(const MHString &message, const LogLevel level)
+void MHLog::write(const UString &message, const LogLevel level)
 {
     const auto currentTime = getCurrentDateTime();
     const auto prefixLogLevel = toStringLogType(level);
-    MHString logMessage = currentTime + prefixLogLevel + message;
+    UString logMessage = currentTime + prefixLogLevel + message;
 
     if (m_logFile.is_open() && m_fileOpened)
     {
@@ -102,19 +119,21 @@ bool MHLog::close()
     return !m_fileOpened;
 }
 
-MHString MHLog::getCurrentDateTime() const
+UString MHLog::getCurrentDateTime() const
 {
     time_t rawTime;
     char buffer[80];
 
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets local time in Day-Month-Year Hours:Minutes:Seconds format
     time(&rawTime);
     const struct tm *timeInfo = localtime(&rawTime);
     strftime(buffer, 80, "%d-%m-%Y %I:%M:%S", timeInfo);
 
-    return MHString(buffer);
+    return UString(buffer);
 }
 
-MHString MHLog::toStringLogType(const LogLevel level) const
+UString MHLog::toStringLogType(const LogLevel level) const
 {
     switch (level)
     {
@@ -129,7 +148,7 @@ MHString MHLog::toStringLogType(const LogLevel level) const
     return kInfoLogLevel;
 }
 
-LogLevel MHLog::toLogType(const MHString &level) const
+LogLevel MHLog::toLogType(const UString &level) const
 {
     if (level == kWarningLogLevel)
     {

@@ -56,7 +56,7 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// @brief invalid parameter for serial port
     constexpr const unsigned int kInvalidParameter = 127;
-}
+} // namespace
 
 unsigned int MHSerialCom::baudRateToUInt(const BaudRate baudRate)
 {

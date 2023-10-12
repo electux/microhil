@@ -16,8 +16,8 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "../../utils/microhil_types.h"
 #include "microhil_view_home.h"
+#include "../../utils/microhil_types.h"
 
 namespace
 {
@@ -39,11 +39,11 @@ namespace
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Serial Settings menu-item id
-    constexpr const char kSerialSettingsId[]{"HomeSerialPortSettings"};
+    constexpr const char kSerialId[]{"HomeSerialPortSettings"};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Log Settings menu-item id
-    constexpr const char kLogSettingsId[]{"HomeLogSettings"};
+    constexpr const char kLogId[]{"HomeLogSettings"};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application About menu-item id
@@ -52,149 +52,102 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// @brief Check buttons (UI ids)
     constexpr const char *kCheckButtonsId[]{
-        "EnableChannel0",
-        "EnableChannel1",
-        "EnableChannel2",
-        "EnableChannel3",
-        "EnableChannel4",
-        "EnableChannel5",
-        "EnableChannel6",
-        "EnableChannel7"
-    };
+        "EnableChannel0", "EnableChannel1", "EnableChannel2", "EnableChannel3",
+        "EnableChannel4", "EnableChannel5", "EnableChannel6", "EnableChannel7"};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toggle buttons (UI ids)
     constexpr const char *kToggleButtonsId[]{
-        "Channel0ToggleButton",
-        "Channel1ToggleButton",
-        "Channel2ToggleButton",
-        "Channel3ToggleButton",
-        "Channel4ToggleButton",
-        "Channel5ToggleButton",
-        "Channel6ToggleButton",
-        "Channel7ToggleButton"
-    };
+        "Channel0ToggleButton", "Channel1ToggleButton", "Channel2ToggleButton",
+        "Channel3ToggleButton", "Channel4ToggleButton", "Channel5ToggleButton",
+        "Channel6ToggleButton", "Channel7ToggleButton"};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Comboboxes (UI ids)
     constexpr const char *kComboBoxTextsId[]{
-        "Channel0Selector",
-        "Channel1Selector",
-        "Channel2Selector",
-        "Channel3Selector",
-        "Channel4Selector",
-        "Channel5Selector",
-        "Channel6Selector",
-        "Channel7Selector"
-    };
+        "Channel0Selector", "Channel1Selector", "Channel2Selector",
+        "Channel3Selector", "Channel4Selector", "Channel5Selector",
+        "Channel6Selector", "Channel7Selector"};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Spin buttons (UI ids)
     constexpr const char *kTimerSpinButtonsId[]{
-        "Channel0TimerSpin",
-        "Channel1TimerSpin",
-        "Channel2TimerSpin",
-        "Channel3TimerSpin",
-        "Channel4TimerSpin",
-        "Channel5TimerSpin",
-        "Channel6TimerSpin",
-        "Channel7TimerSpin"
-    };
+        "Channel0TimerSpin", "Channel1TimerSpin", "Channel2TimerSpin",
+        "Channel3TimerSpin", "Channel4TimerSpin", "Channel5TimerSpin",
+        "Channel6TimerSpin", "Channel7TimerSpin"};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toogle buttons (UI ids)
     constexpr const char *kTimerToggleButtonsId[]{
-        "Channel0TimerButton",
-        "Channel1TimerButton",
-        "Channel2TimerButton",
-        "Channel3TimerButton",
-        "Channel4TimerButton",
-        "Channel5TimerButton",
-        "Channel6TimerButton",
-        "Channel7TimerButton"
-    };
+        "Channel0TimerButton", "Channel1TimerButton", "Channel2TimerButton",
+        "Channel3TimerButton", "Channel4TimerButton", "Channel5TimerButton",
+        "Channel6TimerButton", "Channel7TimerButton"};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Status bars (UI ids)
     constexpr const char *kTimerProgressBarStatus0Id[]{
-        "Channel0TimerStatus",
-        "Channel1TimerStatus",
-        "Channel2TimerStatus",
-        "Channel3TimerStatus",
-        "Channel4TimerStatus",
-        "Channel5TimerStatus",
-        "Channel6TimerStatus",
-        "Channel7TimerStatus"
-    };
-}
+        "Channel0TimerStatus", "Channel1TimerStatus", "Channel2TimerStatus",
+        "Channel3TimerStatus", "Channel4TimerStatus", "Channel5TimerStatus",
+        "Channel6TimerStatus", "Channel7TimerStatus"};
+} // namespace
 
-MHViewHome::MHViewHome(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui)
-    : Gtk::ApplicationWindow(object), m_ui{ui}
+MHViewHome::MHViewHome(BaseObjectType *object, RPtr<Gtk::Builder> const &ui)
+    : Gtk::ApplicationWindow(object)
+    , m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     // Binds Connect menu-item
-    m_connect = MHRPtr<Gtk::MenuItem>::cast_dynamic(
-        m_ui->get_object(kConnectId)
-    );
+    m_connect = RPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kConnectId));
 
     ////////////////////////////////////////////////////////////////////////
     // Binds Disconnect menu-item
-    m_disconnect = MHRPtr<Gtk::MenuItem>::cast_dynamic(
-        m_ui->get_object(kDisconnectId)
-    );
+    m_disconnect =
+        RPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kDisconnectId));
 
     ////////////////////////////////////////////////////////////////////////
     // Binds Quit menu-item
-    m_quit = MHRPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kQuitId));
+    m_quit = RPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kQuitId));
 
     ////////////////////////////////////////////////////////////////////////
     // Binds Serial Settings menu-item
-    m_serialSettings = MHRPtr<Gtk::MenuItem>::cast_dynamic(
-        m_ui->get_object(kSerialSettingsId)
-    );
+    m_serialSettings =
+        RPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kSerialId));
 
     ////////////////////////////////////////////////////////////////////////
     // Binds Log Settings menu-item
-    m_logSettings = MHRPtr<Gtk::MenuItem>::cast_dynamic(
-        m_ui->get_object(kLogSettingsId)
-    );
+    m_logSettings = RPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kLogId));
 
     ////////////////////////////////////////////////////////////////////////
     // Binds About menu-item
-    m_about = MHRPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kAboutId));
+    m_about = RPtr<Gtk::MenuItem>::cast_dynamic(m_ui->get_object(kAboutId));
 
     ////////////////////////////////////////////////////////////////////////
     // Binds channels widgets
     for (int i = 0; i < kNumberOfViewChannels; i++)
     {
-        m_enableChannels.push_back(MHRPtr<Gtk::CheckButton>::cast_dynamic(
-            m_ui->get_object(kCheckButtonsId[i]))
-        );
-        m_selectControlChannels.push_back(
-            MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
-                m_ui->get_object(kComboBoxTextsId[i])
-            )
-        );
-        m_toggleChannels.push_back(
-            MHRPtr<Gtk::ToggleButton>::cast_dynamic(
-                m_ui->get_object(kToggleButtonsId[i])
-            )
-        );
-        m_spinTimerChannels.push_back(
-            MHRPtr<Gtk::SpinButton>::cast_dynamic(
-                m_ui->get_object(kTimerSpinButtonsId[i])
-            )
-        );
-        m_toggleTimerChannels.push_back(
-            MHRPtr<Gtk::ToggleButton>::cast_dynamic(
-                m_ui->get_object(kTimerToggleButtonsId[i])
-            )
-        );
-        m_stautsTimerChannels.push_back(
-            MHRPtr<Gtk::ProgressBar>::cast_dynamic(
-                m_ui->get_object(kTimerProgressBarStatus0Id[i])
-            )
-        );
+        m_enableChannels.push_back(RPtr<Gtk::CheckButton>::cast_dynamic(
+            m_ui->get_object(kCheckButtonsId[i])
+        ));
+
+        m_selectControlChannels.push_back(RPtr<Gtk::ComboBoxText>::cast_dynamic(
+            m_ui->get_object(kComboBoxTextsId[i])
+        ));
+
+        m_toggleChannels.push_back(RPtr<Gtk::ToggleButton>::cast_dynamic(
+            m_ui->get_object(kToggleButtonsId[i])
+        ));
+
+        m_spinTimerChannels.push_back(RPtr<Gtk::SpinButton>::cast_dynamic(
+            m_ui->get_object(kTimerSpinButtonsId[i])
+        ));
+
+        m_toggleTimerChannels.push_back(RPtr<Gtk::ToggleButton>::cast_dynamic(
+            m_ui->get_object(kTimerToggleButtonsId[i])
+        ));
+
+        m_stautsTimerChannels.push_back(RPtr<Gtk::ProgressBar>::cast_dynamic(
+            m_ui->get_object(kTimerProgressBarStatus0Id[i])
+        ));
     }
 
     ////////////////////////////////////////////////////////////////////////

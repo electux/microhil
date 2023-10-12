@@ -44,17 +44,17 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets file path for logger
     /// @param logFilePath represents file path for storing log messages
-    virtual void setFilePath(const MHString &logFilePath) = 0;
+    virtual void setFilePath(const UString &logFilePath) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets file path for logger
     /// @return Log file path
-    virtual MHString getFilePath() const = 0;
+    virtual UString getFilePath() const = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets log level
     /// @param level represent level for logging
-    virtual void setLogLevel(const MHString &level) = 0;
+    virtual void setLogLevel(const UString &level) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Sets log level
@@ -77,30 +77,31 @@ public:
     virtual bool open() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Gets current date and time
-    /// @return current date time in string format (18-08-2023 22:52:06)
-    virtual MHString getCurrentDateTime() const = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Converts log level type to human readable string
-    /// @param level represents log level
-    /// @return string representation of log level
-    virtual MHString toStringLogType(const LogLevel level) const = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Converts log level string to level type
-    /// @param level represents level type in string format
-    /// @return log level type
-    virtual LogLevel toLogType(const MHString &level) const = 0;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Writes log message
     /// @param message represents log message to be stored
     /// @param level represents log level
-    virtual void write(const MHString &message, const LogLevel level) = 0;
+    virtual void write(const UString &message, const LogLevel level) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Closes log storage
     /// @return status true for success close operation else false
     virtual bool close() = 0;
+
+protected:
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Gets current date and time
+    /// @return current date time in string format (18-08-2023 22:52:06)
+    virtual UString getCurrentDateTime() const = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Converts log level type to human readable string
+    /// @param level represents log level
+    /// @return string representation of log level
+    virtual UString toStringLogType(const LogLevel level) const = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Converts log level string to level type
+    /// @param level represents level type in string format
+    /// @return log level type
+    virtual LogLevel toLogType(const UString &level) const = 0;
 };

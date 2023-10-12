@@ -25,7 +25,7 @@ void MHViewSerial::mapping()
     m_cancel->signal_clicked().connect(
         sigc::mem_fun(*this, &MHViewSerial::onCancelSerialTriggered)
     );
-    
+
     m_ok->signal_clicked().connect(
         sigc::mem_fun(*this, &MHViewSerial::onOkSerialTriggered)
     );

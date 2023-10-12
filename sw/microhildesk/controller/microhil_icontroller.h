@@ -39,6 +39,7 @@ public:
     /// @return status true for enabled else false
     virtual bool isEnabled() const = 0;
 
+protected:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Maps views and backend (signals and slots)
     virtual void mapping() = 0;
@@ -47,25 +48,25 @@ public:
     /// @brief Slot for processing log settings changes
     /// @param path represents absolute path of log file
     /// @param level represents level for logging messages
-    virtual void onLogSettingsChanged(MHString &path, int level) = 0;
+    virtual void onLogSettingsChanged(UString &path, int level) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing log settings loaded
     /// @param path represents absolute path of log file
     /// @param logLevel represents level for logging messages
-    virtual void onLogSettingsLoaded(MHString &path, int level) = 0;
+    virtual void onLogSettingsLoaded(UString &path, int level) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
     /// @param dev represents file path for serial device
     /// @param params represents set of serial parameters
-    virtual void onSerialSettingsChanged(MHString &dev, MHVecUInt &params) = 0;
+    virtual void onSerialSettingsChanged(UString &dev, VecUInt &params) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial settings changes
     /// @param dev represents file path for serial device
     /// @param params represents set of serial parameters
-    virtual void onSerialSettingsLoaded(MHString &dev, MHVecUInt &params) = 0;
+    virtual void onSerialSettingsLoaded(UString &dev, VecUInt &params) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing serial port changes

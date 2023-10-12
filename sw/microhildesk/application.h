@@ -18,10 +18,10 @@
  */
 #pragma once
 
-#include <gtkmm/application.h>
+#include "controller/microhil_controller.h"
 #include "model/microhil_model.h"
 #include "view/microhil_view.h"
-#include "controller/microhil_controller.h"
+#include <gtkmm/application.h>
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Application entry class for microHIL system
@@ -46,17 +46,17 @@ public:
 private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application instance
-    MHRPtr<Gtk::Application> m_app{nullptr};
+    RPtr<Gtk::Application> m_app{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Model instance
-    MHSPtr<IMHModel> m_model{nullptr};
+    SPtr<IMHModel> m_model{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief View instance
-    MHSPtr<IMHView> m_view{nullptr};
+    SPtr<IMHView> m_view{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Controller instance
-    MHSPtr<IMHController> m_controller{nullptr};
+    SPtr<IMHController> m_controller{nullptr};
 };

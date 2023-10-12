@@ -18,7 +18,7 @@
  */
 #include "microhil_controller.h"
 
-void MHController::onLogSettingsChanged(MHString &path, int level)
+void MHController::onLogSettingsChanged(UString &path, int level)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Updates the log configuration
@@ -29,25 +29,47 @@ void MHController::onLogSettingsChanged(MHString &path, int level)
     {
         // TODO
         // Emit signal for error handler
+
+        // TODO
+        // logging
+        return;
     }
 
     ////////////////////////////////////////////////////////////////////////
     /// Updates log handler
-    m_log->close();
+    if (!m_log->close())
+    {
+        // TODO
+        // Emit signal for error handler
+
+        // TODO
+        // logging
+        return;
+    }
+
     m_log->setFilePath(path);
     m_log->setLogLevel(level);
-    m_log->open();
+
+    if (!m_log->open())
+    {
+        // TODO
+        // Emit signal for error handler
+
+        // TODO
+        // logging
+        return;
+    }
 
     // TODO
     // logging
 }
 
-void MHController::onLogSettingsLoaded(MHString &path, int level)
+void MHController::onLogSettingsLoaded(UString &path, int level)
 {
     m_view->getLogSettings()->logSettingsLoaded(path, level);
 }
 
-void MHController::onSerialSettingsChanged(MHString &dev, MHVecUInt &params)
+void MHController::onSerialSettingsChanged(UString &dev, VecUInt &params)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Updates the serial port configuration
@@ -65,6 +87,7 @@ void MHController::onSerialSettingsChanged(MHString &dev, MHVecUInt &params)
 
         // TODO
         // logging
+        return;
     }
 
     ////////////////////////////////////////////////////////////////////////
@@ -75,7 +98,7 @@ void MHController::onSerialSettingsChanged(MHString &dev, MHVecUInt &params)
     // logging
 }
 
-void MHController::onSerialSettingsLoaded(MHString &dev, MHVecUInt &params)
+void MHController::onSerialSettingsLoaded(UString &dev, VecUInt &params)
 {
     m_view->getSerialSettings()->serialSettingsLoaded(dev, params);
 }
@@ -84,7 +107,7 @@ void MHController::onSerialControlChanged(bool state)
 {
     if (state)
     {
-        MHVecUInt serialParams{};
+        VecUInt serialParams{};
         serialParams.push_back(m_config->getBaudRate());
         serialParams.push_back(m_config->getDataBits());
         serialParams.push_back(
@@ -92,6 +115,9 @@ void MHController::onSerialControlChanged(bool state)
         );
         serialParams.push_back(m_config->getStopBits());
         m_serial->setup(m_config->getDevice(), serialParams);
+
+        // TODO
+        // logging
     }
     else
     {

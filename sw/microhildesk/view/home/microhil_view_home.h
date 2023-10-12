@@ -18,17 +18,17 @@
  */
 #pragma once
 
-#include <gtkmm/applicationwindow.h>
-#include <gtkmm/builder.h>
-#include <giomm/resource.h>
-#include <gtkmm/menuitem.h>
-#include <gtkmm/checkbutton.h>
-#include <gtkmm/comboboxtext.h>
-#include <gtkmm/togglebutton.h>
-#include <gtkmm/spinbutton.h>
-#include <gtkmm/progressbar.h>
 #include "../../utils/microhil_types.h"
 #include "microhil_view_home_abstract.h"
+#include <giomm/resource.h>
+#include <gtkmm/applicationwindow.h>
+#include <gtkmm/builder.h>
+#include <gtkmm/checkbutton.h>
+#include <gtkmm/comboboxtext.h>
+#include <gtkmm/menuitem.h>
+#include <gtkmm/progressbar.h>
+#include <gtkmm/spinbutton.h>
+#include <gtkmm/togglebutton.h>
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief MHViewHome class is implementation of home view
@@ -39,7 +39,7 @@ public:
     /// @brief MHViewHome constructor
     /// @param object represents base object instance
     /// @param ui represents builder instance
-    MHViewHome(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
+    MHViewHome(BaseObjectType *object, RPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewHome destructor
@@ -56,19 +56,9 @@ public:
     SigChannelChanged channelIsChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing check buttons (enable/disable channel)
-    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
-    void onChannelChanged(Channel id) final;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for comboboxes (control type)
     /// @return Signal for changed channel state combobox
     SigSelectChanged channelIsSelected() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing comboboxes (control type)
-    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
-    void onTypeSelected(Channel id) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggling buttons (turn on/turn off channel)
@@ -76,24 +66,40 @@ public:
     SigChannelToggled channelIsToggled() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing toggle buttons (turn on/turn off channel)
-    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
-    void onToggled(Channel id) final;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for spin buttons (based on timer)
     /// @return Signal for changed spin button
     SigChannelSpinTimerChanged channelIsSpinTimerChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing spin buttons (based on timer)
-    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
-    void onSpinTimerChanged(Channel id) final;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggle buttons (based on timer)
     /// @return Signal for toggled button
     SigChannelTimerToggled channelIsTimerChanged() final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Sets widgets after confirming changes for the serial port
+    /// @param state true for confirmed changes, else false
+    void serialSettingsConfirm(bool state) final;
+
+private:
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing check buttons (enable/disable channel)
+    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
+    void onChannelChanged(Channel id) final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing comboboxes (control type)
+    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
+    void onTypeSelected(Channel id) final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing toggle buttons (turn on/turn off channel)
+    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
+    void onToggled(Channel id) final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing spin buttons (based on timer)
+    /// @param id represents id for channel (Channel::ID0 .. Channel::ID7)
+    void onSpinTimerChanged(Channel id) final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing toggle buttons (turn on/turn off timer)
@@ -124,12 +130,6 @@ public:
     /// @brief Slot for processing About meni-item
     void onAboutClicked();
 
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Sets widgets after confirming changes for the serial port
-    /// @param state true for confirmed changes, else false
-    void serialSettingsConfirm(bool state) final;
-
-private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Maps channels (signals and slots)
     void mapping();
@@ -168,59 +168,59 @@ private:
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    MHRPtr<Gtk::Builder> m_ui{nullptr};
+    RPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Connect menu-item
-    MHRPtr<Gtk::MenuItem> m_connect{nullptr};
+    RPtr<Gtk::MenuItem> m_connect{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Disconnect menu-item
-    MHRPtr<Gtk::MenuItem> m_disconnect{nullptr};
+    RPtr<Gtk::MenuItem> m_disconnect{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Quit menu-item
-    MHRPtr<Gtk::MenuItem> m_quit{nullptr};
+    RPtr<Gtk::MenuItem> m_quit{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Serial Port Settings menu-item
-    MHRPtr<Gtk::MenuItem> m_serialSettings{nullptr};
+    RPtr<Gtk::MenuItem> m_serialSettings{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application Log Settings menu-item
-    MHRPtr<Gtk::MenuItem> m_logSettings{nullptr};
+    RPtr<Gtk::MenuItem> m_logSettings{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Application About menu-item
-    MHRPtr<Gtk::MenuItem> m_about{nullptr};
+    RPtr<Gtk::MenuItem> m_about{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Check buttons for enable/disable channels
-    std::vector<MHRPtr<Gtk::CheckButton>> m_enableChannels{};
+    std::vector<RPtr<Gtk::CheckButton>> m_enableChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Comboboxes for selecting channel mode
-    std::vector<MHRPtr<Gtk::ComboBoxText>> m_selectControlChannels{};
+    std::vector<RPtr<Gtk::ComboBoxText>> m_selectControlChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toggle button for direct channel control
-    std::vector<MHRPtr<Gtk::ToggleButton>> m_toggleChannels{};
+    std::vector<RPtr<Gtk::ToggleButton>> m_toggleChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Spin button for setup channel timer
-    std::vector<MHRPtr<Gtk::SpinButton>> m_spinTimerChannels{};
+    std::vector<RPtr<Gtk::SpinButton>> m_spinTimerChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Toggle button for starting channel timer
-    std::vector<MHRPtr<Gtk::ToggleButton>> m_toggleTimerChannels{};
+    std::vector<RPtr<Gtk::ToggleButton>> m_toggleTimerChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Visual status for channels
-    std::vector<MHRPtr<Gtk::ProgressBar>> m_stautsTimerChannels{};
+    std::vector<RPtr<Gtk::ProgressBar>> m_stautsTimerChannels{};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Adjustment setup for channel visual status
-    MHRPtr<Gtk::Adjustment> m_adjustment_digits{nullptr};
+    RPtr<Gtk::Adjustment> m_adjustment_digits{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for menu items (triggered another view)

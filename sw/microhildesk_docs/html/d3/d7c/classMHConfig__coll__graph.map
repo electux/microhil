@@ -1,9 +1,9 @@
 <map id="MHConfig" name="MHConfig">
-<area shape="rect" id="node1" title="MHConfig class declaration and definition." alt="" coords="383,307,555,531"/>
-<area shape="rect" id="node2" href="$d5/d1b/classIMHConfig.html" title="IMHConfig class is interface set for configuration mechanism." alt="" coords="5,5,177,229"/>
-<area shape="rect" id="node3" title=" " alt="" coords="202,79,261,156"/>
-<area shape="rect" id="node4" title=" " alt="" coords="357,79,407,156"/>
-<area shape="rect" id="node5" title=" " alt="" coords="498,79,567,156"/>
-<area shape="rect" id="node6" title=" " alt="" coords="592,71,761,163"/>
-<area shape="rect" id="node7" title=" " alt="" coords="785,71,955,163"/>
+<area shape="rect" id="node1" title="MHConfig class is implementation for configuration mechanism." alt="" coords="403,512,604,927"/>
+<area shape="rect" id="node2" href="$d5/d1b/classIMHConfig.html" title="IMHConfig class is interface set for configuration mechanism." alt="" coords="5,5,212,435"/>
+<area shape="rect" id="node3" title=" " alt="" coords="237,181,295,259"/>
+<area shape="rect" id="node4" title=" " alt="" coords="391,181,442,259"/>
+<area shape="rect" id="node5" title=" " alt="" coords="537,181,606,259"/>
+<area shape="rect" id="node6" title=" " alt="" coords="630,174,787,266"/>
+<area shape="rect" id="node7" title=" " alt="" coords="811,174,969,266"/>
 </map>

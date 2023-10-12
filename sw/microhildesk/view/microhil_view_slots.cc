@@ -33,6 +33,7 @@ void MHView::onViewChanged(ViewId id)
         m_serialPortChanged.emit(false);
         break;
     case static_cast<int>(ViewId::MICROHIL_QUIT):
+        // TODO
         break;
     case static_cast<int>(ViewId::MICROHIL_SERIAL_SETTINGS):
         ////////////////////////////////////////////////////////////////////

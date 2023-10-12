@@ -18,8 +18,8 @@
  */
 #pragma once
 
-#include <sigc++/sigc++.h>
 #include "../../utils/microhil_types.h"
+#include <sigc++/sigc++.h>
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Scoped class enumerator for dialog message types
@@ -52,12 +52,13 @@ public:
     virtual SigHideDialog hideDialogTrigered() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing Close button (self hide Dialog)
-    virtual void onHideDialogTriggered() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Sets message for dialog
     /// @param message represents message with information for user
     /// @param type represents type of dialog message
-    virtual void setMessage(const MHString &message, const MessageType type) = 0;
+    virtual void setMessage(const UString &message, const MessageType type) = 0;
+
+protected:
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing Close button (self hide Dialog)
+    virtual void onHideDialogTriggered() = 0;
 };

@@ -18,8 +18,8 @@
  */
 #pragma once
 
-#include <vector>
 #include "microhil_imodel.h"
+#include <vector>
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief MHModel class is implementation of model mechanism

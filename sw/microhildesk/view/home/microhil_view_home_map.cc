@@ -23,7 +23,7 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// @brief Number of map channels
     constexpr int kNumberOfMapChannels{8};
-}
+} // namespace
 
 void MHViewHome::mapping()
 {
@@ -67,12 +67,10 @@ void MHViewHome::mapping()
     /// Maps channels (signals and slots)
     for (int i = 0; i < kNumberOfMapChannels; i++)
     {
-        m_enableChannels[i]->signal_toggled().connect(
-            sigc::bind<Channel>(
-                sigc::mem_fun(*this, &MHViewHome::onChannelChanged), 
-                static_cast<Channel>(i)
-            )
-        );
+        m_enableChannels[i]->signal_toggled().connect(sigc::bind<Channel>(
+            sigc::mem_fun(*this, &MHViewHome::onChannelChanged),
+            static_cast<Channel>(i)
+        ));
 
         m_selectControlChannels[i]->signal_changed().connect(
             sigc::bind<Channel>(
@@ -81,25 +79,19 @@ void MHViewHome::mapping()
             )
         );
 
-        m_toggleChannels[i]->signal_toggled().connect(
-            sigc::bind<Channel>(
-                sigc::mem_fun(*this, &MHViewHome::onToggled),
-                static_cast<Channel>(i)
-            )
-        );
+        m_toggleChannels[i]->signal_toggled().connect(sigc::bind<Channel>(
+            sigc::mem_fun(*this, &MHViewHome::onToggled),
+            static_cast<Channel>(i)
+        ));
 
-        m_spinTimerChannels[i]->signal_changed().connect(
-            sigc::bind<Channel>(
-                sigc::mem_fun(*this, &MHViewHome::onSpinTimerChanged),
-                static_cast<Channel>(i)
-            )
-        );
+        m_spinTimerChannels[i]->signal_changed().connect(sigc::bind<Channel>(
+            sigc::mem_fun(*this, &MHViewHome::onSpinTimerChanged),
+            static_cast<Channel>(i)
+        ));
 
-        m_toggleTimerChannels[i]->signal_toggled().connect(
-            sigc::bind<Channel>(
-                sigc::mem_fun(*this, &MHViewHome::onToggleTimerChanged),
-                static_cast<Channel>(i)
-            )
-        );
+        m_toggleTimerChannels[i]->signal_toggled().connect(sigc::bind<Channel>(
+            sigc::mem_fun(*this, &MHViewHome::onToggleTimerChanged),
+            static_cast<Channel>(i)
+        ));
     }
 }

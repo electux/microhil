@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('d2/ddd/classIMHController.html','../..
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="../../d0/d84/classIMHController-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">IMHController Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -101,7 +102,7 @@ Inheritance diagram for IMHController:</div>
 <div class="center"><img src="../../db/db3/classIMHController__inherit__graph.png" border="0" usemap="#aIMHController_inherit__map" alt="Inheritance graph"/></div>
 <map name="aIMHController_inherit__map" id="aIMHController_inherit__map">
 <area shape="rect" title="IMHController class is interface set for controller." alt="" coords="5,5,216,200"/>
-<area shape="rect" href="../../d1/d75/classMHController.html" title="MHController class is implementation of controller." alt="" coords="5,248,216,531"/>
+<area shape="rect" href="../../d1/d75/classMHController.html" title="MHController class is implementation of controller." alt="" coords="9,248,213,531"/>
 </map>
 </div>
 <div class="dynheader">
@@ -124,21 +125,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7eb18a71c63c7fafe0735087af0bbdbe"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#a7eb18a71c63c7fafe0735087af0bbdbe">isEnabled</a> () const =0</td></tr>
 <tr class="memdesc:a7eb18a71c63c7fafe0735087af0bbdbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks is controller enabled (is serial communication enabled)  <a href="../../d2/ddd/classIMHController.html#a7eb18a71c63c7fafe0735087af0bbdbe">More...</a><br /></td></tr>
 <tr class="separator:a7eb18a71c63c7fafe0735087af0bbdbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:adc79977ac31ee14cb653d5ed7298c406"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#adc79977ac31ee14cb653d5ed7298c406">mapping</a> ()=0</td></tr>
 <tr class="memdesc:adc79977ac31ee14cb653d5ed7298c406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps views and backend (signals and slots)  <a href="../../d2/ddd/classIMHController.html#adc79977ac31ee14cb653d5ed7298c406">More...</a><br /></td></tr>
 <tr class="separator:adc79977ac31ee14cb653d5ed7298c406"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aaa446d380a8d7918ce45562bb90803"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#a5aaa446d380a8d7918ce45562bb90803">onLogSettingsChanged</a> (<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;path, int level)=0</td></tr>
-<tr class="memdesc:a5aaa446d380a8d7918ce45562bb90803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing log settings changes.  <a href="../../d2/ddd/classIMHController.html#a5aaa446d380a8d7918ce45562bb90803">More...</a><br /></td></tr>
-<tr class="separator:a5aaa446d380a8d7918ce45562bb90803"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af665af12ecffb6701e86643b79f133c0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#af665af12ecffb6701e86643b79f133c0">onLogSettingsLoaded</a> (<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;path, int level)=0</td></tr>
-<tr class="memdesc:af665af12ecffb6701e86643b79f133c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing log settings loaded.  <a href="../../d2/ddd/classIMHController.html#af665af12ecffb6701e86643b79f133c0">More...</a><br /></td></tr>
-<tr class="separator:af665af12ecffb6701e86643b79f133c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad8c94ef0520e8f3f584540cb6d9b2ce"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#aad8c94ef0520e8f3f584540cb6d9b2ce">onSerialSettingsChanged</a> (<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;dev, <a class="el" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a> &amp;params)=0</td></tr>
-<tr class="memdesc:aad8c94ef0520e8f3f584540cb6d9b2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing serial settings changes.  <a href="../../d2/ddd/classIMHController.html#aad8c94ef0520e8f3f584540cb6d9b2ce">More...</a><br /></td></tr>
-<tr class="separator:aad8c94ef0520e8f3f584540cb6d9b2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ed316afba33fdf30dc3cda25cd85020"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#a0ed316afba33fdf30dc3cda25cd85020">onSerialSettingsLoaded</a> (<a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;dev, <a class="el" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a> &amp;params)=0</td></tr>
-<tr class="memdesc:a0ed316afba33fdf30dc3cda25cd85020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing serial settings changes.  <a href="../../d2/ddd/classIMHController.html#a0ed316afba33fdf30dc3cda25cd85020">More...</a><br /></td></tr>
-<tr class="separator:a0ed316afba33fdf30dc3cda25cd85020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acccc852f940bb7fb8702bb9eb113f6aa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#acccc852f940bb7fb8702bb9eb113f6aa">onLogSettingsChanged</a> (<a class="el" href="../../db/db9/microhil__types_8h.html#a120c0e9ff669eac7b9ad2f4d950acdf3">UString</a> &amp;path, int level)=0</td></tr>
+<tr class="memdesc:acccc852f940bb7fb8702bb9eb113f6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing log settings changes.  <a href="../../d2/ddd/classIMHController.html#acccc852f940bb7fb8702bb9eb113f6aa">More...</a><br /></td></tr>
+<tr class="separator:acccc852f940bb7fb8702bb9eb113f6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e0abe17a797fa7a8b36ccce1846425c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#a7e0abe17a797fa7a8b36ccce1846425c">onLogSettingsLoaded</a> (<a class="el" href="../../db/db9/microhil__types_8h.html#a120c0e9ff669eac7b9ad2f4d950acdf3">UString</a> &amp;path, int level)=0</td></tr>
+<tr class="memdesc:a7e0abe17a797fa7a8b36ccce1846425c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing log settings loaded.  <a href="../../d2/ddd/classIMHController.html#a7e0abe17a797fa7a8b36ccce1846425c">More...</a><br /></td></tr>
+<tr class="separator:a7e0abe17a797fa7a8b36ccce1846425c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dbc8bff54140bc92b5ca13738211399"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#a5dbc8bff54140bc92b5ca13738211399">onSerialSettingsChanged</a> (<a class="el" href="../../db/db9/microhil__types_8h.html#a120c0e9ff669eac7b9ad2f4d950acdf3">UString</a> &amp;dev, <a class="el" href="../../db/db9/microhil__types_8h.html#afc7f8c7bf364d55609b89d5abd555474">VecUInt</a> &amp;params)=0</td></tr>
+<tr class="memdesc:a5dbc8bff54140bc92b5ca13738211399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing serial settings changes.  <a href="../../d2/ddd/classIMHController.html#a5dbc8bff54140bc92b5ca13738211399">More...</a><br /></td></tr>
+<tr class="separator:a5dbc8bff54140bc92b5ca13738211399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331ad84e3d70ddbbfdc022f36989c341"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#a331ad84e3d70ddbbfdc022f36989c341">onSerialSettingsLoaded</a> (<a class="el" href="../../db/db9/microhil__types_8h.html#a120c0e9ff669eac7b9ad2f4d950acdf3">UString</a> &amp;dev, <a class="el" href="../../db/db9/microhil__types_8h.html#afc7f8c7bf364d55609b89d5abd555474">VecUInt</a> &amp;params)=0</td></tr>
+<tr class="memdesc:a331ad84e3d70ddbbfdc022f36989c341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing serial settings changes.  <a href="../../d2/ddd/classIMHController.html#a331ad84e3d70ddbbfdc022f36989c341">More...</a><br /></td></tr>
+<tr class="separator:a331ad84e3d70ddbbfdc022f36989c341"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1e2b3766232bb224e5cfb44897dc0ff"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/ddd/classIMHController.html#ae1e2b3766232bb224e5cfb44897dc0ff">onSerialControlChanged</a> (bool state)=0</td></tr>
 <tr class="memdesc:ae1e2b3766232bb224e5cfb44897dc0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for processing serial port changes.  <a href="../../d2/ddd/classIMHController.html#ae1e2b3766232bb224e5cfb44897dc0ff">More...</a><br /></td></tr>
 <tr class="separator:ae1e2b3766232bb224e5cfb44897dc0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,7 +228,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -235,8 +239,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5aaa446d380a8d7918ce45562bb90803" name="a5aaa446d380a8d7918ce45562bb90803"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5aaa446d380a8d7918ce45562bb90803">&#9670;&nbsp;</a></span>onLogSettingsChanged()</h2>
+<a id="acccc852f940bb7fb8702bb9eb113f6aa" name="acccc852f940bb7fb8702bb9eb113f6aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acccc852f940bb7fb8702bb9eb113f6aa">&#9670;&nbsp;</a></span>onLogSettingsChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,7 +251,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void IMHController::onLogSettingsChanged </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#a120c0e9ff669eac7b9ad2f4d950acdf3">UString</a> &amp;&#160;</td>
           <td class="paramname"><em>path</em>, </td>
         </tr>
         <tr>
@@ -264,7 +268,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -278,12 +282,12 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="../../d1/d75/classMHController.html#ad6f3e6c35f58ee02b13b19a9999a3703">MHController</a>.</p>
+<p>Implemented in <a class="el" href="../../d1/d75/classMHController.html#ac7d7fd35ab6398ba8fe422fd8ffdfb6a">MHController</a>.</p>
 
 </div>
 </div>
-<a id="af665af12ecffb6701e86643b79f133c0" name="af665af12ecffb6701e86643b79f133c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af665af12ecffb6701e86643b79f133c0">&#9670;&nbsp;</a></span>onLogSettingsLoaded()</h2>
+<a id="a7e0abe17a797fa7a8b36ccce1846425c" name="a7e0abe17a797fa7a8b36ccce1846425c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e0abe17a797fa7a8b36ccce1846425c">&#9670;&nbsp;</a></span>onLogSettingsLoaded()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,7 +298,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void IMHController::onLogSettingsLoaded </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#a120c0e9ff669eac7b9ad2f4d950acdf3">UString</a> &amp;&#160;</td>
           <td class="paramname"><em>path</em>, </td>
         </tr>
         <tr>
@@ -311,7 +315,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -325,7 +329,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="../../d1/d75/classMHController.html#a894230eda2339035729894ef57a6e675">MHController</a>.</p>
+<p>Implemented in <a class="el" href="../../d1/d75/classMHController.html#ac0f9932dd1c234b666dbb2605256b1ea">MHController</a>.</p>
 
 </div>
 </div>
@@ -348,7 +352,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -365,8 +369,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aad8c94ef0520e8f3f584540cb6d9b2ce" name="aad8c94ef0520e8f3f584540cb6d9b2ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad8c94ef0520e8f3f584540cb6d9b2ce">&#9670;&nbsp;</a></span>onSerialSettingsChanged()</h2>
+<a id="a5dbc8bff54140bc92b5ca13738211399" name="a5dbc8bff54140bc92b5ca13738211399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dbc8bff54140bc92b5ca13738211399">&#9670;&nbsp;</a></span>onSerialSettingsChanged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -377,13 +381,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void IMHController::onSerialSettingsChanged </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#a120c0e9ff669eac7b9ad2f4d950acdf3">UString</a> &amp;&#160;</td>
           <td class="paramname"><em>dev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#afc7f8c7bf364d55609b89d5abd555474">VecUInt</a> &amp;&#160;</td>
           <td class="paramname"><em>params</em>&#160;</td>
         </tr>
         <tr>
@@ -394,7 +398,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -408,12 +412,12 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="../../d1/d75/classMHController.html#a1bda7b5726e5affa27dccbe6b2879ffc">MHController</a>.</p>
+<p>Implemented in <a class="el" href="../../d1/d75/classMHController.html#a7d41321b53eca0fe241928c36ce12769">MHController</a>.</p>
 
 </div>
 </div>
-<a id="a0ed316afba33fdf30dc3cda25cd85020" name="a0ed316afba33fdf30dc3cda25cd85020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ed316afba33fdf30dc3cda25cd85020">&#9670;&nbsp;</a></span>onSerialSettingsLoaded()</h2>
+<a id="a331ad84e3d70ddbbfdc022f36989c341" name="a331ad84e3d70ddbbfdc022f36989c341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331ad84e3d70ddbbfdc022f36989c341">&#9670;&nbsp;</a></span>onSerialSettingsLoaded()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -424,13 +428,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void IMHController::onSerialSettingsLoaded </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#afb2610de6c3a4cf2dfabbb7b4b0536e3">MHString</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#a120c0e9ff669eac7b9ad2f4d950acdf3">UString</a> &amp;&#160;</td>
           <td class="paramname"><em>dev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#a2918554c846c4149ce02029e00920b89">MHVecUInt</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../db/db9/microhil__types_8h.html#afc7f8c7bf364d55609b89d5abd555474">VecUInt</a> &amp;&#160;</td>
           <td class="paramname"><em>params</em>&#160;</td>
         </tr>
         <tr>
@@ -441,7 +445,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -455,7 +459,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="../../d1/d75/classMHController.html#a386e969734824a32513b94cf4a346e77">MHController</a>.</p>
+<p>Implemented in <a class="el" href="../../d1/d75/classMHController.html#a96e7ab4081b29e875bdf22fce71e98fc">MHController</a>.</p>
 
 </div>
 </div>
@@ -504,7 +508,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/ddd/classIMHController.html">IMHController</a></li>
-    <li class="footer">Generated on Wed Oct 4 2023 09:00:03 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Oct 12 2023 03:47:15 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

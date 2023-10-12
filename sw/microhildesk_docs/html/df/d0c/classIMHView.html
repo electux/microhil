@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('df/d0c/classIMHView.html','../../'); i
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="../../da/d69/classIMHView-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">IMHView Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -101,7 +102,7 @@ Inheritance diagram for IMHView:</div>
 <div class="center"><img src="../../d7/dd4/classIMHView__inherit__graph.png" border="0" usemap="#aIMHView_inherit__map" alt="Inheritance graph"/></div>
 <map name="aIMHView_inherit__map" id="aIMHView_inherit__map">
 <area shape="rect" title="IMHView class is interface set for view." alt="" coords="5,5,209,185"/>
-<area shape="rect" href="../../d1/dfc/classMHView.html" title="MHView class is implementation of view." alt="" coords="5,233,209,516"/>
+<area shape="rect" href="../../d1/dfc/classMHView.html" title="MHView class is implementation of view." alt="" coords="8,233,207,516"/>
 </map>
 </div>
 <div class="dynheader">
@@ -121,15 +122,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a83402145ed3109fc6d65a64cd6e9078e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../da/db1/microhil__iview_8h.html#af02e449f1c8133102a7d5b97286770e3">SigSerialControl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#a83402145ed3109fc6d65a64cd6e9078e">serialControlChanged</a> ()=0</td></tr>
 <tr class="memdesc:a83402145ed3109fc6d65a64cd6e9078e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for controling serial port.  <a href="../../df/d0c/classIMHView.html#a83402145ed3109fc6d65a64cd6e9078e">More...</a><br /></td></tr>
 <tr class="separator:a83402145ed3109fc6d65a64cd6e9078e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d3b05ffe3b364aaa3196b7fdab1b11b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a>&lt; <a class="el" href="../../dc/def/classMHViewHome.html">MHViewHome</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#a2d3b05ffe3b364aaa3196b7fdab1b11b">getHome</a> ()=0</td></tr>
-<tr class="memdesc:a2d3b05ffe3b364aaa3196b7fdab1b11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets home view.  <a href="../../df/d0c/classIMHView.html#a2d3b05ffe3b364aaa3196b7fdab1b11b">More...</a><br /></td></tr>
-<tr class="separator:a2d3b05ffe3b364aaa3196b7fdab1b11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a924bd59ce71f0d7345b424e71bbd54ee"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a>&lt; <a class="el" href="../../d1/d14/classMHViewLog.html">MHViewLog</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#a924bd59ce71f0d7345b424e71bbd54ee">getLogSettings</a> ()=0</td></tr>
-<tr class="memdesc:a924bd59ce71f0d7345b424e71bbd54ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets log settings view.  <a href="../../df/d0c/classIMHView.html#a924bd59ce71f0d7345b424e71bbd54ee">More...</a><br /></td></tr>
-<tr class="separator:a924bd59ce71f0d7345b424e71bbd54ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae631eda861bfe4b68b35b1043651403f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a>&lt; <a class="el" href="../../d2/dd5/classMHViewSerial.html">MHViewSerial</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#ae631eda861bfe4b68b35b1043651403f">getSerialSettings</a> ()=0</td></tr>
-<tr class="memdesc:ae631eda861bfe4b68b35b1043651403f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets serial settings view.  <a href="../../df/d0c/classIMHView.html#ae631eda861bfe4b68b35b1043651403f">More...</a><br /></td></tr>
-<tr class="separator:ae631eda861bfe4b68b35b1043651403f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacddab45716252ea2a1bddce463b87e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a33a8226c79745b0aa043927a9403043c">RPtr</a>&lt; <a class="el" href="../../dc/def/classMHViewHome.html">MHViewHome</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#aaacddab45716252ea2a1bddce463b87e">getHome</a> ()=0</td></tr>
+<tr class="memdesc:aaacddab45716252ea2a1bddce463b87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets home view.  <a href="../../df/d0c/classIMHView.html#aaacddab45716252ea2a1bddce463b87e">More...</a><br /></td></tr>
+<tr class="separator:aaacddab45716252ea2a1bddce463b87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6521b2ab9e80b653a98db8fd444469e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a33a8226c79745b0aa043927a9403043c">RPtr</a>&lt; <a class="el" href="../../d1/d14/classMHViewLog.html">MHViewLog</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#af6521b2ab9e80b653a98db8fd444469e">getLogSettings</a> ()=0</td></tr>
+<tr class="memdesc:af6521b2ab9e80b653a98db8fd444469e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets log settings view.  <a href="../../df/d0c/classIMHView.html#af6521b2ab9e80b653a98db8fd444469e">More...</a><br /></td></tr>
+<tr class="separator:af6521b2ab9e80b653a98db8fd444469e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b60b7a677f4dc9a975bcb0b871526a4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a33a8226c79745b0aa043927a9403043c">RPtr</a>&lt; <a class="el" href="../../d2/dd5/classMHViewSerial.html">MHViewSerial</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#a0b60b7a677f4dc9a975bcb0b871526a4">getSerialSettings</a> ()=0</td></tr>
+<tr class="memdesc:a0b60b7a677f4dc9a975bcb0b871526a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets serial settings view.  <a href="../../df/d0c/classIMHView.html#a0b60b7a677f4dc9a975bcb0b871526a4">More...</a><br /></td></tr>
+<tr class="separator:a0b60b7a677f4dc9a975bcb0b871526a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8c74ad52d09c337bcbfdf376cc839333"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0c/classIMHView.html#a8c74ad52d09c337bcbfdf376cc839333">mapping</a> ()=0</td></tr>
 <tr class="memdesc:a8c74ad52d09c337bcbfdf376cc839333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps views (signal and slots)  <a href="../../df/d0c/classIMHView.html#a8c74ad52d09c337bcbfdf376cc839333">More...</a><br /></td></tr>
 <tr class="separator:a8c74ad52d09c337bcbfdf376cc839333"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,8 +177,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2d3b05ffe3b364aaa3196b7fdab1b11b" name="a2d3b05ffe3b364aaa3196b7fdab1b11b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d3b05ffe3b364aaa3196b7fdab1b11b">&#9670;&nbsp;</a></span>getHome()</h2>
+<a id="aaacddab45716252ea2a1bddce463b87e" name="aaacddab45716252ea2a1bddce463b87e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacddab45716252ea2a1bddce463b87e">&#9670;&nbsp;</a></span>getHome()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +187,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a>&lt; <a class="el" href="../../dc/def/classMHViewHome.html">MHViewHome</a> &gt; IMHView::getHome </td>
+          <td class="memname">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a33a8226c79745b0aa043927a9403043c">RPtr</a>&lt; <a class="el" href="../../dc/def/classMHViewHome.html">MHViewHome</a> &gt; IMHView::getHome </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -199,12 +203,12 @@ Public Member Functions</h2></td></tr>
 <p>Gets home view. </p>
 <dl class="section return"><dt>Returns</dt><dd>Home view instance </dd></dl>
 
-<p>Implemented in <a class="el" href="../../d1/dfc/classMHView.html#ae26dc08c053aedad19726a30b97a012e">MHView</a>.</p>
+<p>Implemented in <a class="el" href="../../d1/dfc/classMHView.html#ac322b84eb0b4a511ae7e5ba8c15802a8">MHView</a>.</p>
 
 </div>
 </div>
-<a id="a924bd59ce71f0d7345b424e71bbd54ee" name="a924bd59ce71f0d7345b424e71bbd54ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a924bd59ce71f0d7345b424e71bbd54ee">&#9670;&nbsp;</a></span>getLogSettings()</h2>
+<a id="af6521b2ab9e80b653a98db8fd444469e" name="af6521b2ab9e80b653a98db8fd444469e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6521b2ab9e80b653a98db8fd444469e">&#9670;&nbsp;</a></span>getLogSettings()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,7 +217,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a>&lt; <a class="el" href="../../d1/d14/classMHViewLog.html">MHViewLog</a> &gt; IMHView::getLogSettings </td>
+          <td class="memname">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a33a8226c79745b0aa043927a9403043c">RPtr</a>&lt; <a class="el" href="../../d1/d14/classMHViewLog.html">MHViewLog</a> &gt; IMHView::getLogSettings </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -229,12 +233,12 @@ Public Member Functions</h2></td></tr>
 <p>Gets log settings view. </p>
 <dl class="section return"><dt>Returns</dt><dd>Log view settings instance </dd></dl>
 
-<p>Implemented in <a class="el" href="../../d1/dfc/classMHView.html#a9e1376978625d269c291b8e104ae822a">MHView</a>.</p>
+<p>Implemented in <a class="el" href="../../d1/dfc/classMHView.html#a2d41da0697ec4871b39904b17abcc9f4">MHView</a>.</p>
 
 </div>
 </div>
-<a id="ae631eda861bfe4b68b35b1043651403f" name="ae631eda861bfe4b68b35b1043651403f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae631eda861bfe4b68b35b1043651403f">&#9670;&nbsp;</a></span>getSerialSettings()</h2>
+<a id="a0b60b7a677f4dc9a975bcb0b871526a4" name="a0b60b7a677f4dc9a975bcb0b871526a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b60b7a677f4dc9a975bcb0b871526a4">&#9670;&nbsp;</a></span>getSerialSettings()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +247,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a995fcf67a347673a77ad94b3403bbea6">MHRPtr</a>&lt; <a class="el" href="../../d2/dd5/classMHViewSerial.html">MHViewSerial</a> &gt; IMHView::getSerialSettings </td>
+          <td class="memname">virtual <a class="el" href="../../db/db9/microhil__types_8h.html#a33a8226c79745b0aa043927a9403043c">RPtr</a>&lt; <a class="el" href="../../d2/dd5/classMHViewSerial.html">MHViewSerial</a> &gt; IMHView::getSerialSettings </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -259,7 +263,7 @@ Public Member Functions</h2></td></tr>
 <p>Gets serial settings view. </p>
 <dl class="section return"><dt>Returns</dt><dd>Serial view settings instance </dd></dl>
 
-<p>Implemented in <a class="el" href="../../d1/dfc/classMHView.html#a3dd70a065bcb23012cf27a08f53b797a">MHView</a>.</p>
+<p>Implemented in <a class="el" href="../../d1/dfc/classMHView.html#a7836b7f3d8ac5ea3a33479a14228b706">MHView</a>.</p>
 
 </div>
 </div>
@@ -281,7 +285,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -311,7 +315,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -347,7 +351,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -403,7 +407,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d0c/classIMHView.html">IMHView</a></li>
-    <li class="footer">Generated on Wed Oct 4 2023 09:00:03 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Oct 12 2023 03:47:15 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -18,17 +18,8 @@
  */
 #include "microhil_view_serial.h"
 
-SigSerialSetup MHViewSerial::serialSetupChanged()
-{
-    return m_serialSetup;
-}
+SigSerialSetup MHViewSerial::serialSetupChanged() { return m_serialSetup; }
 
-SigCancelSerial MHViewSerial::cancelSerialTriggered()
-{
-    return m_cancelSerial;
-}
+SigCancelSerial MHViewSerial::cancelSerialTriggered() { return m_cancelSerial; }
 
-SigOkSerial MHViewSerial::okSerialTriggered()
-{
-    return m_okSerial;
-}
+SigOkSerial MHViewSerial::okSerialTriggered() { return m_okSerial; }

@@ -20,10 +20,14 @@
 
 SigLogConfig MHConfig::LogConfigLoaded()
 {
+    ////////////////////////////////////////////////////////////////////
+    /// Signal for tracking load configuration process (log section)
     return m_logConfig;
 }
 
 SigSerialConfig MHConfig::SerialConfigLoaded()
 {
+    ////////////////////////////////////////////////////////////////////
+    /// Signal for tracking load configuration process (serial section)
     return m_serialConfig;
 }

@@ -245,13 +245,14 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>channel state in enumerator format (ON | OFF) </dd></dl>
+<p >Gets channel state</p>
 
 <p>Implements <a class="el" href="../../dd/db2/classIMHModel.html#abbdd2c447bf80aebebd1ae39a0230e0f">IMHModel</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00043">43</a> of file <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html">microhil_model.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">m_channels</a>[id];</div>
-<div class="line"><span class="lineno">   46</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00045">45</a> of file <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html">microhil_model.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">m_channels</a>[id];</div>
+<div class="line"><span class="lineno">   50</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>.</p>
 
@@ -289,13 +290,14 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status true for ON channel else false for OFF channel </dd></dl>
+<p >Checks is channel active</p>
 
 <p>Implements <a class="el" href="../../dd/db2/classIMHModel.html#ae10c69112b402c1a932359098cecec4e">IMHModel</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00048">48</a> of file <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html">microhil_model.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">m_channels</a>[id] == <a class="code hl_enumvalue" href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">ChannelState::MICROHIL_ON</a>;</div>
-<div class="line"><span class="lineno">   51</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00052">52</a> of file <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html">microhil_model.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">m_channels</a>[id] == <a class="code hl_enumvalue" href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">ChannelState::MICROHIL_ON</a>;</div>
+<div class="line"><span class="lineno">   57</span>}</div>
 <div class="ttc" id="amicrohil__imodel_8h_html_af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae"><div class="ttname"><a href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">ChannelState::MICROHIL_ON</a></div><div class="ttdeci">@ MICROHIL_ON</div><div class="ttdoc">Channel state on.</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>, and <a class="el" href="../../d5/d3a/microhil__imodel_8h.html#af01e337765f2caf3f5f9e88d5fc19b05a97d3ead7a9896d164b9bb533a16f01ae">MICROHIL_ON</a>.</p>
@@ -344,13 +346,14 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p >Sets channel state</p>
 
 <p>Implements <a class="el" href="../../dd/db2/classIMHModel.html#ad582a9cbac20ef724aa8b5add8dba710">IMHModel</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00038">38</a> of file <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html">microhil_model.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
-<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">m_channels</a>[id] = state;</div>
-<div class="line"><span class="lineno">   41</span>}</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="../../da/d3e/classMHModel.html#af3c3208fda658163b42d2df2987e2660">m_channels</a>[id] = state;</div>
+<div class="line"><span class="lineno">   43</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">m_channels</a>.</p>
 
@@ -381,7 +384,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d57/microhil__model_8h_source.html#l00058">58</a> of file <a class="el" href="../../d3/d57/microhil__model_8h_source.html">microhil_model.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00043">getChannel()</a>, <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00048">isOnChannel()</a>, <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00028">MHModel()</a>, and <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00038">setChannel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00045">getChannel()</a>, <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00052">isOnChannel()</a>, <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00028">MHModel()</a>, and <a class="el" href="../../d9/d9c/microhil__model_8cc_source.html#l00038">setChannel()</a>.</p>
 
 </div>
 </div>
@@ -395,7 +398,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d3e/classMHModel.html">MHModel</a></li>
-    <li class="footer">Generated on Wed Oct 4 2023 09:00:03 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Oct 12 2023 03:47:15 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

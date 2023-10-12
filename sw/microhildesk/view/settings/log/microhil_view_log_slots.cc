@@ -16,8 +16,8 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <filesystem>
 #include "microhil_view_log.h"
+#include <filesystem>
 
 void MHViewLog::onLogFilePathChanged()
 {
@@ -35,10 +35,7 @@ void MHViewLog::onLogLevelChanged()
     // TODO
 }
 
-void MHViewLog::onCancelLogTriggered()
-{
-    this->hide();
-}
+void MHViewLog::onCancelLogTriggered() { this->hide(); }
 
 void MHViewLog::onOkLogTriggered()
 {

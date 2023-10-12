@@ -23,7 +23,7 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Number of controllable channels
     constexpr const int kNumberOfChannels{8};
-}
+} // namespace
 
 MHModel::MHModel()
 {
@@ -37,15 +37,21 @@ MHModel::MHModel()
 
 void MHModel::setChannel(const int id, const ChannelState state)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets channel state
     m_channels[id] = state;
 }
 
 ChannelState MHModel::getChannel(const int id) const
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets channel state
     return m_channels[id];
 }
 
 bool MHModel::isOnChannel(const int id) const
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Checks is channel active
     return m_channels[id] == ChannelState::MICROHIL_ON;
 }

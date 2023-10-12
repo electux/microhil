@@ -47,51 +47,47 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Ok button id
     constexpr const char kOkButtonId[]{"SerialOk"};
-}
+} // namespace
 
-MHViewSerial::MHViewSerial(
-    BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui
-) : Gtk::Dialog(object), m_ui{ui}
+MHViewSerial::MHViewSerial(BaseObjectType *object, RPtr<Gtk::Builder> const &ui)
+    : Gtk::Dialog(object)
+    , m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Binds Log file path entry
-    m_device = MHRPtr<Gtk::Entry>::cast_dynamic(
-        m_ui->get_object(kDevicePathId)
-    );
+    m_device = RPtr<Gtk::Entry>::cast_dynamic(m_ui->get_object(kDevicePathId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds baud-rate combobox
-    m_baudRate = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
+    m_baudRate = RPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kBaudRateSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds data-bits combobox
-    m_dataBits = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
+    m_dataBits = RPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kDataBitsSelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds parity combobox
-    m_parity = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
+    m_parity = RPtr<Gtk::ComboBoxText>::cast_dynamic(
         m_ui->get_object(kParitySelectorId)
     );
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds stop-bits combobox
-    m_stopBits = MHRPtr<Gtk::ComboBoxText>::cast_dynamic(
-        m_ui->get_object(kStopBitsId)
-    );
+    m_stopBits =
+        RPtr<Gtk::ComboBoxText>::cast_dynamic(m_ui->get_object(kStopBitsId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds Cancel button
-    m_cancel = MHRPtr<Gtk::Button>::cast_dynamic(
-        m_ui->get_object(kCancelButtonId)
-    );
+    m_cancel =
+        RPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kCancelButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds Ok button
-    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
+    m_ok = RPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Maps all widgets (signals and slots)
@@ -102,7 +98,7 @@ MHViewSerial::MHViewSerial(
     this->hide();
 }
 
-void MHViewSerial::serialSettingsLoaded(MHString &device, MHVecUInt &params)
+void MHViewSerial::serialSettingsLoaded(UString &device, VecUInt &params)
 {
     m_device->set_text(device);
     m_baudRate->set_active(params[0]);

@@ -20,5 +20,7 @@
 
 SigHideAbout MHViewAbout::hideAboutTriggered()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Signal for tracking ok button action in about view
     return m_hideAbout;
 }

@@ -18,12 +18,12 @@
  */
 #include "microhil_controller.h"
 
-MHController::MHController(MHSPtr<IMHModel> model, MHSPtr<IMHView> view)
-    : m_model{model},
-      m_view{view},
-      m_config{MHmakeSPtr<MHConfig>()},
-      m_log{MHmakeSPtr<MHLog>()},
-      m_serial{MHmakeSPtr<MHSerialCom>()}
+MHController::MHController(SPtr<IMHModel> model, SPtr<IMHView> view)
+    : m_model{model}
+    , m_view{view}
+    , m_config{makeSPtr<MHConfig>()}
+    , m_log{makeSPtr<MHLog>()}
+    , m_serial{makeSPtr<MHSerialCom>()}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Maps views and backend (signals and slots)
@@ -35,6 +35,10 @@ MHController::MHController(MHSPtr<IMHModel> model, MHSPtr<IMHView> view)
     {
         // TODO
         // Emit signal for error handler
+
+        // TODO
+        // logging
+        return;
     }
 
     ////////////////////////////////////////////////////////////////////////
@@ -43,6 +47,10 @@ MHController::MHController(MHSPtr<IMHModel> model, MHSPtr<IMHView> view)
     {
         // TODO
         // Emit signal for error handler
+
+        // TODO
+        // logging
+        return;
     }
 
     ////////////////////////////////////////////////////////////////////////
@@ -57,15 +65,23 @@ MHController::MHController(MHSPtr<IMHModel> model, MHSPtr<IMHView> view)
     {
         // TODO
         // Emit signal for error handler
+
+        // TODO
+        // logging
+        return;
     }
 }
 
 void MHController::setEnabled(bool switchController)
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets controller state (enabled - true, or disabled - false)
     m_enabled = switchController;
 }
 
 bool MHController::isEnabled() const
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Checks is controller enabled
     return m_enabled;
 }

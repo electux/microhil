@@ -39,23 +39,19 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// String representation of error message type
     constexpr const char kErrorMessage[]{" ERROR "};
-}
+} // namespace
 
-MHViewDialog::MHViewDialog(
-    BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui
-) : Gtk::Dialog(object), m_ui{ui}
+MHViewDialog::MHViewDialog(BaseObjectType *object, RPtr<Gtk::Builder> const &ui)
+    : Gtk::Dialog(object)
+    , m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Binds Dialog message
-    m_text = MHRPtr<Gtk::Label>::cast_dynamic(
-        m_ui->get_object(kDialogMessage)
-    );
+    m_text = RPtr<Gtk::Label>::cast_dynamic(m_ui->get_object(kDialogMessage));
 
     ////////////////////////////////////////////////////////////////////////
     /// Binds Close button
-    m_close = MHRPtr<Gtk::Button>::cast_dynamic(
-        m_ui->get_object(kCloseButtonId)
-    );
+    m_close = RPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kCloseButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Maps Close button (signal and slot)
@@ -66,14 +62,14 @@ MHViewDialog::MHViewDialog(
     this->hide();
 }
 
-void MHViewDialog::setMessage(const MHString &message, const MessageType type)
+void MHViewDialog::setMessage(const UString &message, const MessageType type)
 {
     const auto messageType = toUnicodeStringMessageType(type);
     this->set_title(messageType);
     m_text->set_text(message);
 }
 
-MHString MHViewDialog::toUnicodeStringMessageType(const MessageType type)
+UString MHViewDialog::toUnicodeStringMessageType(const MessageType type)
 {
     switch (type)
     {

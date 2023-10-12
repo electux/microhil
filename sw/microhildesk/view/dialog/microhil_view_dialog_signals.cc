@@ -20,5 +20,7 @@
 
 SigHideDialog MHViewDialog::hideDialogTrigered()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Signal for tracking ok button action in dialog view
     return m_hideDialog;
 }
