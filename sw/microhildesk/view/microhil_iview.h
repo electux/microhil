@@ -18,10 +18,10 @@
  */
 #pragma once
 
+#include "../utils/microhil_types.h"
 #include "home/microhil_view_home.h"
 #include "settings/log/microhil_view_log.h"
 #include "settings/serial/microhil_view_serial.h"
-#include "../utils/microhil_types.h"
 
 ////////////////////////////////////////////////////////////////////////
 /// @brief Signal type for enable/disable serial communication channel
@@ -44,18 +44,19 @@ public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets home view
     /// @return Home view instance
-    virtual MHRPtr<MHViewHome> getHome() = 0;
+    virtual RPtr<MHViewHome> getHome() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets log settings view
     /// @return Log view settings instance
-    virtual MHRPtr<MHViewLog> getLogSettings() = 0;
+    virtual RPtr<MHViewLog> getLogSettings() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Gets serial settings view
     /// @return Serial view settings instance
-    virtual MHRPtr<MHViewSerial> getSerialSettings() = 0;
+    virtual RPtr<MHViewSerial> getSerialSettings() = 0;
 
+protected:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Maps views (signal and slots)
     virtual void mapping() = 0;

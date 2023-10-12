@@ -1,10 +1,10 @@
 <map id="view/dialog/microhil_view_dialog_abstract.h" name="view/dialog/microhil_view_dialog_abstract.h">
-<area shape="rect" id="node1" title=" " alt="" coords="62,5,241,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,102,140,129"/>
-<area shape="rect" id="node3" href="$db/db9/microhil__types_8h.html" title=" " alt="" coords="165,95,295,136"/>
-<area shape="rect" id="node4" title=" " alt="" coords="6,184,83,211"/>
-<area shape="rect" id="node5" title=" " alt="" coords="107,184,174,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="199,184,261,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="286,184,409,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="433,184,566,211"/>
+<area shape="rect" id="node1" title=" " alt="" coords="299,5,477,47"/>
+<area shape="rect" id="node2" href="$db/db9/microhil__types_8h.html" title=" " alt="" coords="244,95,375,136"/>
+<area shape="rect" id="node8" title=" " alt="" coords="399,102,534,129"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,184,72,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="96,184,219,211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="243,184,376,211"/>
+<area shape="rect" id="node6" title=" " alt="" coords="400,184,477,211"/>
+<area shape="rect" id="node7" title=" " alt="" coords="502,184,565,211"/>
 </map>

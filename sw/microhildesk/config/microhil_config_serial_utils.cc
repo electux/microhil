@@ -67,7 +67,7 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Serial port parity SPACE combobox item index id
     constexpr const int kConfigParitySpaceId{4};
-}
+} // namespace
 
 int MHConfig::baudRateToInt(int baudRate)
 {
@@ -161,7 +161,7 @@ int MHConfig::intToDataBits(int dataBits)
     return (dataBits + kConfigDataBitsOffset);
 }
 
-MHString MHConfig::parityToUnicodeString(const int parity)
+UString MHConfig::parityToUnicodeString(const int parity)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Converts integer parity to scopped enumerator class
@@ -184,7 +184,7 @@ MHString MHConfig::parityToUnicodeString(const int parity)
     return kConfigParityNone;
 }
 
-int MHConfig::parityUnicodeStringToInt(const MHString &parity)
+int MHConfig::parityUnicodeStringToInt(const UString &parity)
 {
     ////////////////////////////////////////////////////////////////////////
     /// Converts string format of parity to index item for combobox

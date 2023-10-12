@@ -116,19 +116,9 @@ public:
     virtual SigChannelChanged channelIsChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing check buttons (enable/disable channel)
-    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
-    virtual void onChannelChanged(Channel id) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for comboboxes (control type)
     /// @return Signal for changed channel state combobox
     virtual SigSelectChanged channelIsSelected() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing comboboxes (control type)
-    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
-    virtual void onTypeSelected(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggling buttons (turn on/turn off channel)
@@ -136,19 +126,9 @@ public:
     virtual SigChannelToggled channelIsToggled() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing toggle buttons (turn on/turn off channel)
-    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
-    virtual void onToggled(Channel id) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for spin buttons (based on timer)
     /// @return Signal for changed spin button
     virtual SigChannelSpinTimerChanged channelIsSpinTimerChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing spin buttons (based on timer)
-    /// @param id repreesnts id for channel (Channel::MICROHIL_ID0 .. 7)
-    virtual void onSpinTimerChanged(Channel id) = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for toggle buttons (based on timer)
@@ -156,12 +136,33 @@ public:
     virtual SigChannelTimerToggled channelIsTimerChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing toggle buttons (turn on/turn off timer)
-    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
-    virtual void onToggleTimerChanged(Channel id) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Sets widgets after confirming changes for the serial port
     /// @param state true for confirmed changes, else false
     virtual void serialSettingsConfirm(bool state) = 0;
+
+protected:
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing check buttons (enable/disable channel)
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
+    virtual void onChannelChanged(Channel id) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing comboboxes (control type)
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
+    virtual void onTypeSelected(Channel id) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing toggle buttons (turn on/turn off channel)
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
+    virtual void onToggled(Channel id) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing spin buttons (based on timer)
+    /// @param id repreesnts id for channel (Channel::MICROHIL_ID0 .. 7)
+    virtual void onSpinTimerChanged(Channel id) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing toggle buttons (turn on/turn off timer)
+    /// @param id represents id for channel (Channel::MICROHIL_ID0 .. 7)
+    virtual void onToggleTimerChanged(Channel id) = 0;
 };

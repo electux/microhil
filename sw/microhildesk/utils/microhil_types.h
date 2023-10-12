@@ -18,51 +18,46 @@
  */
 #pragma once
 
-#include <memory>
 #include <cstdint>
-#include <vector>
 #include <glibmm/refptr.h>
 #include <glibmm/ustring.h>
+#include <memory>
+#include <vector>
 
 ////////////////////////////////////////////////////////////////////////////
 /// Shortest shared pointer declaration
-template <typename T>
-using MHRPtr = Glib::RefPtr<T>;
+template <typename T> using RPtr = Glib::RefPtr<T>;
 
 ////////////////////////////////////////////////////////////////////////////
 /// Shortest shared pointer declaration
-template <typename T>
-using MHSPtr = std::shared_ptr<T>;
+template <typename T> using SPtr = std::shared_ptr<T>;
 
 ////////////////////////////////////////////////////////////////////////////
 /// Creating shorted pointer
-template <typename T, typename... Args>
-MHSPtr<T> MHmakeSPtr(Args... args)
+template <typename T, typename... Args> SPtr<T> makeSPtr(Args... args)
 {
     return std::make_shared<T>(args...);
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// Shortest unique pointer declaration
-template <typename T>
-using MHUPtr = std::unique_ptr<T>;
+template <typename T> using UPtr = std::unique_ptr<T>;
 
 ////////////////////////////////////////////////////////////////////////////
 /// Creating unique pointer
-template <typename T, typename... Args>
-MHUPtr<T> MHmakeUPtr(Args... args)
+template <typename T, typename... Args> UPtr<T> makeUPtr(Args... args)
 {
     return std::make_unique<T>(args...);
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Declared type vector of int elements
-using MHVecUInt = std::vector<unsigned int>;
+using VecUInt = std::vector<unsigned int>;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Declared type vector of uint8_t elements
-using MHVecByte = std::vector<uint8_t>;
+using VecByte = std::vector<uint8_t>;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Declared Glib unicode string type
-using MHString = Glib::ustring;
+using UString = Glib::ustring;

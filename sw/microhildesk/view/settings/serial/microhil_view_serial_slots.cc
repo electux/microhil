@@ -31,7 +31,7 @@ void MHViewSerial::onOkSerialTriggered()
 {
     auto devicePath = m_device->get_text();
 
-    MHVecUInt serialParams{};
+    VecUInt serialParams{};
     serialParams.push_back(m_baudRate->get_active_row_number());
     serialParams.push_back(m_dataBits->get_active_row_number());
     serialParams.push_back(m_parity->get_active_row_number());

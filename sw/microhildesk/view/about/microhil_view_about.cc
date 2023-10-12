@@ -23,15 +23,15 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Ok button id
     constexpr const char kOkButtonId[]{"AboutOk"};
-}
+} // namespace
 
-MHViewAbout::MHViewAbout(
-    BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui
-) : Gtk::AboutDialog(object), m_ui{ui}
+MHViewAbout::MHViewAbout(BaseObjectType *object, RPtr<Gtk::Builder> const &ui)
+    : Gtk::AboutDialog(object)
+    , m_ui{ui}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Binds Ok button
-    m_ok = MHRPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
+    m_ok = RPtr<Gtk::Button>::cast_dynamic(m_ui->get_object(kOkButtonId));
 
     ////////////////////////////////////////////////////////////////////////
     /// Maps Ok button (signal and slot)

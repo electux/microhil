@@ -42,6 +42,31 @@ public:
     void close() final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Setup the serial port parameters
+    /// @param device represents file path for the serial port
+    /// @param params represents parameters for the serial port
+    void setup(const UString &device, const VecUInt &params) final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Setup the serial port parameters
+    /// @param device represents file path for the serial port
+    /// @param params represents parameters for the serial port
+    void setup(const UString &device, const MHSerialParams &params) final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Read from serial communication channel
+    /// @param data represents data to be placed to after reading
+    /// @param len represents length of data to read before returning
+    /// @param timeout represents timeout period in miliseconds
+    void read(VecByte &data, size_t len, size_t timeout) final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Writes data to the serial communication channel
+    /// @param data represents data to be written to the serial port
+    void write(const VecByte &data) final;
+
+private:
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Converts baud-rate from scopped enumerator to unsigned int
     /// @param baudRate represents scoped enumerator value
     /// @return unsigned integer format of baud-rate
@@ -90,35 +115,10 @@ public:
     StopBits uintToStopBits(const unsigned int stopBits) final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Setup the serial port parameters
-    /// @param device represents file path for the serial port
-    /// @param params represents parameters for the serial port
-    void setup(const MHString &device, const MHVecUInt &params) final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Setup the serial port parameters
-    /// @param device represents file path for the serial port
-    /// @param params represents parameters for the serial port
-    void setup(const MHString &device, const MHSerialParams &params) final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Read from serial communication channel
-    /// @param data represents data to be placed to after reading
-    /// @param len represents length of data to read before returning
-    /// @param timeout represents timeout period in miliseconds
-    void read(MHVecByte &data, size_t len, size_t timeout) final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Writes data to the serial communication channel
-    /// @param data represents data to be written to the serial port
-    void write(const MHVecByte &data) final;
-
-private:
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Serial port instance
-    MHUPtr<SerialPort> m_serialPort{nullptr};
+    UPtr<SerialPort> m_serialPort{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Serial port device file path
-    MHString m_device{};
+    UString m_device{};
 };

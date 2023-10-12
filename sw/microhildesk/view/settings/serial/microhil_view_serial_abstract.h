@@ -18,12 +18,12 @@
  */
 #pragma once
 
-#include <sigc++/sigc++.h>
 #include "../../../utils/microhil_types.h"
+#include <sigc++/sigc++.h>
 
 ////////////////////////////////////////////////////////////////////////
 /// @brief Signal type for serial settings
-using SigSerialSetup = sigc::signal<void(MHString &, MHVecUInt &)>;
+using SigSerialSetup = sigc::signal<void(UString &, VecUInt &)>;
 
 ////////////////////////////////////////////////////////////////////////
 /// @brief Signal type for Cancel button
@@ -57,6 +57,7 @@ public:
     /// @return Signal for clicked Ok button
     virtual SigOkSerial okSerialTriggered() = 0;
 
+protected:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Cancel button (dismiss)
     virtual void onCancelSerialTriggered() = 0;

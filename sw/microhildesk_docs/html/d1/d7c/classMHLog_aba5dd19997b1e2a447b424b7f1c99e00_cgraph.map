@@ -1,0 +1,5 @@
+<map id="MHLog::write" name="MHLog::write">
+<area shape="rect" id="node1" title="Writes log message." alt="" coords="5,31,113,57"/>
+<area shape="rect" id="node2" href="$d1/d7c/classMHLog.html#a2d9726bd0b91726bd0f0f2b100aa8dfb" title="Gets current date and time." alt="" coords="161,5,369,32"/>
+<area shape="rect" id="node3" href="$d1/d7c/classMHLog.html#ad91c901fb7a7c1f0ec92cbf49516c883" title="Converts log level type to human readable string." alt="" coords="176,56,355,83"/>
+</map>

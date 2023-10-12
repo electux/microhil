@@ -18,12 +18,12 @@
  */
 #pragma once
 
+#include "microhil_view_log_abstract.h"
 #include <gtkmm/builder.h>
-#include <gtkmm/entry.h>
 #include <gtkmm/button.h>
 #include <gtkmm/comboboxtext.h>
 #include <gtkmm/dialog.h>
-#include "microhil_view_log_abstract.h"
+#include <gtkmm/entry.h>
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief MHViewLog class is implementation of  log settings view
@@ -34,7 +34,7 @@ public:
     /// @brief MHViewLog constructor
     /// @param object represents base object instance
     /// @param ui represents bulder instance
-    MHViewLog(BaseObjectType *object, MHRPtr<Gtk::Builder> const &ui);
+    MHViewLog(BaseObjectType *object, RPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewLog destructor
@@ -51,17 +51,9 @@ public:
     SigLogFilePath logFilePathChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing log file path input
-    void onLogFilePathChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log level combobox
     /// @return Signal for selected log level combobox
     SigSelectLogLevel logLevelChanged() final;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing log level combobox
-    void onLogLevelChanged() final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button
@@ -74,6 +66,21 @@ public:
     SigOkLog okLogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
+    /// @brief Set loaded parameters for log settings view
+    /// @param filePath represents absolute log file path
+    /// @param logLevel represents level for logging
+    void logSettingsLoaded(UString &filePath, int logLevel);
+
+private:
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing log file path input
+    void onLogFilePathChanged() final;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing log level combobox
+    void onLogLevelChanged() final;
+
+    ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Cancel button
     void onCancelLogTriggered() final;
 
@@ -82,35 +89,28 @@ public:
     void onOkLogTriggered() final;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Set loaded parameters for log settings view
-    /// @param filePath represents absolute log file path
-    /// @param logLevel represents level for logging
-    void logSettingsLoaded(MHString &filePath, int logLevel);
-
-private:
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Maps all widgets (signals and slots)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    MHRPtr<Gtk::Builder> m_ui{nullptr};
+    RPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI entry for setting file log path
-    MHRPtr<Gtk::Entry> m_device{nullptr};
+    RPtr<Gtk::Entry> m_device{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Combobox for selecting log level type
-    MHRPtr<Gtk::ComboBoxText> m_level{nullptr};
+    RPtr<Gtk::ComboBoxText> m_level{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Cancel button
-    MHRPtr<Gtk::Button> m_cancel{nullptr};
+    RPtr<Gtk::Button> m_cancel{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Confirm button
-    MHRPtr<Gtk::Button> m_ok{nullptr};
+    RPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log settings

@@ -1,17 +1,17 @@
 <map id="config/microhil_config.cc" name="config/microhil_config.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="161,5,344,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,79,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="103,80,183,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="207,80,298,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="322,80,469,107"/>
-<area shape="rect" id="node6" href="$d7/d31/microhil__config_8h.html" title=" " alt="" coords="493,80,626,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="415,155,546,181"/>
-<area shape="rect" id="node8" href="$d8/d9b/microhil__iconfig_8h.html" title=" " alt="" coords="571,155,708,181"/>
-<area shape="rect" id="node9" title=" " alt="" coords="483,229,617,256"/>
-<area shape="rect" id="node10" href="$db/db9/microhil__types_8h.html" title=" " alt="" coords="641,229,816,256"/>
-<area shape="rect" id="node11" title=" " alt="" coords="505,304,582,331"/>
-<area shape="rect" id="node12" title=" " alt="" coords="606,304,673,331"/>
-<area shape="rect" id="node13" title=" " alt="" coords="697,304,760,331"/>
-<area shape="rect" id="node14" title=" " alt="" coords="785,304,907,331"/>
-<area shape="rect" id="node15" title=" " alt="" coords="931,304,1065,331"/>
+<area shape="rect" id="node1" title=" " alt="" coords="629,5,811,32"/>
+<area shape="rect" id="node2" href="$d7/d31/microhil__config_8h.html" title=" " alt="" coords="411,80,544,107"/>
+<area shape="rect" id="node12" title=" " alt="" coords="568,80,659,107"/>
+<area shape="rect" id="node13" title=" " alt="" coords="683,80,757,107"/>
+<area shape="rect" id="node14" title=" " alt="" coords="781,80,928,107"/>
+<area shape="rect" id="node15" title=" " alt="" coords="952,80,1032,107"/>
+<area shape="rect" id="node3" href="$d8/d9b/microhil__iconfig_8h.html" title=" " alt="" coords="330,155,467,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="492,155,623,181"/>
+<area shape="rect" id="node4" href="$db/db9/microhil__types_8h.html" title=" " alt="" coords="222,229,397,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="421,229,555,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,304,72,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="96,304,219,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="243,304,376,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="400,304,477,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="502,304,565,331"/>
 </map>

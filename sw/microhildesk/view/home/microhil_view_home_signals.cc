@@ -23,20 +23,14 @@ SigActionViewTriggered MHViewHome::viewChanged()
     return m_actionViewTriggered;
 }
 
-SigChannelChanged MHViewHome::channelIsChanged()
-{
-    return m_channelEnabled;
-}
+SigChannelChanged MHViewHome::channelIsChanged() { return m_channelEnabled; }
 
 SigSelectChanged MHViewHome::channelIsSelected()
 {
     return m_channelControlType;
 }
 
-SigChannelToggled MHViewHome::channelIsToggled()
-{
-    return m_channelToggled;
-}
+SigChannelToggled MHViewHome::channelIsToggled() { return m_channelToggled; }
 
 SigChannelSpinTimerChanged MHViewHome::channelIsSpinTimerChanged()
 {

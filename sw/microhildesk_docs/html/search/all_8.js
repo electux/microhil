@@ -6,8 +6,8 @@ var searchData=
   ['loglevel_3',['LogLevel',['../d7/db9/microhil__ilog_8h.html#a9cf4d2a890c8688e0fe1bc38fa88de94',1,'microhil_ilog.h']]],
   ['loglevelchanged_4',['logLevelChanged',['../d1/d14/classMHViewLog.html#af2ffe9cbd4bb57df4dcd2baaafdc0f88',1,'MHViewLog::logLevelChanged()'],['../d9/d0c/classAbMHViewLog.html#aa3bf4f8e0d32c80b4470d120e662a034',1,'AbMHViewLog::logLevelChanged()']]],
   ['loglevelconfig_5',['LogLevelConfig',['../d8/d9b/microhil__iconfig_8h.html#a3fc630a93082b538c6bfdc552440e183',1,'microhil_iconfig.h']]],
-  ['loglevelstringtoint_6',['logLevelStringToInt',['../d5/d1b/classIMHConfig.html#a923ea57587536b3931b2fdd2c905ba08',1,'IMHConfig::logLevelStringToInt()'],['../d9/d79/classMHConfig.html#a558bfccb7ecc54ff4a9f1286c1c73d81',1,'MHConfig::logLevelStringToInt(const MHString &amp;level)']]],
-  ['logleveltounicodestring_7',['logLevelToUnicodeString',['../d9/d79/classMHConfig.html#a13fd998f25828610f1103c5292648b64',1,'MHConfig::logLevelToUnicodeString()'],['../d5/d1b/classIMHConfig.html#a91d155ee71bbf437edde173835feafaa',1,'IMHConfig::logLevelToUnicodeString()']]],
-  ['logsettingsloaded_8',['logSettingsLoaded',['../d1/d14/classMHViewLog.html#af184849623af693d43c146012dbe276c',1,'MHViewLog']]],
+  ['loglevelstringtoint_6',['logLevelStringToInt',['../d5/d1b/classIMHConfig.html#a81bd633025c2e4911fa94296a4802e44',1,'IMHConfig::logLevelStringToInt()'],['../d9/d79/classMHConfig.html#a15a871cb15bacd163df226fc28cc1dc1',1,'MHConfig::logLevelStringToInt(const UString &amp;level)']]],
+  ['logleveltounicodestring_7',['logLevelToUnicodeString',['../d9/d79/classMHConfig.html#ac1da97ad7fc13708727d604018860c73',1,'MHConfig::logLevelToUnicodeString()'],['../d5/d1b/classIMHConfig.html#a12029981279db966169a85ffa55df0f3',1,'IMHConfig::logLevelToUnicodeString()']]],
+  ['logsettingsloaded_8',['logSettingsLoaded',['../d1/d14/classMHViewLog.html#a333e97f993f527ff96ff5906a42d9223',1,'MHViewLog']]],
   ['logsetupchanged_9',['logSetupChanged',['../d1/d14/classMHViewLog.html#add01e9eebba8892e3159025e042ce042',1,'MHViewLog::logSetupChanged()'],['../d9/d0c/classAbMHViewLog.html#a0703647455c46eea8f96f54dc20e5358',1,'AbMHViewLog::logSetupChanged()']]]
 ];

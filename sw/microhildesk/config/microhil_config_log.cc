@@ -22,16 +22,16 @@ namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// Log configuration section
-    constexpr const char kConfigLogSection[]{"log"};
+    constexpr const char kConfigLog[]{"log"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Log level configuration parameter
-    constexpr const char kConfigLogLevel[]{"level"};
+    constexpr const char kConfigLevel[]{"level"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Log file path configuration parameter
-    constexpr const char kConfigLogFile[]{"file"};
-}
+    constexpr const char kConfigFile[]{"file"};
+} // namespace
 
 void MHConfig::setLogLevel(int level)
 {
@@ -39,32 +39,39 @@ void MHConfig::setLogLevel(int level)
     /// Converts integer log level to string format
     auto logLevel = logLevelToUnicodeString(level);
 
-    m_config.set_string(kConfigLogSection, kConfigLogLevel, logLevel);
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets log level to configuration
+    m_config.set_string(kConfigLog, kConfigLevel, logLevel);
 }
 
-MHString MHConfig::getLogLevel() const
+UString MHConfig::getLogLevel() const
 {
-    return m_config.get_string(kConfigLogSection, kConfigLogLevel);
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets log level from configuration
+    return m_config.get_string(kConfigLog, kConfigLevel);
 }
 
-void MHConfig::setLogPath(const MHString &path)
+void MHConfig::setLogPath(const UString &path)
 {
-    m_config.set_string(kConfigLogSection, kConfigLogFile, path);
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets log file path to configuration
+    m_config.set_string(kConfigLog, kConfigFile, path);
 }
 
-MHString MHConfig::getLogPath() const
+UString MHConfig::getLogPath() const
 {
-    return m_config.get_string(kConfigLogSection, kConfigLogFile);
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets log file path from configuration
+    return m_config.get_string(kConfigLog, kConfigFile);
 }
 
 bool MHConfig::validateLogSettings()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Checks log configuration parameters from config file
-    const auto configCheck = (
-        m_config.has_key(kConfigLogSection, kConfigLogLevel) &&
-        m_config.has_key(kConfigLogSection, kConfigLogFile)
-    );
+    const auto configCheck =
+        (m_config.has_key(kConfigLog, kConfigLevel) &&
+         m_config.has_key(kConfigLog, kConfigFile));
 
     if (!configCheck)
     {

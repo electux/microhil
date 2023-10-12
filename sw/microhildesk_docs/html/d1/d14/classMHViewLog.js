@@ -1,11 +1,11 @@
 var classMHViewLog =
 [
-    [ "MHViewLog", "d1/d14/classMHViewLog.html#aced08a94f10af65fa22d586d21600890", null ],
+    [ "MHViewLog", "d1/d14/classMHViewLog.html#a88595153b799b5da85901f02774e85e0", null ],
     [ "~MHViewLog", "d1/d14/classMHViewLog.html#af8c93c5b64947f685d25d76f8dbdc863", null ],
     [ "cancelLogTriggered", "d1/d14/classMHViewLog.html#a2655f2e5bcf4c9833923ede98c5812a5", null ],
     [ "logFilePathChanged", "d1/d14/classMHViewLog.html#a2675eb2d7d08a926ad83e91208c92a6e", null ],
     [ "logLevelChanged", "d1/d14/classMHViewLog.html#af2ffe9cbd4bb57df4dcd2baaafdc0f88", null ],
-    [ "logSettingsLoaded", "d1/d14/classMHViewLog.html#af184849623af693d43c146012dbe276c", null ],
+    [ "logSettingsLoaded", "d1/d14/classMHViewLog.html#a333e97f993f527ff96ff5906a42d9223", null ],
     [ "logSetupChanged", "d1/d14/classMHViewLog.html#add01e9eebba8892e3159025e042ce042", null ],
     [ "mapping", "d1/d14/classMHViewLog.html#aefa7c638ba5f26cf2a3d1389194200b6", null ],
     [ "okLogTriggered", "d1/d14/classMHViewLog.html#a2a75b23b39292ef4540e1ffc08bacc4d", null ],
@@ -13,14 +13,14 @@ var classMHViewLog =
     [ "onLogFilePathChanged", "d1/d14/classMHViewLog.html#aa8de8c9427d7f3a0d3b1f52b1a016b6b", null ],
     [ "onLogLevelChanged", "d1/d14/classMHViewLog.html#ae060f380bf2f0050289f718338685d37", null ],
     [ "onOkLogTriggered", "d1/d14/classMHViewLog.html#aef806bb48373e882d983439eb18300b3", null ],
-    [ "m_cancel", "d1/d14/classMHViewLog.html#a06aa5ad06a13aee565ffba263911142b", null ],
+    [ "m_cancel", "d1/d14/classMHViewLog.html#a12b1b53074f6f2bae308c2d98ec0166e", null ],
     [ "m_cancelLog", "d1/d14/classMHViewLog.html#aae7eadb47bcc2e498b24c0d4d18db32f", null ],
-    [ "m_device", "d1/d14/classMHViewLog.html#a3d135a29e8cfd34b0cd7c6b5e2f8270e", null ],
-    [ "m_level", "d1/d14/classMHViewLog.html#a9f700f71670fcbe4b97905fe6c8300c0", null ],
+    [ "m_device", "d1/d14/classMHViewLog.html#a2a9302f0d2e384d8a630699581a35578", null ],
+    [ "m_level", "d1/d14/classMHViewLog.html#a1d536a8eed47583a384d559673c40e30", null ],
     [ "m_logFilePath", "d1/d14/classMHViewLog.html#a441f7e117a9415bf4c226f05be9c297d", null ],
     [ "m_logLevel", "d1/d14/classMHViewLog.html#abcbfe38f297717013d5100e2a13ff575", null ],
     [ "m_logSetup", "d1/d14/classMHViewLog.html#a3333f7ba8d70aee09107b7822b335c31", null ],
-    [ "m_ok", "d1/d14/classMHViewLog.html#add88682ebbf425b1b83ed97d30aedef9", null ],
+    [ "m_ok", "d1/d14/classMHViewLog.html#a341e7fbfb7846a46e8f571178c66c7ef", null ],
     [ "m_okLog", "d1/d14/classMHViewLog.html#a7aff1fae0997567b81444b4993030acb", null ],
-    [ "m_ui", "d1/d14/classMHViewLog.html#a520136cffe33f81eb7749576878d3843", null ]
+    [ "m_ui", "d1/d14/classMHViewLog.html#a40e1130085e6898bfe3dffdc4124195d", null ]
 ];

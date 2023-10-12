@@ -18,22 +18,22 @@
  */
 #pragma once
 
-#include <gtkmm/builder.h>
-#include <gtkmm/button.h>
-#include <gtkmm/aboutdialog.h>
 #include "../../utils/microhil_types.h"
 #include "microhil_view_about_abstract.h"
+#include <gtkmm/aboutdialog.h>
+#include <gtkmm/builder.h>
+#include <gtkmm/button.h>
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief MHViewAbout class declaration and definition 
-class MHViewAbout: public AbMHViewAbout, public Gtk::AboutDialog
+/// @brief MHViewAbout class declaration and definition
+class MHViewAbout : public AbMHViewAbout, public Gtk::AboutDialog
 {
 public:
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewAbout constructor
     /// @param object represents base object type
     /// @param ui represents builder instance
-    MHViewAbout(BaseObjectType* object, MHRPtr<Gtk::Builder> const& ui);
+    MHViewAbout(BaseObjectType *object, RPtr<Gtk::Builder> const &ui);
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief MHViewAbout destructor
@@ -44,22 +44,22 @@ public:
     /// @return Signal for clicked Ok button
     SigHideAbout hideAboutTriggered() final;
 
+private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Ok button (self hide AboutDialog)
     void onHideAboutTriggered() final;
 
-private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Maps Ok button (signal and slot)
     void mapping();
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief UI builder instance
-    MHRPtr<Gtk::Builder> m_ui{nullptr};
+    RPtr<Gtk::Builder> m_ui{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Ok button for about view
-    MHRPtr<Gtk::Button> m_ok{nullptr};
+    RPtr<Gtk::Button> m_ok{nullptr};
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Ok button (self hide AboutDialog)

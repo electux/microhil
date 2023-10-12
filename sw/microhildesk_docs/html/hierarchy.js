@@ -22,10 +22,16 @@ var hierarchy =
     [ "Gtk::ApplicationWindow", null, [
       [ "MHViewHome", "dc/def/classMHViewHome.html", null ]
     ] ],
+    [ "ChannelControl", "d1/d1c/classChannelControl.html", null ],
+    [ "ChannelId", "d4/d97/classChannelId.html", null ],
+    [ "ChannelVersion", "d8/dbb/classChannelVersion.html", null ],
     [ "Gtk::Dialog", null, [
       [ "MHViewDialog", "dc/d3c/classMHViewDialog.html", null ],
       [ "MHViewLog", "d1/d14/classMHViewLog.html", null ],
       [ "MHViewSerial", "d2/dd5/classMHViewSerial.html", null ]
+    ] ],
+    [ "IHandler", "d5/da6/classIHandler.html", [
+      [ "Handler", "d4/d22/classHandler.html", null ]
     ] ],
     [ "IMHCom", "de/d55/classIMHCom.html", [
       [ "MHSerialCom", "d1/dfa/classMHSerialCom.html", null ]
@@ -44,5 +50,6 @@ var hierarchy =
     ] ],
     [ "IMHView", "df/d0c/classIMHView.html", [
       [ "MHView", "d1/dfc/classMHView.html", null ]
-    ] ]
+    ] ],
+    [ "MHProto", "d3/d9f/classMHProto.html", null ]
 ];

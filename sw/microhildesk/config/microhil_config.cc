@@ -16,11 +16,11 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <fstream>
-#include <iostream>
-#include <filesystem>
-#include <glibmm/miscutils.h>
 #include "microhil_config.h"
+#include <filesystem>
+#include <fstream>
+#include <glibmm/miscutils.h>
+#include <iostream>
 
 namespace
 {
@@ -39,20 +39,14 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Default configuration
     constexpr const char *kConfigSerialDefault[]{
-        "[log]",
-        "level=INFO",
-        "file=/tmp/microhil.log",
-        "[serial]",
-        "device=/dev/ttyUSB0",
-        "baud_rate=115200",
-        "data_bits=8",
-        "parity=None",
-        "stop_bits=1"};
-}
+        "[log]",       "level=INFO",          "file=/tmp/microhil.log",
+        "[serial]",    "device=/dev/ttyUSB0", "baud_rate=115200",
+        "data_bits=8", "parity=None",         "stop_bits=1"};
+} // namespace
 
 MHConfig::MHConfig()
-    : m_homePath{Glib::get_home_dir() + kHomeDirName},
-      m_configFilePath{m_homePath + kConfigFileName}
+    : m_homePath{Glib::get_home_dir() + kHomeDirName}
+    , m_configFilePath{m_homePath + kConfigFileName}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Pre-validation of configuration path
@@ -82,7 +76,7 @@ bool MHConfig::load()
     auto logLevel = logLevelStringToInt(getLogLevel());
     m_logConfig.emit(logPath, logLevel);
 
-    MHVecUInt serialParams{};
+    VecUInt serialParams{};
     serialParams.push_back(getBaudRate());
     serialParams.push_back(getDataBits());
     serialParams.push_back(parityUnicodeStringToInt(getParity()));
@@ -98,6 +92,8 @@ bool MHConfig::load()
 
 bool MHConfig::store()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Stores configuration to file
     return m_config.save_to_file(m_configFilePath);
 }
 
@@ -126,7 +122,7 @@ bool MHConfig::validate()
 bool MHConfig::checkConfigPath() const
 {
     ////////////////////////////////////////////////////////////////////////
-    // Checks home directory /home/<username>/.microhil/
+    /// Checks home directory /home/<username>/.microhil/
     std::filesystem::directory_entry homeDirEntry{m_homePath};
     const auto homeDirExists = homeDirEntry.exists();
 
@@ -141,8 +137,8 @@ bool MHConfig::checkConfigPath() const
     }
 
     ////////////////////////////////////////////////////////////////////////
-    // Checks config file in case of missing generate new with default setup
-    // Configuration file location: /home/<username>/.microhil/config
+    /// Checks config file in case of missing generate new with default setup
+    /// Configuration file location: /home/<username>/.microhil/config
     const auto configFileExists = std::filesystem::exists(m_configFilePath);
 
     if (!configFileExists)
@@ -161,11 +157,15 @@ bool MHConfig::checkConfigPath() const
 }
 
 void MHConfig::setPreValid(bool configValid)
-{ 
-    m_configPreValidate = configValid; 
+{
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets pre-validation status
+    m_configPreValidate = configValid;
 }
 
 bool MHConfig::isPreValid() const
-{ 
-    return m_configPreValidate; 
+{
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets pre-validation status
+    return m_configPreValidate;
 };

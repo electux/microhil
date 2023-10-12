@@ -22,37 +22,41 @@ namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// Serial configuration section
-    constexpr const char kConfigSerialSection[]{"serial"};
+    constexpr const char kConfigSerial[]{"serial"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Serial device configuration parameter
-    constexpr const char kConfigSerialDevice[]{"device"};
+    constexpr const char kConfigDevice[]{"device"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Serial baud-rate configuration parameter
-    constexpr const char kConfigSerialBaudRate[]{"baud_rate"};
+    constexpr const char kConfigBaudRate[]{"baud_rate"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Serial data-bits configuration parameter
-    constexpr const char kConfigSerialDataBits[]{"data_bits"};
+    constexpr const char kConfigDataBits[]{"data_bits"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Serial parity configuration parameter
-    constexpr const char kConfigSerialParity[]{"parity"};
+    constexpr const char kConfigParity[]{"parity"};
 
     ////////////////////////////////////////////////////////////////////////
     /// Serial stop-bits configuration parameter
-    constexpr const char kConfigSerialStopBits[]{"stop_bits"};
+    constexpr const char kConfigStopBits[]{"stop_bits"};
+} // namespace
+
+void MHConfig::setDevice(const UString &device)
+{
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets the serial port device to configuration
+    m_config.set_string(kConfigSerial, kConfigDevice, device);
 }
 
-void MHConfig::setDevice(const MHString &device)
+UString MHConfig::getDevice() const
 {
-    m_config.set_string(kConfigSerialSection, kConfigSerialDevice, device);
-}
-
-MHString MHConfig::getDevice() const
-{
-    return m_config.get_string(kConfigSerialSection, kConfigSerialDevice);
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets the serial port device from configuration
+    return m_config.get_string(kConfigSerial, kConfigDevice);
 }
 
 void MHConfig::setBaudRate(const int baudRate)
@@ -61,16 +65,16 @@ void MHConfig::setBaudRate(const int baudRate)
     /// Pre-process baud-rate for configuration file
     auto baudRatePrepared = intToBaudRate(baudRate);
 
-    m_config.set_integer(
-        kConfigSerialSection, kConfigSerialBaudRate, baudRatePrepared
-    );
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets the serial port baud-rate to configuration
+    m_config.set_integer(kConfigSerial, kConfigBaudRate, baudRatePrepared);
 }
 
 int MHConfig::getBaudRate()
 {
-    auto baudRate = m_config.get_integer(
-        kConfigSerialSection, kConfigSerialBaudRate
-    );
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets the serial port baud-rate from configuration
+    auto baudRate = m_config.get_integer(kConfigSerial, kConfigBaudRate);
 
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process baud-rate from configuration file
@@ -83,16 +87,16 @@ void MHConfig::setDataBits(const int dataBits)
     /// Pre-process data-bits for configuration file
     auto dataBitsPrepared = intToDataBits(dataBits);
 
-    m_config.set_integer(
-        kConfigSerialSection, kConfigSerialDataBits, dataBitsPrepared
-    );
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets the serial port data-bits to configuration
+    m_config.set_integer(kConfigSerial, kConfigDataBits, dataBitsPrepared);
 }
 
 int MHConfig::getDataBits()
 {
-    auto dataBits = m_config.get_integer(
-        kConfigSerialSection, kConfigSerialDataBits
-    );
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets the serial port data-bits from configuration
+    auto dataBits = m_config.get_integer(kConfigSerial, kConfigDataBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process data-bits from configuration file
@@ -105,14 +109,16 @@ void MHConfig::setParity(const int parity)
     /// Pre-process parity for configuration file
     auto parityPrepared = parityToUnicodeString(parity);
 
-    m_config.set_string(
-        kConfigSerialSection, kConfigSerialParity, parityPrepared
-    );
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets the serial port parity to configuration
+    m_config.set_string(kConfigSerial, kConfigParity, parityPrepared);
 }
 
-MHString MHConfig::getParity() const
+UString MHConfig::getParity() const
 {
-    return m_config.get_string(kConfigSerialSection, kConfigSerialParity);
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets the serial port parity from configuration
+    return m_config.get_string(kConfigSerial, kConfigParity);
 }
 
 void MHConfig::setStopBits(const int stopBits)
@@ -121,16 +127,16 @@ void MHConfig::setStopBits(const int stopBits)
     /// Pre-process stop-bits for configuration file
     const auto stopBitsPrepared = intToStopBits(stopBits);
 
-    m_config.set_integer(
-        kConfigSerialSection, kConfigSerialStopBits, stopBitsPrepared
-    );
+    ////////////////////////////////////////////////////////////////////////
+    /// Sets the serial port stop-bits to configuration
+    m_config.set_integer(kConfigSerial, kConfigStopBits, stopBitsPrepared);
 }
 
 int MHConfig::getStopBits()
 {
-    auto stopBits = (int)m_config.get_integer(
-        kConfigSerialSection, kConfigSerialStopBits
-    );
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets the serial port stop-bits from configuration
+    auto stopBits = (int)m_config.get_integer(kConfigSerial, kConfigStopBits);
 
     ////////////////////////////////////////////////////////////////////////
     /// Pre-process stop-bits from configuration file
@@ -141,13 +147,12 @@ bool MHConfig::validateSerialSettings()
 {
     ////////////////////////////////////////////////////////////////////////
     /// Checking serial configuration parameters from config file
-    const auto configCheck = (
-        m_config.has_key(kConfigSerialSection, kConfigSerialDevice) &&
-        m_config.has_key(kConfigSerialSection, kConfigSerialBaudRate) &&
-        m_config.has_key(kConfigSerialSection, kConfigSerialDataBits) &&
-        m_config.has_key(kConfigSerialSection, kConfigSerialParity) &&
-        m_config.has_key(kConfigSerialSection, kConfigSerialStopBits)
-    );
+    const auto configCheck =
+        (m_config.has_key(kConfigSerial, kConfigDevice) &&
+         m_config.has_key(kConfigSerial, kConfigBaudRate) &&
+         m_config.has_key(kConfigSerial, kConfigDataBits) &&
+         m_config.has_key(kConfigSerial, kConfigParity) &&
+         m_config.has_key(kConfigSerial, kConfigStopBits));
 
     if (!configCheck)
     {

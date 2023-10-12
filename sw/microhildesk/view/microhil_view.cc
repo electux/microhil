@@ -43,9 +43,10 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// Application About ID
     constexpr char kAboutId[]{"AboutDialog"};
-}
+} // namespace
 
-MHView::MHView() : m_builder{Gtk::Builder::create_from_resource(kHomeUI)}
+MHView::MHView()
+    : m_builder{Gtk::Builder::create_from_resource(kHomeUI)}
 {
     ////////////////////////////////////////////////////////////////////////
     /// Sets builder and home view
@@ -72,17 +73,23 @@ MHView::MHView() : m_builder{Gtk::Builder::create_from_resource(kHomeUI)}
     mapping();
 }
 
-MHRPtr<MHViewHome> MHView::getHome()
+RPtr<MHViewHome> MHView::getHome()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets home view instance
     return m_home;
 }
 
-MHRPtr<MHViewLog> MHView::getLogSettings()
+RPtr<MHViewLog> MHView::getLogSettings()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets log settings view instance
     return m_log;
 }
 
-MHRPtr<MHViewSerial> MHView::getSerialSettings()
+RPtr<MHViewSerial> MHView::getSerialSettings()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Gets serial settings view instance
     return m_serial;
 }

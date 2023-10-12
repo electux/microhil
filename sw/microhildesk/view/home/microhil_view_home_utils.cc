@@ -23,7 +23,7 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// @brief invalid parameter for convert processes
     constexpr const int kInvalidConversionParameter = 127;
-}
+} // namespace
 
 int MHViewHome::channelToInt(Channel id)
 {

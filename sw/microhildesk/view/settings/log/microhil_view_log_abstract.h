@@ -18,16 +18,16 @@
  */
 #pragma once
 
-#include <sigc++/sigc++.h>
 #include "../../../utils/microhil_types.h"
+#include <sigc++/sigc++.h>
 
 ////////////////////////////////////////////////////////////////////////
 /// @brief Signal type for log settings
-using SigLogSetup = sigc::signal<void(MHString &, int)>;
+using SigLogSetup = sigc::signal<void(UString &, int)>;
 
 ////////////////////////////////////////////////////////////////////////
 /// @brief Signal type for log file path input
-using SigLogFilePath = sigc::signal<void(MHString &)>;
+using SigLogFilePath = sigc::signal<void(UString &)>;
 
 ////////////////////////////////////////////////////////////////////////
 /// @brief Signal type for log level combobox
@@ -61,17 +61,9 @@ public:
     virtual SigLogFilePath logFilePathChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing log file path input
-    virtual void onLogFilePathChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for log level combobox
     /// @return Signal for selected log level combobox
     virtual SigSelectLogLevel logLevelChanged() = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Slot for processing log level combobox
-    virtual void onLogLevelChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Signal for Cancel button
@@ -82,6 +74,15 @@ public:
     /// @brief Signal for Ok button
     /// @return Signal for clicked Ok button
     virtual SigOkLog okLogTriggered() = 0;
+
+protected:
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing log file path input
+    virtual void onLogFilePathChanged() = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Slot for processing log level combobox
+    virtual void onLogLevelChanged() = 0;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Cancel button

@@ -18,14 +18,14 @@
  */
 #include "application.h"
 
-////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 /// @brief Create an application instance
 /// @param argc represents the number of arguments for the application
 /// @param argv represents the array of arguments for the application
 /// @return Unique pointer for application
-MHUPtr<Application> create(int argc, char *argv[]);
+UPtr<Application> create(int argc, char *argv[]);
 
-////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 /// @brief Main entry point for application
 /// @param argc represents the number of arguments for the application
 /// @param argv represents the array of arguments for the application
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     return status;
 }
 
-MHUPtr<Application> create(int argc, char *argv[])
+UPtr<Application> create(int argc, char *argv[])
 {
-    return make_unique<Application>(argc, argv);
+    return makeUPtr<Application>(argc, argv);
 }

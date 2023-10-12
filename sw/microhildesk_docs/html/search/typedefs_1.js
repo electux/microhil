@@ -1,22 +1,4 @@
 var searchData=
 [
-  ['sigactionviewtriggered_0',['SigActionViewTriggered',['../de/d3d/microhil__view__home__abstract_8h.html#a97dbfa002f1478185848a7432044e1eb',1,'microhil_view_home_abstract.h']]],
-  ['sigcancellog_1',['SigCancelLog',['../dc/d95/microhil__view__log__abstract_8h.html#a0904f4583c47329d86499a9fa06b031b',1,'microhil_view_log_abstract.h']]],
-  ['sigcancelserial_2',['SigCancelSerial',['../d6/d8b/microhil__view__serial__abstract_8h.html#aca7d02e79f86f608f1b9359b5e1e6c44',1,'microhil_view_serial_abstract.h']]],
-  ['sigchannelchanged_3',['SigChannelChanged',['../de/d3d/microhil__view__home__abstract_8h.html#a27565e32352b6d64a17e49e3016b55da',1,'microhil_view_home_abstract.h']]],
-  ['sigchannelspintimerchanged_4',['SigChannelSpinTimerChanged',['../de/d3d/microhil__view__home__abstract_8h.html#a819bd212bbee0e1db59ca70a64b1091c',1,'microhil_view_home_abstract.h']]],
-  ['sigchanneltimertoggled_5',['SigChannelTimerToggled',['../de/d3d/microhil__view__home__abstract_8h.html#ab650213bbb203157192e08abf321dac6',1,'microhil_view_home_abstract.h']]],
-  ['sigchanneltoggled_6',['SigChannelToggled',['../de/d3d/microhil__view__home__abstract_8h.html#a9fa1bb0cb9ce8a43ec66c5d52a6c30af',1,'microhil_view_home_abstract.h']]],
-  ['sighideabout_7',['SigHideAbout',['../d1/dea/microhil__view__about__abstract_8h.html#a2f06fdbf29dab18ae1beaa083ac50a84',1,'microhil_view_about_abstract.h']]],
-  ['sighidedialog_8',['SigHideDialog',['../d9/d08/microhil__view__dialog__abstract_8h.html#a8ad401f9ab89f70521bd89aef2e92198',1,'microhil_view_dialog_abstract.h']]],
-  ['siglogconfig_9',['SigLogConfig',['../d8/d9b/microhil__iconfig_8h.html#a63375ee0a5bf3dae57d4226e204d7556',1,'microhil_iconfig.h']]],
-  ['siglogfilepath_10',['SigLogFilePath',['../dc/d95/microhil__view__log__abstract_8h.html#a3c058974d0e186abb3bf9ba408850c42',1,'microhil_view_log_abstract.h']]],
-  ['siglogsetup_11',['SigLogSetup',['../dc/d95/microhil__view__log__abstract_8h.html#a986e738e2ff473bec6ff1620aacf9d20',1,'microhil_view_log_abstract.h']]],
-  ['sigoklog_12',['SigOkLog',['../dc/d95/microhil__view__log__abstract_8h.html#a3cbf59579736c36d46548110309f215f',1,'microhil_view_log_abstract.h']]],
-  ['sigokserial_13',['SigOkSerial',['../d6/d8b/microhil__view__serial__abstract_8h.html#a12e4eae83c58d812b37c28a36a33fb11',1,'microhil_view_serial_abstract.h']]],
-  ['sigselectchanged_14',['SigSelectChanged',['../de/d3d/microhil__view__home__abstract_8h.html#aa8f12be614fecf7d029d597dfc0770f8',1,'microhil_view_home_abstract.h']]],
-  ['sigselectloglevel_15',['SigSelectLogLevel',['../dc/d95/microhil__view__log__abstract_8h.html#a22aa0628cda1b5b2356878b946d3bd58',1,'microhil_view_log_abstract.h']]],
-  ['sigserialconfig_16',['SigSerialConfig',['../d8/d9b/microhil__iconfig_8h.html#af784f73e1c82e741627ddfd6d8ea8d50',1,'microhil_iconfig.h']]],
-  ['sigserialcontrol_17',['SigSerialControl',['../da/db1/microhil__iview_8h.html#af02e449f1c8133102a7d5b97286770e3',1,'microhil_iview.h']]],
-  ['sigserialsetup_18',['SigSerialSetup',['../d6/d8b/microhil__view__serial__abstract_8h.html#a35e792ee97d9458fac3b1c4f2a270197',1,'microhil_view_serial_abstract.h']]]
+  ['rptr_0',['RPtr',['../db/db9/microhil__types_8h.html#a33a8226c79745b0aa043927a9403043c',1,'microhil_types.h']]]
 ];

@@ -20,5 +20,7 @@
 
 void MHViewAbout::onHideAboutTriggered()
 {
+    ////////////////////////////////////////////////////////////////////////
+    /// Slot for closing about view
     this->hide();
 }

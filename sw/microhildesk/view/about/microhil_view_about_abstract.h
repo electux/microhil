@@ -38,6 +38,7 @@ public:
     /// @return Signal for clicked Ok button
     virtual SigHideAbout hideAboutTriggered() = 0;
 
+protected:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Slot for processing Ok button (self hide AboutDialog)
     virtual void onHideAboutTriggered() = 0;

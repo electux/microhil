@@ -18,8 +18,8 @@
  */
 #pragma once
 
-#include <libserial/SerialPort.h>
 #include "../utils/microhil_types.h"
+#include <libserial/SerialPort.h>
 
 using LibSerial::BaudRate;
 using LibSerial::CharacterSize;
@@ -65,6 +65,31 @@ public:
     /// @brief Closes communication channel
     virtual void close() = 0;
 
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Setup the serial port parameters
+    /// @param device represents file path for the serial port
+    /// @param params represents parameters for the serial port
+    virtual void setup(const UString &device, const VecUInt &params) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Setup the serial port parameters
+    /// @param device file path for the serial port
+    /// @param params for the serial port
+    virtual void setup(const UString &device, const MHSerialParams &params) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Reads from the communication channel
+    /// @param data represents buffer to be placed to after reading channel
+    /// @param len represents length of data to read before returning
+    /// @param timeout represents timeout period in miliseconds
+    virtual void read(VecByte &data, size_t len, size_t timeout) = 0;
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Writes to the communication channel
+    /// @param data represents data to be written to channel
+    virtual void write(const VecByte &data) = 0;
+
+protected:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Converts baud-rate from scopped enumerator to unsigned int
     /// @param baudRate represents scoped enumerator value
@@ -112,28 +137,4 @@ public:
     /// @param stopBits represents unsigned integer format
     /// @return scoped enumerator format of stop-bits
     virtual StopBits uintToStopBits(const unsigned int stopBits) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Setup the serial port parameters
-    /// @param device represents file path for the serial port
-    /// @param params represents parameters for the serial port
-    virtual void setup(const MHString &device, const MHVecUInt &params) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Setup the serial port parameters
-    /// @param device file path for the serial port
-    /// @param params for the serial port
-    virtual void setup(const MHString &device, const MHSerialParams &params) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Reads from the communication channel
-    /// @param data represents buffer to be placed to after reading channel
-    /// @param len represents length of data to read before returning
-    /// @param timeout represents timeout period in miliseconds
-    virtual void read(MHVecByte &data, size_t len, size_t timeout) = 0;
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Writes to the communication channel
-    /// @param data represents data to be written to channel
-    virtual void write(const MHVecByte &data) = 0;
 };

@@ -18,7 +18,8 @@
  */
 #include "microhil_serial_com.h"
 
-MHSerialCom::MHSerialCom() : m_serialPort{MHmakeUPtr<SerialPort>()}
+MHSerialCom::MHSerialCom()
+    : m_serialPort{makeUPtr<SerialPort>()}
 {
     close();
 }
@@ -39,7 +40,7 @@ void MHSerialCom::close()
     }
 }
 
-void MHSerialCom::setup(const MHString &device, const MHVecUInt &params)
+void MHSerialCom::setup(const UString &device, const VecUInt &params)
 {
     if (m_serialPort->IsOpen())
     {
@@ -60,7 +61,7 @@ void MHSerialCom::setup(const MHString &device, const MHVecUInt &params)
     m_serialPort->SetStopBits(uintToStopBits(params[3]));
 }
 
-void MHSerialCom::setup(const MHString &device, const MHSerialParams &params)
+void MHSerialCom::setup(const UString &device, const MHSerialParams &params)
 {
     if (m_serialPort->IsOpen())
     {
@@ -68,7 +69,7 @@ void MHSerialCom::setup(const MHString &device, const MHSerialParams &params)
     }
 
     ////////////////////////////////////////////////////////////////////////
-    /// Sets serial port device path 
+    /// Sets serial port device path
     m_device = device;
 
     open();
@@ -81,12 +82,9 @@ void MHSerialCom::setup(const MHString &device, const MHSerialParams &params)
     m_serialPort->SetStopBits(params.stopBits);
 }
 
-void MHSerialCom::read(MHVecByte &data, size_t len, size_t timeout)
+void MHSerialCom::read(VecByte &data, size_t len, size_t timeout)
 {
     m_serialPort->Read(data, len, timeout);
 }
 
-void MHSerialCom::write(const MHVecByte &data)
-{
-    m_serialPort->Write(data);
-}
+void MHSerialCom::write(const VecByte &data) { m_serialPort->Write(data); }
