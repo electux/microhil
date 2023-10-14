@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$d4/d97/classChannelId.html" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node1" href="$d3/da0/classIMHCommander.html" title="IMHCommander class is interface set for command mechanism." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node2" href="$d4/dd8/classMHCommander.html" title="MHCommander class is implementation of command mechanism." alt="" coords="181,5,305,32"/>
 </map>
