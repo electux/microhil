@@ -22,6 +22,7 @@ SOURCES = \
 	../view/microhil_view_slots.cc \
 	../view/microhil_view_map.cc \
 	../view/microhil_view.cc \
+	../commander/microhil_commander.cc \
 	../view/home/microhil_view_home_utils.cc \
 	../view/home/microhil_view_home_signals.cc \
 	../view/home/microhil_view_home_slots.cc \
