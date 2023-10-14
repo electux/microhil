@@ -42,7 +42,7 @@ other information that should be provided before the tool is installed.
 
 #### SW Desktop checks
 
-[![microhil-desktop build checker](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml)
+[![microhildesk build checker](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker_build.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker_build.yml) [![microhil-desktop build checker](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml)
 
 ### Development
 
