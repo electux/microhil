@@ -36,7 +36,7 @@
                 "/usr/include/gtkmm-3.0/",
                 "/usr/include/harfbuzz",
                 "/usr/include/freetype2/",
-                "/usr/lib/gcc/x86_64-linux-gnu/12/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/13/include",
                 "/usr/local/include",
                 "/usr/include"
             ],

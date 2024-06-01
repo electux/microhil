@@ -68,13 +68,14 @@
 			"cinttypes": "cpp",
 			"typeinfo": "cpp",
 			"valarray": "cpp",
-			"*.inc": "cpp",
+			"*.inc": "bitbake",
 			"complex": "cpp",
 			"cfenv": "cpp",
 			"codecvt": "cpp",
 			"fstream": "cpp",
 			"callback": "cpp",
-			"camera": "cpp"
+			"camera": "cpp",
+			"*.conf": "bitbake"
 		}
 	}
 }

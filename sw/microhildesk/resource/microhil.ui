@@ -10,6 +10,7 @@
     <property name="can-focus">False</property>
     <property name="title" translatable="yes">microHIL</property>
     <property name="resizable">False</property>
+    <property name="window-position">center-on-parent</property>
     <property name="default-width">180</property>
     <property name="default-height">100</property>
     <property name="destroy-with-parent">True</property>
@@ -62,7 +63,6 @@
               <object class="GtkLabel" id="DialogMessageText">
                 <property name="name">DialogMessageText</property>
                 <property name="visible">True</property>
-                <property name="sensitive">False</property>
                 <property name="can-focus">False</property>
                 <property name="margin-bottom">169</property>
                 <property name="label" translatable="yes">label</property>
@@ -93,6 +93,7 @@
     <property name="can-focus">False</property>
     <property name="title">microHIL</property>
     <property name="resizable">False</property>
+    <property name="window-position">center-always</property>
     <property name="default-width">600</property>
     <property name="default-height">250</property>
     <property name="destroy-with-parent">True</property>
@@ -1406,6 +1407,7 @@
     <property name="can-focus">False</property>
     <property name="title" translatable="yes">microHIL About</property>
     <property name="resizable">False</property>
+    <property name="window-position">center-on-parent</property>
     <property name="destroy-with-parent">True</property>
     <property name="icon">logo.ico</property>
     <property name="type-hint">dialog</property>
@@ -1423,6 +1425,7 @@ See the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html"&gt;GNU General Pu
     <child internal-child="vbox">
       <object class="GtkBox">
         <property name="name">AboutBox</property>
+        <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
@@ -1468,6 +1471,7 @@ See the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html"&gt;GNU General Pu
     <property name="tooltip-text" translatable="yes">Setting log level path and level</property>
     <property name="title" translatable="yes">microHIL Log Settings</property>
     <property name="resizable">False</property>
+    <property name="window-position">center-on-parent</property>
     <property name="default-width">320</property>
     <property name="default-height">120</property>
     <property name="destroy-with-parent">True</property>
@@ -1540,7 +1544,7 @@ See the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html"&gt;GNU General Pu
           <object class="GtkEntry" id="LogFilePathInput">
             <property name="name">LogFilePathInput</property>
             <property name="visible">True</property>
-            <property name="can-focus">True</property>
+            <property name="can-focus">False</property>
             <property name="tooltip-text" translatable="yes">Set log file path</property>
           </object>
           <packing>
@@ -1589,6 +1593,7 @@ See the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html"&gt;GNU General Pu
     <property name="can-focus">False</property>
     <property name="tooltip-text" translatable="yes">Serial Port Settings</property>
     <property name="resizable">False</property>
+    <property name="window-position">center-on-parent</property>
     <property name="default-width">320</property>
     <property name="default-height">260</property>
     <property name="destroy-with-parent">True</property>
@@ -1606,7 +1611,6 @@ See the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html"&gt;GNU General Pu
         <child internal-child="action_area">
           <object class="GtkButtonBox">
             <property name="name">SerialButtonBox</property>
-            <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="layout-style">end</property>
             <child>
@@ -1663,7 +1667,7 @@ See the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html"&gt;GNU General Pu
           <object class="GtkEntry" id="SerialPortDeviceInput">
             <property name="name">SerialPortDeviceInput</property>
             <property name="visible">True</property>
-            <property name="can-focus">True</property>
+            <property name="can-focus">False</property>
             <property name="tooltip-text" translatable="yes">Set serial port device path</property>
           </object>
           <packing>
