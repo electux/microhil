@@ -74,8 +74,7 @@
 			"codecvt": "cpp",
 			"fstream": "cpp",
 			"callback": "cpp",
-			"camera": "cpp",
-			"*.conf": "bitbake"
+			"camera": "cpp"
 		}
 	}
 }

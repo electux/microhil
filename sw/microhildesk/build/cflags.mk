@@ -6,6 +6,7 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
+ifeq ($(CC),gcc)
 CFLAGS = \
 	-c \
 	-g \
@@ -25,3 +26,25 @@ CFLAGS = \
 	-Wundef \
 	-Wno-overlength-strings \
 	-Wno-unused
+else ifeq ($(CC),clang)
+CFLAGS = \
+	-c \
+	-g \
+	-pedantic \
+	-Wall \
+	-Wextra \
+	-Wcast-align \
+	-Wcast-qual \
+	-Wformat=2 \
+	-Winit-self \
+	-Wmissing-declarations \
+	-Wmissing-include-dirs \
+	-Wshadow \
+	-Wstrict-overflow=5 \
+	-Wundef \
+	-Wno-overlength-strings \
+	-Wunused \
+	-v
+else
+  $(error Unsupported compiler: $(CC))
+endif

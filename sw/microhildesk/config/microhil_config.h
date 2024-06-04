@@ -149,7 +149,7 @@ private:
     ////////////////////////////////////////////////////////////////////////
     /// @brief Checks existence of configuration file
     /// @return status true for existing configuration else false
-    bool checkConfigPath() const;
+    bool checkConfigPath() const final;
 
     ////////////////////////////////////////////////////////////////////////
     /// @brief Converts integer log level to string format

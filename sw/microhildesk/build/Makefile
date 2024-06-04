@@ -24,7 +24,7 @@ GLIB_COMPILE_RESOURCES = $(shell pkg-config --variable=glib_compile_resources gi
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@ `pkg-config gtkmm-3.0 --libs` `pkg-config libserial --libs`
+	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@ `pkg-config --libs gtkmm-3.0` `pkg-config --libs libserial`
 
 resources.c: ../resource/microhildesk.gresource.xml $(RESOURCES)
 	$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=../resource --generate-source $<
