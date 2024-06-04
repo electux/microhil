@@ -1,6 +1,6 @@
-<img align="right" src="https://raw.githubusercontent.com/electux/microhil/master/docs/microhil_logo.png" width="25%">
-
 # microHIL
+
+<img align="right" src="https://raw.githubusercontent.com/electux/microhil/master/docs/microhil_logo.png" width="25%">
 
 **microhil** is development device which can be used for **[HWIL](https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation)**.
 
