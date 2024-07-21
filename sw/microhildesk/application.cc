@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * application.cc
- * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -17,32 +17,93 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include "application.h"
+#include <glibmm/miscutils.h>
+#include <glibmm/refptr.h>
 
-namespace
-{
-    ////////////////////////////////////////////////////////////////////////
-    /// MicroHIL application ID
-    constexpr const char kAppId[]{"org.electux.microhildesk"};
-} // namespace
+using namespace Electux::App;
 
-Application::Application(int argc, char *argv[])
-    : m_app{Gtk::Application::create(argc, argv, kAppId)}
-    , m_model{makeSPtr<MHModel>()}
-    , m_view{makeSPtr<MHView>()}
-    , m_controller{makeSPtr<MHController>(m_model, m_view)}
+EntryApplication::EntryApplication():
+    Gtk::Application("electux.io.microhildesk"),
+    m_home{AppHome()},
+    m_settings{AppSettings()},
+    m_help{AppHelp()}
 {
+    Glib::set_application_name("electux.io.microhildesk");
 }
 
-int Application::run()
+Glib::RefPtr<EntryApplication> EntryApplication::create()
 {
-    auto status{EXIT_FAILURE};
-
-    if (m_app && m_view)
-    {
-        ////////////////////////////////////////////////////////////////////
-        /// Starts the MicroHIL application
-        status = m_app->run(*(m_view->getHome().get()));
-    }
-
-    return status;
+    return Glib::make_refptr_for_instance<EntryApplication>(
+        new EntryApplication()
+    );
 }
+
+void EntryApplication::on_startup()
+{
+    Gtk::Application::on_startup();
+
+    //////////////////////////////////////////////////////////////////////////
+    /// Sets application menubar
+    auto menu = Gio::Menu::create();
+    auto submenu_file = Gio::Menu::create();
+    submenu_file->append("_Quit", "app.quit");
+    menu->append_submenu("File", submenu_file);
+    auto submenu_option = Gio::Menu::create();
+    submenu_option->append("_Settings", "app.setting");
+    menu->append_submenu("Option", submenu_option);
+    auto submenu_help = Gio::Menu::create();
+    submenu_help->append("_Documentation", "app.doc");
+    submenu_help->append("_About", "app.about");
+    menu->append_submenu("Help", submenu_help);
+    set_menubar(menu);
+
+    //////////////////////////////////////////////////////////////////////////
+    /// Sets a keyboard accelerator that will trigger application quit
+    set_accel_for_action("app.quit", "<Primary>q");
+
+    //////////////////////////////////////////////////////////////////////////
+    /// Sets application actions
+    add_action(
+        "quit", sigc::mem_fun(*this, &EntryApplication::on_action_quit)
+    );
+    add_action(
+        "setting", sigc::mem_fun(*this, &EntryApplication::on_action_settings)
+    );
+    add_action(
+        "doc", sigc::mem_fun(*this, &EntryApplication::on_action_doc)
+    );
+    add_action(
+        "about", sigc::mem_fun(*this, &EntryApplication::on_action_about)
+    );
+
+    //////////////////////////////////////////////////////////////////////////
+    /// Sets AppHome as toplevel window, add to the application window
+    add_window(m_home);
+
+    //////////////////////////////////////////////////////////////////////////
+    /// Sets visability for AppHome window
+    m_home.set_visible(true);
+}
+
+void EntryApplication::on_action_quit()
+{
+    m_home.set_visible(false);
+    remove_window(m_home);
+    quit();
+}
+
+void EntryApplication::on_action_settings()
+{
+    m_settings.show();
+}
+
+void EntryApplication::on_action_doc()
+{
+    m_help.show();
+}
+
+void EntryApplication::on_action_about()
+{
+    m_about.show();
+}
+

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<gresources>
-  <gresource prefix="/org/gtkmm/microhildesk">
-    <file preprocess="xml-stripblanks">microhil.ui</file>
-    <file>logo.ico</file>
-    <file>logo.png</file>
-  </gresource>
-</gresources>

@@ -1,39 +1,66 @@
 #
 # @brief   microhildesk
-# @version 1.0.0
-# @date    Sat Aug 19 11:15:56 AM CEST 2023
-# @company None, free software to use 2023
+# @version 1.1.6
+# @date    2024-07-21 16:05:11.326670
+# @company None, free software to use 2024
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
-CC  = gcc
-CXX = g++
-RM  = rm
-
-include ccflags.mk
-include cflags.mk
-include ldflags.mk
+include toolchain.mk
+include cxxflags.mk
+include odflags.mk
+include csflags.mk
 include sources.mk
 include objects.mk
-include resources.mk
 
-EXECUTABLE=microhildesk
+EXECUTABLE = microhildesk
 
-GLIB_COMPILE_RESOURCES = $(shell pkg-config --variable=glib_compile_resources gio-2.0)
+LSS = \
+	$(EXECUTABLE).lss
 
-all: $(SOURCES) $(EXECUTABLE)
+SIZEDUMMY = \
+	sizedummy
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CXX) $(LDFLAGS) $(OBJECTS) -o $@ `pkg-config --libs gtkmm-3.0` `pkg-config --libs libserial`
+CLEAN_LIST = \
+	$(OBJECTS) \
+	$(EXECUTABLE) \
+	$(LSS) \
+	$(SIZEDUMMY)
 
-resources.c: ../resource/microhildesk.gresource.xml $(RESOURCES)
-	$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=../resource --generate-source $<
+all: $(OBJECTS) $(EXECUTABLE) $(EXECUTABLE).lss sizedummy
 
 .cc.o:
-	$(CXX) $(CCFLAGS) $< -o $@ `pkg-config gtkmm-3.0 --cflags`
+	@echo 'Invoking: compile unit $<'
+	$(CXX) $(CXXFLAGS) -o $@ $< `pkg-config --cflags gtkmm-4.0`
+	@echo 'Finished compile unit $<'
+	@echo ' '
 
-.c.o:
-	$(CC) $(CFLAGS) $< -o $@ `pkg-config gio-2.0 --cflags`
+$(EXECUTABLE):
+	@echo 'Invoking: link executable $@'
+	$(CXX) $(OBJECTS) -o $@ `pkg-config --libs gtkmm-4.0`
+	@echo 'Finished link process: $@'
+	@echo ' '
+
+$(EXECUTABLE).lss:
+	@echo 'Invoking: Display information from object $@'
+	$(OD) $(ODFLAGS) $(EXECUTABLE)  > "$(EXECUTABLE).lss"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+sizedummy:
+	@echo 'Invoking: Displays the sizes of sections inside $@'
+	$(CS) $(CSFLAGS) $(EXECUTABLE)
+	@echo 'Finished building: $@'
+	@echo ' '
 
 clean:
-	$(RM) -rf ../*/*/*/*.o ../*/*/*.o ../*/*.o ../*.o *.o resources.c $(EXECUTABLE)
+	@echo 'Invoking: clean up project structure'
+	@for item in $(CLEAN_LIST); do \
+	if [ -e "$$item" ]; then \
+		echo "$(RM) $$item"; \
+		$(RM) $$item; \
+	fi; \
+	done
+	@echo 'Finished clean up'
+	@echo ' '
+
