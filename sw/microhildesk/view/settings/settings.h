@@ -34,7 +34,7 @@ namespace Electux::App::View::Settings
     using SerialParams = std::vector<unsigned int>;
 
     //////////////////////////////////////////////////////////////////////////
-    /// @brief Application settings window 
+    /// @brief Application settings window definition
     class AppSettings : public Gtk::Window
     {
     public:
@@ -43,6 +43,10 @@ namespace Electux::App::View::Settings
         explicit AppSettings();
 
     private:
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Maps channels (signals and slots)
+        void mapping();
+
         //////////////////////////////////////////////////////////////////////
         /// @brief On action OK button
         void on_button_ok_clicked();
@@ -61,17 +65,17 @@ namespace Electux::App::View::Settings
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Vertical box as container box for serial settings
-        ///     m_box_serial - container box for widgets
-        ///     m_label_serial_path - serial path label
-        ///     m_entry_serial_path - entry for serial device path
-        ///     m_label_serial_baud - serial baud rate label
-        ///     m_combo_serial_baud - serial baud rate combobox
-        ///     m_label_serial_data - serial data bits label
-        ///     m_combo_serial_data - serial data bits combobox
-        ///     m_label_serial_parity - serial parity label
-        ///     m_combo_serial_parity - serial parity combobox
-        ///     m_label_serial_stop - serial stop bits label
-        ///     m_combo_serial_stop - serial stop bits combobox
+        ///   m_box_serial - container box for widgets
+        ///   m_label_serial_path - serial path label
+        ///   m_entry_serial_path - entry for serial device path
+        ///   m_label_serial_baud - serial baud rate label
+        ///   m_combo_serial_baud - serial baud rate combobox
+        ///   m_label_serial_data - serial data bits label
+        ///   m_combo_serial_data - serial data bits combobox
+        ///   m_label_serial_parity - serial parity label
+        ///   m_combo_serial_parity - serial parity combobox
+        ///   m_label_serial_stop - serial stop bits label
+        ///   m_combo_serial_stop - serial stop bits combobox
         Gtk::Box m_box_serial;
         Gtk::Label m_label_serial_path;
         Gtk::Entry m_entry_serial_path;
@@ -86,11 +90,11 @@ namespace Electux::App::View::Settings
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Vertical box as container box for log settings
-        ///     m_box_log - container box for widgets
-        ///     m_label_log_path - log path label 
-        ///     m_entry_log_path - log file path entry
-        ///     m_label_log_level - log level label
-        ///     m_combo_log_level - log level combobox
+        ///   m_box_log - container box for widgets
+        ///   m_label_log_path - log path label 
+        ///   m_entry_log_path - log file path entry
+        ///   m_label_log_level - log level label
+        ///   m_combo_log_level - log level combobox
         Gtk::Box m_box_log;
         Gtk::Label m_label_log_path;
         Gtk::Entry m_entry_log_path;
@@ -99,9 +103,9 @@ namespace Electux::App::View::Settings
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Horizontal box as button container box
-        ///     m_button_box - container box for buttons
-        ///     m_button_ok - ok button (save changes)
-        ///     m_button_cancel - cancel button (dissmiss changes)
+        ///   m_button_box - container box for buttons
+        ///   m_button_ok - ok button (save changes)
+        ///   m_button_cancel - cancel button (dissmiss changes)
         Gtk::Grid m_button_box;
         Gtk::Button m_button_ok;
         Gtk::Button m_button_cancel;

@@ -1,6 +1,6 @@
-/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
+/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * about.h
+ * settings_map.cc
  * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -16,20 +16,18 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#pragma once
+#include "settings.h"
 
-#include <gtkmm/aboutdialog.h>
+using namespace Electux::App::View::Settings;
 
-namespace Electux::App::View::About
+void AppSettings::mapping()
 {
     //////////////////////////////////////////////////////////////////////////
-    /// @brief About view dialog definition
-    class AppAbout : public Gtk::AboutDialog
-    {
-    public:
-        //////////////////////////////////////////////////////////////////////
-        /// @brief AppAbout constructor
-        explicit AppAbout();
-    };
-};
-
+    /// Maps the signal handlers to the buttons
+    m_button_ok.signal_clicked().connect(
+        sigc::mem_fun(*this, &AppSettings::on_button_ok_clicked)
+    );
+    m_button_cancel.signal_clicked().connect(
+        sigc::mem_fun(*this, &AppSettings::on_button_cancel_clicked)
+    );
+}

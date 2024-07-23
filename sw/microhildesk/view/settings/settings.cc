@@ -18,91 +18,136 @@
  */
 #include "settings.h"
 
+namespace
+{
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Application settings window widgets parameters
+    ///   settings_title - window title
+    ///   settings_width - window width
+    ///   settings_height - window height
+    ///   settings_notebook_margin - notebook margin
+    ///   settings_serial_path - label serial path
+    ///   settings_serial_baud - label baud rate
+    ///   settings_serial_data - label data bits
+    ///   settings_serial_parity - label parity
+    ///   settings_serial_stop - label stop bits
+    ///   settings_page_serial_label - notebook page label serial
+    ///   settings_log_path - label log file path
+    ///   settings_log_level - label log level
+    ///   settings_page_log_label - notebook page label log
+    ///   settings_button_box_width - button box width
+    ///   settings_button_box_height - button box height
+    ///   settings_button_box_margin - button box margin
+    ///   settings_button_box_row_spacing - button box row spacing
+    ///   settings_button_box_column_spacing -  button box column spacing
+    ///   settings_button_ok_label - button ok label
+    ///   settings_button_cancel_label - button cancel label
+    ///   settings_button_width - button width
+    ///   settings_button_height - button height
+    ///   settings_grid_row_column_occupy_zero - Position widget occupy (0)
+    ///   settings_grid_row_column_occupy_one - Position widget occupy (1)
+    constexpr const char settings_title[]{"microhildesk"};
+    constexpr int settings_width{320};
+    constexpr int settings_height{280};
+    constexpr int settings_notebook_margin{10};
+    constexpr const char settings_serial_path[]{"Device port"};
+    constexpr const char settings_serial_baud[]{"Baud rate"};
+    constexpr const char settings_serial_data[]{"Data bits"};
+    constexpr const char settings_serial_parity[]{"Parity"};
+    constexpr const char settings_serial_stop[]{"Stop bits"};
+    constexpr const char settings_page_serial_label[]{"Serial port"};
+    constexpr const char settings_log_path[]{"Log file path"};
+    constexpr const char settings_log_level[]{"Log level"};
+    constexpr const char settings_page_log_label[]{"Log"};
+    constexpr int settings_button_box_width{220};
+    constexpr int settings_button_box_height{60};
+    constexpr int settings_button_box_margin{10};
+    constexpr int settings_button_box_row_spacing{5};
+    constexpr int settings_button_box_column_spacing{5};
+    constexpr const char settings_button_ok_label[]{"Ok"};
+    constexpr const char settings_button_cancel_label[]{"Cancel"};
+    constexpr int settings_button_width{100};
+    constexpr int settings_button_height{50};
+    constexpr int settings_grid_row_column_occupy_zero{0};
+    constexpr int settings_grid_row_column_occupy_one{1};
+};
+
 using namespace Electux::App::View::Settings;
 
 AppSettings::AppSettings()
 {
-    set_title("microhildesk");
-    set_default_size(320, 280);
+    //////////////////////////////////////////////////////////////////////////
+    /// Setup application settings window
+    set_title(settings_title);
+    set_default_size(settings_width, settings_height);
     set_resizable(false);
     set_hide_on_close(true);
     set_child(m_box_root);
     m_box_root.set_orientation(Gtk::Orientation::VERTICAL);
-    m_notebook.set_margin(10);
+    m_notebook.set_margin(settings_notebook_margin);
     m_notebook.set_expand();
 
     //////////////////////////////////////////////////////////////////////////
-    /// Setup serial port settings
+    /// Setup serial port settings page
     m_box_serial.set_orientation(Gtk::Orientation::VERTICAL);
-    m_label_serial_path.set_label("Device port");
+    m_label_serial_path.set_label(settings_serial_path);
     m_box_serial.append(m_label_serial_path);
     m_box_serial.append(m_entry_serial_path);
-    m_label_serial_baud.set_label("Baud rate");
+    m_label_serial_baud.set_label(settings_serial_baud);
     m_box_serial.append(m_label_serial_baud);
     m_box_serial.append(m_combo_serial_baud);
-    m_label_serial_data.set_label("Data bits");
+    m_label_serial_data.set_label(settings_serial_data);
     m_box_serial.append(m_label_serial_data);
     m_box_serial.append(m_combo_serial_data);
-    m_label_serial_parity.set_label("Parity");
+    m_label_serial_parity.set_label(settings_serial_parity);
     m_box_serial.append(m_label_serial_parity);
     m_box_serial.append(m_combo_serial_parity);
-    m_label_serial_stop.set_label("Stop bits");
+    m_label_serial_stop.set_label(settings_serial_stop);
     m_box_serial.append(m_label_serial_stop);
     m_box_serial.append(m_combo_serial_stop);
-    m_notebook.append_page(m_box_serial, "Serial port");
+    m_notebook.append_page(m_box_serial, settings_page_serial_label);
 
     //////////////////////////////////////////////////////////////////////////
-    /// Setup log settings
+    /// Setup log settings page
     m_box_log.set_orientation(Gtk::Orientation::VERTICAL);
-    m_label_log_path.set_label("Log file path");
+    m_label_log_path.set_label(settings_log_path);
     m_box_log.append(m_label_log_path);
     m_box_log.append(m_entry_log_path);
-    m_label_log_level.set_label("Log level");
+    m_label_log_level.set_label(settings_log_level);
     m_box_log.append(m_label_log_level);
     m_box_log.append(m_combo_log_level);
-    m_notebook.append_page(m_box_log, "Log");
+    m_notebook.append_page(m_box_log, settings_page_log_label);
     m_box_root.append(m_notebook);
-    m_button_box.set_size_request(220, 60);
-    m_button_box.set_margin(10);
-    m_button_ok.set_label("Ok");
-    m_button_ok.set_size_request(100, 50);
-    m_button_cancel.set_label("Cancel");
-    m_button_cancel.set_size_request(100, 50);
-    m_button_box.attach(m_button_cancel, 0, 0, 1, 1);
-    m_button_box.attach(m_button_ok, 1, 0, 1, 1);
+    m_button_box.set_size_request(
+        settings_button_box_width, settings_button_box_height
+    );
+    m_button_box.set_margin(settings_button_box_margin);
+    m_button_ok.set_label(settings_button_ok_label);
+    m_button_ok.set_size_request(
+        settings_button_width, settings_button_height
+    );
+    m_button_cancel.set_label(settings_button_cancel_label);
+    m_button_cancel.set_size_request(
+        settings_button_width, settings_button_height
+    );
+    m_button_box.attach(
+        m_button_cancel,
+        settings_grid_row_column_occupy_zero,
+        settings_grid_row_column_occupy_zero
+    );
+    m_button_box.attach(
+        m_button_ok,
+        settings_grid_row_column_occupy_one,
+        settings_grid_row_column_occupy_zero
+    );
     m_button_box.set_hexpand(false);
     m_button_box.set_vexpand(false);
-    m_button_box.set_row_spacing(5);
-    m_button_box.set_column_spacing(5);
+    m_button_box.set_row_spacing(settings_button_box_row_spacing);
+    m_button_box.set_column_spacing(settings_button_box_column_spacing);
     m_box_root.append(m_button_box);
 
-    //////////////////////////////////////////////////////////////////////////
-    /// Connect the signal handlers to the buttons
-    m_button_ok.signal_clicked().connect(
-        sigc::mem_fun(*this, &AppSettings::on_button_ok_clicked)
-    );
-    m_button_cancel.signal_clicked().connect(
-        sigc::mem_fun(*this, &AppSettings::on_button_cancel_clicked)
-    );
-}
-
-void AppSettings::on_button_ok_clicked()
-{
-    //////////////////////////////////////////////////////////////////////////
-    /// Perform action on OK button
-    auto device_path = m_entry_serial_path.get_text();
-    SerialParams serialParams{};
-    serialParams.push_back(m_combo_serial_baud.get_active_row_number());
-    serialParams.push_back(m_combo_serial_data.get_active_row_number());
-    serialParams.push_back(m_combo_serial_parity.get_active_row_number());
-    serialParams.push_back(m_combo_serial_stop.get_active_row_number());
-    hide();
-}
-
-void AppSettings::on_button_cancel_clicked()
-{
-    //////////////////////////////////////////////////////////////////////////
-    /// Perform action on Cancel button
-    hide();
+    ////////////////////////////////////////////////////////////////////////
+    /// Maps settings, log (signals and slots)
+    mapping();
 }
 

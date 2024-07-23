@@ -22,6 +22,8 @@
 
 namespace Electux::App::View::Help
 {
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Help view window definition
     class AppHelp : public Gtk::Window
     {
     public:

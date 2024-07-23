@@ -32,7 +32,7 @@ using namespace Electux::App::View::About;
 namespace Electux::App
 {
     //////////////////////////////////////////////////////////////////////////
-    /// @brief Entry point for application
+    /// @brief Entry point for application definition
     class EntryApplication : public Gtk::Application
     {
     public:
@@ -50,6 +50,10 @@ namespace Electux::App
         void on_startup() override;
 
     private:
+        //////////////////////////////////////////////////////////////////////
+        /// @brief 
+        void mapping();
+
         //////////////////////////////////////////////////////////////////////
         /// @brief On action settings create window for application settings
         void on_action_settings();

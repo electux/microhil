@@ -17,6 +17,7 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include "about.h"
+#include <vector>
 
 using namespace Electux::App::View::About;
 
