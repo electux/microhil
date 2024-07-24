@@ -1,5 +1,0 @@
-<map id="Electux::App::Com::SerialCom::SerialCom" name="Electux::App::Com::SerialCom::SerialCom">
-<area shape="rect" id="Node000001" title="MicroHILCom constructor." alt="" coords="5,5,169,45"/>
-<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a300f3b50c888f7326b47be0c7d4172dc" title="Closes the serial communication channel." alt="" coords="217,5,367,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,23,203,23,203,28,170,28"/>
-</map>
