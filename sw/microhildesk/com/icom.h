@@ -1,4 +1,4 @@
-/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
+/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * icom.h
  * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>

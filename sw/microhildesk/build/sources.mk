@@ -7,6 +7,7 @@
 #
 
 SOURCES = \
+	../config/config.cc \
 	../com/serial_com.cc \
 	../com/serial_com_utils.cc \
 	../model/model.cc \
