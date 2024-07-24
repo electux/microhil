@@ -25,7 +25,7 @@ namespace
     /// @brief Application home window widgets parameters
     ///   home_title - window title
     ///   home_width - window width
-    ///   home_width - window height
+    ///   home_height - window height
     ///   home_num_channels - number of channels
     ///   home_en_channel_label - checkbox enable channel label
     ///   home_toggle_channel_label - label for toogle channel

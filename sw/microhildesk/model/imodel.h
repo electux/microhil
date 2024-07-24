@@ -27,6 +27,8 @@ namespace Electux::App::Model
     /// @brief Model entities in map format {'key': 'data'}
     using Entities = std::map<std::string, std::string>;
 
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief IModel declaration
     class IModel
     {
     public:

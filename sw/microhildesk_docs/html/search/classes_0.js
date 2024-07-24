@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['abmhviewabout_0',['AbMHViewAbout',['../d3/d19/classAbMHViewAbout.html',1,'']]],
-  ['abmhviewdialog_1',['AbMHViewDialog',['../d9/da7/classAbMHViewDialog.html',1,'']]],
-  ['abmhviewhome_2',['AbMHViewHome',['../d7/d4c/classAbMHViewHome.html',1,'']]],
-  ['abmhviewlog_3',['AbMHViewLog',['../d9/d0c/classAbMHViewLog.html',1,'']]],
-  ['abmhviewserial_4',['AbMHViewSerial',['../d6/d87/classAbMHViewSerial.html',1,'']]],
-  ['application_5',['Application',['../d5/d4c/classApplication.html',1,'']]]
+  ['appabout_0',['AppAbout',['../d6/d7a/classElectux_1_1App_1_1View_1_1About_1_1AppAbout.html',1,'Electux::App::View::About']]],
+  ['apphelp_1',['AppHelp',['../d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp.html',1,'Electux::App::View::Help']]],
+  ['apphome_2',['AppHome',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html',1,'Electux::App::View']]],
+  ['appsettings_3',['AppSettings',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html',1,'Electux::App::View::Settings']]]
 ];

@@ -1,8 +1,0 @@
-<map id="microhil_all_channels" name="microhil_all_channels">
-<area shape="rect" id="node1" title="Performs operations over all channels." alt="" coords="5,81,168,108"/>
-<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#a8ef44932b760b841af69bd38bc66ffe0" title="Delay in miliseconds." alt="" coords="221,5,366,32"/>
-<area shape="rect" id="node3" href="$d0/d6b/channel__relay_8c.html#af309aa839242c2aead1ceecb9880b40a" title="Turns all relays to ON/OFF." alt="" coords="224,56,363,83"/>
-<area shape="rect" id="node5" href="$d0/d22/channel__led_8c.html#a3430b478fd2601c716cf936f321c10c3" title="Writes 32&#45;bit RGB value to PIO state machine." alt="" coords="217,107,370,133"/>
-<area shape="rect" id="node6" href="$df/df1/io__config_8c.html#aa8e053bfd54b08b6b4a4b7813e0f6ebf" title="Writes value to PWM channel." alt="" coords="216,157,371,184"/>
-<area shape="rect" id="node4" href="$df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0" title="Drive GPIO pin." alt="" coords="419,56,581,83"/>
-</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rptr_0',['RPtr',['../db/db9/microhil__types_8h.html#a33a8226c79745b0aa043927a9403043c',1,'microhil_types.h']]]
+  ['serialparams_0',['serialparams',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a932b8883f91a8834a07cda5886429344',1,'Electux::App::Com::SerialParams'],['../d7/d63/namespaceElectux_1_1App_1_1View_1_1Settings.html#aa854fc6673e1c4dbfc2e628858f2b8ba',1,'Electux::App::View::Settings::SerialParams']]]
 ];

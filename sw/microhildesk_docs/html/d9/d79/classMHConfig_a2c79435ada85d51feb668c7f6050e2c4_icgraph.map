@@ -1,5 +1,0 @@
-<map id="MHConfig::dataBitsToInt" name="MHConfig::dataBitsToInt">
-<area shape="rect" id="node1" title="Processes and prepares data&#45;bits (from config file)" alt="" coords="393,5,572,32"/>
-<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a69bc6eba408be1b473da0b722d22089b" title="Gets data&#45;bits for the serial port from configuration." alt="" coords="175,5,345,32"/>
-<area shape="rect" id="node3" href="$d9/d79/classMHConfig.html#a9c26478ceec782516fe6741522a4637f" title="Loads configuration." alt="" coords="5,5,127,32"/>
-</map>

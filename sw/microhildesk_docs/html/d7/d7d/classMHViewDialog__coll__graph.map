@@ -1,9 +1,0 @@
-<map id="MHViewDialog" name="MHViewDialog">
-<area shape="rect" id="node1" title="MHViewDialog class is implementation of dialog view." alt="" coords="391,189,625,355"/>
-<area shape="rect" id="node2" href="$d9/da7/classAbMHViewDialog.html" title="AbMHViewDialog class is abstract setup of dialog view." alt="" coords="5,5,200,127"/>
-<area shape="rect" id="node3" title=" " alt="" coords="225,27,319,105"/>
-<area shape="rect" id="node4" title=" " alt="" coords="343,27,499,105"/>
-<area shape="rect" id="node5" title=" " alt="" coords="523,27,669,105"/>
-<area shape="rect" id="node6" title=" " alt="" coords="693,27,846,105"/>
-<area shape="rect" id="node7" title=" " alt="" coords="870,27,1023,105"/>
-</map>

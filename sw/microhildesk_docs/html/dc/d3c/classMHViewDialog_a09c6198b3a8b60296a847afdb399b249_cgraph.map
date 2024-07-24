@@ -1,5 +1,0 @@
-<map id="MHViewDialog::MHViewDialog" name="MHViewDialog::MHViewDialog">
-<area shape="rect" id="node1" title="MHViewDialog constructor." alt="" coords="5,13,228,39"/>
-<area shape="rect" id="node2" href="$dc/d3c/classMHViewDialog.html#ae2e9e085b92b2ae74d39355037101dac" title="Maps Close button (signal and slot)" alt="" coords="276,13,459,39"/>
-<area shape="rect" id="node3" href="$dc/d3c/classMHViewDialog.html#aa1b850e8af584b79947f1cd11d9aefea" title="Slot for processing Close button (self hide Dialog)" alt="" coords="507,5,721,47"/>
-</map>

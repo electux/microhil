@@ -1,4 +1,4 @@
 var application_8h =
 [
-    [ "Application", "d5/d4c/classApplication.html", "d5/d4c/classApplication" ]
+    [ "Electux::App::EntryApplication", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html", "d0/dcc/classElectux_1_1App_1_1EntryApplication" ]
 ];

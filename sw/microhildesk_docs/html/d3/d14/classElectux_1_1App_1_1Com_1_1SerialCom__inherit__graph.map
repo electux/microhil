@@ -1,0 +1,5 @@
+<map id="Electux::App::Com::SerialCom" name="Electux::App::Com::SerialCom">
+<area shape="rect" id="Node000001" title="SerialCom class is implementation of serial communication." alt="" coords="17,379,168,759"/>
+<area shape="rect" id="Node000002" href="$db/dca/classElectux_1_1App_1_1Com_1_1ICom.html" title="ICom class is interface for serial communication." alt="" coords="5,5,180,331"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,345,95,378,90,378,90,345"/>
+</map>

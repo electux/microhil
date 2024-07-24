@@ -1,4 +1,0 @@
-<map id="MHViewHome::onSpinTimerChanged" name="MHViewHome::onSpinTimerChanged">
-<area shape="rect" id="node1" title="Slot for processing spin buttons (based on timer)" alt="" coords="5,5,268,32"/>
-<area shape="rect" id="node2" href="$dc/def/classMHViewHome.html#a4f8fe83900f485ef446fdbb8866f25cb" title="Converts channel id to integer value." alt="" coords="316,5,521,32"/>
-</map>

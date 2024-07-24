@@ -1,6 +1,0 @@
-<map id="microhil_channel" name="microhil_channel">
-<area shape="rect" id="node1" title="Performs channel operation (single channel)" alt="" coords="5,31,139,57"/>
-<area shape="rect" id="node2" href="$d0/d6b/channel__relay_8c.html#ab0d0115d875d4b895b98d642ccbe1874" title="Turns relay to ON/OFF." alt="" coords="187,5,301,32"/>
-<area shape="rect" id="node4" href="$d4/d28/channel_8c.html#a05ea76a98ce25e04d20e8d9cccc34fec" title="Converts channel number to GPIO number." alt="" coords="209,56,279,83"/>
-<area shape="rect" id="node3" href="$df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0" title="Drive GPIO pin." alt="" coords="349,5,512,32"/>
-</map>

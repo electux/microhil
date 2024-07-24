@@ -1,51 +1,22 @@
 var hierarchy =
 [
-    [ "AbMHViewAbout", "d3/d19/classAbMHViewAbout.html", [
-      [ "MHViewAbout", "d5/d7b/classMHViewAbout.html", null ]
-    ] ],
-    [ "AbMHViewDialog", "d9/da7/classAbMHViewDialog.html", [
-      [ "MHViewDialog", "dc/d3c/classMHViewDialog.html", null ]
-    ] ],
-    [ "AbMHViewHome", "d7/d4c/classAbMHViewHome.html", [
-      [ "MHViewHome", "dc/def/classMHViewHome.html", null ]
-    ] ],
-    [ "AbMHViewLog", "d9/d0c/classAbMHViewLog.html", [
-      [ "MHViewLog", "d1/d14/classMHViewLog.html", null ]
-    ] ],
-    [ "AbMHViewSerial", "d6/d87/classAbMHViewSerial.html", [
-      [ "MHViewSerial", "d2/dd5/classMHViewSerial.html", null ]
-    ] ],
     [ "Gtk::AboutDialog", null, [
-      [ "MHViewAbout", "d5/d7b/classMHViewAbout.html", null ]
+      [ "Electux::App::View::About::AppAbout", "d6/d7a/classElectux_1_1App_1_1View_1_1About_1_1AppAbout.html", null ]
     ] ],
-    [ "Application", "d5/d4c/classApplication.html", null ],
+    [ "Gtk::Application", null, [
+      [ "Electux::App::EntryApplication", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html", null ]
+    ] ],
     [ "Gtk::ApplicationWindow", null, [
-      [ "MHViewHome", "dc/def/classMHViewHome.html", null ]
+      [ "Electux::App::View::AppHome", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html", null ]
     ] ],
-    [ "Gtk::Dialog", null, [
-      [ "MHViewDialog", "dc/d3c/classMHViewDialog.html", null ],
-      [ "MHViewLog", "d1/d14/classMHViewLog.html", null ],
-      [ "MHViewSerial", "d2/dd5/classMHViewSerial.html", null ]
+    [ "Electux::App::Com::ICom", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html", [
+      [ "Electux::App::Com::SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html", null ]
     ] ],
-    [ "IMHCom", "de/d55/classIMHCom.html", [
-      [ "MHSerialCom", "d1/dfa/classMHSerialCom.html", null ]
+    [ "Electux::App::Model::IModel", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html", [
+      [ "Electux::App::Model::Model", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html", null ]
     ] ],
-    [ "IMHCommander", "d3/da0/classIMHCommander.html", [
-      [ "MHCommander", "d4/dd8/classMHCommander.html", null ]
-    ] ],
-    [ "IMHConfig", "d5/d1b/classIMHConfig.html", [
-      [ "MHConfig", "d9/d79/classMHConfig.html", null ]
-    ] ],
-    [ "IMHController", "d2/ddd/classIMHController.html", [
-      [ "MHController", "d1/d75/classMHController.html", null ]
-    ] ],
-    [ "IMHLog", "de/d0f/classIMHLog.html", [
-      [ "MHLog", "d1/d7c/classMHLog.html", null ]
-    ] ],
-    [ "IMHModel", "dd/db2/classIMHModel.html", [
-      [ "MHModel", "da/d3e/classMHModel.html", null ]
-    ] ],
-    [ "IMHView", "df/d0c/classIMHView.html", [
-      [ "MHView", "d1/dfc/classMHView.html", null ]
+    [ "Gtk::Window", null, [
+      [ "Electux::App::View::Help::AppHelp", "d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp.html", null ],
+      [ "Electux::App::View::Settings::AppSettings", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html", null ]
     ] ]
 ];

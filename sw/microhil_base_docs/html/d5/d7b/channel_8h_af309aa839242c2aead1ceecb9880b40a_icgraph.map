@@ -1,4 +1,0 @@
-<map id="microhil_relay_all" name="microhil_relay_all">
-<area shape="rect" id="node1" title="Turns all relays to ON/OFF." alt="" coords="216,5,355,32"/>
-<area shape="rect" id="node2" href="$d4/d28/channel_8c.html#af334e99989414c68dff3a1f190aafc40" title="Performs operations over all channels." alt="" coords="5,5,168,32"/>
-</map>

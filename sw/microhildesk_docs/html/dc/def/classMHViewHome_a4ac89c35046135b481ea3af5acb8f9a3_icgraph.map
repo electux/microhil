@@ -1,5 +1,0 @@
-<map id="MHViewHome::onToggleTimerChanged" name="MHViewHome::onToggleTimerChanged">
-<area shape="rect" id="node1" title="Slot for processing toggle buttons (turn on/turn off timer)" alt="" coords="497,5,716,47"/>
-<area shape="rect" id="node2" href="$dc/def/classMHViewHome.html#a4ccccb1d79d8b65d11371f6c897606ea" title="Maps channels (signals and slots)" alt="" coords="269,13,449,39"/>
-<area shape="rect" id="node3" href="$dc/def/classMHViewHome.html#a16d33cc43d4ba6e5b5f9b1a3c7edb59b" title="MHViewHome constructor." alt="" coords="5,13,221,39"/>
-</map>

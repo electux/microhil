@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['paritytouint_0',['parityToUInt',['../de/d55/classIMHCom.html#a664a27fdd03f9b7790e50dad22d61755',1,'IMHCom::parityToUInt()'],['../d1/dfa/classMHSerialCom.html#a88936d4ee969b6cdbd91ff063638c0cd',1,'MHSerialCom::parityToUInt()']]],
-  ['paritytounicodestring_1',['parityToUnicodeString',['../d9/d79/classMHConfig.html#ab9ed80bb30e489b9f828146b04679f1d',1,'MHConfig::parityToUnicodeString()'],['../d5/d1b/classIMHConfig.html#aa51d1023081baf81652f3ab706c45c55',1,'IMHConfig::parityToUnicodeString()']]],
-  ['parityunicodestringtoint_2',['parityUnicodeStringToInt',['../d9/d79/classMHConfig.html#aac83c4fe225bcbd1db4b68eafedbccbd',1,'MHConfig::parityUnicodeStringToInt()'],['../d5/d1b/classIMHConfig.html#a162bb629d86615c600b45cec988b733c',1,'IMHConfig::parityUnicodeStringToInt()']]]
+  ['uint_5fto_5fbaud_0',['uint_to_baud',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#ab7435d7febe29fed24256d83eeaa7048',1,'Electux::App::Com::ICom::uint_to_baud()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a06c18be9c6e0b71a1c7555ca08c801db',1,'Electux::App::Com::SerialCom::uint_to_baud()']]],
+  ['uint_5fto_5fdata_5fbits_1',['uint_to_data_bits',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a3b0f7fe64cc9278c934dbc15646ae761',1,'Electux::App::Com::ICom::uint_to_data_bits()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a3bf9208cdea0cee48d1e4ff7ebe212be',1,'Electux::App::Com::SerialCom::uint_to_data_bits()']]],
+  ['uint_5fto_5fparity_2',['uint_to_parity',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a61bff79d3be1ffbc0a7cf19241a80bb3',1,'Electux::App::Com::ICom::uint_to_parity()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#af93def5ab025c9bcba851b15dcf7cc72',1,'Electux::App::Com::SerialCom::uint_to_parity()']]],
+  ['uint_5fto_5fstop_5fbits_3',['uint_to_stop_bits',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a535d74f8b1e6e9e87e60b012c35b2ac4',1,'Electux::App::Com::ICom::uint_to_stop_bits()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ac2459da84987b2a56f48dce125859bfb',1,'Electux::App::Com::SerialCom::uint_to_stop_bits()']]]
 ];

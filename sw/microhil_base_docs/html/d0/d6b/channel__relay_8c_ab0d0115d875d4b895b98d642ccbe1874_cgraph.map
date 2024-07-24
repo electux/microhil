@@ -1,4 +1,0 @@
-<map id="microhil_relay" name="microhil_relay">
-<area shape="rect" id="node1" title="Turns relay to ON/OFF." alt="" coords="5,5,120,32"/>
-<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0" title="Drive GPIO pin." alt="" coords="168,5,331,32"/>
-</map>

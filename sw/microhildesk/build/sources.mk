@@ -7,6 +7,8 @@
 #
 
 SOURCES = \
+	../com/serial_com.cc \
+	../com/serial_com_utils.cc \
 	../model/model.cc \
 	../view/home_map.cc \
 	../view/home_slots.cc \

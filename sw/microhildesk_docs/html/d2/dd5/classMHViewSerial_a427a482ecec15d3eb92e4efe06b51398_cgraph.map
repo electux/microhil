@@ -1,5 +1,0 @@
-<map id="MHViewSerial::mapping" name="MHViewSerial::mapping">
-<area shape="rect" id="node1" title="Maps all widgets (signals and slots)" alt="" coords="5,46,184,73"/>
-<area shape="rect" id="node2" href="$d2/dd5/classMHViewSerial.html#a62588bc9c5744c4ba66112bc3d2b17a3" title="Slot for processing Cancel button (dismiss)" alt="" coords="232,5,451,47"/>
-<area shape="rect" id="node3" href="$d2/dd5/classMHViewSerial.html#a1c8f81161c117b434b7aa0a8e59e243e" title="Slot for processing Ok button (confirm)" alt="" coords="245,71,437,112"/>
-</map>

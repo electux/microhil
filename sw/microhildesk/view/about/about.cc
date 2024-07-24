@@ -19,19 +19,49 @@
 #include "about.h"
 #include <vector>
 
+namespace
+{
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Application about dialog widgets parameters
+    ///   program_name - program name
+    ///   program_version - program version
+    ///   program_copyright - program copyright
+    ///   program_comments - program comments
+    ///   program_license - program license
+    ///   program_website - program website
+    ///   program_website_label - program website label 
+    ///   program_authors - program author
+    constexpr const char program_name[]{"microhildesk"};
+    constexpr const char program_version[]{"1.0.0"};
+    constexpr const char program_copyright[]{
+        "Vladimir Roncevic <elektron.ronca@gmail.com>"
+    };
+    constexpr const char program_comments[]{
+        "This is microhildesk application."
+    };
+    constexpr const char program_license[]{"GPLv3"};
+    constexpr const char program_website[]{
+        "https://electux.github.io/microhil"
+    };
+    constexpr const char program_website_label[]{
+        "electux.github.io/microhil"
+    };
+    constexpr const char program_authors[]{"Vladimir Roncevic"};
+};
+
 using namespace Electux::App::View::About;
 
 AppAbout::AppAbout()
 {
-    set_program_name("microhildesk");
-    set_version("1.0.0");
-    set_copyright("Vladimir Roncevic <elektron.ronca@gmail.com>");
-    set_comments("This is microhildesk application.");
-    set_license("GPLv3");
-    set_website("https://electux.github.io/microhil");
-    set_website_label("electux.github.io/microhil");
+    set_program_name(program_name);
+    set_version(program_version);
+    set_copyright(program_copyright);
+    set_comments(program_comments);
+    set_license(program_license);
+    set_website(program_website);
+    set_website_label(program_website_label);
     std::vector<Glib::ustring> list_authors;
-    list_authors.push_back("Vladimir Roncevic");
+    list_authors.push_back(program_authors);
     set_authors(list_authors);
     set_hide_on_close(true);
 }

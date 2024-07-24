@@ -37,7 +37,7 @@ all: $(OBJECTS) $(EXECUTABLE) $(EXECUTABLE).lss sizedummy
 
 $(EXECUTABLE):
 	@echo 'Invoking: link executable $@'
-	$(CXX) $(OBJECTS) -o $@ `pkg-config --libs gtkmm-4.0`
+	$(CXX) $(OBJECTS) -o $@ `pkg-config --libs gtkmm-4.0` `pkg-config --libs libserial`
 	@echo 'Finished link process: $@'
 	@echo ' '
 

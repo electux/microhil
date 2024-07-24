@@ -22,6 +22,8 @@
 
 namespace Electux::App::Model
 {
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Model definition
     class Model : public IModel
     {
     public:
@@ -45,6 +47,5 @@ namespace Electux::App::Model
         /// @brief Model entities in format map of strings {key: data}
         Entities m_entities;
     };
-
 };
 

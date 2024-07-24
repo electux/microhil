@@ -1,19 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cc']]],
-  ['makesptr_1',['makeSPtr',['../db/db9/microhil__types_8h.html#ab7f15713159d956d9cda53d650ce778f',1,'microhil_types.h']]],
-  ['makeuptr_2',['makeUPtr',['../db/db9/microhil__types_8h.html#abac008981730841fd1658079f39c0cf1',1,'microhil_types.h']]],
-  ['mapping_3',['mapping',['../d2/ddd/classIMHController.html#adc79977ac31ee14cb653d5ed7298c406',1,'IMHController::mapping()'],['../d2/dd5/classMHViewSerial.html#a427a482ecec15d3eb92e4efe06b51398',1,'MHViewSerial::mapping()'],['../d1/d14/classMHViewLog.html#aefa7c638ba5f26cf2a3d1389194200b6',1,'MHViewLog::mapping()'],['../df/d0c/classIMHView.html#a8c74ad52d09c337bcbfdf376cc839333',1,'IMHView::mapping()'],['../d1/d75/classMHController.html#a66e872754df9449a312d014e6055f76f',1,'MHController::mapping()'],['../d5/d7b/classMHViewAbout.html#afa6b5ef9b097a38221a9fa51b42910a6',1,'MHViewAbout::mapping()'],['../dc/d3c/classMHViewDialog.html#ae2e9e085b92b2ae74d39355037101dac',1,'MHViewDialog::mapping()'],['../dc/def/classMHViewHome.html#a4ccccb1d79d8b65d11371f6c897606ea',1,'MHViewHome::mapping()'],['../d1/dfc/classMHView.html#a1ea3cc8b81bb27f0fc00a48f2398c7bc',1,'MHView::mapping()']]],
-  ['mhcommander_4',['MHCommander',['../d4/dd8/classMHCommander.html#a0fbe8eb9b53b14b61baa71d163c3ee96',1,'MHCommander']]],
-  ['mhconfig_5',['MHConfig',['../d9/d79/classMHConfig.html#a21227a66402be020ed5c0c45a200ba33',1,'MHConfig']]],
-  ['mhcontroller_6',['MHController',['../d1/d75/classMHController.html#a51d3fb5b781210eb386eef0fc8bf136d',1,'MHController']]],
-  ['mhlog_7',['MHLog',['../d1/d7c/classMHLog.html#a10b0c31d5d39c1a7b531dd96e8e7d1b6',1,'MHLog']]],
-  ['mhmodel_8',['MHModel',['../da/d3e/classMHModel.html#a6c0f221b3a7af2ea473120047fff4503',1,'MHModel']]],
-  ['mhserialcom_9',['MHSerialCom',['../d1/dfa/classMHSerialCom.html#a4534dd62bb96d7baa0cdbd6758a9c117',1,'MHSerialCom']]],
-  ['mhview_10',['MHView',['../d1/dfc/classMHView.html#a5288fc0383c58f06d80eb402890397d4',1,'MHView']]],
-  ['mhviewabout_11',['MHViewAbout',['../d5/d7b/classMHViewAbout.html#a9a14a9a9f814464bbb4899d3c064cd74',1,'MHViewAbout']]],
-  ['mhviewdialog_12',['MHViewDialog',['../dc/d3c/classMHViewDialog.html#a09c6198b3a8b60296a847afdb399b249',1,'MHViewDialog']]],
-  ['mhviewhome_13',['MHViewHome',['../dc/def/classMHViewHome.html#a16d33cc43d4ba6e5b5f9b1a3c7edb59b',1,'MHViewHome']]],
-  ['mhviewlog_14',['MHViewLog',['../d1/d14/classMHViewLog.html#a88595153b799b5da85901f02774e85e0',1,'MHViewLog']]],
-  ['mhviewserial_15',['MHViewSerial',['../d2/dd5/classMHViewSerial.html#abfa9772065e8f2a2c497f5b28630223e',1,'MHViewSerial']]]
+  ['read_0',['read',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a33befe0d60b0acae70c21df1382b5aad',1,'Electux::App::Com::ICom::read()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#abaf96bbaeb3ed8e2c8d2bc827425ddb5',1,'Electux::App::Com::SerialCom::read()']]]
 ];

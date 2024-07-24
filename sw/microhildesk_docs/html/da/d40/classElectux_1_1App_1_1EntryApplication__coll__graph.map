@@ -1,0 +1,49 @@
+<map id="Electux::App::EntryApplication" name="Electux::App::EntryApplication">
+<area shape="rect" id="Node000001" title="Entry point for application definition." alt="" coords="510,499,721,704"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="211,296,329,361"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,372,316,404,343,434,382,468,425,498,511,549,508,553,422,503,379,472,339,438,312,407,291,375"/>
+<area shape="rect" id="Node000003" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html" title="Home view window definition." alt="" coords="1644,221,1869,436"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1644,359,737,574,736,569,1643,354"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="2619,5,2790,71"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="2713,85,2713,114,2709,145,2699,174,2680,199,2661,207,2629,212,2539,219,2394,224,2111,266,1870,308,1869,303,2110,261,2394,219,2539,213,2628,207,2660,202,2676,195,2694,172,2704,143,2708,113,2708,85"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="1084,5,1123,71"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="1124,50,1185,93,1193,108,1197,122,1196,148,1197,172,1201,184,1211,195,1239,216,1280,234,1387,267,1511,292,1628,310,1627,315,1510,297,1386,272,1278,239,1236,220,1207,199,1197,186,1192,173,1191,148,1191,123,1188,110,1181,96,1121,55"/>
+<area shape="rect" id="Node000013" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html" title="Application settings window definition." alt="" coords="513,259,718,399"/>
+<area shape="poly" id="edge14_Node000013_Node000005" title=" " alt="" coords="1098,72,1077,150,1062,199,1027,229,988,254,946,275,903,292,816,314,735,326,734,321,815,309,902,287,944,270,985,250,1023,225,1057,196,1072,148,1093,70"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="1162,5,1303,71"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="1281,69,1303,93,1314,122,1315,148,1317,172,1321,183,1331,196,1362,223,1396,247,1434,266,1473,282,1552,305,1628,318,1627,323,1551,310,1471,287,1431,271,1394,251,1358,227,1327,199,1317,186,1311,173,1309,148,1309,123,1298,96,1277,72"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="1328,5,1527,71"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="1443,70,1500,196,1529,222,1561,245,1630,281,1627,286,1558,249,1525,226,1496,199,1438,72"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="1551,5,1765,71"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="1652,72,1644,131,1645,164,1653,197,1656,206,1651,208,1647,198,1640,165,1639,131,1647,71"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1789,5,1940,71"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="1865,72,1856,131,1838,198,1834,207,1829,205,1833,196,1851,130,1860,71"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="1964,5,2165,71"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="2069,71,2064,134,2054,168,2036,199,2004,232,1967,259,1927,281,1886,298,1884,293,1924,276,1964,254,2001,228,2032,196,2049,166,2058,133,2064,71"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="2190,5,2377,71"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="2287,71,2285,101,2279,136,2266,170,2245,199,2220,218,2185,235,2094,266,1989,291,1886,311,1885,305,1987,286,2093,261,2183,230,2217,213,2241,195,2261,167,2273,134,2280,101,2282,71"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="2401,5,2595,71"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="2501,71,2497,102,2490,136,2476,170,2453,199,2424,214,2373,230,2224,261,2048,290,1886,313,1885,308,2047,285,2223,256,2371,225,2422,209,2450,195,2471,168,2485,135,2492,101,2495,71"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="618,399,618,482,613,482,613,399"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="5,5,103,71"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="79,82,119,155,144,195,174,207,216,212,318,211,422,208,466,210,500,219,530,235,557,257,554,261,527,240,498,224,465,216,422,213,318,216,216,217,173,212,140,199,114,157,75,84"/>
+<area shape="rect" id="Node000021" href="$d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp.html" title="Help view window definition." alt="" coords="353,289,488,369"/>
+<area shape="poly" id="edge22_Node000021_Node000014" title=" " alt="" coords="51,85,52,113,56,143,66,172,84,195,104,206,133,211,208,211,285,209,317,211,342,219,361,233,378,250,404,287,400,290,374,253,358,237,339,224,316,216,285,214,208,216,133,216,102,211,80,199,61,174,51,145,46,114,46,85"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="127,5,205,71"/>
+<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="158,72,152,102,149,135,154,168,171,195,196,210,232,217,278,218,327,216,426,210,468,211,500,219,544,246,541,250,498,224,467,217,426,215,328,221,278,223,232,222,194,215,167,199,149,170,144,135,146,101,153,71"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="245,5,295,71"/>
+<area shape="poly" id="edge16_Node000013_Node000016" title=" " alt="" coords="268,71,266,101,269,135,278,168,297,195,313,204,336,209,394,211,455,211,480,214,500,219,543,245,540,250,498,224,480,219,454,217,394,217,335,214,311,209,294,199,273,170,264,136,261,101,262,71"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="422,5,470,71"/>
+<area shape="poly" id="edge17_Node000013_Node000017" title=" " alt="" coords="447,71,452,132,460,165,474,196,485,209,501,219,530,245,527,249,498,223,482,213,469,199,455,166,447,132,442,71"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="559,5,671,71"/>
+<area shape="poly" id="edge18_Node000013_Node000018" title=" " alt="" coords="618,71,618,242,613,242,613,71"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="783,5,824,71"/>
+<area shape="poly" id="edge19_Node000013_Node000019" title=" " alt="" coords="806,72,800,133,791,167,776,199,756,227,733,252,729,248,752,223,772,196,786,165,795,132,801,71"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="908,5,965,71"/>
+<area shape="poly" id="edge20_Node000013_Node000020" title=" " alt="" coords="937,71,928,142,920,176,910,199,872,236,829,265,782,288,735,305,733,300,780,283,826,261,869,232,905,196,915,174,923,141,932,70"/>
+<area shape="poly" id="edge21_Node000001_Node000021" title=" " alt="" coords="451,367,535,484,530,487,446,370"/>
+<area shape="rect" id="Node000022" href="$d6/d7a/classElectux_1_1App_1_1View_1_1About_1_1AppAbout.html" title="About view dialog definition." alt="" coords="2405,289,2540,369"/>
+<area shape="poly" id="edge23_Node000001_Node000022" title=" " alt="" coords="2405,346,2174,389,1881,439,1558,486,1237,528,737,589,737,584,1236,523,1557,480,1880,433,2173,384,2404,341"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="2814,5,2939,71"/>
+<area shape="poly" id="edge24_Node000022_Node000023" title=" " alt="" coords="2845,83,2791,141,2725,199,2679,230,2631,258,2542,302,2539,297,2629,253,2677,226,2722,195,2787,137,2841,80"/>
+</map>

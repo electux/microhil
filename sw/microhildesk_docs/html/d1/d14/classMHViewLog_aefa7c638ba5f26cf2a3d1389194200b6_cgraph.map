@@ -1,7 +1,0 @@
-<map id="MHViewLog::mapping" name="MHViewLog::mapping">
-<area shape="rect" id="node1" title="Maps all widgets (signals and slots)" alt="" coords="5,93,169,120"/>
-<area shape="rect" id="node2" href="$d1/d14/classMHViewLog.html#abe4a857839931ba3bfc1e83ca73057ce" title="Slot for processing Cancel button." alt="" coords="217,5,468,32"/>
-<area shape="rect" id="node3" href="$d1/d14/classMHViewLog.html#aa8de8c9427d7f3a0d3b1f52b1a016b6b" title="Slot for processing log file path input." alt="" coords="244,57,441,98"/>
-<area shape="rect" id="node4" href="$d1/d14/classMHViewLog.html#ae060f380bf2f0050289f718338685d37" title="Slot for processing log level combobox." alt="" coords="223,123,462,149"/>
-<area shape="rect" id="node5" href="$d1/d14/classMHViewLog.html#aef806bb48373e882d983439eb18300b3" title="Slot for processing Ok button." alt="" coords="231,173,455,200"/>
-</map>

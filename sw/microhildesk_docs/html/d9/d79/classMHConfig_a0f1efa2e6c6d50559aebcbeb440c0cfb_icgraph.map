@@ -1,5 +1,0 @@
-<map id="MHConfig::isPreValid" name="MHConfig::isPreValid">
-<area shape="rect" id="node1" title="Checks is pre&#45;validation state (existing configuration)" alt="" coords="369,5,527,32"/>
-<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#a7cd8cccca5e71ca00d8ce42819392c87" title="Validates configuration (existing all expected parameters)" alt="" coords="175,5,321,32"/>
-<area shape="rect" id="node3" href="$d9/d79/classMHConfig.html#a9c26478ceec782516fe6741522a4637f" title="Loads configuration." alt="" coords="5,5,127,32"/>
-</map>

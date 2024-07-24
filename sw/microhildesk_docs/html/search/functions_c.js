@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['read_0',['read',['../de/d55/classIMHCom.html#a13cf3f07c32c6b3130b494af6abf380b',1,'IMHCom::read()'],['../d1/dfa/classMHSerialCom.html#a50c242d5da8e7e5cc11e2e79f6dfb291',1,'MHSerialCom::read()']]],
-  ['run_1',['run',['../d5/d4c/classApplication.html#a8cf8941c8db90117d3735bce5ae1fdf4',1,'Application']]]
+  ['write_0',['write',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#ac8f47ca960da9285c41cb9a2e788aa0a',1,'Electux::App::Com::ICom::write()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a97378427ef817d1364ca07bf9e7a8535',1,'Electux::App::Com::SerialCom::write()']]]
 ];

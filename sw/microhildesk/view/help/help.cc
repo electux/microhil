@@ -18,12 +18,24 @@
  */
 #include "help.h"
 
+namespace
+{
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Application help window widgets parameters
+    ///   help_title - window title
+    ///   help_width - window width
+    ///   help_height - window height
+    constexpr const char help_title[]{"microhildesk"};
+    constexpr int help_width{600};
+    constexpr int help_height{400};
+};
+
 using namespace Electux::App::View::Help;
 
 AppHelp::AppHelp()
 {
-    set_title("microhildesk");
-    set_default_size(600, 400);
+    set_title(help_title);
+    set_default_size(help_width, help_height);
     set_resizable(false);
     set_hide_on_close(true);
 }

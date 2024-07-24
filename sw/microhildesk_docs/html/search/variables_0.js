@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['databits_0',['dataBits',['../d4/dfd/microhil__icom_8h.html#a41d8e850a1864321c57a26a7d0d55886',1,'microhil_icom.h']]]
+  ['baud_0',['baud',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#aacf9fa2408c1fb6c3e244cdf473a6610',1,'Electux::App::Com']]]
 ];

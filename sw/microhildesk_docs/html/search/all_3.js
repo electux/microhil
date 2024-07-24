@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['databits_0',['dataBits',['../d4/dfd/microhil__icom_8h.html#a41d8e850a1864321c57a26a7d0d55886',1,'microhil_icom.h']]],
-  ['databitstoint_1',['dataBitsToInt',['../d9/d79/classMHConfig.html#a2c79435ada85d51feb668c7f6050e2c4',1,'MHConfig::dataBitsToInt()'],['../d5/d1b/classIMHConfig.html#aa70d8c829f4b504cfa19c558803c5b1f',1,'IMHConfig::dataBitsToInt()']]],
-  ['databitstouint_2',['dataBitsToUInt',['../de/d55/classIMHCom.html#a2aba2dda2e37991dde7ea8259ea8b844',1,'IMHCom::dataBitsToUInt()'],['../d1/dfa/classMHSerialCom.html#a8e02bed549d80e05ed80c46ff981b9a2',1,'MHSerialCom::dataBitsToUInt()']]],
-  ['disablechannel_3',['disableChannel',['../dc/def/classMHViewHome.html#a85eaeba794f77bfbdd6b0567076689f0',1,'MHViewHome']]]
+  ['data_0',['data',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a1492b7a39f37c6880fbe7dfb7524a208',1,'Electux::App::Com']]],
+  ['data_5fbits_5fto_5fuint_1',['data_bits_to_uint',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#ac23643b6135d2a4039d680181cdc3fb0',1,'Electux::App::Com::ICom::data_bits_to_uint()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a0957ef7e55fbd891456e3c16396cd1cb',1,'Electux::App::Com::SerialCom::data_bits_to_uint()']]]
 ];

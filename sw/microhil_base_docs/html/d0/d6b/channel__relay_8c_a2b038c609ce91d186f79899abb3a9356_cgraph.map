@@ -1,5 +1,0 @@
-<map id="microhil_init_relay" name="microhil_init_relay">
-<area shape="rect" id="node1" title="Performs initialization for relay channels." alt="" coords="5,31,148,57"/>
-<area shape="rect" id="node2" href="$df/df1/io__config_8c.html#ad4518cdd949730f34eb04c35354a3df0" title="Drive GPIO pin." alt="" coords="196,5,359,32"/>
-<area shape="rect" id="node3" href="$df/df1/io__config_8c.html#ace6e2881cfde444df4f62cc352888df6" title="Setting port pin configuration." alt="" coords="200,56,355,83"/>
-</map>

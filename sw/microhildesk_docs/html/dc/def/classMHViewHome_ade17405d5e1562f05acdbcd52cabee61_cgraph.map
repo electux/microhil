@@ -1,7 +1,0 @@
-<map id="MHViewHome::onTypeSelected" name="MHViewHome::onTypeSelected">
-<area shape="rect" id="node1" title="Slot for processing comboboxes (control type)" alt="" coords="5,81,231,108"/>
-<area shape="rect" id="node2" href="$dc/def/classMHViewHome.html#a4f8fe83900f485ef446fdbb8866f25cb" title="Converts channel id to integer value." alt="" coords="303,5,508,32"/>
-<area shape="rect" id="node3" href="$dc/def/classMHViewHome.html#aeda516269ab3e404d0315ea4ec68f9d8" title="Converts channel control type to integer value." alt="" coords="291,56,520,83"/>
-<area shape="rect" id="node4" href="$dc/def/classMHViewHome.html#a1d9173171c351002093e6d00b14aed97" title="Sets channel timer mode." alt="" coords="282,107,529,133"/>
-<area shape="rect" id="node5" href="$dc/def/classMHViewHome.html#aed2967871b58f3eb3f7c145feaf614d8" title="Sets channel in toggle mode." alt="" coords="279,157,532,184"/>
-</map>

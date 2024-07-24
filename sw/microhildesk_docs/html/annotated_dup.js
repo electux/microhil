@@ -1,28 +1,28 @@
 var annotated_dup =
 [
-    [ "AbMHViewAbout", "d3/d19/classAbMHViewAbout.html", "d3/d19/classAbMHViewAbout" ],
-    [ "AbMHViewDialog", "d9/da7/classAbMHViewDialog.html", "d9/da7/classAbMHViewDialog" ],
-    [ "AbMHViewHome", "d7/d4c/classAbMHViewHome.html", "d7/d4c/classAbMHViewHome" ],
-    [ "AbMHViewLog", "d9/d0c/classAbMHViewLog.html", "d9/d0c/classAbMHViewLog" ],
-    [ "AbMHViewSerial", "d6/d87/classAbMHViewSerial.html", "d6/d87/classAbMHViewSerial" ],
-    [ "Application", "d5/d4c/classApplication.html", "d5/d4c/classApplication" ],
-    [ "IMHCom", "de/d55/classIMHCom.html", "de/d55/classIMHCom" ],
-    [ "IMHCommander", "d3/da0/classIMHCommander.html", "d3/da0/classIMHCommander" ],
-    [ "IMHConfig", "d5/d1b/classIMHConfig.html", "d5/d1b/classIMHConfig" ],
-    [ "IMHController", "d2/ddd/classIMHController.html", "d2/ddd/classIMHController" ],
-    [ "IMHLog", "de/d0f/classIMHLog.html", "de/d0f/classIMHLog" ],
-    [ "IMHModel", "dd/db2/classIMHModel.html", "dd/db2/classIMHModel" ],
-    [ "IMHView", "df/d0c/classIMHView.html", "df/d0c/classIMHView" ],
-    [ "MHCommander", "d4/dd8/classMHCommander.html", "d4/dd8/classMHCommander" ],
-    [ "MHConfig", "d9/d79/classMHConfig.html", "d9/d79/classMHConfig" ],
-    [ "MHController", "d1/d75/classMHController.html", "d1/d75/classMHController" ],
-    [ "MHLog", "d1/d7c/classMHLog.html", "d1/d7c/classMHLog" ],
-    [ "MHModel", "da/d3e/classMHModel.html", "da/d3e/classMHModel" ],
-    [ "MHSerialCom", "d1/dfa/classMHSerialCom.html", "d1/dfa/classMHSerialCom" ],
-    [ "MHView", "d1/dfc/classMHView.html", "d1/dfc/classMHView" ],
-    [ "MHViewAbout", "d5/d7b/classMHViewAbout.html", "d5/d7b/classMHViewAbout" ],
-    [ "MHViewDialog", "dc/d3c/classMHViewDialog.html", "dc/d3c/classMHViewDialog" ],
-    [ "MHViewHome", "dc/def/classMHViewHome.html", "dc/def/classMHViewHome" ],
-    [ "MHViewLog", "d1/d14/classMHViewLog.html", "d1/d14/classMHViewLog" ],
-    [ "MHViewSerial", "d2/dd5/classMHViewSerial.html", "d2/dd5/classMHViewSerial" ]
+    [ "Electux", "db/deb/namespaceElectux.html", [
+      [ "App", "dd/d31/namespaceElectux_1_1App.html", [
+        [ "Com", "d7/d9d/namespaceElectux_1_1App_1_1Com.html", [
+          [ "ICom", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html", "db/dca/classElectux_1_1App_1_1Com_1_1ICom" ],
+          [ "SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom" ]
+        ] ],
+        [ "Model", "d9/d26/namespaceElectux_1_1App_1_1Model.html", [
+          [ "IModel", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel" ],
+          [ "Model", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html", "da/d81/classElectux_1_1App_1_1Model_1_1Model" ]
+        ] ],
+        [ "View", "d3/d81/namespaceElectux_1_1App_1_1View.html", [
+          [ "About", "da/d2e/namespaceElectux_1_1App_1_1View_1_1About.html", [
+            [ "AppAbout", "d6/d7a/classElectux_1_1App_1_1View_1_1About_1_1AppAbout.html", "d6/d7a/classElectux_1_1App_1_1View_1_1About_1_1AppAbout" ]
+          ] ],
+          [ "Help", "db/d22/namespaceElectux_1_1App_1_1View_1_1Help.html", [
+            [ "AppHelp", "d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp.html", "d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp" ]
+          ] ],
+          [ "Settings", "d7/d63/namespaceElectux_1_1App_1_1View_1_1Settings.html", [
+            [ "AppSettings", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings" ]
+          ] ],
+          [ "AppHome", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome" ]
+        ] ],
+        [ "EntryApplication", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html", "d0/dcc/classElectux_1_1App_1_1EntryApplication" ]
+      ] ]
+    ] ]
 ];

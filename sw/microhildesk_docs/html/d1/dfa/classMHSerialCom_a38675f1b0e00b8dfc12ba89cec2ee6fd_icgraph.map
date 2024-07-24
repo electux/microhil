@@ -1,4 +1,0 @@
-<map id="MHSerialCom::uintToBaudRate" name="MHSerialCom::uintToBaudRate">
-<area shape="rect" id="node1" title="Converts baud&#45;rate from unsigned int to scopped enumerator." alt="" coords="208,5,429,32"/>
-<area shape="rect" id="node2" href="$d1/dfa/classMHSerialCom.html#ac5b29ee3fb1fd01490e63dda93095c43" title="Setup the serial port parameters." alt="" coords="5,5,160,32"/>
-</map>
