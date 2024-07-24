@@ -1,7 +1,0 @@
-<map id="MHCommander::executeCommand" name="MHCommander::executeCommand">
-<area shape="rect" id="node1" title="Executes microHIL command." alt="" coords="5,81,256,108"/>
-<area shape="rect" id="node2" href="$d4/dd8/classMHCommander.html#ad8870a9d358919fc8e66e90435c9aa31" title="Gets identification of microHIL HW." alt="" coords="333,5,498,32"/>
-<area shape="rect" id="node3" href="$d4/dd8/classMHCommander.html#a0b6ecfbf951d1a505d57a664cf8a5643" title="Gets version of microHIL FW." alt="" coords="315,56,516,83"/>
-<area shape="rect" id="node4" href="$d4/dd8/classMHCommander.html#a6defd39922e93986c26cff71f3744e3a" title="Sets all channels." alt="" coords="304,107,527,133"/>
-<area shape="rect" id="node5" href="$d4/dd8/classMHCommander.html#ab8697e47cff9ef0a2f8c1fb6d71f12e3" title="Sets channel state." alt="" coords="313,157,518,184"/>
-</map>

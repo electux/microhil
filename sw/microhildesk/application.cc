@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * application.cc
- * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -17,32 +17,24 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include "application.h"
+#include <glibmm/miscutils.h>
+#include <glibmm/refptr.h>
 
-namespace
-{
-    ////////////////////////////////////////////////////////////////////////
-    /// MicroHIL application ID
-    constexpr const char kAppId[]{"org.electux.microhildesk"};
-} // namespace
+using namespace Electux::App;
 
-Application::Application(int argc, char *argv[])
-    : m_app{Gtk::Application::create(argc, argv, kAppId)}
-    , m_model{makeSPtr<MHModel>()}
-    , m_view{makeSPtr<MHView>()}
-    , m_controller{makeSPtr<MHController>(m_model, m_view)}
+EntryApplication::EntryApplication():
+    Gtk::Application("electux.io.microhildesk"),
+    m_home{AppHome()},
+    m_settings{AppSettings()},
+    m_help{AppHelp()}
 {
+    Glib::set_application_name("electux.io.microhildesk");
 }
 
-int Application::run()
+Glib::RefPtr<EntryApplication> EntryApplication::create()
 {
-    auto status{EXIT_FAILURE};
-
-    if (m_app && m_view)
-    {
-        ////////////////////////////////////////////////////////////////////
-        /// Starts the MicroHIL application
-        status = m_app->run(*(m_view->getHome().get()));
-    }
-
-    return status;
+    return Glib::make_refptr_for_instance<EntryApplication>(
+        new EntryApplication()
+    );
 }
+

@@ -1,5 +1,0 @@
-<map id="MHView::mapping" name="MHView::mapping">
-<area shape="rect" id="node1" title="Maps views (signal and slots)" alt="" coords="5,31,145,57"/>
-<area shape="rect" id="node2" href="$d1/dfc/classMHView.html#a891ac056d218dc037bb7e2de15c97cbd" title="Slot for processing Ok request for serial port changes." alt="" coords="193,5,433,32"/>
-<area shape="rect" id="node3" href="$d1/dfc/classMHView.html#a91f0dec5d272fee87be3c74fb6aa7055" title="Slot for processing requests for triggering view." alt="" coords="219,56,407,83"/>
-</map>

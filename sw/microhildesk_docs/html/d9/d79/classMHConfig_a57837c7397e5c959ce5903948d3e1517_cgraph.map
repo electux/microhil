@@ -1,4 +1,0 @@
-<map id="MHConfig::setParity" name="MHConfig::setParity">
-<area shape="rect" id="node1" title="Sets parity for the serial port to configuration." alt="" coords="5,13,156,39"/>
-<area shape="rect" id="node2" href="$d9/d79/classMHConfig.html#ab9ed80bb30e489b9f828146b04679f1d" title="Converts integer parity to string format (to config file)" alt="" coords="204,5,403,47"/>
-</map>

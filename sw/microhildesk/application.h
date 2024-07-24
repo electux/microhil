@@ -1,7 +1,7 @@
-/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
+/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * application.h
- * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -18,45 +18,73 @@
  */
 #pragma once
 
-#include "controller/microhil_controller.h"
-#include "model/microhil_model.h"
-#include "view/microhil_view.h"
 #include <gtkmm/application.h>
+#include "view/home.h"
+#include "view/settings/settings.h"
+#include "view/help/help.h"
+#include "view/about/about.h"
 
-////////////////////////////////////////////////////////////////////////////
-/// @brief Application entry class for microHIL system
-class Application
+using namespace Electux::App::View;
+using namespace Electux::App::View::Settings;
+using namespace Electux::App::View::Help;
+using namespace Electux::App::View::About;
+
+namespace Electux::App
 {
-public:
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Application constructor
-    /// @param argc represents the number of arguments for the application
-    /// @param argv represents the array of arguments for the application
-    Application(int argc, char *argv[]);
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Entry point for application definition
+    class EntryApplication : public Gtk::Application
+    {
+    public:
+        //////////////////////////////////////////////////////////////////////
+        /// @brief EntryApplication constructor
+        explicit EntryApplication();
 
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Application destructor
-    inline ~Application() noexcept = default;
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Creates reference pointer to EntryApplication
+        static Glib::RefPtr<EntryApplication> create();
 
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Starts the application (run main loop)
-    /// @return integer exit status (exit failure value is 1)
-    int run();
+    protected:
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Handler for the startup signal
+        void on_startup() override;
 
-private:
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Application instance
-    RPtr<Gtk::Application> m_app{nullptr};
+    private:
+        //////////////////////////////////////////////////////////////////////
+        /// @brief 
+        void mapping();
 
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Model instance
-    SPtr<IMHModel> m_model{nullptr};
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action settings create window for application settings
+        void on_action_settings();
 
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief View instance
-    SPtr<IMHView> m_view{nullptr};
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action doc create window for help documentation
+        void on_action_doc();
 
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Controller instance
-    SPtr<IMHController> m_controller{nullptr};
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action about create dialog for about application
+        void on_action_about();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action for quit
+        void on_action_quit();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Instance of HomeView (main window)
+        AppHome m_home;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Instance of AppSettings (settings window)
+        AppSettings m_settings;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Instance of AppHelp (help window)
+        AppHelp m_help;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Instance of AppAbout (about dialog)
+        AppAbout m_about;
+    };
 };
+
