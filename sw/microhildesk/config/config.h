@@ -19,6 +19,10 @@
 #pragma once
 
 #include "iconfig.h"
+#include "../model/model_serial.h"
+#include "../model/model_log.h"
+
+using namespace Electux::App::Model;
 
 namespace Electux::App::Config
 {
@@ -44,18 +48,12 @@ namespace Electux::App::Config
     private:
         //////////////////////////////////////////////////////////////////////
         /// @brief Configuration parameters and properties
-        ///   m_file_name - file name path for configuration
-        ///   m_device - serial device file path
-        ///   m_baud - serial baud rate
-        ///   m_data - serial data bits
-        ///   m_parity - serial parity
-        ///   m_stop - serial stop bits
+        ///   m_file_name - file name path for load/store configuration
+        ///   m_serial_config - serial port configuration
+        ///   m_log_config - log configuration
         std::string m_file_name;
-        std::string m_device;
-        std::string m_baud;
-        std::string m_data;
-        std::string m_parity;
-        std::string m_stop;
+        ModelSerial m_serial_config;
+        ModelLog m_log_config;
     };
 };
 
