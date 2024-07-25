@@ -19,7 +19,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install jq
         sudo apt-get install libserial-dev
-        sudo apt-get install libgtkmm-3.0-dev
+        sudo apt-get install libgtkmm-4.0-dev
     - name: make all
       id: gnu_make_all
       run: |
