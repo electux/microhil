@@ -1,6 +1,6 @@
 /* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * model_log_config.h
+ * model_serial.h
  * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -22,12 +22,12 @@
 
 namespace Electux::App::Model
 {
-    class ModelLogConfig : public Model
+    class ModelSerial : public Model
     {
     public:
         //////////////////////////////////////////////////////////////////////
-        /// @brief ModelLogConfig constructor
-        inline ModelLogConfig() noexcept = default;
+        /// @brief ModelSerial constructor
+        inline ModelSerial() noexcept = default;
     };
 };
 

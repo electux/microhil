@@ -63,7 +63,6 @@ bool Config::load()
     }
 
     file.close();
-
     m_serial_config.add("device", config_map["device"]);;
     m_serial_config.add("baud", config_map["baud"]);
     m_serial_config.add("data", config_map["data"]);
@@ -88,7 +87,7 @@ bool Config::store()
     file << "data=" << m_serial_config.get_entity("data") << std::endl;
     file << "parity=" << m_serial_config.get_entity("parity") << std::endl;
     file << "stop=" << m_serial_config.get_entity("stop") << std::endl;
-
     file.close();
+
     return true;
 }

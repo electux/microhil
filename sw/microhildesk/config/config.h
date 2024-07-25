@@ -19,8 +19,8 @@
 #pragma once
 
 #include "iconfig.h"
-#include "../model/model_serial_config.h"
-#include "../model/model_log_config.h"
+#include "../model/model_serial.h"
+#include "../model/model_log.h"
 
 using namespace Electux::App::Model;
 
@@ -52,8 +52,8 @@ namespace Electux::App::Config
         ///   m_serial_config - serial port configuration
         ///   m_log_config - log configuration
         std::string m_file_name;
-        ModelSerialConfig m_serial_config;
-        ModelLogConfig m_log_config;
+        ModelSerial m_serial_config;
+        ModelLog m_log_config;
     };
 };
 
