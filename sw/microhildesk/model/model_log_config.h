@@ -1,6 +1,6 @@
-/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
+/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * model.cc
+ * model_log_config.h
  * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
@@ -16,23 +16,18 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#pragma once
+
 #include "model.h"
 
-using namespace Electux::App::Model;
-
-bool Model::add(const std::string &key, const std::string &data)
+namespace Electux::App::Model
 {
-    auto const& result = m_entities.try_emplace(key, data);
-    return result.second;
-}
-
-std::string &Model::get_entity(const std::string &key)
-{
-    return m_entities[key];
-}
-
-const Entities &Model::get() const
-{
-    return m_entities;
-}
+    class ModelLogConfig : public Model
+    {
+    public:
+        //////////////////////////////////////////////////////////////////////
+        /// @brief ModelLogConfig constructor
+        inline ModelLogConfig() noexcept = default;
+    };
+};
 

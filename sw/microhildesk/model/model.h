@@ -38,6 +38,12 @@ namespace Electux::App::Model
         bool add(const std::string &key, const std::string &data) final;
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief Gets entity by key
+        /// @param key Represents model enity key
+        /// @return Entity selected by key
+        std::string &get_entity(const std::string &key) final;
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Gets model entities
         /// @return Model entities in format map of strings
         const Entities &get() const final;
