@@ -18,7 +18,10 @@ jobs:
       run: |
         sudo apt update
         sudo apt install jq
+        sudo apt install pkg-config
         sudo apt install libserial-dev
+        sudo apt install libgtkmm-3.0-dev
+        sudo apt install libgtk-4-dev
         sudo apt install libgtkmm-4.0-dev
     - name: make all
       id: gnu_make_all
