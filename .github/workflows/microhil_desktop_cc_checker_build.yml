@@ -17,7 +17,6 @@ jobs:
       id: install_gtkmm
       run: |
         sudo apt update
-        sudo apt install jq
         sudo apt install pkg-config
         sudo apt install libserial-dev
         sudo apt install libgtkmm-3.0-dev
