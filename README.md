@@ -144,6 +144,8 @@ Copyright (C) 2020 by [electux.github.io/microhil](https://electux.github.io/mic
 
 Lets help and support Raspberry PI && GNOME.
 
-<a href="https://www.raspberrypi.org/donate/">
-<img src="https://raw.githubusercontent.com/electux/microhil/master/docs/fondations.png" alt="GNOME&&RPi" width="381" height="221">
-</a>
+<p align="center">
+  <a href="https://www.raspberrypi.org/donate/">
+    <img src="https://raw.githubusercontent.com/electux/microhil/master/docs/fondations.png" alt="GNOME&&RPi" width="381" height="221">
+  </a>
+</p>
