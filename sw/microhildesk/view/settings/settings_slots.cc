@@ -23,19 +23,38 @@ using namespace Electux::App::View::Settings;
 void AppSettings::on_button_ok_clicked()
 {
     //////////////////////////////////////////////////////////////////////////
-    /// Perform action on OK button
-    auto device_path = m_entry_serial_path.get_text();
-    SerialParams serialParams{};
-    serialParams.push_back(m_combo_serial_baud.get_active_row_number());
-    serialParams.push_back(m_combo_serial_data.get_active_row_number());
-    serialParams.push_back(m_combo_serial_parity.get_active_row_number());
-    serialParams.push_back(m_combo_serial_stop.get_active_row_number());
+    /// Performs action on OK button
+    SettingsSetup setup;
+    setup.m_serial_device_path = m_entry_serial_path.get_text();
+    setup.m_serial_params.push_back(
+        m_combo_serial_baud.get_active_row_number()
+    );
+    setup.m_serial_params.push_back(
+        m_combo_serial_data.get_active_row_number()
+    );
+    setup.m_serial_params.push_back(
+        m_combo_serial_parity.get_active_row_number()
+    );
+    setup.m_serial_params.push_back(
+        m_combo_serial_stop.get_active_row_number()
+    );
+    setup.m_log_file_path = m_entry_log_path.get_text();
+    setup.m_log_level = m_combo_log_level.get_active_row_number();
+
+    //////////////////////////////////////////////////////////////////////////
+    /// Emits new serial/log settings setup
+    m_setup.emit(setup);
+
+    //////////////////////////////////////////////////////////////////////////
+    /// Hide settings window
     hide();
 }
 
 void AppSettings::on_button_cancel_clicked()
 {
     //////////////////////////////////////////////////////////////////////////
-    /// Perform action on Cancel button
+    /// Performs action on Cancel button
     hide();
 }
+
+SigSetup AppSettings::setup_changed() { return m_setup; }
