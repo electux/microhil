@@ -26,12 +26,14 @@
 #include <gtkmm/label.h>
 #include <gtkmm/entry.h>
 #include <gtkmm/comboboxtext.h>
+#include <sigc++/sigc++.h>
+#include "settings_setup.h"
 
 namespace Electux::App::View::Settings
 {
     //////////////////////////////////////////////////////////////////////////
-    /// @brief Serial port parameters type
-    using SerialParams = std::vector<unsigned int>;
+    /// @brief Signal type for serial settings
+    using SigSetup = sigc::signal<void(SettingsSetup &)>;
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application settings window definition
@@ -41,6 +43,11 @@ namespace Electux::App::View::Settings
         //////////////////////////////////////////////////////////////////////
         /// @brief AppSettings constructor
         explicit AppSettings();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Signal for serial settings
+        /// @return Signal for changed serial settings
+        SigSetup setup_changed();
 
     private:
         //////////////////////////////////////////////////////////////////////
@@ -54,6 +61,10 @@ namespace Electux::App::View::Settings
         //////////////////////////////////////////////////////////////////////
         /// @brief On action Cancel button
         void on_button_cancel_clicked();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Signal for the serial settings
+        SigSetup m_setup{};
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Vertical box as root container
