@@ -1,7 +1,7 @@
 /* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * application.h
- * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -51,7 +51,7 @@ namespace Electux::App
 
     private:
         //////////////////////////////////////////////////////////////////////
-        /// @brief 
+        /// @brief Maps signal/slots for application views
         void mapping();
 
         //////////////////////////////////////////////////////////////////////
@@ -71,19 +71,14 @@ namespace Electux::App
         void on_action_quit();
 
         //////////////////////////////////////////////////////////////////////
-        /// @brief Instance of HomeView (main window)
+        /// @brief Instances of application views
+        ///   m_home - instance of HomeView (main window)
+        ///   m_settings - instance of AppSettings (settings window)
+        ///   m_help - instance of AppHelp (help window)
+        ///   m_about - instance of AppAbout (about dialog)
         AppHome m_home;
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Instance of AppSettings (settings window)
         AppSettings m_settings;
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Instance of AppHelp (help window)
         AppHelp m_help;
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Instance of AppAbout (about dialog)
         AppAbout m_about;
     };
 };

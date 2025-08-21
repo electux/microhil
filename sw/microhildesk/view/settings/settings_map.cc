@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * settings_map.cc
- * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -24,10 +24,6 @@ void AppSettings::mapping()
 {
     //////////////////////////////////////////////////////////////////////////
     /// Maps the signal handlers to the buttons
-    m_button_ok.signal_clicked().connect(
-        sigc::mem_fun(*this, &AppSettings::on_button_ok_clicked)
-    );
-    m_button_cancel.signal_clicked().connect(
-        sigc::mem_fun(*this, &AppSettings::on_button_cancel_clicked)
-    );
+    m_button_ok.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::on_button_ok_clicked));
+    m_button_cancel.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::on_button_cancel_clicked));
 }

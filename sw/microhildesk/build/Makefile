@@ -31,13 +31,13 @@ all: $(OBJECTS) $(EXECUTABLE) $(EXECUTABLE).lss sizedummy
 
 .cc.o:
 	@echo 'Invoking: compile unit $<'
-	$(CXX) $(CXXFLAGS) -o $@ $< `pkg-config --cflags gtkmm-4.0`
+	$(CXX) $(CXXFLAGS) -o $@ $< `pkg-config --cflags gtkmm-4.0 libserial`
 	@echo 'Finished compile unit $<'
 	@echo ' '
 
 $(EXECUTABLE):
 	@echo 'Invoking: link executable $@'
-	$(CXX) $(OBJECTS) -o $@ `pkg-config --libs gtkmm-4.0` `pkg-config --libs libserial`
+	$(CXX) $(OBJECTS) -o $@ `pkg-config --libs gtkmm-4.0 libserial`
 	@echo 'Finished link process: $@'
 	@echo ' '
 

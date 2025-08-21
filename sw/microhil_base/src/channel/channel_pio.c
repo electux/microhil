@@ -1,7 +1,7 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * channel_pio.c
- * Copyright (C) 2023 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhil-base is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -27,8 +27,6 @@ const uint microhil_ws2812_din = 13;
 /// @return true for success else false
 bool microhil_pio_init()
 {
-    bool status = false;
-
     ////////////////////////////////////////////////////////////////////////
     /// Add PIO program
     ws2812_init init =
@@ -45,13 +43,12 @@ bool microhil_pio_init()
     {
         ////////////////////////////////////////////////////////////////////
         /// Failed to load PIO program
-        return status;
+        return false;
     }
 
     ////////////////////////////////////////////////////////////////////////
     /// Performs WS2812 program initialization
     ws2812_program_init(&init);
-    status = true;
 
-    return status;
+    return true;
 }

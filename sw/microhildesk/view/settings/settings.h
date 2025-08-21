@@ -1,7 +1,7 @@
 /* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * settings.h
- * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -63,20 +63,11 @@ namespace Electux::App::View::Settings
         void on_button_cancel_clicked();
 
         //////////////////////////////////////////////////////////////////////
-        /// @brief Signal for the serial settings
-        SigSetup m_setup{};
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Vertical box as root container
-        Gtk::Box m_box_root;
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Notebook container for settings pages serial port and log
-        Gtk::Notebook m_notebook;
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Vertical box as container box for serial settings
-        ///   m_box_serial - container box for widgets
+        /// @brief Container for packing widgets for settings window 
+        ///   m_setup - signal for the serial settings
+        ///   m_box_root - vertical box as root container
+        ///   m_notebook - notebook container for settings pages serial port and log
+        ///   m_box_serial - vertical box as container box for serial settings
         ///   m_label_serial_path - serial path label
         ///   m_entry_serial_path - entry for serial device path
         ///   m_label_serial_baud - serial baud rate label
@@ -87,6 +78,17 @@ namespace Electux::App::View::Settings
         ///   m_combo_serial_parity - serial parity combobox
         ///   m_label_serial_stop - serial stop bits label
         ///   m_combo_serial_stop - serial stop bits combobox
+        ///   m_box_log - vertical box as container box for log settings
+        ///   m_label_log_path - log path label 
+        ///   m_entry_log_path - log file path entry
+        ///   m_label_log_level - log level label
+        ///   m_combo_log_level - log level combobox
+        ///   m_button_box - horizontal box as button container box
+        ///   m_button_ok - ok button (save changes)
+        ///   m_button_cancel - cancel button (dissmiss changes)
+        SigSetup m_setup{};
+        Gtk::Box m_box_root;
+        Gtk::Notebook m_notebook;
         Gtk::Box m_box_serial;
         Gtk::Label m_label_serial_path;
         Gtk::Entry m_entry_serial_path;
@@ -98,25 +100,11 @@ namespace Electux::App::View::Settings
         Gtk::ComboBoxText m_combo_serial_parity;
         Gtk::Label m_label_serial_stop;
         Gtk::ComboBoxText m_combo_serial_stop;
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Vertical box as container box for log settings
-        ///   m_box_log - container box for widgets
-        ///   m_label_log_path - log path label 
-        ///   m_entry_log_path - log file path entry
-        ///   m_label_log_level - log level label
-        ///   m_combo_log_level - log level combobox
         Gtk::Box m_box_log;
         Gtk::Label m_label_log_path;
         Gtk::Entry m_entry_log_path;
         Gtk::Label m_label_log_level;
         Gtk::ComboBoxText m_combo_log_level;
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Horizontal box as button container box
-        ///   m_button_box - container box for buttons
-        ///   m_button_ok - ok button (save changes)
-        ///   m_button_cancel - cancel button (dissmiss changes)
         Gtk::Grid m_button_box;
         Gtk::Button m_button_ok;
         Gtk::Button m_button_cancel;

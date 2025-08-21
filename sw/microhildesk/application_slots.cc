@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * application_slots.cc
- * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -18,6 +18,34 @@
  */
 #include "application.h"
 
+namespace
+{
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Application parameters
+    ///   file_label - file action label
+    ///   file_quit_label - file quit action label
+    ///   file_quit_detaild_action - file quit detailed action
+    ///   option_label - option action label
+    ///   option_settings_label - option settings action label
+    ///   option_settings_detaild_action - option settings detailed action
+    ///   help_label - help action label
+    ///   help_doc_label - help documentation action label
+    ///   help_doc_detaild_action - help documentation detailed action
+    ///   help_about_label - help about action label
+    ///   help_about_detaild_action - help about detailed action
+    constexpr const char file_label[]{"File"}; 
+    constexpr const char file_quit_label[]{"_Quit"};
+    constexpr const char file_quit_detaild_action[]{"app.quit"};
+    constexpr const char option_label[]{"Option"};
+    constexpr const char option_settings_label[]{"_Settings"};
+    constexpr const char option_settings_detaild_action[]{"app.setting"};
+    constexpr const char help_label[]{"Help"};
+    constexpr const char help_doc_label[]{"_Documentation"};
+    constexpr const char help_doc_detaild_action[]{"app.doc"};
+    constexpr const char help_about_label[]{"_About"};
+    constexpr const char help_about_detaild_action[]{"app.about"};
+};
+
 using namespace Electux::App;
 
 void EntryApplication::on_startup()
@@ -28,15 +56,15 @@ void EntryApplication::on_startup()
     /// Sets application menubar
     auto menu = Gio::Menu::create();
     auto submenu_file = Gio::Menu::create();
-    submenu_file->append("_Quit", "app.quit");
-    menu->append_submenu("File", submenu_file);
+    submenu_file->append(file_quit_label, file_quit_detaild_action);
+    menu->append_submenu(file_label, submenu_file);
     auto submenu_option = Gio::Menu::create();
-    submenu_option->append("_Settings", "app.setting");
-    menu->append_submenu("Option", submenu_option);
+    submenu_option->append(option_settings_label, option_settings_detaild_action);
+    menu->append_submenu(option_label, submenu_option);
     auto submenu_help = Gio::Menu::create();
-    submenu_help->append("_Documentation", "app.doc");
-    submenu_help->append("_About", "app.about");
-    menu->append_submenu("Help", submenu_help);
+    submenu_help->append(help_doc_label, help_doc_detaild_action);
+    submenu_help->append(help_about_label, help_about_detaild_action);
+    menu->append_submenu(help_label, submenu_help);
     set_menubar(menu);
 
     //////////////////////////////////////////////////////////////////////////

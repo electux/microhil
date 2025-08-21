@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * about.cc
- * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -16,8 +16,8 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "about.h"
 #include <vector>
+#include "about.h"
 
 namespace
 {
@@ -33,19 +33,11 @@ namespace
     ///   program_authors - program author
     constexpr const char program_name[]{"microhildesk"};
     constexpr const char program_version[]{"1.0.0"};
-    constexpr const char program_copyright[]{
-        "Vladimir Roncevic <elektron.ronca@gmail.com>"
-    };
-    constexpr const char program_comments[]{
-        "This is microhildesk application."
-    };
+    constexpr const char program_copyright[]{"Vladimir Roncevic <elektron.ronca@gmail.com>"};
+    constexpr const char program_comments[]{"This is microhildesk application."};
     constexpr const char program_license[]{"GPLv3"};
-    constexpr const char program_website[]{
-        "https://electux.github.io/microhil"
-    };
-    constexpr const char program_website_label[]{
-        "electux.github.io/microhil"
-    };
+    constexpr const char program_website[]{"https://electux.github.io/microhil"};
+    constexpr const char program_website_label[]{"electux.github.io/microhil"};
     constexpr const char program_authors[]{"Vladimir Roncevic"};
 };
 
