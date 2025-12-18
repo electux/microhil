@@ -17,7 +17,6 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <glibmm/miscutils.h>
-#include <filesystem>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -64,7 +63,7 @@ bool Config::load()
     }
 
     file.close();
-    m_serial_config.add("device", config_map["device"]);;
+    m_serial_config.add("device", config_map["device"]);
     m_serial_config.add("baud", config_map["baud"]);
     m_serial_config.add("data", config_map["data"]);
     m_serial_config.add("parity", config_map["parity"]);

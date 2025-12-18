@@ -1,0 +1,7 @@
+<map id="Electux::App::View::Settings::AppSettings::mapping" name="Electux::App::View::Settings::AppSettings::mapping">
+<area shape="rect" id="Node000001" title="Maps channels (signals and slots)" alt="" coords="5,45,175,100"/>
+<area shape="rect" id="Node000002" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a240aa62e438f83b32b906272472e75a1" title="On action Cancel button." alt="" coords="223,5,419,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,55,209,49,210,55,175,61"/>
+<area shape="rect" id="Node000003" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#afe8bc782da722894777d55851c23608a" title="On action OK button." alt="" coords="235,84,406,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,84,222,92,221,97,174,89"/>
+</map>

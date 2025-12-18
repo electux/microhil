@@ -1,0 +1,13 @@
+<map id="Electux::App::EntryApplication::on_startup" name="Electux::App::EntryApplication::on_startup">
+<area shape="rect" id="Node000001" title="Handler for the startup signal." alt="" coords="5,101,224,141"/>
+<area shape="rect" id="Node000002" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48" title="Maps signal/slots for application views." alt="" coords="272,101,491,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,119,258,119,258,124,224,124"/>
+<area shape="rect" id="Node000003" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#afb273418ed9fc54ae9511c674b21ccde" title="On action about create dialog for about application." alt="" coords="539,5,757,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="427,99,538,55,561,47,563,52,540,60,429,104"/>
+<area shape="rect" id="Node000004" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a99ac5d88f9a97cb0762c9ad69b9d5cb1" title="On action doc create window for help documentation." alt="" coords="539,69,757,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="490,106,525,101,525,107,491,111"/>
+<area shape="rect" id="Node000005" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a6f23dbfc6b0142a41ec0e01e1cdd7003" title="On action for quit." alt="" coords="539,133,757,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="491,132,525,136,525,141,490,137"/>
+<area shape="rect" id="Node000006" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#acb70aa86d961826ad7f0f1e69dc98a98" title="On action settings create window for application settings." alt="" coords="539,197,757,237"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="429,139,540,183,563,191,561,196,538,188,427,144"/>
+</map>

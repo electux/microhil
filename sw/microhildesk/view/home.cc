@@ -72,7 +72,7 @@ AppHome::AppHome()
     {
         std::string channel = std::to_string(i);
         m_box_channels.emplace_back(Gtk::Orientation::VERTICAL);
-        m_enable_channels.emplace_back(home_en_channel_label + channel);
+        m_enable_channels.emplace_back(std::string(home_en_channel_label) + channel);
         m_box_channels[i].append(m_enable_channels[i]);
         m_select_control_channels.emplace_back();
         for (const auto& option : home_channel_mode_options)
@@ -92,9 +92,9 @@ AppHome::AppHome()
         m_toggle_timer_channels.emplace_back();
         m_toggle_timer_channels[i].set_label(home_timer_channel_button_start);
         m_box_channels[i].append(m_toggle_timer_channels[i]);
-        m_stauts_timer_channels.emplace_back();
-        m_stauts_timer_channels[i].set_fraction(home_status_fraction);
-        m_box_channels[i].append(m_stauts_timer_channels[i]);
+        m_status_timer_channels.emplace_back();
+        m_status_timer_channels[i].set_fraction(home_status_fraction);
+        m_box_channels[i].append(m_status_timer_channels[i]);
         m_box_channels[i].set_margin(home_box_channel_margin);
         m_box_channels[i].set_spacing(home_box_channel_spacing);
         m_box_root.append(m_box_channels[i]);
