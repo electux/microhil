@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * settings_slots.cc
- * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -26,18 +26,10 @@ void AppSettings::on_button_ok_clicked()
     /// Performs action on OK button
     SettingsSetup setup;
     setup.m_serial_device_path = m_entry_serial_path.get_text();
-    setup.m_serial_params.push_back(
-        m_combo_serial_baud.get_active_row_number()
-    );
-    setup.m_serial_params.push_back(
-        m_combo_serial_data.get_active_row_number()
-    );
-    setup.m_serial_params.push_back(
-        m_combo_serial_parity.get_active_row_number()
-    );
-    setup.m_serial_params.push_back(
-        m_combo_serial_stop.get_active_row_number()
-    );
+    setup.m_serial_params.push_back(m_combo_serial_baud.get_active_row_number());
+    setup.m_serial_params.push_back(m_combo_serial_data.get_active_row_number());
+    setup.m_serial_params.push_back(m_combo_serial_parity.get_active_row_number());
+    setup.m_serial_params.push_back(m_combo_serial_stop.get_active_row_number());
     setup.m_log_file_path = m_entry_log_path.get_text();
     setup.m_log_level = m_combo_log_level.get_active_row_number();
 

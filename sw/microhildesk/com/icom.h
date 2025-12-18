@@ -1,7 +1,7 @@
 /* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * icom.h
- * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -34,11 +34,11 @@ namespace Electux::App::Com
     {
         //////////////////////////////////////////////////////////////////////
         /// @brief Serial parameters
-        ///  device - the serial port device file path
-        ///  baud - the serial port baud-rate parameter
-        ///  data - the serial port data-bits parameter
-        ///  parity - the serial port parity parameter
-        ///  stop - the serial port stop-bits parameter
+        ///   device - the serial port device file path
+        ///   baud - the serial port baud-rate parameter
+        ///   data - the serial port data-bits parameter
+        ///   parity - the serial port parity parameter
+        ///   stop - the serial port stop-bits parameter
         std::string device;
         BaudRate baud;
         CharacterSize data;

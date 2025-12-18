@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * settings.cc
- * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -44,8 +44,8 @@ namespace
     ///   settings_button_cancel_label - button cancel label
     ///   settings_button_width - button width
     ///   settings_button_height - button height
-    ///   settings_grid_row_column_occupy_zero - Position widget occupy (0)
-    ///   settings_grid_row_column_occupy_one - Position widget occupy (1)
+    ///   settings_grid_row_column_occupy_zero - position widget occupy (0)
+    ///   settings_grid_row_column_occupy_one - position widget occupy (1)
     constexpr const char settings_title[]{"microhildesk"};
     constexpr int settings_width{320};
     constexpr int settings_height{280};
@@ -118,28 +118,14 @@ AppSettings::AppSettings()
     m_box_log.append(m_combo_log_level);
     m_notebook.append_page(m_box_log, settings_page_log_label);
     m_box_root.append(m_notebook);
-    m_button_box.set_size_request(
-        settings_button_box_width, settings_button_box_height
-    );
+    m_button_box.set_size_request(settings_button_box_width, settings_button_box_height);
     m_button_box.set_margin(settings_button_box_margin);
     m_button_ok.set_label(settings_button_ok_label);
-    m_button_ok.set_size_request(
-        settings_button_width, settings_button_height
-    );
+    m_button_ok.set_size_request(settings_button_width, settings_button_height);
     m_button_cancel.set_label(settings_button_cancel_label);
-    m_button_cancel.set_size_request(
-        settings_button_width, settings_button_height
-    );
-    m_button_box.attach(
-        m_button_cancel,
-        settings_grid_row_column_occupy_zero,
-        settings_grid_row_column_occupy_zero
-    );
-    m_button_box.attach(
-        m_button_ok,
-        settings_grid_row_column_occupy_one,
-        settings_grid_row_column_occupy_zero
-    );
+    m_button_cancel.set_size_request(settings_button_width, settings_button_height);
+    m_button_box.attach(m_button_cancel, settings_grid_row_column_occupy_zero, settings_grid_row_column_occupy_zero);
+    m_button_box.attach(m_button_ok, settings_grid_row_column_occupy_one, settings_grid_row_column_occupy_zero);
     m_button_box.set_hexpand(false);
     m_button_box.set_vexpand(false);
     m_button_box.set_row_spacing(settings_button_box_row_spacing);

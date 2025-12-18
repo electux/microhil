@@ -1,7 +1,7 @@
 /* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * home.h
- * Copyright (C) 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -65,16 +65,16 @@ namespace Electux::App::View
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Container for packing widgets for home window
-        ///   m_box_root - Horizontal box for channel widgets
-        ///   m_box_channels - Channel  container for widgets
-        ///   m_enable_channels - Checkbox for enabling channel
-        ///   m_select_control_channels - Combobox for control type
-        ///   m_label_toggle_channels - Label for toggle channel
-        ///   m_toggle_channels - Toogle button (activate)
-        ///   m_label_timer_channels -  Label for timer channel
-        ///   m_spin_timer_channels - Channel spinner
-        ///   m_toggle_timer_channels - Channel toogle timer (start)
-        ///   m_stauts_timer_channels - Channel status (visual)
+        ///   m_box_root - horizontal box for channel widgets
+        ///   m_box_channels - channel  container for widgets
+        ///   m_enable_channels - checkbox for enabling channel
+        ///   m_select_control_channels - combobox for control type
+        ///   m_label_toggle_channels - label for toggle channel
+        ///   m_toggle_channels - toogle button (activate)
+        ///   m_label_timer_channels -  label for timer channel
+        ///   m_spin_timer_channels - channel spinner
+        ///   m_toggle_timer_channels - channel toogle timer (start)
+        ///   m_stauts_timer_channels - channel status (visual)
         Gtk::Box m_box_root;
         std::vector<Gtk::Box> m_box_channels;
         std::vector<Gtk::CheckButton> m_enable_channels;
