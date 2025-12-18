@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * application.cc
- * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -19,6 +19,11 @@
 #include <glibmm/miscutils.h>
 #include <glibmm/refptr.h>
 #include "application.h"
+
+using namespace Electux::App::View;
+using namespace Electux::App::View::Settings;
+using namespace Electux::App::View::Help;
+using namespace Electux::App::View::About;
 
 namespace
 {

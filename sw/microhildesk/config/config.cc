@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * config.cc
- * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -33,6 +33,7 @@ namespace
 };
 
 using namespace Electux::App::Config;
+using namespace Electux::App::Model;
 
 Config::Config() : m_file_name{Glib::get_home_dir() + config_file}
 {

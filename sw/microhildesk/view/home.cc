@@ -1,7 +1,7 @@
 /* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * home.cc
- * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -23,9 +23,9 @@ namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application home window widgets parameters
-    ///   home_title - window title
-    ///   home_width - window width
-    ///   home_height - window height
+    ///   home_title - home window title
+    ///   home_width - home window width
+    ///   home_height - home window height
     ///   home_num_channels - number of channels
     ///   home_en_channel_label - checkbox enable channel label
     ///   home_toggle_channel_label - label for toogle channel

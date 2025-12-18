@@ -14,6 +14,10 @@ CXXFLAGS = \
 	-pedantic \
 	-Wall \
 	-Wextra \
+	-Wconversion \
+	-Wnull-dereference \
+	-Wnon-virtual-dtor \
+	-Wsuggest-override \
 	-Wcast-align \
 	-Wcast-qual \
 	-Wdisabled-optimization \

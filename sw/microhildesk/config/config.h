@@ -1,7 +1,7 @@
 /* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * config.h
- * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -22,7 +22,8 @@
 #include "../model/model_serial.h"
 #include "../model/model_log.h"
 
-using namespace Electux::App::Model;
+namespace Electux::App::Model { class ModelSerial; }
+namespace Electux::App::Model { class ModelLog; }
 
 namespace Electux::App::Config
 {
@@ -52,8 +53,8 @@ namespace Electux::App::Config
         ///   m_serial_config - serial port configuration
         ///   m_log_config - log configuration
         std::string m_file_name;
-        ModelSerial m_serial_config;
-        ModelLog m_log_config;
+        Model::ModelSerial m_serial_config;
+        Model::ModelLog m_log_config;
     };
 };
 

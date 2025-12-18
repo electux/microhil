@@ -1,7 +1,7 @@
 /* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * application.h
- * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
+ * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhildesk is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -24,10 +24,10 @@
 #include "view/help/help.h"
 #include "view/about/about.h"
 
-using namespace Electux::App::View;
-using namespace Electux::App::View::Settings;
-using namespace Electux::App::View::Help;
-using namespace Electux::App::View::About;
+namespace Electux::App::View { class AppHome; }
+namespace Electux::App::View::Settings { class AppSettings; }
+namespace Electux::App::View::Help { class AppHelp; }
+namespace Electux::App::View::About { class AppAbout; }
 
 namespace Electux::App
 {
@@ -72,14 +72,14 @@ namespace Electux::App
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Instances of application views
-        ///   m_home - instance of HomeView (main window)
+        ///   m_home - instance of AppHome (main window)
         ///   m_settings - instance of AppSettings (settings window)
         ///   m_help - instance of AppHelp (help window)
         ///   m_about - instance of AppAbout (about dialog)
-        AppHome m_home;
-        AppSettings m_settings;
-        AppHelp m_help;
-        AppAbout m_about;
+        View::AppHome m_home;
+        View::Settings::AppSettings m_settings;
+        View::Help::AppHelp m_help;
+        View::About::AppAbout m_about;
     };
 };
 
