@@ -39,7 +39,8 @@ EntryApplication::EntryApplication():
     Gtk::Application(application_id),
     m_home{AppHome()},
     m_settings{AppSettings()},
-    m_help{AppHelp()}
+    m_help{AppHelp()},
+    m_about{AppAbout()}
 {
     Glib::set_application_name(application_id);
 }

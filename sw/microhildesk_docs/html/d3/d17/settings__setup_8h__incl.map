@@ -1,0 +1,7 @@
+<map id="view/settings/settings_setup.h" name="view/settings/settings_setup.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="15,5,181,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,68,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,47,56,84,52,81,81,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="93,93,226,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,44,144,81,140,84,111,47"/>
+</map>

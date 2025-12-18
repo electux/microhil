@@ -74,7 +74,7 @@ namespace Electux::App::View
         ///   m_label_timer_channels -  label for timer channel
         ///   m_spin_timer_channels - channel spinner
         ///   m_toggle_timer_channels - channel toogle timer (start)
-        ///   m_stauts_timer_channels - channel status (visual)
+        ///   m_status_timer_channels - channel status (visual)
         Gtk::Box m_box_root;
         std::vector<Gtk::Box> m_box_channels;
         std::vector<Gtk::CheckButton> m_enable_channels;
@@ -84,7 +84,7 @@ namespace Electux::App::View
         std::vector<Gtk::Label> m_label_timer_channels;
         std::vector<Gtk::SpinButton> m_spin_timer_channels;
         std::vector<Gtk::ToggleButton> m_toggle_timer_channels;
-        std::vector<Gtk::ProgressBar> m_stauts_timer_channels;
+        std::vector<Gtk::ProgressBar> m_status_timer_channels;
     };
 };
 

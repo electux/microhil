@@ -1,0 +1,29 @@
+<map id="view/settings/settings.cc" name="view/settings/settings.cc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="651,5,833,31"/>
+<area shape="rect" id="Node000002" href="$de/d60/settings_8h.html" title=" " alt="" coords="699,79,785,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="745,31,745,65,739,65,739,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,140,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="699,99,470,120,154,155,153,149,470,115,698,94"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="165,152,274,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="699,100,524,122,288,154,287,149,523,117,698,95"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="299,152,409,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="699,103,423,153,422,148,698,98"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="434,152,581,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="705,107,559,151,558,145,704,101"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="605,152,732,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="732,106,692,144,689,140,728,102"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="757,152,874,177"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="756,102,795,140,792,144,752,106"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="898,152,1015,177"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="777,101,910,145,908,150,776,107"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="1039,152,1218,177"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="786,98,1054,147,1053,152,785,103"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="1243,152,1377,177"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="786,95,1229,149,1229,155,785,100"/>
+<area shape="rect" id="Node000012" href="$df/d7c/settings__setup_8h.html" title=" " alt="" coords="1401,152,1531,177"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="786,93,1037,114,1388,149,1387,154,1037,119,785,98"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1373,225,1436,251"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1458,179,1426,217,1422,213,1454,176"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1461,225,1594,251"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="1478,176,1510,213,1506,217,1474,179"/>
+</map>
