@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['_7eicom_0',['~ICom',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a9bc314ff47c99b455b3d8b4e99c8999e',1,'Electux::App::Com::ICom']]],
-  ['_7eiconfig_1',['~IConfig',['../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#a86b43ad41684f04d61b5be597d2768fc',1,'Electux::App::Config::IConfig']]],
-  ['_7eimodel_2',['~IModel',['../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a0018928d46cf5de143f9fb15eba3f437',1,'Electux::App::Model::IModel']]],
-  ['_7eserialcom_3',['~SerialCom',['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ada686e06fbff4e49b10e9faef10c9ca2',1,'Electux::App::Com::SerialCom']]],
-  ['_7esettingssetup_4',['~SettingsSetup',['../d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#a31aa2244903d609b826b67e4352a99bb',1,'Electux::App::View::Settings::SettingsSetup']]]
+  ['uint_5fto_5fbaud_0',['uint_to_baud',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#ab7435d7febe29fed24256d83eeaa7048',1,'Electux::App::Com::ICom::uint_to_baud()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a06c18be9c6e0b71a1c7555ca08c801db',1,'Electux::App::Com::SerialCom::uint_to_baud()']]],
+  ['uint_5fto_5fdata_5fbits_1',['uint_to_data_bits',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a3b0f7fe64cc9278c934dbc15646ae761',1,'Electux::App::Com::ICom::uint_to_data_bits()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a3bf9208cdea0cee48d1e4ff7ebe212be',1,'Electux::App::Com::SerialCom::uint_to_data_bits()']]],
+  ['uint_5fto_5fparity_2',['uint_to_parity',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a61bff79d3be1ffbc0a7cf19241a80bb3',1,'Electux::App::Com::ICom::uint_to_parity()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#af93def5ab025c9bcba851b15dcf7cc72',1,'Electux::App::Com::SerialCom::uint_to_parity()']]],
+  ['uint_5fto_5fstop_5fbits_3',['uint_to_stop_bits',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a535d74f8b1e6e9e87e60b012c35b2ac4',1,'Electux::App::Com::ICom::uint_to_stop_bits()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ac2459da84987b2a56f48dce125859bfb',1,'Electux::App::Com::SerialCom::uint_to_stop_bits()']]]
 ];

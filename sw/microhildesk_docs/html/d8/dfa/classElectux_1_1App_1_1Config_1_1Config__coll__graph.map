@@ -4,10 +4,10 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,525,202,578,198,581,145,529"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="173,425,224,490"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,490,197,522,203,555,206,564,201,566,197,557,191,523,192,490"/>
-<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="250,417,393,497"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="314,499,296,557,293,565,288,564,291,555,309,497"/>
+<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="250,407,393,507"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="311,508,296,557,293,565,288,564,291,555,306,507"/>
 <area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="333,208,475,348"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="368,361,342,418,337,416,364,359"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="369,361,347,408,342,406,364,359"/>
 <area shape="rect" id="Node000008" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="417,417,559,497"/>
 <area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="445,359,472,416,467,418,440,362"/>
 <area shape="rect" id="Node000006" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="247,5,390,145"/>

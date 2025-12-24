@@ -123,10 +123,10 @@ Collaboration diagram for Electux::App::Config::Config:</div>
 <area shape="poly" title=" " alt="" coords="149,525,202,578,198,581,145,529"/>
 <area shape="rect" title=" " alt="" coords="173,425,224,490"/>
 <area shape="poly" title=" " alt="" coords="197,490,197,522,203,555,206,564,201,566,197,557,191,523,192,490"/>
-<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="250,417,393,497"/>
-<area shape="poly" title=" " alt="" coords="314,499,296,557,293,565,288,564,291,555,309,497"/>
+<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="250,407,393,507"/>
+<area shape="poly" title=" " alt="" coords="311,508,296,557,293,565,288,564,291,555,306,507"/>
 <area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="333,208,475,348"/>
-<area shape="poly" title=" " alt="" coords="368,361,342,418,337,416,364,359"/>
+<area shape="poly" title=" " alt="" coords="369,361,347,408,342,406,364,359"/>
 <area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="417,417,559,497"/>
 <area shape="poly" title=" " alt="" coords="445,359,472,416,467,418,440,362"/>
 <area shape="rect" href="../../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="247,5,390,145"/>
@@ -189,10 +189,15 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html" title="Config class is implementation for configuration mechanism.">Config</a> constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/da8/config_8cc_source.html#l00038">38</a> of file <a class="el" href="../../dd/da8/config_8cc_source.html">config.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>               : <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a>{Glib::get_home_dir() + config_file}</div>
-<div class="line"><span class="lineno">   39</span>{</div>
-<div class="line"><span class="lineno">   40</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/da8/config_8cc_source.html#l00037">37</a> of file <a class="el" href="../../dd/da8/config_8cc_source.html">config.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>               :</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a>{Glib::get_home_dir() + config_file},</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>{},</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#a62a89cbdd09dcccb685d9c581b64af91">m_log_config</a>{}</div>
+<div class="line"><span class="lineno">   41</span>{</div>
+<div class="line"><span class="lineno">   42</span>}</div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1Config_html_a62a89cbdd09dcccb685d9c581b64af91"><div class="ttname"><a href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#a62a89cbdd09dcccb685d9c581b64af91">Electux::App::Config::Config::m_log_config</a></div><div class="ttdeci">Model::ModelLog m_log_config</div><div class="ttdef"><b>Definition</b> <a href="../../db/d16/config_8h_source.html#l00057">config.h:57</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1Config_html_aae1f75b56cb9370aa868a11b773443f1"><div class="ttname"><a href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">Electux::App::Config::Config::m_serial_config</a></div><div class="ttdeci">Model::ModelSerial m_serial_config</div><div class="ttdef"><b>Definition</b> <a href="../../db/d16/config_8h_source.html#l00056">config.h:56</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1Config_html_abf6deb1c20e39e4d53a162df8067d4a1"><div class="ttname"><a href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">Electux::App::Config::Config::m_file_name</a></div><div class="ttdeci">std::string m_file_name</div><div class="ttdoc">Configuration parameters and properties m_file_name - file name path for load/store configuration m_s...</div><div class="ttdef"><b>Definition</b> <a href="../../db/d16/config_8h_source.html#l00055">config.h:55</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -226,51 +231,61 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="../../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#aa434d7db6de65ca688ad3ff8bb93248e">Electux::App::Config::IConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/da8/config_8cc_source.html#l00042">42</a> of file <a class="el" href="../../dd/da8/config_8cc_source.html">config.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
-<div class="line"><span class="lineno">   44</span>    std::ifstream file(<a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a>);</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (!file.is_open())</div>
-<div class="line"><span class="lineno">   47</span>    {</div>
-<div class="line"><span class="lineno">   48</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   50</span>    }</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    std::string line;</div>
-<div class="line"><span class="lineno">   53</span>    std::unordered_map&lt;std::string, std::string&gt; config_map;</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">while</span> (std::getline(file, line))</div>
-<div class="line"><span class="lineno">   56</span>    {</div>
-<div class="line"><span class="lineno">   57</span>        std::istringstream iss(line);</div>
-<div class="line"><span class="lineno">   58</span>        std::string key, value;</div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span> (std::getline(iss, key, <span class="charliteral">&#39;=&#39;</span>) &amp;&amp; std::getline(iss, value))</div>
-<div class="line"><span class="lineno">   61</span>        {</div>
-<div class="line"><span class="lineno">   62</span>            config_map[key] = value;</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
-<div class="line"><span class="lineno">   64</span>    }</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>    file.close();</div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<span class="stringliteral">&quot;device&quot;</span>, config_map[<span class="stringliteral">&quot;device&quot;</span>]);;</div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<span class="stringliteral">&quot;baud&quot;</span>, config_map[<span class="stringliteral">&quot;baud&quot;</span>]);</div>
-<div class="line"><span class="lineno">   69</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<span class="stringliteral">&quot;data&quot;</span>, config_map[<span class="stringliteral">&quot;data&quot;</span>]);</div>
-<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<span class="stringliteral">&quot;parity&quot;</span>, config_map[<span class="stringliteral">&quot;parity&quot;</span>]);</div>
-<div class="line"><span class="lineno">   71</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<span class="stringliteral">&quot;stop&quot;</span>, config_map[<span class="stringliteral">&quot;stop&quot;</span>]);</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   74</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1Config_html_aae1f75b56cb9370aa868a11b773443f1"><div class="ttname"><a href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">Electux::App::Config::Config::m_serial_config</a></div><div class="ttdeci">Model::ModelSerial m_serial_config</div><div class="ttdef"><b>Definition</b> <a href="../../db/d16/config_8h_source.html#l00056">config.h:56</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../dd/da8/config_8cc_source.html#l00044">44</a> of file <a class="el" href="../../dd/da8/config_8cc_source.html">config.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
+<div class="line"><span class="lineno">   46</span>    std::ifstream file(<a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a>);</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (!file.is_open())</div>
+<div class="line"><span class="lineno">   49</span>    {</div>
+<div class="line"><span class="lineno">   50</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    std::string line;</div>
+<div class="line"><span class="lineno">   55</span>    std::unordered_map&lt;std::string, std::string&gt; config_map;</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">while</span> (std::getline(file, line))</div>
+<div class="line"><span class="lineno">   58</span>    {</div>
+<div class="line"><span class="lineno">   59</span>        std::istringstream iss(line);</div>
+<div class="line"><span class="lineno">   60</span>        std::string key, value;</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (std::getline(iss, key, <span class="charliteral">&#39;=&#39;</span>) &amp;&amp; std::getline(iss, value))</div>
+<div class="line"><span class="lineno">   63</span>        {</div>
+<div class="line"><span class="lineno">   64</span>            config_map[key] = value;</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    file.close();</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keyword">auto</span> device = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Device);</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(device, config_map[device]);</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#aacf9fa2408c1fb6c3e244cdf473a6610">baud</a> = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Baud);</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(baud, config_map[baud]);</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a1492b7a39f37c6880fbe7dfb7524a208">data</a> = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Data);</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(data, config_map[data]);</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a9714e8a382c097c368b4df723d4e252f">parity</a> = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Parity);</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(parity, config_map[parity]);</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a87896c97c3e5431c312b7e758b9247e8">stop</a> = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Stop);</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(stop, config_map[stop]);</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   80</span>}</div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a4370cf80ec045de8a5f8ea024bd49b8b"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">Electux::App::Model::ModelSerial::to_string</a></div><div class="ttdeci">std::string to_string(Key key)</div><div class="ttdoc">Converts Key enum to.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d12/model__serial_8cc_source.html#l00035">model_serial.cc:35</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_abd377a2d563d5063853ab64aade108b8"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">Electux::App::Model::Model::add</a></div><div class="ttdeci">bool add(const std::string &amp;key, const std::string &amp;data) final</div><div class="ttdoc">Adds entity to model {'key': 'data'}.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00023">model.cc:23</a></div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Com_html_a1492b7a39f37c6880fbe7dfb7524a208"><div class="ttname"><a href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a1492b7a39f37c6880fbe7dfb7524a208">Electux::App::Com::data</a></div><div class="ttdeci">CharacterSize data</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d2e/icom_8h_source.html#l00044">icom.h:44</a></div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Com_html_a87896c97c3e5431c312b7e758b9247e8"><div class="ttname"><a href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a87896c97c3e5431c312b7e758b9247e8">Electux::App::Com::stop</a></div><div class="ttdeci">StopBits stop</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d2e/icom_8h_source.html#l00046">icom.h:46</a></div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Com_html_a9714e8a382c097c368b4df723d4e252f"><div class="ttname"><a href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a9714e8a382c097c368b4df723d4e252f">Electux::App::Com::parity</a></div><div class="ttdeci">Parity parity</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d2e/icom_8h_source.html#l00045">icom.h:45</a></div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Com_html_aacf9fa2408c1fb6c3e244cdf473a6610"><div class="ttname"><a href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#aacf9fa2408c1fb6c3e244cdf473a6610">Electux::App::Com::baud</a></div><div class="ttdeci">BaudRate baud</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d2e/icom_8h_source.html#l00043">icom.h:43</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00023">Electux::App::Model::Model::add()</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00055">m_file_name</a>, and <a class="el" href="../../db/d16/config_8h_source.html#l00056">m_serial_config</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00023">Electux::App::Model::Model::add()</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00055">m_file_name</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00056">m_serial_config</a>, and <a class="el" href="../../d2/d12/model__serial_8cc_source.html#l00035">Electux::App::Model::ModelSerial::to_string()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config_a64a239650e115c500c517ebe36c469aa_cgraph.png" border="0" usemap="#ad7/df3/classElectux_1_1App_1_1Config_1_1Config_a64a239650e115c500c517ebe36c469aa_cgraph" alt=""/></div>
 <map name="ad7/df3/classElectux_1_1App_1_1Config_1_1Config_a64a239650e115c500c517ebe36c469aa_cgraph" id="ad7/df3/classElectux_1_1App_1_1Config_1_1Config_a64a239650e115c500c517ebe36c469aa_cgraph">
-<area shape="rect" title="Loads configuration." alt="" coords="5,5,157,45"/>
-<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="205,5,356,45"/>
-<area shape="poly" title=" " alt="" coords="158,23,192,23,192,28,158,28"/>
+<area shape="rect" title="Loads configuration." alt="" coords="5,37,157,77"/>
+<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="216,5,367,45"/>
+<area shape="poly" title=" " alt="" coords="157,43,202,36,203,41,158,48"/>
+<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b" title="Converts Key enum to." alt="" coords="205,69,377,109"/>
+<area shape="poly" title=" " alt="" coords="158,66,192,72,191,77,157,72"/>
 </map>
 </div>
 
@@ -304,36 +319,43 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="../../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#a5f5eea781713845083e097780c29eefd">Electux::App::Config::IConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/da8/config_8cc_source.html#l00076">76</a> of file <a class="el" href="../../dd/da8/config_8cc_source.html">config.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>{</div>
-<div class="line"><span class="lineno">   78</span>    std::ofstream file(<a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a>);</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span> (!file.is_open())</div>
-<div class="line"><span class="lineno">   81</span>    {</div>
-<div class="line"><span class="lineno">   82</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   84</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/da8/config_8cc_source.html#l00082">82</a> of file <a class="el" href="../../dd/da8/config_8cc_source.html">config.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{</div>
+<div class="line"><span class="lineno">   84</span>    std::ofstream file(<a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a>);</div>
 <div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    file &lt;&lt; <span class="stringliteral">&quot;device=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(<span class="stringliteral">&quot;device&quot;</span>) &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   87</span>    file &lt;&lt; <span class="stringliteral">&quot;baud=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(<span class="stringliteral">&quot;baud&quot;</span>) &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   88</span>    file &lt;&lt; <span class="stringliteral">&quot;data=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(<span class="stringliteral">&quot;data&quot;</span>) &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   89</span>    file &lt;&lt; <span class="stringliteral">&quot;parity=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(<span class="stringliteral">&quot;parity&quot;</span>) &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   90</span>    file &lt;&lt; <span class="stringliteral">&quot;stop=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(<span class="stringliteral">&quot;stop&quot;</span>) &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   91</span>    file.close();</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   94</span>}</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (!file.is_open())</div>
+<div class="line"><span class="lineno">   87</span>    {</div>
+<div class="line"><span class="lineno">   88</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abf6deb1c20e39e4d53a162df8067d4a1">m_file_name</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="keyword">auto</span> device = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Device);</div>
+<div class="line"><span class="lineno">   93</span>    file &lt;&lt; device &lt;&lt; <span class="stringliteral">&quot;=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(device) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#aacf9fa2408c1fb6c3e244cdf473a6610">baud</a> = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Baud);</div>
+<div class="line"><span class="lineno">   95</span>    file &lt;&lt; <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#aacf9fa2408c1fb6c3e244cdf473a6610">baud</a> &lt;&lt; <span class="stringliteral">&quot;=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(baud) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a1492b7a39f37c6880fbe7dfb7524a208">data</a> = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Data);</div>
+<div class="line"><span class="lineno">   97</span>    file &lt;&lt; <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a1492b7a39f37c6880fbe7dfb7524a208">data</a> &lt;&lt; <span class="stringliteral">&quot;=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(data) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a9714e8a382c097c368b4df723d4e252f">parity</a> = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Parity);</div>
+<div class="line"><span class="lineno">   99</span>    file &lt;&lt; <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a9714e8a382c097c368b4df723d4e252f">parity</a> &lt;&lt; <span class="stringliteral">&quot;=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(parity) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a87896c97c3e5431c312b7e758b9247e8">stop</a> = <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b">to_string</a>(ModelSerial::Key::Stop);</div>
+<div class="line"><span class="lineno">  101</span>    file &lt;&lt; <a class="code hl_variable" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a87896c97c3e5431c312b7e758b9247e8">stop</a> &lt;&lt; <span class="stringliteral">&quot;=&quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#aae1f75b56cb9370aa868a11b773443f1">m_serial_config</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">get_entity</a>(stop) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  102</span>    file.close();</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  105</span>}</div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_a3b56b1ad8916a013388cf8f7d8cf56d7"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7">Electux::App::Model::Model::get_entity</a></div><div class="ttdeci">std::string &amp; get_entity(const std::string &amp;key) final</div><div class="ttdoc">Gets entity by key.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00029">model.cc:29</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00029">Electux::App::Model::Model::get_entity()</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00055">m_file_name</a>, and <a class="el" href="../../db/d16/config_8h_source.html#l00056">m_serial_config</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00029">Electux::App::Model::Model::get_entity()</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00055">m_file_name</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00056">m_serial_config</a>, and <a class="el" href="../../d2/d12/model__serial_8cc_source.html#l00035">Electux::App::Model::ModelSerial::to_string()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config_a2c071004dca6041863fce1d6a01e0a57_cgraph.png" border="0" usemap="#ad7/df3/classElectux_1_1App_1_1Config_1_1Config_a2c071004dca6041863fce1d6a01e0a57_cgraph" alt=""/></div>
 <map name="ad7/df3/classElectux_1_1App_1_1Config_1_1Config_a2c071004dca6041863fce1d6a01e0a57_cgraph" id="ad7/df3/classElectux_1_1App_1_1Config_1_1Config_a2c071004dca6041863fce1d6a01e0a57_cgraph">
-<area shape="rect" title="Stores configuration." alt="" coords="5,5,157,45"/>
-<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7" title="Gets entity by key." alt="" coords="205,5,356,45"/>
-<area shape="poly" title=" " alt="" coords="158,23,192,23,192,28,158,28"/>
+<area shape="rect" title="Stores configuration." alt="" coords="5,37,157,77"/>
+<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a3b56b1ad8916a013388cf8f7d8cf56d7" title="Gets entity by key." alt="" coords="216,5,367,45"/>
+<area shape="poly" title=" " alt="" coords="157,43,202,36,203,41,158,48"/>
+<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4370cf80ec045de8a5f8ea024bd49b8b" title="Converts Key enum to." alt="" coords="205,69,377,109"/>
+<area shape="poly" title=" " alt="" coords="158,66,192,72,191,77,157,72"/>
 </map>
 </div>
 
@@ -364,7 +386,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d16/config_8h_source.html#l00055">55</a> of file <a class="el" href="../../db/d16/config_8h_source.html">config.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/da8/config_8cc_source.html#l00042">load()</a>, and <a class="el" href="../../dd/da8/config_8cc_source.html#l00076">store()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/da8/config_8cc_source.html#l00044">load()</a>, and <a class="el" href="../../dd/da8/config_8cc_source.html#l00082">store()</a>.</p>
 
 </div>
 </div>
@@ -414,7 +436,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d16/config_8h_source.html#l00056">56</a> of file <a class="el" href="../../db/d16/config_8h_source.html">config.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/da8/config_8cc_source.html#l00042">load()</a>, and <a class="el" href="../../dd/da8/config_8cc_source.html#l00076">store()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/da8/config_8cc_source.html#l00044">load()</a>, and <a class="el" href="../../dd/da8/config_8cc_source.html#l00082">store()</a>.</p>
 
 </div>
 </div>
@@ -428,7 +450,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d9/d49/namespaceElectux_1_1App_1_1Config.html">Config</a></li><li class="navelem"><a class="el" href="../../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html">Config</a></li>
-    <li class="footer">Generated on Thu Dec 18 2025 21:44:44 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Wed Dec 24 2025 07:31:57 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

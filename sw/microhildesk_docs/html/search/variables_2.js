@@ -42,7 +42,7 @@ var searchData=
   ['m_5fsettings_39',['m_settings',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7ba61ad8de80584725873c5e8c1c268a',1,'Electux::App::EntryApplication']]],
   ['m_5fsetup_40',['m_setup',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aa74a8fb0e5fff3ca5276889da38def0c',1,'Electux::App::View::Settings::AppSettings']]],
   ['m_5fspin_5ftimer_5fchannels_41',['m_spin_timer_channels',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a7b4195104bf0ee358b99c1ba0c1a8db1',1,'Electux::App::View::AppHome']]],
-  ['m_5fstauts_5ftimer_5fchannels_42',['m_stauts_timer_channels',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a394dac47bf40eed3d602e38b1e411c30',1,'Electux::App::View::AppHome']]],
+  ['m_5fstatus_5ftimer_5fchannels_42',['m_status_timer_channels',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aed036828428d26287ecb666c1c69a9d7',1,'Electux::App::View::AppHome']]],
   ['m_5ftoggle_5fchannels_43',['m_toggle_channels',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aac74ba9abf50994cdee4f0cc419df788',1,'Electux::App::View::AppHome']]],
   ['m_5ftoggle_5ftimer_5fchannels_44',['m_toggle_timer_channels',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad70cbeea9dcdacd3a14c3852ed7d5877',1,'Electux::App::View::AppHome']]]
 ];

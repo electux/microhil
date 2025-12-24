@@ -14,7 +14,7 @@ var classElectux_1_1App_1_1View_1_1AppHome =
     [ "m_label_toggle_channels", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac75b1ad55cf858f5fd227a8be079fc59", null ],
     [ "m_select_control_channels", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a16148d01cb5c423e9d15ec495401d293", null ],
     [ "m_spin_timer_channels", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a7b4195104bf0ee358b99c1ba0c1a8db1", null ],
-    [ "m_stauts_timer_channels", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a394dac47bf40eed3d602e38b1e411c30", null ],
+    [ "m_status_timer_channels", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aed036828428d26287ecb666c1c69a9d7", null ],
     [ "m_toggle_channels", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aac74ba9abf50994cdee4f0cc419df788", null ],
     [ "m_toggle_timer_channels", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad70cbeea9dcdacd3a14c3852ed7d5877", null ]
 ];

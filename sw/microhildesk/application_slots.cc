@@ -21,7 +21,7 @@
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
-    /// @brief Application parameters
+    /// @brief Application menu labels and detailed actions
     ///   file_label - file action label
     ///   file_quit_label - file quit action label
     ///   file_quit_detaild_action - file quit detailed action

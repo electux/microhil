@@ -34,7 +34,10 @@ namespace
 using namespace Electux::App::Config;
 using namespace Electux::App::Model;
 
-Config::Config() : m_file_name{Glib::get_home_dir() + config_file}
+Config::Config() :
+    m_file_name{Glib::get_home_dir() + config_file},
+    m_serial_config{},
+    m_log_config{}
 {
 }
 
@@ -63,12 +66,16 @@ bool Config::load()
     }
 
     file.close();
-    m_serial_config.add("device", config_map["device"]);
-    m_serial_config.add("baud", config_map["baud"]);
-    m_serial_config.add("data", config_map["data"]);
-    m_serial_config.add("parity", config_map["parity"]);
-    m_serial_config.add("stop", config_map["stop"]);
-
+    auto device = m_serial_config.to_string(ModelSerial::Key::Device);
+    m_serial_config.add(device, config_map[device]);
+    auto baud = m_serial_config.to_string(ModelSerial::Key::Baud);
+    m_serial_config.add(baud, config_map[baud]);
+    auto data = m_serial_config.to_string(ModelSerial::Key::Data);
+    m_serial_config.add(data, config_map[data]);
+    auto parity = m_serial_config.to_string(ModelSerial::Key::Parity);
+    m_serial_config.add(parity, config_map[parity]);
+    auto stop = m_serial_config.to_string(ModelSerial::Key::Stop);
+    m_serial_config.add(stop, config_map[stop]);
     return true;
 }
 
@@ -82,11 +89,16 @@ bool Config::store()
         return false;
     }
 
-    file << "device=" << m_serial_config.get_entity("device") << std::endl;
-    file << "baud=" << m_serial_config.get_entity("baud") << std::endl;
-    file << "data=" << m_serial_config.get_entity("data") << std::endl;
-    file << "parity=" << m_serial_config.get_entity("parity") << std::endl;
-    file << "stop=" << m_serial_config.get_entity("stop") << std::endl;
+    auto device = m_serial_config.to_string(ModelSerial::Key::Device);
+    file << device << "=" << m_serial_config.get_entity(device) << std::endl;
+    auto baud = m_serial_config.to_string(ModelSerial::Key::Baud);
+    file << baud << "=" << m_serial_config.get_entity(baud) << std::endl;
+    auto data = m_serial_config.to_string(ModelSerial::Key::Data);
+    file << data << "=" << m_serial_config.get_entity(data) << std::endl;
+    auto parity = m_serial_config.to_string(ModelSerial::Key::Parity);
+    file << parity << "=" << m_serial_config.get_entity(parity) << std::endl;
+    auto stop = m_serial_config.to_string(ModelSerial::Key::Stop);
+    file << stop << "=" << m_serial_config.get_entity(stop) << std::endl;
     file.close();
 
     return true;

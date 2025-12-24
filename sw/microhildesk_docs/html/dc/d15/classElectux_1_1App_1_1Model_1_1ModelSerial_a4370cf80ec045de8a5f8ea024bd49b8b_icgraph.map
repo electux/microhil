@@ -1,0 +1,7 @@
+<map id="Electux::App::Model::ModelSerial::to_string" name="Electux::App::Model::ModelSerial::to_string">
+<area shape="rect" id="Node000001" title="Converts Key enum to." alt="" coords="205,37,377,77"/>
+<area shape="rect" id="Node000002" href="$d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#a64a239650e115c500c517ebe36c469aa" title="Loads configuration." alt="" coords="5,5,157,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,45,157,40,158,34,192,40"/>
+<area shape="rect" id="Node000003" href="$d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#a2c071004dca6041863fce1d6a01e0a57" title="Stores configuration." alt="" coords="5,69,157,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,75,158,80,157,75,191,70"/>
+</map>

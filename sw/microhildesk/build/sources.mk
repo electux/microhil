@@ -11,6 +11,7 @@ SOURCES = \
 	../com/serial_com.cc \
 	../com/serial_com_utils.cc \
 	../model/model.cc \
+	../model/model_serial.cc \
 	../view/home_map.cc \
 	../view/home_slots.cc \
 	../view/home.cc \
