@@ -8,8 +8,8 @@ var classElectux_1_1App_1_1EntryApplication =
     [ "onActionDoc", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a", null ],
     [ "onActionQuit", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22", null ],
     [ "onActionSettings", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a", null ],
-    [ "m_about", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a2059ff3e2b9a7c1f5f45c30c779cafda", null ],
-    [ "m_help", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ab9c20e256bb0c420a17a941f92502e90", null ],
-    [ "m_home", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a925eb52cc1f2cdf35859d5bedcabfed9", null ],
-    [ "m_settings", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7ba61ad8de80584725873c5e8c1c268a", null ]
+    [ "m_about", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a384562462b7475ccf5558db97557d16d", null ],
+    [ "m_help", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a8cadd7c71c66910caa81d1e296fb0e30", null ],
+    [ "m_home", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a92a1cd080561fd03ae5f960779c165bc", null ],
+    [ "m_settings", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aa01cb2da6e706b7cf663405d091f256a", null ]
 ];

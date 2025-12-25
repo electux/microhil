@@ -23,7 +23,7 @@ using namespace Electux::App::View::Settings;
 void AppSettings::onButtonOkClicked()
 {
     //////////////////////////////////////////////////////////////////////////
-    /// Performs action on OK button
+    /// @brief Performs action on OK button
     SettingsSetup setup;
     setup.m_serialDevicePath = m_entrySerialPath.get_text();
     setup.m_serialParams.push_back(m_comboSerialBaud.get_active_row_number());
@@ -34,18 +34,18 @@ void AppSettings::onButtonOkClicked()
     setup.m_logLevel = m_comboLogLevel.get_active_row_number();
 
     //////////////////////////////////////////////////////////////////////////
-    /// Emits new serial/log settings setup
+    /// @brief Emit signal for changed settings
     m_setup.emit(setup);
 
     //////////////////////////////////////////////////////////////////////////
-    /// Hide settings window
+    /// @brief Hide settings window
     hide();
 }
 
 void AppSettings::onButtonCancelClicked()
 {
     //////////////////////////////////////////////////////////////////////////
-    /// Performs action on Cancel button
+    /// @brief Performs action on Cancel button
     hide();
 }
 
