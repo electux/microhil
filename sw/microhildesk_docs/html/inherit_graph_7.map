@@ -1,7 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,45,111,70"/>
-<area shape="rect" id="Node000001" href="$d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp.html" title="Help view window definition." alt="" coords="172,5,315,45"/>
-<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="124,43,171,35,172,40,124,49"/>
-<area shape="rect" id="Node000002" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html" title="Application settings window definition." alt="" coords="159,69,328,109"/>
-<area shape="poly" id="edge10_Node000000_Node000002" title=" " alt="" coords="124,66,159,72,158,77,124,71"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,13,184,38"/>
+<area shape="rect" id="Node000001" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html" title="Home view window definition." alt="" coords="232,5,375,45"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="198,23,232,23,232,28,198,28"/>
 </map>

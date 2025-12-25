@@ -22,9 +22,6 @@
 #include "../model/model_serial.h"
 #include "../model/model_log.h"
 
-namespace Electux::App::Model { class ModelSerial; }
-namespace Electux::App::Model { class ModelLog; }
-
 namespace Electux::App::Config
 {
     //////////////////////////////////////////////////////////////////////////
@@ -49,12 +46,12 @@ namespace Electux::App::Config
     private:
         //////////////////////////////////////////////////////////////////////
         /// @brief Configuration parameters and properties
-        ///   m_file_name - file name path for load/store configuration
-        ///   m_serial_config - serial port configuration
-        ///   m_log_config - log configuration
-        std::string m_file_name;
-        Model::ModelSerial m_serial_config;
-        Model::ModelLog m_log_config;
+        ///   m_fileName - file name path for load/store configuration
+        ///   m_serialConfig - serial port configuration
+        ///   m_logConfig - log configuration
+        std::string m_fileName;
+        Electux::App::Model::ModelSerial m_serialConfig;
+        Electux::App::Model::ModelLog m_logConfig;
     };
 };
 

@@ -16,12 +16,13 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <iostream>
 #include "application.h"
 
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
-    /// @brief Application parameters
+    /// @brief Application menu labels and detailed actions
     ///   file_label - file action label
     ///   file_quit_label - file quit action label
     ///   file_quit_detaild_action - file quit detailed action
@@ -50,10 +51,12 @@ using namespace Electux::App;
 
 void EntryApplication::on_startup()
 {
+    std::cout << "Startup application..." << std::endl;
+
     Gtk::Application::on_startup();
 
     //////////////////////////////////////////////////////////////////////////
-    /// Sets application menubar
+    /// @brief Sets application menubar
     auto menu = Gio::Menu::create();
     auto submenu_file = Gio::Menu::create();
     submenu_file->append(file_quit_label, file_quit_detaild_action);
@@ -68,36 +71,39 @@ void EntryApplication::on_startup()
     set_menubar(menu);
 
     //////////////////////////////////////////////////////////////////////////
-    /// Maps application actions and keyboard accelerators
+    /// @brief Maps signal/slots for application views
     mapping();
 
     //////////////////////////////////////////////////////////////////////////
-    /// Sets AppHome as toplevel window, add to the application window
+    /// @brief Sets AppHome as toplevel window, add to the application window
     add_window(m_home);
 
     //////////////////////////////////////////////////////////////////////////
-    /// Sets visability for AppHome window
+    /// @brief Sets visibility for AppHome window
     m_home.set_visible(true);
+
+    std::cout << "Startup application done." << std::endl;
 }
 
-void EntryApplication::on_action_quit()
+void EntryApplication::onActionQuit()
 {
+    std::cout << "Quit application." << std::endl;
     m_home.set_visible(false);
     remove_window(m_home);
     quit();
 }
 
-void EntryApplication::on_action_settings()
+void EntryApplication::onActionSettings()
 {
     m_settings.show();
 }
 
-void EntryApplication::on_action_doc()
+void EntryApplication::onActionDoc()
 {
     m_help.show();
 }
 
-void EntryApplication::on_action_about()
+void EntryApplication::onActionAbout()
 {
     m_about.show();
 }

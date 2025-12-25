@@ -22,20 +22,20 @@ namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application help window widgets parameters
-    ///   help_title - window title
-    ///   help_width - window width
-    ///   help_height - window height
-    constexpr const char help_title[]{"microhildesk"};
-    constexpr int help_width{600};
-    constexpr int help_height{400};
+    ///   helpTitle - window title
+    ///   helpWidth - window width
+    ///   helpHeight - window height
+    constexpr const char helpTitle[]{"microhildesk"};
+    constexpr int helpWidth{600};
+    constexpr int helpHeight{400};
 };
 
 using namespace Electux::App::View::Help;
 
 AppHelp::AppHelp()
 {
-    set_title(help_title);
-    set_default_size(help_width, help_height);
+    set_title(helpTitle);
+    set_default_size(helpWidth, helpHeight);
     set_resizable(false);
     set_hide_on_close(true);
 }

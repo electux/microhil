@@ -28,6 +28,29 @@ namespace Electux::App::Model
         //////////////////////////////////////////////////////////////////////
         /// @brief ModelSerial constructor
         inline ModelSerial() noexcept = default;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Enum for serial configuration keys
+        enum class ModelSerialKey
+        {
+            Device,
+            Baud,
+            Data,
+            Parity,
+            Stop
+        };
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Converts Key enum to 
+        /// @param key Represents ModelSerialKey enum value
+        /// @return string representation of ModelSerialKey enum
+        std::string toString(ModelSerialKey key);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Validates if key is valid serial configuration key
+        /// @param key Represents string key to be validated
+        /// @return status true if key is valid else false
+        bool validateKey(const std::string &key);
     };
 };
 

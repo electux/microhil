@@ -1,9 +1,9 @@
 <map id="Electux::App::Com::SerialCom" name="Electux::App::Com::SerialCom">
-<area shape="rect" id="Node000001" title="SerialCom class is implementation of serial communication." alt="" coords="168,393,319,753"/>
+<area shape="rect" id="Node000001" title="SerialCom class is implementation of serial communication." alt="" coords="173,393,314,753"/>
 <area shape="rect" id="Node000002" href="$db/dca/classElectux_1_1App_1_1Com_1_1ICom.html" title="ICom class is interface for serial communication." alt="" coords="5,5,180,331"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,342,179,392,174,394,155,344"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="205,135,282,201"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,201,246,377,241,377,241,201"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="341,135,391,201"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="367,201,358,279,339,370,327,406,322,404,334,369,353,278,362,200"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="367,201,358,279,339,370,323,418,318,416,334,369,353,278,362,200"/>
 </map>

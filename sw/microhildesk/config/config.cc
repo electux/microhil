@@ -27,29 +27,35 @@ namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration parameters
-    ///   config_file - program configuration file name
-    constexpr const char config_file[]{"/.microhil/config"};
+    ///   configFile - program configuration file name
+    constexpr const char configFile[]{".microhil/config"};
 };
 
 using namespace Electux::App::Config;
 using namespace Electux::App::Model;
 
-Config::Config() : m_file_name{Glib::get_home_dir() + config_file}
+Config::Config() :
+    m_fileName{Glib::build_filename(Glib::get_home_dir(), configFile)},
+    m_serialConfig{ModelSerial()},
+    m_logConfig{ModelLog()}
 {
+    std::cout << "Setup configuration file path: " << m_fileName << std::endl;
 }
 
 bool Config::load()
 {
-    std::ifstream file(m_file_name);
+    std::ifstream file(m_fileName);
+
+    std::cout << "Load configuration..." << std::endl;
 
     if (!file.is_open())
     {
-        std::cerr << "Unable to open file: " << m_file_name << std::endl;
+        std::cerr << "Unable to open file: " << m_fileName << std::endl;
         return false;
     }
 
     std::string line;
-    std::unordered_map<std::string, std::string> config_map;
+    std::unordered_map<std::string, std::string> configMap;
 
     while (std::getline(file, line))
     {
@@ -58,36 +64,77 @@ bool Config::load()
 
         if (std::getline(iss, key, '=') && std::getline(iss, value))
         {
-            config_map[key] = value;
+            if (!m_serialConfig.validateKey(key) && !m_logConfig.validateKey(key))
+            {
+                std::cerr << "Invalid configuration key: " << key << std::endl;
+                return false;
+            }
+            configMap[key] = value;
         }
     }
 
     file.close();
-    m_serial_config.add("device", config_map["device"]);
-    m_serial_config.add("baud", config_map["baud"]);
-    m_serial_config.add("data", config_map["data"]);
-    m_serial_config.add("parity", config_map["parity"]);
-    m_serial_config.add("stop", config_map["stop"]);
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Load serial configuration
+    std::initializer_list<ModelSerial::ModelSerialKey> serialKeys = {
+        ModelSerial::ModelSerialKey::Device,
+        ModelSerial::ModelSerialKey::Baud,
+        ModelSerial::ModelSerialKey::Data,
+        ModelSerial::ModelSerialKey::Parity,
+        ModelSerial::ModelSerialKey::Stop
+    };
+    for (const auto key : serialKeys)
+    {
+        auto serialKey = m_serialConfig.toString(key);
+        m_serialConfig.add(serialKey, configMap[serialKey]);
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Load log configuration
+    auto logLevelKey = m_logConfig.toString(ModelLog::ModelLogKey::LogLevel);
+    m_logConfig.add(logLevelKey, configMap[logLevelKey]);
+
+    std::cout << "Load configuration done." << std::endl;
 
     return true;
 }
 
 bool Config::store()
 {
-    std::ofstream file(m_file_name);
+    std::ofstream file(m_fileName);
+
+    std::cout << "Store configuration..." << std::endl;
 
     if (!file.is_open())
     {
-        std::cerr << "Unable to open file: " << m_file_name << std::endl;
+        std::cerr << "Unable to open file: " << m_fileName << std::endl;
         return false;
     }
 
-    file << "device=" << m_serial_config.get_entity("device") << std::endl;
-    file << "baud=" << m_serial_config.get_entity("baud") << std::endl;
-    file << "data=" << m_serial_config.get_entity("data") << std::endl;
-    file << "parity=" << m_serial_config.get_entity("parity") << std::endl;
-    file << "stop=" << m_serial_config.get_entity("stop") << std::endl;
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Store serial configuration
+    std::initializer_list<ModelSerial::ModelSerialKey> serialKeys = {
+        ModelSerial::ModelSerialKey::Device,
+        ModelSerial::ModelSerialKey::Baud,
+        ModelSerial::ModelSerialKey::Data,
+        ModelSerial::ModelSerialKey::Parity,
+        ModelSerial::ModelSerialKey::Stop
+    };
+
+    for (const auto key : serialKeys)
+    {
+        auto serialKey = m_serialConfig.toString(key);
+        file << serialKey << "=" << m_serialConfig.getEntity(serialKey) << std::endl;
+    }
+
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Store log configuration
+    auto logLevelKey = m_logConfig.toString(ModelLog::ModelLogKey::LogLevel);
+    file << logLevelKey << "=" << m_logConfig.getEntity(logLevelKey) << std::endl;
     file.close();
+
+    std::cout << "Store configuration done." << std::endl;
 
     return true;
 }

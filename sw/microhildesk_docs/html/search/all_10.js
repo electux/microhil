@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['_7eicom_0',['~ICom',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a9bc314ff47c99b455b3d8b4e99c8999e',1,'Electux::App::Com::ICom']]],
-  ['_7eiconfig_1',['~IConfig',['../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#a86b43ad41684f04d61b5be597d2768fc',1,'Electux::App::Config::IConfig']]],
-  ['_7eimodel_2',['~IModel',['../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a0018928d46cf5de143f9fb15eba3f437',1,'Electux::App::Model::IModel']]],
-  ['_7eserialcom_3',['~SerialCom',['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ada686e06fbff4e49b10e9faef10c9ca2',1,'Electux::App::Com::SerialCom']]],
-  ['_7esettingssetup_4',['~SettingsSetup',['../d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#a31aa2244903d609b826b67e4352a99bb',1,'Electux::App::View::Settings::SettingsSetup']]]
+  ['validatekey_0',['validatekey',['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#acca456ff069174f18b2f19e35a865b19',1,'Electux::App::Model::ModelLog::validateKey()'],['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a65ef6c5260afd80bd9fc94c2f28ec8c4',1,'Electux::App::Model::ModelSerial::validateKey()']]]
 ];

@@ -41,13 +41,13 @@ using namespace Electux::App;
 void EntryApplication::mapping()
 {
     //////////////////////////////////////////////////////////////////////////
-    /// Sets a keyboard accelerator that will trigger application quit
+    /// @brief Sets application accelerator
     set_accel_for_action(detailed_action_name, keyboard_accelerator);
 
     //////////////////////////////////////////////////////////////////////////
-    /// Maps application actions
-    add_action(file_quit_action_name, sigc::mem_fun(*this, &EntryApplication::on_action_quit));
-    add_action(option_settings_action_name, sigc::mem_fun(*this, &EntryApplication::on_action_settings));
-    add_action(help_doc_action_name, sigc::mem_fun(*this, &EntryApplication::on_action_doc));
-    add_action(help_about_action_name, sigc::mem_fun(*this, &EntryApplication::on_action_about));
+    /// @brief Maps application actions to their handlers
+    add_action(file_quit_action_name, sigc::mem_fun(*this, &EntryApplication::onActionQuit));
+    add_action(option_settings_action_name, sigc::mem_fun(*this, &EntryApplication::onActionSettings));
+    add_action(help_doc_action_name, sigc::mem_fun(*this, &EntryApplication::onActionDoc));
+    add_action(help_about_action_name, sigc::mem_fun(*this, &EntryApplication::onActionAbout));
 }

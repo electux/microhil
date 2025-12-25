@@ -1,17 +1,17 @@
 var classElectux_1_1App_1_1Com_1_1ICom =
 [
     [ "~ICom", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a9bc314ff47c99b455b3d8b4e99c8999e", null ],
-    [ "baud_to_uint", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a158f30fe2da3d471d10667d5283fdb8e", null ],
+    [ "baudToUint", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a21b863ef396036abe44e3d1fffcffeb5", null ],
     [ "close", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a0f63f93fa5f0c1ff81cf955df785c844", null ],
-    [ "data_bits_to_uint", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#ac23643b6135d2a4039d680181cdc3fb0", null ],
+    [ "dataBitsToUint", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a97b77d56c2fff0f37b62dcd1114af595", null ],
     [ "open", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#aeda014a7723aa2c07863abac30c31e4e", null ],
-    [ "parity_to_uint", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a71f0f5b2dd04ec24ae375f4065406d54", null ],
+    [ "parityToUint", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a008ec6fcb1ad7be28e02b18d8c512113", null ],
     [ "read", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a33befe0d60b0acae70c21df1382b5aad", null ],
     [ "setup", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#aecc7a1914572a2e2add282eddd6f3bbe", null ],
-    [ "stop_bits_to_uint", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a243d424480448d09dbb8043c34a4e2ae", null ],
-    [ "uint_to_baud", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#ab7435d7febe29fed24256d83eeaa7048", null ],
-    [ "uint_to_data_bits", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a3b0f7fe64cc9278c934dbc15646ae761", null ],
-    [ "uint_to_parity", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a61bff79d3be1ffbc0a7cf19241a80bb3", null ],
-    [ "uint_to_stop_bits", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a535d74f8b1e6e9e87e60b012c35b2ac4", null ],
+    [ "stopBitsToUint", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a7c91892d693dcfe9e7c1a68fd3dfdd9a", null ],
+    [ "uintToBaud", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a9674a2acd0f52359bab49689056b5425", null ],
+    [ "uintToDataBits", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a82dade1ada5305a55b6455d649cf9edc", null ],
+    [ "uintToParity", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#aa59f6e3a386d5d073a8b1a1af4822a96", null ],
+    [ "uintToStopBits", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a1fd89ccff81475c1bda41f8ef97f0980", null ],
     [ "write", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#ac8f47ca960da9285c41cb9a2e788aa0a", null ]
 ];

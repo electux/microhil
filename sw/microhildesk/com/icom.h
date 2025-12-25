@@ -84,49 +84,49 @@ namespace Electux::App::Com
         /// @brief Converts baud-rate from scopped enumerator to unsigned int
         /// @param baud represents scoped enumerator value
         /// @return unsigned integer format of baud-rate
-        virtual unsigned int baud_to_uint(const BaudRate baud) = 0;
+        virtual unsigned int baudToUint(const BaudRate baud) = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Converts baud-rate from unsigned int to scopped enumerator
         /// @param baud represents unsigned integer value
         /// @return scoped enumerator format of baud-rate
-        virtual BaudRate uint_to_baud(const unsigned int baud) = 0;
+        virtual BaudRate uintToBaud(const unsigned int baud) = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Converts data-bits from scopped enumerator to unsigned int
         /// @param data represents scoped enumerator value
         /// @return unsigned integer format of data-bits
-        virtual unsigned int data_bits_to_uint(const CharacterSize data) = 0;
+        virtual unsigned int dataBitsToUint(const CharacterSize data) = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Converts data-bits from unsigned int to scopped enumerator
         /// @param data represents unsigned integer format
         /// @return scoped enumerator format of data-bits
-        virtual CharacterSize uint_to_data_bits(const unsigned int data) = 0;
+        virtual CharacterSize uintToDataBits(const unsigned int data) = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Converts parity from scopped enumerator to unsigned int
         /// @param parity represents scoped enumerator value
         /// @return unsigned integer format of parity
-        virtual unsigned int parity_to_uint(const Parity parity) = 0;
+        virtual unsigned int parityToUint(const Parity parity) = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Converts parity from unsigned int to scopped enumerator
         /// @param parity represents unsigned integer format
         /// @return scoped enumerator format of parity
-        virtual Parity uint_to_parity(const unsigned int parity) = 0;
+        virtual Parity uintToParity(const unsigned int parity) = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Converts stop-bits from scopped enumerator to unsigned int
         /// @param stop represents scoped enumerator value
         /// @return unsigned integer format of stop-bits
-        virtual unsigned int stop_bits_to_uint(const StopBits stop) = 0;
+        virtual unsigned int stopBitsToUint(const StopBits stop) = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Converts stop-bits from unsigned int to scopped enumerator
         /// @param stop represents unsigned integer format
         /// @return scoped enumerator format of stop-bits
-        virtual StopBits uint_to_stop_bits(const unsigned int stop) = 0;
+        virtual StopBits uintToStopBits(const unsigned int stop) = 0;
     };
 };
 

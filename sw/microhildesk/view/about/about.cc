@@ -23,37 +23,37 @@ namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application about dialog widgets parameters
-    ///   program_name - program name
-    ///   program_version - program version
-    ///   program_copyright - program copyright
-    ///   program_comments - program comments
-    ///   program_license - program license
-    ///   program_website - program website
-    ///   program_website_label - program website label 
-    ///   program_authors - program author
-    constexpr const char program_name[]{"microhildesk"};
-    constexpr const char program_version[]{"1.0.0"};
-    constexpr const char program_copyright[]{"Vladimir Roncevic <elektron.ronca@gmail.com>"};
-    constexpr const char program_comments[]{"This is microhildesk application."};
-    constexpr const char program_license[]{"GPLv3"};
-    constexpr const char program_website[]{"https://electux.github.io/microhil"};
-    constexpr const char program_website_label[]{"electux.github.io/microhil"};
-    constexpr const char program_authors[]{"Vladimir Roncevic"};
+    ///   programName - program name
+    ///   programVersion - program version
+    ///   programCopyright - program copyright
+    ///   programComments - program comments
+    ///   programLicense - program license
+    ///   programWebsite - program website
+    ///   programWebsiteLabel - program website label 
+    ///   programAuthors - program author
+    constexpr const char programName[]{"microhildesk"};
+    constexpr const char programVersion[]{"1.0.0"};
+    constexpr const char programCopyright[]{"Vladimir Roncevic <elektron.ronca@gmail.com>"};
+    constexpr const char programComments[]{"This is microhildesk application."};
+    constexpr const char programLicense[]{"GPLv3"};
+    constexpr const char programWebsite[]{"https://electux.github.io/microhil"};
+    constexpr const char programWebsiteLabel[]{"electux.github.io/microhil"};
+    constexpr const char programAuthors[]{"Vladimir Roncevic"};
 };
 
 using namespace Electux::App::View::About;
 
 AppAbout::AppAbout()
 {
-    set_program_name(program_name);
-    set_version(program_version);
-    set_copyright(program_copyright);
-    set_comments(program_comments);
-    set_license(program_license);
-    set_website(program_website);
-    set_website_label(program_website_label);
+    set_program_name(programName);
+    set_version(programVersion);
+    set_copyright(programCopyright);
+    set_comments(programComments);
+    set_license(programLicense);
+    set_website(programWebsite);
+    set_website_label(programWebsiteLabel);
     std::vector<Glib::ustring> list_authors;
-    list_authors.push_back(program_authors);
+    list_authors.push_back(programAuthors);
     set_authors(list_authors);
     set_hide_on_close(true);
 }

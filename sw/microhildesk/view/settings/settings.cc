@@ -22,54 +22,54 @@ namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application settings window widgets parameters
-    ///   settings_title - window title
-    ///   settings_width - window width
-    ///   settings_height - window height
-    ///   settings_notebook_margin - notebook margin
-    ///   settings_serial_path - label serial path
-    ///   settings_serial_baud - label baud rate
-    ///   settings_serial_data - label data bits
-    ///   settings_serial_parity - label parity
-    ///   settings_serial_stop - label stop bits
-    ///   settings_page_serial_label - notebook page label serial
-    ///   settings_log_path - label log file path
-    ///   settings_log_level - label log level
-    ///   settings_page_log_label - notebook page label log
-    ///   settings_button_box_width - button box width
-    ///   settings_button_box_height - button box height
-    ///   settings_button_box_margin - button box margin
-    ///   settings_button_box_row_spacing - button box row spacing
-    ///   settings_button_box_column_spacing -  button box column spacing
-    ///   settings_button_ok_label - button ok label
-    ///   settings_button_cancel_label - button cancel label
-    ///   settings_button_width - button width
-    ///   settings_button_height - button height
-    ///   settings_grid_row_column_occupy_zero - position widget occupy (0)
-    ///   settings_grid_row_column_occupy_one - position widget occupy (1)
-    constexpr const char settings_title[]{"microhildesk"};
-    constexpr int settings_width{320};
-    constexpr int settings_height{280};
-    constexpr int settings_notebook_margin{10};
-    constexpr const char settings_serial_path[]{"Device port"};
-    constexpr const char settings_serial_baud[]{"Baud rate"};
-    constexpr const char settings_serial_data[]{"Data bits"};
-    constexpr const char settings_serial_parity[]{"Parity"};
-    constexpr const char settings_serial_stop[]{"Stop bits"};
-    constexpr const char settings_page_serial_label[]{"Serial port"};
-    constexpr const char settings_log_path[]{"Log file path"};
-    constexpr const char settings_log_level[]{"Log level"};
-    constexpr const char settings_page_log_label[]{"Log"};
-    constexpr int settings_button_box_width{220};
-    constexpr int settings_button_box_height{60};
-    constexpr int settings_button_box_margin{10};
-    constexpr int settings_button_box_row_spacing{5};
-    constexpr int settings_button_box_column_spacing{5};
-    constexpr const char settings_button_ok_label[]{"Ok"};
-    constexpr const char settings_button_cancel_label[]{"Cancel"};
-    constexpr int settings_button_width{100};
-    constexpr int settings_button_height{50};
-    constexpr int settings_grid_row_column_occupy_zero{0};
-    constexpr int settings_grid_row_column_occupy_one{1};
+    ///   settingsTitle - window title
+    ///   settingsWidth - window width
+    ///   settingsHeight - window height
+    ///   settingsNotebookMargin - notebook margin
+    ///   settingsSerialPath - label serial path
+    ///   settingsSerialBaud - label baud rate
+    ///   settingsSerialData - label data bits
+    ///   settingsSerialParity - label parity
+    ///   settingsSerialStop - label stop bits
+    ///   settingsPageSerialLabel - notebook page label serial
+    ///   settingsLogPath - label log file path
+    ///   settingsLogLevel - label log level
+    ///   settingsPageLogLabel - notebook page label log
+    ///   settingsButtonBoxWidth - button box width
+    ///   settingsButtonBoxHeight - button box height
+    ///   settingsButtonBoxMargin - button box margin
+    ///   settingsButtonBoxRowSpacing - button box row spacing
+    ///   settingsButtonBoxColumnSpacing -  button box column spacing
+    ///   settingsButtonOkLabel - button ok label
+    ///   settingsButtonCancelLabel - button cancel label
+    ///   settingsButtonWidth - button width
+    ///   settingsButtonHeight - button height
+    ///   settingsGridRowColumnOccupyZero - position widget occupy (0)
+    ///   settingsGridRowColumnOccupyOne - position widget occupy (1)
+    constexpr const char settingsTitle[]{"microhildesk"};
+    constexpr int settingsWidth{320};
+    constexpr int settingsHeight{280};
+    constexpr int settingsNotebookMargin{10};
+    constexpr const char settingsSerialPath[]{"Device port"};
+    constexpr const char settingsSerialBaud[]{"Baud rate"};
+    constexpr const char settingsSerialData[]{"Data bits"};
+    constexpr const char settingsSerialParity[]{"Parity"};
+    constexpr const char settingsSerialStop[]{"Stop bits"};
+    constexpr const char settingsPageSerialLabel[]{"Serial port"};
+    constexpr const char settingsLogPath[]{"Log file path"};
+    constexpr const char settingsLogLevel[]{"Log level"};
+    constexpr const char settingsPageLogLabel[]{"Log"};
+    constexpr int settingsButtonBoxWidth{220};
+    constexpr int settingsButtonBoxHeight{60};
+    constexpr int settingsButtonBoxMargin{10};
+    constexpr int settingsButtonBoxRowSpacing{5};
+    constexpr int settingsButtonBoxColumnSpacing{5};
+    constexpr const char settingsButtonOkLabel[]{"Ok"};
+    constexpr const char settingsButtonCancelLabel[]{"Cancel"};
+    constexpr int settingsButtonWidth{100};
+    constexpr int settingsButtonHeight{50};
+    constexpr int settingsGridRowColumnOccupyZero{0};
+    constexpr int settingsGridRowColumnOccupyOne{1};
 };
 
 using namespace Electux::App::View::Settings;
@@ -77,63 +77,63 @@ using namespace Electux::App::View::Settings;
 AppSettings::AppSettings()
 {
     //////////////////////////////////////////////////////////////////////////
-    /// Setup application settings window
-    set_title(settings_title);
-    set_default_size(settings_width, settings_height);
+    /// @brief Setup application settings window
+    set_title(settingsTitle);
+    set_default_size(settingsWidth, settingsHeight);
     set_resizable(false);
     set_hide_on_close(true);
-    set_child(m_box_root);
-    m_box_root.set_orientation(Gtk::Orientation::VERTICAL);
-    m_notebook.set_margin(settings_notebook_margin);
+    set_child(m_boxRoot);
+    m_boxRoot.set_orientation(Gtk::Orientation::VERTICAL);
+    m_notebook.set_margin(settingsNotebookMargin);
     m_notebook.set_expand();
 
     //////////////////////////////////////////////////////////////////////////
-    /// Setup serial port settings page
-    m_box_serial.set_orientation(Gtk::Orientation::VERTICAL);
-    m_label_serial_path.set_label(settings_serial_path);
-    m_box_serial.append(m_label_serial_path);
-    m_box_serial.append(m_entry_serial_path);
-    m_label_serial_baud.set_label(settings_serial_baud);
-    m_box_serial.append(m_label_serial_baud);
-    m_box_serial.append(m_combo_serial_baud);
-    m_label_serial_data.set_label(settings_serial_data);
-    m_box_serial.append(m_label_serial_data);
-    m_box_serial.append(m_combo_serial_data);
-    m_label_serial_parity.set_label(settings_serial_parity);
-    m_box_serial.append(m_label_serial_parity);
-    m_box_serial.append(m_combo_serial_parity);
-    m_label_serial_stop.set_label(settings_serial_stop);
-    m_box_serial.append(m_label_serial_stop);
-    m_box_serial.append(m_combo_serial_stop);
-    m_notebook.append_page(m_box_serial, settings_page_serial_label);
+    /// @brief Setup serial port settings page
+    m_boxSerial.set_orientation(Gtk::Orientation::VERTICAL);
+    m_labelSerialPath.set_label(settingsSerialPath);
+    m_boxSerial.append(m_labelSerialPath);
+    m_boxSerial.append(m_entrySerialPath);
+    m_labelSerialBaud.set_label(settingsSerialBaud);
+    m_boxSerial.append(m_labelSerialBaud);
+    m_boxSerial.append(m_comboSerialBaud);
+    m_labelSerialData.set_label(settingsSerialData);
+    m_boxSerial.append(m_labelSerialData);
+    m_boxSerial.append(m_comboSerialData);
+    m_labelSerialParity.set_label(settingsSerialParity);
+    m_boxSerial.append(m_labelSerialParity);
+    m_boxSerial.append(m_comboSerialParity);
+    m_labelSerialStop.set_label(settingsSerialStop);
+    m_boxSerial.append(m_labelSerialStop);
+    m_boxSerial.append(m_comboSerialStop);
+    m_notebook.append_page(m_boxSerial, settingsPageSerialLabel);
 
     //////////////////////////////////////////////////////////////////////////
-    /// Setup log settings page
-    m_box_log.set_orientation(Gtk::Orientation::VERTICAL);
-    m_label_log_path.set_label(settings_log_path);
-    m_box_log.append(m_label_log_path);
-    m_box_log.append(m_entry_log_path);
-    m_label_log_level.set_label(settings_log_level);
-    m_box_log.append(m_label_log_level);
-    m_box_log.append(m_combo_log_level);
-    m_notebook.append_page(m_box_log, settings_page_log_label);
-    m_box_root.append(m_notebook);
-    m_button_box.set_size_request(settings_button_box_width, settings_button_box_height);
-    m_button_box.set_margin(settings_button_box_margin);
-    m_button_ok.set_label(settings_button_ok_label);
-    m_button_ok.set_size_request(settings_button_width, settings_button_height);
-    m_button_cancel.set_label(settings_button_cancel_label);
-    m_button_cancel.set_size_request(settings_button_width, settings_button_height);
-    m_button_box.attach(m_button_cancel, settings_grid_row_column_occupy_zero, settings_grid_row_column_occupy_zero);
-    m_button_box.attach(m_button_ok, settings_grid_row_column_occupy_one, settings_grid_row_column_occupy_zero);
-    m_button_box.set_hexpand(false);
-    m_button_box.set_vexpand(false);
-    m_button_box.set_row_spacing(settings_button_box_row_spacing);
-    m_button_box.set_column_spacing(settings_button_box_column_spacing);
-    m_box_root.append(m_button_box);
+    /// @brief Setup log settings page
+    m_boxLog.set_orientation(Gtk::Orientation::VERTICAL);
+    m_labelLogPath.set_label(settingsLogPath);
+    m_boxLog.append(m_labelLogPath);
+    m_boxLog.append(m_entryLogPath);
+    m_labelLogLevel.set_label(settingsLogLevel);
+    m_boxLog.append(m_labelLogLevel);
+    m_boxLog.append(m_comboLogLevel);
+    m_notebook.append_page(m_boxLog, settingsPageLogLabel);
+    m_boxRoot.append(m_notebook);
+    m_buttonBox.set_size_request(settingsButtonBoxWidth, settingsButtonBoxHeight);
+    m_buttonBox.set_margin(settingsButtonBoxMargin);
+    m_buttonOk.set_label(settingsButtonOkLabel);
+    m_buttonOk.set_size_request(settingsButtonWidth, settingsButtonHeight);
+    m_buttonCancel.set_label(settingsButtonCancelLabel);
+    m_buttonCancel.set_size_request(settingsButtonWidth, settingsButtonHeight);
+    m_buttonBox.attach(m_buttonCancel, settingsGridRowColumnOccupyZero, settingsGridRowColumnOccupyZero);
+    m_buttonBox.attach(m_buttonOk, settingsGridRowColumnOccupyOne, settingsGridRowColumnOccupyZero);
+    m_buttonBox.set_hexpand(false);
+    m_buttonBox.set_vexpand(false);
+    m_buttonBox.set_row_spacing(settingsButtonBoxRowSpacing);
+    m_buttonBox.set_column_spacing(settingsButtonBoxColumnSpacing);
+    m_boxRoot.append(m_buttonBox);
 
     ////////////////////////////////////////////////////////////////////////
-    /// Maps settings, log (signals and slots)
+    /// @brief Maps channels (signals and slots)
     mapping();
 }
 

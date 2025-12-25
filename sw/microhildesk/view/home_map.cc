@@ -23,10 +23,10 @@ using namespace Electux::App::View;
 void AppHome::mapping(int index)
 {
     //////////////////////////////////////////////////////////////////////
-    /// 
-    m_enable_channels[index].signal_toggled().connect(sigc::mem_fun(*this, &AppHome::on_channel_enable_changed));
-    m_select_control_channels[index].signal_changed().connect(sigc::mem_fun(*this, &AppHome::on_channel_mode_changed));
-    m_toggle_channels[index].signal_toggled().connect(sigc::mem_fun(*this, &AppHome::on_channel_toggle_changed));
-    m_spin_timer_channels[index].signal_changed().connect(sigc::mem_fun(*this, &AppHome::on_channel_timer_changed));
-    m_toggle_timer_channels[index].signal_toggled().connect(sigc::mem_fun(*this, &AppHome::on_channel_timer_toogle_changed));
+    /// @brief Connect signals and slots for home window widgets
+    m_enableChannels[index].signal_toggled().connect(sigc::mem_fun(*this, &AppHome::onChannelEnableChanged));
+    m_selectControlChannels[index].signal_changed().connect(sigc::mem_fun(*this, &AppHome::onChannelModeChanged));
+    m_toggleChannels[index].signal_toggled().connect(sigc::mem_fun(*this, &AppHome::onChannelToggleChanged));
+    m_spinTimerChannels[index].signal_changed().connect(sigc::mem_fun(*this, &AppHome::onChannelTimerChanged));
+    m_toggleTimerChannels[index].signal_toggled().connect(sigc::mem_fun(*this, &AppHome::onChannelTimerToogleChanged));
 }

@@ -38,14 +38,14 @@ namespace Electux::App::View::Settings
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Settings parameters
-        ///   m_serial_device_path - absolute path for serial device file
-        ///   m_serial_params - baud, data, parity, stop parameters
-        ///   m_log_file_path - absolute path for log file
-        ///   m_log_level - log level
-        Glib::ustring m_serial_device_path;
-        std::vector<int> m_serial_params;
-        Glib::ustring m_log_file_path;
-        int m_log_level;
+        ///   m_serialDevicePath - absolute path for serial device file
+        ///   m_serialParams - baud, data, parity, stop parameters
+        ///   m_logFilePath - absolute path for log file
+        ///   m_logLevel - log level
+        Glib::ustring m_serialDevicePath;
+        std::vector<int> m_serialParams;
+        Glib::ustring m_logFilePath;
+        int m_logLevel;
     };
 };
 

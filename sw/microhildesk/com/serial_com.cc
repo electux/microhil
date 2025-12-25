@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <iostream>
 #include "serial_com.h"
 
 using namespace Electux::App::Com;
@@ -27,22 +28,29 @@ SerialCom::SerialCom(): m_serialPort{SerialPort()}
 
 void SerialCom::open()
 {
+    std::cout << "Open serial port..." << std::endl;
+
     if (!m_serialPort.IsOpen())
     {
         m_serialPort.Open(std::string(m_device));
+        std::cout << "Open serial port done." << std::endl;
     }
 }
 
 void SerialCom::close()
 {
+    std::cout << "Close serial port..." << std::endl;
     if (m_serialPort.IsOpen())
     {
         m_serialPort.Close();
+        std::cout << "Close serial port done." << std::endl;
     }
 }
 
 void SerialCom::setup(const SerialParams &params)
 {
+    std::cout << "Setup serial port..." << std::endl;
+
     if (m_serialPort.IsOpen())
     {
         m_serialPort.Close();
@@ -60,6 +68,8 @@ void SerialCom::setup(const SerialParams &params)
     m_serialPort.SetCharacterSize(params.data);
     m_serialPort.SetParity(params.parity);
     m_serialPort.SetStopBits(params.stop);
+
+    std::cout << "Setup serial port done." << std::endl;
 }
 
 void SerialCom::read(std::vector<uint8_t> &data, size_t len)

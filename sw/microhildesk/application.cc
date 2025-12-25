@@ -29,20 +29,20 @@ namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application parameters
-    ///   application_id - application ID
-    constexpr const char application_id[]{"electux.io.microhildesk"};
+    ///   applicationId - application ID
+    constexpr const char applicationId[]{"electux.io.microhildesk"};
 };
 
 using namespace Electux::App;
 
 EntryApplication::EntryApplication():
-    Gtk::Application(application_id),
+    Gtk::Application(applicationId),
     m_home{AppHome()},
     m_settings{AppSettings()},
     m_help{AppHelp()},
     m_about{AppAbout()}
 {
-    Glib::set_application_name(application_id);
+    Glib::set_application_name(applicationId);
 }
 
 Glib::RefPtr<EntryApplication> EntryApplication::create()

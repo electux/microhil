@@ -28,6 +28,25 @@ namespace Electux::App::Model
         //////////////////////////////////////////////////////////////////////
         /// @brief ModelLog constructor
         inline ModelLog() noexcept = default;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Enum for log configuration keys
+        enum class ModelLogKey
+        {
+            LogLevel
+        };
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Converts ModelLogKey enum to string
+        /// @param key Represents ModelLogKey enum value
+        /// @return string representation of ModelLogKey enum
+        std::string toString(ModelLogKey key);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Validates if key is valid serial configuration key
+        /// @param key Represents string key to be validated
+        /// @return status true if key is valid else false
+        bool validateKey(const std::string &key);
     };
 };
 
