@@ -21,9 +21,9 @@
 
 using namespace Electux::App::View;
 
-void AppHome::on_channel_enable_changed()
+void AppHome::onChannelEnableChanged()
 {
-    for (auto& button : m_enable_channels)
+    for (auto& button : m_enableChannels)
     {
         if (button.get_active())
         {
@@ -36,34 +36,34 @@ void AppHome::on_channel_enable_changed()
     }
 }
 
-void AppHome::on_channel_mode_changed()
+void AppHome::onChannelModeChanged()
 {
-    for (auto& combo : m_select_control_channels)
+    for (auto& combo : m_selectControlChannels)
     {
         std::cout << "Selected: " << combo.get_active_text() << std::endl;
     }
 }
 
-void AppHome::on_channel_toggle_changed()
+void AppHome::onChannelToggleChanged()
 {
-    for (auto &toggle : m_toggle_channels)
+    for (auto &toggle : m_toggleChannels)
     {
         std::cout << "Toggled: " << toggle.get_active() << std::endl;
     }   
 }
 
-void AppHome::on_channel_timer_changed()
+void AppHome::onChannelTimerChanged()
 {
-    for (auto &timer : m_spin_timer_channels)
+    for (auto &timer : m_spinTimerChannels)
     {
         std::cout << "Toggled: " << timer.get_value_as_int() << std::endl;
     }  
 }
 
-void AppHome::on_channel_timer_toogle_changed()
+void AppHome::onChannelTimerToogleChanged()
 {
-    for (auto &toggle_timer : m_toggle_timer_channels)
+    for (auto &toggleTimer : m_toggleTimerChannels)
     {
-        std::cout << "Toggled: " << toggle_timer.get_active() << std::endl;
+        std::cout << "Toggled: " << toggleTimer.get_active() << std::endl;
     }  
 }

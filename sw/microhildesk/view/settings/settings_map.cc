@@ -24,6 +24,6 @@ void AppSettings::mapping()
 {
     //////////////////////////////////////////////////////////////////////////
     /// Maps the signal handlers to the buttons
-    m_button_ok.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::on_button_ok_clicked));
-    m_button_cancel.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::on_button_cancel_clicked));
+    m_buttonOk.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::onButtonOkClicked));
+    m_buttonCancel.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::onButtonCancelClicked));
 }

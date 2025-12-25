@@ -41,7 +41,7 @@ namespace Electux::App::Model
         /// @brief Gets entity by key
         /// @param key Represents model enity key
         /// @return Entity selected by key
-        std::string &get_entity(const std::string &key) final;
+        std::string &getEntity(const std::string &key) final;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Gets model entities

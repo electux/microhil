@@ -45,46 +45,46 @@ namespace Electux::App::View
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Signal handler for enablement channel
-        void on_channel_enable_changed();
+        void onChannelEnableChanged();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Signal handler for setup channel mode
-        void on_channel_mode_changed();
+        void onChannelModeChanged();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Signal handler for toggle mode
-        void on_channel_toggle_changed();
+        void onChannelToggleChanged();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Signal handler for timer mode
-        void on_channel_timer_changed();
+        void onChannelTimerChanged();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Signal handler for timer mode (start process)
-        void on_channel_timer_toogle_changed();
+        void onChannelTimerToogleChanged();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Container for packing widgets for home window
-        ///   m_box_root - horizontal box for channel widgets
-        ///   m_box_channels - channel  container for widgets
-        ///   m_enable_channels - checkbox for enabling channel
-        ///   m_select_control_channels - combobox for control type
-        ///   m_label_toggle_channels - label for toggle channel
-        ///   m_toggle_channels - toogle button (activate)
-        ///   m_label_timer_channels -  label for timer channel
-        ///   m_spin_timer_channels - channel spinner
-        ///   m_toggle_timer_channels - channel toogle timer (start)
-        ///   m_status_timer_channels - channel status (visual)
-        Gtk::Box m_box_root;
-        std::vector<Gtk::Box> m_box_channels;
-        std::vector<Gtk::CheckButton> m_enable_channels;
-        std::vector<Gtk::ComboBoxText> m_select_control_channels;
-        std::vector<Gtk::Label> m_label_toggle_channels;
-        std::vector<Gtk::ToggleButton> m_toggle_channels;
-        std::vector<Gtk::Label> m_label_timer_channels;
-        std::vector<Gtk::SpinButton> m_spin_timer_channels;
-        std::vector<Gtk::ToggleButton> m_toggle_timer_channels;
-        std::vector<Gtk::ProgressBar> m_status_timer_channels;
+        ///   m_boxRoot - horizontal box for channel widgets
+        ///   m_boxChannels - channel  container for widgets
+        ///   m_enableChannels - checkbox for enabling channel
+        ///   m_selectControlChannels - combobox for control type
+        ///   m_labelToggleChannels - label for toggle channel
+        ///   m_toggleChannels - toogle button (activate)
+        ///   m_labelTimerChannels -  label for timer channel
+        ///   m_spinTimerChannels - channel spinner
+        ///   m_toggleTimerChannels - channel toogle timer (start)
+        ///   m_statusTimerChannels - channel status (visual)
+        Gtk::Box m_boxRoot;
+        std::vector<Gtk::Box> m_boxChannels;
+        std::vector<Gtk::CheckButton> m_enableChannels;
+        std::vector<Gtk::ComboBoxText> m_selectControlChannels;
+        std::vector<Gtk::Label> m_labelToggleChannels;
+        std::vector<Gtk::ToggleButton> m_toggleChannels;
+        std::vector<Gtk::Label> m_labelTimerChannels;
+        std::vector<Gtk::SpinButton> m_spinTimerChannels;
+        std::vector<Gtk::ToggleButton> m_toggleTimerChannels;
+        std::vector<Gtk::ProgressBar> m_statusTimerChannels;
     };
 };
 

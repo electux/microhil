@@ -24,11 +24,6 @@
 #include "view/help/help.h"
 #include "view/about/about.h"
 
-namespace Electux::App::View { class AppHome; }
-namespace Electux::App::View::Settings { class AppSettings; }
-namespace Electux::App::View::Help { class AppHelp; }
-namespace Electux::App::View::About { class AppAbout; }
-
 namespace Electux::App
 {
     //////////////////////////////////////////////////////////////////////////
@@ -56,19 +51,19 @@ namespace Electux::App
 
         //////////////////////////////////////////////////////////////////////
         /// @brief On action settings create window for application settings
-        void on_action_settings();
+        void onActionSettings();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief On action doc create window for help documentation
-        void on_action_doc();
+        void onActionDoc();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief On action about create dialog for about application
-        void on_action_about();
+        void onActionAbout();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief On action for quit
-        void on_action_quit();
+        void onActionQuit();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Instances of application views

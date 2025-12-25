@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stop_0',['Stop',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a9cfbbd80d871c0e92c5e584c8774c2c3a11a755d598c0c417f9a36758c3da7481',1,'Electux::App::Model::ModelSerial']]]
+  ['info_0',['Info',['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae73bd6a25e09440d72e847b47f5f7fba4059b0251f66a18cb56f544728796875',1,'Electux::App::Logger::Log']]]
 ];

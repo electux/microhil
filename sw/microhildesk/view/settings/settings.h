@@ -47,7 +47,7 @@ namespace Electux::App::View::Settings
         //////////////////////////////////////////////////////////////////////
         /// @brief Signal for serial settings
         /// @return Signal for changed serial settings
-        SigSetup setup_changed();
+        SigSetup setupChanged();
 
     private:
         //////////////////////////////////////////////////////////////////////
@@ -56,58 +56,58 @@ namespace Electux::App::View::Settings
 
         //////////////////////////////////////////////////////////////////////
         /// @brief On action OK button
-        void on_button_ok_clicked();
+        void onButtonOkClicked();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief On action Cancel button
-        void on_button_cancel_clicked();
+        void onButtonCancelClicked();
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Container for packing widgets for settings window 
         ///   m_setup - signal for the serial settings
-        ///   m_box_root - vertical box as root container
+        ///   m_boxRoot - vertical box as root container
         ///   m_notebook - notebook container for settings pages serial port and log
-        ///   m_box_serial - vertical box as container box for serial settings
-        ///   m_label_serial_path - serial path label
-        ///   m_entry_serial_path - entry for serial device path
-        ///   m_label_serial_baud - serial baud rate label
-        ///   m_combo_serial_baud - serial baud rate combobox
-        ///   m_label_serial_data - serial data bits label
-        ///   m_combo_serial_data - serial data bits combobox
-        ///   m_label_serial_parity - serial parity label
-        ///   m_combo_serial_parity - serial parity combobox
-        ///   m_label_serial_stop - serial stop bits label
-        ///   m_combo_serial_stop - serial stop bits combobox
-        ///   m_box_log - vertical box as container box for log settings
-        ///   m_label_log_path - log path label 
-        ///   m_entry_log_path - log file path entry
-        ///   m_label_log_level - log level label
-        ///   m_combo_log_level - log level combobox
-        ///   m_button_box - horizontal box as button container box
-        ///   m_button_ok - ok button (save changes)
-        ///   m_button_cancel - cancel button (dissmiss changes)
+        ///   m_boxSerial - vertical box as container box for serial settings
+        ///   m_labelSerialPath - serial path label
+        ///   m_entrySerialPath - entry for serial device path
+        ///   m_labelSerialBaud - serial baud rate label
+        ///   m_comboSerialBaud - serial baud rate combobox
+        ///   m_labelSerialData - serial data bits label
+        ///   m_comboSerialData - serial data bits combobox
+        ///   m_labelSerialParity - serial parity label
+        ///   m_comboSerialParity - serial parity combobox
+        ///   m_labelSerialStop - serial stop bits label
+        ///   m_comboSerialStop - serial stop bits combobox
+        ///   m_boxLog - vertical box as container box for log settings
+        ///   m_labelLogPath - log path label 
+        ///   m_entryLogPath - log file path entry
+        ///   m_labelLogLevel - log level label
+        ///   m_comboLogLevel - log level combobox
+        ///   m_buttonBox - horizontal box as button container box
+        ///   m_buttonOk - ok button (save changes)
+        ///   m_buttonCancel - cancel button (dissmiss changes)
         SigSetup m_setup{};
-        Gtk::Box m_box_root;
+        Gtk::Box m_boxRoot;
         Gtk::Notebook m_notebook;
-        Gtk::Box m_box_serial;
-        Gtk::Label m_label_serial_path;
-        Gtk::Entry m_entry_serial_path;
-        Gtk::Label m_label_serial_baud;
-        Gtk::ComboBoxText m_combo_serial_baud;
-        Gtk::Label m_label_serial_data;
-        Gtk::ComboBoxText m_combo_serial_data;
-        Gtk::Label m_label_serial_parity;
-        Gtk::ComboBoxText m_combo_serial_parity;
-        Gtk::Label m_label_serial_stop;
-        Gtk::ComboBoxText m_combo_serial_stop;
-        Gtk::Box m_box_log;
-        Gtk::Label m_label_log_path;
-        Gtk::Entry m_entry_log_path;
-        Gtk::Label m_label_log_level;
-        Gtk::ComboBoxText m_combo_log_level;
-        Gtk::Grid m_button_box;
-        Gtk::Button m_button_ok;
-        Gtk::Button m_button_cancel;
+        Gtk::Box m_boxSerial;
+        Gtk::Label m_labelSerialPath;
+        Gtk::Entry m_entrySerialPath;
+        Gtk::Label m_labelSerialBaud;
+        Gtk::ComboBoxText m_comboSerialBaud;
+        Gtk::Label m_labelSerialData;
+        Gtk::ComboBoxText m_comboSerialData;
+        Gtk::Label m_labelSerialParity;
+        Gtk::ComboBoxText m_comboSerialParity;
+        Gtk::Label m_labelSerialStop;
+        Gtk::ComboBoxText m_comboSerialStop;
+        Gtk::Box m_boxLog;
+        Gtk::Label m_labelLogPath;
+        Gtk::Entry m_entryLogPath;
+        Gtk::Label m_labelLogLevel;
+        Gtk::ComboBoxText m_comboLogLevel;
+        Gtk::Grid m_buttonBox;
+        Gtk::Button m_buttonOk;
+        Gtk::Button m_buttonCancel;
     };
 };
 

@@ -21,6 +21,7 @@ var hierarchy =
         [ "Electux::App::Model::ModelSerial", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html", null ]
       ] ]
     ] ],
+    [ "Electux::App::Logger::Log", "dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html", null ],
     [ "Electux::App::View::Settings::SettingsSetup", "d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html", null ],
     [ "Gtk::Window", null, [
       [ "Electux::App::View::Help::AppHelp", "d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp.html", null ],

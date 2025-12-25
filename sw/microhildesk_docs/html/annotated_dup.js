@@ -10,6 +10,9 @@ var annotated_dup =
           [ "Config", "d7/df3/classElectux_1_1App_1_1Config_1_1Config.html", "d7/df3/classElectux_1_1App_1_1Config_1_1Config" ],
           [ "IConfig", "db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html", "db/dcd/classElectux_1_1App_1_1Config_1_1IConfig" ]
         ] ],
+        [ "Logger", "d5/dd1/namespaceElectux_1_1App_1_1Logger.html", [
+          [ "Log", "dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html", "dd/d03/classElectux_1_1App_1_1Logger_1_1Log" ]
+        ] ],
         [ "Model", "d9/d26/namespaceElectux_1_1App_1_1Model.html", [
           [ "IModel", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel" ],
           [ "Model", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html", "da/d81/classElectux_1_1App_1_1Model_1_1Model" ],

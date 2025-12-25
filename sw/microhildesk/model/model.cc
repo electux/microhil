@@ -26,7 +26,7 @@ bool Model::add(const std::string &key, const std::string &data)
     return result.second;
 }
 
-std::string &Model::get_entity(const std::string &key)
+std::string &Model::getEntity(const std::string &key)
 {
     return m_entities[key];
 }

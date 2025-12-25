@@ -32,15 +32,24 @@ namespace
 
 using namespace Electux::App::Model;
 
-std::string ModelSerial::to_string(Key key)
+std::string ModelSerial::toString(ModelSerialKey key)
 {
     switch (key)
     {
-    case Key::Device: return device;
-    case Key::Baud: return baud;
-    case Key::Data: return data;
-    case Key::Parity: return parity;
-    case Key::Stop: return stop;
+    case ModelSerialKey::Device: return device;
+    case ModelSerialKey::Baud: return baud;
+    case ModelSerialKey::Data: return data;
+    case ModelSerialKey::Parity: return parity;
+    case ModelSerialKey::Stop: return stop;
     default: return unknown;
     }
+}
+
+bool ModelSerial::validateKey(const std::string &key)
+{
+    return key == toString(ModelSerialKey::Device) ||
+            key == toString(ModelSerialKey::Baud) ||
+            key == toString(ModelSerialKey::Data) ||
+            key == toString(ModelSerialKey::Parity) ||
+            key == toString(ModelSerialKey::Stop);
 }

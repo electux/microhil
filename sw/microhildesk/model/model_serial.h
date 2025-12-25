@@ -31,7 +31,7 @@ namespace Electux::App::Model
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Enum for serial configuration keys
-        enum class Key
+        enum class ModelSerialKey
         {
             Device,
             Baud,
@@ -42,9 +42,15 @@ namespace Electux::App::Model
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Converts Key enum to 
-        /// @param key Represents Key enum value
-        /// @return string representation of Key enum
-        std::string to_string(Key key);
+        /// @param key Represents ModelSerialKey enum value
+        /// @return string representation of ModelSerialKey enum
+        std::string toString(ModelSerialKey key);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Validates if key is valid serial configuration key
+        /// @param key Represents string key to be validated
+        /// @return status true if key is valid else false
+        bool validateKey(const std::string &key);
     };
 };
 
