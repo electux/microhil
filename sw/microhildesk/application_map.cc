@@ -22,18 +22,18 @@ namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application mapper parameters
-    ///   detailed_action_name - a detailed action name, specifying an action
-    ///   keyboard_accelerator - an accelerator in the format understood by GTK
-    ///   file_quit_action_name - file quit action name
-    ///   option_settings_action_name - option settings action name
-    ///   help_doc_action_name - help documenation action name
-    ///   help_about_action_name - help about action name
-    constexpr const char detailed_action_name[]{"app.quit"};
-    constexpr const char keyboard_accelerator[]{"<Primary>q"}; 
-    constexpr const char file_quit_action_name[]{"quit"};
-    constexpr const char option_settings_action_name[]{"settings"};
-    constexpr const char help_doc_action_name[]{"doc"};
-    constexpr const char help_about_action_name[]{"about"};
+    ///   detailedActionName - a detailed action name, specifying an action
+    ///   keyboardAccelerator - an accelerator in the format understood by GTK
+    ///   fileQuitActionName - file quit action name
+    ///   optionSettingsActionName - option settings action name
+    ///   helpDocActionName - help documenation action name
+    ///   helpAboutActionName - help about action name
+    constexpr const char detailedActionName[]{"app.quit"};
+    constexpr const char keyboardAccelerator[]{"<Primary>q"}; 
+    constexpr const char fileQuitActionName[]{"quit"};
+    constexpr const char optionSettingsActionName[]{"settings"};
+    constexpr const char helpDocActionName[]{"doc"};
+    constexpr const char helpAboutActionName[]{"about"};
 };
 
 using namespace Electux::App;
@@ -42,12 +42,12 @@ void EntryApplication::mapping()
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Sets application accelerator
-    set_accel_for_action(detailed_action_name, keyboard_accelerator);
+    set_accel_for_action(detailedActionName, keyboardAccelerator);
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Maps application actions to their handlers
-    add_action(file_quit_action_name, sigc::mem_fun(*this, &EntryApplication::onActionQuit));
-    add_action(option_settings_action_name, sigc::mem_fun(*this, &EntryApplication::onActionSettings));
-    add_action(help_doc_action_name, sigc::mem_fun(*this, &EntryApplication::onActionDoc));
-    add_action(help_about_action_name, sigc::mem_fun(*this, &EntryApplication::onActionAbout));
+    add_action(fileQuitActionName, sigc::mem_fun(*this, &EntryApplication::onActionQuit));
+    add_action(optionSettingsActionName, sigc::mem_fun(*this, &EntryApplication::onActionSettings));
+    add_action(helpDocActionName, sigc::mem_fun(*this, &EntryApplication::onActionDoc));
+    add_action(helpAboutActionName, sigc::mem_fun(*this, &EntryApplication::onActionAbout));
 }

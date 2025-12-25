@@ -71,10 +71,10 @@ namespace Electux::App
         ///   m_settings - instance of AppSettings (settings window)
         ///   m_help - instance of AppHelp (help window)
         ///   m_about - instance of AppAbout (about dialog)
-        View::AppHome m_home;
-        View::Settings::AppSettings m_settings;
-        View::Help::AppHelp m_help;
-        View::About::AppAbout m_about;
+        Electux::App::View::AppHome m_home;
+        Electux::App::View::Settings::AppSettings m_settings;
+        Electux::App::View::Help::AppHelp m_help;
+        Electux::App::View::About::AppAbout m_about;
     };
 };
 

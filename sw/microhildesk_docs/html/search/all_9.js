@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['m_5fabout_0',['m_about',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a2059ff3e2b9a7c1f5f45c30c779cafda',1,'Electux::App::EntryApplication']]],
+  ['m_5fabout_0',['m_about',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a384562462b7475ccf5558db97557d16d',1,'Electux::App::EntryApplication']]],
   ['m_5fboxchannels_1',['m_boxChannels',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a51c0cd2a1b6e388c444e4779833e4451',1,'Electux::App::View::AppHome']]],
   ['m_5fboxlog_2',['m_boxLog',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a84f5819aacb8784366cf2d08785b8973',1,'Electux::App::View::Settings::AppSettings']]],
   ['m_5fboxroot_3',['m_boxroot',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5131dd26aabf14b653cfc351a1b6aac4',1,'Electux::App::View::Settings::AppSettings::m_boxRoot'],['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af714bb3895b0537bf13a6985660452d6',1,'Electux::App::View::AppHome::m_boxRoot']]],
@@ -19,8 +19,8 @@ var searchData=
   ['m_5fentrylogpath_16',['m_entryLogPath',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ab7e81b1465a1c9c17bac6781ceeea1ee',1,'Electux::App::View::Settings::AppSettings']]],
   ['m_5fentryserialpath_17',['m_entrySerialPath',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a53dae79534ce4a7ae72a8f28f3650488',1,'Electux::App::View::Settings::AppSettings']]],
   ['m_5ffilename_18',['m_fileName',['../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#a34c024513c2268609bc2ea84aaed64a2',1,'Electux::App::Config::Config']]],
-  ['m_5fhelp_19',['m_help',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ab9c20e256bb0c420a17a941f92502e90',1,'Electux::App::EntryApplication']]],
-  ['m_5fhome_20',['m_home',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a925eb52cc1f2cdf35859d5bedcabfed9',1,'Electux::App::EntryApplication']]],
+  ['m_5fhelp_19',['m_help',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a8cadd7c71c66910caa81d1e296fb0e30',1,'Electux::App::EntryApplication']]],
+  ['m_5fhome_20',['m_home',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a92a1cd080561fd03ae5f960779c165bc',1,'Electux::App::EntryApplication']]],
   ['m_5flabelloglevel_21',['m_labelLogLevel',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ad5cfe0679abe83bcd83ce058efd33fb9',1,'Electux::App::View::Settings::AppSettings']]],
   ['m_5flabellogpath_22',['m_labelLogPath',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a9d2018d21d9b02981c24468e84648590',1,'Electux::App::View::Settings::AppSettings']]],
   ['m_5flabelserialbaud_23',['m_labelSerialBaud',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a1be7f377c9a6cba61e0d0ff328e696fc',1,'Electux::App::View::Settings::AppSettings']]],
@@ -42,7 +42,7 @@ var searchData=
   ['m_5fserialdevicepath_39',['m_serialDevicePath',['../d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#a627f622094c5e79157ce6e6a7bbe03d6',1,'Electux::App::View::Settings::SettingsSetup']]],
   ['m_5fserialparams_40',['m_serialParams',['../d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#a12e4bd3077dbb9a77ba7229b1f11d979',1,'Electux::App::View::Settings::SettingsSetup']]],
   ['m_5fserialport_41',['m_serialPort',['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ad3eade8fb4d6b6b8d10eab46e9668f94',1,'Electux::App::Com::SerialCom']]],
-  ['m_5fsettings_42',['m_settings',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7ba61ad8de80584725873c5e8c1c268a',1,'Electux::App::EntryApplication']]],
+  ['m_5fsettings_42',['m_settings',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aa01cb2da6e706b7cf663405d091f256a',1,'Electux::App::EntryApplication']]],
   ['m_5fsetup_43',['m_setup',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aa74a8fb0e5fff3ca5276889da38def0c',1,'Electux::App::View::Settings::AppSettings']]],
   ['m_5fspintimerchannels_44',['m_spinTimerChannels',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a39dbfa3e1f716225c5bcbe90f184a708',1,'Electux::App::View::AppHome']]],
   ['m_5fstatustimerchannels_45',['m_statusTimerChannels',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a55d0f3b1e6bd1cee806739af9c7d1324',1,'Electux::App::View::AppHome']]],

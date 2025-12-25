@@ -23,28 +23,28 @@ namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application menu labels and detailed actions
-    ///   file_label - file action label
-    ///   file_quit_label - file quit action label
-    ///   file_quit_detaild_action - file quit detailed action
-    ///   option_label - option action label
-    ///   option_settings_label - option settings action label
-    ///   option_settings_detaild_action - option settings detailed action
-    ///   help_label - help action label
-    ///   help_doc_label - help documentation action label
-    ///   help_doc_detaild_action - help documentation detailed action
-    ///   help_about_label - help about action label
-    ///   help_about_detaild_action - help about detailed action
-    constexpr const char file_label[]{"File"}; 
-    constexpr const char file_quit_label[]{"_Quit"};
-    constexpr const char file_quit_detaild_action[]{"app.quit"};
-    constexpr const char option_label[]{"Option"};
-    constexpr const char option_settings_label[]{"_Settings"};
-    constexpr const char option_settings_detaild_action[]{"app.setting"};
-    constexpr const char help_label[]{"Help"};
-    constexpr const char help_doc_label[]{"_Documentation"};
-    constexpr const char help_doc_detaild_action[]{"app.doc"};
-    constexpr const char help_about_label[]{"_About"};
-    constexpr const char help_about_detaild_action[]{"app.about"};
+    ///   fileLabel - file action label
+    ///   fileQuitLabel - file quit action label
+    ///   fileQuitDetaildAction - file quit detailed action
+    ///   optionLabel - option action label
+    ///   optionSettingsLabel - option settings action label
+    ///   optionSettingsDetaildAction - option settings detailed action
+    ///   helpLabel - help action label
+    ///   helpDocLabel - help documentation action label
+    ///   helpDocDetaildAction - help documentation detailed action
+    ///   helpAboutLabel - help about action label
+    ///   helpAboutDetaildAction - help about detailed action
+    constexpr const char fileLabel[]{"File"}; 
+    constexpr const char fileQuitLabel[]{"_Quit"};
+    constexpr const char fileQuitDetaildAction[]{"app.quit"};
+    constexpr const char optionLabel[]{"Option"};
+    constexpr const char optionSettingsLabel[]{"_Settings"};
+    constexpr const char optionSettingsDetaildAction[]{"app.setting"};
+    constexpr const char helpLabel[]{"Help"};
+    constexpr const char helpDocLabel[]{"_Documentation"};
+    constexpr const char helpDocDetaildAction[]{"app.doc"};
+    constexpr const char helpAboutLabel[]{"_About"};
+    constexpr const char helpAboutDetaildAction[]{"app.about"};
 };
 
 using namespace Electux::App;
@@ -59,15 +59,15 @@ void EntryApplication::on_startup()
     /// @brief Sets application menubar
     auto menu = Gio::Menu::create();
     auto submenu_file = Gio::Menu::create();
-    submenu_file->append(file_quit_label, file_quit_detaild_action);
-    menu->append_submenu(file_label, submenu_file);
+    submenu_file->append(fileQuitLabel, fileQuitDetaildAction);
+    menu->append_submenu(fileLabel, submenu_file);
     auto submenu_option = Gio::Menu::create();
-    submenu_option->append(option_settings_label, option_settings_detaild_action);
-    menu->append_submenu(option_label, submenu_option);
+    submenu_option->append(optionSettingsLabel, optionSettingsDetaildAction);
+    menu->append_submenu(optionLabel, submenu_option);
     auto submenu_help = Gio::Menu::create();
-    submenu_help->append(help_doc_label, help_doc_detaild_action);
-    submenu_help->append(help_about_label, help_about_detaild_action);
-    menu->append_submenu(help_label, submenu_help);
+    submenu_help->append(helpDocLabel, helpDocDetaildAction);
+    submenu_help->append(helpAboutLabel, helpAboutDetaildAction);
+    menu->append_submenu(helpLabel, submenu_help);
     set_menubar(menu);
 
     //////////////////////////////////////////////////////////////////////////
