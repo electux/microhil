@@ -108,9 +108,9 @@ Inheritance diagram for Electux::App::Com::ICom:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d9/d36/classElectux_1_1App_1_1Com_1_1ICom__inherit__graph.png" border="0" usemap="#aElectux_1_1App_1_1Com_1_1ICom_inherit__map" alt="Inheritance graph"/></div>
 <map name="aElectux_1_1App_1_1Com_1_1ICom_inherit__map" id="aElectux_1_1App_1_1Com_1_1ICom_inherit__map">
-<area shape="rect" title="ICom class is interface for serial communication." alt="" coords="5,5,180,331"/>
-<area shape="rect" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="SerialCom class is implementation of serial communication." alt="" coords="22,379,163,759"/>
-<area shape="poly" title=" " alt="" coords="95,345,95,378,90,378,90,345"/>
+<area shape="rect" title="ICom class is interface for serial communication." alt="" coords="5,5,180,371"/>
+<area shape="rect" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="SerialCom class is implementation of serial communication." alt="" coords="15,419,171,839"/>
+<area shape="poly" title=" " alt="" coords="95,385,95,419,90,419,90,385"/>
 </map>
 </div>
 <div class="dynheader">
@@ -118,7 +118,7 @@ Collaboration diagram for Electux::App::Com::ICom:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/df8/classElectux_1_1App_1_1Com_1_1ICom__coll__graph.png" border="0" usemap="#aElectux_1_1App_1_1Com_1_1ICom_coll__map" alt="Collaboration graph"/></div>
 <map name="aElectux_1_1App_1_1Com_1_1ICom_coll__map" id="aElectux_1_1App_1_1Com_1_1ICom_coll__map">
-<area shape="rect" title="ICom class is interface for serial communication." alt="" coords="5,5,180,331"/>
+<area shape="rect" title="ICom class is interface for serial communication." alt="" coords="5,5,180,371"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -169,11 +169,17 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a1fd89ccff81475c1bda41f8ef97f0980" id="r_a1fd89ccff81475c1bda41f8ef97f0980"><td class="memItemLeft" align="right" valign="top">virtual StopBits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a1fd89ccff81475c1bda41f8ef97f0980">uintToStopBits</a> (const unsigned int <a class="el" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a87896c97c3e5431c312b7e758b9247e8">stop</a>)=0</td></tr>
 <tr class="memdesc:a1fd89ccff81475c1bda41f8ef97f0980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts stop-bits from unsigned int to scopped enumerator.  <br /></td></tr>
 <tr class="separator:a1fd89ccff81475c1bda41f8ef97f0980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9edbd81e6aceb933c57d7f0a2d9f3da" id="r_af9edbd81e6aceb933c57d7f0a2d9f3da"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#af9edbd81e6aceb933c57d7f0a2d9f3da">flowControlToUint</a> (const FlowControl <a class="el" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#afad0b9d01d90f993f92465be0ee1a269">flow</a>)=0</td></tr>
+<tr class="memdesc:af9edbd81e6aceb933c57d7f0a2d9f3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts flow-control from scopped enumerator to unsigned int.  <br /></td></tr>
+<tr class="separator:af9edbd81e6aceb933c57d7f0a2d9f3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3398abd31d190c57df10a2060415060c" id="r_a3398abd31d190c57df10a2060415060c"><td class="memItemLeft" align="right" valign="top">virtual FlowControl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a3398abd31d190c57df10a2060415060c">uintToFlowControl</a> (const unsigned int <a class="el" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#afad0b9d01d90f993f92465be0ee1a269">flow</a>)=0</td></tr>
+<tr class="memdesc:a3398abd31d190c57df10a2060415060c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts flow-control from unsigned int to scopped enumerator.  <br /></td></tr>
+<tr class="separator:a3398abd31d190c57df10a2060415060c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="../../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html" title="ICom class is interface for serial communication.">ICom</a> class is interface for serial communication. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d2e/icom_8h_source.html#l00051">51</a> of file <a class="el" href="../../d0/d2e/icom_8h_source.html">icom.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d2e/icom_8h_source.html#l00054">54</a> of file <a class="el" href="../../d0/d2e/icom_8h_source.html">icom.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9bc314ff47c99b455b3d8b4e99c8999e" name="a9bc314ff47c99b455b3d8b4e99c8999e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9bc314ff47c99b455b3d8b4e99c8999e">&#9670;&#160;</a></span>~ICom()</h2>
@@ -303,6 +309,43 @@ Protected Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>unsigned integer format of data-bits </dd></dl>
 
 <p>Implemented in <a class="el" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a95d4444ee4aa05a9a67ae72a64e5abea">Electux::App::Com::SerialCom</a>.</p>
+
+</div>
+</div>
+<a id="af9edbd81e6aceb933c57d7f0a2d9f3da" name="af9edbd81e6aceb933c57d7f0a2d9f3da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9edbd81e6aceb933c57d7f0a2d9f3da">&#9670;&#160;</a></span>flowControlToUint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual unsigned int Electux::App::Com::ICom::flowControlToUint </td>
+          <td>(</td>
+          <td class="paramtype">const FlowControl&#160;</td>
+          <td class="paramname"><em>flow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts flow-control from scopped enumerator to unsigned int. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flow</td><td>represents scoped enumerator value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unsigned integer format of flow-control </dd></dl>
+
+<p>Implemented in <a class="el" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ab9340ee58f64ff9bc473fb6363153045">Electux::App::Com::SerialCom</a>.</p>
 
 </div>
 </div>
@@ -566,6 +609,43 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a3398abd31d190c57df10a2060415060c" name="a3398abd31d190c57df10a2060415060c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3398abd31d190c57df10a2060415060c">&#9670;&#160;</a></span>uintToFlowControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual FlowControl Electux::App::Com::ICom::uintToFlowControl </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>flow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts flow-control from unsigned int to scopped enumerator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flow</td><td>represents unsigned integer format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>scoped enumerator format of flow-control </dd></dl>
+
+<p>Implemented in <a class="el" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a8d6d6dd93ca4844f20db9db394ee21e2">Electux::App::Com::SerialCom</a>.</p>
+
+</div>
+</div>
 <a id="aa59f6e3a386d5d073a8b1a1af4822a96" name="aa59f6e3a386d5d073a8b1a1af4822a96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa59f6e3a386d5d073a8b1a1af4822a96">&#9670;&#160;</a></span>uintToParity()</h2>
 
@@ -685,7 +765,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html">Com</a></li><li class="navelem"><a class="el" href="../../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html">ICom</a></li>
-    <li class="footer">Generated on Thu Dec 25 2025 21:47:13 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 07:01:02 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

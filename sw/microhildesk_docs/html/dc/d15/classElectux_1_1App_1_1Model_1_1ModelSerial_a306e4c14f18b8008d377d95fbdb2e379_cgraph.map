@@ -1,0 +1,7 @@
+<map id="Electux::App::Model::ModelSerial::getAllEntries" name="Electux::App::Model::ModelSerial::getAllEntries">
+<area shape="rect" id="Node000001" title="Gets all model entries." alt="" coords="5,37,204,77"/>
+<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf" title="Gets entity by key." alt="" coords="260,5,411,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,41,246,35,247,40,204,46"/>
+<area shape="rect" id="Node000003" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="252,69,419,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,68,239,73,238,79,204,74"/>
+</map>

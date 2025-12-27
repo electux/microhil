@@ -37,16 +37,21 @@ namespace Electux::App::Model
         };
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief Gets all model entries
+        /// @return Map of all model entries {key: data}
+        Entities getAllEntries() const final;
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Converts ModelLogKey enum to string
         /// @param key Represents ModelLogKey enum value
         /// @return string representation of ModelLogKey enum
-        std::string toString(ModelLogKey key);
+        std::string toString(const ModelLogKey &key) const;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Validates if key is valid serial configuration key
         /// @param key Represents string key to be validated
         /// @return status true if key is valid else false
-        bool validateKey(const std::string &key);
+        bool validateKey(const std::string &key) const;
     };
 };
 

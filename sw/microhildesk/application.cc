@@ -35,12 +35,7 @@ namespace
 
 using namespace Electux::App;
 
-EntryApplication::EntryApplication():
-    Gtk::Application(applicationId),
-    m_home{AppHome()},
-    m_settings{AppSettings()},
-    m_help{AppHelp()},
-    m_about{AppAbout()}
+EntryApplication::EntryApplication(): Gtk::Application(applicationId)
 {
     Glib::set_application_name(applicationId);
 }

@@ -17,6 +17,7 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <string>
+#include <format>
 #include "home.h"
 
 namespace
@@ -70,37 +71,34 @@ AppHome::AppHome()
 
     for(auto i = 0; i < homeNumChannels; i++)
     {
-        std::string channel = std::to_string(i);
         m_boxChannels.emplace_back(Gtk::Orientation::VERTICAL);
-        m_enableChannels.emplace_back(std::string(homeEnChannelLabel) + channel);
-        m_boxChannels[i].append(m_enableChannels[i]);
+        auto& currentBox = m_boxChannels.back();
+        m_enableChannels.emplace_back(std::format("{} {}", homeEnChannelLabel, i));
+        currentBox.append(m_enableChannels.back());
         m_selectControlChannels.emplace_back();
         for (const auto& option : homeChannelModeOptions)
         {
-            m_selectControlChannels[i].append(option);
+            m_selectControlChannels.back().append(option);
         }
-        m_boxChannels[i].append(m_selectControlChannels[i]);
-        m_labelToggleChannels.emplace_back(homeToggleChannelLabel + channel);
-        m_boxChannels[i].append(m_labelToggleChannels[i]);
+        currentBox.append(m_selectControlChannels.back());
+        m_labelToggleChannels.emplace_back(std::format("{} {}", homeToggleChannelLabel, i));
+        currentBox.append(m_labelToggleChannels.back());
         m_toggleChannels.emplace_back();
-        m_toggleChannels[i].set_label(homeToggleChannelButtonActivate);
-        m_boxChannels[i].append(m_toggleChannels[i]);
-        m_labelTimerChannels.emplace_back(homeTimerChannelLabel + channel);
-        m_boxChannels[i].append(m_labelTimerChannels[i]);
+        m_toggleChannels.back().set_label(homeToggleChannelButtonActivate);
+        currentBox.append(m_toggleChannels.back());
+        m_labelTimerChannels.emplace_back(std::format("{} {}", homeTimerChannelLabel, i));
+        currentBox.append(m_labelTimerChannels.back());
         m_spinTimerChannels.emplace_back();
-        m_boxChannels[i].append(m_spinTimerChannels[i]);
+        currentBox.append(m_spinTimerChannels.back());
         m_toggleTimerChannels.emplace_back();
-        m_toggleTimerChannels[i].set_label(homeTimerChannelButtonStart);
-        m_boxChannels[i].append(m_toggleTimerChannels[i]);
+        m_toggleTimerChannels.back().set_label(homeTimerChannelButtonStart);
+        currentBox.append(m_toggleTimerChannels.back());
         m_statusTimerChannels.emplace_back();
-        m_statusTimerChannels[i].set_fraction(homeStatusFraction);
-        m_boxChannels[i].append(m_statusTimerChannels[i]);
-        m_boxChannels[i].set_margin(homeBoxChannelMargin);
-        m_boxChannels[i].set_spacing(homeBoxChannelSpacing);
-        m_boxRoot.append(m_boxChannels[i]);
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Maps home (signals and slots)
+        m_statusTimerChannels.back().set_fraction(homeStatusFraction);
+        currentBox.append(m_statusTimerChannels.back());
+        currentBox.set_margin(homeBoxChannelMargin);
+        currentBox.set_spacing(homeBoxChannelSpacing);
+        m_boxRoot.append(currentBox);
         mapping(i);
     }
 }

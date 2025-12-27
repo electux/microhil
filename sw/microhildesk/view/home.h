@@ -75,16 +75,16 @@ namespace Electux::App::View
         ///   m_spinTimerChannels - channel spinner
         ///   m_toggleTimerChannels - channel toogle timer (start)
         ///   m_statusTimerChannels - channel status (visual)
-        Gtk::Box m_boxRoot;
-        std::vector<Gtk::Box> m_boxChannels;
-        std::vector<Gtk::CheckButton> m_enableChannels;
-        std::vector<Gtk::ComboBoxText> m_selectControlChannels;
-        std::vector<Gtk::Label> m_labelToggleChannels;
-        std::vector<Gtk::ToggleButton> m_toggleChannels;
-        std::vector<Gtk::Label> m_labelTimerChannels;
-        std::vector<Gtk::SpinButton> m_spinTimerChannels;
-        std::vector<Gtk::ToggleButton> m_toggleTimerChannels;
-        std::vector<Gtk::ProgressBar> m_statusTimerChannels;
+        Gtk::Box m_boxRoot{};
+        std::vector<Gtk::Box> m_boxChannels{};
+        std::vector<Gtk::CheckButton> m_enableChannels{};
+        std::vector<Gtk::ComboBoxText> m_selectControlChannels{};
+        std::vector<Gtk::Label> m_labelToggleChannels{};
+        std::vector<Gtk::ToggleButton> m_toggleChannels{};
+        std::vector<Gtk::Label> m_labelTimerChannels{};
+        std::vector<Gtk::SpinButton> m_spinTimerChannels{};
+        std::vector<Gtk::ToggleButton> m_toggleTimerChannels{};
+        std::vector<Gtk::ProgressBar> m_statusTimerChannels{};
     };
 };
 

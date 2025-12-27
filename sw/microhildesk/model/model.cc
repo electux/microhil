@@ -22,13 +22,20 @@ using namespace Electux::App::Model;
 
 bool Model::add(const std::string &key, const std::string &data)
 {
-    auto const& result = m_entities.try_emplace(key, data);
-    return result.second;
+    auto const [it, inserted] = m_entities.try_emplace(key, data);
+    return inserted;
 }
 
-std::string &Model::getEntity(const std::string &key)
+const std::string &Model::getEntity(const std::string &key) const
 {
-    return m_entities[key];
+    auto it = m_entities.find(key);
+    if (it != m_entities.end())
+    {
+        return it->second;
+    }
+
+    static const std::string fallback{""};
+    return fallback;
 }
 
 const Entities &Model::get() const

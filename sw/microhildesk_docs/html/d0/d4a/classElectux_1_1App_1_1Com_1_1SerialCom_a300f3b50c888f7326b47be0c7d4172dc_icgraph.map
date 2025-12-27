@@ -1,5 +1,5 @@
 <map id="Electux::App::Com::SerialCom::close" name="Electux::App::Com::SerialCom::close">
-<area shape="rect" id="Node000001" title="Closes the serial communication channel." alt="" coords="217,5,367,45"/>
-<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a4e0fd8ce8d81fc4f3c422d2f9d1aff68" title="SerialCom constructor." alt="" coords="5,5,169,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,28,170,28,170,23,204,23"/>
+<area shape="rect" id="Node000001" title="Closes the serial communication channel." alt="" coords="228,5,377,45"/>
+<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a5fa5dcf53ea60ba07a040cd380c1c73c" title=" " alt="" coords="5,5,180,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,28,180,28,180,23,214,23"/>
 </map>

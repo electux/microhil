@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <vector>
 #include "model_log.h"
 
 namespace
@@ -28,7 +29,24 @@ namespace
 
 using namespace Electux::App::Model;
 
-std::string ModelLog::toString(ModelLogKey key)
+Entities ModelLog::getAllEntries() const 
+{
+    static const std::vector<ModelLogKey> keys =
+    {
+        ModelLogKey::LogLevel
+    };
+
+    Entities entries;
+    for (const auto& key : keys)
+    {
+        std::string keyStr = toString(key);
+        entries[keyStr] = getEntity(keyStr); 
+    }
+
+    return entries;
+}
+
+std::string ModelLog::toString(const ModelLogKey &key) const
 {
     switch (key)
     {
@@ -37,7 +55,7 @@ std::string ModelLog::toString(ModelLogKey key)
     }
 }
 
-bool ModelLog::validateKey(const std::string &key)
+bool ModelLog::validateKey(const std::string &key) const
 {
     return key == toString(ModelLogKey::LogLevel);
 }

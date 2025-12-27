@@ -10,8 +10,9 @@ var classElectux_1_1App_1_1Model_1_1ModelSerial =
     [ "ModelSerial", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a97d5e36e492f8e9375f781f8eb54cd58", null ],
     [ "add", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#abd377a2d563d5063853ab64aade108b8", null ],
     [ "get", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#ae54791da60f29fadc62bdbc8014b944a", null ],
-    [ "getEntity", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a8f52adb617d9d965b1691b65b25d3315", null ],
-    [ "toString", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a886486ab0b47a76bdb8a3f3134a2818b", null ],
-    [ "validateKey", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a65ef6c5260afd80bd9fc94c2f28ec8c4", null ],
+    [ "getAllEntries", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a306e4c14f18b8008d377d95fbdb2e379", null ],
+    [ "getEntity", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#ac99cd32993648f3e38cbc23b69a9c7bf", null ],
+    [ "toString", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2", null ],
+    [ "validateKey", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a13ec4162a88de88366319ea309ab47d4", null ],
     [ "m_entities", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afde7201fe763adf6ecab6f6267e3513a", null ]
 ];

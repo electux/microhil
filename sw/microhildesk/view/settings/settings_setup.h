@@ -42,10 +42,10 @@ namespace Electux::App::View::Settings
         ///   m_serialParams - baud, data, parity, stop parameters
         ///   m_logFilePath - absolute path for log file
         ///   m_logLevel - log level
-        Glib::ustring m_serialDevicePath;
-        std::vector<int> m_serialParams;
-        Glib::ustring m_logFilePath;
-        int m_logLevel;
+        Glib::ustring m_serialDevicePath{};
+        std::vector<int> m_serialParams{};
+        Glib::ustring m_logFilePath{};
+        int m_logLevel{};
     };
 };
 

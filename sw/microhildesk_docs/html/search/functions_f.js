@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_0',['write',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#ac8f47ca960da9285c41cb9a2e788aa0a',1,'Electux::App::Com::ICom::write()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a97378427ef817d1364ca07bf9e7a8535',1,'Electux::App::Com::SerialCom::write()']]]
+  ['validatekey_0',['validatekey',['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a65e8a271f90355b68f2149acb148d290',1,'Electux::App::Model::ModelLog::validateKey()'],['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a13ec4162a88de88366319ea309ab47d4',1,'Electux::App::Model::ModelSerial::validateKey()']]]
 ];

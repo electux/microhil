@@ -52,7 +52,6 @@ using namespace Electux::App;
 void EntryApplication::on_startup()
 {
     std::cout << "Startup application..." << std::endl;
-
     Gtk::Application::on_startup();
 
     //////////////////////////////////////////////////////////////////////////
@@ -81,7 +80,6 @@ void EntryApplication::on_startup()
     //////////////////////////////////////////////////////////////////////////
     /// @brief Sets visibility for AppHome window
     m_home.set_visible(true);
-
     std::cout << "Startup application done." << std::endl;
 }
 

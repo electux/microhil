@@ -162,11 +162,11 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aa1f6f84b423f9af429d03f89da568a9d" id="r_aa1f6f84b423f9af429d03f89da568a9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae73bd6a25e09440d72e847b47f5f7fb">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">m_level</a> {<a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae73bd6a25e09440d72e847b47f5f7fba4059b0251f66a18cb56f544728796875">LogLevel::Info</a>}</td></tr>
 <tr class="memdesc:aa1f6f84b423f9af429d03f89da568a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html">Model</a> log properties m_level - current log level m_outputFile - output log file name m_stream - output file stream m_mutex - mutex for thread safety.  <br /></td></tr>
 <tr class="separator:aa1f6f84b423f9af429d03f89da568a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fedc00436bee8284f09ef7c9b7d3184" id="r_a1fedc00436bee8284f09ef7c9b7d3184"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a></td></tr>
+<tr class="memitem:a1fedc00436bee8284f09ef7c9b7d3184" id="r_a1fedc00436bee8284f09ef7c9b7d3184"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a> {}</td></tr>
 <tr class="separator:a1fedc00436bee8284f09ef7c9b7d3184"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b1b03af6bf2eb8bea1ddc675e7cfa1c" id="r_a4b1b03af6bf2eb8bea1ddc675e7cfa1c"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a></td></tr>
+<tr class="memitem:a4b1b03af6bf2eb8bea1ddc675e7cfa1c" id="r_a4b1b03af6bf2eb8bea1ddc675e7cfa1c"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> {}</td></tr>
 <tr class="separator:a4b1b03af6bf2eb8bea1ddc675e7cfa1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae7b0ed6738bd94cfccf67ba449ed0be" id="r_aae7b0ed6738bd94cfccf67ba449ed0be"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">m_mutex</a></td></tr>
+<tr class="memitem:aae7b0ed6738bd94cfccf67ba449ed0be" id="r_aae7b0ed6738bd94cfccf67ba449ed0be"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">m_mutex</a> {}</td></tr>
 <tr class="separator:aae7b0ed6738bd94cfccf67ba449ed0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -624,7 +624,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::mutex Electux::App::Logger::Log::m_mutex</td>
+          <td class="memname">std::mutex Electux::App::Logger::Log::m_mutex {}</td>
         </tr>
       </table>
   </td>
@@ -635,7 +635,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00089">89</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   89</span>{};</div>
+</div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00060">close()</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00073">log()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00047">open()</a>.</p>
 
 </div>
@@ -650,7 +651,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Electux::App::Logger::Log::m_outputFile</td>
+          <td class="memname">std::string Electux::App::Logger::Log::m_outputFile {}</td>
         </tr>
       </table>
   </td>
@@ -661,7 +662,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00087">87</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   87</span>{};</div>
+</div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00047">open()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00042">setOutputFile()</a>.</p>
 
 </div>
@@ -676,7 +678,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::ofstream Electux::App::Logger::Log::m_stream</td>
+          <td class="memname">std::ofstream Electux::App::Logger::Log::m_stream {}</td>
         </tr>
       </table>
   </td>
@@ -687,7 +689,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00088">88</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   88</span>{};</div>
+</div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00060">close()</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00073">log()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00047">open()</a>.</p>
 
 </div>
@@ -702,7 +705,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html">Logger</a></li><li class="navelem"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html">Log</a></li>
-    <li class="footer">Generated on Thu Dec 25 2025 21:47:13 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 07:01:02 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

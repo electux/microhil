@@ -26,6 +26,7 @@ namespace
     ///   data-bits index values
     ///   parity index values
     ///   stop-bits index values
+    ///   flow-control index values
     ///   invalid parameter for serial port
     constexpr const unsigned int comBaud110 = 0;
     constexpr const unsigned int comBaud300 = 1;
@@ -48,6 +49,9 @@ namespace
     constexpr const unsigned int comParityNone = 2;
     constexpr const unsigned int comStopBits1 = 0;
     constexpr const unsigned int comStopBits2 = 1;
+    constexpr const unsigned int comFlowControlNone = 0;
+    constexpr const unsigned int comFlowControlHw = 1;
+    constexpr const unsigned int comFlowControlSw = 2;
     constexpr const unsigned int comInvalidParameter = 127;
 };
 
@@ -253,3 +257,34 @@ StopBits SerialCom::uintToStopBits(const unsigned int stop)
     return StopBits::STOP_BITS_INVALID;
 }
 
+unsigned int SerialCom::flowControlToUint(const FlowControl flow)
+{
+    switch (flow)
+    {
+    case FlowControl::FLOW_CONTROL_NONE:
+        return comFlowControlNone;
+    case FlowControl::FLOW_CONTROL_HARDWARE:
+        return comFlowControlHw;
+    case FlowControl::FLOW_CONTROL_SOFTWARE:
+        return comFlowControlSw;
+    case FlowControl::FLOW_CONTROL_INVALID:
+        return comInvalidParameter;
+    }
+
+    return comInvalidParameter;
+}
+
+FlowControl SerialCom::uintToFlowControl(const unsigned int flow)
+{
+    switch (flow)
+    {
+    case comFlowControlNone:
+        return FlowControl::FLOW_CONTROL_NONE;
+    case comFlowControlHw:
+        return FlowControl::FLOW_CONTROL_HARDWARE;
+    case comFlowControlSw:
+        return FlowControl::FLOW_CONTROL_SOFTWARE;
+    }
+
+    return FlowControl::FLOW_CONTROL_INVALID;
+}

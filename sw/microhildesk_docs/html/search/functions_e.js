@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['validatekey_0',['validatekey',['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#acca456ff069174f18b2f19e35a865b19',1,'Electux::App::Model::ModelLog::validateKey()'],['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a65ef6c5260afd80bd9fc94c2f28ec8c4',1,'Electux::App::Model::ModelSerial::validateKey()']]]
+  ['uinttobaud_0',['uinttobaud',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a9674a2acd0f52359bab49689056b5425',1,'Electux::App::Com::ICom::uintToBaud()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a9faeae1e47c3565713d6ba5c2b575f5d',1,'Electux::App::Com::SerialCom::uintToBaud()']]],
+  ['uinttodatabits_1',['uinttodatabits',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a82dade1ada5305a55b6455d649cf9edc',1,'Electux::App::Com::ICom::uintToDataBits()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a5c6cca4273e6d1634e8e968a13a1e63b',1,'Electux::App::Com::SerialCom::uintToDataBits()']]],
+  ['uinttoflowcontrol_2',['uinttoflowcontrol',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a3398abd31d190c57df10a2060415060c',1,'Electux::App::Com::ICom::uintToFlowControl()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a8d6d6dd93ca4844f20db9db394ee21e2',1,'Electux::App::Com::SerialCom::uintToFlowControl()']]],
+  ['uinttoparity_3',['uinttoparity',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#aa59f6e3a386d5d073a8b1a1af4822a96',1,'Electux::App::Com::ICom::uintToParity()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a86d04b54579a223d78c00cb33fd4daf9',1,'Electux::App::Com::SerialCom::uintToParity()']]],
+  ['uinttostopbits_4',['uinttostopbits',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a1fd89ccff81475c1bda41f8ef97f0980',1,'Electux::App::Com::ICom::uintToStopBits()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ab8291c64feda3243bae4a9e7d05d5f9e',1,'Electux::App::Com::SerialCom::uintToStopBits()']]]
 ];

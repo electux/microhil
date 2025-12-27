@@ -1,0 +1,9 @@
+<map id="Electux::App::Model::ModelLog::toString" name="Electux::App::Model::ModelLog::toString">
+<area shape="rect" id="Node000001" title="Converts ModelLogKey enum to string." alt="" coords="437,37,589,77"/>
+<area shape="rect" id="Node000002" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a5f2ccdca30eb41451efc310133aad392" title="Gets all model entries." alt="" coords="205,5,389,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="423,47,389,42,390,36,424,41"/>
+<area shape="rect" id="Node000003" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a65e8a271f90355b68f2149acb148d290" title="Validates if key is valid serial configuration key." alt="" coords="208,69,387,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="424,73,387,79,386,73,423,68"/>
+<area shape="rect" id="Node000004" href="$d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#a64a239650e115c500c517ebe36c469aa" title="Loads configuration." alt="" coords="5,69,157,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="195,92,158,92,158,87,195,87"/>
+</map>
