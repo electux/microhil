@@ -47,12 +47,17 @@ namespace Electux::App::Model
         /// @brief Gets entity by key
         /// @param key Represents model enity key
         /// @return Entity selected by key
-        virtual std::string &getEntity(const std::string &key) = 0;
+        virtual const std::string &getEntity(const std::string &key) const = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Gets model entities
         /// @return Model entities in format map of strings {key: data}
         virtual const Entities &get() const = 0;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Gets all model entries
+        /// @return Map of all model entries {key: data}
+        virtual Entities getAllEntries() const = 0;
     };
 };
 

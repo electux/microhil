@@ -34,18 +34,25 @@ namespace
 using namespace Electux::App::Config;
 using namespace Electux::App::Model;
 
-Config::Config() :
-    m_fileName{Glib::build_filename(Glib::get_home_dir(), configFile)},
-    m_serialConfig{ModelSerial()},
-    m_logConfig{ModelLog()}
+Config::Config()
 {
+    m_fileName = Glib::build_filename(Glib::get_home_dir(), configFile);
     std::cout << "Setup configuration file path: " << m_fileName << std::endl;
+}
+
+const ModelSerial& Config::getSerialConfig() const
+{
+    return m_serialConfig; 
+}
+
+const ModelLog& Config::getLogConfig() const
+{
+    return m_logConfig;
 }
 
 bool Config::load()
 {
     std::ifstream file(m_fileName);
-
     std::cout << "Load configuration..." << std::endl;
 
     if (!file.is_open())
@@ -55,55 +62,42 @@ bool Config::load()
     }
 
     std::string line;
-    std::unordered_map<std::string, std::string> configMap;
-
     while (std::getline(file, line))
     {
+        if (line.empty() || line[0] == '#')
+        {
+            continue;
+        }
+
         std::istringstream iss(line);
         std::string key, value;
 
         if (std::getline(iss, key, '=') && std::getline(iss, value))
         {
-            if (!m_serialConfig.validateKey(key) && !m_logConfig.validateKey(key))
+            if (m_serialConfig.validateKey(key))
             {
-                std::cerr << "Invalid configuration key: " << key << std::endl;
+                m_serialConfig.add(key, value);
+            }
+            else if (m_logConfig.validateKey(key))
+            {
+                m_logConfig.add(key, value);
+            }
+            else
+            {
+                std::cerr << "Warning: Unknown configuration key: " << key << std::endl;
                 return false;
             }
-            configMap[key] = value;
         }
     }
 
     file.close();
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Load serial configuration
-    std::initializer_list<ModelSerial::ModelSerialKey> serialKeys = {
-        ModelSerial::ModelSerialKey::Device,
-        ModelSerial::ModelSerialKey::Baud,
-        ModelSerial::ModelSerialKey::Data,
-        ModelSerial::ModelSerialKey::Parity,
-        ModelSerial::ModelSerialKey::Stop
-    };
-    for (const auto key : serialKeys)
-    {
-        auto serialKey = m_serialConfig.toString(key);
-        m_serialConfig.add(serialKey, configMap[serialKey]);
-    }
-
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Load log configuration
-    auto logLevelKey = m_logConfig.toString(ModelLog::ModelLogKey::LogLevel);
-    m_logConfig.add(logLevelKey, configMap[logLevelKey]);
-
     std::cout << "Load configuration done." << std::endl;
-
     return true;
 }
 
 bool Config::store()
 {
     std::ofstream file(m_fileName);
-
     std::cout << "Store configuration..." << std::endl;
 
     if (!file.is_open())
@@ -112,29 +106,18 @@ bool Config::store()
         return false;
     }
 
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Store serial configuration
-    std::initializer_list<ModelSerial::ModelSerialKey> serialKeys = {
-        ModelSerial::ModelSerialKey::Device,
-        ModelSerial::ModelSerialKey::Baud,
-        ModelSerial::ModelSerialKey::Data,
-        ModelSerial::ModelSerialKey::Parity,
-        ModelSerial::ModelSerialKey::Stop
+    auto writeModel = [&](const auto& model)
+    {
+        for (const auto& [key, value] : model.getAllEntries())
+        {
+            file << key << "=" << value << "\n";
+        }
     };
 
-    for (const auto key : serialKeys)
-    {
-        auto serialKey = m_serialConfig.toString(key);
-        file << serialKey << "=" << m_serialConfig.getEntity(serialKey) << std::endl;
-    }
+    writeModel(m_serialConfig);
+    writeModel(m_logConfig);
 
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Store log configuration
-    auto logLevelKey = m_logConfig.toString(ModelLog::ModelLogKey::LogLevel);
-    file << logLevelKey << "=" << m_logConfig.getEntity(logLevelKey) << std::endl;
     file.close();
-
     std::cout << "Store configuration done." << std::endl;
-
     return true;
 }

@@ -27,6 +27,7 @@ namespace Electux::App::Com
     using LibSerial::Parity;
     using LibSerial::SerialPort;
     using LibSerial::StopBits;
+    using LibSerial::FlowControl;
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Declaration of serial parameters structure
@@ -39,11 +40,13 @@ namespace Electux::App::Com
         ///   data - the serial port data-bits parameter
         ///   parity - the serial port parity parameter
         ///   stop - the serial port stop-bits parameter
+        ///   flow - the serial port flow-control parameter
         std::string device;
         BaudRate baud;
         CharacterSize data;
         Parity parity;
         StopBits stop;
+        FlowControl flow;
     };
 
     //////////////////////////////////////////////////////////////////////////
@@ -127,6 +130,18 @@ namespace Electux::App::Com
         /// @param stop represents unsigned integer format
         /// @return scoped enumerator format of stop-bits
         virtual StopBits uintToStopBits(const unsigned int stop) = 0;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Converts flow-control from scopped enumerator to unsigned int
+        /// @param flow represents scoped enumerator value
+        /// @return unsigned integer format of flow-control
+        virtual unsigned int flowControlToUint(const FlowControl flow) = 0;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Converts flow-control from unsigned int to scopped enumerator
+        /// @param flow represents unsigned integer format
+        /// @return scoped enumerator format of flow-control
+        virtual FlowControl uintToFlowControl(const unsigned int flow) = 0;
     };
 };
 

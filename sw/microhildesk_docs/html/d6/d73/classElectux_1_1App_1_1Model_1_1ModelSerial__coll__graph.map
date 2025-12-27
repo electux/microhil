@@ -1,9 +1,9 @@
 <map id="Electux::App::Model::ModelSerial" name="Electux::App::Model::ModelSerial">
-<area shape="rect" id="Node000001" title=" " alt="" coords="91,397,233,517"/>
-<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="91,208,233,348"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,361,165,397,159,397,159,361"/>
-<area shape="rect" id="Node000003" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="5,5,148,145"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,157,135,207,130,209,109,159"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="172,35,323,115"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="233,117,200,194,195,192,228,115"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="91,417,233,557"/>
+<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="91,228,233,368"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,382,165,417,159,417,159,382"/>
+<area shape="rect" id="Node000003" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="5,5,148,165"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,177,136,227,132,229,111,179"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="172,45,323,125"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="234,127,199,214,194,212,229,125"/>
 </map>

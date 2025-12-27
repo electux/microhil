@@ -24,6 +24,9 @@
 
 namespace Electux::App::Config
 {
+    using ModelSerial = Electux::App::Model::ModelSerial;
+    using ModelLog = Electux::App::Model::ModelLog;
+
     //////////////////////////////////////////////////////////////////////////
     /// @brief Config class is implementation for configuration mechanism
     class Config : public IConfig
@@ -32,6 +35,16 @@ namespace Electux::App::Config
         //////////////////////////////////////////////////////////////////////
         /// @brief Config constructor
         explicit Config();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Gets serial configuration
+        /// @return Serial configuration
+        const ModelSerial& getSerialConfig() const;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Gets log configuration
+        /// @return Log configuration
+        const ModelLog& getLogConfig() const;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Loads configuration
@@ -49,9 +62,9 @@ namespace Electux::App::Config
         ///   m_fileName - file name path for load/store configuration
         ///   m_serialConfig - serial port configuration
         ///   m_logConfig - log configuration
-        std::string m_fileName;
-        Electux::App::Model::ModelSerial m_serialConfig;
-        Electux::App::Model::ModelLog m_logConfig;
+        std::string m_fileName{};
+        ModelSerial m_serialConfig{};
+        ModelLog m_logConfig{};
     };
 };
 

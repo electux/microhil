@@ -124,28 +124,35 @@ $(document).ready(function(){initNavTree('d5/d3b/model_8cc_source.html','../../'
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">   23</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">Model::add</a>(<span class="keyword">const</span> std::string &amp;key, <span class="keyword">const</span> std::string &amp;data)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; result = <a class="code hl_variable" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#afde7201fe763adf6ecab6f6267e3513a">m_entities</a>.try_emplace(key, data);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> result.second;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span> <span class="keyword">const</span> [it, inserted] = <a class="code hl_variable" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#afde7201fe763adf6ecab6f6267e3513a">m_entities</a>.try_emplace(key, data);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> inserted;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a8f52adb617d9d965b1691b65b25d3315">   29</a></span>std::string &amp;<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a8f52adb617d9d965b1691b65b25d3315">Model::getEntity</a>(<span class="keyword">const</span> std::string &amp;key)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#afde7201fe763adf6ecab6f6267e3513a">m_entities</a>[key];</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf">   29</a></span><span class="keyword">const</span> std::string &amp;<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf">Model::getEntity</a>(<span class="keyword">const</span> std::string &amp;key)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">auto</span> it = <a class="code hl_variable" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#afde7201fe763adf6ecab6f6267e3513a">m_entities</a>.find(key);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#afde7201fe763adf6ecab6f6267e3513a">m_entities</a>.end())</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">static</span> <span class="keyword">const</span> std::string fallback{<span class="stringliteral">&quot;&quot;</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> fallback;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ae54791da60f29fadc62bdbc8014b944a">   34</a></span><span class="keyword">const</span> <a class="code hl_typedef" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a560bd9e7602201e7f42909e6c4320625">Entities</a> &amp;<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ae54791da60f29fadc62bdbc8014b944a">Model::get</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#afde7201fe763adf6ecab6f6267e3513a">m_entities</a>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ae54791da60f29fadc62bdbc8014b944a">   41</a></span><span class="keyword">const</span> <a class="code hl_typedef" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a560bd9e7602201e7f42909e6c4320625">Entities</a> &amp;<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ae54791da60f29fadc62bdbc8014b944a">Model::get</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#afde7201fe763adf6ecab6f6267e3513a">m_entities</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_a8f52adb617d9d965b1691b65b25d3315"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a8f52adb617d9d965b1691b65b25d3315">Electux::App::Model::Model::getEntity</a></div><div class="ttdeci">std::string &amp; getEntity(const std::string &amp;key) final</div><div class="ttdoc">Gets entity by key.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00029">model.cc:29</a></div></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_abd377a2d563d5063853ab64aade108b8"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">Electux::App::Model::Model::add</a></div><div class="ttdeci">bool add(const std::string &amp;key, const std::string &amp;data) final</div><div class="ttdoc">Adds entity to model {'key': 'data'}.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00023">model.cc:23</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_ae54791da60f29fadc62bdbc8014b944a"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ae54791da60f29fadc62bdbc8014b944a">Electux::App::Model::Model::get</a></div><div class="ttdeci">const Entities &amp; get() const final</div><div class="ttdoc">Gets model entities.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00034">model.cc:34</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_ac99cd32993648f3e38cbc23b69a9c7bf"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf">Electux::App::Model::Model::getEntity</a></div><div class="ttdeci">const std::string &amp; getEntity(const std::string &amp;key) const final</div><div class="ttdoc">Gets entity by key.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00029">model.cc:29</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_ae54791da60f29fadc62bdbc8014b944a"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ae54791da60f29fadc62bdbc8014b944a">Electux::App::Model::Model::get</a></div><div class="ttdeci">const Entities &amp; get() const final</div><div class="ttdoc">Gets model entities.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00041">model.cc:41</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_afde7201fe763adf6ecab6f6267e3513a"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#afde7201fe763adf6ecab6f6267e3513a">Electux::App::Model::Model::m_entities</a></div><div class="ttdeci">Entities m_entities</div><div class="ttdoc">Model entities in format map of strings {key: data}.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d51/model_8h_source.html#l00054">model.h:54</a></div></div>
 <div class="ttc" id="amodel_8h_html"><div class="ttname"><a href="../../dc/d51/model_8h.html">model.h</a></div></div>
 <div class="ttc" id="anamespaceElectux_1_1App_1_1Model_html"><div class="ttname"><a href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html">Electux::App::Model</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d78/imodel_8h_source.html#l00024">imodel.h:25</a></div></div>
@@ -156,7 +163,7 @@ $(document).ready(function(){initNavTree('d5/d3b/model_8cc_source.html','../../'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="../../d5/d3b/model_8cc.html">model.cc</a></li>
-    <li class="footer">Generated on Thu Dec 25 2025 21:47:13 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 07:01:02 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

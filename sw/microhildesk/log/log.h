@@ -84,9 +84,9 @@ namespace Electux::App::Logger
         ///   m_stream - output file stream
         ///   m_mutex - mutex for thread safety
         LogLevel m_level{LogLevel::Info};
-        std::string m_outputFile;
-        std::ofstream m_stream;
-        std::mutex m_mutex;
+        std::string m_outputFile{};
+        std::ofstream m_stream{};
+        std::mutex m_mutex{};
     };
 };
 

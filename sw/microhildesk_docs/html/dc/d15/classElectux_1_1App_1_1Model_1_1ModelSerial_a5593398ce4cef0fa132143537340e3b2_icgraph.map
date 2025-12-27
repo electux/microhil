@@ -1,0 +1,9 @@
+<map id="Electux::App::Model::ModelSerial::toString" name="Electux::App::Model::ModelSerial::toString">
+<area shape="rect" id="Node000001" title="Converts Key enum to." alt="" coords="452,37,619,77"/>
+<area shape="rect" id="Node000002" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a306e4c14f18b8008d377d95fbdb2e379" title="Gets all model entries." alt="" coords="205,5,404,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="438,47,404,42,404,36,438,41"/>
+<area shape="rect" id="Node000003" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a13ec4162a88de88366319ea309ab47d4" title="Validates if key is valid serial configuration key." alt="" coords="209,69,401,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="439,73,401,79,401,73,438,68"/>
+<area shape="rect" id="Node000004" href="$d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#a64a239650e115c500c517ebe36c469aa" title="Loads configuration." alt="" coords="5,69,157,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="195,92,157,92,157,87,195,87"/>
+</map>

@@ -87,27 +87,27 @@ namespace Electux::App::View::Settings
         ///   m_buttonOk - ok button (save changes)
         ///   m_buttonCancel - cancel button (dissmiss changes)
         SigSetup m_setup{};
-        Gtk::Box m_boxRoot;
-        Gtk::Notebook m_notebook;
-        Gtk::Box m_boxSerial;
-        Gtk::Label m_labelSerialPath;
-        Gtk::Entry m_entrySerialPath;
-        Gtk::Label m_labelSerialBaud;
-        Gtk::ComboBoxText m_comboSerialBaud;
-        Gtk::Label m_labelSerialData;
-        Gtk::ComboBoxText m_comboSerialData;
-        Gtk::Label m_labelSerialParity;
-        Gtk::ComboBoxText m_comboSerialParity;
-        Gtk::Label m_labelSerialStop;
-        Gtk::ComboBoxText m_comboSerialStop;
-        Gtk::Box m_boxLog;
-        Gtk::Label m_labelLogPath;
-        Gtk::Entry m_entryLogPath;
-        Gtk::Label m_labelLogLevel;
-        Gtk::ComboBoxText m_comboLogLevel;
-        Gtk::Grid m_buttonBox;
-        Gtk::Button m_buttonOk;
-        Gtk::Button m_buttonCancel;
+        Gtk::Box m_boxRoot{};
+        Gtk::Notebook m_notebook{};
+        Gtk::Box m_boxSerial{};
+        Gtk::Label m_labelSerialPath{};
+        Gtk::Entry m_entrySerialPath{};
+        Gtk::Label m_labelSerialBaud{};
+        Gtk::ComboBoxText m_comboSerialBaud{};
+        Gtk::Label m_labelSerialData{};
+        Gtk::ComboBoxText m_comboSerialData{};
+        Gtk::Label m_labelSerialParity{};
+        Gtk::ComboBoxText m_comboSerialParity{};
+        Gtk::Label m_labelSerialStop{};
+        Gtk::ComboBoxText m_comboSerialStop{};
+        Gtk::Box m_boxLog{};
+        Gtk::Label m_labelLogPath{};
+        Gtk::Entry m_entryLogPath{};
+        Gtk::Label m_labelLogLevel{};
+        Gtk::ComboBoxText m_comboLogLevel{};
+        Gtk::Grid m_buttonBox{};
+        Gtk::Button m_buttonOk{};
+        Gtk::Button m_buttonCancel{};
     };
 };
 

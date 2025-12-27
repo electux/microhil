@@ -24,7 +24,7 @@ void AppSettings::onButtonOkClicked()
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Performs action on OK button
-    SettingsSetup setup;
+    SettingsSetup setup{};
     setup.m_serialDevicePath = m_entrySerialPath.get_text();
     setup.m_serialParams.push_back(m_comboSerialBaud.get_active_row_number());
     setup.m_serialParams.push_back(m_comboSerialData.get_active_row_number());

@@ -28,12 +28,11 @@ namespace Electux::App::Com
     {
     public:
         //////////////////////////////////////////////////////////////////////
-        /// @brief SerialCom constructor
-        explicit SerialCom();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief SerialCom destructor
-        inline ~SerialCom() noexcept = default;
+        /// @brief SerialCom methods
+        ///   SerialCom constructor
+        ///   SerialCom destructor
+        inline SerialCom() noexcept = default;
+        ~SerialCom() noexcept;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Opens the serial communication channel
@@ -109,8 +108,20 @@ namespace Electux::App::Com
         StopBits uintToStopBits(const unsigned int stop) final;
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief Converts flow-control from scopped enumerator to unsigned int
+        /// @param flow represents scoped enumerator value
+        /// @return unsigned integer format of flow-control
+        unsigned int flowControlToUint(const FlowControl flow) final;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Converts flow-control from unsigned int to scopped enumerator
+        /// @param flow represents unsigned integer format
+        /// @return scoped enumerator format of flow-control
+        FlowControl uintToFlowControl(const unsigned int flow) final;
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Serial port instance
-        SerialPort m_serialPort;
+        SerialPort m_serialPort{};
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Serial port device file path

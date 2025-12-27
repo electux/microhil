@@ -1,9 +1,0 @@
-<map id="Electux::App::Config::Config::store" name="Electux::App::Config::Config::store">
-<area shape="rect" id="Node000001" title="Stores configuration." alt="" coords="5,69,157,109"/>
-<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a8f52adb617d9d965b1691b65b25d3315" title="Gets entity by key." alt="" coords="213,5,364,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,67,210,47,211,52,148,72"/>
-<area shape="rect" id="Node000003" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a01d84e3304b896049851181a4e0d9f89" title="Converts ModelLogKey enum to string." alt="" coords="213,69,365,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,87,199,87,199,92,158,92"/>
-<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a886486ab0b47a76bdb8a3f3134a2818b" title="Converts Key enum to." alt="" coords="205,133,372,173"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,107,211,127,210,132,146,112"/>
-</map>

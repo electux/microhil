@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <vector>
 #include "model_serial.h"
 
 namespace
@@ -32,7 +33,28 @@ namespace
 
 using namespace Electux::App::Model;
 
-std::string ModelSerial::toString(ModelSerialKey key)
+Entities ModelSerial::getAllEntries() const 
+{
+    static const std::vector<ModelSerialKey> keys = 
+    {
+        ModelSerialKey::Device,
+        ModelSerialKey::Baud,
+        ModelSerialKey::Data,
+        ModelSerialKey::Parity,
+        ModelSerialKey::Stop
+    };
+
+    Entities entries;
+    for (const auto& key : keys)
+    {
+        std::string keyStr = toString(key);
+        entries[keyStr] = getEntity(keyStr); 
+    }
+
+    return entries;
+}
+
+std::string ModelSerial::toString(const ModelSerialKey &key) const
 {
     switch (key)
     {
@@ -45,7 +67,7 @@ std::string ModelSerial::toString(ModelSerialKey key)
     }
 }
 
-bool ModelSerial::validateKey(const std::string &key)
+bool ModelSerial::validateKey(const std::string &key) const
 {
     return key == toString(ModelSerialKey::Device) ||
             key == toString(ModelSerialKey::Baud) ||

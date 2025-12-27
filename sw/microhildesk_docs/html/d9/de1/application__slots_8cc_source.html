@@ -141,73 +141,71 @@ $(document).ready(function(){initNavTree('d9/de1/application__slots_8cc_source.h
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440">   52</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440">EntryApplication::on_startup</a>()</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Startup application...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    Gtk::Application::on_startup();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">auto</span> menu = Gio::Menu::create();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">auto</span> submenu_file = Gio::Menu::create();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    submenu_file-&gt;append(fileQuitLabel, fileQuitDetaildAction);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    menu-&gt;append_submenu(fileLabel, submenu_file);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">auto</span> submenu_option = Gio::Menu::create();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    submenu_option-&gt;append(optionSettingsLabel, optionSettingsDetaildAction);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    menu-&gt;append_submenu(optionLabel, submenu_option);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">auto</span> submenu_help = Gio::Menu::create();</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    submenu_help-&gt;append(helpDocLabel, helpDocDetaildAction);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    submenu_help-&gt;append(helpAboutLabel, helpAboutDetaildAction);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    menu-&gt;append_submenu(helpLabel, submenu_help);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    set_menubar(menu);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48">mapping</a>();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    add_window(<a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a92a1cd080561fd03ae5f960779c165bc">m_home</a>);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a92a1cd080561fd03ae5f960779c165bc">m_home</a>.set_visible(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Startup application done.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    Gtk::Application::on_startup();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">auto</span> menu = Gio::Menu::create();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">auto</span> submenu_file = Gio::Menu::create();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    submenu_file-&gt;append(fileQuitLabel, fileQuitDetaildAction);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    menu-&gt;append_submenu(fileLabel, submenu_file);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">auto</span> submenu_option = Gio::Menu::create();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    submenu_option-&gt;append(optionSettingsLabel, optionSettingsDetaildAction);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    menu-&gt;append_submenu(optionLabel, submenu_option);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">auto</span> submenu_help = Gio::Menu::create();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    submenu_help-&gt;append(helpDocLabel, helpDocDetaildAction);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    submenu_help-&gt;append(helpAboutLabel, helpAboutDetaildAction);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    menu-&gt;append_submenu(helpLabel, submenu_help);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    set_menubar(menu);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48">mapping</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    add_window(<a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#acf2fc09e2978ec6b29cc708a0a92fff2">m_home</a>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#acf2fc09e2978ec6b29cc708a0a92fff2">m_home</a>.set_visible(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Startup application done.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
 </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">EntryApplication::onActionQuit</a>()</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Quit application.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a92a1cd080561fd03ae5f960779c165bc">m_home</a>.set_visible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    remove_window(<a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a92a1cd080561fd03ae5f960779c165bc">m_home</a>);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    quit();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">   86</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">EntryApplication::onActionQuit</a>()</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Quit application.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#acf2fc09e2978ec6b29cc708a0a92fff2">m_home</a>.set_visible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    remove_window(<a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#acf2fc09e2978ec6b29cc708a0a92fff2">m_home</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    quit();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">   96</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">EntryApplication::onActionSettings</a>()</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>{</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aa01cb2da6e706b7cf663405d091f256a">m_settings</a>.show();</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">   94</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">EntryApplication::onActionSettings</a>()</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a9298ffd230dc563df16fadaa8bc47014">m_settings</a>.show();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
 </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">  101</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">EntryApplication::onActionDoc</a>()</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>{</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a8cadd7c71c66910caa81d1e296fb0e30">m_help</a>.show();</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">   99</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">EntryApplication::onActionDoc</a>()</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#afe58636cecb4c982cf77846a4aa25baf">m_help</a>.show();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
 </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">  106</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">EntryApplication::onActionAbout</a>()</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a384562462b7475ccf5558db97557d16d">m_about</a>.show();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">  104</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">EntryApplication::onActionAbout</a>()</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a1a725b5941ed3293a2694dd2aa572a66">m_about</a>.show();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
 </div>
 <div class="ttc" id="aapplication_8h_html"><div class="ttname"><a href="../../db/d32/application_8h.html">application.h</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a3076fd39b705c6d3fd4f3ecdd5fbc69a"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">Electux::App::EntryApplication::onActionSettings</a></div><div class="ttdeci">void onActionSettings()</div><div class="ttdoc">On action settings create window for application settings.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00096">application_slots.cc:96</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a37d19d8f5b163555d4eab076424cb81a"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">Electux::App::EntryApplication::onActionDoc</a></div><div class="ttdeci">void onActionDoc()</div><div class="ttdoc">On action doc create window for help documentation.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00101">application_slots.cc:101</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a384562462b7475ccf5558db97557d16d"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a384562462b7475ccf5558db97557d16d">Electux::App::EntryApplication::m_about</a></div><div class="ttdeci">Electux::App::View::About::AppAbout m_about</div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00077">application.h:77</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a1a725b5941ed3293a2694dd2aa572a66"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a1a725b5941ed3293a2694dd2aa572a66">Electux::App::EntryApplication::m_about</a></div><div class="ttdeci">AppAbout m_about</div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00082">application.h:82</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a3076fd39b705c6d3fd4f3ecdd5fbc69a"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">Electux::App::EntryApplication::onActionSettings</a></div><div class="ttdeci">void onActionSettings()</div><div class="ttdoc">On action settings create window for application settings.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00094">application_slots.cc:94</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a37d19d8f5b163555d4eab076424cb81a"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">Electux::App::EntryApplication::onActionDoc</a></div><div class="ttdeci">void onActionDoc()</div><div class="ttdoc">On action doc create window for help documentation.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00099">application_slots.cc:99</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a7fede2b4760877dac5577327a1879440"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440">Electux::App::EntryApplication::on_startup</a></div><div class="ttdeci">void on_startup() override</div><div class="ttdoc">Handler for the startup signal.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00052">application_slots.cc:52</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a8cadd7c71c66910caa81d1e296fb0e30"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a8cadd7c71c66910caa81d1e296fb0e30">Electux::App::EntryApplication::m_help</a></div><div class="ttdeci">Electux::App::View::Help::AppHelp m_help</div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00076">application.h:76</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a92a1cd080561fd03ae5f960779c165bc"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a92a1cd080561fd03ae5f960779c165bc">Electux::App::EntryApplication::m_home</a></div><div class="ttdeci">Electux::App::View::AppHome m_home</div><div class="ttdoc">Instances of application views m_home - instance of AppHome (main window) m_settings - instance of Ap...</div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00074">application.h:74</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_aa01cb2da6e706b7cf663405d091f256a"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aa01cb2da6e706b7cf663405d091f256a">Electux::App::EntryApplication::m_settings</a></div><div class="ttdeci">Electux::App::View::Settings::AppSettings m_settings</div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00075">application.h:75</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_ac1f21525becc191cbfdf83bcc7360e22"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">Electux::App::EntryApplication::onActionQuit</a></div><div class="ttdeci">void onActionQuit()</div><div class="ttdoc">On action for quit.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00088">application_slots.cc:88</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_ac446f6532c80978429214cf11bae96c3"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">Electux::App::EntryApplication::onActionAbout</a></div><div class="ttdeci">void onActionAbout()</div><div class="ttdoc">On action about create dialog for about application.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00106">application_slots.cc:106</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a9298ffd230dc563df16fadaa8bc47014"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a9298ffd230dc563df16fadaa8bc47014">Electux::App::EntryApplication::m_settings</a></div><div class="ttdeci">AppSettings m_settings</div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00080">application.h:80</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_ac1f21525becc191cbfdf83bcc7360e22"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">Electux::App::EntryApplication::onActionQuit</a></div><div class="ttdeci">void onActionQuit()</div><div class="ttdoc">On action for quit.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00086">application_slots.cc:86</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_ac446f6532c80978429214cf11bae96c3"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">Electux::App::EntryApplication::onActionAbout</a></div><div class="ttdeci">void onActionAbout()</div><div class="ttdoc">On action about create dialog for about application.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00104">application_slots.cc:104</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_acf2fc09e2978ec6b29cc708a0a92fff2"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#acf2fc09e2978ec6b29cc708a0a92fff2">Electux::App::EntryApplication::m_home</a></div><div class="ttdeci">AppHome m_home</div><div class="ttdoc">Instances of application views m_home - instance of AppHome (main window) m_settings - instance of Ap...</div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00079">application.h:79</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_aed9ee32a0e2d9ee04a7f14854cd00f48"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48">Electux::App::EntryApplication::mapping</a></div><div class="ttdeci">void mapping()</div><div class="ttdoc">Maps signal/slots for application views.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d51/application__map_8cc_source.html#l00041">application_map.cc:41</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_afe58636cecb4c982cf77846a4aa25baf"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#afe58636cecb4c982cf77846a4aa25baf">Electux::App::EntryApplication::m_help</a></div><div class="ttdeci">AppHelp m_help</div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00081">application.h:81</a></div></div>
 <div class="ttc" id="anamespaceElectux_1_1App_html"><div class="ttname"><a href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00027">application.h:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -215,7 +213,7 @@ $(document).ready(function(){initNavTree('d9/de1/application__slots_8cc_source.h
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/de1/application__slots_8cc.html">application_slots.cc</a></li>
-    <li class="footer">Generated on Thu Dec 25 2025 21:47:13 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 07:01:02 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['tostring_0',['tostring',['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a01d84e3304b896049851181a4e0d9f89',1,'Electux::App::Model::ModelLog::toString()'],['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a886486ab0b47a76bdb8a3f3134a2818b',1,'Electux::App::Model::ModelSerial::toString()']]]
+  ['serial_5fcom_2ecc_0',['serial_com.cc',['../d0/d38/serial__com_8cc.html',1,'']]],
+  ['serial_5fcom_2eh_1',['serial_com.h',['../df/d29/serial__com_8h.html',1,'']]],
+  ['serial_5fcom_5futils_2ecc_2',['serial_com_utils.cc',['../d1/df2/serial__com__utils_8cc.html',1,'']]],
+  ['serialcom_3',['serialcom',['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html',1,'Electux::App::Com::SerialCom'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ac6737b8f941ebbafd4f75687b41cdef4',1,'Electux::App::Com::SerialCom::SerialCom()']]],
+  ['serialparams_4',['SerialParams',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a932b8883f91a8834a07cda5886429344',1,'Electux::App::Com']]],
+  ['setlevel_5',['setLevel',['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa9037ce13440d5c0ccec4b59e5b874ce',1,'Electux::App::Logger::Log']]],
+  ['setoutputfile_6',['setOutputFile',['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a42da327364c5a0e750cd344ee21c791c',1,'Electux::App::Logger::Log']]],
+  ['settings_2ecc_7',['settings.cc',['../d3/d8e/settings_8cc.html',1,'']]],
+  ['settings_2eh_8',['settings.h',['../de/d60/settings_8h.html',1,'']]],
+  ['settings_5fmap_2ecc_9',['settings_map.cc',['../d0/d67/settings__map_8cc.html',1,'']]],
+  ['settings_5fsetup_2eh_10',['settings_setup.h',['../df/d7c/settings__setup_8h.html',1,'']]],
+  ['settings_5fslots_2ecc_11',['settings_slots.cc',['../dd/dc1/settings__slots_8cc.html',1,'']]],
+  ['settingssetup_12',['settingssetup',['../d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html',1,'Electux::App::View::Settings::SettingsSetup'],['../d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#a351194157f134cf015bb616f678d7c91',1,'Electux::App::View::Settings::SettingsSetup::SettingsSetup()']]],
+  ['setup_13',['setup',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#aecc7a1914572a2e2add282eddd6f3bbe',1,'Electux::App::Com::ICom::setup()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a66a7276fc495c0a1509d4c91092aaf6e',1,'Electux::App::Com::SerialCom::setup()']]],
+  ['setupchanged_14',['setupChanged',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a182d77c5174cecc76723031da326755e',1,'Electux::App::View::Settings::AppSettings']]],
+  ['sigsetup_15',['SigSetup',['../d7/d63/namespaceElectux_1_1App_1_1View_1_1Settings.html#a2a9008da627d6e2a709a984d3cabb71c',1,'Electux::App::View::Settings']]],
+  ['stop_16',['stop',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a11a755d598c0c417f9a36758c3da7481',1,'Electux::App::Model::ModelSerial::Stop'],['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a87896c97c3e5431c312b7e758b9247e8',1,'Electux::App::Com::stop']]],
+  ['stopbitstouint_17',['stopbitstouint',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a7c91892d693dcfe9e7c1a68fd3dfdd9a',1,'Electux::App::Com::ICom::stopBitsToUint()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a92b5deb9e4d80c7073354caa1fef0eae',1,'Electux::App::Com::SerialCom::stopBitsToUint()']]],
+  ['store_18',['store',['../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#a2c071004dca6041863fce1d6a01e0a57',1,'Electux::App::Config::Config::store()'],['../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#a5f5eea781713845083e097780c29eefd',1,'Electux::App::Config::IConfig::store()']]]
 ];

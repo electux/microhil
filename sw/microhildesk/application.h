@@ -26,6 +26,11 @@
 
 namespace Electux::App
 {
+    using AppHome = Electux::App::View::AppHome;
+    using AppSettings = Electux::App::View::Settings::AppSettings;
+    using AppHelp = Electux::App::View::Help::AppHelp;
+    using AppAbout = Electux::App::View::About::AppAbout;
+
     //////////////////////////////////////////////////////////////////////////
     /// @brief Entry point for application definition
     class EntryApplication : public Gtk::Application
@@ -71,10 +76,10 @@ namespace Electux::App
         ///   m_settings - instance of AppSettings (settings window)
         ///   m_help - instance of AppHelp (help window)
         ///   m_about - instance of AppAbout (about dialog)
-        Electux::App::View::AppHome m_home;
-        Electux::App::View::Settings::AppSettings m_settings;
-        Electux::App::View::Help::AppHelp m_help;
-        Electux::App::View::About::AppAbout m_about;
+        AppHome m_home{};
+        AppSettings m_settings{};
+        AppHelp m_help{};
+        AppAbout m_about{};
     };
 };
 
