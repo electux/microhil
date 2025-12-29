@@ -71,6 +71,11 @@ namespace Electux::App
         void onActionQuit();
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief On handle close main window
+        /// @return true if the signal has been handled
+        bool onHandleClose();
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Instances of application views
         ///   m_home - instance of AppHome (main window)
         ///   m_settings - instance of AppSettings (settings window)
