@@ -39,7 +39,7 @@ namespace
     constexpr const char fileQuitDetaildAction[]{"app.quit"};
     constexpr const char optionLabel[]{"Option"};
     constexpr const char optionSettingsLabel[]{"_Settings"};
-    constexpr const char optionSettingsDetaildAction[]{"app.setting"};
+    constexpr const char optionSettingsDetaildAction[]{"app.settings"};
     constexpr const char helpLabel[]{"Help"};
     constexpr const char helpDocLabel[]{"_Documentation"};
     constexpr const char helpDocDetaildAction[]{"app.doc"};
@@ -78,6 +78,10 @@ void EntryApplication::on_startup()
     add_window(m_home);
 
     //////////////////////////////////////////////////////////////////////////
+    /// @brief Connects close request signal for AppHome window
+    m_home.signal_close_request().connect(sigc::mem_fun(*this, &EntryApplication::onHandleClose), false);
+
+    //////////////////////////////////////////////////////////////////////////
     /// @brief Sets visibility for AppHome window
     m_home.set_visible(true);
     std::cout << "Startup application done." << std::endl;
@@ -89,6 +93,12 @@ void EntryApplication::onActionQuit()
     m_home.set_visible(false);
     remove_window(m_home);
     quit();
+}
+
+bool EntryApplication::onHandleClose()
+{
+    onActionQuit();
+    return false;
 }
 
 void EntryApplication::onActionSettings()
