@@ -28,7 +28,7 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration parameters
     ///   configFile - program configuration file name
-    constexpr const char configFile[]{".microhil/config"};
+    constexpr std::string_view configFile{".microhil/config"};
 };
 
 using namespace Electux::App::Config;
@@ -36,7 +36,7 @@ using namespace Electux::App::Model;
 
 Config::Config()
 {
-    m_fileName = Glib::build_filename(Glib::get_home_dir(), configFile);
+    m_fileName = Glib::build_filename(Glib::get_home_dir(), configFile.data());
     std::cout << "Setup configuration file path: " << m_fileName << std::endl;
 }
 

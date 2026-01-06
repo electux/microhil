@@ -25,7 +25,7 @@ namespace
     ///   helpTitle - window title
     ///   helpWidth - window width
     ///   helpHeight - window height
-    constexpr const char helpTitle[]{"microhildesk"};
+    constexpr std::string_view helpTitle{"microhildesk"};
     constexpr int helpWidth{600};
     constexpr int helpHeight{400};
 };
@@ -34,7 +34,7 @@ using namespace Electux::App::View::Help;
 
 AppHelp::AppHelp()
 {
-    set_title(helpTitle);
+    set_title(helpTitle.data());
     set_default_size(helpWidth, helpHeight);
     set_resizable(false);
     set_hide_on_close(true);

@@ -254,13 +254,13 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html" title="Entry point for application definition.">EntryApplication</a> constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d16/application_8cc_source.html#l00038">38</a> of file <a class="el" href="../../dc/d16/application_8cc_source.html">application.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>                                  : Gtk::Application(applicationId)</div>
-<div class="line"><span class="lineno">   39</span>{</div>
-<div class="line"><span class="lineno">   40</span>    Glib::set_application_name(applicationId);</div>
-<div class="line"><span class="lineno">   41</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../dc/d16/application_8cc_source.html#l00033">33</a> of file <a class="el" href="../../dc/d16/application_8cc_source.html">application.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>                                  : Gtk::Application(applicationId.data())</div>
+<div class="line"><span class="lineno">   34</span>{</div>
+<div class="line"><span class="lineno">   35</span>    Glib::set_application_name(applicationId.data());</div>
+<div class="line"><span class="lineno">   36</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../dc/d16/application_8cc_source.html#l00043">create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d16/application_8cc_source.html#l00038">create()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -302,13 +302,13 @@ Here is the caller graph for this function:</div>
 
 <p>Creates reference pointer to <a class="el" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html" title="Entry point for application definition.">EntryApplication</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d16/application_8cc_source.html#l00043">43</a> of file <a class="el" href="../../dc/d16/application_8cc_source.html">application.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> Glib::make_refptr_for_instance&lt;EntryApplication&gt;(<span class="keyword">new</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">EntryApplication</a>());</div>
-<div class="line"><span class="lineno">   46</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a4b6b66824726af1b9ebef4ae063eba4f"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">Electux::App::EntryApplication::EntryApplication</a></div><div class="ttdeci">EntryApplication()</div><div class="ttdoc">EntryApplication constructor.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d16/application_8cc_source.html#l00038">application.cc:38</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../dc/d16/application_8cc_source.html#l00038">38</a> of file <a class="el" href="../../dc/d16/application_8cc_source.html">application.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> Glib::make_refptr_for_instance&lt;EntryApplication&gt;(<span class="keyword">new</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">EntryApplication</a>());</div>
+<div class="line"><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a4b6b66824726af1b9ebef4ae063eba4f"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">Electux::App::EntryApplication::EntryApplication</a></div><div class="ttdeci">EntryApplication()</div><div class="ttdoc">EntryApplication constructor.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d16/application_8cc_source.html#l00033">application.cc:33</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dc/d16/application_8cc_source.html#l00038">EntryApplication()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/d16/application_8cc_source.html#l00033">EntryApplication()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/d0f/main_8cc_source.html#l00023">main()</a>.</p>
 <div class="dynheader">
@@ -363,12 +363,12 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d51/application__map_8cc_source.html#l00041">41</a> of file <a class="el" href="../../d4/d51/application__map_8cc_source.html">application_map.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
-<div class="line"><span class="lineno">   45</span>    set_accel_for_action(detailedActionName, keyboardAccelerator);</div>
+<div class="line"><span class="lineno">   45</span>    set_accel_for_action(detailedActionName.data(), keyboardAccelerator.data());</div>
 <div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   49</span>    add_action(fileQuitActionName, sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">EntryApplication::onActionQuit</a>));</div>
-<div class="line"><span class="lineno">   50</span>    add_action(optionSettingsActionName, sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">EntryApplication::onActionSettings</a>));</div>
-<div class="line"><span class="lineno">   51</span>    add_action(helpDocActionName, sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">EntryApplication::onActionDoc</a>));</div>
-<div class="line"><span class="lineno">   52</span>    add_action(helpAboutActionName, sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">EntryApplication::onActionAbout</a>));</div>
+<div class="line"><span class="lineno">   49</span>    add_action(fileQuitActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">EntryApplication::onActionQuit</a>));</div>
+<div class="line"><span class="lineno">   50</span>    add_action(optionSettingsActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">EntryApplication::onActionSettings</a>));</div>
+<div class="line"><span class="lineno">   51</span>    add_action(helpDocActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">EntryApplication::onActionDoc</a>));</div>
+<div class="line"><span class="lineno">   52</span>    add_action(helpAboutActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">EntryApplication::onActionAbout</a>));</div>
 <div class="line"><span class="lineno">   53</span>}</div>
 <div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a3076fd39b705c6d3fd4f3ecdd5fbc69a"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">Electux::App::EntryApplication::onActionSettings</a></div><div class="ttdeci">void onActionSettings()</div><div class="ttdoc">On action settings create window for application settings.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00104">application_slots.cc:104</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a37d19d8f5b163555d4eab076424cb81a"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">Electux::App::EntryApplication::onActionDoc</a></div><div class="ttdeci">void onActionDoc()</div><div class="ttdoc">On action doc create window for help documentation.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/de1/application__slots_8cc_source.html#l00109">application_slots.cc:109</a></div></div>
@@ -444,15 +444,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   56</span> </div>
 <div class="line"><span class="lineno">   59</span>    <span class="keyword">auto</span> menu = Gio::Menu::create();</div>
 <div class="line"><span class="lineno">   60</span>    <span class="keyword">auto</span> submenu_file = Gio::Menu::create();</div>
-<div class="line"><span class="lineno">   61</span>    submenu_file-&gt;append(fileQuitLabel, fileQuitDetaildAction);</div>
-<div class="line"><span class="lineno">   62</span>    menu-&gt;append_submenu(fileLabel, submenu_file);</div>
+<div class="line"><span class="lineno">   61</span>    submenu_file-&gt;append(fileQuitLabel.data(), fileQuitDetaildAction.data());</div>
+<div class="line"><span class="lineno">   62</span>    menu-&gt;append_submenu(fileLabel.data(), submenu_file);</div>
 <div class="line"><span class="lineno">   63</span>    <span class="keyword">auto</span> submenu_option = Gio::Menu::create();</div>
-<div class="line"><span class="lineno">   64</span>    submenu_option-&gt;append(optionSettingsLabel, optionSettingsDetaildAction);</div>
-<div class="line"><span class="lineno">   65</span>    menu-&gt;append_submenu(optionLabel, submenu_option);</div>
+<div class="line"><span class="lineno">   64</span>    submenu_option-&gt;append(optionSettingsLabel.data(), optionSettingsDetaildAction.data());</div>
+<div class="line"><span class="lineno">   65</span>    menu-&gt;append_submenu(optionLabel.data(), submenu_option);</div>
 <div class="line"><span class="lineno">   66</span>    <span class="keyword">auto</span> submenu_help = Gio::Menu::create();</div>
-<div class="line"><span class="lineno">   67</span>    submenu_help-&gt;append(helpDocLabel, helpDocDetaildAction);</div>
-<div class="line"><span class="lineno">   68</span>    submenu_help-&gt;append(helpAboutLabel, helpAboutDetaildAction);</div>
-<div class="line"><span class="lineno">   69</span>    menu-&gt;append_submenu(helpLabel, submenu_help);</div>
+<div class="line"><span class="lineno">   67</span>    submenu_help-&gt;append(helpDocLabel.data(), helpDocDetaildAction.data());</div>
+<div class="line"><span class="lineno">   68</span>    submenu_help-&gt;append(helpAboutLabel.data(), helpAboutDetaildAction.data());</div>
+<div class="line"><span class="lineno">   69</span>    menu-&gt;append_submenu(helpLabel.data(), submenu_help);</div>
 <div class="line"><span class="lineno">   70</span>    set_menubar(menu);</div>
 <div class="line"><span class="lineno">   71</span> </div>
 <div class="line"><span class="lineno">   74</span>    <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48">mapping</a>();</div>
@@ -875,7 +875,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html">EntryApplication</a></li>
-    <li class="footer">Generated on Mon Dec 29 2025 07:43:01 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Jan 6 2026 11:33:10 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -34,17 +34,17 @@ namespace
     ///   helpDocDetaildAction - help documentation detailed action
     ///   helpAboutLabel - help about action label
     ///   helpAboutDetaildAction - help about detailed action
-    constexpr const char fileLabel[]{"File"}; 
-    constexpr const char fileQuitLabel[]{"_Quit"};
-    constexpr const char fileQuitDetaildAction[]{"app.quit"};
-    constexpr const char optionLabel[]{"Option"};
-    constexpr const char optionSettingsLabel[]{"_Settings"};
-    constexpr const char optionSettingsDetaildAction[]{"app.settings"};
-    constexpr const char helpLabel[]{"Help"};
-    constexpr const char helpDocLabel[]{"_Documentation"};
-    constexpr const char helpDocDetaildAction[]{"app.doc"};
-    constexpr const char helpAboutLabel[]{"_About"};
-    constexpr const char helpAboutDetaildAction[]{"app.about"};
+    constexpr std::string_view fileLabel{"File"}; 
+    constexpr std::string_view fileQuitLabel{"_Quit"};
+    constexpr std::string_view fileQuitDetaildAction{"app.quit"};
+    constexpr std::string_view optionLabel{"Option"};
+    constexpr std::string_view optionSettingsLabel{"_Settings"};
+    constexpr std::string_view optionSettingsDetaildAction{"app.settings"};
+    constexpr std::string_view helpLabel{"Help"};
+    constexpr std::string_view helpDocLabel{"_Documentation"};
+    constexpr std::string_view helpDocDetaildAction{"app.doc"};
+    constexpr std::string_view helpAboutLabel{"_About"};
+    constexpr std::string_view helpAboutDetaildAction{"app.about"};
 };
 
 using namespace Electux::App;
@@ -58,15 +58,15 @@ void EntryApplication::on_startup()
     /// @brief Sets application menubar
     auto menu = Gio::Menu::create();
     auto submenu_file = Gio::Menu::create();
-    submenu_file->append(fileQuitLabel, fileQuitDetaildAction);
-    menu->append_submenu(fileLabel, submenu_file);
+    submenu_file->append(fileQuitLabel.data(), fileQuitDetaildAction.data());
+    menu->append_submenu(fileLabel.data(), submenu_file);
     auto submenu_option = Gio::Menu::create();
-    submenu_option->append(optionSettingsLabel, optionSettingsDetaildAction);
-    menu->append_submenu(optionLabel, submenu_option);
+    submenu_option->append(optionSettingsLabel.data(), optionSettingsDetaildAction.data());
+    menu->append_submenu(optionLabel.data(), submenu_option);
     auto submenu_help = Gio::Menu::create();
-    submenu_help->append(helpDocLabel, helpDocDetaildAction);
-    submenu_help->append(helpAboutLabel, helpAboutDetaildAction);
-    menu->append_submenu(helpLabel, submenu_help);
+    submenu_help->append(helpDocLabel.data(), helpDocDetaildAction.data());
+    submenu_help->append(helpAboutLabel.data(), helpAboutDetaildAction.data());
+    menu->append_submenu(helpLabel.data(), submenu_help);
     set_menubar(menu);
 
     //////////////////////////////////////////////////////////////////////////

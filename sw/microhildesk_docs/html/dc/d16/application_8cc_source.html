@@ -121,39 +121,30 @@ $(document).ready(function(){initNavTree('dc/d16/application_8cc_source.html','.
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;glibmm/refptr.h&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d32/application_8h.html">application.h</a>&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../d3/d81/namespaceElectux_1_1App_1_1View.html">Electux::App::View</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../d7/d63/namespaceElectux_1_1App_1_1View_1_1Settings.html">Electux::App::View::Settings</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../db/d22/namespaceElectux_1_1App_1_1View_1_1Help.html">Electux::App::View::Help</a>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../da/d2e/namespaceElectux_1_1App_1_1View_1_1About.html">Electux::App::View::About</a>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> applicationId[]{<span class="stringliteral">&quot;electux.io.microhildesk&quot;</span>};</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">constexpr</span> std::string_view applicationId{<span class="stringliteral">&quot;electux.io.microhildesk&quot;</span>};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">   33</a></span><a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">EntryApplication::EntryApplication</a>(): Gtk::Application(applicationId.data())</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    Glib::set_application_name(applicationId.data());</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">   38</a></span><a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">EntryApplication::EntryApplication</a>(): Gtk::Application(applicationId)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">   38</a></span>Glib::RefPtr&lt;EntryApplication&gt; <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">EntryApplication::create</a>()</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    Glib::set_application_name(applicationId);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">return</span> Glib::make_refptr_for_instance&lt;EntryApplication&gt;(<span class="keyword">new</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">EntryApplication</a>());</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">   43</a></span>Glib::RefPtr&lt;EntryApplication&gt; <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">EntryApplication::create</a>()</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">return</span> Glib::make_refptr_for_instance&lt;EntryApplication&gt;(<span class="keyword">new</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">EntryApplication</a>());</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
-</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="ttc" id="aapplication_8h_html"><div class="ttname"><a href="../../db/d32/application_8h.html">application.h</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a4b6b66824726af1b9ebef4ae063eba4f"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">Electux::App::EntryApplication::EntryApplication</a></div><div class="ttdeci">EntryApplication()</div><div class="ttdoc">EntryApplication constructor.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d16/application_8cc_source.html#l00038">application.cc:38</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_add419e3a8185514cf59e101641b70c3e"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">Electux::App::EntryApplication::create</a></div><div class="ttdeci">static Glib::RefPtr&lt; EntryApplication &gt; create()</div><div class="ttdoc">Creates reference pointer to EntryApplication.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d16/application_8cc_source.html#l00043">application.cc:43</a></div></div>
-<div class="ttc" id="anamespaceElectux_1_1App_1_1View_1_1About_html"><div class="ttname"><a href="../../da/d2e/namespaceElectux_1_1App_1_1View_1_1About.html">Electux::App::View::About</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/dc0/about_8h_source.html#l00023">about.h:24</a></div></div>
-<div class="ttc" id="anamespaceElectux_1_1App_1_1View_1_1Help_html"><div class="ttname"><a href="../../db/d22/namespaceElectux_1_1App_1_1View_1_1Help.html">Electux::App::View::Help</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/df1/help_8h_source.html#l00023">help.h:24</a></div></div>
-<div class="ttc" id="anamespaceElectux_1_1App_1_1View_1_1Settings_html"><div class="ttname"><a href="../../d7/d63/namespaceElectux_1_1App_1_1View_1_1Settings.html">Electux::App::View::Settings</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d60/settings_8h_source.html#l00032">settings.h:33</a></div></div>
-<div class="ttc" id="anamespaceElectux_1_1App_1_1View_html"><div class="ttname"><a href="../../d3/d81/namespaceElectux_1_1App_1_1View.html">Electux::App::View</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/dc0/about_8h_source.html#l00023">about.h:24</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_a4b6b66824726af1b9ebef4ae063eba4f"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f">Electux::App::EntryApplication::EntryApplication</a></div><div class="ttdeci">EntryApplication()</div><div class="ttdoc">EntryApplication constructor.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d16/application_8cc_source.html#l00033">application.cc:33</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_add419e3a8185514cf59e101641b70c3e"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">Electux::App::EntryApplication::create</a></div><div class="ttdeci">static Glib::RefPtr&lt; EntryApplication &gt; create()</div><div class="ttdoc">Creates reference pointer to EntryApplication.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d16/application_8cc_source.html#l00038">application.cc:38</a></div></div>
 <div class="ttc" id="anamespaceElectux_1_1App_html"><div class="ttname"><a href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00027">application.h:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -161,7 +152,7 @@ $(document).ready(function(){initNavTree('dc/d16/application_8cc_source.html','.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d16/application_8cc.html">application.cc</a></li>
-    <li class="footer">Generated on Mon Dec 29 2025 07:43:00 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Jan 6 2026 11:33:10 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

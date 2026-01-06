@@ -3,7 +3,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - 'sw/microhil_base/src/**'
+	  - 'sw/microhil_base/src/**/*.c'
+      - 'sw/microhil_base/src/**/*.h'
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -20,24 +20,19 @@
 #include <glibmm/refptr.h>
 #include "application.h"
 
-using namespace Electux::App::View;
-using namespace Electux::App::View::Settings;
-using namespace Electux::App::View::Help;
-using namespace Electux::App::View::About;
-
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application parameters
     ///   applicationId - application ID
-    constexpr const char applicationId[]{"electux.io.microhildesk"};
+    constexpr std::string_view applicationId{"electux.io.microhildesk"};
 };
 
 using namespace Electux::App;
 
-EntryApplication::EntryApplication(): Gtk::Application(applicationId)
+EntryApplication::EntryApplication(): Gtk::Application(applicationId.data())
 {
-    Glib::set_application_name(applicationId);
+    Glib::set_application_name(applicationId.data());
 }
 
 Glib::RefPtr<EntryApplication> EntryApplication::create()
