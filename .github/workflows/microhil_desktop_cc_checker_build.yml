@@ -3,11 +3,13 @@ on:
   push:
     branches: [ master ]
     paths:
-      - 'sw/microhildesk/**'
+      - 'sw/microhildesk/**/*.cc'
+      - 'sw/microhildesk/**/*.h'
   pull_request:
     branches: [ master ]
     paths:
-      - 'sw/microhildesk/**'
+      - 'sw/microhildesk/**/*.cc'
+      - 'sw/microhildesk/**/*.h'
 jobs:
   build:
     runs-on: ubuntu-latest

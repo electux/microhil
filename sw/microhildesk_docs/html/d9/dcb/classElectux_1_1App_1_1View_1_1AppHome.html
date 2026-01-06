@@ -225,7 +225,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d98/home_8cc_source.html#l00061">61</a> of file <a class="el" href="../../df/d98/home_8cc_source.html">home.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
-<div class="line"><span class="lineno">   65</span>    set_title(homeTitle);</div>
+<div class="line"><span class="lineno">   65</span>    set_title(homeTitle.data());</div>
 <div class="line"><span class="lineno">   66</span>    set_default_size(homeWidth, homeHeight);</div>
 <div class="line"><span class="lineno">   67</span>    set_resizable(<span class="keyword">false</span>);</div>
 <div class="line"><span class="lineno">   68</span>    set_show_menubar(<span class="keyword">true</span>);</div>
@@ -236,7 +236,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   73</span>    {</div>
 <div class="line"><span class="lineno">   74</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a51c0cd2a1b6e388c444e4779833e4451">m_boxChannels</a>.emplace_back(Gtk::Orientation::VERTICAL);</div>
 <div class="line"><span class="lineno">   75</span>        <span class="keyword">auto</span>&amp; currentBox = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a51c0cd2a1b6e388c444e4779833e4451">m_boxChannels</a>.back();</div>
-<div class="line"><span class="lineno">   76</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a64db72cf5cf34184a5a2cf44818dfd63">m_enableChannels</a>.emplace_back(std::format(<span class="stringliteral">&quot;{} {}&quot;</span>, homeEnChannelLabel, i));</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a64db72cf5cf34184a5a2cf44818dfd63">m_enableChannels</a>.emplace_back(std::format(<span class="stringliteral">&quot;{} {}&quot;</span>, homeEnChannelLabel.data(), i));</div>
 <div class="line"><span class="lineno">   77</span>        currentBox.append(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a64db72cf5cf34184a5a2cf44818dfd63">m_enableChannels</a>.back());</div>
 <div class="line"><span class="lineno">   78</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abfb1b196b881ab80f6972ee6548f3ec6">m_selectControlChannels</a>.emplace_back();</div>
 <div class="line"><span class="lineno">   79</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; option : homeChannelModeOptions)</div>
@@ -244,17 +244,17 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   81</span>            <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abfb1b196b881ab80f6972ee6548f3ec6">m_selectControlChannels</a>.back().append(option);</div>
 <div class="line"><span class="lineno">   82</span>        }</div>
 <div class="line"><span class="lineno">   83</span>        currentBox.append(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abfb1b196b881ab80f6972ee6548f3ec6">m_selectControlChannels</a>.back());</div>
-<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a2a20945384983c59a1a9f709d2ee0d0e">m_labelToggleChannels</a>.emplace_back(std::format(<span class="stringliteral">&quot;{} {}&quot;</span>, homeToggleChannelLabel, i));</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a2a20945384983c59a1a9f709d2ee0d0e">m_labelToggleChannels</a>.emplace_back(std::format(<span class="stringliteral">&quot;{} {}&quot;</span>, homeToggleChannelLabel.data(), i));</div>
 <div class="line"><span class="lineno">   85</span>        currentBox.append(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a2a20945384983c59a1a9f709d2ee0d0e">m_labelToggleChannels</a>.back());</div>
 <div class="line"><span class="lineno">   86</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aea948e23d96ac34db09650d909e08ad0">m_toggleChannels</a>.emplace_back();</div>
-<div class="line"><span class="lineno">   87</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aea948e23d96ac34db09650d909e08ad0">m_toggleChannels</a>.back().set_label(homeToggleChannelButtonActivate);</div>
+<div class="line"><span class="lineno">   87</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aea948e23d96ac34db09650d909e08ad0">m_toggleChannels</a>.back().set_label(homeToggleChannelButtonActivate.data());</div>
 <div class="line"><span class="lineno">   88</span>        currentBox.append(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aea948e23d96ac34db09650d909e08ad0">m_toggleChannels</a>.back());</div>
-<div class="line"><span class="lineno">   89</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a4ff02ddee81349c02fa3697296ed5600">m_labelTimerChannels</a>.emplace_back(std::format(<span class="stringliteral">&quot;{} {}&quot;</span>, homeTimerChannelLabel, i));</div>
+<div class="line"><span class="lineno">   89</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a4ff02ddee81349c02fa3697296ed5600">m_labelTimerChannels</a>.emplace_back(std::format(<span class="stringliteral">&quot;{} {}&quot;</span>, homeTimerChannelLabel.data(), i));</div>
 <div class="line"><span class="lineno">   90</span>        currentBox.append(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a4ff02ddee81349c02fa3697296ed5600">m_labelTimerChannels</a>.back());</div>
 <div class="line"><span class="lineno">   91</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a39dbfa3e1f716225c5bcbe90f184a708">m_spinTimerChannels</a>.emplace_back();</div>
 <div class="line"><span class="lineno">   92</span>        currentBox.append(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a39dbfa3e1f716225c5bcbe90f184a708">m_spinTimerChannels</a>.back());</div>
 <div class="line"><span class="lineno">   93</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a5b276bc5fd70a4f650d63425acd1da49">m_toggleTimerChannels</a>.emplace_back();</div>
-<div class="line"><span class="lineno">   94</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a5b276bc5fd70a4f650d63425acd1da49">m_toggleTimerChannels</a>.back().set_label(homeTimerChannelButtonStart);</div>
+<div class="line"><span class="lineno">   94</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a5b276bc5fd70a4f650d63425acd1da49">m_toggleTimerChannels</a>.back().set_label(homeTimerChannelButtonStart.data());</div>
 <div class="line"><span class="lineno">   95</span>        currentBox.append(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a5b276bc5fd70a4f650d63425acd1da49">m_toggleTimerChannels</a>.back());</div>
 <div class="line"><span class="lineno">   96</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a55d0f3b1e6bd1cee806739af9c7d1324">m_statusTimerChannels</a>.emplace_back();</div>
 <div class="line"><span class="lineno">   97</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a55d0f3b1e6bd1cee806739af9c7d1324">m_statusTimerChannels</a>.back().set_fraction(homeStatusFraction);</div>
@@ -924,7 +924,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d3/d81/namespaceElectux_1_1App_1_1View.html">View</a></li><li class="navelem"><a class="el" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html">AppHome</a></li>
-    <li class="footer">Generated on Mon Dec 29 2025 07:43:01 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Jan 6 2026 11:33:10 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

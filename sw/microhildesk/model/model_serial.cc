@@ -23,12 +23,12 @@ namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// @brief String constants for serial configuration keys
-    constexpr const char device[]{"device"};
-    constexpr const char baud[]{"baud"};
-    constexpr const char data[]{"data"};
-    constexpr const char parity[]{"parity"};
-    constexpr const char stop[]{"stop"};
-    constexpr const char unknown[]{"unknown"};
+    constexpr std::string_view device{"device"};
+    constexpr std::string_view baud{"baud"};
+    constexpr std::string_view data{"data"};
+    constexpr std::string_view parity{"parity"};
+    constexpr std::string_view stop{"stop"};
+    constexpr std::string_view unknown{"unknown"};
 };
 
 using namespace Electux::App::Model;
@@ -58,12 +58,12 @@ std::string ModelSerial::toString(const ModelSerialKey &key) const
 {
     switch (key)
     {
-    case ModelSerialKey::Device: return device;
-    case ModelSerialKey::Baud: return baud;
-    case ModelSerialKey::Data: return data;
-    case ModelSerialKey::Parity: return parity;
-    case ModelSerialKey::Stop: return stop;
-    default: return unknown;
+    case ModelSerialKey::Device: return device.data();
+    case ModelSerialKey::Baud: return baud.data();
+    case ModelSerialKey::Data: return data.data();
+    case ModelSerialKey::Parity: return parity.data();
+    case ModelSerialKey::Stop: return stop.data();
+    default: return unknown.data();
     }
 }
 

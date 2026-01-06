@@ -23,8 +23,8 @@ namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// @brief String constants for log configuration keys
-    constexpr const char logLevel[]{"log_level"};
-    constexpr const char unknown[]{"unknown"};
+    constexpr std::string_view logLevel{"log_level"};
+    constexpr std::string_view unknown{"unknown"};
 };
 
 using namespace Electux::App::Model;
@@ -50,8 +50,8 @@ std::string ModelLog::toString(const ModelLogKey &key) const
 {
     switch (key)
     {
-    case ModelLogKey::LogLevel: return logLevel;
-    default: return unknown;
+    case ModelLogKey::LogLevel: return logLevel.data();
+    default: return unknown.data();
     }
 }
 

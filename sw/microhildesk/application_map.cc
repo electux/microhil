@@ -28,12 +28,12 @@ namespace
     ///   optionSettingsActionName - option settings action name
     ///   helpDocActionName - help documenation action name
     ///   helpAboutActionName - help about action name
-    constexpr const char detailedActionName[]{"app.quit"};
-    constexpr const char keyboardAccelerator[]{"<Primary>q"}; 
-    constexpr const char fileQuitActionName[]{"quit"};
-    constexpr const char optionSettingsActionName[]{"settings"};
-    constexpr const char helpDocActionName[]{"doc"};
-    constexpr const char helpAboutActionName[]{"about"};
+    constexpr std::string_view detailedActionName{"app.quit"};
+    constexpr std::string_view keyboardAccelerator{"<Primary>q"};
+    constexpr std::string_view fileQuitActionName{"quit"};
+    constexpr std::string_view optionSettingsActionName{"settings"};
+    constexpr std::string_view helpDocActionName{"doc"};
+    constexpr std::string_view helpAboutActionName{"about"};
 };
 
 using namespace Electux::App;
@@ -42,12 +42,12 @@ void EntryApplication::mapping()
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Sets application accelerator
-    set_accel_for_action(detailedActionName, keyboardAccelerator);
+    set_accel_for_action(detailedActionName.data(), keyboardAccelerator.data());
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Maps application actions to their handlers
-    add_action(fileQuitActionName, sigc::mem_fun(*this, &EntryApplication::onActionQuit));
-    add_action(optionSettingsActionName, sigc::mem_fun(*this, &EntryApplication::onActionSettings));
-    add_action(helpDocActionName, sigc::mem_fun(*this, &EntryApplication::onActionDoc));
-    add_action(helpAboutActionName, sigc::mem_fun(*this, &EntryApplication::onActionAbout));
+    add_action(fileQuitActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionQuit));
+    add_action(optionSettingsActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionSettings));
+    add_action(helpDocActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionDoc));
+    add_action(helpAboutActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionAbout));
 }

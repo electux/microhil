@@ -31,29 +31,29 @@ namespace
     ///   programWebsite - program website
     ///   programWebsiteLabel - program website label 
     ///   programAuthors - program author
-    constexpr const char programName[]{"microhildesk"};
-    constexpr const char programVersion[]{"1.0.0"};
-    constexpr const char programCopyright[]{"Vladimir Roncevic <elektron.ronca@gmail.com>"};
-    constexpr const char programComments[]{"This is microhildesk application."};
-    constexpr const char programLicense[]{"GPLv3"};
-    constexpr const char programWebsite[]{"https://electux.github.io/microhil"};
-    constexpr const char programWebsiteLabel[]{"electux.github.io/microhil"};
-    constexpr const char programAuthors[]{"Vladimir Roncevic"};
+    constexpr std::string_view programName{"microhildesk"};
+    constexpr std::string_view programVersion{"1.0.0"};
+    constexpr std::string_view programCopyright{"Vladimir Roncevic <elektron.ronca@gmail.com>"};
+    constexpr std::string_view programComments{"This is microhildesk application."};
+    constexpr std::string_view programLicense{"GPLv3"};
+    constexpr std::string_view programWebsite{"https://electux.github.io/microhil"};
+    constexpr std::string_view programWebsiteLabel{"electux.github.io/microhil"};
+    constexpr std::string_view programAuthors{"Vladimir Roncevic"};
 };
 
 using namespace Electux::App::View::About;
 
 AppAbout::AppAbout()
 {
-    set_program_name(programName);
-    set_version(programVersion);
-    set_copyright(programCopyright);
-    set_comments(programComments);
-    set_license(programLicense);
-    set_website(programWebsite);
-    set_website_label(programWebsiteLabel);
+    set_program_name(programName.data());
+    set_version(programVersion.data());
+    set_copyright(programCopyright.data());
+    set_comments(programComments.data());
+    set_license(programLicense.data());
+    set_website(programWebsite.data());
+    set_website_label(programWebsiteLabel.data());
     std::vector<Glib::ustring> list_authors;
-    list_authors.push_back(programAuthors);
+    list_authors.push_back(programAuthors.data());
     set_authors(list_authors);
     set_hide_on_close(true);
 }
