@@ -18,8 +18,15 @@
  */
 #pragma once
 
-#include <vector>
+#include <array>
 #include <glibmm/ustring.h>
+
+namespace 
+{
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Number of serial parameters
+    constexpr size_t serialParamsCount{4};
+};
 
 namespace Electux::App::View::Settings
 {
@@ -43,7 +50,7 @@ namespace Electux::App::View::Settings
         ///   m_logFilePath - absolute path for log file
         ///   m_logLevel - log level
         Glib::ustring m_serialDevicePath{};
-        std::vector<int> m_serialParams{};
+        std::array<int, serialParamsCount> m_serialParams{};
         Glib::ustring m_logFilePath{};
         int m_logLevel{};
     };

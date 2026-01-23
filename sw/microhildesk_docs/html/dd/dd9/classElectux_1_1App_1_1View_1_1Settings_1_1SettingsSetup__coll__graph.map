@@ -1,9 +1,9 @@
 <map id="Electux::App::View::Settings::SettingsSetup" name="Electux::App::View::Settings::SettingsSetup">
-<area shape="rect" id="Node000001" title="Setup settings for collected parameters." alt="" coords="120,148,293,248"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,64,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="40,70,48,97,62,122,83,142,107,158,104,163,79,146,58,126,43,99,35,72"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="155,5,258,71"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,71,209,131,204,131,204,71"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="342,5,373,71"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="354,72,345,99,330,126,308,147,305,143,326,122,341,97,349,70"/>
+<area shape="rect" id="Node000001" title="Setup settings for collected parameters." alt="" coords="120,163,293,263"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,64,78"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="39,78,47,108,62,137,83,157,107,173,104,178,79,161,58,140,42,110,34,79"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="121,5,293,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,86,209,147,204,147,204,86"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="342,13,373,78"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="356,79,347,110,330,140,309,162,305,158,326,137,342,108,350,78"/>
 </map>

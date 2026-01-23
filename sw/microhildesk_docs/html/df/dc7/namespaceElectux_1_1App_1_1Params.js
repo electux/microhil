@@ -1,0 +1,46 @@
+var namespaceElectux_1_1App_1_1Params =
+[
+    [ "LogLevels", "d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html", [
+      [ "logLevelError", "d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#af04ea2fc1e88ef5d3bd2cce4cd0b743c", null ],
+      [ "logLevelInfo", "d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#a0cc133bdeaba1f9f7b03d29c1012648f", null ],
+      [ "logLevels", "d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#a0865dddb7803bcbe578aa36144a9e7d6", null ],
+      [ "logLevelWarning", "d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#a6a564282ce328ac3dee2a67b7184534e", null ]
+    ] ],
+    [ "SerialComConstants", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html", [
+      [ "comBaud110", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#aab21438d82793ea57be57915d1c50346", null ],
+      [ "comBaud115200", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a487353690dced41b9667213240539e11", null ],
+      [ "comBaud1200", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#ab90748defa103dd508883ad11e3baf02", null ],
+      [ "comBaud19200", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a1b2c019145acd835ef9dec5fe3050f8a", null ],
+      [ "comBaud230400", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#adb68d8d1ed2ed0c849a6260f79674478", null ],
+      [ "comBaud2400", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a54b6087c43fc8e2fc6081ea05c0b4d45", null ],
+      [ "comBaud300", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a84842932597ee8f899ff965f2260662e", null ],
+      [ "comBaud38400", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#aae0de2f0b2d32d467460afa3ac88f2de", null ],
+      [ "comBaud4800", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a63d8c3b20e2a556ff37dd73b92b068c8", null ],
+      [ "comBaud57600", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#aa1d13814de6a6a9caa96710e808dccf0", null ],
+      [ "comBaud600", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a2bfc1343e01275e963e41e51c6781616", null ],
+      [ "comBaud9600", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a04cd7a39d47a34b7749b502c10a54e04", null ],
+      [ "comBaudRates", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a845ff295c7f783f7e9eba6d65c3ed0c2", null ],
+      [ "comDataBits", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#ab4643a3d4a0c4a3cd69331b12f5430d6", null ],
+      [ "comDataBits5", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a80e1c9a70a65386e8e413346cb60c44e", null ],
+      [ "comDataBits6", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#ac8cc735b7ed4ff7bc423dcf5877b639f", null ],
+      [ "comDataBits7", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#ac3a899a4d90a052f1937a9a9216b5de5", null ],
+      [ "comDataBits8", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a2a4104ffa97ad923fd49471c51944a98", null ],
+      [ "comFlowControlHw", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a0414ff5a534821f0127f94db50337525", null ],
+      [ "comFlowControlNone", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a3a75b2720d142156d84c2998d46b4c76", null ],
+      [ "comFlowControls", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#abd6ab39e968cd3d8fe82cb8db0eb04b0", null ],
+      [ "comFlowControlSw", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a920c0d1d335a2c7e9e5fa703bef32546", null ],
+      [ "comInvalidParameter", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a1362c084720fc7a73351ff4ae0d20c55", null ],
+      [ "comParamBaudIndex", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a0d30e1f98d51487854eb916c2437192c", null ],
+      [ "comParamDataIndex", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a20ea3128310ddcefaab9f0d6d0cdc3ad", null ],
+      [ "comParamFlowControlIndex", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#acf35c5dd0ba6ec8c78470b6bef422d06", null ],
+      [ "comParamParityIndex", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a0e5c31d8229ae3b37cffd23c66a53ccc", null ],
+      [ "comParamStopIndex", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a67216387015d527c127f9242febc5f57", null ],
+      [ "comParities", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a116cd057b2d73095a5381f822343f187", null ],
+      [ "comParityEven", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#ab1cb25e42614483484bea0b1a1b9b94a", null ],
+      [ "comParityNone", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a4b35f7f441b7b190f2f12c44df898f6d", null ],
+      [ "comParityOdd", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a6b3ae5a207711b0b5f7dce8be1ac2568", null ],
+      [ "comStopBits", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a11586b032d8a70fb3c7e33b35900aa0d", null ],
+      [ "comStopBits1", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#ab707cf1a5d00a108c4aab46f901bc6ee", null ],
+      [ "comStopBits2", "da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#af8d7a2ca6bfa4a1c8166bc7388bb2e36", null ]
+    ] ]
+];

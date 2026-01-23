@@ -53,7 +53,7 @@ namespace
     constexpr float homeStatusFraction{0.0};
     constexpr int homeBoxChannelMargin{10};
     constexpr int homeBoxChannelSpacing{5};
-    constexpr const char *homeChannelModeOptions[]{"Toogle Active", "Timer Active"};
+    constexpr std::string_view homeChannelModeOptions[]{"Toogle Active", "Timer Active"};
 };
 
 using namespace Electux::App::View;
@@ -78,7 +78,7 @@ AppHome::AppHome()
         m_selectControlChannels.emplace_back();
         for (const auto& option : homeChannelModeOptions)
         {
-            m_selectControlChannels.back().append(option);
+            m_selectControlChannels.back().append(option.data());
         }
         currentBox.append(m_selectControlChannels.back());
         m_labelToggleChannels.emplace_back(std::format("{} {}", homeToggleChannelLabel.data(), i));

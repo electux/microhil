@@ -63,8 +63,38 @@ namespace Electux::App::View::Settings
         void onButtonCancelClicked();
 
         //////////////////////////////////////////////////////////////////////
-        /// @brief Container for packing widgets for settings window 
-        ///   m_setup - signal for the serial settings
+        /// @brief On action Entry serial path changed
+        void onEntrySerialPathChanged();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action Combo serial baud changed
+        void onEntrySerialBaudChanged();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action Combo serial data changed
+        void onEntrySerialDataChanged();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action Combo serial parity changed
+        void onEntrySerialParityChanged();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action Combo serial stop changed
+        void onEntrySerialStopChanged();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action Entry log path changed
+        void onEntryLogPathChanged();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief On action Combo log level changed
+        void onEntryLogLevelChanged();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Container for packing widgets for settings window
+        ///   m_setup - settings parameters
+        ///   m_previusSetup - previous settings parameters
+        ///   m_setupSignal - signal for the serial settings
         ///   m_boxRoot - vertical box as root container
         ///   m_notebook - notebook container for settings pages serial port and log
         ///   m_boxSerial - vertical box as container box for serial settings
@@ -78,6 +108,8 @@ namespace Electux::App::View::Settings
         ///   m_comboSerialParity - serial parity combobox
         ///   m_labelSerialStop - serial stop bits label
         ///   m_comboSerialStop - serial stop bits combobox
+        ///   m_labelSerialFlowControl - serial flow control label
+        ///   m_comboSerialFlowControl - serial flow control combobox
         ///   m_boxLog - vertical box as container box for log settings
         ///   m_labelLogPath - log path label 
         ///   m_entryLogPath - log file path entry
@@ -86,7 +118,9 @@ namespace Electux::App::View::Settings
         ///   m_buttonBox - horizontal box as button container box
         ///   m_buttonOk - ok button (save changes)
         ///   m_buttonCancel - cancel button (dissmiss changes)
-        SigSetup m_setup{};
+        SettingsSetup m_setup{};
+        SettingsSetup m_previusSetup{};
+        SigSetup m_setupSignal{};
         Gtk::Box m_boxRoot{};
         Gtk::Notebook m_notebook{};
         Gtk::Box m_boxSerial{};
@@ -100,6 +134,8 @@ namespace Electux::App::View::Settings
         Gtk::ComboBoxText m_comboSerialParity{};
         Gtk::Label m_labelSerialStop{};
         Gtk::ComboBoxText m_comboSerialStop{};
+        Gtk::Label m_labelSerialFlowControl{};
+        Gtk::ComboBoxText m_comboSerialFlowControl{};
         Gtk::Box m_boxLog{};
         Gtk::Label m_labelLogPath{};
         Gtk::Entry m_entryLogPath{};

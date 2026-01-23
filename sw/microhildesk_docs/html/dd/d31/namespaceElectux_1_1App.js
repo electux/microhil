@@ -4,6 +4,7 @@ var namespaceElectux_1_1App =
     [ "Config", "d9/d49/namespaceElectux_1_1App_1_1Config.html", "d9/d49/namespaceElectux_1_1App_1_1Config" ],
     [ "Logger", "d5/dd1/namespaceElectux_1_1App_1_1Logger.html", "d5/dd1/namespaceElectux_1_1App_1_1Logger" ],
     [ "Model", "d9/d26/namespaceElectux_1_1App_1_1Model.html", "d9/d26/namespaceElectux_1_1App_1_1Model" ],
+    [ "Params", "df/dc7/namespaceElectux_1_1App_1_1Params.html", "df/dc7/namespaceElectux_1_1App_1_1Params" ],
     [ "View", "d3/d81/namespaceElectux_1_1App_1_1View.html", "d3/d81/namespaceElectux_1_1App_1_1View" ],
     [ "EntryApplication", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html", "d0/dcc/classElectux_1_1App_1_1EntryApplication" ],
     [ "AppAbout", "dd/d31/namespaceElectux_1_1App.html#ae6444f9ad49809930b070b93064dc1c3", null ],

@@ -5,5 +5,5 @@ var classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup =
     [ "m_logFilePath", "d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#aec8e857fb70786ecf4ff6075c2e65ee6", null ],
     [ "m_logLevel", "d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#a7f5607ae6ed227304b723a1105ba52d3", null ],
     [ "m_serialDevicePath", "d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#a627f622094c5e79157ce6e6a7bbe03d6", null ],
-    [ "m_serialParams", "d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#a12e4bd3077dbb9a77ba7229b1f11d979", null ]
+    [ "m_serialParams", "d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html#acec3cfbcf10857573d423b81a40786d6", null ]
 ];

@@ -1,9 +1,23 @@
 <map id="Electux::App::View::Settings::AppSettings::AppSettings" name="Electux::App::View::Settings::AppSettings::AppSettings">
-<area shape="rect" id="Node000001" title="AppSettings constructor." alt="" coords="5,45,175,100"/>
-<area shape="rect" id="Node000002" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5763d8088e72a080dd732c16851b5170" title="Maps channels (signals and slots)" alt="" coords="223,45,392,100"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,70,209,70,209,75,175,75"/>
-<area shape="rect" id="Node000003" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a9a0b184f6a0a257f2e9cf2bebd6351f6" title="On action Cancel button." alt="" coords="440,5,620,60"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="392,55,426,49,427,54,393,60"/>
-<area shape="rect" id="Node000004" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ab774932988d1d2ddca6a3db5134e1441" title="On action OK button." alt="" coords="445,84,615,139"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="393,85,432,92,431,97,392,90"/>
+<area shape="rect" id="Node000001" title="AppSettings constructor." alt="" coords="5,320,175,375"/>
+<area shape="rect" id="Node000002" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5763d8088e72a080dd732c16851b5170" title="Maps channels (signals and slots)" alt="" coords="223,320,392,375"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,345,209,345,209,350,175,350"/>
+<area shape="rect" id="Node000003" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a9a0b184f6a0a257f2e9cf2bebd6351f6" title="On action Cancel button." alt="" coords="455,5,635,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,319,326,267,351,200,388,130,411,98,438,69,442,66,446,70,442,73,415,102,392,133,356,202,331,268,317,320"/>
+<area shape="rect" id="Node000004" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ab774932988d1d2ddca6a3db5134e1441" title="On action OK button." alt="" coords="461,84,630,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="318,319,336,281,363,235,397,189,438,148,447,142,450,146,442,152,401,192,367,238,341,283,323,321"/>
+<area shape="rect" id="Node000005" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ad3d577697855f549e60405b8388203e3" title="On action Combo log level changed." alt="" coords="448,163,643,217"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="332,318,379,272,439,226,448,221,451,226,441,231,382,276,335,321"/>
+<area shape="rect" id="Node000006" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a11399207d83ad11962facd5fd5423445" title="On action Entry log path changed." alt="" coords="451,241,639,296"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="390,317,448,298,450,303,392,322"/>
+<area shape="rect" id="Node000007" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a6c6d14e46b1587c12433865a8ad3c444" title="On action Combo serial baud changed." alt="" coords="442,320,649,375"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="392,345,428,345,428,350,392,350"/>
+<area shape="rect" id="Node000008" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aec0f34b1953d00a7293b3def1171def2" title="On action Combo serial data changed." alt="" coords="443,399,648,453"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="392,372,450,392,448,397,390,377"/>
+<area shape="rect" id="Node000009" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a48c91b10afd7599669e269d01fca74c7" title="On action Combo serial parity changed." alt="" coords="440,477,651,532"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="335,373,382,418,441,462,453,469,450,474,439,467,379,422,332,377"/>
+<area shape="rect" id="Node000010" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a8c93dfbe78e5e97e41165b1b919cab45" title="On action Entry serial path changed." alt="" coords="444,556,647,611"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="323,374,341,411,368,456,401,502,442,541,449,547,446,551,438,545,397,505,363,459,337,414,318,376"/>
+<area shape="rect" id="Node000011" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a9618bbb66d47d0b28b8cbe5c0b96a527" title="On action Combo serial stop changed." alt="" coords="444,635,647,689"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="317,374,332,426,356,492,393,560,415,592,442,620,447,625,444,629,438,624,411,595,388,563,351,494,327,427,312,375"/>
 </map>
