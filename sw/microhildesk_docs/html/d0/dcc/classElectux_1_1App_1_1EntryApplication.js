@@ -10,6 +10,7 @@ var classElectux_1_1App_1_1EntryApplication =
     [ "onActionSettings", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a", null ],
     [ "onHandleClose", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a740242096435960d3fd1a191f35c4e0a", null ],
     [ "m_about", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a1a725b5941ed3293a2694dd2aa572a66", null ],
+    [ "m_configManager", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a2dc9b429ac2061316cc959f8ec1b9a34", null ],
     [ "m_help", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#afe58636cecb4c982cf77846a4aa25baf", null ],
     [ "m_home", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#acf2fc09e2978ec6b29cc708a0a92fff2", null ],
     [ "m_settings", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a9298ffd230dc563df16fadaa8bc47014", null ]

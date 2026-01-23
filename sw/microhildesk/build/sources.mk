@@ -8,7 +8,7 @@
 
 SOURCES = \
 	../log/log.cc \
-	../config/config.cc \
+	../config/config_manager.cc \
 	../com/serial_com.cc \
 	../com/serial_com_utils.cc \
 	../model/model.cc \

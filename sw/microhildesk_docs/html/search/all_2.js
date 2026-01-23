@@ -36,8 +36,8 @@ var searchData=
   ['comstopbits_33',['comStopBits',['../da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a11586b032d8a70fb3c7e33b35900aa0d',1,'Electux::App::Params::SerialComConstants']]],
   ['comstopbits1_34',['comStopBits1',['../da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#ab707cf1a5d00a108c4aab46f901bc6ee',1,'Electux::App::Params::SerialComConstants']]],
   ['comstopbits2_35',['comStopBits2',['../da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#af8d7a2ca6bfa4a1c8166bc7388bb2e36',1,'Electux::App::Params::SerialComConstants']]],
-  ['config_36',['config',['../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#abd0c571c116924871e30444b192b792a',1,'Electux::App::Config::Config::Config()'],['../d7/df3/classElectux_1_1App_1_1Config_1_1Config.html',1,'Electux::App::Config::Config']]],
-  ['config_2ecc_37',['config.cc',['../dd/da8/config_8cc.html',1,'']]],
-  ['config_2eh_38',['config.h',['../db/d16/config_8h.html',1,'']]],
+  ['config_5fmanager_2ecc_36',['config_manager.cc',['../da/dd8/config__manager_8cc.html',1,'']]],
+  ['config_5fmanager_2eh_37',['config_manager.h',['../d0/d8b/config__manager_8h.html',1,'']]],
+  ['configmanager_38',['configmanager',['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7d3d7c10423d969f7544509f6fcca32f',1,'Electux::App::Config::ConfigManager::ConfigManager()'],['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html',1,'Electux::App::Config::ConfigManager'],['../dd/d31/namespaceElectux_1_1App.html#a676b54cbeb58c1e48df5e0da28898ec1',1,'Electux::App::ConfigManager']]],
   ['create_39',['create',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e',1,'Electux::App::EntryApplication']]]
 ];

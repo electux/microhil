@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['serialparams_0',['SerialParams',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a932b8883f91a8834a07cda5886429344',1,'Electux::App::Com']]],
-  ['sigsetup_1',['SigSetup',['../d7/d63/namespaceElectux_1_1App_1_1View_1_1Settings.html#a2a9008da627d6e2a709a984d3cabb71c',1,'Electux::App::View::Settings']]]
+  ['modellog_0',['ModelLog',['../d9/d49/namespaceElectux_1_1App_1_1Config.html#a643ae51d5b98681de3c208a700145882',1,'Electux::App::Config']]],
+  ['modelserial_1',['ModelSerial',['../d9/d49/namespaceElectux_1_1App_1_1Config.html#abaa7a94b8d71911d14e3b3cbff34827a',1,'Electux::App::Config']]]
 ];

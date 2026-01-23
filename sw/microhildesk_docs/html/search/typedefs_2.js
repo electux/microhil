@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['modellog_0',['ModelLog',['../d9/d49/namespaceElectux_1_1App_1_1Config.html#a643ae51d5b98681de3c208a700145882',1,'Electux::App::Config']]],
-  ['modelserial_1',['ModelSerial',['../d9/d49/namespaceElectux_1_1App_1_1Config.html#abaa7a94b8d71911d14e3b3cbff34827a',1,'Electux::App::Config']]]
+  ['entities_0',['Entities',['../d9/d26/namespaceElectux_1_1App_1_1Model.html#a560bd9e7602201e7f42909e6c4320625',1,'Electux::App::Model']]]
 ];

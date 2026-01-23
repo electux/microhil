@@ -28,6 +28,7 @@ namespace
     constexpr std::string_view data{"data"};
     constexpr std::string_view parity{"parity"};
     constexpr std::string_view stop{"stop"};
+    constexpr std::string_view flow{"flow"};
     constexpr std::string_view unknown{"unknown"};
 };
 
@@ -41,7 +42,8 @@ Entities ModelSerial::getAllEntries() const
         ModelSerialKey::Baud,
         ModelSerialKey::Data,
         ModelSerialKey::Parity,
-        ModelSerialKey::Stop
+        ModelSerialKey::Stop,
+        ModelSerialKey::Flow
     };
 
     Entities entries;
@@ -63,6 +65,7 @@ std::string ModelSerial::toString(const ModelSerialKey &key) const
     case ModelSerialKey::Data: return data.data();
     case ModelSerialKey::Parity: return parity.data();
     case ModelSerialKey::Stop: return stop.data();
+    case ModelSerialKey::Flow: return flow.data();
     default: return unknown.data();
     }
 }
@@ -73,5 +76,6 @@ bool ModelSerial::validateKey(const std::string &key) const
             key == toString(ModelSerialKey::Baud) ||
             key == toString(ModelSerialKey::Data) ||
             key == toString(ModelSerialKey::Parity) ||
-            key == toString(ModelSerialKey::Stop);
+            key == toString(ModelSerialKey::Stop) ||
+            key == toString(ModelSerialKey::Flow);
 }

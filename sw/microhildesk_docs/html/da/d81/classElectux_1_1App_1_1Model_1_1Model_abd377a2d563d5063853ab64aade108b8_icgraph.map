@@ -1,5 +1,10 @@
 <map id="Electux::App::Model::Model::add" name="Electux::App::Model::Model::add">
-<area shape="rect" id="Node000001" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="205,5,356,45"/>
-<area shape="rect" id="Node000002" href="$d7/df3/classElectux_1_1App_1_1Config_1_1Config.html#a64a239650e115c500c517ebe36c469aa" title="Loads configuration." alt="" coords="5,5,157,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,28,158,28,158,23,191,23"/>
+<area shape="rect" id="Node000001" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="559,49,709,89"/>
+<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="288,5,511,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="545,58,510,52,511,47,546,52"/>
+<area shape="rect" id="Node000004" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762" title="Loads configuration." alt="" coords="317,85,481,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="546,85,482,95,481,89,545,80"/>
+<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7d3d7c10423d969f7544509f6fcca32f" title="Config constructor." alt="" coords="5,49,240,89"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="275,52,241,56,240,51,274,46"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="304,95,240,87,241,81,304,90"/>
 </map>

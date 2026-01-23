@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parity_0',['Parity',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3aa91d6e31a7e409defa6beb8f1311ef98',1,'Electux::App::Model::ModelSerial']]]
+  ['loglevel_0',['LogLevel',['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a31f085f5c12702593ad0244e0090af4e',1,'Electux::App::Model::ModelLog']]]
 ];
