@@ -70,6 +70,16 @@ ConfigManager::ConfigManager()
     }
 }
 
+void ConfigManager::setSerialConfig(const ModelSerial& config)
+{
+    m_serialConfig = config;
+}
+
+void ConfigManager::setLogConfig(const ModelLog& config)
+{
+    m_logConfig = config;
+}
+
 const ModelSerial& ConfigManager::getSerialConfig() const
 {
     return m_serialConfig; 
@@ -83,7 +93,7 @@ const ModelLog& ConfigManager::getLogConfig() const
 bool ConfigManager::load()
 {
     std::ifstream file(m_fileName);
-    std::cout << "Load configuration..." << std::endl;
+    std::cout << "Loading configuration..." << std::endl;
 
     if (!file.is_open())
     {
@@ -104,6 +114,11 @@ bool ConfigManager::load()
 
         if (std::getline(iss, key, configAssignDelimiter) && std::getline(iss, value))
         {
+            key.erase(0, key.find_first_not_of(" \t\n\r"));
+            key.erase(key.find_last_not_of(" \t\n\r") + 1);
+            value.erase(0, value.find_first_not_of(" \t\n\r"));
+            value.erase(value.find_last_not_of(" \t\n\r") + 1);
+
             if (m_serialConfig.validateKey(key))
             {
                 m_serialConfig.add(key, value);
@@ -128,7 +143,7 @@ bool ConfigManager::load()
 bool ConfigManager::store()
 {
     std::ofstream file(m_fileName);
-    std::cout << "Store configuration..." << std::endl;
+    std::cout << "Storing configuration..." << std::endl;
 
     if (!file.is_open())
     {
@@ -156,16 +171,17 @@ void ConfigManager::defaultConfigStore()
 {
     ////////////////////////////////////////////////////////////////////////////
     /// @brief Set default serial configuration
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Device), "/dev/ttyS0");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Baud), "9600");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Data), "8");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Parity), "None");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Stop), "1");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Flow), "None");
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Device), "/dev/ttyUSB0");
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Baud), "10");
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Data), "3");
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Parity), "2");
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Stop), "0");
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Flow), "0");
 
     ////////////////////////////////////////////////////////////////////////////
     /// @brief Set default log configuration
-    m_logConfig.add(m_logConfig.toString(ModelLog::ModelLogKey::LogLevel), "Info");
+    m_logConfig.add(m_logConfig.toString(ModelLog::ModelLogKey::FilePath), "/tmp/microhildesk.log");
+    m_logConfig.add(m_logConfig.toString(ModelLog::ModelLogKey::LogLevel), "2");
 
     ////////////////////////////////////////////////////////////////////////////
     /// @brief Store default configuration to file

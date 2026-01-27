@@ -1,9 +1,14 @@
 <map id="Electux::App::View::Settings::SettingsSetup" name="Electux::App::View::Settings::SettingsSetup">
-<area shape="rect" id="Node000001" title="Setup settings for collected parameters." alt="" coords="120,163,293,263"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,64,78"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="39,78,47,108,62,137,83,157,107,173,104,178,79,161,58,140,42,110,34,79"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="121,5,293,85"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,86,209,147,204,147,204,86"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="342,13,373,78"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="356,79,347,110,330,140,309,162,305,158,326,137,342,108,350,78"/>
+<area shape="rect" id="Node000001" title="Setup settings for collected parameters." alt="" coords="75,660,249,760"/>
+<area shape="rect" id="Node000002" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="8,457,151,597"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,597,99,635,105,645,100,648,94,637,82,598"/>
+<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="91,248,233,408"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,422,111,458,106,456,121,419"/>
+<area shape="rect" id="Node000006" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="175,457,317,597"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="203,419,219,456,214,458,198,422"/>
+<area shape="rect" id="Node000004" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="5,5,148,185"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="117,197,135,247,130,249,112,199"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="172,55,323,135"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="235,137,199,233,194,232,230,135"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="228,599,212,637,207,647,203,644,208,635,223,597"/>
 </map>

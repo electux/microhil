@@ -10,6 +10,7 @@ var classElectux_1_1App_1_1Model_1_1ModelSerial =
     ] ],
     [ "ModelSerial", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a97d5e36e492f8e9375f781f8eb54cd58", null ],
     [ "add", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#abd377a2d563d5063853ab64aade108b8", null ],
+    [ "clear", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5bd1d48829598adacd1d22c5c55422a0", null ],
     [ "get", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#ae54791da60f29fadc62bdbc8014b944a", null ],
     [ "getAllEntries", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a306e4c14f18b8008d377d95fbdb2e379", null ],
     [ "getEntity", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#ac99cd32993648f3e38cbc23b69a9c7bf", null ],

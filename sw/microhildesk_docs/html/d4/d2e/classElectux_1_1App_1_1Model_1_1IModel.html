@@ -107,13 +107,13 @@ Inheritance diagram for Electux::App::Model::IModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/dac/classElectux_1_1App_1_1Model_1_1IModel__inherit__graph.png" border="0" usemap="#aElectux_1_1App_1_1Model_1_1IModel_inherit__map" alt="Inheritance graph"/></div>
 <map name="aElectux_1_1App_1_1Model_1_1IModel_inherit__map" id="aElectux_1_1App_1_1Model_1_1IModel_inherit__map">
-<area shape="rect" title="IModel declaration." alt="" coords="88,5,231,165"/>
-<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="88,213,231,353"/>
-<area shape="poly" title=" " alt="" coords="162,179,162,213,157,213,157,179"/>
-<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="5,401,148,541"/>
-<area shape="poly" title=" " alt="" coords="125,367,110,402,105,400,121,365"/>
-<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="172,401,315,541"/>
-<area shape="poly" title=" " alt="" coords="199,365,214,400,210,402,194,367"/>
+<area shape="rect" title="IModel declaration." alt="" coords="88,5,231,185"/>
+<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="88,233,231,393"/>
+<area shape="poly" title=" " alt="" coords="162,199,162,233,157,233,157,199"/>
+<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="5,441,148,581"/>
+<area shape="poly" title=" " alt="" coords="123,407,108,442,103,440,118,405"/>
+<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="172,441,315,581"/>
+<area shape="poly" title=" " alt="" coords="201,405,216,440,211,442,196,407"/>
 </map>
 </div>
 <div class="dynheader">
@@ -121,7 +121,7 @@ Collaboration diagram for Electux::App::Model::IModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/da7/classElectux_1_1App_1_1Model_1_1IModel__coll__graph.png" border="0" usemap="#aElectux_1_1App_1_1Model_1_1IModel_coll__map" alt="Collaboration graph"/></div>
 <map name="aElectux_1_1App_1_1Model_1_1IModel_coll__map" id="aElectux_1_1App_1_1Model_1_1IModel_coll__map">
-<area shape="rect" title="IModel declaration." alt="" coords="5,5,148,165"/>
+<area shape="rect" title="IModel declaration." alt="" coords="5,5,148,185"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -139,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a646021cefee0f19da0dde6e9000e4f3a" id="r_a646021cefee0f19da0dde6e9000e4f3a"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a560bd9e7602201e7f42909e6c4320625">Entities</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a646021cefee0f19da0dde6e9000e4f3a">get</a> () const =0</td></tr>
 <tr class="memdesc:a646021cefee0f19da0dde6e9000e4f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets model entities.  <br /></td></tr>
 <tr class="separator:a646021cefee0f19da0dde6e9000e4f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa38668cad3fe5b64743e945d9acf95" id="r_abfa38668cad3fe5b64743e945d9acf95"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#abfa38668cad3fe5b64743e945d9acf95">clear</a> ()=0</td></tr>
+<tr class="memdesc:abfa38668cad3fe5b64743e945d9acf95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all model entities.  <br /></td></tr>
+<tr class="separator:abfa38668cad3fe5b64743e945d9acf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d13d898262c55797adb684f50289279" id="r_a8d13d898262c55797adb684f50289279"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a560bd9e7602201e7f42909e6c4320625">Entities</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a8d13d898262c55797adb684f50289279">getAllEntries</a> () const =0</td></tr>
 <tr class="memdesc:a8d13d898262c55797adb684f50289279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all model entries.  <br /></td></tr>
 <tr class="separator:a8d13d898262c55797adb684f50289279"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,6 +224,35 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True for success operation, otherwise false </dd></dl>
 
 <p>Implemented in <a class="el" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">Electux::App::Model::Model</a>.</p>
+
+</div>
+</div>
+<a id="abfa38668cad3fe5b64743e945d9acf95" name="abfa38668cad3fe5b64743e945d9acf95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa38668cad3fe5b64743e945d9acf95">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Electux::App::Model::IModel::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clears all model entities. </p>
+
+<p>Implemented in <a class="el" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a5bd1d48829598adacd1d22c5c55422a0">Electux::App::Model::Model</a>.</p>
 
 </div>
 </div>
@@ -330,7 +362,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html">Model</a></li><li class="navelem"><a class="el" href="../../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html">IModel</a></li>
-    <li class="footer">Generated on Fri Jan 23 2026 20:57:37 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Jan 27 2026 21:00:41 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

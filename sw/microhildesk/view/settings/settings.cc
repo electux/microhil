@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <iostream>
 #include "settings.h"
 #include "../../params/serial_com_params.h"
 #include "../../params/log_level_params.h"
@@ -170,3 +171,7 @@ AppSettings::AppSettings()
     mapping();
 }
 
+void AppSettings::setSettingsSetup(const SettingsSetup& setup)
+{
+    m_setup = setup;
+}

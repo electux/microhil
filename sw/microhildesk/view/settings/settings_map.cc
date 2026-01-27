@@ -24,13 +24,6 @@ void AppSettings::mapping()
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Maps signals to slots (widget actions)
-    m_entrySerialPath.signal_changed().connect(sigc::mem_fun(*this, &AppSettings::onEntrySerialPathChanged));
-    m_comboSerialBaud.signal_changed().connect(sigc::mem_fun(*this, &AppSettings::onEntrySerialBaudChanged));
-    m_comboSerialData.signal_changed().connect(sigc::mem_fun(*this, &AppSettings::onEntrySerialDataChanged));
-    m_comboSerialParity.signal_changed().connect(sigc::mem_fun(*this, &AppSettings::onEntrySerialParityChanged));
-    m_comboSerialStop.signal_changed().connect(sigc::mem_fun(*this, &AppSettings::onEntrySerialStopChanged));
-    m_entryLogPath.signal_changed().connect(sigc::mem_fun(*this, &AppSettings::onEntryLogPathChanged));
-    m_comboLogLevel.signal_changed().connect(sigc::mem_fun(*this, &AppSettings::onEntryLogLevelChanged));
     m_buttonOk.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::onButtonOkClicked));
     m_buttonCancel.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::onButtonCancelClicked));
 }

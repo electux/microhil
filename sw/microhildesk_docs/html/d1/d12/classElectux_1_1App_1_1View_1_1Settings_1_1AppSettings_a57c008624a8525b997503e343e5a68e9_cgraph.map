@@ -1,0 +1,9 @@
+<map id="Electux::App::View::Settings::AppSettings::updateUiData" name="Electux::App::View::Settings::AppSettings::updateUiData">
+<area shape="rect" id="Node000001" title="Updates UI widgets with data from loaded configuration." alt="" coords="5,62,175,117"/>
+<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf" title="Gets entity by key." alt="" coords="231,5,381,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,62,224,47,226,52,176,67"/>
+<area shape="rect" id="Node000003" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="230,69,382,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,87,216,87,216,92,175,92"/>
+<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="223,133,389,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,112,226,127,224,132,174,117"/>
+</map>

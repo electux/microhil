@@ -48,6 +48,10 @@ namespace Electux::App::Model
         /// @return Model entities in format map of strings
         const Entities &get() const final;
 
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Clears all model entities
+        void clear() final;
+
     private:
         //////////////////////////////////////////////////////////////////////
         /// @brief Model entities in format map of strings {key: data}

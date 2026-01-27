@@ -24,6 +24,7 @@ namespace
     ////////////////////////////////////////////////////////////////////////
     /// @brief String constants for log configuration keys
     constexpr std::string_view logLevel{"log_level"};
+    constexpr std::string_view filePath{"log_file_path"};
     constexpr std::string_view unknown{"unknown"};
 };
 
@@ -33,7 +34,7 @@ Entities ModelLog::getAllEntries() const
 {
     static const std::vector<ModelLogKey> keys =
     {
-        ModelLogKey::LogLevel
+        ModelLogKey::LogLevel, ModelLogKey::FilePath
     };
 
     Entities entries;
@@ -51,11 +52,12 @@ std::string ModelLog::toString(const ModelLogKey &key) const
     switch (key)
     {
     case ModelLogKey::LogLevel: return logLevel.data();
+    case ModelLogKey::FilePath: return filePath.data();
     default: return unknown.data();
     }
 }
 
 bool ModelLog::validateKey(const std::string &key) const
 {
-    return key == toString(ModelLogKey::LogLevel);
+    return key == toString(ModelLogKey::LogLevel) || key == toString(ModelLogKey::FilePath);
 }

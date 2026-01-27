@@ -5,5 +5,6 @@ var searchData=
   ['getentity_2',['getentity',['../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a1209cbcc396731548204c8a64f32ec00',1,'Electux::App::Model::IModel::getEntity()'],['../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf',1,'Electux::App::Model::Model::getEntity()']]],
   ['getlevel_3',['getLevel',['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a5dfe7a656c8dbe093621e119157f28e9',1,'Electux::App::Logger::Log']]],
   ['getlogconfig_4',['getLogConfig',['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9435f071d55cb326f33019971f58af38',1,'Electux::App::Config::ConfigManager']]],
-  ['getserialconfig_5',['getSerialConfig',['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a30bbae26b065503252f3c42e3e34a877',1,'Electux::App::Config::ConfigManager']]]
+  ['getserialconfig_5',['getSerialConfig',['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a30bbae26b065503252f3c42e3e34a877',1,'Electux::App::Config::ConfigManager']]],
+  ['getuidata_6',['getUiData',['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6',1,'Electux::App::View::Settings::AppSettings']]]
 ];

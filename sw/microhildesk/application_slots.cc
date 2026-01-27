@@ -48,6 +48,7 @@ namespace
 };
 
 using namespace Electux::App;
+using namespace Electux::App::View::Settings;
 
 void EntryApplication::on_startup()
 {
@@ -82,6 +83,14 @@ void EntryApplication::on_startup()
     m_home.signal_close_request().connect(sigc::mem_fun(*this, &EntryApplication::onHandleClose), false);
 
     //////////////////////////////////////////////////////////////////////////
+    /// @brief Updated settings widgets data based on loaded configuration
+    SettingsSetup setup;
+    setup.m_serialConfig = m_configManager.getSerialConfig();
+    setup.m_logConfig = m_configManager.getLogConfig();
+    m_settings.setSettingsSetup(setup);
+    m_settings.updateUiData();
+
+    //////////////////////////////////////////////////////////////////////////
     /// @brief Sets visibility for AppHome window
     m_home.set_visible(true);
     std::cout << "Startup application done." << std::endl;
@@ -114,4 +123,11 @@ void EntryApplication::onActionDoc()
 void EntryApplication::onActionAbout()
 {
     m_about.show();
+}
+
+void EntryApplication::onSetupChanged(const SettingsSetup &setup)
+{
+    m_configManager.setSerialConfig(setup.m_serialConfig);
+    m_configManager.setLogConfig(setup.m_logConfig);
+    m_configManager.store();
 }

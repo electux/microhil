@@ -1,18 +1,18 @@
 <map id="Electux::App::Config::ConfigManager" name="Electux::App::Config::ConfigManager">
-<area shape="rect" id="Node000001" title="Config class is implementation for configuration mechanism." alt="" coords="179,620,339,800"/>
-<area shape="rect" id="Node000002" href="$db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html" title="IConfig class is interface for configuration mechanism." alt="" coords="5,427,149,547"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,557,187,618,183,621,133,560"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="173,455,224,520"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,520,197,557,203,595,205,604,200,605,197,597,192,557,193,520"/>
-<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="249,417,391,557"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="303,558,290,605,285,603,298,557"/>
-<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="331,228,474,368"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="369,382,353,418,348,416,364,380"/>
-<area shape="rect" id="Node000008" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="415,417,558,557"/>
-<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="442,380,458,416,453,418,437,382"/>
-<area shape="rect" id="Node000006" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="246,5,389,165"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="357,177,377,227,372,229,352,179"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="413,45,563,125"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="475,127,439,214,434,212,470,125"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="441,559,407,598,353,645,350,641,403,594,437,556"/>
+<area shape="rect" id="Node000001" title="Config class is implementation for configuration mechanism." alt="" coords="179,660,339,880"/>
+<area shape="rect" id="Node000002" href="$db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html" title="IConfig class is interface for configuration mechanism." alt="" coords="5,467,149,587"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,597,180,661,176,664,128,600"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="173,495,224,560"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,560,198,597,203,636,205,644,199,645,197,636,193,597,193,560"/>
+<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="249,457,391,597"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="305,598,293,644,288,643,300,597"/>
+<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="331,248,474,408"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="367,422,351,458,346,456,362,419"/>
+<area shape="rect" id="Node000008" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="415,457,558,597"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="444,419,460,456,455,458,439,422"/>
+<area shape="rect" id="Node000006" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="246,5,389,185"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="358,197,376,247,371,249,353,199"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="413,55,563,135"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="476,137,440,233,435,232,471,135"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="442,599,410,638,353,694,349,690,406,634,438,596"/>
 </map>

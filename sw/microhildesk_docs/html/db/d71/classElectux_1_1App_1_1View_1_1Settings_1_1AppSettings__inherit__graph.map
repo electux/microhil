@@ -1,5 +1,5 @@
 <map id="Electux::App::View::Settings::AppSettings" name="Electux::App::View::Settings::AppSettings">
-<area shape="rect" id="Node000001" title="Application settings window definition." alt="" coords="5,119,225,619"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="67,5,164,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,84,118,119,113,119,113,84"/>
+<area shape="rect" id="Node000001" title="Application settings window definition." alt="" coords="5,119,195,539"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="51,5,149,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,84,103,118,97,118,97,84"/>
 </map>

@@ -23,6 +23,7 @@
 #include "view/settings/settings.h"
 #include "view/help/help.h"
 #include "view/about/about.h"
+#include "view/settings/settings_setup.h"
 #include "config/config_manager.h"
 
 namespace Electux::App
@@ -31,6 +32,7 @@ namespace Electux::App
     using AppSettings = Electux::App::View::Settings::AppSettings;
     using AppHelp = Electux::App::View::Help::AppHelp;
     using AppAbout = Electux::App::View::About::AppAbout;
+    using SettingsSetup = Electux::App::View::Settings::SettingsSetup;
     using ConfigManager = Electux::App::Config::ConfigManager;
 
     //////////////////////////////////////////////////////////////////////////
@@ -78,17 +80,22 @@ namespace Electux::App
         bool onHandleClose();
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief Slot to handle setup signal
+        /// @param setup Settings setup parameters
+        void onSetupChanged(const SettingsSetup &setup);
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Instances of application items
+        ///   m_configManager - instance of ConfigManager (configuration manager)
         ///   m_home - instance of AppHome (main window)
         ///   m_settings - instance of AppSettings (settings window)
         ///   m_help - instance of AppHelp (help window)
         ///   m_about - instance of AppAbout (about dialog)
-        ///   m_configManager - instance of ConfigManager (configuration manager)
+        ConfigManager m_configManager{};
         AppHome m_home{};
         AppSettings m_settings{};
         AppHelp m_help{};
         AppAbout m_about{};
-        ConfigManager m_configManager{};
     };
 };
 

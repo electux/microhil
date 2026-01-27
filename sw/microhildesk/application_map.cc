@@ -50,4 +50,8 @@ void EntryApplication::mapping()
     add_action(optionSettingsActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionSettings));
     add_action(helpDocActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionDoc));
     add_action(helpAboutActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionAbout));
+
+    /////////////////////////////////////////////////////////////////////////
+    /// @brief Maps application setup signal
+    m_settings.setupChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));
 }

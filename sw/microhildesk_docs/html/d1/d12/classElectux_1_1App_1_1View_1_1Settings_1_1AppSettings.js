@@ -1,17 +1,13 @@
 var classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings =
 [
     [ "AppSettings", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ac327d0a43da29c01585c7a256b49b31a", null ],
+    [ "getUiData", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6", null ],
     [ "mapping", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5763d8088e72a080dd732c16851b5170", null ],
     [ "onButtonCancelClicked", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a9a0b184f6a0a257f2e9cf2bebd6351f6", null ],
     [ "onButtonOkClicked", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ab774932988d1d2ddca6a3db5134e1441", null ],
-    [ "onEntryLogLevelChanged", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ad3d577697855f549e60405b8388203e3", null ],
-    [ "onEntryLogPathChanged", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a11399207d83ad11962facd5fd5423445", null ],
-    [ "onEntrySerialBaudChanged", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a6c6d14e46b1587c12433865a8ad3c444", null ],
-    [ "onEntrySerialDataChanged", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aec0f34b1953d00a7293b3def1171def2", null ],
-    [ "onEntrySerialParityChanged", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a48c91b10afd7599669e269d01fca74c7", null ],
-    [ "onEntrySerialPathChanged", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a8c93dfbe78e5e97e41165b1b919cab45", null ],
-    [ "onEntrySerialStopChanged", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a9618bbb66d47d0b28b8cbe5c0b96a527", null ],
+    [ "setSettingsSetup", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a15e6f4ca3426de824d12f4002d57f390", null ],
     [ "setupChanged", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a182d77c5174cecc76723031da326755e", null ],
+    [ "updateUiData", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a57c008624a8525b997503e343e5a68e9", null ],
     [ "m_boxLog", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a84f5819aacb8784366cf2d08785b8973", null ],
     [ "m_boxRoot", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5131dd26aabf14b653cfc351a1b6aac4", null ],
     [ "m_boxSerial", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ae33451d4214091c4e2b43716ccc10fa6", null ],
@@ -35,7 +31,6 @@ var classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings =
     [ "m_labelSerialPath", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a6c91f0b0a63e53a1053b9f1b72b5eeaa", null ],
     [ "m_labelSerialStop", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#afc3ecb7e3221f7af7d4a64b0fffc170c", null ],
     [ "m_notebook", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aee6bf816746e27b27fbb92514b48bd19", null ],
-    [ "m_previusSetup", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ac161ae7f7743e73ff663e43e0919ab51", null ],
     [ "m_setup", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aa1f7ca3fff1609b3c178e7e08dde9477", null ],
     [ "m_setupSignal", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a38c3cde1e48901fc4e1821cca0eaeb65", null ]
 ];

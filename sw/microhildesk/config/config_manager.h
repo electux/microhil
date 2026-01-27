@@ -37,6 +37,16 @@ namespace Electux::App::Config
         explicit ConfigManager();
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief Sets serial configuration
+        /// @param config Represents serial configuration
+        void setSerialConfig(const ModelSerial& config);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Sets log configuration
+        /// @param config Represents log configuration
+        void setLogConfig(const ModelLog& config);
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Gets serial configuration
         /// @return Serial configuration
         const ModelSerial& getSerialConfig() const;

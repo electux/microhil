@@ -49,6 +49,18 @@ namespace Electux::App::View::Settings
         /// @return Signal for changed serial settings
         SigSetup setupChanged();
 
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Sets configuration setup
+        void setSettingsSetup(const SettingsSetup& setup);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Gets UI data from widgets and saves them to configuration
+        void getUiData();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Updates UI widgets with data from loaded configuration
+        void updateUiData();
+
     private:
         //////////////////////////////////////////////////////////////////////
         /// @brief Maps channels (signals and slots)
@@ -63,37 +75,8 @@ namespace Electux::App::View::Settings
         void onButtonCancelClicked();
 
         //////////////////////////////////////////////////////////////////////
-        /// @brief On action Entry serial path changed
-        void onEntrySerialPathChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief On action Combo serial baud changed
-        void onEntrySerialBaudChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief On action Combo serial data changed
-        void onEntrySerialDataChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief On action Combo serial parity changed
-        void onEntrySerialParityChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief On action Combo serial stop changed
-        void onEntrySerialStopChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief On action Entry log path changed
-        void onEntryLogPathChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief On action Combo log level changed
-        void onEntryLogLevelChanged();
-
-        //////////////////////////////////////////////////////////////////////
         /// @brief Container for packing widgets for settings window
         ///   m_setup - settings parameters
-        ///   m_previusSetup - previous settings parameters
         ///   m_setupSignal - signal for the serial settings
         ///   m_boxRoot - vertical box as root container
         ///   m_notebook - notebook container for settings pages serial port and log
@@ -119,7 +102,6 @@ namespace Electux::App::View::Settings
         ///   m_buttonOk - ok button (save changes)
         ///   m_buttonCancel - cancel button (dissmiss changes)
         SettingsSetup m_setup{};
-        SettingsSetup m_previusSetup{};
         SigSetup m_setupSignal{};
         Gtk::Box m_boxRoot{};
         Gtk::Notebook m_notebook{};
