@@ -18,11 +18,14 @@
  */
 #pragma once
 
-#include <vector>
-#include <glibmm/ustring.h>
+#include "../../model/model_serial.h"
+#include "../../model/model_log.h"
 
 namespace Electux::App::View::Settings
 {
+    using ModelSerial = Electux::App::Model::ModelSerial;
+    using ModelLog = Electux::App::Model::ModelLog;
+
     //////////////////////////////////////////////////////////////////////////
     /// @brief Setup settings for collected parameters
     class SettingsSetup
@@ -38,14 +41,10 @@ namespace Electux::App::View::Settings
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Settings parameters
-        ///   m_serialDevicePath - absolute path for serial device file
-        ///   m_serialParams - baud, data, parity, stop parameters
-        ///   m_logFilePath - absolute path for log file
-        ///   m_logLevel - log level
-        Glib::ustring m_serialDevicePath{};
-        std::vector<int> m_serialParams{};
-        Glib::ustring m_logFilePath{};
-        int m_logLevel{};
+        ///   m_serialConfig - serial configuration model
+        ///   m_logConfig - log configuration model
+        ModelSerial m_serialConfig{};
+        ModelLog m_logConfig{};
     };
 };
 

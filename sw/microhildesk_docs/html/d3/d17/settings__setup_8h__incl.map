@@ -1,7 +1,16 @@
 <map id="view/settings/settings_setup.h" name="view/settings/settings_setup.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="15,5,181,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,68,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,47,56,84,52,81,81,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="93,93,226,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,44,144,81,140,84,111,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="117,5,283,45"/>
+<area shape="rect" id="Node000002" href="$df/db2/model__serial_8h.html" title=" " alt="" coords="5,93,192,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,48,126,87,123,82,174,43"/>
+<area shape="rect" id="Node000007" href="$d7/d71/model__log_8h.html" title=" " alt="" coords="216,93,387,119"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="226,43,277,82,274,87,223,48"/>
+<area shape="rect" id="Node000003" href="$dc/d51/model_8h.html" title=" " alt="" coords="163,167,237,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,116,174,156,171,161,113,121"/>
+<area shape="rect" id="Node000004" href="$df/d78/imodel_8h.html" title=" " alt="" coords="161,240,239,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="203,192,203,226,197,226,197,192"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="136,313,187,339"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="196,267,176,303,172,300,191,264"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="211,313,269,339"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="209,264,229,300,224,303,204,267"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="287,121,229,161,226,156,284,116"/>
 </map>

@@ -16,7 +16,10 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <iostream>
 #include "settings.h"
+#include "../../params/serial_com_params.h"
+#include "../../params/log_level_params.h"
 
 namespace
 {
@@ -31,6 +34,7 @@ namespace
     ///   settingsSerialData - label data bits
     ///   settingsSerialParity - label parity
     ///   settingsSerialStop - label stop bits
+    ///   settingsSerialFlowControl - label flow control
     ///   settingsPageSerialLabel - notebook page label serial
     ///   settingsLogPath - label log file path
     ///   settingsLogLevel - label log level
@@ -55,6 +59,7 @@ namespace
     constexpr std::string_view settingsSerialData{"Data bits"};
     constexpr std::string_view settingsSerialParity{"Parity"};
     constexpr std::string_view settingsSerialStop{"Stop bits"};
+    constexpr std::string_view settingsSerialFlowControl{"Flow control"};
     constexpr std::string_view settingsPageSerialLabel{"Serial port"};
     constexpr std::string_view settingsLogPath{"Log file path"};
     constexpr std::string_view settingsLogLevel{"Log level"};
@@ -73,6 +78,8 @@ namespace
 };
 
 using namespace Electux::App::View::Settings;
+using namespace Electux::App::Params::SerialComConstants;
+using namespace Electux::App::Params::LogLevels;
 
 AppSettings::AppSettings()
 {
@@ -95,16 +102,39 @@ AppSettings::AppSettings()
     m_boxSerial.append(m_entrySerialPath);
     m_labelSerialBaud.set_label(settingsSerialBaud.data());
     m_boxSerial.append(m_labelSerialBaud);
+    for (const auto& rate : comBaudRates)
+    {
+        m_comboSerialBaud.append(std::string(rate));
+    }
     m_boxSerial.append(m_comboSerialBaud);
     m_labelSerialData.set_label(settingsSerialData.data());
     m_boxSerial.append(m_labelSerialData);
+    for (const auto& data : comDataBits)
+    {
+        m_comboSerialData.append(std::string(data));
+    }
     m_boxSerial.append(m_comboSerialData);
     m_labelSerialParity.set_label(settingsSerialParity.data());
     m_boxSerial.append(m_labelSerialParity);
+    for (const auto& parity : comParities)
+    {
+        m_comboSerialParity.append(std::string(parity));
+    }
     m_boxSerial.append(m_comboSerialParity);
     m_labelSerialStop.set_label(settingsSerialStop.data());
     m_boxSerial.append(m_labelSerialStop);
+    for (const auto& stop : comStopBits)
+    {
+        m_comboSerialStop.append(std::string(stop));
+    }
     m_boxSerial.append(m_comboSerialStop);
+    m_labelSerialFlowControl.set_label(settingsSerialFlowControl.data());
+    m_boxSerial.append(m_labelSerialFlowControl);
+    for (const auto& flow : comFlowControls)
+    {
+        m_comboSerialFlowControl.append(std::string(flow));
+    }
+    m_boxSerial.append(m_comboSerialFlowControl);
     m_notebook.append_page(m_boxSerial, settingsPageSerialLabel.data());
 
     //////////////////////////////////////////////////////////////////////////
@@ -115,6 +145,10 @@ AppSettings::AppSettings()
     m_boxLog.append(m_entryLogPath);
     m_labelLogLevel.set_label(settingsLogLevel.data());
     m_boxLog.append(m_labelLogLevel);
+    for (const auto& level : logLevels)
+    {
+        m_comboLogLevel.append(std::string(level));
+    }
     m_boxLog.append(m_comboLogLevel);
     m_notebook.append_page(m_boxLog, settingsPageLogLabel.data());
     m_boxRoot.append(m_notebook);
@@ -137,3 +171,7 @@ AppSettings::AppSettings()
     mapping();
 }
 
+void AppSettings::setSettingsSetup(const SettingsSetup& setup)
+{
+    m_setup = setup;
+}

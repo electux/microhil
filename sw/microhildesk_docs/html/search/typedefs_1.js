@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['entities_0',['Entities',['../d9/d26/namespaceElectux_1_1App_1_1Model.html#a560bd9e7602201e7f42909e6c4320625',1,'Electux::App::Model']]]
+  ['configmanager_0',['ConfigManager',['../dd/d31/namespaceElectux_1_1App.html#a676b54cbeb58c1e48df5e0da28898ec1',1,'Electux::App']]]
 ];

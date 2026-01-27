@@ -2,10 +2,11 @@ var searchData=
 [
   ['serial_5fcom_2ecc_0',['serial_com.cc',['../d0/d38/serial__com_8cc.html',1,'']]],
   ['serial_5fcom_2eh_1',['serial_com.h',['../df/d29/serial__com_8h.html',1,'']]],
-  ['serial_5fcom_5futils_2ecc_2',['serial_com_utils.cc',['../d1/df2/serial__com__utils_8cc.html',1,'']]],
-  ['settings_2ecc_3',['settings.cc',['../d3/d8e/settings_8cc.html',1,'']]],
-  ['settings_2eh_4',['settings.h',['../de/d60/settings_8h.html',1,'']]],
-  ['settings_5fmap_2ecc_5',['settings_map.cc',['../d0/d67/settings__map_8cc.html',1,'']]],
-  ['settings_5fsetup_2eh_6',['settings_setup.h',['../df/d7c/settings__setup_8h.html',1,'']]],
-  ['settings_5fslots_2ecc_7',['settings_slots.cc',['../dd/dc1/settings__slots_8cc.html',1,'']]]
+  ['serial_5fcom_5fparams_2eh_2',['serial_com_params.h',['../d4/d60/serial__com__params_8h.html',1,'']]],
+  ['serial_5fcom_5futils_2ecc_3',['serial_com_utils.cc',['../d1/df2/serial__com__utils_8cc.html',1,'']]],
+  ['settings_2ecc_4',['settings.cc',['../d3/d8e/settings_8cc.html',1,'']]],
+  ['settings_2eh_5',['settings.h',['../de/d60/settings_8h.html',1,'']]],
+  ['settings_5fmap_2ecc_6',['settings_map.cc',['../d0/d67/settings__map_8cc.html',1,'']]],
+  ['settings_5fsetup_2eh_7',['settings_setup.h',['../df/d7c/settings__setup_8h.html',1,'']]],
+  ['settings_5fslots_2ecc_8',['settings_slots.cc',['../dd/dc1/settings__slots_8cc.html',1,'']]]
 ];

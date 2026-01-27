@@ -1,0 +1,9 @@
+<map id="Electux::App::EntryApplication::onSetupChanged" name="Electux::App::EntryApplication::onSetupChanged">
+<area shape="rect" id="Node000001" title="Slot to handle setup signal." alt="" coords="5,69,224,109"/>
+<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7418869c7332cb5bbb9f8dbe43e6d053" title="Sets log configuration." alt="" coords="279,5,499,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,67,289,46,290,51,202,72"/>
+<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7193d1fa7cfaed1bb17e7570d5663b5c" title="Sets serial configuration." alt="" coords="272,69,507,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,87,258,87,258,92,224,92"/>
+<area shape="rect" id="Node000004" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="305,133,474,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="202,107,292,128,291,133,201,112"/>
+</map>

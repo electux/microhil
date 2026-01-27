@@ -4,6 +4,7 @@ var files_dup =
     [ "config", "dir_9f351d46ce3cc29445a41dc3a31e6919.html", "dir_9f351d46ce3cc29445a41dc3a31e6919" ],
     [ "log", "dir_9381a7bbd03577d6d8720c7f35c94ffa.html", "dir_9381a7bbd03577d6d8720c7f35c94ffa" ],
     [ "model", "dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html", "dir_3f14f6767c31cb4a1d22c13c18cc6fc3" ],
+    [ "params", "dir_e7fd26915a3261f6992d096ead81ea21.html", "dir_e7fd26915a3261f6992d096ead81ea21" ],
     [ "view", "dir_b2f003339c516cc00c8cadcafbe82f13.html", "dir_b2f003339c516cc00c8cadcafbe82f13" ],
     [ "application.cc", "dc/d16/application_8cc.html", null ],
     [ "application.h", "db/d32/application_8h.html", "db/d32/application_8h" ],

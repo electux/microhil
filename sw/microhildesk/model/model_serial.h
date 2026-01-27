@@ -37,7 +37,8 @@ namespace Electux::App::Model
             Baud,
             Data,
             Parity,
-            Stop
+            Stop,
+            Flow
         };
 
         //////////////////////////////////////////////////////////////////////

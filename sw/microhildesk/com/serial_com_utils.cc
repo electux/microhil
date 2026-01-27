@@ -17,45 +17,10 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include "serial_com.h"
-
-namespace
-{
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Expected serial parameters
-    ///   baud-rate index values
-    ///   data-bits index values
-    ///   parity index values
-    ///   stop-bits index values
-    ///   flow-control index values
-    ///   invalid parameter for serial port
-    constexpr const unsigned int comBaud110 = 0;
-    constexpr const unsigned int comBaud300 = 1;
-    constexpr const unsigned int comBaud600 = 2;
-    constexpr const unsigned int comBaud1200 = 3;
-    constexpr const unsigned int comBaud2400 = 4;
-    constexpr const unsigned int comBaud4800 = 5;
-    constexpr const unsigned int comBaud9600 = 6;
-    constexpr const unsigned int comBaud19200 = 7;
-    constexpr const unsigned int comBaud38400 = 8;
-    constexpr const unsigned int comBaud57600 = 9;
-    constexpr const unsigned int comBaud115200 = 10;
-    constexpr const unsigned int comBaud230400 = 11;
-    constexpr const unsigned int comDataBits5 = 0;
-    constexpr const unsigned int comDataBits6 = 1;
-    constexpr const unsigned int comDataBits7 = 2;
-    constexpr const unsigned int comDataBits8 = 3; 
-    constexpr const unsigned int comParityEven = 0;
-    constexpr const unsigned int comParityOdd = 1;
-    constexpr const unsigned int comParityNone = 2;
-    constexpr const unsigned int comStopBits1 = 0;
-    constexpr const unsigned int comStopBits2 = 1;
-    constexpr const unsigned int comFlowControlNone = 0;
-    constexpr const unsigned int comFlowControlHw = 1;
-    constexpr const unsigned int comFlowControlSw = 2;
-    constexpr const unsigned int comInvalidParameter = 127;
-};
+#include "../params/serial_com_params.h"
 
 using namespace Electux::App::Com;
+using namespace Electux::App::Params::SerialComConstants;
 
 unsigned int SerialCom::baudToUint(const BaudRate baud)
 {

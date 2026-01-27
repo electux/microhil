@@ -7,7 +7,7 @@ var annotated_dup =
           [ "SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom" ]
         ] ],
         [ "Config", "d9/d49/namespaceElectux_1_1App_1_1Config.html", [
-          [ "Config", "d7/df3/classElectux_1_1App_1_1Config_1_1Config.html", "d7/df3/classElectux_1_1App_1_1Config_1_1Config" ],
+          [ "ConfigManager", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager" ],
           [ "IConfig", "db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html", "db/dcd/classElectux_1_1App_1_1Config_1_1IConfig" ]
         ] ],
         [ "Logger", "d5/dd1/namespaceElectux_1_1App_1_1Logger.html", [

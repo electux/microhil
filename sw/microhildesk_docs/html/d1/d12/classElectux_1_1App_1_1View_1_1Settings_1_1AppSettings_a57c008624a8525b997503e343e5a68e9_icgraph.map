@@ -1,0 +1,5 @@
+<map id="Electux::App::View::Settings::AppSettings::updateUiData" name="Electux::App::View::Settings::AppSettings::updateUiData">
+<area shape="rect" id="Node000001" title="Updates UI widgets with data from loaded configuration." alt="" coords="272,5,441,60"/>
+<area shape="rect" id="Node000002" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="5,13,224,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,35,224,35,224,30,258,30"/>
+</map>

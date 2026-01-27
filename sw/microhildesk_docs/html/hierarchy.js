@@ -13,7 +13,7 @@ var hierarchy =
       [ "Electux::App::Com::SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html", null ]
     ] ],
     [ "Electux::App::Config::IConfig", "db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html", [
-      [ "Electux::App::Config::Config", "d7/df3/classElectux_1_1App_1_1Config_1_1Config.html", null ]
+      [ "Electux::App::Config::ConfigManager", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html", null ]
     ] ],
     [ "Electux::App::Model::IModel", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html", [
       [ "Electux::App::Model::Model", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html", [

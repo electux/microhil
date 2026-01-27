@@ -30,17 +30,21 @@ void SerialCom::open()
 {
     std::cout << "Open serial port..." << std::endl;
 
-    if (m_device.empty()) {
+    if (m_device.empty())
+    {
         std::cerr << "Error: Device path is empty!" << std::endl;
         return;
     }
 
     if (!m_serialPort.IsOpen())
     {
-        try {
+        try
+        {
             m_serialPort.Open(std::string(m_device));
             std::cout << "Open serial port done." << std::endl;
-        } catch (const std::exception &e) {
+        }
+        catch (const std::exception &e)
+        {
             std::cerr << "Error opening serial port: " << e.what() << std::endl;
         }
     }
@@ -66,11 +70,11 @@ void SerialCom::setup(const SerialParams &params)
         m_serialPort.Close();
     }
 
-    ////////////////////////////////////////////////////////////////////////
-    /// @brief Sets serial port device path
-    m_device = params.device;
-
-    try {
+    try
+    {
+        ////////////////////////////////////////////////////////////////////
+        /// @brief Sets serial port device path
+        m_device = params.device;
         open();
 
         if (m_serialPort.IsOpen())
@@ -89,7 +93,9 @@ void SerialCom::setup(const SerialParams &params)
         {
             std::cerr << "Error: Port could not be opened, skipping configuration." << std::endl;
         }
-    } catch (const std::exception &e) {
+    }
+    catch (const std::exception &e)
+    {
         std::cerr << "Error setting up serial port: " << e.what() << std::endl;
     }
 }
@@ -112,7 +118,7 @@ void SerialCom::read(std::vector<uint8_t> &data, size_t len)
 void SerialCom::write(const std::vector<uint8_t> &data)
 {
     if (!m_serialPort.IsOpen()) {
-        std::cerr << "Read error: Port closed." << std::endl;
+        std::cerr << "Write error: Port closed." << std::endl;
         return;
     }
 

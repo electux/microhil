@@ -33,6 +33,7 @@ namespace Electux::App::Model
         /// @brief Enum for log configuration keys
         enum class ModelLogKey
         {
+            FilePath,
             LogLevel
         };
 

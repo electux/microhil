@@ -43,3 +43,7 @@ const Entities &Model::get() const
     return m_entities;
 }
 
+void Model::clear()
+{
+    m_entities.clear();
+}

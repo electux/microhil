@@ -55,6 +55,10 @@ namespace Electux::App::Model
         virtual const Entities &get() const = 0;
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief Clears all model entities
+        virtual void clear() = 0;
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Gets all model entries
         /// @return Map of all model entries {key: data}
         virtual Entities getAllEntries() const = 0;
