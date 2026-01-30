@@ -1,7 +1,7 @@
 <map id="Electux::App::Model::Model" name="Electux::App::Model::Model">
-<area shape="rect" id="Node000001" title="Model definition." alt="" coords="91,248,233,408"/>
-<area shape="rect" id="Node000002" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="5,5,148,185"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,197,135,247,130,249,112,199"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="172,55,323,135"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,137,199,233,194,232,230,135"/>
+<area shape="rect" id="Node000001" title="Model definition." alt="" coords="91,268,233,448"/>
+<area shape="rect" id="Node000002" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="5,5,148,205"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,217,134,267,129,269,112,219"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="172,65,323,145"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,147,200,253,195,251,231,145"/>
 </map>

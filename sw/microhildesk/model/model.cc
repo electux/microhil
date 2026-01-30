@@ -43,7 +43,19 @@ const Entities &Model::get() const
     return m_entities;
 }
 
+bool Model::update(const std::string &key, const std::string &data)
+{
+    auto it = m_entities.find(key);
+    if (it != m_entities.end())
+    {
+        it->second = data;
+        return true;
+    }
+    return false;
+}
+
 void Model::clear()
 {
     m_entities.clear();
 }
+

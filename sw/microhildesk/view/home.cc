@@ -19,6 +19,7 @@
 #include <string>
 #include <format>
 #include "home.h"
+#include "../params/channel_params.h"
 
 namespace
 {
@@ -27,7 +28,6 @@ namespace
     ///   homeTitle - home window title
     ///   homeWidth - home window width
     ///   homeHeight - home window height
-    ///   homeNumChannels - number of channels
     ///   homeEnChannelLabel - checkbox enable channel label
     ///   homeToggleChannelLabel - label for toogle channel
     ///   homeToggleChannelButtonActivate - toggle button channel label 
@@ -42,7 +42,6 @@ namespace
     constexpr std::string_view homeTitle{"microhildesk"};
     constexpr int homeWidth{600};
     constexpr int homeHeight{250};
-    constexpr int homeNumChannels{8};
     constexpr std::string_view homeEnChannelLabel{"Enable Channel #"};
     constexpr std::string_view homeToggleChannelLabel{"Toogle Channel #"};
     constexpr std::string_view homeToggleChannelButtonActivate{"Activate"};
@@ -57,6 +56,7 @@ namespace
 };
 
 using namespace Electux::App::View;
+using namespace Electux::App::Params::Channel;
 
 AppHome::AppHome()
 {
@@ -69,7 +69,7 @@ AppHome::AppHome()
     m_boxRoot.set_orientation(Gtk::Orientation::HORIZONTAL);
     set_child(m_boxRoot);
 
-    for(auto i = 0; i < homeNumChannels; i++)
+    for(unsigned int i = 0; i < numOfChannels; i++)
     {
         m_boxChannels.emplace_back(Gtk::Orientation::VERTICAL);
         auto& currentBox = m_boxChannels.back();
@@ -101,4 +101,9 @@ AppHome::AppHome()
         m_boxRoot.append(currentBox);
         mapping(i);
     }
+}
+
+void AppHome::setControlSetup(const SettingsSetup& setup)
+{
+    m_controlSetup = setup;
 }

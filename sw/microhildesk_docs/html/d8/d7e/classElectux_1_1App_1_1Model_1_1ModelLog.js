@@ -11,6 +11,7 @@ var classElectux_1_1App_1_1Model_1_1ModelLog =
     [ "getAllEntries", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a5f2ccdca30eb41451efc310133aad392", null ],
     [ "getEntity", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac99cd32993648f3e38cbc23b69a9c7bf", null ],
     [ "toString", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496", null ],
+    [ "update", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac1c785a6481ba5bdaff2874b073faddf", null ],
     [ "validateKey", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a65e8a271f90355b68f2149acb148d290", null ],
     [ "m_entities", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#afde7201fe763adf6ecab6f6267e3513a", null ]
 ];

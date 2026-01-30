@@ -26,9 +26,14 @@
 #include <gtkmm/progressbar.h>
 #include <gtkmm/spinbutton.h>
 #include <gtkmm/togglebutton.h>
+#include "settings_setup.h"
 
 namespace Electux::App::View
 {
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Signal type for settings setup
+    using SigSettings = sigc::signal<void(SettingsSetup &)>;
+
     //////////////////////////////////////////////////////////////////////////
     /// @brief Home view window definition
     class AppHome : public Gtk::ApplicationWindow
@@ -39,7 +44,7 @@ namespace Electux::App::View
         explicit AppHome();
 
     private:
-        //////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////SigSettings/////////////////////////////////
         /// @brief Maps home (signals and slots)
         void mapping(int index);
 
@@ -64,7 +69,41 @@ namespace Electux::App::View
         void onChannelTimerToogleChanged();
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief Signal for settings setup
+        /// @return Signal for changed settings setup
+        SigSettings controlChanged();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Sets configuration setup
+        void setControlSetup(const SettingsSetup& setup);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Gets UI data from widgets and saves them to configuration
+        void getUiData();
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Updates UI widgets with data from loaded configuration
+        void updateUiData();
+        
+        /////////////////////////////////////////////////////////////////////
+        /// @brief Extracts nth substring from input string separated by delimiter
+        /// @param input Input string
+        /// @param index Index of substring to extract
+        /// @return Extracted substring
+        std::string extract_param_value_by_index(const std::string& input, size_t index);
+
+        /////////////////////////////////////////////////////////////////////
+        /// @brief Updates nth substring in input string separated by delimiter
+        /// @param input Input string
+        /// @param index Index of substring to update
+        /// @param newValue New value for the substring
+        /// @return Updated string
+        std::string update_param_value_by_index(const std::string& input, size_t index, const std::string& newValue);
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Container for packing widgets for home window
+        ///   m_controlSetup - control parameters
+        ///   m_controlSignal - signal for control settings
         ///   m_boxRoot - horizontal box for channel widgets
         ///   m_boxChannels - channel  container for widgets
         ///   m_enableChannels - checkbox for enabling channel
@@ -75,6 +114,8 @@ namespace Electux::App::View
         ///   m_spinTimerChannels - channel spinner
         ///   m_toggleTimerChannels - channel toogle timer (start)
         ///   m_statusTimerChannels - channel status (visual)
+        SettingsSetup m_controlSetup{};
+        SigSettings m_controlSignal{};
         Gtk::Box m_boxRoot{};
         std::vector<Gtk::Box> m_boxChannels{};
         std::vector<Gtk::CheckButton> m_enableChannels{};

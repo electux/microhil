@@ -70,6 +70,11 @@ ConfigManager::ConfigManager()
     }
 }
 
+void ConfigManager::setControlConfig(const ModelControl& config)
+{
+    m_controlConfig = config;
+}
+
 void ConfigManager::setSerialConfig(const ModelSerial& config)
 {
     m_serialConfig = config;
@@ -78,6 +83,11 @@ void ConfigManager::setSerialConfig(const ModelSerial& config)
 void ConfigManager::setLogConfig(const ModelLog& config)
 {
     m_logConfig = config;
+}
+
+const ModelControl& ConfigManager::getControlConfig() const
+{
+    return m_controlConfig;
 }
 
 const ModelSerial& ConfigManager::getSerialConfig() const
@@ -127,6 +137,10 @@ bool ConfigManager::load()
             {
                 m_logConfig.add(key, value);
             }
+            else if (m_controlConfig.validateKey(key))
+            {
+                m_controlConfig.add(key, value);
+            }
             else
             {
                 std::cerr << "Warning: Unknown configuration key: " << key << std::endl;
@@ -159,6 +173,7 @@ bool ConfigManager::store()
         }
     };
 
+    writeModel(m_controlConfig);
     writeModel(m_serialConfig);
     writeModel(m_logConfig);
 
@@ -169,6 +184,14 @@ bool ConfigManager::store()
 
 void ConfigManager::defaultConfigStore()
 {
+    ////////////////////////////////////////////////////////////////////////////
+    /// @brief Set default control configuration
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Enable), "false false false false false false false false");
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Mode), "0 0 0 0 0 0 0 0");
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Toggle), "false false false false false false false false");
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Timer), "0 0 0 0 0 0 0 0");
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::TimerEnable), "false false false false false false false false");
+
     ////////////////////////////////////////////////////////////////////////////
     /// @brief Set default serial configuration
     m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Device), "/dev/ttyUSB0");

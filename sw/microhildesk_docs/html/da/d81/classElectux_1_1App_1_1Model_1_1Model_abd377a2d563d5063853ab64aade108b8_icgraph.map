@@ -1,18 +1,10 @@
 <map id="Electux::App::Model::Model::add" name="Electux::App::Model::Model::add">
-<area shape="rect" id="Node000001" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="993,85,1144,125"/>
-<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="723,5,945,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="989,83,923,63,924,57,991,78"/>
-<area shape="rect" id="Node000004" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="749,149,919,204"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="990,131,920,153,918,148,989,126"/>
-<area shape="rect" id="Node000008" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762" title="Loads configuration." alt="" coords="752,85,916,125"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="980,107,916,107,916,102,980,102"/>
-<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7d3d7c10423d969f7544509f6fcca32f" title="Config constructor." alt="" coords="440,49,675,89"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="709,52,675,56,675,51,709,46"/>
-<area shape="rect" id="Node000005" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ab774932988d1d2ddca6a3db5134e1441" title="On action OK button." alt="" coords="473,149,642,204"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="735,179,642,179,642,174,735,174"/>
-<area shape="rect" id="Node000006" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5763d8088e72a080dd732c16851b5170" title="Maps channels (signals and slots)" alt="" coords="223,149,392,204"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="459,179,392,179,392,174,459,174"/>
-<area shape="rect" id="Node000007" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ac327d0a43da29c01585c7a256b49b31a" title="AppSettings constructor." alt="" coords="5,149,175,204"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="209,179,175,179,175,174,209,174"/>
-<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="738,95,675,87,675,81,739,90"/>
+<area shape="rect" id="Node000001" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="559,49,709,89"/>
+<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="288,5,511,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="545,58,510,52,511,47,546,52"/>
+<area shape="rect" id="Node000004" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762" title="Loads configuration." alt="" coords="317,85,481,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="546,85,482,95,481,89,545,80"/>
+<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7d3d7c10423d969f7544509f6fcca32f" title="Config constructor." alt="" coords="5,49,240,89"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="275,52,241,56,240,51,274,46"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="304,95,240,87,241,81,304,90"/>
 </map>

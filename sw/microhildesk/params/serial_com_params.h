@@ -23,6 +23,22 @@
 namespace Electux::App::Params::SerialComConstants {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Serial communication parameters
+    ///   comParamBaudIndex - Index for Baud Rate parameter
+    ///   comParamDataIndex - Index for Data Bits parameter
+    ///   comParamParityIndex - Index for Parity parameter
+    ///   comParamStopIndex - Index for Stop Bits parameter
+    ///   comParamFlowControlIndex - Index for Flow Control parameter
+    ///   comBaudRates - Supported Baud Rates
+    ///   comDataBits - Supported Data Bits
+    ///   comParities - Supported Parities
+    ///   comStopBits - Supported Stop Bits
+    ///   comFlowControls - Supported Flow Controls
+    ///   comBaudXXX - Constant index for each Baud Rate
+    ///   comDataBitsX - Constant index for each Data Bits option
+    ///   comParityX - Constant index for each Parity option
+    ///   comStopBitsX - Constant index for each Stop Bits option
+    ///   comFlowControlX - Constant index for each Flow Control option
+    ///   comInvalidParameter - Constant for invalid parameter
     constexpr const unsigned int comParamBaudIndex{0};
     constexpr const unsigned int comParamDataIndex{1};
     constexpr const unsigned int comParamParityIndex{2};

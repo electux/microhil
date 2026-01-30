@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['error_0',['Error',['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae73bd6a25e09440d72e847b47f5f7fba902b0d55fddef6f8d651fe1035b7d4bd',1,'Electux::App::Logger::Log']]]
+  ['enable_0',['Enable',['../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49',1,'Electux::App::Model::ModelControl']]],
+  ['error_1',['Error',['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae73bd6a25e09440d72e847b47f5f7fba902b0d55fddef6f8d651fe1035b7d4bd',1,'Electux::App::Logger::Log']]]
 ];

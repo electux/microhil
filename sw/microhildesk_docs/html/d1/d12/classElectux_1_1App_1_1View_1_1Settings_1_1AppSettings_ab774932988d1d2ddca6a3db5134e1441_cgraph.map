@@ -1,13 +1,11 @@
 <map id="Electux::App::View::Settings::AppSettings::onButtonOkClicked" name="Electux::App::View::Settings::AppSettings::onButtonOkClicked">
-<area shape="rect" id="Node000001" title="On action OK button." alt="" coords="5,94,175,149"/>
-<area shape="rect" id="Node000002" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="223,94,392,149"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,119,209,119,209,124,175,124"/>
-<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="448,5,599,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="361,91,439,55,455,48,457,53,441,60,364,96"/>
-<area shape="rect" id="Node000004" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a5bd1d48829598adacd1d22c5c55422a0" title="Clears all model entities." alt="" coords="448,69,599,109"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="392,106,434,100,435,105,393,111"/>
-<area shape="rect" id="Node000005" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="447,133,599,173"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="393,131,434,137,433,143,392,137"/>
-<area shape="rect" id="Node000006" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="440,197,607,237"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="364,146,441,183,457,190,455,195,439,188,361,151"/>
+<area shape="rect" id="Node000001" title="On action OK button." alt="" coords="5,62,175,117"/>
+<area shape="rect" id="Node000002" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="223,62,392,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,87,209,87,209,92,175,92"/>
+<area shape="rect" id="Node000003" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="447,5,599,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="392,62,441,47,443,52,393,67"/>
+<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="440,69,607,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="392,87,426,87,426,92,392,92"/>
+<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac1c785a6481ba5bdaff2874b073faddf" title="Updates entity value by key." alt="" coords="448,133,599,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="393,112,443,127,441,132,392,117"/>
 </map>

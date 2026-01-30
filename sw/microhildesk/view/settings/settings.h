@@ -27,7 +27,7 @@
 #include <gtkmm/entry.h>
 #include <gtkmm/comboboxtext.h>
 #include <sigc++/sigc++.h>
-#include "settings_setup.h"
+#include "../settings_setup.h"
 
 namespace Electux::App::View::Settings
 {
@@ -76,9 +76,9 @@ namespace Electux::App::View::Settings
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Container for packing widgets for settings window
-        ///   m_setup - settings parameters
-        ///   m_setupSignal - signal for the serial settings
-        ///   m_boxRoot - vertical box as root container
+        ///   m_setup - settings parameters container
+        ///   m_setupSignal - signal for the serial settings changes
+        ///   m_boxRoot - vertical box as root container box
         ///   m_notebook - notebook container for settings pages serial port and log
         ///   m_boxSerial - vertical box as container box for serial settings
         ///   m_labelSerialPath - serial path label

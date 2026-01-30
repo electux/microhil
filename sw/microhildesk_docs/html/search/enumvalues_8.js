@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warning_0',['Warning',['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae73bd6a25e09440d72e847b47f5f7fba0eaadb4fcb48a0a0ed7bc9868be9fbaa',1,'Electux::App::Logger::Log']]]
+  ['stop_0',['Stop',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a11a755d598c0c417f9a36758c3da7481',1,'Electux::App::Model::ModelSerial']]]
 ];
