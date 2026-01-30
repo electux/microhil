@@ -23,7 +23,7 @@ using namespace Electux::App::View::Settings;
 void AppSettings::mapping()
 {
     //////////////////////////////////////////////////////////////////////////
-    /// @brief Maps signals to slots (widget actions)
+    /// @brief Maps signals to slots (widget actions for settings dialog)
     m_buttonOk.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::onButtonOkClicked));
     m_buttonCancel.signal_clicked().connect(sigc::mem_fun(*this, &AppSettings::onButtonCancelClicked));
 }

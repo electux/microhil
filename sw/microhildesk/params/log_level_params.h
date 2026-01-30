@@ -23,6 +23,10 @@
 namespace Electux::App::Params::LogLevels {
     /////////////////////////////////////////////////////////////////////////
     /// @brief Log levels parameters
+    ///   logLevels - array of log level names
+    ///   logLevelError - index for Error level
+    ///   logLevelWarning - index for Warning level
+    ///   logLevelInfo - index for Info level
     constexpr std::string_view logLevels[]{"Error", "Warning", "Info"};
     constexpr const unsigned int logLevelError = 0;
     constexpr const unsigned int logLevelWarning = 1;

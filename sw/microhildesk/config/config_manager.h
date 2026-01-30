@@ -19,11 +19,13 @@
 #pragma once
 
 #include "iconfig.h"
+#include "../model/model_control.h"
 #include "../model/model_serial.h"
 #include "../model/model_log.h"
 
 namespace Electux::App::Config
 {
+    using ModelControl = Electux::App::Model::ModelControl;
     using ModelSerial = Electux::App::Model::ModelSerial;
     using ModelLog = Electux::App::Model::ModelLog;
 
@@ -37,6 +39,11 @@ namespace Electux::App::Config
         explicit ConfigManager();
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief Sets control configuration
+        /// @param config Represents control configuration
+        void setControlConfig(const ModelControl& config);
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Sets serial configuration
         /// @param config Represents serial configuration
         void setSerialConfig(const ModelSerial& config);
@@ -45,6 +52,11 @@ namespace Electux::App::Config
         /// @brief Sets log configuration
         /// @param config Represents log configuration
         void setLogConfig(const ModelLog& config);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Gets control configuration
+        /// @return Control configuration
+        const ModelControl& getControlConfig() const;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Gets serial configuration
@@ -75,9 +87,11 @@ namespace Electux::App::Config
         //////////////////////////////////////////////////////////////////////
         /// @brief Configuration parameters and properties
         ///   m_fileName - file name path for load/store configuration
+        ///   m_controlConfig - control configuration
         ///   m_serialConfig - serial port configuration
         ///   m_logConfig - log configuration
         std::string m_fileName{};
+        ModelControl m_controlConfig{};
         ModelSerial m_serialConfig{};
         ModelLog m_logConfig{};
     };

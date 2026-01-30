@@ -1,0 +1,9 @@
+<map id="Electux::App::Config::ConfigManager::setControlConfig" name="Electux::App::Config::ConfigManager::setControlConfig">
+<area shape="rect" id="Node000001" title="Sets control configuration." alt="" coords="805,5,1008,60"/>
+<area shape="rect" id="Node000002" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a17eec7f0e7267acc309cfa44daa8aae8" title="Slot to handle setup signal change from settings window." alt="" coords="539,13,757,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="792,35,757,35,757,30,792,30"/>
+<area shape="rect" id="Node000003" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48" title="Maps signal/slots for application views." alt="" coords="272,13,491,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="525,35,491,35,491,30,525,30"/>
+<area shape="rect" id="Node000004" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="5,13,224,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="258,35,224,35,224,30,258,30"/>
+</map>

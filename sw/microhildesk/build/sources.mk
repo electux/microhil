@@ -14,6 +14,7 @@ SOURCES = \
 	../model/model.cc \
 	../model/model_serial.cc \
 	../model/model_log.cc \
+	../model/model_control.cc \
 	../view/home_map.cc \
 	../view/home_slots.cc \
 	../view/home.cc \

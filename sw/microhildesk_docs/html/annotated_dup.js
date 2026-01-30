@@ -16,6 +16,7 @@ var annotated_dup =
         [ "Model", "d9/d26/namespaceElectux_1_1App_1_1Model.html", [
           [ "IModel", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel" ],
           [ "Model", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html", "da/d81/classElectux_1_1App_1_1Model_1_1Model" ],
+          [ "ModelControl", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl" ],
           [ "ModelLog", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog" ],
           [ "ModelSerial", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial" ]
         ] ],
@@ -27,10 +28,10 @@ var annotated_dup =
             [ "AppHelp", "d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp.html", "d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp" ]
           ] ],
           [ "Settings", "d7/d63/namespaceElectux_1_1App_1_1View_1_1Settings.html", [
-            [ "AppSettings", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings" ],
-            [ "SettingsSetup", "d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup.html", "d2/da4/classElectux_1_1App_1_1View_1_1Settings_1_1SettingsSetup" ]
+            [ "AppSettings", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html", "d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings" ]
           ] ],
-          [ "AppHome", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome" ]
+          [ "AppHome", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html", "d9/dcb/classElectux_1_1App_1_1View_1_1AppHome" ],
+          [ "SettingsSetup", "dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html", "dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup" ]
         ] ],
         [ "EntryApplication", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html", "d0/dcc/classElectux_1_1App_1_1EntryApplication" ]
       ] ]

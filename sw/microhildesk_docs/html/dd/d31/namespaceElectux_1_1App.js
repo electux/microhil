@@ -12,5 +12,5 @@ var namespaceElectux_1_1App =
     [ "AppHome", "dd/d31/namespaceElectux_1_1App.html#a40b0b15f908d3cd0b42f876df09ca27d", null ],
     [ "AppSettings", "dd/d31/namespaceElectux_1_1App.html#a39a266d2bab418a8ced05c5022e67a68", null ],
     [ "ConfigManager", "dd/d31/namespaceElectux_1_1App.html#a676b54cbeb58c1e48df5e0da28898ec1", null ],
-    [ "SettingsSetup", "dd/d31/namespaceElectux_1_1App.html#a6fa084cdf8c31066d69a19af66d2b395", null ]
+    [ "SettingsSetup", "dd/d31/namespaceElectux_1_1App.html#a13536830803de83c2af008ed010af7a2", null ]
 ];

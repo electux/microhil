@@ -23,17 +23,17 @@
 #include "view/settings/settings.h"
 #include "view/help/help.h"
 #include "view/about/about.h"
-#include "view/settings/settings_setup.h"
+#include "view/settings_setup.h"
 #include "config/config_manager.h"
 
 namespace Electux::App
 {
+    using ConfigManager = Electux::App::Config::ConfigManager;
     using AppHome = Electux::App::View::AppHome;
     using AppSettings = Electux::App::View::Settings::AppSettings;
     using AppHelp = Electux::App::View::Help::AppHelp;
     using AppAbout = Electux::App::View::About::AppAbout;
-    using SettingsSetup = Electux::App::View::Settings::SettingsSetup;
-    using ConfigManager = Electux::App::Config::ConfigManager;
+    using SettingsSetup = Electux::App::View::SettingsSetup;
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Entry point for application definition
@@ -80,8 +80,8 @@ namespace Electux::App
         bool onHandleClose();
 
         //////////////////////////////////////////////////////////////////////
-        /// @brief Slot to handle setup signal
-        /// @param setup Settings setup parameters
+        /// @brief Slot to handle setup signal change from settings window
+        /// @param setup Settings setup parameters for application
         void onSetupChanged(const SettingsSetup &setup);
 
         //////////////////////////////////////////////////////////////////////

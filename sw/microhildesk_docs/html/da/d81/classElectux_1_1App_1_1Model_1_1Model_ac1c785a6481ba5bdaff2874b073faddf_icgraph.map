@@ -1,0 +1,31 @@
+<map id="Electux::App::Model::Model::update" name="Electux::App::Model::Model::update">
+<area shape="rect" id="Node000001" title="Updates entity value by key." alt="" coords="972,228,1123,268"/>
+<area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aabb49317bb093bd7909d28d0735d71b6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="707,5,875,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1031,216,1015,179,991,136,960,95,922,59,899,47,874,38,876,33,902,42,926,55,964,91,996,133,1020,176,1036,214"/>
+<area shape="rect" id="Node000003" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="706,70,875,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1018,219,976,177,923,138,874,118,876,113,925,134,979,173,1022,216"/>
+<area shape="rect" id="Node000007" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a9e9a0cc8fed68e056c047d5d1e1073f2" title="Signal handler for enablement channel." alt="" coords="683,149,898,203"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="962,227,888,206,889,201,963,222"/>
+<area shape="rect" id="Node000010" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a99d90c51c50d5a2362c0444a75af8028" title="Signal handler for setup channel mode." alt="" coords="659,228,923,268"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="958,251,923,251,923,245,958,245"/>
+<area shape="rect" id="Node000011" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a16cfafe14e25b0865390fab425b769d3" title="Signal handler for timer mode." alt="" coords="657,292,924,332"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="959,274,925,283,876,295,875,289,923,277,958,269"/>
+<area shape="rect" id="Node000012" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a648656ba705eaf82642ca51ac4772162" title="Signal handler for timer mode (start process)" alt="" coords="665,357,916,411"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="1017,280,975,314,925,346,897,359,895,354,923,342,972,310,1014,275"/>
+<area shape="rect" id="Node000013" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a1eefdfc3851f900bc4a333c9503e0666" title="Signal handler for toggle mode." alt="" coords="684,435,897,490"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1034,282,1017,316,992,355,962,393,926,426,899,441,896,437,922,422,958,390,988,352,1012,313,1029,279"/>
+<area shape="rect" id="Node000004" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ab774932988d1d2ddca6a3db5134e1441" title="On action OK button." alt="" coords="440,70,609,125"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="692,100,609,100,609,95,692,95"/>
+<area shape="rect" id="Node000005" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5763d8088e72a080dd732c16851b5170" title="Maps channels (signals and slots)" alt="" coords="223,70,392,125"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="426,100,392,100,392,95,426,95"/>
+<area shape="rect" id="Node000006" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ac327d0a43da29c01585c7a256b49b31a" title="AppSettings constructor." alt="" coords="5,70,175,125"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="209,100,175,100,175,95,209,95"/>
+<area shape="rect" id="Node000008" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a5888b942925dc9778695fb9a1761ae0b" title="Maps home (signals and slots)" alt="" coords="445,292,604,332"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="675,211,659,218,598,256,550,294,547,290,595,251,656,214,673,206"/>
+<area shape="rect" id="Node000009" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a59ec431c4bf878752b3d9a694236c8d0" title="AppHome constructor." alt="" coords="224,292,391,332"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="432,315,391,315,391,309,432,309"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="694,274,658,283,605,296,603,290,657,277,693,269"/>
+<area shape="poly" id="edge12_Node000011_Node000008" title=" " alt="" coords="644,315,604,315,604,309,644,309"/>
+<area shape="poly" id="edge14_Node000012_Node000008" title=" " alt="" coords="675,356,599,335,600,329,677,350"/>
+<area shape="poly" id="edge16_Node000013_Node000008" title=" " alt="" coords="670,433,656,426,622,405,591,380,543,334,546,330,595,376,625,401,659,422,673,429"/>
+</map>

@@ -6,5 +6,6 @@ var classElectux_1_1App_1_1Model_1_1Model =
     [ "get", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ae54791da60f29fadc62bdbc8014b944a", null ],
     [ "getAllEntries", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a8d13d898262c55797adb684f50289279", null ],
     [ "getEntity", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf", null ],
+    [ "update", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac1c785a6481ba5bdaff2874b073faddf", null ],
     [ "m_entities", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html#afde7201fe763adf6ecab6f6267e3513a", null ]
 ];

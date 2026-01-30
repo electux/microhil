@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Stores configuration." alt="" coords="825,49,995,89"/>
 <area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="555,5,777,60"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="811,57,777,52,778,46,812,52"/>
-<area shape="rect" id="Node000004" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a17eec7f0e7267acc309cfa44daa8aae8" title="Slot to handle setup signal." alt="" coords="557,85,775,125"/>
+<area shape="rect" id="Node000004" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a17eec7f0e7267acc309cfa44daa8aae8" title="Slot to handle setup signal change from settings window." alt="" coords="557,85,775,125"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="812,86,776,91,775,86,812,80"/>
 <area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7d3d7c10423d969f7544509f6fcca32f" title="Config constructor." alt="" coords="272,13,507,53"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="541,35,507,35,507,30,541,30"/>

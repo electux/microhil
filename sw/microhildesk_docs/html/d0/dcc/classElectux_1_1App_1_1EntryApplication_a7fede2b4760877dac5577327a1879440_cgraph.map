@@ -1,40 +1,44 @@
 <map id="Electux::App::EntryApplication::on_startup" name="Electux::App::EntryApplication::on_startup">
-<area shape="rect" id="Node000001" title="Handler for the startup signal." alt="" coords="5,165,224,205"/>
-<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9435f071d55cb326f33019971f58af38" title="Gets log configuration." alt="" coords="279,5,500,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,163,191,109,230,80,271,55,286,48,288,53,273,60,233,84,195,113,137,167"/>
-<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a30bbae26b065503252f3c42e3e34a877" title="Gets serial configuration." alt="" coords="272,69,507,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,163,271,119,296,111,298,116,273,124,162,168"/>
-<area shape="rect" id="Node000004" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48" title="Maps signal/slots for application views." alt="" coords="280,197,499,237"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="225,195,267,200,266,206,224,201"/>
-<area shape="rect" id="Node000014" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a740242096435960d3fd1a191f35c4e0a" title="On handle close main window." alt="" coords="280,133,499,173"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="224,170,266,165,267,170,225,175"/>
-<area shape="rect" id="Node000015" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a15e6f4ca3426de824d12f4002d57f390" title="Sets configuration setup." alt="" coords="305,262,474,317"/>
-<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="164,203,273,247,295,255,293,260,271,252,162,208"/>
-<area shape="rect" id="Node000016" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a57c008624a8525b997503e343e5a68e9" title="Updates UI widgets with data from loaded configuration." alt="" coords="305,462,474,517"/>
-<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="136,204,356,450,352,453,132,208"/>
-<area shape="rect" id="Node000005" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3" title="On action about create dialog for about application." alt="" coords="555,101,773,141"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="475,195,505,183,529,167,553,151,571,144,573,149,556,156,532,172,508,188,477,200"/>
-<area shape="rect" id="Node000006" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a" title="On action doc create window for help documentation." alt="" coords="555,165,773,205"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="499,202,541,197,541,202,499,207"/>
-<area shape="rect" id="Node000007" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22" title="On action for quit." alt="" coords="555,37,773,77"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="487,195,505,183,516,172,522,161,528,137,534,112,541,99,553,87,559,82,563,87,556,91,546,103,539,114,533,138,527,163,520,175,508,187,490,199"/>
-<area shape="rect" id="Node000008" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a" title="On action settings create window for application settings." alt="" coords="555,229,773,269"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="499,227,541,232,541,238,499,233"/>
-<area shape="rect" id="Node000009" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a17eec7f0e7267acc309cfa44daa8aae8" title="Slot to handle setup signal." alt="" coords="555,293,773,333"/>
-<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="477,235,508,247,532,263,556,279,573,286,571,291,553,284,529,267,505,252,475,240"/>
-<area shape="rect" id="Node000013" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a182d77c5174cecc76723031da326755e" title="Signal for serial settings." alt="" coords="579,358,749,413"/>
-<area shape="poly" id="edge12_Node000004_Node000013" title=" " alt="" coords="490,235,508,247,527,271,534,296,540,320,557,343,569,353,566,357,553,347,535,322,529,297,522,274,505,251,487,240"/>
-<area shape="rect" id="Node000010" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7418869c7332cb5bbb9f8dbe43e6d053" title="Sets log configuration." alt="" coords="829,229,1049,269"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="750,291,839,270,840,275,751,296"/>
-<area shape="rect" id="Node000011" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7193d1fa7cfaed1bb17e7570d5663b5c" title="Sets serial configuration." alt="" coords="821,293,1056,333"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="774,311,807,311,807,316,774,316"/>
-<area shape="rect" id="Node000012" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="854,357,1023,397"/>
-<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="751,331,841,352,840,357,750,336"/>
-<area shape="poly" id="edge14_Node000014_Node000007" title=" " alt="" coords="475,131,505,119,529,103,553,87,571,80,573,85,556,92,532,108,508,124,477,136"/>
-<area shape="rect" id="Node000017" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf" title="Gets entity by key." alt="" coords="589,437,739,477"/>
-<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="474,477,575,465,575,470,474,482"/>
-<area shape="rect" id="Node000018" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="588,501,740,541"/>
-<area shape="poly" id="edge18_Node000016_Node000018" title=" " alt="" coords="474,497,574,508,574,514,474,502"/>
-<area shape="rect" id="Node000019" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="581,565,747,605"/>
-<area shape="poly" id="edge19_Node000016_Node000019" title=" " alt="" coords="458,514,556,551,580,559,578,564,554,556,456,519"/>
+<area shape="rect" id="Node000001" title="Handler for the startup signal." alt="" coords="5,184,224,224"/>
+<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#acf5b851f666bd4a16681293e934d540e" title="Gets control configuration." alt="" coords="287,9,491,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,182,192,129,230,99,271,74,284,67,287,71,273,78,233,104,196,133,138,186"/>
+<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9435f071d55cb326f33019971f58af38" title="Gets log configuration." alt="" coords="279,88,500,128"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,181,271,137,296,129,298,135,273,143,162,186"/>
+<area shape="rect" id="Node000004" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a30bbae26b065503252f3c42e3e34a877" title="Gets serial configuration." alt="" coords="272,152,507,192"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,189,258,185,259,190,225,194"/>
+<area shape="rect" id="Node000005" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48" title="Maps signal/slots for application views." alt="" coords="280,216,499,256"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="225,214,267,219,266,224,224,219"/>
+<area shape="rect" id="Node000017" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a15e6f4ca3426de824d12f4002d57f390" title="Sets configuration setup." alt="" coords="305,281,474,335"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="164,222,273,266,295,274,293,279,271,270,162,227"/>
+<area shape="rect" id="Node000018" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a57c008624a8525b997503e343e5a68e9" title="Updates UI widgets with data from loaded configuration." alt="" coords="305,481,474,535"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="136,223,356,468,352,472,132,226"/>
+<area shape="rect" id="Node000006" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3" title="On action about create dialog for about application." alt="" coords="555,5,773,45"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="489,214,505,202,519,185,526,167,528,131,531,93,538,74,553,56,558,51,561,55,557,59,543,77,536,94,533,131,531,168,523,187,509,206,492,218"/>
+<area shape="rect" id="Node000007" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a" title="On action doc create window for help documentation." alt="" coords="555,69,773,109"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="485,214,505,202,521,184,529,165,536,146,553,126,572,113,575,118,556,130,541,148,533,167,526,187,508,206,488,218"/>
+<area shape="rect" id="Node000008" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22" title="On action for quit." alt="" coords="829,137,1048,177"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="475,213,505,202,529,185,539,177,554,169,620,153,688,144,754,142,816,143,815,148,754,147,688,150,621,158,556,175,542,181,532,189,508,206,477,218"/>
+<area shape="rect" id="Node000009" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a" title="On action settings create window for application settings." alt="" coords="555,184,773,224"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="499,221,541,216,541,221,499,226"/>
+<area shape="rect" id="Node000010" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a740242096435960d3fd1a191f35c4e0a" title="On handle close main window." alt="" coords="555,248,773,288"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="499,246,541,251,541,256,499,251"/>
+<area shape="rect" id="Node000011" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a17eec7f0e7267acc309cfa44daa8aae8" title="Slot to handle setup signal change from settings window." alt="" coords="555,312,773,352"/>
+<area shape="poly" id="edge11_Node000005_Node000011" title=" " alt="" coords="477,254,508,266,532,282,556,298,573,305,571,310,553,302,529,286,505,270,475,259"/>
+<area shape="rect" id="Node000016" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a182d77c5174cecc76723031da326755e" title="Signal for serial settings." alt="" coords="579,377,749,431"/>
+<area shape="poly" id="edge16_Node000005_Node000016" title=" " alt="" coords="490,254,508,266,527,290,534,315,540,339,557,362,569,372,566,376,553,366,535,341,529,316,522,292,505,270,487,259"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="740,245,772,234,796,221,820,207,877,180,879,185,823,212,799,226,774,238,742,250"/>
+<area shape="rect" id="Node000012" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a1b79d82b3afd0d52dd7be94b3ee0e257" title="Sets control configuration." alt="" coords="837,222,1040,277"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="733,309,773,297,836,278,837,283,774,303,734,315"/>
+<area shape="rect" id="Node000013" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7418869c7332cb5bbb9f8dbe43e6d053" title="Sets log configuration." alt="" coords="829,301,1049,341"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="774,325,815,323,815,329,774,330"/>
+<area shape="rect" id="Node000014" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7193d1fa7cfaed1bb17e7570d5663b5c" title="Sets serial configuration." alt="" coords="821,365,1056,405"/>
+<area shape="poly" id="edge14_Node000011_Node000014" title=" " alt="" coords="768,349,823,360,822,365,767,355"/>
+<area shape="rect" id="Node000015" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="854,429,1023,469"/>
+<area shape="poly" id="edge15_Node000011_Node000015" title=" " alt="" coords="751,350,775,362,790,375,800,389,808,403,823,415,842,425,840,430,820,420,804,406,795,392,786,379,772,366,749,354"/>
+<area shape="rect" id="Node000019" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf" title="Gets entity by key." alt="" coords="589,456,739,496"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="474,496,575,484,575,489,474,501"/>
+<area shape="rect" id="Node000020" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="588,520,740,560"/>
+<area shape="poly" id="edge20_Node000018_Node000020" title=" " alt="" coords="474,515,574,527,574,532,474,520"/>
+<area shape="rect" id="Node000021" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="581,584,747,624"/>
+<area shape="poly" id="edge21_Node000018_Node000021" title=" " alt="" coords="458,533,556,569,580,577,578,582,554,575,456,538"/>
 </map>

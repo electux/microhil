@@ -1,9 +1,11 @@
 <map id="Electux::App::Model::IModel" name="Electux::App::Model::IModel">
-<area shape="rect" id="Node000001" title="IModel declaration." alt="" coords="88,5,231,185"/>
-<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="88,233,231,393"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,199,162,233,157,233,157,199"/>
-<area shape="rect" id="Node000003" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="5,441,148,581"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,407,108,442,103,440,118,405"/>
-<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="172,441,315,581"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="201,405,216,440,211,442,196,407"/>
+<area shape="rect" id="Node000001" title="IModel declaration." alt="" coords="172,5,315,205"/>
+<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="172,253,315,433"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,219,246,253,241,253,241,219"/>
+<area shape="rect" id="Node000003" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html" title=" " alt="" coords="5,481,148,621"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="165,445,135,483,131,479,161,442"/>
+<area shape="rect" id="Node000004" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="172,481,315,621"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="246,447,246,481,241,481,241,447"/>
+<area shape="rect" id="Node000005" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="339,481,481,621"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="326,442,356,479,352,483,322,445"/>
 </map>

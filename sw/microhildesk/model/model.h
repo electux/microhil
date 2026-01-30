@@ -49,6 +49,13 @@ namespace Electux::App::Model
         const Entities &get() const final;
 
         //////////////////////////////////////////////////////////////////////
+        /// @brief Updates entity value by key
+        /// @param key Represents model entity key
+        /// @param data Represents new value for the entity
+        /// @return True if the entity was updated, false if the key does not exist
+        bool update(const std::string &key, const std::string &data) final;
+
+        //////////////////////////////////////////////////////////////////////
         /// @brief Clears all model entities
         void clear() final;
 

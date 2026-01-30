@@ -51,6 +51,10 @@ void EntryApplication::mapping()
     add_action(helpDocActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionDoc));
     add_action(helpAboutActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionAbout));
 
+    //////////////////////////////////////////////////////////////////////////
+    /// @brief Connects close request signal for AppHome window
+    m_home.signal_close_request().connect(sigc::mem_fun(*this, &EntryApplication::onHandleClose), false);
+
     /////////////////////////////////////////////////////////////////////////
     /// @brief Maps application setup signal
     m_settings.setupChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));
