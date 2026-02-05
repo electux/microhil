@@ -34,7 +34,8 @@ CXXFLAGS = \
 	-Wstrict-overflow=5 \
 	-Wundef \
 	-Werror \
-	-Wno-unused
+	-Wno-unused \
+	-I..
 else ifeq ($(CXX), clang++)
 CXXFLAGS = \
     -std=c++20 \
@@ -45,22 +46,21 @@ CXXFLAGS = \
     -Wextra \
     -Wcast-align \
     -Wcast-qual \
-    -Wdisable-optimizations \
     -Wformat=2 \
     -Winit-self \
-    -Wlogical-op \
     -Wmissing-declarations \
     -Wmissing-include-dirs \
-    -Wno-except \
     -Woverloaded-virtual \
     -Wshadow \
     -Wsign-conversion \
-    -Wstrict-null-sentinel \
     -Wstrict-overflow=5 \
+	-Wno-error=sign-conversion \
+	-Wno-error=unused-const-variable \
     -Wundef \
     -Werror \
     -Wunused \
-    -v
+    -v \
+	-I..
 else
 	$(error Unsupported compiler: $(CXX))
 endif

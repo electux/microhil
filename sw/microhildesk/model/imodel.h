@@ -20,12 +20,13 @@
 
 #include <map>
 #include <string>
+#include <string_view>
 
 namespace Electux::App::Model
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Model entities in map format {'key': 'data'}
-    using Entities = std::map<std::string, std::string>;
+    using Entities = std::map<std::string, std::string, std::less<>>;
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief IModel declaration
@@ -41,13 +42,13 @@ namespace Electux::App::Model
         /// @param key Represents model enity key to be added
         /// @param data Represents model entity data to be added
         /// @return True for success operation, otherwise false
-        virtual bool add(const std::string &key, const std::string &data) = 0;
+        virtual bool add(const std::string_view &key, const std::string_view &data) = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Gets entity by key
         /// @param key Represents model enity key
         /// @return Entity selected by key
-        virtual const std::string &getEntity(const std::string &key) const = 0;
+        virtual const std::string &getEntity(const std::string_view &key) const = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Gets model entities
@@ -59,7 +60,7 @@ namespace Electux::App::Model
         /// @param key Represents model entity key
         /// @param data Represents new value for the entity
         /// @return True if the entity was updated, false if the key does not exist
-        virtual bool update(const std::string &key, const std::string &data) = 0;
+        virtual bool update(const std::string_view &key, const std::string_view &data) = 0;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Clears all model entities

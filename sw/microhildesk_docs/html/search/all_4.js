@@ -15,8 +15,9 @@ var searchData=
   ['electux_3a_3aapp_3a_3aview_3a_3ahelp_12',['Help',['../db/d22/namespaceElectux_1_1App_1_1View_1_1Help.html',1,'Electux::App::View']]],
   ['electux_3a_3aapp_3a_3aview_3a_3asettings_13',['Settings',['../d7/d63/namespaceElectux_1_1App_1_1View_1_1Settings.html',1,'Electux::App::View']]],
   ['enable_14',['Enable',['../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49',1,'Electux::App::Model::ModelControl']]],
-  ['entities_15',['Entities',['../d9/d26/namespaceElectux_1_1App_1_1Model.html#a560bd9e7602201e7f42909e6c4320625',1,'Electux::App::Model']]],
+  ['entities_15',['Entities',['../d9/d26/namespaceElectux_1_1App_1_1Model.html#afc9f86a5ce3fbcf1d0486a71b20a4f29',1,'Electux::App::Model']]],
   ['entryapplication_16',['entryapplication',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html',1,'Electux::App::EntryApplication'],['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f',1,'Electux::App::EntryApplication::EntryApplication()']]],
   ['error_17',['Error',['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae73bd6a25e09440d72e847b47f5f7fba902b0d55fddef6f8d651fe1035b7d4bd',1,'Electux::App::Logger::Log']]],
-  ['extract_5fparam_5fvalue_5fby_5findex_18',['extract_param_value_by_index',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa68b29c65fb23c7df49d09307d663ac4',1,'Electux::App::View::AppHome']]]
+  ['extract_5fconfig_18',['extract_config',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af7e89a2c467703a93098ee4e006663bb',1,'Electux::App::View::AppHome']]],
+  ['extract_5fparam_5fvalue_5fby_5findex_19',['extract_param_value_by_index',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad72016315750df4ef5e608d820c2e3a4',1,'Electux::App::View::AppHome']]]
 ];

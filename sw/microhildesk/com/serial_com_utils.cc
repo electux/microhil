@@ -16,8 +16,8 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "serial_com.h"
-#include "../params/serial_com_params.h"
+#include <com/serial_com.h>
+#include <params/serial_com_params.h>
 
 using namespace Electux::App::Com;
 using namespace Electux::App::Params::SerialComConstants;
@@ -27,99 +27,99 @@ unsigned int SerialCom::baudToUint(const BaudRate baud)
     switch (baud)
     {
     case BaudRate::BAUD_50:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_75:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_110:
-        return comBaud110;
+        return cComBaud110;
     case BaudRate::BAUD_134:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_150:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_200:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_300:
-        return comBaud300;
+        return cComBaud300;
     case BaudRate::BAUD_600:
-        return comBaud600;
+        return cComBaud600;
     case BaudRate::BAUD_1200:
-        return comBaud1200;
+        return cComBaud1200;
     case BaudRate::BAUD_1800:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_2400:
-        return comBaud2400;
+        return cComBaud2400;
     case BaudRate::BAUD_4800:
-        return comBaud4800;
+        return cComBaud4800;
     case BaudRate::BAUD_9600:
-        return comBaud9600;
+        return cComBaud9600;
     case BaudRate::BAUD_19200:
-        return comBaud19200;
+        return cComBaud19200;
     case BaudRate::BAUD_38400:
-        return comBaud38400;
+        return cComBaud38400;
     case BaudRate::BAUD_57600:
-        return comBaud57600;
+        return cComBaud57600;
     case BaudRate::BAUD_115200:
-        return comBaud115200;
+        return cComBaud115200;
     case BaudRate::BAUD_230400:
-        return comBaud230400;
+        return cComBaud230400;
     case BaudRate::BAUD_460800:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_500000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_576000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_921600:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_1000000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_1152000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_1500000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_2000000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_2500000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_3000000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_3500000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_4000000:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     case BaudRate::BAUD_INVALID:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     }
 
-    return comInvalidParameter;
+    return cComInvalidParameter;
 }
 
 BaudRate SerialCom::uintToBaud(const unsigned int baud)
 {
     switch (baud)
     {
-    case comBaud110:
+    case cComBaud110:
         return BaudRate::BAUD_110;
-    case comBaud300:
+    case cComBaud300:
         return BaudRate::BAUD_300;
-    case comBaud600:
+    case cComBaud600:
         return BaudRate::BAUD_600;
-    case comBaud1200:
+    case cComBaud1200:
         return BaudRate::BAUD_1200;
-    case comBaud2400:
+    case cComBaud2400:
         return BaudRate::BAUD_2400;
-    case comBaud4800:
+    case cComBaud4800:
         return BaudRate::BAUD_4800;
-    case comBaud9600:
+    case cComBaud9600:
         return BaudRate::BAUD_9600;
-    case comBaud19200:
+    case cComBaud19200:
         return BaudRate::BAUD_19200;
-    case comBaud38400:
+    case cComBaud38400:
         return BaudRate::BAUD_38400;
-    case comBaud57600:
+    case cComBaud57600:
         return BaudRate::BAUD_57600;
-    case comBaud115200:
+    case cComBaud115200:
         return BaudRate::BAUD_115200;
-    case comBaud230400:
+    case cComBaud230400:
         return BaudRate::BAUD_230400;
     }
 
@@ -131,31 +131,31 @@ unsigned int SerialCom::dataBitsToUint(const CharacterSize data)
     switch (data)
     {
     case CharacterSize::CHAR_SIZE_5:
-        return comDataBits5;
+        return cComDataBits5;
     case CharacterSize::CHAR_SIZE_6:
-        return comDataBits6;
+        return cComDataBits6;
     case CharacterSize::CHAR_SIZE_7:
-        return comDataBits7;
+        return cComDataBits7;
     case CharacterSize::CHAR_SIZE_8:
-        return comDataBits8;
+        return cComDataBits8;
     case CharacterSize::CHAR_SIZE_INVALID:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     }
 
-    return comInvalidParameter;
+    return cComInvalidParameter;
 }
 
 CharacterSize SerialCom::uintToDataBits(const unsigned int data)
 {
     switch (data)
     {
-    case comDataBits5:
+    case cComDataBits5:
         return CharacterSize::CHAR_SIZE_5;
-    case comDataBits6:
+    case cComDataBits6:
         return CharacterSize::CHAR_SIZE_6;
-    case comDataBits7:
+    case cComDataBits7:
         return CharacterSize::CHAR_SIZE_7;
-    case comDataBits8:
+    case cComDataBits8:
         return CharacterSize::CHAR_SIZE_8;
     }
 
@@ -167,27 +167,27 @@ unsigned int SerialCom::parityToUint(const Parity parity)
     switch (parity)
     {
     case Parity::PARITY_EVEN:
-        return comParityEven;
+        return cComParityEven;
     case Parity::PARITY_ODD:
-        return comParityOdd;
+        return cComParityOdd;
     case Parity::PARITY_NONE:
-        return comParityNone;
+        return cComParityNone;
     case Parity::PARITY_INVALID:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     }
 
-    return comInvalidParameter;
+    return cComInvalidParameter;
 }
 
 Parity SerialCom::uintToParity(const unsigned int parity)
 {
     switch (parity)
     {
-    case comParityEven:
+    case cComParityEven:
         return Parity::PARITY_EVEN;
-    case comParityOdd:
+    case cComParityOdd:
         return Parity::PARITY_ODD;
-    case comParityNone:
+    case cComParityNone:
         return Parity::PARITY_NONE;
     }
 
@@ -199,23 +199,23 @@ unsigned int SerialCom::stopBitsToUint(const StopBits stop)
     switch (stop)
     {
     case StopBits::STOP_BITS_1:
-        return comStopBits1;
+        return cComStopBits1;
     case StopBits::STOP_BITS_2:
-        return comStopBits2;
+        return cComStopBits2;
     case StopBits::STOP_BITS_INVALID:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     }
 
-    return comInvalidParameter;
+    return cComInvalidParameter;
 }
 
 StopBits SerialCom::uintToStopBits(const unsigned int stop)
 {
     switch (stop)
     {
-    case comStopBits1:
+    case cComStopBits1:
         return StopBits::STOP_BITS_1;
-    case comStopBits2:
+    case cComStopBits2:
         return StopBits::STOP_BITS_2;
     }
 
@@ -227,27 +227,27 @@ unsigned int SerialCom::flowControlToUint(const FlowControl flow)
     switch (flow)
     {
     case FlowControl::FLOW_CONTROL_NONE:
-        return comFlowControlNone;
+        return cComFlowControlNone;
     case FlowControl::FLOW_CONTROL_HARDWARE:
-        return comFlowControlHw;
+        return cComFlowControlHw;
     case FlowControl::FLOW_CONTROL_SOFTWARE:
-        return comFlowControlSw;
+        return cComFlowControlSw;
     case FlowControl::FLOW_CONTROL_INVALID:
-        return comInvalidParameter;
+        return cComInvalidParameter;
     }
 
-    return comInvalidParameter;
+    return cComInvalidParameter;
 }
 
 FlowControl SerialCom::uintToFlowControl(const unsigned int flow)
 {
     switch (flow)
     {
-    case comFlowControlNone:
+    case cComFlowControlNone:
         return FlowControl::FLOW_CONTROL_NONE;
-    case comFlowControlHw:
+    case cComFlowControlHw:
         return FlowControl::FLOW_CONTROL_HARDWARE;
-    case comFlowControlSw:
+    case cComFlowControlSw:
         return FlowControl::FLOW_CONTROL_SOFTWARE;
     }
 

@@ -35,10 +35,10 @@
 <area shape="poly" id="edge14_Node000011_Node000014" title=" " alt="" coords="768,349,823,360,822,365,767,355"/>
 <area shape="rect" id="Node000015" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="854,429,1023,469"/>
 <area shape="poly" id="edge15_Node000011_Node000015" title=" " alt="" coords="751,350,775,362,790,375,800,389,808,403,823,415,842,425,840,430,820,420,804,406,795,392,786,379,772,366,749,354"/>
-<area shape="rect" id="Node000019" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf" title="Gets entity by key." alt="" coords="589,456,739,496"/>
+<area shape="rect" id="Node000019" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18" title="Gets entity by key." alt="" coords="589,456,739,496"/>
 <area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="474,496,575,484,575,489,474,501"/>
-<area shape="rect" id="Node000020" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="588,520,740,560"/>
+<area shape="rect" id="Node000020" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ad7b7772f284051c33bfd3dce106eb986" title="Converts ModelLogKey enum to string." alt="" coords="588,520,740,560"/>
 <area shape="poly" id="edge20_Node000018_Node000020" title=" " alt="" coords="474,515,574,527,574,532,474,520"/>
-<area shape="rect" id="Node000021" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="581,584,747,624"/>
+<area shape="rect" id="Node000021" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69" title="Converts Key enum to." alt="" coords="581,584,747,624"/>
 <area shape="poly" id="edge21_Node000018_Node000021" title=" " alt="" coords="458,533,556,569,580,577,578,582,554,575,456,538"/>
 </map>

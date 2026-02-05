@@ -1,27 +1,24 @@
 <map id="Electux::App::Config::ConfigManager::ConfigManager" name="Electux::App::Config::ConfigManager::ConfigManager">
-<area shape="rect" id="Node000001" title="Config constructor." alt="" coords="5,113,240,153"/>
-<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="500,62,723,117"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,120,486,98,487,103,241,125"/>
-<area shape="rect" id="Node000008" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762" title="Loads configuration." alt="" coords="288,141,452,181"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="241,144,275,148,274,153,240,149"/>
-<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="783,5,934,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="717,59,769,46,770,51,718,64"/>
-<area shape="rect" id="Node000004" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="774,69,943,109"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="723,87,760,87,760,92,723,92"/>
-<area shape="rect" id="Node000005" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a" title="Converts Key enum to." alt="" coords="771,135,947,175"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="716,114,770,129,769,134,715,119"/>
-<area shape="rect" id="Node000006" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="783,200,935,240"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="703,114,724,127,740,142,749,157,758,171,772,185,783,192,780,196,769,189,754,174,744,159,736,145,721,131,700,119"/>
-<area shape="rect" id="Node000007" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="775,268,942,308"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="708,115,725,127,737,143,745,159,750,190,754,220,761,235,773,250,782,259,779,263,769,254,756,238,749,222,744,191,740,161,733,146,721,131,705,119"/>
-<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="385,139,432,91,464,66,499,47,568,26,639,15,708,12,770,13,769,19,708,17,640,20,569,31,501,52,467,71,436,95,389,143"/>
-<area shape="rect" id="Node000009" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#afeeac10bcd108a2ebdc81c3c4490570c" title="Validates if key is valid control configuration key." alt="" coords="510,141,713,181"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="452,159,496,159,496,164,452,164"/>
-<area shape="rect" id="Node000010" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a65e8a271f90355b68f2149acb148d290" title="Validates if key is valid serial configuration key." alt="" coords="522,205,701,245"/>
-<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="447,179,523,199,522,204,446,184"/>
-<area shape="rect" id="Node000011" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a13ec4162a88de88366319ea309ab47d4" title="Validates if key is valid serial configuration key." alt="" coords="515,269,707,309"/>
-<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="395,180,442,218,501,255,517,262,515,267,499,260,439,222,392,184"/>
-<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="713,156,757,155,757,160,713,161"/>
-<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="701,221,769,219,769,225,701,226"/>
-<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="708,286,762,286,762,291,708,291"/>
+<area shape="rect" id="Node000001" title="Config constructor." alt="" coords="5,261,240,301"/>
+<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="288,158,511,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,259,306,215,308,220,182,264"/>
+<area shape="rect" id="Node000008" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762" title="Loads configuration." alt="" coords="317,325,481,365"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="211,299,304,321,303,326,209,304"/>
+<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="585,261,735,301"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,210,560,247,581,254,579,259,558,252,464,215"/>
+<area shape="rect" id="Node000004" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="575,5,745,45"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="426,156,484,105,520,78,557,55,571,48,573,53,560,60,523,83,487,109,430,160"/>
+<area shape="rect" id="Node000005" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="572,69,748,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="464,155,558,119,579,111,581,116,560,124,466,160"/>
+<area shape="rect" id="Node000006" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ad7b7772f284051c33bfd3dce106eb986" title="Converts ModelLogKey enum to string." alt="" coords="584,133,736,173"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="511,169,570,162,571,167,511,174"/>
+<area shape="rect" id="Node000007" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69" title="Converts Key enum to." alt="" coords="577,197,743,237"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="511,196,563,203,563,208,511,202"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="481,323,571,300,572,306,482,328"/>
+<area shape="rect" id="Node000009" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a23cc25f9dc86d32165b47abd1edfc12a" title="Validates if key is valid control configuration key." alt="" coords="559,325,761,365"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="482,343,545,343,545,348,482,348"/>
+<area shape="rect" id="Node000010" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a199273291d597c647277deeed99bfb80" title="Validates if key is valid serial configuration key." alt="" coords="571,389,749,429"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="482,363,565,383,564,389,481,368"/>
+<area shape="rect" id="Node000011" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4bf60654b3051f6cc8b5c2150a626fe6" title="Validates if key is valid serial configuration key." alt="" coords="564,453,756,493"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="431,363,489,401,560,439,577,446,575,451,558,444,486,406,428,368"/>
 </map>

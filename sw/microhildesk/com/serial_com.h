@@ -18,7 +18,7 @@
  */
 #pragma once
 
-#include "icom.h"
+#include <com/icom.h>
 
 namespace Electux::App::Com
 {

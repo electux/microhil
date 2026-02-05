@@ -19,12 +19,12 @@
 #pragma once
 
 #include <gtkmm/application.h>
-#include "view/home.h"
-#include "view/settings/settings.h"
-#include "view/help/help.h"
-#include "view/about/about.h"
-#include "view/settings_setup.h"
-#include "config/config_manager.h"
+#include <view/home.h>
+#include <view/settings/settings.h>
+#include <view/help/help.h>
+#include <view/about/about.h>
+#include <view/settings_setup.h>
+#include <config/config_manager.h>
 
 namespace Electux::App
 {

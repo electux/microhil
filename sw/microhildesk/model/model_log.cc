@@ -17,15 +17,15 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <vector>
-#include "model_log.h"
+#include <model/model_log.h>
 
 namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// @brief String constants for log configuration keys
-    constexpr std::string_view logLevel{"log_level"};
-    constexpr std::string_view filePath{"log_file_path"};
-    constexpr std::string_view unknown{"unknown"};
+    constexpr std::string_view cLogLevel{"log_level"};
+    constexpr std::string_view cFilePath{"log_file_path"};
+    constexpr std::string_view cUnknown{"unknown"};
 };
 
 using namespace Electux::App::Model;
@@ -40,24 +40,25 @@ Entities ModelLog::getAllEntries() const
     Entities entries;
     for (const auto& key : keys)
     {
-        std::string keyStr = toString(key);
-        entries[keyStr] = getEntity(keyStr); 
+        std::string_view keyStrView = toString(key);
+        std::string keyStr{keyStrView};
+        entries.emplace(std::move(keyStr), getEntity(keyStr)); 
     }
 
     return entries;
 }
 
-std::string ModelLog::toString(const ModelLogKey &key) const
+std::string_view ModelLog::toString(const ModelLogKey &key) const
 {
     switch (key)
     {
-    case ModelLogKey::LogLevel: return logLevel.data();
-    case ModelLogKey::FilePath: return filePath.data();
-    default: return unknown.data();
+    case ModelLogKey::LogLevel: return cLogLevel;
+    case ModelLogKey::FilePath: return cFilePath;
+    default: return cUnknown;
     }
 }
 
-bool ModelLog::validateKey(const std::string &key) const
+bool ModelLog::validateKey(const std::string_view &key) const
 {
-    return key == toString(ModelLogKey::LogLevel) || key == toString(ModelLogKey::FilePath);
+    return key == cLogLevel || key == cFilePath;
 }

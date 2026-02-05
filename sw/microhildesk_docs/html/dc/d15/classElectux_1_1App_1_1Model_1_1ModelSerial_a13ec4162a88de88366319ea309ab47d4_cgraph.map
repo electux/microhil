@@ -1,5 +1,0 @@
-<map id="Electux::App::Model::ModelSerial::validateKey" name="Electux::App::Model::ModelSerial::validateKey">
-<area shape="rect" id="Node000001" title="Validates if key is valid serial configuration key." alt="" coords="5,5,197,45"/>
-<area shape="rect" id="Node000002" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="245,5,412,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,23,232,23,232,28,198,28"/>
-</map>

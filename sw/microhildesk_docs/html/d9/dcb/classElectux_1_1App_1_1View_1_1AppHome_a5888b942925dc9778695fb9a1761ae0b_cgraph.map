@@ -2,36 +2,30 @@
 <area shape="rect" id="Node000001" title="Maps home (signals and slots)" alt="" coords="5,163,164,203"/>
 <area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a9e9a0cc8fed68e056c047d5d1e1073f2" title="Signal handler for enablement channel." alt="" coords="238,84,453,139"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,161,232,140,234,145,159,166"/>
-<area shape="rect" id="Node000007" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a99d90c51c50d5a2362c0444a75af8028" title="Signal handler for setup channel mode." alt="" coords="213,163,477,203"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="164,181,200,181,200,186,164,186"/>
-<area shape="rect" id="Node000008" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a16cfafe14e25b0865390fab425b769d3" title="Signal handler for timer mode." alt="" coords="212,227,479,267"/>
-<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="165,201,213,213,248,222,247,227,211,218,164,206"/>
-<area shape="rect" id="Node000009" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a648656ba705eaf82642ca51ac4772162" title="Signal handler for timer mode (start process)" alt="" coords="220,292,471,347"/>
-<area shape="poly" id="edge16_Node000001_Node000009" title=" " alt="" coords="109,202,155,240,213,277,229,284,227,289,211,282,152,244,106,206"/>
-<area shape="rect" id="Node000010" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a1eefdfc3851f900bc4a333c9503e0666" title="Signal handler for toggle mode." alt="" coords="239,5,452,60"/>
-<area shape="poly" id="edge21_Node000001_Node000010" title=" " alt="" coords="102,161,148,115,178,90,211,69,225,62,227,67,213,74,181,95,152,119,105,165"/>
-<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf" title="Gets entity by key." alt="" coords="549,195,700,235"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,136,480,149,504,165,528,181,543,188,541,193,525,186,501,169,477,154,447,141"/>
-<area shape="rect" id="Node000004" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a" title="Converts Key enum to." alt="" coords="537,259,713,299"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="454,133,480,149,499,174,505,198,511,222,529,245,535,250,531,254,525,249,507,225,500,200,494,176,477,153,452,137"/>
-<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac1c785a6481ba5bdaff2874b073faddf" title="Updates entity value by key." alt="" coords="549,51,700,91"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="452,93,535,81,536,87,453,99"/>
-<area shape="rect" id="Node000006" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a74831852a422e6c6baa76ec123aa72c9" title="Updates nth substring in input string separated by delimiter." alt="" coords="527,116,723,171"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="453,121,513,128,513,133,453,126"/>
-<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="478,196,536,203,535,208,477,201"/>
-<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="447,201,480,213,504,229,528,245,543,252,541,257,525,250,501,233,477,218,445,206"/>
-<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="451,161,477,149,492,138,501,127,510,115,525,102,539,95,542,99,528,107,514,118,505,130,495,142,480,154,453,166"/>
-<area shape="poly" id="edge10_Node000007_Node000006" title=" " alt="" coords="477,162,513,157,513,162,478,167"/>
-<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="479,229,535,223,536,228,479,235"/>
-<area shape="poly" id="edge13_Node000008_Node000004" title=" " alt="" coords="479,260,523,265,523,270,479,265"/>
-<area shape="poly" id="edge14_Node000008_Node000005" title=" " alt="" coords="460,225,477,213,489,201,495,188,501,160,506,132,513,117,525,103,536,94,539,99,529,107,517,120,511,133,506,161,500,189,493,204,480,217,462,229"/>
-<area shape="poly" id="edge15_Node000008_Node000006" title=" " alt="" coords="445,225,477,213,502,198,525,181,539,174,541,179,528,186,504,202,480,218,447,230"/>
-<area shape="poly" id="edge17_Node000009_Node000003" title=" " alt="" coords="447,290,477,277,501,261,525,245,541,238,543,243,528,250,504,266,480,282,449,294"/>
-<area shape="poly" id="edge18_Node000009_Node000004" title=" " alt="" coords="470,299,523,291,523,296,471,304"/>
-<area shape="poly" id="edge19_Node000009_Node000005" title=" " alt="" coords="462,290,477,278,492,256,499,236,500,192,501,148,509,125,525,103,536,93,539,97,529,106,513,128,506,149,506,192,505,236,497,259,481,281,465,294"/>
-<area shape="poly" id="edge20_Node000009_Node000006" title=" " alt="" coords="459,289,477,277,494,255,501,231,507,207,525,182,530,177,534,181,529,185,512,209,506,233,499,257,481,281,462,294"/>
-<area shape="poly" id="edge22_Node000010_Node000003" title=" " alt="" coords="454,52,480,69,493,83,500,98,506,127,511,155,517,168,529,181,539,189,536,194,525,185,513,171,505,156,500,128,495,100,489,86,477,73,451,56"/>
-<area shape="poly" id="edge23_Node000010_Node000004" title=" " alt="" coords="454,50,481,69,497,92,505,115,506,159,506,203,513,224,529,246,532,249,529,253,525,249,509,226,501,204,500,159,500,115,492,94,477,73,451,55"/>
-<area shape="poly" id="edge24_Node000010_Node000005" title=" " alt="" coords="452,45,536,56,536,62,452,50"/>
-<area shape="poly" id="edge25_Node000010_Node000006" title=" " alt="" coords="452,58,480,69,504,85,528,101,541,108,539,113,525,106,501,89,477,74,450,63"/>
+<area shape="rect" id="Node000008" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a99d90c51c50d5a2362c0444a75af8028" title="Signal handler for setup channel mode." alt="" coords="213,163,477,203"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="164,181,200,181,200,186,164,186"/>
+<area shape="rect" id="Node000009" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a16cfafe14e25b0865390fab425b769d3" title="Signal handler for timer mode." alt="" coords="212,227,479,267"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="165,201,213,213,248,222,247,227,211,218,164,206"/>
+<area shape="rect" id="Node000010" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a648656ba705eaf82642ca51ac4772162" title="Signal handler for timer mode (start process)" alt="" coords="220,292,471,347"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="109,202,155,240,213,277,229,284,227,289,211,282,152,244,106,206"/>
+<area shape="rect" id="Node000011" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a1eefdfc3851f900bc4a333c9503e0666" title="Signal handler for toggle mode." alt="" coords="239,5,452,60"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="102,161,148,115,178,90,211,69,225,62,227,67,213,74,181,95,152,119,105,165"/>
+<area shape="rect" id="Node000003" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="538,123,714,163"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="453,121,525,129,524,134,453,126"/>
+<area shape="rect" id="Node000004" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859" title="Updates control configuration parameter." alt="" coords="527,188,725,243"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="445,136,480,149,528,173,544,180,542,185,526,178,478,154,443,141"/>
+<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18" title="Gets entity by key." alt="" coords="796,131,947,171"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="725,187,782,172,783,177,726,192"/>
+<area shape="rect" id="Node000006" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283" title="Updates entity value by key." alt="" coords="796,195,947,235"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="725,213,782,213,782,218,725,218"/>
+<area shape="rect" id="Node000007" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299" title="Updates nth substring in input string." alt="" coords="773,260,969,315"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="721,240,766,254,764,259,719,245"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="477,162,524,155,525,160,478,167"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="478,196,513,200,513,205,477,201"/>
+<area shape="poly" id="edge11_Node000009_Node000003" title=" " alt="" coords="448,225,477,213,491,204,501,194,525,174,542,166,544,171,528,179,505,198,495,208,480,218,450,230"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="478,229,513,226,513,231,479,235"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="459,290,477,277,488,265,494,253,500,228,506,201,513,188,525,175,532,169,536,173,529,179,518,191,511,203,505,229,499,255,492,268,480,281,462,294"/>
+<area shape="poly" id="edge15_Node000010_Node000004" title=" " alt="" coords="441,289,478,277,553,246,555,251,480,282,443,294"/>
+<area shape="poly" id="edge17_Node000011_Node000003" title=" " alt="" coords="448,58,480,69,578,114,575,119,478,74,446,63"/>
+<area shape="poly" id="edge18_Node000011_Node000004" title=" " alt="" coords="454,52,480,69,492,82,500,96,506,122,512,148,518,161,529,173,534,178,530,182,525,177,513,164,507,150,501,123,495,98,488,85,477,73,451,57"/>
 </map>

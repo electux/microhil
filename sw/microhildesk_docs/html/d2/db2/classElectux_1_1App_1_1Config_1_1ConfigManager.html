@@ -132,10 +132,10 @@ Collaboration diagram for Electux::App::Config::ConfigManager:</div>
 <area shape="poly" title=" " alt="" coords="489,462,489,497,484,497,484,462"/>
 <area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="582,497,725,637"/>
 <area shape="poly" title=" " alt="" coords="569,457,600,496,596,499,565,460"/>
-<area shape="rect" href="../../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="330,5,473,205"/>
-<area shape="poly" title=" " alt="" coords="442,217,459,267,454,269,437,219"/>
-<area shape="rect" title=" " alt="" coords="497,65,647,145"/>
-<area shape="poly" title=" " alt="" coords="561,147,525,253,520,251,556,145"/>
+<area shape="rect" href="../../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="329,5,471,205"/>
+<area shape="poly" title=" " alt="" coords="441,217,458,267,453,269,436,219"/>
+<area shape="rect" title=" " alt="" coords="495,65,654,145"/>
+<area shape="poly" title=" " alt="" coords="563,147,526,253,521,251,558,145"/>
 <area shape="poly" title=" " alt="" coords="463,639,444,677,412,724,408,721,439,675,458,636"/>
 <area shape="poly" title=" " alt="" coords="602,639,563,678,490,733,416,780,413,776,487,729,560,674,598,636"/>
 </map>
@@ -219,70 +219,67 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="../../d9/d49/namespaceElectux_1_1App_1_1Config.html">Config</a> constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00043">43</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
-<div class="line"><span class="lineno">   45</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a> = Glib::build_filename(Glib::get_home_dir(), configFile.data());</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keyword">auto</span> dirPath = Glib::path_get_dirname(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">if</span> (!std::filesystem::exists(dirPath))</div>
-<div class="line"><span class="lineno">   51</span>        {</div>
-<div class="line"><span class="lineno">   52</span>            std::filesystem::create_directories(dirPath);</div>
-<div class="line"><span class="lineno">   53</span>        }</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">if</span> (!std::filesystem::exists(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>))</div>
-<div class="line"><span class="lineno">   56</span>        {</div>
-<div class="line"><span class="lineno">   57</span>            std::ofstream file(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
-<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span> (!file)</div>
-<div class="line"><span class="lineno">   59</span>            {</div>
-<div class="line"><span class="lineno">   60</span>                <span class="keywordflow">throw</span> std::ios_base::failure(<span class="stringliteral">&quot;Unable to create file: &quot;</span> + <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
-<div class="line"><span class="lineno">   61</span>            }</div>
-<div class="line"><span class="lineno">   62</span>            <a class="code hl_function" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84">defaultConfigStore</a>();</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Setup configuration file path: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   66</span>        <a class="code hl_function" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762">load</a>();</div>
-<div class="line"><span class="lineno">   67</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
-<div class="line"><span class="lineno">   68</span>    {</div>
-<div class="line"><span class="lineno">   69</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error during ConfigManager initialization: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   70</span>    }</div>
-<div class="line"><span class="lineno">   71</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_a6a85e1eb118a61f4813500d9fb42e762"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762">Electux::App::Config::ConfigManager::load</a></div><div class="ttdeci">bool load() final</div><div class="ttdoc">Loads configuration.</div><div class="ttdef"><b>Definition</b> <a href="../../da/dd8/config__manager_8cc_source.html#l00103">config_manager.cc:103</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00069">69</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>{</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a> = Glib::build_filename(Glib::get_home_dir(), cConfigFile.data());</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keyword">auto</span> dirPath = Glib::path_get_dirname(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   75</span>    {</div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">if</span> (!std::filesystem::exists(dirPath))</div>
+<div class="line"><span class="lineno">   77</span>        {</div>
+<div class="line"><span class="lineno">   78</span>            std::filesystem::create_directories(dirPath);</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">if</span> (!std::filesystem::exists(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>))</div>
+<div class="line"><span class="lineno">   82</span>        {</div>
+<div class="line"><span class="lineno">   83</span>            std::ofstream file(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">if</span> (!file)</div>
+<div class="line"><span class="lineno">   85</span>            {</div>
+<div class="line"><span class="lineno">   86</span>                <span class="keywordflow">throw</span> std::ios_base::failure(<span class="stringliteral">&quot;Unable to create file: &quot;</span> + <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
+<div class="line"><span class="lineno">   87</span>            }</div>
+<div class="line"><span class="lineno">   88</span>            <a class="code hl_function" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84">defaultConfigStore</a>();</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Setup configuration file path: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   92</span>        <a class="code hl_function" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762">load</a>();</div>
+<div class="line"><span class="lineno">   93</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
+<div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error during ConfigManager initialization: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="line"><span class="lineno">   97</span>}</div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_a6a85e1eb118a61f4813500d9fb42e762"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762">Electux::App::Config::ConfigManager::load</a></div><div class="ttdeci">bool load() final</div><div class="ttdoc">Loads configuration.</div><div class="ttdef"><b>Definition</b> <a href="../../da/dd8/config__manager_8cc_source.html#l00129">config_manager.cc:129</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_a722827bba08c8fdaabae1e688ee02d40"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">Electux::App::Config::ConfigManager::m_fileName</a></div><div class="ttdeci">std::string m_fileName</div><div class="ttdoc">Configuration parameters and properties m_fileName - file name path for load/store configuration m_co...</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d8b/config__manager_8h_source.html#l00093">config_manager.h:93</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_afa189abd981623859e7ce2a015ffdb84"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84">Electux::App::Config::ConfigManager::defaultConfigStore</a></div><div class="ttdeci">void defaultConfigStore()</div><div class="ttdoc">Stores default configuration.</div><div class="ttdef"><b>Definition</b> <a href="../../da/dd8/config__manager_8cc_source.html#l00185">config_manager.cc:185</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_afa189abd981623859e7ce2a015ffdb84"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84">Electux::App::Config::ConfigManager::defaultConfigStore</a></div><div class="ttdeci">void defaultConfigStore()</div><div class="ttdoc">Stores default configuration.</div><div class="ttdef"><b>Definition</b> <a href="../../da/dd8/config__manager_8cc_source.html#l00211">config_manager.cc:211</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00185">defaultConfigStore()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00103">load()</a>, and <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00093">m_fileName</a>.</p>
+<p class="reference">References <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00211">defaultConfigStore()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00129">load()</a>, and <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00093">m_fileName</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_a7d3d7c10423d969f7544509f6fcca32f_cgraph.png" border="0" usemap="#ad2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_a7d3d7c10423d969f7544509f6fcca32f_cgraph" alt=""/></div>
 <map name="ad2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_a7d3d7c10423d969f7544509f6fcca32f_cgraph" id="ad2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_a7d3d7c10423d969f7544509f6fcca32f_cgraph">
-<area shape="rect" title="Config constructor." alt="" coords="5,113,240,153"/>
-<area shape="rect" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="500,62,723,117"/>
-<area shape="poly" title=" " alt="" coords="240,120,486,98,487,103,241,125"/>
-<area shape="rect" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762" title="Loads configuration." alt="" coords="288,141,452,181"/>
-<area shape="poly" title=" " alt="" coords="241,144,275,148,274,153,240,149"/>
-<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="783,5,934,45"/>
-<area shape="poly" title=" " alt="" coords="717,59,769,46,770,51,718,64"/>
-<area shape="rect" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="774,69,943,109"/>
-<area shape="poly" title=" " alt="" coords="723,87,760,87,760,92,723,92"/>
-<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a" title="Converts Key enum to." alt="" coords="771,135,947,175"/>
-<area shape="poly" title=" " alt="" coords="716,114,770,129,769,134,715,119"/>
-<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="783,200,935,240"/>
-<area shape="poly" title=" " alt="" coords="703,114,724,127,740,142,749,157,758,171,772,185,783,192,780,196,769,189,754,174,744,159,736,145,721,131,700,119"/>
-<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="775,268,942,308"/>
-<area shape="poly" title=" " alt="" coords="708,115,725,127,737,143,745,159,750,190,754,220,761,235,773,250,782,259,779,263,769,254,756,238,749,222,744,191,740,161,733,146,721,131,705,119"/>
-<area shape="poly" title=" " alt="" coords="385,139,432,91,464,66,499,47,568,26,639,15,708,12,770,13,769,19,708,17,640,20,569,31,501,52,467,71,436,95,389,143"/>
-<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#afeeac10bcd108a2ebdc81c3c4490570c" title="Validates if key is valid control configuration key." alt="" coords="510,141,713,181"/>
-<area shape="poly" title=" " alt="" coords="452,159,496,159,496,164,452,164"/>
-<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a65e8a271f90355b68f2149acb148d290" title="Validates if key is valid serial configuration key." alt="" coords="522,205,701,245"/>
-<area shape="poly" title=" " alt="" coords="447,179,523,199,522,204,446,184"/>
-<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a13ec4162a88de88366319ea309ab47d4" title="Validates if key is valid serial configuration key." alt="" coords="515,269,707,309"/>
-<area shape="poly" title=" " alt="" coords="395,180,442,218,501,255,517,262,515,267,499,260,439,222,392,184"/>
-<area shape="poly" title=" " alt="" coords="713,156,757,155,757,160,713,161"/>
-<area shape="poly" title=" " alt="" coords="701,221,769,219,769,225,701,226"/>
-<area shape="poly" title=" " alt="" coords="708,286,762,286,762,291,708,291"/>
+<area shape="rect" title="Config constructor." alt="" coords="5,261,240,301"/>
+<area shape="rect" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="288,158,511,213"/>
+<area shape="poly" title=" " alt="" coords="181,259,306,215,308,220,182,264"/>
+<area shape="rect" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762" title="Loads configuration." alt="" coords="317,325,481,365"/>
+<area shape="poly" title=" " alt="" coords="211,299,304,321,303,326,209,304"/>
+<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="585,261,735,301"/>
+<area shape="poly" title=" " alt="" coords="466,210,560,247,581,254,579,259,558,252,464,215"/>
+<area shape="rect" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="575,5,745,45"/>
+<area shape="poly" title=" " alt="" coords="426,156,484,105,520,78,557,55,571,48,573,53,560,60,523,83,487,109,430,160"/>
+<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="572,69,748,109"/>
+<area shape="poly" title=" " alt="" coords="464,155,558,119,579,111,581,116,560,124,466,160"/>
+<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ad7b7772f284051c33bfd3dce106eb986" title="Converts ModelLogKey enum to string." alt="" coords="584,133,736,173"/>
+<area shape="poly" title=" " alt="" coords="511,169,570,162,571,167,511,174"/>
+<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69" title="Converts Key enum to." alt="" coords="577,197,743,237"/>
+<area shape="poly" title=" " alt="" coords="511,196,563,203,563,208,511,202"/>
+<area shape="poly" title=" " alt="" coords="481,323,571,300,572,306,482,328"/>
+<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a23cc25f9dc86d32165b47abd1edfc12a" title="Validates if key is valid control configuration key." alt="" coords="559,325,761,365"/>
+<area shape="poly" title=" " alt="" coords="482,343,545,343,545,348,482,348"/>
+<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a199273291d597c647277deeed99bfb80" title="Validates if key is valid serial configuration key." alt="" coords="571,389,749,429"/>
+<area shape="poly" title=" " alt="" coords="482,363,565,383,564,389,481,368"/>
+<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4bf60654b3051f6cc8b5c2150a626fe6" title="Validates if key is valid serial configuration key." alt="" coords="564,453,756,493"/>
+<area shape="poly" title=" " alt="" coords="431,363,489,401,560,439,577,446,575,451,558,444,486,406,428,368"/>
 </map>
 </div>
 
@@ -318,31 +315,31 @@ Here is the call graph for this function:</div>
 <p>Set default log configuration</p>
 <p>Store default configuration to file</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00185">185</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  186</span>{</div>
-<div class="line"><span class="lineno">  189</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">ModelControl::ModelControlKey::Enable</a>), <span class="stringliteral">&quot;false false false false false false false false&quot;</span>);</div>
-<div class="line"><span class="lineno">  190</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">ModelControl::ModelControlKey::Mode</a>), <span class="stringliteral">&quot;0 0 0 0 0 0 0 0&quot;</span>);</div>
-<div class="line"><span class="lineno">  191</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">ModelControl::ModelControlKey::Toggle</a>), <span class="stringliteral">&quot;false false false false false false false false&quot;</span>);</div>
-<div class="line"><span class="lineno">  192</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">ModelControl::ModelControlKey::Timer</a>), <span class="stringliteral">&quot;0 0 0 0 0 0 0 0&quot;</span>);</div>
-<div class="line"><span class="lineno">  193</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">ModelControl::ModelControlKey::TimerEnable</a>), <span class="stringliteral">&quot;false false false false false false false false&quot;</span>);</div>
-<div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  197</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3ae0ac20adce6ffee48c7151b070aa5737">ModelSerial::ModelSerialKey::Device</a>), <span class="stringliteral">&quot;/dev/ttyUSB0&quot;</span>);</div>
-<div class="line"><span class="lineno">  198</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a5be5da6b69c4c4c10e17fdecdac7fa15">ModelSerial::ModelSerialKey::Baud</a>), <span class="stringliteral">&quot;10&quot;</span>);</div>
-<div class="line"><span class="lineno">  199</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af6068daa29dbb05a7ead1e3b5a48bbee">ModelSerial::ModelSerialKey::Data</a>), <span class="stringliteral">&quot;3&quot;</span>);</div>
-<div class="line"><span class="lineno">  200</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3aa91d6e31a7e409defa6beb8f1311ef98">ModelSerial::ModelSerialKey::Parity</a>), <span class="stringliteral">&quot;2&quot;</span>);</div>
-<div class="line"><span class="lineno">  201</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a11a755d598c0c417f9a36758c3da7481">ModelSerial::ModelSerialKey::Stop</a>), <span class="stringliteral">&quot;0&quot;</span>);</div>
-<div class="line"><span class="lineno">  202</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af1a76f66cca677c6e628d9ca58a6c8fc">ModelSerial::ModelSerialKey::Flow</a>), <span class="stringliteral">&quot;0&quot;</span>);</div>
-<div class="line"><span class="lineno">  203</span> </div>
-<div class="line"><span class="lineno">  206</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496">toString</a>(<a class="code hl_enumvalue" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a2fb403e71d8ade2ba79af3f6c4695d09">ModelLog::ModelLogKey::FilePath</a>), <span class="stringliteral">&quot;/tmp/microhildesk.log&quot;</span>);</div>
-<div class="line"><span class="lineno">  207</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496">toString</a>(<a class="code hl_enumvalue" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a31f085f5c12702593ad0244e0090af4e">ModelLog::ModelLogKey::LogLevel</a>), <span class="stringliteral">&quot;2&quot;</span>);</div>
-<div class="line"><span class="lineno">  208</span> </div>
-<div class="line"><span class="lineno">  211</span>    <a class="code hl_function" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1">store</a>();</div>
-<div class="line"><span class="lineno">  212</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00211">211</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>{</div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">ModelControl::ModelControlKey::Enable</a>), cConfigDefaultControlEnable);</div>
+<div class="line"><span class="lineno">  216</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">ModelControl::ModelControlKey::Mode</a>), cConfigDefaultControlMode);</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">ModelControl::ModelControlKey::Toggle</a>), cConfigDefaultControlToggle);</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">ModelControl::ModelControlKey::Timer</a>), cConfigDefaultControlTimer);</div>
+<div class="line"><span class="lineno">  219</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">ModelControl::ModelControlKey::TimerEnable</a>), cConfigDefaultControlTimerEnable);</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  223</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3ae0ac20adce6ffee48c7151b070aa5737">ModelSerial::ModelSerialKey::Device</a>), cConfigDefaultSerialDevice);</div>
+<div class="line"><span class="lineno">  224</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a5be5da6b69c4c4c10e17fdecdac7fa15">ModelSerial::ModelSerialKey::Baud</a>), cConfigDefaultSerialBaud);</div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af6068daa29dbb05a7ead1e3b5a48bbee">ModelSerial::ModelSerialKey::Data</a>), cConfigDefaultSerialData);</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3aa91d6e31a7e409defa6beb8f1311ef98">ModelSerial::ModelSerialKey::Parity</a>), cConfigDefaultSerialParity);</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a11a755d598c0c417f9a36758c3da7481">ModelSerial::ModelSerialKey::Stop</a>), cConfigDefaultSerialStop);</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69">toString</a>(<a class="code hl_enumvalue" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af1a76f66cca677c6e628d9ca58a6c8fc">ModelSerial::ModelSerialKey::Flow</a>), cConfigDefaultSerialFlow);</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  232</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ad7b7772f284051c33bfd3dce106eb986">toString</a>(<a class="code hl_enumvalue" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a2fb403e71d8ade2ba79af3f6c4695d09">ModelLog::ModelLogKey::FilePath</a>), cConfigDefaultLogFilePath);</div>
+<div class="line"><span class="lineno">  233</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ad7b7772f284051c33bfd3dce106eb986">toString</a>(<a class="code hl_enumvalue" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a31f085f5c12702593ad0244e0090af4e">ModelLog::ModelLogKey::LogLevel</a>), cConfigDefaultLogLevel);</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  237</span>    <a class="code hl_function" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1">store</a>();</div>
+<div class="line"><span class="lineno">  238</span>}</div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_a8be2b4daeb267b6c8eaebc494f0567b2"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">Electux::App::Config::ConfigManager::m_logConfig</a></div><div class="ttdeci">ModelLog m_logConfig</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d8b/config__manager_8h_source.html#l00096">config_manager.h:96</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_a9ab5c4ca238d3e9ae26998026ebab2c1"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1">Electux::App::Config::ConfigManager::store</a></div><div class="ttdeci">bool store() final</div><div class="ttdoc">Stores configuration.</div><div class="ttdef"><b>Definition</b> <a href="../../da/dd8/config__manager_8cc_source.html#l00157">config_manager.cc:157</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_a9ab5c4ca238d3e9ae26998026ebab2c1"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1">Electux::App::Config::ConfigManager::store</a></div><div class="ttdeci">bool store() final</div><div class="ttdoc">Stores configuration.</div><div class="ttdef"><b>Definition</b> <a href="../../da/dd8/config__manager_8cc_source.html#l00183">config_manager.cc:183</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_ac0a5bb26a64b8f9542f600c2969ac36d"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">Electux::App::Config::ConfigManager::m_controlConfig</a></div><div class="ttdeci">ModelControl m_controlConfig</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d8b/config__manager_8h_source.html#l00094">config_manager.h:94</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Config_1_1ConfigManager_html_af133ef95af1466597223c86a4f158a92"><div class="ttname"><a href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">Electux::App::Config::ConfigManager::m_serialConfig</a></div><div class="ttdeci">ModelSerial m_serialConfig</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d8b/config__manager_8h_source.html#l00095">config_manager.h:95</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a14137f0cf2c1591e6c6edc6902069c0a"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a">Electux::App::Model::ModelControl::toString</a></div><div class="ttdeci">std::string toString(const ModelControlKey &amp;key) const</div><div class="ttdoc">Converts Key enum to.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/dea/model__control_8cc_source.html#l00057">model_control.cc:57</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a6f4b5fc97ff0d51bf1103ec19871d615"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">Electux::App::Model::ModelControl::toString</a></div><div class="ttdeci">std::string_view toString(const ModelControlKey &amp;key) const</div><div class="ttdoc">Converts Key enum to.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/dea/model__control_8cc_source.html#l00058">model_control.cc:58</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::ModelControlKey::Enable</a></div><div class="ttdeci">@ Enable</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::ModelControlKey::Mode</a></div><div class="ttdeci">@ Mode</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::ModelControlKey::Toggle</a></div><div class="ttdeci">@ Toggle</div></div>
@@ -350,34 +347,34 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::ModelControlKey::TimerEnable</a></div><div class="ttdeci">@ TimerEnable</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelLog_html_a416615500e98f799b248bf428a3a3f19a2fb403e71d8ade2ba79af3f6c4695d09"><div class="ttname"><a href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a2fb403e71d8ade2ba79af3f6c4695d09">Electux::App::Model::ModelLog::ModelLogKey::FilePath</a></div><div class="ttdeci">@ FilePath</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelLog_html_a416615500e98f799b248bf428a3a3f19a31f085f5c12702593ad0244e0090af4e"><div class="ttname"><a href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a31f085f5c12702593ad0244e0090af4e">Electux::App::Model::ModelLog::ModelLogKey::LogLevel</a></div><div class="ttdeci">@ LogLevel</div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelLog_html_ac6587f2456803197a7dbf6f335d69496"><div class="ttname"><a href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496">Electux::App::Model::ModelLog::toString</a></div><div class="ttdeci">std::string toString(const ModelLogKey &amp;key) const</div><div class="ttdoc">Converts ModelLogKey enum to string.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d6e/model__log_8cc_source.html#l00050">model_log.cc:50</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelLog_html_ad7b7772f284051c33bfd3dce106eb986"><div class="ttname"><a href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ad7b7772f284051c33bfd3dce106eb986">Electux::App::Model::ModelLog::toString</a></div><div class="ttdeci">std::string_view toString(const ModelLogKey &amp;key) const</div><div class="ttdoc">Converts ModelLogKey enum to string.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d6e/model__log_8cc_source.html#l00051">model_log.cc:51</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a023d61322f592bc1a19e26c25a62fbd3a11a755d598c0c417f9a36758c3da7481"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a11a755d598c0c417f9a36758c3da7481">Electux::App::Model::ModelSerial::ModelSerialKey::Stop</a></div><div class="ttdeci">@ Stop</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a023d61322f592bc1a19e26c25a62fbd3a5be5da6b69c4c4c10e17fdecdac7fa15"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a5be5da6b69c4c4c10e17fdecdac7fa15">Electux::App::Model::ModelSerial::ModelSerialKey::Baud</a></div><div class="ttdeci">@ Baud</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a023d61322f592bc1a19e26c25a62fbd3aa91d6e31a7e409defa6beb8f1311ef98"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3aa91d6e31a7e409defa6beb8f1311ef98">Electux::App::Model::ModelSerial::ModelSerialKey::Parity</a></div><div class="ttdeci">@ Parity</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a023d61322f592bc1a19e26c25a62fbd3ae0ac20adce6ffee48c7151b070aa5737"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3ae0ac20adce6ffee48c7151b070aa5737">Electux::App::Model::ModelSerial::ModelSerialKey::Device</a></div><div class="ttdeci">@ Device</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a023d61322f592bc1a19e26c25a62fbd3af1a76f66cca677c6e628d9ca58a6c8fc"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af1a76f66cca677c6e628d9ca58a6c8fc">Electux::App::Model::ModelSerial::ModelSerialKey::Flow</a></div><div class="ttdeci">@ Flow</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a023d61322f592bc1a19e26c25a62fbd3af6068daa29dbb05a7ead1e3b5a48bbee"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af6068daa29dbb05a7ead1e3b5a48bbee">Electux::App::Model::ModelSerial::ModelSerialKey::Data</a></div><div class="ttdeci">@ Data</div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a5593398ce4cef0fa132143537340e3b2"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2">Electux::App::Model::ModelSerial::toString</a></div><div class="ttdeci">std::string toString(const ModelSerialKey &amp;key) const</div><div class="ttdoc">Converts Key enum to.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d12/model__serial_8cc_source.html#l00059">model_serial.cc:59</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_abd377a2d563d5063853ab64aade108b8"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">Electux::App::Model::Model::add</a></div><div class="ttdeci">bool add(const std::string &amp;key, const std::string &amp;data) final</div><div class="ttdoc">Adds entity to model {'key': 'data'}.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00023">model.cc:23</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_afe4d5fa491c80be10f12975c1c7ffb69"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69">Electux::App::Model::ModelSerial::toString</a></div><div class="ttdeci">std::string_view toString(const ModelSerialKey &amp;key) const</div><div class="ttdoc">Converts Key enum to.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d12/model__serial_8cc_source.html#l00060">model_serial.cc:60</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_ab5f411c8bde7a2ee7f14e6d4dffada41"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">Electux::App::Model::Model::add</a></div><div class="ttdeci">bool add(const std::string_view &amp;key, const std::string_view &amp;data) final</div><div class="ttdoc">Adds entity to model {'key': 'data'}.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00023">model.cc:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00023">Electux::App::Model::Model::add()</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a5be5da6b69c4c4c10e17fdecdac7fa15">Electux::App::Model::ModelSerial::Baud</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af6068daa29dbb05a7ead1e3b5a48bbee">Electux::App::Model::ModelSerial::Data</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3ae0ac20adce6ffee48c7151b070aa5737">Electux::App::Model::ModelSerial::Device</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::Enable</a>, <a class="el" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a2fb403e71d8ade2ba79af3f6c4695d09">Electux::App::Model::ModelLog::FilePath</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af1a76f66cca677c6e628d9ca58a6c8fc">Electux::App::Model::ModelSerial::Flow</a>, <a class="el" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a31f085f5c12702593ad0244e0090af4e">Electux::App::Model::ModelLog::LogLevel</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00094">m_controlConfig</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00096">m_logConfig</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00095">m_serialConfig</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::Mode</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3aa91d6e31a7e409defa6beb8f1311ef98">Electux::App::Model::ModelSerial::Parity</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a11a755d598c0c417f9a36758c3da7481">Electux::App::Model::ModelSerial::Stop</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00157">store()</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::Timer</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::TimerEnable</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::Toggle</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00057">Electux::App::Model::ModelControl::toString()</a>, <a class="el" href="../../d4/d6e/model__log_8cc_source.html#l00050">Electux::App::Model::ModelLog::toString()</a>, and <a class="el" href="../../d2/d12/model__serial_8cc_source.html#l00059">Electux::App::Model::ModelSerial::toString()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00023">Electux::App::Model::Model::add()</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a5be5da6b69c4c4c10e17fdecdac7fa15">Electux::App::Model::ModelSerial::Baud</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af6068daa29dbb05a7ead1e3b5a48bbee">Electux::App::Model::ModelSerial::Data</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3ae0ac20adce6ffee48c7151b070aa5737">Electux::App::Model::ModelSerial::Device</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::Enable</a>, <a class="el" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a2fb403e71d8ade2ba79af3f6c4695d09">Electux::App::Model::ModelLog::FilePath</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af1a76f66cca677c6e628d9ca58a6c8fc">Electux::App::Model::ModelSerial::Flow</a>, <a class="el" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a31f085f5c12702593ad0244e0090af4e">Electux::App::Model::ModelLog::LogLevel</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00094">m_controlConfig</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00096">m_logConfig</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00095">m_serialConfig</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::Mode</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3aa91d6e31a7e409defa6beb8f1311ef98">Electux::App::Model::ModelSerial::Parity</a>, <a class="el" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a11a755d598c0c417f9a36758c3da7481">Electux::App::Model::ModelSerial::Stop</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00183">store()</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::Timer</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::TimerEnable</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::Toggle</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, <a class="el" href="../../d4/d6e/model__log_8cc_source.html#l00051">Electux::App::Model::ModelLog::toString()</a>, and <a class="el" href="../../d2/d12/model__serial_8cc_source.html#l00060">Electux::App::Model::ModelSerial::toString()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00043">ConfigManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00069">ConfigManager()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_afa189abd981623859e7ce2a015ffdb84_cgraph.png" border="0" usemap="#ad2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_afa189abd981623859e7ce2a015ffdb84_cgraph" alt=""/></div>
 <map name="ad2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_afa189abd981623859e7ce2a015ffdb84_cgraph" id="ad2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_afa189abd981623859e7ce2a015ffdb84_cgraph">
 <area shape="rect" title="Stores default configuration." alt="" coords="5,126,228,181"/>
-<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="289,5,439,45"/>
+<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="289,5,439,45"/>
 <area shape="poly" title=" " alt="" coords="157,124,212,89,275,55,290,48,293,53,277,60,215,94,160,128"/>
 <area shape="rect" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="279,69,449,109"/>
 <area shape="poly" title=" " alt="" coords="222,123,273,110,274,115,224,128"/>
-<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a" title="Converts Key enum to." alt="" coords="276,133,452,173"/>
+<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="276,133,452,173"/>
 <area shape="poly" title=" " alt="" coords="228,151,262,151,262,156,228,156"/>
-<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="288,197,440,237"/>
+<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ad7b7772f284051c33bfd3dce106eb986" title="Converts ModelLogKey enum to string." alt="" coords="288,197,440,237"/>
 <area shape="poly" title=" " alt="" coords="224,178,275,192,274,197,222,183"/>
-<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="281,261,447,301"/>
+<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69" title="Converts Key enum to." alt="" coords="281,261,447,301"/>
 <area shape="poly" title=" " alt="" coords="160,179,215,213,277,247,293,254,290,259,275,252,212,218,157,183"/>
 </map>
 </div>
@@ -412,10 +409,10 @@ Here is the caller graph for this function:</div>
 <p>Gets control configuration. </p>
 <dl class="section return"><dt>Returns</dt><dd>Control configuration </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00088">88</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>{</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>;</div>
-<div class="line"><span class="lineno">   91</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00114">114</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>{</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>;</div>
+<div class="line"><span class="lineno">  117</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00094">m_controlConfig</a>.</p>
 
@@ -451,10 +448,10 @@ Here is the caller graph for this function:</div>
 <p>Gets log configuration. </p>
 <dl class="section return"><dt>Returns</dt><dd>Log configuration </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00098">98</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   99</span>{</div>
-<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>;</div>
-<div class="line"><span class="lineno">  101</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00124">124</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>;</div>
+<div class="line"><span class="lineno">  127</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00096">m_logConfig</a>.</p>
 
@@ -490,10 +487,10 @@ Here is the caller graph for this function:</div>
 <p>Gets serial configuration. </p>
 <dl class="section return"><dt>Returns</dt><dd>Serial configuration </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00093">93</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   94</span>{</div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>; </div>
-<div class="line"><span class="lineno">   96</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00119">119</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>{</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>; </div>
+<div class="line"><span class="lineno">  122</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00095">m_serialConfig</a>.</p>
 
@@ -539,86 +536,80 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#aa434d7db6de65ca688ad3ff8bb93248e">Electux::App::Config::IConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00103">103</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  104</span>{</div>
-<div class="line"><span class="lineno">  105</span>    std::ifstream file(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
-<div class="line"><span class="lineno">  106</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Loading configuration...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">if</span> (!file.is_open())</div>
-<div class="line"><span class="lineno">  109</span>    {</div>
-<div class="line"><span class="lineno">  110</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  112</span>    }</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>    std::string line;</div>
-<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">while</span> (std::getline(file, line))</div>
-<div class="line"><span class="lineno">  116</span>    {</div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">if</span> (line.empty() || line[0] == configCommentChar)</div>
-<div class="line"><span class="lineno">  118</span>        {</div>
-<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  120</span>        }</div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>        std::istringstream iss(line);</div>
-<div class="line"><span class="lineno">  123</span>        std::string key, value;</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">if</span> (std::getline(iss, key, configAssignDelimiter) &amp;&amp; std::getline(iss, value))</div>
-<div class="line"><span class="lineno">  126</span>        {</div>
-<div class="line"><span class="lineno">  127</span>            key.erase(0, key.find_first_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>));</div>
-<div class="line"><span class="lineno">  128</span>            key.erase(key.find_last_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>) + 1);</div>
-<div class="line"><span class="lineno">  129</span>            value.erase(0, value.find_first_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>));</div>
-<div class="line"><span class="lineno">  130</span>            value.erase(value.find_last_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>) + 1);</div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a13ec4162a88de88366319ea309ab47d4">validateKey</a>(key))</div>
-<div class="line"><span class="lineno">  133</span>            {</div>
-<div class="line"><span class="lineno">  134</span>                <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(key, value);</div>
-<div class="line"><span class="lineno">  135</span>            }</div>
-<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a65e8a271f90355b68f2149acb148d290">validateKey</a>(key))</div>
-<div class="line"><span class="lineno">  137</span>            {</div>
-<div class="line"><span class="lineno">  138</span>                <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(key, value);</div>
-<div class="line"><span class="lineno">  139</span>            }</div>
-<div class="line"><span class="lineno">  140</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#afeeac10bcd108a2ebdc81c3c4490570c">validateKey</a>(key))</div>
-<div class="line"><span class="lineno">  141</span>            {</div>
-<div class="line"><span class="lineno">  142</span>                <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8">add</a>(key, value);</div>
-<div class="line"><span class="lineno">  143</span>            }</div>
-<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  145</span>            {</div>
-<div class="line"><span class="lineno">  146</span>                std::cerr &lt;&lt; <span class="stringliteral">&quot;Warning: Unknown configuration key: &quot;</span> &lt;&lt; key &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  147</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  148</span>            }</div>
-<div class="line"><span class="lineno">  149</span>        }</div>
-<div class="line"><span class="lineno">  150</span>    }</div>
-<div class="line"><span class="lineno">  151</span> </div>
-<div class="line"><span class="lineno">  152</span>    file.close();</div>
-<div class="line"><span class="lineno">  153</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Load configuration done.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  155</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_afeeac10bcd108a2ebdc81c3c4490570c"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#afeeac10bcd108a2ebdc81c3c4490570c">Electux::App::Model::ModelControl::validateKey</a></div><div class="ttdeci">bool validateKey(const std::string &amp;key) const</div><div class="ttdoc">Validates if key is valid control configuration key.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/dea/model__control_8cc_source.html#l00070">model_control.cc:70</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelLog_html_a65e8a271f90355b68f2149acb148d290"><div class="ttname"><a href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a65e8a271f90355b68f2149acb148d290">Electux::App::Model::ModelLog::validateKey</a></div><div class="ttdeci">bool validateKey(const std::string &amp;key) const</div><div class="ttdoc">Validates if key is valid serial configuration key.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d6e/model__log_8cc_source.html#l00060">model_log.cc:60</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a13ec4162a88de88366319ea309ab47d4"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a13ec4162a88de88366319ea309ab47d4">Electux::App::Model::ModelSerial::validateKey</a></div><div class="ttdeci">bool validateKey(const std::string &amp;key) const</div><div class="ttdoc">Validates if key is valid serial configuration key.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d12/model__serial_8cc_source.html#l00073">model_serial.cc:73</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00129">129</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>{</div>
+<div class="line"><span class="lineno">  131</span>    std::ifstream file(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
+<div class="line"><span class="lineno">  132</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Loading configuration...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">if</span> (!file.is_open())</div>
+<div class="line"><span class="lineno">  135</span>    {</div>
+<div class="line"><span class="lineno">  136</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  138</span>    }</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>    std::string line;</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">while</span> (std::getline(file, line))</div>
+<div class="line"><span class="lineno">  142</span>    {</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">if</span> (line.empty() || line[0] == cConfigCommentChar)</div>
+<div class="line"><span class="lineno">  144</span>        {</div>
+<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  146</span>        }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>        std::istringstream iss(line);</div>
+<div class="line"><span class="lineno">  149</span>        std::string key, value;</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">if</span> (std::getline(iss, key, cConfigAssignDelimiter) &amp;&amp; std::getline(iss, value))</div>
+<div class="line"><span class="lineno">  152</span>        {</div>
+<div class="line"><span class="lineno">  153</span>            key.erase(0, key.find_first_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>));</div>
+<div class="line"><span class="lineno">  154</span>            key.erase(key.find_last_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>) + 1);</div>
+<div class="line"><span class="lineno">  155</span>            value.erase(0, value.find_first_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>));</div>
+<div class="line"><span class="lineno">  156</span>            value.erase(value.find_last_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>) + 1);</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4bf60654b3051f6cc8b5c2150a626fe6">validateKey</a>(key))</div>
+<div class="line"><span class="lineno">  159</span>            {</div>
+<div class="line"><span class="lineno">  160</span>                <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(key, value);</div>
+<div class="line"><span class="lineno">  161</span>            }</div>
+<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a199273291d597c647277deeed99bfb80">validateKey</a>(key))</div>
+<div class="line"><span class="lineno">  163</span>            {</div>
+<div class="line"><span class="lineno">  164</span>                <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(key, value);</div>
+<div class="line"><span class="lineno">  165</span>            }</div>
+<div class="line"><span class="lineno">  166</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a23cc25f9dc86d32165b47abd1edfc12a">validateKey</a>(key))</div>
+<div class="line"><span class="lineno">  167</span>            {</div>
+<div class="line"><span class="lineno">  168</span>                <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41">add</a>(key, value);</div>
+<div class="line"><span class="lineno">  169</span>            }</div>
+<div class="line"><span class="lineno">  170</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  171</span>            {</div>
+<div class="line"><span class="lineno">  172</span>                std::cerr &lt;&lt; <span class="stringliteral">&quot;Warning: Unknown configuration key: &quot;</span> &lt;&lt; key &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  173</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  174</span>            }</div>
+<div class="line"><span class="lineno">  175</span>        }</div>
+<div class="line"><span class="lineno">  176</span>    }</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>    file.close();</div>
+<div class="line"><span class="lineno">  179</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Load configuration done.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  181</span>}</div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a23cc25f9dc86d32165b47abd1edfc12a"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a23cc25f9dc86d32165b47abd1edfc12a">Electux::App::Model::ModelControl::validateKey</a></div><div class="ttdeci">bool validateKey(const std::string_view &amp;key) const</div><div class="ttdoc">Validates if key is valid control configuration key.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/dea/model__control_8cc_source.html#l00071">model_control.cc:71</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelLog_html_a199273291d597c647277deeed99bfb80"><div class="ttname"><a href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a199273291d597c647277deeed99bfb80">Electux::App::Model::ModelLog::validateKey</a></div><div class="ttdeci">bool validateKey(const std::string_view &amp;key) const</div><div class="ttdoc">Validates if key is valid serial configuration key.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d6e/model__log_8cc_source.html#l00061">model_log.cc:61</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelSerial_html_a4bf60654b3051f6cc8b5c2150a626fe6"><div class="ttname"><a href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4bf60654b3051f6cc8b5c2150a626fe6">Electux::App::Model::ModelSerial::validateKey</a></div><div class="ttdeci">bool validateKey(const std::string_view &amp;key) const</div><div class="ttdoc">Validates if key is valid serial configuration key.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d12/model__serial_8cc_source.html#l00074">model_serial.cc:74</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00023">Electux::App::Model::Model::add()</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00094">m_controlConfig</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00093">m_fileName</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00096">m_logConfig</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00095">m_serialConfig</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00070">Electux::App::Model::ModelControl::validateKey()</a>, <a class="el" href="../../d4/d6e/model__log_8cc_source.html#l00060">Electux::App::Model::ModelLog::validateKey()</a>, and <a class="el" href="../../d2/d12/model__serial_8cc_source.html#l00073">Electux::App::Model::ModelSerial::validateKey()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00023">Electux::App::Model::Model::add()</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00094">m_controlConfig</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00093">m_fileName</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00096">m_logConfig</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00095">m_serialConfig</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00071">Electux::App::Model::ModelControl::validateKey()</a>, <a class="el" href="../../d4/d6e/model__log_8cc_source.html#l00061">Electux::App::Model::ModelLog::validateKey()</a>, and <a class="el" href="../../d2/d12/model__serial_8cc_source.html#l00074">Electux::App::Model::ModelSerial::validateKey()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00043">ConfigManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00069">ConfigManager()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_a6a85e1eb118a61f4813500d9fb42e762_cgraph.png" border="0" usemap="#ad2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_a6a85e1eb118a61f4813500d9fb42e762_cgraph" alt=""/></div>
 <map name="ad2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_a6a85e1eb118a61f4813500d9fb42e762_cgraph" id="ad2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager_a6a85e1eb118a61f4813500d9fb42e762_cgraph">
 <area shape="rect" title="Loads configuration." alt="" coords="5,101,169,141"/>
-<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="243,5,394,45"/>
+<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="243,5,394,45"/>
 <area shape="poly" title=" " alt="" coords="124,99,216,55,236,47,238,52,218,60,126,104"/>
-<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#afeeac10bcd108a2ebdc81c3c4490570c" title="Validates if key is valid control configuration key." alt="" coords="217,69,420,109"/>
+<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a23cc25f9dc86d32165b47abd1edfc12a" title="Validates if key is valid control configuration key." alt="" coords="217,69,420,109"/>
 <area shape="poly" title=" " alt="" coords="170,107,203,103,204,108,170,113"/>
-<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a65e8a271f90355b68f2149acb148d290" title="Validates if key is valid serial configuration key." alt="" coords="229,133,408,173"/>
+<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a199273291d597c647277deeed99bfb80" title="Validates if key is valid serial configuration key." alt="" coords="229,133,408,173"/>
 <area shape="poly" title=" " alt="" coords="170,130,216,136,215,142,170,135"/>
-<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a13ec4162a88de88366319ea309ab47d4" title="Validates if key is valid serial configuration key." alt="" coords="223,197,415,237"/>
+<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a4bf60654b3051f6cc8b5c2150a626fe6" title="Validates if key is valid serial configuration key." alt="" coords="223,197,415,237"/>
 <area shape="poly" title=" " alt="" coords="126,139,218,183,238,190,236,195,216,188,124,144"/>
-<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a" title="Converts Key enum to." alt="" coords="468,69,644,109"/>
-<area shape="poly" title=" " alt="" coords="420,87,454,87,454,92,420,92"/>
-<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="480,133,632,173"/>
-<area shape="poly" title=" " alt="" coords="408,151,466,151,466,156,408,156"/>
-<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="473,197,639,237"/>
-<area shape="poly" title=" " alt="" coords="415,215,459,215,459,220,415,220"/>
 </map>
 </div>
 <div class="dynheader">
@@ -658,10 +649,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00073">73</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
-<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a> = config;</div>
-<div class="line"><span class="lineno">   76</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00099">99</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a> = config;</div>
+<div class="line"><span class="lineno">  102</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00094">m_controlConfig</a>.</p>
 
@@ -707,10 +698,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00083">83</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>{</div>
-<div class="line"><span class="lineno">   85</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a> = config;</div>
-<div class="line"><span class="lineno">   86</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00109">109</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>{</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a> = config;</div>
+<div class="line"><span class="lineno">  112</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00096">m_logConfig</a>.</p>
 
@@ -756,10 +747,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00078">78</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>{</div>
-<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a> = config;</div>
-<div class="line"><span class="lineno">   81</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00104">104</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a> = config;</div>
+<div class="line"><span class="lineno">  107</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00095">m_serialConfig</a>.</p>
 
@@ -809,37 +800,37 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="../../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#a5f5eea781713845083e097780c29eefd">Electux::App::Config::IConfig</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00157">157</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  158</span>{</div>
-<div class="line"><span class="lineno">  159</span>    std::ofstream file(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
-<div class="line"><span class="lineno">  160</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Storing configuration...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  161</span> </div>
-<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (!file.is_open())</div>
-<div class="line"><span class="lineno">  163</span>    {</div>
-<div class="line"><span class="lineno">  164</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  166</span>    }</div>
-<div class="line"><span class="lineno">  167</span> </div>
-<div class="line"><span class="lineno">  168</span>    <span class="keyword">auto</span> writeModel = [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; model)</div>
-<div class="line"><span class="lineno">  169</span>    {</div>
-<div class="line"><span class="lineno">  170</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, value] : model.getAllEntries())</div>
-<div class="line"><span class="lineno">  171</span>        {</div>
-<div class="line"><span class="lineno">  172</span>            file &lt;&lt; key &lt;&lt; configAssignDelimiter &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  173</span>        }</div>
-<div class="line"><span class="lineno">  174</span>    };</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>    writeModel(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>);</div>
-<div class="line"><span class="lineno">  177</span>    writeModel(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>);</div>
-<div class="line"><span class="lineno">  178</span>    writeModel(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>);</div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>    file.close();</div>
-<div class="line"><span class="lineno">  181</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Store configuration done.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  183</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00183">183</a> of file <a class="el" href="../../da/dd8/config__manager_8cc_source.html">config_manager.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>{</div>
+<div class="line"><span class="lineno">  185</span>    std::ofstream file(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a>);</div>
+<div class="line"><span class="lineno">  186</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Storing configuration...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">if</span> (!file.is_open())</div>
+<div class="line"><span class="lineno">  189</span>    {</div>
+<div class="line"><span class="lineno">  190</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unable to open file: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40">m_fileName</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  191</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  192</span>    }</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>    <span class="keyword">auto</span> writeModel = [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; model)</div>
+<div class="line"><span class="lineno">  195</span>    {</div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [key, value] : model.getAllEntries())</div>
+<div class="line"><span class="lineno">  197</span>        {</div>
+<div class="line"><span class="lineno">  198</span>            file &lt;&lt; key &lt;&lt; cConfigAssignDelimiter &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  199</span>        }</div>
+<div class="line"><span class="lineno">  200</span>    };</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>    writeModel(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d">m_controlConfig</a>);</div>
+<div class="line"><span class="lineno">  203</span>    writeModel(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92">m_serialConfig</a>);</div>
+<div class="line"><span class="lineno">  204</span>    writeModel(<a class="code hl_variable" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2">m_logConfig</a>);</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>    file.close();</div>
+<div class="line"><span class="lineno">  207</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Store configuration done.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  209</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00094">m_controlConfig</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00093">m_fileName</a>, <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00096">m_logConfig</a>, and <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00095">m_serialConfig</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00185">defaultConfigStore()</a>, and <a class="el" href="../../d9/de1/application__slots_8cc_source.html#l00124">Electux::App::EntryApplication::onSetupChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00211">defaultConfigStore()</a>, and <a class="el" href="../../d9/de1/application__slots_8cc_source.html#l00124">Electux::App::EntryApplication::onSetupChanged()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -885,7 +876,7 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00094">94</a> of file <a class="el" href="../../d0/d8b/config__manager_8h_source.html">config_manager.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   94</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00185">defaultConfigStore()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00088">getControlConfig()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00103">load()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00073">setControlConfig()</a>, and <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00157">store()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00211">defaultConfigStore()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00114">getControlConfig()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00129">load()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00099">setControlConfig()</a>, and <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00183">store()</a>.</p>
 
 </div>
 </div>
@@ -914,7 +905,7 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00093">93</a> of file <a class="el" href="../../d0/d8b/config__manager_8h_source.html">config_manager.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   93</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00043">ConfigManager()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00103">load()</a>, and <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00157">store()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00069">ConfigManager()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00129">load()</a>, and <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00183">store()</a>.</p>
 
 </div>
 </div>
@@ -941,7 +932,7 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00096">96</a> of file <a class="el" href="../../d0/d8b/config__manager_8h_source.html">config_manager.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   96</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00185">defaultConfigStore()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00098">getLogConfig()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00103">load()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00083">setLogConfig()</a>, and <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00157">store()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00211">defaultConfigStore()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00124">getLogConfig()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00129">load()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00109">setLogConfig()</a>, and <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00183">store()</a>.</p>
 
 </div>
 </div>
@@ -968,7 +959,7 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="../../d0/d8b/config__manager_8h_source.html#l00095">95</a> of file <a class="el" href="../../d0/d8b/config__manager_8h_source.html">config_manager.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   95</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00185">defaultConfigStore()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00093">getSerialConfig()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00103">load()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00078">setSerialConfig()</a>, and <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00157">store()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00211">defaultConfigStore()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00119">getSerialConfig()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00129">load()</a>, <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00104">setSerialConfig()</a>, and <a class="el" href="../../da/dd8/config__manager_8cc_source.html#l00183">store()</a>.</p>
 
 </div>
 </div>
@@ -982,7 +973,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d9/d49/namespaceElectux_1_1App_1_1Config.html">Config</a></li><li class="navelem"><a class="el" href="../../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html">ConfigManager</a></li>
-    <li class="footer">Generated on Fri Jan 30 2026 22:38:53 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Feb 5 2026 21:59:20 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

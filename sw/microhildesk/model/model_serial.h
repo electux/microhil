@@ -18,7 +18,7 @@
  */
 #pragma once
 
-#include "model.h"
+#include <model/model.h>
 
 namespace Electux::App::Model
 {
@@ -50,13 +50,13 @@ namespace Electux::App::Model
         /// @brief Converts Key enum to 
         /// @param key Represents ModelSerialKey enum value
         /// @return string representation of ModelSerialKey enum
-        std::string toString(const ModelSerialKey &key) const;
+        std::string_view toString(const ModelSerialKey &key) const;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Validates if key is valid serial configuration key
         /// @param key Represents string key to be validated
         /// @return status true if key is valid else false
-        bool validateKey(const std::string &key) const;
+        bool validateKey(const std::string_view &key) const;
     };
 };
 

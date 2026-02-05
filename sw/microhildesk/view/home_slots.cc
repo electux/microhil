@@ -20,113 +20,134 @@
 #include <string_view>
 #include <ranges>
 #include <numeric>
-#include "home.h"
-#include "../params/channel_params.h"
+#include <view/home.h>
+#include <params/channel_params.h>
+
+namespace {
+    /////////////////////////////////////////////////////////////////////
+    /// @brief Common string constants and character delimiters
+    constexpr std::string_view cEmptyString = "";
+    constexpr std::string_view cSpaceString = " ";
+    constexpr char cSpaceDelimiter = ' ';
+
+    /////////////////////////////////////////////////////////////////////
+    /// @brief String representations for boolean values
+    constexpr std::string_view cTrue = "true";
+    constexpr std::string_view cFalse = "false";
+
+    /////////////////////////////////////////////////////////////////////
+    /// @brief Converts a boolean value to its string representation
+    /// @param value Boolean value to convert
+    /// @return "true" if value is true, "false" otherwise
+    constexpr std::string_view boolToString(bool value)
+    {
+        return value ? cTrue : cFalse;
+    }
+}
 
 using namespace Electux::App::View;
 using namespace Electux::App::Params::Channel;
 
 void AppHome::updateUiData()
 {
-    for (unsigned int i = 0; i < numOfChannels; i++)
+    const auto& config = m_controlSetup.m_controlConfig;
+    const auto controlEnableKey = config.toString(ModelControl::ModelControlKey::Enable);
+    const auto controlModeKey = config.toString(ModelControl::ModelControlKey::Mode);
+    const auto controlToggleKey = config.toString(ModelControl::ModelControlKey::Toggle);
+    const auto controlTimerKey = config.toString(ModelControl::ModelControlKey::Timer);
+    const auto controlTimerEnableKey = config.toString(ModelControl::ModelControlKey::TimerEnable);
+
+    for (unsigned int i = 0; i < cNumOfChannels; i++)
     {
-        auto controlEnableKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Enable);
-        auto controlEnableValue = extract_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlEnableKey), i);
-        m_enableChannels[i].set_active(controlEnableValue == "true");
-        auto controlModeKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Mode);
-        auto controlModeValue = std::stoi(extract_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlModeKey).data(), i));
+        auto controlEnableValue = extract_config(controlEnableKey, i);
+        m_enableChannels[i].set_active(controlEnableValue == std::string(cTrue));
+        auto controlModeValue = std::stoi(extract_config(controlModeKey, i));
         m_selectControlChannels[i].set_active(controlModeValue);
-        auto controlToggleKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Toggle);
-        auto controlToggleValue = extract_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlToggleKey), i);
-        m_toggleChannels[i].set_active(controlToggleValue == "true");
-        auto controlTimerKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Timer);
-        auto controlTimerValue = std::stoi(extract_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlTimerKey), i));
+        auto controlToggleValue = extract_config(controlToggleKey, i);
+        m_toggleChannels[i].set_active(controlToggleValue == std::string(cTrue));
+        auto controlTimerValue = std::stoi(extract_config(controlTimerKey, i));
         m_spinTimerChannels[i].set_value(controlTimerValue);
-        auto controlTimerEnableKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::TimerEnable);
-        auto controlTimerEnableValue = extract_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlTimerEnableKey), i);
-        m_toggleTimerChannels[i].set_active(controlTimerEnableValue == "true");
+        auto controlTimerEnableValue = extract_config(controlTimerEnableKey, i);
+        m_toggleTimerChannels[i].set_active(controlTimerEnableValue == std::string(cTrue));
     }
 }
 
 void AppHome::getUiData()
 {
-    for (unsigned int i = 0; i < numOfChannels; i++)
+    const auto& config = m_controlSetup.m_controlConfig;
+    const auto controlEnableKey = config.toString(ModelControl::ModelControlKey::Enable);
+    const auto controlModeKey = config.toString(ModelControl::ModelControlKey::Mode);
+    const auto controlToggleKey = config.toString(ModelControl::ModelControlKey::Toggle);
+    const auto controlTimerKey = config.toString(ModelControl::ModelControlKey::Timer);
+    const auto controlTimerEnableKey = config.toString(ModelControl::ModelControlKey::TimerEnable);
+
+    for (unsigned int i = 0; i < cNumOfChannels; i++)
     {
-        auto controlEnableKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Enable);
-        auto controlEnableCheckValue = m_enableChannels[i].get_active() ? "true" : "false";
-        auto controlEnableValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlEnableKey), i, controlEnableCheckValue);
-        m_controlSetup.m_controlConfig.update(controlEnableKey, controlEnableValue);
-        auto controlModeKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Mode);
-        auto controlModeComboValue = m_selectControlChannels[i].get_active_row_number();
-        auto controlModeValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlModeKey), i, std::to_string(controlModeComboValue));
-        m_controlSetup.m_controlConfig.update(controlModeKey, controlModeValue);
-        auto controlToggleKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Toggle);
-        auto controlToggleButtonValue = m_toggleChannels[i].get_active() ? "true" : "false";
-        auto controlToggleValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlToggleKey), i, controlToggleButtonValue);
-        m_controlSetup.m_controlConfig.update(controlToggleKey, controlToggleValue);
-        auto controlTimerKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Timer);
-        auto controlTimerSpinValue = m_spinTimerChannels[i].get_value_as_int();
-        auto controlTimerValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlTimerKey), i, std::to_string(controlTimerSpinValue));
-        m_controlSetup.m_controlConfig.update(controlTimerKey, controlTimerValue);
-        auto controlTimerEnableKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::TimerEnable);
-        auto controlTimerEnableButtonValue = m_toggleTimerChannels[i].get_active() ? "true" : "false";
-        auto controlTimerEnableValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlTimerEnableKey), i, controlTimerEnableButtonValue);
-        m_controlSetup.m_controlConfig.update(controlTimerEnableKey, controlTimerEnableValue);
+        auto controlEnableCheckValue = boolToString(m_enableChannels[i].get_active());
+        update_control_config(controlEnableKey, i, controlEnableCheckValue);   
+        auto controlModeComboValue = std::to_string(m_selectControlChannels[i].get_active_row_number());
+        update_control_config(controlModeKey, i, controlModeComboValue);
+        auto controlToggleButtonValue = boolToString(m_toggleChannels[i].get_active());
+        update_control_config(controlToggleKey, i, controlToggleButtonValue);
+        auto controlTimerSpinValue = std::to_string(m_spinTimerChannels[i].get_value_as_int());
+        update_control_config(controlTimerKey, i, controlTimerSpinValue);
+        auto controlTimerEnableButtonValue = boolToString(m_toggleTimerChannels[i].get_active());
+        update_control_config(controlTimerEnableKey, i, controlTimerEnableButtonValue);
     }
 }
 
 void AppHome::onChannelEnableChanged()
 {
-    for (unsigned int i = 0; i < numOfChannels; i++)
+    const auto controlEnableKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Enable);
+
+    for (unsigned int i = 0; i < cNumOfChannels; i++)
     {
-        auto controlEnableKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Enable);
-        auto controlEnableCheckValue = m_enableChannels[i].get_active() ? "true" : "false";
-        auto controlEnableValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlEnableKey), i, controlEnableCheckValue);
-        m_controlSetup.m_controlConfig.update(controlEnableKey, controlEnableValue);
+        auto controlEnableCheckValue = boolToString(m_enableChannels[i].get_active());
+        update_control_config(controlEnableKey, i, controlEnableCheckValue);
     }
 }
 
 void AppHome::onChannelModeChanged()
 {
-    for (unsigned int i = 0; i < numOfChannels; i++)
+    const auto controlModeKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Mode);
+
+    for (unsigned int i = 0; i < cNumOfChannels; i++)
     {
-        auto controlModeKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Mode);
-        auto controlModeComboValue = m_selectControlChannels[i].get_active_row_number();
-        auto controlModeValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlModeKey), i, std::to_string(controlModeComboValue));
-        m_controlSetup.m_controlConfig.update(controlModeKey, controlModeValue);
+        auto controlModeComboValue = std::to_string(m_selectControlChannels[i].get_active_row_number());
+        update_control_config(controlModeKey, i, controlModeComboValue);
     }
 }
 
 void AppHome::onChannelToggleChanged()
 {
-    for (unsigned int i = 0; i < numOfChannels; i++)
+    const auto controlToggleKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Toggle);
+
+    for (unsigned int i = 0; i < cNumOfChannels; i++)
     {
-        auto controlToggleKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Toggle);
-        auto controlToggleButtonValue = m_toggleChannels[i].get_active() ? "true" : "false";
-        auto controlToggleValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlToggleKey), i, controlToggleButtonValue);
-        m_controlSetup.m_controlConfig.update(controlToggleKey, controlToggleValue);
+        auto controlToggleButtonValue = boolToString(m_toggleChannels[i].get_active());
+        update_control_config(controlToggleKey, i, controlToggleButtonValue);
     }
 }
 
 void AppHome::onChannelTimerChanged()
 {
-    for (unsigned int i = 0; i < numOfChannels; i++)
+    const auto controlTimerKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Timer);
+
+    for (unsigned int i = 0; i < cNumOfChannels; i++)
     {
-        auto controlTimerKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::Timer);
-        auto controlTimerSpinValue = m_spinTimerChannels[i].get_value_as_int();
-        auto controlTimerValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlTimerKey), i, std::to_string(controlTimerSpinValue));
-        m_controlSetup.m_controlConfig.update(controlTimerKey, controlTimerValue);
+        auto controlTimerSpinValue = std::to_string(m_spinTimerChannels[i].get_value_as_int());
+        update_control_config(controlTimerKey, i, controlTimerSpinValue);
     }
 }
 
 void AppHome::onChannelTimerToogleChanged()
 {
-    for (unsigned int i = 0; i < numOfChannels; i++)
+    const auto controlTimerEnableKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::TimerEnable);
+
+    for (unsigned int i = 0; i < cNumOfChannels; i++)
     {
-        auto controlTimerEnableKey = m_controlSetup.m_controlConfig.toString(ModelControl::ModelControlKey::TimerEnable);
-        auto controlTimerEnableButtonValue = m_toggleTimerChannels[i].get_active() ? "true" : "false";
-        auto controlTimerEnableValue = update_param_value_by_index(m_controlSetup.m_controlConfig.getEntity(controlTimerEnableKey), i, controlTimerEnableButtonValue);
-        m_controlSetup.m_controlConfig.update(controlTimerEnableKey, controlTimerEnableValue);
+        auto controlTimerEnableButtonValue = boolToString(m_toggleTimerChannels[i].get_active());
+        update_control_config(controlTimerEnableKey, i, controlTimerEnableButtonValue);
     }
 }
 
@@ -135,10 +156,13 @@ SigSettings AppHome::controlChanged()
     return m_controlSignal;
 }
 
-std::string AppHome::extract_param_value_by_index(const std::string &input, size_t index)
+std::string AppHome::extract_param_value_by_index(const std::string_view &input, size_t index)
 {
-    auto words = input | std::views::split(' ') | std::views::transform(
-        [](auto &&rng) {return std::string_view(&*rng.begin(), std::ranges::distance(rng));}
+    auto words = input | std::views::split(cSpaceDelimiter) | std::views::transform(
+        [](auto &&rng)
+        {
+            return std::string_view(&*rng.begin(), std::ranges::distance(rng));
+        }
     );
 
     auto it = words.begin();
@@ -147,13 +171,16 @@ std::string AppHome::extract_param_value_by_index(const std::string &input, size
         ++it;
     }
 
-    return (it != words.end()) ? std::string(*it) : "";
+    return (it != words.end()) ? std::string(*it) : std::string(cEmptyString);
 }
 
-std::string AppHome::update_param_value_by_index(const std::string &input, size_t index, const std::string &newValue)
+std::string AppHome::update_param_value_by_index(const std::string_view &input, size_t index, const std::string_view &newValue)
 {
-    auto view = input | std::views::split(' ') | std::views::transform(
-        [](auto &&range) {return std::string(range.begin(), range.end());}
+    auto view = input | std::views::split(cSpaceDelimiter) | std::views::transform(
+        [](auto &&range)
+        {
+            return std::string(range.begin(), range.end());
+        }
     );
 
     std::vector<std::string> words{view.begin(), view.end()};
@@ -165,7 +192,7 @@ std::string AppHome::update_param_value_by_index(const std::string &input, size_
 
     if (words.empty())
     {
-        return "";
+        return std::string(cEmptyString);
     }
 
     return std::accumulate(
@@ -174,7 +201,20 @@ std::string AppHome::update_param_value_by_index(const std::string &input, size_
         words[0],
         [](std::string a, std::string b)
         {
-            return std::move(a) + " " + b;
+            return std::move(a) + std::string(cSpaceString) + b;
         }
     );
+}
+
+void AppHome::update_control_config(const std::string_view &key, size_t index, const std::string_view &value)
+{
+    auto controlEntity = m_controlSetup.m_controlConfig.getEntity(key);
+    auto controlValue = update_param_value_by_index(controlEntity, index, value);
+    m_controlSetup.m_controlConfig.update(key, controlValue);
+}
+
+std::string AppHome::extract_config(const std::string_view &key, size_t index)
+{
+    auto controlEntity = m_controlSetup.m_controlConfig.getEntity(key);
+    return extract_param_value_by_index(controlEntity, index);
 }

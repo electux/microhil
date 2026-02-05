@@ -23,58 +23,48 @@
 namespace Electux::App::Params::SerialComConstants {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Serial communication parameters
-    ///   comParamBaudIndex - Index for Baud Rate parameter
-    ///   comParamDataIndex - Index for Data Bits parameter
-    ///   comParamParityIndex - Index for Parity parameter
-    ///   comParamStopIndex - Index for Stop Bits parameter
-    ///   comParamFlowControlIndex - Index for Flow Control parameter
-    ///   comBaudRates - Supported Baud Rates
-    ///   comDataBits - Supported Data Bits
-    ///   comParities - Supported Parities
-    ///   comStopBits - Supported Stop Bits
-    ///   comFlowControls - Supported Flow Controls
-    ///   comBaudXXX - Constant index for each Baud Rate
-    ///   comDataBitsX - Constant index for each Data Bits option
-    ///   comParityX - Constant index for each Parity option
-    ///   comStopBitsX - Constant index for each Stop Bits option
-    ///   comFlowControlX - Constant index for each Flow Control option
-    ///   comInvalidParameter - Constant for invalid parameter
-    constexpr const unsigned int comParamBaudIndex{0};
-    constexpr const unsigned int comParamDataIndex{1};
-    constexpr const unsigned int comParamParityIndex{2};
-    constexpr const unsigned int comParamStopIndex{3};
-    constexpr const unsigned int comParamFlowControlIndex{4};
-    constexpr std::string_view comBaudRates[]{
+    ///   cComBaudRates - Supported Baud Rates
+    ///   cComDataBits - Supported Data Bits
+    ///   cComParities - Supported Parities
+    ///   cComStopBits - Supported Stop Bits
+    ///   cComFlowControls - Supported Flow Controls
+    ///   cComBaudXXX - Constant index for each Baud Rate
+    ///   cComDataBitsX - Constant index for each Data Bits option
+    ///   cComParityX - Constant index for each Parity option
+    ///   cComStopBitsX - Constant index for each Stop Bits option
+    ///   cComFlowControlX - Constant index for each Flow Control option
+    ///   cComInvalidParameter - Constant for invalid parameter
+    constexpr std::string_view cComBaudRates[]{
         "110", "300", "600", "1200", "2400", "4800", "9600",
         "19200", "38400", "57600", "115200", "230400"
     };
-    constexpr std::string_view comDataBits[]{"5", "6", "7", "8"};
-    constexpr std::string_view comParities[]{"Even", "Odd", "None"};
-    constexpr std::string_view comStopBits[]{"1", "2"};
-    constexpr std::string_view comFlowControls[]{"None", "Hardware", "Software"};
-    constexpr const unsigned int comBaud110 = 0;
-    constexpr const unsigned int comBaud300 = 1;
-    constexpr const unsigned int comBaud600 = 2;
-    constexpr const unsigned int comBaud1200 = 3;
-    constexpr const unsigned int comBaud2400 = 4;
-    constexpr const unsigned int comBaud4800 = 5;
-    constexpr const unsigned int comBaud9600 = 6;
-    constexpr const unsigned int comBaud19200 = 7;
-    constexpr const unsigned int comBaud38400 = 8;
-    constexpr const unsigned int comBaud57600 = 9;
-    constexpr const unsigned int comBaud115200 = 10;
-    constexpr const unsigned int comBaud230400 = 11;
-    constexpr const unsigned int comDataBits5 = 0;
-    constexpr const unsigned int comDataBits6 = 1;
-    constexpr const unsigned int comDataBits7 = 2;
-    constexpr const unsigned int comDataBits8 = 3;
-    constexpr const unsigned int comParityEven = 0;
-    constexpr const unsigned int comParityOdd = 1;
-    constexpr const unsigned int comParityNone = 2;
-    constexpr const unsigned int comStopBits1 = 0;
-    constexpr const unsigned int comStopBits2 = 1;
-    constexpr const unsigned int comFlowControlNone = 0;
-    constexpr const unsigned int comFlowControlHw = 1;
-    constexpr const unsigned int comFlowControlSw = 2;
-    constexpr const unsigned int comInvalidParameter = 127;
+    constexpr std::string_view cComDataBits[]{"5", "6", "7", "8"};
+    constexpr std::string_view cComParities[]{"Even", "Odd", "None"};
+    constexpr std::string_view cComStopBits[]{"1", "2"};
+    constexpr std::string_view cComFlowControls[]{"None", "Hardware", "Software"};
+    constexpr const unsigned int cComBaud110 = 0;
+    constexpr const unsigned int cComBaud300 = 1;
+    constexpr const unsigned int cComBaud600 = 2;
+    constexpr const unsigned int cComBaud1200 = 3;
+    constexpr const unsigned int cComBaud2400 = 4;
+    constexpr const unsigned int cComBaud4800 = 5;
+    constexpr const unsigned int cComBaud9600 = 6;
+    constexpr const unsigned int cComBaud19200 = 7;
+    constexpr const unsigned int cComBaud38400 = 8;
+    constexpr const unsigned int cComBaud57600 = 9;
+    constexpr const unsigned int cComBaud115200 = 10;
+    constexpr const unsigned int cComBaud230400 = 11;
+    constexpr const unsigned int cComDataBits5 = 0;
+    constexpr const unsigned int cComDataBits6 = 1;
+    constexpr const unsigned int cComDataBits7 = 2;
+    constexpr const unsigned int cComDataBits8 = 3;
+    constexpr const unsigned int cComParityEven = 0;
+    constexpr const unsigned int cComParityOdd = 1;
+    constexpr const unsigned int cComParityNone = 2;
+    constexpr const unsigned int cComStopBits1 = 0;
+    constexpr const unsigned int cComStopBits2 = 1;
+    constexpr const unsigned int cComFlowControlNone = 0;
+    constexpr const unsigned int cComFlowControlHw = 1;
+    constexpr const unsigned int cComFlowControlSw = 2;
+    constexpr const unsigned int cComInvalidParameter = 127;
 };

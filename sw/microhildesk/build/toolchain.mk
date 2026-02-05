@@ -7,7 +7,16 @@
 #
 
 RM = rm
-CXX = g++
 OD = objdump
 CS = size
 
+COMPILER = gcc
+# COMPILER = clang
+
+ifeq ($(COMPILER), gcc)
+    CXX = g++
+else ifeq ($(COMPILER), clang)
+    CXX = clang++
+else
+    $(error Unknown COMPILER: $(COMPILER))
+endif

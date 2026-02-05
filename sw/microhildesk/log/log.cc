@@ -20,7 +20,7 @@
 #include <chrono>
 #include <iomanip>
 #include <ctime>
-#include "log.h"
+#include <log/log.h>
 
 using namespace Electux::App::Logger;
 

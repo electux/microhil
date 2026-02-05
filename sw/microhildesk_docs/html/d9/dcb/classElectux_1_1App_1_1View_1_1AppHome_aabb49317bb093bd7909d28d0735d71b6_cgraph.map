@@ -1,11 +1,13 @@
 <map id="Electux::App::View::AppHome::getUiData" name="Electux::App::View::AppHome::getUiData">
-<area shape="rect" id="Node000001" title="Gets UI data from widgets and saves them to configuration." alt="" coords="5,101,173,141"/>
-<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf" title="Gets entity by key." alt="" coords="244,5,395,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,99,220,55,240,47,241,52,222,60,129,104"/>
-<area shape="rect" id="Node000003" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a" title="Converts Key enum to." alt="" coords="231,69,407,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,107,217,101,218,106,174,112"/>
-<area shape="rect" id="Node000004" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac1c785a6481ba5bdaff2874b073faddf" title="Updates entity value by key." alt="" coords="244,133,395,173"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="174,130,231,138,230,144,173,136"/>
-<area shape="rect" id="Node000005" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a74831852a422e6c6baa76ec123aa72c9" title="Updates nth substring in input string separated by delimiter." alt="" coords="221,198,417,253"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="132,139,222,183,239,190,237,195,220,188,129,144"/>
+<area shape="rect" id="Node000001" title="Gets UI data from widgets and saves them to configuration." alt="" coords="5,41,173,81"/>
+<area shape="rect" id="Node000002" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="233,5,409,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,46,219,38,220,44,174,51"/>
+<area shape="rect" id="Node000003" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859" title="Updates control configuration parameter." alt="" coords="221,70,420,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,72,208,77,207,82,173,77"/>
+<area shape="rect" id="Node000004" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18" title="Gets entity by key." alt="" coords="491,13,641,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="419,69,477,54,478,59,421,74"/>
+<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283" title="Updates entity value by key." alt="" coords="491,77,641,117"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="420,95,477,95,477,100,420,100"/>
+<area shape="rect" id="Node000006" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299" title="Updates nth substring in input string." alt="" coords="468,142,664,197"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="415,122,460,136,459,141,414,127"/>
 </map>

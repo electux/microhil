@@ -5,5 +5,5 @@ var namespaceElectux_1_1App_1_1Model =
     [ "ModelControl", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl" ],
     [ "ModelLog", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog" ],
     [ "ModelSerial", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial" ],
-    [ "Entities", "d9/d26/namespaceElectux_1_1App_1_1Model.html#a560bd9e7602201e7f42909e6c4320625", null ]
+    [ "Entities", "d9/d26/namespaceElectux_1_1App_1_1Model.html#afc9f86a5ce3fbcf1d0486a71b20a4f29", null ]
 ];

@@ -17,7 +17,7 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <iostream>
-#include "serial_com.h"
+#include <com/serial_com.h>
 
 using namespace Electux::App::Com;
 

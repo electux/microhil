@@ -1,0 +1,7 @@
+<map id="Electux::App::View::AppHome::extract_param_value_by_index" name="Electux::App::View::AppHome::extract_param_value_by_index">
+<area shape="rect" id="Node000001" title="Extracts nth substring from input string." alt="" coords="488,5,685,60"/>
+<area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af7e89a2c467703a93098ee4e006663bb" title="Extracts control configuration parameter." alt="" coords="245,13,440,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="475,35,440,35,440,30,475,30"/>
+<area shape="rect" id="Node000003" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae0f8910d94af6ff09113de99f36f0fbe" title="Updates UI widgets with data from loaded configuration." alt="" coords="5,13,197,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,35,197,35,197,30,232,30"/>
+</map>

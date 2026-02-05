@@ -117,16 +117,16 @@ $(document).ready(function(){initNavTree('d4/d51/application__map_8cc_source.htm
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * You should have received a copy of the GNU General Public License along</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d32/application_8h.html">application.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="../../db/d32/application_8h.html">application.h</a>&gt;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">constexpr</span> std::string_view detailedActionName{<span class="stringliteral">&quot;app.quit&quot;</span>};</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">constexpr</span> std::string_view keyboardAccelerator{<span class="stringliteral">&quot;&lt;Primary&gt;q&quot;</span>};</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">constexpr</span> std::string_view fileQuitActionName{<span class="stringliteral">&quot;quit&quot;</span>};</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">constexpr</span> std::string_view optionSettingsActionName{<span class="stringliteral">&quot;settings&quot;</span>};</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">constexpr</span> std::string_view helpDocActionName{<span class="stringliteral">&quot;doc&quot;</span>};</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">constexpr</span> std::string_view helpAboutActionName{<span class="stringliteral">&quot;about&quot;</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">constexpr</span> std::string_view cDetailedActionName{<span class="stringliteral">&quot;app.quit&quot;</span>};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">constexpr</span> std::string_view cKeyboardAccelerator{<span class="stringliteral">&quot;&lt;Primary&gt;q&quot;</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">constexpr</span> std::string_view cFileQuitActionName{<span class="stringliteral">&quot;quit&quot;</span>};</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">constexpr</span> std::string_view cOptionSettingsActionName{<span class="stringliteral">&quot;settings&quot;</span>};</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">constexpr</span> std::string_view cHelpDocActionName{<span class="stringliteral">&quot;doc&quot;</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">constexpr</span> std::string_view cHelpAboutActionName{<span class="stringliteral">&quot;about&quot;</span>};</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a>;</div>
@@ -134,12 +134,12 @@ $(document).ready(function(){initNavTree('d4/d51/application__map_8cc_source.htm
 <div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48">EntryApplication::mapping</a>()</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    set_accel_for_action(detailedActionName.data(), keyboardAccelerator.data());</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    set_accel_for_action(cDetailedActionName.data(), cKeyboardAccelerator.data());</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    add_action(fileQuitActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">EntryApplication::onActionQuit</a>));</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    add_action(optionSettingsActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">EntryApplication::onActionSettings</a>));</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    add_action(helpDocActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">EntryApplication::onActionDoc</a>));</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    add_action(helpAboutActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">EntryApplication::onActionAbout</a>));</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    add_action(cFileQuitActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac1f21525becc191cbfdf83bcc7360e22">EntryApplication::onActionQuit</a>));</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    add_action(cOptionSettingsActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a">EntryApplication::onActionSettings</a>));</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    add_action(cHelpDocActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a">EntryApplication::onActionDoc</a>));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    add_action(cHelpAboutActionName.data(), sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3">EntryApplication::onActionAbout</a>));</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_variable" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#acf2fc09e2978ec6b29cc708a0a92fff2">m_home</a>.signal_close_request().connect(sigc::mem_fun(*<span class="keyword">this</span>, &amp;<a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a740242096435960d3fd1a191f35c4e0a">EntryApplication::onHandleClose</a>), <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
@@ -164,7 +164,7 @@ $(document).ready(function(){initNavTree('d4/d51/application__map_8cc_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d51/application__map_8cc.html">application_map.cc</a></li>
-    <li class="footer">Generated on Fri Jan 30 2026 22:38:53 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Feb 5 2026 21:59:20 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

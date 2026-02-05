@@ -27,7 +27,7 @@
 #include <gtkmm/entry.h>
 #include <gtkmm/comboboxtext.h>
 #include <sigc++/sigc++.h>
-#include "../settings_setup.h"
+#include <view/settings_setup.h>
 
 namespace Electux::App::View::Settings
 {

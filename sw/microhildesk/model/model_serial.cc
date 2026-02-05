@@ -17,19 +17,19 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <vector>
-#include "model_serial.h"
+#include <model/model_serial.h>
 
 namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// @brief String constants for serial configuration keys
-    constexpr std::string_view device{"device"};
-    constexpr std::string_view baud{"baud"};
-    constexpr std::string_view data{"data"};
-    constexpr std::string_view parity{"parity"};
-    constexpr std::string_view stop{"stop"};
-    constexpr std::string_view flow{"flow"};
-    constexpr std::string_view unknown{"unknown"};
+    constexpr std::string_view cDevice{"device"};
+    constexpr std::string_view cBaud{"baud"};
+    constexpr std::string_view cData{"data"};
+    constexpr std::string_view cParity{"parity"};
+    constexpr std::string_view cStop{"stop"};
+    constexpr std::string_view cFlow{"flow"};
+    constexpr std::string_view cUnknown{"unknown"};
 };
 
 using namespace Electux::App::Model;
@@ -49,33 +49,34 @@ Entities ModelSerial::getAllEntries() const
     Entities entries;
     for (const auto& key : keys)
     {
-        std::string keyStr = toString(key);
-        entries[keyStr] = getEntity(keyStr); 
+        std::string_view keyStrView = toString(key);
+        std::string keyStr{keyStrView};
+        entries.emplace(std::move(keyStr), getEntity(keyStr));
     }
 
     return entries;
 }
 
-std::string ModelSerial::toString(const ModelSerialKey &key) const
+std::string_view ModelSerial::toString(const ModelSerialKey &key) const
 {
     switch (key)
     {
-    case ModelSerialKey::Device: return device.data();
-    case ModelSerialKey::Baud: return baud.data();
-    case ModelSerialKey::Data: return data.data();
-    case ModelSerialKey::Parity: return parity.data();
-    case ModelSerialKey::Stop: return stop.data();
-    case ModelSerialKey::Flow: return flow.data();
-    default: return unknown.data();
+    case ModelSerialKey::Device: return cDevice;
+    case ModelSerialKey::Baud: return cBaud;
+    case ModelSerialKey::Data: return cData;
+    case ModelSerialKey::Parity: return cParity;
+    case ModelSerialKey::Stop: return cStop;
+    case ModelSerialKey::Flow: return cFlow;
+    default: return cUnknown;
     }
 }
 
-bool ModelSerial::validateKey(const std::string &key) const
+bool ModelSerial::validateKey(const std::string_view &key) const
 {
-    return key == toString(ModelSerialKey::Device) ||
-            key == toString(ModelSerialKey::Baud) ||
-            key == toString(ModelSerialKey::Data) ||
-            key == toString(ModelSerialKey::Parity) ||
-            key == toString(ModelSerialKey::Stop) ||
-            key == toString(ModelSerialKey::Flow);
+    return key == cDevice ||
+            key == cBaud ||
+            key == cData ||
+            key == cParity ||
+            key == cStop ||
+            key == cFlow;
 }

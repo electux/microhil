@@ -16,26 +16,26 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "help.h"
+#include <view/help/help.h>
 
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application help window widgets parameters
-    ///   helpTitle - window title
-    ///   helpWidth - window width
-    ///   helpHeight - window height
-    constexpr std::string_view helpTitle{"microhildesk"};
-    constexpr int helpWidth{600};
-    constexpr int helpHeight{400};
+    ///   cHelpTitle - window title
+    ///   cHelpWidth - window width
+    ///   cHelpHeight - window height
+    constexpr std::string_view cHelpTitle{"microhildesk"};
+    constexpr int cHelpWidth{600};
+    constexpr int cHelpHeight{400};
 };
 
 using namespace Electux::App::View::Help;
 
 AppHelp::AppHelp()
 {
-    set_title(helpTitle.data());
-    set_default_size(helpWidth, helpHeight);
+    set_title(cHelpTitle.data());
+    set_default_size(cHelpWidth, cHelpHeight);
     set_resizable(false);
     set_hide_on_close(true);
 }
