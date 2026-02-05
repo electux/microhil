@@ -1,4 +1,4 @@
 var channel__params_8h =
 [
-    [ "numOfChannels", "dd/d81/channel__params_8h.html#aacac048e44cf52e3105a1113116245d6", null ]
+    [ "cNumOfChannels", "dd/d81/channel__params_8h.html#a046f896779a010d2fea60d8f624a35e4", null ]
 ];

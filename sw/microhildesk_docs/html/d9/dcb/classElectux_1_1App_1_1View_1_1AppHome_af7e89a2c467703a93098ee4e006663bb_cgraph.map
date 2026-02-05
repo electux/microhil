@@ -1,0 +1,7 @@
+<map id="Electux::App::View::AppHome::extract_config" name="Electux::App::View::AppHome::extract_config">
+<area shape="rect" id="Node000001" title="Extracts control configuration parameter." alt="" coords="5,49,200,89"/>
+<area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad72016315750df4ef5e608d820c2e3a4" title="Extracts nth substring from input string." alt="" coords="248,5,445,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,52,234,47,235,52,200,57"/>
+<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18" title="Gets entity by key." alt="" coords="271,85,422,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,80,258,89,257,94,200,86"/>
+</map>

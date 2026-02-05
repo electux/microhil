@@ -18,21 +18,21 @@
  */
 #include <glibmm/miscutils.h>
 #include <glibmm/refptr.h>
-#include "application.h"
+#include <application.h>
 
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application parameters
-    ///   applicationId - application ID
-    constexpr std::string_view applicationId{"electux.io.microhildesk"};
+    ///   cApplicationId - application ID
+    constexpr std::string_view cApplicationId{"electux.io.microhildesk"};
 };
 
 using namespace Electux::App;
 
-EntryApplication::EntryApplication(): Gtk::Application(applicationId.data())
+EntryApplication::EntryApplication(): Gtk::Application(cApplicationId.data())
 {
-    Glib::set_application_name(applicationId.data());
+    Glib::set_application_name(cApplicationId.data());
 }
 
 Glib::RefPtr<EntryApplication> EntryApplication::create()

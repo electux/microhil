@@ -16,24 +16,24 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "application.h"
+#include <application.h>
 
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application mapper parameters
-    ///   detailedActionName - a detailed action name, specifying an action
-    ///   keyboardAccelerator - an accelerator in the format understood by GTK
-    ///   fileQuitActionName - file quit action name
-    ///   optionSettingsActionName - option settings action name
-    ///   helpDocActionName - help documenation action name
-    ///   helpAboutActionName - help about action name
-    constexpr std::string_view detailedActionName{"app.quit"};
-    constexpr std::string_view keyboardAccelerator{"<Primary>q"};
-    constexpr std::string_view fileQuitActionName{"quit"};
-    constexpr std::string_view optionSettingsActionName{"settings"};
-    constexpr std::string_view helpDocActionName{"doc"};
-    constexpr std::string_view helpAboutActionName{"about"};
+    ///   cDetailedActionName - a detailed action name, specifying an action
+    ///   cKeyboardAccelerator - an accelerator in the format understood by GTK
+    ///   cFileQuitActionName - file quit action name
+    ///   cOptionSettingsActionName - option settings action name
+    ///   cHelpDocActionName - help documenation action name
+    ///   cHelpAboutActionName - help about action name
+    constexpr std::string_view cDetailedActionName{"app.quit"};
+    constexpr std::string_view cKeyboardAccelerator{"<Primary>q"};
+    constexpr std::string_view cFileQuitActionName{"quit"};
+    constexpr std::string_view cOptionSettingsActionName{"settings"};
+    constexpr std::string_view cHelpDocActionName{"doc"};
+    constexpr std::string_view cHelpAboutActionName{"about"};
 };
 
 using namespace Electux::App;
@@ -42,14 +42,14 @@ void EntryApplication::mapping()
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Sets application accelerator
-    set_accel_for_action(detailedActionName.data(), keyboardAccelerator.data());
+    set_accel_for_action(cDetailedActionName.data(), cKeyboardAccelerator.data());
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Maps application actions to their handlers
-    add_action(fileQuitActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionQuit));
-    add_action(optionSettingsActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionSettings));
-    add_action(helpDocActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionDoc));
-    add_action(helpAboutActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionAbout));
+    add_action(cFileQuitActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionQuit));
+    add_action(cOptionSettingsActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionSettings));
+    add_action(cHelpDocActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionDoc));
+    add_action(cHelpAboutActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionAbout));
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Connects close request signal for AppHome window

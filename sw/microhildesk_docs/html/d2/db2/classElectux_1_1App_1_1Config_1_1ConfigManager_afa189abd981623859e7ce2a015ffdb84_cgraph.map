@@ -1,13 +1,13 @@
 <map id="Electux::App::Config::ConfigManager::defaultConfigStore" name="Electux::App::Config::ConfigManager::defaultConfigStore">
 <area shape="rect" id="Node000001" title="Stores default configuration." alt="" coords="5,126,228,181"/>
-<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#abd377a2d563d5063853ab64aade108b8" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="289,5,439,45"/>
+<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="289,5,439,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,124,212,89,275,55,290,48,293,53,277,60,215,94,160,128"/>
 <area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="279,69,449,109"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,123,273,110,274,115,224,128"/>
-<area shape="rect" id="Node000004" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a" title="Converts Key enum to." alt="" coords="276,133,452,173"/>
+<area shape="rect" id="Node000004" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="276,133,452,173"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,151,262,151,262,156,228,156"/>
-<area shape="rect" id="Node000005" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="288,197,440,237"/>
+<area shape="rect" id="Node000005" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ad7b7772f284051c33bfd3dce106eb986" title="Converts ModelLogKey enum to string." alt="" coords="288,197,440,237"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="224,178,275,192,274,197,222,183"/>
-<area shape="rect" id="Node000006" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="281,261,447,301"/>
+<area shape="rect" id="Node000006" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69" title="Converts Key enum to." alt="" coords="281,261,447,301"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="160,179,215,213,277,247,293,254,290,259,275,252,212,218,157,183"/>
 </map>

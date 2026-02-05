@@ -26,7 +26,7 @@
 #include <gtkmm/progressbar.h>
 #include <gtkmm/spinbutton.h>
 #include <gtkmm/togglebutton.h>
-#include "settings_setup.h"
+#include <view/settings_setup.h>
 
 namespace Electux::App::View
 {
@@ -44,7 +44,7 @@ namespace Electux::App::View
         explicit AppHome();
 
     private:
-        /////////////////////////////////////SigSettings/////////////////////////////////
+        //////////////////////////////////////////////////////////////////////
         /// @brief Maps home (signals and slots)
         void mapping(int index);
 
@@ -86,19 +86,33 @@ namespace Electux::App::View
         void updateUiData();
         
         /////////////////////////////////////////////////////////////////////
-        /// @brief Extracts nth substring from input string separated by delimiter
+        /// @brief Extracts nth substring from input string
         /// @param input Input string
         /// @param index Index of substring to extract
         /// @return Extracted substring
-        std::string extract_param_value_by_index(const std::string& input, size_t index);
+        std::string extract_param_value_by_index(const std::string_view &input, size_t index);
 
         /////////////////////////////////////////////////////////////////////
-        /// @brief Updates nth substring in input string separated by delimiter
+        /// @brief Updates nth substring in input string
         /// @param input Input string
         /// @param index Index of substring to update
         /// @param newValue New value for the substring
         /// @return Updated string
-        std::string update_param_value_by_index(const std::string& input, size_t index, const std::string& newValue);
+        std::string update_param_value_by_index(const std::string_view &input, size_t index, const std::string_view &newValue);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Updates control configuration parameter
+        /// @param key Configuration key to update
+        /// @param index Index of the parameter to update
+        /// @param value New value for the configuration key
+        void update_control_config(const std::string_view &key, size_t index, const std::string_view &value);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Extracts control configuration parameter
+        /// @param key Configuration key to extract
+        /// @param index Index of the parameter to extract
+        /// @return Extracted value for the configuration key
+        std::string extract_config(const std::string_view &key, size_t index);
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Container for packing widgets for home window

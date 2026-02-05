@@ -17,34 +17,34 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <iostream>
-#include "application.h"
+#include <application.h>
 
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application menu labels and detailed actions
-    ///   fileLabel - file action label
-    ///   fileQuitLabel - file quit action label
-    ///   fileQuitDetaildAction - file quit detailed action
-    ///   optionLabel - option action label
-    ///   optionSettingsLabel - option settings action label
-    ///   optionSettingsDetaildAction - option settings detailed action
-    ///   helpLabel - help action label
-    ///   helpDocLabel - help documentation action label
-    ///   helpDocDetaildAction - help documentation detailed action
-    ///   helpAboutLabel - help about action label
-    ///   helpAboutDetaildAction - help about detailed action
-    constexpr std::string_view fileLabel{"File"}; 
-    constexpr std::string_view fileQuitLabel{"_Quit"};
-    constexpr std::string_view fileQuitDetaildAction{"app.quit"};
-    constexpr std::string_view optionLabel{"Option"};
-    constexpr std::string_view optionSettingsLabel{"_Settings"};
-    constexpr std::string_view optionSettingsDetaildAction{"app.settings"};
-    constexpr std::string_view helpLabel{"Help"};
-    constexpr std::string_view helpDocLabel{"_Documentation"};
-    constexpr std::string_view helpDocDetaildAction{"app.doc"};
-    constexpr std::string_view helpAboutLabel{"_About"};
-    constexpr std::string_view helpAboutDetaildAction{"app.about"};
+    ///   cFileLabel - file action label
+    ///   cFileQuitLabel - file quit action label
+    ///   cFileQuitDetaildAction - file quit detailed action
+    ///   cOptionLabel - option action label
+    ///   cOptionSettingsLabel - option settings action label
+    ///   cOptionSettingsDetaildAction - option settings detailed action
+    ///   cHelpLabel - help action label
+    ///   cHelpDocLabel - help documentation action label
+    ///   cHelpDocDetaildAction - help documentation detailed action
+    ///   cHelpAboutLabel - help about action label
+    ///   cHelpAboutDetaildAction - help about detailed action
+    constexpr std::string_view cFileLabel{"File"}; 
+    constexpr std::string_view cFileQuitLabel{"_Quit"};
+    constexpr std::string_view cFileQuitDetaildAction{"app.quit"};
+    constexpr std::string_view cOptionLabel{"Option"};
+    constexpr std::string_view cOptionSettingsLabel{"_Settings"};
+    constexpr std::string_view cOptionSettingsDetaildAction{"app.settings"};
+    constexpr std::string_view cHelpLabel{"Help"};
+    constexpr std::string_view cHelpDocLabel{"_Documentation"};
+    constexpr std::string_view cHelpDocDetaildAction{"app.doc"};
+    constexpr std::string_view cHelpAboutLabel{"_About"};
+    constexpr std::string_view cHelpAboutDetaildAction{"app.about"};
 };
 
 using namespace Electux::App;
@@ -58,15 +58,15 @@ void EntryApplication::on_startup()
     /// @brief Sets application menubar
     auto menu = Gio::Menu::create();
     auto submenu_file = Gio::Menu::create();
-    submenu_file->append(fileQuitLabel.data(), fileQuitDetaildAction.data());
-    menu->append_submenu(fileLabel.data(), submenu_file);
+    submenu_file->append(cFileQuitLabel.data(), cFileQuitDetaildAction.data());
+    menu->append_submenu(cFileLabel.data(), submenu_file);
     auto submenu_option = Gio::Menu::create();
-    submenu_option->append(optionSettingsLabel.data(), optionSettingsDetaildAction.data());
-    menu->append_submenu(optionLabel.data(), submenu_option);
+    submenu_option->append(cOptionSettingsLabel.data(), cOptionSettingsDetaildAction.data());
+    menu->append_submenu(cOptionLabel.data(), submenu_option);
     auto submenu_help = Gio::Menu::create();
-    submenu_help->append(helpDocLabel.data(), helpDocDetaildAction.data());
-    submenu_help->append(helpAboutLabel.data(), helpAboutDetaildAction.data());
-    menu->append_submenu(helpLabel.data(), submenu_help);
+    submenu_help->append(cHelpDocLabel.data(), cHelpDocDetaildAction.data());
+    submenu_help->append(cHelpAboutLabel.data(), cHelpAboutDetaildAction.data());
+    menu->append_submenu(cHelpLabel.data(), submenu_help);
     set_menubar(menu);
 
     //////////////////////////////////////////////////////////////////////////

@@ -3,6 +3,7 @@
         {
             "name": "microhildesk C++",
             "includePath": [
+                "${workspaceFolder}",
                 "${workspaceFolder}/**",
                 "/usr/include/x86_64-linux-gnu",
                 "/usr/lib/x86_64-linux-gnu/glibmm-2.68/include",
@@ -71,7 +72,8 @@
                 "-Wno-unused",
                 "-mtune=native",
                 "`pkg-config gtk+-4.0 --cflags`",
-                "`pkg-config --libs gtk+-4.0`"
+                "`pkg-config --libs gtk+-4.0`",
+                "-I${workspaceFolder}"
             ],
             "configurationProvider": "ms-vscode.makefile-tools"
         }

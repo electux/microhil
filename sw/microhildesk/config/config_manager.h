@@ -18,10 +18,10 @@
  */
 #pragma once
 
-#include "iconfig.h"
-#include "../model/model_control.h"
-#include "../model/model_serial.h"
-#include "../model/model_log.h"
+#include <config/iconfig.h>
+#include <model/model_control.h>
+#include <model/model_serial.h>
+#include <model/model_log.h>
 
 namespace Electux::App::Config
 {

@@ -16,17 +16,23 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "model.h"
+#include <model/model.h>
 
 using namespace Electux::App::Model;
 
-bool Model::add(const std::string &key, const std::string &data)
+bool Model::add(const std::string_view &key, const std::string_view &data)
 {
-    auto const [it, inserted] = m_entities.try_emplace(key, data);
+    if (m_entities.find(key) != m_entities.end())
+    {
+        return false;
+    }
+
+    auto [it, inserted] = m_entities.emplace(std::string(key), std::string(data));
+        
     return inserted;
 }
 
-const std::string &Model::getEntity(const std::string &key) const
+const std::string &Model::getEntity(const std::string_view &key) const
 {
     auto it = m_entities.find(key);
     if (it != m_entities.end())
@@ -43,7 +49,7 @@ const Entities &Model::get() const
     return m_entities;
 }
 
-bool Model::update(const std::string &key, const std::string &data)
+bool Model::update(const std::string_view &key, const std::string_view &data)
 {
     auto it = m_entities.find(key);
     if (it != m_entities.end())
@@ -58,4 +64,3 @@ void Model::clear()
 {
     m_entities.clear();
 }
-

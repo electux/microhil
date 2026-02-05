@@ -18,41 +18,41 @@
  */
 #include <string>
 #include <format>
-#include "home.h"
-#include "../params/channel_params.h"
+#include <view/home.h>
+#include <params/channel_params.h>
 
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application home window widgets parameters
-    ///   homeTitle - home window title
-    ///   homeWidth - home window width
-    ///   homeHeight - home window height
-    ///   homeEnChannelLabel - checkbox enable channel label
-    ///   homeToggleChannelLabel - label for toogle channel
-    ///   homeToggleChannelButtonActivate - toggle button channel label 
-    ///   homeToggleChannelButtonDeactivate - toggle button channel label
-    ///   homeTimerChannelLabel - label for timer channel
-    ///   homeTimerChannelButtonStart - spinner channel button label
-    ///   homeTimerChannelButtonStop - spinner channel button label
-    ///   homeStatusFraction - status init fraction
-    ///   homeBoxChannelMargin - box channel margin
-    ///   homeBoxChannelSpacing - box channel spacing
-    ///   homeChannelModeOptions - channel mode options for combobox
-    constexpr std::string_view homeTitle{"microhildesk"};
-    constexpr int homeWidth{600};
-    constexpr int homeHeight{250};
-    constexpr std::string_view homeEnChannelLabel{"Enable Channel #"};
-    constexpr std::string_view homeToggleChannelLabel{"Toogle Channel #"};
-    constexpr std::string_view homeToggleChannelButtonActivate{"Activate"};
-    constexpr std::string_view homeToggleChannelButtonDeactivate{"Deactivate"};
-    constexpr std::string_view homeTimerChannelLabel{"Use timer #"};
-    constexpr std::string_view homeTimerChannelButtonStart{"Start"};
-    constexpr std::string_view homeTimerChannelButtonStop{"Stop"};
-    constexpr float homeStatusFraction{0.0};
-    constexpr int homeBoxChannelMargin{10};
-    constexpr int homeBoxChannelSpacing{5};
-    constexpr std::string_view homeChannelModeOptions[]{"Toogle Active", "Timer Active"};
+    ///   cHomeTitle - home window title
+    ///   cHomeWidth - home window width
+    ///   cHomeHeight - home window height
+    ///   cHomeEnChannelLabel - checkbox enable channel label
+    ///   cHomeToggleChannelLabel - label for toogle channel
+    ///   cHomeToggleChannelButtonActivate - toggle button channel label 
+    ///   cHomeToggleChannelButtonDeactivate - toggle button channel label
+    ///   cHomeTimerChannelLabel - label for timer channel
+    ///   cHomeTimerChannelButtonStart - spinner channel button label
+    ///   cHomeTimerChannelButtonStop - spinner channel button label
+    ///   cHomeStatusFraction - status init fraction
+    ///   cHomeBoxChannelMargin - box channel margin
+    ///   cHomeBoxChannelSpacing - box channel spacing
+    ///   cHomeChannelModeOptions - channel mode options for combobox
+    constexpr std::string_view cHomeTitle{"microhildesk"};
+    constexpr int cHomeWidth{600};
+    constexpr int cHomeHeight{250};
+    constexpr std::string_view cHomeEnChannelLabel{"Enable Channel #"};
+    constexpr std::string_view cHomeToggleChannelLabel{"Toogle Channel #"};
+    constexpr std::string_view cHomeToggleChannelButtonActivate{"Activate"};
+    constexpr std::string_view cHomeToggleChannelButtonDeactivate{"Deactivate"};
+    constexpr std::string_view cHomeTimerChannelLabel{"Use timer #"};
+    constexpr std::string_view cHomeTimerChannelButtonStart{"Start"};
+    constexpr std::string_view cHomeTimerChannelButtonStop{"Stop"};
+    constexpr float cHomeStatusFraction{0.0};
+    constexpr int cHomeBoxChannelMargin{10};
+    constexpr int cHomeBoxChannelSpacing{5};
+    constexpr std::string_view cHomeChannelModeOptions[]{"Toogle Active", "Timer Active"};
 };
 
 using namespace Electux::App::View;
@@ -62,42 +62,42 @@ AppHome::AppHome()
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Setup application home window
-    set_title(homeTitle.data());
-    set_default_size(homeWidth, homeHeight);
+    set_title(cHomeTitle.data());
+    set_default_size(cHomeWidth, cHomeHeight);
     set_resizable(false);
     set_show_menubar(true);
     m_boxRoot.set_orientation(Gtk::Orientation::HORIZONTAL);
     set_child(m_boxRoot);
 
-    for(unsigned int i = 0; i < numOfChannels; i++)
+    for(unsigned int i = 0; i < cNumOfChannels; i++)
     {
         m_boxChannels.emplace_back(Gtk::Orientation::VERTICAL);
         auto& currentBox = m_boxChannels.back();
-        m_enableChannels.emplace_back(std::format("{} {}", homeEnChannelLabel.data(), i));
+        m_enableChannels.emplace_back(std::format("{} {}", cHomeEnChannelLabel.data(), i));
         currentBox.append(m_enableChannels.back());
         m_selectControlChannels.emplace_back();
-        for (const auto& option : homeChannelModeOptions)
+        for (const auto& option : cHomeChannelModeOptions)
         {
             m_selectControlChannels.back().append(option.data());
         }
         currentBox.append(m_selectControlChannels.back());
-        m_labelToggleChannels.emplace_back(std::format("{} {}", homeToggleChannelLabel.data(), i));
+        m_labelToggleChannels.emplace_back(std::format("{} {}", cHomeToggleChannelLabel.data(), i));
         currentBox.append(m_labelToggleChannels.back());
         m_toggleChannels.emplace_back();
-        m_toggleChannels.back().set_label(homeToggleChannelButtonActivate.data());
+        m_toggleChannels.back().set_label(cHomeToggleChannelButtonActivate.data());
         currentBox.append(m_toggleChannels.back());
-        m_labelTimerChannels.emplace_back(std::format("{} {}", homeTimerChannelLabel.data(), i));
+        m_labelTimerChannels.emplace_back(std::format("{} {}", cHomeTimerChannelLabel.data(), i));
         currentBox.append(m_labelTimerChannels.back());
         m_spinTimerChannels.emplace_back();
         currentBox.append(m_spinTimerChannels.back());
         m_toggleTimerChannels.emplace_back();
-        m_toggleTimerChannels.back().set_label(homeTimerChannelButtonStart.data());
+        m_toggleTimerChannels.back().set_label(cHomeTimerChannelButtonStart.data());
         currentBox.append(m_toggleTimerChannels.back());
         m_statusTimerChannels.emplace_back();
-        m_statusTimerChannels.back().set_fraction(homeStatusFraction);
+        m_statusTimerChannels.back().set_fraction(cHomeStatusFraction);
         currentBox.append(m_statusTimerChannels.back());
-        currentBox.set_margin(homeBoxChannelMargin);
-        currentBox.set_spacing(homeBoxChannelSpacing);
+        currentBox.set_margin(cHomeBoxChannelMargin);
+        currentBox.set_spacing(cHomeBoxChannelSpacing);
         m_boxRoot.append(currentBox);
         mapping(i);
     }

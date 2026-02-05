@@ -1,0 +1,21 @@
+<map id="Electux::App::Model::ModelSerial::toString" name="Electux::App::Model::ModelSerial::toString">
+<area shape="rect" id="Node000001" title="Converts Key enum to." alt="" coords="993,121,1160,161"/>
+<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="723,5,945,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1027,117,944,75,914,63,916,58,946,70,1029,112"/>
+<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a306e4c14f18b8008d377d95fbdb2e379" title="Gets all model entries." alt="" coords="735,85,933,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="979,129,933,122,934,117,980,124"/>
+<area shape="rect" id="Node000005" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="749,149,919,204"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="980,158,919,167,918,162,979,152"/>
+<area shape="rect" id="Node000009" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a57c008624a8525b997503e343e5a68e9" title="Updates UI widgets with data from loaded configuration." alt="" coords="749,228,919,283"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1034,170,947,219,920,230,918,225,944,214,1032,166"/>
+<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7d3d7c10423d969f7544509f6fcca32f" title="Config constructor." alt="" coords="440,13,675,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="709,35,675,35,675,30,709,30"/>
+<area shape="rect" id="Node000006" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ab774932988d1d2ddca6a3db5134e1441" title="On action OK button." alt="" coords="473,149,642,204"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="735,179,642,179,642,174,735,174"/>
+<area shape="rect" id="Node000007" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5763d8088e72a080dd732c16851b5170" title="Maps channels (signals and slots)" alt="" coords="223,149,392,204"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="459,179,392,179,392,174,459,174"/>
+<area shape="rect" id="Node000008" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#ac327d0a43da29c01585c7a256b49b31a" title="AppSettings constructor." alt="" coords="5,149,175,204"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="209,179,175,179,175,174,209,174"/>
+<area shape="rect" id="Node000010" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="448,235,667,275"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="735,258,667,258,667,253,735,253"/>
+</map>

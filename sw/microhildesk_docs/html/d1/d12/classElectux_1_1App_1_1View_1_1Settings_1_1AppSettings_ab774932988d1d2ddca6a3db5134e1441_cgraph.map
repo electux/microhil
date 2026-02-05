@@ -2,10 +2,10 @@
 <area shape="rect" id="Node000001" title="On action OK button." alt="" coords="5,62,175,117"/>
 <area shape="rect" id="Node000002" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="223,62,392,117"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,87,209,87,209,92,175,92"/>
-<area shape="rect" id="Node000003" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ac6587f2456803197a7dbf6f335d69496" title="Converts ModelLogKey enum to string." alt="" coords="447,5,599,45"/>
+<area shape="rect" id="Node000003" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ad7b7772f284051c33bfd3dce106eb986" title="Converts ModelLogKey enum to string." alt="" coords="447,5,599,45"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="392,62,441,47,443,52,393,67"/>
-<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a5593398ce4cef0fa132143537340e3b2" title="Converts Key enum to." alt="" coords="440,69,607,109"/>
+<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#afe4d5fa491c80be10f12975c1c7ffb69" title="Converts Key enum to." alt="" coords="440,69,607,109"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="392,87,426,87,426,92,392,92"/>
-<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac1c785a6481ba5bdaff2874b073faddf" title="Updates entity value by key." alt="" coords="448,133,599,173"/>
+<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283" title="Updates entity value by key." alt="" coords="448,133,599,173"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="393,112,443,127,441,132,392,117"/>
 </map>

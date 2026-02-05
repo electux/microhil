@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "settings.h"
+#include <view/settings/settings.h>
 
 using namespace Electux::App::View::Settings;
 

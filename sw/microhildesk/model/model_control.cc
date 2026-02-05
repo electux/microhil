@@ -17,18 +17,18 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <vector>
-#include "model_control.h"
+#include <model/model_control.h>
 
 namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// @brief String constants for control configuration keys
-    constexpr std::string_view enable{"enable"};
-    constexpr std::string_view mode{"mode"};
-    constexpr std::string_view toggle{"toggle"};
-    constexpr std::string_view timer{"timer"};
-    constexpr std::string_view timerEnable{"timerEnable"};
-    constexpr std::string_view unknown{"unknown"};
+    constexpr std::string_view cEnable{"enable"};
+    constexpr std::string_view cMode{"mode"};
+    constexpr std::string_view cToggle{"toggle"};
+    constexpr std::string_view cTimer{"timer"};
+    constexpr std::string_view cTimerEnable{"timerEnable"};
+    constexpr std::string_view cUnknown{"unknown"};
 };
 
 using namespace Electux::App::Model;
@@ -47,31 +47,32 @@ Entities ModelControl::getAllEntries() const
     Entities entries;
     for (const auto& key : keys)
     {
-        std::string keyStr = toString(key);
-        entries[keyStr] = getEntity(keyStr); 
+        std::string_view keyStrView = toString(key);
+        std::string keyStr{keyStrView};
+        entries.emplace(std::move(keyStr), getEntity(keyStr)); 
     }
 
     return entries;
 }
 
-std::string ModelControl::toString(const ModelControlKey &key) const
+std::string_view ModelControl::toString(const ModelControlKey &key) const
 {
     switch (key)
     {
-    case ModelControlKey::Enable: return enable.data();
-    case ModelControlKey::Mode: return mode.data();
-    case ModelControlKey::Toggle: return toggle.data();
-    case ModelControlKey::Timer: return timer.data();
-    case ModelControlKey::TimerEnable: return timerEnable.data();
-    default: return unknown.data();
+    case ModelControlKey::Enable: return cEnable;
+    case ModelControlKey::Mode: return cMode;
+    case ModelControlKey::Toggle: return cToggle;
+    case ModelControlKey::Timer: return cTimer;
+    case ModelControlKey::TimerEnable: return cTimerEnable;
+    default: return cUnknown;
     }
 }
 
-bool ModelControl::validateKey(const std::string &key) const
+bool ModelControl::validateKey(const std::string_view &key) const
 {
-    return key == toString(ModelControlKey::Enable) ||
-            key == toString(ModelControlKey::Mode) ||
-            key == toString(ModelControlKey::Toggle) ||
-            key == toString(ModelControlKey::Timer) ||
-            key == toString(ModelControlKey::TimerEnable);
+    return key ==  cEnable ||
+            key == cMode ||
+            key == cToggle ||
+            key == cTimer ||
+            key == cTimerEnable;
 }

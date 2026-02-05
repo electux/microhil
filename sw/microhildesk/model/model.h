@@ -18,7 +18,7 @@
  */
 #pragma once
 
-#include "imodel.h"
+#include <model/imodel.h>
 
 namespace Electux::App::Model
 {
@@ -35,13 +35,13 @@ namespace Electux::App::Model
         /// @brief Adds entity to model {'key': 'data'}
         /// @param key Represents model enity key to be added
         /// @param data Represents model entity data to be added
-        bool add(const std::string &key, const std::string &data) final;
+        bool add(const std::string_view &key, const std::string_view &data) final;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Gets entity by key
         /// @param key Represents model enity key
         /// @return Entity selected by key
-        const std::string &getEntity(const std::string &key) const final;
+        const std::string &getEntity(const std::string_view &key) const final;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Gets model entities
@@ -53,7 +53,7 @@ namespace Electux::App::Model
         /// @param key Represents model entity key
         /// @param data Represents new value for the entity
         /// @return True if the entity was updated, false if the key does not exist
-        bool update(const std::string &key, const std::string &data) final;
+        bool update(const std::string_view &key, const std::string_view &data) final;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Clears all model entities

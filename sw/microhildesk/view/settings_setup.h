@@ -18,9 +18,9 @@
  */
 #pragma once
 
-#include "../model/model_control.h"
-#include "../model/model_serial.h"
-#include "../model/model_log.h"
+#include <model/model_control.h>
+#include <model/model_serial.h>
+#include <model/model_log.h>
 
 namespace Electux::App::View
 {

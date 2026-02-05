@@ -1,9 +1,11 @@
 <map id="Electux::App::View::AppHome::updateUiData" name="Electux::App::View::AppHome::updateUiData">
-<area shape="rect" id="Node000001" title="Updates UI widgets with data from loaded configuration." alt="" coords="5,85,197,125"/>
-<area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa68b29c65fb23c7df49d09307d663ac4" title="Extracts nth substring from input string separated by delimiter." alt="" coords="245,5,443,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,82,238,61,239,66,170,87"/>
-<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ac99cd32993648f3e38cbc23b69a9c7bf" title="Gets entity by key." alt="" coords="269,85,419,125"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,102,255,102,255,107,198,107"/>
-<area shape="rect" id="Node000004" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a14137f0cf2c1591e6c6edc6902069c0a" title="Converts Key enum to." alt="" coords="256,149,432,189"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,122,255,143,254,148,177,127"/>
+<area shape="rect" id="Node000001" title="Updates UI widgets with data from loaded configuration." alt="" coords="5,81,197,121"/>
+<area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af7e89a2c467703a93098ee4e006663bb" title="Extracts control configuration parameter." alt="" coords="245,49,440,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,85,231,81,232,86,198,91"/>
+<area shape="rect" id="Node000005" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="255,113,431,153"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="198,111,242,117,241,122,197,116"/>
+<area shape="rect" id="Node000003" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad72016315750df4ef5e608d820c2e3a4" title="Extracts nth substring from input string." alt="" coords="488,5,685,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="440,52,474,47,475,52,440,57"/>
+<area shape="rect" id="Node000004" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18" title="Gets entity by key." alt="" coords="511,85,662,125"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="440,80,498,89,497,94,440,86"/>
 </map>

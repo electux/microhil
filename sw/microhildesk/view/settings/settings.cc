@@ -16,64 +16,64 @@
  * You should have received a copy of the GNU General Public License along
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "settings.h"
-#include "../../params/serial_com_params.h"
-#include "../../params/log_level_params.h"
+#include <view/settings/settings.h>
+#include <params/serial_com_params.h>
+#include <params/log_level_params.h>
 
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application settings window widgets parameters
-    ///   settingsTitle - window title
-    ///   settingsWidth - window width
-    ///   settingsHeight - window height
-    ///   settingsNotebookMargin - notebook margin
-    ///   settingsSerialPath - label serial path
-    ///   settingsSerialBaud - label baud rate
-    ///   settingsSerialData - label data bits
-    ///   settingsSerialParity - label parity
-    ///   settingsSerialStop - label stop bits
-    ///   settingsSerialFlowControl - label flow control
-    ///   settingsPageSerialLabel - notebook page label serial
-    ///   settingsLogPath - label log file path
-    ///   settingsLogLevel - label log level
-    ///   settingsPageLogLabel - notebook page label log
-    ///   settingsButtonBoxWidth - button box width
-    ///   settingsButtonBoxHeight - button box height
-    ///   settingsButtonBoxMargin - button box margin
-    ///   settingsButtonBoxRowSpacing - button box row spacing
-    ///   settingsButtonBoxColumnSpacing -  button box column spacing
-    ///   settingsButtonOkLabel - button ok label
-    ///   settingsButtonCancelLabel - button cancel label
-    ///   settingsButtonWidth - button width
-    ///   settingsButtonHeight - button height
-    ///   settingsGridRowColumnOccupyZero - position widget occupy (0)
-    ///   settingsGridRowColumnOccupyOne - position widget occupy (1)
-    constexpr std::string_view settingsTitle{"microhildesk"};
-    constexpr int settingsWidth{320};
-    constexpr int settingsHeight{280};
-    constexpr int settingsNotebookMargin{10};
-    constexpr std::string_view settingsSerialPath{"Device port"};
-    constexpr std::string_view settingsSerialBaud{"Baud rate"};
-    constexpr std::string_view settingsSerialData{"Data bits"};
-    constexpr std::string_view settingsSerialParity{"Parity"};
-    constexpr std::string_view settingsSerialStop{"Stop bits"};
-    constexpr std::string_view settingsSerialFlowControl{"Flow control"};
-    constexpr std::string_view settingsPageSerialLabel{"Serial port"};
-    constexpr std::string_view settingsLogPath{"Log file path"};
-    constexpr std::string_view settingsLogLevel{"Log level"};
-    constexpr std::string_view settingsPageLogLabel{"Log"};
-    constexpr int settingsButtonBoxWidth{220};
-    constexpr int settingsButtonBoxHeight{60};
-    constexpr int settingsButtonBoxMargin{10};
-    constexpr int settingsButtonBoxRowSpacing{5};
-    constexpr int settingsButtonBoxColumnSpacing{5};
-    constexpr std::string_view settingsButtonOkLabel{"Ok"};
-    constexpr std::string_view settingsButtonCancelLabel{"Cancel"};
-    constexpr int settingsButtonWidth{100};
-    constexpr int settingsButtonHeight{50};
-    constexpr int settingsGridRowColumnOccupyZero{0};
-    constexpr int settingsGridRowColumnOccupyOne{1};
+    ///   cSettingsTitle - window title
+    ///   cSettingsWidth - window width
+    ///   cSettingsHeight - window height
+    ///   cSettingsNotebookMargin - notebook margin
+    ///   cSettingsSerialPath - label serial path
+    ///   cSettingsSerialBaud - label baud rate
+    ///   cSettingsSerialData - label data bits
+    ///   cSettingsSerialParity - label parity
+    ///   cSettingsSerialStop - label stop bits
+    ///   cSettingsSerialFlowControl - label flow control
+    ///   cSettingsPageSerialLabel - notebook page label serial
+    ///   cSettingsLogPath - label log file path
+    ///   cSettingsLogLevel - label log level
+    ///   cSettingsPageLogLabel - notebook page label log
+    ///   cSettingsButtonBoxWidth - button box width
+    ///   cSettingsButtonBoxHeight - button box height
+    ///   cSettingsButtonBoxMargin - button box margin
+    ///   cSettingsButtonBoxRowSpacing - button box row spacing
+    ///   cSettingsButtonBoxColumnSpacing -  button box column spacing
+    ///   cSettingsButtonOkLabel - button ok label
+    ///   cSettingsButtonCancelLabel - button cancel label
+    ///   cSettingsButtonWidth - button width
+    ///   cSettingsButtonHeight - button height
+    ///   cSettingsGridRowColumnOccupyZero - position widget occupy (0)
+    ///   cSettingsGridRowColumnOccupyOne - position widget occupy (1)
+    constexpr std::string_view cSettingsTitle{"microhildesk"};
+    constexpr int cSettingsWidth{320};
+    constexpr int cSettingsHeight{280};
+    constexpr int cSettingsNotebookMargin{10};
+    constexpr std::string_view cSettingsSerialPath{"Device port"};
+    constexpr std::string_view cSettingsSerialBaud{"Baud rate"};
+    constexpr std::string_view cSettingsSerialData{"Data bits"};
+    constexpr std::string_view cSettingsSerialParity{"Parity"};
+    constexpr std::string_view cSettingsSerialStop{"Stop bits"};
+    constexpr std::string_view cSettingsSerialFlowControl{"Flow control"};
+    constexpr std::string_view cSettingsPageSerialLabel{"Serial port"};
+    constexpr std::string_view cSettingsLogPath{"Log file path"};
+    constexpr std::string_view cSettingsLogLevel{"Log level"};
+    constexpr std::string_view cSettingsPageLogLabel{"Log"};
+    constexpr int cSettingsButtonBoxWidth{220};
+    constexpr int cSettingsButtonBoxHeight{60};
+    constexpr int cSettingsButtonBoxMargin{10};
+    constexpr int cSettingsButtonBoxRowSpacing{5};
+    constexpr int cSettingsButtonBoxColumnSpacing{5};
+    constexpr std::string_view cSettingsButtonOkLabel{"Ok"};
+    constexpr std::string_view cSettingsButtonCancelLabel{"Cancel"};
+    constexpr int cSettingsButtonWidth{100};
+    constexpr int cSettingsButtonHeight{50};
+    constexpr int cSettingsGridRowColumnOccupyZero{0};
+    constexpr int cSettingsGridRowColumnOccupyOne{1};
 };
 
 using namespace Electux::App::View::Settings;
@@ -84,85 +84,85 @@ AppSettings::AppSettings()
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Setup application settings window
-    set_title(settingsTitle.data());
-    set_default_size(settingsWidth, settingsHeight);
+    set_title(cSettingsTitle.data());
+    set_default_size(cSettingsWidth, cSettingsHeight);
     set_resizable(false);
     set_hide_on_close(true);
     set_child(m_boxRoot);
     m_boxRoot.set_orientation(Gtk::Orientation::VERTICAL);
-    m_notebook.set_margin(settingsNotebookMargin);
+    m_notebook.set_margin(cSettingsNotebookMargin);
     m_notebook.set_expand();
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Setup serial port settings page
     m_boxSerial.set_orientation(Gtk::Orientation::VERTICAL);
-    m_labelSerialPath.set_label(settingsSerialPath.data());
+    m_labelSerialPath.set_label(cSettingsSerialPath.data());
     m_boxSerial.append(m_labelSerialPath);
     m_boxSerial.append(m_entrySerialPath);
-    m_labelSerialBaud.set_label(settingsSerialBaud.data());
+    m_labelSerialBaud.set_label(cSettingsSerialBaud.data());
     m_boxSerial.append(m_labelSerialBaud);
-    for (const auto& rate : comBaudRates)
+    for (const auto& rate : cComBaudRates)
     {
         m_comboSerialBaud.append(std::string(rate));
     }
     m_boxSerial.append(m_comboSerialBaud);
-    m_labelSerialData.set_label(settingsSerialData.data());
+    m_labelSerialData.set_label(cSettingsSerialData.data());
     m_boxSerial.append(m_labelSerialData);
-    for (const auto& data : comDataBits)
+    for (const auto& data : cComDataBits)
     {
         m_comboSerialData.append(std::string(data));
     }
     m_boxSerial.append(m_comboSerialData);
-    m_labelSerialParity.set_label(settingsSerialParity.data());
+    m_labelSerialParity.set_label(cSettingsSerialParity.data());
     m_boxSerial.append(m_labelSerialParity);
-    for (const auto& parity : comParities)
+    for (const auto& parity : cComParities)
     {
         m_comboSerialParity.append(std::string(parity));
     }
     m_boxSerial.append(m_comboSerialParity);
-    m_labelSerialStop.set_label(settingsSerialStop.data());
+    m_labelSerialStop.set_label(cSettingsSerialStop.data());
     m_boxSerial.append(m_labelSerialStop);
-    for (const auto& stop : comStopBits)
+    for (const auto& stop : cComStopBits)
     {
         m_comboSerialStop.append(std::string(stop));
     }
     m_boxSerial.append(m_comboSerialStop);
-    m_labelSerialFlowControl.set_label(settingsSerialFlowControl.data());
+    m_labelSerialFlowControl.set_label(cSettingsSerialFlowControl.data());
     m_boxSerial.append(m_labelSerialFlowControl);
-    for (const auto& flow : comFlowControls)
+    for (const auto& flow : cComFlowControls)
     {
         m_comboSerialFlowControl.append(std::string(flow));
     }
     m_boxSerial.append(m_comboSerialFlowControl);
-    m_notebook.append_page(m_boxSerial, settingsPageSerialLabel.data());
+    m_notebook.append_page(m_boxSerial, cSettingsPageSerialLabel.data());
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Setup log settings page
     m_boxLog.set_orientation(Gtk::Orientation::VERTICAL);
-    m_labelLogPath.set_label(settingsLogPath.data());
+    m_labelLogPath.set_label(cSettingsLogPath.data());
     m_boxLog.append(m_labelLogPath);
     m_boxLog.append(m_entryLogPath);
-    m_labelLogLevel.set_label(settingsLogLevel.data());
+    m_labelLogLevel.set_label(cSettingsLogLevel.data());
     m_boxLog.append(m_labelLogLevel);
-    for (const auto& level : logLevels)
+    for (const auto& level : cLogLevels)
     {
         m_comboLogLevel.append(std::string(level));
     }
     m_boxLog.append(m_comboLogLevel);
-    m_notebook.append_page(m_boxLog, settingsPageLogLabel.data());
+    m_notebook.append_page(m_boxLog, cSettingsPageLogLabel.data());
     m_boxRoot.append(m_notebook);
-    m_buttonBox.set_size_request(settingsButtonBoxWidth, settingsButtonBoxHeight);
-    m_buttonBox.set_margin(settingsButtonBoxMargin);
-    m_buttonOk.set_label(settingsButtonOkLabel.data());
-    m_buttonOk.set_size_request(settingsButtonWidth, settingsButtonHeight);
-    m_buttonCancel.set_label(settingsButtonCancelLabel.data());
-    m_buttonCancel.set_size_request(settingsButtonWidth, settingsButtonHeight);
-    m_buttonBox.attach(m_buttonCancel, settingsGridRowColumnOccupyZero, settingsGridRowColumnOccupyZero);
-    m_buttonBox.attach(m_buttonOk, settingsGridRowColumnOccupyOne, settingsGridRowColumnOccupyZero);
+    m_buttonBox.set_size_request(cSettingsButtonBoxWidth, cSettingsButtonBoxHeight);
+    m_buttonBox.set_margin(cSettingsButtonBoxMargin);
+    m_buttonOk.set_label(cSettingsButtonOkLabel.data());
+    m_buttonOk.set_size_request(cSettingsButtonWidth, cSettingsButtonHeight);
+    m_buttonCancel.set_label(cSettingsButtonCancelLabel.data());
+    m_buttonCancel.set_size_request(cSettingsButtonWidth, cSettingsButtonHeight);
+    m_buttonBox.attach(m_buttonCancel, cSettingsGridRowColumnOccupyZero, cSettingsGridRowColumnOccupyZero);
+    m_buttonBox.attach(m_buttonOk, cSettingsGridRowColumnOccupyOne, cSettingsGridRowColumnOccupyZero);
     m_buttonBox.set_hexpand(false);
     m_buttonBox.set_vexpand(false);
-    m_buttonBox.set_row_spacing(settingsButtonBoxRowSpacing);
-    m_buttonBox.set_column_spacing(settingsButtonBoxColumnSpacing);
+    m_buttonBox.set_row_spacing(cSettingsButtonBoxRowSpacing);
+    m_buttonBox.set_column_spacing(cSettingsButtonBoxColumnSpacing);
     m_boxRoot.append(m_buttonBox);
 
     ////////////////////////////////////////////////////////////////////////

@@ -118,18 +118,18 @@ $(document).ready(function(){initNavTree('d4/d27/about_8cc_source.html','../../'
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="../../d2/dc0/about_8h.html">about.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="../../d2/dc0/about_8h.html">view/about/about.h</a>&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">constexpr</span> std::string_view programName{<span class="stringliteral">&quot;microhildesk&quot;</span>};</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">constexpr</span> std::string_view programVersion{<span class="stringliteral">&quot;1.0.0&quot;</span>};</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">constexpr</span> std::string_view programCopyright{<span class="stringliteral">&quot;Vladimir Roncevic &lt;elektron.ronca@gmail.com&gt;&quot;</span>};</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">constexpr</span> std::string_view programComments{<span class="stringliteral">&quot;This is microhildesk application.&quot;</span>};</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">constexpr</span> std::string_view programLicense{<span class="stringliteral">&quot;GPLv3&quot;</span>};</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">constexpr</span> std::string_view programWebsite{<span class="stringliteral">&quot;https://electux.github.io/microhil&quot;</span>};</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">constexpr</span> std::string_view programWebsiteLabel{<span class="stringliteral">&quot;electux.github.io/microhil&quot;</span>};</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">constexpr</span> std::string_view programAuthors{<span class="stringliteral">&quot;Vladimir Roncevic&quot;</span>};</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">constexpr</span> std::string_view cProgramName{<span class="stringliteral">&quot;microhildesk&quot;</span>};</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">constexpr</span> std::string_view cProgramVersion{<span class="stringliteral">&quot;1.0.0&quot;</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">constexpr</span> std::string_view cProgramCopyright{<span class="stringliteral">&quot;Vladimir Roncevic &lt;elektron.ronca@gmail.com&gt;&quot;</span>};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">constexpr</span> std::string_view cProgramComments{<span class="stringliteral">&quot;This is microhildesk application.&quot;</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">constexpr</span> std::string_view cProgramLicense{<span class="stringliteral">&quot;GPLv3&quot;</span>};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">constexpr</span> std::string_view cProgramWebsite{<span class="stringliteral">&quot;https://electux.github.io/microhil&quot;</span>};</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">constexpr</span> std::string_view cProgramWebsiteLabel{<span class="stringliteral">&quot;electux.github.io/microhil&quot;</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">constexpr</span> std::string_view cProgramAuthors{<span class="stringliteral">&quot;Vladimir Roncevic&quot;</span>};</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../da/d2e/namespaceElectux_1_1App_1_1View_1_1About.html">Electux::App::View::About</a>;</div>
@@ -137,15 +137,15 @@ $(document).ready(function(){initNavTree('d4/d27/about_8cc_source.html','../../'
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../d6/d7a/classElectux_1_1App_1_1View_1_1About_1_1AppAbout.html#ac586420732363bcdcb16ce86f2a0e1ae">   46</a></span><a class="code hl_function" href="../../d6/d7a/classElectux_1_1App_1_1View_1_1About_1_1AppAbout.html#ac586420732363bcdcb16ce86f2a0e1ae">AppAbout::AppAbout</a>()</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    set_program_name(programName.data());</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    set_version(programVersion.data());</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    set_copyright(programCopyright.data());</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    set_comments(programComments.data());</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    set_license(programLicense.data());</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    set_website(programWebsite.data());</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    set_website_label(programWebsiteLabel.data());</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    set_program_name(cProgramName.data());</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    set_version(cProgramVersion.data());</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    set_copyright(cProgramCopyright.data());</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    set_comments(cProgramComments.data());</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    set_license(cProgramLicense.data());</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    set_website(cProgramWebsite.data());</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    set_website_label(cProgramWebsiteLabel.data());</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    std::vector&lt;Glib::ustring&gt; list_authors;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    list_authors.push_back(programAuthors.data());</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    list_authors.push_back(cProgramAuthors.data());</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    set_authors(list_authors);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    set_hide_on_close(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('d4/d27/about_8cc_source.html','../../'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_b2f003339c516cc00c8cadcafbe82f13.html">view</a></li><li class="navelem"><a class="el" href="../../dir_8a7199df7c9f34269196c175eb72be76.html">about</a></li><li class="navelem"><a class="el" href="../../d4/d27/about_8cc.html">about.cc</a></li>
-    <li class="footer">Generated on Fri Jan 30 2026 22:38:53 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Feb 5 2026 21:59:20 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

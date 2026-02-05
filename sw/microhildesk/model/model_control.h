@@ -18,7 +18,7 @@
  */
 #pragma once
 
-#include "model.h"
+#include <model/model.h>
 
 namespace Electux::App::Model
 {
@@ -49,13 +49,13 @@ namespace Electux::App::Model
         /// @brief Converts Key enum to 
         /// @param key Represents ModelControlKey enum value
         /// @return string representation of ModelControlKey enum
-        std::string toString(const ModelControlKey &key) const;
+        std::string_view toString(const ModelControlKey &key) const;
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Validates if key is valid control configuration key
         /// @param key Represents string key to be validated
         /// @return status true if key is valid else false
-        bool validateKey(const std::string &key) const;
+        bool validateKey(const std::string_view &key) const;
     };
 };
 

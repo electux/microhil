@@ -23,18 +23,44 @@
 #include <unordered_map>
 #include <sys/stat.h>
 #include <filesystem>
-#include "config_manager.h"
+#include <config/config_manager.h>
 
 namespace
 {
     ////////////////////////////////////////////////////////////////////////
     /// @brief Configuration parameters
-    ///   configFile - program configuration file name
-    ///   configAssignDelimiter - delimiter for key-value assignment
-    ///   configCommentChar - character for comment line
-    constexpr std::string_view configFile{".microhil/config"};
-    constexpr char configAssignDelimiter{'='};
-    constexpr char configCommentChar{'#'};
+    ///   cConfigFile - program configuration file name
+    ///   cConfigAssignDelimiter - delimiter for key-value assignment
+    ///   cConfigCommentChar - character for comment line
+    ///   cConfigDefaultControlEnable - default control configuration for enable
+    ///   cConfigDefaultControlMode - default control configuration for mode
+    ///   cConfigDefaultControlToggle - default control configuration for toggle
+    ///   cConfigDefaultControlTimer - default control configuration for timer
+    ///   cConfigDefaultControlTimerEnable - default control configuration for timer enable
+    ///   cConfigDefaultSerialDevice - default serial configuration for device
+    ///   cConfigDefaultSerialBaud - default serial configuration for baud rate
+    ///   cConfigDefaultSerialData - default serial configuration for data bits
+    ///   cConfigDefaultSerialParity - default serial configuration for parity
+    ///   cConfigDefaultSerialStop - default serial configuration for stop bits
+    ///   cConfigDefaultSerialFlow - default serial configuration for flow control
+    ///   cConfigDefaultLogFilePath - default log configuration for log file path
+    ///   cConfigDefaultLogLevel - default log configuration for log level
+    constexpr std::string_view cConfigFile{".microhil/config"};
+    constexpr char cConfigAssignDelimiter{'='};
+    constexpr char cConfigCommentChar{'#'};
+    constexpr std::string_view cConfigDefaultControlEnable{"false false false false false false false false"};
+    constexpr std::string_view cConfigDefaultControlMode{"0 0 0 0 0 0 0 0"};
+    constexpr std::string_view cConfigDefaultControlToggle{"false false false false false false false false"};
+    constexpr std::string_view cConfigDefaultControlTimer{"0 0 0 0 0 0 0 0"};
+    constexpr std::string_view cConfigDefaultControlTimerEnable{"false false false false false false false false"};
+    constexpr std::string_view cConfigDefaultSerialDevice{"/dev/ttyUSB0"};
+    constexpr std::string_view cConfigDefaultSerialBaud{"10"};
+    constexpr std::string_view cConfigDefaultSerialData{"3"};
+    constexpr std::string_view cConfigDefaultSerialParity{"2"};
+    constexpr std::string_view cConfigDefaultSerialStop{"0"};
+    constexpr std::string_view cConfigDefaultSerialFlow{"0"};
+    constexpr std::string_view cConfigDefaultLogFilePath{"/tmp/microhildesk.log"};
+    constexpr std::string_view cConfigDefaultLogLevel{"2"};
 };
 
 using namespace Electux::App::Config;
@@ -42,7 +68,7 @@ using namespace Electux::App::Model;
 
 ConfigManager::ConfigManager()
 {
-    m_fileName = Glib::build_filename(Glib::get_home_dir(), configFile.data());
+    m_fileName = Glib::build_filename(Glib::get_home_dir(), cConfigFile.data());
     auto dirPath = Glib::path_get_dirname(m_fileName);
 
     try
@@ -114,7 +140,7 @@ bool ConfigManager::load()
     std::string line;
     while (std::getline(file, line))
     {
-        if (line.empty() || line[0] == configCommentChar)
+        if (line.empty() || line[0] == cConfigCommentChar)
         {
             continue;
         }
@@ -122,7 +148,7 @@ bool ConfigManager::load()
         std::istringstream iss(line);
         std::string key, value;
 
-        if (std::getline(iss, key, configAssignDelimiter) && std::getline(iss, value))
+        if (std::getline(iss, key, cConfigAssignDelimiter) && std::getline(iss, value))
         {
             key.erase(0, key.find_first_not_of(" \t\n\r"));
             key.erase(key.find_last_not_of(" \t\n\r") + 1);
@@ -169,7 +195,7 @@ bool ConfigManager::store()
     {
         for (const auto& [key, value] : model.getAllEntries())
         {
-            file << key << configAssignDelimiter << value << "\n";
+            file << key << cConfigAssignDelimiter << value << "\n";
         }
     };
 
@@ -186,25 +212,25 @@ void ConfigManager::defaultConfigStore()
 {
     ////////////////////////////////////////////////////////////////////////////
     /// @brief Set default control configuration
-    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Enable), "false false false false false false false false");
-    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Mode), "0 0 0 0 0 0 0 0");
-    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Toggle), "false false false false false false false false");
-    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Timer), "0 0 0 0 0 0 0 0");
-    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::TimerEnable), "false false false false false false false false");
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Enable), cConfigDefaultControlEnable);
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Mode), cConfigDefaultControlMode);
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Toggle), cConfigDefaultControlToggle);
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Timer), cConfigDefaultControlTimer);
+    m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::TimerEnable), cConfigDefaultControlTimerEnable);
 
     ////////////////////////////////////////////////////////////////////////////
     /// @brief Set default serial configuration
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Device), "/dev/ttyUSB0");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Baud), "10");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Data), "3");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Parity), "2");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Stop), "0");
-    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Flow), "0");
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Device), cConfigDefaultSerialDevice);
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Baud), cConfigDefaultSerialBaud);
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Data), cConfigDefaultSerialData);
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Parity), cConfigDefaultSerialParity);
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Stop), cConfigDefaultSerialStop);
+    m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Flow), cConfigDefaultSerialFlow);
 
     ////////////////////////////////////////////////////////////////////////////
     /// @brief Set default log configuration
-    m_logConfig.add(m_logConfig.toString(ModelLog::ModelLogKey::FilePath), "/tmp/microhildesk.log");
-    m_logConfig.add(m_logConfig.toString(ModelLog::ModelLogKey::LogLevel), "2");
+    m_logConfig.add(m_logConfig.toString(ModelLog::ModelLogKey::FilePath), cConfigDefaultLogFilePath);
+    m_logConfig.add(m_logConfig.toString(ModelLog::ModelLogKey::LogLevel), cConfigDefaultLogLevel);
 
     ////////////////////////////////////////////////////////////////////////////
     /// @brief Store default configuration to file

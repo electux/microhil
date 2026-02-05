@@ -17,43 +17,43 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #include <vector>
-#include "about.h"
+#include <view/about/about.h>
 
 namespace
 {
     //////////////////////////////////////////////////////////////////////////
     /// @brief Application about dialog widgets parameters
-    ///   programName - program name
-    ///   programVersion - program version
-    ///   programCopyright - program copyright
-    ///   programComments - program comments
-    ///   programLicense - program license
-    ///   programWebsite - program website
-    ///   programWebsiteLabel - program website label 
-    ///   programAuthors - program author
-    constexpr std::string_view programName{"microhildesk"};
-    constexpr std::string_view programVersion{"1.0.0"};
-    constexpr std::string_view programCopyright{"Vladimir Roncevic <elektron.ronca@gmail.com>"};
-    constexpr std::string_view programComments{"This is microhildesk application."};
-    constexpr std::string_view programLicense{"GPLv3"};
-    constexpr std::string_view programWebsite{"https://electux.github.io/microhil"};
-    constexpr std::string_view programWebsiteLabel{"electux.github.io/microhil"};
-    constexpr std::string_view programAuthors{"Vladimir Roncevic"};
+    ///   cProgramName - program name
+    ///   cProgramVersion - program version
+    ///   cProgramCopyright - program copyright
+    ///   cProgramComments - program comments
+    ///   cProgramLicense - program license
+    ///   cProgramWebsite - program website
+    ///   cProgramWebsiteLabel - program website label 
+    ///   cProgramAuthors - program author
+    constexpr std::string_view cProgramName{"microhildesk"};
+    constexpr std::string_view cProgramVersion{"1.0.0"};
+    constexpr std::string_view cProgramCopyright{"Vladimir Roncevic <elektron.ronca@gmail.com>"};
+    constexpr std::string_view cProgramComments{"This is microhildesk application."};
+    constexpr std::string_view cProgramLicense{"GPLv3"};
+    constexpr std::string_view cProgramWebsite{"https://electux.github.io/microhil"};
+    constexpr std::string_view cProgramWebsiteLabel{"electux.github.io/microhil"};
+    constexpr std::string_view cProgramAuthors{"Vladimir Roncevic"};
 };
 
 using namespace Electux::App::View::About;
 
 AppAbout::AppAbout()
 {
-    set_program_name(programName.data());
-    set_version(programVersion.data());
-    set_copyright(programCopyright.data());
-    set_comments(programComments.data());
-    set_license(programLicense.data());
-    set_website(programWebsite.data());
-    set_website_label(programWebsiteLabel.data());
+    set_program_name(cProgramName.data());
+    set_version(cProgramVersion.data());
+    set_copyright(cProgramCopyright.data());
+    set_comments(cProgramComments.data());
+    set_license(cProgramLicense.data());
+    set_website(cProgramWebsite.data());
+    set_website_label(cProgramWebsiteLabel.data());
     std::vector<Glib::ustring> list_authors;
-    list_authors.push_back(programAuthors.data());
+    list_authors.push_back(cProgramAuthors.data());
     set_authors(list_authors);
     set_hide_on_close(true);
 }
