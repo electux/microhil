@@ -11,7 +11,7 @@ OD = objdump
 CS = size
 
 COMPILER = gcc
-# COMPILER = clang
+#COMPILER = clang
 
 ifeq ($(COMPILER), gcc)
     CXX = g++

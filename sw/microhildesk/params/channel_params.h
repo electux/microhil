@@ -22,5 +22,5 @@ namespace Electux::App::Params::Channel {
     /////////////////////////////////////////////////////////////////////////
     /// @brief Channel parameters
     ///   cNumOfChannels - number of channels supported
-    constexpr const unsigned int cNumOfChannels = 8;
+    constexpr const ssize_t cNumOfChannels = 8;
 };

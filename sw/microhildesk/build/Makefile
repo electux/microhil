@@ -29,13 +29,19 @@ CLEAN_LIST = \
 
 all: $(OBJECTS) $(EXECUTABLE) $(EXECUTABLE).lss sizedummy
 
+debug:
+	$(MAKE) all OPT_FLAGS="-g"
+
+release:
+	$(MAKE) all OPT_FLAGS="-O2"
+
 .cc.o:
 	@echo 'Invoking: compile unit $<'
 	$(CXX) $(CXXFLAGS) -o $@ $< `pkg-config --cflags gtkmm-4.0 libserial`
 	@echo 'Finished compile unit $<'
 	@echo ' '
 
-$(EXECUTABLE):
+$(EXECUTABLE): $(OBJECTS)
 	@echo 'Invoking: link executable $@'
 	$(CXX) $(OBJECTS) -o $@ `pkg-config --libs gtkmm-4.0 libserial`
 	@echo 'Finished link process: $@'

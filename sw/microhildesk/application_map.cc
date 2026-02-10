@@ -56,6 +56,7 @@ void EntryApplication::mapping()
     m_home.signal_close_request().connect(sigc::mem_fun(*this, &EntryApplication::onHandleClose), false);
 
     /////////////////////////////////////////////////////////////////////////
-    /// @brief Maps application setup signal
+    /// @brief Maps application setup signals to their handlers
     m_settings.setupChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));
+    m_home.controlChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));
 }

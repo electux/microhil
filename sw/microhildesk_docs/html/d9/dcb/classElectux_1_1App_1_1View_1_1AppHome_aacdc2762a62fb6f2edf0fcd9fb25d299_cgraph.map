@@ -1,0 +1,5 @@
+<map id="Electux::App::View::AppHome::update_param_value_by_index" name="Electux::App::View::AppHome::update_param_value_by_index">
+<area shape="rect" id="Node000001" title="Updates nth substring in input string." alt="" coords="5,5,201,60"/>
+<area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41" title="Splits input string into vector of substrings." alt="" coords="249,5,400,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,30,235,30,235,35,202,35"/>
+</map>

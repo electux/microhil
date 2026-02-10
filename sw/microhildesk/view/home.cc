@@ -69,7 +69,7 @@ AppHome::AppHome()
     m_boxRoot.set_orientation(Gtk::Orientation::HORIZONTAL);
     set_child(m_boxRoot);
 
-    for(unsigned int i = 0; i < cNumOfChannels; i++)
+    for(ssize_t i = 0; i < cNumOfChannels; i++)
     {
         m_boxChannels.emplace_back(Gtk::Orientation::VERTICAL);
         auto& currentBox = m_boxChannels.back();
@@ -89,6 +89,8 @@ AppHome::AppHome()
         m_labelTimerChannels.emplace_back(std::format("{} {}", cHomeTimerChannelLabel.data(), i));
         currentBox.append(m_labelTimerChannels.back());
         m_spinTimerChannels.emplace_back();
+        m_spinTimerChannels.back().set_range(0.0, 3600.0);
+        m_spinTimerChannels.back().set_increments(1.0, 10.0);
         currentBox.append(m_spinTimerChannels.back());
         m_toggleTimerChannels.emplace_back();
         m_toggleTimerChannels.back().set_label(cHomeTimerChannelButtonStart.data());
@@ -105,5 +107,5 @@ AppHome::AppHome()
 
 void AppHome::setControlSetup(const SettingsSetup& setup)
 {
-    m_controlSetup = setup;
+    m_setup = setup;
 }
