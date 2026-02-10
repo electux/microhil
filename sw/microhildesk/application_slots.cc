@@ -85,6 +85,8 @@ void EntryApplication::on_startup()
     setup.m_logConfig = m_configManager.getLogConfig();
     m_settings.setSettingsSetup(setup);
     m_settings.updateUiData();
+    m_home.setControlSetup(setup);
+    m_home.updateUiData();
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Sets visibility for AppHome window

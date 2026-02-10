@@ -30,9 +30,10 @@ var searchData=
   ['ccomstopbits_27',['cComStopBits',['../da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a875b7135f474d0a900b1c61069aa7090',1,'Electux::App::Params::SerialComConstants']]],
   ['ccomstopbits1_28',['cComStopBits1',['../da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a757426657a526cb513fc5e65b8f70f12',1,'Electux::App::Params::SerialComConstants']]],
   ['ccomstopbits2_29',['cComStopBits2',['../da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a268b3caca9719ae06c0ef9a7d6bdb678',1,'Electux::App::Params::SerialComConstants']]],
-  ['cloglevelerror_30',['clogLevelError',['../d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#a1d4cee2234c6e0684f7897722861866d',1,'Electux::App::Params::LogLevels']]],
-  ['cloglevelinfo_31',['clogLevelInfo',['../d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#afd6aa10698db7e700c6e7758c7612fd5',1,'Electux::App::Params::LogLevels']]],
-  ['cloglevels_32',['cLogLevels',['../d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#a4567d6baf9219f706908f201d098182d',1,'Electux::App::Params::LogLevels']]],
-  ['cloglevelwarning_33',['clogLevelWarning',['../d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#aceae9c8d33623a9fea8dbaca63829338',1,'Electux::App::Params::LogLevels']]],
-  ['cnumofchannels_34',['cNumOfChannels',['../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a046f896779a010d2fea60d8f624a35e4',1,'Electux::App::Params::Channel']]]
+  ['cfallback_30',['cFallback',['../d9/d26/namespaceElectux_1_1App_1_1Model.html#a2372a59a00de32121c13a5cae61d5eb3',1,'Electux::App::Model']]],
+  ['cloglevelerror_31',['clogLevelError',['../d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#a1d4cee2234c6e0684f7897722861866d',1,'Electux::App::Params::LogLevels']]],
+  ['cloglevelinfo_32',['clogLevelInfo',['../d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#afd6aa10698db7e700c6e7758c7612fd5',1,'Electux::App::Params::LogLevels']]],
+  ['cloglevels_33',['cLogLevels',['../d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#a4567d6baf9219f706908f201d098182d',1,'Electux::App::Params::LogLevels']]],
+  ['cloglevelwarning_34',['clogLevelWarning',['../d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#aceae9c8d33623a9fea8dbaca63829338',1,'Electux::App::Params::LogLevels']]],
+  ['cnumofchannels_35',['cNumOfChannels',['../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1',1,'Electux::App::Params::Channel']]]
 ];

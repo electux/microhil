@@ -18,6 +18,13 @@
  */
 #include <model/model.h>
 
+namespace Electux::App::Model
+{
+    ////////////////////////////////////////////////////////////////////////
+    /// @brief Fallback string for getEntity method when key is not found
+    constexpr std::string_view cFallback{""};
+};
+
 using namespace Electux::App::Model;
 
 bool Model::add(const std::string_view &key, const std::string_view &data)
@@ -40,7 +47,7 @@ const std::string &Model::getEntity(const std::string_view &key) const
         return it->second;
     }
 
-    static const std::string fallback{""};
+    static const std::string fallback{cFallback.data(), cFallback.size()};
     return fallback;
 }
 

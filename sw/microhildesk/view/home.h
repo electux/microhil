@@ -43,31 +43,6 @@ namespace Electux::App::View
         /// @brief AppHome constructor
         explicit AppHome();
 
-    private:
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Maps home (signals and slots)
-        void mapping(int index);
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for enablement channel
-        void onChannelEnableChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for setup channel mode
-        void onChannelModeChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for toggle mode
-        void onChannelToggleChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for timer mode
-        void onChannelTimerChanged();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for timer mode (start process)
-        void onChannelTimerToogleChanged();
-
         //////////////////////////////////////////////////////////////////////
         /// @brief Signal for settings setup
         /// @return Signal for changed settings setup
@@ -84,7 +59,44 @@ namespace Electux::App::View
         //////////////////////////////////////////////////////////////////////
         /// @brief Updates UI widgets with data from loaded configuration
         void updateUiData();
+
+    private:
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Maps home (signals and slots)
+        /// @param index Index of the channel to map
+        void mapping(size_t index);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Signal handler for enablement channel
+        /// @param index Index of the channel to map
+        void onChannelEnableChanged(size_t index);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Signal handler for setup channel mode
+        /// @param index Index of the channel to map
+        void onChannelModeChanged(size_t index);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Signal handler for toggle mode
+        /// @param index Index of the channel to map
+        void onChannelToggleChanged(size_t index);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Signal handler for timer mode
+        /// @param index Index of the channel to map
+        void onChannelTimerChanged(size_t index);
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Signal handler for timer mode (start process)
+        /// @param index Index of the channel to map
+        void onChannelTimerToggleChanged(size_t index);
         
+        /////////////////////////////////////////////////////////////////////
+        /// @brief Splits input string into vector of substrings
+        /// @param input Input string to split
+        /// @return Vector of substrings
+        std::vector<std::string> split_to_vector(const std::string_view &input);
+
         /////////////////////////////////////////////////////////////////////
         /// @brief Extracts nth substring from input string
         /// @param input Input string
@@ -116,7 +128,8 @@ namespace Electux::App::View
 
         //////////////////////////////////////////////////////////////////////
         /// @brief Container for packing widgets for home window
-        ///   m_controlSetup - control parameters
+        ///   m_blockSignals - flag to block signals during UI update
+        ///   m_setup - control parameters
         ///   m_controlSignal - signal for control settings
         ///   m_boxRoot - horizontal box for channel widgets
         ///   m_boxChannels - channel  container for widgets
@@ -128,7 +141,8 @@ namespace Electux::App::View
         ///   m_spinTimerChannels - channel spinner
         ///   m_toggleTimerChannels - channel toogle timer (start)
         ///   m_statusTimerChannels - channel status (visual)
-        SettingsSetup m_controlSetup{};
+        bool m_blockSignals{false};
+        SettingsSetup m_setup{};
         SigSettings m_controlSignal{};
         Gtk::Box m_boxRoot{};
         std::vector<Gtk::Box> m_boxChannels{};

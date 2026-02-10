@@ -1,7 +1,7 @@
 var namespaceElectux_1_1App_1_1Params =
 [
     [ "Channel", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html", [
-      [ "cNumOfChannels", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a046f896779a010d2fea60d8f624a35e4", null ]
+      [ "cNumOfChannels", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1", null ]
     ] ],
     [ "LogLevels", "d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html", [
       [ "clogLevelError", "d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#a1d4cee2234c6e0684f7897722861866d", null ],

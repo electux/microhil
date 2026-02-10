@@ -6,11 +6,13 @@
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 
+OPT_FLAGS ?= -Og -g
+
 ifeq ($(CXX), g++)
 CXXFLAGS = \
-	-std=c++20 \
+	-std=c++23 \
 	-c \
-	-g \
+	$(OPT_FLAGS) \
 	-pedantic \
 	-Wall \
 	-Wextra \
@@ -38,9 +40,9 @@ CXXFLAGS = \
 	-I..
 else ifeq ($(CXX), clang++)
 CXXFLAGS = \
-    -std=c++20 \
+    -std=c++23 \
     -c \
-    -g \
+    $(OPT_FLAGS) \
     -pedantic \
     -Wall \
     -Wextra \

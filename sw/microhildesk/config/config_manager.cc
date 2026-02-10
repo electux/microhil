@@ -49,7 +49,7 @@ namespace
     constexpr char cConfigAssignDelimiter{'='};
     constexpr char cConfigCommentChar{'#'};
     constexpr std::string_view cConfigDefaultControlEnable{"false false false false false false false false"};
-    constexpr std::string_view cConfigDefaultControlMode{"0 0 0 0 0 0 0 0"};
+    constexpr std::string_view cConfigDefaultControlMode{"-1 -1 -1 -1 -1 -1 -1 -1"};
     constexpr std::string_view cConfigDefaultControlToggle{"false false false false false false false false"};
     constexpr std::string_view cConfigDefaultControlTimer{"0 0 0 0 0 0 0 0"};
     constexpr std::string_view cConfigDefaultControlTimerEnable{"false false false false false false false false"};
@@ -170,7 +170,7 @@ bool ConfigManager::load()
             else
             {
                 std::cerr << "Warning: Unknown configuration key: " << key << std::endl;
-                return false;
+                continue;
             }
         }
     }

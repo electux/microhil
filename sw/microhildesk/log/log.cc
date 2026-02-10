@@ -22,6 +22,14 @@
 #include <ctime>
 #include <log/log.h>
 
+namespace Electux::App::Logger {
+    //////////////////////////////////////////////////////////////////////
+    /// @brief Log level tags
+    static constexpr std::string_view TAG_ERROR = "[ERROR] ";
+    static constexpr std::string_view TAG_WARN  = "[WARN] ";
+    static constexpr std::string_view TAG_INFO  = "[INFO] ";
+}
+
 using namespace Electux::App::Logger;
 
 Log::~Log()
@@ -94,13 +102,13 @@ void Log::log(const std::string &message, LogLevel level)
     switch (level)
     {
     case LogLevel::Error:
-        m_stream << "[ERROR] ";
+        m_stream << TAG_ERROR;
         break;
     case LogLevel::Warning:
-        m_stream << "[WARN] ";
+        m_stream << TAG_WARN;
         break;
     case LogLevel::Info:
-        m_stream << "[INFO] ";
+        m_stream << TAG_INFO;
         break;
     }
 
