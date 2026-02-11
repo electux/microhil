@@ -3,6 +3,8 @@ var classElectux_1_1App_1_1EntryApplication =
     [ "EntryApplication", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f", null ],
     [ "create", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e", null ],
     [ "mapping", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48", null ],
+    [ "on_activate", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a78e38fddc631cb7e1334e4d5ceee00fa", null ],
+    [ "on_shutdown", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a713038ddf091b8a44336cd3c9626f91d", null ],
     [ "on_startup", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440", null ],
     [ "onActionAbout", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#ac446f6532c80978429214cf11bae96c3", null ],
     [ "onActionDoc", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a37d19d8f5b163555d4eab076424cb81a", null ],

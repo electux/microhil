@@ -87,11 +87,26 @@ void EntryApplication::on_startup()
     m_settings.updateUiData();
     m_home.setControlSetup(setup);
     m_home.updateUiData();
+    std::cout << "Startup application done." << std::endl;
+}
+
+void EntryApplication::on_activate()
+{
+    std::cout << "Activate application..." << std::endl;
+    Gtk::Application::on_activate();
 
     //////////////////////////////////////////////////////////////////////////
     /// @brief Sets visibility for AppHome window
     m_home.set_visible(true);
-    std::cout << "Startup application done." << std::endl;
+
+    std::cout << "Activate application done." << std::endl;
+}
+
+void EntryApplication::on_shutdown()
+{
+    std::cout << "Shutting down application..." << std::endl;
+    m_configManager.store();
+    Gtk::Application::on_shutdown();
 }
 
 void EntryApplication::onActionQuit()
