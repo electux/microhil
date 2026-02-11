@@ -53,6 +53,14 @@ namespace Electux::App
         /// @brief Handler for the startup signal
         void on_startup() override;
 
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Handler for the activate signal
+        void on_activate() override;
+
+        //////////////////////////////////////////////////////////////////////
+        /// @brief Handler for the shutdown signal
+        void on_shutdown() override;
+
     private:
         //////////////////////////////////////////////////////////////////////
         /// @brief Maps signal/slots for application views
