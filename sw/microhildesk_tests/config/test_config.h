@@ -19,7 +19,7 @@
 #pragma once
 
 #include <gtest/gtest.h>
-#include <config_manager.h>
+#include <config/config_manager.h>
 
 namespace Electux::App::Config
 {
@@ -32,24 +32,25 @@ namespace Electux::App::Config
         /// @brief Promoting protected methods to public for unit testing
         using ConfigManager::defaultConfigStore;
     };
+
+    ///////////////////////////////////////////////////////////////////////////////
+    /// @brief Fixture for ConfigManager tests
+    class ConfigManagerTest : public ::testing::Test
+    {
+    protected:
+        using ConfigManager = Electux::App::Config::ConfigManagerProxy;
+
+        ConfigManager m_config{};
+
+        void SetUp() override
+        {
+            // Initialization if necessary
+        }
+
+        void TearDown() override
+        {
+            // Cleanup if necessary
+        }
+    };
 }
 
-///////////////////////////////////////////////////////////////////////////////
-/// @brief Fixture for ConfigManager tests
-class ConfigManagerTest : public ::testing::Test
-{
-protected:
-    using ConfigManager = Electux::App::Config::ConfigManagerProxy;
-
-    ConfigManager m_config{};
-
-    void SetUp() override
-    {
-        // Initialization if necessary
-    }
-
-    void TearDown() override
-    {
-        // Cleanup if necessary
-    }
-};

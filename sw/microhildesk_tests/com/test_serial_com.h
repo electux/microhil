@@ -19,7 +19,7 @@
 #pragma once
 
 #include <gtest/gtest.h>
-#include <serial_com.h>
+#include <com/serial_com.h>
 
 namespace Electux::App::Com
 {
@@ -41,34 +41,34 @@ namespace Electux::App::Com
         using SerialCom::flowControlToUint;
         using SerialCom::uintToFlowControl;
     };
+
+    ///////////////////////////////////////////////////////////////////////////////
+    /// @brief Test fixture for SerialCom class
+    class SerialComTest : public ::testing::Test
+    {
+    protected:
+        ///////////////////////////////////////////////////////////////////////////
+        /// @brief Local aliases to keep the test code clean
+        using SerialCom = Electux::App::Com::SerialComProxy;
+        using BaudRate = Electux::App::Com::BaudRate;
+        using CharacterSize = Electux::App::Com::CharacterSize;
+        using Parity = Electux::App::Com::Parity;
+        using StopBits = Electux::App::Com::StopBits;
+        using FlowControl = Electux::App::Com::FlowControl;
+        using SerialParams = Electux::App::Com::SerialParams;
+
+        ///////////////////////////////////////////////////////////////////////////
+        /// @brief The instance being tested is now the Proxy
+        SerialCom m_serial{};
+
+        void SetUp() override
+        {
+            // Initialization if necessary
+        }
+
+        void TearDown() override
+        {
+            // Cleanup if necessary
+        }
+    };
 }
-
-///////////////////////////////////////////////////////////////////////////////
-/// @brief Test fixture for SerialCom class
-class SerialComTest : public ::testing::Test
-{
-protected:
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief Local aliases to keep the test code clean
-    using SerialCom = Electux::App::Com::SerialComProxy;
-    using BaudRate = Electux::App::Com::BaudRate;
-    using CharacterSize = Electux::App::Com::CharacterSize;
-    using Parity = Electux::App::Com::Parity;
-    using StopBits = Electux::App::Com::StopBits;
-    using FlowControl = Electux::App::Com::FlowControl;
-    using SerialParams = Electux::App::Com::SerialParams;
-
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief The instance being tested is now the Proxy
-    SerialCom m_serial{};
-
-    void SetUp() override
-    {
-        // Initialization if necessary
-    }
-
-    void TearDown() override
-    {
-        // Cleanup if necessary
-    }
-};

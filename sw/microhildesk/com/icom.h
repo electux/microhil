@@ -31,7 +31,7 @@ namespace Electux::App::Com
 
     ///////////////////////////////////////////////////////////////////////////
     /// @brief Declaration of serial parameters structure
-    using SerialParams = struct
+    struct SerialParams
     {
         ///////////////////////////////////////////////////////////////////////
         /// @brief Serial parameters

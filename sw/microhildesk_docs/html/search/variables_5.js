@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parity_0',['parity',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a9714e8a382c097c368b4df723d4e252f',1,'Electux::App::Com']]]
+  ['parity_0',['parity',['../d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html#af349472c5134addab6df9d35bd8a2ba9',1,'Electux::App::Com::SerialParams']]]
 ];

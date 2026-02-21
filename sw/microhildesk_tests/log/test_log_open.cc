@@ -22,7 +22,7 @@ using namespace Electux::App::Logger;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Test file opening and closing
-TEST_F(LogTest, FileOpenCloseTest)
+TEST_F(LogTest, FileOpenTest)
 {
     // Should fail if no output file is set (handled in SetUp, but testing logic)
     EXPECT_TRUE(m_logger.open());

@@ -18,6 +18,8 @@
  */
 #include "test_config.h"
 
+using namespace Electux::App::Config;
+
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Test the control function of ConfigManager
 /// @param ConfigManagerTest is test fixture

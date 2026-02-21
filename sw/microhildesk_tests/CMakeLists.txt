@@ -15,6 +15,9 @@ enable_testing()
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(gtkmm REQUIRED IMPORTED_TARGET gtkmm-4.0 glibmm-2.4)
 
+# Find the serial library
+find_library(SERIAL_LIB serial)
+
 # Add sources and includes for googletest
 add_subdirectory(googletest)
 include_directories(googletest/include)
@@ -42,6 +45,6 @@ add_executable(
 )
 
 # Link libraries
-target_link_libraries(microhil_tests PUBLIC gtest gtest_main PkgConfig::gtkmm)
+target_link_libraries(microhil_tests PUBLIC ${SERIAL_LIB} gtest gtest_main PkgConfig::gtkmm)
 include(GoogleTest)
 gtest_discover_tests(microhil_tests)

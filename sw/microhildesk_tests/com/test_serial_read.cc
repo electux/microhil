@@ -18,6 +18,8 @@
  */
 #include "test_serial_com.h"
 
+using namespace Electux::App::Com;
+
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Test read operation of SerialCom
 /// @param SerialComTest is test fixture

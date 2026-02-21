@@ -7,7 +7,7 @@
 
 set(
     MICROHIL_COM_HEADERS
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/
+    ${PROJECT_SOURCE_DIR}/../microhildesk/
 )
 
 set(
