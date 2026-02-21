@@ -22,7 +22,7 @@ using namespace Electux::App::View::Settings;
 
 void AppSettings::updateUiData()
 {
-    /////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Updates UI widgets with data from loaded configuration for serial
     auto serialConfigPathKey = m_setup.m_serialConfig.toString(ModelSerial::ModelSerialKey::Device);
     m_entrySerialPath.set_text(m_setup.m_serialConfig.getEntity(serialConfigPathKey).data());
@@ -42,7 +42,7 @@ void AppSettings::updateUiData()
     auto serialConfigFlowControlValue = std::stoi(m_setup.m_serialConfig.getEntity(serialConfigFlowControlKey).data());
     m_comboSerialFlowControl.set_active(serialConfigFlowControlValue);
     
-    /////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Updates UI widgets with data from loaded configuration for log
     auto logConfigPathKey = m_setup.m_logConfig.toString(ModelLog::ModelLogKey::FilePath);
     m_entryLogPath.set_text(m_setup.m_logConfig.getEntity(logConfigPathKey).data());
@@ -53,7 +53,7 @@ void AppSettings::updateUiData()
 
 void AppSettings::getUiData()
 {
-    /////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Gets UI data from widgets and saves them to configuration for serial
     auto serialConfigPathKey = m_setup.m_serialConfig.toString(ModelSerial::ModelSerialKey::Device);
     auto serialConfigPathValue = m_entrySerialPath.get_text().raw();
@@ -79,7 +79,7 @@ void AppSettings::getUiData()
     auto serialConfigFlowControlValue = std::to_string(serialConfigFlowControlComboValue);
     m_setup.m_serialConfig.update(serialConfigFlowControlKey, serialConfigFlowControlValue);
     
-    /////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Gets UI data from widgets and saves them to configuration for log
     auto logConfigPathKey = m_setup.m_logConfig.toString(ModelLog::ModelLogKey::FilePath);
     auto logConfigPathValue = m_entryLogPath.get_text().raw();
@@ -92,19 +92,19 @@ void AppSettings::getUiData()
 
 void AppSettings::onButtonOkClicked()
 {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Performs action on OK button emit signal for changed settings
     getUiData();
     m_setupSignal.emit(m_setup);
 
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Hide settings window after saving changes
     hide();
 }
 
 void AppSettings::onButtonCancelClicked()
 {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Hide settings window without saving changes
     hide();
 }

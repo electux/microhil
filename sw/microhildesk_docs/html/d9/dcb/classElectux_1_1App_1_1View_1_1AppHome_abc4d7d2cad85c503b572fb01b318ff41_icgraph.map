@@ -8,7 +8,7 @@
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1034,54,998,52,998,46,1034,49"/>
 <area shape="rect" id="Node000004" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae0f8910d94af6ff09113de99f36f0fbe" title="Updates UI widgets with data from loaded configuration." alt="" coords="524,5,716,45"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="790,39,716,34,717,29,790,33"/>
-<area shape="rect" id="Node000005" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="220,5,439,45"/>
+<area shape="rect" id="Node000005" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal to initialize application." alt="" coords="220,5,439,45"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="510,28,439,28,439,23,510,23"/>
 <area shape="rect" id="Node000007" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859" title="Updates control configuration parameter." alt="" coords="801,206,1000,261"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1036,201,1001,210,999,205,1035,196"/>

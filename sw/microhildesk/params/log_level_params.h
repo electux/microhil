@@ -21,14 +21,14 @@
 #include <string_view>
 
 namespace Electux::App::Params::LogLevels {
-    /////////////////////////////////////////////////////////////////////////
-    /// @brief Log levels parameters
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief Log levels parameters definitions
     ///   cLogLevels - array of log level names
     ///   clogLevelError - index for Error level
     ///   clogLevelWarning - index for Warning level
     ///   clogLevelInfo - index for Info level
     constexpr std::string_view cLogLevels[]{"Error", "Warning", "Info"};
-    constexpr const unsigned int clogLevelError = 0;
-    constexpr const unsigned int clogLevelWarning = 1;
-    constexpr const unsigned int clogLevelInfo = 2;
+    constexpr const uint32_t clogLevelError = 0;
+    constexpr const uint32_t clogLevelWarning = 1;
+    constexpr const uint32_t clogLevelInfo = 2;
 };

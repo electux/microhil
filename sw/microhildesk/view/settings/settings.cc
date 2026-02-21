@@ -22,7 +22,7 @@
 
 namespace
 {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Application settings window widgets parameters
     ///   cSettingsTitle - window title
     ///   cSettingsWidth - window width
@@ -82,7 +82,7 @@ using namespace Electux::App::Params::LogLevels;
 
 AppSettings::AppSettings()
 {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Setup application settings window
     set_title(cSettingsTitle.data());
     set_default_size(cSettingsWidth, cSettingsHeight);
@@ -93,7 +93,7 @@ AppSettings::AppSettings()
     m_notebook.set_margin(cSettingsNotebookMargin);
     m_notebook.set_expand();
 
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Setup serial port settings page
     m_boxSerial.set_orientation(Gtk::Orientation::VERTICAL);
     m_labelSerialPath.set_label(cSettingsSerialPath.data());
@@ -101,42 +101,52 @@ AppSettings::AppSettings()
     m_boxSerial.append(m_entrySerialPath);
     m_labelSerialBaud.set_label(cSettingsSerialBaud.data());
     m_boxSerial.append(m_labelSerialBaud);
+
     for (const auto& rate : cComBaudRates)
     {
         m_comboSerialBaud.append(std::string(rate));
     }
+
     m_boxSerial.append(m_comboSerialBaud);
     m_labelSerialData.set_label(cSettingsSerialData.data());
     m_boxSerial.append(m_labelSerialData);
+
     for (const auto& data : cComDataBits)
     {
         m_comboSerialData.append(std::string(data));
     }
+
     m_boxSerial.append(m_comboSerialData);
     m_labelSerialParity.set_label(cSettingsSerialParity.data());
     m_boxSerial.append(m_labelSerialParity);
+
     for (const auto& parity : cComParities)
     {
         m_comboSerialParity.append(std::string(parity));
     }
+
     m_boxSerial.append(m_comboSerialParity);
     m_labelSerialStop.set_label(cSettingsSerialStop.data());
     m_boxSerial.append(m_labelSerialStop);
+
     for (const auto& stop : cComStopBits)
     {
         m_comboSerialStop.append(std::string(stop));
     }
+
     m_boxSerial.append(m_comboSerialStop);
     m_labelSerialFlowControl.set_label(cSettingsSerialFlowControl.data());
     m_boxSerial.append(m_labelSerialFlowControl);
+
     for (const auto& flow : cComFlowControls)
     {
         m_comboSerialFlowControl.append(std::string(flow));
     }
+
     m_boxSerial.append(m_comboSerialFlowControl);
     m_notebook.append_page(m_boxSerial, cSettingsPageSerialLabel.data());
 
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Setup log settings page
     m_boxLog.set_orientation(Gtk::Orientation::VERTICAL);
     m_labelLogPath.set_label(cSettingsLogPath.data());
@@ -144,10 +154,12 @@ AppSettings::AppSettings()
     m_boxLog.append(m_entryLogPath);
     m_labelLogLevel.set_label(cSettingsLogLevel.data());
     m_boxLog.append(m_labelLogLevel);
+
     for (const auto& level : cLogLevels)
     {
         m_comboLogLevel.append(std::string(level));
     }
+
     m_boxLog.append(m_comboLogLevel);
     m_notebook.append_page(m_boxLog, cSettingsPageLogLabel.data());
     m_boxRoot.append(m_notebook);
@@ -165,7 +177,7 @@ AppSettings::AppSettings()
     m_buttonBox.set_column_spacing(cSettingsButtonBoxColumnSpacing);
     m_boxRoot.append(m_buttonBox);
 
-    ////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Maps channels (signals and slots)
     mapping();
 }

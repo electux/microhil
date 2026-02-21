@@ -23,8 +23,8 @@
 #include <log/log.h>
 
 namespace Electux::App::Logger {
-    //////////////////////////////////////////////////////////////////////
-    /// @brief Log level tags
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief Log level tags for formatting log messages
     static constexpr std::string_view TAG_ERROR = "[ERROR] ";
     static constexpr std::string_view TAG_WARN  = "[WARN] ";
     static constexpr std::string_view TAG_INFO  = "[INFO] ";

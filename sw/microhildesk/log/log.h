@@ -20,64 +20,58 @@
 
 #include <fstream>
 #include <mutex>
+#include <string>
+#include <log/ilog.h>
 
 namespace Electux::App::Logger
 {
-    class Log
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief Log class is a file-based implementation of ILog
+    class Log : public ILog
     {
     public:
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Model log methods
         ///   Log constructor
         ///   Log destructor with force close log file
         ///   Deleted copy constructor and assignment operator
         inline Log() noexcept = default;
-        ~Log();
+        ~Log() noexcept;
         Log(const Log &) = delete;
         Log &operator=(const Log &) = delete;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Enum for log levels
-        enum class LogLevel
-        {
-            Error = 0,
-            Warning,
-            Info
-        };
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Sets the filtering log level
+        /// @param level The log level to set for filtering messages
+        void setLevel(LogLevel level) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Sets log level
-        /// @param level Represents log level to be set
-        void setLevel(LogLevel level);
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Gets the current filtering log level
+        /// @return The current log level used for filtering messages
+        LogLevel getLevel() const final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Gets log level
-        /// @return current log level
-        LogLevel getLevel() const;
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Opens the logging sink (file, socket, etc.)
+        /// @return true for success, else false
+        bool open() final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Sets output log file
-        /// @param output Represents output log file to be set
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Closes the logging sink
+        /// @return true for success, else false
+        bool close() final;
+
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Logs a message to the sink
+        /// @param message The string content to log
+        /// @param level The severity of the message
+        void log(const std::string &message, LogLevel level) final;
+
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Specific to File Logger: Sets the path
         void setOutputFile(const std::string &output);
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Opens log file
-        /// @return true for success else false
-        bool open();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Closes log file
-        /// @return true for success else false
-        bool close();
-
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Logs message to log file
-        /// @param message Represents message to be logged
-        /// @param level Represents log level of the message
-        void log(const std::string &message, LogLevel level);
-    
     private:
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Model log properties
         ///   m_level - current log level
         ///   m_outputFile - output log file name
@@ -86,7 +80,7 @@ namespace Electux::App::Logger
         LogLevel m_level{LogLevel::Info};
         std::string m_outputFile{};
         std::ofstream m_stream{};
-        std::mutex m_mutex{};
+        mutable std::mutex m_mutex{};
     };
 };
 

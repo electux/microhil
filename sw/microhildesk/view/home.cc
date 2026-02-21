@@ -23,7 +23,7 @@
 
 namespace
 {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Application home window widgets parameters
     ///   cHomeTitle - home window title
     ///   cHomeWidth - home window width
@@ -60,7 +60,7 @@ using namespace Electux::App::Params::Channel;
 
 AppHome::AppHome()
 {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Setup application home window
     set_title(cHomeTitle.data());
     set_default_size(cHomeWidth, cHomeHeight);
@@ -69,7 +69,7 @@ AppHome::AppHome()
     m_boxRoot.set_orientation(Gtk::Orientation::HORIZONTAL);
     set_child(m_boxRoot);
 
-    for(ssize_t i = 0; i < cNumOfChannels; i++)
+    for (ssize_t i = 0; i < cNumOfChannels; i++)
     {
         m_boxChannels.emplace_back(Gtk::Orientation::VERTICAL);
         auto& currentBox = m_boxChannels.back();

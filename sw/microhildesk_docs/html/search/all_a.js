@@ -55,7 +55,7 @@ var searchData=
   ['main_52',['main',['../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cc']]],
   ['main_2ecc_53',['main.cc',['../d9/d0f/main_8cc.html',1,'']]],
   ['mapping_54',['mapping',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48',1,'Electux::App::EntryApplication::mapping()'],['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa5db7dec159c2ee49ae10120f94d177e',1,'Electux::App::View::AppHome::mapping()'],['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5763d8088e72a080dd732c16851b5170',1,'Electux::App::View::Settings::AppSettings::mapping()']]],
-  ['mode_55',['Mode',['../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26',1,'Electux::App::Model::ModelControl']]],
+  ['mode_55',['Mode',['../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26',1,'Electux::App::Model::ModelControl']]],
   ['model_56',['model',['../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#aa3f587e7bc73f12c7de86a6aa8d03e69',1,'Electux::App::Model::Model::Model()'],['../da/d81/classElectux_1_1App_1_1Model_1_1Model.html',1,'Electux::App::Model::Model']]],
   ['model_2ecc_57',['model.cc',['../d5/d3b/model_8cc.html',1,'']]],
   ['model_2eh_58',['model.h',['../dc/d51/model_8h.html',1,'']]],
@@ -66,9 +66,9 @@ var searchData=
   ['model_5fserial_2ecc_63',['model_serial.cc',['../d2/d12/model__serial_8cc.html',1,'']]],
   ['model_5fserial_2eh_64',['model_serial.h',['../df/db2/model__serial_8h.html',1,'']]],
   ['modelcontrol_65',['modelcontrol',['../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html',1,'Electux::App::Model::ModelControl'],['../d3/d81/namespaceElectux_1_1App_1_1View.html#a4e1d4f1b0f1ce9e598abcae5c8aa344a',1,'Electux::App::View::ModelControl'],['../d9/d49/namespaceElectux_1_1App_1_1Config.html#a1f9413bc2ae89a1fa1ff6b68f2000bb7',1,'Electux::App::Config::ModelControl'],['../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#afa3e18d0f7ce00779a42a0ffe0e7966b',1,'Electux::App::Model::ModelControl::ModelControl() noexcept=default']]],
-  ['modelcontrolkey_66',['ModelControlKey',['../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088',1,'Electux::App::Model::ModelControl']]],
+  ['modelcontrolkey_66',['ModelControlKey',['../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31',1,'Electux::App::Model::ModelControl']]],
   ['modellog_67',['modellog',['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ab0572d7f84ad640a824058d5f3e1fef6',1,'Electux::App::Model::ModelLog::ModelLog()'],['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html',1,'Electux::App::Model::ModelLog'],['../d9/d49/namespaceElectux_1_1App_1_1Config.html#a643ae51d5b98681de3c208a700145882',1,'Electux::App::Config::ModelLog'],['../d3/d81/namespaceElectux_1_1App_1_1View.html#a0b8d440835c8d039c329c0ab325a6810',1,'Electux::App::View::ModelLog']]],
-  ['modellogkey_68',['ModelLogKey',['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19',1,'Electux::App::Model::ModelLog']]],
+  ['modellogkey_68',['ModelLogKey',['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a588b0914dd8af1ff92cb6268d7d0f54d',1,'Electux::App::Model::ModelLog']]],
   ['modelserial_69',['modelserial',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a97d5e36e492f8e9375f781f8eb54cd58',1,'Electux::App::Model::ModelSerial::ModelSerial()'],['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html',1,'Electux::App::Model::ModelSerial'],['../d9/d49/namespaceElectux_1_1App_1_1Config.html#abaa7a94b8d71911d14e3b3cbff34827a',1,'Electux::App::Config::ModelSerial'],['../d3/d81/namespaceElectux_1_1App_1_1View.html#a361d1bdcaf80d88dce3921136b15d96a',1,'Electux::App::View::ModelSerial']]],
-  ['modelserialkey_70',['ModelSerialKey',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3',1,'Electux::App::Model::ModelSerial']]]
+  ['modelserialkey_70',['ModelSerialKey',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9',1,'Electux::App::Model::ModelSerial']]]
 ];

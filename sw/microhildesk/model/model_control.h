@@ -18,40 +18,43 @@
  */
 #pragma once
 
+#include <cstdint>
 #include <model/model.h>
 
 namespace Electux::App::Model
 {
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief ModelControl definition for control configuration
     class ModelControl : public Model
     {
     public:
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief ModelControl constructor
         inline ModelControl() noexcept = default;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Enum for control configuration keys
-        enum class ModelControlKey
+        enum class ModelControlKey : uint8_t
         {
-            Enable,
+            Enable = 0,
             Mode,
             Toggle,
             Timer,
             TimerEnable
         };
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Gets all model entries
         /// @return Map of all model entries {key: data}
         Entities getAllEntries() const final;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Converts Key enum to 
         /// @param key Represents ModelControlKey enum value
         /// @return string representation of ModelControlKey enum
         std::string_view toString(const ModelControlKey &key) const;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Validates if key is valid control configuration key
         /// @param key Represents string key to be validated
         /// @return status true if key is valid else false

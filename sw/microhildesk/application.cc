@@ -22,9 +22,9 @@
 
 namespace
 {
-    //////////////////////////////////////////////////////////////////////////
-    /// @brief Application parameters
-    ///   cApplicationId - application ID
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief Application parameters and constants for EntryApplication
+    ///   cApplicationId - application ID for EntryApplication
     constexpr std::string_view cApplicationId{"electux.io.microhildesk"};
 };
 

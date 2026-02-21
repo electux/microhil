@@ -1,8 +1,8 @@
 var classElectux_1_1App_1_1Model_1_1ModelLog =
 [
-    [ "ModelLogKey", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19", [
-      [ "FilePath", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a2fb403e71d8ade2ba79af3f6c4695d09", null ],
-      [ "LogLevel", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a416615500e98f799b248bf428a3a3f19a31f085f5c12702593ad0244e0090af4e", null ]
+    [ "ModelLogKey", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a588b0914dd8af1ff92cb6268d7d0f54d", [
+      [ "FilePath", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a588b0914dd8af1ff92cb6268d7d0f54da2fb403e71d8ade2ba79af3f6c4695d09", null ],
+      [ "LogLevel", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#a588b0914dd8af1ff92cb6268d7d0f54da31f085f5c12702593ad0244e0090af4e", null ]
     ] ],
     [ "ModelLog", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ab0572d7f84ad640a824058d5f3e1fef6", null ],
     [ "add", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ab5f411c8bde7a2ee7f14e6d4dffada41", null ],

@@ -22,7 +22,7 @@
 using namespace Electux::App::Com;
 using namespace Electux::App::Params::SerialComConstants;
 
-unsigned int SerialCom::baudToUint(const BaudRate baud)
+uint32_t SerialCom::baudToUint(const BaudRate baud)
 {
     switch (baud)
     {
@@ -93,7 +93,7 @@ unsigned int SerialCom::baudToUint(const BaudRate baud)
     return cComInvalidParameter;
 }
 
-BaudRate SerialCom::uintToBaud(const unsigned int baud)
+BaudRate SerialCom::uintToBaud(const uint32_t baud)
 {
     switch (baud)
     {
@@ -126,7 +126,7 @@ BaudRate SerialCom::uintToBaud(const unsigned int baud)
     return BaudRate::BAUD_INVALID;
 }
 
-unsigned int SerialCom::dataBitsToUint(const CharacterSize data)
+uint32_t SerialCom::dataBitsToUint(const CharacterSize data)
 {
     switch (data)
     {
@@ -145,7 +145,7 @@ unsigned int SerialCom::dataBitsToUint(const CharacterSize data)
     return cComInvalidParameter;
 }
 
-CharacterSize SerialCom::uintToDataBits(const unsigned int data)
+CharacterSize SerialCom::uintToDataBits(const uint32_t data)
 {
     switch (data)
     {
@@ -162,7 +162,7 @@ CharacterSize SerialCom::uintToDataBits(const unsigned int data)
     return CharacterSize::CHAR_SIZE_INVALID;
 }
 
-unsigned int SerialCom::parityToUint(const Parity parity)
+uint32_t SerialCom::parityToUint(const Parity parity)
 {
     switch (parity)
     {
@@ -179,7 +179,7 @@ unsigned int SerialCom::parityToUint(const Parity parity)
     return cComInvalidParameter;
 }
 
-Parity SerialCom::uintToParity(const unsigned int parity)
+Parity SerialCom::uintToParity(const uint32_t parity)
 {
     switch (parity)
     {
@@ -194,7 +194,7 @@ Parity SerialCom::uintToParity(const unsigned int parity)
     return Parity::PARITY_INVALID;
 }
 
-unsigned int SerialCom::stopBitsToUint(const StopBits stop)
+uint32_t SerialCom::stopBitsToUint(const StopBits stop)
 {
     switch (stop)
     {
@@ -209,7 +209,7 @@ unsigned int SerialCom::stopBitsToUint(const StopBits stop)
     return cComInvalidParameter;
 }
 
-StopBits SerialCom::uintToStopBits(const unsigned int stop)
+StopBits SerialCom::uintToStopBits(const uint32_t stop)
 {
     switch (stop)
     {
@@ -222,7 +222,7 @@ StopBits SerialCom::uintToStopBits(const unsigned int stop)
     return StopBits::STOP_BITS_INVALID;
 }
 
-unsigned int SerialCom::flowControlToUint(const FlowControl flow)
+uint32_t SerialCom::flowControlToUint(const FlowControl flow)
 {
     switch (flow)
     {
@@ -239,7 +239,7 @@ unsigned int SerialCom::flowControlToUint(const FlowControl flow)
     return cComInvalidParameter;
 }
 
-FlowControl SerialCom::uintToFlowControl(const unsigned int flow)
+FlowControl SerialCom::uintToFlowControl(const uint32_t flow)
 {
     switch (flow)
     {

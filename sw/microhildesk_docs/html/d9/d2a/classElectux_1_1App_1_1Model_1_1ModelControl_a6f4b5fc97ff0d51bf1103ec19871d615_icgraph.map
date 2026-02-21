@@ -1,6 +1,6 @@
 <map id="Electux::App::Model::ModelControl::toString" name="Electux::App::Model::ModelControl::toString">
 <area shape="rect" id="Node000001" title="Converts Key enum to." alt="" coords="817,293,993,333"/>
-<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="525,5,747,60"/>
+<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration to file." alt="" coords="525,5,747,60"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="892,280,875,234,849,178,813,122,792,97,768,75,746,61,749,56,771,71,796,93,817,119,853,176,880,232,897,278"/>
 <area shape="rect" id="Node000004" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a0e25c4963d7f5eb70c3e66201cf162de" title="Gets all model entries." alt="" coords="532,85,740,125"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="886,282,866,247,839,209,806,171,768,139,739,124,741,120,771,134,810,167,844,205,871,245,890,279"/>
@@ -18,7 +18,7 @@
 <area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="890,346,843,418,810,457,771,490,744,504,742,500,768,485,806,453,839,415,885,343"/>
 <area shape="rect" id="Node000013" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae0f8910d94af6ff09113de99f36f0fbe" title="Updates UI widgets with data from loaded configuration." alt="" coords="540,579,732,619"/>
 <area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="898,347,883,397,857,457,820,518,797,545,771,570,733,589,731,584,768,565,793,542,816,515,852,454,878,395,893,345"/>
-<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7d3d7c10423d969f7544509f6fcca32f" title="Config constructor." alt="" coords="220,13,455,53"/>
+<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7d3d7c10423d969f7544509f6fcca32f" title="Config constructor with default configuration." alt="" coords="220,13,455,53"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="511,35,455,35,455,30,511,30"/>
 <area shape="rect" id="Node000007" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa5db7dec159c2ee49ae10120f94d177e" title="Maps home (signals and slots)" alt="" coords="258,357,417,397"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="523,275,504,283,430,321,370,359,367,354,428,316,502,278,521,270"/>
@@ -28,6 +28,6 @@
 <area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="489,379,417,379,417,374,489,374"/>
 <area shape="poly" id="edge13_Node000011_Node000007" title=" " alt="" coords="508,421,416,398,418,393,509,415"/>
 <area shape="poly" id="edge15_Node000012_Node000007" title=" " alt="" coords="519,498,501,490,423,444,362,399,365,395,426,440,504,485,521,493"/>
-<area shape="rect" id="Node000014" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="228,579,447,619"/>
+<area shape="rect" id="Node000014" href="$d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal to initialize application." alt="" coords="228,579,447,619"/>
 <area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="526,602,447,602,447,597,526,597"/>
 </map>

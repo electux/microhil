@@ -1,8 +1,8 @@
 <map id="Electux::App::Config::ConfigManager::defaultConfigStore" name="Electux::App::Config::ConfigManager::defaultConfigStore">
-<area shape="rect" id="Node000001" title="Stores default configuration." alt="" coords="5,126,228,181"/>
+<area shape="rect" id="Node000001" title="Stores default configuration to file." alt="" coords="5,126,228,181"/>
 <area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="289,5,439,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,124,212,89,275,55,290,48,293,53,277,60,215,94,160,128"/>
-<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="279,69,449,109"/>
+<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration to file." alt="" coords="279,69,449,109"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,123,273,110,274,115,224,128"/>
 <area shape="rect" id="Node000004" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="276,133,452,173"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,151,262,151,262,156,228,156"/>

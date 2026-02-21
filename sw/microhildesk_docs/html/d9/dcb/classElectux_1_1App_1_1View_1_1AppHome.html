@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('d9/dcb/classElectux_1_1App_1_1View_1_1
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d1/d3c/classElectux_1_1App_1_1View_1_1AppHome-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Electux::App::View::AppHome Class Reference</div></div>
@@ -126,13 +126,13 @@ Collaboration diagram for Electux::App::View::AppHome:</div>
 <area shape="poly" title=" " alt="" coords="242,781,256,798,281,817,303,829,356,851,574,947,773,1026,771,1031,572,952,354,856,301,834,278,822,253,802,238,785"/>
 <area shape="rect" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html" title="Setup settings for collected parameters." alt="" coords="267,700,407,800"/>
 <area shape="poly" title=" " alt="" coords="409,791,421,798,774,1000,771,1005,419,802,406,795"/>
-<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html" title=" " alt="" coords="99,497,242,637"/>
+<area shape="rect" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html" title="ModelControl definition for control configuration." alt="" coords="99,497,242,637"/>
 <area shape="poly" title=" " alt="" coords="190,636,213,674,230,687,254,697,251,702,227,692,209,678,186,639"/>
-<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="266,268,409,448"/>
+<area shape="rect" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition that implements IModel interface." alt="" coords="266,268,409,448"/>
 <area shape="poly" title=" " alt="" coords="259,460,228,499,224,496,255,457"/>
-<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="266,497,409,637"/>
+<area shape="rect" href="../../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title="ModelSerial definition for serial configuration." alt="" coords="266,497,409,637"/>
 <area shape="poly" title=" " alt="" coords="340,462,340,497,335,497,335,462"/>
-<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="433,497,575,637"/>
+<area shape="rect" href="../../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title="ModelLog definition for log configuration." alt="" coords="433,497,575,637"/>
 <area shape="poly" title=" " alt="" coords="419,457,451,496,446,499,415,460"/>
 <area shape="rect" href="../../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="179,5,322,205"/>
 <area shape="poly" title=" " alt="" coords="292,217,309,267,304,269,287,219"/>
@@ -179,8 +179,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae0f8910d94af6ff09113de99f36f0fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates UI widgets with data from loaded configuration.  <br /></td></tr>
 <tr class="separator:ae0f8910d94af6ff09113de99f36f0fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa5db7dec159c2ee49ae10120f94d177e" id="r_aa5db7dec159c2ee49ae10120f94d177e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa5db7dec159c2ee49ae10120f94d177e">mapping</a> (size_t index)</td></tr>
 <tr class="memdesc:aa5db7dec159c2ee49ae10120f94d177e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps home (signals and slots)  <br /></td></tr>
 <tr class="separator:aa5db7dec159c2ee49ae10120f94d177e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,7 +285,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   69</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af714bb3895b0537bf13a6985660452d6">m_boxRoot</a>.set_orientation(Gtk::Orientation::HORIZONTAL);</div>
 <div class="line"><span class="lineno">   70</span>    set_child(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af714bb3895b0537bf13a6985660452d6">m_boxRoot</a>);</div>
 <div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">for</span>(ssize_t i = 0; i &lt; <a class="code hl_variable" href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">cNumOfChannels</a>; i++)</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">for</span> (ssize_t i = 0; i &lt; <a class="code hl_variable" href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">cNumOfChannels</a>; i++)</div>
 <div class="line"><span class="lineno">   73</span>    {</div>
 <div class="line"><span class="lineno">   74</span>        <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a51c0cd2a1b6e388c444e4779833e4451">m_boxChannels</a>.emplace_back(Gtk::Orientation::VERTICAL);</div>
 <div class="line"><span class="lineno">   75</span>        <span class="keyword">auto</span>&amp; currentBox = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a51c0cd2a1b6e388c444e4779833e4451">m_boxChannels</a>.back();</div>
@@ -320,20 +320,20 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  104</span>        <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa5db7dec159c2ee49ae10120f94d177e">mapping</a>(i);</div>
 <div class="line"><span class="lineno">  105</span>    }</div>
 <div class="line"><span class="lineno">  106</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a2a20945384983c59a1a9f709d2ee0d0e"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a2a20945384983c59a1a9f709d2ee0d0e">Electux::App::View::AppHome::m_labelToggleChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::Label &gt; m_labelToggleChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00151">home.h:151</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a39dbfa3e1f716225c5bcbe90f184a708"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a39dbfa3e1f716225c5bcbe90f184a708">Electux::App::View::AppHome::m_spinTimerChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::SpinButton &gt; m_spinTimerChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00154">home.h:154</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a4ff02ddee81349c02fa3697296ed5600"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a4ff02ddee81349c02fa3697296ed5600">Electux::App::View::AppHome::m_labelTimerChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::Label &gt; m_labelTimerChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00153">home.h:153</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a51c0cd2a1b6e388c444e4779833e4451"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a51c0cd2a1b6e388c444e4779833e4451">Electux::App::View::AppHome::m_boxChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::Box &gt; m_boxChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00148">home.h:148</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a55d0f3b1e6bd1cee806739af9c7d1324"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a55d0f3b1e6bd1cee806739af9c7d1324">Electux::App::View::AppHome::m_statusTimerChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::ProgressBar &gt; m_statusTimerChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00156">home.h:156</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a5b276bc5fd70a4f650d63425acd1da49"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a5b276bc5fd70a4f650d63425acd1da49">Electux::App::View::AppHome::m_toggleTimerChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::ToggleButton &gt; m_toggleTimerChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00155">home.h:155</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a64db72cf5cf34184a5a2cf44818dfd63"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a64db72cf5cf34184a5a2cf44818dfd63">Electux::App::View::AppHome::m_enableChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::CheckButton &gt; m_enableChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00149">home.h:149</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a2a20945384983c59a1a9f709d2ee0d0e"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a2a20945384983c59a1a9f709d2ee0d0e">Electux::App::View::AppHome::m_labelToggleChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::Label &gt; m_labelToggleChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00152">home.h:152</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a39dbfa3e1f716225c5bcbe90f184a708"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a39dbfa3e1f716225c5bcbe90f184a708">Electux::App::View::AppHome::m_spinTimerChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::SpinButton &gt; m_spinTimerChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00155">home.h:155</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a4ff02ddee81349c02fa3697296ed5600"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a4ff02ddee81349c02fa3697296ed5600">Electux::App::View::AppHome::m_labelTimerChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::Label &gt; m_labelTimerChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00154">home.h:154</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a51c0cd2a1b6e388c444e4779833e4451"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a51c0cd2a1b6e388c444e4779833e4451">Electux::App::View::AppHome::m_boxChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::Box &gt; m_boxChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00149">home.h:149</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a55d0f3b1e6bd1cee806739af9c7d1324"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a55d0f3b1e6bd1cee806739af9c7d1324">Electux::App::View::AppHome::m_statusTimerChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::ProgressBar &gt; m_statusTimerChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00157">home.h:157</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a5b276bc5fd70a4f650d63425acd1da49"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a5b276bc5fd70a4f650d63425acd1da49">Electux::App::View::AppHome::m_toggleTimerChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::ToggleButton &gt; m_toggleTimerChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00156">home.h:156</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a64db72cf5cf34184a5a2cf44818dfd63"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a64db72cf5cf34184a5a2cf44818dfd63">Electux::App::View::AppHome::m_enableChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::CheckButton &gt; m_enableChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00150">home.h:150</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_aa5db7dec159c2ee49ae10120f94d177e"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa5db7dec159c2ee49ae10120f94d177e">Electux::App::View::AppHome::mapping</a></div><div class="ttdeci">void mapping(size_t index)</div><div class="ttdoc">Maps home (signals and slots)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d85/home__map_8cc_source.html#l00023">home_map.cc:23</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_abfb1b196b881ab80f6972ee6548f3ec6"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abfb1b196b881ab80f6972ee6548f3ec6">Electux::App::View::AppHome::m_selectControlChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::ComboBoxText &gt; m_selectControlChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00150">home.h:150</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_aea948e23d96ac34db09650d909e08ad0"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aea948e23d96ac34db09650d909e08ad0">Electux::App::View::AppHome::m_toggleChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::ToggleButton &gt; m_toggleChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00152">home.h:152</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_af714bb3895b0537bf13a6985660452d6"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af714bb3895b0537bf13a6985660452d6">Electux::App::View::AppHome::m_boxRoot</a></div><div class="ttdeci">Gtk::Box m_boxRoot</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00147">home.h:147</a></div></div>
-<div class="ttc" id="anamespaceElectux_1_1App_1_1Params_1_1Channel_html_a8ba1a84b52d64ec5140d4dc2d8bd9bf1"><div class="ttname"><a href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">Electux::App::Params::Channel::cNumOfChannels</a></div><div class="ttdeci">constexpr const ssize_t cNumOfChannels</div><div class="ttdoc">Channel parameters cNumOfChannels - number of channels supported.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d81/channel__params_8h_source.html#l00025">channel_params.h:25</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_abfb1b196b881ab80f6972ee6548f3ec6"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abfb1b196b881ab80f6972ee6548f3ec6">Electux::App::View::AppHome::m_selectControlChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::ComboBoxText &gt; m_selectControlChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00151">home.h:151</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_aea948e23d96ac34db09650d909e08ad0"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aea948e23d96ac34db09650d909e08ad0">Electux::App::View::AppHome::m_toggleChannels</a></div><div class="ttdeci">std::vector&lt; Gtk::ToggleButton &gt; m_toggleChannels</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00153">home.h:153</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_af714bb3895b0537bf13a6985660452d6"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af714bb3895b0537bf13a6985660452d6">Electux::App::View::AppHome::m_boxRoot</a></div><div class="ttdeci">Gtk::Box m_boxRoot</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00148">home.h:148</a></div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Params_1_1Channel_html_a8ba1a84b52d64ec5140d4dc2d8bd9bf1"><div class="ttname"><a href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">Electux::App::Params::Channel::cNumOfChannels</a></div><div class="ttdeci">constexpr const ssize_t cNumOfChannels</div><div class="ttdoc">Channel parameters definitions cNumOfChannels - number of channels supported.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d81/channel__params_8h_source.html#l00025">channel_params.h:25</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/d81/channel__params_8h_source.html#l00025">Electux::App::Params::Channel::cNumOfChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00148">m_boxChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00147">m_boxRoot</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00149">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00153">m_labelTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00151">m_labelToggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00154">m_spinTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00156">m_statusTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00152">m_toggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_toggleTimerChannels</a>, and <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d81/channel__params_8h_source.html#l00025">Electux::App::Params::Channel::cNumOfChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00149">m_boxChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00148">m_boxRoot</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00154">m_labelTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00152">m_labelToggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00151">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_spinTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00157">m_statusTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00153">m_toggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00156">m_toggleTimerChannels</a>, and <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -400,9 +400,9 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  171</span>{</div>
 <div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac7fd8642d942f2c141d9b5cf94e91ced">m_controlSignal</a>;</div>
 <div class="line"><span class="lineno">  173</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_ac7fd8642d942f2c141d9b5cf94e91ced"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac7fd8642d942f2c141d9b5cf94e91ced">Electux::App::View::AppHome::m_controlSignal</a></div><div class="ttdeci">SigSettings m_controlSignal</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00146">home.h:146</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_ac7fd8642d942f2c141d9b5cf94e91ced"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac7fd8642d942f2c141d9b5cf94e91ced">Electux::App::View::AppHome::m_controlSignal</a></div><div class="ttdeci">SigSettings m_controlSignal</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00147">home.h:147</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_controlSignal</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00147">m_controlSignal</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d51/application__map_8cc_source.html#l00041">Electux::App::EntryApplication::mapping()</a>.</p>
 <div class="dynheader">
@@ -411,9 +411,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome_a954721e776e8231295c9dab95de10217_icgraph.png" border="0" usemap="#ad9/dcb/classElectux_1_1App_1_1View_1_1AppHome_a954721e776e8231295c9dab95de10217_icgraph" alt=""/></div>
 <map name="ad9/dcb/classElectux_1_1App_1_1View_1_1AppHome_a954721e776e8231295c9dab95de10217_icgraph" id="ad9/dcb/classElectux_1_1App_1_1View_1_1AppHome_a954721e776e8231295c9dab95de10217_icgraph">
 <area shape="rect" title="Signal for settings setup." alt="" coords="539,5,743,45"/>
-<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48" title="Maps signal/slots for application views." alt="" coords="272,5,491,45"/>
+<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48" title="Maps signal/slots for application views and actions." alt="" coords="272,5,491,45"/>
 <area shape="poly" title=" " alt="" coords="525,28,491,28,491,23,525,23"/>
-<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="5,5,224,45"/>
+<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal to initialize application." alt="" coords="5,5,224,45"/>
 <area shape="poly" title=" " alt="" coords="258,28,224,28,224,23,258,23"/>
 </map>
 </div>
@@ -449,7 +449,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -464,17 +464,17 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Extracted value for the configuration key </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00230">230</a> of file <a class="el" href="../../de/d98/home__slots_8cc_source.html">home_slots.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  231</span>{</div>
-<div class="line"><span class="lineno">  232</span>    <span class="keyword">auto</span> controlEntity = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18">getEntity</a>(key);</div>
-<div class="line"><span class="lineno">  233</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad72016315750df4ef5e608d820c2e3a4">extract_param_value_by_index</a>(controlEntity, index);</div>
-<div class="line"><span class="lineno">  234</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00233">233</a> of file <a class="el" href="../../de/d98/home__slots_8cc_source.html">home_slots.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  234</span>{</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keyword">auto</span> controlEntity = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18">getEntity</a>(key);</div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad72016315750df4ef5e608d820c2e3a4">extract_param_value_by_index</a>(controlEntity, index);</div>
+<div class="line"><span class="lineno">  237</span>}</div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_a62467c7319a0502235b9cc1a16150f18"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18">Electux::App::Model::Model::getEntity</a></div><div class="ttdeci">const std::string &amp; getEntity(const std::string_view &amp;key) const final</div><div class="ttdoc">Gets entity by key.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00042">model.cc:42</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a077957785738b33c8a2114b084f0d8f6"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">Electux::App::View::AppHome::m_setup</a></div><div class="ttdeci">SettingsSetup m_setup</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00145">home.h:145</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_ad72016315750df4ef5e608d820c2e3a4"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad72016315750df4ef5e608d820c2e3a4">Electux::App::View::AppHome::extract_param_value_by_index</a></div><div class="ttdeci">std::string extract_param_value_by_index(const std::string_view &amp;input, size_t index)</div><div class="ttdoc">Extracts nth substring from input string.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00186">home_slots.cc:186</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a077957785738b33c8a2114b084f0d8f6"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">Electux::App::View::AppHome::m_setup</a></div><div class="ttdeci">SettingsSetup m_setup</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00146">home.h:146</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_ad72016315750df4ef5e608d820c2e3a4"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad72016315750df4ef5e608d820c2e3a4">Electux::App::View::AppHome::extract_param_value_by_index</a></div><div class="ttdeci">std::string extract_param_value_by_index(const std::string_view &amp;input, size_t index)</div><div class="ttdoc">Extracts nth substring from input string.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00189">home_slots.cc:189</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1View_1_1SettingsSetup_html_a10f7fdfa97db18feb0131f57c699f811"><div class="ttname"><a href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">Electux::App::View::SettingsSetup::m_controlConfig</a></div><div class="ttdeci">ModelControl m_controlConfig</div><div class="ttdoc">Settings parameters m_controlConfig - control configuration model m_serialConfig - serial configurati...</div><div class="ttdef"><b>Definition</b> <a href="../../df/d7c/settings__setup_8h_source.html#l00049">settings_setup.h:49</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00186">extract_param_value_by_index()</a>, <a class="el" href="../../d5/d3b/model_8cc_source.html#l00042">Electux::App::Model::Model::getEntity()</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, and <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00189">extract_param_value_by_index()</a>, <a class="el" href="../../d5/d3b/model_8cc_source.html#l00042">Electux::App::Model::Model::getEntity()</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, and <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00051">updateUiData()</a>.</p>
 <div class="dynheader">
@@ -499,7 +499,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Extracts control configuration parameter." alt="" coords="512,5,707,45"/>
 <area shape="rect" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae0f8910d94af6ff09113de99f36f0fbe" title="Updates UI widgets with data from loaded configuration." alt="" coords="272,5,464,45"/>
 <area shape="poly" title=" " alt="" coords="499,28,464,28,464,23,499,23"/>
-<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="5,5,224,45"/>
+<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal to initialize application." alt="" coords="5,5,224,45"/>
 <area shape="poly" title=" " alt="" coords="258,28,224,28,224,23,258,23"/>
 </map>
 </div>
@@ -535,7 +535,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -550,22 +550,22 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Extracted substring </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00186">186</a> of file <a class="el" href="../../de/d98/home__slots_8cc_source.html">home_slots.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>{</div>
-<div class="line"><span class="lineno">  188</span>    <span class="keyword">auto</span> elements = <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41">split_to_vector</a>(input);</div>
-<div class="line"><span class="lineno">  189</span> </div>
-<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">if</span> (index &lt; elements.size())</div>
-<div class="line"><span class="lineno">  191</span>    {</div>
-<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">return</span> elements[index];</div>
-<div class="line"><span class="lineno">  193</span>    }</div>
-<div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">return</span> std::string(cEmptyString);</div>
-<div class="line"><span class="lineno">  196</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00189">189</a> of file <a class="el" href="../../de/d98/home__slots_8cc_source.html">home_slots.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  190</span>{</div>
+<div class="line"><span class="lineno">  191</span>    <span class="keyword">auto</span> elements = <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41">split_to_vector</a>(input);</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">if</span> (index &lt; elements.size())</div>
+<div class="line"><span class="lineno">  194</span>    {</div>
+<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">return</span> elements[index];</div>
+<div class="line"><span class="lineno">  196</span>    }</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordflow">return</span> std::string(cEmptyString);</div>
+<div class="line"><span class="lineno">  199</span>}</div>
 <div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_abc4d7d2cad85c503b572fb01b318ff41"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41">Electux::App::View::AppHome::split_to_vector</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split_to_vector(const std::string_view &amp;input)</div><div class="ttdoc">Splits input string into vector of substrings.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00175">home_slots.cc:175</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00175">split_to_vector()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00230">extract_config()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00233">extract_config()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -586,7 +586,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="741,35,707,35,707,30,741,30"/>
 <area shape="rect" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae0f8910d94af6ff09113de99f36f0fbe" title="Updates UI widgets with data from loaded configuration." alt="" coords="272,13,464,53"/>
 <area shape="poly" title=" " alt="" coords="499,35,464,35,464,30,499,30"/>
-<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="5,13,224,53"/>
+<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal to initialize application." alt="" coords="5,13,224,53"/>
 <area shape="poly" title=" " alt="" coords="258,35,224,35,224,30,258,30"/>
 </map>
 </div>
@@ -613,11 +613,11 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">78</a> of file <a class="el" href="../../de/d98/home__slots_8cc_source.html">home_slots.cc</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   79</span>{</div>
 <div class="line"><span class="lineno">   80</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; config = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>;</div>
-<div class="line"><span class="lineno">   81</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlEnableKey = config.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">ModelControl::ModelControlKey::Enable</a>);</div>
-<div class="line"><span class="lineno">   82</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlModeKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">ModelControl::ModelControlKey::Mode</a>);</div>
-<div class="line"><span class="lineno">   83</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlToggleKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">ModelControl::ModelControlKey::Toggle</a>);</div>
-<div class="line"><span class="lineno">   84</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">ModelControl::ModelControlKey::Timer</a>);</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerEnableKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">ModelControl::ModelControlKey::TimerEnable</a>);</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlEnableKey = config.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a2faec1f9f8cc7f8f40d521c4dd574f49">ModelControl::ModelControlKey::Enable</a>);</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlModeKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26">ModelControl::ModelControlKey::Mode</a>);</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlToggleKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aa8875bbe4272c0bdd786cfaaedf77921">ModelControl::ModelControlKey::Toggle</a>);</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aefb4777327e6f704fb1519c1882f93ec">ModelControl::ModelControlKey::Timer</a>);</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerEnableKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31af4387efef94ad8501d1d7f16bc6b1359">ModelControl::ModelControlKey::TimerEnable</a>);</div>
 <div class="line"><span class="lineno">   86</span> </div>
 <div class="line"><span class="lineno">   87</span>    <span class="keywordflow">for</span> (ssize_t i = 0; i &lt; <a class="code hl_variable" href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">cNumOfChannels</a>; i++)</div>
 <div class="line"><span class="lineno">   88</span>    {</div>
@@ -635,15 +635,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  100</span> </div>
 <div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac7fd8642d942f2c141d9b5cf94e91ced">m_controlSignal</a>.emit(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>);</div>
 <div class="line"><span class="lineno">  102</span>}</div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a032032cb7a0144ba34f3ee53ca6d8d31a2faec1f9f8cc7f8f40d521c4dd574f49"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::ModelControlKey::Enable</a></div><div class="ttdeci">@ Enable</div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::ModelControlKey::Mode</a></div><div class="ttdeci">@ Mode</div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a032032cb7a0144ba34f3ee53ca6d8d31aa8875bbe4272c0bdd786cfaaedf77921"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::ModelControlKey::Toggle</a></div><div class="ttdeci">@ Toggle</div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a032032cb7a0144ba34f3ee53ca6d8d31aefb4777327e6f704fb1519c1882f93ec"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::ModelControlKey::Timer</a></div><div class="ttdeci">@ Timer</div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a032032cb7a0144ba34f3ee53ca6d8d31af4387efef94ad8501d1d7f16bc6b1359"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::ModelControlKey::TimerEnable</a></div><div class="ttdeci">@ TimerEnable</div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a6f4b5fc97ff0d51bf1103ec19871d615"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">Electux::App::Model::ModelControl::toString</a></div><div class="ttdeci">std::string_view toString(const ModelControlKey &amp;key) const</div><div class="ttdoc">Converts Key enum to.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/dea/model__control_8cc_source.html#l00058">model_control.cc:58</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::ModelControlKey::Enable</a></div><div class="ttdeci">@ Enable</div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::ModelControlKey::Mode</a></div><div class="ttdeci">@ Mode</div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::ModelControlKey::Toggle</a></div><div class="ttdeci">@ Toggle</div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::ModelControlKey::Timer</a></div><div class="ttdeci">@ Timer</div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1ModelControl_html_a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359"><div class="ttname"><a href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::ModelControlKey::TimerEnable</a></div><div class="ttdeci">@ TimerEnable</div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_aab57308bd29908f6c012691c478a3859"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859">Electux::App::View::AppHome::update_control_config</a></div><div class="ttdeci">void update_control_config(const std::string_view &amp;key, size_t index, const std::string_view &amp;value)</div><div class="ttdoc">Updates control configuration parameter.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00223">home_slots.cc:223</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_aab57308bd29908f6c012691c478a3859"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859">Electux::App::View::AppHome::update_control_config</a></div><div class="ttdeci">void update_control_config(const std::string_view &amp;key, size_t index, const std::string_view &amp;value)</div><div class="ttdoc">Updates control configuration parameter.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00226">home_slots.cc:226</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/d81/channel__params_8h_source.html#l00025">Electux::App::Params::Channel::cNumOfChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::Enable</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00149">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00154">m_spinTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00152">m_toggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_toggleTimerChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::Mode</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::Timer</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::TimerEnable</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::Toggle</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00223">update_control_config()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d81/channel__params_8h_source.html#l00025">Electux::App::Params::Channel::cNumOfChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::Enable</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00147">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00151">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_spinTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00153">m_toggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00156">m_toggleTimerChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::Mode</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::Timer</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::TimerEnable</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::Toggle</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00226">update_control_config()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -686,7 +686,7 @@ Here is the call graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -714,7 +714,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a730fae65042fb06b1ca5792bc1c60e04"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a730fae65042fb06b1ca5792bc1c60e04">Electux::App::View::AppHome::onChannelTimerChanged</a></div><div class="ttdeci">void onChannelTimerChanged(size_t index)</div><div class="ttdoc">Signal handler for timer mode.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00143">home_slots.cc:143</a></div></div>
 <div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_ae59f559fc54c0f579d2fd21336cf7faa"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae59f559fc54c0f579d2fd21336cf7faa">Electux::App::View::AppHome::onChannelTimerToggleChanged</a></div><div class="ttdeci">void onChannelTimerToggleChanged(size_t index)</div><div class="ttdoc">Signal handler for timer mode (start process)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00157">home_slots.cc:157</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00149">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00154">m_spinTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00152">m_toggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_toggleTimerChannels</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00104">onChannelEnableChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00117">onChannelModeChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00143">onChannelTimerChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00157">onChannelTimerToggleChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00130">onChannelToggleChanged()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00151">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_spinTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00153">m_toggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00156">m_toggleTimerChannels</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00104">onChannelEnableChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00117">onChannelModeChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00143">onChannelTimerChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00157">onChannelTimerToggleChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00130">onChannelToggleChanged()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>.</p>
 <div class="dynheader">
@@ -787,7 +787,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -807,14 +807,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  108</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  109</span>    }</div>
 <div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlEnableKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">ModelControl::ModelControlKey::Enable</a>);</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlEnableKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a2faec1f9f8cc7f8f40d521c4dd574f49">ModelControl::ModelControlKey::Enable</a>);</div>
 <div class="line"><span class="lineno">  112</span>    <span class="keyword">auto</span> value = boolToString(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a64db72cf5cf34184a5a2cf44818dfd63">m_enableChannels</a>[index].get_active());</div>
 <div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859">update_control_config</a>(controlEnableKey, index, value);</div>
 <div class="line"><span class="lineno">  114</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac7fd8642d942f2c141d9b5cf94e91ced">m_controlSignal</a>.emit(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>);</div>
 <div class="line"><span class="lineno">  115</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a3854095c157622d7c7995d4daaff37b1"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a3854095c157622d7c7995d4daaff37b1">Electux::App::View::AppHome::m_blockSignals</a></div><div class="ttdeci">bool m_blockSignals</div><div class="ttdoc">Container for packing widgets for home window m_blockSignals - flag to block signals during UI update...</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00144">home.h:144</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_a3854095c157622d7c7995d4daaff37b1"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a3854095c157622d7c7995d4daaff37b1">Electux::App::View::AppHome::m_blockSignals</a></div><div class="ttdeci">bool m_blockSignals</div><div class="ttdoc">Container for packing widgets for home window m_blockSignals - flag to block signals during UI update...</div><div class="ttdef"><b>Definition</b> <a href="../../dd/df2/home_8h_source.html#l00145">home.h:145</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::Enable</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00144">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00149">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00223">update_control_config()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::Enable</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00147">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00226">update_control_config()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>.</p>
 <div class="dynheader">
@@ -871,7 +871,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -891,13 +891,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  121</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  122</span>    }</div>
 <div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlModeKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">ModelControl::ModelControlKey::Mode</a>);</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlModeKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26">ModelControl::ModelControlKey::Mode</a>);</div>
 <div class="line"><span class="lineno">  125</span>    <span class="keyword">auto</span> controlModeComboValue = std::to_string(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abfb1b196b881ab80f6972ee6548f3ec6">m_selectControlChannels</a>[index].get_active_row_number());</div>
 <div class="line"><span class="lineno">  126</span>    <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859">update_control_config</a>(controlModeKey, index, controlModeComboValue);</div>
 <div class="line"><span class="lineno">  127</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac7fd8642d942f2c141d9b5cf94e91ced">m_controlSignal</a>.emit(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>);</div>
 <div class="line"><span class="lineno">  128</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00144">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::Mode</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00223">update_control_config()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00147">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00151">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::Mode</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00226">update_control_config()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>.</p>
 <div class="dynheader">
@@ -954,7 +954,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -974,14 +974,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  147</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  148</span>    }</div>
 <div class="line"><span class="lineno">  149</span> </div>
-<div class="line"><span class="lineno">  150</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">ModelControl::ModelControlKey::Timer</a>);</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aefb4777327e6f704fb1519c1882f93ec">ModelControl::ModelControlKey::Timer</a>);</div>
 <div class="line"><span class="lineno">  151</span>    <span class="keyword">auto</span> controlTimerSpinValue = std::to_string(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a39dbfa3e1f716225c5bcbe90f184a708">m_spinTimerChannels</a>[index].get_value_as_int());</div>
 <div class="line"><span class="lineno">  152</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Timer value changed for channel &quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; controlTimerSpinValue &lt;&lt; std::endl;</div>
 <div class="line"><span class="lineno">  153</span>    <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859">update_control_config</a>(controlTimerKey, index, controlTimerSpinValue);</div>
 <div class="line"><span class="lineno">  154</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac7fd8642d942f2c141d9b5cf94e91ced">m_controlSignal</a>.emit(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>);</div>
 <div class="line"><span class="lineno">  155</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00144">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00154">m_spinTimerChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::Timer</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00223">update_control_config()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00147">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_spinTimerChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::Timer</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00226">update_control_config()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>.</p>
 <div class="dynheader">
@@ -1038,7 +1038,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1058,13 +1058,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  161</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  162</span>    }</div>
 <div class="line"><span class="lineno">  163</span> </div>
-<div class="line"><span class="lineno">  164</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerEnableKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">ModelControl::ModelControlKey::TimerEnable</a>);</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerEnableKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31af4387efef94ad8501d1d7f16bc6b1359">ModelControl::ModelControlKey::TimerEnable</a>);</div>
 <div class="line"><span class="lineno">  165</span>    <span class="keyword">auto</span> controlTimerEnableButtonValue = boolToString(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a5b276bc5fd70a4f650d63425acd1da49">m_toggleTimerChannels</a>[index].get_active());</div>
 <div class="line"><span class="lineno">  166</span>    <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859">update_control_config</a>(controlTimerEnableKey, index, controlTimerEnableButtonValue);</div>
 <div class="line"><span class="lineno">  167</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac7fd8642d942f2c141d9b5cf94e91ced">m_controlSignal</a>.emit(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>);</div>
 <div class="line"><span class="lineno">  168</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00144">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_toggleTimerChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::TimerEnable</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00223">update_control_config()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00147">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00156">m_toggleTimerChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::TimerEnable</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00226">update_control_config()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>.</p>
 <div class="dynheader">
@@ -1121,7 +1121,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1141,13 +1141,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  134</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  135</span>    }</div>
 <div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlToggleKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">ModelControl::ModelControlKey::Toggle</a>);</div>
+<div class="line"><span class="lineno">  137</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlToggleKey = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aa8875bbe4272c0bdd786cfaaedf77921">ModelControl::ModelControlKey::Toggle</a>);</div>
 <div class="line"><span class="lineno">  138</span>    <span class="keyword">auto</span> controlToggleButtonValue = boolToString(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aea948e23d96ac34db09650d909e08ad0">m_toggleChannels</a>[index].get_active());</div>
 <div class="line"><span class="lineno">  139</span>    <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859">update_control_config</a>(controlToggleKey, index, controlToggleButtonValue);</div>
 <div class="line"><span class="lineno">  140</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ac7fd8642d942f2c141d9b5cf94e91ced">m_controlSignal</a>.emit(<a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>);</div>
 <div class="line"><span class="lineno">  141</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00144">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00152">m_toggleChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::Toggle</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00223">update_control_config()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00147">m_controlSignal</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00153">m_toggleChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::Toggle</a>, <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00226">update_control_config()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>.</p>
 <div class="dynheader">
@@ -1208,7 +1208,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  110</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a> = setup;</div>
 <div class="line"><span class="lineno">  111</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/de1/application__slots_8cc_source.html#l00052">Electux::App::EntryApplication::on_startup()</a>.</p>
 <div class="dynheader">
@@ -1217,7 +1217,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome_a9fced15c918143d35e856c6dbef3454f_icgraph.png" border="0" usemap="#ad9/dcb/classElectux_1_1App_1_1View_1_1AppHome_a9fced15c918143d35e856c6dbef3454f_icgraph" alt=""/></div>
 <map name="ad9/dcb/classElectux_1_1App_1_1View_1_1AppHome_a9fced15c918143d35e856c6dbef3454f_icgraph" id="ad9/dcb/classElectux_1_1App_1_1View_1_1AppHome_a9fced15c918143d35e856c6dbef3454f_icgraph">
 <area shape="rect" title="Sets configuration setup." alt="" coords="272,5,479,45"/>
-<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="5,5,224,45"/>
+<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal to initialize application." alt="" coords="5,5,224,45"/>
 <area shape="poly" title=" " alt="" coords="258,28,224,28,224,23,258,23"/>
 </map>
 </div>
@@ -1243,7 +1243,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1262,13 +1262,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  177</span>    std::vector&lt;std::string&gt; elements;</div>
 <div class="line"><span class="lineno">  178</span>    std::stringstream ss{std::string(input)};</div>
 <div class="line"><span class="lineno">  179</span>    std::string item;</div>
-<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">while</span> (ss &gt;&gt; item) {</div>
-<div class="line"><span class="lineno">  181</span>        elements.push_back(item);</div>
-<div class="line"><span class="lineno">  182</span>    }</div>
-<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">return</span> elements;</div>
-<div class="line"><span class="lineno">  184</span>}</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">while</span> (ss &gt;&gt; item)</div>
+<div class="line"><span class="lineno">  182</span>    {</div>
+<div class="line"><span class="lineno">  183</span>        elements.push_back(item);</div>
+<div class="line"><span class="lineno">  184</span>    }</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">return</span> elements;</div>
+<div class="line"><span class="lineno">  187</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00186">extract_param_value_by_index()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00198">update_param_value_by_index()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00189">extract_param_value_by_index()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00201">update_param_value_by_index()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1283,7 +1286,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="1034,54,998,52,998,46,1034,49"/>
 <area shape="rect" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae0f8910d94af6ff09113de99f36f0fbe" title="Updates UI widgets with data from loaded configuration." alt="" coords="524,5,716,45"/>
 <area shape="poly" title=" " alt="" coords="790,39,716,34,717,29,790,33"/>
-<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="220,5,439,45"/>
+<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal to initialize application." alt="" coords="220,5,439,45"/>
 <area shape="poly" title=" " alt="" coords="510,28,439,28,439,23,510,23"/>
 <area shape="rect" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859" title="Updates control configuration parameter." alt="" coords="801,206,1000,261"/>
 <area shape="poly" title=" " alt="" coords="1036,201,1001,210,999,205,1035,196"/>
@@ -1347,7 +1350,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1362,16 +1365,16 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00223">223</a> of file <a class="el" href="../../de/d98/home__slots_8cc_source.html">home_slots.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  224</span>{</div>
-<div class="line"><span class="lineno">  225</span>    <span class="keyword">auto</span> controlEntity = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18">getEntity</a>(key);</div>
-<div class="line"><span class="lineno">  226</span>    <span class="keyword">auto</span> controlValue = <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299">update_param_value_by_index</a>(controlEntity, index, value);</div>
-<div class="line"><span class="lineno">  227</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283">update</a>(key, controlValue);</div>
-<div class="line"><span class="lineno">  228</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00226">226</a> of file <a class="el" href="../../de/d98/home__slots_8cc_source.html">home_slots.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>{</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keyword">auto</span> controlEntity = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18">getEntity</a>(key);</div>
+<div class="line"><span class="lineno">  229</span>    <span class="keyword">auto</span> controlValue = <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299">update_param_value_by_index</a>(controlEntity, index, value);</div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>.<a class="code hl_function" href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283">update</a>(key, controlValue);</div>
+<div class="line"><span class="lineno">  231</span>}</div>
 <div class="ttc" id="aclassElectux_1_1App_1_1Model_1_1Model_html_a961e17c5fed3100886ccdd4adc7e9283"><div class="ttname"><a href="../../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283">Electux::App::Model::Model::update</a></div><div class="ttdeci">bool update(const std::string_view &amp;key, const std::string_view &amp;data) final</div><div class="ttdoc">Updates entity value by key.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d3b/model_8cc_source.html#l00059">model.cc:59</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_aacdc2762a62fb6f2edf0fcd9fb25d299"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299">Electux::App::View::AppHome::update_param_value_by_index</a></div><div class="ttdeci">std::string update_param_value_by_index(const std::string_view &amp;input, size_t index, const std::string_view &amp;newValue)</div><div class="ttdoc">Updates nth substring in input string.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00198">home_slots.cc:198</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_aacdc2762a62fb6f2edf0fcd9fb25d299"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299">Electux::App::View::AppHome::update_param_value_by_index</a></div><div class="ttdeci">std::string update_param_value_by_index(const std::string_view &amp;input, size_t index, const std::string_view &amp;newValue)</div><div class="ttdoc">Updates nth substring in input string.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00201">home_slots.cc:201</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00042">Electux::App::Model::Model::getEntity()</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>, <a class="el" href="../../d5/d3b/model_8cc_source.html#l00059">Electux::App::Model::Model::update()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00198">update_param_value_by_index()</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d3b/model_8cc_source.html#l00042">Electux::App::Model::Model::getEntity()</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>, <a class="el" href="../../d5/d3b/model_8cc_source.html#l00059">Electux::App::Model::Model::update()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00201">update_param_value_by_index()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">getUiData()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00104">onChannelEnableChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00117">onChannelModeChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00143">onChannelTimerChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00157">onChannelTimerToggleChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00130">onChannelToggleChanged()</a>.</p>
 <div class="dynheader">
@@ -1456,7 +1459,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1472,34 +1475,34 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Updated string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00198">198</a> of file <a class="el" href="../../de/d98/home__slots_8cc_source.html">home_slots.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  199</span>{</div>
-<div class="line"><span class="lineno">  200</span>    <span class="keyword">auto</span> elements = <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41">split_to_vector</a>(input);</div>
-<div class="line"><span class="lineno">  201</span> </div>
-<div class="line"><span class="lineno">  202</span>    <span class="keywordflow">if</span> (elements.size() &lt; <a class="code hl_variable" href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">cNumOfChannels</a>)</div>
-<div class="line"><span class="lineno">  203</span>    {</div>
-<div class="line"><span class="lineno">  204</span>        std::string defaultValue = elements.empty() ? std::string(newValue) : elements.back();</div>
-<div class="line"><span class="lineno">  205</span>        elements.resize(<a class="code hl_variable" href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">cNumOfChannels</a>, defaultValue);</div>
-<div class="line"><span class="lineno">  206</span>    }</div>
-<div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">if</span> (index &lt; elements.size())</div>
-<div class="line"><span class="lineno">  209</span>    {</div>
-<div class="line"><span class="lineno">  210</span>        elements[index] = std::string(newValue);</div>
-<div class="line"><span class="lineno">  211</span>    }</div>
-<div class="line"><span class="lineno">  212</span> </div>
-<div class="line"><span class="lineno">  213</span>    std::string result;</div>
-<div class="line"><span class="lineno">  214</span> </div>
-<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; elements.size(); ++i)</div>
-<div class="line"><span class="lineno">  216</span>    {</div>
-<div class="line"><span class="lineno">  217</span>        result += elements[i] + (i &lt; elements.size() - 1 ? std::string(cSpaceString) : <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">  218</span>    }</div>
-<div class="line"><span class="lineno">  219</span> </div>
-<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  221</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00201">201</a> of file <a class="el" href="../../de/d98/home__slots_8cc_source.html">home_slots.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  202</span>{</div>
+<div class="line"><span class="lineno">  203</span>    <span class="keyword">auto</span> elements = <a class="code hl_function" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41">split_to_vector</a>(input);</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">if</span> (elements.size() &lt; <a class="code hl_variable" href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">cNumOfChannels</a>)</div>
+<div class="line"><span class="lineno">  206</span>    {</div>
+<div class="line"><span class="lineno">  207</span>        std::string defaultValue = elements.empty() ? std::string(newValue) : elements.back();</div>
+<div class="line"><span class="lineno">  208</span>        elements.resize(<a class="code hl_variable" href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">cNumOfChannels</a>, defaultValue);</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">if</span> (index &lt; elements.size())</div>
+<div class="line"><span class="lineno">  212</span>    {</div>
+<div class="line"><span class="lineno">  213</span>        elements[index] = std::string(newValue);</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    std::string result;</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; elements.size(); ++i)</div>
+<div class="line"><span class="lineno">  219</span>    {</div>
+<div class="line"><span class="lineno">  220</span>        result += elements[i] + (i &lt; elements.size() - 1 ? std::string(cSpaceString) : <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">  221</span>    }</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  224</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../dd/d81/channel__params_8h_source.html#l00025">Electux::App::Params::Channel::cNumOfChannels</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00175">split_to_vector()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00223">update_control_config()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00226">update_control_config()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1564,11 +1567,11 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   52</span>{</div>
 <div class="line"><span class="lineno">   53</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a3854095c157622d7c7995d4daaff37b1">m_blockSignals</a> = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   54</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; config = <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a077957785738b33c8a2114b084f0d8f6">m_setup</a>.<a class="code hl_variable" href="../../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a10f7fdfa97db18feb0131f57c699f811">m_controlConfig</a>;</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlEnableKey = config.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">ModelControl::ModelControlKey::Enable</a>);</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlModeKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">ModelControl::ModelControlKey::Mode</a>);</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlToggleKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">ModelControl::ModelControlKey::Toggle</a>);</div>
-<div class="line"><span class="lineno">   58</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">ModelControl::ModelControlKey::Timer</a>);</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerEnableKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">ModelControl::ModelControlKey::TimerEnable</a>);</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlEnableKey = config.<a class="code hl_function" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615">toString</a>(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a2faec1f9f8cc7f8f40d521c4dd574f49">ModelControl::ModelControlKey::Enable</a>);</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlModeKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26">ModelControl::ModelControlKey::Mode</a>);</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlToggleKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aa8875bbe4272c0bdd786cfaaedf77921">ModelControl::ModelControlKey::Toggle</a>);</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aefb4777327e6f704fb1519c1882f93ec">ModelControl::ModelControlKey::Timer</a>);</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keyword">const</span> <span class="keyword">auto</span> controlTimerEnableKey = config.toString(<a class="code hl_enumvalue" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31af4387efef94ad8501d1d7f16bc6b1359">ModelControl::ModelControlKey::TimerEnable</a>);</div>
 <div class="line"><span class="lineno">   60</span> </div>
 <div class="line"><span class="lineno">   61</span>    <span class="keywordflow">for</span> (ssize_t i = 0; i &lt; <a class="code hl_variable" href="../../da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1">cNumOfChannels</a>; i++)</div>
 <div class="line"><span class="lineno">   62</span>    {</div>
@@ -1586,9 +1589,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   74</span> </div>
 <div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a3854095c157622d7c7995d4daaff37b1">m_blockSignals</a> = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   76</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_af7e89a2c467703a93098ee4e006663bb"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af7e89a2c467703a93098ee4e006663bb">Electux::App::View::AppHome::extract_config</a></div><div class="ttdeci">std::string extract_config(const std::string_view &amp;key, size_t index)</div><div class="ttdoc">Extracts control configuration parameter.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00230">home_slots.cc:230</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1View_1_1AppHome_html_af7e89a2c467703a93098ee4e006663bb"><div class="ttname"><a href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af7e89a2c467703a93098ee4e006663bb">Electux::App::View::AppHome::extract_config</a></div><div class="ttdeci">std::string extract_config(const std::string_view &amp;key, size_t index)</div><div class="ttdoc">Extracts control configuration parameter.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d98/home__slots_8cc_source.html#l00233">home_slots.cc:233</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/d81/channel__params_8h_source.html#l00025">Electux::App::Params::Channel::cNumOfChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::Enable</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00230">extract_config()</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00144">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00149">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00154">m_spinTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00152">m_toggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_toggleTimerChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::Mode</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::Timer</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::TimerEnable</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::Toggle</a>, and <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/d81/channel__params_8h_source.html#l00025">Electux::App::Params::Channel::cNumOfChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a2faec1f9f8cc7f8f40d521c4dd574f49">Electux::App::Model::ModelControl::Enable</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00233">extract_config()</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00145">m_blockSignals</a>, <a class="el" href="../../df/d7c/settings__setup_8h_source.html#l00049">Electux::App::View::SettingsSetup::m_controlConfig</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00150">m_enableChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00151">m_selectControlChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00146">m_setup</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00155">m_spinTimerChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00153">m_toggleChannels</a>, <a class="el" href="../../dd/df2/home_8h_source.html#l00156">m_toggleTimerChannels</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26">Electux::App::Model::ModelControl::Mode</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aefb4777327e6f704fb1519c1882f93ec">Electux::App::Model::ModelControl::Timer</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31af4387efef94ad8501d1d7f16bc6b1359">Electux::App::Model::ModelControl::TimerEnable</a>, <a class="el" href="../../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aa8875bbe4272c0bdd786cfaaedf77921">Electux::App::Model::ModelControl::Toggle</a>, and <a class="el" href="../../d2/dea/model__control_8cc_source.html#l00058">Electux::App::Model::ModelControl::toString()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d9/de1/application__slots_8cc_source.html#l00052">Electux::App::EntryApplication::on_startup()</a>.</p>
 <div class="dynheader">
@@ -1615,7 +1618,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome_ae0f8910d94af6ff09113de99f36f0fbe_icgraph.png" border="0" usemap="#ad9/dcb/classElectux_1_1App_1_1View_1_1AppHome_ae0f8910d94af6ff09113de99f36f0fbe_icgraph" alt=""/></div>
 <map name="ad9/dcb/classElectux_1_1App_1_1View_1_1AppHome_ae0f8910d94af6ff09113de99f36f0fbe_icgraph" id="ad9/dcb/classElectux_1_1App_1_1View_1_1AppHome_ae0f8910d94af6ff09113de99f36f0fbe_icgraph">
 <area shape="rect" title="Updates UI widgets with data from loaded configuration." alt="" coords="272,5,464,45"/>
-<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal." alt="" coords="5,5,224,45"/>
+<area shape="rect" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a7fede2b4760877dac5577327a1879440" title="Handler for the startup signal to initialize application." alt="" coords="5,5,224,45"/>
 <area shape="poly" title=" " alt="" coords="258,28,224,28,224,23,258,23"/>
 </map>
 </div>
@@ -1645,8 +1648,8 @@ Here is the caller graph for this function:</div>
 
 <p>Container for packing widgets for home window m_blockSignals - flag to block signals during UI update m_setup - control parameters m_controlSignal - signal for control settings m_boxRoot - horizontal box for channel widgets m_boxChannels - channel container for widgets m_enableChannels - checkbox for enabling channel m_selectControlChannels - combobox for control type m_labelToggleChannels - label for toggle channel m_toggleChannels - toogle button (activate) m_labelTimerChannels - label for timer channel m_spinTimerChannels - channel spinner m_toggleTimerChannels - channel toogle timer (start) m_statusTimerChannels - channel status (visual) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00144">144</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  144</span>{<span class="keyword">false</span>};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00145">145</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>{<span class="keyword">false</span>};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00104">onChannelEnableChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00117">onChannelModeChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00143">onChannelTimerChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00157">onChannelTimerToggleChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00130">onChannelToggleChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00051">updateUiData()</a>.</p>
 
@@ -1672,8 +1675,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00148">148</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00149">149</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>.</p>
 
@@ -1699,8 +1702,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00147">147</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  147</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00148">148</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>.</p>
 
@@ -1726,8 +1729,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00146">146</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00147">147</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00170">controlChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">getUiData()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00104">onChannelEnableChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00117">onChannelModeChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00143">onChannelTimerChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00157">onChannelTimerToggleChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00130">onChannelToggleChanged()</a>.</p>
 
@@ -1753,8 +1756,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00149">149</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  149</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00150">150</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">getUiData()</a>, <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00104">onChannelEnableChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00051">updateUiData()</a>.</p>
 
@@ -1780,8 +1783,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00153">153</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00154">154</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>.</p>
 
@@ -1807,8 +1810,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00151">151</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  151</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00152">152</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>.</p>
 
@@ -1834,8 +1837,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00150">150</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00151">151</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  151</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">getUiData()</a>, <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00117">onChannelModeChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00051">updateUiData()</a>.</p>
 
@@ -1861,10 +1864,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00145">145</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  145</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00146">146</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00230">extract_config()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">getUiData()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00104">onChannelEnableChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00117">onChannelModeChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00143">onChannelTimerChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00157">onChannelTimerToggleChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00130">onChannelToggleChanged()</a>, <a class="el" href="../../df/d98/home_8cc_source.html#l00108">setControlSetup()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00223">update_control_config()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00051">updateUiData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00233">extract_config()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">getUiData()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00104">onChannelEnableChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00117">onChannelModeChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00143">onChannelTimerChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00157">onChannelTimerToggleChanged()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00130">onChannelToggleChanged()</a>, <a class="el" href="../../df/d98/home_8cc_source.html#l00108">setControlSetup()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00226">update_control_config()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00051">updateUiData()</a>.</p>
 
 </div>
 </div>
@@ -1888,8 +1891,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00154">154</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00155">155</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">getUiData()</a>, <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00143">onChannelTimerChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00051">updateUiData()</a>.</p>
 
@@ -1915,8 +1918,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00156">156</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00157">157</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>.</p>
 
@@ -1942,8 +1945,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00152">152</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00153">153</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">getUiData()</a>, <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00130">onChannelToggleChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00051">updateUiData()</a>.</p>
 
@@ -1969,8 +1972,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00155">155</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  155</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/df2/home_8h_source.html#l00156">156</a> of file <a class="el" href="../../dd/df2/home_8h_source.html">home.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../df/d98/home_8cc_source.html#l00061">AppHome()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00078">getUiData()</a>, <a class="el" href="../../d5/d85/home__map_8cc_source.html#l00023">mapping()</a>, <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00157">onChannelTimerToggleChanged()</a>, and <a class="el" href="../../de/d98/home__slots_8cc_source.html#l00051">updateUiData()</a>.</p>
 
@@ -1988,7 +1991,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d3/d81/namespaceElectux_1_1App_1_1View.html">View</a></li><li class="navelem"><a class="el" href="../../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html">AppHome</a></li>
-    <li class="footer">Generated on Wed Feb 11 2026 20:53:00 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Feb 21 2026 08:24:20 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -1,11 +1,13 @@
 <map id="Electux::App::Logger::Log" name="Electux::App::Logger::Log">
-<area shape="rect" id="Node000001" title=" " alt="" coords="107,133,285,379"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,77,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,70,68,108,98,152,94,155,63,111,47,72"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="108,5,159,71"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,71,137,109,139,117,134,118,132,110,129,71"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="222,5,295,71"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="252,72,238,118,233,117,247,70"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="337,5,393,71"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="350,72,325,111,298,146,294,142,320,108,345,69"/>
+<area shape="rect" id="Node000001" title="Log class is a file&#45;based implementation of ILog." alt="" coords="215,248,393,493"/>
+<area shape="rect" id="Node000002" href="$d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="ILog is the interface for logging implementations." alt="" coords="5,5,152,185"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,194,217,259,212,263,159,198"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="176,63,248,128"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,128,227,173,240,223,243,232,238,233,235,225,222,174,214,129"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="279,63,329,128"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="307,128,307,231,301,231,301,128"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="393,63,466,128"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="428,129,419,175,402,225,398,234,393,232,398,223,413,174,423,128"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="508,63,564,128"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="531,129,514,177,488,226,450,268,408,304,405,300,447,264,483,222,510,174,526,127"/>
 </map>

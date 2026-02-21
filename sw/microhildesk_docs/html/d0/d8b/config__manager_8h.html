@@ -98,7 +98,8 @@ $(document).ready(function(){initNavTree('d0/d8b/config__manager_8h.html','../..
   <div class="headertitle"><div class="title">config_manager.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../d2/d37/iconfig_8h_source.html">config/iconfig.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d2/d37/iconfig_8h_source.html">config/iconfig.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d6/d36/model__control_8h_source.html">model/model_control.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../df/db2/model__serial_8h_source.html">model/model_serial.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d7/d71/model__log_8h_source.html">model/model_log.h</a>&gt;</code><br />
@@ -107,28 +108,32 @@ Include dependency graph for config_manager.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d9/d02/config__manager_8h__incl.png" border="0" usemap="#aconfig_2config__manager_8h" alt=""/></div>
 <map name="aconfig_2config__manager_8h" id="aconfig_2config__manager_8h">
-<area shape="rect" title=" " alt="" coords="116,5,296,31"/>
-<area shape="rect" href="../../d2/d37/iconfig_8h.html" title=" " alt="" coords="11,152,131,177"/>
-<area shape="poly" title=" " alt="" coords="116,26,87,33,59,44,34,59,13,80,8,96,14,112,27,128,43,142,40,146,23,131,9,114,3,96,9,77,30,55,57,39,85,28,115,21"/>
-<area shape="rect" href="../../d6/d36/model__control_8h.html" title=" " alt="" coords="24,79,196,104"/>
-<area shape="poly" title=" " alt="" coords="192,33,138,72,135,68,189,29"/>
-<area shape="rect" href="../../df/db2/model__serial_8h.html" title=" " alt="" coords="220,79,383,104"/>
-<area shape="poly" title=" " alt="" coords="223,29,276,68,273,72,219,33"/>
-<area shape="rect" href="../../d7/d71/model__log_8h.html" title=" " alt="" coords="407,79,554,104"/>
-<area shape="poly" title=" " alt="" coords="250,28,423,73,422,78,249,33"/>
-<area shape="rect" title=" " alt="" coords="74,299,132,324"/>
-<area shape="poly" title=" " alt="" coords="76,177,100,285,95,286,71,178"/>
-<area shape="rect" href="../../dc/d51/model_8h.html" title=" " alt="" coords="198,152,318,177"/>
-<area shape="poly" title=" " alt="" coords="135,102,222,144,220,148,132,106"/>
-<area shape="rect" href="../../df/d78/imodel_8h.html" title=" " alt="" coords="162,225,286,251"/>
-<area shape="poly" title=" " alt="" coords="255,179,238,214,233,212,250,177"/>
-<area shape="poly" title=" " alt="" coords="206,253,136,294,133,289,203,248"/>
-<area shape="rect" title=" " alt="" coords="178,299,228,324"/>
-<area shape="poly" title=" " alt="" coords="223,252,213,286,208,285,218,250"/>
-<area shape="rect" title=" " alt="" coords="253,299,350,324"/>
-<area shape="poly" title=" " alt="" coords="239,249,281,287,277,291,235,253"/>
-<area shape="poly" title=" " alt="" coords="297,106,274,142,270,139,292,103"/>
-<area shape="poly" title=" " alt="" coords="445,107,307,150,306,145,444,101"/>
+<area shape="rect" title=" " alt="" coords="224,5,404,31"/>
+<area shape="rect" title=" " alt="" coords="76,299,134,324"/>
+<area shape="poly" title=" " alt="" coords="224,28,165,35,105,46,56,61,38,70,26,80,12,105,8,132,12,161,22,190,54,244,87,287,82,290,49,247,17,192,7,162,3,132,7,104,21,77,35,66,54,56,104,41,164,30,224,23"/>
+<area shape="rect" href="../../d2/d37/iconfig_8h.html" title=" " alt="" coords="590,79,710,104"/>
+<area shape="poly" title=" " alt="" coords="369,28,583,73,582,78,368,33"/>
+<area shape="rect" href="../../d6/d36/model__control_8h.html" title=" " alt="" coords="36,79,208,104"/>
+<area shape="poly" title=" " alt="" coords="284,33,168,76,166,71,282,28"/>
+<area shape="rect" href="../../df/db2/model__serial_8h.html" title=" " alt="" coords="233,79,396,104"/>
+<area shape="poly" title=" " alt="" coords="317,31,317,65,312,65,312,31"/>
+<area shape="rect" href="../../d7/d71/model__log_8h.html" title=" " alt="" coords="420,79,566,104"/>
+<area shape="poly" title=" " alt="" coords="344,28,452,71,450,76,342,33"/>
+<area shape="rect" title=" " alt="" coords="164,152,230,177"/>
+<area shape="poly" title=" " alt="" coords="136,102,177,141,173,144,132,106"/>
+<area shape="rect" href="../../dc/d51/model_8h.html" title=" " alt="" coords="254,152,374,177"/>
+<area shape="poly" title=" " alt="" coords="154,102,271,144,269,149,152,107"/>
+<area shape="rect" href="../../df/d78/imodel_8h.html" title=" " alt="" coords="226,225,350,251"/>
+<area shape="poly" title=" " alt="" coords="312,179,299,214,294,212,307,177"/>
+<area shape="poly" title=" " alt="" coords="259,253,149,296,147,291,257,248"/>
+<area shape="rect" title=" " alt="" coords="334,299,385,324"/>
+<area shape="poly" title=" " alt="" coords="301,249,340,287,336,291,298,253"/>
+<area shape="rect" title=" " alt="" coords="212,299,310,324"/>
+<area shape="poly" title=" " alt="" coords="286,252,272,287,267,285,281,250"/>
+<area shape="poly" title=" " alt="" coords="297,106,229,147,226,142,294,102"/>
+<area shape="poly" title=" " alt="" coords="317,104,317,138,312,138,312,104"/>
+<area shape="poly" title=" " alt="" coords="444,107,245,154,243,149,443,101"/>
+<area shape="poly" title=" " alt="" coords="465,107,357,149,355,144,463,102"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -184,7 +189,7 @@ Typedefs</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_9f351d46ce3cc29445a41dc3a31e6919.html">config</a></li><li class="navelem"><a class="el" href="../../d0/d8b/config__manager_8h.html">config_manager.h</a></li>
-    <li class="footer">Generated on Wed Feb 11 2026 20:53:00 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Feb 21 2026 08:24:20 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

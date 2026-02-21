@@ -20,10 +20,10 @@
 
 namespace
 {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Application mapper parameters
     ///   cDetailedActionName - a detailed action name, specifying an action
-    ///   cKeyboardAccelerator - an accelerator in the format understood by GTK
+    ///   cKeyboardAccelerator - an accelerator for the detailed action
     ///   cFileQuitActionName - file quit action name
     ///   cOptionSettingsActionName - option settings action name
     ///   cHelpDocActionName - help documenation action name
@@ -40,22 +40,22 @@ using namespace Electux::App;
 
 void EntryApplication::mapping()
 {
-    //////////////////////////////////////////////////////////////////////////
-    /// @brief Sets application accelerator
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief Sets application accelerator for quit action
     set_accel_for_action(cDetailedActionName.data(), cKeyboardAccelerator.data());
 
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Maps application actions to their handlers
     add_action(cFileQuitActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionQuit));
     add_action(cOptionSettingsActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionSettings));
     add_action(cHelpDocActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionDoc));
     add_action(cHelpAboutActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionAbout));
 
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Connects close request signal for AppHome window
     m_home.signal_close_request().connect(sigc::mem_fun(*this, &EntryApplication::onHandleClose), false);
 
-    /////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
     /// @brief Maps application setup signals to their handlers
     m_settings.setupChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));
     m_home.controlChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));

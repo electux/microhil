@@ -1,12 +1,12 @@
 <map id="Electux::App::Config::ConfigManager::ConfigManager" name="Electux::App::Config::ConfigManager::ConfigManager">
-<area shape="rect" id="Node000001" title="Config constructor." alt="" coords="5,261,240,301"/>
-<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration." alt="" coords="288,158,511,213"/>
+<area shape="rect" id="Node000001" title="Config constructor with default configuration." alt="" coords="5,261,240,301"/>
+<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84" title="Stores default configuration to file." alt="" coords="288,158,511,213"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,259,306,215,308,220,182,264"/>
-<area shape="rect" id="Node000008" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762" title="Loads configuration." alt="" coords="317,325,481,365"/>
+<area shape="rect" id="Node000008" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762" title="Loads configuration from file." alt="" coords="317,325,481,365"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="211,299,304,321,303,326,209,304"/>
 <area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="585,261,735,301"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,210,560,247,581,254,579,259,558,252,464,215"/>
-<area shape="rect" id="Node000004" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration." alt="" coords="575,5,745,45"/>
+<area shape="rect" id="Node000004" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores configuration to file." alt="" coords="575,5,745,45"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="426,156,484,105,520,78,557,55,571,48,573,53,560,60,523,83,487,109,430,160"/>
 <area shape="rect" id="Node000005" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="572,69,748,109"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="464,155,558,119,579,111,581,116,560,124,466,160"/>

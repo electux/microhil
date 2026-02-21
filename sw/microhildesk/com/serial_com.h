@@ -22,108 +22,109 @@
 
 namespace Electux::App::Com
 {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief SerialCom class is implementation of serial communication
     class SerialCom : public ICom
     {
     public:
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief SerialCom methods
         ///   SerialCom constructor
         ///   SerialCom destructor
         inline SerialCom() noexcept = default;
         ~SerialCom() noexcept;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Opens the serial communication channel
         void open() final;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Closes the serial communication channel
         void close() final;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Setup the serial port parameters
         /// @param params represents parameters for the serial port
         void setup(const SerialParams &params) final;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Read from serial communication channel
         /// @param data represents data to be placed to after reading
         /// @param len represents length of data to read before returning
         void read(std::vector<uint8_t> &data, size_t len) final;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Writes data to the serial communication channel
         /// @param data represents data to be written to the serial port
         void write(const std::vector<uint8_t> &data) final;
 
-    private:
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts baud-rate from scopped enumerator to unsigned int
+    protected:
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts baud-rate from scopped enumerator to uint32_t
         /// @param baud represents scoped enumerator value
-        /// @return unsigned integer format of baud-rate
-        unsigned int baudToUint(const BaudRate baud) final;
+        /// @return uint32_t format of baud-rate
+        uint32_t baudToUint(const BaudRate baud) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts baud-rate from unsigned int to scopped enumerator
-        /// @param baud represents unsigned integer value
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts baud-rate from uint32_t to scopped enumerator
+        /// @param baud represents uint32_t value
         /// @return scoped enumerator format of baud-rate
-        BaudRate uintToBaud(const unsigned int baud) final;
+        BaudRate uintToBaud(const uint32_t baud) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts data-bits from scopped enumerator to unsigned int
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts data-bits from scopped enumerator to uint32_t
         /// @param data represents scoped enumerator value
-        /// @return unsigned integer format of data-bits
-        unsigned int dataBitsToUint(const CharacterSize data) final;
+        /// @return uint32_t format of data-bits
+        uint32_t dataBitsToUint(const CharacterSize data) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts data-bits from unsigned int to scopped enumerator
-        /// @param data represents unsigned integer format
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts data-bits from uint32_t to scopped enumerator
+        /// @param data represents uint32_t format
         /// @return scoped enumerator format of data-bits
-        CharacterSize uintToDataBits(const unsigned int data) final;
+        CharacterSize uintToDataBits(const uint32_t data) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts parity from scopped enumerator to unsigned int
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts parity from scopped enumerator to uint32_t
         /// @param parity represents scoped enumerator value
-        /// @return unsigned integer format of parity
-        unsigned int parityToUint(const Parity parity) final;
+        /// @return uint32_t format of parity
+        uint32_t parityToUint(const Parity parity) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts parity from unsigned int to scopped enumerator
-        /// @param parity represents unsigned integer format
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts parity from uint32_t to scopped enumerator
+        /// @param parity represents uint32_t format
         /// @return scoped enumerator format of parity
-        Parity uintToParity(const unsigned int parity) final;
+        Parity uintToParity(const uint32_t parity) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts stop-bits from scopped enumerator to unsigned int
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts stop-bits from scopped enumerator to uint32_t
         /// @param stop represents scoped enumerator value
-        /// @return unsigned integer format of stop-bits
-        unsigned int stopBitsToUint(const StopBits stop) final;
+        /// @return uint32_t format of stop-bits
+        uint32_t stopBitsToUint(const StopBits stop) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts stop-bits from unsigned int to scopped enumerator
-        /// @param stop represents unsigned integer format
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts stop-bits from uint32_t to scopped enumerator
+        /// @param stop represents uint32_t format
         /// @return scoped enumerator format of stop-bits
-        StopBits uintToStopBits(const unsigned int stop) final;
+        StopBits uintToStopBits(const uint32_t stop) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts flow-control from scopped enumerator to unsigned int
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts flow-control from scopped enumerator to uint32_t
         /// @param flow represents scoped enumerator value
-        /// @return unsigned integer format of flow-control
-        unsigned int flowControlToUint(const FlowControl flow) final;
+        /// @return uint32_t format of flow-control
+        uint32_t flowControlToUint(const FlowControl flow) final;
 
-        //////////////////////////////////////////////////////////////////////
-        /// @brief Converts flow-control from unsigned int to scopped enumerator
-        /// @param flow represents unsigned integer format
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Converts flow-control from uint32_t to scopped enumerator
+        /// @param flow represents uint32_t format
         /// @return scoped enumerator format of flow-control
-        FlowControl uintToFlowControl(const unsigned int flow) final;
+        FlowControl uintToFlowControl(const uint32_t flow) final;
 
-        //////////////////////////////////////////////////////////////////////
+    private:
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Serial port instance
         SerialPort m_serialPort{};
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Serial port device file path
         std::string m_device{};
     };
