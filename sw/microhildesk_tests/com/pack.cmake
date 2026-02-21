@@ -7,24 +7,24 @@
 
 set(
     MICROHIL_COM_HEADERS
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/
+    ${PROJECT_SOURCE_DIR}/../microhildesk/
 )
 
 set(
     MICROHIL_COM_SOURCES
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/microhil_serial_com.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/microhil_serial_com_utils.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com_utils.cc
 )
 
 set(
     MICROHIL_COM_TESTS
-    ${PROJECT_SOURCE_DIR}/config/test_mhserial_baude_rate.cc
-    ${PROJECT_SOURCE_DIR}/config/test_mhserial_data_bits.cc
-    ${PROJECT_SOURCE_DIR}/config/test_mhserial_parity.cc
-    ${PROJECT_SOURCE_DIR}/config/test_mhserial_stop_bits.cc
-    ${PROJECT_SOURCE_DIR}/config/test_mhserial_setup.cc
-    ${PROJECT_SOURCE_DIR}/config/test_mhserial_open.cc
-    ${PROJECT_SOURCE_DIR}/config/test_mhserial_close.cc
-    ${PROJECT_SOURCE_DIR}/config/test_mhserial_read.cc
-    ${PROJECT_SOURCE_DIR}/config/test_mhserial_write.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_baude_rate.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_data_bits.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_parity.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_stop_bits.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_setup.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_open.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_close.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_read.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_write.cc
 )

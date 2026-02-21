@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['baud_0',['baud',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#aacf9fa2408c1fb6c3e244cdf473a6610',1,'Electux::App::Com']]]
+  ['baud_0',['baud',['../d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html#ad328f93c6bfbedf56b753d68476532ed',1,'Electux::App::Com::SerialParams']]]
 ];

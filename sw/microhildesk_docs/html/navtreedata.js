@@ -57,8 +57,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d4/d60/serial__com__params_8h.html#a5f9306427009aa73c8961ef343d236bf",
-"db/d22/namespaceElectux_1_1App_1_1View_1_1Help.html"
+"d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a8d13d898262c55797adb684f50289279",
+"da/d22/namespaceElectux_1_1App_1_1Params_1_1SerialComConstants.html#a875b7135f474d0a900b1c61069aa7090"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

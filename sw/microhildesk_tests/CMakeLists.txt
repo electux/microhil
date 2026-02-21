@@ -13,7 +13,10 @@ enable_testing()
 
 # Add gtkmm and glibmm packages
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(gtkmm REQUIRED IMPORTED_TARGET gtkmm-3.0 glibmm-2.4)
+pkg_check_modules(gtkmm REQUIRED IMPORTED_TARGET gtkmm-4.0 glibmm-2.4)
+
+# Find the serial library
+find_library(SERIAL_LIB serial)
 
 # Add sources and includes for googletest
 add_subdirectory(googletest)
@@ -26,11 +29,9 @@ include(${PROJECT_SOURCE_DIR}/log/pack.cmake)
 include_directories(com)
 include_directories(config)
 include_directories(log)
-include_directories(model)
 include_directories(${MICROHIL_COM_HEADERS})
 include_directories(${MICROHIL_CONFIG_HEADERS})
 include_directories(${MICROHIL_LOG_HEADERS})
-include_directories(${MICROHIL_MODEL_HEADERS})
 
 add_executable(
     microhil_tests
@@ -38,14 +39,12 @@ add_executable(
     ${MICROHIL_COM_TESTS}
     ${MICROHIL_CONFIG_TESTS}
     ${MICROHIL_LOG_TESTS}
-    ${MICROHIL_MODEL_TESTS}
     ${MICROHIL_COM_SOURCES}
     ${MICROHIL_CONFIG_SOURCES}
     ${MICROHIL_LOG_SOURCES}
-    ${MICROHIL_MODEL_SOURCES}
 )
 
 # Link libraries
-target_link_libraries(microhil_tests PUBLIC gtest gtest_main PkgConfig::gtkmm)
+target_link_libraries(microhil_tests PUBLIC ${SERIAL_LIB} gtest gtest_main PkgConfig::gtkmm)
 include(GoogleTest)
 gtest_discover_tests(microhil_tests)

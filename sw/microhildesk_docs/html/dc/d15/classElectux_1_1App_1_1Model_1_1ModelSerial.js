@@ -1,12 +1,12 @@
 var classElectux_1_1App_1_1Model_1_1ModelSerial =
 [
-    [ "ModelSerialKey", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3", [
-      [ "Device", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3ae0ac20adce6ffee48c7151b070aa5737", null ],
-      [ "Baud", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a5be5da6b69c4c4c10e17fdecdac7fa15", null ],
-      [ "Data", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af6068daa29dbb05a7ead1e3b5a48bbee", null ],
-      [ "Parity", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3aa91d6e31a7e409defa6beb8f1311ef98", null ],
-      [ "Stop", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3a11a755d598c0c417f9a36758c3da7481", null ],
-      [ "Flow", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a023d61322f592bc1a19e26c25a62fbd3af1a76f66cca677c6e628d9ca58a6c8fc", null ]
+    [ "ModelSerialKey", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9", [
+      [ "Device", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9ae0ac20adce6ffee48c7151b070aa5737", null ],
+      [ "Baud", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9a5be5da6b69c4c4c10e17fdecdac7fa15", null ],
+      [ "Data", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9af6068daa29dbb05a7ead1e3b5a48bbee", null ],
+      [ "Parity", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9aa91d6e31a7e409defa6beb8f1311ef98", null ],
+      [ "Stop", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9a11a755d598c0c417f9a36758c3da7481", null ],
+      [ "Flow", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9af1a76f66cca677c6e628d9ca58a6c8fc", null ]
     ] ],
     [ "ModelSerial", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a97d5e36e492f8e9375f781f8eb54cd58", null ],
     [ "add", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#ab5f411c8bde7a2ee7f14e6d4dffada41", null ],

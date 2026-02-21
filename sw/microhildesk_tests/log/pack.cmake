@@ -7,20 +7,21 @@
 
 set(
     MICROHIL_LOG_HEADERS
-    ${PROJECT_SOURCE_DIR}/../microhildesk/log/
+    ${PROJECT_SOURCE_DIR}/../microhildesk/
 )
 
 set(
     MICROHIL_LOG_SOURCES
-    ${PROJECT_SOURCE_DIR}/../microhildesk/log/microhil_log.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/log/microhil_log_<TODO>.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/log/log.cc
 )
 
 set(
     MICROHIL_LOG_TESTS
-    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_file_path.cc
-    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_log_level.cc
-    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_open.cc
-    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_write.cc
-    ${PROJECT_SOURCE_DIR}/controller/test_mhlog_close.cc
+    ${PROJECT_SOURCE_DIR}/log/test_log_file_path.cc
+    ${PROJECT_SOURCE_DIR}/log/test_log_log_level.cc
+    ${PROJECT_SOURCE_DIR}/log/test_log_open.cc
+    ${PROJECT_SOURCE_DIR}/log/test_log_message_format.cc
+    ${PROJECT_SOURCE_DIR}/log/test_log_filtering.cc
+    ${PROJECT_SOURCE_DIR}/log/test_log_multi_thread.cc
+    ${PROJECT_SOURCE_DIR}/log/test_log_close.cc
 )

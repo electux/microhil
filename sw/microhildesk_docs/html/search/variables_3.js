@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['flow_0',['flow',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#afad0b9d01d90f993f92465be0ee1a269',1,'Electux::App::Com']]]
+  ['flow_0',['flow',['../d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html#a29dfed4642104e175cf79bd5682b0534',1,'Electux::App::Com::SerialParams']]]
 ];

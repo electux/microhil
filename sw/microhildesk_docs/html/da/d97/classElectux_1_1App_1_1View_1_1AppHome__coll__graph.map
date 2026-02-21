@@ -6,13 +6,13 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,781,256,798,281,817,303,829,356,851,574,947,773,1026,771,1031,572,952,354,856,301,834,278,822,253,802,238,785"/>
 <area shape="rect" id="Node000004" href="$dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html" title="Setup settings for collected parameters." alt="" coords="267,700,407,800"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="409,791,421,798,774,1000,771,1005,419,802,406,795"/>
-<area shape="rect" id="Node000005" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html" title=" " alt="" coords="99,497,242,637"/>
+<area shape="rect" id="Node000005" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html" title="ModelControl definition for control configuration." alt="" coords="99,497,242,637"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="190,636,213,674,230,687,254,697,251,702,227,692,209,678,186,639"/>
-<area shape="rect" id="Node000006" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition." alt="" coords="266,268,409,448"/>
+<area shape="rect" id="Node000006" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition that implements IModel interface." alt="" coords="266,268,409,448"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="259,460,228,499,224,496,255,457"/>
-<area shape="rect" id="Node000009" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title=" " alt="" coords="266,497,409,637"/>
+<area shape="rect" id="Node000009" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title="ModelSerial definition for serial configuration." alt="" coords="266,497,409,637"/>
 <area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="340,462,340,497,335,497,335,462"/>
-<area shape="rect" id="Node000010" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title=" " alt="" coords="433,497,575,637"/>
+<area shape="rect" id="Node000010" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title="ModelLog definition for log configuration." alt="" coords="433,497,575,637"/>
 <area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="419,457,451,496,446,499,415,460"/>
 <area shape="rect" id="Node000007" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="179,5,322,205"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="292,217,309,267,304,269,287,219"/>

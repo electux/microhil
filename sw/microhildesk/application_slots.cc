@@ -21,7 +21,7 @@
 
 namespace
 {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Application menu labels and detailed actions
     ///   cFileLabel - file action label
     ///   cFileQuitLabel - file quit action label
@@ -54,8 +54,8 @@ void EntryApplication::on_startup()
     std::cout << "Startup application..." << std::endl;
     Gtk::Application::on_startup();
 
-    //////////////////////////////////////////////////////////////////////////
-    /// @brief Sets application menubar
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief Sets application menubar with File, Option and Help menu
     auto menu = Gio::Menu::create();
     auto submenu_file = Gio::Menu::create();
     submenu_file->append(cFileQuitLabel.data(), cFileQuitDetaildAction.data());
@@ -69,15 +69,15 @@ void EntryApplication::on_startup()
     menu->append_submenu(cHelpLabel.data(), submenu_help);
     set_menubar(menu);
 
-    //////////////////////////////////////////////////////////////////////////
-    /// @brief Maps signal/slots for application views
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief Maps signal/slots for application views and actions
     mapping();
 
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Sets AppHome as toplevel window, add to the application window
     add_window(m_home);
 
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Updated settings widgets data based on loaded configuration
     SettingsSetup setup;
     setup.m_controlConfig = m_configManager.getControlConfig();
@@ -95,7 +95,7 @@ void EntryApplication::on_activate()
     std::cout << "Activate application..." << std::endl;
     Gtk::Application::on_activate();
 
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Sets visibility for AppHome window
     m_home.set_visible(true);
 

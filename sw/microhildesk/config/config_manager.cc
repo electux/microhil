@@ -27,7 +27,7 @@
 
 namespace
 {
-    ////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Configuration parameters
     ///   cConfigFile - program configuration file name
     ///   cConfigAssignDelimiter - delimiter for key-value assignment
@@ -210,7 +210,7 @@ bool ConfigManager::store()
 
 void ConfigManager::defaultConfigStore()
 {
-    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Set default control configuration
     m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Enable), cConfigDefaultControlEnable);
     m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Mode), cConfigDefaultControlMode);
@@ -218,7 +218,7 @@ void ConfigManager::defaultConfigStore()
     m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::Timer), cConfigDefaultControlTimer);
     m_controlConfig.add(m_controlConfig.toString(ModelControl::ModelControlKey::TimerEnable), cConfigDefaultControlTimerEnable);
 
-    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Set default serial configuration
     m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Device), cConfigDefaultSerialDevice);
     m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Baud), cConfigDefaultSerialBaud);
@@ -227,12 +227,12 @@ void ConfigManager::defaultConfigStore()
     m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Stop), cConfigDefaultSerialStop);
     m_serialConfig.add(m_serialConfig.toString(ModelSerial::ModelSerialKey::Flow), cConfigDefaultSerialFlow);
 
-    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Set default log configuration
     m_logConfig.add(m_logConfig.toString(ModelLog::ModelLogKey::FilePath), cConfigDefaultLogFilePath);
     m_logConfig.add(m_logConfig.toString(ModelLog::ModelLogKey::LogLevel), cConfigDefaultLogLevel);
 
-    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Store default configuration to file
     store();
 }

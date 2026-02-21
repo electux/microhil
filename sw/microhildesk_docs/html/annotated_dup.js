@@ -4,13 +4,15 @@ var annotated_dup =
       [ "App", "dd/d31/namespaceElectux_1_1App.html", [
         [ "Com", "d7/d9d/namespaceElectux_1_1App_1_1Com.html", [
           [ "ICom", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html", "db/dca/classElectux_1_1App_1_1Com_1_1ICom" ],
-          [ "SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom" ]
+          [ "SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom" ],
+          [ "SerialParams", "d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html", "d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams" ]
         ] ],
         [ "Config", "d9/d49/namespaceElectux_1_1App_1_1Config.html", [
           [ "ConfigManager", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager" ],
           [ "IConfig", "db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html", "db/dcd/classElectux_1_1App_1_1Config_1_1IConfig" ]
         ] ],
         [ "Logger", "d5/dd1/namespaceElectux_1_1App_1_1Logger.html", [
+          [ "ILog", "d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html", "d0/d68/classElectux_1_1App_1_1Logger_1_1ILog" ],
           [ "Log", "dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html", "dd/d03/classElectux_1_1App_1_1Logger_1_1Log" ]
         ] ],
         [ "Model", "d9/d26/namespaceElectux_1_1App_1_1Model.html", [

@@ -72,14 +72,14 @@ void SerialCom::setup(const SerialParams &params)
 
     try
     {
-        ////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Sets serial port device path
         m_device = params.device;
         open();
 
         if (m_serialPort.IsOpen())
         {
-            ////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////
             /// @brief Sets serial port parameters
             m_serialPort.SetBaudRate(params.baud);
             m_serialPort.SetCharacterSize(params.data);

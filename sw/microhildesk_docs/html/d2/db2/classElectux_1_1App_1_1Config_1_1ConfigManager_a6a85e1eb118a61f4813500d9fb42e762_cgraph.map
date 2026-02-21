@@ -1,5 +1,5 @@
 <map id="Electux::App::Config::ConfigManager::load" name="Electux::App::Config::ConfigManager::load">
-<area shape="rect" id="Node000001" title="Loads configuration." alt="" coords="5,101,169,141"/>
+<area shape="rect" id="Node000001" title="Loads configuration from file." alt="" coords="5,101,169,141"/>
 <area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds entity to model {&#39;key&#39;: &#39;data&#39;}." alt="" coords="243,5,394,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,99,216,55,236,47,238,52,218,60,126,104"/>
 <area shape="rect" id="Node000003" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a23cc25f9dc86d32165b47abd1edfc12a" title="Validates if key is valid control configuration key." alt="" coords="217,69,420,109"/>

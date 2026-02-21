@@ -18,22 +18,25 @@
  */
 #pragma once
 
+#include <cstdint>
 #include <model/model.h>
 
 namespace Electux::App::Model
 {
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief ModelSerial definition for serial configuration
     class ModelSerial : public Model
     {
     public:
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief ModelSerial constructor
         inline ModelSerial() noexcept = default;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Enum for serial configuration keys
-        enum class ModelSerialKey
+        enum class ModelSerialKey : uint8_t
         {
-            Device,
+            Device = 0,
             Baud,
             Data,
             Parity,
@@ -41,18 +44,18 @@ namespace Electux::App::Model
             Flow
         };
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Gets all model entries
         /// @return Map of all model entries {key: data}
         Entities getAllEntries() const final;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Converts Key enum to 
         /// @param key Represents ModelSerialKey enum value
         /// @return string representation of ModelSerialKey enum
         std::string_view toString(const ModelSerialKey &key) const;
 
-        //////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////
         /// @brief Validates if key is valid serial configuration key
         /// @param key Represents string key to be validated
         /// @return status true if key is valid else false

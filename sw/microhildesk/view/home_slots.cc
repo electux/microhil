@@ -24,18 +24,18 @@
 #include <params/channel_params.h>
 
 namespace {
-    /////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Common string constants and character delimiters
     constexpr std::string_view cEmptyString = "";
     constexpr std::string_view cSpaceString = " ";
     constexpr char cSpaceDelimiter = ' ';
 
-    /////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief String representations for boolean values
     constexpr std::string_view cTrue = "true";
     constexpr std::string_view cFalse = "false";
 
-    /////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Converts a boolean value to its string representation
     /// @param value Boolean value to convert
     /// @return "true" if value is true, "false" otherwise
@@ -177,9 +177,12 @@ std::vector<std::string> AppHome::split_to_vector(const std::string_view &input)
     std::vector<std::string> elements;
     std::stringstream ss{std::string(input)};
     std::string item;
-    while (ss >> item) {
+
+    while (ss >> item)
+    {
         elements.push_back(item);
     }
+
     return elements;
 }
 

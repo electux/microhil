@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['entities_0',['Entities',['../d9/d26/namespaceElectux_1_1App_1_1Model.html#afc9f86a5ce3fbcf1d0486a71b20a4f29',1,'Electux::App::Model']]]
+  ['charactersize_0',['CharacterSize',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#afcd9fbcc2861f2f49c659fbca037f171',1,'Electux::App::Com']]],
+  ['configmanager_1',['ConfigManager',['../dd/d31/namespaceElectux_1_1App.html#a676b54cbeb58c1e48df5e0da28898ec1',1,'Electux::App']]]
 ];

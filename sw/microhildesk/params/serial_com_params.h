@@ -21,7 +21,7 @@
 #include <string_view>
 
 namespace Electux::App::Params::SerialComConstants {
-    //////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Serial communication parameters
     ///   cComBaudRates - Supported Baud Rates
     ///   cComDataBits - Supported Data Bits
@@ -42,29 +42,29 @@ namespace Electux::App::Params::SerialComConstants {
     constexpr std::string_view cComParities[]{"Even", "Odd", "None"};
     constexpr std::string_view cComStopBits[]{"1", "2"};
     constexpr std::string_view cComFlowControls[]{"None", "Hardware", "Software"};
-    constexpr const unsigned int cComBaud110 = 0;
-    constexpr const unsigned int cComBaud300 = 1;
-    constexpr const unsigned int cComBaud600 = 2;
-    constexpr const unsigned int cComBaud1200 = 3;
-    constexpr const unsigned int cComBaud2400 = 4;
-    constexpr const unsigned int cComBaud4800 = 5;
-    constexpr const unsigned int cComBaud9600 = 6;
-    constexpr const unsigned int cComBaud19200 = 7;
-    constexpr const unsigned int cComBaud38400 = 8;
-    constexpr const unsigned int cComBaud57600 = 9;
-    constexpr const unsigned int cComBaud115200 = 10;
-    constexpr const unsigned int cComBaud230400 = 11;
-    constexpr const unsigned int cComDataBits5 = 0;
-    constexpr const unsigned int cComDataBits6 = 1;
-    constexpr const unsigned int cComDataBits7 = 2;
-    constexpr const unsigned int cComDataBits8 = 3;
-    constexpr const unsigned int cComParityEven = 0;
-    constexpr const unsigned int cComParityOdd = 1;
-    constexpr const unsigned int cComParityNone = 2;
-    constexpr const unsigned int cComStopBits1 = 0;
-    constexpr const unsigned int cComStopBits2 = 1;
-    constexpr const unsigned int cComFlowControlNone = 0;
-    constexpr const unsigned int cComFlowControlHw = 1;
-    constexpr const unsigned int cComFlowControlSw = 2;
-    constexpr const unsigned int cComInvalidParameter = 127;
+    constexpr const uint32_t cComBaud110 = 0;
+    constexpr const uint32_t cComBaud300 = 1;
+    constexpr const uint32_t cComBaud600 = 2;
+    constexpr const uint32_t cComBaud1200 = 3;
+    constexpr const uint32_t cComBaud2400 = 4;
+    constexpr const uint32_t cComBaud4800 = 5;
+    constexpr const uint32_t cComBaud9600 = 6;
+    constexpr const uint32_t cComBaud19200 = 7;
+    constexpr const uint32_t cComBaud38400 = 8;
+    constexpr const uint32_t cComBaud57600 = 9;
+    constexpr const uint32_t cComBaud115200 = 10;
+    constexpr const uint32_t cComBaud230400 = 11;
+    constexpr const uint32_t cComDataBits5 = 0;
+    constexpr const uint32_t cComDataBits6 = 1;
+    constexpr const uint32_t cComDataBits7 = 2;
+    constexpr const uint32_t cComDataBits8 = 3;
+    constexpr const uint32_t cComParityEven = 0;
+    constexpr const uint32_t cComParityOdd = 1;
+    constexpr const uint32_t cComParityNone = 2;
+    constexpr const uint32_t cComStopBits1 = 0;
+    constexpr const uint32_t cComStopBits2 = 1;
+    constexpr const uint32_t cComFlowControlNone = 0;
+    constexpr const uint32_t cComFlowControlHw = 1;
+    constexpr const uint32_t cComFlowControlSw = 2;
+    constexpr const uint32_t cComInvalidParameter = 127;
 };

@@ -1,11 +1,11 @@
 var classElectux_1_1App_1_1Model_1_1ModelControl =
 [
-    [ "ModelControlKey", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088", [
-      [ "Enable", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a2faec1f9f8cc7f8f40d521c4dd574f49", null ],
-      [ "Mode", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088a650be61892bf690026089544abbd9d26", null ],
-      [ "Toggle", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aa8875bbe4272c0bdd786cfaaedf77921", null ],
-      [ "Timer", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088aefb4777327e6f704fb1519c1882f93ec", null ],
-      [ "TimerEnable", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a82a75a3357f2b33416985056d8236088af4387efef94ad8501d1d7f16bc6b1359", null ]
+    [ "ModelControlKey", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31", [
+      [ "Enable", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a2faec1f9f8cc7f8f40d521c4dd574f49", null ],
+      [ "Mode", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31a650be61892bf690026089544abbd9d26", null ],
+      [ "Toggle", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aa8875bbe4272c0bdd786cfaaedf77921", null ],
+      [ "Timer", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31aefb4777327e6f704fb1519c1882f93ec", null ],
+      [ "TimerEnable", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a032032cb7a0144ba34f3ee53ca6d8d31af4387efef94ad8501d1d7f16bc6b1359", null ]
     ] ],
     [ "ModelControl", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#afa3e18d0f7ce00779a42a0ffe0e7966b", null ],
     [ "add", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#ab5f411c8bde7a2ee7f14e6d4dffada41", null ],

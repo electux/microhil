@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['data_0',['data',['../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a1492b7a39f37c6880fbe7dfb7524a208',1,'Electux::App::Com']]]
+  ['data_0',['data',['../d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html#ab0faa3f4ec4fb334a6062b4f063daf90',1,'Electux::App::Com::SerialParams']]],
+  ['device_1',['device',['../d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html#aaad51128fda574792362d38aa0b1b247',1,'Electux::App::Com::SerialParams']]]
 ];

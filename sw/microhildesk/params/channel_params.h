@@ -19,8 +19,8 @@
 #pragma once
 
 namespace Electux::App::Params::Channel {
-    /////////////////////////////////////////////////////////////////////////
-    /// @brief Channel parameters
+    ///////////////////////////////////////////////////////////////////////////
+    /// @brief Channel parameters definitions
     ///   cNumOfChannels - number of channels supported
     constexpr const ssize_t cNumOfChannels = 8;
 };

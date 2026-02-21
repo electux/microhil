@@ -22,7 +22,7 @@ using namespace Electux::App::View;
 
 void AppHome::mapping(size_t index)
 {
-    //////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
     /// @brief Connect signals and slots for home window widgets
     m_enableChannels[index].signal_toggled().connect(sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelEnableChanged), index));
     m_selectControlChannels[index].signal_changed().connect(sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelModeChanged), index));
