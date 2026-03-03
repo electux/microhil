@@ -1,21 +1,21 @@
-/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * home.h
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// home.h
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include <gtkmm/applicationwindow.h>
@@ -28,133 +28,156 @@
 #include <gtkmm/togglebutton.h>
 #include <view/settings_setup.h>
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @namespace Electux::App::View
+/// @brief Namespace for application view components and data structures
 namespace Electux::App::View
 {
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief Signal type for settings setup
-    using SigSettings = sigc::signal<void(SettingsSetup &)>;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @name Local Type Aliases
+	/// @{
+	using SigSettings = sigc::signal<void(SettingsSetup &)>;
+	/// @}
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief Home view window definition
-    class AppHome : public Gtk::ApplicationWindow
-    {
-    public:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief AppHome constructor
-        explicit AppHome();
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @class AppHome
+	/// @brief Home view window definition for the microhildesk application.
+	///
+	/// Provides the main user interface for monitoring and controlling
+	/// multiple channels, including toggle, timer, and mode selection.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	class AppHome : public Gtk::ApplicationWindow
+	{
+	public:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief AppHome constructor.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		explicit AppHome();
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Signal for settings setup
-        /// @return Signal for changed settings setup
-        SigSettings controlChanged();
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Signal for settings setup.
+		/// @return Signal emitted when control settings are changed.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		SigSettings controlChanged();
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Sets configuration setup
-        void setControlSetup(const SettingsSetup& setup);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the configuration setup.
+		/// @param setup Reference to the SettingsSetup object.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setControlSetup(const SettingsSetup& setup);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets UI data from widgets and saves them to configuration
-        void getUiData();
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets UI data from widgets and saves them to configuration.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void getUiData();
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Updates UI widgets with data from loaded configuration
-        void updateUiData();
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Updates UI widgets with data from loaded configuration.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void updateUiData();
 
-    protected:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Maps home (signals and slots)
-        /// @param index Index of the channel to map
-        void mapping(size_t index);
+	protected:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Maps home (signals and slots).
+		/// @param index Index of the channel to map.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void mapping(size_t index);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for enablement channel
-        /// @param index Index of the channel to map
-        void onChannelEnableChanged(size_t index);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Signal handler for enablement channel.
+		/// @param index Index of the affected channel.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void onChannelEnableChanged(size_t index);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for setup channel mode
-        /// @param index Index of the channel to map
-        void onChannelModeChanged(size_t index);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Signal handler for setup channel mode.
+		/// @param index Index of the affected channel.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void onChannelModeChanged(size_t index);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for toggle mode
-        /// @param index Index of the channel to map
-        void onChannelToggleChanged(size_t index);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Signal handler for toggle mode.
+		/// @param index Index of the affected channel.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void onChannelToggleChanged(size_t index);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for timer mode
-        /// @param index Index of the channel to map
-        void onChannelTimerChanged(size_t index);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Signal handler for timer mode.
+		/// @param index Index of the affected channel.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void onChannelTimerChanged(size_t index);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Signal handler for timer mode (start process)
-        /// @param index Index of the channel to map
-        void onChannelTimerToggleChanged(size_t index);
-        
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Splits input string into vector of substrings
-        /// @param input Input string to split
-        /// @return Vector of substrings
-        std::vector<std::string> split_to_vector(const std::string_view &input);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Signal handler for timer mode (start process).
+		/// @param index Index of the affected channel.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void onChannelTimerToggleChanged(size_t index);
+		
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Splits input string into vector of substrings.
+		/// @param input Input string to split.
+		/// @return Vector of substrings.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::vector<std::string> split_to_vector(const std::string_view &input);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Extracts nth substring from input string
-        /// @param input Input string
-        /// @param index Index of substring to extract
-        /// @return Extracted substring
-        std::string extract_param_value_by_index(const std::string_view &input, size_t index);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Extracts nth substring from input string.
+		/// @param input Input string.
+		/// @param index Index of substring to extract.
+		/// @return Extracted substring.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::string extract_param_value_by_index(const std::string_view &input, size_t index);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Updates nth substring in input string
-        /// @param input Input string
-        /// @param index Index of substring to update
-        /// @param newValue New value for the substring
-        /// @return Updated string
-        std::string update_param_value_by_index(const std::string_view &input, size_t index, const std::string_view &newValue);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Updates nth substring in input string.
+		/// @param input Input string.
+		/// @param index Index of substring to update.
+		/// @param newValue New value for the substring.
+		/// @return Updated string.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::string update_param_value_by_index(const std::string_view &input, size_t index, const std::string_view &newValue);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Updates control configuration parameter
-        /// @param key Configuration key to update
-        /// @param index Index of the parameter to update
-        /// @param value New value for the configuration key
-        void update_control_config(const std::string_view &key, size_t index, const std::string_view &value);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Updates control configuration parameter.
+		/// @param key Configuration key to update.
+		/// @param index Index of the parameter to update.
+		/// @param value New value for the configuration key.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void update_control_config(const std::string_view &key, size_t index, const std::string_view &value);
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Extracts control configuration parameter
-        /// @param key Configuration key to extract
-        /// @param index Index of the parameter to extract
-        /// @return Extracted value for the configuration key
-        std::string extract_config(const std::string_view &key, size_t index);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Extracts control configuration parameter.
+		/// @param key Configuration key to extract.
+		/// @param index Index of the parameter to extract.
+		/// @return Extracted value for the configuration key.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::string extract_config(const std::string_view &key, size_t index);
 
-    private:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Container for packing widgets for home window
-        ///   m_blockSignals - flag to block signals during UI update
-        ///   m_setup - control parameters
-        ///   m_controlSignal - signal for control settings
-        ///   m_boxRoot - horizontal box for channel widgets
-        ///   m_boxChannels - channel  container for widgets
-        ///   m_enableChannels - checkbox for enabling channel
-        ///   m_selectControlChannels - combobox for control type
-        ///   m_labelToggleChannels - label for toggle channel
-        ///   m_toggleChannels - toogle button (activate)
-        ///   m_labelTimerChannels -  label for timer channel
-        ///   m_spinTimerChannels - channel spinner
-        ///   m_toggleTimerChannels - channel toogle timer (start)
-        ///   m_statusTimerChannels - channel status (visual)
-        bool m_blockSignals{false};
-        SettingsSetup m_setup{};
-        SigSettings m_controlSignal{};
-        Gtk::Box m_boxRoot{};
-        std::vector<Gtk::Box> m_boxChannels{};
-        std::vector<Gtk::CheckButton> m_enableChannels{};
-        std::vector<Gtk::ComboBoxText> m_selectControlChannels{};
-        std::vector<Gtk::Label> m_labelToggleChannels{};
-        std::vector<Gtk::ToggleButton> m_toggleChannels{};
-        std::vector<Gtk::Label> m_labelTimerChannels{};
-        std::vector<Gtk::SpinButton> m_spinTimerChannels{};
-        std::vector<Gtk::ToggleButton> m_toggleTimerChannels{};
-        std::vector<Gtk::ProgressBar> m_statusTimerChannels{};
-    };
-};
+	private:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @name UI State and Configuration
+		/// @{
+		bool m_blockSignals{false};    ///< Flag to block signals during UI update
+		SettingsSetup m_setup{};       ///< Control parameters storage
+		SigSettings m_controlSignal{}; ///< Internal signal for control settings
+		/// @}
+		////////////////////////////////////////////////////////////////////////////////////////////////
 
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @name UI Widgets and Containers
+		/// @{
+		Gtk::Box m_boxRoot{};                                     ///< Root container for packing
+		std::vector<Gtk::Box> m_boxChannels{};                    ///< Containers for individual channels
+		std::vector<Gtk::CheckButton> m_enableChannels{};         ///< Enablement checkboxes
+		std::vector<Gtk::ComboBoxText> m_selectControlChannels{}; ///< Mode selection
+		std::vector<Gtk::Label> m_labelToggleChannels{};          ///< Toggle labels
+		std::vector<Gtk::ToggleButton> m_toggleChannels{};        ///< Main toggle buttons
+		std::vector<Gtk::Label> m_labelTimerChannels{};           ///< Timer labels
+		std::vector<Gtk::SpinButton> m_spinTimerChannels{};       ///< Timer duration spinners
+		std::vector<Gtk::ToggleButton> m_toggleTimerChannels{};   ///< Timer activation buttons
+		std::vector<Gtk::ProgressBar> m_statusTimerChannels{};    ///< Timer progress indicators
+		/// @}
+		////////////////////////////////////////////////////////////////////////////////////////////////
+	};
+} // namespace Electux::App::View

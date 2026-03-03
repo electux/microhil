@@ -21,6 +21,7 @@ set(
     ${PROJECT_SOURCE_DIR}/log/test_log_log_level.cc
     ${PROJECT_SOURCE_DIR}/log/test_log_open.cc
     ${PROJECT_SOURCE_DIR}/log/test_log_message_format.cc
+    ${PROJECT_SOURCE_DIR}/log/test_log_closed_stream.cc
     ${PROJECT_SOURCE_DIR}/log/test_log_filtering.cc
     ${PROJECT_SOURCE_DIR}/log/test_log_multi_thread.cc
     ${PROJECT_SOURCE_DIR}/log/test_log_close.cc

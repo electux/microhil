@@ -1,6 +1,9 @@
 var namespaceElectux_1_1App_1_1Com =
 [
     [ "ICom", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html", "db/dca/classElectux_1_1App_1_1Com_1_1ICom" ],
+    [ "ILibSerialPort", "d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort.html", "d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort" ],
+    [ "ISerial", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial" ],
+    [ "LibSerialPortWrapper", "da/d76/classElectux_1_1App_1_1Com_1_1LibSerialPortWrapper.html", "da/d76/classElectux_1_1App_1_1Com_1_1LibSerialPortWrapper" ],
     [ "SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom" ],
     [ "SerialParams", "d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html", "d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams" ],
     [ "BaudRate", "d7/d9d/namespaceElectux_1_1App_1_1Com.html#a9d794cdb90a90e2e1cfe0458c977a2a6", null ],

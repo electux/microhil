@@ -1,30 +1,45 @@
-/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * test_config_control.cc
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// test_config_control.cc
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include "test_config.h"
 
+using namespace Electux::App::Model;
 using namespace Electux::App::Config;
 
-////////////////////////////////////////////////////////////////////////////
-/// @brief Test the control function of ConfigManager
-/// @param ConfigManagerTest is test fixture
-/// @param controlConfigTest is test name
-TEST_F(ConfigManagerTest, controlConfigTest)
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test the control configuration functionality of ConfigManager.
+///
+/// Verifies that the configuration manager correctly loads and retrieves
+/// control-related parameters, ensuring that keys like 'Enable' and 'Timer'
+/// match the expected default values.
+///
+/// @param ConfigManagerTest The test fixture.
+/// @param ControlConfigTest The name of the test case.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST_F(ConfigManagerTest, ControlConfigTest)
 {
-    EXPECT_TRUE(true == true);
+	m_config->load();
+	const auto& control = m_config->getConfig();
+
+	auto enableKey = control.toString(ModelControlKey::Enable);
+	auto timerKey = control.toString(ModelControlKey::Timer);
+
+	EXPECT_EQ(control.getEntity(enableKey), "false false false false false false false false");
+	EXPECT_EQ(control.getEntity(timerKey), "0 0 0 0 0 0 0 0");
 }

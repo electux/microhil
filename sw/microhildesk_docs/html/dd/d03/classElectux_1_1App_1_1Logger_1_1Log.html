@@ -92,15 +92,13 @@ $(document).ready(function(){initNavTree('dd/d03/classElectux_1_1App_1_1Logger_1
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d7/d2a/classElectux_1_1App_1_1Logger_1_1Log-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Electux::App::Logger::Log Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="Log class is a file-based implementation of ILog.">Log</a> class is a file-based implementation of <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="ILog is the interface for logging implementations.">ILog</a>.  
+<p>A file-based implementation of the <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="Interface for logging implementations.">ILog</a> interface.  
  <a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>&gt;</code></p>
@@ -109,9 +107,9 @@ Inheritance diagram for Electux::App::Logger::Log:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d67/classElectux_1_1App_1_1Logger_1_1Log__inherit__graph.png" border="0" usemap="#aElectux_1_1App_1_1Logger_1_1Log_inherit__map" alt="Inheritance graph"/></div>
 <map name="aElectux_1_1App_1_1Logger_1_1Log_inherit__map" id="aElectux_1_1App_1_1Logger_1_1Log_inherit__map">
-<area shape="rect" title="Log class is a file&#45;based implementation of ILog." alt="" coords="5,233,184,539"/>
-<area shape="rect" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="ILog is the interface for logging implementations." alt="" coords="21,5,168,185"/>
-<area shape="poly" title=" " alt="" coords="97,199,97,233,92,233,92,199"/>
+<area shape="rect" title="A file&#45;based implementation of the ILog interface." alt="" coords="5,253,184,639"/>
+<area shape="rect" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="Interface for logging implementations." alt="" coords="21,5,168,205"/>
+<area shape="poly" title=" " alt="" coords="97,219,97,253,92,253,92,219"/>
 </map>
 </div>
 <div class="dynheader">
@@ -119,116 +117,74 @@ Collaboration diagram for Electux::App::Logger::Log:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d4/df9/classElectux_1_1App_1_1Logger_1_1Log__coll__graph.png" border="0" usemap="#aElectux_1_1App_1_1Logger_1_1Log_coll__map" alt="Collaboration graph"/></div>
 <map name="aElectux_1_1App_1_1Logger_1_1Log_coll__map" id="aElectux_1_1App_1_1Logger_1_1Log_coll__map">
-<area shape="rect" title="Log class is a file&#45;based implementation of ILog." alt="" coords="215,248,393,493"/>
-<area shape="rect" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="ILog is the interface for logging implementations." alt="" coords="5,5,152,185"/>
-<area shape="poly" title=" " alt="" coords="163,194,217,259,212,263,159,198"/>
-<area shape="rect" title=" " alt="" coords="176,63,248,128"/>
-<area shape="poly" title=" " alt="" coords="219,128,227,173,240,223,243,232,238,233,235,225,222,174,214,129"/>
-<area shape="rect" title=" " alt="" coords="279,63,329,128"/>
-<area shape="poly" title=" " alt="" coords="307,128,307,231,301,231,301,128"/>
-<area shape="rect" title=" " alt="" coords="393,63,466,128"/>
-<area shape="poly" title=" " alt="" coords="428,129,419,175,402,225,398,234,393,232,398,223,413,174,423,128"/>
-<area shape="rect" title=" " alt="" coords="508,63,564,128"/>
-<area shape="poly" title=" " alt="" coords="531,129,514,177,488,226,450,268,408,304,405,300,447,264,483,222,510,174,526,127"/>
+<area shape="rect" title="A file&#45;based implementation of the ILog interface." alt="" coords="215,268,393,513"/>
+<area shape="rect" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="Interface for logging implementations." alt="" coords="5,5,152,205"/>
+<area shape="poly" title=" " alt="" coords="163,208,217,275,212,279,159,211"/>
+<area shape="rect" title=" " alt="" coords="176,73,248,138"/>
+<area shape="poly" title=" " alt="" coords="218,138,226,188,240,243,243,252,238,253,235,245,221,189,213,139"/>
+<area shape="rect" title=" " alt="" coords="279,73,329,138"/>
+<area shape="poly" title=" " alt="" coords="307,139,307,251,301,251,301,139"/>
+<area shape="rect" title=" " alt="" coords="393,73,466,138"/>
+<area shape="poly" title=" " alt="" coords="429,139,420,189,402,245,398,254,393,252,398,243,414,188,423,138"/>
+<area shape="rect" title=" " alt="" coords="508,73,564,138"/>
+<area shape="poly" title=" " alt="" coords="532,139,517,191,505,219,489,246,451,289,408,326,404,322,447,285,485,242,500,217,512,189,527,138"/>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:ac331b29c2e015b29251750782e4dfc25" id="r_ac331b29c2e015b29251750782e4dfc25"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">LogLevel</a> : uint8_t { <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> = 0
-, <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Warning</a>
-, <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875">Info</a>
- }</td></tr>
-<tr class="memdesc:ac331b29c2e015b29251750782e4dfc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for log levels.  <a href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">More...</a><br /></td></tr>
-<tr class="separator:ac331b29c2e015b29251750782e4dfc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b057da5d2fec3cc353f3c91f2c821b7" id="r_a3b057da5d2fec3cc353f3c91f2c821b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a3b057da5d2fec3cc353f3c91f2c821b7">Log</a> () noexcept=default</td></tr>
-<tr class="memdesc:a3b057da5d2fec3cc353f3c91f2c821b7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html">Model</a> log methods <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="Log class is a file-based implementation of ILog.">Log</a> constructor <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="Log class is a file-based implementation of ILog.">Log</a> destructor with force close log file Deleted copy constructor and assignment operator.  <br /></td></tr>
+<tr class="memdesc:a3b057da5d2fec3cc353f3c91f2c821b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="A file-based implementation of the ILog interface.">Log</a> class.  <br /></td></tr>
 <tr class="separator:a3b057da5d2fec3cc353f3c91f2c821b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab34c6e7856d2b711b7082cc93d980659" id="r_ab34c6e7856d2b711b7082cc93d980659"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#ab34c6e7856d2b711b7082cc93d980659">~Log</a> () noexcept</td></tr>
+<tr class="memdesc:ab34c6e7856d2b711b7082cc93d980659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="A file-based implementation of the ILog interface.">Log</a> class. Ensures that the log file stream is properly closed before destruction.  <br /></td></tr>
 <tr class="separator:ab34c6e7856d2b711b7082cc93d980659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a9040d926e10c40da6b4191878786e6" id="r_a9a9040d926e10c40da6b4191878786e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a9a9040d926e10c40da6b4191878786e6">Log</a> (const <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html">Log</a> &amp;)=delete</td></tr>
 <tr class="separator:a9a9040d926e10c40da6b4191878786e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace43a1b23b00f8b50d91b508705cb67c" id="r_ace43a1b23b00f8b50d91b508705cb67c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html">Log</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#ace43a1b23b00f8b50d91b508705cb67c">operator=</a> (const <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html">Log</a> &amp;)=delete</td></tr>
 <tr class="separator:ace43a1b23b00f8b50d91b508705cb67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0865a4096de5adf78beaf5724bb597e" id="r_ac0865a4096de5adf78beaf5724bb597e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#ac0865a4096de5adf78beaf5724bb597e">setLevel</a> (<a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">LogLevel</a> level) final</td></tr>
+<tr class="memitem:ac0865a4096de5adf78beaf5724bb597e" id="r_ac0865a4096de5adf78beaf5724bb597e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#ac0865a4096de5adf78beaf5724bb597e">setLevel</a> (<a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68">LogLevel</a> level) final</td></tr>
 <tr class="memdesc:ac0865a4096de5adf78beaf5724bb597e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the filtering log level.  <br /></td></tr>
 <tr class="separator:ac0865a4096de5adf78beaf5724bb597e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23a46cb9cc911f558b6144bd23e216f9" id="r_a23a46cb9cc911f558b6144bd23e216f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a23a46cb9cc911f558b6144bd23e216f9">getLevel</a> () const final</td></tr>
-<tr class="memdesc:a23a46cb9cc911f558b6144bd23e216f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current filtering log level.  <br /></td></tr>
-<tr class="separator:a23a46cb9cc911f558b6144bd23e216f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f9781b9178687e8551664b4f248802" id="r_a34f9781b9178687e8551664b4f248802"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a34f9781b9178687e8551664b4f248802">getLevel</a> () const final</td></tr>
+<tr class="memdesc:a34f9781b9178687e8551664b4f248802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current filtering log level.  <br /></td></tr>
+<tr class="separator:a34f9781b9178687e8551664b4f248802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4deeccf6860ca90e42de4d724b376eb1" id="r_a4deeccf6860ca90e42de4d724b376eb1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4deeccf6860ca90e42de4d724b376eb1">open</a> () final</td></tr>
-<tr class="memdesc:a4deeccf6860ca90e42de4d724b376eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the logging sink (file, socket, etc.)  <br /></td></tr>
+<tr class="memdesc:a4deeccf6860ca90e42de4d724b376eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the logging sink (file stream).  <br /></td></tr>
 <tr class="separator:a4deeccf6860ca90e42de4d724b376eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11f2942bd0858104d7dc3481d55f94da" id="r_a11f2942bd0858104d7dc3481d55f94da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a11f2942bd0858104d7dc3481d55f94da">close</a> () final</td></tr>
-<tr class="memdesc:a11f2942bd0858104d7dc3481d55f94da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the logging sink.  <br /></td></tr>
+<tr class="memdesc:a11f2942bd0858104d7dc3481d55f94da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the logging sink (file stream).  <br /></td></tr>
 <tr class="separator:a11f2942bd0858104d7dc3481d55f94da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5834f3054f9380260bb8b2b90cc74c8" id="r_aa5834f3054f9380260bb8b2b90cc74c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa5834f3054f9380260bb8b2b90cc74c8">log</a> (const std::string &amp;message, <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">LogLevel</a> level) final</td></tr>
-<tr class="memdesc:aa5834f3054f9380260bb8b2b90cc74c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the sink.  <br /></td></tr>
+<tr class="memitem:aa5834f3054f9380260bb8b2b90cc74c8" id="r_aa5834f3054f9380260bb8b2b90cc74c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa5834f3054f9380260bb8b2b90cc74c8">log</a> (const std::string &amp;message, <a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68">LogLevel</a> level) final</td></tr>
+<tr class="memdesc:aa5834f3054f9380260bb8b2b90cc74c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the file with a timestamp and severity tag.  <br /></td></tr>
 <tr class="separator:aa5834f3054f9380260bb8b2b90cc74c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42da327364c5a0e750cd344ee21c791c" id="r_a42da327364c5a0e750cd344ee21c791c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a42da327364c5a0e750cd344ee21c791c">setOutputFile</a> (const std::string &amp;output)</td></tr>
-<tr class="memdesc:a42da327364c5a0e750cd344ee21c791c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specific to File <a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html">Logger</a>: Sets the path.  <br /></td></tr>
-<tr class="separator:a42da327364c5a0e750cd344ee21c791c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd4c97002bcbb8685c768f1315714cb6" id="r_afd4c97002bcbb8685c768f1315714cb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#afd4c97002bcbb8685c768f1315714cb6">setOutputFile</a> (const std::string &amp;output) final</td></tr>
+<tr class="memdesc:afd4c97002bcbb8685c768f1315714cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specific to File <a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html" title="Namespace for application logging components.">Logger</a>: Sets the destination file path.  <br /></td></tr>
+<tr class="separator:afd4c97002bcbb8685c768f1315714cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa1f6f84b423f9af429d03f89da568a9d" id="r_aa1f6f84b423f9af429d03f89da568a9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">m_level</a> {<a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875">LogLevel::Info</a>}</td></tr>
-<tr class="memdesc:aa1f6f84b423f9af429d03f89da568a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html">Model</a> log properties m_level - current log level m_outputFile - output log file name m_stream - output file stream m_mutex - mutex for thread safety.  <br /></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Internal State and Thread Safety</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Current filtering log level. </p>
+</div></td></tr>
+<tr class="memitem:aa1f6f84b423f9af429d03f89da568a9d" id="r_aa1f6f84b423f9af429d03f89da568a9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">m_level</a> {<a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a4059b0251f66a18cb56f544728796875">LogLevel::Info</a>}</td></tr>
 <tr class="separator:aa1f6f84b423f9af429d03f89da568a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fedc00436bee8284f09ef7c9b7d3184" id="r_a1fedc00436bee8284f09ef7c9b7d3184"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a> {}</td></tr>
+<tr class="memdesc:a1fedc00436bee8284f09ef7c9b7d3184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the destination log file.  <br /></td></tr>
 <tr class="separator:a1fedc00436bee8284f09ef7c9b7d3184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b1b03af6bf2eb8bea1ddc675e7cfa1c" id="r_a4b1b03af6bf2eb8bea1ddc675e7cfa1c"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> {}</td></tr>
+<tr class="memdesc:a4b1b03af6bf2eb8bea1ddc675e7cfa1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output file stream for logging operations.  <br /></td></tr>
 <tr class="separator:a4b1b03af6bf2eb8bea1ddc675e7cfa1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae7b0ed6738bd94cfccf67ba449ed0be" id="r_aae7b0ed6738bd94cfccf67ba449ed0be"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">m_mutex</a> {}</td></tr>
+<tr class="memdesc:aae7b0ed6738bd94cfccf67ba449ed0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex to ensure thread-safe access to the file stream.  <br /></td></tr>
 <tr class="separator:aae7b0ed6738bd94cfccf67ba449ed0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="Log class is a file-based implementation of ILog.">Log</a> class is a file-based implementation of <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="ILog is the interface for logging implementations.">ILog</a>. </p>
+<div class="textblock"><p>A file-based implementation of the <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="Interface for logging implementations.">ILog</a> interface. </p>
+<p>This class provides thread-safe logging to a physical file on disk. It supports log level filtering and automatic timestamping of entries. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00030">30</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="ac331b29c2e015b29251750782e4dfc25" name="ac331b29c2e015b29251750782e4dfc25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac331b29c2e015b29251750782e4dfc25">&#9670;&#160;</a></span>LogLevel</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">Electux::App::Logger::ILog::LogLevel</a> : uint8_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enum for log levels. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac331b29c2e015b29251750782e4dfc25a902b0d55fddef6f8d651fe1035b7d4bd" name="ac331b29c2e015b29251750782e4dfc25a902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac331b29c2e015b29251750782e4dfc25a0eaadb4fcb48a0a0ed7bc9868be9fbaa" name="ac331b29c2e015b29251750782e4dfc25a0eaadb4fcb48a0a0ed7bc9868be9fbaa"></a>Warning&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875" name="ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875"></a>Info&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="../../dc/d73/ilog_8h_source.html#l00033">33</a> of file <a class="el" href="../../dc/d73/ilog_8h_source.html">ilog.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>        {</div>
-<div class="line"><span class="lineno">   35</span>            <a class="code hl_enumvalue" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> = 0,</div>
-<div class="line"><span class="lineno">   36</span>            <a class="code hl_enumvalue" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Warning</a>,</div>
-<div class="line"><span class="lineno">   37</span>            <a class="code hl_enumvalue" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875">Info</a></div>
-<div class="line"><span class="lineno">   38</span>        };</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1ILog_html_ac331b29c2e015b29251750782e4dfc25a0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Electux::App::Logger::ILog::LogLevel::Warning</a></div><div class="ttdeci">@ Warning</div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1ILog_html_ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875"><div class="ttname"><a href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875">Electux::App::Logger::ILog::LogLevel::Info</a></div><div class="ttdeci">@ Info</div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1ILog_html_ac331b29c2e015b29251750782e4dfc25a902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a902b0d55fddef6f8d651fe1035b7d4bd">Electux::App::Logger::ILog::LogLevel::Error</a></div><div class="ttdeci">@ Error</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00038">38</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3b057da5d2fec3cc353f3c91f2c821b7" name="a3b057da5d2fec3cc353f3c91f2c821b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b057da5d2fec3cc353f3c91f2c821b7">&#9670;&#160;</a></span>Log() <span class="overload">[1/2]</span></h2>
 
@@ -252,7 +208,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html">Model</a> log methods <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="Log class is a file-based implementation of ILog.">Log</a> constructor <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="Log class is a file-based implementation of ILog.">Log</a> destructor with force close log file Deleted copy constructor and assignment operator. </p>
+<p>Default constructor for the <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="A file-based implementation of the ILog interface.">Log</a> class. </p>
 
 </div>
 </div>
@@ -279,20 +235,23 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00035">35</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a11f2942bd0858104d7dc3481d55f94da">close</a>();</div>
-<div class="line"><span class="lineno">   38</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_a11f2942bd0858104d7dc3481d55f94da"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a11f2942bd0858104d7dc3481d55f94da">Electux::App::Logger::Log::close</a></div><div class="ttdeci">bool close() final</div><div class="ttdoc">Closes the logging sink.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/dc1/log_8cc_source.html#l00068">log.cc:68</a></div></div>
+<p>Destructor for the <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="A file-based implementation of the ILog interface.">Log</a> class. Ensures that the log file stream is properly closed before destruction. </p>
+<p>Destructor for the <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="A file-based implementation of the ILog interface.">Log</a> class. Calls <a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a11f2942bd0858104d7dc3481d55f94da" title="Closes the logging sink (file stream).">close()</a> to ensure the file stream is flushed and closed safely. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00047">47</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_function" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a11f2942bd0858104d7dc3481d55f94da">close</a>();</div>
+<div class="line"><span class="lineno">   50</span>}</div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_a11f2942bd0858104d7dc3481d55f94da"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a11f2942bd0858104d7dc3481d55f94da">Electux::App::Logger::Log::close</a></div><div class="ttdeci">bool close() final</div><div class="ttdoc">Closes the logging sink (file stream).</div><div class="ttdef"><b>Definition</b> <a href="../../d4/dc1/log_8cc_source.html#l00109">log.cc:109</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d4/dc1/log_8cc_source.html#l00068">close()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/dc1/log_8cc_source.html#l00109">close()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log_ab34c6e7856d2b711b7082cc93d980659_cgraph.png" border="0" usemap="#add/d03/classElectux_1_1App_1_1Logger_1_1Log_ab34c6e7856d2b711b7082cc93d980659_cgraph" alt=""/></div>
 <map name="add/d03/classElectux_1_1App_1_1Logger_1_1Log_ab34c6e7856d2b711b7082cc93d980659_cgraph" id="add/d03/classElectux_1_1App_1_1Logger_1_1Log_ab34c6e7856d2b711b7082cc93d980659_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,160,45"/>
-<area shape="rect" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a11f2942bd0858104d7dc3481d55f94da" title="Closes the logging sink." alt="" coords="208,5,363,45"/>
+<area shape="rect" title="Destructor for the Log class. Ensures that the log file stream is properly closed before destruction." alt="" coords="5,5,160,45"/>
+<area shape="rect" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a11f2942bd0858104d7dc3481d55f94da" title="Closes the logging sink (file stream)." alt="" coords="208,5,363,45"/>
 <area shape="poly" title=" " alt="" coords="160,23,194,23,194,28,160,28"/>
 </map>
 </div>
@@ -349,44 +308,61 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Closes the logging sink. </p>
-<dl class="section return"><dt>Returns</dt><dd>true for success, else false </dd></dl>
+<p>Closes the logging sink (file stream). </p>
+<p>Closes the log file stream.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the stream was successfully closed, else false.</dd>
+<dd>
+true if the stream was open or closed and is now closed, false otherwise. </dd></dl>
 
 <p>Implements <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#a94b6c07b346568bb5742653db3fe0ef8">Electux::App::Logger::ILog</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00068">68</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>{</div>
-<div class="line"><span class="lineno">   70</span>    std::lock_guard&lt;std::mutex&gt; lk(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">m_mutex</a>);</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.is_open())</div>
-<div class="line"><span class="lineno">   73</span>    {</div>
-<div class="line"><span class="lineno">   74</span>        <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.close();</div>
-<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   79</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_a4b1b03af6bf2eb8bea1ddc675e7cfa1c"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">Electux::App::Logger::Log::m_stream</a></div><div class="ttdeci">std::ofstream m_stream</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d7f/log_8h_source.html#l00082">log.h:82</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_aae7b0ed6738bd94cfccf67ba449ed0be"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">Electux::App::Logger::Log::m_mutex</a></div><div class="ttdeci">std::mutex m_mutex</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d7f/log_8h_source.html#l00083">log.h:83</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00109">109</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>{</div>
+<div class="line"><span class="lineno">  111</span>    std::lock_guard&lt;std::mutex&gt; lk(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">m_mutex</a>);</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.is_open())</div>
+<div class="line"><span class="lineno">  114</span>    {</div>
+<div class="line"><span class="lineno">  115</span>        <span class="comment">// Stream is already closed, consider this a successful close operation</span></div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <span class="comment">// Attempt to close the stream</span></div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.close();</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.fail())</div>
+<div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>        <span class="comment">// If closing failed, clear the error state to allow future operations</span></div>
+<div class="line"><span class="lineno">  125</span>        <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.clear();</div>
+<div class="line"><span class="lineno">  126</span>        <span class="comment">// Log the error to stderr for debugging purposes</span></div>
+<div class="line"><span class="lineno">  127</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to close log stream for file: &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  129</span>    }</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <span class="comment">// Successfully closed the stream</span></div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  133</span>}</div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_a1fedc00436bee8284f09ef7c9b7d3184"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">Electux::App::Logger::Log::m_outputFile</a></div><div class="ttdeci">std::string m_outputFile</div><div class="ttdoc">Path to the destination log file.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d7f/log_8h_source.html#l00101">log.h:101</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_a4b1b03af6bf2eb8bea1ddc675e7cfa1c"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">Electux::App::Logger::Log::m_stream</a></div><div class="ttdeci">std::ofstream m_stream</div><div class="ttdoc">Output file stream for logging operations.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d7f/log_8h_source.html#l00103">log.h:103</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_aae7b0ed6738bd94cfccf67ba449ed0be"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">Electux::App::Logger::Log::m_mutex</a></div><div class="ttdeci">std::mutex m_mutex</div><div class="ttdoc">Mutex to ensure thread-safe access to the file stream.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d7f/log_8h_source.html#l00105">log.h:105</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00083">m_mutex</a>, and <a class="el" href="../../d7/d7f/log_8h_source.html#l00082">m_stream</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00105">m_mutex</a>, <a class="el" href="../../d7/d7f/log_8h_source.html#l00101">m_outputFile</a>, and <a class="el" href="../../d7/d7f/log_8h_source.html#l00103">m_stream</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00035">~Log()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00047">~Log()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log_a11f2942bd0858104d7dc3481d55f94da_icgraph.png" border="0" usemap="#add/d03/classElectux_1_1App_1_1Logger_1_1Log_a11f2942bd0858104d7dc3481d55f94da_icgraph" alt=""/></div>
 <map name="add/d03/classElectux_1_1App_1_1Logger_1_1Log_a11f2942bd0858104d7dc3481d55f94da_icgraph" id="add/d03/classElectux_1_1App_1_1Logger_1_1Log_a11f2942bd0858104d7dc3481d55f94da_icgraph">
-<area shape="rect" title="Closes the logging sink." alt="" coords="208,5,363,45"/>
-<area shape="rect" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#ab34c6e7856d2b711b7082cc93d980659" title=" " alt="" coords="5,5,160,45"/>
+<area shape="rect" title="Closes the logging sink (file stream)." alt="" coords="208,5,363,45"/>
+<area shape="rect" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#ab34c6e7856d2b711b7082cc93d980659" title="Destructor for the Log class. Ensures that the log file stream is properly closed before destruction." alt="" coords="5,5,160,45"/>
 <area shape="poly" title=" " alt="" coords="194,28,161,28,161,23,194,23"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a23a46cb9cc911f558b6144bd23e216f9" name="a23a46cb9cc911f558b6144bd23e216f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23a46cb9cc911f558b6144bd23e216f9">&#9670;&#160;</a></span>getLevel()</h2>
+<a id="a34f9781b9178687e8551664b4f248802" name="a34f9781b9178687e8551664b4f248802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f9781b9178687e8551664b4f248802">&#9670;&#160;</a></span>getLevel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -395,7 +371,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">Log::LogLevel</a> Log::getLevel </td>
+          <td class="memname"><a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68">LogLevel</a> Log::getLevel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -409,17 +385,19 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Gets the current filtering log level. </p>
-<dl class="section return"><dt>Returns</dt><dd>The current log level used for filtering messages </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The current log level used for filtering messages.</dd>
+<dd>
+The current LogLevel enum value. </dd></dl>
 
 <p>Implements <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac1dc4803d98a8428094de8efc805e9bb">Electux::App::Logger::ILog</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00045">45</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">m_level</a>;</div>
-<div class="line"><span class="lineno">   48</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_aa1f6f84b423f9af429d03f89da568a9d"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">Electux::App::Logger::Log::m_level</a></div><div class="ttdeci">LogLevel m_level</div><div class="ttdoc">Model log properties m_level - current log level m_outputFile - output log file name m_stream - outpu...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d7f/log_8h_source.html#l00080">log.h:80</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00074">74</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">m_level</a>;</div>
+<div class="line"><span class="lineno">   77</span>}</div>
+<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_aa1f6f84b423f9af429d03f89da568a9d"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">Electux::App::Logger::Log::m_level</a></div><div class="ttdeci">LogLevel m_level</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d7f/log_8h_source.html#l00099">log.h:99</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00080">m_level</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00099">m_level</a>.</p>
 
 </div>
 </div>
@@ -441,7 +419,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">LogLevel</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68">LogLevel</a>&#160;</td>
           <td class="paramname"><em>level</em>&#160;</td>
         </tr>
         <tr>
@@ -457,59 +435,83 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Logs a message to the sink. </p>
+<p>Logs a message to the file with a timestamp and severity tag. </p>
+<p>Formats and writes a log entry.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td>The string content to log </td></tr>
-    <tr><td class="paramname">level</td><td>The severity of the message </td></tr>
+    <tr><td class="paramname">message</td><td>The string content to log. </td></tr>
+    <tr><td class="paramname">level</td><td>The severity of the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This operation is thread-safe.</dd></dl>
+<p>Processes the message by:</p><ol type="1">
+<li>Checking if the stream is open.</li>
+<li>Filtering based on the current log level.</li>
+<li>Generating a ISO 8601 timestamp (YYYY-MM-DDTHH:MM:SS).</li>
+<li>Appending the appropriate severity tag.</li>
+<li>Flushing the stream to ensure data is written to disk immediately.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The text content to log. </td></tr>
+    <tr><td class="paramname">level</td><td>The severity of the entry. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Implements <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#a02cdfae675bef5abf19ca591a3e82dc0">Electux::App::Logger::ILog</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00081">81</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>{</div>
-<div class="line"><span class="lineno">   83</span>    std::lock_guard&lt;std::mutex&gt; lk(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">m_mutex</a>);</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.is_open())</div>
-<div class="line"><span class="lineno">   86</span>    {</div>
-<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(level) &gt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">m_level</a>))</div>
-<div class="line"><span class="lineno">   91</span>    {</div>
-<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
-<div class="line"><span class="lineno">   96</span>    std::time_t t = std::chrono::system_clock::to_time_t(now);</div>
-<div class="line"><span class="lineno">   97</span>    std::tm tm;</div>
-<div class="line"><span class="lineno">   98</span>    localtime_r(&amp;t, &amp;tm);</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; std::put_time(&amp;tm, <span class="stringliteral">&quot;%Y-%m-%dT%H:%M:%S&quot;</span>) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">switch</span> (level)</div>
-<div class="line"><span class="lineno">  103</span>    {</div>
-<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a902b0d55fddef6f8d651fe1035b7d4bd">LogLevel::Error</a>:</div>
-<div class="line"><span class="lineno">  105</span>        <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; <a class="code hl_variable" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#a05b7a03c48610b17b7042c8625b77a74">TAG_ERROR</a>;</div>
-<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a0eaadb4fcb48a0a0ed7bc9868be9fbaa">LogLevel::Warning</a>:</div>
-<div class="line"><span class="lineno">  108</span>        <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; <a class="code hl_variable" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#abe83009742997443b792ed6b47585864">TAG_WARN</a>;</div>
-<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875">LogLevel::Info</a>:</div>
-<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; <a class="code hl_variable" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#a8797a5c3d8807540410fb5b908302832">TAG_INFO</a>;</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  116</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.flush();</div>
-<div class="line"><span class="lineno">  117</span>}</div>
-<div class="ttc" id="anamespaceElectux_1_1App_1_1Logger_html_a05b7a03c48610b17b7042c8625b77a74"><div class="ttname"><a href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#a05b7a03c48610b17b7042c8625b77a74">Electux::App::Logger::TAG_ERROR</a></div><div class="ttdeci">static constexpr std::string_view TAG_ERROR</div><div class="ttdoc">Log level tags for formatting log messages.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/dc1/log_8cc_source.html#l00028">log.cc:28</a></div></div>
-<div class="ttc" id="anamespaceElectux_1_1App_1_1Logger_html_a8797a5c3d8807540410fb5b908302832"><div class="ttname"><a href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#a8797a5c3d8807540410fb5b908302832">Electux::App::Logger::TAG_INFO</a></div><div class="ttdeci">static constexpr std::string_view TAG_INFO</div><div class="ttdef"><b>Definition</b> <a href="../../d4/dc1/log_8cc_source.html#l00030">log.cc:30</a></div></div>
-<div class="ttc" id="anamespaceElectux_1_1App_1_1Logger_html_abe83009742997443b792ed6b47585864"><div class="ttname"><a href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#abe83009742997443b792ed6b47585864">Electux::App::Logger::TAG_WARN</a></div><div class="ttdeci">static constexpr std::string_view TAG_WARN</div><div class="ttdef"><b>Definition</b> <a href="../../d4/dc1/log_8cc_source.html#l00029">log.cc:29</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00148">148</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>{</div>
+<div class="line"><span class="lineno">  150</span>    std::lock_guard&lt;std::mutex&gt; lk(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">m_mutex</a>);</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.is_open())</div>
+<div class="line"><span class="lineno">  153</span>    {</div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="comment">// Filter messages: lower enum value means higher priority (Error=0)</span></div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(level) &gt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">m_level</a>))</div>
+<div class="line"><span class="lineno">  159</span>    {</div>
+<div class="line"><span class="lineno">  160</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  161</span>    }</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="comment">// Get current system time</span></div>
+<div class="line"><span class="lineno">  164</span>    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">  165</span>    std::time_t t = std::chrono::system_clock::to_time_t(now);</div>
+<div class="line"><span class="lineno">  166</span>    std::tm tm;</div>
+<div class="line"><span class="lineno">  167</span>    localtime_r(&amp;t, &amp;tm); <span class="comment">// Thread-safe version of localtime</span></div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>    <span class="comment">// Write timestamp</span></div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; std::put_time(&amp;tm, <span class="stringliteral">&quot;%Y-%m-%dT%H:%M:%S&quot;</span>) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    <span class="comment">// Write severity tag</span></div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">switch</span> (level)</div>
+<div class="line"><span class="lineno">  174</span>    {</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a902b0d55fddef6f8d651fe1035b7d4bd">LogLevel::Error</a>:</div>
+<div class="line"><span class="lineno">  176</span>        <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; <a class="code hl_variable" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#a05b7a03c48610b17b7042c8625b77a74">TAG_ERROR</a>;</div>
+<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a0eaadb4fcb48a0a0ed7bc9868be9fbaa">LogLevel::Warning</a>:</div>
+<div class="line"><span class="lineno">  179</span>        <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; <a class="code hl_variable" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#abe83009742997443b792ed6b47585864">TAG_WARN</a>;</div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a4059b0251f66a18cb56f544728796875">LogLevel::Info</a>:</div>
+<div class="line"><span class="lineno">  182</span>        <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; <a class="code hl_variable" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#a8797a5c3d8807540410fb5b908302832">TAG_INFO</a>;</div>
+<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  184</span>    }</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>    <span class="comment">// Write message and ensure it&#39;s on disk</span></div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a> &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.flush();</div>
+<div class="line"><span class="lineno">  189</span>}</div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Logger_html_a05b7a03c48610b17b7042c8625b77a74"><div class="ttname"><a href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#a05b7a03c48610b17b7042c8625b77a74">Electux::App::Logger::TAG_ERROR</a></div><div class="ttdeci">static constexpr std::string_view TAG_ERROR</div><div class="ttdoc">Tag for error messages.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/dc1/log_8cc_source.html#l00034">log.cc:34</a></div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Logger_html_a8797a5c3d8807540410fb5b908302832"><div class="ttname"><a href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#a8797a5c3d8807540410fb5b908302832">Electux::App::Logger::TAG_INFO</a></div><div class="ttdeci">static constexpr std::string_view TAG_INFO</div><div class="ttdoc">Tag for info messages.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/dc1/log_8cc_source.html#l00036">log.cc:36</a></div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Logger_html_aaef3f2e83d66c3d974809e99c2869b68a0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Electux::App::Logger::LogLevel::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdoc">Non-critical issues or warnings.</div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Logger_html_aaef3f2e83d66c3d974809e99c2869b68a4059b0251f66a18cb56f544728796875"><div class="ttname"><a href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a4059b0251f66a18cb56f544728796875">Electux::App::Logger::LogLevel::Info</a></div><div class="ttdeci">@ Info</div><div class="ttdoc">General informational messages.</div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Logger_html_aaef3f2e83d66c3d974809e99c2869b68a902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a902b0d55fddef6f8d651fe1035b7d4bd">Electux::App::Logger::LogLevel::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdoc">Critical errors or failures.</div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_1_1Logger_html_abe83009742997443b792ed6b47585864"><div class="ttname"><a href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#abe83009742997443b792ed6b47585864">Electux::App::Logger::TAG_WARN</a></div><div class="ttdeci">static constexpr std::string_view TAG_WARN</div><div class="ttdoc">Tag for warning messages.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/dc1/log_8cc_source.html#l00035">log.cc:35</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a902b0d55fddef6f8d651fe1035b7d4bd">Electux::App::Logger::ILog::Error</a>, <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875">Electux::App::Logger::ILog::Info</a>, <a class="el" href="../../d7/d7f/log_8h_source.html#l00080">m_level</a>, <a class="el" href="../../d7/d7f/log_8h_source.html#l00083">m_mutex</a>, <a class="el" href="../../d7/d7f/log_8h_source.html#l00082">m_stream</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00028">Electux::App::Logger::TAG_ERROR</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00030">Electux::App::Logger::TAG_INFO</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00029">Electux::App::Logger::TAG_WARN</a>, and <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Electux::App::Logger::ILog::Warning</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a902b0d55fddef6f8d651fe1035b7d4bd">Electux::App::Logger::Error</a>, <a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a4059b0251f66a18cb56f544728796875">Electux::App::Logger::Info</a>, <a class="el" href="../../d7/d7f/log_8h_source.html#l00099">m_level</a>, <a class="el" href="../../d7/d7f/log_8h_source.html#l00105">m_mutex</a>, <a class="el" href="../../d7/d7f/log_8h_source.html#l00103">m_stream</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00034">Electux::App::Logger::TAG_ERROR</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00036">Electux::App::Logger::TAG_INFO</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00035">Electux::App::Logger::TAG_WARN</a>, and <a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Electux::App::Logger::Warning</a>.</p>
 
 </div>
 </div>
@@ -536,26 +538,36 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Opens the logging sink (file, socket, etc.) </p>
-<dl class="section return"><dt>Returns</dt><dd>true for success, else false </dd></dl>
+<p>Opens the logging sink (file stream). </p>
+<p>Opens the log file stream. Uses std::ios::app to append to existing file content.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if the file was successfully opened, else false.</dd>
+<dd>
+true if the stream is ready for writing, false otherwise. </dd></dl>
 
 <p>Implements <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac5b9694373881bd1271574fb9da5f2ba">Electux::App::Logger::ILog</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00055">55</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
-<div class="line"><span class="lineno">   57</span>    std::lock_guard&lt;std::mutex&gt; lk(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">m_mutex</a>);</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a>.empty())</div>
-<div class="line"><span class="lineno">   60</span>    {</div>
-<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.open(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a>, std::ios::out | std::ios::app);</div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.is_open();</div>
-<div class="line"><span class="lineno">   66</span>}</div>
-<div class="ttc" id="aclassElectux_1_1App_1_1Logger_1_1Log_html_a1fedc00436bee8284f09ef7c9b7d3184"><div class="ttname"><a href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">Electux::App::Logger::Log::m_outputFile</a></div><div class="ttdeci">std::string m_outputFile</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d7f/log_8h_source.html#l00081">log.h:81</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00084">84</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
+<div class="line"><span class="lineno">   86</span>    std::lock_guard&lt;std::mutex&gt; lk(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aae7b0ed6738bd94cfccf67ba449ed0be">m_mutex</a>);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment">// If already open, return true</span></div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.is_open())</div>
+<div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <span class="comment">// Validate that an output file path has been set</span></div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a>.empty())</div>
+<div class="line"><span class="lineno">   96</span>    {</div>
+<div class="line"><span class="lineno">   97</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Output file path is not set. Cannot open log stream.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.open(<a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a>, std::ios::out | std::ios::app);</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a4b1b03af6bf2eb8bea1ddc675e7cfa1c">m_stream</a>.is_open();</div>
+<div class="line"><span class="lineno">  103</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00083">m_mutex</a>, <a class="el" href="../../d7/d7f/log_8h_source.html#l00081">m_outputFile</a>, and <a class="el" href="../../d7/d7f/log_8h_source.html#l00082">m_stream</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00105">m_mutex</a>, <a class="el" href="../../d7/d7f/log_8h_source.html#l00101">m_outputFile</a>, and <a class="el" href="../../d7/d7f/log_8h_source.html#l00103">m_stream</a>.</p>
 
 </div>
 </div>
@@ -597,7 +609,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void Log::setLevel </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">LogLevel</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68">LogLevel</a>&#160;</td>
           <td class="paramname"><em>level</em></td><td>)</td>
           <td></td>
         </tr>
@@ -612,27 +624,31 @@ Here is the caller graph for this function:</div>
 <p>Sets the filtering log level. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">level</td><td>The log level to set for filtering messages </td></tr>
+    <tr><td class="paramname">level</td><td>The log level to set for filtering messages.</td></tr>
+    <tr><td class="paramname">level</td><td>The log level to set (Error, Warning, or Info). </td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Implements <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#aa900d917f498fbee46e5c986d2003822">Electux::App::Logger::ILog</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00040">40</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">m_level</a> = level;</div>
-<div class="line"><span class="lineno">   43</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00065">65</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa1f6f84b423f9af429d03f89da568a9d">m_level</a> = level;</div>
+<div class="line"><span class="lineno">   68</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00080">m_level</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00099">m_level</a>.</p>
 
 </div>
 </div>
-<a id="a42da327364c5a0e750cd344ee21c791c" name="a42da327364c5a0e750cd344ee21c791c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42da327364c5a0e750cd344ee21c791c">&#9670;&#160;</a></span>setOutputFile()</h2>
+<a id="afd4c97002bcbb8685c768f1315714cb6" name="afd4c97002bcbb8685c768f1315714cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd4c97002bcbb8685c768f1315714cb6">&#9670;&#160;</a></span>setOutputFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Log::setOutputFile </td>
@@ -642,16 +658,31 @@ Here is the caller graph for this function:</div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Specific to File <a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html">Logger</a>: Sets the path. </p>
+<p>Specific to File <a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html" title="Namespace for application logging components.">Logger</a>: Sets the destination file path. </p>
+<p>Sets the destination file path for the logger.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>The absolute or relative path to the log file.</td></tr>
+    <tr><td class="paramname">output</td><td>The path to the log file. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00050">50</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>{</div>
-<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a> = output;</div>
-<div class="line"><span class="lineno">   53</span>}</div>
+<p>Implements <a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#a2894228ae7432318e5343b4243185462">Electux::App::Logger::ILog</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d4/dc1/log_8cc_source.html#l00056">56</a> of file <a class="el" href="../../d4/dc1/log_8cc_source.html">log.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a1fedc00436bee8284f09ef7c9b7d3184">m_outputFile</a> = output;</div>
+<div class="line"><span class="lineno">   59</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00081">m_outputFile</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d7f/log_8h_source.html#l00101">m_outputFile</a>.</p>
 
 </div>
 </div>
@@ -666,7 +697,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25">LogLevel</a> Electux::App::Logger::Log::m_level {<a class="el" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875">LogLevel::Info</a>}</td>
+          <td class="memname"><a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68">LogLevel</a> Electux::App::Logger::Log::m_level {<a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a4059b0251f66a18cb56f544728796875">LogLevel::Info</a>}</td>
         </tr>
       </table>
   </td>
@@ -676,12 +707,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html">Model</a> log properties m_level - current log level m_outputFile - output log file name m_stream - output file stream m_mutex - mutex for thread safety. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00080">80</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>{<a class="code hl_enumvalue" href="../../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875">LogLevel::Info</a>};</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00099">99</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>{<a class="code hl_enumvalue" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a4059b0251f66a18cb56f544728796875">LogLevel::Info</a>};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00045">getLevel()</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00081">log()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00040">setLevel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00074">getLevel()</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00148">log()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00065">setLevel()</a>.</p>
 
 </div>
 </div>
@@ -705,10 +734,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00083">83</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>{};</div>
+<p>Mutex to ensure thread-safe access to the file stream. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00105">105</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00068">close()</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00081">log()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00055">open()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00109">close()</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00148">log()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00084">open()</a>.</p>
 
 </div>
 </div>
@@ -732,10 +763,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00081">81</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>{};</div>
+<p>Path to the destination log file. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00101">101</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00055">open()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00050">setOutputFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00109">close()</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00084">open()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00056">setOutputFile()</a>.</p>
 
 </div>
 </div>
@@ -759,10 +792,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00082">82</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>{};</div>
+<p>Output file stream for logging operations. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d7f/log_8h_source.html#l00103">103</a> of file <a class="el" href="../../d7/d7f/log_8h_source.html">log.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00068">close()</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00081">log()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00055">open()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/dc1/log_8cc_source.html#l00109">close()</a>, <a class="el" href="../../d4/dc1/log_8cc_source.html#l00148">log()</a>, and <a class="el" href="../../d4/dc1/log_8cc_source.html#l00084">open()</a>.</p>
 
 </div>
 </div>
@@ -776,7 +811,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d5/dd1/namespaceElectux_1_1App_1_1Logger.html">Logger</a></li><li class="navelem"><a class="el" href="../../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html">Log</a></li>
-    <li class="footer">Generated on Sat Feb 21 2026 08:57:48 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Mar 3 2026 21:03:01 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

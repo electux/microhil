@@ -1,0 +1,14 @@
+<map id="Electux::App::Com::SerialCom::isOpen" name="Electux::App::Com::SerialCom::isOpen">
+<area shape="rect" id="Node000001" title="Checks if the communication channel is currently open." alt="" coords="425,69,575,109"/>
+<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a12f50299aadd15877a743964e9c7f2ea" title="Closes the serial communication channel." alt="" coords="228,5,377,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="424,68,364,48,366,43,426,63"/>
+<area shape="rect" id="Node000004" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a4d1ed234a3bfdd397df4a472d241db9d" title="Opens the serial communication channel." alt="" coords="228,69,377,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="411,101,378,101,378,95,411,96"/>
+<area shape="rect" id="Node000005" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#abaf96bbaeb3ed8e2c8d2bc827425ddb5" title="Reads data from the serial communication channel." alt="" coords="228,133,377,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="426,116,366,136,364,131,424,111"/>
+<area shape="rect" id="Node000006" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a97378427ef817d1364ca07bf9e7a8535" title="Writes data to the serial communication channel." alt="" coords="228,197,377,237"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="468,121,427,154,379,188,356,200,353,195,376,183,424,150,465,116"/>
+<area shape="rect" id="Node000003" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a5fa5dcf53ea60ba07a040cd380c1c73c" title="Destructor for SerialCom. Ensures the serial port is closed and resources are released." alt="" coords="5,5,180,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="214,28,180,28,180,23,214,23"/>
+<area shape="poly" id="edge4_Node000004_Node000001" title=" " alt="" coords="391,78,425,78,425,83,391,83"/>
+</map>

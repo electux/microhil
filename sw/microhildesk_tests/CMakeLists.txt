@@ -21,17 +21,22 @@ find_library(SERIAL_LIB serial)
 # Add sources and includes for googletest
 add_subdirectory(googletest)
 include_directories(googletest/include)
+include_directories(googletest/googletest/include)
+include_directories(googletest/googlemock/include)
 
 # Add sources and includes
 include(${PROJECT_SOURCE_DIR}/com/pack.cmake)
 include(${PROJECT_SOURCE_DIR}/config/pack.cmake)
 include(${PROJECT_SOURCE_DIR}/log/pack.cmake)
+include(${PROJECT_SOURCE_DIR}/channel/pack.cmake)
 include_directories(com)
 include_directories(config)
 include_directories(log)
+include_directories(channel)
 include_directories(${MICROHIL_COM_HEADERS})
 include_directories(${MICROHIL_CONFIG_HEADERS})
 include_directories(${MICROHIL_LOG_HEADERS})
+include_directories(${MICROHIL_PARAMS_HEADERS})
 
 add_executable(
     microhil_tests
@@ -42,9 +47,19 @@ add_executable(
     ${MICROHIL_COM_SOURCES}
     ${MICROHIL_CONFIG_SOURCES}
     ${MICROHIL_LOG_SOURCES}
+    ${MICROHIL_PARAMS_TESTS}
 )
 
 # Link libraries
-target_link_libraries(microhil_tests PUBLIC ${SERIAL_LIB} gtest gtest_main PkgConfig::gtkmm)
+target_link_libraries(
+    microhil_tests
+    PUBLIC
+    ${SERIAL_LIB}
+    gtest
+    gtest_main
+    gmock
+    gmock_main
+    PkgConfig::gtkmm
+)
 include(GoogleTest)
 gtest_discover_tests(microhil_tests)

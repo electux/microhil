@@ -1,12 +1,12 @@
 <map id="Electux::App::View::AppHome::onChannelModeChanged" name="Electux::App::View::AppHome::onChannelModeChanged">
 <area shape="rect" id="Node000001" title="Signal handler for setup channel mode." alt="" coords="5,41,269,81"/>
-<area shape="rect" id="Node000002" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="329,5,505,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,42,315,36,316,41,270,47"/>
+<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a24c634d446349d55624310adb4a62dd6" title="Converts a ModelSerialKey enum value to its string representation." alt="" coords="341,5,492,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,42,328,34,328,39,270,47"/>
 <area shape="rect" id="Node000003" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859" title="Updates control configuration parameter." alt="" coords="317,70,516,125"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="270,76,304,80,303,85,269,81"/>
-<area shape="rect" id="Node000004" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18" title="Gets entity by key." alt="" coords="587,13,737,53"/>
+<area shape="rect" id="Node000004" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18" title="Gets an entity value by its key." alt="" coords="587,13,737,53"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="515,69,573,54,574,59,517,74"/>
-<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283" title="Updates entity value by key." alt="" coords="587,77,737,117"/>
+<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283" title="Updates an entity value by its key." alt="" coords="587,77,737,117"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="516,95,573,95,573,100,516,100"/>
 <area shape="rect" id="Node000006" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299" title="Updates nth substring in input string." alt="" coords="564,142,760,197"/>
 <area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="511,122,556,136,555,141,510,127"/>

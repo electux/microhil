@@ -5,6 +5,6 @@ var application_8h =
     [ "AppHelp", "db/d32/application_8h.html#a0e30748923837226b4ef41523cab7767", null ],
     [ "AppHome", "db/d32/application_8h.html#a40b0b15f908d3cd0b42f876df09ca27d", null ],
     [ "AppSettings", "db/d32/application_8h.html#a39a266d2bab418a8ced05c5022e67a68", null ],
-    [ "ConfigManager", "db/d32/application_8h.html#a676b54cbeb58c1e48df5e0da28898ec1", null ],
+    [ "IConfig", "db/d32/application_8h.html#ad531d49791f04f9cc4f3aeade8dd8dc9", null ],
     [ "SettingsSetup", "db/d32/application_8h.html#a13536830803de83c2af008ed010af7a2", null ]
 ];

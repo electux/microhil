@@ -1,5 +1,5 @@
 <map id="Electux::App::Com::SerialParams" name="Electux::App::Com::SerialParams">
-<area shape="rect" id="Node000001" title="Declaration of serial parameters structure." alt="" coords="213,133,355,213"/>
+<area shape="rect" id="Node000001" title="Configuration structure for serial port parameters." alt="" coords="213,133,355,213"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,56,71"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,59,70,69,95,89,121,107,199,142,197,147,119,112,91,94,66,73,55,63"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="80,5,157,71"/>

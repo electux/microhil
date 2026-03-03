@@ -1,100 +1,97 @@
-/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * config_manager.h
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// config_manager.h
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include <string>
 #include <config/iconfig.h>
-#include <model/model_control.h>
-#include <model/model_serial.h>
-#include <model/model_log.h>
+#include <model/model.h>
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @namespace Electux::App::Config
+/// @brief Namespace for application configuration management
 namespace Electux::App::Config
 {
-    using ModelControl = Electux::App::Model::ModelControl;
-    using ModelSerial = Electux::App::Model::ModelSerial;
-    using ModelLog = Electux::App::Model::ModelLog;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @class ConfigManager
+	/// @brief Implementation of the IConfig interface for configuration management.
+	///
+	/// This class manages the loading, storing, and access of various application
+	/// configuration modules including Control, Serial, and Logging.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	class ConfigManager: public IConfig
+	{
+	public:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief ConfigManager constructor.
+		/// @param configFileName The path/name of the configuration file. 
+		///        If empty, a default path will be resolved.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		explicit ConfigManager(const std::string &configFileName = "") noexcept;
 
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief Config class is implementation for configuration mechanism
-    class ConfigManager : public IConfig
-    {
-    public:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Config constructor with default configuration
-        explicit ConfigManager();
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Initializes the configuration manager.
+		/// Performs file system checks, directory creation, and initial load.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void init() final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Sets control configuration
-        /// @param config Represents control configuration
-        void setControlConfig(const ModelControl& config);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Loads the configuration from the specified file.
+		/// @return true if the configuration was successfully loaded, else false.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool load() final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Sets serial configuration
-        /// @param config Represents serial configuration
-        void setSerialConfig(const ModelSerial& config);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Stores the current configuration to the specified file.
+		/// @return true if the configuration was successfully stored, else false.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool store() final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Sets log configuration
-        /// @param config Represents log configuration
-        void setLogConfig(const ModelLog& config);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the log configuration.
+		/// @param config Reference to the Model configuration object.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setConfig(const Model& config) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets control configuration
-        /// @return Control configuration
-        const ModelControl& getControlConfig() const;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets the current log configuration.
+		/// @return A constant reference to the Model configuration.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		const Model& getConfig() const final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets serial configuration
-        /// @return Serial configuration
-        const ModelSerial& getSerialConfig() const;
+	protected:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Populates models with default values and stores them to a file.
+		///
+		/// This method is typically called when no configuration file is found
+		/// or when a factory reset of the configuration is required.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void defaultConfigStore();
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets log configuration
-        /// @return Log configuration
-        const ModelLog& getLogConfig() const;
+	private:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Path to the configuration file.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::string m_fileName{};
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Loads configuration from file
-        /// @return status true for success load configuration else false
-        bool load() final;
-
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Stores configuration to file
-        /// @return status true for success store configuration else false
-        bool store() final;
-
-    protected:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Stores default configuration to file
-        void defaultConfigStore();
-
-    private:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Configuration parameters and properties
-        ///   m_fileName - file name path for load/store configuration
-        ///   m_controlConfig - control configuration
-        ///   m_serialConfig - serial port configuration
-        ///   m_logConfig - log configuration
-        std::string m_fileName{};
-        ModelControl m_controlConfig{};
-        ModelSerial m_serialConfig{};
-        ModelLog m_logConfig{};
-    };
-};
-
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Model data instance.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		Model m_config{};
+	};
+} // namespace Electux::App::Config

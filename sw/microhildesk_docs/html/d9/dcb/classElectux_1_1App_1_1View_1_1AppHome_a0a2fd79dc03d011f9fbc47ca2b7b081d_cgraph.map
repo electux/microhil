@@ -1,15 +1,17 @@
 <map id="Electux::App::View::AppHome::onChannelToggleChanged" name="Electux::App::View::AppHome::onChannelToggleChanged">
-<area shape="rect" id="Node000001" title="Signal handler for toggle mode." alt="" coords="5,34,219,89"/>
-<area shape="rect" id="Node000002" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#a6f4b5fc97ff0d51bf1103ec19871d615" title="Converts Key enum to." alt="" coords="278,5,454,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,44,264,37,265,42,219,49"/>
-<area shape="rect" id="Node000003" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859" title="Updates control configuration parameter." alt="" coords="267,70,465,125"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,74,254,79,253,84,218,79"/>
-<area shape="rect" id="Node000004" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18" title="Gets entity by key." alt="" coords="536,13,687,53"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="465,69,522,54,523,59,466,74"/>
-<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283" title="Updates entity value by key." alt="" coords="536,77,687,117"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="465,95,522,95,522,100,465,100"/>
-<area shape="rect" id="Node000006" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299" title="Updates nth substring in input string." alt="" coords="513,142,709,197"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="461,122,506,136,504,141,459,127"/>
-<area shape="rect" id="Node000007" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41" title="Splits input string into vector of substrings." alt="" coords="757,142,908,197"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="710,167,743,167,743,172,710,172"/>
+<area shape="rect" id="Node000001" title="Signal handler for toggle mode." alt="" coords="5,62,219,117"/>
+<area shape="rect" id="Node000002" href="$da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8e903207fd21a59805ea41f189f7ed65" title="Converts a boolean value to its string representation." alt="" coords="281,5,451,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,60,272,46,273,51,219,65"/>
+<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a24c634d446349d55624310adb4a62dd6" title="Converts a ModelSerialKey enum value to its string representation." alt="" coords="291,69,441,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,87,277,87,277,92,219,92"/>
+<area shape="rect" id="Node000004" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859" title="Updates control configuration parameter." alt="" coords="267,134,465,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="210,114,257,128,255,133,208,119"/>
+<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18" title="Gets an entity value by its key." alt="" coords="536,77,687,117"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="465,133,522,118,523,123,466,138"/>
+<area shape="rect" id="Node000006" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283" title="Updates an entity value by its key." alt="" coords="536,141,687,181"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="465,159,522,159,522,164,465,164"/>
+<area shape="rect" id="Node000007" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299" title="Updates nth substring in input string." alt="" coords="513,206,709,261"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="461,186,506,200,504,205,459,191"/>
+<area shape="rect" id="Node000008" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41" title="Splits input string into vector of substrings." alt="" coords="757,206,908,261"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="710,231,743,231,743,236,710,236"/>
 </map>

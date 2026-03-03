@@ -98,16 +98,45 @@ $(document).ready(function(){initNavTree('df/d29/serial__com_8h.html','../../');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../d0/d2e/icom_8h_source.html">com/icom.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../de/d76/iserial_8h_source.html">com/iserial.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../df/ddd/serial__lib__wrapper_8h_source.html">com/serial_lib_wrapper.h</a>&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for serial_com.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/df1/serial__com_8h__incl.png" border="0" usemap="#acom_2serial__com_8h" alt=""/></div>
 <map name="acom_2serial__com_8h" id="acom_2serial__com_8h">
-<area shape="rect" title=" " alt="" coords="13,5,151,31"/>
-<area shape="rect" href="../../d0/d2e/icom_8h.html" title=" " alt="" coords="33,79,131,104"/>
-<area shape="poly" title=" " alt="" coords="85,31,85,65,79,65,79,31"/>
-<area shape="rect" title=" " alt="" coords="5,152,159,177"/>
-<area shape="poly" title=" " alt="" coords="85,104,85,138,79,138,79,104"/>
+<area shape="rect" title=" " alt="" coords="213,5,351,31"/>
+<area shape="rect" href="../../d0/d2e/icom_8h.html" title=" " alt="" coords="58,152,157,177"/>
+<area shape="poly" title=" " alt="" coords="221,33,175,51,153,64,135,80,119,109,112,139,106,138,114,107,131,77,150,60,172,46,219,28"/>
+<area shape="rect" title=" " alt="" coords="5,225,68,251"/>
+<area shape="poly" title=" " alt="" coords="234,33,175,52,113,81,63,110,46,127,31,153,26,183,31,212,25,213,21,183,26,151,42,124,60,106,110,76,173,47,233,28"/>
+<area shape="rect" href="../../de/d76/iserial_8h.html" title=" " alt="" coords="145,79,251,104"/>
+<area shape="poly" title=" " alt="" coords="270,33,224,72,221,67,267,29"/>
+<area shape="rect" title=" " alt="" coords="377,225,435,251"/>
+<area shape="poly" title=" " alt="" coords="351,22,426,39,463,55,497,77,514,93,525,110,537,151,540,165,536,179,519,199,497,214,450,232,448,227,494,209,515,195,532,176,535,165,531,153,520,112,510,97,494,81,461,60,424,44,350,27"/>
+<area shape="rect" href="../../df/ddd/serial__lib__wrapper_8h.html" title=" " alt="" coords="275,79,459,104"/>
+<area shape="poly" title=" " alt="" coords="297,29,345,68,341,72,294,33"/>
+<area shape="rect" title=" " alt="" coords="445,152,522,177"/>
+<area shape="poly" title=" " alt="" coords="352,21,384,27,417,38,447,54,473,77,482,91,487,107,489,138,484,138,482,108,477,93,469,80,444,58,414,43,382,32,351,26"/>
+<area shape="poly" title=" " alt="" coords="98,180,60,218,56,214,94,176"/>
+<area shape="rect" title=" " alt="" coords="107,225,174,251"/>
+<area shape="poly" title=" " alt="" coords="115,177,132,212,127,214,110,179"/>
+<area shape="poly" title=" " alt="" coords="197,105,171,178,155,214,150,212,166,176,192,103"/>
+<area shape="poly" title=" " alt="" coords="236,102,284,121,333,150,366,181,392,212,388,216,362,184,330,154,281,126,234,107"/>
+<area shape="rect" href="../../d7/d57/ilib_8h.html" title=" " alt="" coords="232,152,319,177"/>
+<area shape="poly" title=" " alt="" coords="212,102,254,141,251,144,209,106"/>
+<area shape="poly" title=" " alt="" coords="238,180,82,226,80,221,236,175"/>
+<area shape="poly" title=" " alt="" coords="255,180,176,221,174,216,252,175"/>
+<area shape="poly" title=" " alt="" coords="298,175,374,216,372,221,295,180"/>
+<area shape="rect" title=" " alt="" coords="199,225,352,251"/>
+<area shape="poly" title=" " alt="" coords="278,178,278,212,273,212,273,178"/>
+<area shape="poly" title=" " alt="" coords="276,107,133,129,77,142,48,154,40,166,36,181,35,212,30,212,30,180,35,164,44,150,75,137,132,124,275,101"/>
+<area shape="poly" title=" " alt="" coords="373,104,402,211,397,213,368,105"/>
+<area shape="poly" title=" " alt="" coords="354,106,303,146,299,141,351,102"/>
+<area shape="poly" title=" " alt="" coords="387,102,454,142,451,147,385,106"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -115,11 +144,21 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/d89/serial__com_8h__dep__incl.png" border="0" usemap="#acom_2serial__com_8hdep" alt=""/></div>
 <map name="acom_2serial__com_8hdep" id="acom_2serial__com_8hdep">
-<area shape="rect" title=" " alt="" coords="100,5,237,31"/>
-<area shape="rect" href="../../d0/d38/serial__com_8cc.html" title=" " alt="" coords="5,79,148,104"/>
-<area shape="poly" title=" " alt="" coords="145,41,93,81,90,76,142,37"/>
-<area shape="rect" href="../../d1/df2/serial__com__utils_8cc.html" title=" " alt="" coords="173,79,351,104"/>
-<area shape="poly" title=" " alt="" coords="196,37,248,76,245,81,193,41"/>
+<area shape="rect" title=" " alt="" coords="556,5,693,31"/>
+<area shape="rect" href="../../d0/d38/serial__com_8cc.html" title=" " alt="" coords="5,86,148,111"/>
+<area shape="poly" title=" " alt="" coords="543,30,366,51,160,81,124,89,123,83,159,76,366,45,542,25"/>
+<area shape="rect" href="../../de/d89/serial__com__baud__rate_8cc.html" title=" " alt="" coords="172,79,336,119"/>
+<area shape="poly" title=" " alt="" coords="558,36,337,83,335,77,557,31"/>
+<area shape="rect" href="../../de/d45/serial__com__data__bits_8cc.html" title=" " alt="" coords="360,79,521,119"/>
+<area shape="poly" title=" " alt="" coords="587,38,486,81,484,76,585,33"/>
+<area shape="rect" href="../../d7/df7/serial__com__flow__control_8cc.html" title=" " alt="" coords="545,79,704,119"/>
+<area shape="poly" title=" " alt="" coords="627,44,627,79,622,79,622,44"/>
+<area shape="rect" href="../../d6/d14/serial__com__parity_8cc.html" title=" " alt="" coords="729,86,915,111"/>
+<area shape="poly" title=" " alt="" coords="667,33,794,83,792,88,665,38"/>
+<area shape="rect" href="../../db/df2/serial__com__setup_8cc.html" title=" " alt="" coords="939,86,1126,111"/>
+<area shape="poly" title=" " alt="" coords="698,31,974,83,973,89,697,36"/>
+<area shape="rect" href="../../d3/d64/serial__com__stop__bits_8cc.html" title=" " alt="" coords="1150,79,1310,119"/>
+<area shape="poly" title=" " alt="" coords="708,24,904,45,1138,76,1150,78,1149,83,1138,81,904,50,707,29"/>
 </map>
 </div>
 </div>
@@ -128,16 +167,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html">Electux::App::Com::SerialCom</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="SerialCom class is implementation of serial communication.">SerialCom</a> class is implementation of serial communication.  <a href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of serial communication using LibSerial.  <a href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:d7/d9d/namespaceElectux_1_1App_1_1Com" id="r_d7/d9d/namespaceElectux_1_1App_1_1Com"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html">Electux::App::Com</a></td></tr>
+<tr class="memdesc:d7/d9d/namespaceElectux_1_1App_1_1Com"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for application communication components. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:db/deb/namespaceElectux" id="r_db/deb/namespaceElectux"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:dd/d31/namespaceElectux_1_1App" id="r_dd/d31/namespaceElectux_1_1App"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d7/d9d/namespaceElectux_1_1App_1_1Com" id="r_d7/d9d/namespaceElectux_1_1App_1_1Com"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html">Electux::App::Com</a></td></tr>
+<tr class="memdesc:dd/d31/namespaceElectux_1_1App"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace for the microhildesk application. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
@@ -146,7 +187,7 @@ Namespaces</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_194442ccfdda5330a9fc879f923cbd7f.html">com</a></li><li class="navelem"><a class="el" href="../../df/d29/serial__com_8h.html">serial_com.h</a></li>
-    <li class="footer">Generated on Sat Feb 21 2026 08:57:48 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Mar 3 2026 21:03:01 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

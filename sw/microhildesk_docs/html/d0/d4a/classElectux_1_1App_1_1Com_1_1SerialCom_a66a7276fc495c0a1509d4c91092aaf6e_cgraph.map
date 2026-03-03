@@ -1,5 +1,0 @@
-<map id="Electux::App::Com::SerialCom::setup" name="Electux::App::Com::SerialCom::setup">
-<area shape="rect" id="Node000001" title="Setup the serial port parameters." alt="" coords="5,5,155,45"/>
-<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a8f218d4dae259e29bddff87461de8370" title="Opens the serial communication channel." alt="" coords="203,5,352,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,23,189,23,189,28,155,28"/>
-</map>

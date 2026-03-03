@@ -15,15 +15,17 @@ var hierarchy =
     [ "Electux::App::Config::IConfig", "db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html", [
       [ "Electux::App::Config::ConfigManager", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html", null ]
     ] ],
+    [ "Electux::App::Com::ILibSerialPort", "d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort.html", [
+      [ "Electux::App::Com::LibSerialPortWrapper", "da/d76/classElectux_1_1App_1_1Com_1_1LibSerialPortWrapper.html", null ]
+    ] ],
     [ "Electux::App::Logger::ILog", "d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html", [
       [ "Electux::App::Logger::Log", "dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html", null ]
     ] ],
     [ "Electux::App::Model::IModel", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html", [
-      [ "Electux::App::Model::Model", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html", [
-        [ "Electux::App::Model::ModelControl", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html", null ],
-        [ "Electux::App::Model::ModelLog", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html", null ],
-        [ "Electux::App::Model::ModelSerial", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html", null ]
-      ] ]
+      [ "Electux::App::Model::Model", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html", null ]
+    ] ],
+    [ "Electux::App::Com::ISerial", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html", [
+      [ "Electux::App::Com::SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html", null ]
     ] ],
     [ "Electux::App::Com::SerialParams", "d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html", null ],
     [ "Electux::App::View::SettingsSetup", "dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html", null ],

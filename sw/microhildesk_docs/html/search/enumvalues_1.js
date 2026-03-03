@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['data_0',['Data',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9af6068daa29dbb05a7ead1e3b5a48bbee',1,'Electux::App::Model::ModelSerial']]],
-  ['device_1',['Device',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a297e09e9b289aa55ac7008a5f78a58f9ae0ac20adce6ffee48c7151b070aa5737',1,'Electux::App::Model::ModelSerial']]]
+  ['data_0',['Data',['../d9/d26/namespaceElectux_1_1App_1_1Model.html#a61629a4e16d887b762e6994df68c2e1eaf6068daa29dbb05a7ead1e3b5a48bbee',1,'Electux::App::Model']]],
+  ['device_1',['Device',['../d9/d26/namespaceElectux_1_1App_1_1Model.html#a61629a4e16d887b762e6994df68c2e1eae0ac20adce6ffee48c7151b070aa5737',1,'Electux::App::Model']]]
 ];

@@ -6,5 +6,9 @@ var classElectux_1_1App_1_1Model_1_1IModel =
     [ "get", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a646021cefee0f19da0dde6e9000e4f3a", null ],
     [ "getAllEntries", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a8d13d898262c55797adb684f50289279", null ],
     [ "getEntity", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a312c9d5952b9be87708a83625f275166", null ],
-    [ "update", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#abd0f4f54468fa350efdfb287005b4b57", null ]
+    [ "toString", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#ab2fa9eee3007116f34a27f4d1bcc05e4", null ],
+    [ "toString", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a3a7748120d6be79e677f18f05713f1f9", null ],
+    [ "toString", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a282d73fbb889b20afa101a9fb4b0cb27", null ],
+    [ "update", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#abd0f4f54468fa350efdfb287005b4b57", null ],
+    [ "validateKey", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a67425b18844bfbc0fe88b10f41c3d7de", null ]
 ];

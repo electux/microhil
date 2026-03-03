@@ -1,75 +1,158 @@
-/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * imodel.h
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// imodel.h
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include <map>
 #include <string>
 #include <string_view>
+#include <cstdint>
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @namespace Electux::App::Model
+/// @brief Namespace for application data models and entities
 namespace Electux::App::Model
 {
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief Model entities in map format {'key': 'data'}
-    using Entities = std::map<std::string, std::string, std::less<>>;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @name Local Type Aliases
+	/// @{
+	using Entities = std::map<std::string, std::string, std::less<>>;
+	/// @}
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief IModel declaration
-    class IModel
-    {
-    public:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief IModel destructor
-        virtual ~IModel() noexcept = default;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @enum ModelControlKey
+	/// @brief Defines valid configuration keys for the control system.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	enum class ModelControlKey : uint8_t
+	{
+		Enable = 0,  ///< Key for enabling/disabling control features
+		Mode,        ///< Key for setting the operational mode
+		Toggle,      ///< Key for toggle-based control states
+		Timer,       ///< Key for timer duration settings
+		TimerEnable  ///< Key for enabling/disabling timer functionality
+	};
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Adds entity to model {'key': 'data'}
-        /// @param key Represents model enity key to be added
-        /// @param data Represents model entity data to be added
-        /// @return True for success operation, otherwise false
-        virtual bool add(const std::string_view &key, const std::string_view &data) = 0;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @enum ModelLogKey
+	/// @brief Defines valid configuration keys for the logging system.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	enum class ModelLogKey : uint8_t
+	{
+		FilePath = 0, ///< Key for the log file destination path
+		LogLevel      ///< Key for the verbosity level setting
+	};
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets entity by key
-        /// @param key Represents model enity key
-        /// @return Entity selected by key
-        virtual const std::string &getEntity(const std::string_view &key) const = 0;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @enum ModelSerialKey
+	/// @brief Defines valid configuration keys for serial communication.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	enum class ModelSerialKey : uint8_t
+	{
+		Device = 0, ///< Key for serial device path (e.g., /dev/ttyUSB0)
+		Baud,       ///< Key for baud rate setting
+		Data,       ///< Key for data bits setting
+		Parity,     ///< Key for parity setting
+		Stop,       ///< Key for stop bits setting
+		Flow        ///< Key for flow control setting
+	};
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets model entities
-        /// @return Model entities in format map of strings {key: data}
-        virtual const Entities &get() const = 0;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @class IModel
+	/// @brief Interface for application data models.
+	///
+	/// Defines core operations for managing key-value pairs representing
+	/// configuration or state data within the application.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	class IModel
+	{
+	public:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Virtual destructor for the IModel interface.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		inline virtual ~IModel() noexcept = default;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Updates entity value by key
-        /// @param key Represents model entity key
-        /// @param data Represents new value for the entity
-        /// @return True if the entity was updated, false if the key does not exist
-        virtual bool update(const std::string_view &key, const std::string_view &data) = 0;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Adds an entity to the model.
+		/// @param key Represents the model entity key to be added.
+		/// @param data Represents the model entity data to be added.
+		/// @return true if the operation was successful, otherwise false.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual bool add(const std::string_view &key, const std::string_view &data) = 0;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Clears all model entities
-        virtual void clear() = 0;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Validates if a string key is a valid control configuration key.
+		/// @param key Represents the string key to be validated.
+		/// @return true if the key is valid, false otherwise.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual bool validateKey(const std::string_view &key) const = 0;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets all model entries
-        /// @return Map of all model entries {key: data}
-        virtual Entities getAllEntries() const = 0;
-    };
-};
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets an entity value by its key.
+		/// @param key Represents the model entity key.
+		/// @return Reference to the string entity selected by key.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual const std::string &getEntity(const std::string_view &key) const = 0;
 
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Updates an entity value by its key.
+		/// @param key Represents the model entity key.
+		/// @param data Represents the new value for the entity.
+		/// @return true if the entity was updated, false if the key does not exist.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual bool update(const std::string_view &key, const std::string_view &data) = 0;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets all model entities.
+		/// @return Constant reference to the map of strings {key: data}.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual const Entities &get() const = 0;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets a copy of all model entries.
+		/// @return A new map containing all model entries {key: data}.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual Entities getAllEntries() const = 0;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Clears all entities from the model.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual void clear() = 0;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts a ModelControlKey enum value to its string representation.
+		/// @param key Represents the ModelControlKey enum value.
+		/// @return A string_view containing the key name.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual std::string_view toString(const ModelControlKey &key) const = 0;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts a ModelLogKey enum value to its string representation.
+		/// @param key Represents the ModelLogKey enum value.
+		/// @return A string_view containing the key name.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual std::string_view toString(const ModelLogKey &key) const = 0;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts a ModelSerialKey enum value to its string representation.
+		/// @param key Represents the ModelSerialKey enum value.
+		/// @return A string_view containing the key name.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual std::string_view toString(const ModelSerialKey &key) const = 0;
+	};
+} // namespace Electux::App::Model

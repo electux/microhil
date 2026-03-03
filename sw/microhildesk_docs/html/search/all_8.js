@@ -1,12 +1,25 @@
 var searchData=
 [
   ['icom_0',['ICom',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html',1,'Electux::App::Com']]],
-  ['icom_2eh_1',['icom.h',['../d0/d2e/icom_8h.html',1,'']]],
-  ['iconfig_2',['IConfig',['../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html',1,'Electux::App::Config']]],
-  ['iconfig_2eh_3',['iconfig.h',['../d2/d37/iconfig_8h.html',1,'']]],
-  ['ilog_4',['ILog',['../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html',1,'Electux::App::Logger']]],
-  ['ilog_2eh_5',['ilog.h',['../dc/d73/ilog_8h.html',1,'']]],
-  ['imodel_6',['IModel',['../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html',1,'Electux::App::Model']]],
-  ['imodel_2eh_7',['imodel.h',['../df/d78/imodel_8h.html',1,'']]],
-  ['info_8',['Info',['../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac331b29c2e015b29251750782e4dfc25a4059b0251f66a18cb56f544728796875',1,'Electux::App::Logger::ILog']]]
+  ['icom_20interface_1',['ICom Interface',['../d8/dda/md_docs_2icom.html',1,'']]],
+  ['icom_2eh_2',['icom.h',['../d0/d2e/icom_8h.html',1,'']]],
+  ['icom_2emd_3',['icom.md',['../d8/ddb/icom_8md.html',1,'']]],
+  ['iconfig_4',['iconfig',['../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html',1,'Electux::App::Config::IConfig'],['../dd/d31/namespaceElectux_1_1App.html#ad531d49791f04f9cc4f3aeade8dd8dc9',1,'Electux::App::IConfig']]],
+  ['iconfig_2eh_5',['iconfig.h',['../d2/d37/iconfig_8h.html',1,'']]],
+  ['ilib_2eh_6',['ilib.h',['../d7/d57/ilib_8h.html',1,'']]],
+  ['ilib_2emd_7',['ilib.md',['../dd/d75/ilib_8md.html',1,'']]],
+  ['ilibserialport_8',['ILibSerialPort',['../d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort.html',1,'Electux::App::Com']]],
+  ['ilibserialport_20interface_9',['ILibSerialPort Interface',['../d9/d65/md_docs_2ilib.html',1,'']]],
+  ['ilog_10',['ILog',['../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html',1,'Electux::App::Logger']]],
+  ['ilog_2eh_11',['ilog.h',['../dc/d73/ilog_8h.html',1,'']]],
+  ['imodel_12',['IModel',['../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html',1,'Electux::App::Model']]],
+  ['imodel_2eh_13',['imodel.h',['../df/d78/imodel_8h.html',1,'']]],
+  ['info_14',['Info',['../d5/dd1/namespaceElectux_1_1App_1_1Logger.html#aaef3f2e83d66c3d974809e99c2869b68a4059b0251f66a18cb56f544728796875',1,'Electux::App::Logger']]],
+  ['init_15',['init',['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac9212fc0738a040828229775561e3769',1,'Electux::App::Config::ConfigManager::init()'],['../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#a94daf5fd649f406e777c3f85441cd50b',1,'Electux::App::Config::IConfig::init()']]],
+  ['interface_16',['interface',['../d8/dda/md_docs_2icom.html',1,'ICom Interface'],['../d9/d65/md_docs_2ilib.html',1,'ILibSerialPort Interface'],['../d6/dde/md_docs_2iserial.html',1,'ISerial Interface']]],
+  ['iserial_17',['ISerial',['../da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html',1,'Electux::App::Com']]],
+  ['iserial_20interface_18',['ISerial Interface',['../d6/dde/md_docs_2iserial.html',1,'']]],
+  ['iserial_2eh_19',['iserial.h',['../de/d76/iserial_8h.html',1,'']]],
+  ['iserial_2emd_20',['iserial.md',['../dd/dfe/iserial_8md.html',1,'']]],
+  ['isopen_21',['isopen',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#aae8ec550b5be2afcfe69a7c87131167e',1,'Electux::App::Com::ICom::isOpen()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a1348560df4c4799c2c52690821303ac6',1,'Electux::App::Com::SerialCom::isOpen()'],['../d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort.html#ae46c2d58e9c1190326e8d1e5385f3346',1,'Electux::App::Com::ILibSerialPort::IsOpen()'],['../da/d76/classElectux_1_1App_1_1Com_1_1LibSerialPortWrapper.html#a2ca9581b286546c1d5709bcb05c137d9',1,'Electux::App::Com::LibSerialPortWrapper::IsOpen()']]]
 ];

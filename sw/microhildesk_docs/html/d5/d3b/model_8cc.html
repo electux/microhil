@@ -97,23 +97,34 @@ $(document).ready(function(){initNavTree('d5/d3b/model_8cc.html','../../'); init
   <div class="headertitle"><div class="title">model.cc File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../dc/d51/model_8h_source.html">model/model.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;initializer_list&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../dc/d51/model_8h_source.html">model/model.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for model.cc:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dd/d6c/model_8cc__incl.png" border="0" usemap="#amodel_2model_8cc" alt=""/></div>
 <map name="amodel_2model_8cc" id="amodel_2model_8cc">
-<area shape="rect" title=" " alt="" coords="46,5,173,31"/>
-<area shape="rect" href="../../dc/d51/model_8h.html" title=" " alt="" coords="49,79,169,104"/>
-<area shape="poly" title=" " alt="" coords="112,31,112,65,107,65,107,31"/>
-<area shape="rect" href="../../df/d78/imodel_8h.html" title=" " alt="" coords="47,152,171,177"/>
-<area shape="poly" title=" " alt="" coords="112,104,112,138,107,138,107,104"/>
-<area shape="rect" title=" " alt="" coords="5,225,56,251"/>
-<area shape="poly" title=" " alt="" coords="98,179,55,218,52,214,95,175"/>
-<area shape="rect" title=" " alt="" coords="80,225,139,251"/>
-<area shape="poly" title=" " alt="" coords="112,178,112,212,107,212,107,178"/>
-<area shape="rect" title=" " alt="" coords="163,225,261,251"/>
-<area shape="poly" title=" " alt="" coords="127,175,185,215,182,219,124,180"/>
+<area shape="rect" title=" " alt="" coords="162,5,289,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,91,104"/>
+<area shape="poly" title=" " alt="" coords="198,33,90,76,88,71,196,28"/>
+<area shape="rect" title=" " alt="" coords="115,79,226,104"/>
+<area shape="poly" title=" " alt="" coords="218,33,190,69,186,66,214,29"/>
+<area shape="rect" title=" " alt="" coords="250,79,313,104"/>
+<area shape="poly" title=" " alt="" coords="237,29,266,66,262,69,232,33"/>
+<area shape="rect" href="../../dc/d51/model_8h.html" title=" " alt="" coords="337,79,457,104"/>
+<area shape="poly" title=" " alt="" coords="254,28,358,71,356,76,252,33"/>
+<area shape="rect" href="../../df/d78/imodel_8h.html" title=" " alt="" coords="335,152,459,177"/>
+<area shape="poly" title=" " alt="" coords="400,104,400,138,395,138,395,104"/>
+<area shape="rect" title=" " alt="" coords="243,225,293,251"/>
+<area shape="poly" title=" " alt="" coords="378,180,303,221,300,216,375,175"/>
+<area shape="rect" title=" " alt="" coords="317,225,376,251"/>
+<area shape="poly" title=" " alt="" coords="391,179,365,216,361,213,387,176"/>
+<area shape="rect" title=" " alt="" coords="401,225,498,251"/>
+<area shape="poly" title=" " alt="" coords="408,176,435,213,431,216,404,179"/>
+<area shape="rect" title=" " alt="" coords="523,225,589,251"/>
+<area shape="poly" title=" " alt="" coords="424,175,519,217,517,222,422,180"/>
 </map>
 </div>
 </div>
@@ -121,11 +132,13 @@ Include dependency graph for model.cc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:d9/d26/namespaceElectux_1_1App_1_1Model" id="r_d9/d26/namespaceElectux_1_1App_1_1Model"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html">Electux::App::Model</a></td></tr>
+<tr class="memdesc:d9/d26/namespaceElectux_1_1App_1_1Model"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for application data model and entities. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:db/deb/namespaceElectux" id="r_db/deb/namespaceElectux"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:dd/d31/namespaceElectux_1_1App" id="r_dd/d31/namespaceElectux_1_1App"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d9/d26/namespaceElectux_1_1App_1_1Model" id="r_d9/d26/namespaceElectux_1_1App_1_1Model"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html">Electux::App::Model</a></td></tr>
+<tr class="memdesc:dd/d31/namespaceElectux_1_1App"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace for the microhildesk application. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -133,6 +146,52 @@ Variables</h2></td></tr>
 <tr class="memitem:a2372a59a00de32121c13a5cae61d5eb3" id="r_a2372a59a00de32121c13a5cae61d5eb3"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a2372a59a00de32121c13a5cae61d5eb3">Electux::App::Model::cFallback</a> {&quot;&quot;}</td></tr>
 <tr class="memdesc:a2372a59a00de32121c13a5cae61d5eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fallback string for getEntity method when key is not found.  <br /></td></tr>
 <tr class="separator:a2372a59a00de32121c13a5cae61d5eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Internal Control Key Constants</div></td></tr>
+<tr class="memitem:a9b1e0fd2566e243da73ec43fea749965" id="r_a9b1e0fd2566e243da73ec43fea749965"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a9b1e0fd2566e243da73ec43fea749965">Electux::App::Model::cEnable</a> {&quot;enable&quot;}</td></tr>
+<tr class="memdesc:a9b1e0fd2566e243da73ec43fea749965"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for enable.  <br /></td></tr>
+<tr class="separator:a9b1e0fd2566e243da73ec43fea749965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdd8134ee7ea35f270ff9b2d5024d15c" id="r_afdd8134ee7ea35f270ff9b2d5024d15c"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#afdd8134ee7ea35f270ff9b2d5024d15c">Electux::App::Model::cMode</a> {&quot;mode&quot;}</td></tr>
+<tr class="memdesc:afdd8134ee7ea35f270ff9b2d5024d15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for mode.  <br /></td></tr>
+<tr class="separator:afdd8134ee7ea35f270ff9b2d5024d15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e00b3ee64f791baf5d7186c1d6dd2e3" id="r_a9e00b3ee64f791baf5d7186c1d6dd2e3"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a9e00b3ee64f791baf5d7186c1d6dd2e3">Electux::App::Model::cToggle</a> {&quot;toggle&quot;}</td></tr>
+<tr class="memdesc:a9e00b3ee64f791baf5d7186c1d6dd2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for toggle.  <br /></td></tr>
+<tr class="separator:a9e00b3ee64f791baf5d7186c1d6dd2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae29dc5e6e705542a4dae621ca23bab" id="r_a7ae29dc5e6e705542a4dae621ca23bab"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a7ae29dc5e6e705542a4dae621ca23bab">Electux::App::Model::cTimer</a> {&quot;timer&quot;}</td></tr>
+<tr class="memdesc:a7ae29dc5e6e705542a4dae621ca23bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for timer.  <br /></td></tr>
+<tr class="separator:a7ae29dc5e6e705542a4dae621ca23bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16bf154360f4f8d99a363b5a16d0cc97" id="r_a16bf154360f4f8d99a363b5a16d0cc97"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a16bf154360f4f8d99a363b5a16d0cc97">Electux::App::Model::cTimerEnable</a> {&quot;timerEnable&quot;}</td></tr>
+<tr class="memdesc:a16bf154360f4f8d99a363b5a16d0cc97"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for timer enable.  <br /></td></tr>
+<tr class="separator:a16bf154360f4f8d99a363b5a16d0cc97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Internal Serial Key Constants</div></td></tr>
+<tr class="memitem:ad05addad9d5b7fe4c2b3392d9c651856" id="r_ad05addad9d5b7fe4c2b3392d9c651856"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#ad05addad9d5b7fe4c2b3392d9c651856">Electux::App::Model::cDevice</a> {&quot;device&quot;}</td></tr>
+<tr class="memdesc:ad05addad9d5b7fe4c2b3392d9c651856"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for device.  <br /></td></tr>
+<tr class="separator:ad05addad9d5b7fe4c2b3392d9c651856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351f8a73bdc8bc817b52b141de1c41b3" id="r_a351f8a73bdc8bc817b52b141de1c41b3"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a351f8a73bdc8bc817b52b141de1c41b3">Electux::App::Model::cBaud</a> {&quot;baud&quot;}</td></tr>
+<tr class="memdesc:a351f8a73bdc8bc817b52b141de1c41b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for baud rate.  <br /></td></tr>
+<tr class="separator:a351f8a73bdc8bc817b52b141de1c41b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c18a855082926773ba2bb11f71d81f" id="r_a55c18a855082926773ba2bb11f71d81f"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a55c18a855082926773ba2bb11f71d81f">Electux::App::Model::cData</a> {&quot;data&quot;}</td></tr>
+<tr class="memdesc:a55c18a855082926773ba2bb11f71d81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for data bits.  <br /></td></tr>
+<tr class="separator:a55c18a855082926773ba2bb11f71d81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bff29496003fcaa18a9cf5030075aba" id="r_a0bff29496003fcaa18a9cf5030075aba"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a0bff29496003fcaa18a9cf5030075aba">Electux::App::Model::cParity</a> {&quot;parity&quot;}</td></tr>
+<tr class="memdesc:a0bff29496003fcaa18a9cf5030075aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for parity.  <br /></td></tr>
+<tr class="separator:a0bff29496003fcaa18a9cf5030075aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6798100f9d15633f257334b03002d0f" id="r_ac6798100f9d15633f257334b03002d0f"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#ac6798100f9d15633f257334b03002d0f">Electux::App::Model::cStop</a> {&quot;stop&quot;}</td></tr>
+<tr class="memdesc:ac6798100f9d15633f257334b03002d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for stop bits.  <br /></td></tr>
+<tr class="separator:ac6798100f9d15633f257334b03002d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a058315107bc710121ff8a14df8b1f1e5" id="r_a058315107bc710121ff8a14df8b1f1e5"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a058315107bc710121ff8a14df8b1f1e5">Electux::App::Model::cFlow</a> {&quot;flow&quot;}</td></tr>
+<tr class="memdesc:a058315107bc710121ff8a14df8b1f1e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for flow control.  <br /></td></tr>
+<tr class="separator:a058315107bc710121ff8a14df8b1f1e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Internal Log Key Constants</div></td></tr>
+<tr class="memitem:af7870edac0af76a6ba1e154f5378c175" id="r_af7870edac0af76a6ba1e154f5378c175"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#af7870edac0af76a6ba1e154f5378c175">Electux::App::Model::cLogLevel</a> {&quot;log_level&quot;}</td></tr>
+<tr class="memdesc:af7870edac0af76a6ba1e154f5378c175"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for log level.  <br /></td></tr>
+<tr class="separator:af7870edac0af76a6ba1e154f5378c175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af106c8fdee900f1c103ab8a20d10a3e3" id="r_af106c8fdee900f1c103ab8a20d10a3e3"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#af106c8fdee900f1c103ab8a20d10a3e3">Electux::App::Model::cFilePath</a> {&quot;log_file_path&quot;}</td></tr>
+<tr class="memdesc:af106c8fdee900f1c103ab8a20d10a3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">String key for file path.  <br /></td></tr>
+<tr class="separator:af106c8fdee900f1c103ab8a20d10a3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Internal Key Constants</div></td></tr>
+<tr class="memitem:a49e77f6f6172315e7ebaeceb908152e8" id="r_a49e77f6f6172315e7ebaeceb908152e8"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/namespaceElectux_1_1App_1_1Model.html#a49e77f6f6172315e7ebaeceb908152e8">Electux::App::Model::cUnknown</a> {&quot;unknown&quot;}</td></tr>
+<tr class="memdesc:a49e77f6f6172315e7ebaeceb908152e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fallback for unknown keys.  <br /></td></tr>
+<tr class="separator:a49e77f6f6172315e7ebaeceb908152e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -140,7 +199,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_3f14f6767c31cb4a1d22c13c18cc6fc3.html">model</a></li><li class="navelem"><a class="el" href="../../d5/d3b/model_8cc.html">model.cc</a></li>
-    <li class="footer">Generated on Sat Feb 21 2026 08:57:48 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Mar 3 2026 21:03:01 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

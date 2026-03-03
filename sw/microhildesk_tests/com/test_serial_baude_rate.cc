@@ -1,47 +1,84 @@
-/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * test_serial_baude_rate.cc
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// test_serial_baude_rate.cc
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include "test_serial_com.h"
+#include <params/serial_com_params.h>
 
 using namespace Electux::App::Com;
+using namespace Electux::App::Params::SerialComConstants;
 
-///////////////////////////////////////////////////////////////////////////////
-/// @brief Test conversion baud-rate to uint32_t
-/// @param SerialComTest is test fixture
-/// @param baudToUintTest is test name
-TEST_F(SerialComTest, baudToUintTest)
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test bidirectional conversion of all supported BaudRates.
+///
+/// Iterates through provided parameters to verify that baudToUint and
+/// uintToBaud mappings are consistent and correct based on serial_com_utils.
+/// @param BaudRateTest The name of the test case.
+/// @param BaudRateConversionTest The name of the test.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST_P(BaudRateTest, BaudRateConversionTest)
 {
-    const BaudRate baud_rate = BaudRate::BAUD_115200;
-    const uint32_t converted = m_serial.baudToUint(baud_rate);
-    const uint32_t baud_expected = 4098;
+	ParameterMapping<BaudRate> params = this->GetParam();
 
-    EXPECT_TRUE(baud_expected == converted);
+	EXPECT_EQ(m_serial.baudToUint(params.enum_val), params.uint_val);
+	EXPECT_EQ(m_serial.uintToBaud(params.uint_val), params.enum_val);
 }
 
-///////////////////////////////////////////////////////////////////////////////
-/// @brief Test conversion uint32_t to baud-rate
-/// @param SerialComTest is test fixture
-/// @param uintToBaudTest is test name
-TEST_F(SerialComTest, uintToBaudTest)
-{
-    const uint32_t baud_rate = 4098;
-    const BaudRate baud_expected = BaudRate::BAUD_115200;
-    BaudRate converted = m_serial.uintToBaud(baud_rate);
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief List of all supported baud rate mappings from serial_com_utils.cc.
+///
+/// Note: Replace numeric values with actual constants if they differ.
+/// @param SerialComTest The name of the test suite.
+/// @param BaudRateTest The name of the parameterized test case.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+INSTANTIATE_TEST_SUITE_P
+(
+	SerialComTest,
+	BaudRateTest,
+	::testing::Values(
+		ParameterMapping<BaudRate>{BaudRate::BAUD_110,    0}, 
+		ParameterMapping<BaudRate>{BaudRate::BAUD_300,    1}, 
+		ParameterMapping<BaudRate>{BaudRate::BAUD_600,    2}, 
+		ParameterMapping<BaudRate>{BaudRate::BAUD_1200,   3},
+		ParameterMapping<BaudRate>{BaudRate::BAUD_2400,   4},
+		ParameterMapping<BaudRate>{BaudRate::BAUD_4800,   5},
+		ParameterMapping<BaudRate>{BaudRate::BAUD_9600,   6},
+		ParameterMapping<BaudRate>{BaudRate::BAUD_19200,  7},
+		ParameterMapping<BaudRate>{BaudRate::BAUD_38400,  8},
+		ParameterMapping<BaudRate>{BaudRate::BAUD_57600,  9},
+		ParameterMapping<BaudRate>{BaudRate::BAUD_115200, 10},
+		ParameterMapping<BaudRate>{BaudRate::BAUD_230400, 11}
+	)
+);
 
-    EXPECT_TRUE(baud_expected == converted);
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test detection of invalid baud rate parameters.
+///
+/// Verifies that the conversion logic correctly identifies unsupported 
+/// baud rates and returns the predefined invalid parameter constant or enum.
+/// @param SerialComTest The name of the test suite.
+/// @param InvalidBaudRateDetectionTest The name of the test.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST_F(SerialComTest, InvalidBaudRateDetectionTest)
+{
+	uint32_t invalid_uint = m_serial.baudToUint(BaudRate::BAUD_200);
+	EXPECT_EQ(invalid_uint, cComInvalidParameter);
+
+	BaudRate invalid_enum = m_serial.uintToBaud(999999);
+	EXPECT_EQ(invalid_enum, BaudRate::BAUD_INVALID);
 }

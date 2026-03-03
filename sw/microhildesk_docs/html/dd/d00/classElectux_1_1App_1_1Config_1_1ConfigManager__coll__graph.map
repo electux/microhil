@@ -1,21 +1,9 @@
 <map id="Electux::App::Config::ConfigManager" name="Electux::App::Config::ConfigManager">
-<area shape="rect" id="Node000001" title="Config class is implementation for configuration mechanism." alt="" coords="240,700,400,960"/>
-<area shape="rect" id="Node000002" href="$db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html" title="IConfig class is interface for configuration mechanism." alt="" coords="5,507,149,627"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,636,242,741,238,745,140,639"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="173,535,224,600"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="206,599,215,636,228,675,235,691,230,693,223,677,210,638,201,601"/>
-<area shape="rect" id="Node000004" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html" title="ModelControl definition for control configuration." alt="" coords="249,497,391,637"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="323,638,323,684,317,684,317,638"/>
-<area shape="rect" id="Node000005" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition that implements IModel interface." alt="" coords="415,268,558,448"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="409,460,378,499,373,496,405,457"/>
-<area shape="rect" id="Node000008" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title="ModelSerial definition for serial configuration." alt="" coords="415,497,558,637"/>
-<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="489,462,489,497,484,497,484,462"/>
-<area shape="rect" id="Node000009" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title="ModelLog definition for log configuration." alt="" coords="582,497,725,637"/>
-<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="569,457,600,496,596,499,565,460"/>
-<area shape="rect" id="Node000006" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="329,5,471,205"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="441,217,458,267,453,269,436,219"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="495,65,654,145"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="563,147,526,253,521,251,558,145"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="463,639,444,677,412,724,408,721,439,675,458,636"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="602,639,563,678,490,733,416,780,413,776,487,729,560,674,598,636"/>
+<area shape="rect" id="Node000001" title="Implementation of the IConfig interface for configuration management." alt="" coords="119,268,279,468"/>
+<area shape="rect" id="Node000002" href="$db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html" title="Interface for configuration mechanism." alt="" coords="5,5,149,205"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,217,155,267,150,269,127,219"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="173,73,224,138"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,138,201,252,196,252,196,138"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="291,73,346,138"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="318,139,310,190,292,245,287,254,282,252,287,243,304,188,313,138"/>
 </map>

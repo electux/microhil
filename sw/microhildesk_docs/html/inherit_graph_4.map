@@ -1,11 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="5,69,156,109"/>
-<area shape="rect" id="Node000001" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition that implements IModel interface." alt="" coords="204,69,355,109"/>
-<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="169,87,204,87,204,92,169,92"/>
-<area shape="rect" id="Node000002" href="$d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html" title="ModelControl definition for control configuration." alt="" coords="403,5,553,45"/>
-<area shape="poly" id="edge5_Node000001_Node000002" title=" " alt="" coords="354,63,415,43,416,48,356,68"/>
-<area shape="rect" id="Node000003" href="$d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title="ModelLog definition for log configuration." alt="" coords="403,69,553,109"/>
-<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="368,87,402,87,402,92,368,92"/>
-<area shape="rect" id="Node000004" href="$dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title="ModelSerial definition for serial configuration." alt="" coords="403,133,553,173"/>
-<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="356,111,416,131,415,136,354,116"/>
+<area shape="rect" id="Node000000" href="$d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="Interface for logging implementations." alt="" coords="5,5,160,45"/>
+<area shape="rect" id="Node000001" href="$dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="A file&#45;based implementation of the ILog interface." alt="" coords="208,13,395,38"/>
+<area shape="poly" id="edge5_Node000000_Node000001" title=" " alt="" coords="174,23,208,23,208,28,174,28"/>
 </map>

@@ -1,10 +1,4 @@
 var searchData=
 [
-  ['_7eicom_0',['~ICom',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#a9bc314ff47c99b455b3d8b4e99c8999e',1,'Electux::App::Com::ICom']]],
-  ['_7eiconfig_1',['~IConfig',['../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#a86b43ad41684f04d61b5be597d2768fc',1,'Electux::App::Config::IConfig']]],
-  ['_7eilog_2',['~ILog',['../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ad16a939b9097a21cf929471fa1c1470f',1,'Electux::App::Logger::ILog']]],
-  ['_7eimodel_3',['~IModel',['../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a0018928d46cf5de143f9fb15eba3f437',1,'Electux::App::Model::IModel']]],
-  ['_7elog_4',['~Log',['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#ab34c6e7856d2b711b7082cc93d980659',1,'Electux::App::Logger::Log']]],
-  ['_7eserialcom_5',['~SerialCom',['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a5fa5dcf53ea60ba07a040cd380c1c73c',1,'Electux::App::Com::SerialCom']]],
-  ['_7esettingssetup_6',['~SettingsSetup',['../dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a795dcfb7dfd9eab7b9b69f792eb82ad4',1,'Electux::App::View::SettingsSetup']]]
+  ['write_0',['write',['../db/dca/classElectux_1_1App_1_1Com_1_1ICom.html#ac8f47ca960da9285c41cb9a2e788aa0a',1,'Electux::App::Com::ICom::write()'],['../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a97378427ef817d1364ca07bf9e7a8535',1,'Electux::App::Com::SerialCom::write()'],['../d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort.html#acb48a024abeed10bf88ea6dc03f03d54',1,'Electux::App::Com::ILibSerialPort::Write()'],['../da/d76/classElectux_1_1App_1_1Com_1_1LibSerialPortWrapper.html#a194cca4902997f2ca4498ea87f948f95',1,'Electux::App::Com::LibSerialPortWrapper::Write()']]]
 ];

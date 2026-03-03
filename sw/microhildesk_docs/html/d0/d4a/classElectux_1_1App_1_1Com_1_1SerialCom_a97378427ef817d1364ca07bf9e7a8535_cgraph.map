@@ -1,0 +1,8 @@
+<map id="Electux::App::Com::SerialCom::write" name="Electux::App::Com::SerialCom::write">
+<area shape="rect" id="Node000001" title="Writes data to the serial communication channel." alt="" coords="5,5,155,45"/>
+<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a1348560df4c4799c2c52690821303ac6" title="Checks if the communication channel is currently open." alt="" coords="203,5,352,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,23,189,23,189,28,155,28"/>
+<area shape="rect" id="Node000003" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a4d1ed234a3bfdd397df4a472d241db9d" title="Opens the serial communication channel." alt="" coords="400,5,549,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="352,31,386,32,386,37,352,37"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="400,19,366,19,366,14,400,14"/>
+</map>

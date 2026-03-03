@@ -1,68 +1,117 @@
-/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * model.h
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// model.h
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include <model/imodel.h>
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @namespace Electux::App::Model
+/// @brief Namespace for application data models and entities
 namespace Electux::App::Model
 {
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief Model definition that implements IModel interface
-    class Model : public IModel
-    {
-    public:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Model constructor
-        inline Model() noexcept = default;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @class Model
+	/// @brief Concrete implementation of the IModel interface.
+	///
+	/// Provides a standard container for managing application entities using
+	/// an internal map-based storage mechanism.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	class Model : public IModel
+	{
+	public:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Model constructor.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		inline Model() noexcept = default;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Adds entity to model {'key': 'data'}
-        /// @param key Represents model enity key to be added
-        /// @param data Represents model entity data to be added
-        bool add(const std::string_view &key, const std::string_view &data) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Adds an entity to the model.
+		/// @param key Represents the model entity key to be added.
+		/// @param data Represents the model entity data to be added.
+		/// @return true if the entity was successfully added, false otherwise.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool add(const std::string_view &key, const std::string_view &data) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets entity by key
-        /// @param key Represents model enity key
-        /// @return Entity selected by key
-        const std::string &getEntity(const std::string_view &key) const final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Validates if a string key is a valid serial configuration key.
+		/// @param key Represents the string key to be validated.
+		/// @return true if the key is valid, false otherwise.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool validateKey(const std::string_view &key) const final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets model entities
-        /// @return Model entities in format map of strings
-        const Entities &get() const final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets an entity value by its key.
+		/// @param key Represents the model entity key.
+		/// @return Reference to the string entity selected by key.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		const std::string &getEntity(const std::string_view &key) const final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Updates entity value by key
-        /// @param key Represents model entity key
-        /// @param data Represents new value for the entity
-        /// @return True if the entity was updated, false if the key does not exist
-        bool update(const std::string_view &key, const std::string_view &data) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets all model entities.
+		/// @return Constant reference to the map of strings {key: data}.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		const Entities &get() const final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Clears all model entities
-        void clear() final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets a copy of all serial model entries.
+		/// @return A map containing all serial configuration entries {key: data}.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		Entities getAllEntries() const final;
 
-    private:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Model entities in format map of strings {key: data}
-        Entities m_entities{};
-    };
-};
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Updates an entity value by its key.
+		/// @param key Represents the model entity key.
+		/// @param data Represents the new value for the entity.
+		/// @return true if the entity was updated, false if the key does not exist.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool update(const std::string_view &key, const std::string_view &data) final;
 
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Clears all model entities.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void clear() final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts a ModelSerialKey enum value to its string representation.
+		/// @param key Represents the ModelSerialKey enum value.
+		/// @return A string_view containing the key name.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::string_view toString(const ModelSerialKey &key) const final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts a ModelLogKey enum value to its string representation.
+		/// @param key Represents the ModelLogKey enum value.
+		/// @return A string_view containing the key name.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::string_view toString(const ModelLogKey &key) const final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts a ModelControlKey enum value to its string representation.
+		/// @param key Represents the ModelControlKey enum value.
+		/// @return A string_view containing the key name.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::string_view toString(const ModelControlKey &key) const final;
+
+	private:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Internal storage for model entities in map format {key: data}.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		Entities m_entities{};
+	};
+} // namespace Electux::App::Model
