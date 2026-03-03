@@ -1,32 +1,54 @@
-/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * home_map.cc
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// home_map.cc
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include <view/home.h>
 
 using namespace Electux::App::View;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Connects signals and slots for a specific channel in the home window.
+///
+/// Uses sigc::bind to pass the channel index to the handlers, ensuring that
+/// each widget's interaction is correctly routed to the corresponding channel.
+///
+/// @param index The index of the channel being mapped.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 void AppHome::mapping(size_t index)
 {
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief Connect signals and slots for home window widgets
-    m_enableChannels[index].signal_toggled().connect(sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelEnableChanged), index));
-    m_selectControlChannels[index].signal_changed().connect(sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelModeChanged), index));
-    m_toggleChannels[index].signal_toggled().connect(sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelToggleChanged), index));
-    m_spinTimerChannels[index].signal_value_changed().connect(sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelTimerChanged), index));
-    m_toggleTimerChannels[index].signal_toggled().connect(sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelTimerToggleChanged), index));
+	// Connect signals and slots for home window widgets
+	m_enableChannels[index].signal_toggled().connect(
+		sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelEnableChanged), index)
+	);
+
+	m_selectControlChannels[index].signal_changed().connect(
+		sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelModeChanged), index)
+	);
+
+	m_toggleChannels[index].signal_toggled().connect(
+		sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelToggleChanged), index)
+	);
+
+	m_spinTimerChannels[index].signal_value_changed().connect(
+		sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelTimerChanged), index)
+	);
+
+	m_toggleTimerChannels[index].signal_toggled().connect(
+		sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelTimerToggleChanged), index)
+	);
 }

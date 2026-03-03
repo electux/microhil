@@ -1,21 +1,21 @@
-/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * log.h
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// log.h
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include <fstream>
@@ -23,64 +23,87 @@
 #include <string>
 #include <log/ilog.h>
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @namespace Electux::App::Logger
+/// @brief Namespace for application logging components
 namespace Electux::App::Logger
 {
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief Log class is a file-based implementation of ILog
-    class Log : public ILog
-    {
-    public:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Model log methods
-        ///   Log constructor
-        ///   Log destructor with force close log file
-        ///   Deleted copy constructor and assignment operator
-        inline Log() noexcept = default;
-        ~Log() noexcept;
-        Log(const Log &) = delete;
-        Log &operator=(const Log &) = delete;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @class Log
+	/// @brief A file-based implementation of the ILog interface.
+	///
+	/// This class provides thread-safe logging to a physical file on disk.
+	/// It supports log level filtering and automatic timestamping of entries.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	class Log : public ILog
+	{
+	public:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Default constructor for the Log class.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		inline Log() noexcept = default;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Sets the filtering log level
-        /// @param level The log level to set for filtering messages
-        void setLevel(LogLevel level) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Destructor for the Log class.
+		/// Ensures that the log file stream is properly closed before destruction.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		~Log() noexcept;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Gets the current filtering log level
-        /// @return The current log level used for filtering messages
-        LogLevel getLevel() const final;
+		// Deleted copy constructor and assignment operator to prevent duplicates
+		Log(const Log &) = delete;
+		Log &operator=(const Log &) = delete;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Opens the logging sink (file, socket, etc.)
-        /// @return true for success, else false
-        bool open() final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the filtering log level.
+		/// @param level The log level to set for filtering messages.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setLevel(LogLevel level) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Closes the logging sink
-        /// @return true for success, else false
-        bool close() final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets the current filtering log level.
+		/// @return The current log level used for filtering messages.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		LogLevel getLevel() const final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Logs a message to the sink
-        /// @param message The string content to log
-        /// @param level The severity of the message
-        void log(const std::string &message, LogLevel level) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Opens the logging sink (file stream).
+		/// @return true if the file was successfully opened, else false.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool open() final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Specific to File Logger: Sets the path
-        void setOutputFile(const std::string &output);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Closes the logging sink (file stream).
+		/// @return true if the stream was successfully closed, else false.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool close() final;
 
-    private:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Model log properties
-        ///   m_level - current log level
-        ///   m_outputFile - output log file name
-        ///   m_stream - output file stream
-        ///   m_mutex - mutex for thread safety
-        LogLevel m_level{LogLevel::Info};
-        std::string m_outputFile{};
-        std::ofstream m_stream{};
-        mutable std::mutex m_mutex{};
-    };
-};
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Logs a message to the file with a timestamp and severity tag.
+		/// @param message The string content to log.
+		/// @param level The severity of the message.
+		/// @note This operation is thread-safe.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void log(const std::string &message, LogLevel level) final;
 
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Specific to File Logger: Sets the destination file path.
+		/// @param output The absolute or relative path to the log file.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setOutputFile(const std::string &output) final;
+
+	private:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @name Internal State and Thread Safety
+		/// @{
+		/// @brief Current filtering log level.
+		LogLevel m_level{LogLevel::Info};
+		/// @brief Path to the destination log file.
+		std::string m_outputFile{};
+		/// @brief Output file stream for logging operations.
+		std::ofstream m_stream{};
+		/// @brief Mutex to ensure thread-safe access to the file stream.
+		mutable std::mutex m_mutex{};
+		/// @}
+		////////////////////////////////////////////////////////////////////////////////////////////////
+	};
+} // namespace Electux::App::Logger

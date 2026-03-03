@@ -1,0 +1,3 @@
+<map id="Electux::App::Com::ILibSerialPort" name="Electux::App::Com::ILibSerialPort">
+<area shape="rect" id="Node000001" title="Interface wrapper around LibSerial::SerialPort for testability." alt="" coords="5,5,155,285"/>
+</map>

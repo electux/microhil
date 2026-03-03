@@ -13,10 +13,8 @@ set(
 set(
     MICROHIL_CONFIG_SOURCES
     ${PROJECT_SOURCE_DIR}/../microhildesk/config/config_manager.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/config/config_manager_utils.cc
     ${PROJECT_SOURCE_DIR}/../microhildesk/model/model.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/model/model_serial.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/model/model_log.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/model/model_control.cc
 )
 
 set(

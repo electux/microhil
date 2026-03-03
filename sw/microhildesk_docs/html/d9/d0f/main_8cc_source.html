@@ -99,48 +99,31 @@ $(document).ready(function(){initNavTree('d9/d0f/main_8cc_source.html','../../')
   <div class="headertitle"><div class="title">main.cc</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d9/d0f/main_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * main.cc</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Copyright (C) 2025 - 2026 Vladimir Roncevic &lt;elektron.ronca@gmail.com&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * </span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * microhildesk is free software: you can redistribute it and/or modify it</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * under the terms of the GNU General Public License as published by the</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * (at your option) any later version.</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * </span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * microhildesk is distributed in the hope that it will be useful, but</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * See the GNU General Public License for more details.</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * </span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * You should have received a copy of the GNU General Public License along</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> */</span></div>
+<a href="../../d9/d0f/main_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="../../db/d32/application_8h.html">application.h</a>&gt;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">   23</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span> app = <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">EntryApplication::create</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = app-&gt;run(argc, argv);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">return</span> status;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">   33</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">auto</span> app = <a class="code hl_function" href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">EntryApplication::create</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> status = app-&gt;run(argc, argv);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> status;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
 <div class="ttc" id="aapplication_8h_html"><div class="ttname"><a href="../../db/d32/application_8h.html">application.h</a></div></div>
-<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_add419e3a8185514cf59e101641b70c3e"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">Electux::App::EntryApplication::create</a></div><div class="ttdeci">static Glib::RefPtr&lt; EntryApplication &gt; create()</div><div class="ttdoc">Creates reference pointer to EntryApplication.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d16/application_8cc_source.html#l00038">application.cc:38</a></div></div>
-<div class="ttc" id="amain_8cc_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0f/main_8cc_source.html#l00023">main.cc:23</a></div></div>
-<div class="ttc" id="anamespaceElectux_1_1App_html"><div class="ttname"><a href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d32/application_8h_source.html#l00029">application.h:30</a></div></div>
+<div class="ttc" id="aclassElectux_1_1App_1_1EntryApplication_html_add419e3a8185514cf59e101641b70c3e"><div class="ttname"><a href="../../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e">Electux::App::EntryApplication::create</a></div><div class="ttdeci">static Glib::RefPtr&lt; EntryApplication &gt; create()</div><div class="ttdoc">Creates a reference pointer to EntryApplication.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d16/application_8cc_source.html#l00056">application.cc:56</a></div></div>
+<div class="ttc" id="amain_8cc_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdoc">The main entry point of the microhildesk application.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0f/main_8cc_source.html#l00033">main.cc:33</a></div></div>
+<div class="ttc" id="anamespaceElectux_1_1App_html"><div class="ttname"><a href="../../dd/d31/namespaceElectux_1_1App.html">Electux::App</a></div><div class="ttdoc">Main namespace for the microhildesk application.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d0f/main_8cc.html">main.cc</a></li>
-    <li class="footer">Generated on Sat Feb 21 2026 08:57:48 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Mar 3 2026 21:03:01 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

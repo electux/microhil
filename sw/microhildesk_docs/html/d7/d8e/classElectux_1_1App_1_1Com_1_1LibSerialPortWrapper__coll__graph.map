@@ -1,0 +1,7 @@
+<map id="Electux::App::Com::LibSerialPortWrapper" name="Electux::App::Com::LibSerialPortWrapper">
+<area shape="rect" id="Node000001" title="Wrapper class for LibSerial::SerialPort implementing ILibSerialPort." alt="" coords="80,348,267,648"/>
+<area shape="rect" id="Node000002" href="$d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort.html" title="Interface wrapper around LibSerial::SerialPort for testability." alt="" coords="5,5,155,285"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,298,136,347,131,348,118,299"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="179,113,355,178"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="261,179,220,333,215,331,256,178"/>
+</map>

@@ -1,17 +1,13 @@
 var classElectux_1_1App_1_1Config_1_1ConfigManager =
 [
-    [ "ConfigManager", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7d3d7c10423d969f7544509f6fcca32f", null ],
+    [ "Model", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a76be9275393314adc64b1854808f7d6a", null ],
+    [ "ConfigManager", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#aed256505683b75907825133c3910b3b8", null ],
     [ "defaultConfigStore", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#afa189abd981623859e7ce2a015ffdb84", null ],
-    [ "getControlConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#acf5b851f666bd4a16681293e934d540e", null ],
-    [ "getLogConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9435f071d55cb326f33019971f58af38", null ],
-    [ "getSerialConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a30bbae26b065503252f3c42e3e34a877", null ],
+    [ "getConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7b1db0eeade96bcd3929704de74b7478", null ],
+    [ "init", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac9212fc0738a040828229775561e3769", null ],
     [ "load", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762", null ],
-    [ "setControlConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a1b79d82b3afd0d52dd7be94b3ee0e257", null ],
-    [ "setLogConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7418869c7332cb5bbb9f8dbe43e6d053", null ],
-    [ "setSerialConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7193d1fa7cfaed1bb17e7570d5663b5c", null ],
+    [ "setConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a58231749162fed0ce33e149cad88374d", null ],
     [ "store", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1", null ],
-    [ "m_controlConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac0a5bb26a64b8f9542f600c2969ac36d", null ],
-    [ "m_fileName", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40", null ],
-    [ "m_logConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a8be2b4daeb267b6c8eaebc494f0567b2", null ],
-    [ "m_serialConfig", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#af133ef95af1466597223c86a4f158a92", null ]
+    [ "m_config", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a2c387286b24de92df0a59a591b48e093", null ],
+    [ "m_fileName", "d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a722827bba08c8fdaabae1e688ee02d40", null ]
 ];

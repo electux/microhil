@@ -5,5 +5,6 @@ var searchData=
   ['home_2ecc_2',['home.cc',['../df/d98/home_8cc.html',1,'']]],
   ['home_2eh_3',['home.h',['../dd/df2/home_8h.html',1,'']]],
   ['home_5fmap_2ecc_4',['home_map.cc',['../d5/d85/home__map_8cc.html',1,'']]],
-  ['home_5fslots_2ecc_5',['home_slots.cc',['../de/d98/home__slots_8cc.html',1,'']]]
+  ['home_5fslots_2ecc_5',['home_slots.cc',['../de/d98/home__slots_8cc.html',1,'']]],
+  ['home_5fui_5futils_2ecc_6',['home_ui_utils.cc',['../de/dd4/home__ui__utils_8cc.html',1,'']]]
 ];

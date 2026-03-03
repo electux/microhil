@@ -1,0 +1,17 @@
+<map id="Electux::App::Params::Channel::boolToString" name="Electux::App::Params::Channel::boolToString">
+<area shape="rect" id="Node000001" title="Converts a boolean value to its string representation." alt="" coords="725,117,896,157"/>
+<area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aabb49317bb093bd7909d28d0735d71b6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="468,5,636,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="769,112,726,85,676,60,636,46,637,41,678,55,728,80,772,108"/>
+<area shape="rect" id="Node000003" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a4f0289b90bfe1c4d25d892049d6e6a31" title="Signal handler for enablement channel." alt="" coords="445,70,659,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="711,125,659,117,660,111,712,119"/>
+<area shape="rect" id="Node000006" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae59f559fc54c0f579d2fd21336cf7faa" title="Signal handler for timer mode (start process)." alt="" coords="427,149,677,203"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="712,155,678,160,677,155,711,149"/>
+<area shape="rect" id="Node000007" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a0a2fd79dc03d011f9fbc47ca2b7b081d" title="Signal handler for toggle mode." alt="" coords="445,227,659,282"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="769,167,726,193,678,217,647,230,645,225,676,212,724,188,767,162"/>
+<area shape="rect" id="Node000004" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa5db7dec159c2ee49ae10120f94d177e" title="Maps home (signals and slots)." alt="" coords="220,156,379,196"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="450,131,427,139,364,159,363,153,426,133,449,126"/>
+<area shape="rect" id="Node000005" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a59ec431c4bf878752b3d9a694236c8d0" title="AppHome constructor." alt="" coords="5,156,172,196"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="206,179,172,179,172,173,206,173"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="413,179,379,179,379,173,413,173"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="450,226,364,199,365,194,452,221"/>
+</map>

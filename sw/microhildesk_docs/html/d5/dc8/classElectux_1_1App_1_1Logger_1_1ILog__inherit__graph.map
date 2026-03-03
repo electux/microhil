@@ -1,5 +1,5 @@
 <map id="Electux::App::Logger::ILog" name="Electux::App::Logger::ILog">
-<area shape="rect" id="Node000001" title="ILog is the interface for logging implementations." alt="" coords="21,5,168,185"/>
-<area shape="rect" id="Node000002" href="$dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="Log class is a file&#45;based implementation of ILog." alt="" coords="5,233,184,539"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,199,97,233,92,233,92,199"/>
+<area shape="rect" id="Node000001" title="Interface for logging implementations." alt="" coords="21,5,168,205"/>
+<area shape="rect" id="Node000002" href="$dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="A file&#45;based implementation of the ILog interface." alt="" coords="5,253,184,639"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,219,97,253,92,253,92,219"/>
 </map>

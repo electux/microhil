@@ -1,31 +1,55 @@
-/* -*- Mode: CC; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * test_log_open.cc
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// test_log_open.cc
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include "test_log.h"
 
 using namespace Electux::App::Logger;
 
-////////////////////////////////////////////////////////////////////////////
-/// @brief Test file opening and closing
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test the file opening and basic lifecycle of the Logger.
+///
+/// Verifies that the logger can successfully create and open the designated
+/// log file on the filesystem and properly release the resource upon closing.
+///
+/// @param LogTest The test fixture.
+/// @param FileOpenTest The name of the test case.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(LogTest, FileOpenTest)
 {
-    // Should fail if no output file is set (handled in SetUp, but testing logic)
+	// Should fail if no output file is set (handled in SetUp, but testing logic)
+	EXPECT_TRUE(m_logger.open());
+	EXPECT_TRUE(std::filesystem::exists(m_testFileName));
+	EXPECT_TRUE(m_logger.close());
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test that calling open() multiple times does not cause errors.
+///
+/// Verifies that calling open() multiple times does not cause errors and that the
+/// logger remains in a valid state, allowing for idempotent open operations.
+///
+/// @param LogTest The test fixture.
+/// @param DoubleOpenTest The name of the test case.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST_F(LogTest, DoubleOpenTest)
+{
+    // Test double open
     EXPECT_TRUE(m_logger.open());
-    EXPECT_TRUE(std::filesystem::exists(m_testFileName));
-    EXPECT_TRUE(m_logger.close());
+    EXPECT_TRUE(m_logger.open()); // Should still be true/ready
 }

@@ -20,11 +20,11 @@
 <area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="788,236,752,236,752,231,788,231"/>
 <area shape="rect" id="Node000013" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a730fae65042fb06b1ca5792bc1c60e04" title="Signal handler for timer mode." alt="" coords="487,277,753,317"/>
 <area shape="poly" id="edge13_Node000007_Node000013" title=" " alt="" coords="789,262,709,280,708,275,787,256"/>
-<area shape="rect" id="Node000014" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae59f559fc54c0f579d2fd21336cf7faa" title="Signal handler for timer mode (start process)" alt="" coords="495,342,745,397"/>
+<area shape="rect" id="Node000014" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae59f559fc54c0f579d2fd21336cf7faa" title="Signal handler for timer mode (start process)." alt="" coords="495,342,745,397"/>
 <area shape="poly" id="edge15_Node000007_Node000014" title=" " alt="" coords="854,271,807,303,754,332,724,344,722,339,752,327,805,298,851,267"/>
 <area shape="rect" id="Node000015" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a0a2fd79dc03d011f9fbc47ca2b7b081d" title="Signal handler for toggle mode." alt="" coords="513,421,727,475"/>
 <area shape="poly" id="edge17_Node000007_Node000015" title=" " alt="" coords="879,274,828,344,794,381,755,412,728,426,726,421,752,407,790,377,824,341,874,271"/>
-<area shape="rect" id="Node000010" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa5db7dec159c2ee49ae10120f94d177e" title="Maps home (signals and slots)" alt="" coords="250,277,409,317"/>
+<area shape="rect" id="Node000010" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa5db7dec159c2ee49ae10120f94d177e" title="Maps home (signals and slots)." alt="" coords="250,277,409,317"/>
 <area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="507,196,488,204,418,241,360,279,357,275,415,237,486,199,505,191"/>
 <area shape="rect" id="Node000011" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a59ec431c4bf878752b3d9a694236c8d0" title="AppHome constructor." alt="" coords="5,277,172,317"/>
 <area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="236,300,172,300,172,295,236,295"/>

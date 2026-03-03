@@ -4,6 +4,9 @@ var annotated_dup =
       [ "App", "dd/d31/namespaceElectux_1_1App.html", [
         [ "Com", "d7/d9d/namespaceElectux_1_1App_1_1Com.html", [
           [ "ICom", "db/dca/classElectux_1_1App_1_1Com_1_1ICom.html", "db/dca/classElectux_1_1App_1_1Com_1_1ICom" ],
+          [ "ILibSerialPort", "d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort.html", "d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort" ],
+          [ "ISerial", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial" ],
+          [ "LibSerialPortWrapper", "da/d76/classElectux_1_1App_1_1Com_1_1LibSerialPortWrapper.html", "da/d76/classElectux_1_1App_1_1Com_1_1LibSerialPortWrapper" ],
           [ "SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom" ],
           [ "SerialParams", "d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html", "d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams" ]
         ] ],
@@ -17,10 +20,7 @@ var annotated_dup =
         ] ],
         [ "Model", "d9/d26/namespaceElectux_1_1App_1_1Model.html", [
           [ "IModel", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html", "d4/d2e/classElectux_1_1App_1_1Model_1_1IModel" ],
-          [ "Model", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html", "da/d81/classElectux_1_1App_1_1Model_1_1Model" ],
-          [ "ModelControl", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html", "d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl" ],
-          [ "ModelLog", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html", "d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog" ],
-          [ "ModelSerial", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html", "dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial" ]
+          [ "Model", "da/d81/classElectux_1_1App_1_1Model_1_1Model.html", "da/d81/classElectux_1_1App_1_1Model_1_1Model" ]
         ] ],
         [ "View", "d3/d81/namespaceElectux_1_1App_1_1View.html", [
           [ "About", "da/d2e/namespaceElectux_1_1App_1_1View_1_1About.html", [

@@ -1,132 +1,214 @@
-/* -*- Mode: H; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
-/*
- * serial_com.h
- * Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
- *
- * microhildesk is free software: you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * microhildesk is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program. If not, see <http://www.gnu.org/licenses/>.
- */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// serial_com.h
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include <com/icom.h>
+#include <com/iserial.h>
+#include <com/serial_lib_wrapper.h>
+#include <memory>
+#include <string>
+#include <vector>
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @namespace Electux::App::Com
+/// @brief Namespace for application communication components
 namespace Electux::App::Com
 {
-    ///////////////////////////////////////////////////////////////////////////
-    /// @brief SerialCom class is implementation of serial communication
-    class SerialCom : public ICom
-    {
-    public:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief SerialCom methods
-        ///   SerialCom constructor
-        ///   SerialCom destructor
-        inline SerialCom() noexcept = default;
-        ~SerialCom() noexcept;
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @class SerialCom
+	/// @brief Implementation of serial communication using LibSerial.
+	///
+	/// This class implements the ICom interface to provide concrete serial
+	/// port operations, including hardware configuration and data I/O.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	class SerialCom : public ICom, public ISerial
+	{
+	public:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Constructor for SerialCom.
+		/// @param port Unique pointer to an ILibSerialPort implementation.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		explicit SerialCom(std::unique_ptr<ILibSerialPort> port = std::make_unique<LibSerialPortWrapper>());
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Opens the serial communication channel
-        void open() final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Destructor for SerialCom.
+		/// Ensures the serial port is closed and resources are released.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		~SerialCom() noexcept;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Closes the serial communication channel
-        void close() final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Opens the serial communication channel.
+		/// @return True if the channel was successfully opened, false otherwise.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool open() final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Setup the serial port parameters
-        /// @param params represents parameters for the serial port
-        void setup(const SerialParams &params) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Closes the serial communication channel.
+		/// @return True if the channel was successfully closed, false otherwise.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool close() final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Read from serial communication channel
-        /// @param data represents data to be placed to after reading
-        /// @param len represents length of data to read before returning
-        void read(std::vector<uint8_t> &data, size_t len) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Checks if the communication channel is currently open.
+		/// @return True if the channel is open, false otherwise.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool isOpen() const final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Writes data to the serial communication channel
-        /// @param data represents data to be written to the serial port
-        void write(const std::vector<uint8_t> &data) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Reads data from the serial communication channel.
+		/// @param data Vector buffer to store the received bytes.
+		/// @param len The number of bytes to read before returning.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void read(std::vector<uint8_t> &data, size_t len) final;
 
-    protected:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts baud-rate from scopped enumerator to uint32_t
-        /// @param baud represents scoped enumerator value
-        /// @return uint32_t format of baud-rate
-        uint32_t baudToUint(const BaudRate baud) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Writes data to the serial communication channel.
+		/// @param data Vector containing the sequence of bytes to transmit.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void write(const std::vector<uint8_t> &data) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts baud-rate from uint32_t to scopped enumerator
-        /// @param baud represents uint32_t value
-        /// @return scoped enumerator format of baud-rate
-        BaudRate uintToBaud(const uint32_t baud) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Configures the serial port with specific parameters.
+		/// @param params Reference to SerialParams structure (configuration).
+		/// @return True if setup was successful, false otherwise.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		bool setup(const SerialParams &params) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts data-bits from scopped enumerator to uint32_t
-        /// @param data represents scoped enumerator value
-        /// @return uint32_t format of data-bits
-        uint32_t dataBitsToUint(const CharacterSize data) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the baud rate for the serial port.
+		/// @param baudRate The desired baud rate.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setBaudRate(BaudRate baudRate) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts data-bits from uint32_t to scopped enumerator
-        /// @param data represents uint32_t format
-        /// @return scoped enumerator format of data-bits
-        CharacterSize uintToDataBits(const uint32_t data) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the character size for the serial port.
+		/// @param characterSize The desired character size.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setCharacterSize(CharacterSize characterSize) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts parity from scopped enumerator to uint32_t
-        /// @param parity represents scoped enumerator value
-        /// @return uint32_t format of parity
-        uint32_t parityToUint(const Parity parity) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the parity mode for the serial port.
+		/// @param parity The desired parity mode.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setParity(Parity parity) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts parity from uint32_t to scopped enumerator
-        /// @param parity represents uint32_t format
-        /// @return scoped enumerator format of parity
-        Parity uintToParity(const uint32_t parity) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the number of stop bits for the serial port.
+		/// @param stopBits The desired number of stop bits.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setStopBits(StopBits stopBits) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts stop-bits from scopped enumerator to uint32_t
-        /// @param stop represents scoped enumerator value
-        /// @return uint32_t format of stop-bits
-        uint32_t stopBitsToUint(const StopBits stop) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the flow control mode for the serial port.
+		/// @param flowControl The desired flow control mode.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setFlowControl(FlowControl flowControl) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts stop-bits from uint32_t to scopped enumerator
-        /// @param stop represents uint32_t format
-        /// @return scoped enumerator format of stop-bits
-        StopBits uintToStopBits(const uint32_t stop) final;
+	protected:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @name Utility Conversion Methods
+		/// Overridden helpers for LibSerial enum and numeric type conversion.
+		/// @{
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts flow-control from scopped enumerator to uint32_t
-        /// @param flow represents scoped enumerator value
-        /// @return uint32_t format of flow-control
-        uint32_t flowControlToUint(const FlowControl flow) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts BaudRate enum to numeric uint32_t.
+		/// @param baud Scoped enumerator value.
+		/// @return Numeric representation of the baud rate.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		uint32_t baudToUint(const BaudRate baud) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Converts flow-control from uint32_t to scopped enumerator
-        /// @param flow represents uint32_t format
-        /// @return scoped enumerator format of flow-control
-        FlowControl uintToFlowControl(const uint32_t flow) final;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts numeric uint32_t to BaudRate enum.
+		/// @param baud Numeric value.
+		/// @return Scoped enumerator for the baud rate.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		BaudRate uintToBaud(const uint32_t baud) final;
 
-    private:
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Serial port instance
-        SerialPort m_serialPort{};
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts CharacterSize enum to numeric uint32_t.
+		/// @param data Scoped enumerator value.
+		/// @return Numeric representation of data bits.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		uint32_t dataBitsToUint(const CharacterSize data) final;
 
-        ///////////////////////////////////////////////////////////////////////
-        /// @brief Serial port device file path
-        std::string m_device{};
-    };
-};
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts numeric uint32_t to CharacterSize enum.
+		/// @param data Numeric value.
+		/// @return Scoped enumerator for data bits.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		CharacterSize uintToDataBits(const uint32_t data) final;
 
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts Parity enum to numeric uint32_t.
+		/// @param parity Scoped enumerator value.
+		/// @return Numeric representation of parity.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		uint32_t parityToUint(const Parity parity) final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts numeric uint32_t to Parity enum.
+		/// @param parity Numeric value.
+		/// @return Scoped enumerator for parity.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		Parity uintToParity(const uint32_t parity) final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts StopBits enum to numeric uint32_t.
+		/// @param stop Scoped enumerator value.
+		/// @return Numeric representation of stop bits.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		uint32_t stopBitsToUint(const StopBits stop) final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts numeric uint32_t to StopBits enum.
+		/// @param stop Numeric value.
+		/// @return Scoped enumerator for stop bits.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		StopBits uintToStopBits(const uint32_t stop) final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts FlowControl enum to numeric uint32_t.
+		/// @param flow Scoped enumerator value.
+		/// @return Numeric representation of flow control.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		uint32_t flowControlToUint(const FlowControl flow) final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts numeric uint32_t to FlowControl enum.
+		/// @param flow Numeric value.
+		/// @return Scoped enumerator for flow control.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		FlowControl uintToFlowControl(const uint32_t flow) final;
+
+		/// @}
+		////////////////////////////////////////////////////////////////////////////////////////////////
+
+	private:
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Unique pointer to the ILibSerialPort implementation for
+		///        serial port operations.
+		/// @{
+		/// @brief  Adapter for serial port abstraction
+		std::unique_ptr<ILibSerialPort> m_serialPort{nullptr};
+		/// @brief  Path to the serial port device (e.g., "/dev/ttyS0").
+		std::string m_device{};
+		/// @}
+		////////////////////////////////////////////////////////////////////////////////////////////////
+	};
+}

@@ -1,7 +1,7 @@
 <map id="Electux::App::Model::Model" name="Electux::App::Model::Model">
-<area shape="rect" id="Node000001" title="Model definition that implements IModel interface." alt="" coords="92,268,235,448"/>
-<area shape="rect" id="Node000002" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="5,5,148,205"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,217,135,267,130,269,113,219"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="172,65,331,145"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,147,203,253,198,251,235,145"/>
+<area shape="rect" id="Node000001" title="Concrete implementation of the IModel interface." alt="" coords="92,348,235,628"/>
+<area shape="rect" id="Node000002" href="$d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="Interface for application data models." alt="" coords="5,5,148,285"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,298,131,347,125,348,113,299"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="172,105,331,185"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="244,186,206,333,201,332,239,185"/>
 </map>

@@ -2,11 +2,19 @@ var searchData=
 [
   ['serial_5fcom_2ecc_0',['serial_com.cc',['../d0/d38/serial__com_8cc.html',1,'']]],
   ['serial_5fcom_2eh_1',['serial_com.h',['../df/d29/serial__com_8h.html',1,'']]],
-  ['serial_5fcom_5fparams_2eh_2',['serial_com_params.h',['../d4/d60/serial__com__params_8h.html',1,'']]],
-  ['serial_5fcom_5futils_2ecc_3',['serial_com_utils.cc',['../d1/df2/serial__com__utils_8cc.html',1,'']]],
-  ['settings_2ecc_4',['settings.cc',['../d3/d8e/settings_8cc.html',1,'']]],
-  ['settings_2eh_5',['settings.h',['../de/d60/settings_8h.html',1,'']]],
-  ['settings_5fmap_2ecc_6',['settings_map.cc',['../d0/d67/settings__map_8cc.html',1,'']]],
-  ['settings_5fsetup_2eh_7',['settings_setup.h',['../df/d7c/settings__setup_8h.html',1,'']]],
-  ['settings_5fslots_2ecc_8',['settings_slots.cc',['../dd/dc1/settings__slots_8cc.html',1,'']]]
+  ['serial_5fcom_5fbaud_5frate_2ecc_2',['serial_com_baud_rate.cc',['../de/d89/serial__com__baud__rate_8cc.html',1,'']]],
+  ['serial_5fcom_5fdata_5fbits_2ecc_3',['serial_com_data_bits.cc',['../de/d45/serial__com__data__bits_8cc.html',1,'']]],
+  ['serial_5fcom_5fflow_5fcontrol_2ecc_4',['serial_com_flow_control.cc',['../d7/df7/serial__com__flow__control_8cc.html',1,'']]],
+  ['serial_5fcom_5fparams_2eh_5',['serial_com_params.h',['../d4/d60/serial__com__params_8h.html',1,'']]],
+  ['serial_5fcom_5fparity_2ecc_6',['serial_com_parity.cc',['../d6/d14/serial__com__parity_8cc.html',1,'']]],
+  ['serial_5fcom_5fsetup_2ecc_7',['serial_com_setup.cc',['../db/df2/serial__com__setup_8cc.html',1,'']]],
+  ['serial_5fcom_5fstop_5fbits_2ecc_8',['serial_com_stop_bits.cc',['../d3/d64/serial__com__stop__bits_8cc.html',1,'']]],
+  ['serial_5flib_5fwrapper_2ecc_9',['serial_lib_wrapper.cc',['../d0/df0/serial__lib__wrapper_8cc.html',1,'']]],
+  ['serial_5flib_5fwrapper_2eh_10',['serial_lib_wrapper.h',['../df/ddd/serial__lib__wrapper_8h.html',1,'']]],
+  ['settings_2ecc_11',['settings.cc',['../d3/d8e/settings_8cc.html',1,'']]],
+  ['settings_2eh_12',['settings.h',['../de/d60/settings_8h.html',1,'']]],
+  ['settings_5fmap_2ecc_13',['settings_map.cc',['../d0/d67/settings__map_8cc.html',1,'']]],
+  ['settings_5fsetup_2eh_14',['settings_setup.h',['../df/d7c/settings__setup_8h.html',1,'']]],
+  ['settings_5fslots_2ecc_15',['settings_slots.cc',['../dd/dc1/settings__slots_8cc.html',1,'']]],
+  ['settings_5fui_5futils_2ecc_16',['settings_ui_utils.cc',['../d9/d33/settings__ui__utils_8cc.html',1,'']]]
 ];

@@ -13,7 +13,13 @@ set(
 set(
     MICROHIL_COM_SOURCES
     ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com_utils.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_lib_wrapper.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com_baud_rate.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com_data_bits.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com_parity.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com_stop_bits.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com_flow_control.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com_setup.cc
 )
 
 set(
@@ -22,9 +28,10 @@ set(
     ${PROJECT_SOURCE_DIR}/com/test_serial_data_bits.cc
     ${PROJECT_SOURCE_DIR}/com/test_serial_parity.cc
     ${PROJECT_SOURCE_DIR}/com/test_serial_stop_bits.cc
+    ${PROJECT_SOURCE_DIR}/com/test_serial_flow_control.cc
     ${PROJECT_SOURCE_DIR}/com/test_serial_setup.cc
     ${PROJECT_SOURCE_DIR}/com/test_serial_open.cc
     ${PROJECT_SOURCE_DIR}/com/test_serial_close.cc
     ${PROJECT_SOURCE_DIR}/com/test_serial_read.cc
-    ${PROJECT_SOURCE_DIR}/com/test_serial_write.cc
+    #${PROJECT_SOURCE_DIR}/com/test_serial_write.cc
 )

@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../d9/d0f/main_8cc.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cc']]],
-  ['mapping_1',['mapping',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48',1,'Electux::App::EntryApplication::mapping()'],['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aa5db7dec159c2ee49ae10120f94d177e',1,'Electux::App::View::AppHome::mapping()'],['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#a5763d8088e72a080dd732c16851b5170',1,'Electux::App::View::Settings::AppSettings::mapping()']]],
-  ['model_2',['Model',['../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#aa3f587e7bc73f12c7de86a6aa8d03e69',1,'Electux::App::Model::Model']]],
-  ['modelcontrol_3',['ModelControl',['../d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html#afa3e18d0f7ce00779a42a0ffe0e7966b',1,'Electux::App::Model::ModelControl']]],
-  ['modellog_4',['ModelLog',['../d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html#ab0572d7f84ad640a824058d5f3e1fef6',1,'Electux::App::Model::ModelLog']]],
-  ['modelserial_5',['ModelSerial',['../dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html#a97d5e36e492f8e9375f781f8eb54cd58',1,'Electux::App::Model::ModelSerial']]]
+  ['libserialportwrapper_0',['LibSerialPortWrapper',['../da/d76/classElectux_1_1App_1_1Com_1_1LibSerialPortWrapper.html#a3fbfde6d9335a61f8603ad621b695730',1,'Electux::App::Com::LibSerialPortWrapper']]],
+  ['load_1',['load',['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a6a85e1eb118a61f4813500d9fb42e762',1,'Electux::App::Config::ConfigManager::load()'],['../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#aa434d7db6de65ca688ad3ff8bb93248e',1,'Electux::App::Config::IConfig::load()']]],
+  ['log_2',['log',['../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#a02cdfae675bef5abf19ca591a3e82dc0',1,'Electux::App::Logger::ILog::log()'],['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#aa5834f3054f9380260bb8b2b90cc74c8',1,'Electux::App::Logger::Log::log(const std::string &amp;message, LogLevel level) final'],['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a3b057da5d2fec3cc353f3c91f2c821b7',1,'Electux::App::Logger::Log::Log() noexcept=default'],['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a9a9040d926e10c40da6b4191878786e6',1,'Electux::App::Logger::Log::Log(const Log &amp;)=delete']]]
 ];

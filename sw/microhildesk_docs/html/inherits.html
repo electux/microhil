@@ -99,73 +99,76 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 </div><table border="0" cellspacing="10" cellpadding="0">
 <tr><td><img src="inherit_graph_0.png" border="0" usemap="#aElectux_1_1App_1_1Com_1_1ICom" alt=""/>
 <map name="aElectux_1_1App_1_1Com_1_1ICom" id="aElectux_1_1App_1_1Com_1_1ICom">
-<area shape="rect" href="db/dca/classElectux_1_1App_1_1Com_1_1ICom.html" title="ICom class is interface for serial communication." alt="" coords="5,13,188,38"/>
-<area shape="rect" href="d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="SerialCom class is implementation of serial communication." alt="" coords="236,5,385,45"/>
-<area shape="poly" title=" " alt="" coords="202,23,236,23,236,28,202,28"/>
+<area shape="rect" href="db/dca/classElectux_1_1App_1_1Com_1_1ICom.html" title="Interface for communication implementations." alt="" coords="5,5,188,31"/>
+<area shape="rect" href="d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="Implementation of serial communication using LibSerial." alt="" coords="236,27,385,67"/>
+<area shape="poly" title=" " alt="" coords="202,30,236,35,236,40,201,35"/>
+<area shape="rect" href="da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html" title="Interface for serial communication implementations." alt="" coords="22,55,171,95"/>
+<area shape="poly" title=" " alt="" coords="185,61,235,54,236,60,186,66"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" usemap="#aElectux_1_1App_1_1Com_1_1SerialParams" alt=""/>
+<tr><td><img src="inherit_graph_1.png" border="0" usemap="#aElectux_1_1App_1_1Com_1_1ILibSerialPort" alt=""/>
+<map name="aElectux_1_1App_1_1Com_1_1ILibSerialPort" id="aElectux_1_1App_1_1Com_1_1ILibSerialPort">
+<area shape="rect" href="d6/dac/classElectux_1_1App_1_1Com_1_1ILibSerialPort.html" title="Interface wrapper around LibSerial::SerialPort for testability." alt="" coords="5,5,155,45"/>
+<area shape="rect" href="da/d76/classElectux_1_1App_1_1Com_1_1LibSerialPortWrapper.html" title="Wrapper class for LibSerial::SerialPort implementing ILibSerialPort." alt="" coords="203,5,361,45"/>
+<area shape="poly" title=" " alt="" coords="169,23,203,23,203,28,169,28"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_2.png" border="0" usemap="#aElectux_1_1App_1_1Com_1_1SerialParams" alt=""/>
 <map name="aElectux_1_1App_1_1Com_1_1SerialParams" id="aElectux_1_1App_1_1Com_1_1SerialParams">
-<area shape="rect" href="d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html" title="Declaration of serial parameters structure." alt="" coords="5,5,155,45"/>
+<area shape="rect" href="d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html" title="Configuration structure for serial port parameters." alt="" coords="5,5,155,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" usemap="#aElectux_1_1App_1_1Config_1_1IConfig" alt=""/>
+<tr><td><img src="inherit_graph_3.png" border="0" usemap="#aElectux_1_1App_1_1Config_1_1IConfig" alt=""/>
 <map name="aElectux_1_1App_1_1Config_1_1IConfig" id="aElectux_1_1App_1_1Config_1_1IConfig">
-<area shape="rect" href="db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html" title="IConfig class is interface for configuration mechanism." alt="" coords="5,5,157,45"/>
-<area shape="rect" href="d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html" title="Config class is implementation for configuration mechanism." alt="" coords="205,5,357,45"/>
+<area shape="rect" href="db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html" title="Interface for configuration mechanism." alt="" coords="5,5,157,45"/>
+<area shape="rect" href="d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html" title="Implementation of the IConfig interface for configuration management." alt="" coords="205,5,357,45"/>
 <area shape="poly" title=" " alt="" coords="171,23,205,23,205,28,171,28"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" usemap="#aElectux_1_1App_1_1Logger_1_1ILog" alt=""/>
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aElectux_1_1App_1_1Logger_1_1ILog" alt=""/>
 <map name="aElectux_1_1App_1_1Logger_1_1ILog" id="aElectux_1_1App_1_1Logger_1_1ILog">
-<area shape="rect" href="d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="ILog is the interface for logging implementations." alt="" coords="5,5,160,45"/>
-<area shape="rect" href="dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="Log class is a file&#45;based implementation of ILog." alt="" coords="208,13,395,38"/>
+<area shape="rect" href="d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html" title="Interface for logging implementations." alt="" coords="5,5,160,45"/>
+<area shape="rect" href="dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html" title="A file&#45;based implementation of the ILog interface." alt="" coords="208,13,395,38"/>
 <area shape="poly" title=" " alt="" coords="174,23,208,23,208,28,174,28"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aElectux_1_1App_1_1Model_1_1IModel" alt=""/>
+<tr><td><img src="inherit_graph_5.png" border="0" usemap="#aElectux_1_1App_1_1Model_1_1IModel" alt=""/>
 <map name="aElectux_1_1App_1_1Model_1_1IModel" id="aElectux_1_1App_1_1Model_1_1IModel">
-<area shape="rect" href="d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="IModel declaration." alt="" coords="5,69,156,109"/>
-<area shape="rect" href="da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Model definition that implements IModel interface." alt="" coords="204,69,355,109"/>
-<area shape="poly" title=" " alt="" coords="169,87,204,87,204,92,169,92"/>
-<area shape="rect" href="d9/d2a/classElectux_1_1App_1_1Model_1_1ModelControl.html" title="ModelControl definition for control configuration." alt="" coords="403,5,553,45"/>
-<area shape="poly" title=" " alt="" coords="354,63,415,43,416,48,356,68"/>
-<area shape="rect" href="d8/d7e/classElectux_1_1App_1_1Model_1_1ModelLog.html" title="ModelLog definition for log configuration." alt="" coords="403,69,553,109"/>
-<area shape="poly" title=" " alt="" coords="368,87,402,87,402,92,368,92"/>
-<area shape="rect" href="dc/d15/classElectux_1_1App_1_1Model_1_1ModelSerial.html" title="ModelSerial definition for serial configuration." alt="" coords="403,133,553,173"/>
-<area shape="poly" title=" " alt="" coords="356,111,416,131,415,136,354,116"/>
+<area shape="rect" href="d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html" title="Interface for application data models." alt="" coords="5,5,156,45"/>
+<area shape="rect" href="da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Concrete implementation of the IModel interface." alt="" coords="204,5,355,45"/>
+<area shape="poly" title=" " alt="" coords="169,23,204,23,204,28,169,28"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_5.png" border="0" usemap="#aElectux_1_1App_1_1View_1_1SettingsSetup" alt=""/>
+<tr><td><img src="inherit_graph_6.png" border="0" usemap="#aElectux_1_1App_1_1View_1_1SettingsSetup" alt=""/>
 <map name="aElectux_1_1App_1_1View_1_1SettingsSetup" id="aElectux_1_1App_1_1View_1_1SettingsSetup">
-<area shape="rect" href="dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html" title="Setup settings for collected parameters." alt="" coords="5,5,148,45"/>
+<area shape="rect" href="dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html" title="Data structure for aggregating various configuration models." alt="" coords="5,5,148,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_6.png" border="0" usemap="#aGtk_1_1AboutDialog" alt=""/>
+<tr><td><img src="inherit_graph_7.png" border="0" usemap="#aGtk_1_1AboutDialog" alt=""/>
 <map name="aGtk_1_1AboutDialog" id="aGtk_1_1AboutDialog">
 <area shape="rect" title=" " alt="" coords="5,13,139,38"/>
-<area shape="rect" href="d6/d7a/classElectux_1_1App_1_1View_1_1About_1_1AppAbout.html" title="About view dialog definition." alt="" coords="187,5,329,45"/>
+<area shape="rect" href="d6/d7a/classElectux_1_1App_1_1View_1_1About_1_1AppAbout.html" title="About view dialog definition for the microhildesk application." alt="" coords="187,5,329,45"/>
 <area shape="poly" title=" " alt="" coords="153,23,186,23,186,28,153,28"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_7.png" border="0" usemap="#aGtk_1_1Application" alt=""/>
+<tr><td><img src="inherit_graph_8.png" border="0" usemap="#aGtk_1_1Application" alt=""/>
 <map name="aGtk_1_1Application" id="aGtk_1_1Application">
 <area shape="rect" title=" " alt="" coords="5,5,132,31"/>
 <area shape="rect" href="d0/dcc/classElectux_1_1App_1_1EntryApplication.html" title="Entry point for application and main application class." alt="" coords="180,5,399,31"/>
 <area shape="poly" title=" " alt="" coords="146,15,180,15,180,21,146,21"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_8.png" border="0" usemap="#aGtk_1_1ApplicationWindow" alt=""/>
+<tr><td><img src="inherit_graph_9.png" border="0" usemap="#aGtk_1_1ApplicationWindow" alt=""/>
 <map name="aGtk_1_1ApplicationWindow" id="aGtk_1_1ApplicationWindow">
 <area shape="rect" title=" " alt="" coords="5,13,184,38"/>
-<area shape="rect" href="d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html" title="Home view window definition." alt="" coords="232,5,375,45"/>
+<area shape="rect" href="d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html" title="Home view window definition for the microhildesk application." alt="" coords="232,5,375,45"/>
 <area shape="poly" title=" " alt="" coords="198,23,232,23,232,28,198,28"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_9.png" border="0" usemap="#aGtk_1_1Window" alt=""/>
+<tr><td><img src="inherit_graph_10.png" border="0" usemap="#aGtk_1_1Window" alt=""/>
 <map name="aGtk_1_1Window" id="aGtk_1_1Window">
 <area shape="rect" title=" " alt="" coords="5,45,111,70"/>
-<area shape="rect" href="d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp.html" title="Help view window definition." alt="" coords="172,5,315,45"/>
+<area shape="rect" href="d8/d5e/classElectux_1_1App_1_1View_1_1Help_1_1AppHelp.html" title="Help view window definition for application documentation." alt="" coords="172,5,315,45"/>
 <area shape="poly" title=" " alt="" coords="124,43,171,35,172,40,124,49"/>
 <area shape="rect" href="d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html" title="Application settings window definition." alt="" coords="159,69,328,109"/>
 <area shape="poly" title=" " alt="" coords="124,66,159,72,158,77,124,71"/>
@@ -177,7 +180,7 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Feb 21 2026 08:57:48 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Mar 3 2026 21:03:01 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

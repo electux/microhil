@@ -1,7 +1,13 @@
 var namespaceElectux_1_1App_1_1Params =
 [
     [ "Channel", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html", [
-      [ "cNumOfChannels", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1", null ]
+      [ "boolToString", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8e903207fd21a59805ea41f189f7ed65", null ],
+      [ "cEmptyString", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#acd316a7272a030d9e9cac585204d5bfc", null ],
+      [ "cFalse", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a999359e470a9421d335504fe59bc2255", null ],
+      [ "cNumOfChannels", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a8ba1a84b52d64ec5140d4dc2d8bd9bf1", null ],
+      [ "cSpaceDelimiter", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#acc3dfaa2ae23ef661276f01ac87b192d", null ],
+      [ "cSpaceString", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a1b7d11c54f76120ee83f22a8bb0fed27", null ],
+      [ "cTrue", "da/d00/namespaceElectux_1_1App_1_1Params_1_1Channel.html#a899d18ee3f19d34e447202d5d82bd80e", null ]
     ] ],
     [ "LogLevels", "d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html", [
       [ "clogLevelError", "d7/d38/namespaceElectux_1_1App_1_1Params_1_1LogLevels.html#a814231f41c714e03fff782a898344751", null ],

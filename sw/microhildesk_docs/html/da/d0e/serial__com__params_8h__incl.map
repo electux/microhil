@@ -1,5 +1,7 @@
 <map id="params/serial_com_params.h" name="params/serial_com_params.h">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,5,220,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="64,79,161,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,31,115,65,110,65,110,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="26,79,93,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,33,78,69,74,66,102,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="117,79,215,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,29,151,66,147,69,119,33"/>
 </map>

@@ -1,15 +1,21 @@
 var classElectux_1_1App_1_1Com_1_1SerialCom =
 [
-    [ "SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ac6737b8f941ebbafd4f75687b41cdef4", null ],
+    [ "SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ac5a79a29508b8a88fc9247cbf1ea4562", null ],
     [ "~SerialCom", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a5fa5dcf53ea60ba07a040cd380c1c73c", null ],
     [ "baudToUint", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#aef382accdadf59ec09dc324b3a22467b", null ],
-    [ "close", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a300f3b50c888f7326b47be0c7d4172dc", null ],
+    [ "close", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a12f50299aadd15877a743964e9c7f2ea", null ],
     [ "dataBitsToUint", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a8b67b8052dd497c5a91d9cb1ef2e39f4", null ],
     [ "flowControlToUint", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a614fcb9a73bb257d460fa57b13c402e4", null ],
-    [ "open", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a8f218d4dae259e29bddff87461de8370", null ],
+    [ "isOpen", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a1348560df4c4799c2c52690821303ac6", null ],
+    [ "open", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a4d1ed234a3bfdd397df4a472d241db9d", null ],
     [ "parityToUint", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#acb55069cbbe05ef071f564e185ecb3be", null ],
     [ "read", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#abaf96bbaeb3ed8e2c8d2bc827425ddb5", null ],
-    [ "setup", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a66a7276fc495c0a1509d4c91092aaf6e", null ],
+    [ "setBaudRate", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a151f8c8203d489d6de8a1458b38b57da", null ],
+    [ "setCharacterSize", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ad225d6f5b9f923854f4a515972c43d62", null ],
+    [ "setFlowControl", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ab285abb9d28c87cad7e99766e8c0893a", null ],
+    [ "setParity", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a6985af0b97dd1257b4f1629c9b0ebeb1", null ],
+    [ "setStopBits", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#af366e7682d6d3d56da9f04d3e9a73ca3", null ],
+    [ "setup", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a1ce52ce39d7afdfb0a231f3575612661", null ],
     [ "stopBitsToUint", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ad998c2655da21b52bd05706d953386e2", null ],
     [ "uintToBaud", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#aafcf8ee4c33880b664e1ab23afd72b83", null ],
     [ "uintToDataBits", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a717ef09ba634cf67561a8c02a6e5433d", null ],
@@ -18,5 +24,5 @@ var classElectux_1_1App_1_1Com_1_1SerialCom =
     [ "uintToStopBits", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a9718fdec2a5fdfdc7f5c502f111b6d53", null ],
     [ "write", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a97378427ef817d1364ca07bf9e7a8535", null ],
     [ "m_device", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a4f4d22e9baae8964c65fd88cc23bc56e", null ],
-    [ "m_serialPort", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ad3eade8fb4d6b6b8d10eab46e9668f94", null ]
+    [ "m_serialPort", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a16e529e480245a4ce8c939b71f0720b6", null ]
 ];
