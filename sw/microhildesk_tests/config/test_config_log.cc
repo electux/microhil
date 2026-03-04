@@ -34,6 +34,7 @@ using namespace Electux::App::Config;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(ConfigManagerTest, LogConfigTest)
 {
+	m_config->init();
 	m_config->load();
 	const auto& logCfg = m_config->getConfig();
 

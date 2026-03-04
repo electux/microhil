@@ -41,10 +41,15 @@ TEST_F(SerialComTest, closeSerialPortTest)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief 
+/// @brief Test closing the mock ICom interface.
 ///
+/// Verifies that the MockICom mock object correctly handles expectations for
+/// open and close method calls.
+///
+/// @param MockIComTest The test suite name.
+/// @param CloseIComTest The test case name.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-TEST(MockIComTest, OpenCloseTest)
+TEST(MockIComTest, CloseIComTest)
 {
     MockICom mockCom;
 
@@ -56,10 +61,15 @@ TEST(MockIComTest, OpenCloseTest)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief 
+/// @brief Test closing the mock ILibSerialPort interface.
 ///
+/// Verifies that the MockILibSerialPort mock object correctly handles expectations
+/// for Open and Close method calls.
+///
+/// @param MockILibSerialPortTest The test suite name.
+/// @param CloseILibSerialPortTest The test case name.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-TEST(MockILibSerialPortTest, OpenCloseTest)
+TEST(MockILibSerialPortTest, CloseILibSerialPortTest)
 {
     MockILibSerialPort mockPort;
 

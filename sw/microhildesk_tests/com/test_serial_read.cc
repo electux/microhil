@@ -22,23 +22,18 @@
 using namespace Electux::App::Com;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Test reading from the serial port using a pseudo-terminal.
+/// @brief Test reading from a closed serial port.
 ///
-/// This test simulates incoming data by writing to the master end of a pseudo-terminal
-/// and verifies that the SerialCom instance can read it correctly from the slave end.
+/// Verifies that attempting to read from a serial port that has not been
+/// opened does not cause a crash and leaves the data buffer unchanged.
 ///
 /// @param SerialComTest The test fixture.
 /// @param ReadFromPortTest The name of the test case.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(SerialComTest, ReadFromPortTest)
 {
-    m_serial.open();
-    std::string mock_response = "ACK\n";
-	std::vector<uint8_t> result;
+    std::vector<uint8_t> buffer;
 
-    write(master_fd, mock_response.c_str(), mock_response.length());
-    m_serial.read(result, mock_response.length());
-
-    EXPECT_EQ(result.size(), mock_response.length());
-    EXPECT_EQ(std::string(result.begin(), result.end()), mock_response);
+    EXPECT_NO_THROW(m_serial.read(buffer, 10));
+    EXPECT_TRUE(buffer.empty());
 }

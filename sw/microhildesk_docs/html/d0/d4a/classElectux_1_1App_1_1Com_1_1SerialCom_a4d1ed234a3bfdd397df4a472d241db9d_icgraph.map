@@ -1,14 +1,16 @@
 <map id="Electux::App::Com::SerialCom::open" name="Electux::App::Com::SerialCom::open">
-<area shape="rect" id="Node000001" title="Opens the serial communication channel." alt="" coords="623,69,772,109"/>
-<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a1348560df4c4799c2c52690821303ac6" title="Checks if the communication channel is currently open." alt="" coords="425,69,575,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="609,101,575,101,575,95,609,96"/>
-<area shape="poly" id="edge4_Node000002_Node000001" title=" " alt="" coords="589,78,622,78,622,83,589,83"/>
+<area shape="rect" id="Node000001" title="Opens the serial communication channel." alt="" coords="623,101,772,141"/>
+<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a1348560df4c4799c2c52690821303ac6" title="Checks if the communication channel is currently open." alt="" coords="425,101,575,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="609,133,575,133,575,127,609,128"/>
+<area shape="poly" id="edge4_Node000002_Node000001" title=" " alt="" coords="589,110,622,110,622,115,589,115"/>
 <area shape="rect" id="Node000003" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a12f50299aadd15877a743964e9c7f2ea" title="Closes the serial communication channel." alt="" coords="228,5,377,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="424,68,364,48,366,43,426,63"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,97,376,60,350,48,353,43,378,55,452,93"/>
 <area shape="rect" id="Node000005" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#abaf96bbaeb3ed8e2c8d2bc827425ddb5" title="Reads data from the serial communication channel." alt="" coords="228,69,377,109"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="411,92,378,92,378,87,411,87"/>
-<area shape="rect" id="Node000006" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a97378427ef817d1364ca07bf9e7a8535" title="Writes data to the serial communication channel." alt="" coords="228,133,377,173"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="426,116,366,136,364,131,424,111"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="411,110,377,104,378,99,412,104"/>
+<area shape="rect" id="Node000006" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a1ce52ce39d7afdfb0a231f3575612661" title="Configures the serial port with specific parameters." alt="" coords="228,133,377,173"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="412,138,378,144,377,139,411,133"/>
+<area shape="rect" id="Node000007" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a97378427ef817d1364ca07bf9e7a8535" title="Writes data to the serial communication channel." alt="" coords="228,197,377,237"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="452,150,378,188,353,200,350,195,376,183,449,145"/>
 <area shape="rect" id="Node000004" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a5fa5dcf53ea60ba07a040cd380c1c73c" title="Destructor for SerialCom. Ensures the serial port is closed and resources are released." alt="" coords="5,5,180,45"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,28,180,28,180,23,214,23"/>
 </map>

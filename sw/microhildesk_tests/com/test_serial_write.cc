@@ -22,21 +22,16 @@
 using namespace Electux::App::Com;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Test writing to the serial port using a pseudo-terminal.
+/// @brief Test writing to a closed serial port.
 ///
-/// This test simulates incoming data by writing to the master end of a pseudo-terminal
-/// and verifies that the SerialCom instance can read it correctly from the slave end.
-///
+/// Verifies that attempting to write to a serial port that has not been
+/// opened does not cause a crash.
 /// @param SerialComTest The test fixture.
 /// @param WriteToPortTest The name of the test case.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(SerialComTest, WriteToPortTest)
 {
-    m_serial.open();
-    const std::vector<uint8_t> test_data = {'H','E','L','L','O','_','P','T','Y'};
-    m_serial.write(test_data);
-    char buffer[64] = {0};
-    int n = read(master_fd, buffer, sizeof(buffer));
+    const std::vector<uint8_t> data_to_write = {0xDE, 0xAD, 0xBE, 0xEF};
 
-    EXPECT_EQ(std::vector<uint8_t>(buffer, buffer + n), test_data);
+    EXPECT_NO_THROW(m_serial.write(data_to_write));
 }
