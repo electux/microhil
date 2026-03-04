@@ -77,6 +77,7 @@ TEST_F(ConfigManagerTest, StoreFailureTest)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(ConfigManagerTest, ExplicitDefaultStoreTest)
 {
+	m_config->init();
 	auto serial = m_config->getConfig();
 	const auto deviceKey = serial.toString(ModelSerialKey::Device);
 

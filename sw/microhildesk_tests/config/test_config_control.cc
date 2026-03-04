@@ -34,6 +34,7 @@ using namespace Electux::App::Config;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(ConfigManagerTest, ControlConfigTest)
 {
+	m_config->init();
 	m_config->load();
 	const auto& control = m_config->getConfig();
 

@@ -34,6 +34,7 @@ using namespace Electux::App::Config;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(ConfigManagerTest, SerialConfigTest)
 {
+	m_config->init();
 	m_config->load();
 	const auto& serial = m_config->getConfig();
 

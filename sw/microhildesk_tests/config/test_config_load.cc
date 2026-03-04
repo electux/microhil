@@ -39,6 +39,7 @@ TEST_F(ConfigManagerTest, LoadConfigTest)
 	ofs << "device=/dev/ttyUSB0\n";
 	ofs.close();
 
+	m_config->init();
 	bool success = m_config->load();
 	EXPECT_TRUE(success);
 
@@ -65,6 +66,7 @@ TEST_F(ConfigManagerTest, MissingFileLoadDefaultsTest)
 	}
 
 	// load() should call defaultConfigStore() and return true
+	m_config->init();
 	EXPECT_TRUE(m_config->load());
 	EXPECT_TRUE(std::filesystem::exists(m_testConfigFileName));
 
@@ -95,6 +97,7 @@ TEST_F(ConfigManagerTest, ParsingEdgeCasesTest)
 		ofs.close();
 	}
 
+	m_config->init();
 	EXPECT_TRUE(m_config->load());
 	// Verification is implicit: if parser crashes or fails on malformed lines, 
 	// the test fails.

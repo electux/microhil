@@ -29,6 +29,18 @@ using namespace Electux::App::Com;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool SerialCom::setup(const SerialParams &params)
 {
+    if (!isOpen())
+    {
+        std::cerr << "Setup error: Serial port not open." << std::endl;
+        return false;
+    }
+
+    if (params.device.empty())
+    {
+        std::cerr << "Setup error: Device path is empty!" << std::endl;
+        return false;
+    }
+
     try
     {
         setBaudRate(params.baud);
