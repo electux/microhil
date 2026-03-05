@@ -25,4 +25,5 @@ set(
     ${PROJECT_SOURCE_DIR}/log/test_log_filtering.cc
     ${PROJECT_SOURCE_DIR}/log/test_log_multi_thread.cc
     ${PROJECT_SOURCE_DIR}/log/test_log_close.cc
+    ${PROJECT_SOURCE_DIR}/log/test_mock_log_failure.cc
 )

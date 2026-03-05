@@ -12,6 +12,7 @@ var classElectux_1_1App_1_1Com_1_1SerialCom =
     [ "read", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#abaf96bbaeb3ed8e2c8d2bc827425ddb5", null ],
     [ "setBaudRate", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a151f8c8203d489d6de8a1458b38b57da", null ],
     [ "setCharacterSize", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ad225d6f5b9f923854f4a515972c43d62", null ],
+    [ "setDevice", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#aeb7684405870acdaafa90605b1153dd4", null ],
     [ "setFlowControl", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ab285abb9d28c87cad7e99766e8c0893a", null ],
     [ "setParity", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#a6985af0b97dd1257b4f1629c9b0ebeb1", null ],
     [ "setStopBits", "d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#af366e7682d6d3d56da9f04d3e9a73ca3", null ],

@@ -39,3 +39,16 @@ TEST_F(LogTest, LevelManagementTest)
 	m_logger.setLevel(LogLevel::Info);
 	EXPECT_EQ(m_logger.getLevel(), LogLevel::Info);
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test the default log level.
+///
+/// Verifies that the Logger is initialized with the expected default log level (Info).
+///
+/// @param LogTest The test fixture.
+/// @param DefaultLevelTest The name of the test case.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST_F(LogTest, DefaultLevelTest)
+{
+	EXPECT_EQ(m_logger.getLevel(), LogLevel::Info);
+}

@@ -47,10 +47,21 @@ namespace com::mock
     {
     public:
         MOCK_METHOD(bool, setup, (const SerialParams &params), (override));
+        MOCK_METHOD(void, setDevice, (const std::string &device), (override));
         MOCK_METHOD(void, setBaudRate, (BaudRate baudRate), (override));
         MOCK_METHOD(void, setCharacterSize, (CharacterSize characterSize), (override));
         MOCK_METHOD(void, setParity, (Parity parity), (override));
         MOCK_METHOD(void, setStopBits, (StopBits stopBits), (override));
         MOCK_METHOD(void, setFlowControl, (FlowControl flowControl), (override));
+        MOCK_METHOD(uint32_t, baudToUint, (const BaudRate baud), (override));
+        MOCK_METHOD(BaudRate, uintToBaud, (const uint32_t baud), (override));
+        MOCK_METHOD(uint32_t, dataBitsToUint, (const CharacterSize data), (override));
+        MOCK_METHOD(CharacterSize, uintToDataBits, (const uint32_t data), (override));
+        MOCK_METHOD(uint32_t, parityToUint, (const Parity parity), (override));
+        MOCK_METHOD(Parity, uintToParity, (const uint32_t parity), (override));
+        MOCK_METHOD(uint32_t, stopBitsToUint, (const StopBits stop), (override));
+        MOCK_METHOD(StopBits, uintToStopBits, (const uint32_t stop), (override));
+        MOCK_METHOD(uint32_t, flowControlToUint, (const FlowControl flow), (override));
+        MOCK_METHOD(FlowControl, uintToFlowControl, (const uint32_t flow), (override));
     };
 } // namespace com::mock

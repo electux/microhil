@@ -71,6 +71,13 @@ namespace Electux::App::Com
 		virtual bool setup(const SerialParams &params) = 0;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Configures the serial port device file path.
+		/// @param device Path to the serial port device.
+		/// Implementation should apply the provided settings to the underlying serial port.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual void setDevice(const std::string &device) = 0;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Sets the baud rate for the serial port.
 		/// @param baudRate The desired baud rate.
 		/// Implementation should call the underlying serial port method to

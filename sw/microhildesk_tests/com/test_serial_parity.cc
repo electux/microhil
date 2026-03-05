@@ -29,6 +29,7 @@ using namespace Electux::App::Params::SerialComConstants;
 /// This parameterized test iterates through all valid Parity mappings to 
 /// ensure that the internal conversion logic (enum to uint and vice versa) 
 /// is consistent and matches the expected system constants.
+///
 /// @param ParityTest The name of the test case.
 /// @param ParityConversionTest The name of the test.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,8 +44,8 @@ TEST_P(ParityTest, ParityConversionTest)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Define the test suite instance with all supported parity values.
 ///
-/// These values correspond to the switch-case logic found in 
-/// serial_com_utils.cc.
+/// These values correspond to the switch-case logic found in serial_com_utils.cc.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param ParityTest The name of the parameterized test case.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +53,8 @@ INSTANTIATE_TEST_SUITE_P
 (
 	SerialComTest,
 	ParityTest,
-	::testing::Values(
+	::testing::Values
+	(
 		ParameterMapping<Parity>{Parity::PARITY_NONE, 2},
 		ParameterMapping<Parity>{Parity::PARITY_ODD,  1},
 		ParameterMapping<Parity>{Parity::PARITY_EVEN, 0}
@@ -65,6 +67,7 @@ INSTANTIATE_TEST_SUITE_P
 /// Verifies that the conversion logic correctly identifies unsupported 
 /// parity modes and returns the predefined invalid parameter 
 /// constant or enum.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param InvalidParityDetectionTest The name of the test case.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

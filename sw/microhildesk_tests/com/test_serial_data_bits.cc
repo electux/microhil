@@ -29,6 +29,7 @@ using namespace Electux::App::Params::SerialComConstants;
 /// This parameterized test iterates through all valid Data Bits mappings to 
 /// ensure that the internal conversion logic (enum to uint and vice versa) 
 /// is consistent and matches the expected system constants.
+///
 /// @param DataBitsTest The name of the test case.
 /// @param DataBitsConversionTest The name of the test.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,8 +44,8 @@ TEST_P(DataBitsTest, DataBitsConversionTest)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Define the test suite instance with all supported data bits values.
 ///
-/// These values correspond to the switch-case logic found in 
-/// serial_com_utils.cc.
+/// These values correspond to the switch-case logic found in serial_com_utils.cc.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param DataBitsTest The name of the parameterized test case.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +53,8 @@ INSTANTIATE_TEST_SUITE_P
 (
 	SerialComTest,
 	DataBitsTest,
-	::testing::Values(
+	::testing::Values
+	(
 		ParameterMapping<CharacterSize>{CharacterSize::CHAR_SIZE_5, 0},
 		ParameterMapping<CharacterSize>{CharacterSize::CHAR_SIZE_6, 1},
 		ParameterMapping<CharacterSize>{CharacterSize::CHAR_SIZE_7, 2},
@@ -66,6 +68,7 @@ INSTANTIATE_TEST_SUITE_P
 /// Verifies that the conversion logic correctly identifies unsupported 
 /// character sizes (outside the 5-8 range) and returns the predefined 
 /// invalid parameter constant or enum.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param InvalidDataBitsDetectionTest The name of the test case.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

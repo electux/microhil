@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// test_serial_write.cc
+/// mock_log.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -16,23 +16,28 @@
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma once
 
-#include "test_serial_com.h"
-
-using namespace Electux::App::Com;
+#include <gmock/gmock.h>
+#include <log/ilog.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Test writing to a closed serial port.
-///
-/// Verifies that attempting to write to a serial port that has not been
-/// opened does not cause a crash.
-///
-/// @param SerialComTest The test fixture.
-/// @param WriteToPortTest The name of the test case.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-TEST_F(SerialComTest, WriteToPortTest)
+/// @namespace Electux::App::Logger
+/// @brief Namespace for application logging components
+namespace Electux::App::Logger
 {
-    const std::vector<uint8_t> data_to_write = {0xDE, 0xAD, 0xBE, 0xEF};
-
-    EXPECT_NO_THROW(m_serial.write(data_to_write));
-}
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @class MockLog
+	/// @brief Mock implementation of the ILog interface.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	class MockLog : public ILog
+	{
+	public:
+		MOCK_METHOD(void, setOutputFile, (const std::string &output), (override));
+		MOCK_METHOD(void, setLevel, (LogLevel level), (override));
+		MOCK_METHOD(LogLevel, getLevel, (), (const, override));
+		MOCK_METHOD(bool, open, (), (override));
+		MOCK_METHOD(bool, close, (), (override));
+		MOCK_METHOD(void, log, (const std::string &message, LogLevel level), (override));
+	};
+} // namespace Electux::App::Logger

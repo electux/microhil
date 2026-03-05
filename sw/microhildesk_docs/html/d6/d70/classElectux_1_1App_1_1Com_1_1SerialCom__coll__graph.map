@@ -1,11 +1,11 @@
 <map id="Electux::App::Com::SerialCom" name="Electux::App::Com::SerialCom">
-<area shape="rect" id="Node000001" title="Implementation of serial communication using LibSerial." alt="" coords="304,668,460,1388"/>
-<area shape="rect" id="Node000002" href="$db/dca/classElectux_1_1App_1_1Com_1_1ICom.html" title="Interface for communication implementations." alt="" coords="5,223,180,388"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,401,156,500,194,604,249,737,306,864,301,866,244,740,189,606,151,501,119,403"/>
-<area shape="rect" id="Node000003" href="$da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html" title="Interface for serial communication implementations." alt="" coords="204,5,360,605"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="328,619,335,667,330,668,323,620"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="385,265,579,345"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="479,346,437,652,431,651,474,345"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="603,273,654,338"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="631,339,622,458,611,532,594,606,568,680,538,752,470,885,466,883,533,750,563,678,589,605,606,531,617,457,626,338"/>
+<area shape="rect" id="Node000001" title="Implementation of serial communication using LibSerial." alt="" coords="304,688,460,1428"/>
+<area shape="rect" id="Node000002" href="$db/dca/classElectux_1_1App_1_1Com_1_1ICom.html" title="Interface for communication implementations." alt="" coords="5,233,180,398"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,410,155,514,194,624,249,761,306,890,301,892,244,763,189,626,150,515,117,412"/>
+<area shape="rect" id="Node000003" href="$da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html" title="Interface for serial communication implementations." alt="" coords="204,5,360,625"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="328,639,335,687,329,688,323,639"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="385,275,579,355"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="479,356,437,672,431,671,474,355"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="603,283,654,348"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="631,348,623,471,612,549,594,626,568,701,538,776,470,912,466,909,533,774,563,699,589,625,606,548,617,471,626,348"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="Electux::App::Com::ISerial" name="Electux::App::Com::ISerial">
-<area shape="rect" id="Node000001" title="Interface for serial communication implementations." alt="" coords="5,5,161,605"/>
-<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="Implementation of serial communication using LibSerial." alt="" coords="5,653,161,1433"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,619,86,653,81,653,81,619"/>
+<area shape="rect" id="Node000001" title="Interface for serial communication implementations." alt="" coords="5,5,161,625"/>
+<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="Implementation of serial communication using LibSerial." alt="" coords="5,673,161,1473"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,639,86,673,81,673,81,639"/>
 </map>

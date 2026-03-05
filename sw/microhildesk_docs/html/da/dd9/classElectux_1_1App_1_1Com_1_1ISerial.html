@@ -107,9 +107,9 @@ Inheritance diagram for Electux::App::Com::ISerial:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d7/d76/classElectux_1_1App_1_1Com_1_1ISerial__inherit__graph.png" border="0" usemap="#aElectux_1_1App_1_1Com_1_1ISerial_inherit__map" alt="Inheritance graph"/></div>
 <map name="aElectux_1_1App_1_1Com_1_1ISerial_inherit__map" id="aElectux_1_1App_1_1Com_1_1ISerial_inherit__map">
-<area shape="rect" title="Interface for serial communication implementations." alt="" coords="5,5,161,605"/>
-<area shape="rect" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="Implementation of serial communication using LibSerial." alt="" coords="5,653,161,1433"/>
-<area shape="poly" title=" " alt="" coords="86,619,86,653,81,653,81,619"/>
+<area shape="rect" title="Interface for serial communication implementations." alt="" coords="5,5,161,625"/>
+<area shape="rect" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="Implementation of serial communication using LibSerial." alt="" coords="5,673,161,1473"/>
+<area shape="poly" title=" " alt="" coords="86,639,86,673,81,673,81,639"/>
 </map>
 </div>
 <div class="dynheader">
@@ -117,7 +117,7 @@ Collaboration diagram for Electux::App::Com::ISerial:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d04/classElectux_1_1App_1_1Com_1_1ISerial__coll__graph.png" border="0" usemap="#aElectux_1_1App_1_1Com_1_1ISerial_coll__map" alt="Collaboration graph"/></div>
 <map name="aElectux_1_1App_1_1Com_1_1ISerial_coll__map" id="aElectux_1_1App_1_1Com_1_1ISerial_coll__map">
-<area shape="rect" title="Interface for serial communication implementations." alt="" coords="5,5,161,605"/>
+<area shape="rect" title="Interface for serial communication implementations." alt="" coords="5,5,161,625"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -129,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f7774637f9a0bae14d957dd0b6441c3" id="r_a2f7774637f9a0bae14d957dd0b6441c3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#a2f7774637f9a0bae14d957dd0b6441c3">setup</a> (const <a class="el" href="../../d7/da4/structElectux_1_1App_1_1Com_1_1SerialParams.html">SerialParams</a> &amp;params)=0</td></tr>
 <tr class="memdesc:a2f7774637f9a0bae14d957dd0b6441c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the serial port with specific parameters.  <br /></td></tr>
 <tr class="separator:a2f7774637f9a0bae14d957dd0b6441c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a508d6962f85d2131e213ccd7d4ef824e" id="r_a508d6962f85d2131e213ccd7d4ef824e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#a508d6962f85d2131e213ccd7d4ef824e">setDevice</a> (const std::string &amp;device)=0</td></tr>
+<tr class="memdesc:a508d6962f85d2131e213ccd7d4ef824e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the serial port device file path.  <br /></td></tr>
+<tr class="separator:a508d6962f85d2131e213ccd7d4ef824e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36d5754dbf9bcc8299904a663660df34" id="r_a36d5754dbf9bcc8299904a663660df34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#a36d5754dbf9bcc8299904a663660df34">setBaudRate</a> (<a class="el" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html#a9d794cdb90a90e2e1cfe0458c977a2a6">BaudRate</a> baudRate)=0</td></tr>
 <tr class="memdesc:a36d5754dbf9bcc8299904a663660df34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the baud rate for the serial port.  <br /></td></tr>
 <tr class="separator:a36d5754dbf9bcc8299904a663660df34"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -432,6 +435,42 @@ Protected Member Functions</h2></td></tr>
 </dl>
 
 <p>Implemented in <a class="el" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#ad225d6f5b9f923854f4a515972c43d62">Electux::App::Com::SerialCom</a>.</p>
+
+</div>
+</div>
+<a id="a508d6962f85d2131e213ccd7d4ef824e" name="a508d6962f85d2131e213ccd7d4ef824e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a508d6962f85d2131e213ccd7d4ef824e">&#9670;&#160;</a></span>setDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Electux::App::Com::ISerial::setDevice </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configures the serial port device file path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Path to the serial port device. Implementation should apply the provided settings to the underlying serial port. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html#aeb7684405870acdaafa90605b1153dd4">Electux::App::Com::SerialCom</a>.</p>
 
 </div>
 </div>
@@ -811,7 +850,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/deb/namespaceElectux.html">Electux</a></li><li class="navelem"><a class="el" href="../../dd/d31/namespaceElectux_1_1App.html">App</a></li><li class="navelem"><a class="el" href="../../d7/d9d/namespaceElectux_1_1App_1_1Com.html">Com</a></li><li class="navelem"><a class="el" href="../../da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html">ISerial</a></li>
-    <li class="footer">Generated on Wed Mar 4 2026 06:53:27 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Mar 5 2026 20:47:50 for microhildesk by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

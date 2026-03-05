@@ -7,6 +7,7 @@ var classElectux_1_1App_1_1Com_1_1ISerial =
     [ "parityToUint", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#aba7c1b6328bcad856332a68f39e32dda", null ],
     [ "setBaudRate", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#a36d5754dbf9bcc8299904a663660df34", null ],
     [ "setCharacterSize", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#abce3b37d69201e909215e5978a78f13d", null ],
+    [ "setDevice", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#a508d6962f85d2131e213ccd7d4ef824e", null ],
     [ "setFlowControl", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#a2df76564bb3e699e99f168510616d952", null ],
     [ "setParity", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#a973760ffff16cc1852ae77a7f0cf9ab5", null ],
     [ "setStopBits", "da/dd9/classElectux_1_1App_1_1Com_1_1ISerial.html#ac56ac115370df630365015d3a56cf589", null ],
