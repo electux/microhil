@@ -29,6 +29,7 @@ using namespace Electux::App::Params::SerialComConstants;
 /// This parameterized test iterates through all valid Flow Control mappings 
 /// to ensure that the internal conversion logic (enum to uint and vice versa) 
 /// is consistent and matches the expected system constants.
+///
 /// @param FlowControlTest The name of the test case.
 /// @param FlowControlConversionTest The name of the test.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,8 +44,8 @@ TEST_P(FlowControlTest, FlowControlConversionTest)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Define the test suite instance with all supported flow control values.
 ///
-/// These values correspond to the switch-case logic found in 
-/// serial_com_utils.cc.
+/// These values correspond to the switch-case logic found in serial_com_utils.cc.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param FlowControlTest The name of the parameterized test case.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +53,8 @@ INSTANTIATE_TEST_SUITE_P
 (
 	SerialComTest,
 	FlowControlTest,
-	::testing::Values(
+	::testing::Values
+	(
 		ParameterMapping<FlowControl>{FlowControl::FLOW_CONTROL_NONE,     0},
 		ParameterMapping<FlowControl>{FlowControl::FLOW_CONTROL_HARDWARE, 1},
 		ParameterMapping<FlowControl>{FlowControl::FLOW_CONTROL_SOFTWARE, 2}
@@ -65,6 +67,7 @@ INSTANTIATE_TEST_SUITE_P
 /// Verifies that the conversion logic correctly identifies unsupported 
 /// flow control modes and returns the predefined invalid parameter 
 /// constant or enum.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param InvalidFlowControlDetectionTest The name of the test.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

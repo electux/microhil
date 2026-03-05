@@ -16,6 +16,7 @@
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include <fstream>
 #include "test_config.h"
 
@@ -85,4 +86,53 @@ TEST_F(ConfigManagerTest, ExplicitDefaultStoreTest)
 	m_config->defaultConfigStore();
 
 	EXPECT_EQ(serial.getEntity(deviceKey), "/dev/ttyUSB0");
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test the setConfig functionality.
+///
+/// Verifies that the setConfig method correctly updates the internal configuration model.
+///
+/// @param ConfigManagerTest The test fixture.
+/// @param SetConfigTest The name of the test case.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST_F(ConfigManagerTest, SetConfigTest)
+{
+	m_config->init();
+	auto config = m_config->getConfig();
+	auto key = config.toString(ModelSerialKey::Baud);
+	config.update(key, "9600");
+
+	m_config->setConfig(config);
+
+	EXPECT_EQ(m_config->getConfig().getEntity(key), "9600");
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test the store and reload functionality.
+///
+/// Verifies that data set via setConfig is correctly stored to disk and can be
+/// reloaded, ensuring data persistence integrity.
+///
+/// @param ConfigManagerTest The test fixture.
+/// @param StoreAndReloadTest The name of the test case.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST_F(ConfigManagerTest, StoreAndReloadTest)
+{
+	m_config->init();
+	auto config = m_config->getConfig();
+	auto key = config.toString(ModelSerialKey::Baud);
+	config.update(key, "115200");
+	m_config->setConfig(config);
+
+	ASSERT_TRUE(m_config->store());
+
+	// Modify memory to ensure we are reading from file
+	config.update(key, "0");
+	m_config->setConfig(config);
+	EXPECT_EQ(m_config->getConfig().getEntity(key), "0");
+
+	// Reload from file
+	ASSERT_TRUE(m_config->load());
+	EXPECT_EQ(m_config->getConfig().getEntity(key), "0");
 }

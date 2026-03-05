@@ -37,9 +37,22 @@ SerialCom::SerialCom(std::unique_ptr<ILibSerialPort> port)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 SerialCom::~SerialCom() noexcept
 {
-    if (!close())
+    try 
     {
-        std::cerr << "Close error: Serial port was not closed properly." << std::endl;
+        // Even if close() throws, we catch it here to satisfy noexcept
+        if (!close())
+        {
+            std::cerr << "Close error: Serial port was not closed properly." << std::endl;
+        }
+    }
+    catch (const std::exception& e)
+    {
+        // Log the error but DO NOT rethrow
+        std::cerr << "Exception in destructor during close(): " << e.what() << std::endl;
+    }
+    catch (...)
+    {
+        std::cerr << "Unknown exception in SerialCom destructor." << std::endl;
     }
 
     std::cout << "SerialCom destructor called." << std::endl;
@@ -132,6 +145,15 @@ void SerialCom::write(const std::vector<uint8_t> &data)
 
     m_serialPort->Write(data);
     std::cout << "Wrote " << data.size() << " bytes to serial port." << std::endl;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Configures the serial port device file path.
+/// @param device Path to the serial port device.
+////////////////////////////////////////////////////////////////////////////////////////////////
+void SerialCom::setDevice(const std::string &device)
+{
+    m_device = device;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

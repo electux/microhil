@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a9412114b626cf2861accd364dbee0ba3":[4,0,0,0,4,4,2],
+"dd/dc1/settings__slots_8cc.html":[5,0,6,2,3],
+"dd/dc1/settings__slots_8cc_source.html":[5,0,6,2,3],
+"dd/df2/home_8h.html":[5,0,6,4],
 "dd/df2/home_8h.html#a37d1c4058c74e9f117779a1ad1340d9d":[5,0,6,4,1],
 "dd/df2/home_8h_source.html":[5,0,6,4],
 "de/d45/serial__com__data__bits_8cc.html":[5,0,0,6],

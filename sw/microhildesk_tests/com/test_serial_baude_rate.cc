@@ -17,17 +17,21 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include "test_mock_iserial.h"
 #include "test_serial_com.h"
 #include <params/serial_com_params.h>
 
+using namespace com::mock;
 using namespace Electux::App::Com;
 using namespace Electux::App::Params::SerialComConstants;
+using ::testing::Return;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Test bidirectional conversion of all supported BaudRates.
 ///
 /// Iterates through provided parameters to verify that baudToUint and
 /// uintToBaud mappings are consistent and correct based on serial_com_utils.
+///
 /// @param BaudRateTest The name of the test case.
 /// @param BaudRateConversionTest The name of the test.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,6 +47,7 @@ TEST_P(BaudRateTest, BaudRateConversionTest)
 /// @brief List of all supported baud rate mappings from serial_com_utils.cc.
 ///
 /// Note: Replace numeric values with actual constants if they differ.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param BaudRateTest The name of the parameterized test case.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,7 +55,8 @@ INSTANTIATE_TEST_SUITE_P
 (
 	SerialComTest,
 	BaudRateTest,
-	::testing::Values(
+	::testing::Values
+	(
 		ParameterMapping<BaudRate>{BaudRate::BAUD_110,    0}, 
 		ParameterMapping<BaudRate>{BaudRate::BAUD_300,    1}, 
 		ParameterMapping<BaudRate>{BaudRate::BAUD_600,    2}, 
@@ -71,6 +77,7 @@ INSTANTIATE_TEST_SUITE_P
 ///
 /// Verifies that the conversion logic correctly identifies unsupported 
 /// baud rates and returns the predefined invalid parameter constant or enum.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param InvalidBaudRateDetectionTest The name of the test.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -81,4 +88,25 @@ TEST_F(SerialComTest, InvalidBaudRateDetectionTest)
 
 	BaudRate invalid_enum = m_serial.uintToBaud(999999);
 	EXPECT_EQ(invalid_enum, BaudRate::BAUD_INVALID);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test the conversion of BaudRate enum to unsigned integer.
+///
+/// This test simulates the utility function that converts internal enum types 
+/// to standard numeric values used by system ioctls.
+///
+/// @param MockISerialTest The name of the test suite.
+/// @param BaudRateConversionTest The name of the test.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST(MockISerialTest, BaudRateConversionTest)
+{
+    MockISerial mockSerial;
+    BaudRate rate = BaudRate::BAUD_115200;
+    uint32_t expectedValue = 10;
+
+    EXPECT_CALL(mockSerial, baudToUint(rate))
+        .WillOnce(Return(expectedValue));
+
+    ASSERT_EQ(mockSerial.baudToUint(rate), expectedValue);
 }

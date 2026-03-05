@@ -17,9 +17,11 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include "test_mock_iserial.h"
 #include "test_serial_com.h"
 #include <params/serial_com_params.h>
 
+using namespace com::mock;
 using namespace Electux::App::Com;
 using namespace Electux::App::Params::SerialComConstants;
 
@@ -29,6 +31,7 @@ using namespace Electux::App::Params::SerialComConstants;
 /// This parameterized test iterates through all valid Stop Bits mappings to 
 /// ensure that the internal conversion logic (enum to uint and vice versa) 
 /// is consistent and matches the expected system constants.
+///
 /// @param StopBitsTest The name of the test case.
 /// @param StopBitsConversionTest The name of the test.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,8 +46,8 @@ TEST_P(StopBitsTest, StopBitsConversionTest)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Define the test suite instance with all supported stop bits values.
 ///
-/// These values correspond to the switch-case logic found in 
-/// serial_com_utils.cc.
+/// These values correspond to the switch-case logic found in serial_com_utils.cc.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param StopBitsTest The name of the parameterized test case.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,6 +68,7 @@ INSTANTIATE_TEST_SUITE_P
 /// Verifies that the conversion logic correctly identifies unsupported 
 /// stop bits settings and returns the predefined invalid parameter 
 /// constant or enum.
+///
 /// @param SerialComTest The name of the test suite.
 /// @param InvalidStopBitsDetectionTest The name of the test.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,4 +79,22 @@ TEST_F(SerialComTest, InvalidStopBitsDetectionTest)
 
 	StopBits invalid_enum = m_serial.uintToStopBits(9);
 	EXPECT_EQ(invalid_enum, StopBits::STOP_BITS_INVALID);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test setting stop bits configuration.
+///
+/// Ensures the setStopBits method is called with the correct enum value.
+///
+/// @param MockISerialTest The name of the test suite.
+/// @param SetStopBitsTest The name of the test.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST(MockISerialTest, SetStopBitsTest)
+{
+    MockISerial mockSerial;
+    StopBits stopBits = StopBits::STOP_BITS_2;
+
+    EXPECT_CALL(mockSerial, setStopBits(stopBits)).Times(1);
+
+    mockSerial.setStopBits(stopBits);
 }

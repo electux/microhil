@@ -24,8 +24,7 @@ using namespace Electux::App::Com;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Test opening the serial port connection.
 ///
-/// Verifies that the SerialCom class correctly opens the pseudo-terminal 
-/// slave device provided during setup.
+/// Ensure that the class handles missing device path gracefully by returning false.
 ///
 /// @param SerialComTest The test fixture.
 /// @param OpenSerialPortTest The name of the test case.
@@ -38,8 +37,7 @@ TEST_F(SerialComTest, OpenSerialPortTest)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Test opening a non-existent serial port.
 ///
-/// Ensures that the class handles invalid device paths gracefully by 
-/// returning false.
+/// Ensures that the class handles invalid device paths gracefully by returning false.
 ///
 /// @param SerialComTest The test fixture.
 /// @param OpenInvalidPortTest The name of the test case.

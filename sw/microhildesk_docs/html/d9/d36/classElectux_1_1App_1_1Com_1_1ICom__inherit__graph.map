@@ -1,5 +1,5 @@
 <map id="Electux::App::Com::ICom" name="Electux::App::Com::ICom">
 <area shape="rect" id="Node000001" title="Interface for communication implementations." alt="" coords="5,5,180,171"/>
-<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="Implementation of serial communication using LibSerial." alt="" coords="15,219,171,999"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,185,95,218,90,218,90,185"/>
+<area shape="rect" id="Node000002" href="$d0/d4a/classElectux_1_1App_1_1Com_1_1SerialCom.html" title="Implementation of serial communication using LibSerial." alt="" coords="15,219,171,1019"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,184,95,218,90,218,90,184"/>
 </map>

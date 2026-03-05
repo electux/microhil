@@ -17,6 +17,7 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <sys/stat.h>
 #include "test_log.h"
 
 using namespace Electux::App::Logger;
@@ -52,4 +53,29 @@ TEST_F(LogTest, DoubleOpenTest)
     // Test double open
     EXPECT_TRUE(m_logger.open());
     EXPECT_TRUE(m_logger.open()); // Should still be true/ready
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Test open functionality when file permissions prevent writing.
+///
+/// Creates a temporary log file, removes write permissions, and verifies
+/// that the open() method fails gracefully. Restores permissions afterward.
+///
+/// @param LogTest The test fixture.
+/// @param OpenFailureTest The name of the test case.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+TEST_F(LogTest, OpenFailureTest)
+{
+	// Create a dummy file
+	{
+		std::ofstream ofs(m_testFileName);
+		ofs << "dummy content";
+	}
+
+	// Remove write permissions
+	chmod(m_testFileName.c_str(), S_IRUSR); // Read only
+
+	EXPECT_FALSE(m_logger.open());
+
+	chmod(m_testFileName.c_str(), S_IWUSR | S_IRUSR);
 }
