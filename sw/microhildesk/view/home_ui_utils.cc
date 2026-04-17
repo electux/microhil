@@ -18,6 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <view/home.h>
+#include <model/model.h>
 #include <params/channel_params.h>
 
 using namespace Electux::App::View;
@@ -31,7 +32,7 @@ using namespace Electux::App::Params::Channel;
 void AppHome::updateUiData()
 {
 	m_blockSignals = true;
-	const auto& config = m_setup.m_config;
+	const auto& config = *m_setup.m_config;
 	const auto controlEnableKey = config.toString(ModelControlKey::Enable);
 	const auto controlModeKey = config.toString(ModelControlKey::Mode);
 	const auto controlToggleKey = config.toString(ModelControlKey::Toggle);
@@ -65,7 +66,7 @@ void AppHome::updateUiData()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void AppHome::getUiData()
 {
-	const auto& config = m_setup.m_config;
+	const auto& config = *m_setup.m_config;
 	const auto controlEnableKey = config.toString(ModelControlKey::Enable);
 	const auto controlModeKey = config.toString(ModelControlKey::Mode);
 	const auto controlToggleKey = config.toString(ModelControlKey::Toggle);
@@ -169,9 +170,9 @@ std::string AppHome::update_param_value_by_index(const std::string_view &input, 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void AppHome::update_control_config(const std::string_view &key, size_t index, const std::string_view &value)
 {
-	auto controlEntity = m_setup.m_config.getEntity(key);
+	auto controlEntity = m_setup.m_config->getEntity(key);
 	auto controlValue = update_param_value_by_index(controlEntity, index, value);
-	m_setup.m_config.update(key, controlValue);
+	m_setup.m_config->update(key, controlValue);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -182,7 +183,7 @@ void AppHome::update_control_config(const std::string_view &key, size_t index, c
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 std::string AppHome::extract_config(const std::string_view &key, size_t index)
 {
-	auto controlEntity = m_setup.m_config.getEntity(key);
+	auto controlEntity = m_setup.m_config->getEntity(key);
 	return extract_param_value_by_index(controlEntity, index);
 }
 

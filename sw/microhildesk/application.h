@@ -32,7 +32,7 @@ namespace Electux::App
 	namespace View
 	{
 		class AppHome;
-		struct SettingsSetup;
+		class SettingsSetup;
 		namespace Settings { class AppSettings; }
 		namespace Help { class AppHelp; }
 		namespace About { class AppAbout; }

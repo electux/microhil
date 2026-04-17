@@ -20,6 +20,7 @@
 #include <iostream>
 #include <application.h>
 #include <config/iconfig.h>
+#include <model/model.h>
 #include <view/home.h>
 #include <view/settings/settings.h>
 #include <view/help/help.h>
@@ -86,7 +87,7 @@ void EntryApplication::on_startup()
 
 	// Updated settings widgets data based on loaded configuration
 	SettingsSetup setup;
-	setup.m_config = m_configManager->getConfig();
+	*setup.m_config = m_configManager->getConfig();
 	m_settings->setSettingsSetup(setup);
 	m_settings->updateUiData();
 	m_home->setControlSetup(setup);
@@ -173,6 +174,6 @@ void EntryApplication::onActionAbout()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EntryApplication::onSetupChanged(const SettingsSetup &setup)
 {
-	m_configManager->setConfig(setup.m_config);
+	m_configManager->setConfig(*setup.m_config);
 	m_configManager->store();
 }
