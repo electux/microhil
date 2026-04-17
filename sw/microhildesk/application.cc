@@ -21,6 +21,10 @@
 #include <glibmm/refptr.h>
 #include <application.h>
 #include <config/config_manager.h>
+#include <view/home.h>
+#include <view/settings/settings.h>
+#include <view/help/help.h>
+#include <view/about/about.h>
 
 namespace
 {
@@ -44,9 +48,18 @@ using ConfigManager = Electux::App::Config::ConfigManager;
 EntryApplication::EntryApplication()
 	: Gtk::Application(cApplicationId.data())
 	, m_configManager(std::make_unique<ConfigManager>())
+	, m_home(std::make_unique<AppHome>())
+	, m_settings(std::make_unique<AppSettings>())
+	, m_help(std::make_unique<AppHelp>())
+	, m_about(std::make_unique<AppAbout>())
 {
 	Glib::set_application_name(cApplicationId.data());
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief EntryApplication destructor.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+EntryApplication::~EntryApplication() = default;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Creates a reference pointer to EntryApplication.
