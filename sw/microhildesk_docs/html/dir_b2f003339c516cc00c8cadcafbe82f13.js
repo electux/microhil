@@ -8,5 +8,6 @@ var dir_b2f003339c516cc00c8cadcafbe82f13 =
     [ "home_map.cc", "d5/d85/home__map_8cc.html", null ],
     [ "home_slots.cc", "de/d98/home__slots_8cc.html", null ],
     [ "home_ui_utils.cc", "de/dd4/home__ui__utils_8cc.html", null ],
+    [ "settings_setup.cc", "d5/dbd/settings__setup_8cc.html", null ],
     [ "settings_setup.h", "df/d7c/settings__setup_8h.html", "df/d7c/settings__setup_8h" ]
 ];

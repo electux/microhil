@@ -1,18 +1,9 @@
 <map id="config/config_manager.h" name="config/config_manager.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="10,5,190,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,225,64,251"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,33,52,52,30,80,21,114,19,150,23,184,30,212,24,213,18,184,14,150,15,113,26,77,48,48,76,29"/>
-<area shape="rect" id="Node000003" href="$d2/d37/iconfig_8h.html" title=" " alt="" coords="40,79,160,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,31,103,65,97,65,97,31"/>
-<area shape="rect" id="Node000004" href="$dc/d51/model_8h.html" title=" " alt="" coords="184,79,304,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="124,28,209,70,207,75,122,33"/>
-<area shape="rect" id="Node000005" href="$df/d78/imodel_8h.html" title=" " alt="" coords="166,152,290,177"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="244,105,236,139,231,138,239,104"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="198,180,78,224,76,219,196,175"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="104,225,155,251"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="214,180,158,219,155,215,211,175"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="179,225,277,251"/>
-<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="231,178,231,212,225,212,225,178"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="301,225,368,251"/>
-<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="247,175,307,215,304,220,244,180"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="37,5,217,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,64,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,33,62,72,59,68,110,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="88,79,165,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,31,129,65,124,65,124,31"/>
+<area shape="rect" id="Node000004" href="$d2/d37/iconfig_8h.html" title=" " alt="" coords="189,79,309,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,28,219,69,216,74,145,33"/>
 </map>

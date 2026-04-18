@@ -14,7 +14,8 @@ var searchData=
   ['settings_2ecc_11',['settings.cc',['../d3/d8e/settings_8cc.html',1,'']]],
   ['settings_2eh_12',['settings.h',['../de/d60/settings_8h.html',1,'']]],
   ['settings_5fmap_2ecc_13',['settings_map.cc',['../d0/d67/settings__map_8cc.html',1,'']]],
-  ['settings_5fsetup_2eh_14',['settings_setup.h',['../df/d7c/settings__setup_8h.html',1,'']]],
-  ['settings_5fslots_2ecc_15',['settings_slots.cc',['../dd/dc1/settings__slots_8cc.html',1,'']]],
-  ['settings_5fui_5futils_2ecc_16',['settings_ui_utils.cc',['../d9/d33/settings__ui__utils_8cc.html',1,'']]]
+  ['settings_5fsetup_2ecc_14',['settings_setup.cc',['../d5/dbd/settings__setup_8cc.html',1,'']]],
+  ['settings_5fsetup_2eh_15',['settings_setup.h',['../df/d7c/settings__setup_8h.html',1,'']]],
+  ['settings_5fslots_2ecc_16',['settings_slots.cc',['../dd/dc1/settings__slots_8cc.html',1,'']]],
+  ['settings_5fui_5futils_2ecc_17',['settings_ui_utils.cc',['../d9/d33/settings__ui__utils_8cc.html',1,'']]]
 ];

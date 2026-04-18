@@ -1,9 +1,5 @@
 <map id="Electux::App::View::Settings::AppSettings::onButtonOkClicked" name="Electux::App::View::Settings::AppSettings::onButtonOkClicked">
-<area shape="rect" id="Node000001" title="Handler for the OK button click signal." alt="" coords="5,30,175,85"/>
-<area shape="rect" id="Node000002" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="223,30,392,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,55,209,55,209,60,175,60"/>
-<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a24c634d446349d55624310adb4a62dd6" title="Converts a ModelSerialKey enum value to its string representation." alt="" coords="440,5,591,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="392,42,426,36,427,42,393,47"/>
-<area shape="rect" id="Node000004" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283" title="Updates an entity value by its key." alt="" coords="440,69,591,109"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="393,68,427,73,426,78,392,73"/>
+<area shape="rect" id="Node000001" title="Handler for the OK button click signal." alt="" coords="5,5,175,60"/>
+<area shape="rect" id="Node000002" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="223,5,392,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,30,209,30,209,35,175,35"/>
 </map>

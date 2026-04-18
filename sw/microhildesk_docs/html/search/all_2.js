@@ -53,7 +53,7 @@ var searchData=
   ['config_5fmanager_2ecc_50',['config_manager.cc',['../da/dd8/config__manager_8cc.html',1,'']]],
   ['config_5fmanager_2eh_51',['config_manager.h',['../d0/d8b/config__manager_8h.html',1,'']]],
   ['config_5fmanager_5futils_2ecc_52',['config_manager_utils.cc',['../d0/d33/config__manager__utils_8cc.html',1,'']]],
-  ['configmanager_53',['configmanager',['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#aed256505683b75907825133c3910b3b8',1,'Electux::App::Config::ConfigManager::ConfigManager()'],['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html',1,'Electux::App::Config::ConfigManager'],['../dc/d16/application_8cc.html#a62600804217d8af1daad12865bad500c',1,'ConfigManager:&#160;application.cc']]],
+  ['configmanager_53',['configmanager',['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#ac7efcce0e4117e6785f10b12f7d02585',1,'Electux::App::Config::ConfigManager::ConfigManager()'],['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html',1,'Electux::App::Config::ConfigManager'],['../dc/d16/application_8cc.html#a62600804217d8af1daad12865bad500c',1,'ConfigManager:&#160;application.cc']]],
   ['controlchanged_54',['controlChanged',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#a954721e776e8231295c9dab95de10217',1,'Electux::App::View::AppHome']]],
   ['cparity_55',['cParity',['../d9/d26/namespaceElectux_1_1App_1_1Model.html#a0bff29496003fcaa18a9cf5030075aba',1,'Electux::App::Model']]],
   ['create_56',['create',['../d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e',1,'Electux::App::EntryApplication']]],

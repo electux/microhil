@@ -78,9 +78,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#abd0f4f54468fa350efdfb287005b4b57",
-"d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#af714bb3895b0537bf13a6985660452d6",
-"dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html#a9412114b626cf2861accd364dbee0ba3"
+"d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a8d13d898262c55797adb684f50289279",
+"d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ae0f8910d94af6ff09113de99f36f0fbe",
+"dd/d9e/classElectux_1_1App_1_1View_1_1SettingsSetup.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
