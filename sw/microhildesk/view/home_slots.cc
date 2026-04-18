@@ -22,6 +22,7 @@
 #include <ranges>
 #include <numeric>
 #include <view/home.h>
+#include <model/model.h>
 #include <params/channel_params.h>
 
 using namespace Electux::App::View;
@@ -36,7 +37,7 @@ void AppHome::onChannelEnableChanged(size_t index)
 {
 	if (m_blockSignals) { return; }
 
-	const auto controlEnableKey = m_setup.m_config.toString(ModelControlKey::Enable);
+	const auto controlEnableKey = m_setup.m_config->toString(ModelControlKey::Enable);
 	auto value = boolToString(m_enableChannels[index].get_active());
 	update_control_config(controlEnableKey, index, value);
 	m_controlSignal.emit(m_setup);
@@ -50,7 +51,7 @@ void AppHome::onChannelModeChanged(size_t index)
 {
 	if (m_blockSignals) { return; }
 
-	const auto controlModeKey = m_setup.m_config.toString(ModelControlKey::Mode);
+	const auto controlModeKey = m_setup.m_config->toString(ModelControlKey::Mode);
 	auto controlModeComboValue = std::to_string(m_selectControlChannels[index].get_active_row_number());
 	update_control_config(controlModeKey, index, controlModeComboValue);
 	m_controlSignal.emit(m_setup);
@@ -64,7 +65,7 @@ void AppHome::onChannelToggleChanged(size_t index)
 {
 	if (m_blockSignals) { return; }
 
-	const auto controlToggleKey = m_setup.m_config.toString(ModelControlKey::Toggle);
+	const auto controlToggleKey = m_setup.m_config->toString(ModelControlKey::Toggle);
 	auto controlToggleButtonValue = boolToString(m_toggleChannels[index].get_active());
 	update_control_config(controlToggleKey, index, controlToggleButtonValue);
 	m_controlSignal.emit(m_setup);
@@ -78,7 +79,7 @@ void AppHome::onChannelTimerChanged(size_t index)
 {
 	if (m_blockSignals) { return; }
 
-	const auto controlTimerKey = m_setup.m_config.toString(ModelControlKey::Timer);
+	const auto controlTimerKey = m_setup.m_config->toString(ModelControlKey::Timer);
 	auto controlTimerSpinValue = std::to_string(m_spinTimerChannels[index].get_value_as_int());
 	update_control_config(controlTimerKey, index, controlTimerSpinValue);
 	m_controlSignal.emit(m_setup);
@@ -92,7 +93,7 @@ void AppHome::onChannelTimerToggleChanged(size_t index)
 {
 	if (m_blockSignals) { return; }
 
-	const auto controlTimerEnableKey = m_setup.m_config.toString(ModelControlKey::TimerEnable);
+	const auto controlTimerEnableKey = m_setup.m_config->toString(ModelControlKey::TimerEnable);
 	auto controlTimerEnableButtonValue = boolToString(m_toggleTimerChannels[index].get_active());
 	update_control_config(controlTimerEnableKey, index, controlTimerEnableButtonValue);
 	m_controlSignal.emit(m_setup);

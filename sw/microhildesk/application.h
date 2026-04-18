@@ -20,12 +20,6 @@
 
 #include <memory>
 #include <gtkmm/application.h>
-#include <view/home.h>
-#include <view/settings/settings.h>
-#include <view/help/help.h>
-#include <view/about/about.h>
-#include <view/settings_setup.h>
-#include <config/iconfig.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace Electux::App
@@ -33,14 +27,26 @@
 namespace Electux::App
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @brief Forward declarations for sub-components
+	namespace Config { class IConfig; }
+	namespace View
+	{
+		class AppHome;
+		class SettingsSetup;
+		namespace Settings { class AppSettings; }
+		namespace Help { class AppHelp; }
+		namespace About { class AppAbout; }
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// @name Local Type Aliases
 	/// @{
-	using IConfig = Electux::App::Config::IConfig;
-	using AppHome = Electux::App::View::AppHome;
-	using AppSettings = Electux::App::View::Settings::AppSettings;
-	using AppHelp = Electux::App::View::Help::AppHelp;
-	using AppAbout = Electux::App::View::About::AppAbout;
-	using SettingsSetup = Electux::App::View::SettingsSetup;
+	using IConfig = Config::IConfig;
+	using AppHome = View::AppHome;
+	using AppSettings = View::Settings::AppSettings;
+	using AppHelp = View::Help::AppHelp;
+	using AppAbout = View::About::AppAbout;
+	using SettingsSetup = View::SettingsSetup;
 	/// @}
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -58,6 +64,11 @@ namespace Electux::App
 		/// @brief EntryApplication constructor.
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		explicit EntryApplication();
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief EntryApplication destructor.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		~EntryApplication() override;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Creates a reference pointer to EntryApplication.
@@ -125,13 +136,13 @@ namespace Electux::App
 		/// @brief Instance of the configuration manager.
 		std::unique_ptr<IConfig> m_configManager;
 		/// @brief Main application window (home view).
-		AppHome m_home{};
+		std::unique_ptr<AppHome> m_home;
 		/// @brief Settings window view.
-		AppSettings m_settings{};
+		std::unique_ptr<AppSettings> m_settings;
 		/// @brief Help and documentation window view.
-		AppHelp m_help{};
+		std::unique_ptr<AppHelp> m_help;
 		/// @brief About dialog view.
-		AppAbout m_about{};
+		std::unique_ptr<AppAbout> m_about;
 		/// @}
 		////////////////////////////////////////////////////////////////////////////////////////////////
 	};

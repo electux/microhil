@@ -1,7 +1,0 @@
-<map id="Electux::App::Config::ConfigManager::load" name="Electux::App::Config::ConfigManager::load">
-<area shape="rect" id="Node000001" title="Loads the configuration from the specified file." alt="" coords="5,37,169,77"/>
-<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds an entity to the model." alt="" coords="219,5,370,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,42,205,36,206,42,170,47"/>
-<area shape="rect" id="Node000003" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a4d4f4043a4f2742186acc88714820acc" title="Validates if a string key is a valid serial configuration key." alt="" coords="217,69,372,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,67,204,73,203,78,169,73"/>
-</map>

@@ -18,6 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <view/settings/settings.h>
+#include <model/model.h> // Required for Model class definition and enums
 
 using namespace Electux::App::Model;
 using namespace Electux::App::View::Settings;
@@ -30,82 +31,82 @@ using namespace Electux::App::View::Settings;
 void AppSettings::updateUiData()
 {
 	// Updates UI widgets with data from loaded configuration for serial
-	auto serialConfigPathKey = m_setup.m_config.toString(ModelSerialKey::Device);
-	m_entrySerialPath.set_text(m_setup.m_config.getEntity(serialConfigPathKey).data());
+	auto serialConfigPathKey = m_setup.m_config->toString(ModelSerialKey::Device);
+	m_entrySerialPath.set_text(m_setup.m_config->getEntity(serialConfigPathKey).data());
 
-	auto serialConfigBaudKey = m_setup.m_config.toString(ModelSerialKey::Baud);
-	auto serialConfigBaudValue = std::stoi(m_setup.m_config.getEntity(serialConfigBaudKey).data());
+	auto serialConfigBaudKey = m_setup.m_config->toString(ModelSerialKey::Baud);
+	auto serialConfigBaudValue = std::stoi(m_setup.m_config->getEntity(serialConfigBaudKey).data());
 	m_comboSerialBaud.set_active(serialConfigBaudValue);
 
-	auto serialConfigDataKey = m_setup.m_config.toString(ModelSerialKey::Data);
-	auto serialConfigDataValue = std::stoi(m_setup.m_config.getEntity(serialConfigDataKey).data());
+	auto serialConfigDataKey = m_setup.m_config->toString(ModelSerialKey::Data);
+	auto serialConfigDataValue = std::stoi(m_setup.m_config->getEntity(serialConfigDataKey).data());
 	m_comboSerialData.set_active(serialConfigDataValue);
 
-	auto serialConfigParityKey = m_setup.m_config.toString(ModelSerialKey::Parity);
-	auto serialConfigParityValue = std::stoi(m_setup.m_config.getEntity(serialConfigParityKey).data());
+	auto serialConfigParityKey = m_setup.m_config->toString(ModelSerialKey::Parity);
+	auto serialConfigParityValue = std::stoi(m_setup.m_config->getEntity(serialConfigParityKey).data());
 	m_comboSerialParity.set_active(serialConfigParityValue);
 
-	auto serialConfigStopKey = m_setup.m_config.toString(ModelSerialKey::Stop);
-	auto serialConfigStopValue = std::stoi(m_setup.m_config.getEntity(serialConfigStopKey).data());
+	auto serialConfigStopKey = m_setup.m_config->toString(ModelSerialKey::Stop);
+	auto serialConfigStopValue = std::stoi(m_setup.m_config->getEntity(serialConfigStopKey).data());
 	m_comboSerialStop.set_active(serialConfigStopValue);
 
-	auto serialConfigFlowControlKey = m_setup.m_config.toString(ModelSerialKey::Flow);
-	auto serialConfigFlowControlValue = std::stoi(m_setup.m_config.getEntity(serialConfigFlowControlKey).data());
+	auto serialConfigFlowControlKey = m_setup.m_config->toString(ModelSerialKey::Flow);
+	auto serialConfigFlowControlValue = std::stoi(m_setup.m_config->getEntity(serialConfigFlowControlKey).data());
 	m_comboSerialFlowControl.set_active(serialConfigFlowControlValue);
     
 	// Updates UI widgets with data from loaded configuration for log
-	auto logConfigPathKey = m_setup.m_config.toString(ModelLogKey::FilePath);
-	m_entryLogPath.set_text(m_setup.m_config.getEntity(logConfigPathKey).data());
+	auto logConfigPathKey = m_setup.m_config->toString(ModelLogKey::FilePath);
+	m_entryLogPath.set_text(m_setup.m_config->getEntity(logConfigPathKey).data());
 
-	auto logConfigLevelKey = m_setup.m_config.toString(ModelLogKey::LogLevel);
-	auto logConfigLevelValue = std::stoi(m_setup.m_config.getEntity(logConfigLevelKey).data());
+	auto logConfigLevelKey = m_setup.m_config->toString(ModelLogKey::LogLevel);
+	auto logConfigLevelValue = std::stoi(m_setup.m_config->getEntity(logConfigLevelKey).data());
 	m_comboLogLevel.set_active(logConfigLevelValue);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Gets UI data from widgets and saves them to configuration models.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-void AppSettings::getUiData()
+void AppSettings::getUiData() // This function also needs to be updated
 {
 	// Gets UI data from widgets and saves them to configuration for serial
-	auto serialConfigPathKey = m_setup.m_config.toString(ModelSerialKey::Device);
+	auto serialConfigPathKey = m_setup.m_config->toString(ModelSerialKey::Device);
 	auto serialConfigPathValue = m_entrySerialPath.get_text().raw();
-	m_setup.m_config.update(serialConfigPathKey, serialConfigPathValue);
+	m_setup.m_config->update(serialConfigPathKey, serialConfigPathValue);
 
-	auto serialConfigBaudKey = m_setup.m_config.toString(ModelSerialKey::Baud);
+	auto serialConfigBaudKey = m_setup.m_config->toString(ModelSerialKey::Baud);
 	int serialConfigBaudComboValue = m_comboSerialBaud.get_active_row_number();
 	auto serialConfigBaudValue = std::to_string(serialConfigBaudComboValue);
-	m_setup.m_config.update(serialConfigBaudKey, serialConfigBaudValue);
+	m_setup.m_config->update(serialConfigBaudKey, serialConfigBaudValue);
 
-	auto serialConfigDataKey = m_setup.m_config.toString(ModelSerialKey::Data);
+	auto serialConfigDataKey = m_setup.m_config->toString(ModelSerialKey::Data);
 	int serialConfigDataComboValue = m_comboSerialData.get_active_row_number();
 	auto serialConfigDataValue = std::to_string(serialConfigDataComboValue);
-	m_setup.m_config.update(serialConfigDataKey, serialConfigDataValue);
+	m_setup.m_config->update(serialConfigDataKey, serialConfigDataValue);
 
-	auto serialConfigParityKey = m_setup.m_config.toString(ModelSerialKey::Parity);
+	auto serialConfigParityKey = m_setup.m_config->toString(ModelSerialKey::Parity);
 	int serialConfigParityComboValue = m_comboSerialParity.get_active_row_number();
 	auto serialConfigParityValue = std::to_string(serialConfigParityComboValue);
-	m_setup.m_config.update(serialConfigParityKey, serialConfigParityValue);
+	m_setup.m_config->update(serialConfigParityKey, serialConfigParityValue);
 
-	auto serialConfigStopKey = m_setup.m_config.toString(ModelSerialKey::Stop);
+	auto serialConfigStopKey = m_setup.m_config->toString(ModelSerialKey::Stop);
 	int serialConfigStopComboValue = m_comboSerialStop.get_active_row_number();
 	auto serialConfigStopValue = std::to_string(serialConfigStopComboValue);
-	m_setup.m_config.update(serialConfigStopKey, serialConfigStopValue);
+	m_setup.m_config->update(serialConfigStopKey, serialConfigStopValue);
 
-	auto serialConfigFlowControlKey = m_setup.m_config.toString(ModelSerialKey::Flow);
+	auto serialConfigFlowControlKey = m_setup.m_config->toString(ModelSerialKey::Flow);
 	int serialConfigFlowControlComboValue = m_comboSerialFlowControl.get_active_row_number();
 	auto serialConfigFlowControlValue = std::to_string(serialConfigFlowControlComboValue);
-	m_setup.m_config.update(serialConfigFlowControlKey, serialConfigFlowControlValue);
+	m_setup.m_config->update(serialConfigFlowControlKey, serialConfigFlowControlValue);
     
 	// Gets UI data from widgets and saves them to configuration for log
-	auto logConfigPathKey = m_setup.m_config.toString(ModelLogKey::FilePath);
+	auto logConfigPathKey = m_setup.m_config->toString(ModelLogKey::FilePath);
 	auto logConfigPathValue = m_entryLogPath.get_text().raw();
-	m_setup.m_config.update(logConfigPathKey, logConfigPathValue);
+	m_setup.m_config->update(logConfigPathKey, logConfigPathValue);
 
-	auto logConfigLevelKey = m_setup.m_config.toString(ModelLogKey::LogLevel);
+	auto logConfigLevelKey = m_setup.m_config->toString(ModelLogKey::LogLevel);
 	int logConfigLevelComboValue = m_comboLogLevel.get_active_row_number();
 	auto logConfigLevelValue = std::to_string(logConfigLevelComboValue);
-	m_setup.m_config.update(logConfigLevelKey, logConfigLevelValue);
+	m_setup.m_config->update(logConfigLevelKey, logConfigLevelValue);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

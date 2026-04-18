@@ -21,8 +21,10 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <memory>
 #include <filesystem>
 #include <config/config_manager.h>
+#include <model/model.h>
 
 namespace
 {
@@ -46,10 +48,16 @@ using namespace Electux::App::Model;
 /// @brief Constructor that initializes the config path.
 /// @param configFileName The path/name of the configuration file.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-ConfigManager::ConfigManager(const std::string &configFileName) noexcept
+ConfigManager::ConfigManager(const std::string &configFileName)
+	: m_config(std::make_unique<Model>())
 {
 	m_fileName = configFileName.empty() ? Glib::build_filename(Glib::get_home_dir(), cConfigFile.data()) : configFileName;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief ConfigManager destructor.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+ConfigManager::~ConfigManager() = default;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Initializes the configuration manager.
@@ -127,9 +135,9 @@ bool ConfigManager::load()
 			value.erase(value.find_last_not_of(" \t\n\r") + 1);
 
 			// Map keys to specific models
-			if (m_config.validateKey(key))
+			if (m_config->validateKey(key))
 			{
-				m_config.add(key, value);
+				m_config->add(key, value);
 			}
 			else
 			{
@@ -168,7 +176,7 @@ bool ConfigManager::store()
 		}
 	};
 
-	writeModel(m_config);
+	writeModel(*m_config);
 
 	file.close();
 	std::cout << "Store configuration done." << std::endl;
@@ -181,7 +189,7 @@ bool ConfigManager::store()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void ConfigManager::setConfig(const Model& config)
 {
-	m_config = config;
+	*m_config = config;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -190,6 +198,5 @@ void ConfigManager::setConfig(const Model& config)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 const Model& ConfigManager::getConfig() const
 {
-	return m_config;
+	return *m_config;
 }
-

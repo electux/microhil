@@ -19,6 +19,7 @@ SOURCES = \
 	../com/serial_lib_wrapper.cc \
 	../com/serial_com.cc \
 	../model/model.cc \
+	../view/settings_setup.cc \
 	../view/home_map.cc \
 	../view/home_slots.cc \
 	../view/home_ui_utils.cc \

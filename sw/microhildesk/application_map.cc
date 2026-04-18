@@ -18,6 +18,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <application.h>
+#include <view/home.h>
+#include <view/settings/settings.h>
 
 namespace
 {
@@ -61,9 +63,9 @@ void EntryApplication::mapping()
 	add_action(cHelpAboutActionName.data(), sigc::mem_fun(*this, &EntryApplication::onActionAbout));
 
 	// Connects close request signal for AppHome window
-	m_home.signal_close_request().connect(sigc::mem_fun(*this, &EntryApplication::onHandleClose), false);
+	m_home->signal_close_request().connect(sigc::mem_fun(*this, &EntryApplication::onHandleClose), false);
 
 	// Maps application setup signals to their handlers
-	m_settings.setupChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));
-	m_home.controlChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));
+	m_settings->setupChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));
+	m_home->controlChanged().connect(sigc::mem_fun(*this, &EntryApplication::onSetupChanged));
 }

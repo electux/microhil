@@ -1,9 +1,9 @@
 <map id="Electux::App::Config::ConfigManager" name="Electux::App::Config::ConfigManager">
-<area shape="rect" id="Node000001" title="Implementation of the IConfig interface for configuration management." alt="" coords="119,268,279,468"/>
+<area shape="rect" id="Node000001" title="Implementation of the IConfig interface for configuration management." alt="" coords="119,268,279,488"/>
 <area shape="rect" id="Node000002" href="$db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html" title="Interface for configuration mechanism." alt="" coords="5,5,149,205"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,217,155,267,150,269,127,219"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,217,152,267,147,269,125,219"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="173,73,224,138"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,138,201,252,196,252,196,138"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="291,73,346,138"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="318,139,310,190,292,245,287,254,282,252,287,243,304,188,313,138"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="249,73,402,138"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="324,139,314,190,296,245,289,259,284,256,291,243,309,188,319,138"/>
 </map>

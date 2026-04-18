@@ -1,9 +1,5 @@
 <map id="Electux::App::Config::ConfigManager::defaultConfigStore" name="Electux::App::Config::ConfigManager::defaultConfigStore">
-<area shape="rect" id="Node000001" title="Populates models with default values and stores them to a file." alt="" coords="5,62,228,117"/>
-<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ab5f411c8bde7a2ee7f14e6d4dffada41" title="Adds an entity to the model." alt="" coords="285,5,436,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,59,272,46,273,51,222,64"/>
-<area shape="rect" id="Node000003" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores the current configuration to the specified file." alt="" coords="276,69,445,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,87,262,87,262,92,228,92"/>
-<area shape="rect" id="Node000004" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a24c634d446349d55624310adb4a62dd6" title="Converts a ModelSerialKey enum value to its string representation." alt="" coords="285,133,436,173"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="222,114,273,128,272,133,221,119"/>
+<area shape="rect" id="Node000001" title="Populates models with default values and stores them to a file." alt="" coords="5,5,228,60"/>
+<area shape="rect" id="Node000002" href="$d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a9ab5c4ca238d3e9ae26998026ebab2c1" title="Stores the current configuration to the specified file." alt="" coords="276,13,445,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,30,262,30,262,35,228,35"/>
 </map>

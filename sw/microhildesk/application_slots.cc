@@ -19,6 +19,13 @@
 
 #include <iostream>
 #include <application.h>
+#include <config/iconfig.h>
+#include <model/model.h>
+#include <view/home.h>
+#include <view/settings/settings.h>
+#include <view/help/help.h>
+#include <view/about/about.h>
+#include <view/settings_setup.h>
 
 namespace
 {
@@ -76,15 +83,15 @@ void EntryApplication::on_startup()
 	mapping();
 
 	// Sets AppHome as toplevel window, add to the application window
-	add_window(m_home);
+	add_window(*m_home);
 
 	// Updated settings widgets data based on loaded configuration
 	SettingsSetup setup;
-	setup.m_config = m_configManager->getConfig();
-	m_settings.setSettingsSetup(setup);
-	m_settings.updateUiData();
-	m_home.setControlSetup(setup);
-	m_home.updateUiData();
+	*setup.m_config = m_configManager->getConfig();
+	m_settings->setSettingsSetup(setup);
+	m_settings->updateUiData();
+	m_home->setControlSetup(setup);
+	m_home->updateUiData();
 
 	std::cout << "Startup application done." << std::endl;
 }
@@ -99,7 +106,7 @@ void EntryApplication::on_activate()
 	Gtk::Application::on_activate();
 
 	// Sets visibility for AppHome window
-	m_home.set_visible(true);
+	m_home->set_visible(true);
 
 	std::cout << "Activate application done." << std::endl;
 }
@@ -122,8 +129,8 @@ void EntryApplication::on_shutdown()
 void EntryApplication::onActionQuit()
 {
 	std::cout << "Quit application." << std::endl;
-	m_home.set_visible(false);
-	remove_window(m_home);
+	m_home->set_visible(false);
+	remove_window(*m_home);
 	quit();
 }
 
@@ -142,7 +149,7 @@ bool EntryApplication::onHandleClose()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EntryApplication::onActionSettings()
 {
-	m_settings.show();
+	m_settings->show();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -150,7 +157,7 @@ void EntryApplication::onActionSettings()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EntryApplication::onActionDoc()
 {
-	m_help.show();
+	m_help->show();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -158,7 +165,7 @@ void EntryApplication::onActionDoc()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EntryApplication::onActionAbout()
 {
-	m_about.show();
+	m_about->show();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -167,6 +174,6 @@ void EntryApplication::onActionAbout()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void EntryApplication::onSetupChanged(const SettingsSetup &setup)
 {
-	m_configManager->setConfig(setup.m_config);
+	m_configManager->setConfig(*setup.m_config);
 	m_configManager->store();
 }

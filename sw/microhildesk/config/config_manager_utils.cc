@@ -18,6 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <config/config_manager.h>
+#include <model/model.h>
 
 namespace
 {
@@ -56,36 +57,36 @@ using namespace Electux::App::Model;
 void ConfigManager::defaultConfigStore()
 {
 	// Set default control configuration
-	const auto enableKey = m_config.toString(ModelControlKey::Enable);
-	m_config.add(enableKey, cConfigDefaultControlEnable.data());
-	const auto modeKey = m_config.toString(ModelControlKey::Mode);
-	m_config.add(modeKey, cConfigDefaultControlMode.data());
-	const auto toggleKey = m_config.toString(ModelControlKey::Toggle);
-	m_config.add(toggleKey, cConfigDefaultControlToggle.data());
-	const auto timerKey = m_config.toString(ModelControlKey::Timer);
-	m_config.add(timerKey, cConfigDefaultControlTimer.data());
-	const auto timerEnableKey = m_config.toString(ModelControlKey::TimerEnable);
-	m_config.add(timerEnableKey, cConfigDefaultControlTimerEnable.data());
+	const auto enableKey = m_config->toString(ModelControlKey::Enable);
+	m_config->add(enableKey, cConfigDefaultControlEnable.data());
+	const auto modeKey = m_config->toString(ModelControlKey::Mode);
+	m_config->add(modeKey, cConfigDefaultControlMode.data());
+	const auto toggleKey = m_config->toString(ModelControlKey::Toggle);
+	m_config->add(toggleKey, cConfigDefaultControlToggle.data());
+	const auto timerKey = m_config->toString(ModelControlKey::Timer);
+	m_config->add(timerKey, cConfigDefaultControlTimer.data());
+	const auto timerEnableKey = m_config->toString(ModelControlKey::TimerEnable);
+	m_config->add(timerEnableKey, cConfigDefaultControlTimerEnable.data());
 
 	// Set default serial configuration
-	const auto deviceKey = m_config.toString(ModelSerialKey::Device);
-	m_config.add(deviceKey, cConfigDefaultSerialDevice.data());
-	const auto baudKey = m_config.toString(ModelSerialKey::Baud);
-	m_config.add(baudKey, cConfigDefaultSerialBaud.data());
-	const auto dataKey = m_config.toString(ModelSerialKey::Data);
-	m_config.add(dataKey, cConfigDefaultSerialData.data());
-	const auto parityKey = m_config.toString(ModelSerialKey::Parity);
-	m_config.add(parityKey, cConfigDefaultSerialParity.data());
-	const auto stopKey = m_config.toString(ModelSerialKey::Stop);
-	m_config.add(stopKey, cConfigDefaultSerialStop.data());
-	const auto flowKey = m_config.toString(ModelSerialKey::Flow);
-	m_config.add(flowKey, cConfigDefaultSerialFlow.data());
+	const auto deviceKey = m_config->toString(ModelSerialKey::Device);
+	m_config->add(deviceKey, cConfigDefaultSerialDevice.data());
+	const auto baudKey = m_config->toString(ModelSerialKey::Baud);
+	m_config->add(baudKey, cConfigDefaultSerialBaud.data());
+	const auto dataKey = m_config->toString(ModelSerialKey::Data);
+	m_config->add(dataKey, cConfigDefaultSerialData.data());
+	const auto parityKey = m_config->toString(ModelSerialKey::Parity);
+	m_config->add(parityKey, cConfigDefaultSerialParity.data());
+	const auto stopKey = m_config->toString(ModelSerialKey::Stop);
+	m_config->add(stopKey, cConfigDefaultSerialStop.data());
+	const auto flowKey = m_config->toString(ModelSerialKey::Flow);
+	m_config->add(flowKey, cConfigDefaultSerialFlow.data());
 
 	// Set default log configuration
-	const auto filePathKey = m_config.toString(ModelLogKey::FilePath);
-	m_config.add(filePathKey, cConfigDefaultLogFilePath.data());
-	const auto logLevelKey = m_config.toString(ModelLogKey::LogLevel);
-	m_config.add(logLevelKey, cConfigDefaultLogLevel.data());
+	const auto filePathKey = m_config->toString(ModelLogKey::FilePath);
+	m_config->add(filePathKey, cConfigDefaultLogFilePath.data());
+	const auto logLevelKey = m_config->toString(ModelLogKey::LogLevel);
+	m_config->add(logLevelKey, cConfigDefaultLogLevel.data());
 
 	// Finalize by storing to disk
 	store();

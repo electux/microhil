@@ -1,6 +1,7 @@
 var classElectux_1_1App_1_1EntryApplication =
 [
     [ "EntryApplication", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a4b6b66824726af1b9ebef4ae063eba4f", null ],
+    [ "~EntryApplication", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#abc2fe758a4718418aa6a6976012d53b0", null ],
     [ "create", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#add419e3a8185514cf59e101641b70c3e", null ],
     [ "mapping", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#aed9ee32a0e2d9ee04a7f14854cd00f48", null ],
     [ "on_activate", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a78e38fddc631cb7e1334e4d5ceee00fa", null ],
@@ -12,9 +13,9 @@ var classElectux_1_1App_1_1EntryApplication =
     [ "onActionSettings", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a3076fd39b705c6d3fd4f3ecdd5fbc69a", null ],
     [ "onHandleClose", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a740242096435960d3fd1a191f35c4e0a", null ],
     [ "onSetupChanged", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a17eec7f0e7267acc309cfa44daa8aae8", null ],
-    [ "m_about", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a1a725b5941ed3293a2694dd2aa572a66", null ],
+    [ "m_about", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a9ba70031bdbe2cb29c2635ba736ef24d", null ],
     [ "m_configManager", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a386d426f0e41457c3dc3751ddb4ff75f", null ],
-    [ "m_help", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#afe58636cecb4c982cf77846a4aa25baf", null ],
-    [ "m_home", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#acf2fc09e2978ec6b29cc708a0a92fff2", null ],
-    [ "m_settings", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a9298ffd230dc563df16fadaa8bc47014", null ]
+    [ "m_help", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a2b32af280fdd2d58df7704bc8901f91c", null ],
+    [ "m_home", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a6ed65263d7a07f696733282e84c21ce0", null ],
+    [ "m_settings", "d0/dcc/classElectux_1_1App_1_1EntryApplication.html#a9b9e37476cf069608a835ab687237cb1", null ]
 ];

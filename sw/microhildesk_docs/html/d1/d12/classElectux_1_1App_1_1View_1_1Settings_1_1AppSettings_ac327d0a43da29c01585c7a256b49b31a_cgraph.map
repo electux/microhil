@@ -8,8 +8,4 @@
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="393,85,432,92,431,97,392,90"/>
 <area shape="rect" id="Node000005" href="$d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6" title="Gets UI data from widgets and saves them to configuration." alt="" coords="668,84,837,139"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="615,109,654,109,654,114,615,114"/>
-<area shape="rect" id="Node000006" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a24c634d446349d55624310adb4a62dd6" title="Converts a ModelSerialKey enum value to its string representation." alt="" coords="885,59,1036,99"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="837,96,871,90,872,96,838,101"/>
-<area shape="rect" id="Node000007" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a961e17c5fed3100886ccdd4adc7e9283" title="Updates an entity value by its key." alt="" coords="885,123,1036,163"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="838,122,872,127,871,132,837,127"/>
 </map>
