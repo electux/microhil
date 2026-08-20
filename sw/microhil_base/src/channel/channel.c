@@ -16,39 +16,43 @@
  * You should have received a copy of the GNU General Public License along
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <string.h>
-#include "io_config.h"
 #include "channel.h"
+#include "io_config.h"
+#include <stdlib.h>
+#include <string.h>
+
+const char *const MICROHIL_VERSION = "microHIL v1.0.0";
+const char *const MICROHIL_BOARD_ID = "mh:333:2023:0";
 
 #define VERBOSE
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Marks private functions
-#define MICROHIL_PRIVATE
+#define MICROHIL_PRIVATE static
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Total number of supported channels
-#define MICROHIL_NUMBER_OF_CHANNELS 8
+enum { MICROHIL_NUMBER_OF_CHANNELS = 8 };
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief microHIL channel switch ON request tail
-#define MICROHIL_ON_CHANNEL "on#end"
+static const char *const MICROHIL_ON_CHANNEL = "on#end";
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief microHIL channel switch OFF request tail
-#define MICROHIL_OFF_CHANNEL "off#end"
+static const char *const MICROHIL_OFF_CHANNEL = "off#end";
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Prefix verbose message
-#define MICROHIL_VERBOSE "[microHIL] INFO"
+static const char *const MICROHIL_VERBOSE = "[microHIL] INFO";
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Info message for all channels switched to ON
-#define MICROHIL_ALL_ON "all channels on"
+static const char *const MICROHIL_ALL_ON = "all channels on";
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Info message for all channels switched to OFF
-#define MICROHIL_ALL_OFF "all channels off"
+static const char *const MICROHIL_ALL_OFF = "all channels off";
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Buffer for storing channel states
@@ -94,153 +98,141 @@ static microhil_req request_tbl[] = {
     {"mh#ch#all#on#end", microhil_all_channels},
     {"mh#ch#all#off#end", microhil_all_channels},
     {"mh#ch#board#id#end", microhil_board_id},
-    {"mh#ch#version#end", microhil_version}
-};
+    {"mh#ch#version#end", microhil_version}};
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Compare request with candidates from request table
 /// @param req1 represents microHIL request
 /// @param req2 represents microHIL request
 /// @return compare result
-MICROHIL_PRIVATE int comapre_request(const void *req1, const void *req2)
-{
-    const microhil_req *cmd1 = req1, *cmd2 = req2;
+MICROHIL_PRIVATE int comapre_request(const void *req1, const void *req2) {
+  const microhil_req *cmd1 = req1, *cmd2 = req2;
 
-    return memcmp(cmd1->name, cmd2->name, 9);
+  return memcmp(cmd1->name, cmd2->name, 9);
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Switches channels by command request
 /// @param request represents command request
-void microhil_channel_switch(uint8_t *request)
-{    
-    microhil_req key = {request, NULL};
+void microhil_channel_switch(uint8_t *request) {
+  microhil_req key = {(const char *)request, NULL};
 
-    microhil_req *channel_target = bsearch(
-        &key,
-        request_tbl,
-        sizeof(request_tbl) / sizeof(request_tbl[0]),
-        sizeof(request_tbl[0]),
-        comapre_request
-    );
+  microhil_req *channel_target =
+      bsearch(&key, request_tbl, sizeof(request_tbl) / sizeof(request_tbl[0]),
+              sizeof(request_tbl[0]), comapre_request);
 
+  if (channel_target != NULL && channel_target->req_operation != NULL) {
     channel_target->req_operation(request);
+  }
+#ifdef VERBOSE
+  else {
+    printf("%s invalid command: %s\n", MICROHIL_VERBOSE, request);
+  }
+#endif
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Converts channel number to GPIO number
 /// @param channel_number represents channel number
 /// @return GPIO pin number
-MICROHIL_PRIVATE microhil_channel_gpio to_gpio(uint8_t channel_number)
-{
-    switch(channel_number)
-    {
-        case 1:
-            return MICROHIL_CHANNEL_0;
-        case 2:
-            return MICROHIL_CHANNEL_1;
-        case 3:
-            return MICROHIL_CHANNEL_2;
-        case 4:
-            return MICROHIL_CHANNEL_3;
-        case 5:
-            return MICROHIL_CHANNEL_4;
-        case 6:
-            return MICROHIL_CHANNEL_5;
-        case 7:
-            return MICROHIL_CHANNEL_6;
-        case 8:
-            return MICROHIL_CHANNEL_7;
-        }
+MICROHIL_PRIVATE microhil_channel_gpio to_gpio(uint8_t channel_number) {
+  switch (channel_number - '0') {
+  case 1:
+    return MICROHIL_CHANNEL_0;
+  case 2:
+    return MICROHIL_CHANNEL_1;
+  case 3:
+    return MICROHIL_CHANNEL_2;
+  case 4:
+    return MICROHIL_CHANNEL_3;
+  case 5:
+    return MICROHIL_CHANNEL_4;
+  case 6:
+    return MICROHIL_CHANNEL_5;
+  case 7:
+    return MICROHIL_CHANNEL_6;
+  case 8:
+    return MICROHIL_CHANNEL_7;
+  }
+
+  return MICROHIL_CHANNEL_0;
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Performs channel operation (single channel)
 /// @param args represents arguments (channel number and state on/off)
-MICROHIL_PRIVATE void microhil_channel(uint8_t *args)
-{
-    uint8_t channel_number = args[6];
-    size_t on_len = strlen(MICROHIL_ON_CHANNEL);
-    size_t off_len = strlen(MICROHIL_OFF_CHANNEL);
-    bool on = (memcmp(args + 8, MICROHIL_ON_CHANNEL, on_len) == 0);
-    bool off = (memcmp(args + 8, MICROHIL_OFF_CHANNEL, off_len) == 0);
+MICROHIL_PRIVATE void microhil_channel(uint8_t *args) {
+  uint8_t channel_number = args[6];
+  size_t on_len = strlen(MICROHIL_ON_CHANNEL);
+  size_t off_len = strlen(MICROHIL_OFF_CHANNEL);
+  bool on = (memcmp(args + 8, MICROHIL_ON_CHANNEL, on_len) == 0);
+  bool off = (memcmp(args + 8, MICROHIL_OFF_CHANNEL, off_len) == 0);
 
-    if(on)
-    {
-        microhil_relay(to_gpio(channel_number), on);
+  if (on) {
+    microhil_relay(to_gpio(channel_number), on);
 #ifdef VERBOSE
-        printf("%s channel %c on\n", MICROHIL_VERBOSE, channel_number);
+    printf("%s channel %c on\n", MICROHIL_VERBOSE, channel_number);
 #endif
-    }
+  }
 
-    if (off)
-    {
-        microhil_relay(to_gpio(channel_number), off);
+  if (off) {
+    microhil_relay(to_gpio(channel_number), off);
 #ifdef VERBOSE
-        printf("%s channel %c off\n", MICROHIL_VERBOSE, channel_number);
+    printf("%s channel %c off\n", MICROHIL_VERBOSE, channel_number);
 #endif
-    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Performs operations over all channels
 /// @param args represents argument (state on/off)
-MICROHIL_PRIVATE void microhil_all_channels(uint8_t *args)
-{
-    size_t on_len = strlen(MICROHIL_ON_CHANNEL);
-    size_t off_len = strlen(MICROHIL_OFF_CHANNEL);
-    bool on = (memcmp(args + 10, MICROHIL_ON_CHANNEL, on_len) == 0);
-    bool off = (memcmp(args + 10, MICROHIL_OFF_CHANNEL, off_len) == 0);
+MICROHIL_PRIVATE void microhil_all_channels(uint8_t *args) {
+  size_t on_len = strlen(MICROHIL_ON_CHANNEL);
+  size_t off_len = strlen(MICROHIL_OFF_CHANNEL);
+  bool on = (memcmp(args + 10, MICROHIL_ON_CHANNEL, on_len) == 0);
+  bool off = (memcmp(args + 10, MICROHIL_OFF_CHANNEL, off_len) == 0);
 
-    if (on)
-    {
-        ////////////////////////////////////////////////////////////////////
-        /// Sets relay channels to ON
-        microhil_relay_all(true);
+  if (on) {
+    ////////////////////////////////////////////////////////////////////
+    /// Sets relay channels to ON
+    microhil_relay_all(true);
 
-        ////////////////////////////////////////////////////////////////////
-        /// Store channel states
-        memset(channels, 1, MICROHIL_NUMBER_OF_CHANNELS * sizeof(uint8_t));
+    ////////////////////////////////////////////////////////////////////
+    /// Store channel states
+    memset(channels, 1, MICROHIL_NUMBER_OF_CHANNELS * sizeof(uint8_t));
 #ifdef VERBOSE
-        printf("%s %s\n", MICROHIL_VERBOSE, MICROHIL_ALL_ON);
+    printf("%s %s\n", MICROHIL_VERBOSE, MICROHIL_ALL_ON);
 #endif
-    }
+  }
 
-    if (off)
-    {
-        ////////////////////////////////////////////////////////////////////
-        /// Sets relay channels to OFF
-        microhil_relay_all(false);
+  if (off) {
+    ////////////////////////////////////////////////////////////////////
+    /// Sets relay channels to OFF
+    microhil_relay_all(false);
 
-        ////////////////////////////////////////////////////////////////////
-        /// Stores channel states
-        memset(channels, 0, MICROHIL_NUMBER_OF_CHANNELS * sizeof(uint8_t));
+    ////////////////////////////////////////////////////////////////////
+    /// Stores channel states
+    memset(channels, 0, MICROHIL_NUMBER_OF_CHANNELS * sizeof(uint8_t));
 #ifdef VERBOSE
-        printf("%s %s\n", MICROHIL_VERBOSE, MICROHIL_ALL_OFF);
+    printf("%s %s\n", MICROHIL_VERBOSE, MICROHIL_ALL_OFF);
 #endif
-    }
+  }
 
-    ////////////////////////////////////////////////////////////////////////
-    /// Led notification
-    microhil_write_pixel(255, 255, 255);
+  ////////////////////////////////////////////////////////////////////////
+  /// Led notification
+  microhil_write_pixel(255, 255, 255);
 
-    ////////////////////////////////////////////////////////////////////////
-    /// Buzzer notification
-    microhil_write_pwm(PWM_CHAN_A, 80);
-    microhil_delay_ms(100);
-    microhil_write_pwm(PWM_CHAN_A, 0);
+  ////////////////////////////////////////////////////////////////////////
+  /// Buzzer notification
+  microhil_write_pwm(PWM_CHAN_A, 80);
+  microhil_delay_ms(100);
+  microhil_write_pwm(PWM_CHAN_A, 0);
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Gets unique HW board id
-MICROHIL_PRIVATE void microhil_board_id()
-{
-    printf("%s", MICROHIL_BOARD_ID);
-}
+MICROHIL_PRIVATE void microhil_board_id() { printf("%s", MICROHIL_BOARD_ID); }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Gets microHIL FW version
-MICROHIL_PRIVATE void microhil_version()
-{
-    printf("%s", MICROHIL_VERSION);
-}
+MICROHIL_PRIVATE void microhil_version() { printf("%s", MICROHIL_VERSION); }

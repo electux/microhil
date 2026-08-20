@@ -13,6 +13,7 @@ include(pico_sdk_import.cmake)
 
 # Sets project info
 project(microhil-base C CXX ASM)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_PROJECT_VERSION 1.0.0)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)

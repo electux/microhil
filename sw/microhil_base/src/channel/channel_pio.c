@@ -25,30 +25,25 @@ const uint microhil_ws2812_din = 13;
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Performs initialization for PIO state machine
 /// @return true for success else false
-bool microhil_pio_init()
-{
-    ////////////////////////////////////////////////////////////////////////
-    /// Add PIO program
-    ws2812_init init =
-    {
-        .pio = pio0,
-        .sm = 0,
-        .offset = pio_add_program(pio0, &ws2812_program),
-        .pin = microhil_ws2812_din,
-        .freq = 800000,
-        .rgbw = true
-    };
+bool microhil_pio_init() {
+  ////////////////////////////////////////////////////////////////////////
+  /// Add PIO program
+  ws2812_init init = {.pio = pio0,
+                      .sm = 0,
+                      .offset = pio_add_program(pio0, &ws2812_program),
+                      .pin = microhil_ws2812_din,
+                      .freq = 800000,
+                      .rgbw = true};
 
-    if (init.offset == 0)
-    {
-        ////////////////////////////////////////////////////////////////////
-        /// Failed to load PIO program
-        return false;
-    }
+  if (init.offset == 0) {
+    ////////////////////////////////////////////////////////////////////
+    /// Failed to load PIO program
+    return false;
+  }
 
-    ////////////////////////////////////////////////////////////////////////
-    /// Performs WS2812 program initialization
-    ws2812_program_init(&init);
+  ////////////////////////////////////////////////////////////////////////
+  /// Performs WS2812 program initialization
+  ws2812_program_init(&init);
 
-    return true;
+  return true;
 }

@@ -16,10 +16,10 @@
  * You should have received a copy of the GNU General Public License along
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
+#include "channel.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "channel.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Start marker of microHIL request
@@ -32,50 +32,39 @@ const char end = '>';
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Fetches microHIL command requests from the serial port
 /// @param request storage for received request from the serial port
-void microhil_fetch_request(uint8_t *request)
-{
-    static uint8_t index = 0;
-    int16_t rc = getchar_timeout_us(1);
+void microhil_fetch_request(uint8_t *request) {
+  static uint8_t index = 0;
+  int16_t rc = getchar_timeout_us(1);
 
-    while ((rc != PICO_ERROR_TIMEOUT) && (new_request == false))
-    {
-        if (receive_in_progress == true)
-        {
-            if (rc == start)
-            {
-                ////////////////////////////////////////////////////////////
-                /// Reset index if a new start marker comes in
-                receive_in_progress = true;
-                index = 0;
-            }
-            else if (rc == end)
-            {
-                ////////////////////////////////////////////////////////////
-                // End of the microHIL request
-                request[index] = '\0';
-                receive_in_progress = false;
-                index = 0;
-                new_request = true;
-            }
-            else
-            {
-                ////////////////////////////////////////////////////////////
-                // Append any data between start and end markers
-                request[index] = (char)rc;
-                index++;
+  while ((rc != PICO_ERROR_TIMEOUT) && (new_request == false)) {
+    if (receive_in_progress == true) {
+      if (rc == start) {
+        ////////////////////////////////////////////////////////////
+        /// Reset index if a new start marker comes in
+        receive_in_progress = true;
+        index = 0;
+      } else if (rc == end) {
+        ////////////////////////////////////////////////////////////
+        // End of the microHIL request
+        request[index] = '\0';
+        receive_in_progress = false;
+        index = 0;
+        new_request = true;
+      } else {
+        ////////////////////////////////////////////////////////////
+        // Append any data between start and end markers
+        request[index] = (char)rc;
+        index++;
 
-                if (index >= MICROHIL_REQ_LEN)
-                {
-                    index = MICROHIL_REQ_LEN - 1;
-                }
-            }
+        if (index >= MICROHIL_REQ_LEN) {
+          index = MICROHIL_REQ_LEN - 1;
         }
-        else if (rc == start)
-        {
-            receive_in_progress = true;
-            index = 0;
-        }
-
-        rc = getchar_timeout_us(10);
+      }
+    } else if (rc == start) {
+      receive_in_progress = true;
+      index = 0;
     }
+
+    rc = getchar_timeout_us(10);
+  }
 }

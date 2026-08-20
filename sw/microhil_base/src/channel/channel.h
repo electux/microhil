@@ -18,21 +18,20 @@
  */
 #pragma once
 
-#include <stdlib.h>
 #include "pico/stdlib.h"
 #include "ws2812.pio.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief microHIL version
-#define MICROHIL_VERSION "microHIL v1.0.0"
+extern const char *const MICROHIL_VERSION;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief microHIL board id
-#define MICROHIL_BOARD_ID "mh:333:2023:0"
+extern const char *const MICROHIL_BOARD_ID;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Command request length
-#define MICROHIL_REQ_LEN 32
+enum { MICROHIL_REQ_LEN = 32 };
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Flag for received new request from the serial port
@@ -44,24 +43,22 @@ extern bool receive_in_progress;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief GPIO ports and numbers for channels
-typedef enum _microhil_channel_gpio
-{
-    MICROHIL_CHANNEL_0 = 21,
-    MICROHIL_CHANNEL_1 = 20,
-    MICROHIL_CHANNEL_2 = 19,
-    MICROHIL_CHANNEL_3 = 18,
-    MICROHIL_CHANNEL_4 = 17,
-    MICROHIL_CHANNEL_5 = 16,
-    MICROHIL_CHANNEL_6 = 15,
-    MICROHIL_CHANNEL_7 = 14
+typedef enum _microhil_channel_gpio {
+  MICROHIL_CHANNEL_0 = 21,
+  MICROHIL_CHANNEL_1 = 20,
+  MICROHIL_CHANNEL_2 = 19,
+  MICROHIL_CHANNEL_3 = 18,
+  MICROHIL_CHANNEL_4 = 17,
+  MICROHIL_CHANNEL_5 = 16,
+  MICROHIL_CHANNEL_6 = 15,
+  MICROHIL_CHANNEL_7 = 14
 } microhil_channel_gpio;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Structure for mapping name and requst operation
-typedef struct _microhil_req
-{
-    uint8_t *name;
-    void (*req_operation)(uint8_t *args);
+typedef struct _microhil_req {
+  const char *name;
+  void (*req_operation)(uint8_t *args);
 } microhil_req;
 
 ////////////////////////////////////////////////////////////////////////////

@@ -23,10 +23,7 @@
 /// @param red represents red color value
 /// @param green represents green color value
 /// @param blue represents blue color value
-void microhil_write_pixel(uint8_t red, uint8_t green, uint8_t blue)
-{
-    uint pixel_rgb = ((uint)(red) << 8) |
-                     ((uint)(green) << 16) |
-                     ((uint)(blue));
-    pio_sm_put_blocking(pio0, 0, pixel_rgb << 8u);
+void microhil_write_pixel(uint8_t red, uint8_t green, uint8_t blue) {
+  uint pixel_rgb = ((uint)(red) << 8) | ((uint)(green) << 16) | ((uint)(blue));
+  pio_sm_put_blocking(pio0, 0, pixel_rgb << 8u);
 }

@@ -16,8 +16,8 @@
  * You should have received a copy of the GNU General Public License along
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "io_config.h"
 #include "channel.h"
+#include "io_config.h"
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief GPIO port pin number for buzzer
@@ -26,21 +26,23 @@ const uint microhil_buzzer = 6;
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Performs initialization for buzzer channel
 /// @return true for success else false
-bool microhil_init_buzzer()
-{
-    ////////////////////////////////////////////////////////////////////////
-    /// Performs initialization for buzzer channel to be out
-    microhil_gpio_mode(microhil_buzzer, GPIO_OUT);
+bool microhil_init_buzzer() {
+  ////////////////////////////////////////////////////////////////////////
+  /// Performs initialization for buzzer channel to be out
+  microhil_gpio_mode(microhil_buzzer, GPIO_OUT);
 
-    ////////////////////////////////////////////////////////////////////////
-    /// Performs initialization for buzzer channel to PWM 0
-    return microhil_init_pwm(microhil_buzzer, PWM_CHAN_A);
+  ////////////////////////////////////////////////////////////////////////
+  /// Performs initialization for buzzer channel to PWM 0
+  return microhil_init_pwm(microhil_buzzer, PWM_CHAN_A);
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Turns buzzer state on/off
 /// @param value represents value for buzzer (true - on | false - off)
-void microhil_write_buzzer(bool value)
-{
-    microhil_digital_write(microhil_buzzer, value);
+void microhil_write_buzzer(bool value) {
+  if (value) {
+    microhil_write_pwm(PWM_CHAN_A, 80);
+  } else {
+    microhil_write_pwm(PWM_CHAN_A, 0);
+  }
 }

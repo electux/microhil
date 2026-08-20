@@ -20,11 +20,11 @@
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Prefix error message for IO modules
-#define MICROHIL_IO_CONFIG_ERROR "[microHIL] ERROR"
+static const char *const MICROHIL_IO_CONFIG_ERROR = "[microHIL] ERROR";
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Error message for
-#define MICROHIL_PWM_SET_ERROR "set PWM error"
+static const char *const MICROHIL_PWM_SET_ERROR = "set PWM error";
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief PWM slice number
@@ -34,91 +34,70 @@ static uint slice_num;
 /// @brief Sets port pin configuration
 /// @param pin represents GPIO pin number
 /// @param mode represents GPIO pin direction (GPIO_IN | GPIO_OUT)
-void microhil_gpio_mode(uint pin, uint16_t mode)
-{
-    gpio_init(pin);
+void microhil_gpio_mode(uint pin, uint16_t mode) {
+  gpio_init(pin);
 
-    if (mode == 0 || mode == GPIO_IN)
-    {
-        gpio_set_dir(pin, GPIO_IN);
-    }
-    else
-    {
-        gpio_set_dir(pin, GPIO_OUT);
-    }
+  if (mode == 0 || mode == GPIO_IN) {
+    gpio_set_dir(pin, GPIO_IN);
+  } else {
+    gpio_set_dir(pin, GPIO_OUT);
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Drives GPIO pin
 /// @param pin represents GPIO number
 /// @param value represents GPIO value (true - set | false - clear)
-void microhil_digital_write(uint pin, bool value)
-{
-    gpio_put(pin, value);
-}
+void microhil_digital_write(uint pin, bool value) { gpio_put(pin, value); }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Gets GPIO state
 /// @param pin represents GPIO pin number
 /// @return state of GPIO pin
-bool microhil_digital_read(uint pin)
-{
-    return gpio_get(pin);
-}
+bool microhil_digital_read(uint pin) { return gpio_get(pin); }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Sets delay in miliseconds
 /// @param ms represents number of miliseconds to sleep
-void microhil_delay_ms(uint32_t ms)
-{
-    sleep_ms(ms);
-}
+void microhil_delay_ms(uint32_t ms) { sleep_ms(ms); }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Sets delay in microseconds
 /// @param us represents number of microseconds to sleep
-void microhil_delay_us(uint64_t us)
-{
-    sleep_us(us);
-}
+void microhil_delay_us(uint64_t us) { sleep_us(us); }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Initialization of PWM channel
 /// @param gpio represents GPIO pin
 /// @param channel represents channel number
 /// @return true for success else false
-bool microhil_init_pwm(uint gpio, enum pwm_chan channel)
-{
-    bool status = false;
+bool microhil_init_pwm(uint gpio, enum pwm_chan channel) {
+  bool status = false;
 
-    ////////////////////////////////////////////////////////////////////////
-    /// Sets PWM pin configuration
-    gpio_set_function(gpio, GPIO_FUNC_PWM);
+  ////////////////////////////////////////////////////////////////////////
+  /// Sets PWM pin configuration
+  gpio_set_function(gpio, GPIO_FUNC_PWM);
 
-    ////////////////////////////////////////////////////////////////////////
-    /// Init PWM channel
-    slice_num = pwm_gpio_to_slice_num(gpio);
-    pwm_set_wrap(slice_num, 500);
-    pwm_set_chan_level(slice_num, channel, 1);
-    pwm_set_clkdiv(slice_num, 50);
-    pwm_set_enabled(slice_num, true);
-    status = true;
+  ////////////////////////////////////////////////////////////////////////
+  /// Init PWM channel
+  slice_num = pwm_gpio_to_slice_num(gpio);
+  pwm_set_wrap(slice_num, 500);
+  pwm_set_chan_level(slice_num, channel, 1);
+  pwm_set_clkdiv(slice_num, 50);
+  pwm_set_enabled(slice_num, true);
+  status = true;
 
-    return status;
+  return status;
 }
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Writes value to PWM channel
 /// @param channel represents PWM channel (PWM_CHAN_A | PWM_CHAN_B)
 /// @param value represents new value for selected output
-void microhil_write_pwm(enum pwm_chan channel, uint16_t value)
-{
-    if (value < 0 || value > 100)
-    {
-        printf("%s %s\n", MICROHIL_IO_CONFIG_ERROR, MICROHIL_PWM_SET_ERROR);
-    }
-    else
-    {
-        pwm_set_chan_level(slice_num, channel, value);
-    }
+void microhil_write_pwm(enum pwm_chan channel, uint16_t value) {
+  if (value > 100) {
+    printf("%s %s\n", MICROHIL_IO_CONFIG_ERROR, MICROHIL_PWM_SET_ERROR);
+  } else {
+    pwm_set_chan_level(slice_num, channel, value);
+  }
 }
