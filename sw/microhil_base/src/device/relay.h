@@ -1,6 +1,6 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * channel_buzzer.c
+ * relay.h
  * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhil-base is free software: you can redistribute it and/or modify it
@@ -16,33 +16,38 @@
  * You should have received a copy of the GNU General Public License along
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "channel.h"
-#include "io_config.h"
+#pragma once
+
+#include <stdbool.h>
+#include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief GPIO port pin number for buzzer
-const uint microhil_buzzer = 6;
+/// @brief Total number of relay channels
+enum { RELAY_NUM_CHANNELS = 8 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Performs initialization for buzzer channel
-/// @return true for success else false
-bool microhil_init_buzzer() {
-  ////////////////////////////////////////////////////////////////////////
-  /// Performs initialization for buzzer channel to be out
-  microhil_gpio_mode(microhil_buzzer, GPIO_OUT);
+/// @brief Initializes all relay GPIO channels
+///
+/// @return True if initialization succeeded, false otherwise
+bool relay_init(void);
 
-  ////////////////////////////////////////////////////////////////////////
-  /// Performs initialization for buzzer channel to PWM 0
-  return microhil_init_pwm(microhil_buzzer, PWM_CHAN_A);
+////////////////////////////////////////////////////////////////////////////
+/// @brief Sets the state of a specific relay channel
+///
+/// @param channel [in] Relay channel index (0 to RELAY_NUM_CHANNELS - 1)
+/// @param state [in] True to turn ON, false to turn OFF
+void relay_set(uint32_t channel, bool state);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Sets the state of all relay channels simultaneously
+///
+/// @param state [in] True to turn all ON, false to turn all OFF
+void relay_set_all(bool state);
+
+#ifdef __cplusplus
 }
-
-////////////////////////////////////////////////////////////////////////////
-/// @brief Turns buzzer state on/off
-/// @param value represents value for buzzer (true - on | false - off)
-void microhil_write_buzzer(bool value) {
-  if (value) {
-    microhil_write_pwm(PWM_CHAN_A, 80);
-  } else {
-    microhil_write_pwm(PWM_CHAN_A, 0);
-  }
-}
+#endif

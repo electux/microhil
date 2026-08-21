@@ -17,56 +17,70 @@
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "channel.h"
+#include "command/dispatcher.h"
+#include "command/parser.h"
+#include "device/buzzer.h"
+#include "device/relay.h"
+#include "device/status_led.h"
 #include "pico/stdlib.h"
 #include "tusb.h"
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
 
-////////////////////////////////////////////////////////////////////////////
-/// @brief Flag for received new request from the serial port
-bool new_request = false;
+enum { MICROHIL_REQ_LEN = 32 };
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Flag for marking receive in progress
-bool receive_in_progress = false;
+/// @brief Performs unified initialization of all hardware devices
+/// @return true for success else false
+static bool device_init(void) {
+  if (!stdio_init_all()) {
+    return false;
+  }
+
+  if (!relay_init()) {
+    return false;
+  }
+
+  if (!status_led_init()) {
+    return false;
+  }
+
+  if (!buzzer_init()) {
+    return false;
+  }
+
+  buzzer_beep_start();
+
+  return true;
+}
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Main entry point for microhil-base
 /// @return 0 for success exit else 1 for failed exit
 int main() {
-  ////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////
   /// Performs device initialization
-  bool status = microhil_init();
-
-  if (!status) {
-    ////////////////////////////////////////////////////////////////////
-    /// Failed to perform device initialization
+  if (!device_init()) {
     return 1;
   }
 
-  ////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////
   /// Waits for USB connection
   while (!tud_cdc_connected()) {
     sleep_ms(100);
   }
 
-  ////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////
   /// Command buffer for received request
-  uint8_t request[MICROHIL_REQ_LEN] = {0};
+  char request[MICROHIL_REQ_LEN] = {0};
 
-  while (status) {
-    ////////////////////////////////////////////////////////////////////
-    /// Fetch channel command request
-    microhil_fetch_request(request);
-
-    if (!receive_in_progress && new_request) {
-      ////////////////////////////////////////////////////////////////
-      /// Cleans the command buffer and flag
-      microhil_channel_switch(request);
-      memset(request, 0, MICROHIL_REQ_LEN * sizeof(uint8_t));
-      new_request = false;
+  while (true) {
+    ////////////////////////////////////////////////////////////////////////
+    /// Fetch and process channel command request
+    if (parser_get_command(request, MICROHIL_REQ_LEN)) {
+      command_dispatch(request);
+      memset(request, 0, MICROHIL_REQ_LEN * sizeof(char));
     }
   }
 

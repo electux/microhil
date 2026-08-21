@@ -1,6 +1,6 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * channel_led.c
+ * dispatcher.h
  * Copyright (C) 2025 Vladimir Roncevic <elektron.ronca@gmail.com>
  *
  * microhil-base is free software: you can redistribute it and/or modify it
@@ -16,14 +16,20 @@
  * You should have received a copy of the GNU General Public License along
  * with this program_name. If not, see <http://www.gnu.org/licenses/>.
  */
-#include "channel.h"
+#pragma once
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Writes 32-bit RGB value to PIO state machine
-/// @param red represents red color value
-/// @param green represents green color value
-/// @param blue represents blue color value
-void microhil_write_pixel(uint8_t red, uint8_t green, uint8_t blue) {
-  uint pixel_rgb = ((uint)(red) << 8) | ((uint)(green) << 16) | ((uint)(blue));
-  pio_sm_put_blocking(pio0, 0, pixel_rgb << 8u);
+/// @brief Dispatches a parsed command string to its registered handler
+///
+/// Matches the input string against the command registration table.
+///
+/// @param cmd_str [in] The null-terminated command string to route
+void command_dispatch(const char *cmd_str);
+
+#ifdef __cplusplus
 }
+#endif

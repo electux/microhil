@@ -20,3 +20,24 @@ __pycache__/
 *.out
 *.app
 
+sw/microhil_base/build/*
+
+# CMake cache and generated files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# CPack / CTest artifacts
+CPackConfig.cmake
+CPackSourceConfig.cmake
+CTestConfig.cmake
+*.pfx
+
+# CMake presets user-specific overrides
