@@ -21,6 +21,7 @@ __pycache__/
 *.app
 
 sw/microhil_base/build/*
+sw/microhildesk/build/*
 
 # CMake cache and generated files
 CMakeCache.txt
