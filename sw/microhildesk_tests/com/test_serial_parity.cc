@@ -18,10 +18,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "test_serial_com.h"
-#include <params/serial_com_params.h>
+#include <com/serial_com_params.h>
+#include <com/serial_utils.h>
 
 using namespace Electux::App::Com;
-using namespace Electux::App::Params::SerialComConstants;
+using namespace Electux::App::Com::SerialComConstants;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Test bidirectional conversion of all supported Parity modes.
@@ -37,8 +38,8 @@ TEST_P(ParityTest, ParityConversionTest)
 {
 	const ParameterMapping<Parity> params = this->GetParam();
 
-	EXPECT_EQ(this->m_serial.parityToUint(params.enum_val), params.uint_val);
-	EXPECT_EQ(this->m_serial.uintToParity(params.uint_val), params.enum_val);
+	EXPECT_EQ(SerialUtils::parityToUint(params.enum_val), params.uint_val);
+	EXPECT_EQ(SerialUtils::uintToParity(params.uint_val), params.enum_val);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,9 +74,9 @@ INSTANTIATE_TEST_SUITE_P
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(SerialComTest, InvalidParityDetectionTest)
 {
-	uint32_t invalid_uint = m_serial.parityToUint(Parity::PARITY_INVALID);
+	uint32_t invalid_uint = SerialUtils::parityToUint(Parity::PARITY_INVALID);
 	EXPECT_EQ(invalid_uint, cComInvalidParameter);
 
-	Parity invalid_enum = m_serial.uintToParity(9);
+	Parity invalid_enum = SerialUtils::uintToParity(9);
 	EXPECT_EQ(invalid_enum, Parity::PARITY_INVALID);
 }

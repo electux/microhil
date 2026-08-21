@@ -15,6 +15,7 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
@@ -22,9 +23,9 @@
 #include <string_view>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @namespace Electux::App::Params::SerialComConstants
+/// @namespace Electux::App::Com::SerialComConstants
 /// @brief Namespace for serial communication constants and definitions
-namespace Electux::App::Params::SerialComConstants
+namespace Electux::App::Com::SerialComConstants
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// @name Baud Rate Parameters
@@ -112,4 +113,4 @@ namespace Electux::App::Params::SerialComConstants
 	constexpr const uint32_t cComInvalidParameter = 127;
 	/// @}
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-} // namespace Electux::App::Params::SerialComConstants
+} // namespace Electux::App::Com::SerialComConstants

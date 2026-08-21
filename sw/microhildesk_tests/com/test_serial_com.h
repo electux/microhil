@@ -38,19 +38,6 @@ namespace Electux::App::Com
 	class SerialComProxy : public SerialCom
 	{
 	public:
-		////////////////////////////////////////////////////////////////////////////////////////////////
-		/// @brief Promoting protected methods to public for unit testing
-		////////////////////////////////////////////////////////////////////////////////////////////////
-		using SerialCom::baudToUint;
-		using SerialCom::uintToBaud;
-		using SerialCom::dataBitsToUint;
-		using SerialCom::uintToDataBits;
-		using SerialCom::parityToUint;
-		using SerialCom::uintToParity;
-		using SerialCom::stopBitsToUint;
-		using SerialCom::uintToStopBits;
-		using SerialCom::flowControlToUint;
-		using SerialCom::uintToFlowControl;
 	};
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////

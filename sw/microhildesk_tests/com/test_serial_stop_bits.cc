@@ -17,13 +17,12 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "test_mock_iserial.h"
 #include "test_serial_com.h"
-#include <params/serial_com_params.h>
+#include <com/serial_com_params.h>
+#include <com/serial_utils.h>
 
-using namespace com::mock;
 using namespace Electux::App::Com;
-using namespace Electux::App::Params::SerialComConstants;
+using namespace Electux::App::Com::SerialComConstants;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Test bidirectional conversion of all supported Stop Bits.
@@ -39,8 +38,8 @@ TEST_P(StopBitsTest, StopBitsConversionTest)
 {
 	const ParameterMapping<StopBits> params = this->GetParam();
 
-	EXPECT_EQ(this->m_serial.stopBitsToUint(params.enum_val), params.uint_val);
-	EXPECT_EQ(this->m_serial.uintToStopBits(params.uint_val), params.enum_val);
+	EXPECT_EQ(SerialUtils::stopBitsToUint(params.enum_val), params.uint_val);
+	EXPECT_EQ(SerialUtils::uintToStopBits(params.uint_val), params.enum_val);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,27 +73,9 @@ INSTANTIATE_TEST_SUITE_P
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(SerialComTest, InvalidStopBitsDetectionTest)
 {
-	uint32_t invalid_uint = m_serial.stopBitsToUint(StopBits::STOP_BITS_INVALID);
+	uint32_t invalid_uint = SerialUtils::stopBitsToUint(StopBits::STOP_BITS_INVALID);
 	EXPECT_EQ(invalid_uint, cComInvalidParameter);
 
-	StopBits invalid_enum = m_serial.uintToStopBits(9);
+	StopBits invalid_enum = SerialUtils::uintToStopBits(9);
 	EXPECT_EQ(invalid_enum, StopBits::STOP_BITS_INVALID);
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Test setting stop bits configuration.
-///
-/// Ensures the setStopBits method is called with the correct enum value.
-///
-/// @param MockISerialTest The name of the test suite.
-/// @param SetStopBitsTest The name of the test.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-TEST(MockISerialTest, SetStopBitsTest)
-{
-    MockISerial mockSerial;
-    StopBits stopBits = StopBits::STOP_BITS_2;
-
-    EXPECT_CALL(mockSerial, setStopBits(stopBits)).Times(1);
-
-    mockSerial.setStopBits(stopBits);
 }

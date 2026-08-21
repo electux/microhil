@@ -43,7 +43,7 @@ TEST_F(ConfigManagerTest, LoadConfigTest)
 	bool success = m_config->load();
 	EXPECT_TRUE(success);
 
-	auto serial = m_config->getConfig();
+	const auto& serial = m_config->getConfig();
 	auto deviceKey = serial.toString(ModelSerialKey::Device);
 
 	EXPECT_EQ(serial.getEntity(deviceKey), "/dev/ttyUSB0");
@@ -71,7 +71,7 @@ TEST_F(ConfigManagerTest, MissingFileLoadDefaultsTest)
 	EXPECT_TRUE(std::filesystem::exists(m_testConfigFileName));
 
 	// Verify a default value was set
-	auto serial = m_config->getConfig();
+	const auto& serial = m_config->getConfig();
 	auto deviceKey = serial.toString(ModelSerialKey::Device);
 	EXPECT_EQ(serial.getEntity(deviceKey), "/dev/ttyUSB0");
 }

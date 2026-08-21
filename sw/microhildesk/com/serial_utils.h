@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// about.h
+/// serial_utils.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,24 +19,23 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <gtkmm/aboutdialog.h>
-#include <view/about/iabout_view.h>
+#include <cstdint>
+#include <com/ilib.h>
 
-namespace Electux::App::View::About
+namespace Electux::App::Com::SerialUtils
 {
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class AppAbout
-	/// @brief About view dialog definition for the microhildesk application.
-	///
-	/// Displays application metadata including version, copyright, license,
-	/// and contributor information using the standard Gtk::AboutDialog.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class AppAbout : public Gtk::AboutDialog, public IAboutView
-	{
-	public:
-		explicit AppAbout();
-		virtual ~AppAbout() override = default;
+	uint32_t baudToUint(const BaudRate baud);
+	BaudRate uintToBaud(const uint32_t baud);
 
-		void show() override;
-	};
-} // namespace Electux::App::View::About
+	uint32_t dataBitsToUint(const CharacterSize data);
+	CharacterSize uintToDataBits(const uint32_t data);
+
+	uint32_t parityToUint(const Parity parity);
+	Parity uintToParity(const uint32_t parity);
+
+	uint32_t stopBitsToUint(const StopBits stop);
+	StopBits uintToStopBits(const uint32_t stop);
+
+	uint32_t flowControlToUint(const FlowControl flow);
+	FlowControl uintToFlowControl(const uint32_t flow);
+} // namespace Electux::App::Com::SerialUtils

@@ -39,10 +39,12 @@ SerialCom::~SerialCom() noexcept
 {
     try 
     {
-        // Even if close() throws, we catch it here to satisfy noexcept
-        if (!close())
+        if (isOpen())
         {
-            std::cerr << "Close error: Serial port was not closed properly." << std::endl;
+            if (!close())
+            {
+                std::cerr << "Close error: Serial port was not closed properly." << std::endl;
+            }
         }
     }
     catch (const std::exception& e)
@@ -200,3 +202,40 @@ void SerialCom::setFlowControl(FlowControl flowControl)
 {
     m_serialPort->SetFlowControl(flowControl);
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Configures the serial port with specific parameters.
+/// @param params Reference to SerialParams structure (configuration).
+/// @return True if setup was successful, false otherwise.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+bool SerialCom::setup(const SerialParams &params)
+{
+	if (!isOpen())
+	{
+		std::cerr << "Setup error: Serial port not open." << std::endl;
+		return false;
+	}
+
+	if (params.device.empty())
+	{
+		std::cerr << "Setup error: Device path is empty!" << std::endl;
+		return false;
+	}
+
+	try
+	{
+		setBaudRate(params.baud);
+		setCharacterSize(params.data);
+		setParity(params.parity);
+		setStopBits(params.stop);
+		setFlowControl(params.flow);
+		m_device = params.device;
+		return true;
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "Setup error: " << e.what() << std::endl;
+		return false;
+	}
+}
+

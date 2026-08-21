@@ -49,7 +49,7 @@ using namespace Electux::App::Model;
 /// @param configFileName The path/name of the configuration file.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ConfigManager::ConfigManager(const std::string &configFileName)
-	: m_config(std::make_unique<Model>())
+	: m_config(std::make_unique<Electux::App::Model::Model>())
 {
 	m_fileName = configFileName.empty() ? Glib::build_filename(Glib::get_home_dir(), cConfigFile.data()) : configFileName;
 }
@@ -187,16 +187,16 @@ bool ConfigManager::store()
 /// @brief Sets the control configuration.
 /// @param config Reference to the Model configuration object.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-void ConfigManager::setConfig(const Model& config)
+void ConfigManager::setConfig(const Electux::App::Model::IModel& config)
 {
-	*m_config = config;
+	*m_config = dynamic_cast<const Electux::App::Model::Model&>(config);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Gets the current control configuration.
 /// @return A constant reference to the Model configuration.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-const Model& ConfigManager::getConfig() const
+const Electux::App::Model::IModel& ConfigManager::getConfig() const
 {
 	return *m_config;
 }

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// help.cc
+/// iapp_controller.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -15,39 +15,33 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-#include <view/help/help.h>
-
-namespace
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @name Application Help Window Widgets Parameters
-	/// @{
-	constexpr std::string_view cHelpTitle{"microhildesk"};
-	constexpr int cHelpWidth{600};
-	constexpr int cHelpHeight{400};
-	/// @}
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-} // namespace
-
-using namespace Electux::App::View::Help;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief AppHelp constructor.
 ///
-/// Initializes the help window with predefined title and dimensions.
-/// The window is set to be non-resizable and remains hidden when closed.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-AppHelp::AppHelp()
-{
-	set_title(cHelpTitle.data());
-	set_default_size(cHelpWidth, cHelpHeight);
-	set_resizable(false);
-	set_hide_on_close(true);
-}
+#pragma once
 
-void AppHelp::show()
+namespace Electux::App
 {
-	set_visible(true);
-}
+	namespace Model
+	{
+		class IModel;
+		class SettingsSetup;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @class IAppController
+	/// @brief Interface defining the contract for the application business logic coordinator.
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	class IAppController
+	{
+	public:
+		virtual ~IAppController() = default;
+
+		virtual void startup() = 0;
+		virtual void shutdown() = 0;
+
+		virtual Model::IModel& getModel() = 0;
+		virtual const Model::IModel& getModel() const = 0;
+
+		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
+	};
+} // namespace Electux::App

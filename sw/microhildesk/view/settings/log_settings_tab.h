@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// about.h
+/// log_settings_tab.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,24 +19,30 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <gtkmm/aboutdialog.h>
-#include <view/about/iabout_view.h>
+#include <gtkmm/box.h>
+#include <gtkmm/label.h>
+#include <gtkmm/entry.h>
+#include <gtkmm/comboboxtext.h>
+#include <model/imodel.h>
 
-namespace Electux::App::View::About
+namespace Electux::App::View::Settings
 {
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class AppAbout
-	/// @brief About view dialog definition for the microhildesk application.
-	///
-	/// Displays application metadata including version, copyright, license,
-	/// and contributor information using the standard Gtk::AboutDialog.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class AppAbout : public Gtk::AboutDialog, public IAboutView
+	class LogSettingsTab : public Gtk::Box
 	{
 	public:
-		explicit AppAbout();
-		virtual ~AppAbout() override = default;
+		explicit LogSettingsTab();
+		virtual ~LogSettingsTab() override = default;
 
-		void show() override;
+		LogSettingsTab(const LogSettingsTab &) = delete;
+		LogSettingsTab &operator=(const LogSettingsTab &) = delete;
+
+		void updateData(const Electux::App::Model::IModel &config);
+		void getData(Electux::App::Model::IModel &config);
+
+	private:
+		Gtk::Label m_labelLogPath;
+		Gtk::Entry m_entryLogPath;
+		Gtk::Label m_labelLogLevel;
+		Gtk::ComboBoxText m_comboLogLevel;
 	};
-} // namespace Electux::App::View::About
+} // namespace Electux::App::View::Settings

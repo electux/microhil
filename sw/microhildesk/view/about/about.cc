@@ -62,3 +62,8 @@ AppAbout::AppAbout()
 
 	set_hide_on_close(true);
 }
+
+void AppAbout::show()
+{
+	set_visible(true);
+}

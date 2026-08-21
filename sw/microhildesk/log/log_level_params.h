@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// help.cc
+/// log_level_params.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -15,39 +15,29 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma once
 
-#include <view/help/help.h>
+#include <cstdint>
+#include <string_view>
 
-namespace
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @namespace Electux::App::Logger::LogLevels
+/// @brief Namespace for log level configuration parameters
+namespace Electux::App::Logger::LogLevels
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @name Application Help Window Widgets Parameters
+	/// @name Log Levels Definitions
 	/// @{
-	constexpr std::string_view cHelpTitle{"microhildesk"};
-	constexpr int cHelpWidth{600};
-	constexpr int cHelpHeight{400};
+	/// @brief Array of string representations for log levels
+	constexpr std::string_view cLogLevels[]{"Error", "Warning", "Info"};
+	/// @brief Constant index for the Error log level
+	constexpr const uint32_t clogLevelError = 0;
+	/// @brief Constant index for the Warning log level
+	constexpr const uint32_t clogLevelWarning = 1;
+	/// @brief Constant index for the Info log level
+	constexpr const uint32_t clogLevelInfo = 2;
 	/// @}
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-} // namespace
-
-using namespace Electux::App::View::Help;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief AppHelp constructor.
-///
-/// Initializes the help window with predefined title and dimensions.
-/// The window is set to be non-resizable and remains hidden when closed.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-AppHelp::AppHelp()
-{
-	set_title(cHelpTitle.data());
-	set_default_size(cHelpWidth, cHelpHeight);
-	set_resizable(false);
-	set_hide_on_close(true);
-}
-
-void AppHelp::show()
-{
-	set_visible(true);
-}
+} // namespace Electux::App::Logger::LogLevels

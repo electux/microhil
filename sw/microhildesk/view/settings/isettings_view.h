@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// settings.h
+/// isettings_view.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,59 +19,29 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <gtkmm/window.h>
-#include <gtkmm/box.h>
-#include <gtkmm/grid.h>
-#include <gtkmm/notebook.h>
-#include <gtkmm/button.h>
 #include <sigc++/sigc++.h>
 #include <view/settings_setup.h>
-#include <view/settings/serial_settings_tab.h>
-#include <view/settings/log_settings_tab.h>
-#include <view/settings/isettings_view.h>
 
 namespace Electux::App::View::Settings
 {
+	using SettingsSetup = Electux::App::Model::SettingsSetup;
+	using SigSetup = sigc::signal<void(const SettingsSetup &)>;
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class AppSettings
-	/// @brief Application settings window definition.
-	///
-	/// Manages the UI for configuring settings, delegating tab rendering
-	/// and data binding to SerialSettingsTab and LogSettingsTab.
+	/// @class ISettingsView
+	/// @brief Interface defining the contract for the settings tab view.
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class AppSettings : public Gtk::Window, public ISettingsView
+	class ISettingsView
 	{
 	public:
-		explicit AppSettings();
-		virtual ~AppSettings() override = default;
+		virtual ~ISettingsView() = default;
 
-		AppSettings(const AppSettings &) = delete;
-		AppSettings &operator=(const AppSettings &) = delete;
+		virtual SigSetup setupChanged() = 0;
+		virtual void setSettingsSetup(const SettingsSetup& setup) = 0;
+		virtual void updateUiData() = 0;
+		virtual void getUiData() = 0;
 
-		SigSetup setupChanged() override;
-		void setSettingsSetup(const SettingsSetup& setup) override;
-		void getUiData() override;
-		void updateUiData() override;
-
-		void show() override;
-		void hide() override;
-
-	protected:
-		void mapping();
-		void onButtonOkClicked();
-		void onButtonCancelClicked();
-
-	private:
-		SettingsSetup m_setup{};
-		SigSetup m_setupSignal{};
-
-		Gtk::Box m_boxRoot{};
-		Gtk::Notebook m_notebook{};
-		SerialSettingsTab m_serialTab{};
-		LogSettingsTab m_logTab{};
-		Gtk::Grid m_buttonBox{};
-
-		Gtk::Button m_buttonOk{};
-		Gtk::Button m_buttonCancel{};
+		virtual void show() = 0;
+		virtual void hide() = 0;
 	};
 } // namespace Electux::App::View::Settings

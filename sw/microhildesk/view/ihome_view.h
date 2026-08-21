@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// home.h
+/// ihome_view.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,49 +19,33 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <gtkmm/applicationwindow.h>
-#include <gtkmm/box.h>
-#include <vector>
-#include <memory>
+#include <sigc++/sigc++.h>
 #include <view/settings_setup.h>
-#include <view/channel_widget.h>
-#include <view/ihome_view.h>
+
+namespace Gtk { class Window; }
 
 namespace Electux::App::View
 {
+	using SettingsSetup = Electux::App::Model::SettingsSetup;
+	using SigSettings = sigc::signal<void(SettingsSetup &)>;
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class AppHome
-	/// @brief Home view window definition for the microhildesk application.
-	///
-	/// Provides the main user interface for monitoring and controlling
-	/// multiple channels, delegating to individual ChannelWidget components.
+	/// @class IHomeView
+	/// @brief Interface defining the contract for the main home screen view.
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class AppHome : public Gtk::ApplicationWindow, public IHomeView
+	class IHomeView
 	{
 	public:
-		explicit AppHome();
-		virtual ~AppHome() override = default;
+		virtual ~IHomeView() = default;
 
-		AppHome(const AppHome &) = delete;
-		AppHome &operator=(const AppHome &) = delete;
+		virtual SigSettings controlChanged() = 0;
+		virtual void setControlSetup(const SettingsSetup& setup) = 0;
+		virtual void updateUiData() = 0;
+		virtual void getUiData() = 0;
 
-		SigSettings controlChanged() override;
-		void setControlSetup(const SettingsSetup& setup) override;
-		void getUiData() override;
-		void updateUiData() override;
-
-		void show() override;
-		void hide() override;
-		void connect_close_request(const sigc::slot<bool()>& slot) override;
-		Gtk::Window& getGtkWindow() override;
-
-	private:
-		void onChannelChanged(size_t index);
-
-		SettingsSetup m_setup{};
-		SigSettings m_controlSignal{};
-
-		Gtk::Box m_boxRoot{};
-		std::vector<std::unique_ptr<ChannelWidget>> m_channelWidgets{};
+		virtual void show() = 0;
+		virtual void hide() = 0;
+		virtual void connect_close_request(const sigc::slot<bool()>& slot) = 0;
+		virtual Gtk::Window& getGtkWindow() = 0;
 	};
 } // namespace Electux::App::View

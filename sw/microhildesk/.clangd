@@ -2,6 +2,8 @@ CompileFlags:
   Add:
     - -std=c++23
     - -I.
+    - -I..
+    - -I../..
     - -I/usr/include/gtkmm-4.0
     - -I/usr/lib/x86_64-linux-gnu/gtkmm-4.0/include
     - -I/usr/include/giomm-2.68
@@ -33,3 +35,9 @@ CompileFlags:
     - -I/usr/lib/x86_64-linux-gnu/pangomm-2.48/include
     - -I/usr/include/gtk-4.0/unix-print
     - -pthread
+
+---
+If:
+  PathMatch: .*\.h
+CompileFlags:
+  Add: [-xc++-header]

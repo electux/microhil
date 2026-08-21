@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// channel_params.h
+/// channel_state.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -15,6 +15,7 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
@@ -22,9 +23,9 @@
 #include <string_view>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @namespace Electux::App::Params::Channel
-/// @brief Namespace for channel-related configuration parameters
-namespace Electux::App::Params::Channel
+/// @namespace Electux::App::Model::Channel
+/// @brief Namespace for channel-related configuration parameters and state
+namespace Electux::App::Model::Channel
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// @brief The total number of communication channels supported by the system
@@ -34,13 +35,22 @@ namespace Electux::App::Params::Channel
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// @name Internal Home Slot Constants
 	/// @{
-    constexpr std::string_view cEmptyString = "";
+	constexpr std::string_view cEmptyString = "";
 	constexpr std::string_view cSpaceString = " ";
 	constexpr char cSpaceDelimiter = ' ';
 	constexpr std::string_view cTrue = "true";
 	constexpr std::string_view cFalse = "false";
 	/// @}
 	////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	struct ChannelState
+	{
+		bool enabled{false};
+		int mode{-1};
+		bool toggle{false};
+		int timer{0};
+		bool timerEnabled{false};
+	};
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// @brief Converts a boolean value to its string representation.
@@ -51,4 +61,4 @@ namespace Electux::App::Params::Channel
 	{
 		return value ? cTrue : cFalse;
 	}
-} // namespace Electux::App::Params::Channel
+} // namespace Electux::App::Model::Channel

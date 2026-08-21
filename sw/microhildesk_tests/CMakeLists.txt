@@ -7,6 +7,7 @@
 
 cmake_minimum_required(VERSION 3.12)
 project(microhil_tests CXX)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(GOOGLETEST_VERSION 1.14.0)
 
 enable_testing()
@@ -29,14 +30,17 @@ include(${PROJECT_SOURCE_DIR}/com/pack.cmake)
 include(${PROJECT_SOURCE_DIR}/config/pack.cmake)
 include(${PROJECT_SOURCE_DIR}/log/pack.cmake)
 include(${PROJECT_SOURCE_DIR}/channel/pack.cmake)
+include(${PROJECT_SOURCE_DIR}/model/pack.cmake)
 include_directories(com)
 include_directories(config)
 include_directories(log)
 include_directories(channel)
+include_directories(model)
 include_directories(${MICROHIL_COM_HEADERS})
 include_directories(${MICROHIL_CONFIG_HEADERS})
 include_directories(${MICROHIL_LOG_HEADERS})
 include_directories(${MICROHIL_PARAMS_HEADERS})
+include_directories(${MICROHIL_MODEL_HEADERS})
 
 add_executable(
     microhil_tests
@@ -44,9 +48,11 @@ add_executable(
     ${MICROHIL_COM_TESTS}
     ${MICROHIL_CONFIG_TESTS}
     ${MICROHIL_LOG_TESTS}
+    ${MICROHIL_MODEL_TESTS}
     ${MICROHIL_COM_SOURCES}
     ${MICROHIL_CONFIG_SOURCES}
     ${MICROHIL_LOG_SOURCES}
+    ${MICROHIL_MODEL_SOURCES}
     ${MICROHIL_PARAMS_TESTS}
 )
 

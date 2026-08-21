@@ -18,10 +18,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "test_serial_com.h"
-#include <params/serial_com_params.h>
+#include <com/serial_com_params.h>
+#include <com/serial_utils.h>
 
 using namespace Electux::App::Com;
-using namespace Electux::App::Params::SerialComConstants;
+using namespace Electux::App::Com::SerialComConstants;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Test bidirectional conversion of all supported Character sizes.
@@ -37,8 +38,8 @@ TEST_P(DataBitsTest, DataBitsConversionTest)
 {
 	const ParameterMapping<CharacterSize> params = this->GetParam();
 
-	EXPECT_EQ(this->m_serial.dataBitsToUint(params.enum_val), params.uint_val);
-	EXPECT_EQ(this->m_serial.uintToDataBits(params.uint_val), params.enum_val);
+	EXPECT_EQ(SerialUtils::dataBitsToUint(params.enum_val), params.uint_val);
+	EXPECT_EQ(SerialUtils::uintToDataBits(params.uint_val), params.enum_val);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,9 +75,9 @@ INSTANTIATE_TEST_SUITE_P
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(SerialComTest, InvalidDataBitsDetectionTest)
 {
-	uint32_t invalid_uint = m_serial.dataBitsToUint(CharacterSize::CHAR_SIZE_INVALID);
+	uint32_t invalid_uint = SerialUtils::dataBitsToUint(CharacterSize::CHAR_SIZE_INVALID);
 	EXPECT_EQ(invalid_uint, cComInvalidParameter);
 
-	CharacterSize invalid_enum = m_serial.uintToDataBits(9);
+	CharacterSize invalid_enum = SerialUtils::uintToDataBits(9);
 	EXPECT_EQ(invalid_enum, CharacterSize::CHAR_SIZE_INVALID);
 }
