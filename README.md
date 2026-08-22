@@ -146,6 +146,6 @@ Lets help and support Raspberry PI && GNOME.
 
 <p align="center">
   <a href="https://www.raspberrypi.org/donate/">
-    <img src="https://raw.githubusercontent.com/electux/microhil/master/docs/fondations.jpeg" alt="GNOME&&RPi" width="512" height="768">
+    <img src="https://raw.githubusercontent.com/electux/microhil/master/docs/fondations.jpeg" alt="GNOME&&RPi">
   </a>
 </p>
