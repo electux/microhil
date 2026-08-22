@@ -79,13 +79,13 @@ TEST_F(ConfigManagerTest, StoreFailureTest)
 TEST_F(ConfigManagerTest, ExplicitDefaultStoreTest)
 {
 	m_config->init();
-	auto serial = m_config->getConfig();
-	const auto deviceKey = serial.toString(ModelSerialKey::Device);
+	auto serial = m_config->getConfig().clone();
+	const auto deviceKey = serial->toString(ModelSerialKey::Device);
 
-	serial.add(deviceKey, "/dev/custom_path");
+	serial->add(deviceKey, "/dev/custom_path");
 	m_config->defaultConfigStore();
 
-	EXPECT_EQ(serial.getEntity(deviceKey), "/dev/ttyUSB0");
+	EXPECT_EQ(m_config->getConfig().getEntity(deviceKey), "/dev/ttyUSB0");
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -99,11 +99,11 @@ TEST_F(ConfigManagerTest, ExplicitDefaultStoreTest)
 TEST_F(ConfigManagerTest, SetConfigTest)
 {
 	m_config->init();
-	auto config = m_config->getConfig();
-	auto key = config.toString(ModelSerialKey::Baud);
-	config.update(key, "9600");
+	auto config = m_config->getConfig().clone();
+	auto key = config->toString(ModelSerialKey::Baud);
+	config->update(key, "9600");
 
-	m_config->setConfig(config);
+	m_config->setConfig(*config);
 
 	EXPECT_EQ(m_config->getConfig().getEntity(key), "9600");
 }
@@ -120,16 +120,16 @@ TEST_F(ConfigManagerTest, SetConfigTest)
 TEST_F(ConfigManagerTest, StoreAndReloadTest)
 {
 	m_config->init();
-	auto config = m_config->getConfig();
-	auto key = config.toString(ModelSerialKey::Baud);
-	config.update(key, "115200");
-	m_config->setConfig(config);
+	auto config = m_config->getConfig().clone();
+	auto key = config->toString(ModelSerialKey::Baud);
+	config->update(key, "115200");
+	m_config->setConfig(*config);
 
 	ASSERT_TRUE(m_config->store());
 
 	// Modify memory to ensure we are reading from file
-	config.update(key, "0");
-	m_config->setConfig(config);
+	config->update(key, "0");
+	m_config->setConfig(*config);
 	EXPECT_EQ(m_config->getConfig().getEntity(key), "0");
 
 	// Reload from file

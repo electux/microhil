@@ -15,49 +15,25 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <string>
-#include <format>
 #include <view/home.h>
-#include <params/channel_params.h>
+#include <model/model.h>
 
 namespace
 {
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @name Application Home Window Widgets Parameters
-	/// @{
 	constexpr std::string_view cHomeTitle{"microhildesk"};
 	constexpr int cHomeWidth{600};
 	constexpr int cHomeHeight{250};
-	constexpr std::string_view cHomeEnChannelLabel{"Enable Channel #"};
-	constexpr std::string_view cHomeToggleChannelLabel{"Toogle Channel #"};
-	constexpr std::string_view cHomeToggleChannelButtonActivate{"Activate"};
-	constexpr std::string_view cHomeToggleChannelButtonDeactivate{"Deactivate"};
-	constexpr std::string_view cHomeTimerChannelLabel{"Use timer #"};
-	constexpr std::string_view cHomeTimerChannelButtonStart{"Start"};
-	constexpr std::string_view cHomeTimerChannelButtonStop{"Stop"};
-	constexpr float cHomeStatusFraction{0.0};
-	constexpr int cHomeBoxChannelMargin{10};
-	constexpr int cHomeBoxChannelSpacing{5};
-	constexpr std::string_view cHomeChannelModeOptions[]{"Toogle Active", "Timer Active"};
-	/// @}
-	////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace
 
 using namespace Electux::App::View;
-using namespace Electux::App::Params::Channel;
+using namespace Electux::App::Model;
+using namespace Electux::App::Model::Channel;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief AppHome constructor.
-///
-/// Sets up the main window properties, initializes layout containers, and
-/// dynamically creates UI widgets for each channel based on defined parameters.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 AppHome::AppHome()
 {
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @brief Setup application home window
 	set_title(cHomeTitle.data());
 	set_default_size(cHomeWidth, cHomeHeight);
 	set_resizable(false);
@@ -67,57 +43,70 @@ AppHome::AppHome()
 
 	for (ssize_t i = 0; i < cNumOfChannels; i++)
 	{
-		m_boxChannels.emplace_back(Gtk::Orientation::VERTICAL);
-		auto& currentBox = m_boxChannels.back();
+		auto widget = std::make_unique<ChannelWidget>(static_cast<size_t>(i));
+		
+		// Map changes to home callback
+		widget->signal_changed().connect(
+			sigc::bind(sigc::mem_fun(*this, &AppHome::onChannelChanged), static_cast<size_t>(i))
+		);
 
-		// Setup Enable CheckButton
-		m_enableChannels.emplace_back(std::format("{} {}", cHomeEnChannelLabel.data(), i));
-		currentBox.append(m_enableChannels.back());
-
-		// Setup Mode ComboBox
-		m_selectControlChannels.emplace_back();
-		for (const auto& option : cHomeChannelModeOptions)
-		{
-			m_selectControlChannels.back().append(option.data());
-		}
-		currentBox.append(m_selectControlChannels.back());
-
-		// Setup Toggle Label and Button
-		m_labelToggleChannels.emplace_back(std::format("{} {}", cHomeToggleChannelLabel.data(), i));
-		currentBox.append(m_labelToggleChannels.back());
-		m_toggleChannels.emplace_back();
-		m_toggleChannels.back().set_label(cHomeToggleChannelButtonActivate.data());
-		currentBox.append(m_toggleChannels.back());
-
-		// Setup Timer Label, Spinner and Button
-		m_labelTimerChannels.emplace_back(std::format("{} {}", cHomeTimerChannelLabel.data(), i));
-		currentBox.append(m_labelTimerChannels.back());
-		m_spinTimerChannels.emplace_back();
-		m_spinTimerChannels.back().set_range(0.0, 3600.0);
-		m_spinTimerChannels.back().set_increments(1.0, 10.0);
-		currentBox.append(m_spinTimerChannels.back());
-		m_toggleTimerChannels.emplace_back();
-		m_toggleTimerChannels.back().set_label(cHomeTimerChannelButtonStart.data());
-		currentBox.append(m_toggleTimerChannels.back());
-
-		// Setup Progress Bar
-		m_statusTimerChannels.emplace_back();
-		m_statusTimerChannels.back().set_fraction(cHomeStatusFraction);
-		currentBox.append(m_statusTimerChannels.back());
-
-		// Layout and Signal Mapping
-		currentBox.set_margin(cHomeBoxChannelMargin);
-		currentBox.set_spacing(cHomeBoxChannelSpacing);
-		m_boxRoot.append(currentBox);
-		mapping(i);
+		m_boxRoot.append(*widget);
+		m_channelWidgets.push_back(std::move(widget));
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Sets the internal configuration setup.
-/// @param setup Constant reference to the SettingsSetup object.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+SigSettings AppHome::controlChanged()
+{
+	return m_controlSignal;
+}
+
 void AppHome::setControlSetup(const SettingsSetup& setup)
 {
 	m_setup = setup;
+}
+
+void AppHome::updateUiData()
+{
+	const auto& config = *m_setup.m_config;
+	for (ssize_t i = 0; i < cNumOfChannels; i++)
+	{
+		m_channelWidgets[static_cast<size_t>(i)]->updateState(config.getChannelState(static_cast<size_t>(i)));
+	}
+}
+
+void AppHome::getUiData()
+{
+	auto& config = *m_setup.m_config;
+	for (ssize_t i = 0; i < cNumOfChannels; i++)
+	{
+		config.setChannelState(static_cast<size_t>(i), m_channelWidgets[static_cast<size_t>(i)]->getState());
+	}
+	m_controlSignal.emit(m_setup);
+}
+
+void AppHome::onChannelChanged(size_t index)
+{
+	auto& config = *m_setup.m_config;
+	config.setChannelState(index, m_channelWidgets[index]->getState());
+	m_controlSignal.emit(m_setup);
+}
+
+void AppHome::show()
+{
+	set_visible(true);
+}
+
+void AppHome::hide()
+{
+	set_visible(false);
+}
+
+void AppHome::connect_close_request(const sigc::slot<bool()>& slot)
+{
+	signal_close_request().connect(slot, false);
+}
+
+Gtk::Window& AppHome::getGtkWindow()
+{
+	return *this;
 }

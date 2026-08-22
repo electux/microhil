@@ -1,0 +1,173 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/// app_controller.cc
+/// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+///
+/// microhildesk is free software: you can redistribute it and/or modify it
+/// under the terms of the GNU General Public License as published by the
+/// Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// microhildesk is distributed in the hope that it will be useful, but
+/// WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+/// See the GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License along
+/// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <app_controller.h>
+#include <com/icom.h>
+#include <com/icom_configurator.h>
+#include <command/icommand_formatter.h>
+#include <config/iconfig.h>
+#include <format>
+#include <log/ilog.h>
+#include <model/model.h>
+#include <string>
+#include <vector>
+
+using namespace Electux::App;
+
+AppController::AppController(
+    std::unique_ptr<Config::IConfig> configManager,
+    std::unique_ptr<Com::ICom> comChannel,
+    std::unique_ptr<Com::IComConfigurator> comConfigurator,
+    std::unique_ptr<Logger::ILog> logger,
+    std::unique_ptr<Command::ICommandFormatter> commandFormatter
+)
+    : m_configManager(std::move(configManager)),
+      m_comChannel(std::move(comChannel)),
+      m_comConfigurator(std::move(comConfigurator)),
+      m_logger(std::move(logger)),
+      m_commandFormatter(std::move(commandFormatter)) {}
+
+AppController::~AppController() = default;
+
+void AppController::startup() {
+  m_configManager->init();
+  configureLogger();
+  configureComChannel();
+  m_logger->log("Application started.", Logger::LogLevel::Info);
+}
+
+void AppController::shutdown() {
+  if (m_logger) {
+    m_logger->log("Application shutting down.", Logger::LogLevel::Info);
+    m_logger->close();
+  }
+  if (m_comChannel) {
+    m_comChannel->close();
+  }
+  m_configManager->store();
+}
+
+void AppController::configureLogger() {
+  if (!m_logger) {
+    return;
+  }
+
+  m_logger->close();
+
+  auto &config = getModel();
+  auto pathKey = config.toString(Model::ModelLogKey::FilePath);
+  auto levelKey = config.toString(Model::ModelLogKey::LogLevel);
+
+  m_logger->setOutputFile(config.getEntity(pathKey));
+
+  uint32_t levelIdx =
+      static_cast<uint32_t>(std::stoul(config.getEntity(levelKey)));
+  m_logger->setLevel(static_cast<Logger::LogLevel>(levelIdx));
+
+  m_logger->open();
+}
+
+void AppController::configureComChannel() {
+  if (!m_comChannel || !m_comConfigurator) {
+    return;
+  }
+
+  m_comChannel->close();
+  m_comConfigurator->configure(getModel(), m_comChannel.get());
+}
+
+const Model::IModel &AppController::getModel() const {
+  return m_configManager->getConfig();
+}
+
+void AppController::onSetupChanged(const Model::SettingsSetup &setup) {
+  const auto &oldConfig = m_configManager->getConfig();
+  auto &newConfig = *setup.m_config;
+
+  handleChannelStateChanges(oldConfig, newConfig);
+
+  bool logChanged = hasLoggerConfigChanged(oldConfig, newConfig);
+  bool serialChanged = hasSerialConfigChanged(oldConfig, newConfig);
+
+  m_configManager->setConfig(newConfig);
+  m_configManager->store();
+
+  if (logChanged) {
+    configureLogger();
+  }
+  if (serialChanged) {
+    configureComChannel();
+  }
+
+  getModel().emit_changed();
+}
+
+void AppController::handleChannelStateChanges(const Model::IModel &oldConfig, const Model::IModel &newConfig) {
+  for (size_t i = 0; i < Model::Channel::cNumOfChannels; ++i) {
+    auto oldState = oldConfig.getChannelState(i);
+    auto newState = newConfig.getChannelState(i);
+
+    if (oldState.enabled != newState.enabled ||
+        oldState.mode != newState.mode || oldState.toggle != newState.toggle ||
+        oldState.timer != newState.timer ||
+        oldState.timerEnabled != newState.timerEnabled) {
+      // 1. Log change
+      std::string logMsg =
+          std::format("Channel {} state changed: enabled={}, mode={}, "
+                      "toggle={}, timer={}, timerEnabled={}",
+                      i, newState.enabled, newState.mode, newState.toggle,
+                      newState.timer, newState.timerEnabled);
+      m_logger->log(logMsg, Logger::LogLevel::Info);
+
+      // 2. Transmit via serial
+      std::string oldCmd = m_commandFormatter->getCommandState(i, oldState);
+      std::string newCmd = m_commandFormatter->getCommandState(i, newState);
+
+      if (oldCmd != newCmd && !newCmd.empty()) {
+        std::vector<uint8_t> cmdBytes(newCmd.begin(), newCmd.end());
+        if (m_comChannel && m_comChannel->isOpen()) {
+          m_comChannel->write(cmdBytes);
+        }
+      }
+    }
+  }
+}
+
+bool AppController::hasSerialConfigChanged(const Model::IModel &oldConfig, const Model::IModel &newConfig) {
+  for (int k = static_cast<int>(Model::ModelSerialKey::Device);
+       k <= static_cast<int>(Model::ModelSerialKey::Flow); ++k) {
+    auto key = oldConfig.toString(static_cast<Model::ModelSerialKey>(k));
+    if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+bool AppController::hasLoggerConfigChanged(const Model::IModel &oldConfig, const Model::IModel &newConfig) {
+  for (int k = static_cast<int>(Model::ModelLogKey::FilePath);
+       k <= static_cast<int>(Model::ModelLogKey::LogLevel); ++k) {
+    auto key = oldConfig.toString(static_cast<Model::ModelLogKey>(k));
+    if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
+      return true;
+    }
+  }
+  return false;
+}

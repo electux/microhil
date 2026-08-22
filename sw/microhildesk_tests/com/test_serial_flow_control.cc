@@ -18,10 +18,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "test_serial_com.h"
-#include <params/serial_com_params.h>
+#include <com/serial_com_params.h>
+#include <com/serial_utils.h>
 
 using namespace Electux::App::Com;
-using namespace Electux::App::Params::SerialComConstants;
+using namespace Electux::App::Com::SerialComConstants;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Test bidirectional conversion of all supported Flow Control modes.
@@ -37,8 +38,8 @@ TEST_P(FlowControlTest, FlowControlConversionTest)
 {
 	const ParameterMapping<FlowControl> params = this->GetParam();
 
-	EXPECT_EQ(this->m_serial.flowControlToUint(params.enum_val), params.uint_val);
-	EXPECT_EQ(this->m_serial.uintToFlowControl(params.uint_val), params.enum_val);
+	EXPECT_EQ(SerialUtils::flowControlToUint(params.enum_val), params.uint_val);
+	EXPECT_EQ(SerialUtils::uintToFlowControl(params.uint_val), params.enum_val);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,9 +74,9 @@ INSTANTIATE_TEST_SUITE_P
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(SerialComTest, InvalidFlowControlDetectionTest)
 {
-	uint32_t invalid_uint = m_serial.flowControlToUint(FlowControl::FLOW_CONTROL_INVALID);
+	uint32_t invalid_uint = SerialUtils::flowControlToUint(FlowControl::FLOW_CONTROL_INVALID);
 	EXPECT_EQ(invalid_uint, cComInvalidParameter);
 
-	FlowControl invalid_enum = m_serial.uintToFlowControl(9);
+	FlowControl invalid_enum = SerialUtils::uintToFlowControl(9);
 	EXPECT_EQ(invalid_enum, FlowControl::FLOW_CONTROL_INVALID);
 }

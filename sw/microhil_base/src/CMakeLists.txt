@@ -8,15 +8,21 @@
 # Prepares PIO target for WS2812 (headers and implementation)
 pico_simple_hardware_target(pio)
 
-# Adds sub-structure sources
-add_subdirectory(io_config)
-add_subdirectory(ws2812)
-add_subdirectory(channel)
+# Enable verbose logging globally
+add_compile_definitions(VERBOSE)
 
 # Adds sub-structure includes
-include_directories(channel)
+include_directories(.)
+include_directories(io)
 include_directories(ws2812)
-include_directories(io_config)
+include_directories(device)
+include_directories(command)
+
+# Adds sub-structure sources
+add_subdirectory(io)
+add_subdirectory(ws2812)
+add_subdirectory(device)
+add_subdirectory(command)
 
 # Sets executable
 add_executable("${CMAKE_PROJECT_NAME}" main.c)
@@ -28,7 +34,7 @@ pico_enable_stdio_usb("${CMAKE_PROJECT_NAME}" 1)
 pico_enable_stdio_uart("${CMAKE_PROJECT_NAME}" 0)
 
 # Links all libraries
-target_link_libraries("${CMAKE_PROJECT_NAME}" channel ws2812 io_config)
+target_link_libraries("${CMAKE_PROJECT_NAME}" command device io ws2812)
 
 # Creates extra output files map/bin/hex
 pico_add_extra_outputs("${CMAKE_PROJECT_NAME}")

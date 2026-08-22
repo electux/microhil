@@ -21,6 +21,8 @@
 #include <filesystem>
 #include <gtest/gtest.h>
 #include <config/config_manager.h>
+#include <model/imodel.h>
+#include <model/model.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace Electux::App::Config

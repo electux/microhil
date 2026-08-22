@@ -88,30 +88,56 @@ namespace Electux::App::Model
 		void clear() final;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Gets the state of a specific channel.
+		/// @param index The index of the channel.
+		/// @return The ChannelState representation of the channel status.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		ChannelState getChannelState(size_t index) const final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the state of a specific channel.
+		/// @param index The index of the channel.
+		/// @param state The new ChannelState value.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		void setChannelState(size_t index, const ChannelState &state) final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Converts a ModelSerialKey enum value to its string representation.
 		/// @param key Represents the ModelSerialKey enum value.
 		/// @return A string_view containing the key name.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		std::string_view toString(const ModelSerialKey &key) const final;
+		std::string_view toString(const ModelSerialKey key) const final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts a ModelGeneralKey enum value to its string representation.
+		/// @param key Represents the ModelGeneralKey enum value.
+		/// @return A string_view containing the key name.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::string_view toString(const ModelGeneralKey key) const final;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Converts a ModelLogKey enum value to its string representation.
 		/// @param key Represents the ModelLogKey enum value.
 		/// @return A string_view containing the key name.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		std::string_view toString(const ModelLogKey &key) const final;
+		std::string_view toString(const ModelLogKey key) const final;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Converts a ModelControlKey enum value to its string representation.
 		/// @param key Represents the ModelControlKey enum value.
 		/// @return A string_view containing the key name.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		std::string_view toString(const ModelControlKey &key) const final;
+		std::string_view toString(const ModelControlKey key) const final;
+
+		sigc::signal<void()> signal_changed() const final;
+		void emit_changed() const final;
+		std::unique_ptr<IModel> clone() const final;
 
 	private:
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Internal storage for model entities in map format {key: data}.
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		Entities m_entities{};
+		mutable sigc::signal<void()> m_signalChanged{};
 	};
 } // namespace Electux::App::Model

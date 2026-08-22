@@ -10,27 +10,26 @@ SOURCES = \
 	../log/log.cc \
 	../config/config_manager_utils.cc \
 	../config/config_manager.cc \
-	../com/serial_com_baud_rate.cc \
-	../com/serial_com_data_bits.cc \
-	../com/serial_com_parity.cc \
-	../com/serial_com_stop_bits.cc \
-	../com/serial_com_flow_control.cc \
-	../com/serial_com_setup.cc \
 	../com/serial_lib_wrapper.cc \
+	../com/serial_utils.cc \
 	../com/serial_com.cc \
+	../com/serial_com_configurator.cc \
+	../com/tcp_com.cc \
+	../com/tcp_com_configurator.cc \
+	../com/switchable_com.cc \
+	../com/switchable_com_configurator.cc \
 	../model/model.cc \
 	../view/settings_setup.cc \
-	../view/home_map.cc \
-	../view/home_slots.cc \
-	../view/home_ui_utils.cc \
+	../view/channel_widget.cc \
 	../view/home.cc \
 	../view/about/about.cc \
 	../view/help/help.cc \
-	../view/settings/settings_map.cc \
-	../view/settings/settings_slots.cc \
-	../view/settings/settings_ui_utils.cc \
+	../view/settings/general_settings_tab.cc \
+	../view/settings/serial_settings_tab.cc \
+	../view/settings/tcp_settings_tab.cc \
+	../view/settings/log_settings_tab.cc \
 	../view/settings/settings.cc \
-	../application_map.cc \
-	../application_slots.cc \
 	../application.cc \
+	../app_controller.cc \
+	../command/command_formatter.cc \
 	../main.cc

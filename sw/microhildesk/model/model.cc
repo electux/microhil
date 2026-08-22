@@ -20,6 +20,7 @@
 #include <algorithm>
 #include <initializer_list>
 #include <vector>
+#include <sstream>
 #include <model/model.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,6 +28,51 @@
 /// @brief Namespace for application data models and entities
 namespace Electux::App::Model
 {
+	namespace
+	{
+		std::vector<std::string> split_to_vector(const std::string_view &input)
+		{
+			std::vector<std::string> elements;
+			std::stringstream ss{std::string(input)};
+			std::string item;
+			while (ss >> item)
+			{
+				elements.push_back(item);
+			}
+			return elements;
+		}
+
+		std::string extract_param_value_by_index(const std::string_view &input, size_t index)
+		{
+			auto elements = split_to_vector(input);
+			if (index < elements.size())
+			{
+				return elements[index];
+			}
+			return "";
+		}
+
+		std::string update_param_value_by_index(const std::string_view &input, size_t index, const std::string_view &newValue)
+		{
+			auto elements = split_to_vector(input);
+			if (elements.size() < static_cast<size_t>(Electux::App::Model::Channel::cNumOfChannels))
+			{
+				std::string defaultValue = elements.empty() ? std::string(newValue) : elements.back();
+				elements.resize(static_cast<size_t>(Electux::App::Model::Channel::cNumOfChannels), defaultValue);
+			}
+			if (index < elements.size())
+			{
+				elements[index] = std::string(newValue);
+			}
+			std::string result;
+			for (size_t i = 0; i < elements.size(); ++i)
+			{
+				result += elements[i] + (i < elements.size() - 1 ? " " : "");
+			}
+			return result;
+		}
+	}
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// @brief Fallback string for getEntity method when key is not found
 	////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,6 +106,15 @@ namespace Electux::App::Model
 	/// @{
 	constexpr std::string_view cLogLevel{"log_level"};      ///< String key for log level
 	constexpr std::string_view cFilePath{"log_file_path"};  ///< String key for file path
+	/// @}
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @name Internal General Key Constants
+	/// @{
+	constexpr std::string_view cComType{"com_type"};        ///< String key for connection type
+	constexpr std::string_view cTcpIp{"tcp_ip"};            ///< String key for TCP IP Address
+	constexpr std::string_view cTcpPort{"tcp_port"};        ///< String key for TCP Port
 	/// @}
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -102,7 +157,8 @@ bool Model::validateKey(const std::string_view &key) const
 	{
         cEnable, cMode, cToggle, cTimer, cTimerEnable,
         cLogLevel, cFilePath,
-        cDevice, cBaud, cData, cParity, cStop, cFlow
+        cDevice, cBaud, cData, cParity, cStop, cFlow,
+        cComType, cTcpIp, cTcpPort
     };
 
     return std::any_of(validKeys.begin(), validKeys.end(), [&](auto k) { return k == key; });
@@ -179,9 +235,17 @@ Entities Model::getAllEntries() const
         ModelSerialKey::Flow
     };
 
+    static const std::vector<ModelGeneralKey> generalKeys =
+	{
+        ModelGeneralKey::ComType,
+        ModelGeneralKey::TcpIp,
+        ModelGeneralKey::TcpPort
+    };
+
     fill(controlKeys);
     fill(logKeys);
     fill(serialKeys);
+    fill(generalKeys);
 
     return entries;
 }
@@ -216,7 +280,7 @@ void Model::clear()
 /// @param key Represents the ModelControlKey enum value.
 /// @return A string_view containing the constant key name.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-std::string_view Model::toString(const ModelControlKey &key) const
+std::string_view Model::toString(const ModelControlKey key) const
 {
 	switch (key)
 	{
@@ -234,7 +298,7 @@ std::string_view Model::toString(const ModelControlKey &key) const
 /// @param key Represents the ModelLogKey enum value.
 /// @return A string_view containing the constant key name.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-std::string_view Model::toString(const ModelLogKey &key) const
+std::string_view Model::toString(const ModelLogKey key) const
 {
 	switch (key)
 	{
@@ -249,7 +313,7 @@ std::string_view Model::toString(const ModelLogKey &key) const
 /// @param key Represents the ModelSerialKey enum value.
 /// @return A string_view containing the constant key name.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-std::string_view Model::toString(const ModelSerialKey &key) const
+std::string_view Model::toString(const ModelSerialKey key) const
 {
 	switch (key)
 	{
@@ -262,3 +326,92 @@ std::string_view Model::toString(const ModelSerialKey &key) const
 		default:                     return cUnknown;
 	}
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Converts a ModelGeneralKey enum value to its string representation.
+/// @param key Represents the ModelGeneralKey enum value.
+/// @return A string_view containing the constant key name.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+std::string_view Model::toString(const ModelGeneralKey key) const
+{
+	switch (key)
+	{
+		case ModelGeneralKey::ComType: return cComType;
+		case ModelGeneralKey::TcpIp:   return cTcpIp;
+		case ModelGeneralKey::TcpPort: return cTcpPort;
+		default:                       return cUnknown;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Gets the state of a specific channel.
+/// @param index The index of the channel.
+/// @return The ChannelState representation of the channel status.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+ChannelState Model::getChannelState(size_t index) const
+{
+	ChannelState state;
+
+	auto enableKey = toString(ModelControlKey::Enable);
+	state.enabled = (extract_param_value_by_index(getEntity(enableKey), index) == "true");
+
+	auto modeKey = toString(ModelControlKey::Mode);
+	auto modeStr = extract_param_value_by_index(getEntity(modeKey), index);
+	state.mode = modeStr.empty() ? -1 : std::stoi(modeStr);
+
+	auto toggleKey = toString(ModelControlKey::Toggle);
+	state.toggle = (extract_param_value_by_index(getEntity(toggleKey), index) == "true");
+
+	auto timerKey = toString(ModelControlKey::Timer);
+	auto timerStr = extract_param_value_by_index(getEntity(timerKey), index);
+	state.timer = timerStr.empty() ? 0 : std::stoi(timerStr);
+
+	auto timerEnableKey = toString(ModelControlKey::TimerEnable);
+	state.timerEnabled = (extract_param_value_by_index(getEntity(timerEnableKey), index) == "true");
+
+	return state;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Sets the state of a specific channel.
+/// @param index The index of the channel.
+/// @param state The new ChannelState value.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+void Model::setChannelState(size_t index, const ChannelState &state)
+{
+	auto enableKey = toString(ModelControlKey::Enable);
+	auto enableVal = update_param_value_by_index(getEntity(enableKey), index, state.enabled ? "true" : "false");
+	update(enableKey, enableVal);
+
+	auto modeKey = toString(ModelControlKey::Mode);
+	auto modeVal = update_param_value_by_index(getEntity(modeKey), index, std::to_string(state.mode));
+	update(modeKey, modeVal);
+
+	auto toggleKey = toString(ModelControlKey::Toggle);
+	auto toggleVal = update_param_value_by_index(getEntity(toggleKey), index, state.toggle ? "true" : "false");
+	update(toggleKey, toggleVal);
+
+	auto timerKey = toString(ModelControlKey::Timer);
+	auto timerVal = update_param_value_by_index(getEntity(timerKey), index, std::to_string(state.timer));
+	update(timerKey, timerVal);
+
+	auto timerEnableKey = toString(ModelControlKey::TimerEnable);
+	auto timerEnableVal = update_param_value_by_index(getEntity(timerEnableKey), index, state.timerEnabled ? "true" : "false");
+	update(timerEnableKey, timerEnableVal);
+}
+
+sigc::signal<void()> Model::signal_changed() const
+{
+	return m_signalChanged;
+}
+
+void Model::emit_changed() const
+{
+	m_signalChanged.emit();
+}
+
+std::unique_ptr<IModel> Model::clone() const
+{
+	return std::make_unique<Model>(*this);
+}
+

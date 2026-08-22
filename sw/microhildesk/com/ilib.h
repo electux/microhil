@@ -21,23 +21,60 @@
 #include <string>
 #include <vector>
 #include <cstdint>
-#include <libserial/SerialPort.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace Electux::App::Com
 /// @brief Namespace for application communication components
 namespace Electux::App::Com
 {
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @name Local Type Aliases
-	/// @{
-	using SerialPort = LibSerial::SerialPort;
-	using BaudRate = LibSerial::BaudRate;
-	using CharacterSize = LibSerial::CharacterSize;
-	using Parity = LibSerial::Parity;
-	using StopBits = LibSerial::StopBits;
-	using FlowControl = LibSerial::FlowControl;
-	/// @}
+	enum class BaudRate : uint32_t
+	{
+		BAUD_INVALID = 0,
+		BAUD_110,
+		BAUD_300,
+		BAUD_600,
+		BAUD_1200,
+		BAUD_2400,
+		BAUD_4800,
+		BAUD_9600,
+		BAUD_19200,
+		BAUD_38400,
+		BAUD_57600,
+		BAUD_115200,
+		BAUD_230400
+	};
+
+	enum class CharacterSize : uint8_t
+	{
+		CHAR_SIZE_INVALID = 0,
+		CHAR_SIZE_5,
+		CHAR_SIZE_6,
+		CHAR_SIZE_7,
+		CHAR_SIZE_8
+	};
+
+	enum class Parity : uint8_t
+	{
+		PARITY_INVALID = 0,
+		PARITY_NONE,
+		PARITY_ODD,
+		PARITY_EVEN
+	};
+
+	enum class StopBits : uint8_t
+	{
+		STOP_BITS_INVALID = 0,
+		STOP_BITS_1,
+		STOP_BITS_2
+	};
+
+	enum class FlowControl : uint8_t
+	{
+		FLOW_CONTROL_INVALID = 0,
+		FLOW_CONTROL_NONE,
+		FLOW_CONTROL_SOFTWARE,
+		FLOW_CONTROL_HARDWARE
+	};
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////

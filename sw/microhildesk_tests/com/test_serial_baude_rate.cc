@@ -17,14 +17,12 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "test_mock_iserial.h"
 #include "test_serial_com.h"
-#include <params/serial_com_params.h>
+#include <com/serial_com_params.h>
+#include <com/serial_utils.h>
 
-using namespace com::mock;
 using namespace Electux::App::Com;
-using namespace Electux::App::Params::SerialComConstants;
-using ::testing::Return;
+using namespace Electux::App::Com::SerialComConstants;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Test bidirectional conversion of all supported BaudRates.
@@ -39,8 +37,8 @@ TEST_P(BaudRateTest, BaudRateConversionTest)
 {
 	ParameterMapping<BaudRate> params = this->GetParam();
 
-	EXPECT_EQ(m_serial.baudToUint(params.enum_val), params.uint_val);
-	EXPECT_EQ(m_serial.uintToBaud(params.uint_val), params.enum_val);
+	EXPECT_EQ(SerialUtils::baudToUint(params.enum_val), params.uint_val);
+	EXPECT_EQ(SerialUtils::uintToBaud(params.uint_val), params.enum_val);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -83,30 +81,9 @@ INSTANTIATE_TEST_SUITE_P
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(SerialComTest, InvalidBaudRateDetectionTest)
 {
-	uint32_t invalid_uint = m_serial.baudToUint(BaudRate::BAUD_200);
+	uint32_t invalid_uint = SerialUtils::baudToUint(BaudRate::BAUD_200);
 	EXPECT_EQ(invalid_uint, cComInvalidParameter);
 
-	BaudRate invalid_enum = m_serial.uintToBaud(999999);
+	BaudRate invalid_enum = SerialUtils::uintToBaud(999999);
 	EXPECT_EQ(invalid_enum, BaudRate::BAUD_INVALID);
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Test the conversion of BaudRate enum to unsigned integer.
-///
-/// This test simulates the utility function that converts internal enum types 
-/// to standard numeric values used by system ioctls.
-///
-/// @param MockISerialTest The name of the test suite.
-/// @param BaudRateConversionTest The name of the test.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-TEST(MockISerialTest, BaudRateConversionTest)
-{
-    MockISerial mockSerial;
-    BaudRate rate = BaudRate::BAUD_115200;
-    uint32_t expectedValue = 10;
-
-    EXPECT_CALL(mockSerial, baudToUint(rate))
-        .WillOnce(Return(expectedValue));
-
-    ASSERT_EQ(mockSerial.baudToUint(rate), expectedValue);
 }

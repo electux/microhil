@@ -46,3 +46,8 @@ AppHelp::AppHelp()
 	set_resizable(false);
 	set_hide_on_close(true);
 }
+
+void AppHelp::show()
+{
+	set_visible(true);
+}

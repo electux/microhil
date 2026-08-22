@@ -41,6 +41,10 @@ namespace
 	// Default values for Log Model
 	constexpr std::string_view cConfigDefaultLogFilePath{"/tmp/microhildesk.log"};
 	constexpr std::string_view cConfigDefaultLogLevel{"2"};
+	// Default values for General Model
+	constexpr std::string_view cConfigDefaultGeneralComType{"serial"};
+	constexpr std::string_view cConfigDefaultGeneralTcpIp{"127.0.0.1"};
+	constexpr std::string_view cConfigDefaultGeneralTcpPort{"5000"};
 	/// @}
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace
@@ -55,6 +59,15 @@ using namespace Electux::App::Model;
 /// or when a factory reset of the configuration is required.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void ConfigManager::defaultConfigStore()
+{
+	populateDefaults();
+	store();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Populates models with default values.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+void ConfigManager::populateDefaults()
 {
 	// Set default control configuration
 	const auto enableKey = m_config->toString(ModelControlKey::Enable);
@@ -88,6 +101,11 @@ void ConfigManager::defaultConfigStore()
 	const auto logLevelKey = m_config->toString(ModelLogKey::LogLevel);
 	m_config->add(logLevelKey, cConfigDefaultLogLevel.data());
 
-	// Finalize by storing to disk
-	store();
+	// Set default general configuration
+	const auto comTypeKey = m_config->toString(ModelGeneralKey::ComType);
+	m_config->add(comTypeKey, cConfigDefaultGeneralComType.data());
+	const auto tcpIpKey = m_config->toString(ModelGeneralKey::TcpIp);
+	m_config->add(tcpIpKey, cConfigDefaultGeneralTcpIp.data());
+	const auto tcpPortKey = m_config->toString(ModelGeneralKey::TcpPort);
+	m_config->add(tcpPortKey, cConfigDefaultGeneralTcpPort.data());
 }
