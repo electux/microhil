@@ -20,21 +20,27 @@
 #include <vector>
 #include <view/about/about.h>
 
-namespace
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @name Application About Dialog Metadata
-	/// @{
-	constexpr std::string_view cProgramName{"microhildesk"};
-	constexpr std::string_view cProgramVersion{"1.0.0"};
-	constexpr std::string_view cProgramCopyright{"Vladimir Roncevic <elektron.ronca@gmail.com>"};
-	constexpr std::string_view cProgramComments{"This is microhildesk application."};
-	constexpr std::string_view cProgramLicense{"GPLv3"};
-	constexpr std::string_view cProgramWebsite{"https://electux.github.io/microhil"};
-	constexpr std::string_view cProgramWebsiteLabel{"electux.github.io/microhil"};
-	constexpr std::string_view cProgramAuthors{"Vladimir Roncevic"};
-	/// @}
-	////////////////////////////////////////////////////////////////////////////////////////////////////
+namespace {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @name Application About Dialog Metadata
+    /// @{
+    constexpr std::string_view cProgramName{"microhildesk"};
+    constexpr std::string_view cProgramVersion{"1.0.0"};
+    constexpr std::string_view cProgramCopyright{
+        "Vladimir Roncevic <elektron.ronca@gmail.com>"
+    };
+    constexpr std::string_view cProgramComments{
+        "This is microhildesk application."
+    };
+    constexpr std::string_view cProgramLicense{"GPLv3"};
+    constexpr std::string_view cProgramWebsite{
+        "https://electux.github.io/microhil"
+    };
+    constexpr std::string_view cProgramWebsiteLabel{"electux.github.io/microhil"
+    };
+    constexpr std::string_view cProgramAuthors{"Vladimir Roncevic"};
+    /// @}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace
 
 using namespace Electux::App::View::About;
@@ -45,25 +51,21 @@ using namespace Electux::App::View::About;
 /// Configures the Gtk::AboutDialog with application-specific information
 /// including name, version, copyright, and developer credits.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-AppAbout::AppAbout()
-{
-	set_program_name(cProgramName.data());
-	set_version(cProgramVersion.data());
-	set_copyright(cProgramCopyright.data());
-	set_comments(cProgramComments.data());
-	set_license(cProgramLicense.data());
-	set_website(cProgramWebsite.data());
-	set_website_label(cProgramWebsiteLabel.data());
+AppAbout::AppAbout() {
+    set_program_name(cProgramName.data());
+    set_version(cProgramVersion.data());
+    set_copyright(cProgramCopyright.data());
+    set_comments(cProgramComments.data());
+    set_license(cProgramLicense.data());
+    set_website(cProgramWebsite.data());
+    set_website_label(cProgramWebsiteLabel.data());
 
-	// Setup authors list
-	std::vector<Glib::ustring> list_authors;
-	list_authors.push_back(cProgramAuthors.data());
-	set_authors(list_authors);
+    // Setup authors list
+    std::vector<Glib::ustring> list_authors;
+    list_authors.push_back(cProgramAuthors.data());
+    set_authors(list_authors);
 
-	set_hide_on_close(true);
+    set_hide_on_close(true);
 }
 
-void AppAbout::show()
-{
-	set_visible(true);
-}
+void AppAbout::show() { set_visible(true); }

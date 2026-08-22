@@ -22,26 +22,24 @@
 #include <sigc++/sigc++.h>
 #include <view/settings_setup.h>
 
-namespace Electux::App::View::Settings
-{
-	using SettingsSetup = Electux::App::Model::SettingsSetup;
-	using SigSetup = sigc::signal<void(const SettingsSetup &)>;
+namespace Electux::App::View::Settings {
+    using SettingsSetup = Electux::App::Model::SettingsSetup;
+    using SigSetup = sigc::signal<void(const SettingsSetup &)>;
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class ISettingsView
-	/// @brief Interface defining the contract for the settings tab view.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class ISettingsView
-	{
-	public:
-		virtual ~ISettingsView() = default;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class ISettingsView
+    /// @brief Interface defining the contract for the settings tab view.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class ISettingsView {
+      public:
+        virtual ~ISettingsView() = default;
 
-		virtual SigSetup setupChanged() = 0;
-		virtual void setSettingsSetup(const SettingsSetup& setup) = 0;
-		virtual void updateUiData() = 0;
-		virtual void getUiData() = 0;
+        virtual SigSetup setupChanged() = 0;
+        virtual void setSettingsSetup(const SettingsSetup &setup) = 0;
+        virtual void updateUiData() = 0;
+        virtual void getUiData() = 0;
 
-		virtual void show() = 0;
-		virtual void hide() = 0;
-	};
+        virtual void show() = 0;
+        virtual void hide() = 0;
+    };
 } // namespace Electux::App::View::Settings

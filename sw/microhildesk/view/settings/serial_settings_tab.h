@@ -20,37 +20,35 @@
 #pragma once
 
 #include <gtkmm/box.h>
-#include <gtkmm/label.h>
-#include <gtkmm/entry.h>
 #include <gtkmm/comboboxtext.h>
+#include <gtkmm/entry.h>
+#include <gtkmm/label.h>
 #include <model/imodel.h>
 
-namespace Electux::App::View::Settings
-{
-	class SerialSettingsTab : public Gtk::Box
-	{
-	public:
-		explicit SerialSettingsTab();
-		virtual ~SerialSettingsTab() override = default;
+namespace Electux::App::View::Settings {
+    class SerialSettingsTab : public Gtk::Box {
+      public:
+        explicit SerialSettingsTab();
+        virtual ~SerialSettingsTab() override = default;
 
-		SerialSettingsTab(const SerialSettingsTab &) = delete;
-		SerialSettingsTab &operator=(const SerialSettingsTab &) = delete;
+        SerialSettingsTab(const SerialSettingsTab &) = delete;
+        SerialSettingsTab &operator=(const SerialSettingsTab &) = delete;
 
-		void updateData(const Electux::App::Model::IModel &config);
-		void getData(Electux::App::Model::IModel &config);
+        void updateData(const Electux::App::Model::IModel &config);
+        void getData(Electux::App::Model::IModel &config);
 
-	private:
-		Gtk::Label m_labelSerialPath;
-		Gtk::Entry m_entrySerialPath;
-		Gtk::Label m_labelSerialBaud;
-		Gtk::ComboBoxText m_comboSerialBaud;
-		Gtk::Label m_labelSerialData;
-		Gtk::ComboBoxText m_comboSerialData;
-		Gtk::Label m_labelSerialParity;
-		Gtk::ComboBoxText m_comboSerialParity;
-		Gtk::Label m_labelSerialStop;
-		Gtk::ComboBoxText m_comboSerialStop;
-		Gtk::Label m_labelSerialFlowControl;
-		Gtk::ComboBoxText m_comboSerialFlowControl;
-	};
+      private:
+        Gtk::Label m_labelSerialPath;
+        Gtk::Entry m_entrySerialPath;
+        Gtk::Label m_labelSerialBaud;
+        Gtk::ComboBoxText m_comboSerialBaud;
+        Gtk::Label m_labelSerialData;
+        Gtk::ComboBoxText m_comboSerialData;
+        Gtk::Label m_labelSerialParity;
+        Gtk::ComboBoxText m_comboSerialParity;
+        Gtk::Label m_labelSerialStop;
+        Gtk::ComboBoxText m_comboSerialStop;
+        Gtk::Label m_labelSerialFlowControl;
+        Gtk::ComboBoxText m_comboSerialFlowControl;
+    };
 } // namespace Electux::App::View::Settings

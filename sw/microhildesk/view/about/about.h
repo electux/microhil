@@ -22,21 +22,19 @@
 #include <gtkmm/aboutdialog.h>
 #include <view/about/iabout_view.h>
 
-namespace Electux::App::View::About
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class AppAbout
-	/// @brief About view dialog definition for the microhildesk application.
-	///
-	/// Displays application metadata including version, copyright, license,
-	/// and contributor information using the standard Gtk::AboutDialog.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class AppAbout : public Gtk::AboutDialog, public IAboutView
-	{
-	public:
-		explicit AppAbout();
-		virtual ~AppAbout() override = default;
+namespace Electux::App::View::About {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class AppAbout
+    /// @brief About view dialog definition for the microhildesk application.
+    ///
+    /// Displays application metadata including version, copyright, license,
+    /// and contributor information using the standard Gtk::AboutDialog.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class AppAbout : public Gtk::AboutDialog, public IAboutView {
+      public:
+        explicit AppAbout();
+        virtual ~AppAbout() override = default;
 
-		void show() override;
-	};
+        void show() override;
+    };
 } // namespace Electux::App::View::About

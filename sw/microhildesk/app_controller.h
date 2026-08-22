@@ -19,55 +19,73 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <memory>
 #include <config/iconfig.h>
+#include <iapp_controller.h>
+#include <memory>
 #include <model/imodel.h>
 #include <view/settings_setup.h>
-#include <iapp_controller.h>
 
-namespace Electux::App::Com { class ICom; class IComConfigurator; }
-namespace Electux::App::Logger { class ILog; }
-namespace Electux::App::Command { class ICommandFormatter; }
+namespace Electux::App::Com {
+    class ICom;
+    class IComConfigurator;
+} // namespace Electux::App::Com
+namespace Electux::App::Logger {
+    class ILog;
+}
+namespace Electux::App::Command {
+    class ICommandFormatter;
+}
 
-namespace Electux::App
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class AppController
-	/// @brief Pure C++ coordination controller managing config loading, storing, and model change propagation.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class AppController : public IAppController
-	{
-	public:
-		AppController(
-			std::unique_ptr<Config::IConfig> configManager,
-			std::unique_ptr<Com::ICom> comChannel,
-			std::unique_ptr<Com::IComConfigurator> comConfigurator,
-			std::unique_ptr<Logger::ILog> logger,
-			std::unique_ptr<Command::ICommandFormatter> commandFormatter
-		);
-		virtual ~AppController() override;
+namespace Electux::App {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class AppController
+    /// @brief Coordination controller managing config loading, storing, and
+    /// model change propagation.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class AppController : public IAppController {
+      public:
+        AppController(
+            std::unique_ptr<Config::IConfig> configManager,
+            std::unique_ptr<Com::ICom> comChannel,
+            std::unique_ptr<Com::IComConfigurator> comConfigurator,
+            std::unique_ptr<Logger::ILog> logger,
+            std::unique_ptr<Command::ICommandFormatter> commandFormatter
+        );
+        virtual ~AppController() override;
 
-		AppController(const AppController &) = delete;
-		AppController &operator=(const AppController &) = delete;
+        AppController(const AppController &) = delete;
+        AppController &operator=(const AppController &) = delete;
 
-		void startup() override;
-		void shutdown() override;
+        void startup() override;
+        void shutdown() override;
 
-		const Model::IModel& getModel() const override;
+        const Model::IModel &getModel() const override;
 
-		void onSetupChanged(const Model::SettingsSetup &setup) override;
+        void onSetupChanged(const Model::SettingsSetup &setup) override;
 
-	private:
-		void configureLogger();
-		void configureComChannel();
-		void handleChannelStateChanges(const Model::IModel &oldConfig, const Model::IModel &newConfig);
-		bool hasSerialConfigChanged(const Model::IModel &oldConfig, const Model::IModel &newConfig);
-		bool hasLoggerConfigChanged(const Model::IModel &oldConfig, const Model::IModel &newConfig);
+      private:
+        void configureLogger();
+        void configureComChannel();
+        void handleChannelStateChanges(
+            const Model::IModel &oldConfig, const Model::IModel &newConfig
+        );
+        bool hasSerialConfigChanged(
+            const Model::IModel &oldConfig, const Model::IModel &newConfig
+        );
+        bool hasGeneralConfigChanged(
+            const Model::IModel &oldConfig, const Model::IModel &newConfig
+        );
+        bool hasBleConfigChanged(
+            const Model::IModel &oldConfig, const Model::IModel &newConfig
+        );
+        bool hasLoggerConfigChanged(
+            const Model::IModel &oldConfig, const Model::IModel &newConfig
+        );
 
-		std::unique_ptr<Config::IConfig> m_configManager;
-		std::unique_ptr<Com::ICom> m_comChannel;
-		std::unique_ptr<Com::IComConfigurator> m_comConfigurator;
-		std::unique_ptr<Logger::ILog> m_logger;
-		std::unique_ptr<Command::ICommandFormatter> m_commandFormatter;
-	};
+        std::unique_ptr<Config::IConfig> m_configManager;
+        std::unique_ptr<Com::ICom> m_comChannel;
+        std::unique_ptr<Com::IComConfigurator> m_comConfigurator;
+        std::unique_ptr<Logger::ILog> m_logger;
+        std::unique_ptr<Command::ICommandFormatter> m_commandFormatter;
+    };
 } // namespace Electux::App

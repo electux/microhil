@@ -20,7 +20,7 @@
 
 #include <gtest/gtest.h>
 #include <iostream>
-#include <com/serial_com.h>
+#include <com/serial/serial_com.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace Electux::App::Com

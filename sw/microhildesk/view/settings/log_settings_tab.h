@@ -20,29 +20,27 @@
 #pragma once
 
 #include <gtkmm/box.h>
-#include <gtkmm/label.h>
-#include <gtkmm/entry.h>
 #include <gtkmm/comboboxtext.h>
+#include <gtkmm/entry.h>
+#include <gtkmm/label.h>
 #include <model/imodel.h>
 
-namespace Electux::App::View::Settings
-{
-	class LogSettingsTab : public Gtk::Box
-	{
-	public:
-		explicit LogSettingsTab();
-		virtual ~LogSettingsTab() override = default;
+namespace Electux::App::View::Settings {
+    class LogSettingsTab : public Gtk::Box {
+      public:
+        explicit LogSettingsTab();
+        virtual ~LogSettingsTab() override = default;
 
-		LogSettingsTab(const LogSettingsTab &) = delete;
-		LogSettingsTab &operator=(const LogSettingsTab &) = delete;
+        LogSettingsTab(const LogSettingsTab &) = delete;
+        LogSettingsTab &operator=(const LogSettingsTab &) = delete;
 
-		void updateData(const Electux::App::Model::IModel &config);
-		void getData(Electux::App::Model::IModel &config);
+        void updateData(const Electux::App::Model::IModel &config);
+        void getData(Electux::App::Model::IModel &config);
 
-	private:
-		Gtk::Label m_labelLogPath;
-		Gtk::Entry m_entryLogPath;
-		Gtk::Label m_labelLogLevel;
-		Gtk::ComboBoxText m_comboLogLevel;
-	};
+      private:
+        Gtk::Label m_labelLogPath;
+        Gtk::Entry m_entryLogPath;
+        Gtk::Label m_labelLogLevel;
+        Gtk::ComboBoxText m_comboLogLevel;
+    };
 } // namespace Electux::App::View::Settings

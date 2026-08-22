@@ -18,7 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <gtest/gtest.h>
-#include <com/serial_com_params.h>
+#include <com/serial/serial_com_params.h>
 
 using namespace Electux::App::Com::SerialComConstants;
 

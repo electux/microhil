@@ -21,47 +21,45 @@
 
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/box.h>
-#include <vector>
 #include <memory>
-#include <view/settings_setup.h>
+#include <vector>
 #include <view/channel_widget.h>
 #include <view/ihome_view.h>
+#include <view/settings_setup.h>
 
-namespace Electux::App::View
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class AppHome
-	/// @brief Home view window definition for the microhildesk application.
-	///
-	/// Provides the main user interface for monitoring and controlling
-	/// multiple channels, delegating to individual ChannelWidget components.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class AppHome : public Gtk::ApplicationWindow, public IHomeView
-	{
-	public:
-		explicit AppHome();
-		virtual ~AppHome() override = default;
+namespace Electux::App::View {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class AppHome
+    /// @brief Home view window definition for the microhildesk application.
+    ///
+    /// Provides the main user interface for monitoring and controlling
+    /// multiple channels, delegating to individual ChannelWidget components.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class AppHome : public Gtk::ApplicationWindow, public IHomeView {
+      public:
+        explicit AppHome();
+        virtual ~AppHome() override = default;
 
-		AppHome(const AppHome &) = delete;
-		AppHome &operator=(const AppHome &) = delete;
+        AppHome(const AppHome &) = delete;
+        AppHome &operator=(const AppHome &) = delete;
 
-		SigSettings controlChanged() override;
-		void setControlSetup(const SettingsSetup& setup) override;
-		void getUiData() override;
-		void updateUiData() override;
+        SigSettings controlChanged() override;
+        void setControlSetup(const SettingsSetup &setup) override;
+        void getUiData() override;
+        void updateUiData() override;
 
-		void show() override;
-		void hide() override;
-		void connect_close_request(const sigc::slot<bool()>& slot) override;
-		Gtk::Window& getGtkWindow() override;
+        void show() override;
+        void hide() override;
+        void connect_close_request(const sigc::slot<bool()> &slot) override;
+        Gtk::Window &getGtkWindow() override;
 
-	private:
-		void onChannelChanged(size_t index);
+      private:
+        void onChannelChanged(size_t index);
 
-		SettingsSetup m_setup{};
-		SigSettings m_controlSignal{};
+        SettingsSetup m_setup{};
+        SigSettings m_controlSignal{};
 
-		Gtk::Box m_boxRoot{};
-		std::vector<std::unique_ptr<ChannelWidget>> m_channelWidgets{};
-	};
+        Gtk::Box m_boxRoot{};
+        std::vector<std::unique_ptr<ChannelWidget>> m_channelWidgets{};
+    };
 } // namespace Electux::App::View

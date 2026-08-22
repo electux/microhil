@@ -22,30 +22,30 @@
 #include <sigc++/sigc++.h>
 #include <view/settings_setup.h>
 
-namespace Gtk { class Window; }
+namespace Gtk {
+    class Window;
+}
 
-namespace Electux::App::View
-{
-	using SettingsSetup = Electux::App::Model::SettingsSetup;
-	using SigSettings = sigc::signal<void(SettingsSetup &)>;
+namespace Electux::App::View {
+    using SettingsSetup = Electux::App::Model::SettingsSetup;
+    using SigSettings = sigc::signal<void(SettingsSetup &)>;
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IHomeView
-	/// @brief Interface defining the contract for the main home screen view.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IHomeView
-	{
-	public:
-		virtual ~IHomeView() = default;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class IHomeView
+    /// @brief Interface defining the contract for the main home screen view.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class IHomeView {
+      public:
+        virtual ~IHomeView() = default;
 
-		virtual SigSettings controlChanged() = 0;
-		virtual void setControlSetup(const SettingsSetup& setup) = 0;
-		virtual void updateUiData() = 0;
-		virtual void getUiData() = 0;
+        virtual SigSettings controlChanged() = 0;
+        virtual void setControlSetup(const SettingsSetup &setup) = 0;
+        virtual void updateUiData() = 0;
+        virtual void getUiData() = 0;
 
-		virtual void show() = 0;
-		virtual void hide() = 0;
-		virtual void connect_close_request(const sigc::slot<bool()>& slot) = 0;
-		virtual Gtk::Window& getGtkWindow() = 0;
-	};
+        virtual void show() = 0;
+        virtual void hide() = 0;
+        virtual void connect_close_request(const sigc::slot<bool()> &slot) = 0;
+        virtual Gtk::Window &getGtkWindow() = 0;
+    };
 } // namespace Electux::App::View

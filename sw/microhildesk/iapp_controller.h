@@ -19,28 +19,26 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-namespace Electux::App
-{
-	namespace Model
-	{
-		class IModel;
-		class SettingsSetup;
-	}
+namespace Electux::App {
+    namespace Model {
+        class IModel;
+        class SettingsSetup;
+    } // namespace Model
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
-	{
-	public:
-		virtual ~IAppController() = default;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class IAppController
+    /// @brief Interface defining the contract for the application business
+    /// logic coordinator.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class IAppController {
+      public:
+        virtual ~IAppController() = default;
 
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
+        virtual void startup() = 0;
+        virtual void shutdown() = 0;
 
-		virtual const Model::IModel& getModel() const = 0;
+        virtual const Model::IModel &getModel() const = 0;
 
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
-	};
+        virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
+    };
 } // namespace Electux::App

@@ -22,30 +22,31 @@
 #include <com/icom_configurator.h>
 #include <memory>
 
-namespace Electux::App::Com
-{
-	class SwitchableCom;
+namespace Electux::App::Com {
+    class SwitchableCom;
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class SwitchableComConfigurator
-	/// @brief Proxy implementing IComConfigurator that delegates configuration to active channel configurator.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class SwitchableComConfigurator : public IComConfigurator
-	{
-	public:
-		SwitchableComConfigurator(
-			SwitchableCom* switchableCom,
-			std::unique_ptr<IComConfigurator> serialConfigurator,
-			std::unique_ptr<IComConfigurator> tcpConfigurator
-		);
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class SwitchableComConfigurator
+    /// @brief Proxy implementing IComConfigurator that delegates configuration
+    /// to active channel configurator.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class SwitchableComConfigurator : public IComConfigurator {
+      public:
+        SwitchableComConfigurator(
+            SwitchableCom *switchableCom,
+            std::unique_ptr<IComConfigurator> serialConfigurator,
+            std::unique_ptr<IComConfigurator> tcpConfigurator,
+            std::unique_ptr<IComConfigurator> bleConfigurator
+        );
 
-		~SwitchableComConfigurator() override = default;
+        ~SwitchableComConfigurator() override = default;
 
-		bool configure(const Model::IModel& model, ICom* comChannel) override;
+        bool configure(const Model::IModel &model, ICom *comChannel) override;
 
-	private:
-		SwitchableCom* m_switchableCom;
-		std::unique_ptr<IComConfigurator> m_serialConfigurator;
-		std::unique_ptr<IComConfigurator> m_tcpConfigurator;
-	};
+      private:
+        SwitchableCom *m_switchableCom;
+        std::unique_ptr<IComConfigurator> m_serialConfigurator;
+        std::unique_ptr<IComConfigurator> m_tcpConfigurator;
+        std::unique_ptr<IComConfigurator> m_bleConfigurator;
+    };
 } // namespace Electux::App::Com

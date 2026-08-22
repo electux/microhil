@@ -18,8 +18,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "test_serial_com.h"
-#include <com/serial_com_params.h>
-#include <com/serial_utils.h>
+#include <com/serial/serial_com_params.h>
+#include <com/serial/serial_utils.h>
 
 using namespace Electux::App::Com;
 using namespace Electux::App::Com::SerialComConstants;
@@ -81,7 +81,7 @@ INSTANTIATE_TEST_SUITE_P
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 TEST_F(SerialComTest, InvalidBaudRateDetectionTest)
 {
-	uint32_t invalid_uint = SerialUtils::baudToUint(BaudRate::BAUD_200);
+	uint32_t invalid_uint = SerialUtils::baudToUint(BaudRate::BAUD_INVALID);
 	EXPECT_EQ(invalid_uint, cComInvalidParameter);
 
 	BaudRate invalid_enum = SerialUtils::uintToBaud(999999);

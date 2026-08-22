@@ -20,39 +20,37 @@
 #pragma once
 
 #include <com/icom.h>
-#include <com/itcp.h>
+#include <com/tcp/itcp.h>
 #include <string>
 #include <vector>
 
-namespace Electux::App::Com
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class TcpCom
-	/// @brief Implementation of TCP/IP communication using raw BSD sockets.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class TcpCom : public ICom, public ITcp
-	{
-	public:
-		TcpCom();
-		~TcpCom() noexcept override;
+namespace Electux::App::Com {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class TcpCom
+    /// @brief Implementation of TCP/IP communication using raw BSD sockets.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class TcpCom : public ICom, public ITcp {
+      public:
+        TcpCom();
+        ~TcpCom() noexcept override;
 
-		TcpCom(const TcpCom &) = delete;
-		TcpCom &operator=(const TcpCom &) = delete;
+        TcpCom(const TcpCom &) = delete;
+        TcpCom &operator=(const TcpCom &) = delete;
 
-		// ICom overrides
-		bool open() override;
-		bool close() override;
-		bool isOpen() const override;
-		void read(std::vector<uint8_t> &data, size_t len) override;
-		void write(const std::vector<uint8_t> &data) override;
+        // ICom overrides
+        bool open() override;
+        bool close() override;
+        bool isOpen() const override;
+        void read(std::vector<uint8_t> &data, size_t len) override;
+        void write(const std::vector<uint8_t> &data) override;
 
-		// ITcp overrides
-		void setIpAddress(const std::string& ip) override;
-		void setPort(uint16_t port) override;
+        // ITcp overrides
+        void setIpAddress(const std::string &ip) override;
+        void setPort(uint16_t port) override;
 
-	private:
-		std::string m_ip;
-		uint16_t m_port;
-		int m_socketFd;
-	};
+      private:
+        std::string m_ip;
+        uint16_t m_port;
+        int m_socketFd;
+    };
 } // namespace Electux::App::Com

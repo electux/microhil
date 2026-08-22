@@ -26,14 +26,13 @@ using namespace Electux::App;
 /// This function initializes the entry application and starts the main
 /// execution loop, returning the final exit status.
 ///
-/// @param argc The number of command-line arguments.
-/// @param argv The array of command-line arguments.
+/// @param argc [in] The number of command-line arguments.
+/// @param argv [in] The array of command-line arguments.
 /// @return The exit status of the application (0 for success).
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-int main(int argc, char *argv[])
-{
-	auto app = EntryApplication::create();
-	const int status = app->run(argc, argv);
+int main(int argc, char *argv[]) {
+    auto app = EntryApplication::create();
+    const int status = app->run(argc, argv);
 
-	return status;
+    return status;
 }

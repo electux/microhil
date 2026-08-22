@@ -20,56 +20,55 @@
 #pragma once
 
 #include <gtkmm/box.h>
-#include <gtkmm/label.h>
 #include <gtkmm/checkbutton.h>
 #include <gtkmm/comboboxtext.h>
+#include <gtkmm/label.h>
 #include <gtkmm/progressbar.h>
 #include <gtkmm/spinbutton.h>
 #include <gtkmm/togglebutton.h>
 #include <model/channel_state.h>
 #include <sigc++/sigc++.h>
 
-namespace Electux::App::View
-{
-	using ChannelState = Electux::App::Model::Channel::ChannelState;
+namespace Electux::App::View {
+    using ChannelState = Electux::App::Model::Channel::ChannelState;
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class ChannelWidget
-	/// @brief A self-contained UI component managing a single communication channel's controls.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class ChannelWidget : public Gtk::Box
-	{
-	public:
-		explicit ChannelWidget(size_t index);
-		virtual ~ChannelWidget() override = default;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class ChannelWidget
+    /// @brief A self-contained UI component managing a single communication
+    /// channel's controls.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class ChannelWidget : public Gtk::Box {
+      public:
+        explicit ChannelWidget(size_t index);
+        virtual ~ChannelWidget() override = default;
 
-		ChannelWidget(const ChannelWidget &) = delete;
-		ChannelWidget &operator=(const ChannelWidget &) = delete;
+        ChannelWidget(const ChannelWidget &) = delete;
+        ChannelWidget &operator=(const ChannelWidget &) = delete;
 
-		void updateState(const ChannelState &state);
-		ChannelState getState() const;
+        void updateState(const ChannelState &state);
+        ChannelState getState() const;
 
-		sigc::signal<void()> signal_changed() { return m_signalChanged; }
+        sigc::signal<void()> signal_changed() { return m_signalChanged; }
 
-	private:
-		void onEnableToggled();
-		void onModeChanged();
-		void onToggleClicked();
-		void onTimerValueChanged();
-		void onTimerToggleClicked();
+      private:
+        void onEnableToggled();
+        void onModeChanged();
+        void onToggleClicked();
+        void onTimerValueChanged();
+        void onTimerToggleClicked();
 
-		size_t m_index;
-		bool m_blockSignals{false};
+        size_t m_index;
+        bool m_blockSignals{false};
 
-		Gtk::CheckButton m_enableBtn;
-		Gtk::ComboBoxText m_modeCombo;
-		Gtk::Label m_toggleLabel;
-		Gtk::ToggleButton m_toggleBtn;
-		Gtk::Label m_timerLabel;
-		Gtk::SpinButton m_timerSpin;
-		Gtk::ToggleButton m_timerToggleBtn;
-		Gtk::ProgressBar m_progressBar;
+        Gtk::CheckButton m_enableBtn;
+        Gtk::ComboBoxText m_modeCombo;
+        Gtk::Label m_toggleLabel;
+        Gtk::ToggleButton m_toggleBtn;
+        Gtk::Label m_timerLabel;
+        Gtk::SpinButton m_timerSpin;
+        Gtk::ToggleButton m_timerToggleBtn;
+        Gtk::ProgressBar m_progressBar;
 
-		sigc::signal<void()> m_signalChanged;
-	};
+        sigc::signal<void()> m_signalChanged;
+    };
 } // namespace Electux::App::View

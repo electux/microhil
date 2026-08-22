@@ -19,63 +19,63 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <gtkmm/window.h>
 #include <gtkmm/box.h>
+#include <gtkmm/button.h>
 #include <gtkmm/grid.h>
 #include <gtkmm/notebook.h>
-#include <gtkmm/button.h>
+#include <gtkmm/window.h>
 #include <sigc++/sigc++.h>
-#include <view/settings_setup.h>
 #include <view/settings/general_settings_tab.h>
+#include <view/settings/isettings_view.h>
+#include <view/settings/log_settings_tab.h>
 #include <view/settings/serial_settings_tab.h>
 #include <view/settings/tcp_settings_tab.h>
-#include <view/settings/log_settings_tab.h>
-#include <view/settings/isettings_view.h>
+#include <view/settings/ble_settings_tab.h>
+#include <view/settings_setup.h>
 
-namespace Electux::App::View::Settings
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class AppSettings
-	/// @brief Application settings window definition.
-	///
-	/// Manages the UI for configuring settings, delegating tab rendering
-	/// and data binding to SerialSettingsTab and LogSettingsTab.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class AppSettings : public Gtk::Window, public ISettingsView
-	{
-	public:
-		explicit AppSettings();
-		virtual ~AppSettings() override = default;
+namespace Electux::App::View::Settings {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class AppSettings
+    /// @brief Application settings window definition.
+    ///
+    /// Manages the UI for configuring settings, delegating tab rendering
+    /// and data binding to SerialSettingsTab and LogSettingsTab.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class AppSettings : public Gtk::Window, public ISettingsView {
+      public:
+        explicit AppSettings();
+        virtual ~AppSettings() override = default;
 
-		AppSettings(const AppSettings &) = delete;
-		AppSettings &operator=(const AppSettings &) = delete;
+        AppSettings(const AppSettings &) = delete;
+        AppSettings &operator=(const AppSettings &) = delete;
 
-		SigSetup setupChanged() override;
-		void setSettingsSetup(const SettingsSetup& setup) override;
-		void getUiData() override;
-		void updateUiData() override;
+        SigSetup setupChanged() override;
+        void setSettingsSetup(const SettingsSetup &setup) override;
+        void getUiData() override;
+        void updateUiData() override;
 
-		void show() override;
-		void hide() override;
+        void show() override;
+        void hide() override;
 
-	protected:
-		void mapping();
-		void onButtonOkClicked();
-		void onButtonCancelClicked();
+      protected:
+        void mapping();
+        void onButtonOkClicked();
+        void onButtonCancelClicked();
 
-	private:
-		SettingsSetup m_setup{};
-		SigSetup m_setupSignal{};
+      private:
+        SettingsSetup m_setup{};
+        SigSetup m_setupSignal{};
 
-		Gtk::Box m_boxRoot{};
-		Gtk::Notebook m_notebook{};
-		GeneralSettingsTab m_generalTab{};
-		SerialSettingsTab m_serialTab{};
-		TcpSettingsTab m_tcpTab{};
-		LogSettingsTab m_logTab{};
-		Gtk::Grid m_buttonBox{};
+        Gtk::Box m_boxRoot{};
+        Gtk::Notebook m_notebook{};
+        GeneralSettingsTab m_generalTab{};
+        SerialSettingsTab m_serialTab{};
+        TcpSettingsTab m_tcpTab{};
+        BleSettingsTab m_bleTab{};
+        LogSettingsTab m_logTab{};
+        Gtk::Grid m_buttonBox{};
 
-		Gtk::Button m_buttonOk{};
-		Gtk::Button m_buttonCancel{};
-	};
+        Gtk::Button m_buttonOk{};
+        Gtk::Button m_buttonCancel{};
+    };
 } // namespace Electux::App::View::Settings

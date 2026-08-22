@@ -20,26 +20,24 @@
 #pragma once
 
 #include <gtkmm/box.h>
-#include <gtkmm/label.h>
 #include <gtkmm/comboboxtext.h>
+#include <gtkmm/label.h>
 #include <model/imodel.h>
 
-namespace Electux::App::View::Settings
-{
-	class GeneralSettingsTab : public Gtk::Box
-	{
-	public:
-		explicit GeneralSettingsTab();
-		virtual ~GeneralSettingsTab() override = default;
+namespace Electux::App::View::Settings {
+    class GeneralSettingsTab : public Gtk::Box {
+      public:
+        explicit GeneralSettingsTab();
+        virtual ~GeneralSettingsTab() override = default;
 
-		GeneralSettingsTab(const GeneralSettingsTab &) = delete;
-		GeneralSettingsTab &operator=(const GeneralSettingsTab &) = delete;
+        GeneralSettingsTab(const GeneralSettingsTab &) = delete;
+        GeneralSettingsTab &operator=(const GeneralSettingsTab &) = delete;
 
-		void updateData(const Electux::App::Model::IModel &config);
-		void getData(Electux::App::Model::IModel &config);
+        void updateData(const Electux::App::Model::IModel &config);
+        void getData(Electux::App::Model::IModel &config);
 
-	private:
-		Gtk::Label m_labelComType;
-		Gtk::ComboBoxText m_comboComType;
-	};
+      private:
+        Gtk::Label m_labelComType;
+        Gtk::ComboBoxText m_comboComType;
+    };
 } // namespace Electux::App::View::Settings

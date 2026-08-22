@@ -19,23 +19,22 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <com/serial/ilib.h>
 #include <cstdint>
-#include <com/ilib.h>
 
-namespace Electux::App::Com::SerialUtils
-{
-	uint32_t baudToUint(const BaudRate baud);
-	BaudRate uintToBaud(const uint32_t baud);
+namespace Electux::App::Com::SerialUtils {
+    uint32_t baudToUint(const BaudRate baud);
+    BaudRate uintToBaud(const uint32_t baud);
 
-	uint32_t dataBitsToUint(const CharacterSize data);
-	CharacterSize uintToDataBits(const uint32_t data);
+    uint32_t dataBitsToUint(const CharacterSize data);
+    CharacterSize uintToDataBits(const uint32_t data);
 
-	uint32_t parityToUint(const Parity parity);
-	Parity uintToParity(const uint32_t parity);
+    uint32_t parityToUint(const Parity parity);
+    Parity uintToParity(const uint32_t parity);
 
-	uint32_t stopBitsToUint(const StopBits stop);
-	StopBits uintToStopBits(const uint32_t stop);
+    uint32_t stopBitsToUint(const StopBits stop);
+    StopBits uintToStopBits(const uint32_t stop);
 
-	uint32_t flowControlToUint(const FlowControl flow);
-	FlowControl uintToFlowControl(const uint32_t flow);
+    uint32_t flowControlToUint(const FlowControl flow);
+    FlowControl uintToFlowControl(const uint32_t flow);
 } // namespace Electux::App::Com::SerialUtils
