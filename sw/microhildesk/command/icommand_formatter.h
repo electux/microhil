@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// iapp_controller.h
+/// icommand_formatter.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,28 +19,21 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-namespace Electux::App
-{
-	namespace Model
-	{
-		class IModel;
-		class SettingsSetup;
-	}
+#include <model/channel_state.h>
+#include <string>
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
-	{
-	public:
-		virtual ~IAppController() = default;
+namespace Electux::App::Command {
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @class ICommandFormatter
+/// @brief Interface defining the contract for parsing relay channel state into
+/// protocol strings.
+////////////////////////////////////////////////////////////////////////////////////////////////////
+class ICommandFormatter {
+public:
+  virtual ~ICommandFormatter() = default;
 
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
-
-		virtual const Model::IModel& getModel() const = 0;
-
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
-	};
-} // namespace Electux::App
+  virtual std::string
+  getCommandState(size_t channelIdx,
+                  const Model::Channel::ChannelState &state) const = 0;
+};
+} // namespace Electux::App::Command

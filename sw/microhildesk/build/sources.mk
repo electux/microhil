@@ -13,15 +13,23 @@ SOURCES = \
 	../com/serial_lib_wrapper.cc \
 	../com/serial_utils.cc \
 	../com/serial_com.cc \
+	../com/serial_com_configurator.cc \
+	../com/tcp_com.cc \
+	../com/tcp_com_configurator.cc \
+	../com/switchable_com.cc \
+	../com/switchable_com_configurator.cc \
 	../model/model.cc \
 	../view/settings_setup.cc \
 	../view/channel_widget.cc \
 	../view/home.cc \
 	../view/about/about.cc \
 	../view/help/help.cc \
+	../view/settings/general_settings_tab.cc \
 	../view/settings/serial_settings_tab.cc \
+	../view/settings/tcp_settings_tab.cc \
 	../view/settings/log_settings_tab.cc \
 	../view/settings/settings.cc \
 	../application.cc \
 	../app_controller.cc \
+	../command/command_formatter.cc \
 	../main.cc

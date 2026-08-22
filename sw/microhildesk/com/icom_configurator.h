@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// iapp_controller.h
+/// icom_configurator.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,28 +19,33 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-namespace Electux::App
+namespace Electux::App::Model
 {
-	namespace Model
-	{
-		class IModel;
-		class SettingsSetup;
-	}
+	class IModel;
+}
+
+namespace Electux::App::Com
+{
+	class ICom;
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
+	/// @class IComConfigurator
+	/// @brief Interface for protocol-independent configuration of communication channels.
+	///
+	/// This class abstracts the parameters configuration for any communication mechanism (Serial, TCP, etc.)
+	/// from the AppController.
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
+	class IComConfigurator
 	{
 	public:
-		virtual ~IAppController() = default;
+		virtual ~IComConfigurator() = default;
 
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
-
-		virtual const Model::IModel& getModel() const = 0;
-
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Configures the communication channel using parameters from the model.
+		/// @param model Reference to the configuration model.
+		/// @param comChannel Pointer to the communication channel interface.
+		/// @return true if configuration was successful, else false.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual bool configure(const Model::IModel& model, ICom* comChannel) = 0;
 	};
-} // namespace Electux::App
+} // namespace Electux::App::Com

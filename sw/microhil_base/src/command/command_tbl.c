@@ -72,6 +72,21 @@ static void cmd_handle_channel(const char *cmd_str) {
   }
 }
 
+static void cmd_handle_timer(const char *cmd_str) {
+  // Pattern: "mh#ch#X#tmr#Y#end"
+  char ch_char = cmd_str[6];
+  uint32_t channel = ch_char - '1';
+  uint32_t seconds = 0;
+
+  if (sscanf(cmd_str + 12, "%u#end", &seconds) == 1) {
+    if (channel < RELAY_NUM_CHANNELS) {
+#ifdef VERBOSE
+      printf("%s channel %c timer %u seconds\n", MICROHIL_VERBOSE, ch_char, seconds);
+#endif
+    }
+  }
+}
+
 static const command_entry_t command_tbl[] = {
     {"mh#ch#1#on#end", cmd_handle_channel},
     {"mh#ch#1#off#end", cmd_handle_channel},
@@ -99,6 +114,15 @@ static const size_t command_tbl_size =
     sizeof(command_tbl) / sizeof(command_tbl[0]);
 
 void command_dispatch(const char *cmd_str) {
+  // Check for timer commands: "mh#ch#X#tmr#Y#end"
+  // Where X is '1'-'8', followed by "#tmr#"
+  if (strncmp(cmd_str, "mh#ch#", 6) == 0 &&
+      cmd_str[6] >= '1' && cmd_str[6] <= '8' &&
+      strncmp(cmd_str + 7, "#tmr#", 5) == 0) {
+    cmd_handle_timer(cmd_str);
+    return;
+  }
+
   for (size_t i = 0; i < command_tbl_size; i++) {
     if (strcmp(cmd_str, command_tbl[i].pattern) == 0) {
       command_tbl[i].handler(cmd_str);

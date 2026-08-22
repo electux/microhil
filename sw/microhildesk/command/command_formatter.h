@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// iapp_controller.h
+/// command_formatter.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,28 +19,24 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-namespace Electux::App
-{
-	namespace Model
-	{
-		class IModel;
-		class SettingsSetup;
-	}
+#include <command/icommand_formatter.h>
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
-	{
-	public:
-		virtual ~IAppController() = default;
+namespace Electux::App::Command {
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @class CommandFormatter
+/// @brief Implements ICommandFormatter to serialize relay channel state into
+/// command strings.
+////////////////////////////////////////////////////////////////////////////////////////////////////
+class CommandFormatter : public ICommandFormatter {
+public:
+  CommandFormatter() = default;
+  virtual ~CommandFormatter() override = default;
 
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
+  CommandFormatter(const CommandFormatter &) = delete;
+  CommandFormatter &operator=(const CommandFormatter &) = delete;
 
-		virtual const Model::IModel& getModel() const = 0;
-
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
-	};
-} // namespace Electux::App
+  virtual std::string
+  getCommandState(size_t channelIdx,
+                  const Model::Channel::ChannelState &state) const override;
+};
+} // namespace Electux::App::Command

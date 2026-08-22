@@ -110,6 +110,15 @@ namespace Electux::App::Model
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @name Internal General Key Constants
+	/// @{
+	constexpr std::string_view cComType{"com_type"};        ///< String key for connection type
+	constexpr std::string_view cTcpIp{"tcp_ip"};            ///< String key for TCP IP Address
+	constexpr std::string_view cTcpPort{"tcp_port"};        ///< String key for TCP Port
+	/// @}
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// @name Internal Key Constants
 	/// @{
 	constexpr std::string_view cUnknown{"unknown"};         ///< Fallback for unknown keys
@@ -148,7 +157,8 @@ bool Model::validateKey(const std::string_view &key) const
 	{
         cEnable, cMode, cToggle, cTimer, cTimerEnable,
         cLogLevel, cFilePath,
-        cDevice, cBaud, cData, cParity, cStop, cFlow
+        cDevice, cBaud, cData, cParity, cStop, cFlow,
+        cComType, cTcpIp, cTcpPort
     };
 
     return std::any_of(validKeys.begin(), validKeys.end(), [&](auto k) { return k == key; });
@@ -225,9 +235,17 @@ Entities Model::getAllEntries() const
         ModelSerialKey::Flow
     };
 
+    static const std::vector<ModelGeneralKey> generalKeys =
+	{
+        ModelGeneralKey::ComType,
+        ModelGeneralKey::TcpIp,
+        ModelGeneralKey::TcpPort
+    };
+
     fill(controlKeys);
     fill(logKeys);
     fill(serialKeys);
+    fill(generalKeys);
 
     return entries;
 }
@@ -262,7 +280,7 @@ void Model::clear()
 /// @param key Represents the ModelControlKey enum value.
 /// @return A string_view containing the constant key name.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-std::string_view Model::toString(const ModelControlKey &key) const
+std::string_view Model::toString(const ModelControlKey key) const
 {
 	switch (key)
 	{
@@ -280,7 +298,7 @@ std::string_view Model::toString(const ModelControlKey &key) const
 /// @param key Represents the ModelLogKey enum value.
 /// @return A string_view containing the constant key name.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-std::string_view Model::toString(const ModelLogKey &key) const
+std::string_view Model::toString(const ModelLogKey key) const
 {
 	switch (key)
 	{
@@ -295,7 +313,7 @@ std::string_view Model::toString(const ModelLogKey &key) const
 /// @param key Represents the ModelSerialKey enum value.
 /// @return A string_view containing the constant key name.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-std::string_view Model::toString(const ModelSerialKey &key) const
+std::string_view Model::toString(const ModelSerialKey key) const
 {
 	switch (key)
 	{
@@ -306,6 +324,22 @@ std::string_view Model::toString(const ModelSerialKey &key) const
 		case ModelSerialKey::Stop:   return cStop;
 		case ModelSerialKey::Flow:   return cFlow;
 		default:                     return cUnknown;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @brief Converts a ModelGeneralKey enum value to its string representation.
+/// @param key Represents the ModelGeneralKey enum value.
+/// @return A string_view containing the constant key name.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+std::string_view Model::toString(const ModelGeneralKey key) const
+{
+	switch (key)
+	{
+		case ModelGeneralKey::ComType: return cComType;
+		case ModelGeneralKey::TcpIp:   return cTcpIp;
+		case ModelGeneralKey::TcpPort: return cTcpPort;
+		default:                       return cUnknown;
 	}
 }
 

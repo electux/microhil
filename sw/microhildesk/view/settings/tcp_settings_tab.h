@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// iapp_controller.h
+/// tcp_settings_tab.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,28 +19,29 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-namespace Electux::App
-{
-	namespace Model
-	{
-		class IModel;
-		class SettingsSetup;
-	}
+#include <gtkmm/box.h>
+#include <gtkmm/label.h>
+#include <gtkmm/entry.h>
+#include <model/imodel.h>
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
+namespace Electux::App::View::Settings
+{
+	class TcpSettingsTab : public Gtk::Box
 	{
 	public:
-		virtual ~IAppController() = default;
+		explicit TcpSettingsTab();
+		virtual ~TcpSettingsTab() override = default;
 
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
+		TcpSettingsTab(const TcpSettingsTab &) = delete;
+		TcpSettingsTab &operator=(const TcpSettingsTab &) = delete;
 
-		virtual const Model::IModel& getModel() const = 0;
+		void updateData(const Electux::App::Model::IModel &config);
+		void getData(Electux::App::Model::IModel &config);
 
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
+	private:
+		Gtk::Label m_labelIpAddress;
+		Gtk::Entry m_entryIpAddress;
+		Gtk::Label m_labelPort;
+		Gtk::Entry m_entryPort;
 	};
-} // namespace Electux::App
+} // namespace Electux::App::View::Settings

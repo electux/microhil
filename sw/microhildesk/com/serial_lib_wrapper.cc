@@ -86,7 +86,24 @@ void LibSerialPortWrapper::Write(const std::vector<uint8_t> &data)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LibSerialPortWrapper::SetBaudRate(BaudRate baudRate)
 {
-    m_serialPort->SetBaudRate(baudRate);
+	LibSerial::BaudRate libBaud = LibSerial::BaudRate::BAUD_INVALID;
+	switch (baudRate)
+	{
+		case BaudRate::BAUD_110:    libBaud = LibSerial::BaudRate::BAUD_110; break;
+		case BaudRate::BAUD_300:    libBaud = LibSerial::BaudRate::BAUD_300; break;
+		case BaudRate::BAUD_600:    libBaud = LibSerial::BaudRate::BAUD_600; break;
+		case BaudRate::BAUD_1200:   libBaud = LibSerial::BaudRate::BAUD_1200; break;
+		case BaudRate::BAUD_2400:   libBaud = LibSerial::BaudRate::BAUD_2400; break;
+		case BaudRate::BAUD_4800:   libBaud = LibSerial::BaudRate::BAUD_4800; break;
+		case BaudRate::BAUD_9600:   libBaud = LibSerial::BaudRate::BAUD_9600; break;
+		case BaudRate::BAUD_19200:  libBaud = LibSerial::BaudRate::BAUD_19200; break;
+		case BaudRate::BAUD_38400:  libBaud = LibSerial::BaudRate::BAUD_38400; break;
+		case BaudRate::BAUD_57600:  libBaud = LibSerial::BaudRate::BAUD_57600; break;
+		case BaudRate::BAUD_115200: libBaud = LibSerial::BaudRate::BAUD_115200; break;
+		case BaudRate::BAUD_230400: libBaud = LibSerial::BaudRate::BAUD_230400; break;
+		default: break;
+	}
+	m_serialPort->SetBaudRate(libBaud);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -95,7 +112,16 @@ void LibSerialPortWrapper::SetBaudRate(BaudRate baudRate)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LibSerialPortWrapper::SetCharacterSize(CharacterSize characterSize)
 {
-    m_serialPort->SetCharacterSize(characterSize);
+	LibSerial::CharacterSize libSize = LibSerial::CharacterSize::CHAR_SIZE_INVALID;
+	switch (characterSize)
+	{
+		case CharacterSize::CHAR_SIZE_5: libSize = LibSerial::CharacterSize::CHAR_SIZE_5; break;
+		case CharacterSize::CHAR_SIZE_6: libSize = LibSerial::CharacterSize::CHAR_SIZE_6; break;
+		case CharacterSize::CHAR_SIZE_7: libSize = LibSerial::CharacterSize::CHAR_SIZE_7; break;
+		case CharacterSize::CHAR_SIZE_8: libSize = LibSerial::CharacterSize::CHAR_SIZE_8; break;
+		default: break;
+	}
+	m_serialPort->SetCharacterSize(libSize);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -104,7 +130,15 @@ void LibSerialPortWrapper::SetCharacterSize(CharacterSize characterSize)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LibSerialPortWrapper::SetParity(Parity parity)
 {
-    m_serialPort->SetParity(parity);
+	LibSerial::Parity libParity = LibSerial::Parity::PARITY_INVALID;
+	switch (parity)
+	{
+		case Parity::PARITY_NONE: libParity = LibSerial::Parity::PARITY_NONE; break;
+		case Parity::PARITY_ODD:  libParity = LibSerial::Parity::PARITY_ODD; break;
+		case Parity::PARITY_EVEN: libParity = LibSerial::Parity::PARITY_EVEN; break;
+		default: break;
+	}
+	m_serialPort->SetParity(libParity);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -113,7 +147,14 @@ void LibSerialPortWrapper::SetParity(Parity parity)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LibSerialPortWrapper::SetStopBits(StopBits stopBits)
 {
-    m_serialPort->SetStopBits(stopBits);
+	LibSerial::StopBits libStop = LibSerial::StopBits::STOP_BITS_INVALID;
+	switch (stopBits)
+	{
+		case StopBits::STOP_BITS_1: libStop = LibSerial::StopBits::STOP_BITS_1; break;
+		case StopBits::STOP_BITS_2: libStop = LibSerial::StopBits::STOP_BITS_2; break;
+		default: break;
+	}
+	m_serialPort->SetStopBits(libStop);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -122,5 +163,13 @@ void LibSerialPortWrapper::SetStopBits(StopBits stopBits)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void LibSerialPortWrapper::SetFlowControl(FlowControl flowControl)
 {
-    m_serialPort->SetFlowControl(flowControl);
+	LibSerial::FlowControl libFlow = LibSerial::FlowControl::FLOW_CONTROL_INVALID;
+	switch (flowControl)
+	{
+		case FlowControl::FLOW_CONTROL_NONE:     libFlow = LibSerial::FlowControl::FLOW_CONTROL_NONE; break;
+		case FlowControl::FLOW_CONTROL_SOFTWARE: libFlow = LibSerial::FlowControl::FLOW_CONTROL_SOFTWARE; break;
+		case FlowControl::FLOW_CONTROL_HARDWARE: libFlow = LibSerial::FlowControl::FLOW_CONTROL_HARDWARE; break;
+		default: break;
+	}
+	m_serialPort->SetFlowControl(libFlow);
 }

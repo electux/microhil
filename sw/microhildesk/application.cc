@@ -25,6 +25,15 @@
 #include <application.h>
 #include <iapp_controller.h>
 #include <app_controller.h>
+#include <config/config_manager.h>
+#include <com/serial_com.h>
+#include <com/serial_com_configurator.h>
+#include <com/tcp_com.h>
+#include <com/tcp_com_configurator.h>
+#include <com/switchable_com.h>
+#include <com/switchable_com_configurator.h>
+#include <command/command_formatter.h>
+#include <log/log.h>
 #include <model/model.h>
 #include <view/home.h>
 #include <view/settings/settings.h>
@@ -79,12 +88,42 @@ using namespace Electux::App;
 
 EntryApplication::EntryApplication()
 	: Gtk::Application(cApplicationId.data())
-	, m_controller(std::make_unique<AppController>())
-	, m_home(std::make_unique<View::AppHome>())
-	, m_settings(std::make_unique<View::Settings::AppSettings>())
-	, m_help(std::make_unique<View::Help::AppHelp>())
-	, m_about(std::make_unique<View::About::AppAbout>())
 {
+	auto configManager = std::make_unique<Config::ConfigManager>();
+
+	auto serial = std::make_unique<Com::SerialCom>();
+	auto* serialConfig = serial.get();
+	auto serialConfigurator = std::make_unique<Com::SerialComConfigurator>(serialConfig);
+
+	auto tcp = std::make_unique<Com::TcpCom>();
+	auto* tcpConfig = tcp.get();
+	auto tcpConfigurator = std::make_unique<Com::TcpComConfigurator>(tcpConfig);
+
+	auto switchableCom = std::make_unique<Com::SwitchableCom>(std::move(serial), std::move(tcp));
+	auto* switchableComPtr = switchableCom.get();
+
+	auto configurator = std::make_unique<Com::SwitchableComConfigurator>(
+		switchableComPtr,
+		std::move(serialConfigurator),
+		std::move(tcpConfigurator)
+	);
+
+	auto logger = std::make_unique<Logger::Log>();
+	auto commandFormatter = std::make_unique<Command::CommandFormatter>();
+
+	m_controller = std::make_unique<AppController>(
+		std::move(configManager),
+		std::move(switchableCom),
+		std::move(configurator),
+		std::move(logger),
+		std::move(commandFormatter)
+	);
+
+	m_home = std::make_unique<View::AppHome>();
+	m_settings = std::make_unique<View::Settings::AppSettings>();
+	m_help = std::make_unique<View::Help::AppHelp>();
+	m_about = std::make_unique<View::About::AppAbout>();
+
 	Glib::set_application_name(cApplicationId.data());
 }
 

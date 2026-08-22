@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// iapp_controller.h
+/// tcp_com.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,28 +19,40 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-namespace Electux::App
-{
-	namespace Model
-	{
-		class IModel;
-		class SettingsSetup;
-	}
+#include <com/icom.h>
+#include <com/itcp.h>
+#include <string>
+#include <vector>
 
+namespace Electux::App::Com
+{
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
+	/// @class TcpCom
+	/// @brief Implementation of TCP/IP communication using raw BSD sockets.
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
+	class TcpCom : public ICom, public ITcp
 	{
 	public:
-		virtual ~IAppController() = default;
+		TcpCom();
+		~TcpCom() noexcept override;
 
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
+		TcpCom(const TcpCom &) = delete;
+		TcpCom &operator=(const TcpCom &) = delete;
 
-		virtual const Model::IModel& getModel() const = 0;
+		// ICom overrides
+		bool open() override;
+		bool close() override;
+		bool isOpen() const override;
+		void read(std::vector<uint8_t> &data, size_t len) override;
+		void write(const std::vector<uint8_t> &data) override;
 
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
+		// ITcp overrides
+		void setIpAddress(const std::string& ip) override;
+		void setPort(uint16_t port) override;
+
+	private:
+		std::string m_ip;
+		uint16_t m_port;
+		int m_socketFd;
 	};
-} // namespace Electux::App
+} // namespace Electux::App::Com

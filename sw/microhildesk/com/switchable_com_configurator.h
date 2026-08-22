@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// iapp_controller.h
+/// switchable_com_configurator.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,28 +19,33 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-namespace Electux::App
+#include <com/icom_configurator.h>
+#include <memory>
+
+namespace Electux::App::Com
 {
-	namespace Model
-	{
-		class IModel;
-		class SettingsSetup;
-	}
+	class SwitchableCom;
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
+	/// @class SwitchableComConfigurator
+	/// @brief Proxy implementing IComConfigurator that delegates configuration to active channel configurator.
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
+	class SwitchableComConfigurator : public IComConfigurator
 	{
 	public:
-		virtual ~IAppController() = default;
+		SwitchableComConfigurator(
+			SwitchableCom* switchableCom,
+			std::unique_ptr<IComConfigurator> serialConfigurator,
+			std::unique_ptr<IComConfigurator> tcpConfigurator
+		);
 
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
+		~SwitchableComConfigurator() override = default;
 
-		virtual const Model::IModel& getModel() const = 0;
+		bool configure(const Model::IModel& model, ICom* comChannel) override;
 
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
+	private:
+		SwitchableCom* m_switchableCom;
+		std::unique_ptr<IComConfigurator> m_serialConfigurator;
+		std::unique_ptr<IComConfigurator> m_tcpConfigurator;
 	};
-} // namespace Electux::App
+} // namespace Electux::App::Com

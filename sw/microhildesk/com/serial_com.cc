@@ -18,6 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <com/serial_com.h>
+#include <com/serial_lib_wrapper.h>
 #include <iostream>
 
 using namespace Electux::App::Com;
@@ -27,7 +28,7 @@ using namespace Electux::App::Com;
 /// @param port A unique pointer to an ILibSerialPort implementation.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 SerialCom::SerialCom(std::unique_ptr<ILibSerialPort> port)
-    : m_serialPort(std::move(port))
+    : m_serialPort(port ? std::move(port) : std::make_unique<LibSerialPortWrapper>())
 {
     std::cout << "SerialCom constructor called." << std::endl;
 }

@@ -76,6 +76,17 @@ namespace Electux::App::Model
 	};
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @enum ModelGeneralKey
+	/// @brief Defines valid configuration keys for general settings (communication mode, TCP).
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	enum class ModelGeneralKey : uint8_t
+	{
+		ComType = 0, ///< Key for communication type ("serial" or "tcp")
+		TcpIp,       ///< Key for TCP IP Address
+		TcpPort      ///< Key for TCP Port
+	};
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// @class IModel
 	/// @brief Interface for application data models.
 	///
@@ -156,21 +167,28 @@ namespace Electux::App::Model
 		/// @param key Represents the ModelControlKey enum value.
 		/// @return A string_view containing the key name.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		virtual std::string_view toString(const ModelControlKey &key) const = 0;
+		virtual std::string_view toString(ModelControlKey key) const = 0;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Converts a ModelLogKey enum value to its string representation.
 		/// @param key Represents the ModelLogKey enum value.
 		/// @return A string_view containing the key name.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		virtual std::string_view toString(const ModelLogKey &key) const = 0;
+		virtual std::string_view toString(ModelLogKey key) const = 0;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Converts a ModelSerialKey enum value to its string representation.
 		/// @param key Represents the ModelSerialKey enum value.
 		/// @return A string_view containing the key name.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		virtual std::string_view toString(const ModelSerialKey &key) const = 0;
+		virtual std::string_view toString(ModelSerialKey key) const = 0;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts a ModelGeneralKey enum value to its string representation.
+		/// @param key Represents the ModelGeneralKey enum value.
+		/// @return A string_view containing the key name.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual std::string_view toString(ModelGeneralKey key) const = 0;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Gets the signal emitted when model data changes.

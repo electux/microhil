@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// iapp_controller.h
+/// itcp.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,28 +19,30 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-namespace Electux::App
-{
-	namespace Model
-	{
-		class IModel;
-		class SettingsSetup;
-	}
+#include <string>
+#include <cstdint>
 
+namespace Electux::App::Com
+{
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
+	/// @class ITcp
+	/// @brief Interface for TCP communication configuration parameters.
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
+	class ITcp
 	{
 	public:
-		virtual ~IAppController() = default;
+		virtual ~ITcp() = default;
 
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the target IP Address for the TCP connection.
+		/// @param ip The IP address.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual void setIpAddress(const std::string& ip) = 0;
 
-		virtual const Model::IModel& getModel() const = 0;
-
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Sets the target port number for the TCP connection.
+		/// @param port The port number.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		virtual void setPort(uint16_t port) = 0;
 	};
-} // namespace Electux::App
+} // namespace Electux::App::Com

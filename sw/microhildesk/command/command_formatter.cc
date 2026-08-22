@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// iapp_controller.h
+/// command_formatter.cc
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -17,30 +17,28 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma once
 
-namespace Electux::App
-{
-	namespace Model
-	{
-		class IModel;
-		class SettingsSetup;
-	}
+#include <command/command_formatter.h>
+#include <format>
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
-	{
-	public:
-		virtual ~IAppController() = default;
+using namespace Electux::App::Command;
 
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
-
-		virtual const Model::IModel& getModel() const = 0;
-
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
-	};
-} // namespace Electux::App
+std::string CommandFormatter::getCommandState(
+    size_t channelIdx, const Model::Channel::ChannelState &state) const {
+  if (!state.enabled) {
+    return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
+  }
+  if (state.mode == 0) // Toggle Mode
+  {
+    return std::format("<mh#ch#{}#{}#end>", channelIdx + 1,
+                       state.toggle ? "on" : "off");
+  } else if (state.mode == 1) // Timer Mode
+  {
+    if (state.timerEnabled) {
+      return std::format("<mh#ch#{}#tmr#{}#end>", channelIdx + 1, state.timer);
+    } else {
+      return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
+    }
+  }
+  return "";
+}

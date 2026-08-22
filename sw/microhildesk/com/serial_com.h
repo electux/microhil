@@ -20,7 +20,6 @@
 
 #include <com/icom.h>
 #include <com/iserial.h>
-#include <com/serial_lib_wrapper.h>
 #include <memory>
 #include <string>
 #include <vector>
@@ -30,6 +29,8 @@
 /// @brief Namespace for application communication components
 namespace Electux::App::Com
 {
+	class ILibSerialPort;
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// @class SerialCom
 	/// @brief Implementation of serial communication using LibSerial.
@@ -44,7 +45,7 @@ namespace Electux::App::Com
 		/// @brief Constructor for SerialCom.
 		/// @param port Unique pointer to an ILibSerialPort implementation.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		explicit SerialCom(std::unique_ptr<ILibSerialPort> port = std::make_unique<LibSerialPortWrapper>());
+		explicit SerialCom(std::unique_ptr<ILibSerialPort> port = nullptr);
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Destructor for SerialCom.

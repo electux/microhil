@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// iapp_controller.h
+/// tcp_com_configurator.cc
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -17,30 +17,34 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma once
 
-namespace Electux::App
+#include <com/tcp_com_configurator.h>
+#include <com/itcp.h>
+#include <com/icom.h>
+#include <model/imodel.h>
+#include <string>
+
+namespace Electux::App::Com
 {
-	namespace Model
+	TcpComConfigurator::TcpComConfigurator(ITcp* tcp)
+		: m_tcp(tcp) {}
+
+	bool TcpComConfigurator::configure(const Model::IModel& model, ICom* comChannel)
 	{
-		class IModel;
-		class SettingsSetup;
+		if (m_tcp == nullptr || comChannel == nullptr)
+		{
+			return false;
+		}
+
+		auto ipKey = model.toString(Model::ModelGeneralKey::TcpIp);
+		auto portKey = model.toString(Model::ModelGeneralKey::TcpPort);
+
+		std::string ip = model.getEntity(ipKey);
+		uint16_t port = static_cast<uint16_t>(std::stoul(model.getEntity(portKey)));
+
+		m_tcp->setIpAddress(ip);
+		m_tcp->setPort(port);
+
+		return comChannel->open();
 	}
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IAppController
-	/// @brief Interface defining the contract for the application business logic coordinator.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IAppController
-	{
-	public:
-		virtual ~IAppController() = default;
-
-		virtual void startup() = 0;
-		virtual void shutdown() = 0;
-
-		virtual const Model::IModel& getModel() const = 0;
-
-		virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
-	};
-} // namespace Electux::App
+} // namespace Electux::App::Com

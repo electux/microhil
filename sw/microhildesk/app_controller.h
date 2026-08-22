@@ -25,8 +25,9 @@
 #include <view/settings_setup.h>
 #include <iapp_controller.h>
 
-namespace Electux::App::Com { class ICom; class ISerial; }
+namespace Electux::App::Com { class ICom; class IComConfigurator; }
 namespace Electux::App::Logger { class ILog; }
+namespace Electux::App::Command { class ICommandFormatter; }
 
 namespace Electux::App
 {
@@ -37,7 +38,13 @@ namespace Electux::App
 	class AppController : public IAppController
 	{
 	public:
-		AppController();
+		AppController(
+			std::unique_ptr<Config::IConfig> configManager,
+			std::unique_ptr<Com::ICom> comChannel,
+			std::unique_ptr<Com::IComConfigurator> comConfigurator,
+			std::unique_ptr<Logger::ILog> logger,
+			std::unique_ptr<Command::ICommandFormatter> commandFormatter
+		);
 		virtual ~AppController() override;
 
 		AppController(const AppController &) = delete;
@@ -46,18 +53,21 @@ namespace Electux::App
 		void startup() override;
 		void shutdown() override;
 
-		Model::IModel& getModel() override;
 		const Model::IModel& getModel() const override;
 
 		void onSetupChanged(const Model::SettingsSetup &setup) override;
 
 	private:
 		void configureLogger();
-		void configureSerial();
+		void configureComChannel();
+		void handleChannelStateChanges(const Model::IModel &oldConfig, const Model::IModel &newConfig);
+		bool hasSerialConfigChanged(const Model::IModel &oldConfig, const Model::IModel &newConfig);
+		bool hasLoggerConfigChanged(const Model::IModel &oldConfig, const Model::IModel &newConfig);
 
 		std::unique_ptr<Config::IConfig> m_configManager;
 		std::unique_ptr<Com::ICom> m_comChannel;
-		Com::ISerial* m_serialConfig{nullptr};
+		std::unique_ptr<Com::IComConfigurator> m_comConfigurator;
 		std::unique_ptr<Logger::ILog> m_logger;
+		std::unique_ptr<Command::ICommandFormatter> m_commandFormatter;
 	};
 } // namespace Electux::App

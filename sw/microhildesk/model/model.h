@@ -106,21 +106,28 @@ namespace Electux::App::Model
 		/// @param key Represents the ModelSerialKey enum value.
 		/// @return A string_view containing the key name.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		std::string_view toString(const ModelSerialKey &key) const final;
+		std::string_view toString(const ModelSerialKey key) const final;
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		/// @brief Converts a ModelGeneralKey enum value to its string representation.
+		/// @param key Represents the ModelGeneralKey enum value.
+		/// @return A string_view containing the key name.
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		std::string_view toString(const ModelGeneralKey key) const final;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Converts a ModelLogKey enum value to its string representation.
 		/// @param key Represents the ModelLogKey enum value.
 		/// @return A string_view containing the key name.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		std::string_view toString(const ModelLogKey &key) const final;
+		std::string_view toString(const ModelLogKey key) const final;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Converts a ModelControlKey enum value to its string representation.
 		/// @param key Represents the ModelControlKey enum value.
 		/// @return A string_view containing the key name.
 		////////////////////////////////////////////////////////////////////////////////////////////////
-		std::string_view toString(const ModelControlKey &key) const final;
+		std::string_view toString(const ModelControlKey key) const final;
 
 		sigc::signal<void()> signal_changed() const final;
 		void emit_changed() const final;

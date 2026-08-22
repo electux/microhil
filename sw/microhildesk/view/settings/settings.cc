@@ -25,9 +25,11 @@ namespace
 {
 	constexpr std::string_view cSettingsTitle{"microhildesk"};
 	constexpr int cSettingsWidth{320};
-	constexpr int cSettingsHeight{280};
+	constexpr int cSettingsHeight{320};
 	constexpr int cSettingsNotebookMargin{10};
+	constexpr std::string_view cSettingsPageGeneralLabel{"General"};
 	constexpr std::string_view cSettingsPageSerialLabel{"Serial port"};
+	constexpr std::string_view cSettingsPageTcpLabel{"TCP/IP"};
 	constexpr std::string_view cSettingsPageLogLabel{"Log"};
 
 	constexpr int cSettingsButtonBoxWidth{220};
@@ -57,8 +59,10 @@ AppSettings::AppSettings()
 	m_notebook.set_margin(cSettingsNotebookMargin);
 	m_notebook.set_expand();
 
-	// Add Serial and Log settings tabs
+	// Add settings tabs
+	m_notebook.append_page(m_generalTab, cSettingsPageGeneralLabel.data());
 	m_notebook.append_page(m_serialTab, cSettingsPageSerialLabel.data());
+	m_notebook.append_page(m_tcpTab, cSettingsPageTcpLabel.data());
 	m_notebook.append_page(m_logTab, cSettingsPageLogLabel.data());
 	m_boxRoot.append(m_notebook);
 
@@ -98,13 +102,17 @@ void AppSettings::setSettingsSetup(const SettingsSetup& setup)
 
 void AppSettings::updateUiData()
 {
+	m_generalTab.updateData(*m_setup.m_config);
 	m_serialTab.updateData(*m_setup.m_config);
+	m_tcpTab.updateData(*m_setup.m_config);
 	m_logTab.updateData(*m_setup.m_config);
 }
 
 void AppSettings::getUiData()
 {
+	m_generalTab.getData(*m_setup.m_config);
 	m_serialTab.getData(*m_setup.m_config);
+	m_tcpTab.getData(*m_setup.m_config);
 	m_logTab.getData(*m_setup.m_config);
 }
 

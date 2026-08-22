@@ -26,7 +26,9 @@
 #include <gtkmm/button.h>
 #include <sigc++/sigc++.h>
 #include <view/settings_setup.h>
+#include <view/settings/general_settings_tab.h>
 #include <view/settings/serial_settings_tab.h>
+#include <view/settings/tcp_settings_tab.h>
 #include <view/settings/log_settings_tab.h>
 #include <view/settings/isettings_view.h>
 
@@ -67,7 +69,9 @@ namespace Electux::App::View::Settings
 
 		Gtk::Box m_boxRoot{};
 		Gtk::Notebook m_notebook{};
+		GeneralSettingsTab m_generalTab{};
 		SerialSettingsTab m_serialTab{};
+		TcpSettingsTab m_tcpTab{};
 		LogSettingsTab m_logTab{};
 		Gtk::Grid m_buttonBox{};
 

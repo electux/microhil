@@ -65,6 +65,8 @@ ConfigManager::~ConfigManager() = default;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void ConfigManager::init()
 {
+	populateDefaults();
+
 	auto dirPath = Glib::path_get_dirname(m_fileName);
 
 	try
@@ -137,7 +139,10 @@ bool ConfigManager::load()
 			// Map keys to specific models
 			if (m_config->validateKey(key))
 			{
-				m_config->add(key, value);
+				if (!m_config->update(key, value))
+				{
+					m_config->add(key, value);
+				}
 			}
 			else
 			{
@@ -189,7 +194,7 @@ bool ConfigManager::store()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void ConfigManager::setConfig(const Electux::App::Model::IModel& config)
 {
-	*m_config = dynamic_cast<const Electux::App::Model::Model&>(config);
+	m_config = config.clone();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
