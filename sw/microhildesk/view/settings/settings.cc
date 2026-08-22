@@ -58,7 +58,6 @@ AppSettings::AppSettings() {
     m_notebook.set_margin(cSettingsNotebookMargin);
     m_notebook.set_expand();
 
-    // Add settings tabs
     m_notebook.append_page(m_generalTab, cSettingsPageGeneralLabel.data());
     m_notebook.append_page(m_serialTab, cSettingsPageSerialLabel.data());
     m_notebook.append_page(m_tcpTab, cSettingsPageTcpLabel.data());
@@ -66,7 +65,6 @@ AppSettings::AppSettings() {
     m_notebook.append_page(m_logTab, cSettingsPageLogLabel.data());
     m_boxRoot.append(m_notebook);
 
-    // Setup Button Box (Ok/Cancel Grid)
     m_buttonBox.set_size_request(
         cSettingsButtonBoxWidth, cSettingsButtonBoxHeight
     );
@@ -96,7 +94,6 @@ AppSettings::AppSettings() {
 
     m_boxRoot.append(m_buttonBox);
 
-    // Connect signals/slots
     mapping();
 }
 

@@ -18,27 +18,32 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <com/com_types.h>
 #include <string>
 #include <view/settings/general_settings_tab.h>
 
 namespace {
     constexpr std::string_view cSettingsComTypeLabel{"Connection type"};
-    constexpr std::string_view cComTypeSerial{"Serial Port"};
-    constexpr std::string_view cComTypeTcp{"TCP/IP Connection"};
-    constexpr std::string_view cComTypeBle{"BLE Connection"};
 } // namespace
 
-using namespace Electux::App::View::Settings;
-using namespace Electux::App::Model;
+using Electux::App::Com::cComTypeDescriptors;
+using Electux::App::Com::ComType;
+using Electux::App::Com::fromConfigString;
+using Electux::App::Com::toConfigString;
+using Electux::App::Model::IModel;
+using Electux::App::Model::ModelGeneralKey;
+using Electux::App::View::Settings::GeneralSettingsTab;
 
 GeneralSettingsTab::GeneralSettingsTab()
     : Gtk::Box(Gtk::Orientation::VERTICAL) {
     m_labelComType.set_label(cSettingsComTypeLabel.data());
     append(m_labelComType);
 
-    m_comboComType.append(cComTypeSerial.data());
-    m_comboComType.append(cComTypeTcp.data());
-    m_comboComType.append(cComTypeBle.data());
+    for (const auto &desc : cComTypeDescriptors) {
+        m_comboComType.append(desc.displayName.data());
+    }
+
+    m_comboComType.set_active(0);
     append(m_comboComType);
 }
 
@@ -46,24 +51,18 @@ void GeneralSettingsTab::updateData(const IModel &config) {
     auto comTypeKey = config.toString(ModelGeneralKey::ComType);
     auto value = config.getEntity(comTypeKey);
 
-    if (value == "tcp") {
-        m_comboComType.set_active(1);
-    } else if (value == "ble") {
-        m_comboComType.set_active(2);
-    } else {
-        m_comboComType.set_active(0);
-    }
+    ComType type = fromConfigString(value);
+    m_comboComType.set_active(static_cast<int>(type));
 }
 
 void GeneralSettingsTab::getData(IModel &config) {
     auto comTypeKey = config.toString(ModelGeneralKey::ComType);
     int active = m_comboComType.get_active_row_number();
 
-    if (active == 1) {
-        config.update(comTypeKey, "tcp");
-    } else if (active == 2) {
-        config.update(comTypeKey, "ble");
+    if (active >= 0 && active < static_cast<int>(ComType::Count)) {
+        ComType type = static_cast<ComType>(active);
+        config.update(comTypeKey, std::string(toConfigString(type)));
     } else {
-        config.update(comTypeKey, "serial");
+        config.update(comTypeKey, std::string(toConfigString(ComType::Serial)));
     }
 }

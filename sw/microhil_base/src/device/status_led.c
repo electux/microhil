@@ -29,7 +29,7 @@ bool status_led_init(void) {
       .offset = pio_add_program(pio0, &ws2812_program),
       .pin = STATUS_LED_PIN,
       .freq = 800000,
-      .rgbw = true};
+      .rgbw = false};
 
   ws2812_program_init(&init);
   return true;

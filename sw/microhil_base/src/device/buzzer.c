@@ -20,8 +20,8 @@
 #include "io/io_pwm.h"
 #include "pico/stdlib.h"
 
-static const uint32_t BUZZER_PIN = 22;
-static const uint32_t BUZZER_PWM_CHAN = 1; // PWM_CHAN_B
+static const uint32_t BUZZER_PIN = 6;
+static const uint32_t BUZZER_PWM_CHAN = 0; // PWM_CHAN_A
 
 bool buzzer_init(void) {
   io_pwm_init(BUZZER_PIN, BUZZER_PWM_CHAN);

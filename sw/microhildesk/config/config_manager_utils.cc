@@ -29,7 +29,7 @@ namespace {
         "false false false false false false false false"
     };
     constexpr std::string_view cConfigDefaultControlMode{
-        "-1 -1 -1 -1 -1 -1 -1 -1"
+        "0 0 0 0 0 0 0 0"
     };
     constexpr std::string_view cConfigDefaultControlToggle{
         "false false false false false false false false"

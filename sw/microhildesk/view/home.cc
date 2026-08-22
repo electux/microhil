@@ -42,11 +42,12 @@ AppHome::AppHome() {
     for (ssize_t i = 0; i < cNumOfChannels; i++) {
         auto widget = std::make_unique<ChannelWidget>(static_cast<size_t>(i));
 
-        // Map changes to home callback
-        widget->signal_changed().connect(sigc::bind(
-            sigc::mem_fun(*this, &AppHome::onChannelChanged),
-            static_cast<size_t>(i)
-        ));
+        widget->signal_changed().connect(
+            sigc::bind(
+                sigc::mem_fun(*this, &AppHome::onChannelChanged),
+                static_cast<size_t>(i)
+            )
+        );
 
         m_boxRoot.append(*widget);
         m_channelWidgets.push_back(std::move(widget));
@@ -59,6 +60,7 @@ void AppHome::setControlSetup(const SettingsSetup &setup) { m_setup = setup; }
 
 void AppHome::updateUiData() {
     const auto &config = *m_setup.m_config;
+
     for (ssize_t i = 0; i < cNumOfChannels; i++) {
         m_channelWidgets[static_cast<size_t>(i)]->updateState(
             config.getChannelState(static_cast<size_t>(i))
@@ -68,12 +70,14 @@ void AppHome::updateUiData() {
 
 void AppHome::getUiData() {
     auto &config = *m_setup.m_config;
+
     for (ssize_t i = 0; i < cNumOfChannels; i++) {
         config.setChannelState(
             static_cast<size_t>(i),
             m_channelWidgets[static_cast<size_t>(i)]->getState()
         );
     }
+
     m_controlSignal.emit(m_setup);
 }
 

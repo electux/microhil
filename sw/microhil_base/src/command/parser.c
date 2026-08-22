@@ -32,6 +32,10 @@ static uint32_t parser_idx = 0;
 /// @param max_len [in] Maximum capacity of the destination buffer
 /// @return True if a complete command frame was successfully parsed, else false
 static bool parser_process_char(char c, char *buf, uint32_t max_len) {
+  if (c == '\r' || c == '\n') {
+    return false;
+  }
+
   if (c == '<') {
     parser_state = PARSER_STATE_RECEIVING;
     parser_idx = 0;
@@ -46,15 +50,23 @@ static bool parser_process_char(char c, char *buf, uint32_t max_len) {
       return true;
     }
 
-    buf[parser_idx++] = c;
-    if (parser_idx >= max_len) {
-      parser_idx = max_len - 1;
+    if (parser_idx < (max_len - 1)) {
+      buf[parser_idx++] = c;
+    } else {
+      parser_state = PARSER_STATE_IDLE;
+      parser_idx = 0;
     }
   }
 
   return false;
 }
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief Reads and parses command requests from the input stream
+///
+/// @param buf [out] Destination buffer to store parsed command
+/// @param max_len [in] Maximum capacity of the destination buffer
+/// @return True if a command was parsed, else false
 bool parser_get_command(char *buf, uint32_t max_len) {
   int16_t rc = getchar_timeout_us(0);
   while (rc != PICO_ERROR_TIMEOUT) {
