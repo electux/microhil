@@ -35,7 +35,11 @@ namespace Electux::App::View {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class ChannelWidget
     /// @brief A self-contained UI component managing a single communication
-    /// channel's controls.
+    ///        channel's controls.
+    ///
+    /// This widget encapsulates all UI elements for a single channel,
+    /// including the enable checkbox, mode selection (Toggle/Timer), toggle
+    /// button, timer spin button, timer toggle button, and progress bar.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class ChannelWidget : public Gtk::Box {
       public:
@@ -51,6 +55,7 @@ namespace Electux::App::View {
         sigc::signal<void()> signal_changed() { return m_signalChanged; }
 
       private:
+        void updateSensitivity();
         void onEnableToggled();
         void onModeChanged();
         void onToggleClicked();
