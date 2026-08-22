@@ -19,11 +19,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <com/ble/bluez_ble_client.h>
+#include <com/ble/bluez_device_resolver.h>
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include <algorithm>
-#include <map>
 
 using namespace Electux::App::Com;
 
@@ -36,12 +35,6 @@ namespace {
 
     bool get_bool_from_variant(const Glib::VariantBase& var) {
         return g_variant_get_boolean(const_cast<GVariant*>(var.gobj())) != 0;
-    }
-
-    Glib::ustring getStringProperty(const Glib::VariantBase& propValVar) {
-        GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(propValVar.gobj()));
-        Glib::VariantBase inner(innerGVar, true);
-        return get_string_from_variant(inner);
     }
 } // namespace
 
@@ -92,47 +85,7 @@ bool BluezBleClient::connect(NotificationCallback callback) {
         Glib::VariantContainerBase objectsResult = objManagerProxy->call_sync("GetManagedObjects");
         Glib::VariantContainerBase objectsBase = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(objectsResult.get_child(0));
 
-        Glib::ustring devPath;
-        size_t nObjects = objectsBase.get_n_children();
-        for (size_t i = 0; i < nObjects; ++i) {
-            Glib::VariantContainerBase objEntry;
-            objectsBase.get_child(objEntry, i);
-
-            Glib::ustring path = get_string_from_variant(objEntry.get_child(0));
-
-            Glib::VariantContainerBase interfacesVar = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(objEntry.get_child(1));
-            size_t nInterfaces = interfacesVar.get_n_children();
-            for (size_t j = 0; j < nInterfaces; ++j) {
-                Glib::VariantContainerBase intEntry;
-                interfacesVar.get_child(intEntry, j);
-
-                Glib::ustring interfaceName = get_string_from_variant(intEntry.get_child(0));
-
-                if (interfaceName == "org.bluez.Device1") {
-                    Glib::VariantContainerBase propertiesVar = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(intEntry.get_child(1));
-                    size_t nProps = propertiesVar.get_n_children();
-                    for (size_t k = 0; k < nProps; ++k) {
-                        Glib::VariantContainerBase propEntry;
-                        propertiesVar.get_child(propEntry, k);
-
-                        Glib::ustring propName = get_string_from_variant(propEntry.get_child(0));
-
-                        if (propName == "Address") {
-                            Glib::VariantBase propValBase = propEntry.get_child(1);
-                            GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(propValBase.gobj()));
-                            Glib::VariantBase inner(innerGVar, true);
-                            Glib::ustring addr = get_string_from_variant(inner);
-                            if (g_ascii_strcasecmp(addr.c_str(), m_address.c_str()) == 0) {
-                                devPath = path;
-                                break;
-                            }
-                        }
-                    }
-                }
-                if (!devPath.empty()) break;
-            }
-            if (!devPath.empty()) break;
-        }
+        Glib::ustring devPath = BluezDeviceResolver::findDevicePath(objectsBase, m_address);
 
         if (devPath.empty()) {
             std::cerr << "BluezBleClient connect error: Device with address " << m_address << " not found in managed objects." << std::endl;
@@ -194,7 +147,7 @@ bool BluezBleClient::connect(NotificationCallback callback) {
         }
 
         // Find RX and TX characteristics
-        if (!findGattPaths(objManagerProxy, m_devicePath, m_rxCharPath, m_txCharPath)) {
+        if (!BluezDeviceResolver::findGattPaths(objectsBase, m_devicePath, m_serviceUuid, m_rxUuid, m_txUuid, m_rxCharPath, m_txCharPath)) {
             std::cerr << "BluezBleClient connect error: GATT Characteristics matching RX/TX UUIDs not found." << std::endl;
             return false;
         }
@@ -344,99 +297,5 @@ void BluezBleClient::onPropertiesChanged(
                 }
             }
         }
-    }
-}
-
-bool BluezBleClient::findGattPaths(
-    const Glib::RefPtr<Gio::DBus::Proxy>& objManagerProxy,
-    const Glib::ustring& devicePath,
-    Glib::ustring& rxPath,
-    Glib::ustring& txPath
-) {
-    try {
-        Glib::VariantContainerBase objectsResult = objManagerProxy->call_sync("GetManagedObjects");
-        Glib::VariantContainerBase objectsBase = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(objectsResult.get_child(0));
-
-        struct CharInfo {
-            Glib::ustring uuid;
-            Glib::ustring servicePath;
-        };
-        std::map<Glib::ustring, CharInfo> characteristics;
-        std::map<Glib::ustring, Glib::ustring> servicePathToUuid;
-        std::map<Glib::ustring, Glib::ustring> servicePathToDevice;
-
-        size_t nObjects = objectsBase.get_n_children();
-        for (size_t i = 0; i < nObjects; ++i) {
-            Glib::VariantContainerBase objEntry;
-            objectsBase.get_child(objEntry, i);
-
-            Glib::ustring path = get_string_from_variant(objEntry.get_child(0));
-
-            Glib::VariantContainerBase interfacesVar = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(objEntry.get_child(1));
-            size_t nInterfaces = interfacesVar.get_n_children();
-            for (size_t j = 0; j < nInterfaces; ++j) {
-                Glib::VariantContainerBase intEntry;
-                interfacesVar.get_child(intEntry, j);
-
-                Glib::ustring interfaceName = get_string_from_variant(intEntry.get_child(0));
-
-                if (interfaceName == "org.bluez.GattCharacteristic1") {
-                    Glib::VariantContainerBase propertiesVar = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(intEntry.get_child(1));
-                    size_t nProps = propertiesVar.get_n_children();
-                    CharInfo info;
-                    for (size_t k = 0; k < nProps; ++k) {
-                        Glib::VariantContainerBase propEntry;
-                        propertiesVar.get_child(propEntry, k);
-
-                        Glib::ustring propName = get_string_from_variant(propEntry.get_child(0));
-
-                        if (propName == "UUID") {
-                            info.uuid = getStringProperty(propEntry.get_child(1));
-                        } else if (propName == "Service") {
-                            info.servicePath = getStringProperty(propEntry.get_child(1));
-                        }
-                    }
-                    characteristics[path] = info;
-                } else if (interfaceName == "org.bluez.GattService1") {
-                    Glib::VariantContainerBase propertiesVar = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(intEntry.get_child(1));
-                    size_t nProps = propertiesVar.get_n_children();
-                    Glib::ustring uuid;
-                    Glib::ustring devPath;
-                    for (size_t k = 0; k < nProps; ++k) {
-                        Glib::VariantContainerBase propEntry;
-                        propertiesVar.get_child(propEntry, k);
-
-                        Glib::ustring propName = get_string_from_variant(propEntry.get_child(0));
-
-                        if (propName == "UUID") {
-                            uuid = getStringProperty(propEntry.get_child(1));
-                        } else if (propName == "Device") {
-                            devPath = getStringProperty(propEntry.get_child(1));
-                        }
-                    }
-                    servicePathToUuid[path] = uuid;
-                    servicePathToDevice[path] = devPath;
-                }
-            }
-        }
-
-        for (const auto& [path, info] : characteristics) {
-            Glib::ustring servicePath = info.servicePath;
-            if (servicePathToDevice[servicePath] == devicePath) {
-                Glib::ustring serviceUuid = servicePathToUuid[servicePath];
-                if (g_ascii_strcasecmp(serviceUuid.c_str(), m_serviceUuid.c_str()) == 0) {
-                    if (g_ascii_strcasecmp(info.uuid.c_str(), m_rxUuid.c_str()) == 0) {
-                        rxPath = path;
-                    }
-                    if (g_ascii_strcasecmp(info.uuid.c_str(), m_txUuid.c_str()) == 0) {
-                        txPath = path;
-                    }
-                }
-            }
-        }
-
-        return !rxPath.empty() && !txPath.empty();
-    } catch (...) {
-        return false;
     }
 }

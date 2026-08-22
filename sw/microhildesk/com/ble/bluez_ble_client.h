@@ -61,13 +61,6 @@ namespace Electux::App::Com {
             const Glib::VariantContainerBase& parameters
         );
 
-        bool findGattPaths(
-            const Glib::RefPtr<Gio::DBus::Proxy>& objManagerProxy,
-            const Glib::ustring& devicePath,
-            Glib::ustring& rxPath,
-            Glib::ustring& txPath
-        );
-
         std::string m_address;
         std::string m_serviceUuid;
         std::string m_rxUuid;

@@ -19,6 +19,7 @@ SOURCES = \
 	../com/ble/ble_com.cc \
 	../com/ble/ble_com_configurator.cc \
 	../com/ble/bluez_ble_client.cc \
+	../com/ble/bluez_device_resolver.cc \
 	../com/switchable_com.cc \
 	../com/switchable_com_configurator.cc \
 	../model/model.cc \
