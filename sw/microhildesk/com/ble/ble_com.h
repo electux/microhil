@@ -21,17 +21,17 @@
 
 #include <com/icom.h>
 #include <com/ble/ible.h>
-#include <giomm.h>
-#include <glibmm.h>
+#include <com/ble/bluez_ble_client.h>
 #include <string>
 #include <vector>
 #include <mutex>
 #include <condition_variable>
+#include <memory>
 
 namespace Electux::App::Com {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class BleCom
-    /// @brief Implementation of BLE communication using BlueZ D-Bus API.
+    /// @brief Implementation of BLE communication using BluezBleClient.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class BleCom : public ICom, public IBle {
       public:
@@ -55,33 +55,14 @@ namespace Electux::App::Com {
         void setTxUuid(const std::string &uuid) override;
 
       private:
-        void onPropertiesChanged(
-            const Glib::RefPtr<Gio::DBus::Connection>& connection,
-            const Glib::ustring& sender_name,
-            const Glib::ustring& object_path,
-            const Glib::ustring& interface_name,
-            const Glib::ustring& signal_name,
-            const Glib::VariantContainerBase& parameters
-        );
-
-        bool findGattPaths(
-            const Glib::RefPtr<Gio::DBus::Proxy>& objManagerProxy,
-            const Glib::ustring& devicePath,
-            Glib::ustring& rxPath,
-            Glib::ustring& txPath
-        );
+        void onNotificationReceived(const std::vector<uint8_t> &data);
 
         std::string m_address;
         std::string m_serviceUuid;
         std::string m_rxUuid;
         std::string m_txUuid;
 
-        bool m_connected;
-        Glib::RefPtr<Gio::DBus::Connection> m_connection;
-        Glib::ustring m_devicePath;
-        Glib::ustring m_rxCharPath;
-        Glib::ustring m_txCharPath;
-        guint m_subscriptionId;
+        std::unique_ptr<BluezBleClient> m_client;
 
         std::vector<uint8_t> m_readBuffer;
         mutable std::mutex m_bufferMutex;
