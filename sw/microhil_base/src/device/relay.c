@@ -26,19 +26,19 @@ static const uint32_t relay_pins[RELAY_NUM_CHANNELS] = {
 bool relay_init(void) {
   for (int i = 0; i < RELAY_NUM_CHANNELS; i++) {
     io_gpio_init(relay_pins[i], true);
-    io_gpio_write(relay_pins[i], false);
+    io_gpio_write(relay_pins[i], true);
   }
   return true;
 }
 
 void relay_set(uint32_t channel, bool state) {
   if (channel < RELAY_NUM_CHANNELS) {
-    io_gpio_write(relay_pins[channel], state);
+    io_gpio_write(relay_pins[channel], !state);
   }
 }
 
 void relay_set_all(bool state) {
   for (int i = 0; i < RELAY_NUM_CHANNELS; i++) {
-    io_gpio_write(relay_pins[i], state);
+    io_gpio_write(relay_pins[i], !state);
   }
 }
