@@ -23,44 +23,44 @@
 #include <memory>
 #include <string>
 
-namespace Electux::App::Com
-{
-	class SerialCom;
-	class TcpCom;
+namespace Electux::App::Com {
+    class SerialCom;
+    class TcpCom;
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class SwitchableCom
-	/// @brief Proxy/Decorator implementing ICom that switches between Serial and TCP at runtime.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class SwitchableCom : public ICom
-	{
-	public:
-		SwitchableCom(
-			std::unique_ptr<ICom> serialCom,
-			std::unique_ptr<ICom> tcpCom
-		);
-		~SwitchableCom() override = default;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class SwitchableCom
+    /// @brief Proxy/Decorator implementing ICom that switches between Serial
+    /// and TCP at runtime.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class SwitchableCom : public ICom {
+      public:
+        SwitchableCom(
+            std::unique_ptr<ICom> serialCom, std::unique_ptr<ICom> tcpCom, std::unique_ptr<ICom> bleCom
+        );
+        ~SwitchableCom() override = default;
 
-		SwitchableCom(const SwitchableCom &) = delete;
-		SwitchableCom &operator=(const SwitchableCom &) = delete;
+        SwitchableCom(const SwitchableCom &) = delete;
+        SwitchableCom &operator=(const SwitchableCom &) = delete;
 
-		// ICom overrides
-		bool open() override;
-		bool close() override;
-		bool isOpen() const override;
-		void read(std::vector<uint8_t> &data, size_t len) override;
-		void write(const std::vector<uint8_t> &data) override;
+        // ICom overrides
+        bool open() override;
+        bool close() override;
+        bool isOpen() const override;
+        void read(std::vector<uint8_t> &data, size_t len) override;
+        void write(const std::vector<uint8_t> &data) override;
 
-		// Active channel control
-		void setComType(const std::string& type);
-		ICom* getActiveCom() const;
+        // Active channel control
+        void setComType(const std::string &type);
+        ICom *getActiveCom() const;
 
-		ICom* getSerialCom() const;
-		ICom* getTcpCom() const;
+        ICom *getSerialCom() const;
+        ICom *getTcpCom() const;
+        ICom *getBleCom() const;
 
-	private:
-		std::unique_ptr<ICom> m_serialCom;
-		std::unique_ptr<ICom> m_tcpCom;
-		ICom* m_activeCom;
-	};
+      private:
+        std::unique_ptr<ICom> m_serialCom;
+        std::unique_ptr<ICom> m_tcpCom;
+        std::unique_ptr<ICom> m_bleCom;
+        ICom *m_activeCom;
+    };
 } // namespace Electux::App::Com

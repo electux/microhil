@@ -21,93 +21,76 @@
 #include <com/switchable_com.h>
 #include <iostream>
 
-namespace Electux::App::Com
-{
-	SwitchableCom::SwitchableCom(
-		std::unique_ptr<ICom> serialCom,
-		std::unique_ptr<ICom> tcpCom
-	)
-		: m_serialCom(std::move(serialCom)),
-		  m_tcpCom(std::move(tcpCom)),
-		  m_activeCom(m_serialCom.get()) {}
+namespace Electux::App::Com {
+    SwitchableCom::SwitchableCom(
+        std::unique_ptr<ICom> serialCom, std::unique_ptr<ICom> tcpCom, std::unique_ptr<ICom> bleCom
+    )
+        : m_serialCom(std::move(serialCom)), m_tcpCom(std::move(tcpCom)),
+          m_bleCom(std::move(bleCom)), m_activeCom(m_serialCom.get()) {}
 
-	bool SwitchableCom::open()
-	{
-		if (m_activeCom)
-		{
-			return m_activeCom->open();
-		}
-		return false;
-	}
+    bool SwitchableCom::open() {
+        if (m_activeCom) {
+            return m_activeCom->open();
+        }
+        return false;
+    }
 
-	bool SwitchableCom::close()
-	{
-		if (m_activeCom)
-		{
-			return m_activeCom->close();
-		}
-		return false;
-	}
+    bool SwitchableCom::close() {
+        if (m_activeCom) {
+            return m_activeCom->close();
+        }
+        return false;
+    }
 
-	bool SwitchableCom::isOpen() const
-	{
-		if (m_activeCom)
-		{
-			return m_activeCom->isOpen();
-		}
-		return false;
-	}
+    bool SwitchableCom::isOpen() const {
+        if (m_activeCom) {
+            return m_activeCom->isOpen();
+        }
+        return false;
+    }
 
-	void SwitchableCom::read(std::vector<uint8_t> &data, size_t len)
-	{
-		if (m_activeCom)
-		{
-			m_activeCom->read(data, len);
-		}
-	}
+    void SwitchableCom::read(std::vector<uint8_t> &data, size_t len) {
+        if (m_activeCom) {
+            m_activeCom->read(data, len);
+        }
+    }
 
-	void SwitchableCom::write(const std::vector<uint8_t> &data)
-	{
-		if (m_activeCom)
-		{
-			m_activeCom->write(data);
-		}
-	}
+    void SwitchableCom::write(const std::vector<uint8_t> &data) {
+        if (m_activeCom) {
+            m_activeCom->write(data);
+        }
+    }
 
-	void SwitchableCom::setComType(const std::string& type)
-	{
-		if (type == "tcp")
-		{
-			if (m_activeCom != m_tcpCom.get())
-			{
-				close();
-				m_activeCom = m_tcpCom.get();
-				std::cout << "Switched communication channel to TCP/IP." << std::endl;
-			}
-		}
-		else
-		{
-			if (m_activeCom != m_serialCom.get())
-			{
-				close();
-				m_activeCom = m_serialCom.get();
-				std::cout << "Switched communication channel to Serial Port." << std::endl;
-			}
-		}
-	}
+    void SwitchableCom::setComType(const std::string &type) {
+        if (type == "tcp") {
+            if (m_activeCom != m_tcpCom.get()) {
+                close();
+                m_activeCom = m_tcpCom.get();
+                std::cout << "Switched communication channel to TCP/IP."
+                          << std::endl;
+            }
+        } else if (type == "ble") {
+            if (m_activeCom != m_bleCom.get()) {
+                close();
+                m_activeCom = m_bleCom.get();
+                std::cout << "Switched communication channel to BLE."
+                          << std::endl;
+            }
+        } else {
+            if (m_activeCom != m_serialCom.get()) {
+                close();
+                m_activeCom = m_serialCom.get();
+                std::cout << "Switched communication channel to Serial Port."
+                          << std::endl;
+            }
+        }
+    }
 
-	ICom* SwitchableCom::getActiveCom() const
-	{
-		return m_activeCom;
-	}
+    ICom *SwitchableCom::getActiveCom() const { return m_activeCom; }
 
-	ICom* SwitchableCom::getSerialCom() const
-	{
-		return m_serialCom.get();
-	}
+    ICom *SwitchableCom::getSerialCom() const { return m_serialCom.get(); }
 
-	ICom* SwitchableCom::getTcpCom() const
-	{
-		return m_tcpCom.get();
-	}
+    ICom *SwitchableCom::getTcpCom() const { return m_tcpCom.get(); }
+
+    ICom *SwitchableCom::getBleCom() const { return m_bleCom.get(); }
 } // namespace Electux::App::Com

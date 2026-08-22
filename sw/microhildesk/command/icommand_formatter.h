@@ -23,17 +23,17 @@
 #include <string>
 
 namespace Electux::App::Command {
-////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @class ICommandFormatter
-/// @brief Interface defining the contract for parsing relay channel state into
-/// protocol strings.
-////////////////////////////////////////////////////////////////////////////////////////////////////
-class ICommandFormatter {
-public:
-  virtual ~ICommandFormatter() = default;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class ICommandFormatter
+    /// @brief Interface defining the contract for parsing relay channel state
+    /// into protocol strings.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class ICommandFormatter {
+      public:
+        virtual ~ICommandFormatter() = default;
 
-  virtual std::string
-  getCommandState(size_t channelIdx,
-                  const Model::Channel::ChannelState &state) const = 0;
-};
+        virtual std::string getCommandState(
+            size_t channelIdx, const Model::Channel::ChannelState &state
+        ) const = 0;
+    };
 } // namespace Electux::App::Command

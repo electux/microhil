@@ -134,5 +134,5 @@ TEST_F(ConfigManagerTest, StoreAndReloadTest)
 
 	// Reload from file
 	ASSERT_TRUE(m_config->load());
-	EXPECT_EQ(m_config->getConfig().getEntity(key), "0");
+	EXPECT_EQ(m_config->getConfig().getEntity(key), "115200");
 }

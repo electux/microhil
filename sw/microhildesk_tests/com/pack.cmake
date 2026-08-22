@@ -12,9 +12,10 @@ set(
 
 set(
     MICROHIL_COM_SOURCES
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_com.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_lib_wrapper.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial_utils.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serial_com.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serial_lib_wrapper.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serial_utils.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/ble/ble_com_configurator.cc
 )
 
 set(
@@ -28,5 +29,6 @@ set(
     ${PROJECT_SOURCE_DIR}/com/test_serial_open.cc
     ${PROJECT_SOURCE_DIR}/com/test_serial_close.cc
     ${PROJECT_SOURCE_DIR}/com/test_serial_read.cc
+    ${PROJECT_SOURCE_DIR}/com/test_ble_com.cc
     #${PROJECT_SOURCE_DIR}/com/test_serial_write.cc
 )

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// tcp_com_configurator.cc
+/// test_mock_ible.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -17,34 +17,36 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma once
 
-#include <com/tcp_com_configurator.h>
-#include <com/itcp.h>
-#include <com/icom.h>
-#include <model/imodel.h>
+#include <com/ble/ible.h>
 #include <string>
 
-namespace Electux::App::Com
-{
-	TcpComConfigurator::TcpComConfigurator(ITcp* tcp)
-		: m_tcp(tcp) {}
+namespace com::mock {
+    class MockIBle : public Electux::App::Com::IBle {
+      public:
+        MockIBle() = default;
+        ~MockIBle() override = default;
 
-	bool TcpComConfigurator::configure(const Model::IModel& model, ICom* comChannel)
-	{
-		if (m_tcp == nullptr || comChannel == nullptr)
-		{
-			return false;
-		}
+        void setBleAddress(const std::string &address) override {
+            m_address = address;
+        }
 
-		auto ipKey = model.toString(Model::ModelGeneralKey::TcpIp);
-		auto portKey = model.toString(Model::ModelGeneralKey::TcpPort);
+        void setServiceUuid(const std::string &uuid) override {
+            m_serviceUuid = uuid;
+        }
 
-		std::string ip = model.getEntity(ipKey);
-		uint16_t port = static_cast<uint16_t>(std::stoul(model.getEntity(portKey)));
+        void setRxUuid(const std::string &uuid) override {
+            m_rxUuid = uuid;
+        }
 
-		m_tcp->setIpAddress(ip);
-		m_tcp->setPort(port);
+        void setTxUuid(const std::string &uuid) override {
+            m_txUuid = uuid;
+        }
 
-		return comChannel->open();
-	}
-} // namespace Electux::App::Com
+        std::string m_address;
+        std::string m_serviceUuid;
+        std::string m_rxUuid;
+        std::string m_txUuid;
+    };
+} // namespace com::mock

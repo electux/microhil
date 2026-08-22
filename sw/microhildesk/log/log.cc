@@ -17,25 +17,27 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <iostream>
 #include <chrono>
-#include <iomanip>
 #include <ctime>
+#include <iomanip>
+#include <iostream>
 #include <log/log.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace Electux::App::Logger
 /// @brief Namespace for application logging components
-namespace Electux::App::Logger
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @name Internal Formatting Constants
-	/// @{
-	static constexpr std::string_view TAG_ERROR = "[ERROR] "; ///< Tag for error messages
-	static constexpr std::string_view TAG_WARN  = "[WARN]  "; ///< Tag for warning messages
-	static constexpr std::string_view TAG_INFO  = "[INFO]  "; ///< Tag for info messages
-	/// @}
-	////////////////////////////////////////////////////////////////////////////////////////////////////
+namespace Electux::App::Logger {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @name Internal Formatting Constants
+    /// @{
+    static constexpr std::string_view TAG_ERROR =
+        "[ERROR] "; ///< Tag for error messages
+    static constexpr std::string_view TAG_WARN =
+        "[WARN]  "; ///< Tag for warning messages
+    static constexpr std::string_view TAG_INFO =
+        "[INFO]  "; ///< Tag for info messages
+                    /// @}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace Electux::App::Logger
 
 using namespace Electux::App::Logger;
@@ -44,92 +46,77 @@ using namespace Electux::App::Logger;
 /// @brief Destructor for the Log class.
 /// Calls close() to ensure the file stream is flushed and closed safely.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-Log::~Log()
-{
-	close();
-}
+Log::~Log() { close(); }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Sets the destination file path for the logger.
 /// @param output The path to the log file.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-void Log::setOutputFile(const std::string &output)
-{
-	m_outputFile = output;
-}
+void Log::setOutputFile(const std::string &output) { m_outputFile = output; }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Sets the filtering log level.
 /// @param level The log level to set (Error, Warning, or Info).
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-void Log::setLevel(LogLevel level)
-{
-	m_level = level;
-}
+void Log::setLevel(LogLevel level) { m_level = level; }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Gets the current filtering log level.
 /// @return The current LogLevel enum value.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-LogLevel Log::getLevel() const
-{
-	return m_level;
-}
+LogLevel Log::getLevel() const { return m_level; }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Opens the log file stream.
 /// Uses std::ios::app to append to existing file content.
 /// @return true if the stream is ready for writing, false otherwise.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-bool Log::open()
-{
-	std::lock_guard<std::mutex> lk(m_mutex);
+bool Log::open() {
+    std::lock_guard<std::mutex> lk(m_mutex);
 
-	// If already open, return true
-	if (m_stream.is_open())
-	{
-		return true;
-	}
+    // If already open, return true
+    if (m_stream.is_open()) {
+        return true;
+    }
 
-	// Validate that an output file path has been set
-	if (m_outputFile.empty())
-	{
-		std::cerr << "Output file path is not set. Cannot open log stream." << std::endl;
-		return false;
-	}
+    // Validate that an output file path has been set
+    if (m_outputFile.empty()) {
+        std::cerr << "Output file path is not set. Cannot open log stream."
+                  << std::endl;
+        return false;
+    }
 
-	m_stream.open(m_outputFile, std::ios::out | std::ios::app);
-	return m_stream.is_open();
+    m_stream.open(m_outputFile, std::ios::out | std::ios::app);
+    return m_stream.is_open();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Closes the log file stream.
-/// @return true if the stream was open or closed and is now closed, false otherwise.
+/// @return true if the stream was open or closed and is now closed, false
+/// otherwise.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-bool Log::close()
-{
-	std::lock_guard<std::mutex> lk(m_mutex);
+bool Log::close() {
+    std::lock_guard<std::mutex> lk(m_mutex);
 
-	if (!m_stream.is_open())
-	{
-		// Stream is already closed, consider this a successful close operation
-		return true;
-	}
+    if (!m_stream.is_open()) {
+        // Stream is already closed, consider this a successful close operation
+        return true;
+    }
 
-	// Attempt to close the stream
-	m_stream.close();
+    // Attempt to close the stream
+    m_stream.close();
 
-	if (m_stream.fail())
-	{
-		// If closing failed, clear the error state to allow future operations
-		m_stream.clear();
-		// Log the error to stderr for debugging purposes
-		std::cerr << "Failed to close log stream for file: " << m_outputFile << std::endl;
-		return false;
-	}
+    if (m_stream.fail()) {
+        // If closing failed, clear the error state to allow future operations
+        m_stream.clear();
+        // Log the error to stderr for debugging purposes
+        std::cerr << "Failed to close log stream for file: " << m_outputFile
+                  << std::endl;
+        return false;
+    }
 
-	// Successfully closed the stream
-	return true;
+    // Successfully closed the stream
+    return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -145,45 +132,41 @@ bool Log::close()
 /// @param message The text content to log.
 /// @param level The severity of the entry.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-void Log::log(const std::string &message, LogLevel level)
-{
-	std::lock_guard<std::mutex> lk(m_mutex);
+void Log::log(const std::string &message, LogLevel level) {
+    std::lock_guard<std::mutex> lk(m_mutex);
 
-	if (!m_stream.is_open())
-	{
-		return;
-	}
+    if (!m_stream.is_open()) {
+        return;
+    }
 
-	// Filter messages: lower enum value means higher priority (Error=0)
-	if (static_cast<int>(level) > static_cast<int>(m_level))
-	{
-		return;
-	}
+    // Filter messages: lower enum value means higher priority (Error=0)
+    if (static_cast<int>(level) > static_cast<int>(m_level)) {
+        return;
+    }
 
-	// Get current system time
-	auto now = std::chrono::system_clock::now();
-	std::time_t t = std::chrono::system_clock::to_time_t(now);
-	std::tm tm;
-	localtime_r(&t, &tm); // Thread-safe version of localtime
+    // Get current system time
+    auto now = std::chrono::system_clock::now();
+    std::time_t t = std::chrono::system_clock::to_time_t(now);
+    std::tm tm;
+    localtime_r(&t, &tm); // Thread-safe version of localtime
 
-	// Write timestamp
-	m_stream << std::put_time(&tm, "%Y-%m-%dT%H:%M:%S") << " ";
+    // Write timestamp
+    m_stream << std::put_time(&tm, "%Y-%m-%dT%H:%M:%S") << " ";
 
-	// Write severity tag
-	switch (level)
-	{
-	case LogLevel::Error:
-		m_stream << TAG_ERROR;
-		break;
-	case LogLevel::Warning:
-		m_stream << TAG_WARN;
-		break;
-	case LogLevel::Info:
-		m_stream << TAG_INFO;
-		break;
-	}
+    // Write severity tag
+    switch (level) {
+    case LogLevel::Error:
+        m_stream << TAG_ERROR;
+        break;
+    case LogLevel::Warning:
+        m_stream << TAG_WARN;
+        break;
+    case LogLevel::Info:
+        m_stream << TAG_INFO;
+        break;
+    }
 
-	// Write message and ensure it's on disk
-	m_stream << message << std::endl;
-	m_stream.flush();
+    // Write message and ensure it's on disk
+    m_stream << message << std::endl;
+    m_stream.flush();
 }

@@ -19,16 +19,15 @@
 
 #include <view/help/help.h>
 
-namespace
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @name Application Help Window Widgets Parameters
-	/// @{
-	constexpr std::string_view cHelpTitle{"microhildesk"};
-	constexpr int cHelpWidth{600};
-	constexpr int cHelpHeight{400};
-	/// @}
-	////////////////////////////////////////////////////////////////////////////////////////////////////
+namespace {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @name Application Help Window Widgets Parameters
+    /// @{
+    constexpr std::string_view cHelpTitle{"microhildesk"};
+    constexpr int cHelpWidth{600};
+    constexpr int cHelpHeight{400};
+    /// @}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace
 
 using namespace Electux::App::View::Help;
@@ -39,15 +38,11 @@ using namespace Electux::App::View::Help;
 /// Initializes the help window with predefined title and dimensions.
 /// The window is set to be non-resizable and remains hidden when closed.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-AppHelp::AppHelp()
-{
-	set_title(cHelpTitle.data());
-	set_default_size(cHelpWidth, cHelpHeight);
-	set_resizable(false);
-	set_hide_on_close(true);
+AppHelp::AppHelp() {
+    set_title(cHelpTitle.data());
+    set_default_size(cHelpWidth, cHelpHeight);
+    set_resizable(false);
+    set_hide_on_close(true);
 }
 
-void AppHelp::show()
-{
-	set_visible(true);
-}
+void AppHelp::show() { set_visible(true); }

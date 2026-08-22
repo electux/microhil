@@ -47,127 +47,168 @@ AppController::AppController(
 AppController::~AppController() = default;
 
 void AppController::startup() {
-  m_configManager->init();
-  configureLogger();
-  configureComChannel();
-  m_logger->log("Application started.", Logger::LogLevel::Info);
+    m_configManager->init();
+    configureLogger();
+    configureComChannel();
+    m_logger->log("Application started.", Logger::LogLevel::Info);
 }
 
 void AppController::shutdown() {
-  if (m_logger) {
-    m_logger->log("Application shutting down.", Logger::LogLevel::Info);
-    m_logger->close();
-  }
-  if (m_comChannel) {
-    m_comChannel->close();
-  }
-  m_configManager->store();
+    if (m_logger) {
+        m_logger->log("Application shutting down.", Logger::LogLevel::Info);
+        m_logger->close();
+    }
+
+    if (m_comChannel) {
+        m_comChannel->close();
+    }
+
+    m_configManager->store();
 }
 
 void AppController::configureLogger() {
-  if (!m_logger) {
-    return;
-  }
+    if (!m_logger) {
+        return;
+    }
 
-  m_logger->close();
+    m_logger->close();
 
-  auto &config = getModel();
-  auto pathKey = config.toString(Model::ModelLogKey::FilePath);
-  auto levelKey = config.toString(Model::ModelLogKey::LogLevel);
+    auto &config = getModel();
+    auto pathKey = config.toString(Model::ModelLogKey::FilePath);
+    auto levelKey = config.toString(Model::ModelLogKey::LogLevel);
 
-  m_logger->setOutputFile(config.getEntity(pathKey));
+    m_logger->setOutputFile(config.getEntity(pathKey));
 
-  uint32_t levelIdx =
-      static_cast<uint32_t>(std::stoul(config.getEntity(levelKey)));
-  m_logger->setLevel(static_cast<Logger::LogLevel>(levelIdx));
+    uint32_t levelIdx =
+        static_cast<uint32_t>(std::stoul(config.getEntity(levelKey)));
+    m_logger->setLevel(static_cast<Logger::LogLevel>(levelIdx));
 
-  m_logger->open();
+    m_logger->open();
 }
 
 void AppController::configureComChannel() {
-  if (!m_comChannel || !m_comConfigurator) {
-    return;
-  }
+    if (!m_comChannel || !m_comConfigurator) {
+        return;
+    }
 
-  m_comChannel->close();
-  m_comConfigurator->configure(getModel(), m_comChannel.get());
+    m_comChannel->close();
+    m_comConfigurator->configure(getModel(), m_comChannel.get());
 }
 
 const Model::IModel &AppController::getModel() const {
-  return m_configManager->getConfig();
+    return m_configManager->getConfig();
 }
 
 void AppController::onSetupChanged(const Model::SettingsSetup &setup) {
-  const auto &oldConfig = m_configManager->getConfig();
-  auto &newConfig = *setup.m_config;
+    const auto &oldConfig = m_configManager->getConfig();
+    auto &newConfig = *setup.m_config;
 
-  handleChannelStateChanges(oldConfig, newConfig);
+    handleChannelStateChanges(oldConfig, newConfig);
 
-  bool logChanged = hasLoggerConfigChanged(oldConfig, newConfig);
-  bool serialChanged = hasSerialConfigChanged(oldConfig, newConfig);
+    bool logChanged = hasLoggerConfigChanged(oldConfig, newConfig);
+    bool comChanged = hasSerialConfigChanged(oldConfig, newConfig) ||
+                      hasGeneralConfigChanged(oldConfig, newConfig) ||
+                      hasBleConfigChanged(oldConfig, newConfig);
 
-  m_configManager->setConfig(newConfig);
-  m_configManager->store();
+    m_configManager->setConfig(newConfig);
+    m_configManager->store();
 
-  if (logChanged) {
-    configureLogger();
-  }
-  if (serialChanged) {
-    configureComChannel();
-  }
+    if (logChanged) {
+        configureLogger();
+    }
 
-  getModel().emit_changed();
+    if (comChanged) {
+        configureComChannel();
+    }
+
+    getModel().emit_changed();
 }
 
-void AppController::handleChannelStateChanges(const Model::IModel &oldConfig, const Model::IModel &newConfig) {
-  for (size_t i = 0; i < Model::Channel::cNumOfChannels; ++i) {
-    auto oldState = oldConfig.getChannelState(i);
-    auto newState = newConfig.getChannelState(i);
+void AppController::handleChannelStateChanges(
+    const Model::IModel &oldConfig, const Model::IModel &newConfig
+) {
+    for (size_t i = 0; i < Model::Channel::cNumOfChannels; ++i) {
+        auto oldState = oldConfig.getChannelState(i);
+        auto newState = newConfig.getChannelState(i);
 
-    if (oldState.enabled != newState.enabled ||
-        oldState.mode != newState.mode || oldState.toggle != newState.toggle ||
-        oldState.timer != newState.timer ||
-        oldState.timerEnabled != newState.timerEnabled) {
-      // 1. Log change
-      std::string logMsg =
-          std::format("Channel {} state changed: enabled={}, mode={}, "
-                      "toggle={}, timer={}, timerEnabled={}",
-                      i, newState.enabled, newState.mode, newState.toggle,
-                      newState.timer, newState.timerEnabled);
-      m_logger->log(logMsg, Logger::LogLevel::Info);
+        if (oldState.enabled != newState.enabled ||
+            oldState.mode != newState.mode ||
+            oldState.toggle != newState.toggle ||
+            oldState.timer != newState.timer ||
+            oldState.timerEnabled != newState.timerEnabled) {
+            // 1. Log change
+            std::string logMsg = std::format(
+                "Channel {} state changed: enabled={}, mode={}, "
+                "toggle={}, timer={}, timerEnabled={}",
+                i, newState.enabled, newState.mode, newState.toggle,
+                newState.timer, newState.timerEnabled
+            );
+            m_logger->log(logMsg, Logger::LogLevel::Info);
 
-      // 2. Transmit via serial
-      std::string oldCmd = m_commandFormatter->getCommandState(i, oldState);
-      std::string newCmd = m_commandFormatter->getCommandState(i, newState);
+            // 2. Transmit via serial
+            std::string oldCmd =
+                m_commandFormatter->getCommandState(i, oldState);
+            std::string newCmd =
+                m_commandFormatter->getCommandState(i, newState);
 
-      if (oldCmd != newCmd && !newCmd.empty()) {
-        std::vector<uint8_t> cmdBytes(newCmd.begin(), newCmd.end());
-        if (m_comChannel && m_comChannel->isOpen()) {
-          m_comChannel->write(cmdBytes);
+            if (oldCmd != newCmd && !newCmd.empty()) {
+                std::vector<uint8_t> cmdBytes(newCmd.begin(), newCmd.end());
+                if (m_comChannel && m_comChannel->isOpen()) {
+                    m_comChannel->write(cmdBytes);
+                }
+            }
         }
-      }
     }
-  }
 }
 
-bool AppController::hasSerialConfigChanged(const Model::IModel &oldConfig, const Model::IModel &newConfig) {
-  for (int k = static_cast<int>(Model::ModelSerialKey::Device);
-       k <= static_cast<int>(Model::ModelSerialKey::Flow); ++k) {
-    auto key = oldConfig.toString(static_cast<Model::ModelSerialKey>(k));
-    if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
-      return true;
+bool AppController::hasSerialConfigChanged(
+    const Model::IModel &oldConfig, const Model::IModel &newConfig
+) {
+    for (int k = static_cast<int>(Model::ModelSerialKey::Device);
+         k <= static_cast<int>(Model::ModelSerialKey::Flow); ++k) {
+        auto key = oldConfig.toString(static_cast<Model::ModelSerialKey>(k));
+        if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
+            return true;
+        }
     }
-  }
-  return false;
+    return false;
 }
 
-bool AppController::hasLoggerConfigChanged(const Model::IModel &oldConfig, const Model::IModel &newConfig) {
-  for (int k = static_cast<int>(Model::ModelLogKey::FilePath);
-       k <= static_cast<int>(Model::ModelLogKey::LogLevel); ++k) {
-    auto key = oldConfig.toString(static_cast<Model::ModelLogKey>(k));
-    if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
-      return true;
+bool AppController::hasLoggerConfigChanged(
+    const Model::IModel &oldConfig, const Model::IModel &newConfig
+) {
+    for (int k = static_cast<int>(Model::ModelLogKey::FilePath);
+         k <= static_cast<int>(Model::ModelLogKey::LogLevel); ++k) {
+        auto key = oldConfig.toString(static_cast<Model::ModelLogKey>(k));
+        if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
+            return true;
+        }
     }
-  }
-  return false;
+    return false;
+}
+
+bool AppController::hasGeneralConfigChanged(
+    const Model::IModel &oldConfig, const Model::IModel &newConfig
+) {
+    for (int k = static_cast<int>(Model::ModelGeneralKey::ComType);
+         k <= static_cast<int>(Model::ModelGeneralKey::TcpPort); ++k) {
+        auto key = oldConfig.toString(static_cast<Model::ModelGeneralKey>(k));
+        if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool AppController::hasBleConfigChanged(
+    const Model::IModel &oldConfig, const Model::IModel &newConfig
+) {
+    for (int k = static_cast<int>(Model::ModelBleKey::Address);
+         k <= static_cast<int>(Model::ModelBleKey::TxUuid); ++k) {
+        auto key = oldConfig.toString(static_cast<Model::ModelBleKey>(k));
+        if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
+            return true;
+        }
+    }
+    return false;
 }

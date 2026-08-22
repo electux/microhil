@@ -18,56 +18,52 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <view/settings/general_settings_tab.h>
 #include <string>
+#include <view/settings/general_settings_tab.h>
 
-namespace
-{
-	constexpr std::string_view cSettingsComTypeLabel{"Connection type"};
-	constexpr std::string_view cComTypeSerial{"Serial Port"};
-	constexpr std::string_view cComTypeTcp{"TCP/IP Connection"};
+namespace {
+    constexpr std::string_view cSettingsComTypeLabel{"Connection type"};
+    constexpr std::string_view cComTypeSerial{"Serial Port"};
+    constexpr std::string_view cComTypeTcp{"TCP/IP Connection"};
+    constexpr std::string_view cComTypeBle{"BLE Connection"};
 } // namespace
 
 using namespace Electux::App::View::Settings;
 using namespace Electux::App::Model;
 
 GeneralSettingsTab::GeneralSettingsTab()
-	: Gtk::Box(Gtk::Orientation::VERTICAL)
-{
-	m_labelComType.set_label(cSettingsComTypeLabel.data());
-	append(m_labelComType);
+    : Gtk::Box(Gtk::Orientation::VERTICAL) {
+    m_labelComType.set_label(cSettingsComTypeLabel.data());
+    append(m_labelComType);
 
-	m_comboComType.append(cComTypeSerial.data());
-	m_comboComType.append(cComTypeTcp.data());
-	append(m_comboComType);
+    m_comboComType.append(cComTypeSerial.data());
+    m_comboComType.append(cComTypeTcp.data());
+    m_comboComType.append(cComTypeBle.data());
+    append(m_comboComType);
 }
 
-void GeneralSettingsTab::updateData(const IModel &config)
-{
-	auto comTypeKey = config.toString(ModelGeneralKey::ComType);
-	auto value = config.getEntity(comTypeKey);
+void GeneralSettingsTab::updateData(const IModel &config) {
+    auto comTypeKey = config.toString(ModelGeneralKey::ComType);
+    auto value = config.getEntity(comTypeKey);
 
-	if (value == "tcp")
-	{
-		m_comboComType.set_active(1);
-	}
-	else
-	{
-		m_comboComType.set_active(0);
-	}
+    if (value == "tcp") {
+        m_comboComType.set_active(1);
+    } else if (value == "ble") {
+        m_comboComType.set_active(2);
+    } else {
+        m_comboComType.set_active(0);
+    }
 }
 
-void GeneralSettingsTab::getData(IModel &config)
-{
-	auto comTypeKey = config.toString(ModelGeneralKey::ComType);
-	int active = m_comboComType.get_active_row_number();
+void GeneralSettingsTab::getData(IModel &config) {
+    auto comTypeKey = config.toString(ModelGeneralKey::ComType);
+    int active = m_comboComType.get_active_row_number();
 
-	if (active == 1)
-	{
-		config.update(comTypeKey, "tcp");
-	}
-	else
-	{
-		config.update(comTypeKey, "serial");
-	}
+    if (active == 1) {
+        config.update(comTypeKey, "tcp");
+    } else if (active == 2) {
+        config.update(comTypeKey, "ble");
+    } else {
+        config.update(comTypeKey, "serial");
+    }
 }

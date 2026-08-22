@@ -18,8 +18,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "test_serial_com.h"
-#include <com/serial_com_params.h>
-#include <com/serial_utils.h>
+#include <com/serial/serial_com_params.h>
+#include <com/serial/serial_utils.h>
 
 using namespace Electux::App::Com;
 using namespace Electux::App::Com::SerialComConstants;

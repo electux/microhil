@@ -2,7 +2,7 @@
 
 '''
 Module
-    run-echo-port.py
+    run-serial-port.py
 Copyright
     Copyright (C) 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
     microhil is free software: you can redistribute it and/or modify it
@@ -16,7 +16,7 @@ Copyright
     You should have received a copy of the GNU General Public License along
     with this program. If not, see <http://www.gnu.org/licenses/>.
 Info
-    A simple script for demonstrating USB serial port communication.
+    A simple script for demonstrating UART communication.
 '''
 
 from __future__ import annotations

@@ -18,44 +18,39 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <view/settings/tcp_settings_tab.h>
 #include <string>
+#include <view/settings/tcp_settings_tab.h>
 
-namespace
-{
-	constexpr std::string_view cSettingsTcpIpLabel{"IP Address"};
-	constexpr std::string_view cSettingsTcpPortLabel{"Port number"};
+namespace {
+    constexpr std::string_view cSettingsTcpIpLabel{"IP Address"};
+    constexpr std::string_view cSettingsTcpPortLabel{"Port number"};
 } // namespace
 
 using namespace Electux::App::View::Settings;
 using namespace Electux::App::Model;
 
-TcpSettingsTab::TcpSettingsTab()
-	: Gtk::Box(Gtk::Orientation::VERTICAL)
-{
-	m_labelIpAddress.set_label(cSettingsTcpIpLabel.data());
-	append(m_labelIpAddress);
-	append(m_entryIpAddress);
+TcpSettingsTab::TcpSettingsTab() : Gtk::Box(Gtk::Orientation::VERTICAL) {
+    m_labelIpAddress.set_label(cSettingsTcpIpLabel.data());
+    append(m_labelIpAddress);
+    append(m_entryIpAddress);
 
-	m_labelPort.set_label(cSettingsTcpPortLabel.data());
-	append(m_labelPort);
-	append(m_entryPort);
+    m_labelPort.set_label(cSettingsTcpPortLabel.data());
+    append(m_labelPort);
+    append(m_entryPort);
 }
 
-void TcpSettingsTab::updateData(const IModel &config)
-{
-	auto ipKey = config.toString(ModelGeneralKey::TcpIp);
-	m_entryIpAddress.set_text(config.getEntity(ipKey).data());
+void TcpSettingsTab::updateData(const IModel &config) {
+    auto ipKey = config.toString(ModelGeneralKey::TcpIp);
+    m_entryIpAddress.set_text(config.getEntity(ipKey).data());
 
-	auto portKey = config.toString(ModelGeneralKey::TcpPort);
-	m_entryPort.set_text(config.getEntity(portKey).data());
+    auto portKey = config.toString(ModelGeneralKey::TcpPort);
+    m_entryPort.set_text(config.getEntity(portKey).data());
 }
 
-void TcpSettingsTab::getData(IModel &config)
-{
-	auto ipKey = config.toString(ModelGeneralKey::TcpIp);
-	config.update(ipKey, m_entryIpAddress.get_text().raw());
+void TcpSettingsTab::getData(IModel &config) {
+    auto ipKey = config.toString(ModelGeneralKey::TcpIp);
+    config.update(ipKey, m_entryIpAddress.get_text().raw());
 
-	auto portKey = config.toString(ModelGeneralKey::TcpPort);
-	config.update(portKey, m_entryPort.get_text().raw());
+    auto portKey = config.toString(ModelGeneralKey::TcpPort);
+    config.update(portKey, m_entryPort.get_text().raw());
 }

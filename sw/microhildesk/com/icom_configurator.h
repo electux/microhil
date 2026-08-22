@@ -19,33 +19,33 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-namespace Electux::App::Model
-{
-	class IModel;
+namespace Electux::App::Model {
+    class IModel;
 }
 
-namespace Electux::App::Com
-{
-	class ICom;
+namespace Electux::App::Com {
+    class ICom;
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class IComConfigurator
-	/// @brief Interface for protocol-independent configuration of communication channels.
-	///
-	/// This class abstracts the parameters configuration for any communication mechanism (Serial, TCP, etc.)
-	/// from the AppController.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class IComConfigurator
-	{
-	public:
-		virtual ~IComConfigurator() = default;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class IComConfigurator
+    /// @brief Interface for protocol-independent configuration of communication
+    /// channels.
+    ///
+    /// This class abstracts the parameters configuration for any communication
+    /// mechanism (Serial, TCP, etc.) from the AppController.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class IComConfigurator {
+      public:
+        virtual ~IComConfigurator() = default;
 
-		////////////////////////////////////////////////////////////////////////////////////////////////
-		/// @brief Configures the communication channel using parameters from the model.
-		/// @param model Reference to the configuration model.
-		/// @param comChannel Pointer to the communication channel interface.
-		/// @return true if configuration was successful, else false.
-		////////////////////////////////////////////////////////////////////////////////////////////////
-		virtual bool configure(const Model::IModel& model, ICom* comChannel) = 0;
-	};
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        /// @brief Configures the communication channel using parameters from
+        /// the model.
+        /// @param model Reference to the configuration model.
+        /// @param comChannel Pointer to the communication channel interface.
+        /// @return true if configuration was successful, else false.
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        virtual bool
+        configure(const Model::IModel &model, ICom *comChannel) = 0;
+    };
 } // namespace Electux::App::Com

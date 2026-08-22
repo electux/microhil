@@ -18,51 +18,47 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <view/settings/log_settings_tab.h>
 #include <log/log_level_params.h>
 #include <string>
+#include <view/settings/log_settings_tab.h>
 
-namespace
-{
-	constexpr std::string_view cSettingsLogPath{"Log file path"};
-	constexpr std::string_view cSettingsLogLevel{"Log level"};
+namespace {
+    constexpr std::string_view cSettingsLogPath{"Log file path"};
+    constexpr std::string_view cSettingsLogLevel{"Log level"};
 } // namespace
 
 using namespace Electux::App::View::Settings;
 using namespace Electux::App::Model;
 using namespace Electux::App::Logger::LogLevels;
 
-LogSettingsTab::LogSettingsTab()
-	: Gtk::Box(Gtk::Orientation::VERTICAL)
-{
-	m_labelLogPath.set_label(cSettingsLogPath.data());
-	append(m_labelLogPath);
-	append(m_entryLogPath);
+LogSettingsTab::LogSettingsTab() : Gtk::Box(Gtk::Orientation::VERTICAL) {
+    m_labelLogPath.set_label(cSettingsLogPath.data());
+    append(m_labelLogPath);
+    append(m_entryLogPath);
 
-	m_labelLogLevel.set_label(cSettingsLogLevel.data());
-	append(m_labelLogLevel);
-	for (const auto& level : cLogLevels)
-	{
-		m_comboLogLevel.append(std::string(level));
-	}
-	append(m_comboLogLevel);
+    m_labelLogLevel.set_label(cSettingsLogLevel.data());
+    append(m_labelLogLevel);
+    for (const auto &level : cLogLevels) {
+        m_comboLogLevel.append(std::string(level));
+    }
+    append(m_comboLogLevel);
 }
 
-void LogSettingsTab::updateData(const IModel &config)
-{
-	auto pathKey = config.toString(ModelLogKey::FilePath);
-	m_entryLogPath.set_text(config.getEntity(pathKey).data());
+void LogSettingsTab::updateData(const IModel &config) {
+    auto pathKey = config.toString(ModelLogKey::FilePath);
+    m_entryLogPath.set_text(config.getEntity(pathKey).data());
 
-	auto levelKey = config.toString(ModelLogKey::LogLevel);
-	auto levelValue = std::stoi(config.getEntity(levelKey).data());
-	m_comboLogLevel.set_active(levelValue);
+    auto levelKey = config.toString(ModelLogKey::LogLevel);
+    auto levelValue = std::stoi(config.getEntity(levelKey).data());
+    m_comboLogLevel.set_active(levelValue);
 }
 
-void LogSettingsTab::getData(IModel &config)
-{
-	auto pathKey = config.toString(ModelLogKey::FilePath);
-	config.update(pathKey, m_entryLogPath.get_text().raw());
+void LogSettingsTab::getData(IModel &config) {
+    auto pathKey = config.toString(ModelLogKey::FilePath);
+    config.update(pathKey, m_entryLogPath.get_text().raw());
 
-	auto levelKey = config.toString(ModelLogKey::LogLevel);
-	config.update(levelKey, std::to_string(m_comboLogLevel.get_active_row_number()));
+    auto levelKey = config.toString(ModelLogKey::LogLevel);
+    config.update(
+        levelKey, std::to_string(m_comboLogLevel.get_active_row_number())
+    );
 }

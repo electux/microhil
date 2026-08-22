@@ -22,21 +22,21 @@
 #include <command/icommand_formatter.h>
 
 namespace Electux::App::Command {
-////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @class CommandFormatter
-/// @brief Implements ICommandFormatter to serialize relay channel state into
-/// command strings.
-////////////////////////////////////////////////////////////////////////////////////////////////////
-class CommandFormatter : public ICommandFormatter {
-public:
-  CommandFormatter() = default;
-  virtual ~CommandFormatter() override = default;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class CommandFormatter
+    /// @brief Implements ICommandFormatter to serialize relay channel state
+    /// into command strings.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class CommandFormatter : public ICommandFormatter {
+      public:
+        CommandFormatter() = default;
+        virtual ~CommandFormatter() override = default;
 
-  CommandFormatter(const CommandFormatter &) = delete;
-  CommandFormatter &operator=(const CommandFormatter &) = delete;
+        CommandFormatter(const CommandFormatter &) = delete;
+        CommandFormatter &operator=(const CommandFormatter &) = delete;
 
-  virtual std::string
-  getCommandState(size_t channelIdx,
-                  const Model::Channel::ChannelState &state) const override;
-};
+        virtual std::string getCommandState(
+            size_t channelIdx, const Model::Channel::ChannelState &state
+        ) const override;
+    };
 } // namespace Electux::App::Command

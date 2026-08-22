@@ -25,19 +25,18 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace Electux::App::Logger::LogLevels
 /// @brief Namespace for log level configuration parameters
-namespace Electux::App::Logger::LogLevels
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @name Log Levels Definitions
-	/// @{
-	/// @brief Array of string representations for log levels
-	constexpr std::string_view cLogLevels[]{"Error", "Warning", "Info"};
-	/// @brief Constant index for the Error log level
-	constexpr const uint32_t clogLevelError = 0;
-	/// @brief Constant index for the Warning log level
-	constexpr const uint32_t clogLevelWarning = 1;
-	/// @brief Constant index for the Info log level
-	constexpr const uint32_t clogLevelInfo = 2;
-	/// @}
-	////////////////////////////////////////////////////////////////////////////////////////////////////
+namespace Electux::App::Logger::LogLevels {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @name Log Levels Definitions
+    /// @{
+    /// @brief Array of string representations for log levels
+    constexpr std::string_view cLogLevels[]{"Error", "Warning", "Info"};
+    /// @brief Constant index for the Error log level
+    constexpr const uint32_t clogLevelError = 0;
+    /// @brief Constant index for the Warning log level
+    constexpr const uint32_t clogLevelWarning = 1;
+    /// @brief Constant index for the Info log level
+    constexpr const uint32_t clogLevelInfo = 2;
+    /// @}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace Electux::App::Logger::LogLevels

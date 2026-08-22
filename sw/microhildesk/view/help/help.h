@@ -22,21 +22,19 @@
 #include <gtkmm/window.h>
 #include <view/help/ihelp_view.h>
 
-namespace Electux::App::View::Help
-{
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class AppHelp
-	/// @brief Help view window definition for application documentation.
-	///
-	/// This window provides users with access to local documentation or
-	/// help resources related to microhildesk functionality.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class AppHelp : public Gtk::Window, public IHelpView
-	{
-	public:
-		explicit AppHelp();
-		virtual ~AppHelp() override = default;
+namespace Electux::App::View::Help {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class AppHelp
+    /// @brief Help view window definition for application documentation.
+    ///
+    /// This window provides users with access to local documentation or
+    /// help resources related to microhildesk functionality.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class AppHelp : public Gtk::Window, public IHelpView {
+      public:
+        explicit AppHelp();
+        virtual ~AppHelp() override = default;
 
-		void show() override;
-	};
+        void show() override;
+    };
 } // namespace Electux::App::View::Help

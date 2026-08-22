@@ -19,57 +19,63 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <memory>
 #include <gtkmm/application.h>
+#include <memory>
 
-namespace Electux::App
-{
-	class IAppController;
+namespace Electux::App {
+    class IAppController;
 
-	namespace Model { class SettingsSetup; }
-	namespace View
-	{
-		class IHomeView;
-		namespace Settings { class ISettingsView; }
-		namespace Help { class IHelpView; }
-		namespace About { class IAboutView; }
-	}
+    namespace Model {
+        class SettingsSetup;
+    }
 
-	using SettingsSetup = Model::SettingsSetup;
+    namespace View {
+        class IHomeView;
+        namespace Settings {
+            class ISettingsView;
+        }
+        namespace Help {
+            class IHelpView;
+        }
+        namespace About {
+            class IAboutView;
+        }
+    } // namespace View
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// @class EntryApplication
-	/// @brief Entry point for application and main application class.
-	///
-	/// Manages the application lifecycle, signal mapping, and coordinates
-	/// between the configuration manager and the various UI views.
-	////////////////////////////////////////////////////////////////////////////////////////////////////
-	class EntryApplication : public Gtk::Application
-	{
-	public:
-		explicit EntryApplication();
-		~EntryApplication() override;
+    using SettingsSetup = Model::SettingsSetup;
 
-		static Glib::RefPtr<EntryApplication> create();
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class EntryApplication
+    /// @brief Entry point for application and main application class.
+    ///
+    /// Manages the application lifecycle, signal mapping, and coordinates
+    /// between the configuration manager and the various UI views.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class EntryApplication : public Gtk::Application {
+      public:
+        explicit EntryApplication();
+        ~EntryApplication() override;
 
-	protected:
-		void on_startup() override;
-		void on_activate() override;
-		void on_shutdown() override;
+        static Glib::RefPtr<EntryApplication> create();
 
-	private:
-		void mapping();
-		void onActionSettings();
-		void onActionDoc();
-		void onActionAbout();
-		void onActionQuit();
-		bool onHandleClose();
-		void onSetupChanged(const SettingsSetup &setup);
+      protected:
+        void on_startup() override;
+        void on_activate() override;
+        void on_shutdown() override;
 
-		std::unique_ptr<IAppController> m_controller;
-		std::unique_ptr<View::IHomeView> m_home;
-		std::unique_ptr<View::Settings::ISettingsView> m_settings;
-		std::unique_ptr<View::Help::IHelpView> m_help;
-		std::unique_ptr<View::About::IAboutView> m_about;
-	};
+      private:
+        void mapping();
+        void onActionSettings();
+        void onActionDoc();
+        void onActionAbout();
+        void onActionQuit();
+        bool onHandleClose();
+        void onSetupChanged(const SettingsSetup &setup);
+
+        std::unique_ptr<IAppController> m_controller;
+        std::unique_ptr<View::IHomeView> m_home;
+        std::unique_ptr<View::Settings::ISettingsView> m_settings;
+        std::unique_ptr<View::Help::IHelpView> m_help;
+        std::unique_ptr<View::About::IAboutView> m_about;
+    };
 } // namespace Electux::App

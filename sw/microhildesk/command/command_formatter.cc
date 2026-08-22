@@ -24,21 +24,25 @@
 using namespace Electux::App::Command;
 
 std::string CommandFormatter::getCommandState(
-    size_t channelIdx, const Model::Channel::ChannelState &state) const {
-  if (!state.enabled) {
-    return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
-  }
-  if (state.mode == 0) // Toggle Mode
-  {
-    return std::format("<mh#ch#{}#{}#end>", channelIdx + 1,
-                       state.toggle ? "on" : "off");
-  } else if (state.mode == 1) // Timer Mode
-  {
-    if (state.timerEnabled) {
-      return std::format("<mh#ch#{}#tmr#{}#end>", channelIdx + 1, state.timer);
-    } else {
-      return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
+    size_t channelIdx, const Model::Channel::ChannelState &state
+) const {
+    if (!state.enabled) {
+        return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
     }
-  }
-  return "";
+    if (state.mode == 0) // Toggle Mode
+    {
+        return std::format(
+            "<mh#ch#{}#{}#end>", channelIdx + 1, state.toggle ? "on" : "off"
+        );
+    } else if (state.mode == 1) // Timer Mode
+    {
+        if (state.timerEnabled) {
+            return std::format(
+                "<mh#ch#{}#tmr#{}#end>", channelIdx + 1, state.timer
+            );
+        } else {
+            return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
+        }
+    }
+    return "";
 }

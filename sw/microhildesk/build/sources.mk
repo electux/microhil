@@ -10,12 +10,14 @@ SOURCES = \
 	../log/log.cc \
 	../config/config_manager_utils.cc \
 	../config/config_manager.cc \
-	../com/serial_lib_wrapper.cc \
-	../com/serial_utils.cc \
-	../com/serial_com.cc \
-	../com/serial_com_configurator.cc \
-	../com/tcp_com.cc \
-	../com/tcp_com_configurator.cc \
+	../com/serial/serial_lib_wrapper.cc \
+	../com/serial/serial_utils.cc \
+	../com/serial/serial_com.cc \
+	../com/serial/serial_com_configurator.cc \
+	../com/tcp/tcp_com.cc \
+	../com/tcp/tcp_com_configurator.cc \
+	../com/ble/ble_com.cc \
+	../com/ble/ble_com_configurator.cc \
 	../com/switchable_com.cc \
 	../com/switchable_com_configurator.cc \
 	../model/model.cc \
@@ -27,6 +29,7 @@ SOURCES = \
 	../view/settings/general_settings_tab.cc \
 	../view/settings/serial_settings_tab.cc \
 	../view/settings/tcp_settings_tab.cc \
+	../view/settings/ble_settings_tab.cc \
 	../view/settings/log_settings_tab.cc \
 	../view/settings/settings.cc \
 	../application.cc \
