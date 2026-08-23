@@ -23,6 +23,7 @@
 #include <com/icom.h>
 #include <com/icom_configurator.h>
 #include <command/icommand_formatter.h>
+#include <command/response_processor.h>
 #include <config/iconfig.h>
 #include <format>
 #include <log/ilog.h>
@@ -37,13 +38,15 @@ AppController::AppController(
     std::unique_ptr<Com::ICom> comChannel,
     std::unique_ptr<Com::IComConfigurator> comConfigurator,
     std::unique_ptr<Logger::ILog> logger,
-    std::unique_ptr<Command::ICommandFormatter> commandFormatter
+    std::unique_ptr<Command::ICommandFormatter> commandFormatter,
+    std::unique_ptr<Command::IResponseProcessor> responseProcessor
 )
     : m_configManager(std::move(configManager)),
       m_comChannel(std::move(comChannel)),
       m_comConfigurator(std::move(comConfigurator)),
       m_logger(std::move(logger)),
-      m_commandFormatter(std::move(commandFormatter)) {}
+      m_commandFormatter(std::move(commandFormatter)),
+      m_responseProcessor(std::move(responseProcessor)) {}
 
 AppController::~AppController() {
     m_stopThread = true;
@@ -261,7 +264,14 @@ void AppController::readLoop() {
 
                 if (!buffer.empty()) {
                     std::string dataStr(buffer.begin(), buffer.end());
-                    m_signalDataReceived.emit(dataStr);
+                    if (m_responseProcessor) {
+                        auto payloads = m_responseProcessor->process(dataStr);
+                        for (const auto &payload : payloads) {
+                            m_signalDataReceived.emit(payload);
+                        }
+                    } else {
+                        m_signalDataReceived.emit(dataStr);
+                    }
                 }
 
             } else {

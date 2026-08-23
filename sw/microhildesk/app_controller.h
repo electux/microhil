@@ -36,6 +36,7 @@ namespace Electux::App::Logger {
 }
 namespace Electux::App::Command {
     class ICommandFormatter;
+    class IResponseProcessor;
 }
 
 namespace Electux::App {
@@ -51,7 +52,8 @@ namespace Electux::App {
             std::unique_ptr<Com::ICom> comChannel,
             std::unique_ptr<Com::IComConfigurator> comConfigurator,
             std::unique_ptr<Logger::ILog> logger,
-            std::unique_ptr<Command::ICommandFormatter> commandFormatter
+            std::unique_ptr<Command::ICommandFormatter> commandFormatter,
+            std::unique_ptr<Command::IResponseProcessor> responseProcessor
         );
         virtual ~AppController() override;
 
@@ -93,6 +95,7 @@ namespace Electux::App {
         std::unique_ptr<Com::IComConfigurator> m_comConfigurator;
         std::unique_ptr<Logger::ILog> m_logger;
         std::unique_ptr<Command::ICommandFormatter> m_commandFormatter;
+        std::unique_ptr<Command::IResponseProcessor> m_responseProcessor;
 
         std::thread m_readThread;
         std::atomic<bool> m_stopThread{false};
