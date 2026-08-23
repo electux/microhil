@@ -19,6 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <app_controller.h>
+#include <chrono>
 #include <com/icom.h>
 #include <com/icom_configurator.h>
 #include <command/icommand_formatter.h>
@@ -44,23 +45,57 @@ AppController::AppController(
       m_logger(std::move(logger)),
       m_commandFormatter(std::move(commandFormatter)) {}
 
-AppController::~AppController() = default;
+AppController::~AppController() {
+    m_stopThread = true;
+    if (m_comChannel) {
+        m_comChannel->close();
+    }
+    if (m_readThread.joinable()) {
+        m_readThread.join();
+    }
+}
 
 void AppController::startup() {
     m_configManager->init();
     configureLogger();
     configureComChannel();
+
+    m_stopThread = false;
+    m_readThread = std::thread(&AppController::readLoop, this);
+
     m_logger->log("Application started.", Logger::LogLevel::Info);
+
+    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
+        std::string cmdBoardId = m_commandFormatter->getCommandBoardId();
+
+        if (!cmdBoardId.empty()) {
+            std::vector<uint8_t> cmdBytes(cmdBoardId.begin(), cmdBoardId.end());
+            m_comChannel->write(cmdBytes);
+        }
+
+        std::string cmdVersion = m_commandFormatter->getCommandVersion();
+
+        if (!cmdVersion.empty()) {
+            std::vector<uint8_t> cmdBytes(cmdVersion.begin(), cmdVersion.end());
+            m_comChannel->write(cmdBytes);
+        }
+    }
 }
 
 void AppController::shutdown() {
-    if (m_logger) {
-        m_logger->log("Application shutting down.", Logger::LogLevel::Info);
-        m_logger->close();
-    }
+    m_stopThread = true;
 
     if (m_comChannel) {
         m_comChannel->close();
+    }
+
+    if (m_readThread.joinable()) {
+        m_readThread.join();
+    }
+
+    if (m_logger) {
+        m_logger->log("Application shutting down.", Logger::LogLevel::Info);
+        m_logger->close();
     }
 
     m_configManager->store();
@@ -211,4 +246,29 @@ bool AppController::hasBleConfigChanged(
         }
     }
     return false;
+}
+
+sigc::signal<void(const std::string &)> AppController::signal_data_received() {
+    return m_signalDataReceived;
+}
+
+void AppController::readLoop() {
+    while (!m_stopThread) {
+        try {
+            if (m_comChannel && m_comChannel->isOpen()) {
+                std::vector<uint8_t> buffer;
+                m_comChannel->read(buffer, 1);
+
+                if (!buffer.empty()) {
+                    std::string dataStr(buffer.begin(), buffer.end());
+                    m_signalDataReceived.emit(dataStr);
+                }
+
+            } else {
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+        } catch (...) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
+    }
 }

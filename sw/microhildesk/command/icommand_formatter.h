@@ -21,6 +21,7 @@
 
 #include <model/channel_state.h>
 #include <string>
+#include <vector>
 
 namespace Electux::App::Command {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,5 +36,22 @@ namespace Electux::App::Command {
         virtual std::string getCommandState(
             size_t channelIdx, const Model::Channel::ChannelState &state
         ) const = 0;
+        virtual std::string getCommandPulse(
+            size_t channelIdx, const Model::Channel::ChannelState &state
+        ) const = 0;
+        virtual std::string getCommandBlink(
+            size_t channelIdx, const Model::Channel::ChannelState &state
+        ) const = 0;
+        virtual std::string getCommandOffAllChannels() const = 0;
+        virtual std::string getCommandOnAllChannels() const = 0;
+        virtual std::string getCommandMaskChannels(
+            const std::vector<Model::Channel::ChannelState> &states
+        ) const = 0;
+
+        virtual std::string getCommandStatus(size_t channelIdx) const = 0;
+        virtual std::string getCommandStatusAllChannels() const = 0;
+        virtual std::string getCommandReset() const = 0;
+        virtual std::string getCommandBoardId() const = 0;
+        virtual std::string getCommandVersion() const = 0;
     };
 } // namespace Electux::App::Command

@@ -57,6 +57,7 @@ def main() -> bool:
     print("Press any key to exit...")
 
     old_settings = tcgetattr(stdin)
+    buffer = bytearray()
 
     try:
         setcbreak(stdin.fileno())
@@ -71,9 +72,34 @@ def main() -> bool:
 
             if waiting > 0:
                 raw_data = serial_port.read(waiting)
-                print(f"[{strftime('%H:%M:%S')}] Received {len(raw_data)} bytes:")
-                print(f"  Hex: {raw_data.hex(' ')}")
-                print(f"  Raw: {raw_data}")
+                buffer.extend(raw_data)
+                
+                print(f"[{strftime('%H:%M:%S')}] Received {len(raw_data)} bytes: {raw_data.hex(' ')} ({raw_data})")
+
+                while b"<" in buffer and b">" in buffer:
+                    start = buffer.find(b"<")
+                    end = buffer.find(b">", start)
+
+                    if end == -1:
+                        break
+
+                    msg = bytes(buffer[start:end + 1])
+                    del buffer[:end + 1]
+
+                    print(f"  -> Parsed packet: {msg.decode('utf-8', errors='replace')}")
+
+                    if msg == b"<mh#sys#id#end>":
+                        response = b"<mh#sys#mh:333:2023:0#end>"
+                        serial_port.write(response)
+                        print(f"  <- Sent ID: {response}")
+
+                    elif msg == b"<mh#sys#version#end>":
+                        response = b"<mh#sys#microHIL v1.0.0#end>"
+                        serial_port.write(response)
+                        print(f"  <- Sent Version: {response}")
+
+                    else:
+                        serial_port.write(msg)
 
             sleep(0.01)
 

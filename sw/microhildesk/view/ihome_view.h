@@ -20,6 +20,7 @@
 #pragma once
 
 #include <sigc++/sigc++.h>
+#include <string>
 #include <view/settings_setup.h>
 
 namespace Gtk {
@@ -47,5 +48,7 @@ namespace Electux::App::View {
         virtual void hide() = 0;
         virtual void connect_close_request(const sigc::slot<bool()> &slot) = 0;
         virtual Gtk::Window &getGtkWindow() = 0;
+
+        virtual void postData(const std::string& data) = 0;
     };
 } // namespace Electux::App::View

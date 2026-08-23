@@ -19,6 +19,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <sigc++/sigc++.h>
+#include <string>
+
 namespace Electux::App {
     namespace Model {
         class IModel;
@@ -40,5 +43,7 @@ namespace Electux::App {
         virtual const Model::IModel &getModel() const = 0;
 
         virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
+
+        virtual sigc::signal<void(const std::string&)> signal_data_received() = 0;
     };
 } // namespace Electux::App
