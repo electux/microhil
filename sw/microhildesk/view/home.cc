@@ -24,7 +24,7 @@
 namespace {
     constexpr std::string_view cHomeTitle{"microhildesk"};
     constexpr int cHomeWidth{600};
-    constexpr int cHomeHeight{250};
+    constexpr int cHomeHeight{520};
 } // namespace
 
 using namespace Electux::App::View;
@@ -36,7 +36,31 @@ AppHome::AppHome() {
     set_default_size(cHomeWidth, cHomeHeight);
     set_resizable(false);
     set_show_menubar(true);
-    m_boxRoot.set_orientation(Gtk::Orientation::HORIZONTAL);
+    m_boxRoot.set_orientation(Gtk::Orientation::VERTICAL);
+    m_boxChannels.set_orientation(Gtk::Orientation::HORIZONTAL);
+    m_textView.set_editable(false);
+    m_textView.set_cursor_visible(false);
+    m_textView.set_wrap_mode(Gtk::WrapMode::CHAR);
+    m_textView.set_monospace(true);
+    m_textView.set_left_margin(10);
+    m_textView.set_right_margin(10);
+    m_textView.set_top_margin(10);
+    m_textView.set_bottom_margin(10);
+
+    m_scrolled_window.set_child(m_textView);
+    m_scrolled_window.set_vexpand(true);
+    m_scrolled_window.set_hexpand(true);
+    m_scrolled_window.set_size_request(-1, 250);
+    m_scrolled_window.set_margin_start(10);
+    m_scrolled_window.set_margin_end(10);
+    m_scrolled_window.set_margin_bottom(10);
+
+    m_dispatcher.connect(
+        sigc::mem_fun(*this, &AppHome::onDataReceivedDispatcher)
+    );
+
+    m_boxRoot.append(m_boxChannels);
+    m_boxRoot.append(m_scrolled_window);
     set_child(m_boxRoot);
 
     for (ssize_t i = 0; i < cNumOfChannels; i++) {
@@ -49,7 +73,7 @@ AppHome::AppHome() {
             )
         );
 
-        m_boxRoot.append(*widget);
+        m_boxChannels.append(*widget);
         m_channelWidgets.push_back(std::move(widget));
     }
 }
@@ -96,3 +120,25 @@ void AppHome::connect_close_request(const sigc::slot<bool()> &slot) {
 }
 
 Gtk::Window &AppHome::getGtkWindow() { return *this; }
+
+void AppHome::postData(const std::string &data) {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    m_incomingDataQueue.push(data);
+    m_dispatcher.emit();
+}
+
+void AppHome::onDataReceivedDispatcher() {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    auto buffer = m_textView.get_buffer();
+
+    while (!m_incomingDataQueue.empty()) {
+        std::string data = m_incomingDataQueue.front();
+        buffer->insert(buffer->end(), data);
+
+        if (data.find('>') != std::string::npos) {
+            buffer->insert(buffer->end(), "\n");
+        }
+
+        m_incomingDataQueue.pop();
+    }
+}

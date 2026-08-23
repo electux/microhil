@@ -100,7 +100,8 @@ bool SerialCom::close() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool SerialCom::isOpen() const {
     bool open = m_serialPort->IsOpen();
-    std::cout << "Serial port is " << (open ? "open." : "closed.") << std::endl;
+    // std::cout << "Serial port is " << (open ? "open." : "closed.") <<
+    // std::endl;
     return open;
 }
 
@@ -116,8 +117,6 @@ void SerialCom::read(std::vector<uint8_t> &data, size_t len) {
     }
 
     m_serialPort->Read(data, len);
-    std::cout << "Read " << data.size() << " bytes from serial port."
-              << std::endl;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -131,8 +130,6 @@ void SerialCom::write(const std::vector<uint8_t> &data) {
     }
 
     m_serialPort->Write(data);
-    std::cout << "Wrote " << data.size() << " bytes to serial port."
-              << std::endl;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -203,6 +200,7 @@ bool SerialCom::setup(const SerialParams &params) {
         setFlowControl(params.flow);
         m_device = params.device;
         return true;
+
     } catch (const std::exception &e) {
         std::cerr << "Setup error: " << e.what() << std::endl;
         return false;

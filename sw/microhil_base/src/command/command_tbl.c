@@ -81,7 +81,46 @@ static void cmd_handle_timer(const char *cmd_str) {
   if (sscanf(cmd_str + 12, "%u#end", &seconds) == 1) {
     if (channel < RELAY_NUM_CHANNELS) {
 #ifdef VERBOSE
-      printf("%s channel %c timer %u seconds\n", MICROHIL_VERBOSE, ch_char, seconds);
+      printf(
+          "%s channel %c timer %u seconds\n", MICROHIL_VERBOSE, ch_char, seconds
+      );
+#endif
+    }
+  }
+}
+
+static void cmd_handle_pulse(const char *cmd_str) {
+  // Pattern: "mh#ch#X#pulse#Y#end"
+  char ch_char = cmd_str[6];
+  uint32_t channel = ch_char - '1';
+  uint32_t duration_ms = 0;
+
+  if (sscanf(cmd_str + 14, "%u#end", &duration_ms) == 1) {
+    if (channel < RELAY_NUM_CHANNELS) {
+#ifdef VERBOSE
+      printf(
+          "%s channel %c pulse %u milliseconds\n", MICROHIL_VERBOSE, ch_char, duration_ms
+      );
+#endif
+    }
+  }
+}
+
+static void cmd_handle_blink(const char *cmd_str) {
+  // Pattern: "mh#ch#X#blink#on_time#off_time#count#end"
+  char ch_char = cmd_str[6];
+  uint32_t channel = ch_char - '1';
+  uint32_t on_time = 0;
+  uint32_t off_time = 0;
+  uint32_t count = 0;
+
+  if (sscanf(cmd_str + 14, "%u#%u#%u#end", &on_time, &off_time, &count) == 3) {
+    if (channel < RELAY_NUM_CHANNELS) {
+#ifdef VERBOSE
+      printf(
+          "%s channel %c blink on_time %u off_time %u count %u\n",
+          MICROHIL_VERBOSE, ch_char, on_time, off_time, count
+      );
 #endif
     }
   }
@@ -106,8 +145,8 @@ static const command_entry_t command_tbl[] = {
     {"mh#ch#8#off#end", cmd_handle_channel},
     {"mh#ch#all#on#end", cmd_handle_all_channels},
     {"mh#ch#all#off#end", cmd_handle_all_channels},
-    {"mh#ch#board#id#end", cmd_handle_board_id},
-    {"mh#ch#version#end", cmd_handle_version},
+    {"mh#sys#id#end", cmd_handle_board_id},
+    {"mh#sys#version#end", cmd_handle_version},
 };
 
 static const size_t command_tbl_size =
@@ -116,10 +155,23 @@ static const size_t command_tbl_size =
 void command_dispatch(const char *cmd_str) {
   // Check for timer commands: "mh#ch#X#tmr#Y#end"
   // Where X is '1'-'8', followed by "#tmr#"
-  if (strncmp(cmd_str, "mh#ch#", 6) == 0 &&
-      cmd_str[6] >= '1' && cmd_str[6] <= '8' &&
-      strncmp(cmd_str + 7, "#tmr#", 5) == 0) {
+  if (strncmp(cmd_str, "mh#ch#", 6) == 0 && cmd_str[6] >= '1' &&
+      cmd_str[6] <= '8' && strncmp(cmd_str + 7, "#tmr#", 5) == 0) {
     cmd_handle_timer(cmd_str);
+    return;
+  }
+
+  // Check for pulse commands: "mh#ch#X#pulse#Y#end"
+  if (strncmp(cmd_str, "mh#ch#", 6) == 0 && cmd_str[6] >= '1' &&
+      cmd_str[6] <= '8' && strncmp(cmd_str + 7, "#pulse#", 7) == 0) {
+    cmd_handle_pulse(cmd_str);
+    return;
+  }
+
+  // Check for blink commands: "mh#ch#X#blink#Y#Z#W#end"
+  if (strncmp(cmd_str, "mh#ch#", 6) == 0 && cmd_str[6] >= '1' &&
+      cmd_str[6] <= '8' && strncmp(cmd_str + 7, "#blink#", 7) == 0) {
+    cmd_handle_blink(cmd_str);
     return;
   }
 

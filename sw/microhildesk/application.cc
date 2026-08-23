@@ -172,6 +172,9 @@ void EntryApplication::mapping() {
     m_home->controlChanged().connect(
         sigc::mem_fun(*this, &EntryApplication::onSetupChanged)
     );
+    m_controller->signal_data_received().connect(
+        sigc::mem_fun(*m_home, &View::IHomeView::postData)
+    );
 }
 
 void EntryApplication::on_startup() {

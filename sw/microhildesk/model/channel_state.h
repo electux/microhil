@@ -49,6 +49,10 @@ namespace Electux::App::Model::Channel {
         bool toggle{false};
         int timer{0};
         bool timerEnabled{false};
+        int pulseTime{0};
+        int blinkOnTime{0};
+        int blinkOffTime{0};
+        int blinkCount{0};
     };
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////

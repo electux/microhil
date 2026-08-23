@@ -29,12 +29,15 @@ std::string CommandFormatter::getCommandState(
     if (!state.enabled) {
         return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
     }
+
     if (state.mode == 0) // Toggle Mode
     {
         return std::format(
             "<mh#ch#{}#{}#end>", channelIdx + 1, state.toggle ? "on" : "off"
         );
-    } else if (state.mode == 1) // Timer Mode
+    }
+
+    if (state.mode == 1) // Timer Mode
     {
         if (state.timerEnabled) {
             return std::format(
@@ -44,5 +47,63 @@ std::string CommandFormatter::getCommandState(
             return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
         }
     }
+
     return "";
+}
+
+std::string CommandFormatter::getCommandPulse(
+    size_t channelIdx, const Model::Channel::ChannelState &state
+) const {
+    return std::format("<mh#ch#{}#pulse#{}#end>", channelIdx + 1, state.pulseTime);
+}
+
+std::string CommandFormatter::getCommandBlink(
+    size_t channelIdx, const Model::Channel::ChannelState &state
+) const {
+    return std::format(
+        "<mh#ch#{}#blink#{}#{}#{}#end>",
+        channelIdx + 1,
+        state.blinkOnTime,
+        state.blinkOffTime,
+        state.blinkCount
+    );
+}
+
+std::string CommandFormatter::getCommandOffAllChannels() const {
+    return "<mh#all#off#end>";
+}
+
+std::string CommandFormatter::getCommandOnAllChannels() const {
+    return "<mh#all#on#end>";
+}
+
+std::string CommandFormatter::getCommandMaskChannels(
+    const std::vector<Model::Channel::ChannelState> &states
+) const {
+    std::string command = "<mh#all#mask#";
+    for (const auto &state : states) {
+        command += (state.enabled and state.toggle ? "1" : "0");
+    }
+    command += "#end>";
+    return command;
+}
+
+std::string CommandFormatter::getCommandStatus(size_t channelIdx) const {
+    return std::format("<mh#ch#{}#stat#end>", channelIdx + 1);
+}
+
+std::string CommandFormatter::getCommandStatusAllChannels() const {
+    return "<mh#all#stat#end>";
+}
+
+std::string CommandFormatter::getCommandReset() const {
+    return "<mh#sys#reset#end>";
+}
+
+std::string CommandFormatter::getCommandBoardId() const {
+    return "<mh#sys#id#end>";
+}
+
+std::string CommandFormatter::getCommandVersion() const {
+    return "<mh#sys#version#end>";
 }

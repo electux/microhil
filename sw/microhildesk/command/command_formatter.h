@@ -38,5 +38,21 @@ namespace Electux::App::Command {
         virtual std::string getCommandState(
             size_t channelIdx, const Model::Channel::ChannelState &state
         ) const override;
+        virtual std::string getCommandPulse(
+            size_t channelIdx, const Model::Channel::ChannelState &state
+        ) const override;
+        virtual std::string getCommandBlink(
+            size_t channelIdx, const Model::Channel::ChannelState &state
+        ) const override;
+        virtual std::string getCommandOffAllChannels() const override;
+        virtual std::string getCommandOnAllChannels() const override;
+        virtual std::string getCommandMaskChannels(
+            const std::vector<Model::Channel::ChannelState> &states
+        ) const override;
+        virtual std::string getCommandStatusAllChannels() const override;
+        virtual std::string getCommandStatus(size_t channelIdx) const override;
+        virtual std::string getCommandReset() const override;
+        virtual std::string getCommandBoardId() const override;
+        virtual std::string getCommandVersion() const override;
     };
 } // namespace Electux::App::Command

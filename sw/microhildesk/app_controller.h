@@ -24,6 +24,8 @@
 #include <memory>
 #include <model/imodel.h>
 #include <view/settings_setup.h>
+#include <thread>
+#include <atomic>
 
 namespace Electux::App::Com {
     class ICom;
@@ -63,6 +65,8 @@ namespace Electux::App {
 
         void onSetupChanged(const Model::SettingsSetup &setup) override;
 
+        sigc::signal<void(const std::string&)> signal_data_received() override;
+
       private:
         void configureLogger();
         void configureComChannel();
@@ -82,10 +86,16 @@ namespace Electux::App {
             const Model::IModel &oldConfig, const Model::IModel &newConfig
         );
 
+        void readLoop();
+
         std::unique_ptr<Config::IConfig> m_configManager;
         std::unique_ptr<Com::ICom> m_comChannel;
         std::unique_ptr<Com::IComConfigurator> m_comConfigurator;
         std::unique_ptr<Logger::ILog> m_logger;
         std::unique_ptr<Command::ICommandFormatter> m_commandFormatter;
+
+        std::thread m_readThread;
+        std::atomic<bool> m_stopThread{false};
+        sigc::signal<void(const std::string&)> m_signalDataReceived;
     };
 } // namespace Electux::App

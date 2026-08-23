@@ -21,8 +21,13 @@
 
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/box.h>
+#include <gtkmm/scrolledwindow.h>
+#include <gtkmm/textview.h>
 #include <memory>
 #include <vector>
+#include <queue>
+#include <mutex>
+#include <glibmm/dispatcher.h>
 #include <view/channel_widget.h>
 #include <view/ihome_view.h>
 #include <view/settings_setup.h>
@@ -53,13 +58,23 @@ namespace Electux::App::View {
         void connect_close_request(const sigc::slot<bool()> &slot) override;
         Gtk::Window &getGtkWindow() override;
 
+        void postData(const std::string& data) override;
+
       private:
         void onChannelChanged(size_t index);
+        void onDataReceivedDispatcher();
 
         SettingsSetup m_setup{};
         SigSettings m_controlSignal{};
 
         Gtk::Box m_boxRoot{};
+        Gtk::Box m_boxChannels{};
+        Gtk::ScrolledWindow m_scrolled_window{};
+        Gtk::TextView m_textView{};
         std::vector<std::unique_ptr<ChannelWidget>> m_channelWidgets{};
+
+        Glib::Dispatcher m_dispatcher{};
+        std::queue<std::string> m_incomingDataQueue{};
+        std::mutex m_mutex{};
     };
 } // namespace Electux::App::View
