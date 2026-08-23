@@ -13,6 +13,9 @@ include csflags.mk
 include sources.mk
 include objects.mk
 
+GTK_CFLAGS := $(shell pkg-config --cflags gtkmm-4.0 libserial)
+GTK_LIBS   := $(shell pkg-config --libs gtkmm-4.0 libserial)
+
 EXECUTABLE = microhildesk
 
 LSS = \
@@ -24,10 +27,11 @@ SIZEDUMMY = \
 CLEAN_LIST = \
 	$(OBJECTS) \
 	$(EXECUTABLE) \
-	$(LSS) \
-	$(SIZEDUMMY)
+	$(LSS)
 
-all: $(OBJECTS) $(EXECUTABLE) $(EXECUTABLE).lss sizedummy
+.PHONY: all debug release clean sizedummy
+
+all: $(EXECUTABLE) $(LSS) $(SIZEDUMMY)
 
 debug:
 	$(MAKE) all OPT_FLAGS="-g"
@@ -37,23 +41,23 @@ release:
 
 .cc.o:
 	@echo 'Invoking: compile unit $<'
-	$(CXX) $(CXXFLAGS) -o $@ $< `pkg-config --cflags gtkmm-4.0 libserial`
+	$(CXX) $(CXXFLAGS) $(GTK_CFLAGS) -o $@ $<
 	@echo 'Finished compile unit $<'
 	@echo ' '
 
 $(EXECUTABLE): $(OBJECTS)
 	@echo 'Invoking: link executable $@'
-	$(CXX) $(OBJECTS) -o $@ `pkg-config --libs gtkmm-4.0 libserial`
+	$(CXX) $(OBJECTS) $(GTK_LIBS) -o $@
 	@echo 'Finished link process: $@'
 	@echo ' '
 
-$(EXECUTABLE).lss:
+$(EXECUTABLE).lss: $(EXECUTABLE)
 	@echo 'Invoking: Display information from object $@'
-	$(OD) $(ODFLAGS) $(EXECUTABLE)  > "$(EXECUTABLE).lss"
+	$(OD) $(ODFLAGS) $(EXECUTABLE) > "$(EXECUTABLE).lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy:
+sizedummy: $(EXECUTABLE)
 	@echo 'Invoking: Displays the sizes of sections inside $@'
 	$(CS) $(CSFLAGS) $(EXECUTABLE)
 	@echo 'Finished building: $@'
@@ -69,4 +73,3 @@ clean:
 	done
 	@echo 'Finished clean up'
 	@echo ' '
-

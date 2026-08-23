@@ -20,14 +20,14 @@
 
 #include <app_controller.h>
 #include <application.h>
+#include <com/ble/ble_com.h>
+#include <com/ble/ble_com_configurator.h>
 #include <com/serial/serial_com.h>
 #include <com/serial/serial_com_configurator.h>
 #include <com/switchable_com.h>
 #include <com/switchable_com_configurator.h>
 #include <com/tcp/tcp_com.h>
 #include <com/tcp/tcp_com_configurator.h>
-#include <com/ble/ble_com.h>
-#include <com/ble/ble_com_configurator.h>
 #include <command/command_formatter.h>
 #include <command/response_processor.h>
 #include <config/config_manager.h>
@@ -104,8 +104,9 @@ EntryApplication::EntryApplication() : Gtk::Application(cApplicationId.data()) {
     auto *bleConfig = ble.get();
     auto bleConfigurator = std::make_unique<Com::BleComConfigurator>(bleConfig);
 
-    auto switchableCom =
-        std::make_unique<Com::SwitchableCom>(std::move(serial), std::move(tcp), std::move(ble));
+    auto switchableCom = std::make_unique<Com::SwitchableCom>(
+        std::move(serial), std::move(tcp), std::move(ble)
+    );
     auto *switchableComPtr = switchableCom.get();
 
     auto configurator = std::make_unique<Com::SwitchableComConfigurator>(
@@ -119,8 +120,8 @@ EntryApplication::EntryApplication() : Gtk::Application(cApplicationId.data()) {
 
     m_controller = std::make_unique<AppController>(
         std::move(configManager), std::move(switchableCom),
-        std::move(configurator), std::move(logger),
-        std::move(commandFormatter), std::move(responseProcessor)
+        std::move(configurator), std::move(logger), std::move(commandFormatter),
+        std::move(responseProcessor)
     );
 
     m_home = std::make_unique<View::AppHome>();
@@ -140,12 +141,10 @@ Glib::RefPtr<EntryApplication> EntryApplication::create() {
 }
 
 void EntryApplication::mapping() {
-    // Sets application accelerator for quit action
     set_accel_for_action(
         cDetailedActionName.data(), cKeyboardAccelerator.data()
     );
 
-    // Maps application actions to their handlers
     add_action(
         cFileQuitActionName.data(),
         sigc::mem_fun(*this, &EntryApplication::onActionQuit)
@@ -163,12 +162,9 @@ void EntryApplication::mapping() {
         sigc::mem_fun(*this, &EntryApplication::onActionAbout)
     );
 
-    // Connects close request signal for AppHome window
     m_home->connect_close_request(
         sigc::mem_fun(*this, &EntryApplication::onHandleClose)
     );
-
-    // Maps application setup signals to their handlers
     m_settings->setupChanged().connect(
         sigc::mem_fun(*this, &EntryApplication::onSetupChanged)
     );
@@ -184,10 +180,8 @@ void EntryApplication::on_startup() {
     std::cout << "Startup application..." << std::endl;
     Gtk::Application::on_startup();
 
-    // Initialize configuration manager via controller
     m_controller->startup();
 
-    // Sets application menubar with File, Option and Help menu
     auto menu = Gio::Menu::create();
     auto submenu_file = Gio::Menu::create();
     submenu_file->append(cFileQuitLabel.data(), cFileQuitDetailedAction.data());
@@ -206,14 +200,9 @@ void EntryApplication::on_startup() {
     );
     menu->append_submenu(cHelpLabel.data(), submenu_help);
     set_menubar(menu);
-
-    // Maps signal/slots for application views and actions
     mapping();
-
-    // Sets AppHome as toplevel window, add to the application window
     add_window(m_home->getGtkWindow());
 
-    // Reactive model changes synchronization (Observer Pattern)
     m_controller->getModel().signal_changed().connect([this]() {
         SettingsSetup setup;
         setup.m_config = m_controller->getModel().clone();
@@ -223,7 +212,6 @@ void EntryApplication::on_startup() {
         m_home->updateUiData();
     });
 
-    // Initial data sync
     SettingsSetup setup;
     setup.m_config = m_controller->getModel().clone();
     m_settings->setSettingsSetup(setup);
@@ -237,10 +225,7 @@ void EntryApplication::on_startup() {
 void EntryApplication::on_activate() {
     std::cout << "Activate application..." << std::endl;
     Gtk::Application::on_activate();
-
-    // Sets visibility for AppHome window
     m_home->show();
-
     std::cout << "Activate application done." << std::endl;
 }
 
