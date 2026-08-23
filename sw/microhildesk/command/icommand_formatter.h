@@ -47,7 +47,6 @@ namespace Electux::App::Command {
         virtual std::string getCommandMaskChannels(
             const std::vector<Model::Channel::ChannelState> &states
         ) const = 0;
-
         virtual std::string getCommandStatus(size_t channelIdx) const = 0;
         virtual std::string getCommandStatusAllChannels() const = 0;
         virtual std::string getCommandReset() const = 0;

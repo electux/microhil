@@ -174,16 +174,16 @@ void AppController::handleChannelStateChanges(
             oldState.toggle != newState.toggle ||
             oldState.timer != newState.timer ||
             oldState.timerEnabled != newState.timerEnabled) {
-            // 1. Log change
+
             std::string logMsg = std::format(
                 "Channel {} state changed: enabled={}, mode={}, "
                 "toggle={}, timer={}, timerEnabled={}",
                 i, newState.enabled, newState.mode, newState.toggle,
                 newState.timer, newState.timerEnabled
             );
+
             m_logger->log(logMsg, Logger::LogLevel::Info);
 
-            // 2. Transmit via serial
             std::string oldCmd =
                 m_commandFormatter->getCommandState(i, oldState);
             std::string newCmd =
@@ -191,6 +191,7 @@ void AppController::handleChannelStateChanges(
 
             if (oldCmd != newCmd && !newCmd.empty()) {
                 std::vector<uint8_t> cmdBytes(newCmd.begin(), newCmd.end());
+
                 if (m_comChannel && m_comChannel->isOpen()) {
                     m_comChannel->write(cmdBytes);
                 }
@@ -205,6 +206,7 @@ bool AppController::hasSerialConfigChanged(
     for (int k = static_cast<int>(Model::ModelSerialKey::Device);
          k <= static_cast<int>(Model::ModelSerialKey::Flow); ++k) {
         auto key = oldConfig.toString(static_cast<Model::ModelSerialKey>(k));
+
         if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
             return true;
         }
@@ -218,6 +220,7 @@ bool AppController::hasLoggerConfigChanged(
     for (int k = static_cast<int>(Model::ModelLogKey::FilePath);
          k <= static_cast<int>(Model::ModelLogKey::LogLevel); ++k) {
         auto key = oldConfig.toString(static_cast<Model::ModelLogKey>(k));
+
         if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
             return true;
         }
@@ -231,6 +234,7 @@ bool AppController::hasGeneralConfigChanged(
     for (int k = static_cast<int>(Model::ModelGeneralKey::ComType);
          k <= static_cast<int>(Model::ModelGeneralKey::TcpPort); ++k) {
         auto key = oldConfig.toString(static_cast<Model::ModelGeneralKey>(k));
+
         if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
             return true;
         }
@@ -244,6 +248,7 @@ bool AppController::hasBleConfigChanged(
     for (int k = static_cast<int>(Model::ModelBleKey::Address);
          k <= static_cast<int>(Model::ModelBleKey::TxUuid); ++k) {
         auto key = oldConfig.toString(static_cast<Model::ModelBleKey>(k));
+
         if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
             return true;
         }
@@ -264,11 +269,14 @@ void AppController::readLoop() {
 
                 if (!buffer.empty()) {
                     std::string dataStr(buffer.begin(), buffer.end());
+
                     if (m_responseProcessor) {
                         auto payloads = m_responseProcessor->process(dataStr);
+
                         for (const auto &payload : payloads) {
                             m_signalDataReceived.emit(payload);
                         }
+
                     } else {
                         m_signalDataReceived.emit(dataStr);
                     }
