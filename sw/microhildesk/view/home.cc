@@ -20,6 +20,8 @@
 
 #include <model/model.h>
 #include <view/home.h>
+#include <gtkmm/cssprovider.h>
+#include <gtkmm/stylecontext.h>
 
 namespace {
     constexpr std::string_view cHomeTitle{"microhildesk"};
@@ -46,6 +48,10 @@ AppHome::AppHome() {
     m_textView.set_right_margin(10);
     m_textView.set_top_margin(10);
     m_textView.set_bottom_margin(10);
+
+    auto css_provider = Gtk::CssProvider::create();
+    css_provider->load_from_data("textview text { background-color: black; color: white; }");
+    m_textView.get_style_context()->add_provider(css_provider, GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     m_scrolled_window.set_child(m_textView);
     m_scrolled_window.set_vexpand(true);
@@ -134,10 +140,7 @@ void AppHome::onDataReceivedDispatcher() {
     while (!m_incomingDataQueue.empty()) {
         std::string data = m_incomingDataQueue.front();
         buffer->insert(buffer->end(), data);
-
-        if (data.find('>') != std::string::npos) {
-            buffer->insert(buffer->end(), "\n");
-        }
+        buffer->insert(buffer->end(), "\n");
 
         m_incomingDataQueue.pop();
     }

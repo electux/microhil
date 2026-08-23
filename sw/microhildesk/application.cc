@@ -29,6 +29,7 @@
 #include <com/ble/ble_com.h>
 #include <com/ble/ble_com_configurator.h>
 #include <command/command_formatter.h>
+#include <command/response_processor.h>
 #include <config/config_manager.h>
 #include <glibmm/miscutils.h>
 #include <glibmm/refptr.h>
@@ -114,10 +115,12 @@ EntryApplication::EntryApplication() : Gtk::Application(cApplicationId.data()) {
 
     auto logger = std::make_unique<Logger::Log>();
     auto commandFormatter = std::make_unique<Command::CommandFormatter>();
+    auto responseProcessor = std::make_unique<Command::ResponseProcessor>();
 
     m_controller = std::make_unique<AppController>(
         std::move(configManager), std::move(switchableCom),
-        std::move(configurator), std::move(logger), std::move(commandFormatter)
+        std::move(configurator), std::move(logger),
+        std::move(commandFormatter), std::move(responseProcessor)
     );
 
     m_home = std::make_unique<View::AppHome>();

@@ -37,4 +37,5 @@ SOURCES = \
 	../application.cc \
 	../app_controller.cc \
 	../command/command_formatter.cc \
+	../command/response_processor.cc \
 	../main.cc
