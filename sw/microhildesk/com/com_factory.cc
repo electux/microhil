@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// settings_setup.cc
+/// com_factory.cc
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -15,27 +15,37 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <model/imodel.h>
-#include <view/settings_setup.h>
+#include <com/com_factory.h>
+#include <com/serial/serial_com.h>
+#include <com/tcp/tcp_com.h>
+#include <com/ble/ble_com.h>
+#include <com/switchable_com.h>
 
-namespace Electux::App::Model {
-    SettingsSetup::SettingsSetup() : m_config(nullptr) {}
-
-    SettingsSetup::~SettingsSetup() = default;
-
-    SettingsSetup::SettingsSetup(const SettingsSetup &other)
-        : m_config(other.m_config ? other.m_config->clone() : nullptr) {}
-
-    SettingsSetup &SettingsSetup::operator=(const SettingsSetup &other) {
-        if (this != &other) {
-            m_config = other.m_config ? other.m_config->clone() : nullptr;
-        }
-        return *this;
+namespace Electux::App::Com {
+    std::unique_ptr<ICom> createSerialCom() {
+        return std::make_unique<SerialCom>();
     }
 
-    SettingsSetup::SettingsSetup(SettingsSetup &&) noexcept = default;
-    SettingsSetup &
-    SettingsSetup::operator=(SettingsSetup &&) noexcept = default;
-} // namespace Electux::App::Model
+    std::unique_ptr<ICom> createTcpCom() {
+        return std::make_unique<TcpCom>();
+    }
+
+    std::unique_ptr<ICom> createBleCom() {
+        return std::make_unique<BleCom>();
+    }
+
+    std::unique_ptr<ICom> createSwitchableCom(
+        std::unique_ptr<ICom> serialCom,
+        std::unique_ptr<ICom> tcpCom,
+        std::unique_ptr<ICom> bleCom
+    ) {
+        return std::make_unique<SwitchableCom>(
+            std::move(serialCom),
+            std::move(tcpCom),
+            std::move(bleCom)
+        );
+    }
+} // namespace Electux::App::Com

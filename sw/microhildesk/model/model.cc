@@ -15,220 +15,75 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <algorithm>
-#include <initializer_list>
 #include <model/model.h>
-#include <sstream>
 #include <vector>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @namespace Electux::App::Model
-/// @brief Namespace for application data models and entities
 namespace Electux::App::Model {
-    namespace {
-        std::vector<std::string> split_to_vector(const std::string_view &input
-        ) {
-            std::vector<std::string> elements;
-            std::stringstream ss{std::string(input)};
-            std::string item;
-            while (ss >> item) {
-                elements.push_back(item);
-            }
-            return elements;
-        }
-
-        std::string extract_param_value_by_index(
-            const std::string_view &input, size_t index
-        ) {
-            auto elements = split_to_vector(input);
-            if (index < elements.size()) {
-                return elements[index];
-            }
-            return "";
-        }
-
-        std::string update_param_value_by_index(
-            const std::string_view &input, size_t index,
-            const std::string_view &newValue
-        ) {
-            auto elements = split_to_vector(input);
-            if (elements.size() <
-                static_cast<size_t>(Electux::App::Model::Channel::cNumOfChannels
-                )) {
-                std::string defaultValue =
-                    elements.empty() ? std::string(newValue) : elements.back();
-                elements.resize(
-                    static_cast<size_t>(
-                        Electux::App::Model::Channel::cNumOfChannels
-                    ),
-                    defaultValue
-                );
-            }
-            if (index < elements.size()) {
-                elements[index] = std::string(newValue);
-            }
-            std::string result;
-            for (size_t i = 0; i < elements.size(); ++i) {
-                result += elements[i] + (i < elements.size() - 1 ? " " : "");
-            }
-            return result;
-        }
-    } // namespace
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// @brief Fallback string for getEntity method when key is not found
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
     constexpr std::string_view cFallback{""};
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// @name Internal Control Key Constants
-    /// @{
-    constexpr std::string_view cEnable{"enable"}; ///< String key for enable
-    constexpr std::string_view cMode{"mode"};     ///< String key for mode
-    constexpr std::string_view cToggle{"toggle"}; ///< String key for toggle
-    constexpr std::string_view cTimer{"timer"};   ///< String key for timer
-    constexpr std::string_view cTimerEnable{"timerEnable"
-    }; ///< String key for timer enable
-    constexpr std::string_view cPulseTime{"pulseTime"};
-    constexpr std::string_view cPulseTriggered{"pulseTriggered"};
-    constexpr std::string_view cBlinkOn{"blinkOn"};
-    constexpr std::string_view cBlinkOff{"blinkOff"};
-    constexpr std::string_view cBlinkCount{"blinkCount"};
-    constexpr std::string_view cBlinkEnabled{"blinkEnabled"};
-    /// @}
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// @name Internal Serial Key Constants
-    /// @{
-    constexpr std::string_view cDevice{"device"}; ///< String key for device
-    constexpr std::string_view cBaud{"baud"};     ///< String key for baud rate
-    constexpr std::string_view cData{"data"};     ///< String key for data bits
-    constexpr std::string_view cParity{"parity"}; ///< String key for parity
-    constexpr std::string_view cStop{"stop"};     ///< String key for stop bits
-    constexpr std::string_view cFlow{"flow"}; ///< String key for flow control
-    /// @}
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// @name Internal Log Key Constants
-    /// @{
-    constexpr std::string_view cLogLevel{"log_level"
-    }; ///< String key for log level
-    constexpr std::string_view cFilePath{"log_file_path"
-    }; ///< String key for file path
-    /// @}
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// @name Internal General Key Constants
-    /// @{
-    constexpr std::string_view cComType{"com_type"
-    }; ///< String key for connection type
-    constexpr std::string_view cTcpIp{"tcp_ip"
-    }; ///< String key for TCP IP Address
-    constexpr std::string_view cTcpPort{"tcp_port"
-    }; ///< String key for TCP Port
-    /// @}
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// @name Internal BLE Key Constants
-    /// @{
-    constexpr std::string_view cBleAddress{"ble_address"};        ///< String key for BLE device address/name
-    constexpr std::string_view cBleServiceUuid{"ble_service_uuid"}; ///< String key for BLE service UUID
-    constexpr std::string_view cBleRxUuid{"ble_rx_uuid"};          ///< String key for BLE RX characteristic UUID
-    constexpr std::string_view cBleTxUuid{"ble_tx_uuid"};          ///< String key for BLE TX characteristic UUID
-    /// @}
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// @name Internal Key Constants
-    /// @{
-    constexpr std::string_view cUnknown{"unknown"
-    }; ///< Fallback for unknown keys
-       /// @}
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace Electux::App::Model
 
 using namespace Electux::App::Model;
-using Electux::App::Model::Channel::ChannelMode;
-using Electux::App::Model::Channel::toConfigString;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Adds an entity to the model.
-/// @param key Represents the model entity key to be added.
-/// @param data Represents the model entity data to be added.
-/// @return true if the entity was successfully added, false if it already
-/// exists.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+Model::Model(
+    std::unique_ptr<IControlModelDelegate> controlDelegate,
+    std::unique_ptr<ISerialModelDelegate> serialDelegate,
+    std::unique_ptr<IGeneralModelDelegate> generalDelegate,
+    std::unique_ptr<IBleModelDelegate> bleDelegate,
+    std::unique_ptr<ILogModelDelegate> logDelegate
+) noexcept
+    : m_controlDelegate(std::move(controlDelegate)),
+      m_serialDelegate(std::move(serialDelegate)),
+      m_generalDelegate(std::move(generalDelegate)),
+      m_bleDelegate(std::move(bleDelegate)),
+      m_logDelegate(std::move(logDelegate)) {}
+
+Model::Model(const Model &other)
+    : m_entities(other.m_entities),
+      m_controlDelegate(other.m_controlDelegate ? other.m_controlDelegate->clone() : nullptr),
+      m_serialDelegate(other.m_serialDelegate ? other.m_serialDelegate->clone() : nullptr),
+      m_generalDelegate(other.m_generalDelegate ? other.m_generalDelegate->clone() : nullptr),
+      m_bleDelegate(other.m_bleDelegate ? other.m_bleDelegate->clone() : nullptr),
+      m_logDelegate(other.m_logDelegate ? other.m_logDelegate->clone() : nullptr) {}
+
 bool Model::add(const std::string_view &key, const std::string_view &data) {
     if (m_entities.find(key) != m_entities.end()) {
         return false;
     }
-
     auto [it, inserted] =
         m_entities.emplace(std::string(key), std::string(data));
-
     return inserted;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Validates if a string key is a valid control configuration key.
-/// @param key Represents the string key to be validated.
-/// @return true if the key matches one of the internal constants, else false.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool Model::validateKey(const std::string_view &key) const {
-    static const std::initializer_list<std::string_view> validKeys = {
-        cEnable,   cMode,    cToggle, cTimer,  cTimerEnable,
-        cPulseTime, cPulseTriggered, cBlinkOn, cBlinkOff, cBlinkCount, cBlinkEnabled,
-        cLogLevel, cFilePath, cDevice,  cBaud,   cData,   cParity,      cStop,
-        cFlow,     cComType, cTcpIp,  cTcpPort, cBleAddress,  cBleServiceUuid,
-        cBleRxUuid, cBleTxUuid
-    };
-
-    return std::any_of(validKeys.begin(), validKeys.end(), [&](auto k) {
-        return k == key;
-    });
+    return (m_controlDelegate && m_controlDelegate->validateKey(key)) ||
+           (m_serialDelegate && m_serialDelegate->validateKey(key)) ||
+           (m_generalDelegate && m_generalDelegate->validateKey(key)) ||
+           (m_bleDelegate && m_bleDelegate->validateKey(key)) ||
+           (m_logDelegate && m_logDelegate->validateKey(key));
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Gets an entity value by its key.
-/// @param key Represents the model entity key.
-/// @return Reference to the string entity selected by key, or fallback if not
-/// found.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 const std::string &Model::getEntity(const std::string_view &key) const {
     auto it = m_entities.find(key);
     if (it != m_entities.end()) {
         return it->second;
     }
-
     static const std::string fallback{cFallback.data(), cFallback.size()};
     return fallback;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Gets all model entities.
-/// @return Constant reference to the internal map of entities.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 const Entities &Model::get() const { return m_entities; }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Gets a copy of all control model entries.
-///
-/// Iterates through all defined ModelControlKey values and retrieves their
-/// current string data from the underlying map.
-/// @return A map containing all control configuration entries {key: data}.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 Entities Model::getAllEntries() const {
     Entities entries;
 
-    auto fill = [&](auto &&keys) {
+    auto fill = [&](auto &&keys, const auto &delegate) {
+        if (!delegate) return;
         for (const auto &key : keys) {
-            std::string keyStr{toString(key)};
+            std::string keyStr{delegate->toString(key)};
             entries.emplace(std::move(keyStr), getEntity(keyStr));
         }
     };
@@ -251,8 +106,7 @@ Entities Model::getAllEntries() const {
     };
 
     static const std::vector<ModelGeneralKey> generalKeys = {
-        ModelGeneralKey::ComType, ModelGeneralKey::TcpIp,
-        ModelGeneralKey::TcpPort
+        ModelGeneralKey::ComType, ModelGeneralKey::TcpIp, ModelGeneralKey::TcpPort
     };
 
     static const std::vector<ModelBleKey> bleKeys = {
@@ -260,21 +114,15 @@ Entities Model::getAllEntries() const {
         ModelBleKey::RxUuid, ModelBleKey::TxUuid
     };
 
-    fill(controlKeys);
-    fill(logKeys);
-    fill(serialKeys);
-    fill(generalKeys);
-    fill(bleKeys);
+    fill(controlKeys, m_controlDelegate);
+    fill(logKeys, m_logDelegate);
+    fill(serialKeys, m_serialDelegate);
+    fill(generalKeys, m_generalDelegate);
+    fill(bleKeys, m_bleDelegate);
 
     return entries;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Updates an entity value by its key.
-/// @param key Represents the model entity key.
-/// @param data Represents the new value for the entity.
-/// @return true if the entity was updated, false if the key does not exist.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool Model::update(const std::string_view &key, const std::string_view &data) {
     auto it = m_entities.find(key);
     if (it != m_entities.end()) {
@@ -284,264 +132,36 @@ bool Model::update(const std::string_view &key, const std::string_view &data) {
     return false;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Clears all entities from the internal storage.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Model::clear() { m_entities.clear(); }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Converts a ModelControlKey enum value to its string representation.
-/// @param key Represents the ModelControlKey enum value.
-/// @return A string_view containing the constant key name.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 std::string_view Model::toString(const ModelControlKey key) const {
-    switch (key) {
-    case ModelControlKey::Enable:
-        return cEnable;
-    case ModelControlKey::Mode:
-        return cMode;
-    case ModelControlKey::Toggle:
-        return cToggle;
-    case ModelControlKey::Timer:
-        return cTimer;
-    case ModelControlKey::TimerEnable:
-        return cTimerEnable;
-    case ModelControlKey::PulseTime:
-        return cPulseTime;
-    case ModelControlKey::PulseTriggered:
-        return cPulseTriggered;
-    case ModelControlKey::BlinkOn:
-        return cBlinkOn;
-    case ModelControlKey::BlinkOff:
-        return cBlinkOff;
-    case ModelControlKey::BlinkCount:
-        return cBlinkCount;
-    case ModelControlKey::BlinkEnabled:
-        return cBlinkEnabled;
-    default:
-        return cUnknown;
-    }
+    return m_controlDelegate ? m_controlDelegate->toString(key) : "";
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Converts a ModelLogKey enum value to its string representation.
-/// @param key Represents the ModelLogKey enum value.
-/// @return A string_view containing the constant key name.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 std::string_view Model::toString(const ModelLogKey key) const {
-    switch (key) {
-    case ModelLogKey::LogLevel:
-        return cLogLevel;
-    case ModelLogKey::FilePath:
-        return cFilePath;
-    default:
-        return cUnknown;
-    }
+    return m_logDelegate ? m_logDelegate->toString(key) : "";
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Converts a ModelSerialKey enum value to its string representation.
-/// @param key Represents the ModelSerialKey enum value.
-/// @return A string_view containing the constant key name.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 std::string_view Model::toString(const ModelSerialKey key) const {
-    switch (key) {
-    case ModelSerialKey::Device:
-        return cDevice;
-    case ModelSerialKey::Baud:
-        return cBaud;
-    case ModelSerialKey::Data:
-        return cData;
-    case ModelSerialKey::Parity:
-        return cParity;
-    case ModelSerialKey::Stop:
-        return cStop;
-    case ModelSerialKey::Flow:
-        return cFlow;
-    default:
-        return cUnknown;
-    }
+    return m_serialDelegate ? m_serialDelegate->toString(key) : "";
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Converts a ModelGeneralKey enum value to its string representation.
-/// @param key Represents the ModelGeneralKey enum value.
-/// @return A string_view containing the constant key name.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 std::string_view Model::toString(const ModelGeneralKey key) const {
-    switch (key) {
-    case ModelGeneralKey::ComType:
-        return cComType;
-    case ModelGeneralKey::TcpIp:
-        return cTcpIp;
-    case ModelGeneralKey::TcpPort:
-        return cTcpPort;
-    default:
-        return cUnknown;
-    }
+    return m_generalDelegate ? m_generalDelegate->toString(key) : "";
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Converts a ModelBleKey enum value to its string representation.
-/// @param key Represents the ModelBleKey enum value.
-/// @return A string_view containing the constant key name.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 std::string_view Model::toString(const ModelBleKey key) const {
-    switch (key) {
-    case ModelBleKey::Address:
-        return cBleAddress;
-    case ModelBleKey::ServiceUuid:
-        return cBleServiceUuid;
-    case ModelBleKey::RxUuid:
-        return cBleRxUuid;
-    case ModelBleKey::TxUuid:
-        return cBleTxUuid;
-    default:
-        return cUnknown;
-    }
+    return m_bleDelegate ? m_bleDelegate->toString(key) : "";
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Gets the state of a specific channel.
-/// @param index The index of the channel.
-/// @return The ChannelState representation of the channel status.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 ChannelState Model::getChannelState(size_t index) const {
-    ChannelState state;
-
-    auto enableKey = toString(ModelControlKey::Enable);
-    state.enabled =
-        (extract_param_value_by_index(getEntity(enableKey), index) == "true");
-
-    auto modeKey = toString(ModelControlKey::Mode);
-    auto modeStr = extract_param_value_by_index(getEntity(modeKey), index);
-    if (modeStr.empty()) {
-        state.mode = ChannelMode::Unknown;
-    } else if (modeStr == "0" || modeStr == "toggle") {
-        state.mode = ChannelMode::Toggle;
-    } else if (modeStr == "1" || modeStr == "timer") {
-        state.mode = ChannelMode::Timer;
-    } else if (modeStr == "2" || modeStr == "pulse") {
-        state.mode = ChannelMode::Pulse;
-    } else if (modeStr == "3" || modeStr == "blink") {
-        state.mode = ChannelMode::Blink;
-    } else {
-        state.mode = ChannelMode::Unknown;
-    }
-
-    auto toggleKey = toString(ModelControlKey::Toggle);
-    state.toggle =
-        (extract_param_value_by_index(getEntity(toggleKey), index) == "true");
-
-    auto timerKey = toString(ModelControlKey::Timer);
-    auto timerStr = extract_param_value_by_index(getEntity(timerKey), index);
-    state.timer = timerStr.empty() ? 0 : std::stoi(timerStr);
-
-    auto timerEnableKey = toString(ModelControlKey::TimerEnable);
-    state.timerEnabled =
-        (extract_param_value_by_index(getEntity(timerEnableKey), index) ==
-         "true");
-
-    auto pulseTimeKey = toString(ModelControlKey::PulseTime);
-    auto pulseTimeStr = extract_param_value_by_index(getEntity(pulseTimeKey), index);
-    state.pulseTime = pulseTimeStr.empty() ? 0 : std::stoi(pulseTimeStr);
-
-    auto pulseTriggeredKey = toString(ModelControlKey::PulseTriggered);
-    state.pulseTriggered =
-        (extract_param_value_by_index(getEntity(pulseTriggeredKey), index) ==
-         "true");
-
-    auto blinkOnKey = toString(ModelControlKey::BlinkOn);
-    auto blinkOnStr = extract_param_value_by_index(getEntity(blinkOnKey), index);
-    state.blinkOnTime = blinkOnStr.empty() ? 0 : std::stoi(blinkOnStr);
-
-    auto blinkOffKey = toString(ModelControlKey::BlinkOff);
-    auto blinkOffStr = extract_param_value_by_index(getEntity(blinkOffKey), index);
-    state.blinkOffTime = blinkOffStr.empty() ? 0 : std::stoi(blinkOffStr);
-
-    auto blinkCountKey = toString(ModelControlKey::BlinkCount);
-    auto blinkCountStr = extract_param_value_by_index(getEntity(blinkCountKey), index);
-    state.blinkCount = blinkCountStr.empty() ? 0 : std::stoi(blinkCountStr);
-
-    auto blinkEnabledKey = toString(ModelControlKey::BlinkEnabled);
-    state.blinkEnabled =
-        (extract_param_value_by_index(getEntity(blinkEnabledKey), index) ==
-         "true");
-
-    return state;
+    return m_controlDelegate ? m_controlDelegate->getChannelState(m_entities, index) : ChannelState{};
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Sets the state of a specific channel.
-/// @param index The index of the channel.
-/// @param state The new ChannelState value.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Model::setChannelState(size_t index, const ChannelState &state) {
-    auto enableKey = toString(ModelControlKey::Enable);
-    auto enableVal = update_param_value_by_index(
-        getEntity(enableKey), index, state.enabled ? "true" : "false"
-    );
-    update(enableKey, enableVal);
-
-    auto modeKey = toString(ModelControlKey::Mode);
-    auto modeVal = update_param_value_by_index(
-        getEntity(modeKey), index, toConfigString(state.mode)
-    );
-    update(modeKey, modeVal);
-
-    auto toggleKey = toString(ModelControlKey::Toggle);
-    auto toggleVal = update_param_value_by_index(
-        getEntity(toggleKey), index, state.toggle ? "true" : "false"
-    );
-    update(toggleKey, toggleVal);
-
-    auto timerKey = toString(ModelControlKey::Timer);
-    auto timerVal = update_param_value_by_index(
-        getEntity(timerKey), index, std::to_string(state.timer)
-    );
-    update(timerKey, timerVal);
-
-    auto timerEnableKey = toString(ModelControlKey::TimerEnable);
-    auto timerEnableVal = update_param_value_by_index(
-        getEntity(timerEnableKey), index, state.timerEnabled ? "true" : "false"
-    );
-    update(timerEnableKey, timerEnableVal);
-
-    auto pulseTimeKey = toString(ModelControlKey::PulseTime);
-    auto pulseTimeVal = update_param_value_by_index(
-        getEntity(pulseTimeKey), index, std::to_string(state.pulseTime)
-    );
-    update(pulseTimeKey, pulseTimeVal);
-
-    auto pulseTriggeredKey = toString(ModelControlKey::PulseTriggered);
-    auto pulseTriggeredVal = update_param_value_by_index(
-        getEntity(pulseTriggeredKey), index, state.pulseTriggered ? "true" : "false"
-    );
-    update(pulseTriggeredKey, pulseTriggeredVal);
-
-    auto blinkOnKey = toString(ModelControlKey::BlinkOn);
-    auto blinkOnVal = update_param_value_by_index(
-        getEntity(blinkOnKey), index, std::to_string(state.blinkOnTime)
-    );
-    update(blinkOnKey, blinkOnVal);
-
-    auto blinkOffKey = toString(ModelControlKey::BlinkOff);
-    auto blinkOffVal = update_param_value_by_index(
-        getEntity(blinkOffKey), index, std::to_string(state.blinkOffTime)
-    );
-    update(blinkOffKey, blinkOffVal);
-
-    auto blinkCountKey = toString(ModelControlKey::BlinkCount);
-    auto blinkCountVal = update_param_value_by_index(
-        getEntity(blinkCountKey), index, std::to_string(state.blinkCount)
-    );
-    update(blinkCountKey, blinkCountVal);
-
-    auto blinkEnabledKey = toString(ModelControlKey::BlinkEnabled);
-    auto blinkEnabledVal = update_param_value_by_index(
-        getEntity(blinkEnabledKey), index, state.blinkEnabled ? "true" : "false"
-    );
-    update(blinkEnabledKey, blinkEnabledVal);
+    if (m_controlDelegate) {
+        m_controlDelegate->setChannelState(m_entities, index, state);
+    }
 }
 
 sigc::signal<void()> Model::signal_changed() const { return m_signalChanged; }

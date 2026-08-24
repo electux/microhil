@@ -23,7 +23,7 @@
 #include <glibmm/miscutils.h>
 #include <iostream>
 #include <memory>
-#include <model/model.h>
+#include <model/model_factory.h>
 #include <sstream>
 
 namespace {
@@ -48,7 +48,7 @@ using namespace Electux::App::Model;
 /// @param configFileName The path/name of the configuration file.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ConfigManager::ConfigManager(const std::string &configFileName)
-    : m_config(std::make_unique<Electux::App::Model::Model>()) {
+    : m_config(Electux::App::Model::createDefault()) {
     m_fileName =
         configFileName.empty()
             ? Glib::build_filename(Glib::get_home_dir(), cConfigFile.data())

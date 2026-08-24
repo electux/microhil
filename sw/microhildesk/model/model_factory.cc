@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// settings_setup.cc
+/// model_factory.cc
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -15,27 +15,25 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <model/imodel.h>
-#include <view/settings_setup.h>
+#include <model/model_factory.h>
+#include <model/model.h>
+#include <model/delegate/control/control_model_delegate.h>
+#include <model/delegate/serial/serial_model_delegate.h>
+#include <model/delegate/general/general_model_delegate.h>
+#include <model/delegate/ble/ble_model_delegate.h>
+#include <model/delegate/log/log_model_delegate.h>
 
 namespace Electux::App::Model {
-    SettingsSetup::SettingsSetup() : m_config(nullptr) {}
-
-    SettingsSetup::~SettingsSetup() = default;
-
-    SettingsSetup::SettingsSetup(const SettingsSetup &other)
-        : m_config(other.m_config ? other.m_config->clone() : nullptr) {}
-
-    SettingsSetup &SettingsSetup::operator=(const SettingsSetup &other) {
-        if (this != &other) {
-            m_config = other.m_config ? other.m_config->clone() : nullptr;
-        }
-        return *this;
+    std::unique_ptr<IModel> createDefault() {
+        return std::make_unique<Model>(
+            std::make_unique<ControlModelDelegate>(),
+            std::make_unique<SerialModelDelegate>(),
+            std::make_unique<GeneralModelDelegate>(),
+            std::make_unique<BleModelDelegate>(),
+            std::make_unique<LogModelDelegate>()
+        );
     }
-
-    SettingsSetup::SettingsSetup(SettingsSetup &&) noexcept = default;
-    SettingsSetup &
-    SettingsSetup::operator=(SettingsSetup &&) noexcept = default;
 } // namespace Electux::App::Model

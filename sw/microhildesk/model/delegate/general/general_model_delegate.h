@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// settings_setup.cc
+/// general_model_delegate.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -15,27 +15,28 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma once
 
 #include <model/imodel.h>
-#include <view/settings_setup.h>
+#include <model/delegate/general/igeneral_model_delegate.h>
+#include <memory>
+#include <string_view>
 
 namespace Electux::App::Model {
-    SettingsSetup::SettingsSetup() : m_config(nullptr) {}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class GeneralModelDelegate
+    /// @brief Handles general communication configuration keys and validation.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class GeneralModelDelegate : public IGeneralModelDelegate {
+      public:
+        GeneralModelDelegate() = default;
+        ~GeneralModelDelegate() override = default;
 
-    SettingsSetup::~SettingsSetup() = default;
+        std::string_view toString(ModelGeneralKey key) const override;
+        bool validateKey(const std::string_view &key) const override;
 
-    SettingsSetup::SettingsSetup(const SettingsSetup &other)
-        : m_config(other.m_config ? other.m_config->clone() : nullptr) {}
-
-    SettingsSetup &SettingsSetup::operator=(const SettingsSetup &other) {
-        if (this != &other) {
-            m_config = other.m_config ? other.m_config->clone() : nullptr;
-        }
-        return *this;
-    }
-
-    SettingsSetup::SettingsSetup(SettingsSetup &&) noexcept = default;
-    SettingsSetup &
-    SettingsSetup::operator=(SettingsSetup &&) noexcept = default;
+        std::unique_ptr<IGeneralModelDelegate> clone() const override;
+    };
 } // namespace Electux::App::Model

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// settings_setup.cc
+/// iserial_model_delegate.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -15,27 +15,26 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma once
 
 #include <model/imodel.h>
-#include <view/settings_setup.h>
+#include <memory>
+#include <string_view>
 
 namespace Electux::App::Model {
-    SettingsSetup::SettingsSetup() : m_config(nullptr) {}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class ISerialModelDelegate
+    /// @brief Interface for serial settings delegates.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class ISerialModelDelegate {
+      public:
+        virtual ~ISerialModelDelegate() = default;
 
-    SettingsSetup::~SettingsSetup() = default;
+        virtual std::string_view toString(ModelSerialKey key) const = 0;
+        virtual bool validateKey(const std::string_view &key) const = 0;
 
-    SettingsSetup::SettingsSetup(const SettingsSetup &other)
-        : m_config(other.m_config ? other.m_config->clone() : nullptr) {}
-
-    SettingsSetup &SettingsSetup::operator=(const SettingsSetup &other) {
-        if (this != &other) {
-            m_config = other.m_config ? other.m_config->clone() : nullptr;
-        }
-        return *this;
-    }
-
-    SettingsSetup::SettingsSetup(SettingsSetup &&) noexcept = default;
-    SettingsSetup &
-    SettingsSetup::operator=(SettingsSetup &&) noexcept = default;
+        virtual std::unique_ptr<ISerialModelDelegate> clone() const = 0;
+    };
 } // namespace Electux::App::Model

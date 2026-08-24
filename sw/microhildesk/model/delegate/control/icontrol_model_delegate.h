@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// settings_setup.cc
+/// icontrol_model_delegate.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -15,27 +15,29 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma once
 
 #include <model/imodel.h>
-#include <view/settings_setup.h>
+#include <memory>
+#include <string_view>
 
 namespace Electux::App::Model {
-    SettingsSetup::SettingsSetup() : m_config(nullptr) {}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @class IControlModelDelegate
+    /// @brief Interface for control and channel settings delegates.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    class IControlModelDelegate {
+      public:
+        virtual ~IControlModelDelegate() = default;
 
-    SettingsSetup::~SettingsSetup() = default;
+        virtual std::string_view toString(ModelControlKey key) const = 0;
+        virtual bool validateKey(const std::string_view &key) const = 0;
 
-    SettingsSetup::SettingsSetup(const SettingsSetup &other)
-        : m_config(other.m_config ? other.m_config->clone() : nullptr) {}
+        virtual ChannelState getChannelState(const Entities &entities, size_t index) const = 0;
+        virtual void setChannelState(Entities &entities, size_t index, const ChannelState &state) const = 0;
 
-    SettingsSetup &SettingsSetup::operator=(const SettingsSetup &other) {
-        if (this != &other) {
-            m_config = other.m_config ? other.m_config->clone() : nullptr;
-        }
-        return *this;
-    }
-
-    SettingsSetup::SettingsSetup(SettingsSetup &&) noexcept = default;
-    SettingsSetup &
-    SettingsSetup::operator=(SettingsSetup &&) noexcept = default;
+        virtual std::unique_ptr<IControlModelDelegate> clone() const = 0;
+    };
 } // namespace Electux::App::Model

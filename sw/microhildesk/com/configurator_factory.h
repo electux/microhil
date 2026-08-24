@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// settings_setup.cc
+/// configurator_factory.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -15,27 +15,22 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma once
 
-#include <model/imodel.h>
-#include <view/settings_setup.h>
+#include <com/icom.h>
+#include <com/icom_configurator.h>
+#include <memory>
 
-namespace Electux::App::Model {
-    SettingsSetup::SettingsSetup() : m_config(nullptr) {}
-
-    SettingsSetup::~SettingsSetup() = default;
-
-    SettingsSetup::SettingsSetup(const SettingsSetup &other)
-        : m_config(other.m_config ? other.m_config->clone() : nullptr) {}
-
-    SettingsSetup &SettingsSetup::operator=(const SettingsSetup &other) {
-        if (this != &other) {
-            m_config = other.m_config ? other.m_config->clone() : nullptr;
-        }
-        return *this;
-    }
-
-    SettingsSetup::SettingsSetup(SettingsSetup &&) noexcept = default;
-    SettingsSetup &
-    SettingsSetup::operator=(SettingsSetup &&) noexcept = default;
-} // namespace Electux::App::Model
+namespace Electux::App::Com {
+    std::unique_ptr<IComConfigurator> createSerialConfigurator(ICom* com);
+    std::unique_ptr<IComConfigurator> createTcpConfigurator(ICom* com);
+    std::unique_ptr<IComConfigurator> createBleConfigurator(ICom* com);
+    std::unique_ptr<IComConfigurator> createSwitchableConfigurator(
+        ICom* com,
+        std::unique_ptr<IComConfigurator> serialConfigurator,
+        std::unique_ptr<IComConfigurator> tcpConfigurator,
+        std::unique_ptr<IComConfigurator> bleConfigurator
+    );
+} // namespace Electux::App::Com
