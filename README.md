@@ -49,9 +49,18 @@ other information that should be provided before the tool is installed.
 #### SW Firmware Application
 
 **microhil-base**
-```
-TODO
-```
+
+A C-based firmware designed for the microHIL hardware controller (Raspberry Pi Pico). It acts as the direct hardware interface layer, managing physical relays, status LEDs, and buzzer alerts by parsing and executing command protocols received over standard serial interfaces.
+
+*   **Supported Operations:**
+    *   **Channel Toggle:** Control individual relays (channels 1-8) by turning them ON or OFF.
+    *   **Timer Mode:** Keep a channel active for a specified duration in seconds.
+    *   **Pulse Mode:** Trigger a brief pulse on a channel for a duration specified in milliseconds.
+    *   **Blink Mode:** Configure blinking loops with custom ON/OFF durations and a loop count.
+    *   **Channel Masking:** Apply an 8-bit binary mask (e.g., `10101010`) to update all 8 channel states at once.
+    *   **Status Monitoring:** Query the current state of a single channel or all channels.
+    *   **System Reset:** Trigger a watchdog-based hardware reboot.
+    *   **Diagnostics:** Query system board identity and firmware version info.
 
 **microhil-nuttx**
 ```
@@ -66,9 +75,14 @@ TODO
 #### SW Desktop Application
 
 **microhildesk**
-```
-TODO
-```
+
+A desktop GUI application built in C++ using `gtkmm`. It acts as the primary orchestration and control panel, allowing users to interact with and manage microHIL hardware controllers visually.
+
+*   **Supported Operations:**
+    *   **Multi-Interface Connectivity:** Switch and communicate seamlessly over Serial, TCP (Socket), and BLE (Bluetooth Low Energy) interfaces.
+    *   **Visual Control Dashboard:** Visually toggle channel states, apply 8-bit channel masks, and monitor live statuses.
+    *   **Advanced Control Configuration:** Configure and execute timer, pulse, and blinking tasks on hardware channels through the GUI.
+    *   **Diagnostics & System Control:** Read connected board IDs/versions and trigger remote watchdog system resets.
 
 ### Installation
 
