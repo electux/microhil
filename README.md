@@ -38,7 +38,7 @@ other information that should be provided before the tool is installed.
 
 #### SW Firmware checks
 
-[![microhil_base C checker](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml) [![microhil_nuttx C checker](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml) [![microhil_upy C checker](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml)
+[![microhil_base C checker](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml) [![microhil_nuttx C checker](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml) [![microhil_upy Python checker](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml)
 
 #### SW Desktop checks
 
@@ -68,9 +68,15 @@ TODO
 ```
 
 **microhil-upy**
-```
-TODO
-```
+
+A MicroPython-based firmware designed for the microHIL hardware controller (Raspberry Pi Pico). It implements a non-blocking execution loop that manages channel states, timer-based activities, status LEDs, and buzzer beeps by processing command strings in a structured `<mh#...#end>` format received over serial connections.
+
+*   **Supported Operations:**
+    *   **Channel Control:** Toggle channel state ON/OFF or apply an 8-bit channel mask.
+    *   **Timer & Pulse Mode:** Activate a channel for a duration in seconds or trigger a millisecond-precision pulse.
+    *   **Blink Mode:** Trigger repeating ON/OFF blinking cycles with a specific loop count.
+    *   **System Status & Reset:** Monitor channel statuses and trigger remote system watchdog resets.
+    *   **Diagnostics:** Query device version and identification details.
 
 #### SW Desktop Application
 
@@ -103,8 +109,20 @@ TODO
 ```
 
 To install **microhil-upy** type the following
-```
-TODO
+
+```bash
+# Clone the repository
+git clone https://github.com/electux/microhil.git
+cd microhil/sw/microhil_upy
+
+# Setup virtual environment and generate typings for development
+make env
+
+# Compile python source files to .mpy binaries
+make
+
+# Deploy to Raspberry Pi Pico (using mpremote or standard tool)
+mpremote fs cp -r apps/microhil :
 ```
 
 #### SW Desktop Application installation
@@ -129,9 +147,12 @@ TODO
 ```
 
 **microhil-upy** requires next modules and libraries
-```
-TODO
-```
+
+*   **Runtime:**
+    *   MicroPython firmware (v1.20+) on Raspberry Pi Pico (RP2/RP2040)
+*   **Development / Environment Setup:**
+    *   `micropython-rp2-stubs` (for static analysis/autocomplete typings)
+    *   `micropython-stdlib-stubs` (for standard library autocomplete typings)
 
 #### SW Desktop Application dependencies
 
