@@ -30,14 +30,14 @@ std::string CommandFormatter::getCommandState(
         return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
     }
 
-    if (state.mode == 0) // Toggle Mode
+    if (state.mode == Model::Channel::ChannelMode::Toggle) // Toggle Mode
     {
         return std::format(
             "<mh#ch#{}#{}#end>", channelIdx + 1, state.toggle ? "on" : "off"
         );
     }
 
-    if (state.mode == 1) // Timer Mode
+    if (state.mode == Model::Channel::ChannelMode::Timer) // Timer Mode
     {
         if (state.timerEnabled) {
             return std::format(

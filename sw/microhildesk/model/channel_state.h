@@ -19,6 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <model/channel_types.h>
 #include <string_view>
 #include <sys/types.h>
 
@@ -45,14 +46,16 @@ namespace Electux::App::Model::Channel {
 
     struct ChannelState {
         bool enabled{false};
-        int mode{-1};
+        ChannelMode mode{ChannelMode::Unknown};
         bool toggle{false};
         int timer{0};
         bool timerEnabled{false};
         int pulseTime{0};
+        bool pulseTriggered{false};
         int blinkOnTime{0};
         int blinkOffTime{0};
         int blinkCount{0};
+        bool blinkEnabled{false};
     };
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////

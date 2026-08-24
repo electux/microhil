@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// channel_widget.h
+/// mode_page_blink.h
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -19,62 +19,52 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <gtkmm/frame.h>
 #include <gtkmm/box.h>
-#include <gtkmm/checkbutton.h>
-#include <gtkmm/comboboxtext.h>
-#include <gtkmm/stack.h>
+#include <gtkmm/label.h>
+#include <gtkmm/spinbutton.h>
+#include <gtkmm/togglebutton.h>
+#include <gtkmm/progressbar.h>
 #include <model/channel_state.h>
 #include <sigc++/sigc++.h>
-#include <view/mode_page_toggle.h>
-#include <view/mode_page_timer.h>
-#include <view/mode_page_pulse.h>
-#include <view/mode_page_blink.h>
 
 namespace Electux::App::View {
     using ChannelState = Electux::App::Model::Channel::ChannelState;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// @class ChannelWidget
-    /// @brief A self-contained UI component managing a single communication channel's controls.
-    ///
-    /// This widget encapsulates all UI elements for a single channel, leveraging Gtk::Stack
-    /// to switch between mode-specific control panels dynamically.
+    /// @class BlinkModePage
+    /// @brief ModePage implementation for Blink Mode, inheriting from Gtk::Box.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    class ChannelWidget : public Gtk::Frame {
+    class BlinkModePage : public Gtk::Box {
       public:
-        explicit ChannelWidget(size_t index);
-        virtual ~ChannelWidget() override = default;
+        explicit BlinkModePage(size_t index);
+        virtual ~BlinkModePage() override = default;
 
-        ChannelWidget(const ChannelWidget &) = delete;
-        ChannelWidget &operator=(const ChannelWidget &) = delete;
-        ChannelWidget(ChannelWidget &&) = delete;
-        ChannelWidget &operator=(ChannelWidget &&) = delete;
+        BlinkModePage(const BlinkModePage &) = delete;
+        BlinkModePage &operator=(const BlinkModePage &) = delete;
+        BlinkModePage(BlinkModePage &&) = delete;
+        BlinkModePage &operator=(BlinkModePage &&) = delete;
 
         void updateState(const ChannelState &state);
-        ChannelState getState() const;
-
+        void getState(ChannelState &state) const;
         sigc::signal<void()>& signal_changed() { return m_signalChanged; }
 
       private:
-        void updateSensitivity();
-        void onEnableToggled();
-        void onModeChanged();
-        void onChildPageChanged();
+        void onSpinValueChanged();
+        void onToggleClicked();
 
         size_t m_index;
-        bool m_blockSignals{false};
+        Gtk::Label m_blinkOnLabel;
+        Gtk::SpinButton m_blinkOnSpin;
 
-        Gtk::Box m_mainBox;
-        Gtk::CheckButton m_enableBtn;
-        Gtk::ComboBoxText m_modeCombo;
+        Gtk::Label m_blinkOffLabel;
+        Gtk::SpinButton m_blinkOffSpin;
 
-        Gtk::Stack m_stack;
-        ToggleModePage m_pageToggle;
-        TimerModePage m_pageTimer;
-        PulseModePage m_pagePulse;
-        BlinkModePage m_pageBlink;
+        Gtk::Label m_blinkCountLabel;
+        Gtk::SpinButton m_blinkCountSpin;
 
+        Gtk::ToggleButton m_blinkToggleBtn;
+        Gtk::Label m_descLabel;
+        Gtk::ProgressBar m_progressBar;
         sigc::signal<void()> m_signalChanged;
     };
 } // namespace Electux::App::View

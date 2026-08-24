@@ -17,120 +17,143 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include <format>
 #include <view/channel_widget.h>
 
 namespace {
     constexpr std::string_view cChannelEnableLabel{"Enable Channel #"};
-    constexpr std::string_view cChannelToggleLabel{"Toogle Channel #"};
-    constexpr std::string_view cChannelToggleBtnActivate{"Activate"};
-    constexpr std::string_view cChannelTimerLabel{"Use timer #"};
-    constexpr std::string_view cChannelTimerBtnStart{"Start"};
-    constexpr std::string_view cChannelModeOptions[]{
-        "Toogle Active", "Timer Active"
-    };
 } // namespace
 
 using namespace Electux::App::View;
 
 ChannelWidget::ChannelWidget(size_t index)
-    : Gtk::Box(Gtk::Orientation::VERTICAL, 5), m_index(index),
+    : Gtk::Frame(), m_index(index),
+      m_mainBox(Gtk::Orientation::VERTICAL, 5),
       m_enableBtn(std::format("{} {}", cChannelEnableLabel.data(), index)),
-      m_toggleLabel(std::format("{} {}", cChannelToggleLabel.data(), index)),
-      m_timerLabel(std::format("{} {}", cChannelTimerLabel.data(), index)) {
+      m_pageToggle(index),
+      m_pageTimer(index),
+      m_pagePulse(index),
+      m_pageBlink(index) {
     set_margin(10);
+    m_mainBox.set_margin(10);
+    m_mainBox.set_vexpand(true);
 
-    append(m_enableBtn);
+    m_mainBox.append(m_enableBtn);
     m_enableBtn.signal_toggled().connect(
         sigc::mem_fun(*this, &ChannelWidget::onEnableToggled)
     );
-    for (const auto &option : cChannelModeOptions) {
-        m_modeCombo.append(option.data());
+
+    // Dynamically populate mode combo box from descriptors
+    for (const auto &desc : Model::Channel::cChannelModeDescriptors) {
+        m_modeCombo.append(desc.displayName.data());
     }
     m_modeCombo.set_active(0);
-    append(m_modeCombo);
+    m_mainBox.append(m_modeCombo);
     m_modeCombo.signal_changed().connect(
         sigc::mem_fun(*this, &ChannelWidget::onModeChanged)
     );
 
-    append(m_toggleLabel);
-    m_toggleBtn.set_label(cChannelToggleBtnActivate.data());
-    append(m_toggleBtn);
-    m_toggleBtn.signal_clicked().connect(
-        sigc::mem_fun(*this, &ChannelWidget::onToggleClicked)
-    );
+    // Configure stack properties
+    m_stack.set_transition_type(Gtk::StackTransitionType::CROSSFADE);
+    m_stack.set_transition_duration(100);
+    m_stack.set_hhomogeneous(true);
+    m_stack.set_vhomogeneous(true);
+    m_stack.set_vexpand(true);
 
-    append(m_timerLabel);
-    m_timerSpin.set_range(0.0, 3600.0);
-    m_timerSpin.set_increments(1.0, 10.0);
-    append(m_timerSpin);
-    m_timerSpin.signal_value_changed().connect(
-        sigc::mem_fun(*this, &ChannelWidget::onTimerValueChanged)
-    );
+    // Add concrete mode pages to stack using overloaded add(widget, name)
+    m_stack.add(m_pageToggle, std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Toggle)));
+    m_stack.add(m_pageTimer, std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Timer)));
+    m_stack.add(m_pagePulse, std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Pulse)));
+    m_stack.add(m_pageBlink, std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Blink)));
 
-    m_timerToggleBtn.set_label(cChannelTimerBtnStart.data());
-    append(m_timerToggleBtn);
-    m_timerToggleBtn.signal_clicked().connect(
-        sigc::mem_fun(*this, &ChannelWidget::onTimerToggleClicked)
-    );
+    m_mainBox.append(m_stack);
+    set_child(m_mainBox);
 
-    m_progressBar.set_fraction(0.0);
-    append(m_progressBar);
+    // Connect state change signals from child pages
+    m_pageToggle.signal_changed().connect(
+        sigc::mem_fun(*this, &ChannelWidget::onChildPageChanged)
+    );
+    m_pageTimer.signal_changed().connect(
+        sigc::mem_fun(*this, &ChannelWidget::onChildPageChanged)
+    );
+    m_pagePulse.signal_changed().connect(
+        sigc::mem_fun(*this, &ChannelWidget::onChildPageChanged)
+    );
+    m_pageBlink.signal_changed().connect(
+        sigc::mem_fun(*this, &ChannelWidget::onChildPageChanged)
+    );
 
     updateSensitivity();
 }
 
 void ChannelWidget::updateSensitivity() {
     bool isEnabled = m_enableBtn.get_active();
-    int mode = m_modeCombo.get_active_row_number();
-
     m_modeCombo.set_sensitive(isEnabled);
-
-    bool isToggleActive = isEnabled && (mode == 0);
-
-    m_toggleLabel.set_sensitive(isToggleActive);
-    m_toggleBtn.set_sensitive(isToggleActive);
-
-    bool isTimerActive = isEnabled && (mode == 1);
-
-    m_timerLabel.set_sensitive(isTimerActive);
-    m_timerSpin.set_sensitive(isTimerActive);
-    m_timerToggleBtn.set_sensitive(isTimerActive);
-    m_progressBar.set_sensitive(isTimerActive);
+    m_stack.set_sensitive(isEnabled);
 }
 
 void ChannelWidget::updateState(const ChannelState &state) {
     m_blockSignals = true;
     m_enableBtn.set_active(state.enabled);
-    m_modeCombo.set_active(state.mode);
-    m_toggleBtn.set_active(state.toggle);
-    m_timerSpin.set_value(state.timer);
-    m_timerToggleBtn.set_active(state.timerEnabled);
-    m_blockSignals = false;
 
+    int activeRow = -1;
+    for (size_t i = 0; i < Model::Channel::cChannelModeDescriptors.size(); ++i) {
+        if (Model::Channel::cChannelModeDescriptors[i].mode == state.mode) {
+            activeRow = static_cast<int>(i);
+            break;
+        }
+    }
+    m_modeCombo.set_active(activeRow >= 0 ? activeRow : 0);
+
+    auto visibleChildName = Model::Channel::toConfigString(state.mode);
+    if (state.mode != Model::Channel::ChannelMode::Unknown) {
+        m_stack.set_visible_child(std::string(visibleChildName));
+    } else {
+        m_stack.set_visible_child(std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Toggle)));
+    }
+
+    m_pageToggle.updateState(state);
+    m_pageTimer.updateState(state);
+    m_pagePulse.updateState(state);
+    m_pageBlink.updateState(state);
+
+    m_blockSignals = false;
     updateSensitivity();
 }
 
 ChannelState ChannelWidget::getState() const {
     ChannelState state;
     state.enabled = m_enableBtn.get_active();
-    state.mode = m_modeCombo.get_active_row_number();
-    state.toggle = m_toggleBtn.get_active();
-    state.timer = m_timerSpin.get_value_as_int();
-    state.timerEnabled = m_timerToggleBtn.get_active();
+
+    int activeRow = m_modeCombo.get_active_row_number();
+    if (activeRow >= 0 && activeRow < static_cast<int>(Model::Channel::cChannelModeDescriptors.size())) {
+        state.mode = Model::Channel::cChannelModeDescriptors[static_cast<size_t>(activeRow)].mode;
+    } else {
+        state.mode = Model::Channel::ChannelMode::Unknown;
+    }
+
+    m_pageToggle.getState(state);
+    m_pageTimer.getState(state);
+    m_pagePulse.getState(state);
+    m_pageBlink.getState(state);
+
     return state;
 }
 
 void ChannelWidget::onEnableToggled() {
     updateSensitivity();
-
     if (!m_blockSignals) {
         m_signalChanged.emit();
     }
 }
 
 void ChannelWidget::onModeChanged() {
+    int activeRow = m_modeCombo.get_active_row_number();
+    if (activeRow >= 0 && activeRow < static_cast<int>(Model::Channel::cChannelModeDescriptors.size())) {
+        auto mode = Model::Channel::cChannelModeDescriptors[static_cast<size_t>(activeRow)].mode;
+        auto visibleChildName = Model::Channel::toConfigString(mode);
+        m_stack.set_visible_child(std::string(visibleChildName));
+    }
     updateSensitivity();
 
     if (!m_blockSignals) {
@@ -138,19 +161,7 @@ void ChannelWidget::onModeChanged() {
     }
 }
 
-void ChannelWidget::onToggleClicked() {
-    if (!m_blockSignals) {
-        m_signalChanged.emit();
-    }
-}
-
-void ChannelWidget::onTimerValueChanged() {
-    if (!m_blockSignals) {
-        m_signalChanged.emit();
-    }
-}
-
-void ChannelWidget::onTimerToggleClicked() {
+void ChannelWidget::onChildPageChanged() {
     if (!m_blockSignals) {
         m_signalChanged.emit();
     }

@@ -91,6 +91,12 @@ namespace Electux::App::Model {
     constexpr std::string_view cTimer{"timer"};   ///< String key for timer
     constexpr std::string_view cTimerEnable{"timerEnable"
     }; ///< String key for timer enable
+    constexpr std::string_view cPulseTime{"pulseTime"};
+    constexpr std::string_view cPulseTriggered{"pulseTriggered"};
+    constexpr std::string_view cBlinkOn{"blinkOn"};
+    constexpr std::string_view cBlinkOff{"blinkOff"};
+    constexpr std::string_view cBlinkCount{"blinkCount"};
+    constexpr std::string_view cBlinkEnabled{"blinkEnabled"};
     /// @}
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -148,6 +154,8 @@ namespace Electux::App::Model {
 } // namespace Electux::App::Model
 
 using namespace Electux::App::Model;
+using Electux::App::Model::Channel::ChannelMode;
+using Electux::App::Model::Channel::toConfigString;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Adds an entity to the model.
@@ -174,8 +182,9 @@ bool Model::add(const std::string_view &key, const std::string_view &data) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool Model::validateKey(const std::string_view &key) const {
     static const std::initializer_list<std::string_view> validKeys = {
-        cEnable,   cMode,    cToggle, cTimer,  cTimerEnable, cLogLevel,
-        cFilePath, cDevice,  cBaud,   cData,   cParity,      cStop,
+        cEnable,   cMode,    cToggle, cTimer,  cTimerEnable,
+        cPulseTime, cPulseTriggered, cBlinkOn, cBlinkOff, cBlinkCount, cBlinkEnabled,
+        cLogLevel, cFilePath, cDevice,  cBaud,   cData,   cParity,      cStop,
         cFlow,     cComType, cTcpIp,  cTcpPort, cBleAddress,  cBleServiceUuid,
         cBleRxUuid, cBleTxUuid
     };
@@ -226,7 +235,10 @@ Entities Model::getAllEntries() const {
 
     static const std::vector<ModelControlKey> controlKeys = {
         ModelControlKey::Enable, ModelControlKey::Mode, ModelControlKey::Toggle,
-        ModelControlKey::Timer, ModelControlKey::TimerEnable
+        ModelControlKey::Timer, ModelControlKey::TimerEnable,
+        ModelControlKey::PulseTime, ModelControlKey::PulseTriggered,
+        ModelControlKey::BlinkOn, ModelControlKey::BlinkOff,
+        ModelControlKey::BlinkCount, ModelControlKey::BlinkEnabled
     };
 
     static const std::vector<ModelLogKey> logKeys = {
@@ -294,6 +306,18 @@ std::string_view Model::toString(const ModelControlKey key) const {
         return cTimer;
     case ModelControlKey::TimerEnable:
         return cTimerEnable;
+    case ModelControlKey::PulseTime:
+        return cPulseTime;
+    case ModelControlKey::PulseTriggered:
+        return cPulseTriggered;
+    case ModelControlKey::BlinkOn:
+        return cBlinkOn;
+    case ModelControlKey::BlinkOff:
+        return cBlinkOff;
+    case ModelControlKey::BlinkCount:
+        return cBlinkCount;
+    case ModelControlKey::BlinkEnabled:
+        return cBlinkEnabled;
     default:
         return cUnknown;
     }
@@ -391,7 +415,19 @@ ChannelState Model::getChannelState(size_t index) const {
 
     auto modeKey = toString(ModelControlKey::Mode);
     auto modeStr = extract_param_value_by_index(getEntity(modeKey), index);
-    state.mode = modeStr.empty() ? -1 : std::stoi(modeStr);
+    if (modeStr.empty()) {
+        state.mode = ChannelMode::Unknown;
+    } else if (modeStr == "0" || modeStr == "toggle") {
+        state.mode = ChannelMode::Toggle;
+    } else if (modeStr == "1" || modeStr == "timer") {
+        state.mode = ChannelMode::Timer;
+    } else if (modeStr == "2" || modeStr == "pulse") {
+        state.mode = ChannelMode::Pulse;
+    } else if (modeStr == "3" || modeStr == "blink") {
+        state.mode = ChannelMode::Blink;
+    } else {
+        state.mode = ChannelMode::Unknown;
+    }
 
     auto toggleKey = toString(ModelControlKey::Toggle);
     state.toggle =
@@ -404,6 +440,32 @@ ChannelState Model::getChannelState(size_t index) const {
     auto timerEnableKey = toString(ModelControlKey::TimerEnable);
     state.timerEnabled =
         (extract_param_value_by_index(getEntity(timerEnableKey), index) ==
+         "true");
+
+    auto pulseTimeKey = toString(ModelControlKey::PulseTime);
+    auto pulseTimeStr = extract_param_value_by_index(getEntity(pulseTimeKey), index);
+    state.pulseTime = pulseTimeStr.empty() ? 0 : std::stoi(pulseTimeStr);
+
+    auto pulseTriggeredKey = toString(ModelControlKey::PulseTriggered);
+    state.pulseTriggered =
+        (extract_param_value_by_index(getEntity(pulseTriggeredKey), index) ==
+         "true");
+
+    auto blinkOnKey = toString(ModelControlKey::BlinkOn);
+    auto blinkOnStr = extract_param_value_by_index(getEntity(blinkOnKey), index);
+    state.blinkOnTime = blinkOnStr.empty() ? 0 : std::stoi(blinkOnStr);
+
+    auto blinkOffKey = toString(ModelControlKey::BlinkOff);
+    auto blinkOffStr = extract_param_value_by_index(getEntity(blinkOffKey), index);
+    state.blinkOffTime = blinkOffStr.empty() ? 0 : std::stoi(blinkOffStr);
+
+    auto blinkCountKey = toString(ModelControlKey::BlinkCount);
+    auto blinkCountStr = extract_param_value_by_index(getEntity(blinkCountKey), index);
+    state.blinkCount = blinkCountStr.empty() ? 0 : std::stoi(blinkCountStr);
+
+    auto blinkEnabledKey = toString(ModelControlKey::BlinkEnabled);
+    state.blinkEnabled =
+        (extract_param_value_by_index(getEntity(blinkEnabledKey), index) ==
          "true");
 
     return state;
@@ -423,7 +485,7 @@ void Model::setChannelState(size_t index, const ChannelState &state) {
 
     auto modeKey = toString(ModelControlKey::Mode);
     auto modeVal = update_param_value_by_index(
-        getEntity(modeKey), index, std::to_string(state.mode)
+        getEntity(modeKey), index, toConfigString(state.mode)
     );
     update(modeKey, modeVal);
 
@@ -444,6 +506,42 @@ void Model::setChannelState(size_t index, const ChannelState &state) {
         getEntity(timerEnableKey), index, state.timerEnabled ? "true" : "false"
     );
     update(timerEnableKey, timerEnableVal);
+
+    auto pulseTimeKey = toString(ModelControlKey::PulseTime);
+    auto pulseTimeVal = update_param_value_by_index(
+        getEntity(pulseTimeKey), index, std::to_string(state.pulseTime)
+    );
+    update(pulseTimeKey, pulseTimeVal);
+
+    auto pulseTriggeredKey = toString(ModelControlKey::PulseTriggered);
+    auto pulseTriggeredVal = update_param_value_by_index(
+        getEntity(pulseTriggeredKey), index, state.pulseTriggered ? "true" : "false"
+    );
+    update(pulseTriggeredKey, pulseTriggeredVal);
+
+    auto blinkOnKey = toString(ModelControlKey::BlinkOn);
+    auto blinkOnVal = update_param_value_by_index(
+        getEntity(blinkOnKey), index, std::to_string(state.blinkOnTime)
+    );
+    update(blinkOnKey, blinkOnVal);
+
+    auto blinkOffKey = toString(ModelControlKey::BlinkOff);
+    auto blinkOffVal = update_param_value_by_index(
+        getEntity(blinkOffKey), index, std::to_string(state.blinkOffTime)
+    );
+    update(blinkOffKey, blinkOffVal);
+
+    auto blinkCountKey = toString(ModelControlKey::BlinkCount);
+    auto blinkCountVal = update_param_value_by_index(
+        getEntity(blinkCountKey), index, std::to_string(state.blinkCount)
+    );
+    update(blinkCountKey, blinkCountVal);
+
+    auto blinkEnabledKey = toString(ModelControlKey::BlinkEnabled);
+    auto blinkEnabledVal = update_param_value_by_index(
+        getEntity(blinkEnabledKey), index, state.blinkEnabled ? "true" : "false"
+    );
+    update(blinkEnabledKey, blinkEnabledVal);
 }
 
 sigc::signal<void()> Model::signal_changed() const { return m_signalChanged; }

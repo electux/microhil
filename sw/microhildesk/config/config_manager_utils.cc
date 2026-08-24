@@ -38,6 +38,16 @@ namespace {
     constexpr std::string_view cConfigDefaultControlTimerEnable{
         "false false false false false false false false"
     };
+    constexpr std::string_view cConfigDefaultControlPulseTime{"0 0 0 0 0 0 0 0"};
+    constexpr std::string_view cConfigDefaultControlPulseTriggered{
+        "false false false false false false false false"
+    };
+    constexpr std::string_view cConfigDefaultControlBlinkOn{"0 0 0 0 0 0 0 0"};
+    constexpr std::string_view cConfigDefaultControlBlinkOff{"0 0 0 0 0 0 0 0"};
+    constexpr std::string_view cConfigDefaultControlBlinkCount{"0 0 0 0 0 0 0 0"};
+    constexpr std::string_view cConfigDefaultControlBlinkEnabled{
+        "false false false false false false false false"
+    };
     // Default values for Serial Model
     constexpr std::string_view cConfigDefaultSerialDevice{"/dev/ttyUSB0"};
     constexpr std::string_view cConfigDefaultSerialBaud{"10"};
@@ -92,6 +102,19 @@ void ConfigManager::populateDefaults() {
     const auto timerEnableKey =
         m_config->toString(ModelControlKey::TimerEnable);
     m_config->add(timerEnableKey, cConfigDefaultControlTimerEnable.data());
+
+    const auto pulseTimeKey = m_config->toString(ModelControlKey::PulseTime);
+    m_config->add(pulseTimeKey, cConfigDefaultControlPulseTime.data());
+    const auto pulseTriggeredKey = m_config->toString(ModelControlKey::PulseTriggered);
+    m_config->add(pulseTriggeredKey, cConfigDefaultControlPulseTriggered.data());
+    const auto blinkOnKey = m_config->toString(ModelControlKey::BlinkOn);
+    m_config->add(blinkOnKey, cConfigDefaultControlBlinkOn.data());
+    const auto blinkOffKey = m_config->toString(ModelControlKey::BlinkOff);
+    m_config->add(blinkOffKey, cConfigDefaultControlBlinkOff.data());
+    const auto blinkCountKey = m_config->toString(ModelControlKey::BlinkCount);
+    m_config->add(blinkCountKey, cConfigDefaultControlBlinkCount.data());
+    const auto blinkEnabledKey = m_config->toString(ModelControlKey::BlinkEnabled);
+    m_config->add(blinkEnabledKey, cConfigDefaultControlBlinkEnabled.data());
 
     // Set default serial configuration
     const auto deviceKey = m_config->toString(ModelSerialKey::Device);

@@ -169,6 +169,9 @@ void AppController::handleChannelStateChanges(
         auto oldState = oldConfig.getChannelState(i);
         auto newState = newConfig.getChannelState(i);
 
+        std::string cmd;
+
+        // 1. Detect standard/mode changes
         if (oldState.enabled != newState.enabled ||
             oldState.mode != newState.mode ||
             oldState.toggle != newState.toggle ||
@@ -178,23 +181,56 @@ void AppController::handleChannelStateChanges(
             std::string logMsg = std::format(
                 "Channel {} state changed: enabled={}, mode={}, "
                 "toggle={}, timer={}, timerEnabled={}",
-                i, newState.enabled, newState.mode, newState.toggle,
+                i, newState.enabled, static_cast<int>(newState.mode), newState.toggle,
                 newState.timer, newState.timerEnabled
             );
 
             m_logger->log(logMsg, Logger::LogLevel::Info);
 
-            std::string oldCmd =
-                m_commandFormatter->getCommandState(i, oldState);
-            std::string newCmd =
-                m_commandFormatter->getCommandState(i, newState);
+            cmd = m_commandFormatter->getCommandState(i, newState);
+        }
 
-            if (oldCmd != newCmd && !newCmd.empty()) {
-                std::vector<uint8_t> cmdBytes(newCmd.begin(), newCmd.end());
+        // 2. Detect Pulse trigger (one-shot)
+        if (newState.enabled && newState.mode == Model::Channel::ChannelMode::Pulse &&
+            newState.pulseTriggered && !oldState.pulseTriggered) {
 
-                if (m_comChannel && m_comChannel->isOpen()) {
-                    m_comChannel->write(cmdBytes);
+            std::string logMsg = std::format(
+                "Channel {} pulse triggered: duration={}ms",
+                i, newState.pulseTime
+            );
+
+            m_logger->log(logMsg, Logger::LogLevel::Info);
+
+            cmd = m_commandFormatter->getCommandPulse(i, newState);
+        }
+
+        // 3. Detect Blink changes (enable/disable)
+        if (newState.enabled && newState.mode == Model::Channel::ChannelMode::Blink) {
+            if (oldState.blinkEnabled != newState.blinkEnabled ||
+                oldState.blinkOnTime != newState.blinkOnTime ||
+                oldState.blinkOffTime != newState.blinkOffTime ||
+                oldState.blinkCount != newState.blinkCount) {
+
+                std::string logMsg = std::format(
+                    "Channel {} blink state changed: enabled={}, on={}ms, off={}ms, count={}",
+                    i, newState.blinkEnabled, newState.blinkOnTime, newState.blinkOffTime, newState.blinkCount
+                );
+
+                m_logger->log(logMsg, Logger::LogLevel::Info);
+
+                if (newState.blinkEnabled) {
+                    cmd = m_commandFormatter->getCommandBlink(i, newState);
+                } else {
+                    cmd = std::format("<mh#ch#{}#off#end>", i + 1);
                 }
+            }
+        }
+
+        if (!cmd.empty()) {
+            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
+
+            if (m_comChannel && m_comChannel->isOpen()) {
+                m_comChannel->write(cmdBytes);
             }
         }
     }

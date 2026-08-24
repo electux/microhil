@@ -124,11 +124,6 @@ EntryApplication::EntryApplication() : Gtk::Application(cApplicationId.data()) {
         std::move(responseProcessor)
     );
 
-    m_home = std::make_unique<View::AppHome>();
-    m_settings = std::make_unique<View::Settings::AppSettings>();
-    m_help = std::make_unique<View::Help::AppHelp>();
-    m_about = std::make_unique<View::About::AppAbout>();
-
     Glib::set_application_name(cApplicationId.data());
 }
 
@@ -179,6 +174,11 @@ void EntryApplication::mapping() {
 void EntryApplication::on_startup() {
     std::cout << "Startup application..." << std::endl;
     Gtk::Application::on_startup();
+
+    m_home = std::make_unique<View::AppHome>();
+    m_settings = std::make_unique<View::Settings::AppSettings>();
+    m_help = std::make_unique<View::Help::AppHelp>();
+    m_about = std::make_unique<View::About::AppAbout>();
 
     m_controller->startup();
 

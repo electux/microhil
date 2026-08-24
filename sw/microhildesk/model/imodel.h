@@ -46,7 +46,13 @@ namespace Electux::App::Model {
         Mode,       ///< Key for setting the operational mode
         Toggle,     ///< Key for toggle-based control states
         Timer,      ///< Key for timer duration settings
-        TimerEnable ///< Key for enabling/disabling timer functionality
+        TimerEnable, ///< Key for enabling/disabling timer functionality
+        PulseTime,
+        PulseTriggered,
+        BlinkOn,
+        BlinkOff,
+        BlinkCount,
+        BlinkEnabled
     };
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
