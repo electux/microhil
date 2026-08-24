@@ -18,25 +18,17 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <app_controller.h>
 #include <application.h>
-#include <com/ble/ble_com.h>
-#include <com/ble/ble_com_configurator.h>
-#include <com/serial/serial_com.h>
-#include <com/serial/serial_com_configurator.h>
-#include <com/switchable_com.h>
-#include <com/switchable_com_configurator.h>
-#include <com/tcp/tcp_com.h>
-#include <com/tcp/tcp_com_configurator.h>
-#include <command/command_formatter.h>
-#include <command/response_processor.h>
-#include <config/config_manager.h>
+#include <com/com_factory.h>
+#include <com/configurator_factory.h>
+#include <config/config_factory.h>
+#include <log/log_factory.h>
+#include <command/command_factory.h>
+#include <app_controller_factory.h>
 #include <glibmm/miscutils.h>
 #include <glibmm/refptr.h>
 #include <iapp_controller.h>
 #include <iostream>
-#include <log/log.h>
-#include <model/model.h>
 #include <string_view>
 #include <view/about/about.h>
 #include <view/about/iabout_view.h>
@@ -84,50 +76,54 @@ namespace {
     constexpr std::string_view cHelpAboutDetailedAction{"app.about"};
     /// @}
     ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @name Application Console Messages
+    /// @{
+    constexpr std::string_view cStartupMsg{"Startup application..."};
+    constexpr std::string_view cStartupDoneMsg{"Startup application done."};
+    constexpr std::string_view cActivateMsg{"Activate application..."};
+    constexpr std::string_view cActivateDoneMsg{"Activate application done."};
+    constexpr std::string_view cShutdownMsg{"Shutting down application..."};
+    constexpr std::string_view cQuitMsg{"Quit application."};
+    /// @}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace
 
 using namespace Electux::App;
 
 EntryApplication::EntryApplication() : Gtk::Application(cApplicationId.data()) {
-    auto configManager = std::make_unique<Config::ConfigManager>();
+    auto configManager = Config::createConfigManager();
 
-    auto serial = std::make_unique<Com::SerialCom>();
-    auto *serialConfig = serial.get();
-    auto serialConfigurator =
-        std::make_unique<Com::SerialComConfigurator>(serialConfig);
+    auto serial = Com::createSerialCom();
+    auto *serialPtr = serial.get();
+    auto serialConfigurator = Com::createSerialConfigurator(serialPtr);
 
-    auto tcp = std::make_unique<Com::TcpCom>();
-    auto *tcpConfig = tcp.get();
-    auto tcpConfigurator = std::make_unique<Com::TcpComConfigurator>(tcpConfig);
+    auto tcp = Com::createTcpCom();
+    auto *tcpPtr = tcp.get();
+    auto tcpConfigurator = Com::createTcpConfigurator(tcpPtr);
 
-    auto ble = std::make_unique<Com::BleCom>();
-    auto *bleConfig = ble.get();
-    auto bleConfigurator = std::make_unique<Com::BleComConfigurator>(bleConfig);
+    auto ble = Com::createBleCom();
+    auto *blePtr = ble.get();
+    auto bleConfigurator = Com::createBleConfigurator(blePtr);
 
-    auto switchableCom = std::make_unique<Com::SwitchableCom>(
+    auto switchableCom = Com::createSwitchableCom(
         std::move(serial), std::move(tcp), std::move(ble)
     );
     auto *switchableComPtr = switchableCom.get();
 
-    auto configurator = std::make_unique<Com::SwitchableComConfigurator>(
+    auto configurator = Com::createSwitchableConfigurator(
         switchableComPtr, std::move(serialConfigurator),
         std::move(tcpConfigurator), std::move(bleConfigurator)
     );
 
-    auto logger = std::make_unique<Logger::Log>();
-    auto commandFormatter = std::make_unique<Command::CommandFormatter>();
-    auto responseProcessor = std::make_unique<Command::ResponseProcessor>();
+    auto logger = Logger::createLogger();
+    auto commandFormatter = Command::createCommandFormatter();
+    auto responseProcessor = Command::createResponseProcessor();
 
-    m_controller = std::make_unique<AppController>(
+    m_controller = createAppController(
         std::move(configManager), std::move(switchableCom),
         std::move(configurator), std::move(logger), std::move(commandFormatter),
         std::move(responseProcessor)
     );
-
-    m_home = std::make_unique<View::AppHome>();
-    m_settings = std::make_unique<View::Settings::AppSettings>();
-    m_help = std::make_unique<View::Help::AppHelp>();
-    m_about = std::make_unique<View::About::AppAbout>();
 
     Glib::set_application_name(cApplicationId.data());
 }
@@ -177,8 +173,13 @@ void EntryApplication::mapping() {
 }
 
 void EntryApplication::on_startup() {
-    std::cout << "Startup application..." << std::endl;
+    std::cout << cStartupMsg << std::endl;
     Gtk::Application::on_startup();
+
+    m_home = std::make_unique<View::AppHome>();
+    m_settings = std::make_unique<View::Settings::AppSettings>();
+    m_help = std::make_unique<View::Help::AppHelp>();
+    m_about = std::make_unique<View::About::AppAbout>();
 
     m_controller->startup();
 
@@ -219,24 +220,24 @@ void EntryApplication::on_startup() {
     m_home->setControlSetup(setup);
     m_home->updateUiData();
 
-    std::cout << "Startup application done." << std::endl;
+    std::cout << cStartupDoneMsg << std::endl;
 }
 
 void EntryApplication::on_activate() {
-    std::cout << "Activate application..." << std::endl;
+    std::cout << cActivateMsg << std::endl;
     Gtk::Application::on_activate();
     m_home->show();
-    std::cout << "Activate application done." << std::endl;
+    std::cout << cActivateDoneMsg << std::endl;
 }
 
 void EntryApplication::on_shutdown() {
-    std::cout << "Shutting down application..." << std::endl;
+    std::cout << cShutdownMsg << std::endl;
     m_controller->shutdown();
     Gtk::Application::on_shutdown();
 }
 
 void EntryApplication::onActionQuit() {
-    std::cout << "Quit application." << std::endl;
+    std::cout << cQuitMsg << std::endl;
     m_home->hide();
     remove_window(m_home->getGtkWindow());
     quit();

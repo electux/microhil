@@ -36,7 +36,12 @@ namespace Electux::App::Logger {
         "[WARN]  "; ///< Tag for warning messages
     static constexpr std::string_view TAG_INFO =
         "[INFO]  "; ///< Tag for info messages
-                    /// @}
+    static constexpr const char *cTimestampFormat = "%Y-%m-%dT%H:%M:%S";
+    static constexpr const char *cOutputNotSetError =
+        "Output file path is not set. Cannot open log stream.";
+    static constexpr const char *cCloseStreamError =
+        "Failed to close log stream for file: ";
+    /// @}
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace Electux::App::Logger
 
@@ -81,8 +86,7 @@ bool Log::open() {
 
     // Validate that an output file path has been set
     if (m_outputFile.empty()) {
-        std::cerr << "Output file path is not set. Cannot open log stream."
-                  << std::endl;
+        std::cerr << cOutputNotSetError << std::endl;
         return false;
     }
 
@@ -110,8 +114,7 @@ bool Log::close() {
         // If closing failed, clear the error state to allow future operations
         m_stream.clear();
         // Log the error to stderr for debugging purposes
-        std::cerr << "Failed to close log stream for file: " << m_outputFile
-                  << std::endl;
+        std::cerr << cCloseStreamError << m_outputFile << std::endl;
         return false;
     }
 
@@ -139,21 +142,17 @@ void Log::log(const std::string &message, LogLevel level) {
         return;
     }
 
-    // Filter messages: lower enum value means higher priority (Error=0)
     if (static_cast<int>(level) > static_cast<int>(m_level)) {
         return;
     }
 
-    // Get current system time
     auto now = std::chrono::system_clock::now();
     std::time_t t = std::chrono::system_clock::to_time_t(now);
-    std::tm tm;
-    localtime_r(&t, &tm); // Thread-safe version of localtime
+    std::tm tm{};
+    localtime_r(&t, &tm);
 
-    // Write timestamp
-    m_stream << std::put_time(&tm, "%Y-%m-%dT%H:%M:%S") << " ";
+    m_stream << std::put_time(&tm, cTimestampFormat) << " ";
 
-    // Write severity tag
     switch (level) {
     case LogLevel::Error:
         m_stream << TAG_ERROR;
@@ -166,7 +165,6 @@ void Log::log(const std::string &message, LogLevel level) {
         break;
     }
 
-    // Write message and ensure it's on disk
     m_stream << message << std::endl;
     m_stream.flush();
 }

@@ -17,11 +17,11 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <model/model.h>
+#include <model/imodel.h>
 #include <view/settings_setup.h>
 
 namespace Electux::App::Model {
-    SettingsSetup::SettingsSetup() : m_config(std::make_unique<Model>()) {}
+    SettingsSetup::SettingsSetup() : m_config(nullptr) {}
 
     SettingsSetup::~SettingsSetup() = default;
 

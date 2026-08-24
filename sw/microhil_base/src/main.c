@@ -77,6 +77,11 @@ int main() {
 
   while (true) {
     ////////////////////////////////////////////////////////////////////////
+    /// Run non-blocking timings
+    relay_tick();
+    buzzer_tick();
+
+    ////////////////////////////////////////////////////////////////////////
     /// Fetch and process channel command request
     if (parser_get_command(request, MICROHIL_REQ_LEN)) {
       command_dispatch(request);

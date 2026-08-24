@@ -15,10 +15,17 @@
 ///
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
+///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include <model/imodel.h>
+#include <model/delegate/control/icontrol_model_delegate.h>
+#include <model/delegate/serial/iserial_model_delegate.h>
+#include <model/delegate/general/igeneral_model_delegate.h>
+#include <model/delegate/ble/ible_model_delegate.h>
+#include <model/delegate/log/ilog_model_delegate.h>
+#include <memory>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace Electux::App::Model
@@ -34,9 +41,20 @@ namespace Electux::App::Model {
     class Model : public IModel {
       public:
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        /// @brief Model constructor.
+        /// @brief Model constructor with Dependency Injection.
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        inline Model() noexcept = default;
+        Model(
+            std::unique_ptr<IControlModelDelegate> controlDelegate,
+            std::unique_ptr<ISerialModelDelegate> serialDelegate,
+            std::unique_ptr<IGeneralModelDelegate> generalDelegate,
+            std::unique_ptr<IBleModelDelegate> bleDelegate,
+            std::unique_ptr<ILogModelDelegate> logDelegate
+        ) noexcept;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        /// @brief Model copy constructor to support deep cloning.
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        Model(const Model &other);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         /// @brief Adds an entity to the model.
@@ -168,5 +186,11 @@ namespace Electux::App::Model {
         ////////////////////////////////////////////////////////////////////////////////////////////////
         Entities m_entities{};
         mutable sigc::signal<void()> m_signalChanged{};
+
+        std::unique_ptr<IControlModelDelegate> m_controlDelegate;
+        std::unique_ptr<ISerialModelDelegate> m_serialDelegate;
+        std::unique_ptr<IGeneralModelDelegate> m_generalDelegate;
+        std::unique_ptr<IBleModelDelegate> m_bleDelegate;
+        std::unique_ptr<ILogModelDelegate> m_logDelegate;
     };
 } // namespace Electux::App::Model

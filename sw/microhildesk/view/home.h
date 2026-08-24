@@ -28,7 +28,7 @@
 #include <queue>
 #include <mutex>
 #include <glibmm/dispatcher.h>
-#include <view/channel_widget.h>
+#include <view/channel/channel_widget.h>
 #include <view/ihome_view.h>
 #include <view/settings_setup.h>
 

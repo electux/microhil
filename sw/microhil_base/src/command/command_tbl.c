@@ -21,12 +21,44 @@
 #include "device/status_led.h"
 #include "dispatcher.h"
 #include "pico/stdlib.h"
+#include "hardware/watchdog.h"
 #include <stdio.h>
 #include <string.h>
 
 static const char *const MICROHIL_VERSION = "microHIL v1.0.0";
 static const char *const MICROHIL_BOARD_ID = "mh:333:2023:0";
-static const char *const MICROHIL_VERBOSE = "microHIL log:";
+
+static const uint8_t STATUS_LED_DEFAULT_VAL = 255;
+
+static const char CMD_CHANNEL_MIN_CHAR = '1';
+static const char CMD_CHANNEL_MAX_CHAR = '8';
+static const size_t CMD_CHANNEL_CHAR_INDEX = 6;
+
+static const size_t CMD_TIMER_ARGS_OFFSET = 12;
+static const size_t CMD_PULSE_ARGS_OFFSET = 14;
+static const size_t CMD_BLINK_ARGS_OFFSET = 14;
+static const size_t CMD_MASK_ARGS_OFFSET = 12;
+
+static const size_t CMD_MASK_SUFFIX_OFFSET = 20;
+
+static const size_t CMD_PREFIX_CH_LEN = 6;
+static const char *const CMD_PREFIX_CH = "mh#ch#";
+
+static const size_t CMD_TMR_LEN = 5;
+static const char *const CMD_TMR = "#tmr#";
+
+static const size_t CMD_PULSE_LEN = 7;
+static const char *const CMD_PULSE = "#pulse#";
+
+static const size_t CMD_BLINK_LEN = 7;
+static const char *const CMD_BLINK = "#blink#";
+
+static const char *const CMD_STAT_SUFFIX = "#stat#end";
+
+static const size_t CMD_PREFIX_MASK_LEN = 12;
+static const char *const CMD_PREFIX_MASK = "mh#all#mask#";
+
+static const char *const CMD_SUFFIX_END = "#end";
 
 typedef void (*cmd_handler_t)(const char *cmd_str);
 
@@ -37,93 +69,117 @@ typedef struct {
 
 static void cmd_handle_board_id(const char *cmd_str) {
   (void)cmd_str;
-  printf("%s", MICROHIL_BOARD_ID);
+  printf("<mh#sys#%s#end>", MICROHIL_BOARD_ID);
 }
 
 static void cmd_handle_version(const char *cmd_str) {
   (void)cmd_str;
-  printf("%s", MICROHIL_VERSION);
+  printf("<mh#sys#%s#end>", MICROHIL_VERSION);
 }
 
 static void cmd_handle_all_channels(const char *cmd_str) {
-  // Pattern: "mh#ch#all#on#end" or "mh#ch#all#off#end"
   bool on = (strstr(cmd_str, "#on#") != NULL);
 
   relay_set_all(on);
-  status_led_write(255, 255, 255);
-  buzzer_beep_start();
-
-#ifdef VERBOSE
-  printf("%s all channels %s\n", MICROHIL_VERBOSE, on ? "on" : "off");
-#endif
+  status_led_write(STATUS_LED_DEFAULT_VAL, STATUS_LED_DEFAULT_VAL, STATUS_LED_DEFAULT_VAL);
+  printf("<mh#sys#all channels %s#end>", on ? "on" : "off");
 }
 
 static void cmd_handle_channel(const char *cmd_str) {
-  // Pattern: "mh#ch#X#on#end" or "mh#ch#X#off#end"
-  char ch_char = cmd_str[6];
-  uint32_t channel = ch_char - '1';
+  char ch_char = cmd_str[CMD_CHANNEL_CHAR_INDEX];
+  uint32_t channel = ch_char - CMD_CHANNEL_MIN_CHAR;
   bool on = (strstr(cmd_str, "#on#") != NULL);
 
   if (channel < RELAY_NUM_CHANNELS) {
     relay_set(channel, on);
-#ifdef VERBOSE
-    printf("%s channel %c %s\n", MICROHIL_VERBOSE, ch_char, on ? "on" : "off");
-#endif
+    printf("<mh#sys#channel %c %s#end>", ch_char, on ? "on" : "off");
   }
 }
 
 static void cmd_handle_timer(const char *cmd_str) {
-  // Pattern: "mh#ch#X#tmr#Y#end"
-  char ch_char = cmd_str[6];
-  uint32_t channel = ch_char - '1';
+  char ch_char = cmd_str[CMD_CHANNEL_CHAR_INDEX];
+  uint32_t channel = ch_char - CMD_CHANNEL_MIN_CHAR;
   uint32_t seconds = 0;
 
-  if (sscanf(cmd_str + 12, "%u#end", &seconds) == 1) {
+  if (sscanf(cmd_str + CMD_TIMER_ARGS_OFFSET, "%u#end", &seconds) == 1) {
     if (channel < RELAY_NUM_CHANNELS) {
-#ifdef VERBOSE
-      printf(
-          "%s channel %c timer %u seconds\n", MICROHIL_VERBOSE, ch_char, seconds
-      );
-#endif
+      relay_start_timer(channel, seconds);
+      printf("<mh#sys#channel %c timer started: %u seconds#end>", ch_char, seconds);
     }
   }
 }
 
 static void cmd_handle_pulse(const char *cmd_str) {
-  // Pattern: "mh#ch#X#pulse#Y#end"
-  char ch_char = cmd_str[6];
-  uint32_t channel = ch_char - '1';
+  char ch_char = cmd_str[CMD_CHANNEL_CHAR_INDEX];
+  uint32_t channel = ch_char - CMD_CHANNEL_MIN_CHAR;
   uint32_t duration_ms = 0;
 
-  if (sscanf(cmd_str + 14, "%u#end", &duration_ms) == 1) {
+  if (sscanf(cmd_str + CMD_PULSE_ARGS_OFFSET, "%u#end", &duration_ms) == 1) {
     if (channel < RELAY_NUM_CHANNELS) {
-#ifdef VERBOSE
-      printf(
-          "%s channel %c pulse %u milliseconds\n", MICROHIL_VERBOSE, ch_char, duration_ms
-      );
-#endif
+      relay_start_pulse(channel, duration_ms);
+      printf("<mh#sys#channel %c pulse started: %u ms#end>", ch_char, duration_ms);
     }
   }
 }
 
 static void cmd_handle_blink(const char *cmd_str) {
-  // Pattern: "mh#ch#X#blink#on_time#off_time#count#end"
-  char ch_char = cmd_str[6];
-  uint32_t channel = ch_char - '1';
+  char ch_char = cmd_str[CMD_CHANNEL_CHAR_INDEX];
+  uint32_t channel = ch_char - CMD_CHANNEL_MIN_CHAR;
   uint32_t on_time = 0;
   uint32_t off_time = 0;
   uint32_t count = 0;
 
-  if (sscanf(cmd_str + 14, "%u#%u#%u#end", &on_time, &off_time, &count) == 3) {
+  if (sscanf(cmd_str + CMD_BLINK_ARGS_OFFSET, "%u#%u#%u#end", &on_time, &off_time, &count) == 3) {
     if (channel < RELAY_NUM_CHANNELS) {
-#ifdef VERBOSE
-      printf(
-          "%s channel %c blink on_time %u off_time %u count %u\n",
-          MICROHIL_VERBOSE, ch_char, on_time, off_time, count
-      );
-#endif
+      relay_start_blink(channel, on_time, off_time, count);
+      printf("<mh#sys#channel %c blink started: on=%u ms, off=%u ms, count=%u#end>",
+             ch_char, on_time, off_time, count);
     }
   }
+}
+
+static void cmd_handle_mask(const char *cmd_str) {
+  for (uint32_t i = 0; i < RELAY_NUM_CHANNELS; i++) {
+    char bit = cmd_str[CMD_MASK_ARGS_OFFSET + i];
+    bool on = (bit == '1');
+    relay_set(i, on);
+  }
+  printf("<mh#sys#channels mask applied: %.8s#end>", cmd_str + CMD_MASK_ARGS_OFFSET);
+}
+
+static void cmd_handle_reset(const char *cmd_str) {
+  (void)cmd_str;
+  printf("<mh#sys#system resetting...#end>");
+  fflush(stdout);
+  buzzer_beep_stop();
+  watchdog_reboot(0, 0, 0);
+}
+
+static void cmd_handle_channel_status(const char *cmd_str) {
+  char ch_char = cmd_str[CMD_CHANNEL_CHAR_INDEX];
+  uint32_t channel = ch_char - CMD_CHANNEL_MIN_CHAR;
+  if (channel < RELAY_NUM_CHANNELS) {
+    char status_buf[64];
+    relay_get_status(channel, status_buf, sizeof(status_buf));
+    printf("<mh#sys#%s#end>", status_buf);
+  }
+}
+
+static void cmd_handle_all_status(const char *cmd_str) {
+  (void)cmd_str;
+  char all_status_buf[256] = "Channels: ";
+  uint32_t offset = 10;
+  for (uint32_t i = 0; i < RELAY_NUM_CHANNELS; i++) {
+    char status_buf[48];
+    relay_get_status(i, status_buf, sizeof(status_buf));
+    const char *state_str = strstr(status_buf, "ON") ? "ON" : "OFF";
+    int written = snprintf(all_status_buf + offset, sizeof(all_status_buf) - offset,
+                           "%u:%s ", i + 1, state_str);
+    if (written > 0) {
+      offset += (uint32_t)written;
+    }
+  }
+  printf("<mh#sys#%s#end>", all_status_buf);
 }
 
 static const command_entry_t command_tbl[] = {
@@ -145,6 +201,8 @@ static const command_entry_t command_tbl[] = {
     {"mh#ch#8#off#end", cmd_handle_channel},
     {"mh#ch#all#on#end", cmd_handle_all_channels},
     {"mh#ch#all#off#end", cmd_handle_all_channels},
+    {"mh#all#stat#end", cmd_handle_all_status},
+    {"mh#sys#reset#end", cmd_handle_reset},
     {"mh#sys#id#end", cmd_handle_board_id},
     {"mh#sys#version#end", cmd_handle_version},
 };
@@ -154,24 +212,45 @@ static const size_t command_tbl_size =
 
 void command_dispatch(const char *cmd_str) {
   // Check for timer commands: "mh#ch#X#tmr#Y#end"
-  // Where X is '1'-'8', followed by "#tmr#"
-  if (strncmp(cmd_str, "mh#ch#", 6) == 0 && cmd_str[6] >= '1' &&
-      cmd_str[6] <= '8' && strncmp(cmd_str + 7, "#tmr#", 5) == 0) {
+  if (strncmp(cmd_str, CMD_PREFIX_CH, CMD_PREFIX_CH_LEN) == 0 &&
+      cmd_str[CMD_CHANNEL_CHAR_INDEX] >= CMD_CHANNEL_MIN_CHAR &&
+      cmd_str[CMD_CHANNEL_CHAR_INDEX] <= CMD_CHANNEL_MAX_CHAR &&
+      strncmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_TMR, CMD_TMR_LEN) == 0) {
     cmd_handle_timer(cmd_str);
     return;
   }
 
   // Check for pulse commands: "mh#ch#X#pulse#Y#end"
-  if (strncmp(cmd_str, "mh#ch#", 6) == 0 && cmd_str[6] >= '1' &&
-      cmd_str[6] <= '8' && strncmp(cmd_str + 7, "#pulse#", 7) == 0) {
+  if (strncmp(cmd_str, CMD_PREFIX_CH, CMD_PREFIX_CH_LEN) == 0 &&
+      cmd_str[CMD_CHANNEL_CHAR_INDEX] >= CMD_CHANNEL_MIN_CHAR &&
+      cmd_str[CMD_CHANNEL_CHAR_INDEX] <= CMD_CHANNEL_MAX_CHAR &&
+      strncmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_PULSE, CMD_PULSE_LEN) == 0) {
     cmd_handle_pulse(cmd_str);
     return;
   }
 
   // Check for blink commands: "mh#ch#X#blink#Y#Z#W#end"
-  if (strncmp(cmd_str, "mh#ch#", 6) == 0 && cmd_str[6] >= '1' &&
-      cmd_str[6] <= '8' && strncmp(cmd_str + 7, "#blink#", 7) == 0) {
+  if (strncmp(cmd_str, CMD_PREFIX_CH, CMD_PREFIX_CH_LEN) == 0 &&
+      cmd_str[CMD_CHANNEL_CHAR_INDEX] >= CMD_CHANNEL_MIN_CHAR &&
+      cmd_str[CMD_CHANNEL_CHAR_INDEX] <= CMD_CHANNEL_MAX_CHAR &&
+      strncmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_BLINK, CMD_BLINK_LEN) == 0) {
     cmd_handle_blink(cmd_str);
+    return;
+  }
+
+  // Check for channel status commands: "mh#ch#X#stat#end"
+  if (strncmp(cmd_str, CMD_PREFIX_CH, CMD_PREFIX_CH_LEN) == 0 &&
+      cmd_str[CMD_CHANNEL_CHAR_INDEX] >= CMD_CHANNEL_MIN_CHAR &&
+      cmd_str[CMD_CHANNEL_CHAR_INDEX] <= CMD_CHANNEL_MAX_CHAR &&
+      strcmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_STAT_SUFFIX) == 0) {
+    cmd_handle_channel_status(cmd_str);
+    return;
+  }
+
+  // Check for mask commands: "mh#all#mask#10101010#end"
+  if (strncmp(cmd_str, CMD_PREFIX_MASK, CMD_PREFIX_MASK_LEN) == 0 &&
+      strcmp(cmd_str + CMD_MASK_SUFFIX_OFFSET, CMD_SUFFIX_END) == 0) {
+    cmd_handle_mask(cmd_str);
     return;
   }
 
@@ -181,7 +260,4 @@ void command_dispatch(const char *cmd_str) {
       return;
     }
   }
-#ifdef VERBOSE
-  printf("%s invalid command: %s\n", MICROHIL_VERBOSE, cmd_str);
-#endif
 }

@@ -18,10 +18,16 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <com/com_types.h>
 #include <com/switchable_com.h>
 #include <iostream>
 
 namespace Electux::App::Com {
+    namespace {
+        constexpr std::string_view cTcpSwitchMsg{"Switched communication channel to TCP/IP."};
+        constexpr std::string_view cBleSwitchMsg{"Switched communication channel to BLE."};
+        constexpr std::string_view cSerialSwitchMsg{"Switched communication channel to Serial Port."};
+    } // namespace
     SwitchableCom::SwitchableCom(
         std::unique_ptr<ICom> serialCom, std::unique_ptr<ICom> tcpCom, std::unique_ptr<ICom> bleCom
     )
@@ -62,26 +68,23 @@ namespace Electux::App::Com {
     }
 
     void SwitchableCom::setComType(const std::string &type) {
-        if (type == "tcp") {
+        if (type == toConfigString(ComType::Tcp)) {
             if (m_activeCom != m_tcpCom.get()) {
                 close();
                 m_activeCom = m_tcpCom.get();
-                std::cout << "Switched communication channel to TCP/IP."
-                          << std::endl;
+                std::cout << cTcpSwitchMsg << std::endl;
             }
-        } else if (type == "ble") {
+        } else if (type == toConfigString(ComType::Ble)) {
             if (m_activeCom != m_bleCom.get()) {
                 close();
                 m_activeCom = m_bleCom.get();
-                std::cout << "Switched communication channel to BLE."
-                          << std::endl;
+                std::cout << cBleSwitchMsg << std::endl;
             }
         } else {
             if (m_activeCom != m_serialCom.get()) {
                 close();
                 m_activeCom = m_serialCom.get();
-                std::cout << "Switched communication channel to Serial Port."
-                          << std::endl;
+                std::cout << cSerialSwitchMsg << std::endl;
             }
         }
     }

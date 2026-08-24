@@ -18,6 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <com/com_types.h>
 #include <com/switchable_com.h>
 #include <com/switchable_com_configurator.h>
 #include <model/imodel.h>
@@ -45,11 +46,11 @@ namespace Electux::App::Com {
 
         m_switchableCom->setComType(comType);
 
-        if (comType == "tcp") {
+        if (comType == toConfigString(ComType::Tcp)) {
             return m_tcpConfigurator->configure(
                 model, m_switchableCom->getTcpCom()
             );
-        } else if (comType == "ble") {
+        } else if (comType == toConfigString(ComType::Ble)) {
             return m_bleConfigurator->configure(
                 model, m_switchableCom->getBleCom()
             );

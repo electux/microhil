@@ -30,6 +30,14 @@ extern "C" {
 enum { RELAY_NUM_CHANNELS = 8 };
 
 ////////////////////////////////////////////////////////////////////////////
+typedef enum {
+  RELAY_MODE_TOGGLE,
+  RELAY_MODE_TIMER,
+  RELAY_MODE_PULSE,
+  RELAY_MODE_BLINK
+} relay_mode_t;
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Initializes all relay GPIO channels
 ///
 /// @return True if initialization succeeded, false otherwise
@@ -47,6 +55,26 @@ void relay_set(uint32_t channel, bool state);
 ///
 /// @param state [in] True to turn all ON, false to turn all OFF
 void relay_set_all(bool state);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Starts a timer mode on a relay channel
+void relay_start_timer(uint32_t channel, uint32_t seconds);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Starts a pulse mode on a relay channel
+void relay_start_pulse(uint32_t channel, uint32_t duration_ms);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Starts a blink mode on a relay channel
+void relay_start_blink(uint32_t channel, uint32_t on_ms, uint32_t off_ms, uint32_t count);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Non-blocking tick routine for relay timings
+void relay_tick(void);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Returns a status string for the given relay channel
+void relay_get_status(uint32_t channel, char *buf, uint32_t max_len);
 
 #ifdef __cplusplus
 }
