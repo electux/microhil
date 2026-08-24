@@ -24,6 +24,7 @@
 #include <config/config_factory.h>
 #include <log/log_factory.h>
 #include <command/command_factory.h>
+#include <model/model_factory.h>
 #include <app_controller_factory.h>
 #include <glibmm/miscutils.h>
 #include <glibmm/refptr.h>
@@ -57,6 +58,10 @@ namespace {
     constexpr std::string_view cOptionSettingsActionName{"settings"};
     constexpr std::string_view cHelpDocActionName{"doc"};
     constexpr std::string_view cHelpAboutActionName{"about"};
+    constexpr std::string_view cCmdAllOnActionName{"cmd_all_on"};
+    constexpr std::string_view cCmdAllOffActionName{"cmd_all_off"};
+    constexpr std::string_view cCmdAllStatActionName{"cmd_all_stat"};
+    constexpr std::string_view cCmdSysResetActionName{"cmd_sys_reset"};
     /// @}
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -69,6 +74,15 @@ namespace {
     constexpr std::string_view cOptionLabel{"Option"};
     constexpr std::string_view cOptionSettingsLabel{"_Settings"};
     constexpr std::string_view cOptionSettingsDetailedAction{"app.settings"};
+    constexpr std::string_view cCommandLabel{"Command"};
+    constexpr std::string_view cCmdAllOnLabel{"_All Channels On"};
+    constexpr std::string_view cCmdAllOnDetailedAction{"app.cmd_all_on"};
+    constexpr std::string_view cCmdAllOffLabel{"_All Channels Off"};
+    constexpr std::string_view cCmdAllOffDetailedAction{"app.cmd_all_off"};
+    constexpr std::string_view cCmdAllStatLabel{"_All Status"};
+    constexpr std::string_view cCmdAllStatDetailedAction{"app.cmd_all_stat"};
+    constexpr std::string_view cCmdSysResetLabel{"_System Reset"};
+    constexpr std::string_view cCmdSysResetDetailedAction{"app.cmd_sys_reset"};
     constexpr std::string_view cHelpLabel{"Help"};
     constexpr std::string_view cHelpDocLabel{"_Documentation"};
     constexpr std::string_view cHelpDocDetailedAction{"app.doc"};
@@ -90,49 +104,50 @@ namespace {
 
 using namespace Electux::App;
 
-EntryApplication::EntryApplication() : Gtk::Application(cApplicationId.data()) {
-    auto configManager = Config::createConfigManager();
+EntryApplication::EntryApplication(bool verbose) : Gtk::Application(cApplicationId.data()), m_verbose(verbose) {
+    auto config = Model::createDefault();
+    auto configManager = Config::createConfigManager(std::move(config), m_verbose);
 
-    auto serial = Com::createSerialCom();
+    auto serial = Com::createSerialCom(m_verbose);
     auto *serialPtr = serial.get();
     auto serialConfigurator = Com::createSerialConfigurator(serialPtr);
 
-    auto tcp = Com::createTcpCom();
+    auto tcp = Com::createTcpCom(m_verbose);
     auto *tcpPtr = tcp.get();
     auto tcpConfigurator = Com::createTcpConfigurator(tcpPtr);
 
-    auto ble = Com::createBleCom();
+    auto ble = Com::createBleCom(m_verbose);
     auto *blePtr = ble.get();
     auto bleConfigurator = Com::createBleConfigurator(blePtr);
 
     auto switchableCom = Com::createSwitchableCom(
-        std::move(serial), std::move(tcp), std::move(ble)
+        m_verbose, std::move(serial), std::move(tcp), std::move(ble)
     );
     auto *switchableComPtr = switchableCom.get();
-
+ 
     auto configurator = Com::createSwitchableConfigurator(
         switchableComPtr, std::move(serialConfigurator),
         std::move(tcpConfigurator), std::move(bleConfigurator)
     );
-
+ 
     auto logger = Logger::createLogger();
     auto commandFormatter = Command::createCommandFormatter();
     auto responseProcessor = Command::createResponseProcessor();
-
+ 
     m_controller = createAppController(
         std::move(configManager), std::move(switchableCom),
         std::move(configurator), std::move(logger), std::move(commandFormatter),
         std::move(responseProcessor)
     );
-
+ 
     Glib::set_application_name(cApplicationId.data());
 }
-
+ 
 EntryApplication::~EntryApplication() = default;
-
-Glib::RefPtr<EntryApplication> EntryApplication::create() {
+ 
+Glib::RefPtr<EntryApplication> EntryApplication::create(bool verbose) {
     return Glib::make_refptr_for_instance<EntryApplication>(
-        new EntryApplication()
+        new EntryApplication(verbose)
     );
 }
 
@@ -148,6 +163,22 @@ void EntryApplication::mapping() {
     add_action(
         cOptionSettingsActionName.data(),
         sigc::mem_fun(*this, &EntryApplication::onActionSettings)
+    );
+    add_action(
+        cCmdAllOnActionName.data(),
+        sigc::mem_fun(*this, &EntryApplication::onActionCmdAllOn)
+    );
+    add_action(
+        cCmdAllOffActionName.data(),
+        sigc::mem_fun(*this, &EntryApplication::onActionCmdAllOff)
+    );
+    add_action(
+        cCmdAllStatActionName.data(),
+        sigc::mem_fun(*this, &EntryApplication::onActionCmdAllStat)
+    );
+    add_action(
+        cCmdSysResetActionName.data(),
+        sigc::mem_fun(*this, &EntryApplication::onActionCmdSysReset)
     );
     add_action(
         cHelpDocActionName.data(),
@@ -173,7 +204,9 @@ void EntryApplication::mapping() {
 }
 
 void EntryApplication::on_startup() {
-    std::cout << cStartupMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cStartupMsg << std::endl;
+    }
     Gtk::Application::on_startup();
 
     m_home = std::make_unique<View::AppHome>();
@@ -193,6 +226,21 @@ void EntryApplication::on_startup() {
         cOptionSettingsLabel.data(), cOptionSettingsDetailedAction.data()
     );
     menu->append_submenu(cOptionLabel.data(), submenu_option);
+
+    auto submenu_command = Gio::Menu::create();
+    submenu_command->append(
+        cCmdAllOnLabel.data(), cCmdAllOnDetailedAction.data()
+    );
+    submenu_command->append(
+        cCmdAllOffLabel.data(), cCmdAllOffDetailedAction.data()
+    );
+    submenu_command->append(
+        cCmdAllStatLabel.data(), cCmdAllStatDetailedAction.data()
+    );
+    submenu_command->append(
+        cCmdSysResetLabel.data(), cCmdSysResetDetailedAction.data()
+    );
+    menu->append_submenu(cCommandLabel.data(), submenu_command);
 
     auto submenu_help = Gio::Menu::create();
     submenu_help->append(cHelpDocLabel.data(), cHelpDocDetailedAction.data());
@@ -220,24 +268,34 @@ void EntryApplication::on_startup() {
     m_home->setControlSetup(setup);
     m_home->updateUiData();
 
-    std::cout << cStartupDoneMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cStartupDoneMsg << std::endl;
+    }
 }
 
 void EntryApplication::on_activate() {
-    std::cout << cActivateMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cActivateMsg << std::endl;
+    }
     Gtk::Application::on_activate();
     m_home->show();
-    std::cout << cActivateDoneMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cActivateDoneMsg << std::endl;
+    }
 }
 
 void EntryApplication::on_shutdown() {
-    std::cout << cShutdownMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cShutdownMsg << std::endl;
+    }
     m_controller->shutdown();
     Gtk::Application::on_shutdown();
 }
 
 void EntryApplication::onActionQuit() {
-    std::cout << cQuitMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cQuitMsg << std::endl;
+    }
     m_home->hide();
     remove_window(m_home->getGtkWindow());
     quit();
@@ -256,4 +314,20 @@ void EntryApplication::onActionAbout() { m_about->show(); }
 
 void EntryApplication::onSetupChanged(const SettingsSetup &setup) {
     m_controller->onSetupChanged(setup);
+}
+
+void EntryApplication::onActionCmdAllOn() {
+    m_controller->turnOnAllChannels();
+}
+
+void EntryApplication::onActionCmdAllOff() {
+    m_controller->turnOffAllChannels();
+}
+
+void EntryApplication::onActionCmdAllStat() {
+    m_controller->requestAllChannelsStatus();
+}
+
+void EntryApplication::onActionCmdSysReset() {
+    m_controller->resetSystem();
 }

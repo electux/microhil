@@ -29,6 +29,7 @@
 #include <string.h>
 
 enum { MICROHIL_REQ_LEN = 32 };
+static const uint32_t USB_CONN_CHECK_MS = 100;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Performs unified initialization of all hardware devices
@@ -68,7 +69,7 @@ int main() {
   //////////////////////////////////////////////////////////////////////////
   /// Waits for USB connection
   while (!tud_cdc_connected()) {
-    sleep_ms(100);
+    sleep_ms(USB_CONN_CHECK_MS);
   }
 
   //////////////////////////////////////////////////////////////////////////

@@ -39,11 +39,10 @@ namespace Electux::App::Com {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class SerialCom : public ICom, public ISerial {
       public:
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        /// @brief Constructor for SerialCom.
-        /// @param port Unique pointer to an ILibSerialPort implementation.
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        explicit SerialCom(std::unique_ptr<ILibSerialPort> port = nullptr);
+        explicit SerialCom(bool verbose = false);
+        explicit SerialCom(
+            std::unique_ptr<ILibSerialPort> port, bool verbose = false
+        );
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         /// @brief Destructor for SerialCom.
@@ -136,6 +135,8 @@ namespace Electux::App::Com {
         std::unique_ptr<ILibSerialPort> m_serialPort{nullptr};
         /// @brief  Path to the serial port device (e.g., "/dev/ttyS0").
         std::string m_device{};
+        /// @brief  Verbose mode for debugging.
+        bool m_verbose{false};
         /// @}
         ////////////////////////////////////////////////////////////////////////////////////////////////
     };

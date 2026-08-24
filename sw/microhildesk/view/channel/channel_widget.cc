@@ -32,10 +32,8 @@ using namespace Electux::App::View;
 ChannelWidget::ChannelWidget(size_t index)
     : Gtk::Frame(), m_index(index),
       m_mainBox(Gtk::Orientation::VERTICAL, cBoxSpacing),
-      m_enableBtn(std::format("{} {}", cChannelEnableLabel.data(), index)),
-      m_pageToggle(index),
-      m_pageTimer(index),
-      m_pagePulse(index),
+      m_enableBtn(std::format("{} {}", cChannelEnableLabel.data(), index + 1)),
+      m_pageToggle(index), m_pageTimer(index), m_pagePulse(index),
       m_pageBlink(index) {
     set_margin(cWidgetMargin);
     m_mainBox.set_margin(cWidgetMargin);
@@ -64,10 +62,30 @@ ChannelWidget::ChannelWidget(size_t index)
     m_stack.set_vexpand(true);
 
     // Add concrete mode pages to stack using overloaded add(widget, name)
-    m_stack.add(m_pageToggle, std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Toggle)));
-    m_stack.add(m_pageTimer, std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Timer)));
-    m_stack.add(m_pagePulse, std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Pulse)));
-    m_stack.add(m_pageBlink, std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Blink)));
+    m_stack.add(
+        m_pageToggle,
+        std::string(
+            Model::Channel::toConfigString(Model::Channel::ChannelMode::Toggle)
+        )
+    );
+    m_stack.add(
+        m_pageTimer,
+        std::string(
+            Model::Channel::toConfigString(Model::Channel::ChannelMode::Timer)
+        )
+    );
+    m_stack.add(
+        m_pagePulse,
+        std::string(
+            Model::Channel::toConfigString(Model::Channel::ChannelMode::Pulse)
+        )
+    );
+    m_stack.add(
+        m_pageBlink,
+        std::string(
+            Model::Channel::toConfigString(Model::Channel::ChannelMode::Blink)
+        )
+    );
 
     m_mainBox.append(m_stack);
     set_child(m_mainBox);
@@ -100,7 +118,8 @@ void ChannelWidget::updateState(const ChannelState &state) {
     m_enableBtn.set_active(state.enabled);
 
     int activeRow = -1;
-    for (size_t i = 0; i < Model::Channel::cChannelModeDescriptors.size(); ++i) {
+    for (size_t i = 0; i < Model::Channel::cChannelModeDescriptors.size();
+         ++i) {
         if (Model::Channel::cChannelModeDescriptors.at(i).mode == state.mode) {
             activeRow = static_cast<int>(i);
             break;
@@ -112,7 +131,13 @@ void ChannelWidget::updateState(const ChannelState &state) {
     if (state.mode != Model::Channel::ChannelMode::Unknown) {
         m_stack.set_visible_child(std::string(visibleChildName));
     } else {
-        m_stack.set_visible_child(std::string(Model::Channel::toConfigString(Model::Channel::ChannelMode::Toggle)));
+        m_stack.set_visible_child(
+            std::string(
+                Model::Channel::toConfigString(
+                    Model::Channel::ChannelMode::Toggle
+                )
+            )
+        );
     }
 
     m_pageToggle.updateState(state);
@@ -129,8 +154,12 @@ ChannelState ChannelWidget::getState() const {
     state.enabled = m_enableBtn.get_active();
 
     int activeRow = m_modeCombo.get_active_row_number();
-    if (activeRow >= 0 && activeRow < static_cast<int>(Model::Channel::cChannelModeDescriptors.size())) {
-        state.mode = Model::Channel::cChannelModeDescriptors.at(static_cast<size_t>(activeRow)).mode;
+    if (activeRow >= 0 &&
+        activeRow <
+            static_cast<int>(Model::Channel::cChannelModeDescriptors.size())) {
+        state.mode = Model::Channel::cChannelModeDescriptors
+                         .at(static_cast<size_t>(activeRow))
+                         .mode;
     } else {
         state.mode = Model::Channel::ChannelMode::Unknown;
     }
@@ -152,8 +181,12 @@ void ChannelWidget::onEnableToggled() {
 
 void ChannelWidget::onModeChanged() {
     int activeRow = m_modeCombo.get_active_row_number();
-    if (activeRow >= 0 && activeRow < static_cast<int>(Model::Channel::cChannelModeDescriptors.size())) {
-        auto mode = Model::Channel::cChannelModeDescriptors.at(static_cast<size_t>(activeRow)).mode;
+    if (activeRow >= 0 &&
+        activeRow <
+            static_cast<int>(Model::Channel::cChannelModeDescriptors.size())) {
+        auto mode = Model::Channel::cChannelModeDescriptors
+                        .at(static_cast<size_t>(activeRow))
+                        .mode;
         auto visibleChildName = Model::Channel::toConfigString(mode);
         m_stack.set_visible_child(std::string(visibleChildName));
     }

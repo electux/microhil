@@ -35,7 +35,10 @@ namespace Electux::App::Com {
     class SwitchableCom : public ICom {
       public:
         SwitchableCom(
-            std::unique_ptr<ICom> serialCom, std::unique_ptr<ICom> tcpCom, std::unique_ptr<ICom> bleCom
+            bool verbose,
+            std::unique_ptr<ICom> serialCom,
+            std::unique_ptr<ICom> tcpCom,
+            std::unique_ptr<ICom> bleCom
         );
         ~SwitchableCom() override = default;
 
@@ -58,6 +61,7 @@ namespace Electux::App::Com {
         ICom *getBleCom() const;
 
       private:
+        bool m_verbose;
         std::unique_ptr<ICom> m_serialCom;
         std::unique_ptr<ICom> m_tcpCom;
         std::unique_ptr<ICom> m_bleCom;

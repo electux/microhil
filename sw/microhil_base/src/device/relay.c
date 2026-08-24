@@ -130,6 +130,8 @@ void relay_tick(void) {
         relay_set_phys(i, false);
         relay_states[i].active = false;
         relay_states[i].mode = RELAY_MODE_TOGGLE;
+        printf("<mh#sys#channel %u off#end>", i + 1);
+        fflush(stdout);
       }
     } else if (relay_states[i].mode == RELAY_MODE_BLINK) {
       if (relay_states[i].blink_phase) {
@@ -145,6 +147,8 @@ void relay_tick(void) {
             if (relay_states[i].blink_count == 0) {
               relay_states[i].active = false;
               relay_states[i].mode = RELAY_MODE_TOGGLE;
+              printf("<mh#sys#channel %u off#end>", i + 1);
+              fflush(stdout);
               continue;
             }
           }

@@ -23,6 +23,7 @@ typedef enum { PARSER_STATE_IDLE, PARSER_STATE_RECEIVING } parser_state_t;
 
 static parser_state_t parser_state = PARSER_STATE_IDLE;
 static uint32_t parser_idx = 0;
+static const uint32_t PARSER_TIMEOUT_US = 0;
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Processes a single character inside the parsing state machine
@@ -68,12 +69,12 @@ static bool parser_process_char(char c, char *buf, uint32_t max_len) {
 /// @param max_len [in] Maximum capacity of the destination buffer
 /// @return True if a command was parsed, else false
 bool parser_get_command(char *buf, uint32_t max_len) {
-  int16_t rc = getchar_timeout_us(0);
+  int16_t rc = getchar_timeout_us(PARSER_TIMEOUT_US);
   while (rc != PICO_ERROR_TIMEOUT) {
     if (parser_process_char((char)rc, buf, max_len)) {
       return true;
     }
-    rc = getchar_timeout_us(0);
+    rc = getchar_timeout_us(PARSER_TIMEOUT_US);
   }
   return false;
 }

@@ -53,10 +53,10 @@ namespace Electux::App {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class EntryApplication : public Gtk::Application {
       public:
-        explicit EntryApplication();
+        explicit EntryApplication(bool verbose = false);
         ~EntryApplication() override;
 
-        static Glib::RefPtr<EntryApplication> create();
+        static Glib::RefPtr<EntryApplication> create(bool verbose = false);
 
       protected:
         void on_startup() override;
@@ -69,9 +69,14 @@ namespace Electux::App {
         void onActionDoc();
         void onActionAbout();
         void onActionQuit();
+        void onActionCmdAllOn();
+        void onActionCmdAllOff();
+        void onActionCmdAllStat();
+        void onActionCmdSysReset();
         bool onHandleClose();
         void onSetupChanged(const SettingsSetup &setup);
 
+        bool m_verbose{false};
         std::unique_ptr<IAppController> m_controller;
         std::unique_ptr<View::IHomeView> m_home;
         std::unique_ptr<View::Settings::ISettingsView> m_settings;

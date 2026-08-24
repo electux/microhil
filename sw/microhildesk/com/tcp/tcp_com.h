@@ -31,7 +31,7 @@ namespace Electux::App::Com {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class TcpCom : public ICom, public ITcp {
       public:
-        TcpCom();
+        explicit TcpCom(bool verbose = false);
         ~TcpCom() noexcept override;
 
         TcpCom(const TcpCom &) = delete;
@@ -52,5 +52,6 @@ namespace Electux::App::Com {
         std::string m_ip;
         uint16_t m_port;
         int m_socketFd;
+        bool m_verbose;
     };
 } // namespace Electux::App::Com

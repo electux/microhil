@@ -22,6 +22,13 @@
 #include <config/iconfig.h>
 #include <memory>
 
+namespace Electux::App::Model {
+    class IModel;
+}
+
 namespace Electux::App::Config {
-    std::unique_ptr<IConfig> createConfigManager();
+    std::unique_ptr<IConfig> createConfigManager(
+        std::unique_ptr<Electux::App::Model::IModel> config,
+        bool verbose = false
+    );
 } // namespace Electux::App::Config

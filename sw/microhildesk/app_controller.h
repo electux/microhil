@@ -69,6 +69,11 @@ namespace Electux::App {
 
         sigc::signal<void(const std::string&)> signal_data_received() override;
 
+        void turnOnAllChannels() override;
+        void turnOffAllChannels() override;
+        void requestAllChannelsStatus() override;
+        void resetSystem() override;
+
       private:
         void configureLogger();
         void configureComChannel();

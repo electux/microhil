@@ -20,8 +20,8 @@
 #include "device/relay.h"
 #include "device/status_led.h"
 #include "dispatcher.h"
-#include "pico/stdlib.h"
 #include "hardware/watchdog.h"
+#include "pico/stdlib.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -81,7 +81,13 @@ static void cmd_handle_all_channels(const char *cmd_str) {
   bool on = (strstr(cmd_str, "#on#") != NULL);
 
   relay_set_all(on);
-  status_led_write(STATUS_LED_DEFAULT_VAL, STATUS_LED_DEFAULT_VAL, STATUS_LED_DEFAULT_VAL);
+  if (on) {
+    status_led_write(
+        STATUS_LED_DEFAULT_VAL, STATUS_LED_DEFAULT_VAL, STATUS_LED_DEFAULT_VAL
+    );
+  } else {
+    status_led_write(0, 0, 0);
+  }
   printf("<mh#sys#all channels %s#end>", on ? "on" : "off");
 }
 
@@ -104,7 +110,9 @@ static void cmd_handle_timer(const char *cmd_str) {
   if (sscanf(cmd_str + CMD_TIMER_ARGS_OFFSET, "%u#end", &seconds) == 1) {
     if (channel < RELAY_NUM_CHANNELS) {
       relay_start_timer(channel, seconds);
-      printf("<mh#sys#channel %c timer started: %u seconds#end>", ch_char, seconds);
+      printf(
+          "<mh#sys#channel %c timer started: %u seconds#end>", ch_char, seconds
+      );
     }
   }
 }
@@ -117,7 +125,9 @@ static void cmd_handle_pulse(const char *cmd_str) {
   if (sscanf(cmd_str + CMD_PULSE_ARGS_OFFSET, "%u#end", &duration_ms) == 1) {
     if (channel < RELAY_NUM_CHANNELS) {
       relay_start_pulse(channel, duration_ms);
-      printf("<mh#sys#channel %c pulse started: %u ms#end>", ch_char, duration_ms);
+      printf(
+          "<mh#sys#channel %c pulse started: %u ms#end>", ch_char, duration_ms
+      );
     }
   }
 }
@@ -129,11 +139,17 @@ static void cmd_handle_blink(const char *cmd_str) {
   uint32_t off_time = 0;
   uint32_t count = 0;
 
-  if (sscanf(cmd_str + CMD_BLINK_ARGS_OFFSET, "%u#%u#%u#end", &on_time, &off_time, &count) == 3) {
+  if (sscanf(
+          cmd_str + CMD_BLINK_ARGS_OFFSET, "%u#%u#%u#end", &on_time, &off_time,
+          &count
+      ) == 3) {
     if (channel < RELAY_NUM_CHANNELS) {
       relay_start_blink(channel, on_time, off_time, count);
-      printf("<mh#sys#channel %c blink started: on=%u ms, off=%u ms, count=%u#end>",
-             ch_char, on_time, off_time, count);
+      printf(
+          "<mh#sys#channel %c blink started: on=%u ms, off=%u ms, "
+          "count=%u#end>",
+          ch_char, on_time, off_time, count
+      );
     }
   }
 }
@@ -144,7 +160,9 @@ static void cmd_handle_mask(const char *cmd_str) {
     bool on = (bit == '1');
     relay_set(i, on);
   }
-  printf("<mh#sys#channels mask applied: %.8s#end>", cmd_str + CMD_MASK_ARGS_OFFSET);
+  printf(
+      "<mh#sys#channels mask applied: %.8s#end>", cmd_str + CMD_MASK_ARGS_OFFSET
+  );
 }
 
 static void cmd_handle_reset(const char *cmd_str) {
@@ -167,14 +185,16 @@ static void cmd_handle_channel_status(const char *cmd_str) {
 
 static void cmd_handle_all_status(const char *cmd_str) {
   (void)cmd_str;
-  char all_status_buf[256] = "Channels: ";
+  char all_status_buf[256] = "channels: ";
   uint32_t offset = 10;
   for (uint32_t i = 0; i < RELAY_NUM_CHANNELS; i++) {
     char status_buf[48];
     relay_get_status(i, status_buf, sizeof(status_buf));
     const char *state_str = strstr(status_buf, "ON") ? "ON" : "OFF";
-    int written = snprintf(all_status_buf + offset, sizeof(all_status_buf) - offset,
-                           "%u:%s ", i + 1, state_str);
+    int written = snprintf(
+        all_status_buf + offset, sizeof(all_status_buf) - offset, "%u:%s ",
+        i + 1, state_str
+    );
     if (written > 0) {
       offset += (uint32_t)written;
     }
@@ -199,8 +219,8 @@ static const command_entry_t command_tbl[] = {
     {"mh#ch#7#off#end", cmd_handle_channel},
     {"mh#ch#8#on#end", cmd_handle_channel},
     {"mh#ch#8#off#end", cmd_handle_channel},
-    {"mh#ch#all#on#end", cmd_handle_all_channels},
-    {"mh#ch#all#off#end", cmd_handle_all_channels},
+    {"mh#all#on#end", cmd_handle_all_channels},
+    {"mh#all#off#end", cmd_handle_all_channels},
     {"mh#all#stat#end", cmd_handle_all_status},
     {"mh#sys#reset#end", cmd_handle_reset},
     {"mh#sys#id#end", cmd_handle_board_id},
@@ -215,7 +235,8 @@ void command_dispatch(const char *cmd_str) {
   if (strncmp(cmd_str, CMD_PREFIX_CH, CMD_PREFIX_CH_LEN) == 0 &&
       cmd_str[CMD_CHANNEL_CHAR_INDEX] >= CMD_CHANNEL_MIN_CHAR &&
       cmd_str[CMD_CHANNEL_CHAR_INDEX] <= CMD_CHANNEL_MAX_CHAR &&
-      strncmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_TMR, CMD_TMR_LEN) == 0) {
+      strncmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_TMR, CMD_TMR_LEN) ==
+          0) {
     cmd_handle_timer(cmd_str);
     return;
   }
@@ -224,7 +245,8 @@ void command_dispatch(const char *cmd_str) {
   if (strncmp(cmd_str, CMD_PREFIX_CH, CMD_PREFIX_CH_LEN) == 0 &&
       cmd_str[CMD_CHANNEL_CHAR_INDEX] >= CMD_CHANNEL_MIN_CHAR &&
       cmd_str[CMD_CHANNEL_CHAR_INDEX] <= CMD_CHANNEL_MAX_CHAR &&
-      strncmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_PULSE, CMD_PULSE_LEN) == 0) {
+      strncmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_PULSE, CMD_PULSE_LEN) ==
+          0) {
     cmd_handle_pulse(cmd_str);
     return;
   }
@@ -233,7 +255,8 @@ void command_dispatch(const char *cmd_str) {
   if (strncmp(cmd_str, CMD_PREFIX_CH, CMD_PREFIX_CH_LEN) == 0 &&
       cmd_str[CMD_CHANNEL_CHAR_INDEX] >= CMD_CHANNEL_MIN_CHAR &&
       cmd_str[CMD_CHANNEL_CHAR_INDEX] <= CMD_CHANNEL_MAX_CHAR &&
-      strncmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_BLINK, CMD_BLINK_LEN) == 0) {
+      strncmp(cmd_str + CMD_CHANNEL_CHAR_INDEX + 1, CMD_BLINK, CMD_BLINK_LEN) ==
+          0) {
     cmd_handle_blink(cmd_str);
     return;
   }

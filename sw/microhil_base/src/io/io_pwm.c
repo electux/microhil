@@ -20,17 +20,22 @@
 #include "hardware/gpio.h"
 #include "hardware/pwm.h"
 
+static const uint32_t PWM_WRAP_VAL = 500;
+static const uint32_t PWM_INITIAL_LEVEL = 1;
+static const float PWM_CLKDIV = 50.0f;
+static const uint16_t PWM_MAX_DUTY_LEVEL = 100;
+
 void io_pwm_init(uint32_t pin, uint32_t channel) {
   gpio_set_function(pin, GPIO_FUNC_PWM);
   uint32_t slice_num = pwm_gpio_to_slice_num(pin);
-  pwm_set_wrap(slice_num, 500);
-  pwm_set_chan_level(slice_num, channel, 1);
-  pwm_set_clkdiv(slice_num, 50);
+  pwm_set_wrap(slice_num, PWM_WRAP_VAL);
+  pwm_set_chan_level(slice_num, channel, PWM_INITIAL_LEVEL);
+  pwm_set_clkdiv(slice_num, PWM_CLKDIV);
   pwm_set_enabled(slice_num, true);
 }
 
 void io_pwm_write(uint32_t pin, uint32_t channel, uint16_t duty_level) {
-  if (duty_level <= 100) {
+  if (duty_level <= PWM_MAX_DUTY_LEVEL) {
     uint32_t slice_num = pwm_gpio_to_slice_num(pin);
     pwm_set_chan_level(slice_num, channel, duty_level);
   }

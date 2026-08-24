@@ -76,12 +76,14 @@ BluezBleClient::BluezBleClient(
     const std::string &address,
     const std::string &serviceUuid,
     const std::string &rxUuid,
-    const std::string &txUuid
+    const std::string &txUuid,
+    bool verbose
 ) : m_address(address),
     m_serviceUuid(serviceUuid),
     m_rxUuid(rxUuid),
     m_txUuid(txUuid),
     m_connected(false),
+    m_verbose(verbose),
     m_subscriptionId(0) {}
 
 BluezBleClient::~BluezBleClient() {
@@ -206,7 +208,9 @@ bool BluezBleClient::connect(NotificationCallback callback) {
         rxProxy->call_sync(cStartNotifyMethod);
 
         m_connected = true;
-        std::cout << cConnectSuccessMsg << m_address << std::endl;
+        if (m_verbose) {
+            std::cout << cConnectSuccessMsg << m_address << std::endl;
+        }
         return true;
     } catch (const Glib::Error &ex) {
         std::cerr << cConnectDbusExceptionError << ex.what() << std::endl;
@@ -249,7 +253,9 @@ bool BluezBleClient::disconnect() {
         m_txCharPath.clear();
         m_connection.reset();
         m_notificationCallback = nullptr;
-        std::cout << cDisconnectSuccessMsg << std::endl;
+        if (m_verbose) {
+            std::cout << cDisconnectSuccessMsg << std::endl;
+        }
         return true;
     }
     return false;
