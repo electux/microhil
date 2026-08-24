@@ -23,6 +23,17 @@
 static const uint32_t BUZZER_PIN = 6;
 static const uint32_t BUZZER_PWM_CHAN = 0; // PWM_CHAN_A
 
+static const uint16_t BUZZER_BEEP_START_DUTY = 80;
+static const uint32_t BUZZER_BEEP_START_MS = 100;
+
+static const uint16_t BUZZER_BEEP_CHANGED_DUTY = 80;
+static const uint32_t BUZZER_BEEP_CHANGED_MS = 50;
+
+static const uint16_t BUZZER_BEEP_STOP_DUTY = 100;
+static const uint32_t BUZZER_BEEP_STOP_MS = 300;
+
+static const uint64_t US_TO_MS = 1000;
+
 bool buzzer_init(void) {
   io_pwm_init(BUZZER_PIN, BUZZER_PWM_CHAN);
   io_pwm_write(BUZZER_PIN, BUZZER_PWM_CHAN, 0);
@@ -34,7 +45,29 @@ void buzzer_write(uint16_t value) {
 }
 
 void buzzer_beep_start(void) {
-  buzzer_write(80);
-  sleep_ms(100);
+  buzzer_write(BUZZER_BEEP_START_DUTY);
+  sleep_ms(BUZZER_BEEP_START_MS);
+  buzzer_write(0);
+}
+
+static uint64_t buzzer_off_time = 0;
+
+void buzzer_beep_changed(void) {
+  buzzer_write(BUZZER_BEEP_CHANGED_DUTY);
+  buzzer_off_time = time_us_64() / US_TO_MS + BUZZER_BEEP_CHANGED_MS;
+}
+
+void buzzer_tick(void) {
+  if (buzzer_off_time > 0) {
+    if ((time_us_64() / US_TO_MS) >= buzzer_off_time) {
+      buzzer_write(0);
+      buzzer_off_time = 0;
+    }
+  }
+}
+
+void buzzer_beep_stop(void) {
+  buzzer_write(BUZZER_BEEP_STOP_DUTY);
+  sleep_ms(BUZZER_BEEP_STOP_MS);
   buzzer_write(0);
 }

@@ -41,6 +41,18 @@ void buzzer_write(uint16_t value);
 /// @brief Triggers a short startup notification beep
 void buzzer_beep_start(void);
 
+////////////////////////////////////////////////////////////////////////////
+/// @brief Triggers a short non-blocking notification beep for state changes
+void buzzer_beep_changed(void);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Polling tick function to turn off buzzer non-blockingly
+void buzzer_tick(void);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Triggers a longer shutdown/reset beep (blocking, pre-reset)
+void buzzer_beep_stop(void);
+
 #ifdef __cplusplus
 }
 #endif
