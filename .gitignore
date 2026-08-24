@@ -1,5 +1,6 @@
 __pycache__/
 *.py[cod]
+*.pyi
 *.d
 *.slo
 *.lo
@@ -19,10 +20,15 @@ __pycache__/
 *.exe
 *.out
 *.app
+*.venv/
 
 sw/microhil_base/build/*
 sw/microhildesk/build/*
 sw/microhildesk_tests/build/*
+sw/microhil_upy/build/*
+sw/microhil_upy/upy/mpy-cross/build/*
+sw/microhil_upy/apps/microhil/rp2*
+sw/microhil_upy/apps/microhil/typings*
 
 # CMake cache and generated files
 CMakeCache.txt

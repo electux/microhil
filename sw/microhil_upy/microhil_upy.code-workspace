@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.analysis.extraPaths": [
+			"/data/dev/raspberry/microhil/github/microhil/sw/microhil_upy/typings",
+			"/data/dev/raspberry/microhil/github/microhil/sw/microhil_upy/.venv/lib/python3.12/site-packages"
+		],
+		"python.autoComplete.extraPaths": [
+			"/data/dev/raspberry/microhil/github/microhil/sw/microhil_upy/typings",
+			"/data/dev/raspberry/microhil/github/microhil/sw/microhil_upy/.venv/lib/python3.12/site-packages"
+		],
+		"python.analysis.stubPath": "/data/dev/raspberry/microhil/github/microhil/sw/microhil_upy/typings"
+	}
+}
