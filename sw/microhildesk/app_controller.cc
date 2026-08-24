@@ -33,6 +33,10 @@
 
 using namespace Electux::App;
 
+namespace {
+    constexpr std::chrono::milliseconds cThreadSleepDuration{100};
+} // namespace
+
 AppController::AppController(
     std::unique_ptr<Config::IConfig> configManager,
     std::unique_ptr<Com::ICom> comChannel,
@@ -319,10 +323,10 @@ void AppController::readLoop() {
                 }
 
             } else {
-                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+                std::this_thread::sleep_for(cThreadSleepDuration);
             }
         } catch (...) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            std::this_thread::sleep_for(cThreadSleepDuration);
         }
     }
 }

@@ -32,6 +32,7 @@ namespace {
     constexpr std::string_view cOpenSuccessMsg{"BleCom opened successfully."};
     constexpr std::string_view cCloseSuccessMsg{"BleCom closed successfully."};
     constexpr std::string_view cWriteError{"BleCom write error: Connection is not open."};
+    constexpr std::chrono::seconds cReadTimeout{5};
 } // namespace
 
 BleCom::BleCom()
@@ -89,17 +90,17 @@ void BleCom::read(std::vector<uint8_t> &data, size_t len) {
 
     data.clear();
     std::unique_lock<std::mutex> lock(m_bufferMutex);
-    bool success = m_bufferCv.wait_for(lock, std::chrono::seconds(5), [this, len]() {
+    bool success = m_bufferCv.wait_for(lock, cReadTimeout, [this, len]() {
         return m_readBuffer.size() >= len;
     });
 
     if (success) {
-        data.assign(m_readBuffer.begin(), m_readBuffer.begin() + len);
-        m_readBuffer.erase(m_readBuffer.begin(), m_readBuffer.begin() + len);
+        data.assign(m_readBuffer.begin(), m_readBuffer.begin() + static_cast<std::vector<uint8_t>::difference_type>(len));
+        m_readBuffer.erase(m_readBuffer.begin(), m_readBuffer.begin() + static_cast<std::vector<uint8_t>::difference_type>(len));
     } else {
         size_t toCopy = std::min(len, m_readBuffer.size());
-        data.assign(m_readBuffer.begin(), m_readBuffer.begin() + toCopy);
-        m_readBuffer.erase(m_readBuffer.begin(), m_readBuffer.begin() + toCopy);
+        data.assign(m_readBuffer.begin(), m_readBuffer.begin() + static_cast<std::vector<uint8_t>::difference_type>(toCopy));
+        m_readBuffer.erase(m_readBuffer.begin(), m_readBuffer.begin() + static_cast<std::vector<uint8_t>::difference_type>(toCopy));
     }
 }
 

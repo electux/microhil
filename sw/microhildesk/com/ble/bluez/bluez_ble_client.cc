@@ -29,12 +29,12 @@ using namespace Electux::App::Com;
 namespace {
     Glib::ustring get_string_from_variant(const Glib::VariantBase& var) {
         gsize length = 0;
-        const gchar* str = g_variant_get_string(const_cast<GVariant*>(var.gobj()), &length);
+        const gchar* str = g_variant_get_string(const_cast<GVariant*>(var.gobj()), &length); // NOLINT(cppcoreguidelines-pro-type-const-cast)
         return Glib::ustring(str, length);
     }
 
     bool get_bool_from_variant(const Glib::VariantBase& var) {
-        return g_variant_get_boolean(const_cast<GVariant*>(var.gobj())) != 0;
+        return g_variant_get_boolean(const_cast<GVariant*>(var.gobj())) != 0; // NOLINT(cppcoreguidelines-pro-type-const-cast)
     }
 
     constexpr const char* cDbusSessionEnv{"MICROHILDESK_DBUS_SESSION"};
@@ -68,6 +68,8 @@ namespace {
     constexpr const char* cDisconnectSuccessMsg{"BluezBleClient disconnected successfully."};
     constexpr const char* cWriteNotOpenError{"BluezBleClient write error: Connection is not open."};
     constexpr const char* cWriteExceptionError{"BluezBleClient write error: "};
+    constexpr int cMaxServiceResolveRetries{30};
+    constexpr std::chrono::milliseconds cServiceResolveRetryInterval{500};
 } // namespace
 
 BluezBleClient::BluezBleClient(
@@ -140,7 +142,7 @@ bool BluezBleClient::connect(NotificationCallback callback) {
         auto getResult = propProxy->call_sync(cGetMethod, Glib::VariantContainerBase::create_tuple(getArgs));
         Glib::VariantBase valBase;
         getResult.get_child(valBase, 0);
-        GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(valBase.gobj()));
+        GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(valBase.gobj())); // NOLINT(cppcoreguidelines-pro-type-const-cast)
         Glib::VariantBase innerVal(innerGVar, true);
         bool isConnected = get_bool_from_variant(innerVal);
 
@@ -156,21 +158,21 @@ bool BluezBleClient::connect(NotificationCallback callback) {
 
         // Wait for services to resolve (timeout after 15 seconds)
         bool servicesResolved = false;
-        for (int i = 0; i < 30; ++i) {
+        for (int i = 0; i < cMaxServiceResolveRetries; ++i) {
             std::vector<Glib::VariantBase> getArgs2;
             getArgs2.push_back(Glib::Variant<Glib::ustring>::create(cDeviceInterface));
             getArgs2.push_back(Glib::Variant<Glib::ustring>::create(cServicesResolvedProp));
             auto getResult2 = propProxy->call_sync(cGetMethod, Glib::VariantContainerBase::create_tuple(getArgs2));
             Glib::VariantBase valBase2;
             getResult2.get_child(valBase2, 0);
-            GVariant* innerGVar2 = g_variant_get_variant(const_cast<GVariant*>(valBase2.gobj()));
+            GVariant* innerGVar2 = g_variant_get_variant(const_cast<GVariant*>(valBase2.gobj())); // NOLINT(cppcoreguidelines-pro-type-const-cast)
             Glib::VariantBase innerVal2(innerGVar2, true);
             bool isResolved = get_bool_from_variant(innerVal2);
             if (isResolved) {
                 servicesResolved = true;
                 break;
             }
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            std::this_thread::sleep_for(cServiceResolveRetryInterval);
         }
 
         if (!servicesResolved) {
@@ -313,11 +315,11 @@ void BluezBleClient::onPropertiesChanged(
 
             if (keyStr == cValueProp) {
                 Glib::VariantBase valBase = propEntry.get_child(1);
-                GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(valBase.gobj()));
+                GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(valBase.gobj())); // NOLINT(cppcoreguidelines-pro-type-const-cast)
                 Glib::VariantBase actualVal(innerGVar, true);
                 if (actualVal.get_type_string() == cByteArrayType) {
                     gsize n_elements = 0;
-                    gconstpointer data_ptr = g_variant_get_fixed_array(const_cast<GVariant*>(actualVal.gobj()), &n_elements, 1);
+                    gconstpointer data_ptr = g_variant_get_fixed_array(const_cast<GVariant*>(actualVal.gobj()), &n_elements, 1); // NOLINT(cppcoreguidelines-pro-type-const-cast)
                     if (data_ptr && n_elements > 0) {
                         const uint8_t* raw_bytes = static_cast<const uint8_t*>(data_ptr);
                         std::vector<uint8_t> bytes(raw_bytes, raw_bytes + n_elements);

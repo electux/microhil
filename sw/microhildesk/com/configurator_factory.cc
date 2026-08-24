@@ -30,15 +30,18 @@
 
 namespace Electux::App::Com {
     std::unique_ptr<IComConfigurator> createSerialConfigurator(ICom* com) {
-        return std::make_unique<SerialComConfigurator>(static_cast<SerialCom*>(com));
+        auto* concrete = dynamic_cast<SerialCom*>(com);
+        return concrete ? std::make_unique<SerialComConfigurator>(concrete) : nullptr;
     }
 
     std::unique_ptr<IComConfigurator> createTcpConfigurator(ICom* com) {
-        return std::make_unique<TcpComConfigurator>(static_cast<TcpCom*>(com));
+        auto* concrete = dynamic_cast<TcpCom*>(com);
+        return concrete ? std::make_unique<TcpComConfigurator>(concrete) : nullptr;
     }
 
     std::unique_ptr<IComConfigurator> createBleConfigurator(ICom* com) {
-        return std::make_unique<BleComConfigurator>(static_cast<BleCom*>(com));
+        auto* concrete = dynamic_cast<BleCom*>(com);
+        return concrete ? std::make_unique<BleComConfigurator>(concrete) : nullptr;
     }
 
     std::unique_ptr<IComConfigurator> createSwitchableConfigurator(
@@ -47,11 +50,12 @@ namespace Electux::App::Com {
         std::unique_ptr<IComConfigurator> tcpConfigurator,
         std::unique_ptr<IComConfigurator> bleConfigurator
     ) {
-        return std::make_unique<SwitchableComConfigurator>(
-            static_cast<SwitchableCom*>(com),
+        auto* concrete = dynamic_cast<SwitchableCom*>(com);
+        return concrete ? std::make_unique<SwitchableComConfigurator>(
+            concrete,
             std::move(serialConfigurator),
             std::move(tcpConfigurator),
             std::move(bleConfigurator)
-        );
+        ) : nullptr;
     }
 } // namespace Electux::App::Com

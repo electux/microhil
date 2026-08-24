@@ -28,6 +28,8 @@ namespace {
     constexpr int cHomeWidth{600};
     constexpr int cHomeHeight{520};
     constexpr std::string_view cTextViewCss{"textview text { background-color: black; color: white; }"};
+    constexpr int cWidgetMargin{10};
+    constexpr int cScrolledWindowHeight{250};
 } // namespace
 
 using namespace Electux::App::View;
@@ -45,10 +47,10 @@ AppHome::AppHome() {
     m_textView.set_cursor_visible(false);
     m_textView.set_wrap_mode(Gtk::WrapMode::CHAR);
     m_textView.set_monospace(true);
-    m_textView.set_left_margin(10);
-    m_textView.set_right_margin(10);
-    m_textView.set_top_margin(10);
-    m_textView.set_bottom_margin(10);
+    m_textView.set_left_margin(cWidgetMargin);
+    m_textView.set_right_margin(cWidgetMargin);
+    m_textView.set_top_margin(cWidgetMargin);
+    m_textView.set_bottom_margin(cWidgetMargin);
 
     auto css_provider = Gtk::CssProvider::create();
     css_provider->load_from_data(cTextViewCss.data());
@@ -57,10 +59,10 @@ AppHome::AppHome() {
     m_scrolled_window.set_child(m_textView);
     m_scrolled_window.set_vexpand(true);
     m_scrolled_window.set_hexpand(true);
-    m_scrolled_window.set_size_request(-1, 250);
-    m_scrolled_window.set_margin_start(10);
-    m_scrolled_window.set_margin_end(10);
-    m_scrolled_window.set_margin_bottom(10);
+    m_scrolled_window.set_size_request(-1, cScrolledWindowHeight);
+    m_scrolled_window.set_margin_start(cWidgetMargin);
+    m_scrolled_window.set_margin_end(cWidgetMargin);
+    m_scrolled_window.set_margin_bottom(cWidgetMargin);
 
     m_dispatcher.connect(
         sigc::mem_fun(*this, &AppHome::onDataReceivedDispatcher)

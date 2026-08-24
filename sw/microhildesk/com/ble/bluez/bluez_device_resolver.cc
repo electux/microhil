@@ -26,12 +26,12 @@ using namespace Electux::App::Com;
 namespace {
     Glib::ustring get_string_from_variant(const Glib::VariantBase& var) {
         gsize length = 0;
-        const gchar* str = g_variant_get_string(const_cast<GVariant*>(var.gobj()), &length);
+        const gchar* str = g_variant_get_string(const_cast<GVariant*>(var.gobj()), &length); // NOLINT(cppcoreguidelines-pro-type-const-cast)
         return Glib::ustring(str, length);
     }
 
     Glib::ustring getStringProperty(const Glib::VariantBase& propValVar) {
-        GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(propValVar.gobj()));
+        GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(propValVar.gobj())); // NOLINT(cppcoreguidelines-pro-type-const-cast)
         Glib::VariantBase inner(innerGVar, true);
         return get_string_from_variant(inner);
     }

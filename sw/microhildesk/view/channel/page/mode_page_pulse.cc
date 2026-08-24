@@ -24,26 +24,32 @@ namespace {
     constexpr std::string_view cChannelPulseLabel{"Pulse (ms) #"};
     constexpr std::string_view cChannelPulseBtnTrigger{"Trigger"};
     constexpr std::string_view cChannelPulseDesc{"Generate a short momentary pulse."};
+    constexpr int cBoxSpacing{5};
+    constexpr int cMarginTopBottom{15};
+    constexpr double cPulseTimeMin{10.0};
+    constexpr double cPulseTimeMax{10000.0};
+    constexpr double cPulseTimeStep{10.0};
+    constexpr double cPulseTimePage{100.0};
 } // namespace
 
 using namespace Electux::App::View;
 
 PulseModePage::PulseModePage(size_t index)
-    : Gtk::Box(Gtk::Orientation::VERTICAL, 5),
+    : Gtk::Box(Gtk::Orientation::VERTICAL, cBoxSpacing),
       m_index(index) {
     m_pulseLabel.set_label(std::format("{} {}", cChannelPulseLabel.data(), index));
     m_descLabel.set_label(cChannelPulseDesc.data());
 
     append(m_pulseLabel);
 
-    m_pulseSpin.set_range(10.0, 10000.0);
-    m_pulseSpin.set_increments(10.0, 100.0);
+    m_pulseSpin.set_range(cPulseTimeMin, cPulseTimeMax);
+    m_pulseSpin.set_increments(cPulseTimeStep, cPulseTimePage);
     append(m_pulseSpin);
 
     m_descLabel.set_wrap(true);
     m_descLabel.set_justify(Gtk::Justification::CENTER);
-    m_descLabel.set_margin_top(15);
-    m_descLabel.set_margin_bottom(15);
+    m_descLabel.set_margin_top(cMarginTopBottom);
+    m_descLabel.set_margin_bottom(cMarginTopBottom);
     m_descLabel.set_vexpand(true);
     m_descLabel.set_valign(Gtk::Align::END);
     append(m_descLabel);

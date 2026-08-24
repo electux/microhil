@@ -39,9 +39,10 @@ namespace {
     constexpr std::string_view cTcpReadError{"TcpCom read: Connection lost or read error."};
     constexpr std::string_view cTcpWriteError{"TcpCom write: Connection lost or write error."};
     constexpr std::string_view cTcpWriteNotOpenError{"TcpCom write error: Connection is not open."};
+    constexpr uint16_t cDefaultPort{5000};
 } // namespace
 
-TcpCom::TcpCom() : m_ip(cDefaultIp), m_port(5000), m_socketFd(-1) {
+TcpCom::TcpCom() : m_ip(cDefaultIp), m_port(cDefaultPort), m_socketFd(-1) {
     std::cout << cTcpComConstructorMsg << std::endl;
 }
 
@@ -61,7 +62,7 @@ bool TcpCom::open() {
         return false;
     }
 
-    struct sockaddr_in serv_addr;
+    struct sockaddr_in serv_addr{};
     std::memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(m_port);
@@ -74,7 +75,7 @@ bool TcpCom::open() {
     }
 
     if (::connect(
-            m_socketFd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)
+            m_socketFd, reinterpret_cast<struct sockaddr *>(&serv_addr), sizeof(serv_addr)
         ) < 0) {
         std::cerr << cTcpOpenConnError << std::endl;
         ::close(m_socketFd);
@@ -108,7 +109,7 @@ void TcpCom::read(std::vector<uint8_t> &data, size_t len) {
     size_t totalRead = 0;
     while (totalRead < len) {
         ssize_t bytesRead =
-            ::recv(m_socketFd, data.data() + totalRead, len - totalRead, 0);
+            ::recv(m_socketFd, &data.at(totalRead), len - totalRead, 0);
         if (bytesRead <= 0) {
             std::cerr << cTcpReadError << std::endl;
             close();
@@ -127,7 +128,7 @@ void TcpCom::write(const std::vector<uint8_t> &data) {
     size_t totalSent = 0;
     while (totalSent < data.size()) {
         ssize_t bytesSent = ::send(
-            m_socketFd, data.data() + totalSent, data.size() - totalSent, 0
+            m_socketFd, &data.at(totalSent), data.size() - totalSent, 0
         );
         if (bytesSent <= 0) {
             std::cerr << cTcpWriteError << std::endl;

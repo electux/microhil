@@ -24,26 +24,32 @@ namespace {
     constexpr std::string_view cChannelTimerLabel{"Use timer #"};
     constexpr std::string_view cChannelTimerBtnStart{"Start"};
     constexpr std::string_view cChannelTimerDesc{"Keep the channel active for a time."};
+    constexpr int cBoxSpacing{5};
+    constexpr int cMarginTopBottom{15};
+    constexpr double cTimerMinSec{0.0};
+    constexpr double cTimerMaxSec{3600.0};
+    constexpr double cTimerStep{1.0};
+    constexpr double cTimerPage{10.0};
 } // namespace
 
 using namespace Electux::App::View;
 
 TimerModePage::TimerModePage(size_t index)
-    : Gtk::Box(Gtk::Orientation::VERTICAL, 5),
+    : Gtk::Box(Gtk::Orientation::VERTICAL, cBoxSpacing),
       m_index(index) {
     m_timerLabel.set_label(std::format("{} {}", cChannelTimerLabel.data(), index));
     m_descLabel.set_label(cChannelTimerDesc.data());
 
     append(m_timerLabel);
 
-    m_timerSpin.set_range(0.0, 3600.0);
-    m_timerSpin.set_increments(1.0, 10.0);
+    m_timerSpin.set_range(cTimerMinSec, cTimerMaxSec);
+    m_timerSpin.set_increments(cTimerStep, cTimerPage);
     append(m_timerSpin);
 
     m_descLabel.set_wrap(true);
     m_descLabel.set_justify(Gtk::Justification::CENTER);
-    m_descLabel.set_margin_top(15);
-    m_descLabel.set_margin_bottom(15);
+    m_descLabel.set_margin_top(cMarginTopBottom);
+    m_descLabel.set_margin_bottom(cMarginTopBottom);
     m_descLabel.set_vexpand(true);
     m_descLabel.set_valign(Gtk::Align::END);
     append(m_descLabel);

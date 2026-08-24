@@ -26,12 +26,22 @@ namespace {
     constexpr std::string_view cBlinkCountLabel{"Count #"};
     constexpr std::string_view cBlinkBtnStart{"Start Blink"};
     constexpr std::string_view cChannelBlinkDesc{"Cycle the channel state ON and OFF."};
+    constexpr int cBoxSpacing{5};
+    constexpr int cMarginTopBottom{15};
+    constexpr double cBlinkTimeMin{10.0};
+    constexpr double cBlinkTimeMax{10000.0};
+    constexpr double cBlinkTimeStep{10.0};
+    constexpr double cBlinkTimePage{100.0};
+    constexpr double cBlinkCountMin{0.0};
+    constexpr double cBlinkCountMax{1000.0};
+    constexpr double cBlinkCountStep{1.0};
+    constexpr double cBlinkCountPage{10.0};
 } // namespace
 
 using namespace Electux::App::View;
 
 BlinkModePage::BlinkModePage(size_t index)
-    : Gtk::Box(Gtk::Orientation::VERTICAL, 5),
+    : Gtk::Box(Gtk::Orientation::VERTICAL, cBoxSpacing),
       m_index(index) {
     m_blinkOnLabel.set_label(std::format("{} {}", cBlinkOnLabel.data(), index));
     m_blinkOffLabel.set_label(std::format("{} {}", cBlinkOffLabel.data(), index));
@@ -39,24 +49,24 @@ BlinkModePage::BlinkModePage(size_t index)
     m_descLabel.set_label(cChannelBlinkDesc.data());
 
     append(m_blinkOnLabel);
-    m_blinkOnSpin.set_range(10.0, 10000.0);
-    m_blinkOnSpin.set_increments(10.0, 100.0);
+    m_blinkOnSpin.set_range(cBlinkTimeMin, cBlinkTimeMax);
+    m_blinkOnSpin.set_increments(cBlinkTimeStep, cBlinkTimePage);
     append(m_blinkOnSpin);
 
     append(m_blinkOffLabel);
-    m_blinkOffSpin.set_range(10.0, 10000.0);
-    m_blinkOffSpin.set_increments(10.0, 100.0);
+    m_blinkOffSpin.set_range(cBlinkTimeMin, cBlinkTimeMax);
+    m_blinkOffSpin.set_increments(cBlinkTimeStep, cBlinkTimePage);
     append(m_blinkOffSpin);
 
     append(m_blinkCountLabel);
-    m_blinkCountSpin.set_range(0.0, 1000.0);
-    m_blinkCountSpin.set_increments(1.0, 10.0);
+    m_blinkCountSpin.set_range(cBlinkCountMin, cBlinkCountMax);
+    m_blinkCountSpin.set_increments(cBlinkCountStep, cBlinkCountPage);
     append(m_blinkCountSpin);
 
     m_descLabel.set_wrap(true);
     m_descLabel.set_justify(Gtk::Justification::CENTER);
-    m_descLabel.set_margin_top(15);
-    m_descLabel.set_margin_bottom(15);
+    m_descLabel.set_margin_top(cMarginTopBottom);
+    m_descLabel.set_margin_bottom(cMarginTopBottom);
     m_descLabel.set_vexpand(true);
     m_descLabel.set_valign(Gtk::Align::END);
     append(m_descLabel);
