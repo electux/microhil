@@ -1,0 +1,2 @@
+micropython-rp2-stubs==1.28.0.post4
+micropython-stdlib-stubs==1.28.0.post6
