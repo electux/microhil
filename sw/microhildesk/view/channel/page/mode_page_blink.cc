@@ -25,6 +25,7 @@ namespace {
     constexpr std::string_view cBlinkOffLabel{"Blink OFF (ms) #"};
     constexpr std::string_view cBlinkCountLabel{"Count #"};
     constexpr std::string_view cBlinkBtnStart{"Start Blink"};
+    constexpr std::string_view cChannelBlinkDesc{"Cycle the channel state ON and OFF."};
 } // namespace
 
 using namespace Electux::App::View;
@@ -35,7 +36,7 @@ BlinkModePage::BlinkModePage(size_t index)
     m_blinkOnLabel.set_label(std::format("{} {}", cBlinkOnLabel.data(), index));
     m_blinkOffLabel.set_label(std::format("{} {}", cBlinkOffLabel.data(), index));
     m_blinkCountLabel.set_label(std::format("{} {}", cBlinkCountLabel.data(), index));
-    m_descLabel.set_label("Cycle the channel state ON and OFF.");
+    m_descLabel.set_label(cChannelBlinkDesc.data());
 
     append(m_blinkOnLabel);
     m_blinkOnSpin.set_range(10.0, 10000.0);

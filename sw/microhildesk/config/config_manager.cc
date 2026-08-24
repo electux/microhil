@@ -36,6 +36,16 @@ namespace {
     constexpr char cConfigAssignDelimiter{'='};
     // Character indicating a comment line in the config file
     constexpr char cConfigCommentChar{'#'};
+    // Console messages
+    constexpr std::string_view cUnableToCreateFileMsg{"Unable to create file: "};
+    constexpr std::string_view cInitConfigPathMsg{"Initialized configuration file path: "};
+    constexpr std::string_view cInitErrorMsg{"Error during ConfigManager initialization: "};
+    constexpr std::string_view cLoadingConfigMsg{"Loading configuration..."};
+    constexpr std::string_view cUnableToOpenFileMsg{"Unable to open file: "};
+    constexpr std::string_view cUnknownKeyWarningMsg{"Warning: Unknown configuration key: "};
+    constexpr std::string_view cLoadConfigDoneMsg{"Load configuration done."};
+    constexpr std::string_view cStoringConfigMsg{"Storing configuration..."};
+    constexpr std::string_view cStoreConfigDoneMsg{"Store configuration done."};
     /// @}
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace
@@ -79,7 +89,7 @@ void ConfigManager::init() {
                 std::ofstream file(m_fileName);
                 if (!file) {
                     throw std::ios_base::failure(
-                        "Unable to create file: " + m_fileName
+                        std::string(cUnableToCreateFileMsg) + m_fileName
                     );
                 }
 
@@ -89,11 +99,11 @@ void ConfigManager::init() {
             defaultConfigStore();
         }
 
-        std::cout << "Initialized configuration file path: " << m_fileName
+        std::cout << cInitConfigPathMsg << m_fileName
                   << std::endl;
         load();
     } catch (const std::exception &e) {
-        std::cerr << "Error during ConfigManager initialization: " << e.what()
+        std::cerr << cInitErrorMsg << e.what()
                   << std::endl;
     }
 }
@@ -106,10 +116,10 @@ void ConfigManager::init() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool ConfigManager::load() {
     std::ifstream file(m_fileName);
-    std::cout << "Loading configuration..." << std::endl;
+    std::cout << cLoadingConfigMsg << std::endl;
 
     if (!file.is_open()) {
-        std::cerr << "Unable to open file: " << m_fileName << std::endl;
+        std::cerr << cUnableToOpenFileMsg << m_fileName << std::endl;
         return false;
     }
 
@@ -137,7 +147,7 @@ bool ConfigManager::load() {
                     m_config->add(key, value);
                 }
             } else {
-                std::cerr << "Warning: Unknown configuration key: " << key
+                std::cerr << cUnknownKeyWarningMsg << key
                           << std::endl;
                 continue;
             }
@@ -145,7 +155,7 @@ bool ConfigManager::load() {
     }
 
     file.close();
-    std::cout << "Load configuration done." << std::endl;
+    std::cout << cLoadConfigDoneMsg << std::endl;
     return true;
 }
 
@@ -155,10 +165,10 @@ bool ConfigManager::load() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool ConfigManager::store() {
     std::ofstream file(m_fileName);
-    std::cout << "Storing configuration..." << std::endl;
+    std::cout << cStoringConfigMsg << std::endl;
 
     if (!file.is_open()) {
-        std::cerr << "Unable to open file: " << m_fileName << std::endl;
+        std::cerr << cUnableToOpenFileMsg << m_fileName << std::endl;
         return false;
     }
 
@@ -172,7 +182,7 @@ bool ConfigManager::store() {
     writeModel(*m_config);
 
     file.close();
-    std::cout << "Store configuration done." << std::endl;
+    std::cout << cStoreConfigDoneMsg << std::endl;
     return true;
 }
 

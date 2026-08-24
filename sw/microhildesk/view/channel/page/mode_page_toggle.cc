@@ -22,6 +22,7 @@
 
 namespace {
     constexpr std::string_view cChannelToggleBtnActivate{"Activate"};
+    constexpr std::string_view cChannelToggleDesc{"Manually control the channel state."};
 } // namespace
 
 using namespace Electux::App::View;
@@ -29,7 +30,7 @@ using namespace Electux::App::View;
 ToggleModePage::ToggleModePage(size_t index)
     : Gtk::Box(Gtk::Orientation::VERTICAL, 5),
       m_index(index) {
-    m_descLabel.set_label("Manually control the channel state.");
+    m_descLabel.set_label(cChannelToggleDesc.data());
 
     m_descLabel.set_wrap(true);
     m_descLabel.set_justify(Gtk::Justification::CENTER);

@@ -23,28 +23,45 @@
 
 using namespace Electux::App::Command;
 
+namespace {
+    constexpr std::string_view cCmdChOff{"<mh#ch#{}#off#end>"};
+    constexpr std::string_view cCmdChToggle{"<mh#ch#{}#{}#end>"};
+    constexpr std::string_view cCmdChTmr{"<mh#ch#{}#tmr#{}#end>"};
+    constexpr std::string_view cCmdChPulse{"<mh#ch#{}#pulse#{}#end>"};
+    constexpr std::string_view cCmdChBlink{"<mh#ch#{}#blink#{}#{}#{}#end>"};
+    constexpr std::string_view cCmdAllOff{"<mh#all#off#end>"};
+    constexpr std::string_view cCmdAllOn{"<mh#all#on#end>"};
+    constexpr std::string_view cCmdAllMaskPrefix{"<mh#all#mask#"};
+    constexpr std::string_view cCmdAllMaskSuffix{"#end>"};
+    constexpr std::string_view cCmdChStat{"<mh#ch#{}#stat#end>"};
+    constexpr std::string_view cCmdAllStat{"<mh#all#stat#end>"};
+    constexpr std::string_view cCmdSysReset{"<mh#sys#reset#end>"};
+    constexpr std::string_view cCmdSysId{"<mh#sys#id#end>"};
+    constexpr std::string_view cCmdSysVersion{"<mh#sys#version#end>"};
+    constexpr std::string_view cOnVal{"on"};
+    constexpr std::string_view cOffVal{"off"};
+    constexpr std::string_view cBitOne{"1"};
+    constexpr std::string_view cBitZero{"0"};
+} // namespace
+
 std::string CommandFormatter::getCommandState(
     size_t channelIdx, const Model::Channel::ChannelState &state
 ) const {
     if (!state.enabled) {
-        return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
+        return std::format(cCmdChOff.data(), channelIdx + 1);
     }
 
-    if (state.mode == Model::Channel::ChannelMode::Toggle) // Toggle Mode
-    {
+    if (state.mode == Model::Channel::ChannelMode::Toggle) {
         return std::format(
-            "<mh#ch#{}#{}#end>", channelIdx + 1, state.toggle ? "on" : "off"
+            cCmdChToggle.data(), channelIdx + 1, state.toggle ? cOnVal : cOffVal
         );
     }
 
-    if (state.mode == Model::Channel::ChannelMode::Timer) // Timer Mode
-    {
+    if (state.mode == Model::Channel::ChannelMode::Timer) {
         if (state.timerEnabled) {
-            return std::format(
-                "<mh#ch#{}#tmr#{}#end>", channelIdx + 1, state.timer
-            );
+            return std::format(cCmdChTmr.data(), channelIdx + 1, state.timer);
         } else {
-            return std::format("<mh#ch#{}#off#end>", channelIdx + 1);
+            return std::format(cCmdChOff.data(), channelIdx + 1);
         }
     }
 
@@ -54,56 +71,53 @@ std::string CommandFormatter::getCommandState(
 std::string CommandFormatter::getCommandPulse(
     size_t channelIdx, const Model::Channel::ChannelState &state
 ) const {
-    return std::format("<mh#ch#{}#pulse#{}#end>", channelIdx + 1, state.pulseTime);
+    return std::format(cCmdChPulse.data(), channelIdx + 1, state.pulseTime);
 }
 
 std::string CommandFormatter::getCommandBlink(
     size_t channelIdx, const Model::Channel::ChannelState &state
 ) const {
     return std::format(
-        "<mh#ch#{}#blink#{}#{}#{}#end>",
-        channelIdx + 1,
-        state.blinkOnTime,
-        state.blinkOffTime,
-        state.blinkCount
+        cCmdChBlink.data(), channelIdx + 1, state.blinkOnTime,
+        state.blinkOffTime, state.blinkCount
     );
 }
 
 std::string CommandFormatter::getCommandOffAllChannels() const {
-    return "<mh#all#off#end>";
+    return std::string(cCmdAllOff);
 }
 
 std::string CommandFormatter::getCommandOnAllChannels() const {
-    return "<mh#all#on#end>";
+    return std::string(cCmdAllOn);
 }
 
 std::string CommandFormatter::getCommandMaskChannels(
     const std::vector<Model::Channel::ChannelState> &states
 ) const {
-    std::string command = "<mh#all#mask#";
+    std::string command = std::string(cCmdAllMaskPrefix);
     for (const auto &state : states) {
-        command += (state.enabled and state.toggle ? "1" : "0");
+        command += (state.enabled and state.toggle ? cBitOne : cBitZero);
     }
-    command += "#end>";
+    command += cCmdAllMaskSuffix;
     return command;
 }
 
 std::string CommandFormatter::getCommandStatus(size_t channelIdx) const {
-    return std::format("<mh#ch#{}#stat#end>", channelIdx + 1);
+    return std::format(cCmdChStat.data(), channelIdx + 1);
 }
 
 std::string CommandFormatter::getCommandStatusAllChannels() const {
-    return "<mh#all#stat#end>";
+    return std::string(cCmdAllStat);
 }
 
 std::string CommandFormatter::getCommandReset() const {
-    return "<mh#sys#reset#end>";
+    return std::string(cCmdSysReset);
 }
 
 std::string CommandFormatter::getCommandBoardId() const {
-    return "<mh#sys#id#end>";
+    return std::string(cCmdSysId);
 }
 
 std::string CommandFormatter::getCommandVersion() const {
-    return "<mh#sys#version#end>";
+    return std::string(cCmdSysVersion);
 }

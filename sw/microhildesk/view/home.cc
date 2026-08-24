@@ -27,6 +27,7 @@ namespace {
     constexpr std::string_view cHomeTitle{"microhildesk"};
     constexpr int cHomeWidth{600};
     constexpr int cHomeHeight{520};
+    constexpr std::string_view cTextViewCss{"textview text { background-color: black; color: white; }"};
 } // namespace
 
 using namespace Electux::App::View;
@@ -50,7 +51,7 @@ AppHome::AppHome() {
     m_textView.set_bottom_margin(10);
 
     auto css_provider = Gtk::CssProvider::create();
-    css_provider->load_from_data("textview text { background-color: black; color: white; }");
+    css_provider->load_from_data(cTextViewCss.data());
     m_textView.get_style_context()->add_provider(css_provider, GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     m_scrolled_window.set_child(m_textView);

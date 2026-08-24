@@ -26,18 +26,26 @@
 
 using namespace Electux::App::Com;
 
+namespace {
+    constexpr std::string_view cConstructorMsg{"BleCom constructor called."};
+    constexpr std::string_view cDestructorMsg{"BleCom destructor called."};
+    constexpr std::string_view cOpenSuccessMsg{"BleCom opened successfully."};
+    constexpr std::string_view cCloseSuccessMsg{"BleCom closed successfully."};
+    constexpr std::string_view cWriteError{"BleCom write error: Connection is not open."};
+} // namespace
+
 BleCom::BleCom()
     : m_address(""),
       m_serviceUuid(""),
       m_rxUuid(""),
       m_txUuid(""),
       m_client(nullptr) {
-    std::cout << "BleCom constructor called." << std::endl;
+    std::cout << cConstructorMsg << std::endl;
 }
 
 BleCom::~BleCom() noexcept {
     close();
-    std::cout << "BleCom destructor called." << std::endl;
+    std::cout << cDestructorMsg << std::endl;
 }
 
 bool BleCom::open() {
@@ -52,7 +60,7 @@ bool BleCom::open() {
     };
 
     if (m_client->connect(callback)) {
-        std::cout << "BleCom opened successfully." << std::endl;
+        std::cout << cOpenSuccessMsg << std::endl;
         return true;
     }
 
@@ -64,7 +72,7 @@ bool BleCom::close() {
     if (m_client) {
         m_client->disconnect();
         m_client.reset();
-        std::cout << "BleCom closed successfully." << std::endl;
+        std::cout << cCloseSuccessMsg << std::endl;
         return true;
     }
     return false;
@@ -97,7 +105,7 @@ void BleCom::read(std::vector<uint8_t> &data, size_t len) {
 
 void BleCom::write(const std::vector<uint8_t> &data) {
     if (!isOpen()) {
-        std::cerr << "BleCom write error: Connection is not open." << std::endl;
+        std::cerr << cWriteError << std::endl;
         return;
     }
     m_client->write(data);

@@ -23,6 +23,23 @@
 
 using namespace Electux::App::Com;
 
+namespace {
+    constexpr std::string_view cConstructorMsg{"SerialCom constructor called."};
+    constexpr std::string_view cDestructorMsg{"SerialCom destructor called."};
+    constexpr std::string_view cCloseErrorMsg{"Close error: Serial port was not closed properly."};
+    constexpr std::string_view cExceptionCloseErrorMsg{"Exception in destructor during close(): "};
+    constexpr std::string_view cUnknownExceptionMsg{"Unknown exception in SerialCom destructor."};
+    constexpr std::string_view cOpenEmptyDeviceError{"Open error: Device path is empty!"};
+    constexpr std::string_view cOpenSuccessMsg{"Serial port opened successfully."};
+    constexpr std::string_view cOpenExceptionError{"Open error: "};
+    constexpr std::string_view cCloseSuccessMsg{"Serial port closed successfully."};
+    constexpr std::string_view cReadError{"Read error: Serial port closed."};
+    constexpr std::string_view cWriteError{"Write error: Serial port closed."};
+    constexpr std::string_view cSetupNotOpenError{"Setup error: Serial port not open."};
+    constexpr std::string_view cSetupEmptyDeviceError{"Setup error: Device path is empty!"};
+    constexpr std::string_view cSetupExceptionError{"Setup error: "};
+} // namespace
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Constructs a SerialCom object with the given serial port adapter.
 /// @param port A unique pointer to an ILibSerialPort implementation.
@@ -31,7 +48,7 @@ SerialCom::SerialCom(std::unique_ptr<ILibSerialPort> port)
     : m_serialPort(
           port ? std::move(port) : std::make_unique<LibSerialPortWrapper>()
       ) {
-    std::cout << "SerialCom constructor called." << std::endl;
+    std::cout << cConstructorMsg << std::endl;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -42,19 +59,19 @@ SerialCom::~SerialCom() noexcept {
     try {
         if (isOpen()) {
             if (!close()) {
-                std::cerr << "Close error: Serial port was not closed properly."
+                std::cerr << cCloseErrorMsg
                           << std::endl;
             }
         }
     } catch (const std::exception &e) {
         // Log the error but DO NOT rethrow
-        std::cerr << "Exception in destructor during close(): " << e.what()
+        std::cerr << cExceptionCloseErrorMsg << e.what()
                   << std::endl;
     } catch (...) {
-        std::cerr << "Unknown exception in SerialCom destructor." << std::endl;
+        std::cerr << cUnknownExceptionMsg << std::endl;
     }
 
-    std::cout << "SerialCom destructor called." << std::endl;
+    std::cout << cDestructorMsg << std::endl;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,17 +80,17 @@ SerialCom::~SerialCom() noexcept {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool SerialCom::open() {
     if (m_device.empty()) {
-        std::cerr << "Open error: Device path is empty!" << std::endl;
+        std::cerr << cOpenEmptyDeviceError << std::endl;
         return false;
     }
 
     if (!isOpen()) {
         try {
             m_serialPort->Open(m_device);
-            std::cout << "Serial port opened successfully." << std::endl;
+            std::cout << cOpenSuccessMsg << std::endl;
             return true;
         } catch (const std::exception &e) {
-            std::cerr << "Open error: " << e.what() << std::endl;
+            std::cerr << cOpenExceptionError << e.what() << std::endl;
         }
     }
 
@@ -87,7 +104,7 @@ bool SerialCom::open() {
 bool SerialCom::close() {
     if (isOpen()) {
         m_serialPort->Close();
-        std::cout << "Serial port closed successfully." << std::endl;
+        std::cout << cCloseSuccessMsg << std::endl;
         return true;
     }
 
@@ -112,7 +129,7 @@ bool SerialCom::isOpen() const {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::read(std::vector<uint8_t> &data, size_t len) {
     if (!isOpen()) {
-        std::cerr << "Read error: Serial port closed." << std::endl;
+        std::cerr << cReadError << std::endl;
         return;
     }
 
@@ -125,7 +142,7 @@ void SerialCom::read(std::vector<uint8_t> &data, size_t len) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::write(const std::vector<uint8_t> &data) {
     if (!isOpen()) {
-        std::cerr << "Write error: Serial port closed." << std::endl;
+        std::cerr << cWriteError << std::endl;
         return;
     }
 
@@ -183,12 +200,12 @@ void SerialCom::setFlowControl(FlowControl flowControl) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool SerialCom::setup(const SerialParams &params) {
     if (!isOpen()) {
-        std::cerr << "Setup error: Serial port not open." << std::endl;
+        std::cerr << cSetupNotOpenError << std::endl;
         return false;
     }
 
     if (params.device.empty()) {
-        std::cerr << "Setup error: Device path is empty!" << std::endl;
+        std::cerr << cSetupEmptyDeviceError << std::endl;
         return false;
     }
 
@@ -202,7 +219,7 @@ bool SerialCom::setup(const SerialParams &params) {
         return true;
 
     } catch (const std::exception &e) {
-        std::cerr << "Setup error: " << e.what() << std::endl;
+        std::cerr << cSetupExceptionError << e.what() << std::endl;
         return false;
     }
 }

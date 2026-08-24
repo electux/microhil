@@ -36,6 +36,38 @@ namespace {
     bool get_bool_from_variant(const Glib::VariantBase& var) {
         return g_variant_get_boolean(const_cast<GVariant*>(var.gobj())) != 0;
     }
+
+    constexpr const char* cDbusSessionEnv{"MICROHILDESK_DBUS_SESSION"};
+    constexpr const char* cBluezService{"org.bluez"};
+    constexpr const char* cDbusObjectManagerPath{"/"};
+    constexpr const char* cDbusObjectManagerInterface{"org.freedesktop.DBus.ObjectManager"};
+    constexpr const char* cGetManagedObjectsMethod{"GetManagedObjects"};
+    constexpr const char* cDbusPropertiesInterface{"org.freedesktop.DBus.Properties"};
+    constexpr const char* cDeviceInterface{"org.bluez.Device1"};
+    constexpr const char* cConnectedProp{"Connected"};
+    constexpr const char* cGetMethod{"Get"};
+    constexpr const char* cConnectMethod{"Connect"};
+    constexpr const char* cServicesResolvedProp{"ServicesResolved"};
+    constexpr const char* cPropertiesChangedSignal{"PropertiesChanged"};
+    constexpr const char* cGattCharacteristicInterface{"org.bluez.GattCharacteristic1"};
+    constexpr const char* cStartNotifyMethod{"StartNotify"};
+    constexpr const char* cStopNotifyMethod{"StopNotify"};
+    constexpr const char* cDisconnectMethod{"Disconnect"};
+    constexpr const char* cWriteValueMethod{"WriteValue"};
+    constexpr const char* cValueProp{"Value"};
+    constexpr const char* cByteArrayType{"ay"};
+
+    constexpr const char* cConnectIncompleteError{"BluezBleClient connect error: BLE configuration is incomplete."};
+    constexpr const char* cConnectDbusFailedError{"BluezBleClient connect error: Failed to connect to D-Bus ("};
+    constexpr const char* cConnectDeviceNotFoundError{"BluezBleClient connect error: Device with address "};
+    constexpr const char* cConnectDeviceNotFoundSuffix{" not found in managed objects."};
+    constexpr const char* cConnectServicesTimeoutError{"BluezBleClient connect error: GATT services could not be resolved in time."};
+    constexpr const char* cConnectCharsNotFoundError{"BluezBleClient connect error: GATT Characteristics matching RX/TX UUIDs not found."};
+    constexpr const char* cConnectSuccessMsg{"BluezBleClient connected successfully to device: "};
+    constexpr const char* cConnectDbusExceptionError{"BluezBleClient connect error: D-Bus call failed: "};
+    constexpr const char* cDisconnectSuccessMsg{"BluezBleClient disconnected successfully."};
+    constexpr const char* cWriteNotOpenError{"BluezBleClient write error: Connection is not open."};
+    constexpr const char* cWriteExceptionError{"BluezBleClient write error: "};
 } // namespace
 
 BluezBleClient::BluezBleClient(
@@ -60,35 +92,35 @@ bool BluezBleClient::connect(NotificationCallback callback) {
     }
 
     if (m_address.empty() || m_serviceUuid.empty() || m_rxUuid.empty() || m_txUuid.empty()) {
-        std::cerr << "BluezBleClient connect error: BLE configuration is incomplete." << std::endl;
+        std::cerr << cConnectIncompleteError << std::endl;
         return false;
     }
 
     try {
-        bool useSessionBus = (std::getenv("MICROHILDESK_DBUS_SESSION") != nullptr);
+        bool useSessionBus = (std::getenv(cDbusSessionEnv) != nullptr);
         auto busType = useSessionBus ? Gio::DBus::BusType::SESSION : Gio::DBus::BusType::SYSTEM;
         m_connection = Gio::DBus::Connection::get_sync(busType);
         if (!m_connection) {
-            std::cerr << "BluezBleClient connect error: Failed to connect to D-Bus (" 
+            std::cerr << cConnectDbusFailedError
                       << (useSessionBus ? "Session" : "System") << ")." << std::endl;
             return false;
         }
 
         auto objManagerProxy = Gio::DBus::Proxy::create_sync(
             m_connection,
-            "org.bluez",
-            "/",
-            "org.freedesktop.DBus.ObjectManager"
+            cBluezService,
+            cDbusObjectManagerPath,
+            cDbusObjectManagerInterface
         );
 
         // Find device path matching MAC address
-        Glib::VariantContainerBase objectsResult = objManagerProxy->call_sync("GetManagedObjects");
+        Glib::VariantContainerBase objectsResult = objManagerProxy->call_sync(cGetManagedObjectsMethod);
         Glib::VariantContainerBase objectsBase = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(objectsResult.get_child(0));
 
         Glib::ustring devPath = BluezDeviceResolver::findDevicePath(objectsBase, m_address);
 
         if (devPath.empty()) {
-            std::cerr << "BluezBleClient connect error: Device with address " << m_address << " not found in managed objects." << std::endl;
+            std::cerr << cConnectDeviceNotFoundError << m_address << cConnectDeviceNotFoundSuffix << std::endl;
             return false;
         }
 
@@ -97,15 +129,15 @@ bool BluezBleClient::connect(NotificationCallback callback) {
         // Check connection status
         auto propProxy = Gio::DBus::Proxy::create_sync(
             m_connection,
-            "org.bluez",
+            cBluezService,
             m_devicePath,
-            "org.freedesktop.DBus.Properties"
+            cDbusPropertiesInterface
         );
 
         std::vector<Glib::VariantBase> getArgs;
-        getArgs.push_back(Glib::Variant<Glib::ustring>::create("org.bluez.Device1"));
-        getArgs.push_back(Glib::Variant<Glib::ustring>::create("Connected"));
-        auto getResult = propProxy->call_sync("Get", Glib::VariantContainerBase::create_tuple(getArgs));
+        getArgs.push_back(Glib::Variant<Glib::ustring>::create(cDeviceInterface));
+        getArgs.push_back(Glib::Variant<Glib::ustring>::create(cConnectedProp));
+        auto getResult = propProxy->call_sync(cGetMethod, Glib::VariantContainerBase::create_tuple(getArgs));
         Glib::VariantBase valBase;
         getResult.get_child(valBase, 0);
         GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(valBase.gobj()));
@@ -115,20 +147,20 @@ bool BluezBleClient::connect(NotificationCallback callback) {
         if (!isConnected) {
             auto deviceProxy = Gio::DBus::Proxy::create_sync(
                 m_connection,
-                "org.bluez",
+                cBluezService,
                 m_devicePath,
-                "org.bluez.Device1"
+                cDeviceInterface
             );
-            deviceProxy->call_sync("Connect");
+            deviceProxy->call_sync(cConnectMethod);
         }
 
         // Wait for services to resolve (timeout after 15 seconds)
         bool servicesResolved = false;
         for (int i = 0; i < 30; ++i) {
             std::vector<Glib::VariantBase> getArgs2;
-            getArgs2.push_back(Glib::Variant<Glib::ustring>::create("org.bluez.Device1"));
-            getArgs2.push_back(Glib::Variant<Glib::ustring>::create("ServicesResolved"));
-            auto getResult2 = propProxy->call_sync("Get", Glib::VariantContainerBase::create_tuple(getArgs2));
+            getArgs2.push_back(Glib::Variant<Glib::ustring>::create(cDeviceInterface));
+            getArgs2.push_back(Glib::Variant<Glib::ustring>::create(cServicesResolvedProp));
+            auto getResult2 = propProxy->call_sync(cGetMethod, Glib::VariantContainerBase::create_tuple(getArgs2));
             Glib::VariantBase valBase2;
             getResult2.get_child(valBase2, 0);
             GVariant* innerGVar2 = g_variant_get_variant(const_cast<GVariant*>(valBase2.gobj()));
@@ -142,13 +174,13 @@ bool BluezBleClient::connect(NotificationCallback callback) {
         }
 
         if (!servicesResolved) {
-            std::cerr << "BluezBleClient connect error: GATT services could not be resolved in time." << std::endl;
+            std::cerr << cConnectServicesTimeoutError << std::endl;
             return false;
         }
 
         // Find RX and TX characteristics
         if (!BluezDeviceResolver::findGattPaths(objectsBase, m_devicePath, m_serviceUuid, m_rxUuid, m_txUuid, m_rxCharPath, m_txCharPath)) {
-            std::cerr << "BluezBleClient connect error: GATT Characteristics matching RX/TX UUIDs not found." << std::endl;
+            std::cerr << cConnectCharsNotFoundError << std::endl;
             return false;
         }
 
@@ -156,26 +188,26 @@ bool BluezBleClient::connect(NotificationCallback callback) {
         m_notificationCallback = callback;
         m_subscriptionId = m_connection->signal_subscribe(
             sigc::mem_fun(*this, &BluezBleClient::onPropertiesChanged),
-            "org.bluez",
-            "org.freedesktop.DBus.Properties",
-            "PropertiesChanged",
+            cBluezService,
+            cDbusPropertiesInterface,
+            cPropertiesChangedSignal,
             m_rxCharPath
         );
 
         // Start notifications on RX Characteristic
         auto rxProxy = Gio::DBus::Proxy::create_sync(
             m_connection,
-            "org.bluez",
+            cBluezService,
             m_rxCharPath,
-            "org.bluez.GattCharacteristic1"
+            cGattCharacteristicInterface
         );
-        rxProxy->call_sync("StartNotify");
+        rxProxy->call_sync(cStartNotifyMethod);
 
         m_connected = true;
-        std::cout << "BluezBleClient connected successfully to device: " << m_address << std::endl;
+        std::cout << cConnectSuccessMsg << m_address << std::endl;
         return true;
     } catch (const Glib::Error &ex) {
-        std::cerr << "BluezBleClient connect error: D-Bus call failed: " << ex.what() << std::endl;
+        std::cerr << cConnectDbusExceptionError << ex.what() << std::endl;
         disconnect();
         return false;
     }
@@ -187,11 +219,11 @@ bool BluezBleClient::disconnect() {
             try {
                 auto rxProxy = Gio::DBus::Proxy::create_sync(
                     m_connection,
-                    "org.bluez",
+                    cBluezService,
                     m_rxCharPath,
-                    "org.bluez.GattCharacteristic1"
+                    cGattCharacteristicInterface
                 );
-                rxProxy->call_sync("StopNotify");
+                rxProxy->call_sync(cStopNotifyMethod);
             } catch (...) {}
         }
         if (m_subscriptionId > 0 && m_connection) {
@@ -202,11 +234,11 @@ bool BluezBleClient::disconnect() {
             try {
                 auto deviceProxy = Gio::DBus::Proxy::create_sync(
                     m_connection,
-                    "org.bluez",
+                    cBluezService,
                     m_devicePath,
-                    "org.bluez.Device1"
+                    cDeviceInterface
                 );
-                deviceProxy->call_sync("Disconnect");
+                deviceProxy->call_sync(cDisconnectMethod);
             } catch (...) {}
         }
         m_connected = false;
@@ -215,7 +247,7 @@ bool BluezBleClient::disconnect() {
         m_txCharPath.clear();
         m_connection.reset();
         m_notificationCallback = nullptr;
-        std::cout << "BluezBleClient disconnected successfully." << std::endl;
+        std::cout << cDisconnectSuccessMsg << std::endl;
         return true;
     }
     return false;
@@ -225,16 +257,16 @@ bool BluezBleClient::isConnected() const { return m_connected; }
 
 void BluezBleClient::write(const std::vector<uint8_t> &data) {
     if (!isConnected() || m_txCharPath.empty() || !m_connection) {
-        std::cerr << "BluezBleClient write error: Connection is not open." << std::endl;
+        std::cerr << cWriteNotOpenError << std::endl;
         return;
     }
 
     try {
         auto txProxy = Gio::DBus::Proxy::create_sync(
             m_connection,
-            "org.bluez",
+            cBluezService,
             m_txCharPath,
-            "org.bluez.GattCharacteristic1"
+            cGattCharacteristicInterface
         );
 
         auto dataVariant = Glib::Variant<std::vector<uint8_t>>::create(data);
@@ -246,9 +278,9 @@ void BluezBleClient::write(const std::vector<uint8_t> &data) {
         tupleChildren.push_back(optionsVariant);
 
         auto parameters = Glib::VariantContainerBase::create_tuple(tupleChildren);
-        txProxy->call_sync("WriteValue", parameters);
+        txProxy->call_sync(cWriteValueMethod, parameters);
     } catch (const Glib::Error &ex) {
-        std::cerr << "BluezBleClient write error: " << ex.what() << std::endl;
+        std::cerr << cWriteExceptionError << ex.what() << std::endl;
         disconnect();
     }
 }
@@ -270,7 +302,7 @@ void BluezBleClient::onPropertiesChanged(
     parameters.get_child(interfaceVariant, 0);
     Glib::ustring targetInterface = interfaceVariant.get();
 
-    if (targetInterface == "org.bluez.GattCharacteristic1" && object_path == m_rxCharPath) {
+    if (targetInterface == cGattCharacteristicInterface && object_path == m_rxCharPath) {
         Glib::VariantContainerBase changedProps = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(parameters.get_child(1));
         size_t nProps = changedProps.get_n_children();
         for (size_t i = 0; i < nProps; ++i) {
@@ -279,11 +311,11 @@ void BluezBleClient::onPropertiesChanged(
 
             Glib::ustring keyStr = get_string_from_variant(propEntry.get_child(0));
 
-            if (keyStr == "Value") {
+            if (keyStr == cValueProp) {
                 Glib::VariantBase valBase = propEntry.get_child(1);
                 GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(valBase.gobj()));
                 Glib::VariantBase actualVal(innerGVar, true);
-                if (actualVal.get_type_string() == "ay") {
+                if (actualVal.get_type_string() == cByteArrayType) {
                     gsize n_elements = 0;
                     gconstpointer data_ptr = g_variant_get_fixed_array(const_cast<GVariant*>(actualVal.gobj()), &n_elements, 1);
                     if (data_ptr && n_elements > 0) {

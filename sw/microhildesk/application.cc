@@ -76,6 +76,16 @@ namespace {
     constexpr std::string_view cHelpAboutDetailedAction{"app.about"};
     /// @}
     ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @name Application Console Messages
+    /// @{
+    constexpr std::string_view cStartupMsg{"Startup application..."};
+    constexpr std::string_view cStartupDoneMsg{"Startup application done."};
+    constexpr std::string_view cActivateMsg{"Activate application..."};
+    constexpr std::string_view cActivateDoneMsg{"Activate application done."};
+    constexpr std::string_view cShutdownMsg{"Shutting down application..."};
+    constexpr std::string_view cQuitMsg{"Quit application."};
+    /// @}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace
 
 using namespace Electux::App;
@@ -163,7 +173,7 @@ void EntryApplication::mapping() {
 }
 
 void EntryApplication::on_startup() {
-    std::cout << "Startup application..." << std::endl;
+    std::cout << cStartupMsg << std::endl;
     Gtk::Application::on_startup();
 
     m_home = std::make_unique<View::AppHome>();
@@ -210,24 +220,24 @@ void EntryApplication::on_startup() {
     m_home->setControlSetup(setup);
     m_home->updateUiData();
 
-    std::cout << "Startup application done." << std::endl;
+    std::cout << cStartupDoneMsg << std::endl;
 }
 
 void EntryApplication::on_activate() {
-    std::cout << "Activate application..." << std::endl;
+    std::cout << cActivateMsg << std::endl;
     Gtk::Application::on_activate();
     m_home->show();
-    std::cout << "Activate application done." << std::endl;
+    std::cout << cActivateDoneMsg << std::endl;
 }
 
 void EntryApplication::on_shutdown() {
-    std::cout << "Shutting down application..." << std::endl;
+    std::cout << cShutdownMsg << std::endl;
     m_controller->shutdown();
     Gtk::Application::on_shutdown();
 }
 
 void EntryApplication::onActionQuit() {
-    std::cout << "Quit application." << std::endl;
+    std::cout << cQuitMsg << std::endl;
     m_home->hide();
     remove_window(m_home->getGtkWindow());
     quit();

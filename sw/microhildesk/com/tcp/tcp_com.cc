@@ -28,13 +28,26 @@
 
 using namespace Electux::App::Com;
 
-TcpCom::TcpCom() : m_ip("127.0.0.1"), m_port(5000), m_socketFd(-1) {
-    std::cout << "TcpCom constructor called." << std::endl;
+namespace {
+    constexpr std::string_view cDefaultIp{"127.0.0.1"};
+    constexpr std::string_view cTcpComConstructorMsg{"TcpCom constructor called."};
+    constexpr std::string_view cTcpComDestructorMsg{"TcpCom destructor called."};
+    constexpr std::string_view cTcpOpenSocketError{"TcpCom open error: Failed to create socket."};
+    constexpr std::string_view cTcpOpenAddrError{"TcpCom open error: Invalid address or Address not supported."};
+    constexpr std::string_view cTcpOpenConnError{"TcpCom open error: Connection Failed."};
+    constexpr std::string_view cTcpCloseMsg{"TcpCom connection closed."};
+    constexpr std::string_view cTcpReadError{"TcpCom read: Connection lost or read error."};
+    constexpr std::string_view cTcpWriteError{"TcpCom write: Connection lost or write error."};
+    constexpr std::string_view cTcpWriteNotOpenError{"TcpCom write error: Connection is not open."};
+} // namespace
+
+TcpCom::TcpCom() : m_ip(cDefaultIp), m_port(5000), m_socketFd(-1) {
+    std::cout << cTcpComConstructorMsg << std::endl;
 }
 
 TcpCom::~TcpCom() noexcept {
     close();
-    std::cout << "TcpCom destructor called." << std::endl;
+    std::cout << cTcpComDestructorMsg << std::endl;
 }
 
 bool TcpCom::open() {
@@ -44,7 +57,7 @@ bool TcpCom::open() {
 
     m_socketFd = ::socket(AF_INET, SOCK_STREAM, 0);
     if (m_socketFd < 0) {
-        std::cerr << "TcpCom open error: Failed to create socket." << std::endl;
+        std::cerr << cTcpOpenSocketError << std::endl;
         return false;
     }
 
@@ -54,9 +67,7 @@ bool TcpCom::open() {
     serv_addr.sin_port = htons(m_port);
 
     if (::inet_pton(AF_INET, m_ip.c_str(), &serv_addr.sin_addr) <= 0) {
-        std::cerr
-            << "TcpCom open error: Invalid address or Address not supported."
-            << std::endl;
+        std::cerr << cTcpOpenAddrError << std::endl;
         ::close(m_socketFd);
         m_socketFd = -1;
         return false;
@@ -65,7 +76,7 @@ bool TcpCom::open() {
     if (::connect(
             m_socketFd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)
         ) < 0) {
-        std::cerr << "TcpCom open error: Connection Failed." << std::endl;
+        std::cerr << cTcpOpenConnError << std::endl;
         ::close(m_socketFd);
         m_socketFd = -1;
         return false;
@@ -80,7 +91,7 @@ bool TcpCom::close() {
     if (isOpen()) {
         ::close(m_socketFd);
         m_socketFd = -1;
-        std::cout << "TcpCom connection closed." << std::endl;
+        std::cout << cTcpCloseMsg << std::endl;
         return true;
     }
     return false;
@@ -99,8 +110,7 @@ void TcpCom::read(std::vector<uint8_t> &data, size_t len) {
         ssize_t bytesRead =
             ::recv(m_socketFd, data.data() + totalRead, len - totalRead, 0);
         if (bytesRead <= 0) {
-            std::cerr << "TcpCom read: Connection lost or read error."
-                      << std::endl;
+            std::cerr << cTcpReadError << std::endl;
             close();
             break;
         }
@@ -110,7 +120,7 @@ void TcpCom::read(std::vector<uint8_t> &data, size_t len) {
 
 void TcpCom::write(const std::vector<uint8_t> &data) {
     if (!isOpen()) {
-        std::cerr << "TcpCom write error: Connection is not open." << std::endl;
+        std::cerr << cTcpWriteNotOpenError << std::endl;
         return;
     }
 
@@ -120,8 +130,7 @@ void TcpCom::write(const std::vector<uint8_t> &data) {
             m_socketFd, data.data() + totalSent, data.size() - totalSent, 0
         );
         if (bytesSent <= 0) {
-            std::cerr << "TcpCom write: Connection lost or write error."
-                      << std::endl;
+            std::cerr << cTcpWriteError << std::endl;
             close();
             break;
         }

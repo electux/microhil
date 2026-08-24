@@ -23,6 +23,7 @@
 namespace {
     constexpr std::string_view cChannelTimerLabel{"Use timer #"};
     constexpr std::string_view cChannelTimerBtnStart{"Start"};
+    constexpr std::string_view cChannelTimerDesc{"Keep the channel active for a time."};
 } // namespace
 
 using namespace Electux::App::View;
@@ -31,7 +32,7 @@ TimerModePage::TimerModePage(size_t index)
     : Gtk::Box(Gtk::Orientation::VERTICAL, 5),
       m_index(index) {
     m_timerLabel.set_label(std::format("{} {}", cChannelTimerLabel.data(), index));
-    m_descLabel.set_label("Keep the channel active for a time.");
+    m_descLabel.set_label(cChannelTimerDesc.data());
 
     append(m_timerLabel);
 

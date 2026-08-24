@@ -22,12 +22,17 @@
 
 using namespace Electux::App::Command;
 
+namespace {
+    constexpr std::string_view cStartMarker{"<mh#sys#"};
+    constexpr std::string_view cEndMarker{"#end>"};
+} // namespace
+
 std::vector<std::string> ResponseProcessor::process(const std::string &data) {
     m_buffer += data;
     std::vector<std::string> payloads;
 
     while (true) {
-        size_t startPos = m_buffer.find("<mh#sys#");
+        size_t startPos = m_buffer.find(cStartMarker);
 
         if (startPos == std::string::npos) {
             size_t lastLessThan = m_buffer.rfind('<');
@@ -41,7 +46,7 @@ std::vector<std::string> ResponseProcessor::process(const std::string &data) {
             break;
         }
 
-        size_t endPos = m_buffer.find("#end>", startPos);
+        size_t endPos = m_buffer.find(cEndMarker, startPos);
 
         if (endPos == std::string::npos) {
             if (startPos > 0) {
@@ -51,14 +56,13 @@ std::vector<std::string> ResponseProcessor::process(const std::string &data) {
             break;
         }
 
-        constexpr size_t startMarkerLen = 8;
-        size_t payloadStart = startPos + startMarkerLen;
+        size_t payloadStart = startPos + cStartMarker.length();
         size_t payloadLen = endPos - payloadStart;
 
         std::string payload = m_buffer.substr(payloadStart, payloadLen);
         payloads.push_back(payload);
 
-        m_buffer = m_buffer.substr(endPos + 5);
+        m_buffer = m_buffer.substr(endPos + cEndMarker.length());
     }
 
     return payloads;

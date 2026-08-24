@@ -23,6 +23,7 @@
 namespace {
     constexpr std::string_view cChannelPulseLabel{"Pulse (ms) #"};
     constexpr std::string_view cChannelPulseBtnTrigger{"Trigger"};
+    constexpr std::string_view cChannelPulseDesc{"Generate a short momentary pulse."};
 } // namespace
 
 using namespace Electux::App::View;
@@ -31,7 +32,7 @@ PulseModePage::PulseModePage(size_t index)
     : Gtk::Box(Gtk::Orientation::VERTICAL, 5),
       m_index(index) {
     m_pulseLabel.set_label(std::format("{} {}", cChannelPulseLabel.data(), index));
-    m_descLabel.set_label("Generate a short momentary pulse.");
+    m_descLabel.set_label(cChannelPulseDesc.data());
 
     append(m_pulseLabel);
 

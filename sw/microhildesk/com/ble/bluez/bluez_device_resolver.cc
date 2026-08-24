@@ -35,6 +35,13 @@ namespace {
         Glib::VariantBase inner(innerGVar, true);
         return get_string_from_variant(inner);
     }
+    constexpr const char* cDeviceInterface{"org.bluez.Device1"};
+    constexpr const char* cAddressProp{"Address"};
+    constexpr const char* cGattCharacteristicInterface{"org.bluez.GattCharacteristic1"};
+    constexpr const char* cUuidProp{"UUID"};
+    constexpr const char* cServiceProp{"Service"};
+    constexpr const char* cGattServiceInterface{"org.bluez.GattService1"};
+    constexpr const char* cDeviceProp{"Device"};
 } // namespace
 
 Glib::ustring BluezDeviceResolver::findDevicePath(
@@ -56,7 +63,7 @@ Glib::ustring BluezDeviceResolver::findDevicePath(
 
             Glib::ustring interfaceName = get_string_from_variant(intEntry.get_child(0));
 
-            if (interfaceName == "org.bluez.Device1") {
+            if (interfaceName == cDeviceInterface) {
                 Glib::VariantContainerBase propertiesVar = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(intEntry.get_child(1));
                 size_t nProps = propertiesVar.get_n_children();
                 for (size_t k = 0; k < nProps; ++k) {
@@ -65,7 +72,7 @@ Glib::ustring BluezDeviceResolver::findDevicePath(
 
                     Glib::ustring propName = get_string_from_variant(propEntry.get_child(0));
 
-                    if (propName == "Address") {
+                    if (propName == cAddressProp) {
                         Glib::VariantBase propValBase = propEntry.get_child(1);
                         GVariant* innerGVar = g_variant_get_variant(const_cast<GVariant*>(propValBase.gobj()));
                         Glib::VariantBase inner(innerGVar, true);
@@ -113,7 +120,7 @@ bool BluezDeviceResolver::findGattPaths(
 
             Glib::ustring interfaceName = get_string_from_variant(intEntry.get_child(0));
 
-            if (interfaceName == "org.bluez.GattCharacteristic1") {
+            if (interfaceName == cGattCharacteristicInterface) {
                 Glib::VariantContainerBase propertiesVar = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(intEntry.get_child(1));
                 size_t nProps = propertiesVar.get_n_children();
                 CharInfo info;
@@ -123,14 +130,14 @@ bool BluezDeviceResolver::findGattPaths(
 
                     Glib::ustring propName = get_string_from_variant(propEntry.get_child(0));
 
-                    if (propName == "UUID") {
+                    if (propName == cUuidProp) {
                         info.uuid = getStringProperty(propEntry.get_child(1));
-                    } else if (propName == "Service") {
+                    } else if (propName == cServiceProp) {
                         info.servicePath = getStringProperty(propEntry.get_child(1));
                     }
                 }
                 characteristics[path] = info;
-            } else if (interfaceName == "org.bluez.GattService1") {
+            } else if (interfaceName == cGattServiceInterface) {
                 Glib::VariantContainerBase propertiesVar = Glib::VariantBase::cast_dynamic<Glib::VariantContainerBase>(intEntry.get_child(1));
                 size_t nProps = propertiesVar.get_n_children();
                 Glib::ustring uuid;
@@ -141,9 +148,9 @@ bool BluezDeviceResolver::findGattPaths(
 
                     Glib::ustring propName = get_string_from_variant(propEntry.get_child(0));
 
-                    if (propName == "UUID") {
+                    if (propName == cUuidProp) {
                         uuid = getStringProperty(propEntry.get_child(1));
-                    } else if (propName == "Device") {
+                    } else if (propName == cDeviceProp) {
                         devPath = getStringProperty(propEntry.get_child(1));
                     }
                 }
