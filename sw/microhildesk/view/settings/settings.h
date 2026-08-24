@@ -25,12 +25,12 @@
 #include <gtkmm/notebook.h>
 #include <gtkmm/window.h>
 #include <sigc++/sigc++.h>
-#include <view/settings/general_settings_tab.h>
+#include <view/settings/general/general_settings_tab.h>
 #include <view/settings/isettings_view.h>
-#include <view/settings/log_settings_tab.h>
-#include <view/settings/serial_settings_tab.h>
-#include <view/settings/tcp_settings_tab.h>
-#include <view/settings/ble_settings_tab.h>
+#include <view/settings/log/log_settings_tab.h>
+#include <view/settings/serial/serial_settings_tab.h>
+#include <view/settings/tcp/tcp_settings_tab.h>
+#include <view/settings/ble/ble_settings_tab.h>
 #include <view/settings_setup.h>
 
 namespace Electux::App::View::Settings {

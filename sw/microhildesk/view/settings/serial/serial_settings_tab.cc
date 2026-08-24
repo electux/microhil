@@ -20,7 +20,7 @@
 
 #include <com/serial/serial_com_params.h>
 #include <string>
-#include <view/settings/serial_settings_tab.h>
+#include <view/settings/serial/serial_settings_tab.h>
 
 namespace {
     constexpr std::string_view cSettingsSerialPath{"Device port"};

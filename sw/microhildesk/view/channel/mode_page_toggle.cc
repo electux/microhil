@@ -18,7 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <format>
-#include <view/mode_page_toggle.h>
+#include <view/channel/mode_page_toggle.h>
 
 namespace {
     constexpr std::string_view cChannelToggleBtnActivate{"Activate"};

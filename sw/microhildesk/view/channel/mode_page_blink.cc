@@ -18,7 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <format>
-#include <view/mode_page_blink.h>
+#include <view/channel/mode_page_blink.h>
 
 namespace {
     constexpr std::string_view cBlinkOnLabel{"Blink ON (ms) #"};

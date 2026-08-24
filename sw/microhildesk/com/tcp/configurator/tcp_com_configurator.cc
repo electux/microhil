@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///
-/// response_processor.h
+/// tcp_com_configurator.cc
 /// Copyright (C) 2025 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
 ///
 /// microhildesk is free software: you can redistribute it and/or modify it
@@ -17,28 +17,33 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma once
 
-#include <command/iresponse_processor.h>
+#include <com/icom.h>
+#include <com/tcp/itcp.h>
+#include <com/tcp/configurator/tcp_com_configurator.h>
+#include <model/imodel.h>
 #include <string>
-#include <vector>
 
-namespace Electux::App::Command {
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// @class ResponseProcessor
-    /// @brief Implementation of IResponseProcessor that parses serial response messages.
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    class ResponseProcessor : public IResponseProcessor {
-      public:
-        ResponseProcessor() = default;
-        virtual ~ResponseProcessor() override = default;
+namespace Electux::App::Com {
+    TcpComConfigurator::TcpComConfigurator(ITcp *tcp) : m_tcp(tcp) {}
 
-        ResponseProcessor(const ResponseProcessor &) = delete;
-        ResponseProcessor &operator=(const ResponseProcessor &) = delete;
+    bool TcpComConfigurator::configure(
+        const Model::IModel &model, ICom *comChannel
+    ) {
+        if (m_tcp == nullptr || comChannel == nullptr) {
+            return false;
+        }
 
-        std::vector<std::string> process(const std::string &data) override;
+        auto ipKey = model.toString(Model::ModelGeneralKey::TcpIp);
+        auto portKey = model.toString(Model::ModelGeneralKey::TcpPort);
 
-      private:
-        std::string m_buffer;
-    };
-} // namespace Electux::App::Command
+        std::string ip = model.getEntity(ipKey);
+        uint16_t port =
+            static_cast<uint16_t>(std::stoul(model.getEntity(portKey)));
+
+        m_tcp->setIpAddress(ip);
+        m_tcp->setPort(port);
+
+        return comChannel->open();
+    }
+} // namespace Electux::App::Com

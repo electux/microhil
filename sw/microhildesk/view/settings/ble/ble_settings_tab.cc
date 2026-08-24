@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <string>
-#include <view/settings/ble_settings_tab.h>
+#include <view/settings/ble/ble_settings_tab.h>
 
 namespace {
     constexpr std::string_view cSettingsBleAddressLabel{"BLE Device Address / Name"};

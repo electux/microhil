@@ -18,7 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <command/response_processor.h>
+#include <command/processor/response_processor.h>
 
 using namespace Electux::App::Command;
 

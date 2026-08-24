@@ -21,7 +21,7 @@
 
 #include <com/icom.h>
 #include <com/ble/ible.h>
-#include <com/ble/bluez_ble_client.h>
+#include <com/ble/bluez/bluez_ble_client.h>
 #include <string>
 #include <vector>
 #include <mutex>

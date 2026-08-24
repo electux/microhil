@@ -20,7 +20,7 @@
 
 #include <com/com_types.h>
 #include <string>
-#include <view/settings/general_settings_tab.h>
+#include <view/settings/general/general_settings_tab.h>
 
 namespace {
     constexpr std::string_view cSettingsComTypeLabel{"Connection type"};

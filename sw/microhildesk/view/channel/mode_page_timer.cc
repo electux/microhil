@@ -18,7 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <format>
-#include <view/mode_page_timer.h>
+#include <view/channel/mode_page_timer.h>
 
 namespace {
     constexpr std::string_view cChannelTimerLabel{"Use timer #"};

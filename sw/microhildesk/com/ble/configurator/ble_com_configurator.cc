@@ -20,7 +20,7 @@
 
 #include <com/icom.h>
 #include <com/ble/ible.h>
-#include <com/ble/ble_com_configurator.h>
+#include <com/ble/configurator/ble_com_configurator.h>
 #include <model/imodel.h>
 #include <string>
 

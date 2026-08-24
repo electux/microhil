@@ -18,8 +18,8 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <com/ble/bluez_ble_client.h>
-#include <com/ble/bluez_device_resolver.h>
+#include <com/ble/bluez/bluez_ble_client.h>
+#include <com/ble/bluez/bluez_device_resolver.h>
 #include <iostream>
 #include <thread>
 #include <chrono>

@@ -20,7 +20,7 @@
 
 #include <com/icom.h>
 #include <com/serial/iserial.h>
-#include <com/serial/serial_com_configurator.h>
+#include <com/serial/configurator/serial_com_configurator.h>
 #include <com/serial/serial_utils.h>
 #include <model/imodel.h>
 #include <string>

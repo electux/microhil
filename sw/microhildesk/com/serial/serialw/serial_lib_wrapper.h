@@ -18,7 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <com/serial/ilib.h>
+#include <com/serial/serialw/ilib.h>
 #include <libserial/SerialPort.h>
 #include <memory>
 #include <string>

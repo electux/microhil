@@ -18,7 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <com/ble/bluez_device_resolver.h>
+#include <com/ble/bluez/bluez_device_resolver.h>
 #include <map>
 
 using namespace Electux::App::Com;

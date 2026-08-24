@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <string>
-#include <view/settings/tcp_settings_tab.h>
+#include <view/settings/tcp/tcp_settings_tab.h>
 
 namespace {
     constexpr std::string_view cSettingsTcpIpLabel{"IP Address"};

@@ -17,7 +17,7 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <com/serial/serial_lib_wrapper.h>
+#include <com/serial/serialw/serial_lib_wrapper.h>
 #include <memory>
 #include <string>
 #include <vector>

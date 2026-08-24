@@ -22,8 +22,8 @@
 #include <chrono>
 #include <com/icom.h>
 #include <com/icom_configurator.h>
-#include <command/icommand_formatter.h>
-#include <command/response_processor.h>
+#include <command/formatter/icommand_formatter.h>
+#include <command/processor/response_processor.h>
 #include <config/iconfig.h>
 #include <format>
 #include <log/ilog.h>

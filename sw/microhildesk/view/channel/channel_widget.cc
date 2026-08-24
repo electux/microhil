@@ -18,7 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <format>
-#include <view/channel_widget.h>
+#include <view/channel/channel_widget.h>
 
 namespace {
     constexpr std::string_view cChannelEnableLabel{"Enable Channel #"};

@@ -18,7 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <com/serial/serial_com.h>
-#include <com/serial/serial_lib_wrapper.h>
+#include <com/serial/serialw/serial_lib_wrapper.h>
 #include <iostream>
 
 using namespace Electux::App::Com;

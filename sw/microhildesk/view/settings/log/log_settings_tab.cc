@@ -20,7 +20,7 @@
 
 #include <log/log_level_params.h>
 #include <string>
-#include <view/settings/log_settings_tab.h>
+#include <view/settings/log/log_settings_tab.h>
 
 namespace {
     constexpr std::string_view cSettingsLogPath{"Log file path"};

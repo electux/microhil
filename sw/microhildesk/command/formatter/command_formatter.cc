@@ -18,7 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <command/command_formatter.h>
+#include <command/formatter/command_formatter.h>
 #include <format>
 
 using namespace Electux::App::Command;

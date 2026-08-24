@@ -26,10 +26,10 @@
 #include <gtkmm/stack.h>
 #include <model/channel_state.h>
 #include <sigc++/sigc++.h>
-#include <view/mode_page_toggle.h>
-#include <view/mode_page_timer.h>
-#include <view/mode_page_pulse.h>
-#include <view/mode_page_blink.h>
+#include <view/channel/mode_page_toggle.h>
+#include <view/channel/mode_page_timer.h>
+#include <view/channel/mode_page_pulse.h>
+#include <view/channel/mode_page_blink.h>
 
 namespace Electux::App::View {
     using ChannelState = Electux::App::Model::Channel::ChannelState;
