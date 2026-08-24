@@ -3,7 +3,13 @@ on:
   push:
     branches: [ master ]
     paths:
-      - 'sw/microhil_nuttx/**'
+      - 'sw/microhil_nuttx/apps/microhil/**/*.c'
+      - 'sw/microhil_nuttx/apps/microhil/**/*.h'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'sw/microhil_nuttx/apps/microhil/**/*.c'
+      - 'sw/microhil_nuttx/apps/microhil/**/*.h'
 jobs:
   build:
     runs-on: ubuntu-latest
