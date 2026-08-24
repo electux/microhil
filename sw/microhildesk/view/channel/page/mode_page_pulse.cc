@@ -18,7 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <format>
-#include <view/channel/mode_page_pulse.h>
+#include <view/channel/page/mode_page_pulse.h>
 
 namespace {
     constexpr std::string_view cChannelPulseLabel{"Pulse (ms) #"};

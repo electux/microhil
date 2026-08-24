@@ -25,10 +25,10 @@ SOURCES = \
 	../model/model.cc \
 	../view/settings_setup.cc \
 	../view/channel/channel_widget.cc \
-	../view/channel/mode_page_toggle.cc \
-	../view/channel/mode_page_timer.cc \
-	../view/channel/mode_page_pulse.cc \
-	../view/channel/mode_page_blink.cc \
+	../view/channel/page/mode_page_toggle.cc \
+	../view/channel/page/mode_page_timer.cc \
+	../view/channel/page/mode_page_pulse.cc \
+	../view/channel/page/mode_page_blink.cc \
 	../view/home.cc \
 	../view/about/about.cc \
 	../view/help/help.cc \
