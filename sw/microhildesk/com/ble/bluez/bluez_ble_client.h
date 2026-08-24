@@ -38,7 +38,8 @@ namespace Electux::App::Com {
             const std::string &address,
             const std::string &serviceUuid,
             const std::string &rxUuid,
-            const std::string &txUuid
+            const std::string &txUuid,
+            bool verbose = false
         );
         ~BluezBleClient();
 
@@ -67,6 +68,7 @@ namespace Electux::App::Com {
         std::string m_txUuid;
 
         bool m_connected;
+        bool m_verbose;
         Glib::RefPtr<Gio::DBus::Connection> m_connection;
         Glib::ustring m_devicePath;
         Glib::ustring m_rxCharPath;

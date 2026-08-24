@@ -23,10 +23,11 @@
 #include <memory>
 
 namespace Electux::App::Com {
-    std::unique_ptr<ICom> createSerialCom();
-    std::unique_ptr<ICom> createTcpCom();
-    std::unique_ptr<ICom> createBleCom();
+    std::unique_ptr<ICom> createSerialCom(bool verbose = false);
+    std::unique_ptr<ICom> createTcpCom(bool verbose = false);
+    std::unique_ptr<ICom> createBleCom(bool verbose = false);
     std::unique_ptr<ICom> createSwitchableCom(
+        bool verbose,
         std::unique_ptr<ICom> serialCom,
         std::unique_ptr<ICom> tcpCom,
         std::unique_ptr<ICom> bleCom

@@ -25,24 +25,26 @@
 #include <com/switchable_com.h>
 
 namespace Electux::App::Com {
-    std::unique_ptr<ICom> createSerialCom() {
-        return std::make_unique<SerialCom>();
+    std::unique_ptr<ICom> createSerialCom(bool verbose) {
+        return std::make_unique<SerialCom>(verbose);
     }
 
-    std::unique_ptr<ICom> createTcpCom() {
-        return std::make_unique<TcpCom>();
+    std::unique_ptr<ICom> createTcpCom(bool verbose) {
+        return std::make_unique<TcpCom>(verbose);
     }
 
-    std::unique_ptr<ICom> createBleCom() {
-        return std::make_unique<BleCom>();
+    std::unique_ptr<ICom> createBleCom(bool verbose) {
+        return std::make_unique<BleCom>(verbose);
     }
 
     std::unique_ptr<ICom> createSwitchableCom(
+        bool verbose,
         std::unique_ptr<ICom> serialCom,
         std::unique_ptr<ICom> tcpCom,
         std::unique_ptr<ICom> bleCom
     ) {
         return std::make_unique<SwitchableCom>(
+            verbose,
             std::move(serialCom),
             std::move(tcpCom),
             std::move(bleCom)

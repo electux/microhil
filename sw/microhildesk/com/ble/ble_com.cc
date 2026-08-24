@@ -35,18 +35,23 @@ namespace {
     constexpr std::chrono::seconds cReadTimeout{5};
 } // namespace
 
-BleCom::BleCom()
+BleCom::BleCom(bool verbose)
     : m_address(""),
       m_serviceUuid(""),
       m_rxUuid(""),
       m_txUuid(""),
+      m_verbose(verbose),
       m_client(nullptr) {
-    std::cout << cConstructorMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cConstructorMsg << std::endl;
+    }
 }
 
 BleCom::~BleCom() noexcept {
     close();
-    std::cout << cDestructorMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cDestructorMsg << std::endl;
+    }
 }
 
 bool BleCom::open() {
@@ -54,14 +59,16 @@ bool BleCom::open() {
         return true;
     }
 
-    m_client = std::make_unique<BluezBleClient>(m_address, m_serviceUuid, m_rxUuid, m_txUuid);
+    m_client = std::make_unique<BluezBleClient>(m_address, m_serviceUuid, m_rxUuid, m_txUuid, m_verbose);
     
     auto callback = [this](const std::vector<uint8_t> &data) {
         onNotificationReceived(data);
     };
 
     if (m_client->connect(callback)) {
-        std::cout << cOpenSuccessMsg << std::endl;
+        if (m_verbose) {
+            std::cout << cOpenSuccessMsg << std::endl;
+        }
         return true;
     }
 
@@ -73,7 +80,9 @@ bool BleCom::close() {
     if (m_client) {
         m_client->disconnect();
         m_client.reset();
-        std::cout << cCloseSuccessMsg << std::endl;
+        if (m_verbose) {
+            std::cout << cCloseSuccessMsg << std::endl;
+        }
         return true;
     }
     return false;

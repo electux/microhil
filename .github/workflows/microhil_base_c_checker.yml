@@ -5,6 +5,11 @@ on:
     paths:
       - 'sw/microhil_base/src/**/*.c'
       - 'sw/microhil_base/src/**/*.h'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'sw/microhil_base/src/**/*.c'
+      - 'sw/microhil_base/src/**/*.h'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,4 +31,3 @@ jobs:
           modules=($(find sw/microhil_base/src/ -type f -name '*.c' -exec echo '{}' \;))
           for mod in "${modules[@]}"; do line_numbers=$(wc -l < "${mod}"); echo "${mod} : $line_numbers"; [[ $line_numbers -gt 300 ]] && modules_ok=1; done
           [[ $modules_ok -eq 0 ]] && echo "All modules are good" && exit 0 || exit 1
-

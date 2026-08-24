@@ -17,6 +17,7 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <application.h>
+#include <string>
 
 using namespace Electux::App;
 
@@ -31,7 +32,15 @@ using namespace Electux::App;
 /// @return The exit status of the application (0 for success).
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main(int argc, char *argv[]) {
-    auto app = EntryApplication::create();
+    bool verbose = false;
+    for (int i = 1; i < argc; ++i) {
+        if (std::string(argv[i]) == "-v" || std::string(argv[i]) == "--verbose") {
+            verbose = true;
+            break;
+        }
+    }
+
+    auto app = EntryApplication::create(verbose);
     const int status = app->run(argc, argv);
 
     return status;

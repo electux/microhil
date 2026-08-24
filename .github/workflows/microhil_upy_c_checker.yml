@@ -1,9 +1,13 @@
-name: microhil_upy C checker
+name: microhil_upy Python checker
 on:
   push:
     branches: [ master ]
     paths:
-      - 'sw/microhil_upy/**'
+      - 'sw/microhil_upy/apps/microhil/*.py'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'sw/microhil_upy/apps/microhil/*.py'
 jobs:
   build:
     runs-on: ubuntu-latest

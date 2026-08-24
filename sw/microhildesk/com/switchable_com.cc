@@ -29,10 +29,16 @@ namespace Electux::App::Com {
         constexpr std::string_view cSerialSwitchMsg{"Switched communication channel to Serial Port."};
     } // namespace
     SwitchableCom::SwitchableCom(
-        std::unique_ptr<ICom> serialCom, std::unique_ptr<ICom> tcpCom, std::unique_ptr<ICom> bleCom
+        bool verbose,
+        std::unique_ptr<ICom> serialCom,
+        std::unique_ptr<ICom> tcpCom,
+        std::unique_ptr<ICom> bleCom
     )
-        : m_serialCom(std::move(serialCom)), m_tcpCom(std::move(tcpCom)),
-          m_bleCom(std::move(bleCom)), m_activeCom(m_serialCom.get()) {}
+        : m_verbose(verbose),
+          m_serialCom(std::move(serialCom)),
+          m_tcpCom(std::move(tcpCom)),
+          m_bleCom(std::move(bleCom)),
+          m_activeCom(m_serialCom.get()) {}
 
     bool SwitchableCom::open() {
         if (m_activeCom) {
@@ -72,19 +78,25 @@ namespace Electux::App::Com {
             if (m_activeCom != m_tcpCom.get()) {
                 close();
                 m_activeCom = m_tcpCom.get();
-                std::cout << cTcpSwitchMsg << std::endl;
+                if (m_verbose) {
+                    std::cout << cTcpSwitchMsg << std::endl;
+                }
             }
         } else if (type == toConfigString(ComType::Ble)) {
             if (m_activeCom != m_bleCom.get()) {
                 close();
                 m_activeCom = m_bleCom.get();
-                std::cout << cBleSwitchMsg << std::endl;
+                if (m_verbose) {
+                    std::cout << cBleSwitchMsg << std::endl;
+                }
             }
         } else {
             if (m_activeCom != m_serialCom.get()) {
                 close();
                 m_activeCom = m_serialCom.get();
-                std::cout << cSerialSwitchMsg << std::endl;
+                if (m_verbose) {
+                    std::cout << cSerialSwitchMsg << std::endl;
+                }
             }
         }
     }

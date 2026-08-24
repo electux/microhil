@@ -74,7 +74,7 @@ namespace Electux::App::Config {
         /// false. Implementations should handle the specifics of the storing
         /// mechanism, such as file paths, database connections, etc.
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        virtual bool store() = 0;
+        virtual bool store(bool verbose = false) = 0;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         /// @brief Sets the log configuration.

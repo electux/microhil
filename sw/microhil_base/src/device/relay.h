@@ -30,6 +30,7 @@ extern "C" {
 enum { RELAY_NUM_CHANNELS = 8 };
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Relay modes
 typedef enum {
   RELAY_MODE_TOGGLE,
   RELAY_MODE_TIMER,
@@ -66,7 +67,9 @@ void relay_start_pulse(uint32_t channel, uint32_t duration_ms);
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Starts a blink mode on a relay channel
-void relay_start_blink(uint32_t channel, uint32_t on_ms, uint32_t off_ms, uint32_t count);
+void relay_start_blink(
+    uint32_t channel, uint32_t on_ms, uint32_t off_ms, uint32_t count
+);
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Non-blocking tick routine for relay timings

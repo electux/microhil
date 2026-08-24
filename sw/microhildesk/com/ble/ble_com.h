@@ -35,7 +35,7 @@ namespace Electux::App::Com {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class BleCom : public ICom, public IBle {
       public:
-        BleCom();
+        explicit BleCom(bool verbose = false);
         ~BleCom() noexcept override;
 
         BleCom(const BleCom &) = delete;
@@ -62,6 +62,7 @@ namespace Electux::App::Com {
         std::string m_rxUuid;
         std::string m_txUuid;
 
+        bool m_verbose;
         std::unique_ptr<BluezBleClient> m_client;
 
         std::vector<uint8_t> m_readBuffer;

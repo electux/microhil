@@ -57,8 +57,11 @@ using namespace Electux::App::Model;
 /// @brief Constructor that initializes the config path.
 /// @param configFileName The path/name of the configuration file.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-ConfigManager::ConfigManager(const std::string &configFileName)
-    : m_config(Electux::App::Model::createDefault()) {
+ConfigManager::ConfigManager(
+    std::unique_ptr<Electux::App::Model::IModel> config,
+    const std::string &configFileName,
+    bool verbose
+) : m_verbose(verbose), m_config(std::move(config)) {
     m_fileName =
         configFileName.empty()
             ? Glib::build_filename(Glib::get_home_dir(), cConfigFile.data())
@@ -99,8 +102,10 @@ void ConfigManager::init() {
             defaultConfigStore();
         }
 
-        std::cout << cInitConfigPathMsg << m_fileName
-                  << std::endl;
+        if (m_verbose) {
+            std::cout << cInitConfigPathMsg << m_fileName
+                      << std::endl;
+        }
         load();
     } catch (const std::exception &e) {
         std::cerr << cInitErrorMsg << e.what()
@@ -116,7 +121,9 @@ void ConfigManager::init() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool ConfigManager::load() {
     std::ifstream file(m_fileName);
-    std::cout << cLoadingConfigMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cLoadingConfigMsg << std::endl;
+    }
 
     if (!file.is_open()) {
         std::cerr << cUnableToOpenFileMsg << m_fileName << std::endl;
@@ -155,7 +162,9 @@ bool ConfigManager::load() {
     }
 
     file.close();
-    std::cout << cLoadConfigDoneMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cLoadConfigDoneMsg << std::endl;
+    }
     return true;
 }
 
@@ -163,9 +172,12 @@ bool ConfigManager::load() {
 /// @brief Serializes all models and writes them to the configuration file.
 /// @return true if the configuration was successfully stored, else false.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-bool ConfigManager::store() {
+bool ConfigManager::store(bool forceVerbose) {
     std::ofstream file(m_fileName);
-    std::cout << cStoringConfigMsg << std::endl;
+    bool shouldPrint = forceVerbose && m_verbose;
+    if (shouldPrint) {
+        std::cout << cStoringConfigMsg << std::endl;
+    }
 
     if (!file.is_open()) {
         std::cerr << cUnableToOpenFileMsg << m_fileName << std::endl;
@@ -182,7 +194,9 @@ bool ConfigManager::store() {
     writeModel(*m_config);
 
     file.close();
-    std::cout << cStoreConfigDoneMsg << std::endl;
+    if (shouldPrint) {
+        std::cout << cStoreConfigDoneMsg << std::endl;
+    }
     return true;
 }
 

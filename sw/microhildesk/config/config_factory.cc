@@ -20,9 +20,13 @@
 
 #include <config/config_factory.h>
 #include <config/config_manager.h>
+#include <model/imodel.h>
 
 namespace Electux::App::Config {
-    std::unique_ptr<IConfig> createConfigManager() {
-        return std::make_unique<ConfigManager>();
+    std::unique_ptr<IConfig> createConfigManager(
+        std::unique_ptr<Electux::App::Model::IModel> config,
+        bool verbose
+    ) {
+        return std::make_unique<ConfigManager>(std::move(config), "", verbose);
     }
 } // namespace Electux::App::Config

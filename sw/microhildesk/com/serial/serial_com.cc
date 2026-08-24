@@ -44,11 +44,21 @@ namespace {
 /// @brief Constructs a SerialCom object with the given serial port adapter.
 /// @param port A unique pointer to an ILibSerialPort implementation.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-SerialCom::SerialCom(std::unique_ptr<ILibSerialPort> port)
+SerialCom::SerialCom(bool verbose)
+    : m_serialPort(std::make_unique<LibSerialPortWrapper>()), m_verbose(verbose) {
+    if (m_verbose) {
+        std::cout << cConstructorMsg << std::endl;
+    }
+}
+
+SerialCom::SerialCom(std::unique_ptr<ILibSerialPort> port, bool verbose)
     : m_serialPort(
           port ? std::move(port) : std::make_unique<LibSerialPortWrapper>()
-      ) {
-    std::cout << cConstructorMsg << std::endl;
+      ),
+      m_verbose(verbose) {
+    if (m_verbose) {
+        std::cout << cConstructorMsg << std::endl;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -71,7 +81,9 @@ SerialCom::~SerialCom() noexcept {
         std::cerr << cUnknownExceptionMsg << std::endl;
     }
 
-    std::cout << cDestructorMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cDestructorMsg << std::endl;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +99,9 @@ bool SerialCom::open() {
     if (!isOpen()) {
         try {
             m_serialPort->Open(m_device);
-            std::cout << cOpenSuccessMsg << std::endl;
+            if (m_verbose) {
+                std::cout << cOpenSuccessMsg << std::endl;
+            }
             return true;
         } catch (const std::exception &e) {
             std::cerr << cOpenExceptionError << e.what() << std::endl;
@@ -103,8 +117,13 @@ bool SerialCom::open() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool SerialCom::close() {
     if (isOpen()) {
-        m_serialPort->Close();
-        std::cout << cCloseSuccessMsg << std::endl;
+        try {
+            m_serialPort->Close();
+        } catch (...) {
+        }
+        if (m_verbose) {
+            std::cout << cCloseSuccessMsg << std::endl;
+        }
         return true;
     }
 
@@ -133,7 +152,17 @@ void SerialCom::read(std::vector<uint8_t> &data, size_t len) {
         return;
     }
 
-    m_serialPort->Read(data, len);
+    try {
+        m_serialPort->Read(data, len);
+    } catch (const std::exception &e) {
+        if (m_verbose) {
+            std::cerr << cReadError << ": " << e.what() << std::endl;
+        }
+        try {
+            m_serialPort->Close();
+        } catch (...) {
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -146,7 +175,15 @@ void SerialCom::write(const std::vector<uint8_t> &data) {
         return;
     }
 
-    m_serialPort->Write(data);
+    try {
+        m_serialPort->Write(data);
+    } catch (const std::exception &e) {
+        std::cerr << cWriteError << ": " << e.what() << std::endl;
+        try {
+            m_serialPort->Close();
+        } catch (...) {
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

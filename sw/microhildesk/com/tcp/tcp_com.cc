@@ -42,13 +42,17 @@ namespace {
     constexpr uint16_t cDefaultPort{5000};
 } // namespace
 
-TcpCom::TcpCom() : m_ip(cDefaultIp), m_port(cDefaultPort), m_socketFd(-1) {
-    std::cout << cTcpComConstructorMsg << std::endl;
+TcpCom::TcpCom(bool verbose) : m_ip(cDefaultIp), m_port(cDefaultPort), m_socketFd(-1), m_verbose(verbose) {
+    if (m_verbose) {
+        std::cout << cTcpComConstructorMsg << std::endl;
+    }
 }
 
 TcpCom::~TcpCom() noexcept {
     close();
-    std::cout << cTcpComDestructorMsg << std::endl;
+    if (m_verbose) {
+        std::cout << cTcpComDestructorMsg << std::endl;
+    }
 }
 
 bool TcpCom::open() {
@@ -83,8 +87,10 @@ bool TcpCom::open() {
         return false;
     }
 
-    std::cout << "TcpCom connected successfully to " << m_ip << ":" << m_port
-              << std::endl;
+    if (m_verbose) {
+        std::cout << "TcpCom connected successfully to " << m_ip << ":" << m_port
+                  << std::endl;
+    }
     return true;
 }
 
@@ -92,7 +98,9 @@ bool TcpCom::close() {
     if (isOpen()) {
         ::close(m_socketFd);
         m_socketFd = -1;
-        std::cout << cTcpCloseMsg << std::endl;
+        if (m_verbose) {
+            std::cout << cTcpCloseMsg << std::endl;
+        }
         return true;
     }
     return false;

@@ -86,6 +86,56 @@ void AppController::startup() {
             std::vector<uint8_t> cmdBytes(cmdVersion.begin(), cmdVersion.end());
             m_comChannel->write(cmdBytes);
         }
+
+        std::string cmdAllStat =
+            m_commandFormatter->getCommandStatusAllChannels();
+
+        if (!cmdAllStat.empty()) {
+            std::vector<uint8_t> cmdBytes(cmdAllStat.begin(), cmdAllStat.end());
+            m_comChannel->write(cmdBytes);
+        }
+    }
+}
+
+void AppController::turnOnAllChannels() {
+    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
+        std::string cmd = m_commandFormatter->getCommandOnAllChannels();
+        if (!cmd.empty()) {
+            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
+            m_comChannel->write(cmdBytes);
+        }
+    }
+}
+
+void AppController::turnOffAllChannels() {
+    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
+        std::string cmd = m_commandFormatter->getCommandOffAllChannels();
+        if (!cmd.empty()) {
+            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
+            m_comChannel->write(cmdBytes);
+        }
+    }
+}
+
+void AppController::requestAllChannelsStatus() {
+    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
+        std::string cmd = m_commandFormatter->getCommandStatusAllChannels();
+        if (!cmd.empty()) {
+            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
+            m_comChannel->write(cmdBytes);
+        }
+    }
+}
+
+void AppController::resetSystem() {
+    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
+        std::string cmd = m_commandFormatter->getCommandReset();
+        if (!cmd.empty()) {
+            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
+            m_comChannel->write(cmdBytes);
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            m_comChannel->close();
+        }
     }
 }
 
@@ -105,7 +155,7 @@ void AppController::shutdown() {
         m_logger->close();
     }
 
-    m_configManager->store();
+    m_configManager->store(true);
 }
 
 void AppController::configureLogger() {
@@ -176,17 +226,66 @@ void AppController::handleChannelStateChanges(
         std::string cmd;
 
         // 1. Detect standard/mode changes
-        if (oldState.enabled != newState.enabled ||
-            oldState.mode != newState.mode ||
-            oldState.toggle != newState.toggle ||
-            oldState.timer != newState.timer ||
-            oldState.timerEnabled != newState.timerEnabled) {
+        bool shouldUpdate = false;
 
+        if (oldState.enabled != newState.enabled) {
+            if (!newState.enabled) {
+                // Disabling channel: always send off command
+                shouldUpdate = true;
+            } else {
+                // Enabling channel: only send command if it starts as active
+                if (newState.mode == Model::Channel::ChannelMode::Toggle &&
+                    newState.toggle) {
+                    shouldUpdate = true;
+                } else if (
+                    newState.mode == Model::Channel::ChannelMode::Timer &&
+                    newState.timerEnabled
+                ) {
+                    shouldUpdate = true;
+                }
+            }
+        } else if (newState.enabled) {
+            // Channel is and remains enabled
+            if (oldState.mode != newState.mode) {
+                // Mode changed: only send command if old state was active (to
+                // turn off) or new state is active (to turn on)
+                bool oldActive =
+                    (oldState.mode == Model::Channel::ChannelMode::Toggle &&
+                     oldState.toggle) ||
+                    (oldState.mode == Model::Channel::ChannelMode::Timer &&
+                     oldState.timerEnabled);
+                bool newActive =
+                    (newState.mode == Model::Channel::ChannelMode::Toggle &&
+                     newState.toggle) ||
+                    (newState.mode == Model::Channel::ChannelMode::Timer &&
+                     newState.timerEnabled);
+                if (oldActive || newActive) {
+                    shouldUpdate = true;
+                }
+            } else {
+                // Mode is the same
+                if (newState.mode == Model::Channel::ChannelMode::Toggle) {
+                    if (oldState.toggle != newState.toggle) {
+                        shouldUpdate = true;
+                    }
+                } else if (
+                    newState.mode == Model::Channel::ChannelMode::Timer
+                ) {
+                    if (oldState.timerEnabled != newState.timerEnabled ||
+                        (newState.timerEnabled &&
+                         oldState.timer != newState.timer)) {
+                        shouldUpdate = true;
+                    }
+                }
+            }
+        }
+
+        if (shouldUpdate) {
             std::string logMsg = std::format(
                 "Channel {} state changed: enabled={}, mode={}, "
                 "toggle={}, timer={}, timerEnabled={}",
-                i, newState.enabled, static_cast<int>(newState.mode), newState.toggle,
-                newState.timer, newState.timerEnabled
+                i, newState.enabled, static_cast<int>(newState.mode),
+                newState.toggle, newState.timer, newState.timerEnabled
             );
 
             m_logger->log(logMsg, Logger::LogLevel::Info);
@@ -195,12 +294,13 @@ void AppController::handleChannelStateChanges(
         }
 
         // 2. Detect Pulse trigger (one-shot)
-        if (newState.enabled && newState.mode == Model::Channel::ChannelMode::Pulse &&
+        if (newState.enabled &&
+            newState.mode == Model::Channel::ChannelMode::Pulse &&
             newState.pulseTriggered && !oldState.pulseTriggered) {
 
             std::string logMsg = std::format(
-                "Channel {} pulse triggered: duration={}ms",
-                i, newState.pulseTime
+                "Channel {} pulse triggered: duration={}ms", i,
+                newState.pulseTime
             );
 
             m_logger->log(logMsg, Logger::LogLevel::Info);
@@ -209,15 +309,18 @@ void AppController::handleChannelStateChanges(
         }
 
         // 3. Detect Blink changes (enable/disable)
-        if (newState.enabled && newState.mode == Model::Channel::ChannelMode::Blink) {
+        if (newState.enabled &&
+            newState.mode == Model::Channel::ChannelMode::Blink) {
             if (oldState.blinkEnabled != newState.blinkEnabled ||
                 oldState.blinkOnTime != newState.blinkOnTime ||
                 oldState.blinkOffTime != newState.blinkOffTime ||
                 oldState.blinkCount != newState.blinkCount) {
 
                 std::string logMsg = std::format(
-                    "Channel {} blink state changed: enabled={}, on={}ms, off={}ms, count={}",
-                    i, newState.blinkEnabled, newState.blinkOnTime, newState.blinkOffTime, newState.blinkCount
+                    "Channel {} blink state changed: enabled={}, on={}ms, "
+                    "off={}ms, count={}",
+                    i, newState.blinkEnabled, newState.blinkOnTime,
+                    newState.blinkOffTime, newState.blinkCount
                 );
 
                 m_logger->log(logMsg, Logger::LogLevel::Info);
@@ -323,6 +426,19 @@ void AppController::readLoop() {
                 }
 
             } else {
+                static auto lastReconnectTry = std::chrono::steady_clock::now();
+                auto now = std::chrono::steady_clock::now();
+                if (now - lastReconnectTry >= std::chrono::seconds(2)) {
+                    lastReconnectTry = now;
+                    if (m_logger) {
+                        m_logger->log(
+                            "Communication channel closed. Attempting to "
+                            "reconnect...",
+                            Logger::LogLevel::Warning
+                        );
+                    }
+                    configureComChannel();
+                }
                 std::this_thread::sleep_for(cThreadSleepDuration);
             }
         } catch (...) {
