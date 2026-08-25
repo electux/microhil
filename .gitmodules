@@ -2,3 +2,4 @@
 	path = sw/microhil_nuttx/nuttx
 	url = git@github.com:vroncevic/nuttx-pico.git
 	branch = master
+	ignore = dirty
