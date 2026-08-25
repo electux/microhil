@@ -3,3 +3,7 @@
 	url = git@github.com:vroncevic/nuttx-pico.git
 	branch = master
 	ignore = dirty
+[submodule "sw/microhil_upy/upy"]
+	path = sw/microhil_upy/upy
+	url = https://github.com/micropython/micropython.git
+	ignore = dirty
