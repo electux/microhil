@@ -27,6 +27,8 @@ other information that should be provided before the tool is installed.
   - [SW Desktop Application dependencies](#sw-desktop-application-dependencies)
 - [Docs](#docs)
 - [Copyright and licence](#copyright-and-licence)
+  - [microHIL Licenses](#microhil-licenses)
+  - [Third-Party Component Licenses](#third-party-component-licenses)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
