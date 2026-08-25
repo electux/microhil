@@ -1,7 +1,0 @@
-<map id="application.h" name="application.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="61,5,168,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,83,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,33,67,71,63,67,101,29"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="107,79,264,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,29,166,67,162,71,124,33"/>
-</map>

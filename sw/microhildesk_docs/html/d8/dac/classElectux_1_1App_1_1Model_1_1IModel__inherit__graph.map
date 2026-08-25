@@ -1,5 +1,0 @@
-<map id="Electux::App::Model::IModel" name="Electux::App::Model::IModel">
-<area shape="rect" id="Node000001" title="Interface for application data models." alt="" coords="5,5,148,285"/>
-<area shape="rect" id="Node000002" href="$da/d81/classElectux_1_1App_1_1Model_1_1Model.html" title="Concrete implementation of the IModel interface." alt="" coords="5,333,148,613"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,299,79,333,74,333,74,299"/>
-</map>

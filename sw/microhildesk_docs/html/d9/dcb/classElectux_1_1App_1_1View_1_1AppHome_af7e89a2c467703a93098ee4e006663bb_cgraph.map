@@ -1,7 +1,0 @@
-<map id="Electux::App::View::AppHome::extract_config" name="Electux::App::View::AppHome::extract_config">
-<area shape="rect" id="Node000001" title="Extracts control configuration parameter." alt="" coords="5,13,200,53"/>
-<area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#ad72016315750df4ef5e608d820c2e3a4" title="Extracts nth substring from input string." alt="" coords="248,5,445,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,30,234,30,234,35,200,35"/>
-<area shape="rect" id="Node000003" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41" title="Splits input string into vector of substrings." alt="" coords="493,5,644,60"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="445,30,480,30,480,35,445,35"/>
-</map>
