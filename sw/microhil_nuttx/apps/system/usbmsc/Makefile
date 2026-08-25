@@ -1,6 +1,8 @@
 ############################################################################
 # apps/system/usbmsc/Makefile
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.  The
@@ -20,7 +22,7 @@
 
 include $(APPDIR)/Make.defs
 
-PROGNAME = msconn
+PROGNAME = msconn msdis
 PRIORITY = $(CONFIG_SYSTEM_USBMSC_CMD_PRIORITY)
 STACKSIZE = $(CONFIG_SYSTEM_USBMSC_CMD_STACKSIZE)
 MODULE = $(CONFIG_SYSTEM_USBMSC)

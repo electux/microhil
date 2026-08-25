@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/system/readline/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -20,6 +22,7 @@
 
 if(CONFIG_SYSTEM_READLINE)
 
-  target_sources(apps PRIVATE readline.c readline_fd.c readline_common.c)
+  target_sources(apps PRIVATE readline.c readline_fd.c readline_stream.c
+                              readline_common.c)
 
 endif()

@@ -9,9 +9,8 @@ config NSH_LIBRARY
 	bool "NSH Library"
 	default n
 	select NETUTILS_NETLIB if NET
-	select BOARDCTL if (!NSH_DISABLE_MKRD && !DISABLE_MOUNTPOINT) || NSH_ARCHINIT || NSH_ROMFSETC
+	select BOARDCTL if (!NSH_DISABLE_MKRD && !DISABLE_MOUNTPOINT)
 	select BOARDCTL_MKRD if !NSH_DISABLE_MKRD && !DISABLE_MOUNTPOINT
-	select BOARDCTL_ROMDISK if NSH_ROMFSETC
 	---help---
 		Build the NSH support library.  This is used, for example, by
 		system/nsh in order to implement the full NuttShell (NSH).
@@ -67,7 +66,51 @@ config NSH_PROMPT_STRING
 	string "Prompt String"
 	default "nsh> "
 	---help---
-		Provide the shell prompt string, default is "nsh> ".
+		Provide the shell prompt string with size limit NSH_PROMPT_MAX.
+		default is "nsh> ".
+
+config NSH_PROMPT_STRING_ROOT
+	string "Prompt string for effective root (euid=0)"
+	default ""
+	depends on SCHED_USER_IDENTITY
+	---help---
+		Optional full prompt override when the effective UID is zero.
+		If empty, NSH keeps NSH_PROMPT_STRING until login; after login the
+		last '>' in the base prompt becomes '#' (for example, "nsh> "
+		becomes "nsh# "), or '#' is appended when the prompt has no '>'.
+
+config NSH_PROMPT_STRING_USER
+	string "Prompt string for non-root effective UID"
+	default ""
+	depends on SCHED_USER_IDENTITY
+	---help---
+		Optional full prompt override when the effective UID is non-zero.
+		If empty, NSH keeps NSH_PROMPT_STRING until login; after login the
+		last '>' in the base prompt becomes '$' (for example, "nsh> "
+		becomes "nsh$ "), or '$' is appended when the prompt has no '>'.
+
+config NSH_PROMPT_MAX
+	int "Maximum Size of Prompt String"
+	default NAME_MAX
+	---help---
+		The maximum size of shell prompt string, including ending null.
+
+config NSH_PROMPT_ENV
+	string "Prompt String Environment Variable"
+	default "PS1"
+	depends on !DISABLE_ENVIRON
+	---help---
+		The environment variable name containing prompt string.
+		Only used when NSH_PROMPT_STRING is empty.
+
+config NSH_PROMPT_SUFFIX
+	string "Suffix used to derive fallback prompt string"
+	default "> "
+	---help---
+		When NSH_PROMPT_STRING is empty, the environment variable defined
+		by NSH_PROMPT_ENV or hostname will be used to derive the prompt
+		at runtime. This suffix is a part of the final prompt that serves
+		to clearly separate prompt from user inputs.
 
 config NSH_DISABLE_ECHOBACK
 	bool "Disable echoback"
@@ -101,14 +144,6 @@ config NSH_CLE
 		footprint.
 
 endchoice
-
-config NSH_LINELEN
-	int "Max command line length"
-	default 64 if DEFAULT_SMALL
-	default 80 if !DEFAULT_SMALL
-	---help---
-		The maximum length of one command line and of one output line.
-		Default: 64/80
 
 config NSH_DISABLE_SEMICOLON
 	bool "Disable multiple commands per line"
@@ -208,6 +243,13 @@ config NSH_ALIAS_MAX_AMOUNT
 
 endif # NSH_ALIAS
 
+config NSH_PIPELINE
+	bool "Enable pipeline support"
+	default !DEFAULT_SMALL
+	depends on PIPES
+	---help---
+		Enable pipeline support for nsh.
+
 endmenu # Command Line Configuration
 
 config NSH_BUILTIN_APPS
@@ -219,6 +261,14 @@ config NSH_BUILTIN_APPS
 		executed from the NSH command line (see apps/README.txt for
 		more information).  This options requires support for builtin
 		applications (BUILTIN).
+
+config NSH_BUILTIN_AS_COMMAND
+	bool "Run builtin apps as command"
+	default n
+	depends on BUILTIN
+	---help---
+		Enable to run builtin application directly without creating
+		a separate thread.
 
 config NSH_FILE_APPS
 	bool "Enable execution of program files"
@@ -311,6 +361,36 @@ config NSH_DISABLE_CD
 	bool "Disable cd"
 	default DEFAULT_SMALL
 
+config NSH_DISABLE_CHROOT
+	bool "Disable chroot"
+	default DEFAULT_SMALL
+	depends on FS_CHROOT
+
+config NSH_DISABLE_CHMOD
+	bool "Disable chmod"
+	default DEFAULT_SMALL
+	depends on FS_PERMISSION
+
+config NSH_DISABLE_CHOWN
+	bool "Disable chown"
+	default DEFAULT_SMALL
+	depends on FS_PERMISSION
+
+config NSH_DISABLE_SU
+	bool "Disable su"
+	default DEFAULT_SMALL
+	depends on SCHED_USER_IDENTITY
+
+config NSH_DISABLE_ID
+	bool "Disable id"
+	default DEFAULT_SMALL
+	depends on SCHED_USER_IDENTITY
+
+config NSH_DISABLE_WHOAMI
+	bool "Disable whoami"
+	default DEFAULT_SMALL
+	depends on SCHED_USER_IDENTITY
+
 config NSH_DISABLE_CP
 	bool "Disable cp"
 	default DEFAULT_SMALL
@@ -322,10 +402,6 @@ config NSH_DISABLE_CMP
 config NSH_DISABLE_DATE
 	bool "Disable date"
 	default DEFAULT_SMALL || !RTC
-
-config NSH_DISABLE_DD
-	bool "Disable dd"
-	default DEFAULT_SMALL
 
 config NSH_DISABLE_DF
 	bool "Disable df"
@@ -344,6 +420,10 @@ config NSH_DISABLE_DMESG
 	bool "Disable dmesg"
 	default DEFAULT_SMALL
 
+config NSH_DISABLE_DU
+	bool "Disable du"
+	default DEFAULT_SMALL
+
 config NSH_DISABLE_ECHO
 	bool "Disable echo"
 	default DEFAULT_SMALL
@@ -359,6 +439,10 @@ config NSH_DISABLE_EXEC
 config NSH_DISABLE_EXIT
 	bool "Disable exit"
 	default DEFAULT_SMALL && !NSH_TELNET
+
+config NSH_DISABLE_EXPR
+	bool "Disable expr"
+	default DEFAULT_SMALL
 
 config NSH_DISABLE_EXPORT
 	bool "Disable export"
@@ -379,11 +463,11 @@ config NSH_DISABLE_GET
 
 config NSH_DISABLE_HELP
 	bool "Disable help"
-	default DEFAULT_SMALL
+	default n
 
 config NSH_DISABLE_ERROR_PRINT
 	bool "Disable NSH Error Printing"
-	default DEFAULT_SMALL
+	default n
 
 config NSH_DISABLE_HEXDUMP
 	bool "Disable hexdump"
@@ -393,6 +477,10 @@ config NSH_DISABLE_IFCONFIG
 	bool "Disable ifconfig"
 	default DEFAULT_SMALL || !FS_PROCFS || FS_PROCFS_EXCLUDE_NET
 
+config NSH_DISABLE_VCONFIG
+	bool "Disable vconfig"
+	default DEFAULT_SMALL || !FS_PROCFS || FS_PROCFS_EXCLUDE_NET
+
 config NSH_DISABLE_IFUPDOWN
 	bool "Disable ifup/down"
 	default DEFAULT_SMALL || !FS_PROCFS || FS_PROCFS_EXCLUDE_NET
@@ -400,6 +488,11 @@ config NSH_DISABLE_IFUPDOWN
 config NSH_DISABLE_KILL
 	bool "Disable kill"
 	default DEFAULT_SMALL
+
+config NSH_DISABLE_PKILL
+	bool "Disable pkill"
+	default DEFAULT_SMALL
+	depends on FS_PROCFS
 
 config NSH_DISABLE_LOSETUP
 	bool "Disable losetup"
@@ -475,7 +568,7 @@ config NSH_DISABLE_MW
 	bool "Disable mw"
 	default y
 
-config NSH_DISABLE_NSFMOUNT
+config NSH_DISABLE_NFSMOUNT
 	bool "Disable nfsmount"
 	default DEFAULT_SMALL
 	depends on NFS
@@ -525,6 +618,13 @@ config NSH_DISABLE_PSSTACKUSAGE
 	---help---
 		Disable to save space and not pull in floating point routines
 
+config NSH_DISABLE_PSSIGMASK
+	bool "Disable ps sigmask"
+	depends on !NSH_DISABLE_PS
+	default DEFAULT_SMALL
+	---help---
+		Disable sigmask print from ps
+
 config NSH_DISABLE_PUT
 	bool "Disable put"
 	default DEFAULT_SMALL
@@ -566,10 +666,15 @@ config NSH_DISABLE_ROUTE
 	depends on FS_PROCFS && NET_ROUTE && !FS_PROCFS_EXCLUDE_NET && !FS_PROCFS_EXCLUDE_ROUTE
 	default DEFAULT_SMALL
 
+config NSH_DISABLE_RPMSG
+	bool "Disable rpmsg"
+	default DEFAULT_SMALL
+	depends on RPMSG
+
 config NSH_DISABLE_RPTUN
 	bool "Disable rptun"
 	default DEFAULT_SMALL
-	depends on RPTUN
+	depends on RPTUN && !NSH_DISABLE_RPMSG
 
 config NSH_DISABLE_SET
 	bool "Disable set"
@@ -599,6 +704,11 @@ config NSH_DISABLE_TIMEDATECTL
 config NSH_DISABLE_TEST
 	bool "Disable test"
 	default DEFAULT_SMALL
+
+config NSH_DISABLE_TOP
+	bool "Disable top"
+	default DEFAULT_SMALL
+	depends on !NSH_DISABLE_PS
 
 config NSH_DISABLE_TRUNCATE
 	bool "Disable truncate"
@@ -656,6 +766,21 @@ config NSH_DISABLE_RESET_CAUSE
 	bool "Disable reset cause"
 	default DEFAULT_SMALL
 	depends on BOARDCTL_RESET_CAUSE
+
+config NSH_DISABLE_IRQ_AFFINITY
+	bool "Disable command of irq affinity"
+	default DEFAULT_SMALL
+	depends on BOARDCTL_IRQ_AFFINITY
+
+config NSH_DISABLE_WAIT
+	bool "Disable wait"
+	default DEFAULT_SMALL
+	depends on SCHED_WAITPID
+	depends on FS_PROCFS && !FS_PROCFS_EXCLUDE_PROCESS
+
+config NSH_DISABLE_WATCH
+	bool "Disable watch"
+	default DEFAULT_SMALL
 
 endmenu
 
@@ -724,11 +849,6 @@ config NSH_VARS
 		               variables                   variables
 		============== =========================== ===========================
 
-config NSH_CMDOPT_DD_STATS
-	bool "dd: Support transfer statistics"
-	default n
-	depends on !NSH_DISABLE_DD
-
 config NSH_CODECS_BUFSIZE
 	int "File buffer size used by CODEC commands"
 	default 128
@@ -793,29 +913,6 @@ config NSH_DISABLE_LOOPS
 		systems where some minimal scripting is required but looping
 		is not.
 
-endif # !NSH_DISABLESCRIPT
-
-config NSH_ROMFSETC
-	bool "Support ROMFS start-up script"
-	default n
-	depends on FS_ROMFS
-	---help---
-		Mount a ROMFS filesystem at /etc and provide a system init
-		script at /etc/init.d/rc.sysinit and a startup script
-		at /etc/init.d/rcS.  The default system init script will mount
-		a FAT FS RAMDISK at /tmp but the logic is easily extensible.
-
-if NSH_ROMFSETC
-
-config NSH_CROMFSETC
-	bool "Support CROMFS (compressed) start-up script"
-	default n
-	depends on FS_CROMFS
-	---help---
-		Mount a CROMFS filesystem at /etc and provide a compressed system
-		init script at /etc/init.d/rc.sysinit and a startup script
-		at /etc/init.d/rcS.
-
 config NSH_ROMFSRC
 	bool "Support ROMFS login script"
 	default n
@@ -827,14 +924,6 @@ config NSH_ROMFSRC
 		may need another script that is executed at the beginning of each
 		session.  Selecting this option enables support for such a login
 		script
-
-config NSH_ROMFSMOUNTPT
-	string "ROMFS mount point"
-	default "/etc"
-	---help---
-		The default mountpoint for the ROMFS volume is /etc, but that
-		can be changed with this setting.  This must be a absolute path
-		beginning with '/'.
 
 config NSH_SYSINITSCRIPT
 	string "Relative path to sysinit script"
@@ -861,106 +950,14 @@ config NSH_RCSCRIPT
 		The default is .nshrc.  This is a relative path and must not
 		start with '/'.
 
-config NSH_ROMFSDEVNO
-	int "ROMFS block device minor number"
-	default 0
-	---help---
-		This is the minor number of the ROMFS block device.  The default is
-		'0' corresponding to /dev/ram0.
-
-config NSH_ROMFSSECTSIZE
-	int "ROMFS sector size"
-	default 64
-	---help---
-		This is the sector size to use with the ROMFS volume.  Since the
-		default volume is very small, this defaults to 64 but should be
-		increased if the ROMFS volume were to be become large.  Any value
-		selected must be a power of 2.
-
-choice
-	prompt "ROMFS header location"
-	default NSH_DEFAULTROMFS
-
-config NSH_DEFAULTROMFS
-	bool "Default ROMFS header path"
-	---help---
-		Selects the default header located in the source directory of the
-		NSH library.
-
-config NSH_ARCHROMFS
-	bool "Architecture-specific ROMFS path"
-	---help---
-		Enable this option to provide an architecture-specific ROMFS
-		header at arch/<boardname>/nsh_romfsimg.h.  Note that this header
-		will be linked (or copied) from nuttx/boards/<arch>/<chip>/<board>/include
-		and should be stored at that location in the nuttx boards/
-		sub-directory.
-
-config NSH_CUSTOMROMFS
-	bool "Custom ROMFS header path"
-	---help---
-		Enable this option to provide a custom ROMFS header. The path to
-		the header file can be specified in the option "Custom ROMFS header
-		file".
-
-endchoice
-
-if NSH_CUSTOMROMFS
-
-config NSH_CUSTOMROMFS_HEADER
-	string "Custom ROMFS header file path"
-	default ""
-	---help---
-		Specifies the path to the custom ROMFS header file.  This must be
-		either a full path or a path relative to one of the include file
-		search paths provided in your CFLAGS.
-
-endif #NSH_CUSTOMROMFS
-
-config NSH_FATDEVNO
-	int "FAT block device minor number"
-	default 1
-	depends on FS_FAT
-	---help---
-		When the default rcS file used when NSH_ROMFSETC is selected, it
-		will mount a FAT FS under /tmp. This is the minor number of the FAT
-		FS block device.  The default is '1' corresponding to /dev/ram1.
-
-config NSH_FATSECTSIZE
-	int "FAT sector size"
-	default 512
-	depends on FS_FAT
-	---help---
-		When the default rcS file used when NSH_ROMFSETC is selected, it
-		will mount a FAT FS under /tmp. This is the sector size use with the
-		FAT FS. Default is 512.
-
-config NSH_FATNSECTORS
-	int "FAT number of sectors"
-	default 1024
-	depends on FS_FAT
-	---help---
-		When the default rcS file used when NSH_ROMFSETC is selected, it
-		will mount a FAT FS under /tmp. This is the number of sectors to use
-		with the FAT FS.  Default is 1024.  The amount of memory used by the
-		FAT FS will be NSH_FATSECTSIZE * NSH_FATNSECTORS bytes.
-
-config NSH_FATMOUNTPT
-	string "FAT mount point"
-	default "/tmp"
-	depends on FS_FAT
-	---help---
-		When the default rcS file used when NSH_ROMFSETC is selected, it
-		will mount a FAT FS under /tmp. This is the location where the FAT
-		FS will be mounted.  Default is "/tmp".
-
 config NSH_SCRIPT_REDIRECT_PATH
 	string "rcS redirect output"
 	default ""
 	---help---
 		This option can redirect rcS output.such as /dev/log or other.
 
-endif # NSH_ROMFSETC
+endif # !NSH_DISABLESCRIPT
+
 endmenu # Scripting Support
 
 menu "Console Configuration"
@@ -1100,6 +1097,7 @@ config NSH_USBKBD
 	bool "Use USB keyboard input"
 	default n
 	depends on NSH_CONSOLE && USBHOST_HIDKBD && !NSH_USBCONSOLE
+	depends on INPUT_KEYBOARD_BYTESTREAM
 	---help---
 		Normally NSH uses the same device for stdin, stdout, and stderr.  By
 		default, that device is /dev/console.  If this option is selected,
@@ -1107,6 +1105,9 @@ config NSH_USBKBD
 		keyboard is connected directly to the target (via a USB host
 		interface) and the data from the keyboard will drive NSH.  NSH
 		output (stdout and stderr) will still go to /dev/console.
+
+		NSH reads the keyboard as a stream of characters, which is what
+		INPUT_KEYBOARD_BYTESTREAM makes a keyboard device deliver.
 
 if NSH_USBKBD
 
@@ -1173,16 +1174,6 @@ config NSH_USBDEV_TRACEINTERRUPTS
 endif # NSH_USBDEV_TRACE
 endmenu # USB Device Trace Support
 
-config NSH_ARCHINIT
-	bool "Have architecture-specific initialization"
-	default n
-	select BOARDCTL
-	---help---
-		Set if your board provides architecture specific initialization
-		via the board-interface function boardctl().  The boardctl()
-		function will be called early in NSH initialization to allow
-		board logic to do such things as configure MMC/SD slots.
-
 menu "Networking Configuration"
 	depends on NET
 
@@ -1225,6 +1216,28 @@ config NSH_DISABLE_TELNETSTART
 
 endmenu # Telnet Configuration
 
+menu "Dropbear Configuration"
+
+config NSH_DROPBEAR
+	bool "Start Dropbear SSH server"
+	default n
+	depends on NETUTILS_DROPBEAR
+	depends on NSH_BUILTIN_APPS
+	depends on !NSH_DISABLEBG
+	select NSH_LOGIN
+	---help---
+		If NSH_DROPBEAR is set to 'y', then NSH starts the Dropbear SSH
+		server automatically.
+
+config NSH_DISABLE_DROPBEARSTART
+	bool "Disable to start Dropbear"
+	default n
+	depends on NSH_DROPBEAR
+	---help---
+		Determines if NSH starts Dropbear automatically.
+
+endmenu # Dropbear Configuration
+
 config NSH_LOGIN
 	bool
 	default n
@@ -1232,32 +1245,42 @@ config NSH_LOGIN
 config NSH_CONSOLE_LOGIN
 	bool "Console Login"
 	default n
+	depends on FSUTILS_PASSWD
+	depends on !ETC_ROMFS || BOARD_ETC_ROMFS_PASSWD_ENABLE
 	select NSH_LOGIN
 	---help---
 		If defined, then the console user will be required to provide a
-		username and password to start the NSH shell.
+		username and password to start the NSH shell.  Requires
+		CONFIG_FSUTILS_PASSWD (PBKDF2-HMAC-SHA256) so credentials are
+		verified against the encrypted password file.
+
+		When CONFIG_ETC_ROMFS is enabled, also enable
+		CONFIG_BOARD_ETC_ROMFS_PASSWD_ENABLE so /etc/passwd is generated
+		at build time (or provide the passwd file by other means and leave
+		ETC_ROMFS disabled).
 
 config NSH_TELNET_LOGIN
 	bool "Telnet Login"
 	default n
-	depends on NSH_TELNET
+	depends on NSH_TELNET && FSUTILS_PASSWD
+	depends on !ETC_ROMFS || BOARD_ETC_ROMFS_PASSWD_ENABLE
 	select NSH_LOGIN
 	---help---
 		If defined, then the Telnet user will be required to provide a
-		username and password to start the NSH shell.
+		username and password to start the NSH shell.  Requires
+		CONFIG_FSUTILS_PASSWD (PBKDF2-HMAC-SHA256) so credentials are
+		verified against the encrypted password file.
+
+		When CONFIG_ETC_ROMFS is enabled, also enable
+		CONFIG_BOARD_ETC_ROMFS_PASSWD_ENABLE so /etc/passwd is generated
+		at build time (or provide the passwd file by other means and leave
+		ETC_ROMFS disabled).
 
 if NSH_LOGIN
 
 choice
 	prompt "Verification method"
-	default NSH_LOGIN_PASSWD if FSUTILS_PASSWD
-	default NSH_LOGIN_FIXED if !FSUTILS_PASSWD
-
-config NSH_LOGIN_FIXED
-	bool "Fixed username/password"
-	---help---
-		Verify user credentials by matching to fixed username and password
-		strings
+	default NSH_LOGIN_PASSWD
 
 config NSH_LOGIN_PLATFORM
 	bool "Platform username/password"
@@ -1289,17 +1312,10 @@ endchoice # Verification method
 
 config NSH_LOGIN_USERNAME
 	string "Login username"
-	default "admin"
+	default "root"
 	depends on !NSH_LOGIN_PASSWD
 	---help---
-		Login user name.  Default: "admin"
-
-config NSH_LOGIN_PASSWORD
-	string "Login password"
-	default "Administrator"
-	depends on !NSH_LOGIN_PASSWD
-	---help---
-		Login password:  Default: "Administrator"
+		Login user name.  Default: "root"
 
 config NSH_LOGIN_FAILDELAY
 	int "Login failure delay"
@@ -1315,6 +1331,19 @@ config NSH_LOGIN_FAILCOUNT
 	default 3
 	---help---
 		Number of login retry attempts.
+
+config NSH_LOGIN_SETUID
+	bool "Set user identity after successful login"
+	default y
+	depends on SCHED_USER_IDENTITY
+	---help---
+		After a successful NSH login, look up the authenticated user name
+		in the passwd database and call setuid()/setgid() so that the shell
+		session runs with that user's credentials.
+
+		When CONFIG_LIBC_PASSWD_FILE is enabled, any user listed in the
+		passwd file may be selected.  Otherwise only the built-in "root"
+		account is supported.
 
 config NSH_PLATFORM_CHALLENGE
 	bool "Platform challenge"

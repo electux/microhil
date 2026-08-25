@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/include/system/readline.h
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -39,6 +41,11 @@
 #ifndef CONFIG_READLINE_ECHO
 #  undef CONFIG_READLINE_TABCOMPLETION
 #endif
+
+/* readline_fd_ex() options */
+
+#define READLINE_CTRL_D_EOF      (1 << 0)
+#define READLINE_RETURN_ON_EINTR (1 << 1)
 
 /* Make sure that the are valid values for all tab-completion settings */
 
@@ -86,8 +93,9 @@ extern "C"
  *
  *   If a prompt string is used by the application, then the application
  *   must provide the prompt string to readline() by calling this function.
- *   This is needed only for tab completion in cases where is it necessary
- *   to reprint the prompt string.
+ *   This is needed for tab completion, and for line editing's full-line
+ *   redraws (Home, End, history recall, ...), in cases where it is
+ *   necessary to reprint the prompt string.
  *
  * Input Parameters:
  *   prompt    - The prompt string. This function may then be
@@ -106,7 +114,7 @@ extern "C"
  *
  ****************************************************************************/
 
-#ifdef CONFIG_READLINE_TABCOMPLETION
+#if defined(CONFIG_READLINE_TABCOMPLETION) || defined(CONFIG_READLINE_EDIT)
 FAR const char *readline_prompt(FAR const char *prompt);
 #else
 #  define readline_prompt(p)
@@ -174,16 +182,43 @@ FAR const struct extmatch_vtable_s *
 ssize_t readline_fd(FAR char *buf, int buflen, int infd, int outfd);
 
 /****************************************************************************
- * Name: readline
+ * Name: readline_fd_ex
  *
- *   readline() is same to readline_fd() but accept a file stream instead
- *   of a file handle.
+ *   readline_fd_ex() extends readline_fd() with caller-selected options.
+ *   READLINE_CTRL_D_EOF makes Ctrl-D return EOF when the line is empty.
+ *   READLINE_RETURN_ON_EINTR makes an interrupted input read return -EINTR
+ *   instead of being retried.
+ *
+ ****************************************************************************/
+
+ssize_t readline_fd_ex(FAR char *buf, int buflen, int infd, int outfd,
+                       unsigned int options);
+
+/****************************************************************************
+ * Name: readline_stream
+ *
+ *   readline_stream() is same to readline_fd() but accept a file stream
+ *   instead of a file handle.
  *
  ****************************************************************************/
 
 #ifdef CONFIG_FILE_STREAM
-ssize_t readline(FAR char *buf, int buflen, FILE *instream, FILE *outstream);
+ssize_t readline_stream(FAR char *buf, int buflen,
+                        FAR FILE *instream, FAR FILE *outstream);
 #endif
+
+/****************************************************************************
+ * Name: readline
+ *
+ *   readline will read a line from the terminal and return it, using
+ *   prompt as a prompt.  If prompt is NULL or the empty string, no prompt
+ *   is issued.  The line returned is allocated with malloc(3);
+ *   the caller must free it when finished.  The line re‐turned has the
+ *   final newline removed, so only the text of the line remains.
+ *
+ ****************************************************************************/
+
+FAR char *readline(FAR const char *prompt);
 
 /****************************************************************************
  * Name: std_readline
@@ -212,7 +247,7 @@ ssize_t readline(FAR char *buf, int buflen, FILE *instream, FILE *outstream);
  *
  ****************************************************************************/
 
-#define std_readline(b,s) readline(b,s,stdin,stdout)
+#define std_readline(b,s) readline_stream(b,s,stdin,stdout)
 
 #undef EXTERN
 #ifdef __cplusplus

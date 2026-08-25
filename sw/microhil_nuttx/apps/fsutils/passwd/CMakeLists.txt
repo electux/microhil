@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/fsutils/passwd/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -21,7 +23,8 @@
 if(CONFIG_FSUTILS_PASSWD)
   set(CSRCS)
 
-  list(APPEND CSRCS passwd_verify.c passwd_find.c passwd_encrypt.c)
+  list(APPEND CSRCS passwd_verify.c passwd_find.c passwd_encrypt.c
+       passwd_pbkdf2.c)
 
   if(NOT CONFIG_FSUTILS_PASSWD_READONLY)
     list(

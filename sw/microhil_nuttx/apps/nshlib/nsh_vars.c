@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/nshlib/nsh_vars.c
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -255,6 +257,11 @@ int nsh_setvar(FAR struct nsh_vtbl_s *vtbl, FAR const char *name,
 
   if (pstate->varp != NULL)
     {
+      if (varlen > INT_MAX - pstate->varsz)
+        {
+          return -ENOMEM;
+        }
+
       newsize = pstate->varsz + varlen;
       newvarp = (FAR char *)realloc(pstate->varp, newsize);
       if (newvarp == NULL)
@@ -346,7 +353,6 @@ int nsh_unsetvar(FAR struct nsh_vtbl_s *vtbl, FAR const char *name)
         }
     }
 
-  sched_unlock();
   return ret;
 }
 #endif

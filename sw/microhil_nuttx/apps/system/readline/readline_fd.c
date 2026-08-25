@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/system/readline/readline_fd.c
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -28,20 +30,24 @@
 #include <unistd.h>
 #include <errno.h>
 #include <assert.h>
+#include <stdbool.h>
+#include <termios.h>
 
 #include "system/readline.h"
 #include "readline.h"
 
 /****************************************************************************
- * Private Type Declarations
+ * Private Types
  ****************************************************************************/
 
 struct readline_s
 {
   struct rl_common_s vtbl;
-  int infd;
+  unsigned int       options;
+  int                infd;
+  int                errcode;
 #ifdef CONFIG_READLINE_ECHO
-  int outfd;
+  int                outfd;
 #endif
 };
 
@@ -89,7 +95,13 @@ static int readline_getc(FAR struct rl_common_s *vtbl)
            */
 
           int errcode = errno;
-          if (errcode != EINTR)
+          if (errcode == EINTR &&
+              (priv->options & READLINE_RETURN_ON_EINTR) != 0)
+            {
+              priv->errcode = errcode;
+              return EOF;
+            }
+          else if (errcode != EINTR)
             {
               /* Return EOF on any errors that we cannot handle */
 
@@ -154,7 +166,21 @@ static void readline_write(FAR struct rl_common_s *vtbl,
                            FAR const char *buffer, size_t buflen)
 {
   FAR struct readline_s *priv = (FAR struct readline_s *)vtbl;
-  DEBUGASSERT(priv && buffer && buflen > 0);
+  DEBUGASSERT(priv && buffer);
+
+  /* Several full-line-redraw paths in readline_common.c (Home, End,
+   * Ctrl+A, Ctrl+U, Ctrl+Left/Right, ...) call RL_WRITE(vtbl, buf, nch)
+   * unconditionally after repositioning the cursor, and 'nch' -- the
+   * number of characters currently in the line -- can legitimately be
+   * 0 (e.g. pressing Home on an empty prompt, or Ctrl+U clearing the
+   * line back to empty).  Writing zero bytes is a valid no-op; it must
+   * not be treated as a caller error.
+   */
+
+  if (buflen == 0)
+    {
+      return;
+    }
 
   /* If outfd is a invalid fd, return directly. */
 
@@ -202,14 +228,42 @@ static void readline_write(FAR struct rl_common_s *vtbl,
 
 ssize_t readline_fd(FAR char *buf, int buflen, int infd, int outfd)
 {
+  return readline_fd_ex(buf, buflen, infd, outfd, 0);
+}
+
+/****************************************************************************
+ * Name: readline_fd_ex
+ ****************************************************************************/
+
+ssize_t readline_fd_ex(FAR char *buf, int buflen, int infd, int outfd,
+                       unsigned int options)
+{
   UNUSED(outfd);
 
   struct readline_s vtbl;
+  struct termios cfg;
+  struct termios newcfg;
+  bool restore_termios = false;
+  ssize_t ret;
+
+  if (isatty(infd) && tcgetattr(infd, &cfg) == 0 &&
+      (cfg.c_lflag & ICANON) != 0)
+    {
+      newcfg = cfg;
+      newcfg.c_lflag &= ~ICANON;
+
+      if (tcsetattr(infd, TCSANOW, &newcfg) == 0)
+        {
+          restore_termios = true;
+        }
+    }
 
   /* Set up the vtbl structure */
 
   vtbl.vtbl.rl_getc  = readline_getc;
   vtbl.infd          = infd;
+  vtbl.options       = options;
+  vtbl.errcode       = 0;
 
 #ifdef CONFIG_READLINE_ECHO
   vtbl.vtbl.rl_putc  = readline_putc;
@@ -219,5 +273,17 @@ ssize_t readline_fd(FAR char *buf, int buflen, int infd, int outfd)
 
   /* The let the common readline logic do the work */
 
-  return readline_common(&vtbl.vtbl, buf, buflen);
+  ret = readline_common(&vtbl.vtbl, buf, buflen, options);
+
+  if (restore_termios)
+    {
+      tcsetattr(infd, TCSANOW, &cfg);
+    }
+
+  if (vtbl.errcode != 0)
+    {
+      ret = -vtbl.errcode;
+    }
+
+  return ret;
 }

@@ -174,7 +174,7 @@ void relay_get_status(uint32_t channel, char *buf, size_t buf_len)
               mode_str = "BLINK";
             }
         }
-      snprintf(buf, buf_len, "ch:%u:%s:%s", channel + 1,
+      snprintf(buf, buf_len, "ch:%u:%s:%s", (unsigned int)(channel + 1),
                current_phys_state[channel] ? "ON" : "OFF", mode_str);
     }
 }

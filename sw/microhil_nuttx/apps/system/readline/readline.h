@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/system/readline/readline.h
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -82,6 +84,6 @@ struct rl_common_s
  ****************************************************************************/
 
 ssize_t readline_common(FAR struct rl_common_s *vtbl,
-                        FAR char *buf, int buflen);
+                        FAR char *buf, int buflen, unsigned int options);
 
 #endif /* __APPS_SYSTEM_READLINE_READLINE_H */

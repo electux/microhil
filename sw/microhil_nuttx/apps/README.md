@@ -34,7 +34,7 @@ NuttX directory. Like:
 
 If all of the above conditions are TRUE, then NuttX will be able to find the
 application directory. If your application directory has a different name or is
-location at a different position, then you will have to inform the NuttX build
+located at a different position, then you will have to inform the NuttX build
 system of that location. There are several ways to do that:
 
 1) You can define `CONFIG_APPS_DIR` to be the full path to your application
@@ -117,9 +117,6 @@ This will select the `apps/examples/hello` in the following way:
   endif
 ```
 
-## Prepare microHIL section
-
-
 ## Example Built-In Application
 
 An example application skeleton can be found under the `examples/hello`
@@ -143,7 +140,7 @@ project. One must:
     main()
     ```
 
- 4. Set the requirements in the file: `Makefile`, specially the lines:
+ 4. Set the requirements in the file: `Makefile`, specifically the lines:
 
     ```makefile
     PROGNAME   = progname

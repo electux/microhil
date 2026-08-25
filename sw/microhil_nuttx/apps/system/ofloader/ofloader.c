@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/system/ofloader/ofloader.c
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -33,7 +35,7 @@
 #include "ofloader.h"
 
 /****************************************************************************
- * Private Type Definitions
+ * Private Types
  ****************************************************************************/
 
 struct devinfo_s
@@ -318,16 +320,10 @@ int main(int argc, FAR char *argv[])
   size_t i;
   mqd_t mq;
 
-#if defined(CONFIG_BOARDCTL) && !defined(CONFIG_NSH_ARCHINIT)
-  /* Perform architecture-specific initialization (if configured) */
-
-  boardctl(BOARDIOC_INIT, 0);
-
-#  ifdef CONFIG_BOARDCTL_FINALINIT
+#ifdef CONFIG_BOARDCTL_FINALINIT
   /* Perform architecture-specific final-initialization (if configured) */
 
   boardctl(BOARDIOC_FINALINIT, 0);
-#  endif
 #endif
 
   memset(&mqattr, 0, sizeof(struct mq_attr));

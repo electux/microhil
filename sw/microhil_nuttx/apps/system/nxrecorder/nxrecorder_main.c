@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/system/nxrecorder/nxrecorder_main.c
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -49,7 +51,7 @@
 #endif
 
 /****************************************************************************
- * Private Type Declarations
+ * Private Types
  ****************************************************************************/
 
 struct mp_cmd_s
@@ -188,10 +190,21 @@ static int nxrecorder_cmd_recordraw(FAR struct nxrecorder_s *precorder,
   int bpsamp = 0;
   int samprate = 0;
   int chmap = 0;
-  char filename[128];
+  size_t len;
+  char filename[PATH_MAX];
 
-  sscanf(parg, "%s %d %d %d %d", filename, &channels, &bpsamp,
-                                 &samprate, &chmap);
+  parg += strspn(parg, " \t\r\n");
+  len = strcspn(parg, " \t\r\n");
+  if (len >= sizeof(filename))
+    {
+      len = sizeof(filename) - 1;
+    }
+
+  memcpy(filename, parg, len);
+  filename[len] = '\0';
+
+  sscanf(parg + len, "%d %d %d %d", &channels, &bpsamp,
+         &samprate, &chmap);
 
   /* Try to record the file specified */
 
@@ -257,10 +270,21 @@ static int nxrecorder_cmd_record(FAR struct nxrecorder_s *precorder,
   int bpsamp = 0;
   int samprate = 0;
   int chmap = 0;
-  char filename[128];
+  size_t len;
+  char filename[PATH_MAX];
 
-  sscanf(parg, "%s %d %d %d %d", filename, &channels, &bpsamp,
-                                 &samprate, &chmap);
+  parg += strspn(parg, " \t\r\n");
+  len = strcspn(parg, " \t\r\n");
+  if (len >= sizeof(filename))
+    {
+      len = sizeof(filename) - 1;
+    }
+
+  memcpy(filename, parg, len);
+  filename[len] = '\0';
+
+  sscanf(parg + len, "%d %d %d %d", &channels, &bpsamp,
+         &samprate, &chmap);
 
   /* Try to record the file specified */
 
@@ -529,7 +553,7 @@ static int nxrecorder_cmd_help(FAR struct nxrecorder_s *precorder,
 
 int main(int argc, FAR char *argv[])
 {
-  char                    buffer[CONFIG_NSH_LINELEN];
+  char                    buffer[LINE_MAX];
   int                     len;
   int                     x;
   int                     running;
@@ -562,7 +586,8 @@ int main(int argc, FAR char *argv[])
 
       /* Read a line from the terminal */
 
-      len = readline(buffer, sizeof(buffer), stdin, stdout);
+      len = readline_stream(buffer, sizeof(buffer),
+                            stdin, stdout);
       if (len > 0)
         {
           buffer[len] = '\0';
@@ -585,7 +610,7 @@ int main(int argc, FAR char *argv[])
 
               /* Remove leading spaces from arg */
 
-              while (*arg == ' ')
+              while (arg && *arg == ' ')
                 {
                   arg++;
                 }

@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/system/uorb/sensor/ots.c
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -28,22 +30,13 @@
  * Private Functions
  ****************************************************************************/
 
-#ifdef CONFIG_DEBUG_UORB
-static void print_sensor_ots_message(FAR const struct orb_metadata *meta,
-                                     FAR const void *buffer)
-{
-  FAR const struct sensor_ots *message = buffer;
-  const orb_abstime now = orb_absolute_time();
-
-  uorbinfo_raw("%s:\ttimestamp: %" PRIu64 " (%" PRIu64 " us ago) "
-               "x: % " PRIi32 " y: % " PRIi32 "",
-               meta->o_name, message->timestamp, now - message->timestamp,
-               message->x, message->y);
-}
+#ifdef CONFIG_UORB_FORMAT
+static const char sensor_ots_format[] =
+  "timestamp:%" PRIu64 ",x:%" PRIi32 ",y:%" PRIi32 "";
 #endif
 
 /****************************************************************************
  * Public Data
  ****************************************************************************/
 
-ORB_DEFINE(sensor_ots, struct sensor_ots, print_sensor_ots_message);
+ORB_DEFINE(sensor_ots, struct sensor_ots, sensor_ots_format);

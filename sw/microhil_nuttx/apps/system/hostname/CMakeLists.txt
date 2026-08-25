@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/system/hostname/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -18,6 +20,7 @@
 #
 # ##############################################################################
 
-if(CONFIG_EXAMPLES_MM)
-  nuttx_add_application(NAME mm)
+if(CONFIG_SYSTEM_HOSTNAME)
+  nuttx_add_application(MODULE ${CONFIG_SYSTEM_HOSTNAME} NAME hostname SRCS
+                        hostname_main.c)
 endif()

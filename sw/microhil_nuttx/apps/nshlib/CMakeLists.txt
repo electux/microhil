@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/nshlib/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -32,13 +34,17 @@ if(CONFIG_NSH_LIBRARY)
     nsh_system.c
     nsh_command.c
     nsh_fscmds.c
-    nsh_ddcmd.c
     nsh_proccmds.c
     nsh_mmcmds.c
     nsh_timcmds.c
     nsh_envcmds.c
+    nsh_prompt.c
     nsh_syscmds.c
     nsh_dbgcmds.c)
+
+  if(CONFIG_SCHED_USER_IDENTITY)
+    list(APPEND CSRCS nsh_identity.c)
+  endif()
 
   list(APPEND CSRCS nsh_session.c)
 
@@ -49,7 +55,9 @@ if(CONFIG_NSH_LIBRARY)
   list(APPEND CSRCS nsh_fsutils.c)
 
   if(CONFIG_NSH_BUILTIN_APPS)
-    list(APPEND CSRCS nsh_builtin.c)
+    if(NOT CONFIG_NSH_BUILTIN_AS_COMMAND)
+      list(APPEND CSRCS nsh_builtin.c)
+    endif()
   endif()
 
   if(CONFIG_NSH_FILE_APPS)
@@ -58,10 +66,6 @@ if(CONFIG_NSH_LIBRARY)
 
   if(CONFIG_NSH_VARS)
     list(APPEND CSRCS nsh_vars.c)
-  endif()
-
-  if(CONFIG_NSH_ROMFSETC)
-    list(APPEND CSRCS nsh_romfsetc.c)
   endif()
 
   if(CONFIG_NET)
@@ -97,8 +101,16 @@ if(CONFIG_NSH_LIBRARY)
     endif()
   endif()
 
+  if(CONFIG_NSH_DROPBEAR)
+    list(APPEND CSRCS nsh_dropbear.c)
+  endif()
+
   if(NOT CONFIG_NSH_DISABLESCRIPT)
     list(APPEND CSRCS nsh_test.c)
+  endif()
+
+  if(NOT CONFIG_NSH_DISABLE_WAIT)
+    list(APPEND CSRCS nsh_wait.c)
   endif()
 
   if(CONFIG_USBDEV)

@@ -54,12 +54,8 @@ void buzzer_write(uint16_t duty_percent)
       struct pwm_info_s info;
       memset(&info, 0, sizeof(info));
       info.frequency = 1000;
-#ifdef CONFIG_PWM_MULTICHAN
       info.channels[0].duty = (uint32_t)duty_percent * 65535 / 100;
       info.channels[0].channel = 1;
-#else
-      info.duty = (uint32_t)duty_percent * 65535 / 100;
-#endif
       info.arg = NULL;
       ioctl(pwm_fd, PWMIOC_SETCHARACTERISTICS,
             (unsigned long)((uintptr_t)&info));
