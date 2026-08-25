@@ -45,29 +45,152 @@ other information that should be provided before the tool is installed.</p>
 <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
 <p>Navigate to release <a class="reference external" href="https://github.com/electux/microhil/releases">page</a> download and extract release archive.</p>
-<p>To install <strong>microhil</strong> type the following</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">in</span><span class="w"> </span>progress
+<p>To install <strong>microhil-base</strong> type the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/electux/microhil.git
+<span class="nb">cd</span><span class="w"> </span>microhil/sw/microhil_base
+
+<span class="c1"># Create build directory</span>
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+
+<span class="c1"># Configure build (ensure PICO_SDK_PATH is set)</span>
+cmake<span class="w"> </span>-DPICO_SDK_PATH<span class="o">=</span>/path/to/pico-sdk<span class="w"> </span>..
+
+<span class="c1"># Build</span>
+make
+
+<span class="c1"># Deploy by copying the generated microhil-base.uf2 file to the Pico mounted storage</span>
+cp<span class="w"> </span>src/microhil-base.uf2<span class="w"> </span>/media/<span class="nv">$USER</span>/RPI-RP2/
+</pre></div>
+</div>
+<p>To install <strong>microhil-nuttx</strong> type the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository recursively (to pull the NuttX submodule)</span>
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/electux/microhil.git
+<span class="nb">cd</span><span class="w"> </span>microhil/sw/microhil_nuttx
+
+<span class="c1"># Build the firmware (automatically configures if .config is missing)</span>
+make
+
+<span class="c1"># Deploy by copying the generated microhil-nuttx.uf2 file to the Pico mounted storage</span>
+<span class="c1"># Note: Ensure the Pico is in BOOTSEL mode before running</span>
+make<span class="w"> </span>flash
+</pre></div>
+</div>
+<p>To install <strong>microhil-upy</strong> type the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository recursively (to pull the MicroPython submodule)</span>
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/electux/microhil.git
+<span class="nb">cd</span><span class="w"> </span>microhil/sw/microhil_upy
+
+<span class="c1"># Setup virtual environment and generate typings for development</span>
+make<span class="w"> </span>env
+
+<span class="c1"># Compile the MicroPython OS firmware image (.uf2) from source</span>
+make<span class="w"> </span>firmware
+
+<span class="c1"># Flash the compiled OS firmware to Raspberry Pi Pico (in BOOTSEL mode)</span>
+make<span class="w"> </span>flash
+
+<span class="c1"># Compile Python application scripts to .mpy bytecodes and stage deployment package</span>
+make
+
+<span class="c1"># Deploy the compiled scripts to Raspberry Pi Pico (using mpremote)</span>
+make<span class="w"> </span>deploy
+</pre></div>
+</div>
+<p>To install <strong>microhildesk</strong> type the following:</p>
+<p><strong>From Source:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/electux/microhil.git
+<span class="nb">cd</span><span class="w"> </span>microhil/sw/microhildesk/build
+
+<span class="c1"># Build the release version</span>
+make<span class="w"> </span>release
+
+<span class="c1"># Run the application</span>
+./microhildesk
+</pre></div>
+</div>
+<p><strong>As a Debian Package (.deb):</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate the .deb package</span>
+python3<span class="w"> </span>sw/microhildesk/scripts/deb/create_deb.py
+
+<span class="c1"># Install the package</span>
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>sw/microhildesk/build/deb_dist/microhildesk_*.deb
 </pre></div>
 </div>
 </section>
 <section id="dependencies">
 <h1>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">¶</a></h1>
-<dl class="simple">
-<dt><strong>microhil</strong> requires next modules and libraries</dt><dd><p>in progress</p>
-</dd>
-</dl>
+<p><strong>microhil-base</strong> requires next modules and libraries:</p>
+<ul class="simple">
+<li><p><strong>Runtime:</strong>
+* Raspberry Pi Pico (RP2040) hardware</p></li>
+<li><p><strong>Development / Build:</strong>
+* Raspberry Pi Pico SDK (<code class="docutils literal notranslate"><span class="pre">pico-sdk</span></code>)
+* GNU Arm Embedded Toolchain (<code class="docutils literal notranslate"><span class="pre">gcc-arm-none-eabi</span></code>)
+* <code class="docutils literal notranslate"><span class="pre">CMake</span></code> (v3.12+)</p></li>
+</ul>
+<p><strong>microhil-nuttx</strong> requires next modules and libraries:</p>
+<ul class="simple">
+<li><p><strong>Runtime:</strong>
+* Raspberry Pi Pico (RP2040) hardware</p></li>
+<li><p><strong>Development / Build:</strong>
+* GNU Arm Embedded Toolchain (<code class="docutils literal notranslate"><span class="pre">gcc-arm-none-eabi</span></code>)
+* <code class="docutils literal notranslate"><span class="pre">kconfig-frontends</span></code> (for NuttX configuration)
+* <code class="docutils literal notranslate"><span class="pre">make</span></code> and standard Linux build tools</p></li>
+</ul>
+<p><strong>microhil-upy</strong> requires next modules and libraries:</p>
+<ul class="simple">
+<li><p><strong>Runtime:</strong>
+* MicroPython firmware (v1.20+) on Raspberry Pi Pico (RP2/RP2040)</p></li>
+<li><p><strong>Development / Environment Setup:</strong>
+* <code class="docutils literal notranslate"><span class="pre">micropython-rp2-stubs</span></code> (for static analysis/autocomplete typings)
+* <code class="docutils literal notranslate"><span class="pre">micropython-stdlib-stubs</span></code> (for standard library autocomplete typings)</p></li>
+</ul>
+<p><strong>microhildesk</strong> requires next modules and libraries:</p>
+<ul class="simple">
+<li><p><strong>Runtime:</strong>
+* <code class="docutils literal notranslate"><span class="pre">libgtkmm-4.0-1</span></code> | <code class="docutils literal notranslate"><span class="pre">libgtkmm-4.0-1t64</span></code>
+* <code class="docutils literal notranslate"><span class="pre">socat</span></code> (for virtual serial ports)</p></li>
+<li><p><strong>Development / Build:</strong>
+* <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code>
+* <code class="docutils literal notranslate"><span class="pre">libgtkmm-4.0-dev</span></code>
+* C++17 compliant compiler (<code class="docutils literal notranslate"><span class="pre">g++</span></code>)</p></li>
+</ul>
 </section>
 <section id="project-structure">
 <h1>Project structure<a class="headerlink" href="#project-structure" title="Link to this heading">¶</a></h1>
-<p><strong>microhil</strong> is based on POP.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">in</span><span class="w"> </span>progress
+<p>The repository is organized as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>microhil/
+├── docs/                   # Documentation files
+├── hw/                     # Hardware design files (schematics, PCB layouts)
+└── sw/                     # Software and firmware source directories
+    ├── microhil_base/      # C-based firmware for Pico (direct HWIL interface)
+    ├── microhil_nuttx/     # NuttX-based RTOS firmware for Pico
+    ├── microhil_upy/       # MicroPython-based firmware for Pico
+    ├── microhildesk/       # Desktop GUI application (gtkmm/C++)
+    └── microhildesk_tests/ # Test suites for the desktop application
 </pre></div>
 </div>
 </section>
 <section id="copyright-and-licence">
 <h1>Copyright and licence<a class="headerlink" href="#copyright-and-licence" title="Link to this heading">¶</a></h1>
+<section id="microhil-licenses">
+<h2>microHIL Licenses<a class="headerlink" href="#microhil-licenses" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a> <a class="reference external" href="https://opensource.org/licenses/Apache-2.0"><img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a></p>
-<p>Copyright (C) 2020 by <a class="reference external" href="https://electux.github.io/microhil">electux.github.io/microhil</a></p>
+<p><strong>microhil</strong> is free software and is dual-licensed under the <strong>GPLv3</strong> and <strong>Apache 2.0</strong> licenses. Copyright (C) 2020 - 2026 by <a class="reference external" href="https://electux.github.io/microhil">electux.github.io/microhil</a>.</p>
+</section>
+<section id="third-party-component-licenses">
+<h2>Third-Party Component Licenses<a class="headerlink" href="#third-party-component-licenses" title="Link to this heading">¶</a></h2>
+<p>This project utilizes several open-source technologies, each under their respective licenses:</p>
+<ul class="simple">
+<li><p><strong>Apache NuttX RTOS:</strong> Licensed under the <a class="reference external" href="https://opensource.org/licenses/Apache-2.0"><img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a> license.</p></li>
+<li><p><strong>MicroPython (uPy):</strong> Licensed under the <a class="reference external" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a> license.</p></li>
+<li><p><strong>GNOME / gtkmm:</strong> Licensed under the <a class="reference external" href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"><img alt="License: LGPL v2.1" src="https://img.shields.io/badge/License-LGPL%20v2.1-blue.svg" /></a> license.</p></li>
+<li><p><strong>Raspberry Pi Pico SDK:</strong> Licensed under the <a class="reference external" href="https://opensource.org/licenses/BSD-3-Clause"><img alt="License: BSD 3-Clause" src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg" /></a> license.</p></li>
+</ul>
+<p>Lets help and support Raspberry PI, Nuttx, MicroPython and GNOME.</p>
+</section>
 </section>
 
 
@@ -84,7 +207,11 @@ other information that should be provided before the tool is installed.</p>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li><a class="reference internal" href="#project-structure">Project structure</a></li>
-<li><a class="reference internal" href="#copyright-and-licence">Copyright and licence</a></li>
+<li><a class="reference internal" href="#copyright-and-licence">Copyright and licence</a><ul>
+<li><a class="reference internal" href="#microhil-licenses">microHIL Licenses</a></li>
+<li><a class="reference internal" href="#third-party-component-licenses">Third-Party Component Licenses</a></li>
+</ul>
+</li>
 </ul>
 
   </div>

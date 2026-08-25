@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/system/trace/trace.h
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -55,7 +57,7 @@ extern "C"
  *
  ****************************************************************************/
 
-int trace_dump(FAR FILE *out);
+int trace_dump(FAR FILE *out, bool binary);
 
 /****************************************************************************
  * Name: trace_dump_clear

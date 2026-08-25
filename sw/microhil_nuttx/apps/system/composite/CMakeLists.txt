@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/system/composite/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -19,5 +21,6 @@
 # ##############################################################################
 
 if(CONFIG_SYSTEM_COMPOSITE)
-  nuttx_add_application(NAME composite SRCS composite_main.c)
+  nuttx_add_application(NAME conn SRCS composite_main.c)
+  nuttx_add_application(NAME disconn)
 endif()

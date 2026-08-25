@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/system/sched_note/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -19,5 +21,15 @@
 # ##############################################################################
 
 if(CONFIG_SYSTEM_NOTE)
-  nuttx_add_application(NAME sched_note)
+  nuttx_add_application(
+    MODULE
+    ${CONFIG_SYSTEM_NOTE}
+    NAME
+    ${CONFIG_SYSTEM_NOTE_PROGNAME}
+    STACKSIZE
+    ${CONFIG_SYSTEM_NOTE_STACKSIZE}
+    PRIORITY
+    ${CONFIG_SYSTEM_NOTE_PRIORITY}
+    SRCS
+    note_main.c)
 endif()

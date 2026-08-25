@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/system/lzf/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -19,5 +21,15 @@
 # ##############################################################################
 
 if(CONFIG_SYSTEM_LZF)
-  nuttx_add_application(NAME lzf)
+  nuttx_add_application(
+    MODULE
+    ${CONFIG_SYSTEM_LZF}
+    NAME
+    ${CONFIG_SYSTEM_LZF_PROGNAME}
+    STACKSIZE
+    ${CONFIG_SYSTEM_LZF_STACKSIZE}
+    PRIORITY
+    ${CONFIG_SYSTEM_LZF_PRIORITY}
+    SRCS
+    lzf_main.c)
 endif()

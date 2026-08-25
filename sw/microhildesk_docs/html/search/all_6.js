@@ -1,9 +1,0 @@
-var searchData=
-[
-  ['get_0',['get',['../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a646021cefee0f19da0dde6e9000e4f3a',1,'Electux::App::Model::IModel::get()'],['../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#ae54791da60f29fadc62bdbc8014b944a',1,'Electux::App::Model::Model::get()']]],
-  ['getallentries_1',['getallentries',['../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a8d13d898262c55797adb684f50289279',1,'Electux::App::Model::IModel::getAllEntries()'],['../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a76f64621678f1beca59b38dc8c0454fa',1,'Electux::App::Model::Model::getAllEntries()']]],
-  ['getconfig_2',['getconfig',['../d2/db2/classElectux_1_1App_1_1Config_1_1ConfigManager.html#a7b1db0eeade96bcd3929704de74b7478',1,'Electux::App::Config::ConfigManager::getConfig()'],['../db/dcd/classElectux_1_1App_1_1Config_1_1IConfig.html#a8e2eee05d880cc79e7827f6ff9b5eec5',1,'Electux::App::Config::IConfig::getConfig()']]],
-  ['getentity_3',['getentity',['../d4/d2e/classElectux_1_1App_1_1Model_1_1IModel.html#a312c9d5952b9be87708a83625f275166',1,'Electux::App::Model::IModel::getEntity()'],['../da/d81/classElectux_1_1App_1_1Model_1_1Model.html#a62467c7319a0502235b9cc1a16150f18',1,'Electux::App::Model::Model::getEntity()']]],
-  ['getlevel_4',['getlevel',['../d0/d68/classElectux_1_1App_1_1Logger_1_1ILog.html#ac1dc4803d98a8428094de8efc805e9bb',1,'Electux::App::Logger::ILog::getLevel()'],['../dd/d03/classElectux_1_1App_1_1Logger_1_1Log.html#a34f9781b9178687e8551664b4f248802',1,'Electux::App::Logger::Log::getLevel()']]],
-  ['getuidata_5',['getuidata',['../d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aabb49317bb093bd7909d28d0735d71b6',1,'Electux::App::View::AppHome::getUiData()'],['../d1/d12/classElectux_1_1App_1_1View_1_1Settings_1_1AppSettings.html#aadd858166ce97b2995207fae264e69a6',1,'Electux::App::View::Settings::AppSettings::getUiData()']]]
-];

@@ -38,7 +38,10 @@ sw/microhil_upy/
 │           ├── base.py         # Abstract command handler
 │           ├── parser.py       # Serial character parser
 │           └── ...             # Individual command implementations
-└── build/                      # Build output folder for compiled MPY binaries
+└── build/                      # Build output directory
+    └── deploy/                 # Deployment target outputs
+        ├── apps/               # Compiled MPY application files
+        └── upy/                # MicroPython OS compiled binary (firmware.uf2)
 ```
 
 ## Command Protocol
@@ -85,27 +88,38 @@ To set up a local workspace with full Python IDE typing stubs, auto-completion, 
 
 ## Compilation
 
-To compile Python source files into compact `.mpy` binary bytecodes (which optimizes memory usage and performance on the Pico):
+To compile the Python source files into compact `.mpy` binary bytecodes and compile the MicroPython OS firmware:
 
 ```bash
-# Build the mpy-cross compiler (first run) and compile all source scripts
+# Compile Python application scripts to .mpy bytecodes
 make
+
+# Compile the MicroPython OS firmware image (.uf2) from source
+make firmware
 ```
 
-Compiled `.mpy` files will be outputted to `build/deploy/apps/microhil/`.
+Compiled `.mpy` files will be outputted to `build/deploy/apps/` and the compiled firmware image to `build/deploy/upy/firmware.uf2`.
 
 ## Deployment
 
-Deploy the firmware to your board (e.g., Raspberry Pi Pico) using `mpremote`, `ampy`, or `rshell`.
+Flash the MicroPython firmware and deploy the application to your Raspberry Pi Pico:
 
-Using `mpremote` (recommended):
+```bash
+# 1. Connect Pico in BOOTSEL mode and flash the compiled MicroPython OS
+make flash
+
+# 2. Re-connect Pico in normal serial mode and deploy the application bytecode
+make deploy
+```
+
+Alternatively, you can interact with the board or copy files manually using `mpremote` inside the virtual environment:
 
 ```bash
 # Copy compiled mpy files to the root directory on the Pico
-mpremote fs cp -r build/deploy/apps/microhil :
+.venv/bin/mpremote connect /dev/ttyACM0 fs cp -r build/deploy/apps/microhil :
 
-# OR deploy python source code directly (if debugging)
-mpremote fs cp -r apps/microhil :
+# Open MicroPython REPL console
+.venv/bin/mpremote connect /dev/ttyACM0 repl
 ```
 
 You can then run it interactively or configure `main.py` on the device to invoke `microhil.engine`:

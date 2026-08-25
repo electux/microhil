@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/system/uorb/sensor/hcho.c
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -28,21 +30,12 @@
  * Private Functions
  ****************************************************************************/
 
-#ifdef CONFIG_DEBUG_UORB
-static void print_sensor_hcho_message(FAR const struct orb_metadata *meta,
-                                      FAR const void *buffer)
-{
-  FAR const struct sensor_hcho *message = buffer;
-  const orb_abstime now = orb_absolute_time();
-
-  uorbinfo_raw("%s:\ttimestamp: %" PRIu64 " (%" PRIu64 " us ago) hcho: %.4f",
-               meta->o_name, message->timestamp, now - message->timestamp,
-               message->hcho);
-}
+#ifdef CONFIG_UORB_FORMAT
+static const char sensor_hcho_format[] = "timestamp:%" PRIu64 ",hcho:%hf";
 #endif
 
 /****************************************************************************
  * Public Data
  ****************************************************************************/
 
-ORB_DEFINE(sensor_hcho, struct sensor_hcho, print_sensor_hcho_message);
+ORB_DEFINE(sensor_hcho, struct sensor_hcho, sensor_hcho_format);

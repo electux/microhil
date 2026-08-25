@@ -1,9 +1,0 @@
-<map id="Electux::App::View::AppHome::onChannelTimerChanged" name="Electux::App::View::AppHome::onChannelTimerChanged">
-<area shape="rect" id="Node000001" title="Signal handler for timer mode." alt="" coords="5,13,272,53"/>
-<area shape="rect" id="Node000002" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aab57308bd29908f6c012691c478a3859" title="Updates control configuration parameter." alt="" coords="320,5,519,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,30,306,30,306,35,272,35"/>
-<area shape="rect" id="Node000003" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#aacdc2762a62fb6f2edf0fcd9fb25d299" title="Updates nth substring in input string." alt="" coords="567,5,763,60"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="519,30,553,30,553,35,519,35"/>
-<area shape="rect" id="Node000004" href="$d9/dcb/classElectux_1_1App_1_1View_1_1AppHome.html#abc4d7d2cad85c503b572fb01b318ff41" title="Splits input string into vector of substrings." alt="" coords="811,5,961,60"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="763,30,796,30,796,35,763,35"/>
-</map>

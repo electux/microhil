@@ -82,7 +82,7 @@ sw/microhil_nuttx/nuttx/tools/mkdeps
 sw/microhil_nuttx/nuttx/tools/mkversion
 sw/microhil_nuttx/nuttx/arch/dummy/Kconfig
 sw/microhil_nuttx/nuttx/boards/dummy/Kconfig
-sw/microhil_nuttx/deploy/
+sw/microhil_nuttx/build/
 .clangd
 sw/microhil_nuttx/nuttx/arch/arm/src/rp2040_boot_stage2.*
 sw/microhil_nuttx/nuttx/**/*.tmp

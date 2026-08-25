@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/system/flash_eraseall/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -19,5 +21,6 @@
 # ##############################################################################
 
 if(CONFIG_SYSTEM_FLASH_ERASEALL)
-  nuttx_add_application(NAME flash_eraseall)
+  nuttx_add_application(MODULE ${CONFIG_SYSTEM_FLASH_ERASEALL} NAME
+                        flash_eraseall SRCS flash_eraseall_main.c)
 endif()

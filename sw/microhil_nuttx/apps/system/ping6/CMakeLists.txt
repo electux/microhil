@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/system/ping6/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -19,5 +21,15 @@
 # ##############################################################################
 
 if(CONFIG_SYSTEM_PING6)
-  nuttx_add_application(NAME ping6)
+  nuttx_add_application(
+    MODULE
+    ${CONFIG_SYSTEM_PING6}
+    NAME
+    ${CONFIG_SYSTEM_PING6_PROGNAME}
+    STACKSIZE
+    ${CONFIG_SYSTEM_PING6_STACKSIZE}
+    PRIORITY
+    ${CONFIG_SYSTEM_PING6_PRIORITY}
+    SRCS
+    ping6.c)
 endif()

@@ -27,6 +27,8 @@ other information that should be provided before the tool is installed.
   - [SW Desktop Application dependencies](#sw-desktop-application-dependencies)
 - [Docs](#docs)
 - [Copyright and licence](#copyright-and-licence)
+  - [microHIL Licenses](#microhil-licenses)
+  - [Third-Party Component Licenses](#third-party-component-licenses)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -126,40 +128,41 @@ cp src/microhil-base.uf2 /media/$USER/RPI-RP2/
 ```
 
 To install **microhil-nuttx** type the following
-
+ 
 ```bash
-# Clone the repository
+# Clone the repository recursively (to pull the NuttX submodule)
 git clone --recursive https://github.com/electux/microhil.git
 cd microhil/sw/microhil_nuttx
-
-# Configure the NuttX build system
-cd nuttx
-./tools/configure.sh raspberrypi-pico:usbnsh
-cd ..
-
-# Build the firmware
+ 
+# Build the firmware (automatically configures if .config is missing)
 make
-
+ 
 # Deploy by copying the generated microhil-nuttx.uf2 file to the Pico mounted storage
-# Note: Ensure the Pico is in BOOTSEL mode before mounting
+# Note: Ensure the Pico is in BOOTSEL mode before running
 make flash
 ```
-
+ 
 To install **microhil-upy** type the following
-
+ 
 ```bash
-# Clone the repository
-git clone https://github.com/electux/microhil.git
+# Clone the repository recursively (to pull the MicroPython submodule)
+git clone --recursive https://github.com/electux/microhil.git
 cd microhil/sw/microhil_upy
-
+ 
 # Setup virtual environment and generate typings for development
 make env
 
-# Compile python source files to .mpy binaries
-make
+# Compile the MicroPython OS firmware image (.uf2) from source
+make firmware
 
-# Deploy to Raspberry Pi Pico (using mpremote or standard tool)
-mpremote fs cp -r apps/microhil :
+# Flash the compiled OS firmware to Raspberry Pi Pico (in BOOTSEL mode)
+make flash
+ 
+# Compile Python application scripts to .mpy bytecodes and stage deployment package
+make
+ 
+# Deploy the compiled scripts to Raspberry Pi Pico (using mpremote)
+make deploy
 ```
 
 #### SW Desktop Application installation
@@ -240,13 +243,19 @@ More documentation and info at
 
 ### Copyright and licence
 
+#### microHIL Licenses
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Copyright (C) 2020 by [electux.github.io/microhil](https://electux.github.io/microhil)
+**microhil** is free software and is dual-licensed under the **GPLv3** and **Apache 2.0** licenses. Copyright (C) 2020 - 2026 by [electux.github.io/microhil](https://electux.github.io/microhil).
 
-**microhil** is free software; you can redistribute it and/or modify it.
+#### Third-Party Component Licenses
+This project utilizes several open-source technologies, each under their respective licenses:
+*   **Apache NuttX RTOS:** Licensed under the [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) license.
+*   **MicroPython (uPy):** Licensed under the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) license.
+*   **GNOME / gtkmm:** Licensed under the [![License: LGPL v2.1](https://img.shields.io/badge/License-LGPL%20v2.1-blue.svg)](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) license.
+*   **Raspberry Pi Pico SDK:** Licensed under the [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) license.
 
-Lets help and support Raspberry PI && GNOME.
+Lets help and support Raspberry PI, Nuttx, MicroPython and GNOME.
 
 <p align="center">
   <a href="https://www.raspberrypi.org/donate/">

@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/system/nxrecorder/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -24,4 +26,8 @@ if(CONFIG_SYSTEM_NXRECORDER)
                           ${CONFIG_NXRECORDER_MAINTHREAD_STACKSIZE})
   endif()
   target_sources(apps PRIVATE nxrecorder.c)
+
+  set(CSRCS nxrecorder.c nxrecorder_common.c nxrecorder_amr.c)
+
+  target_sources(apps PRIVATE ${CSRCS})
 endif()

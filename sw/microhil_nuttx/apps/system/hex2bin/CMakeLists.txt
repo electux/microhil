@@ -1,6 +1,8 @@
 # ##############################################################################
 # apps/system/hex2bin/CMakeLists.txt
 #
+# SPDX-License-Identifier: Apache-2.0
+#
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
 # additional information regarding copyright ownership.  The ASF licenses this
@@ -19,5 +21,32 @@
 # ##############################################################################
 
 if(CONFIG_SYSTEM_HEX2BIN)
-  nuttx_add_application(NAME hex2bin)
+  if(CONFIG_SYSTEM_HEX2BIN_BUILTIN)
+    nuttx_add_application(
+      MODULE
+      ${CONFIG_SYSTEM_HEX2BIN}
+      NAME
+      hex2bin
+      STACKSIZE
+      ${CONFIG_SYSTEM_HEX2BIN_STACKSIZE}
+      PRIORITY
+      ${CONFIG_SYSTEM_HEX2BIN_PRIORITY}
+      SRCS
+      hex2bin_main.c)
+  endif()
+
+  if(CONFIG_SYSTEM_HEX2MEM_BUILTIN)
+    nuttx_add_application(
+      MODULE
+      ${CONFIG_SYSTEM_HEX2BIN}
+      NAME
+      hex2mem
+      STACKSIZE
+      ${CONFIG_SYSTEM_HEX2MEM_PRIORITY}
+      PRIORITY
+      ${CONFIG_SYSTEM_HEX2MEM_STACKSIZE}
+      SRCS
+      hex2mem_main.c)
+  endif()
+
 endif()

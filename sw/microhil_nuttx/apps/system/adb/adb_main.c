@@ -1,6 +1,8 @@
 /****************************************************************************
  * apps/system/adb/adb_main.c
  *
+ * SPDX-License-Identifier: Apache-2.0
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.  The
@@ -24,17 +26,29 @@
 
 #include "adb.h"
 
-#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <syslog.h>
+#include <nuttx/streams.h>
 
-#if defined(CONFIG_ADBD_BOARD_INIT) || defined (CONFIG_BOARDCTL_RESET) || \
-    defined(CONFIG_ADBD_USB_BOARDCTL)
+#if defined (CONFIG_BOARDCTL_RESET) || defined(CONFIG_ADBD_USB_BOARDCTL)
 #  include <sys/boardctl.h>
 #endif
 
 #ifdef CONFIG_ADBD_NET_INIT
-#include "netutils/netinit.h"
+#  include "netutils/netinit.h"
 #endif
+
+#define ADB_WAIT_EP_READY(ep)             \
+  {                                       \
+    struct stat sb;                       \
+                                          \
+    while (stat(ep, &sb) != 0)            \
+      {                                   \
+        usleep(500000);                   \
+      };                                  \
+  }
 
 /****************************************************************************
  * Public Functions
@@ -70,7 +84,7 @@ void adb_log_impl(int priority, FAR const char *func, int line,
   va_end(ap);
 }
 
-void adb_reboot_impl(const char *target)
+void adb_reboot_impl(FAR const char *target)
 {
 #ifdef CONFIG_BOARDCTL_RESET
   if (strcmp(target, "recovery") == 0)
@@ -94,22 +108,20 @@ int main(int argc, FAR char **argv)
 {
   adb_context_t *ctx;
 
-#ifdef CONFIG_ADBD_BOARD_INIT
-  boardctl(BOARDIOC_INIT, 0);
-#endif /* CONFIG_ADBD_BOARD_INIT */
+#ifdef CONFIG_ADBD_USB_BOARDCTL
+  struct boardioc_usbdev_ctrl_s ctrl;
+#  ifdef CONFIG_USBDEV_COMPOSITE
+  uint8_t usbdev = BOARDIOC_USBDEV_COMPOSITE;
+#  else
+  uint8_t usbdev = BOARDIOC_USBDEV_ADB;
+#  endif
+  FAR void *handle;
+  int ret;
+#endif
 
 #ifdef CONFIG_ADBD_USB_BOARDCTL
 
   /* Setup USBADB device */
-
-  struct boardioc_usbdev_ctrl_s ctrl;
-#ifdef CONFIG_USBDEV_COMPOSITE
-  uint8_t usbdev = BOARDIOC_USBDEV_COMPOSITE;
-#else
-  uint8_t usbdev = BOARDIOC_USBDEV_ADB;
-#endif
-  FAR void *handle;
-  int ret;
 
   /* Perform architecture-specific initialization */
 
@@ -142,6 +154,10 @@ int main(int argc, FAR char **argv)
     }
 #endif /* ADBD_USB_BOARDCTL */
 
+  ADB_WAIT_EP_READY("/dev/adb0/ep0");
+  ADB_WAIT_EP_READY("/dev/adb0/ep1");
+  ADB_WAIT_EP_READY("/dev/adb0/ep2");
+
 #ifdef CONFIG_ADBD_NET_INIT
   /* Bring up the network */
 
@@ -151,7 +167,7 @@ int main(int argc, FAR char **argv)
   ctx = adb_hal_create_context();
   if (!ctx)
     {
-      return -1;
+      return 1;
     }
 
   adb_hal_run(ctx);

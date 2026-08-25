@@ -201,39 +201,61 @@ int main(int argc, char *argv[])
   (void)argc;
   (void)argv;
 
+  /* 1. Initialize hardware first so we can use diagnostic beeps */
+  if (!status_led_init() || !buzzer_init() || !relay_init())
+    {
+      return 1;
+    }
+
+  /* Boot beep: 1 beep */
+  buzzer_beep_start();
+  usleep(500000);
+
+  /* 2. Connect USB CDCACM */
   struct boardioc_usbdev_ctrl_s ctrl;
   ctrl.usbdev = BOARDIOC_USBDEV_CDCACM;
   ctrl.action = BOARDIOC_USBDEV_CONNECT;
   ctrl.instance = 0;
   ctrl.handle = NULL;
-  boardctl(BOARDIOC_USBDEV_CONTROL, (uintptr_t)&ctrl);
+  int ret = boardctl(BOARDIOC_USBDEV_CONTROL, (uintptr_t)&ctrl);
+  if (ret < 0)
+    {
+      /* USB controller connection failed: beep 5 times rapidly */
+      for (int i = 0; i < 5; i++)
+        {
+          buzzer_write(80);
+          usleep(50000);
+          buzzer_write(0);
+          usleep(50000);
+        }
+    }
 
+  /* 3. Wait indefinitely for /dev/ttyACM0 to open successfully */
   int fd = -1;
-  for (int i = 0; i < 50; i++)
+  while (fd < 0)
     {
       fd = open("/dev/ttyACM0", O_RDWR | O_NONBLOCK);
       if (fd >= 0)
         {
           break;
         }
+      usleep(200000);
+    }
+
+  /* Redirect standard streams to USB serial */
+  dup2(fd, 0);
+  dup2(fd, 1);
+  dup2(fd, 2);
+  close(fd);
+
+  /* Connection success beep: 2 beeps */
+  for (int i = 0; i < 2; i++)
+    {
+      buzzer_write(80);
+      usleep(100000);
+      buzzer_write(0);
       usleep(100000);
     }
-
-  if (fd >= 0)
-    {
-      dup2(fd, 0);
-      dup2(fd, 1);
-      dup2(fd, 2);
-      close(fd);
-    }
-
-  if (!status_led_init() || !buzzer_init() || !relay_init())
-    {
-      fprintf(stderr, "Device initialization failed!\n");
-      return 1;
-    }
-
-  buzzer_beep_start();
 
   int flags = fcntl(0, F_GETFL, 0);
   fcntl(0, F_SETFL, flags | O_NONBLOCK);
