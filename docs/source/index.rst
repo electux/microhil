@@ -24,37 +24,170 @@ other information that should be provided before the tool is installed.
    :target: https://microhil.readthedocs.io/projects/microhil/en/latest/?badge=latest
 
 Installation
--------------
+------------
 
 Navigate to release `page`_ download and extract release archive.
 
 .. _page: https://github.com/electux/microhil/releases
 
-To install **microhil** type the following
+To install **microhil-base** type the following:
 
 .. code-block:: bash
 
-   in progress
+   # Clone the repository
+   git clone https://github.com/electux/microhil.git
+   cd microhil/sw/microhil_base
+
+   # Create build directory
+   mkdir build && cd build
+
+   # Configure build (ensure PICO_SDK_PATH is set)
+   cmake -DPICO_SDK_PATH=/path/to/pico-sdk ..
+
+   # Build
+   make
+
+   # Deploy by copying the generated microhil-base.uf2 file to the Pico mounted storage
+   cp src/microhil-base.uf2 /media/$USER/RPI-RP2/
+
+To install **microhil-nuttx** type the following:
+
+.. code-block:: bash
+
+   # Clone the repository
+   git clone --recursive https://github.com/electux/microhil.git
+   cd microhil/sw/microhil_nuttx
+
+   # Configure the NuttX build system
+   cd nuttx
+   ./tools/configure.sh raspberrypi-pico:usbnsh
+   cd ..
+
+   # Build the firmware
+   make
+
+   # Deploy by copying the generated microhil-nuttx.uf2 file to the Pico mounted storage
+   # Note: Ensure the Pico is in BOOTSEL mode before mounting
+   make flash
+
+To install **microhil-upy** type the following:
+
+.. code-block:: bash
+
+   # Clone the repository
+   git clone https://github.com/electux/microhil.git
+   cd microhil/sw/microhil_upy
+
+   # Setup virtual environment and generate typings for development
+   make env
+
+   # Compile python source files to .mpy binaries
+   make
+
+   # Deploy to Raspberry Pi Pico (using mpremote or standard tool)
+   mpremote fs cp -r apps/microhil :
+
+To install **microhildesk** type the following:
+
+**From Source:**
+
+.. code-block:: bash
+
+   # Clone the repository
+   git clone https://github.com/electux/microhil.git
+   cd microhil/sw/microhildesk/build
+
+   # Build the release version
+   make release
+
+   # Run the application
+   ./microhildesk
+
+**As a Debian Package (.deb):**
+
+.. code-block:: bash
+
+   # Generate the .deb package
+   python3 sw/microhildesk/scripts/deb/create_deb.py
+
+   # Install the package
+   sudo dpkg -i sw/microhildesk/build/deb_dist/microhildesk_*.deb
 
 Dependencies
--------------
+------------
 
-**microhil** requires next modules and libraries
-    in progress
+**microhil-base** requires next modules and libraries:
+
+* **Runtime:**
+  * Raspberry Pi Pico (RP2040) hardware
+* **Development / Build:**
+  * Raspberry Pi Pico SDK (``pico-sdk``)
+  * GNU Arm Embedded Toolchain (``gcc-arm-none-eabi``)
+  * ``CMake`` (v3.12+)
+
+**microhil-nuttx** requires next modules and libraries:
+
+* **Runtime:**
+  * Raspberry Pi Pico (RP2040) hardware
+* **Development / Build:**
+  * GNU Arm Embedded Toolchain (``gcc-arm-none-eabi``)
+  * ``kconfig-frontends`` (for NuttX configuration)
+  * ``make`` and standard Linux build tools
+
+**microhil-upy** requires next modules and libraries:
+
+* **Runtime:**
+  * MicroPython firmware (v1.20+) on Raspberry Pi Pico (RP2/RP2040)
+* **Development / Environment Setup:**
+  * ``micropython-rp2-stubs`` (for static analysis/autocomplete typings)
+  * ``micropython-stdlib-stubs`` (for standard library autocomplete typings)
+
+**microhildesk** requires next modules and libraries:
+
+* **Runtime:**
+  * ``libgtkmm-4.0-1`` | ``libgtkmm-4.0-1t64``
+  * ``socat`` (for virtual serial ports)
+* **Development / Build:**
+  * ``pkg-config``
+  * ``libgtkmm-4.0-dev``
+  * C++17 compliant compiler (``g++``)
 
 Project structure
 ------------------
 
-**microhil** is based on POP.
+The repository is organized as follows:
 
-.. code-block:: bash
+.. code-block:: text
 
-   in progress
+   microhil/
+   ├── docs/                   # Documentation files
+   ├── hw/                     # Hardware design files (schematics, PCB layouts)
+   └── sw/                     # Software and firmware source directories
+       ├── microhil_base/      # C-based firmware for Pico (direct HWIL interface)
+       ├── microhil_nuttx/     # NuttX-based RTOS firmware for Pico
+       ├── microhil_upy/       # MicroPython-based firmware for Pico
+       ├── microhildesk/       # Desktop GUI application (gtkmm/C++)
+       └── microhildesk_tests/ # Test suites for the desktop application
 
 Copyright and licence
 ----------------------
 
+microHIL Licenses
+^^^^^^^^^^^^^^^^^^
 |License: GPL v3| |License: Apache 2.0|
+
+**microhil** is free software and is dual-licensed under the **GPLv3** and **Apache 2.0** licenses. Copyright (C) 2020 - 2026 by `electux.github.io/microhil <https://electux.github.io/microhil>`_.
+
+Third-Party Component Licenses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This project utilizes several open-source technologies, each under their respective licenses:
+
+* **Apache NuttX RTOS:** Licensed under the |License: Apache 2.0| license.
+* **MicroPython (uPy):** Licensed under the |License: MIT| license.
+* **GNOME / gtkmm:** Licensed under the |License: LGPL v2.1| license.
+* **Raspberry Pi Pico SDK:** Licensed under the |License: BSD 3-Clause| license.
+
+Lets help and support Raspberry PI, Nuttx, MicroPython and GNOME.
 
 .. |License: GPL v3| image:: https://img.shields.io/badge/License-GPLv3-blue.svg
    :target: https://www.gnu.org/licenses/gpl-3.0
@@ -62,5 +195,12 @@ Copyright and licence
 .. |License: Apache 2.0| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
    :target: https://opensource.org/licenses/Apache-2.0
 
-Copyright (C) 2020 by `electux.github.io/microhil <https://electux.github.io/microhil>`_
+.. |License: MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
+   :target: https://opensource.org/licenses/MIT
+
+.. |License: LGPL v2.1| image:: https://img.shields.io/badge/License-LGPL%20v2.1-blue.svg
+   :target: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+
+.. |License: BSD 3-Clause| image:: https://img.shields.io/badge/License-BSD_3--Clause-blue.svg
+   :target: https://opensource.org/licenses/BSD-3-Clause
 

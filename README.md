@@ -240,13 +240,19 @@ More documentation and info at
 
 ### Copyright and licence
 
+#### microHIL Licenses
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Copyright (C) 2020 by [electux.github.io/microhil](https://electux.github.io/microhil)
+**microhil** is free software and is dual-licensed under the **GPLv3** and **Apache 2.0** licenses. Copyright (C) 2020 - 2026 by [electux.github.io/microhil](https://electux.github.io/microhil).
 
-**microhil** is free software; you can redistribute it and/or modify it.
+#### Third-Party Component Licenses
+This project utilizes several open-source technologies, each under their respective licenses:
+*   **Apache NuttX RTOS:** Licensed under the [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) license.
+*   **MicroPython (uPy):** Licensed under the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) license.
+*   **GNOME / gtkmm:** Licensed under the [![License: LGPL v2.1](https://img.shields.io/badge/License-LGPL%20v2.1-blue.svg)](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) license.
+*   **Raspberry Pi Pico SDK:** Licensed under the [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) license.
 
-Lets help and support Raspberry PI && GNOME.
+Lets help and support Raspberry PI, Nuttx, MicroPython and GNOME.
 
 <p align="center">
   <a href="https://www.raspberrypi.org/donate/">
