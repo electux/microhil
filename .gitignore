@@ -50,3 +50,39 @@ CTestConfig.cmake
 *.pfx
 
 # CMake presets user-specific overrides
+
+# microhil_nuttx generated files
+sw/microhil_nuttx/apps/.*
+sw/microhil_nuttx/apps/**/.*
+sw/microhil_nuttx/apps/Kconfig
+sw/microhil_nuttx/apps/**/Make.dep
+sw/microhil_nuttx/apps/**/*.built
+sw/microhil_nuttx/apps/*.lock
+sw/microhil_nuttx/nuttx/.*
+sw/microhil_nuttx/nuttx/**/.*
+sw/microhil_nuttx/nuttx/nuttx
+sw/microhil_nuttx/nuttx/nuttx.*
+sw/microhil_nuttx/nuttx/System.map
+sw/microhil_nuttx/nuttx/Make.defs
+sw/microhil_nuttx/nuttx/defconfig
+sw/microhil_nuttx/nuttx/**/Make.dep
+sw/microhil_nuttx/nuttx/arch/arm/include/board
+sw/microhil_nuttx/nuttx/arch/arm/include/chip
+sw/microhil_nuttx/nuttx/arch/arm/src/board
+sw/microhil_nuttx/nuttx/arch/arm/src/chip
+sw/microhil_nuttx/nuttx/boards/arm/rp2040/common/board
+sw/microhil_nuttx/nuttx/drivers/platform
+sw/microhil_nuttx/nuttx/include/arch
+sw/microhil_nuttx/nuttx/include/nuttx/config.h
+sw/microhil_nuttx/nuttx/include/nuttx/version.h
+sw/microhil_nuttx/nuttx/tools/cnvwindeps
+sw/microhil_nuttx/nuttx/tools/incdir
+sw/microhil_nuttx/nuttx/tools/mkconfig
+sw/microhil_nuttx/nuttx/tools/mkdeps
+sw/microhil_nuttx/nuttx/tools/mkversion
+sw/microhil_nuttx/nuttx/arch/dummy/Kconfig
+sw/microhil_nuttx/nuttx/boards/dummy/Kconfig
+sw/microhil_nuttx/deploy/
+.clangd
+sw/microhil_nuttx/nuttx/arch/arm/src/rp2040_boot_stage2.*
+sw/microhil_nuttx/nuttx/**/*.tmp

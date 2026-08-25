@@ -1,5 +1,5 @@
 # ##############################################################################
-# apps/CMakeLists.txt
+# apps/microhil/CMakeLists.txt
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
@@ -18,28 +18,17 @@
 #
 # ##############################################################################
 
-# ~~~
-# Important note:
-# This CMakeLists.txt is not meant as a top-level CMakeLists.txt. Instead,
-# CMake must be run using the top-level CMakeLists.txt from the nuttx
-# repository and point to this directory via NUTTX_APPS_DIR. For example:
-#   cmake -S <nuttx-dir> -B <build-dir> [...] -DNUTTX_APPS_DIR=<apps-dir>
-# ~~~
-
-if(CONFIG_APPS_DIR)
-  nuttx_add_library(apps)
-  if(NOT EXISTS {NUTTX_APPS_BINDIR}/dummy.c)
-    file(TOUCH ${NUTTX_APPS_BINDIR}/dummy.c)
-  endif()
-  target_sources(apps PRIVATE ${NUTTX_APPS_BINDIR}/dummy.c)
+if(CONFIG_MICROHIL)
+  nuttx_add_application(
+    NAME
+    ${CONFIG_MICROHIL_PROGNAME}
+    SRCS
+    microhil_main.c
+    microhil_relay.c
+    microhil_buzzer.c
+    microhil_led.c
+    STACKSIZE
+    ${CONFIG_MICROHIL_STACKSIZE}
+    PRIORITY
+    ${CONFIG_MICROHIL_PRIORITY})
 endif()
-
-file(MAKE_DIRECTORY ${NUTTX_APPS_BINDIR}/include)
-include_directories(include)
-include_directories(${NUTTX_APPS_BINDIR}/include)
-
-add_subdirectory(microhil)
-
-add_subdirectory(builtin) # must be last
-
-nuttx_generate_kconfig()

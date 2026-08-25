@@ -45,16 +45,14 @@
  */
 
 #define GPIO_OUT1     25
-
-/* Input pins.
- */
-
-#define GPIO_IN1      6
-
-/* Interrupt pins.
- */
-
-#define GPIO_IRQPIN1  14
+#define GPIO_OUT2     21
+#define GPIO_OUT3     20
+#define GPIO_OUT4     19
+#define GPIO_OUT5     18
+#define GPIO_OUT6     17
+#define GPIO_OUT7     16
+#define GPIO_OUT8     15
+#define GPIO_OUT9     14
 
 /****************************************************************************
  * Private Types
@@ -109,7 +107,15 @@ static const struct gpio_operations_s gpout_ops =
 
 static const uint32_t g_gpiooutputs[BOARD_NGPIOOUT] =
 {
-  GPIO_OUT1
+  GPIO_OUT1,
+  GPIO_OUT2,
+  GPIO_OUT3,
+  GPIO_OUT4,
+  GPIO_OUT5,
+  GPIO_OUT6,
+  GPIO_OUT7,
+  GPIO_OUT8,
+  GPIO_OUT9
 };
 
 static struct rp2040gpio_dev_s g_gpout[BOARD_NGPIOOUT];
