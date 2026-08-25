@@ -63,9 +63,16 @@ A C-based firmware designed for the microHIL hardware controller (Raspberry Pi P
     *   **Diagnostics:** Query system board identity and firmware version info.
 
 **microhil-nuttx**
-```
-TODO
-```
+
+An RTOS-based firmware built on Apache NuttX (v12.0.0+) for the microHIL hardware controller (Raspberry Pi Pico). It runs a low-latency, non-blocking background daemon (`microhil_daemon`) for controlling hardware channels and features a combined boot mode that exposes a NuttX Shell (NSH) console on the physical UART0 interface.
+
+*   **Supported Operations:**
+    *   **Background Daemon Execution:** Automatically initializes hardware channels, zujalica (buzzer) and WS2812 status LED upon boot.
+    *   **Channel Control:** Turn individual relays (channels 1-8) ON or OFF.
+    *   **Timer & Pulse Mode:** Activate channels with second-level precision or trigger millisecond-level pulses.
+    *   **Blink Mode:** Trigger repeating blinking loops with configurable duty cycles and loop counts.
+    *   **Combined Console Support:** Exposes standard NSH console on UART0 (GP0/GP1) for device diagnostics and `microhil` control daemon on the virtual USB CDC ACM serial interface (`/dev/ttyACM0`).
+    *   **System Status & Reset:** Monitor real-time channel status and reboot the board remotely.
 
 **microhil-upy**
 
@@ -119,8 +126,23 @@ cp src/microhil-base.uf2 /media/$USER/RPI-RP2/
 ```
 
 To install **microhil-nuttx** type the following
-```
-TODO
+
+```bash
+# Clone the repository
+git clone --recursive https://github.com/electux/microhil.git
+cd microhil/sw/microhil_nuttx
+
+# Configure the NuttX build system
+cd nuttx
+./tools/configure.sh raspberrypi-pico:usbnsh
+cd ..
+
+# Build the firmware
+make
+
+# Deploy by copying the generated microhil-nuttx.uf2 file to the Pico mounted storage
+# Note: Ensure the Pico is in BOOTSEL mode before mounting
+make flash
 ```
 
 To install **microhil-upy** type the following
@@ -180,9 +202,13 @@ sudo dpkg -i sw/microhildesk/build/deb_dist/microhildesk_*.deb
     *   `CMake` (v3.12+)
 
 **microhil-nuttx** requires next modules and libraries
-```
-TODO
-```
+
+*   **Runtime:**
+    *   Raspberry Pi Pico (RP2040) hardware
+*   **Development / Build:**
+    *   GNU Arm Embedded Toolchain (`gcc-arm-none-eabi`)
+    *   `kconfig-frontends` (for NuttX configuration)
+    *   `make` and standard Linux build tools
 
 **microhil-upy** requires next modules and libraries
 
