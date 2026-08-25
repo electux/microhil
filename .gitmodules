@@ -1,0 +1,4 @@
+[submodule "sw/microhil_nuttx/nuttx"]
+	path = sw/microhil_nuttx/nuttx
+	url = git@github.com:vroncevic/nuttx-pico.git
+	branch = master
