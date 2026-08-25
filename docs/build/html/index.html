@@ -64,36 +64,37 @@ cp<span class="w"> </span>src/microhil-base.uf2<span class="w"> </span>/media/<s
 </pre></div>
 </div>
 <p>To install <strong>microhil-nuttx</strong> type the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository recursively (to pull the NuttX submodule)</span>
 git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/electux/microhil.git
 <span class="nb">cd</span><span class="w"> </span>microhil/sw/microhil_nuttx
 
-<span class="c1"># Configure the NuttX build system</span>
-<span class="nb">cd</span><span class="w"> </span>nuttx
-./tools/configure.sh<span class="w"> </span>raspberrypi-pico:usbnsh
-<span class="nb">cd</span><span class="w"> </span>..
-
-<span class="c1"># Build the firmware</span>
+<span class="c1"># Build the firmware (automatically configures if .config is missing)</span>
 make
 
 <span class="c1"># Deploy by copying the generated microhil-nuttx.uf2 file to the Pico mounted storage</span>
-<span class="c1"># Note: Ensure the Pico is in BOOTSEL mode before mounting</span>
+<span class="c1"># Note: Ensure the Pico is in BOOTSEL mode before running</span>
 make<span class="w"> </span>flash
 </pre></div>
 </div>
 <p>To install <strong>microhil-upy</strong> type the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/electux/microhil.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository recursively (to pull the MicroPython submodule)</span>
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/electux/microhil.git
 <span class="nb">cd</span><span class="w"> </span>microhil/sw/microhil_upy
 
 <span class="c1"># Setup virtual environment and generate typings for development</span>
 make<span class="w"> </span>env
 
-<span class="c1"># Compile python source files to .mpy binaries</span>
+<span class="c1"># Compile the MicroPython OS firmware image (.uf2) from source</span>
+make<span class="w"> </span>firmware
+
+<span class="c1"># Flash the compiled OS firmware to Raspberry Pi Pico (in BOOTSEL mode)</span>
+make<span class="w"> </span>flash
+
+<span class="c1"># Compile Python application scripts to .mpy bytecodes and stage deployment package</span>
 make
 
-<span class="c1"># Deploy to Raspberry Pi Pico (using mpremote or standard tool)</span>
-mpremote<span class="w"> </span>fs<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>apps/microhil<span class="w"> </span>:
+<span class="c1"># Deploy the compiled scripts to Raspberry Pi Pico (using mpremote)</span>
+make<span class="w"> </span>deploy
 </pre></div>
 </div>
 <p>To install <strong>microhildesk</strong> type the following:</p>

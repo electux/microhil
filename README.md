@@ -126,40 +126,41 @@ cp src/microhil-base.uf2 /media/$USER/RPI-RP2/
 ```
 
 To install **microhil-nuttx** type the following
-
+ 
 ```bash
-# Clone the repository
+# Clone the repository recursively (to pull the NuttX submodule)
 git clone --recursive https://github.com/electux/microhil.git
 cd microhil/sw/microhil_nuttx
-
-# Configure the NuttX build system
-cd nuttx
-./tools/configure.sh raspberrypi-pico:usbnsh
-cd ..
-
-# Build the firmware
+ 
+# Build the firmware (automatically configures if .config is missing)
 make
-
+ 
 # Deploy by copying the generated microhil-nuttx.uf2 file to the Pico mounted storage
-# Note: Ensure the Pico is in BOOTSEL mode before mounting
+# Note: Ensure the Pico is in BOOTSEL mode before running
 make flash
 ```
-
+ 
 To install **microhil-upy** type the following
-
+ 
 ```bash
-# Clone the repository
-git clone https://github.com/electux/microhil.git
+# Clone the repository recursively (to pull the MicroPython submodule)
+git clone --recursive https://github.com/electux/microhil.git
 cd microhil/sw/microhil_upy
-
+ 
 # Setup virtual environment and generate typings for development
 make env
 
-# Compile python source files to .mpy binaries
-make
+# Compile the MicroPython OS firmware image (.uf2) from source
+make firmware
 
-# Deploy to Raspberry Pi Pico (using mpremote or standard tool)
-mpremote fs cp -r apps/microhil :
+# Flash the compiled OS firmware to Raspberry Pi Pico (in BOOTSEL mode)
+make flash
+ 
+# Compile Python application scripts to .mpy bytecodes and stage deployment package
+make
+ 
+# Deploy the compiled scripts to Raspberry Pi Pico (using mpremote)
+make deploy
 ```
 
 #### SW Desktop Application installation
