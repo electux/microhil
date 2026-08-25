@@ -19,19 +19,32 @@ Info
     Timer command handler of microhil.
 '''
 
-from commands.base import BaseCommand
 
-class TimerCommand(BaseCommand):
+class TimerCommand:
     '''
         Command handler for timer execution on a channel.
     '''
     def match(self, cmd_str):
+        '''
+            Checks if the command string matches the Timer command.
+            :param cmd_str: Command string to match.
+            :return: True if the command string matches the Timer command, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str.startswith("mh#ch#") and "#tmr#" in cmd_str
 
     def execute(self, board, cmd_str):
+        '''
+            Executes the Timer command.
+            :param board: Board to execute the command on.
+            :param cmd_str: Command string to execute.
+            :return: None.
+            :exceptions: None.
+        '''
         parts = cmd_str.split("#")
         ch_idx = int(parts[2]) - 1
         seconds = int(parts[4])
+
         if 0 <= ch_idx < len(board.channels):
             board.channels[ch_idx].start_timer(seconds, board.buzzer)
-            print("<mh#sys#channel {} timer started: {} seconds#end>".format(parts[2], seconds))
+            print(f"<mh#sys#channel {parts[2]} timer started: {seconds} seconds#end>")

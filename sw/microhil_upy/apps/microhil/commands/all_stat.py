@@ -19,18 +19,32 @@ Info
     All channel states command handler of microhil.
 '''
 
-from commands.base import BaseCommand
 
-class AllStatCommand(BaseCommand):
+class AllStatCommand:
     '''
         Command handler for querying all channel states.
     '''
     def match(self, cmd_str):
+        '''
+            Checks if the command string matches the All States command.
+            :param cmd_str: Command string to match.
+            :return: True if the command string matches the All States command, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str == "mh#all#stat#end"
 
     def execute(self, board, cmd_str):
+        '''
+            Executes the All States command.
+            :param board: Board to execute the command on.
+            :param cmd_str: Command string to execute.
+            :return: None.
+            :exceptions: None.
+        '''
         status_parts = []
+
         for i, ch in enumerate(board.channels):
             state_str = "ON" if ch.state else "OFF"
-            status_parts.append("{}:{}".format(i + 1, state_str))
-        print("<mh#sys#channels: {}#end>".format(" ".join(status_parts)))
+            status_parts.append(f"{i + 1}:{state_str}")
+
+        print(f"<mh#sys#channels: {' '.join(status_parts)}#end>")

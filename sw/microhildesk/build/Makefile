@@ -13,8 +13,8 @@ include csflags.mk
 include sources.mk
 include objects.mk
 
-GTK_CFLAGS := $(shell pkg-config --cflags gtkmm-4.0 libserial)
-GTK_LIBS   := $(shell pkg-config --libs gtkmm-4.0 libserial)
+GTK_CFLAGS := $(shell pkg-config --cflags gtkmm-4.0)
+GTK_LIBS   := $(shell pkg-config --libs gtkmm-4.0)
 
 EXECUTABLE = microhildesk
 
@@ -29,7 +29,7 @@ CLEAN_LIST = \
 	$(EXECUTABLE) \
 	$(LSS)
 
-.PHONY: all debug release clean sizedummy
+.PHONY: all debug release clean sizedummy coredump-setup run-debug
 
 all: $(EXECUTABLE) $(LSS) $(SIZEDUMMY)
 
@@ -73,3 +73,6 @@ clean:
 	done
 	@echo 'Finished clean up'
 	@echo ' '
+
+run-debug: $(EXECUTABLE)
+	ulimit -c unlimited && ./$(EXECUTABLE)

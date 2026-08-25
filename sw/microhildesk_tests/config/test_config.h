@@ -22,7 +22,7 @@
 #include <gtest/gtest.h>
 #include <config/config_manager.h>
 #include <model/imodel.h>
-#include <model/model.h>
+#include <model/model_factory.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace Electux::App::Config
@@ -45,7 +45,7 @@ namespace Electux::App::Config
 		/// @param fileName The name of the configuration file.
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		explicit ConfigManagerProxy(const std::string &fileName) 
-			: ConfigManager(fileName) {}
+			: ConfigManager(Electux::App::Model::createDefault(), fileName) {}
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		/// @brief Promoting protected methods to public for unit testing.

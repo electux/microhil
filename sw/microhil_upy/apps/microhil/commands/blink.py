@@ -19,23 +19,33 @@ Info
     Blink command handler of microhil.
 '''
 
-from commands.base import BaseCommand
 
-class BlinkCommand(BaseCommand):
+class BlinkCommand:
     '''
         Command handler for blinking execution on a channel.
     '''
     def match(self, cmd_str):
+        '''
+            Check if the command string matches the blink command pattern.
+            :param cmd_str: Command string to match
+            :return: True if the command string matches the blink command pattern, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str.startswith("mh#ch#") and "#blink#" in cmd_str
 
     def execute(self, board, cmd_str):
+        '''
+            Execute the blink command.
+            :param board: Board to execute the command on
+            :param cmd_str: Command string to execute
+            :exceptions: None.
+        '''
         parts = cmd_str.split("#")
         ch_idx = int(parts[2]) - 1
         on_time = int(parts[4])
         off_time = int(parts[5])
         count = int(parts[6])
+
         if 0 <= ch_idx < len(board.channels):
             board.channels[ch_idx].start_blink(on_time, off_time, count, board.buzzer)
-            print("<mh#sys#channel {} blink started: on={} ms, off={} ms, count={}#end>".format(
-                parts[2], on_time, off_time, count
-            ))
+            print(f"<mh#sys#channel {parts[2]} blink started: on={on_time} ms, off={off_time} ms, count={count}#end>")

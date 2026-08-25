@@ -37,7 +37,16 @@ class Buzzer:
                 | beep_stop - Beeps the buzzer when the application is stopped.
                 | tick - Ticks the buzzer.
     '''
-    def __init__(self, pin_num):
+    DEFAULT_PIN = 6
+    FREQ = 1000
+    BEEP_START_DUTY = 16
+    BEEP_START_DELAY = 0.1
+    BEEP_CHANGED_DUTY = 16
+    BEEP_CHANGED_MS = 50
+    BEEP_STOP_DUTY = 20
+    BEEP_STOP_DELAY = 0.3
+
+    def __init__(self, pin_num=DEFAULT_PIN):
         '''
             Initializes the buzzer.
 
@@ -45,7 +54,7 @@ class Buzzer:
             :exceptions: None.
         '''
         self.pwm = PWM(Pin(pin_num))
-        self.pwm.freq(1000)
+        self.pwm.freq(self.FREQ)
         self.pwm.duty_u16(0)
         self.off_time = 0
 
@@ -65,8 +74,8 @@ class Buzzer:
             :param pin_num: Pin number of the buzzer.
             :exceptions: None.
         '''
-        self.write(16)
-        sleep(0.1)
+        self.write(self.BEEP_START_DUTY)
+        sleep(self.BEEP_START_DELAY)
         self.write(0)
 
     def beep_changed(self):
@@ -76,8 +85,8 @@ class Buzzer:
             :param pin_num: Pin number of the buzzer.
             :exceptions: None.
         '''
-        self.write(16)
-        self.off_time = ticks_ms() + 50
+        self.write(self.BEEP_CHANGED_DUTY)
+        self.off_time = ticks_ms() + self.BEEP_CHANGED_MS
 
     def beep_stop(self):
         '''
@@ -86,8 +95,8 @@ class Buzzer:
             :param pin_num: Pin number of the buzzer.
             :exceptions: None.
         '''
-        self.write(20)
-        sleep(0.3)
+        self.write(self.BEEP_STOP_DUTY)
+        sleep(self.BEEP_STOP_DELAY)
         self.write(0)
 
     def tick(self):

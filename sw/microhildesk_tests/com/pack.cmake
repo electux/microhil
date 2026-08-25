@@ -13,9 +13,9 @@ set(
 set(
     MICROHIL_COM_SOURCES
     ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serial_com.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serial_lib_wrapper.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serialw/serial_lib_wrapper.cc
     ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serial_utils.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/ble/ble_com_configurator.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/ble/configurator/ble_com_configurator.cc
 )
 
 set(

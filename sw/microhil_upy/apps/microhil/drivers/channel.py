@@ -19,11 +19,11 @@ Info
     Relay channel controller of microhil.
 '''
 
-from drivers.relay import Relay
-from drivers.behaviors.toggle import ToggleBehavior
-from drivers.behaviors.timer import TimerBehavior
-from drivers.behaviors.pulse import PulseBehavior
-from drivers.behaviors.blink import BlinkBehavior
+from .relay import Relay
+from .behaviors.toggle import ToggleBehavior
+from .behaviors.timer import TimerBehavior
+from .behaviors.pulse import PulseBehavior
+from .behaviors.blink import BlinkBehavior
 
 
 class RelayChannel:
@@ -33,10 +33,12 @@ class RelayChannel:
     def __init__(self, pin_num, index):
         '''
             Initializes the relay channel.
+            :param pin_num: Pin number for the relay.
+            :param index: Index of the relay.
+            :exceptions: None.
         '''
         self.relay = Relay(pin_num)
         self.index = index
-        # Expose self.pin for backwards compatibility
         self.pin = self.relay.pin
         self.behavior = ToggleBehavior()
 
@@ -44,12 +46,18 @@ class RelayChannel:
     def state(self):
         '''
             Exposes current physical relay state.
+            :return: Current physical relay state.
+            :exceptions: None.
         '''
         return self.relay.state
 
     def set_behavior(self, behavior, buzzer, turn_on=False):
         '''
             Changes the active behavior strategy.
+            :param behavior: Behavior to set.
+            :param buzzer: Buzzer to set.
+            :param turn_on: Whether to turn the relay on.
+            :exceptions: None.
         '''
         self.behavior = behavior
         self.relay.write(turn_on, buzzer)
@@ -57,35 +65,53 @@ class RelayChannel:
     def set_state(self, on, buzzer):
         '''
             Switches channel state using ToggleBehavior.
+            :param on: Whether to turn the relay on.
+            :param buzzer: Buzzer to set.
+            :exceptions: None.
         '''
         self.set_behavior(ToggleBehavior(), buzzer, turn_on=on)
 
     def start_timer(self, seconds, buzzer):
         '''
             Starts the timer behavior.
+            :param seconds: Time to turn the relay OFF.
+            :param buzzer: Buzzer to set.
+            :exceptions: None.
         '''
         self.set_behavior(TimerBehavior(seconds), buzzer, turn_on=True)
 
     def start_pulse(self, duration_ms, buzzer):
         '''
             Starts the pulse behavior.
+            :param duration_ms: Duration of the pulse in milliseconds.
+            :param buzzer: Buzzer to set.
+            :exceptions: None.
         '''
         self.set_behavior(PulseBehavior(duration_ms), buzzer, turn_on=True)
 
     def start_blink(self, on_ms, off_ms, count, buzzer):
         '''
             Starts the blink behavior.
+            :param on_ms: Duration of the blink in milliseconds.
+            :param off_ms: Duration of the blink in milliseconds.
+            :param count: Number of blinks.
+            :param buzzer: Buzzer to set.
+            :exceptions: None.
         '''
         self.set_behavior(BlinkBehavior(on_ms, off_ms, count), buzzer, turn_on=True)
 
     def tick(self, buzzer):
         '''
             Delegates non-blocking update to active behavior strategy.
+            :param buzzer: Buzzer to set.
+            :exceptions: None.
         '''
         self.behavior.tick(self, self.relay, buzzer)
 
     def get_status_str(self):
         '''
             Delegates status string query to active behavior strategy.
+            :return: Status string for the behavior.
+            :exceptions: None.
         '''
         return self.behavior.get_status_str(self, self.relay)

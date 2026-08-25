@@ -73,6 +73,8 @@ namespace Electux::App {
         void onActionCmdAllOff();
         void onActionCmdAllStat();
         void onActionCmdSysReset();
+        void onActionCmdSysId();
+        void onActionCmdSysVersion();
         bool onHandleClose();
         void onSetupChanged(const SettingsSetup &setup);
 

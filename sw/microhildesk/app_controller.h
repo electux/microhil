@@ -73,6 +73,8 @@ namespace Electux::App {
         void turnOffAllChannels() override;
         void requestAllChannelsStatus() override;
         void resetSystem() override;
+        void requestBoardId() override;
+        void requestVersion() override;
 
       private:
         void configureLogger();

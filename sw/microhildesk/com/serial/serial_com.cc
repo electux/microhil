@@ -19,6 +19,7 @@
 
 #include <com/serial/serial_com.h>
 #include <com/serial/serialw/serial_lib_wrapper.h>
+#include <com/serial/serialw/SerialPortConstants.h>
 #include <iostream>
 
 using namespace Electux::App::Com;
@@ -105,6 +106,8 @@ bool SerialCom::open() {
             return true;
         } catch (const std::exception &e) {
             std::cerr << cOpenExceptionError << e.what() << std::endl;
+        } catch (...) {
+            std::cerr << cOpenExceptionError << "Unknown error during open." << std::endl;
         }
     }
 
@@ -154,9 +157,19 @@ void SerialCom::read(std::vector<uint8_t> &data, size_t len) {
 
     try {
         m_serialPort->Read(data, len);
+    } catch (const LibSerial::ReadTimeout &) {
+        // Normal timeout when no data is received, do not close the port.
     } catch (const std::exception &e) {
         if (m_verbose) {
             std::cerr << cReadError << ": " << e.what() << std::endl;
+        }
+        try {
+            m_serialPort->Close();
+        } catch (...) {
+        }
+    } catch (...) {
+        if (m_verbose) {
+            std::cerr << cReadError << ": Unknown exception occurred (possibly I/O error)." << std::endl;
         }
         try {
             m_serialPort->Close();
@@ -183,6 +196,12 @@ void SerialCom::write(const std::vector<uint8_t> &data) {
             m_serialPort->Close();
         } catch (...) {
         }
+    } catch (...) {
+        std::cerr << cWriteError << ": Unknown exception occurred during write." << std::endl;
+        try {
+            m_serialPort->Close();
+        } catch (...) {
+        }
     }
 }
 
@@ -197,7 +216,10 @@ void SerialCom::setDevice(const std::string &device) { m_device = device; }
 /// @param baudRate The desired baud rate.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::setBaudRate(BaudRate baudRate) {
-    m_serialPort->SetBaudRate(baudRate);
+    try {
+        m_serialPort->SetBaudRate(baudRate);
+    } catch (...) {
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -205,21 +227,32 @@ void SerialCom::setBaudRate(BaudRate baudRate) {
 /// @param characterSize The desired character size.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::setCharacterSize(CharacterSize characterSize) {
-    m_serialPort->SetCharacterSize(characterSize);
+    try {
+        m_serialPort->SetCharacterSize(characterSize);
+    } catch (...) {
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Sets the parity mode for the serial port.
 /// @param parity The desired parity mode.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-void SerialCom::setParity(Parity parity) { m_serialPort->SetParity(parity); }
+void SerialCom::setParity(Parity parity) {
+    try {
+        m_serialPort->SetParity(parity);
+    } catch (...) {
+    }
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Sets the number of stop bits for the serial port.
 /// @param stopBits The desired number of stop bits.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::setStopBits(StopBits stopBits) {
-    m_serialPort->SetStopBits(stopBits);
+    try {
+        m_serialPort->SetStopBits(stopBits);
+    } catch (...) {
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -227,7 +260,10 @@ void SerialCom::setStopBits(StopBits stopBits) {
 /// @param flowControl The desired flow control mode.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::setFlowControl(FlowControl flowControl) {
-    m_serialPort->SetFlowControl(flowControl);
+    try {
+        m_serialPort->SetFlowControl(flowControl);
+    } catch (...) {
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -257,6 +293,9 @@ bool SerialCom::setup(const SerialParams &params) {
 
     } catch (const std::exception &e) {
         std::cerr << cSetupExceptionError << e.what() << std::endl;
+        return false;
+    } catch (...) {
+        std::cerr << cSetupExceptionError << "Unknown error during setup." << std::endl;
         return false;
     }
 }

@@ -27,9 +27,17 @@ class StatusLED:
     '''
         Defines control of the status LED (NeoPixel).
     '''
-    def __init__(self, pin_num=13, num_leds=1, brightness=0.8):
+    DEFAULT_PIN = 13
+    DEFAULT_NUM_LEDS = 1
+    DEFAULT_BRIGHTNESS = 0.8
+
+    def __init__(self, pin_num=DEFAULT_PIN, num_leds=DEFAULT_NUM_LEDS, brightness=DEFAULT_BRIGHTNESS):
         '''
             Initializes the status LED.
+            :param pin_num: Pin number for the LED.
+            :param num_leds: Number of LEDs.
+            :param brightness: Brightness of the LEDs.
+            :exceptions: None.
         '''
         self.pin = Pin(pin_num, Pin.OUT)
         self.num = num_leds
@@ -39,6 +47,10 @@ class StatusLED:
     def set_color(self, r, g, b):
         '''
             Writes the RGB state to the first pixel.
+            :param r: Red component.
+            :param g: Green component.
+            :param b: Blue component.
+            :exceptions: None.
         '''
         r_val = int(r * self.brightness)
         g_val = int(g * self.brightness)

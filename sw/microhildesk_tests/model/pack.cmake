@@ -13,6 +13,12 @@ set(
 set(
     MICROHIL_MODEL_SOURCES
     ${PROJECT_SOURCE_DIR}/../microhildesk/model/model.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/model/model_factory.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/model/delegate/control/control_model_delegate.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/model/delegate/serial/serial_model_delegate.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/model/delegate/general/general_model_delegate.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/model/delegate/ble/ble_model_delegate.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/model/delegate/log/log_model_delegate.cc
 )
 
 set(

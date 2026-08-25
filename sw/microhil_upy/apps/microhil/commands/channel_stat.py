@@ -19,18 +19,31 @@ Info
     Individual channel status query handler of microhil.
 '''
 
-from commands.base import BaseCommand
 
-class ChannelStatCommand(BaseCommand):
+class ChannelStatCommand:
     '''
         Command handler for querying individual channel state/timings.
     '''
     def match(self, cmd_str):
+        '''
+            Checks if the command string matches the Channel State command.
+            :param cmd_str: Command string to match.
+            :return: True if the command string matches the Channel State command, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str.startswith("mh#ch#") and cmd_str.endswith("#stat#end")
 
     def execute(self, board, cmd_str):
+        '''
+            Executes the Channel State command.
+            :param board: Board to execute the command on.
+            :param cmd_str: Command string to execute.
+            :return: None.
+            :exceptions: None.
+        '''
         parts = cmd_str.split("#")
         ch_idx = int(parts[2]) - 1
+
         if 0 <= ch_idx < len(board.channels):
             status_str = board.channels[ch_idx].get_status_str()
-            print("<mh#sys#{}#end>".format(status_str))
+            print(f"<mh#sys#{status_str}#end>")

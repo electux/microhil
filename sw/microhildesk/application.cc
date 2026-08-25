@@ -62,6 +62,8 @@ namespace {
     constexpr std::string_view cCmdAllOffActionName{"cmd_all_off"};
     constexpr std::string_view cCmdAllStatActionName{"cmd_all_stat"};
     constexpr std::string_view cCmdSysResetActionName{"cmd_sys_reset"};
+    constexpr std::string_view cCmdSysIdActionName{"cmd_sys_id"};
+    constexpr std::string_view cCmdSysVersionActionName{"cmd_sys_version"};
     /// @}
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -83,6 +85,10 @@ namespace {
     constexpr std::string_view cCmdAllStatDetailedAction{"app.cmd_all_stat"};
     constexpr std::string_view cCmdSysResetLabel{"_System Reset"};
     constexpr std::string_view cCmdSysResetDetailedAction{"app.cmd_sys_reset"};
+    constexpr std::string_view cCmdSysIdLabel{"_Get Board ID"};
+    constexpr std::string_view cCmdSysIdDetailedAction{"app.cmd_sys_id"};
+    constexpr std::string_view cCmdSysVersionLabel{"_Get Version"};
+    constexpr std::string_view cCmdSysVersionDetailedAction{"app.cmd_sys_version"};
     constexpr std::string_view cHelpLabel{"Help"};
     constexpr std::string_view cHelpDocLabel{"_Documentation"};
     constexpr std::string_view cHelpDocDetailedAction{"app.doc"};
@@ -181,6 +187,14 @@ void EntryApplication::mapping() {
         sigc::mem_fun(*this, &EntryApplication::onActionCmdSysReset)
     );
     add_action(
+        cCmdSysIdActionName.data(),
+        sigc::mem_fun(*this, &EntryApplication::onActionCmdSysId)
+    );
+    add_action(
+        cCmdSysVersionActionName.data(),
+        sigc::mem_fun(*this, &EntryApplication::onActionCmdSysVersion)
+    );
+    add_action(
         cHelpDocActionName.data(),
         sigc::mem_fun(*this, &EntryApplication::onActionDoc)
     );
@@ -239,6 +253,12 @@ void EntryApplication::on_startup() {
     );
     submenu_command->append(
         cCmdSysResetLabel.data(), cCmdSysResetDetailedAction.data()
+    );
+    submenu_command->append(
+        cCmdSysIdLabel.data(), cCmdSysIdDetailedAction.data()
+    );
+    submenu_command->append(
+        cCmdSysVersionLabel.data(), cCmdSysVersionDetailedAction.data()
     );
     menu->append_submenu(cCommandLabel.data(), submenu_command);
 
@@ -330,4 +350,12 @@ void EntryApplication::onActionCmdAllStat() {
 
 void EntryApplication::onActionCmdSysReset() {
     m_controller->resetSystem();
+}
+
+void EntryApplication::onActionCmdSysId() {
+    m_controller->requestBoardId();
+}
+
+void EntryApplication::onActionCmdSysVersion() {
+    m_controller->requestVersion();
 }

@@ -19,23 +19,22 @@ Info
     Main engine of microhil.
 '''
 
-# Import local modules
-from drivers.buzzer import Buzzer
-from drivers.channel import RelayChannel
-from drivers.led import StatusLED
-from commands.parser import CommandParser
-from commands.id import IdCommand
-from commands.version import VersionCommand
-from commands.reset import ResetCommand
-from commands.all_on import AllOnCommand
-from commands.all_off import AllOffCommand
-from commands.all_stat import AllStatCommand
-from commands.channel_state import ChannelStateCommand
-from commands.timer import TimerCommand
-from commands.pulse import PulseCommand
-from commands.blink import BlinkCommand
-from commands.channel_stat import ChannelStatCommand
-from commands.mask import MaskCommand
+from .drivers.buzzer import Buzzer
+from .drivers.channel import RelayChannel
+from .drivers.led import StatusLED
+from .commands.parser import CommandParser
+from .commands.id import IdCommand
+from .commands.version import VersionCommand
+from .commands.reset import ResetCommand
+from .commands.all_on import AllOnCommand
+from .commands.all_off import AllOffCommand
+from .commands.all_stat import AllStatCommand
+from .commands.channel_state import ChannelStateCommand
+from .commands.timer import TimerCommand
+from .commands.pulse import PulseCommand
+from .commands.blink import BlinkCommand
+from .commands.channel_stat import ChannelStatCommand
+from .commands.mask import MaskCommand
 
 
 class MicroHil:
@@ -50,11 +49,12 @@ class MicroHil:
                 | dispatch - Dispatches the command.
                 | tick - Ticks the engine and processes incoming commands.
     '''
-    def __init__(self, pin=13, num=1, brightness=0.8):
-        self.led = StatusLED(pin, num, brightness)
-        self.buzzer = Buzzer(6)
-        relay_pins = [21, 20, 19, 18, 17, 16, 15, 14]
-        self.channels = [RelayChannel(p, i) for i, p in enumerate(relay_pins)]
+    RELAY_PINS = b'\x15\x14\x13\x12\x11\x10\x0f\x0e'
+
+    def __init__(self):
+        self.led = StatusLED()
+        self.buzzer = Buzzer()
+        self.channels = [RelayChannel(p, i) for i, p in enumerate(self.RELAY_PINS)]
         self.parser = CommandParser()
         self.commands = [
             IdCommand(),
@@ -75,6 +75,11 @@ class MicroHil:
     def set_led(self, r, g, b):
         '''
             Delegates write to the LED driver.
+
+            :param r: Red color value.
+            :param g: Green color value.
+            :param b: Blue color value.
+            :exceptions: None.
         '''
         self.led.set_color(r, g, b)
 
@@ -106,9 +111,3 @@ class MicroHil:
         while cmd is not None:
             self.dispatch(cmd)
             cmd = self.parser.get_command()
-
-if __name__=='__main__':
-    board = MicroHil()
-
-    while True:
-        board.tick()

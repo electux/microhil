@@ -29,19 +29,26 @@ class Relay:
     def __init__(self, pin_num):
         '''
             Initializes the physical relay pin (active-low, default OFF).
+            :param pin_num: Pin number for the relay.
+            :exceptions: None.
         '''
         self.pin = Pin(pin_num, Pin.OUT)
-        self.pin.high()  # Active-low OFF
+        self.pin.high()
         self.state = False
 
     def write(self, on, buzzer):
         '''
             Sets the physical state of the relay.
+            :param on: Whether to turn the relay on.
+            :param buzzer: Buzzer to set.
+            :exceptions: None.
         '''
         if self.state != on:
             self.state = on
+
             if on:
-                self.pin.low()  # Active-low ON
+                self.pin.low()
             else:
-                self.pin.high()  # Active-low OFF
+                self.pin.high()
+
             buzzer.beep_changed()

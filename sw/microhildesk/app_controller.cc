@@ -22,6 +22,7 @@
 #include <chrono>
 #include <com/icom.h>
 #include <com/icom_configurator.h>
+#include <com/switchable_com.h>
 #include <command/formatter/icommand_formatter.h>
 #include <command/processor/response_processor.h>
 #include <config/iconfig.h>
@@ -54,11 +55,11 @@ AppController::AppController(
 
 AppController::~AppController() {
     m_stopThread = true;
-    if (m_comChannel) {
-        m_comChannel->close();
-    }
     if (m_readThread.joinable()) {
         m_readThread.join();
+    }
+    if (m_comChannel) {
+        m_comChannel->close();
     }
 }
 
@@ -139,15 +140,35 @@ void AppController::resetSystem() {
     }
 }
 
+void AppController::requestBoardId() {
+    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
+        std::string cmd = m_commandFormatter->getCommandBoardId();
+        if (!cmd.empty()) {
+            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
+            m_comChannel->write(cmdBytes);
+        }
+    }
+}
+
+void AppController::requestVersion() {
+    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
+        std::string cmd = m_commandFormatter->getCommandVersion();
+        if (!cmd.empty()) {
+            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
+            m_comChannel->write(cmdBytes);
+        }
+    }
+}
+
 void AppController::shutdown() {
     m_stopThread = true;
 
-    if (m_comChannel) {
-        m_comChannel->close();
-    }
-
     if (m_readThread.joinable()) {
         m_readThread.join();
+    }
+
+    if (m_comChannel) {
+        m_comChannel->close();
     }
 
     if (m_logger) {
@@ -225,15 +246,12 @@ void AppController::handleChannelStateChanges(
 
         std::string cmd;
 
-        // 1. Detect standard/mode changes
         bool shouldUpdate = false;
 
         if (oldState.enabled != newState.enabled) {
             if (!newState.enabled) {
-                // Disabling channel: always send off command
                 shouldUpdate = true;
             } else {
-                // Enabling channel: only send command if it starts as active
                 if (newState.mode == Model::Channel::ChannelMode::Toggle &&
                     newState.toggle) {
                     shouldUpdate = true;
@@ -245,10 +263,7 @@ void AppController::handleChannelStateChanges(
                 }
             }
         } else if (newState.enabled) {
-            // Channel is and remains enabled
             if (oldState.mode != newState.mode) {
-                // Mode changed: only send command if old state was active (to
-                // turn off) or new state is active (to turn on)
                 bool oldActive =
                     (oldState.mode == Model::Channel::ChannelMode::Toggle &&
                      oldState.toggle) ||
@@ -263,7 +278,6 @@ void AppController::handleChannelStateChanges(
                     shouldUpdate = true;
                 }
             } else {
-                // Mode is the same
                 if (newState.mode == Model::Channel::ChannelMode::Toggle) {
                     if (oldState.toggle != newState.toggle) {
                         shouldUpdate = true;
@@ -293,7 +307,6 @@ void AppController::handleChannelStateChanges(
             cmd = m_commandFormatter->getCommandState(i, newState);
         }
 
-        // 2. Detect Pulse trigger (one-shot)
         if (newState.enabled &&
             newState.mode == Model::Channel::ChannelMode::Pulse &&
             newState.pulseTriggered && !oldState.pulseTriggered) {
@@ -308,7 +321,6 @@ void AppController::handleChannelStateChanges(
             cmd = m_commandFormatter->getCommandPulse(i, newState);
         }
 
-        // 3. Detect Blink changes (enable/disable)
         if (newState.enabled &&
             newState.mode == Model::Channel::ChannelMode::Blink) {
             if (oldState.blinkEnabled != newState.blinkEnabled ||
@@ -410,7 +422,38 @@ void AppController::readLoop() {
                 std::vector<uint8_t> buffer;
                 m_comChannel->read(buffer, 1);
 
-                if (!buffer.empty()) {
+                if (!m_stopThread && !m_comChannel->isOpen()) {
+                    std::string errorMsg = "\n[Error] Connection lost.";
+                    auto *switchable =
+                        dynamic_cast<Com::SwitchableCom *>(m_comChannel.get());
+                    if (switchable) {
+                        if (switchable->getActiveCom() ==
+                            switchable->getSerialCom()) {
+                            errorMsg =
+                                "\n[Error] Serial port is no longer available "
+                                "(I/O error). Device disconnected.";
+                        } else if (
+                            switchable->getActiveCom() ==
+                            switchable->getTcpCom()
+                        ) {
+                            errorMsg =
+                                "\n[Error] TCP connection lost (I/O error).";
+                        } else if (
+                            switchable->getActiveCom() ==
+                            switchable->getBleCom()
+                        ) {
+                            errorMsg =
+                                "\n[Error] BLE connection lost (I/O error).";
+                        }
+                    }
+                    m_signalDataReceived.emit(errorMsg);
+                    if (m_logger) {
+                        m_logger->log(
+                            "Communication channel lost (I/O error).",
+                            Logger::LogLevel::Error
+                        );
+                    }
+                } else if (!buffer.empty()) {
                     std::string dataStr(buffer.begin(), buffer.end());
 
                     if (m_responseProcessor) {
