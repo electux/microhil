@@ -20,8 +20,8 @@
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include <model/model.h>
-#include <com/ble/ble_com_configurator.h>
+#include <model/model_factory.h>
+#include <com/ble/configurator/ble_com_configurator.h>
 #include "test_mock_ible.h"
 #include "test_mock_icom.h"
 
@@ -32,7 +32,7 @@ using namespace ::testing;
 class BleComConfiguratorTest : public Test {
   protected:
     void SetUp() override {
-        m_model = std::make_unique<Model>();
+        m_model = Electux::App::Model::createDefault();
         
         auto addrKey = m_model->toString(ModelBleKey::Address);
         auto serviceKey = m_model->toString(ModelBleKey::ServiceUuid);
@@ -49,7 +49,7 @@ class BleComConfiguratorTest : public Test {
         m_configurator = std::make_unique<BleComConfigurator>(m_bleMock.get());
     }
 
-    std::unique_ptr<Model> m_model;
+    std::unique_ptr<IModel> m_model;
     std::unique_ptr<com::mock::MockIBle> m_bleMock;
     std::unique_ptr<com::mock::MockICom> m_comMock;
     std::unique_ptr<BleComConfigurator> m_configurator;

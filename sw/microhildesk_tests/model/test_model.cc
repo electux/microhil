@@ -18,7 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <gtest/gtest.h>
-#include <model/model.h>
+#include <model/model_factory.h>
 
 using namespace Electux::App::Model;
 
@@ -29,11 +29,11 @@ using namespace Electux::App::Model;
 class ModelTest : public ::testing::Test
 {
 protected:
-	std::unique_ptr<Model> m_model;
+	std::unique_ptr<IModel> m_model;
 
 	void SetUp() override
 	{
-		m_model = std::make_unique<Model>();
+		m_model = Electux::App::Model::createDefault();
 	}
 };
 
@@ -140,14 +140,14 @@ TEST_F(ModelTest, ChannelStateTest)
 	// Get initial channel state for channel 3
 	ChannelState state = m_model->getChannelState(3);
 	EXPECT_FALSE(state.enabled);
-	EXPECT_EQ(state.mode, 0);
+	EXPECT_EQ(state.mode, Channel::ChannelMode::Toggle);
 	EXPECT_FALSE(state.toggle);
 	EXPECT_EQ(state.timer, 0);
 	EXPECT_FALSE(state.timerEnabled);
 
 	// Modify and set channel state for channel 3
 	state.enabled = true;
-	state.mode = 2;
+	state.mode = Channel::ChannelMode::Pulse;
 	state.toggle = true;
 	state.timer = 100;
 	state.timerEnabled = true;
@@ -157,7 +157,7 @@ TEST_F(ModelTest, ChannelStateTest)
 	// Verify update
 	ChannelState updatedState = m_model->getChannelState(3);
 	EXPECT_TRUE(updatedState.enabled);
-	EXPECT_EQ(updatedState.mode, 2);
+	EXPECT_EQ(updatedState.mode, Channel::ChannelMode::Pulse);
 	EXPECT_TRUE(updatedState.toggle);
 	EXPECT_EQ(updatedState.timer, 100);
 	EXPECT_TRUE(updatedState.timerEnabled);
@@ -165,7 +165,7 @@ TEST_F(ModelTest, ChannelStateTest)
 	// Check that other channels remain unaffected (e.g. channel 2)
 	ChannelState otherState = m_model->getChannelState(2);
 	EXPECT_FALSE(otherState.enabled);
-	EXPECT_EQ(otherState.mode, 0);
+	EXPECT_EQ(otherState.mode, Channel::ChannelMode::Toggle);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

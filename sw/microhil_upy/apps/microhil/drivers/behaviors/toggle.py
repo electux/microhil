@@ -19,12 +19,29 @@ Info
     Toggle behavior class of microhil.
 '''
 
-from drivers.behaviors.base import BaseBehavior
 
-class ToggleBehavior(BaseBehavior):
+class ToggleBehavior:
     '''
         Standard toggle ON/OFF behavior with no timings.
     '''
+    def tick(self, channel, relay, buzzer):
+        '''
+            Tick the toggle behavior.
+            :param channel: Channel to tick the toggle behavior for.
+            :param relay: Relay to tick the toggle behavior for.
+            :param buzzer: Buzzer to tick the toggle behavior for.
+            :exceptions: None.
+        '''
+        pass
+
     def get_status_str(self, channel, relay):
+        '''
+            Get the status string for the toggle behavior.
+            :param channel: Channel to get the status string for.
+            :param relay: Relay to get the status string for.
+            :return: Status string for the toggle behavior.
+            :exceptions: None.
+        '''
         state_str = "ON" if relay.state else "OFF"
-        return "Channel {}: {} (Toggle)".format(channel.index + 1, state_str)
+
+        return f"Channel {channel.index + 1}: {state_str} (Toggle)"

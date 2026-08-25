@@ -26,6 +26,7 @@ sw/microhil_base/build/*
 sw/microhildesk/build/*
 sw/microhildesk_tests/build/*
 sw/microhil_upy/build/*
+sw/microhil_upy/upy/ports/rp2/build-PICO/*
 sw/microhil_upy/upy/mpy-cross/build/*
 sw/microhil_upy/apps/microhil/rp2*
 sw/microhil_upy/apps/microhil/typings*

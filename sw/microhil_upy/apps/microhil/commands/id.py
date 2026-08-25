@@ -19,14 +19,26 @@ Info
     ID command handler of microhil.
 '''
 
-from commands.base import BaseCommand
 
-class IdCommand(BaseCommand):
+class IdCommand:
     '''
         Command handler for 'id' query.
     '''
     def match(self, cmd_str):
+        '''
+            Checks if the command string matches the ID command.
+            :param cmd_str: Command string to match.
+            :return: True if the command string matches the ID command, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str == "mh#sys#id#end"
 
     def execute(self, board, cmd_str):
+        '''
+            Executes the ID command.
+            :param board: Board to execute the command on.
+            :param cmd_str: Command string to execute.
+            :return: None.
+            :exceptions: None.
+        '''
         print("<mh#sys#mh:333:2023:0#end>")

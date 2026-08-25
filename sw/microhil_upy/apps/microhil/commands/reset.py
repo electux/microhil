@@ -19,17 +19,30 @@ Info
     Reset command handler of microhil.
 '''
 
-from commands.base import BaseCommand
+from machine import reset
 
-class ResetCommand(BaseCommand):
+
+class ResetCommand:
     '''
         Command handler for 'reset' trigger.
     '''
     def match(self, cmd_str):
+        '''
+            Checks if the command string matches the Reset command.
+            :param cmd_str: Command string to match.
+            :return: True if the command string matches the Reset command, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str == "mh#sys#reset#end"
 
     def execute(self, board, cmd_str):
+        '''
+            Executes the Reset command.
+            :param board: Board to execute the command on.
+            :param cmd_str: Command string to execute.
+            :return: None.
+            :exceptions: None.
+        '''
         print("<mh#sys#system resetting...#end>")
         board.buzzer.beep_stop()
-        import machine
-        machine.reset()
+        reset()

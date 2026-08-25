@@ -19,14 +19,25 @@ Info
     Version command handler of microhil.
 '''
 
-from commands.base import BaseCommand
 
-class VersionCommand(BaseCommand):
+class VersionCommand:
     '''
         Command handler for 'version' query.
     '''
     def match(self, cmd_str):
+        '''
+            Checks if the command string matches the Version command.
+            :param cmd_str: Command string to match.
+            :return: True if the command string matches the Version command, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str == "mh#sys#version#end"
 
     def execute(self, board, cmd_str):
+        '''
+            Executes the Version command.
+            :param board: Board to execute the command on.
+            :param cmd_str: Command string to execute.
+            :exceptions: None.
+        '''
         print("<mh#sys#microHIL v1.0.0#end>")

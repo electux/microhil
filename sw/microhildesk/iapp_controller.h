@@ -50,5 +50,7 @@ namespace Electux::App {
         virtual void turnOffAllChannels() = 0;
         virtual void requestAllChannelsStatus() = 0;
         virtual void resetSystem() = 0;
+        virtual void requestBoardId() = 0;
+        virtual void requestVersion() = 0;
     };
 } // namespace Electux::App

@@ -19,17 +19,30 @@ Info
     All OFF command handler of microhil.
 '''
 
-from commands.base import BaseCommand
 
-class AllOffCommand(BaseCommand):
+class AllOffCommand:
     '''
         Command handler for switching all channels OFF.
     '''
     def match(self, cmd_str):
+        '''
+            Checks if the command string matches the All OFF command.
+            :param cmd_str: Command string to match.
+            :return: True if the command string matches the All OFF command, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str == "mh#all#off#end"
 
     def execute(self, board, cmd_str):
+        '''
+            Executes the All OFF command.
+            :param board: Board to execute the command on.
+            :param cmd_str: Command string to execute.
+            :return: None.
+            :exceptions: None.
+        '''
         for ch in board.channels:
             ch.set_state(False, board.buzzer)
+
         board.set_led(0, 0, 0)
         print("<mh#sys#all channels off#end>")

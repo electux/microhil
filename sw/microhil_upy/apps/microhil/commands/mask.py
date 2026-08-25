@@ -19,18 +19,32 @@ Info
     Binary channel mask command handler of microhil.
 '''
 
-from commands.base import BaseCommand
 
-class MaskCommand(BaseCommand):
+class MaskCommand:
     '''
         Command handler for applying binary channel states mask.
     '''
     def match(self, cmd_str):
+        '''
+            Checks if the command string matches the Mask command.
+            :param cmd_str: Command string to match.
+            :return: True if the command string matches the Mask command, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str.startswith("mh#all#mask#") and cmd_str.endswith("#end")
 
     def execute(self, board, cmd_str):
+        '''
+            Executes the Mask command.
+            :param board: Board to execute the command on.
+            :param cmd_str: Command string to execute.
+            :return: None.
+            :exceptions: None.
+        '''
         mask_str = cmd_str[12:20]
+
         for i, bit in enumerate(mask_str):
             if i < len(board.channels):
                 board.channels[i].set_state(bit == "1", board.buzzer)
-        print("<mh#sys#channels mask applied: {}#end>".format(mask_str))
+
+        print(f"<mh#sys#channels mask applied: {mask_str}#end>")

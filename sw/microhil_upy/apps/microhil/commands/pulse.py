@@ -19,19 +19,32 @@ Info
     Pulse command handler of microhil.
 '''
 
-from commands.base import BaseCommand
 
-class PulseCommand(BaseCommand):
+class PulseCommand:
     '''
         Command handler for pulse execution on a channel.
     '''
     def match(self, cmd_str):
+        '''
+            Checks if the command string matches the Pulse command.
+            :param cmd_str: Command string to match.
+            :return: True if the command string matches the Pulse command, False otherwise.
+            :exceptions: None.
+        '''
         return cmd_str.startswith("mh#ch#") and "#pulse#" in cmd_str
 
     def execute(self, board, cmd_str):
+        '''
+            Executes the Pulse command.
+            :param board: Board to execute the command on.
+            :param cmd_str: Command string to execute.
+            :return: None.
+            :exceptions: None.
+        '''
         parts = cmd_str.split("#")
         ch_idx = int(parts[2]) - 1
         duration_ms = int(parts[4])
+
         if 0 <= ch_idx < len(board.channels):
             board.channels[ch_idx].start_pulse(duration_ms, board.buzzer)
-            print("<mh#sys#channel {} pulse started: {} ms#end>".format(parts[2], duration_ms))
+            print(f"<mh#sys#channel {parts[2]} pulse started: {duration_ms} ms#end>")

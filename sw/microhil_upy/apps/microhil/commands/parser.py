@@ -21,6 +21,10 @@ Info
 
 import sys
 import uselect
+from micropython import const
+
+_STATE_IDLE = const(0)
+_STATE_RECEIVING = const(1)
 
 class CommandParser:
     '''
@@ -39,8 +43,9 @@ class CommandParser:
 
             :exceptions: None.
         '''
-        self.state = "idle"
-        self.buf = ""
+        self.state = _STATE_IDLE
+        self.buf = bytearray(64)
+        self.buf_idx = 0
         self.poll = uselect.poll()
         self.poll.register(sys.stdin, uselect.POLLIN)
 
@@ -51,23 +56,23 @@ class CommandParser:
             :param c: Character to process.
             :exceptions: None.
         '''
-        if c in ('\r', '\n'):
+        if c == '\r' or c == '\n':
             return None
 
         if c == '<':
-            self.state = "receiving"
-            self.buf = ""
+            self.state = _STATE_RECEIVING
+            self.buf_idx = 0
             return None
 
-        if self.state == "receiving":
+        if self.state == _STATE_RECEIVING:
             if c == '>':
-                cmd = self.buf
-                self.state = "idle"
-                self.buf = ""
-
+                cmd = self.buf[:self.buf_idx].decode()
+                self.state = _STATE_IDLE
                 return cmd
 
-            self.buf += c
+            if self.buf_idx < 64:
+                self.buf[self.buf_idx] = ord(c)
+                self.buf_idx += 1
 
         return None
 

@@ -99,8 +99,23 @@ Navigate to release **[page](https://github.com/electux/microhil/releases)** dow
 #### SW Firmware Application installation
 
 To install **microhil-base** type the following
-```
-TODO
+
+```bash
+# Clone the repository
+git clone https://github.com/electux/microhil.git
+cd microhil/sw/microhil_base
+
+# Create build directory
+mkdir build && cd build
+
+# Configure build (ensure PICO_SDK_PATH is set)
+cmake -DPICO_SDK_PATH=/path/to/pico-sdk ..
+
+# Build
+make
+
+# Deploy by copying the generated microhil-base.uf2 file to the Pico mounted storage
+cp src/microhil-base.uf2 /media/$USER/RPI-RP2/
 ```
 
 To install **microhil-nuttx** type the following
@@ -128,8 +143,27 @@ mpremote fs cp -r apps/microhil :
 #### SW Desktop Application installation
 
 To install **microhildesk** type the following
+
+**From Source:**
+```bash
+# Clone the repository
+git clone https://github.com/electux/microhil.git
+cd microhil/sw/microhildesk/build
+
+# Build the release version
+make release
+
+# Run the application
+./microhildesk
 ```
-TODO
+
+**As a Debian Package (.deb):**
+```bash
+# Generate the .deb package
+python3 sw/microhildesk/scripts/deb/create_deb.py
+
+# Install the package
+sudo dpkg -i sw/microhildesk/build/deb_dist/microhildesk_*.deb
 ```
 
 ### Dependencies
@@ -137,9 +171,13 @@ TODO
 #### SW Firmware Application dependencies
 
 **microhil-base** requires next modules and libraries
-```
-TODO
-```
+
+*   **Runtime:**
+    *   Raspberry Pi Pico (RP2040) hardware
+*   **Development / Build:**
+    *   Raspberry Pi Pico SDK (`pico-sdk`)
+    *   GNU Arm Embedded Toolchain (`gcc-arm-none-eabi`)
+    *   `CMake` (v3.12+)
 
 **microhil-nuttx** requires next modules and libraries
 ```
@@ -157,9 +195,14 @@ TODO
 #### SW Desktop Application dependencies
 
 **microhildesk** requires next modules and libraries
-```
-TODO
-```
+
+*   **Runtime:**
+    *   `libgtkmm-4.0-1` | `libgtkmm-4.0-1t64`
+    *   `socat` (for virtual serial ports)
+*   **Development / Build:**
+    *   `pkg-config`
+    *   `libgtkmm-4.0-dev`
+    *   C++17 compliant compiler (`g++`)
 
 ### Docs
 

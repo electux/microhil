@@ -2,7 +2,7 @@
 
 '''
 Module
-    base.py
+    main.py
 Copyright
     Copyright (C) 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
     microhil is free software: you can redistribute it and/or modify it
@@ -16,21 +16,12 @@ Copyright
     You should have received a copy of the GNU General Public License along
     with this program. If not, see <http://www.gnu.org/licenses/>.
 Info
-    Base behavior class of microhil.
+    Main program that uses MicroHil.
 '''
 
-class BaseBehavior:
-    '''
-        Base interface for relay channel behaviors.
-    '''
-    def tick(self, channel, relay, buzzer):
-        '''
-            Processes non-blocking timing updates.
-        '''
-        pass
+from microhil.engine import MicroHil
 
-    def get_status_str(self, channel, relay):
-        '''
-            Returns status string for this behavior state.
-        '''
-        raise NotImplementedError
+board = MicroHil()
+
+while True:
+    board.tick()

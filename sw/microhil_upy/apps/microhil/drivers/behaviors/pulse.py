@@ -20,24 +20,45 @@ Info
 '''
 
 from time import ticks_ms, ticks_diff
-from drivers.behaviors.base import BaseBehavior
 
-class PulseBehavior(BaseBehavior):
+
+class PulseBehavior:
     '''
         Behavior that turns relay OFF after a duration in milliseconds.
     '''
     def __init__(self, duration_ms):
+        '''
+            Initialize the pulse behavior.
+            :param duration_ms: Time to pulse the relay.
+            :exceptions: None.
+        '''
         self.start_time = ticks_ms()
         self.duration_ms = duration_ms
 
     def tick(self, channel, relay, buzzer):
+        '''
+            Tick the pulse behavior.
+            :param channel: Channel to tick the pulse behavior for.
+            :param relay: Relay to tick the pulse behavior for.
+            :param buzzer: Buzzer to tick the pulse behavior for.
+            :exceptions: None.
+        '''
         elapsed = ticks_diff(ticks_ms(), self.start_time)
+
         if elapsed >= self.duration_ms:
             channel.set_state(False, buzzer)
-            print("<mh#sys#channel {} off#end>".format(channel.index + 1))
+            print(f"<mh#sys#channel {channel.index + 1} off#end>")
 
     def get_status_str(self, channel, relay):
+        '''
+            Get the status string for the pulse behavior.
+            :param channel: Channel to get the status string for.
+            :param relay: Relay to get the status string for.
+            :return: Status string for the pulse behavior.
+            :exceptions: None.
+        '''
         state_str = "ON" if relay.state else "OFF"
         elapsed = ticks_diff(ticks_ms(), self.start_time)
         rem = max(0, self.duration_ms - elapsed)
-        return "Channel {}: {} (Pulse, rem: {}ms)".format(channel.index + 1, state_str, rem)
+
+        return f"Channel {channel.index + 1}: {state_str} (Pulse, rem: {rem}ms)"

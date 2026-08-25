@@ -19,10 +19,11 @@
 #pragma once
 
 #include <com/serial/serialw/ilib.h>
-#include <libserial/SerialPort.h>
-#include <memory>
+#include <com/serial/serialw/SerialPortConstants.h>
 #include <string>
 #include <vector>
+#include <poll.h>
+#include <filesystem>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace Electux::App::Com
@@ -109,10 +110,12 @@ namespace Electux::App::Com {
         void SetFlowControl(FlowControl flowControl) override;
 
       private:
+        void checkOpen() const;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        /// @brief Unique pointer to the underlying LibSerial::SerialPort
-        /// instance.
+        /// @brief POSIX file descriptor for the serial port.
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        std::unique_ptr<LibSerial::SerialPort> m_serialPort;
+        int m_fd{-1};
+        std::string m_device{};
     };
 } // namespace Electux::App::Com
