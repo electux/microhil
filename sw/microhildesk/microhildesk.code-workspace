@@ -75,6 +75,12 @@
 			"fstream": "cpp",
 			"callback": "cpp",
 			"camera": "cpp"
+		},
+		"files.exclude": {
+			"**/*.o": true,
+			"**/.built": true,
+			"**/.depend": true,
+			"**/Make.dep": true
 		}
 	}
 }

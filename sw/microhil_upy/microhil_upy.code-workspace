@@ -13,6 +13,13 @@
 			"/data/dev/raspberry/microhil/github/microhil/sw/microhil_upy/typings",
 			"/data/dev/raspberry/microhil/github/microhil/sw/microhil_upy/.venv/lib/python3.12/site-packages"
 		],
-		"python.analysis.stubPath": "/data/dev/raspberry/microhil/github/microhil/sw/microhil_upy/typings"
+		"python.analysis.stubPath": "/data/dev/raspberry/microhil/github/microhil/sw/microhil_upy/typings",
+		"files.exclude": {
+			"**/*.pyc": true,
+			"**/*.pyo": true,
+			"**/__pycache__": true,
+			"**/.pytest_cache": true,
+			"**/.cache": true
+		}
 	}
 }
