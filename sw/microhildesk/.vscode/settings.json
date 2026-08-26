@@ -1,8 +1,4 @@
 {
-    "files.exclude": {
-        "*.o": true,
-        "**/*.o": true
-    },
     "files.associations": {
         "*.h": "cpp"
     },

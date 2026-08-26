@@ -1,37 +1,52 @@
-__pycache__/
-*.py[cod]
-*.pyi
-*.d
-*.slo
-*.lo
+# ==========================================
+# 1. Global & Common Ignores
+# ==========================================
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# Compiler & Build Artifacts (Generic)
 *.o
 *.obj
-*.gch
-*.pch
+*.a
+*.lib
 *.so
 *.dylib
 *.dll
+*.d
+*.slo
+*.lo
+*.gch
+*.pch
 *.mod
 *.smod
 *.lai
 *.la
-*.a
-*.lib
 *.exe
 *.out
 *.app
-*.venv/
 
-sw/microhil_base/build/*
-sw/microhildesk/build/*
-sw/microhildesk_tests/build/*
-sw/microhil_upy/build/*
-sw/microhil_upy/upy/ports/rp2/build-PICO/*
-sw/microhil_upy/upy/mpy-cross/build/*
-sw/microhil_upy/apps/microhil/rp2*
-sw/microhil_upy/apps/microhil/typings*
+# Development Caches & Local Configurations
+.cache/
+.clangd
+.idea/
+.vs/
+*.pfx
 
-# CMake cache and generated files
+# Python generic ignores
+__pycache__/
+*.py[cod]
+*.pyi
+.venv/
+venv/
+ENV/
+env/
+
+# CMake generic ignores
 CMakeCache.txt
 CMakeFiles/
 CMakeScripts/
@@ -42,16 +57,23 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps/
-
-# CPack / CTest artifacts
 CPackConfig.cmake
 CPackSourceConfig.cmake
 CTestConfig.cmake
-*.pfx
 
-# CMake presets user-specific overrides
 
-# microhil_nuttx generated files
+# ==========================================
+# 2. Sub-project Ignores (Software - sw/)
+# ==========================================
+
+### sw/microhil_base
+sw/microhil_base/build/
+
+### sw/microhil_base_tests
+sw/microhil_base_tests/build/
+
+### sw/microhil_nuttx
+sw/microhil_nuttx/build/
 sw/microhil_nuttx/apps/.*
 sw/microhil_nuttx/apps/**/.*
 sw/microhil_nuttx/apps/Kconfig
@@ -82,7 +104,40 @@ sw/microhil_nuttx/nuttx/tools/mkdeps
 sw/microhil_nuttx/nuttx/tools/mkversion
 sw/microhil_nuttx/nuttx/arch/dummy/Kconfig
 sw/microhil_nuttx/nuttx/boards/dummy/Kconfig
-sw/microhil_nuttx/build/
-.clangd
 sw/microhil_nuttx/nuttx/arch/arm/src/rp2040_boot_stage2.*
 sw/microhil_nuttx/nuttx/**/*.tmp
+
+### sw/microhil_nuttx_tests
+sw/microhil_nuttx_tests/build/
+
+### sw/microhil_upy
+sw/microhil_upy/build/
+sw/microhil_upy/.venv/
+sw/microhil_upy/typings/
+sw/microhil_upy/upy/ports/rp2/build-PICO/
+sw/microhil_upy/upy/mpy-cross/build/
+sw/microhil_upy/apps/microhil/rp2*
+sw/microhil_upy/apps/microhil/typings*
+sw/microhil_upy/apps/microhil/*.pyi
+
+### sw/microhil_upy_tests
+sw/microhil_upy_tests/build/
+sw/microhil_upy_tests/.venv/
+
+### sw/microhildesk
+sw/microhildesk/build/
+
+### sw/microhildesk_tests
+sw/microhildesk_tests/build/
+sw/microhildesk_tests/lib/
+
+
+# ==========================================
+# 3. Sub-project Ignores (Hardware - hw/)
+# ==========================================
+
+# KiCad / CAD backups and local caches
+hw/**/*.kicad_pcb-bak
+hw/**/*.sch-bak
+hw/**/fp-info-cache
+hw/**/*-backups/

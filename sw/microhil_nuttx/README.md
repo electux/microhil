@@ -24,13 +24,21 @@ sw/microhil_nuttx/
 │       ├── Kconfig             # Menuconfig properties (priority, stack)
 │       ├── Make.defs           # Classic Make build definitions
 │       ├── Makefile            # App Make recipe
-│       ├── microhil_main.c     # Main parser loop, command dispatcher, and boot beeps
-│       ├── microhil_led.h      # Status RGB LED (NeoPixel) controller header
-│       ├── microhil_led.c      # Status RGB LED (NeoPixel) controller source
-│       ├── microhil_buzzer.h   # PWM buzzer controller header
-│       ├── microhil_buzzer.c   # PWM buzzer controller source
-│       ├── microhil_relay.h    # 8-channel relay controller header
-│       └── microhil_relay.c    # 8-channel relay controller source
+│       ├── microhil_main.c     # Main daemon loop & hardware setup
+│       ├── command/            # Command parsing and dispatching module
+│       │   ├── microhil_parser.h
+│       │   ├── microhil_parser.c
+│       │   ├── microhil_cmd.h
+│       │   ├── microhil_cmd.c
+│       │   ├── microhil_dispatcher.h
+│       │   └── microhil_dispatcher.c
+│       └── controllers/        # Hardware driver controller wrappers
+│           ├── microhil_led.h
+│           ├── microhil_led.c
+│           ├── microhil_buzzer.h
+│           ├── microhil_buzzer.c
+│           ├── microhil_relay.h
+│           └── microhil_relay.c
 └── build/                      # Build output directory
     └── deploy/                 # Deployment target outputs
         ├── apps/               # Source copy of the microhil app

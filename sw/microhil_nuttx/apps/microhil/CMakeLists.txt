@@ -24,9 +24,12 @@ if(CONFIG_MICROHIL)
     ${CONFIG_MICROHIL_PROGNAME}
     SRCS
     microhil_main.c
-    microhil_relay.c
-    microhil_buzzer.c
-    microhil_led.c
+    controllers/microhil_relay.c
+    controllers/microhil_buzzer.c
+    controllers/microhil_led.c
+    command/microhil_parser.c
+    command/microhil_cmd.c
+    command/microhil_dispatcher.c
     STACKSIZE
     ${CONFIG_MICROHIL_STACKSIZE}
     PRIORITY
