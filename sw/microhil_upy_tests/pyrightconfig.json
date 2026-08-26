@@ -1,0 +1,5 @@
+{
+  "extraPaths": [
+    "../microhil_upy/apps"
+  ]
+}
