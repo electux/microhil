@@ -22,32 +22,21 @@
 #include <com/icom_configurator.h>
 
 namespace Electux::App::Com {
-    class IBle;
-    class ICom;
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class BleComConfigurator
     /// @brief Configures BLE communication parameters using the model.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class BleComConfigurator : public IComConfigurator {
       public:
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        /// @brief Constructs a new BleComConfigurator object.
-        /// @param ble Pointer to the IBle interface representing the BLE channel.
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        explicit BleComConfigurator(IBle *ble);
-
+        BleComConfigurator() = default;
         ~BleComConfigurator() override = default;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         /// @brief Configures the BLE connection.
         /// @param model Reference to the configuration model.
-        /// @param comChannel Pointer to the communication channel interface.
+        /// @param comChannel Reference to the communication channel interface.
         /// @return true if configuration was successful, else false.
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        bool configure(const Model::IModel &model, ICom *comChannel) override;
-
-      private:
-        IBle *m_ble;
+        bool configure(const Model::IModel &model, ICom &comChannel) override;
     };
 } // namespace Electux::App::Com

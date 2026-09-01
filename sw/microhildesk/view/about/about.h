@@ -36,5 +36,6 @@ namespace Electux::App::View::About {
         virtual ~AppAbout() override = default;
 
         void show() override;
+        Gtk::Window &getGtkWindow() override;
     };
 } // namespace Electux::App::View::About

@@ -20,7 +20,7 @@
 #pragma once
 
 #include <gtkmm/box.h>
-#include <gtkmm/button.h>
+#include <gtkmm/togglebutton.h>
 #include <gtkmm/label.h>
 #include <gtkmm/spinbutton.h>
 #include <gtkmm/progressbar.h>
@@ -50,15 +50,14 @@ namespace Electux::App::View {
 
       private:
         void onPulseSpinChanged();
-        void onTriggerClicked();
+        void onPulseToggleClicked();
 
         size_t m_index;
         Gtk::Label m_pulseLabel;
         Gtk::SpinButton m_pulseSpin;
-        Gtk::Button m_pulseTriggerBtn;
+        Gtk::ToggleButton m_pulseToggleBtn;
         Gtk::Label m_descLabel;
         Gtk::ProgressBar m_progressBar;
-        mutable bool m_pulseTriggered{false};
         sigc::signal<void()> m_signalChanged;
     };
 } // namespace Electux::App::View

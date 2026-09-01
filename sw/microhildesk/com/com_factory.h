@@ -23,9 +23,19 @@
 #include <memory>
 
 namespace Electux::App::Com {
+    class IBleClient;
+    class ISerialPort;
     std::unique_ptr<ICom> createSerialCom(bool verbose = false);
+    std::unique_ptr<ICom> createSerialCom(
+        bool verbose,
+        std::unique_ptr<ISerialPort> port
+    );
     std::unique_ptr<ICom> createTcpCom(bool verbose = false);
     std::unique_ptr<ICom> createBleCom(bool verbose = false);
+    std::unique_ptr<ICom> createBleCom(
+        bool verbose,
+        std::unique_ptr<IBleClient> client
+    );
     std::unique_ptr<ICom> createSwitchableCom(
         bool verbose,
         std::unique_ptr<ICom> serialCom,

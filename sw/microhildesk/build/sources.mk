@@ -12,7 +12,12 @@ SOURCES = \
 	../config/config_manager_utils.cc \
 	../config/config_manager.cc \
 	../config/config_factory.cc \
-	../com/serial/serialw/serial_lib_wrapper.cc \
+	../config/detector/config_change_detector.cc \
+	../config/detector/config_detector_factory.cc \
+	../com/serial/driver/posix_serial_port.cc \
+	../com/serial/driver/serial_port_factory.cc \
+	../com/serial/driver/termios/serial_termios_configurator.cc \
+	../com/serial/driver/termios/serial_termios_factory.cc \
 	../com/serial/serial_utils.cc \
 	../com/serial/serial_com.cc \
 	../com/serial/configurator/serial_com_configurator.cc \
@@ -20,8 +25,12 @@ SOURCES = \
 	../com/tcp/configurator/tcp_com_configurator.cc \
 	../com/ble/ble_com.cc \
 	../com/ble/configurator/ble_com_configurator.cc \
-	../com/ble/bluez/bluez_ble_client.cc \
-	../com/ble/bluez/bluez_device_resolver.cc \
+	../com/ble/bluez/dbus/bluez_dbus_utils.cc \
+	../com/ble/bluez/dbus/bluez_dbus_helper.cc \
+	../com/ble/bluez/dbus/bluez_dbus_factory.cc \
+	../com/ble/bluez/resolver/bluez_device_resolver.cc \
+	../com/ble/bluez/client/bluez_ble_client.cc \
+	../com/ble/bluez/client/bluez_ble_client_factory.cc \
 	../com/switchable_com.cc \
 	../com/com_factory.cc \
 	../com/switchable_com_configurator.cc \
@@ -48,10 +57,18 @@ SOURCES = \
 	../view/settings/ble/ble_settings_tab.cc \
 	../view/settings/log/log_settings_tab.cc \
 	../view/settings/settings.cc \
+	../view/menu/app_menu_builder.cc \
+	../view/menu/app_menu_builder_factory.cc \
+	../view/action/app_action_manager.cc \
+	../view/action/app_action_manager_factory.cc \
+	../worker/device_worker.cc \
+	../worker/device_worker_factory.cc \
 	../application.cc \
 	../app_controller.cc \
 	../app_controller_factory.cc \
 	../command/formatter/command_formatter.cc \
+	../command/mapper/channel_command_mapper.cc \
+	../command/mapper/channel_command_mapper_factory.cc \
 	../command/command_factory.cc \
 	../command/processor/response_processor.cc \
 	../main.cc

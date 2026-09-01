@@ -22,6 +22,10 @@
 #include <sigc++/sigc++.h>
 #include <view/settings_setup.h>
 
+namespace Gtk {
+    class Window;
+}
+
 namespace Electux::App::View::Settings {
     using SettingsSetup = Electux::App::Model::SettingsSetup;
     using SigSetup = sigc::signal<void(const SettingsSetup &)>;
@@ -41,5 +45,6 @@ namespace Electux::App::View::Settings {
 
         virtual void show() = 0;
         virtual void hide() = 0;
+        virtual Gtk::Window &getGtkWindow() = 0;
     };
 } // namespace Electux::App::View::Settings

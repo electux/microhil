@@ -42,10 +42,10 @@ namespace Electux::App::Com {
         /// @brief Configures the communication channel using parameters from
         /// the model.
         /// @param model Reference to the configuration model.
-        /// @param comChannel Pointer to the communication channel interface.
+        /// @param comChannel Reference to the communication channel interface.
         /// @return true if configuration was successful, else false.
         ////////////////////////////////////////////////////////////////////////////////////////////////
         virtual bool
-        configure(const Model::IModel &model, ICom *comChannel) = 0;
+        configure(const Model::IModel &model, ICom &comChannel) = 0;
     };
 } // namespace Electux::App::Com

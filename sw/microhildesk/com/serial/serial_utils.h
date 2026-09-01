@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <com/serial/serialw/ilib.h>
+#include <com/serial/driver/serial_port_types.h>
 #include <cstdint>
 
 namespace Electux::App::Com::SerialUtils {

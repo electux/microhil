@@ -18,8 +18,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <com/serial/serial_com.h>
-#include <com/serial/serialw/serial_lib_wrapper.h>
-#include <com/serial/serialw/SerialPortConstants.h>
+#include <com/serial/driver/iserial_port.h>
+#include <com/serial/driver/serial_port_factory.h>
+#include <com/serial/driver/serial_port_types.h>
 #include <iostream>
 
 using namespace Electux::App::Com;
@@ -41,20 +42,19 @@ namespace {
     constexpr std::string_view cSetupExceptionError{"Setup error: "};
 } // namespace
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// @brief Constructs a SerialCom object with the given serial port adapter.
-/// @param port A unique pointer to an ILibSerialPort implementation.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-SerialCom::SerialCom(bool verbose)
-    : m_serialPort(std::make_unique<LibSerialPortWrapper>()), m_verbose(verbose) {
+SerialCom::SerialCom(bool verbose, std::unique_ptr<ISerialPort> port)
+    : m_serialPort(
+          port ? std::move(port) : createPosixSerialPort()
+      ),
+      m_verbose(verbose) {
     if (m_verbose) {
         std::cout << cConstructorMsg << std::endl;
     }
 }
 
-SerialCom::SerialCom(std::unique_ptr<ILibSerialPort> port, bool verbose)
+SerialCom::SerialCom(std::unique_ptr<ISerialPort> port, bool verbose)
     : m_serialPort(
-          port ? std::move(port) : std::make_unique<LibSerialPortWrapper>()
+          port ? std::move(port) : createPosixSerialPort()
       ),
       m_verbose(verbose) {
     if (m_verbose) {

@@ -4,6 +4,7 @@
 #include "device/relay.h"
 #include "device/buzzer.h"
 #include "device/status_led.h"
+#include "serial/serial_transport.h"
 #include <cstdio>
 #include <cstring>
 
@@ -59,6 +60,38 @@ int16_t getchar_timeout_us(uint32_t timeout_us) {
     char c = mock_input_queue.front();
     mock_input_queue.pop();
     return (int16_t)(uint8_t)c;
+}
+
+bool serial_transport_init(void) {
+    return true;
+}
+
+void serial_transport_poll(void) {
+    // No-op for tests
+}
+
+bool serial_transport_read_byte(uint8_t *byte) {
+    if (byte == NULL || mock_input_queue.empty()) {
+        return false;
+    }
+    *byte = (uint8_t)mock_input_queue.front();
+    mock_input_queue.pop();
+    return true;
+}
+
+bool serial_transport_send(const uint8_t *data, uint16_t length) {
+    if (data == NULL || length == 0) {
+        return false;
+    }
+    for (uint16_t i = 0; i < length; i++) {
+        putchar((int)data[i]);
+    }
+    fflush(stdout);
+    return true;
+}
+
+bool serial_transport_is_connected(void) {
+    return true;
 }
 
 void watchdog_reboot(uint32_t pc, uint32_t sp, uint32_t delay_ms) {
@@ -121,4 +154,22 @@ void status_led_write(uint8_t r, uint8_t g, uint8_t b) {
     mock_led_b = b;
 }
 
+static relay_state_cb_t s_mock_relay_cb = NULL;
+
+void relay_set_state_callback(relay_state_cb_t callback) {
+    s_mock_relay_cb = callback;
 }
+
+}
+
+void mock_trigger_relay_callback(uint32_t channel, bool state) {
+    if (s_mock_relay_cb != NULL) {
+        s_mock_relay_cb(channel, state);
+    }
+}
+
+bool mock_has_relay_callback() {
+    return s_mock_relay_cb != NULL;
+}
+
+

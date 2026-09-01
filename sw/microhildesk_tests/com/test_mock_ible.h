@@ -20,13 +20,22 @@
 #pragma once
 
 #include <com/ble/ible.h>
+#include <com/icom.h>
+#include <gmock/gmock.h>
 #include <string>
+#include <vector>
 
 namespace com::mock {
-    class MockIBle : public Electux::App::Com::IBle {
+    class MockIBle : public Electux::App::Com::ICom, public Electux::App::Com::IBle {
       public:
         MockIBle() = default;
         ~MockIBle() override = default;
+
+        MOCK_METHOD(bool, open, (), (override));
+        MOCK_METHOD(bool, close, (), (override));
+        MOCK_METHOD(bool, isOpen, (), (const, override));
+        MOCK_METHOD(void, read, (std::vector<uint8_t> &data, size_t len), (override));
+        MOCK_METHOD(void, write, (const std::vector<uint8_t> &data), (override));
 
         void setBleAddress(const std::string &address) override {
             m_address = address;

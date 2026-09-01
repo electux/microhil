@@ -23,6 +23,10 @@ extern "C" {
 #endif
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Initializes command subsystem and registers device event callbacks
+void command_init(void);
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Dispatches a parsed command string to its registered handler
 ///
 /// Matches the input string against the command registration table.

@@ -21,21 +21,25 @@
 
 #include <com/icom.h>
 #include <com/ble/ible.h>
-#include <com/ble/bluez/bluez_ble_client.h>
-#include <string>
-#include <vector>
-#include <mutex>
+#include <com/ble/client/ible_client.h>
+#include <atomic>
 #include <condition_variable>
 #include <memory>
+#include <mutex>
+#include <string>
+#include <vector>
 
 namespace Electux::App::Com {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class BleCom
-    /// @brief Implementation of BLE communication using BluezBleClient.
+    /// @brief Implementation of BLE communication using IBleClient.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class BleCom : public ICom, public IBle {
       public:
-        explicit BleCom(bool verbose = false);
+        explicit BleCom(
+            bool verbose = false,
+            std::unique_ptr<IBleClient> client = nullptr
+        );
         ~BleCom() noexcept override;
 
         BleCom(const BleCom &) = delete;
@@ -63,10 +67,11 @@ namespace Electux::App::Com {
         std::string m_txUuid;
 
         bool m_verbose;
-        std::unique_ptr<BluezBleClient> m_client;
+        std::unique_ptr<IBleClient> m_client;
 
         std::vector<uint8_t> m_readBuffer;
         mutable std::mutex m_bufferMutex;
         std::condition_variable m_bufferCv;
+        std::atomic<bool> m_isClosing{false};
     };
 } // namespace Electux::App::Com

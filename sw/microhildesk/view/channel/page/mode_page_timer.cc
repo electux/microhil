@@ -21,8 +21,9 @@
 #include <view/channel/page/mode_page_timer.h>
 
 namespace {
-    constexpr std::string_view cChannelTimerLabel{"Use timer #"};
+    constexpr std::string_view cChannelTimerLabel{"Timer (s)"};
     constexpr std::string_view cChannelTimerBtnStart{"Start"};
+    constexpr std::string_view cChannelTimerBtnStop{"Stop"};
     constexpr std::string_view cChannelTimerDesc{"Keep the channel active for a time."};
     constexpr int cBoxSpacing{5};
     constexpr int cMarginTopBottom{15};
@@ -37,7 +38,7 @@ using namespace Electux::App::View;
 TimerModePage::TimerModePage(size_t index)
     : Gtk::Box(Gtk::Orientation::VERTICAL, cBoxSpacing),
       m_index(index) {
-    m_timerLabel.set_label(std::format("{} {}", cChannelTimerLabel.data(), index));
+    m_timerLabel.set_label(cChannelTimerLabel.data());
     m_descLabel.set_label(cChannelTimerDesc.data());
 
     append(m_timerLabel);
@@ -71,6 +72,9 @@ TimerModePage::TimerModePage(size_t index)
 void TimerModePage::updateState(const ChannelState &state) {
     m_timerSpin.set_value(state.timer);
     m_timerToggleBtn.set_active(state.timerEnabled);
+    m_timerToggleBtn.set_label(
+        state.timerEnabled ? cChannelTimerBtnStop.data() : cChannelTimerBtnStart.data()
+    );
     m_progressBar.set_fraction(state.timerEnabled ? 1.0 : 0.0);
 }
 
@@ -84,6 +88,10 @@ void TimerModePage::onTimerValueChanged() {
 }
 
 void TimerModePage::onTimerToggleClicked() {
-    m_progressBar.set_fraction(m_timerToggleBtn.get_active() ? 1.0 : 0.0);
+    bool active = m_timerToggleBtn.get_active();
+    m_timerToggleBtn.set_label(
+        active ? cChannelTimerBtnStop.data() : cChannelTimerBtnStart.data()
+    );
+    m_progressBar.set_fraction(active ? 1.0 : 0.0);
     m_signalChanged.emit();
 }

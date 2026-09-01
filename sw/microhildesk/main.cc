@@ -33,8 +33,10 @@ using namespace Electux::App;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main(int argc, char *argv[]) {
     bool verbose = false;
+
     for (int i = 1; i < argc; ++i) {
-        if (std::string(argv[i]) == "-v" || std::string(argv[i]) == "--verbose") {
+        if (std::string(argv[i]) == "-v" ||
+            std::string(argv[i]) == "--verbose") {
             verbose = true;
             break;
         }

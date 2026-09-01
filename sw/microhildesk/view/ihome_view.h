@@ -22,6 +22,7 @@
 #include <sigc++/sigc++.h>
 #include <string>
 #include <view/settings_setup.h>
+#include <worker/connection_state.h>
 
 namespace Gtk {
     class Window;
@@ -50,5 +51,6 @@ namespace Electux::App::View {
         virtual Gtk::Window &getGtkWindow() = 0;
 
         virtual void postData(const std::string& data) = 0;
+        virtual void setConnectionState(Worker::ConnectionState state) = 0;
     };
 } // namespace Electux::App::View

@@ -22,33 +22,21 @@
 #include <com/icom_configurator.h>
 
 namespace Electux::App::Com {
-    class ITcp;
-    class ICom;
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class TcpComConfigurator
     /// @brief Configures TCP/IP communication parameters using the model.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class TcpComConfigurator : public IComConfigurator {
       public:
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        /// @brief Constructs a new TcpComConfigurator object.
-        /// @param tcp Pointer to the ITcp interface representing the TCP
-        /// channel.
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        explicit TcpComConfigurator(ITcp *tcp);
-
+        TcpComConfigurator() = default;
         ~TcpComConfigurator() override = default;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         /// @brief Configures the TCP/IP connection.
         /// @param model Reference to the configuration model.
-        /// @param comChannel Pointer to the communication channel interface.
+        /// @param comChannel Reference to the communication channel interface.
         /// @return true if configuration was successful, else false.
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        bool configure(const Model::IModel &model, ICom *comChannel) override;
-
-      private:
-        ITcp *m_tcp;
+        bool configure(const Model::IModel &model, ICom &comChannel) override;
     };
 } // namespace Electux::App::Com

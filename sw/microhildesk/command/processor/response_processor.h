@@ -37,6 +37,7 @@ namespace Electux::App::Command {
         ResponseProcessor &operator=(const ResponseProcessor &) = delete;
 
         std::vector<std::string> process(const std::string &data) override;
+        ChannelEvent parseChannelEvent(const std::string &payload) const override;
 
       private:
         std::string m_buffer;

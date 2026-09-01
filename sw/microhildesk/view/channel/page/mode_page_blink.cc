@@ -21,10 +21,11 @@
 #include <view/channel/page/mode_page_blink.h>
 
 namespace {
-    constexpr std::string_view cBlinkOnLabel{"Blink ON (ms) #"};
-    constexpr std::string_view cBlinkOffLabel{"Blink OFF (ms) #"};
-    constexpr std::string_view cBlinkCountLabel{"Count #"};
-    constexpr std::string_view cBlinkBtnStart{"Start Blink"};
+    constexpr std::string_view cBlinkOnLabel{"Blink ON (ms)"};
+    constexpr std::string_view cBlinkOffLabel{"Blink OFF (ms)"};
+    constexpr std::string_view cBlinkCountLabel{"Count"};
+    constexpr std::string_view cBlinkBtnStart{"Start"};
+    constexpr std::string_view cBlinkBtnStop{"Stop"};
     constexpr std::string_view cChannelBlinkDesc{"Cycle the channel state ON and OFF."};
     constexpr int cBoxSpacing{5};
     constexpr int cMarginTopBottom{15};
@@ -43,9 +44,9 @@ using namespace Electux::App::View;
 BlinkModePage::BlinkModePage(size_t index)
     : Gtk::Box(Gtk::Orientation::VERTICAL, cBoxSpacing),
       m_index(index) {
-    m_blinkOnLabel.set_label(std::format("{} {}", cBlinkOnLabel.data(), index));
-    m_blinkOffLabel.set_label(std::format("{} {}", cBlinkOffLabel.data(), index));
-    m_blinkCountLabel.set_label(std::format("{} {}", cBlinkCountLabel.data(), index));
+    m_blinkOnLabel.set_label(cBlinkOnLabel.data());
+    m_blinkOffLabel.set_label(cBlinkOffLabel.data());
+    m_blinkCountLabel.set_label(cBlinkCountLabel.data());
     m_descLabel.set_label(cChannelBlinkDesc.data());
 
     append(m_blinkOnLabel);
@@ -96,6 +97,9 @@ void BlinkModePage::updateState(const ChannelState &state) {
     m_blinkOffSpin.set_value(state.blinkOffTime);
     m_blinkCountSpin.set_value(state.blinkCount);
     m_blinkToggleBtn.set_active(state.blinkEnabled);
+    m_blinkToggleBtn.set_label(
+        state.blinkEnabled ? cBlinkBtnStop.data() : cBlinkBtnStart.data()
+    );
     m_progressBar.set_fraction(state.blinkEnabled ? 1.0 : 0.0);
 }
 
@@ -111,6 +115,10 @@ void BlinkModePage::onSpinValueChanged() {
 }
 
 void BlinkModePage::onToggleClicked() {
-    m_progressBar.set_fraction(m_blinkToggleBtn.get_active() ? 1.0 : 0.0);
+    bool active = m_blinkToggleBtn.get_active();
+    m_blinkToggleBtn.set_label(
+        active ? cBlinkBtnStop.data() : cBlinkBtnStart.data()
+    );
+    m_progressBar.set_fraction(active ? 1.0 : 0.0);
     m_signalChanged.emit();
 }

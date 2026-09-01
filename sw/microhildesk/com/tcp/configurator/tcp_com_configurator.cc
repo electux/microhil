@@ -17,20 +17,18 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include <com/icom.h>
-#include <com/tcp/itcp.h>
 #include <com/tcp/configurator/tcp_com_configurator.h>
+#include <com/tcp/itcp.h>
 #include <model/imodel.h>
 #include <string>
 
 namespace Electux::App::Com {
-    TcpComConfigurator::TcpComConfigurator(ITcp *tcp) : m_tcp(tcp) {}
-
     bool TcpComConfigurator::configure(
-        const Model::IModel &model, ICom *comChannel
+        const Model::IModel &model, ICom &comChannel
     ) {
-        if (m_tcp == nullptr || comChannel == nullptr) {
+        auto *tcp = dynamic_cast<ITcp *>(&comChannel);
+        if (tcp == nullptr) {
             return false;
         }
 
@@ -41,9 +39,9 @@ namespace Electux::App::Com {
         uint16_t port =
             static_cast<uint16_t>(std::stoul(model.getEntity(portKey)));
 
-        m_tcp->setIpAddress(ip);
-        m_tcp->setPort(port);
+        tcp->setIpAddress(ip);
+        tcp->setPort(port);
 
-        return comChannel->open();
+        return comChannel.open();
     }
 } // namespace Electux::App::Com

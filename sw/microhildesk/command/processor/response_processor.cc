@@ -17,14 +17,22 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include <command/processor/response_processor.h>
+#include <string_view>
 
 using namespace Electux::App::Command;
 
 namespace {
     constexpr std::string_view cStartMarker{"<mh#sys#"};
     constexpr std::string_view cEndMarker{"#end>"};
+    constexpr std::string_view cChannelPrefixLower{"channel "};
+    constexpr std::string_view cChannelPrefixUpper{"Channel "};
+    constexpr std::string_view cActionOffLower{"off"};
+    constexpr std::string_view cActionOffUpper{"OFF"};
+    constexpr std::string_view cActionOnLower{"on"};
+    constexpr std::string_view cActionOnUpper{"ON"};
+    constexpr int cMinChannelNumber{1};
+    constexpr int cMaxChannelNumber{8};
 } // namespace
 
 std::vector<std::string> ResponseProcessor::process(const std::string &data) {
@@ -66,4 +74,31 @@ std::vector<std::string> ResponseProcessor::process(const std::string &data) {
     }
 
     return payloads;
+}
+
+ChannelEvent ResponseProcessor::parseChannelEvent(const std::string &payload) const {
+    ChannelEvent event;
+
+    if (payload.starts_with(cChannelPrefixLower) || payload.starts_with(cChannelPrefixUpper)) {
+        size_t numStart = cChannelPrefixLower.length();
+        size_t spacePos = payload.find(' ', numStart);
+        if (spacePos != std::string::npos) {
+            try {
+                int chNum = std::stoi(payload.substr(numStart, spacePos - numStart));
+                std::string action = payload.substr(spacePos + 1);
+                if (chNum >= cMinChannelNumber && chNum <= cMaxChannelNumber) {
+                    event.channelIndex = static_cast<size_t>(chNum - 1);
+                    if (action == cActionOffLower || action == cActionOffUpper) {
+                        event.valid = true;
+                        event.active = false;
+                    } else if (action == cActionOnLower || action == cActionOnUpper) {
+                        event.valid = true;
+                        event.active = true;
+                    }
+                }
+            } catch (...) {}
+        }
+    }
+
+    return event;
 }

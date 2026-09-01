@@ -17,13 +17,13 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include <model/model_factory.h>
+#include <memory>
 #include <com/ble/configurator/ble_com_configurator.h>
+#include <model/model_factory.h>
+#include <model/imodel.h>
 #include "test_mock_ible.h"
-#include "test_mock_icom.h"
 
 using namespace Electux::App::Com;
 using namespace Electux::App::Model;
@@ -45,20 +45,18 @@ class BleComConfiguratorTest : public Test {
         m_model->add(txKey, "ffe2");
 
         m_bleMock = std::make_unique<com::mock::MockIBle>();
-        m_comMock = std::make_unique<com::mock::MockICom>();
-        m_configurator = std::make_unique<BleComConfigurator>(m_bleMock.get());
+        m_configurator = std::make_unique<BleComConfigurator>();
     }
 
     std::unique_ptr<IModel> m_model;
     std::unique_ptr<com::mock::MockIBle> m_bleMock;
-    std::unique_ptr<com::mock::MockICom> m_comMock;
     std::unique_ptr<BleComConfigurator> m_configurator;
 };
 
 TEST_F(BleComConfiguratorTest, ConfigureSuccessTest) {
-    EXPECT_CALL(*m_comMock, open()).WillOnce(Return(true));
+    EXPECT_CALL(*m_bleMock, open()).WillOnce(Return(true));
 
-    bool result = m_configurator->configure(*m_model, m_comMock.get());
+    bool result = m_configurator->configure(*m_model, *m_bleMock);
 
     EXPECT_TRUE(result);
     EXPECT_EQ(m_bleMock->m_address, "00:11:22:33:44:55");
@@ -68,9 +66,9 @@ TEST_F(BleComConfiguratorTest, ConfigureSuccessTest) {
 }
 
 TEST_F(BleComConfiguratorTest, ConfigureFailureTest) {
-    EXPECT_CALL(*m_comMock, open()).WillOnce(Return(false));
+    EXPECT_CALL(*m_bleMock, open()).WillOnce(Return(false));
 
-    bool result = m_configurator->configure(*m_model, m_comMock.get());
+    bool result = m_configurator->configure(*m_model, *m_bleMock);
 
     EXPECT_FALSE(result);
 }

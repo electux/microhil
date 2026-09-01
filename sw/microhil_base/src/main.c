@@ -23,7 +23,7 @@
 #include "device/relay.h"
 #include "device/status_led.h"
 #include "pico/stdlib.h"
-#include "tusb.h"
+#include "serial/serial_transport.h"
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
@@ -32,10 +32,10 @@ enum { MICROHIL_REQ_LEN = 32 };
 static const uint32_t USB_CONN_CHECK_MS = 100;
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Performs unified initialization of all hardware devices
+/// @brief Performs unified initialization of all hardware devices and serial transport
 /// @return true for success else false
 static bool device_init(void) {
-  if (!stdio_init_all()) {
+  if (!serial_transport_init()) {
     return false;
   }
 
@@ -51,6 +51,8 @@ static bool device_init(void) {
     return false;
   }
 
+  command_init();
+
   buzzer_beep_start();
 
   return true;
@@ -59,16 +61,16 @@ static bool device_init(void) {
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Main entry point for microhil-base
 /// @return 0 for success exit else 1 for failed exit
-int main() {
+int main(void) {
   //////////////////////////////////////////////////////////////////////////
-  /// Performs device initialization
+  /// Performs device and transport initialization
   if (!device_init()) {
     return 1;
   }
 
   //////////////////////////////////////////////////////////////////////////
-  /// Waits for USB connection
-  while (!tud_cdc_connected()) {
+  /// Waits for USB serial connection
+  while (!serial_transport_is_connected()) {
     sleep_ms(USB_CONN_CHECK_MS);
   }
 
@@ -77,6 +79,10 @@ int main() {
   char request[MICROHIL_REQ_LEN] = {0};
 
   while (true) {
+    ////////////////////////////////////////////////////////////////////////
+    /// Run serial communication polling
+    serial_transport_poll();
+
     ////////////////////////////////////////////////////////////////////////
     /// Run non-blocking timings
     relay_tick();
