@@ -56,6 +56,24 @@ namespace Electux::App::Model::Channel {
         int blinkOffTime{0};
         int blinkCount{0};
         bool blinkEnabled{false};
+
+        bool operator==(const ChannelState &other) const {
+            return enabled == other.enabled &&
+                   mode == other.mode &&
+                   toggle == other.toggle &&
+                   timer == other.timer &&
+                   timerEnabled == other.timerEnabled &&
+                   pulseTime == other.pulseTime &&
+                   pulseTriggered == other.pulseTriggered &&
+                   blinkOnTime == other.blinkOnTime &&
+                   blinkOffTime == other.blinkOffTime &&
+                   blinkCount == other.blinkCount &&
+                   blinkEnabled == other.blinkEnabled;
+        }
+
+        bool operator!=(const ChannelState &other) const {
+            return !(*this == other);
+        }
     };
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////

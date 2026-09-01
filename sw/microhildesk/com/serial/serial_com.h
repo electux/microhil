@@ -19,6 +19,7 @@
 #pragma once
 
 #include <com/icom.h>
+#include <com/serial/driver/iserial_port.h>
 #include <com/serial/iserial.h>
 #include <memory>
 #include <string>
@@ -28,20 +29,21 @@
 /// @namespace Electux::App::Com
 /// @brief Namespace for application communication components
 namespace Electux::App::Com {
-    class ILibSerialPort;
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class SerialCom
-    /// @brief Implementation of serial communication using LibSerial.
+    /// @brief Implementation of serial communication using ISerialPort.
     ///
     /// This class implements the ICom interface to provide concrete serial
     /// port operations, including hardware configuration and data I/O.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class SerialCom : public ICom, public ISerial {
       public:
-        explicit SerialCom(bool verbose = false);
         explicit SerialCom(
-            std::unique_ptr<ILibSerialPort> port, bool verbose = false
+            bool verbose = false,
+            std::unique_ptr<ISerialPort> port = nullptr
+        );
+        explicit SerialCom(
+            std::unique_ptr<ISerialPort> port, bool verbose = false
         );
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -128,16 +130,8 @@ namespace Electux::App::Com {
 
       private:
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        /// @brief Unique pointer to the ILibSerialPort implementation for
-        ///        serial port operations.
-        /// @{
-        /// @brief  Adapter for serial port abstraction
-        std::unique_ptr<ILibSerialPort> m_serialPort{nullptr};
-        /// @brief  Path to the serial port device (e.g., "/dev/ttyS0").
+        std::unique_ptr<ISerialPort> m_serialPort{nullptr};
         std::string m_device{};
-        /// @brief  Verbose mode for debugging.
         bool m_verbose{false};
-        /// @}
-        ////////////////////////////////////////////////////////////////////////////////////////////////
     };
 } // namespace Electux::App::Com

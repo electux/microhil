@@ -13,7 +13,10 @@ set(
 set(
     MICROHIL_COM_SOURCES
     ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serial_com.cc
-    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serialw/serial_lib_wrapper.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/driver/posix_serial_port.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/driver/serial_port_factory.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/driver/termios/serial_termios_configurator.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/driver/termios/serial_termios_factory.cc
     ${PROJECT_SOURCE_DIR}/../microhildesk/com/serial/serial_utils.cc
     ${PROJECT_SOURCE_DIR}/../microhildesk/com/ble/configurator/ble_com_configurator.cc
 )

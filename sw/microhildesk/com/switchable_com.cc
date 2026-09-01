@@ -24,20 +24,22 @@
 
 namespace Electux::App::Com {
     namespace {
-        constexpr std::string_view cTcpSwitchMsg{"Switched communication channel to TCP/IP."};
-        constexpr std::string_view cBleSwitchMsg{"Switched communication channel to BLE."};
-        constexpr std::string_view cSerialSwitchMsg{"Switched communication channel to Serial Port."};
+        constexpr std::string_view cTcpSwitchMsg{
+            "Switched communication channel to TCP/IP."
+        };
+        constexpr std::string_view cBleSwitchMsg{
+            "Switched communication channel to BLE."
+        };
+        constexpr std::string_view cSerialSwitchMsg{
+            "Switched communication channel to Serial Port."
+        };
     } // namespace
     SwitchableCom::SwitchableCom(
-        bool verbose,
-        std::unique_ptr<ICom> serialCom,
-        std::unique_ptr<ICom> tcpCom,
-        std::unique_ptr<ICom> bleCom
+        bool verbose, std::unique_ptr<ICom> serialCom,
+        std::unique_ptr<ICom> tcpCom, std::unique_ptr<ICom> bleCom
     )
-        : m_verbose(verbose),
-          m_serialCom(std::move(serialCom)),
-          m_tcpCom(std::move(tcpCom)),
-          m_bleCom(std::move(bleCom)),
+        : m_verbose(verbose), m_serialCom(std::move(serialCom)),
+          m_tcpCom(std::move(tcpCom)), m_bleCom(std::move(bleCom)),
           m_activeCom(m_serialCom.get()) {}
 
     bool SwitchableCom::open() {
@@ -48,10 +50,21 @@ namespace Electux::App::Com {
     }
 
     bool SwitchableCom::close() {
-        if (m_activeCom) {
-            return m_activeCom->close();
+        bool result = true;
+
+        if (m_serialCom) {
+            result = m_serialCom->close() && result;
         }
-        return false;
+
+        if (m_tcpCom) {
+            result = m_tcpCom->close() && result;
+        }
+
+        if (m_bleCom) {
+            result = m_bleCom->close() && result;
+        }
+
+        return result;
     }
 
     bool SwitchableCom::isOpen() const {

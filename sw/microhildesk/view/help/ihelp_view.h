@@ -19,6 +19,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+namespace Gtk {
+    class Window;
+}
+
 namespace Electux::App::View::Help {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class IHelpView
@@ -29,5 +33,6 @@ namespace Electux::App::View::Help {
         virtual ~IHelpView() = default;
 
         virtual void show() = 0;
+        virtual Gtk::Window &getGtkWindow() = 0;
     };
 } // namespace Electux::App::View::Help

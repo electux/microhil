@@ -19,16 +19,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <com/icom.h>
 #include <com/icom_configurator.h>
 #include <memory>
 
 namespace Electux::App::Com {
-    std::unique_ptr<IComConfigurator> createSerialConfigurator(ICom* com);
-    std::unique_ptr<IComConfigurator> createTcpConfigurator(ICom* com);
-    std::unique_ptr<IComConfigurator> createBleConfigurator(ICom* com);
+    std::unique_ptr<IComConfigurator> createSerialConfigurator();
+    std::unique_ptr<IComConfigurator> createTcpConfigurator();
+    std::unique_ptr<IComConfigurator> createBleConfigurator();
     std::unique_ptr<IComConfigurator> createSwitchableConfigurator(
-        ICom* com,
         std::unique_ptr<IComConfigurator> serialConfigurator,
         std::unique_ptr<IComConfigurator> tcpConfigurator,
         std::unique_ptr<IComConfigurator> bleConfigurator

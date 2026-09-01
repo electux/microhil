@@ -182,3 +182,15 @@ TEST_F(CommandTest, SystemReset) {
     EXPECT_TRUE(buzzer_beep_stop_called);
     EXPECT_TRUE(watchdog_reboot_called);
 }
+
+TEST_F(CommandTest, AsyncRelayOffNotification) {
+    command_init();
+    ASSERT_TRUE(mock_has_relay_callback());
+    
+    StdoutCapture capture;
+    mock_trigger_relay_callback(2, false); // Channel 3 turns OFF
+    std::string output = capture.GetCapture();
+    EXPECT_EQ(output, "<mh#sys#channel 3 off#end>");
+}
+
+

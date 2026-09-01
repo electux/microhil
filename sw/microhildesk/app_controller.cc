@@ -17,170 +17,205 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include <app_controller.h>
-#include <chrono>
-#include <com/icom.h>
-#include <com/icom_configurator.h>
-#include <com/switchable_com.h>
-#include <command/formatter/icommand_formatter.h>
-#include <command/processor/response_processor.h>
-#include <config/iconfig.h>
-#include <format>
-#include <log/ilog.h>
 #include <model/model.h>
 #include <string>
-#include <vector>
 
 using namespace Electux::App;
 
 namespace {
-    constexpr std::chrono::milliseconds cThreadSleepDuration{100};
+    constexpr std::string_view cAppStartedLog{"Application started."};
+    constexpr std::string_view cAppShuttingDownLog{"Application shutting down."};
 } // namespace
 
 AppController::AppController(
     std::unique_ptr<Config::IConfig> configManager,
-    std::unique_ptr<Com::ICom> comChannel,
-    std::unique_ptr<Com::IComConfigurator> comConfigurator,
+    std::unique_ptr<Worker::IDeviceWorker> deviceWorker,
     std::unique_ptr<Logger::ILog> logger,
     std::unique_ptr<Command::ICommandFormatter> commandFormatter,
+    std::unique_ptr<Command::IChannelCommandMapper> channelMapper,
+    std::unique_ptr<Config::IConfigChangeDetector> configDetector,
     std::unique_ptr<Command::IResponseProcessor> responseProcessor
 )
     : m_configManager(std::move(configManager)),
-      m_comChannel(std::move(comChannel)),
-      m_comConfigurator(std::move(comConfigurator)),
+      m_deviceWorker(std::move(deviceWorker)),
       m_logger(std::move(logger)),
       m_commandFormatter(std::move(commandFormatter)),
-      m_responseProcessor(std::move(responseProcessor)) {}
-
-AppController::~AppController() {
-    m_stopThread = true;
-    if (m_readThread.joinable()) {
-        m_readThread.join();
-    }
-    if (m_comChannel) {
-        m_comChannel->close();
+      m_channelMapper(std::move(channelMapper)),
+      m_configDetector(std::move(configDetector)),
+      m_responseProcessor(std::move(responseProcessor)) {
+    if (m_deviceWorker) {
+        m_deviceWorker->signal_data_received().connect(
+            sigc::mem_fun(*this, &AppController::onDeviceDataReceived)
+        );
     }
 }
 
 void AppController::startup() {
-    m_configManager->init();
+    if (m_configManager) {
+        m_configManager->init();
+    }
     configureLogger();
-    configureComChannel();
 
-    m_stopThread = false;
-    m_readThread = std::thread(&AppController::readLoop, this);
-
-    m_logger->log("Application started.", Logger::LogLevel::Info);
-
-    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
-        std::string cmdBoardId = m_commandFormatter->getCommandBoardId();
-
-        if (!cmdBoardId.empty()) {
-            std::vector<uint8_t> cmdBytes(cmdBoardId.begin(), cmdBoardId.end());
-            m_comChannel->write(cmdBytes);
+    if (m_deviceWorker) {
+        if (m_configManager) {
+            m_deviceWorker->configure(m_configManager->getConfig());
         }
-
-        std::string cmdVersion = m_commandFormatter->getCommandVersion();
-
-        if (!cmdVersion.empty()) {
-            std::vector<uint8_t> cmdBytes(cmdVersion.begin(), cmdVersion.end());
-            m_comChannel->write(cmdBytes);
-        }
-
-        std::string cmdAllStat =
-            m_commandFormatter->getCommandStatusAllChannels();
-
-        if (!cmdAllStat.empty()) {
-            std::vector<uint8_t> cmdBytes(cmdAllStat.begin(), cmdAllStat.end());
-            m_comChannel->write(cmdBytes);
-        }
+        m_deviceWorker->start();
     }
-}
 
-void AppController::turnOnAllChannels() {
-    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
-        std::string cmd = m_commandFormatter->getCommandOnAllChannels();
-        if (!cmd.empty()) {
-            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
-            m_comChannel->write(cmdBytes);
-        }
-    }
-}
-
-void AppController::turnOffAllChannels() {
-    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
-        std::string cmd = m_commandFormatter->getCommandOffAllChannels();
-        if (!cmd.empty()) {
-            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
-            m_comChannel->write(cmdBytes);
-        }
-    }
-}
-
-void AppController::requestAllChannelsStatus() {
-    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
-        std::string cmd = m_commandFormatter->getCommandStatusAllChannels();
-        if (!cmd.empty()) {
-            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
-            m_comChannel->write(cmdBytes);
-        }
-    }
-}
-
-void AppController::resetSystem() {
-    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
-        std::string cmd = m_commandFormatter->getCommandReset();
-        if (!cmd.empty()) {
-            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
-            m_comChannel->write(cmdBytes);
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-            m_comChannel->close();
-        }
-    }
-}
-
-void AppController::requestBoardId() {
-    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
-        std::string cmd = m_commandFormatter->getCommandBoardId();
-        if (!cmd.empty()) {
-            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
-            m_comChannel->write(cmdBytes);
-        }
-    }
-}
-
-void AppController::requestVersion() {
-    if (m_commandFormatter && m_comChannel && m_comChannel->isOpen()) {
-        std::string cmd = m_commandFormatter->getCommandVersion();
-        if (!cmd.empty()) {
-            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
-            m_comChannel->write(cmdBytes);
-        }
+    if (m_logger) {
+        m_logger->log(cAppStartedLog.data(), Logger::LogLevel::Info);
     }
 }
 
 void AppController::shutdown() {
-    m_stopThread = true;
-
-    if (m_readThread.joinable()) {
-        m_readThread.join();
-    }
-
-    if (m_comChannel) {
-        m_comChannel->close();
+    if (m_deviceWorker) {
+        m_deviceWorker->stop();
     }
 
     if (m_logger) {
-        m_logger->log("Application shutting down.", Logger::LogLevel::Info);
+        m_logger->log(cAppShuttingDownLog.data(), Logger::LogLevel::Info);
         m_logger->close();
     }
 
-    m_configManager->store(true);
+    if (m_configManager) {
+        m_configManager->store(true);
+    }
+}
+
+const Model::IModel &AppController::getModel() const {
+    return m_configManager->getConfig();
+}
+
+void AppController::onSetupChanged(const Model::SettingsSetup &setup) {
+    const auto &oldConfig = m_configManager->getConfig();
+    auto &newConfig = *setup.m_config;
+
+    Config::ConfigChanges changes;
+    if (m_configDetector) {
+        changes = m_configDetector->detectChanges(oldConfig, newConfig);
+    }
+
+    for (size_t channelIdx : changes.changedChannels) {
+        handleChannelStateChange(
+            channelIdx, newConfig.getChannelState(channelIdx)
+        );
+    }
+
+    m_configManager->setConfig(newConfig);
+    m_configManager->store();
+
+    if (changes.logChanged) {
+        configureLogger();
+    }
+
+    if (changes.hasComChanged() && m_deviceWorker) {
+        m_deviceWorker->configure(newConfig);
+    }
+
+    getModel().emit_changed();
+}
+
+void AppController::handleChannelStateChange(
+    size_t channelIndex, const Model::ChannelState &state
+) {
+    if (!m_channelMapper || !m_commandFormatter) {
+        return;
+    }
+
+    auto [cmd, logMsg] = m_channelMapper->map(
+        channelIndex, state, *m_commandFormatter
+    );
+
+    if (!logMsg.empty() && m_logger) {
+        m_logger->log(logMsg, Logger::LogLevel::Info);
+    }
+
+    if (!cmd.empty() && m_deviceWorker) {
+        m_deviceWorker->send(cmd);
+    }
+}
+
+void AppController::turnOnAllChannels() {
+    if (m_commandFormatter && m_deviceWorker) {
+        m_deviceWorker->send(m_commandFormatter->getCommandOnAllChannels());
+    }
+}
+
+void AppController::turnOffAllChannels() {
+    if (m_commandFormatter && m_deviceWorker) {
+        m_deviceWorker->send(m_commandFormatter->getCommandOffAllChannels());
+    }
+}
+
+void AppController::requestAllChannelsStatus() {
+    if (m_commandFormatter && m_deviceWorker) {
+        m_deviceWorker->send(m_commandFormatter->getCommandStatusAllChannels());
+    }
+}
+
+void AppController::resetSystem() {
+    if (m_commandFormatter && m_deviceWorker) {
+        m_deviceWorker->send(m_commandFormatter->getCommandReset());
+    }
+}
+
+void AppController::requestBoardId() {
+    if (m_commandFormatter && m_deviceWorker) {
+        m_deviceWorker->send(m_commandFormatter->getCommandBoardId());
+    }
+}
+
+void AppController::requestVersion() {
+    if (m_commandFormatter && m_deviceWorker) {
+        m_deviceWorker->send(m_commandFormatter->getCommandVersion());
+    }
+}
+
+sigc::signal<void(const std::string &)> AppController::signal_data_received() {
+    return m_signalDataReceived;
+}
+
+sigc::signal<void(Worker::ConnectionState)> AppController::signal_connection_state() {
+    if (m_deviceWorker) {
+        return m_deviceWorker->signal_connection_state();
+    }
+    static sigc::signal<void(Worker::ConnectionState)> dummy;
+    return dummy;
+}
+
+Worker::ConnectionState AppController::getConnectionState() const {
+    return m_deviceWorker ? m_deviceWorker->getConnectionState()
+                          : Worker::ConnectionState::Disconnected;
+}
+
+void AppController::onDeviceDataReceived(const std::string &data) {
+    if (m_responseProcessor && m_configManager) {
+        auto event = m_responseProcessor->parseChannelEvent(data);
+        if (event.valid) {
+            auto newConfig = m_configManager->getConfig().clone();
+            auto state = newConfig->getChannelState(event.channelIndex);
+            if (event.active) {
+                if (state.mode == Model::Channel::ChannelMode::Toggle) {
+                    state.toggle = true;
+                }
+            } else {
+                state.toggle = false;
+                state.timerEnabled = false;
+                state.pulseTriggered = false;
+                state.blinkEnabled = false;
+            }
+            newConfig->setChannelState(event.channelIndex, state);
+            m_configManager->setConfig(*newConfig);
+            getModel().emit_changed();
+        }
+    }
+    m_signalDataReceived.emit(data);
 }
 
 void AppController::configureLogger() {
-    if (!m_logger) {
+    if (!m_logger || !m_configManager) {
         return;
     }
 
@@ -197,295 +232,4 @@ void AppController::configureLogger() {
     m_logger->setLevel(static_cast<Logger::LogLevel>(levelIdx));
 
     m_logger->open();
-}
-
-void AppController::configureComChannel() {
-    if (!m_comChannel || !m_comConfigurator) {
-        return;
-    }
-
-    m_comChannel->close();
-    m_comConfigurator->configure(getModel(), m_comChannel.get());
-}
-
-const Model::IModel &AppController::getModel() const {
-    return m_configManager->getConfig();
-}
-
-void AppController::onSetupChanged(const Model::SettingsSetup &setup) {
-    const auto &oldConfig = m_configManager->getConfig();
-    auto &newConfig = *setup.m_config;
-
-    handleChannelStateChanges(oldConfig, newConfig);
-
-    bool logChanged = hasLoggerConfigChanged(oldConfig, newConfig);
-    bool comChanged = hasSerialConfigChanged(oldConfig, newConfig) ||
-                      hasGeneralConfigChanged(oldConfig, newConfig) ||
-                      hasBleConfigChanged(oldConfig, newConfig);
-
-    m_configManager->setConfig(newConfig);
-    m_configManager->store();
-
-    if (logChanged) {
-        configureLogger();
-    }
-
-    if (comChanged) {
-        configureComChannel();
-    }
-
-    getModel().emit_changed();
-}
-
-void AppController::handleChannelStateChanges(
-    const Model::IModel &oldConfig, const Model::IModel &newConfig
-) {
-    for (size_t i = 0; i < Model::Channel::cNumOfChannels; ++i) {
-        auto oldState = oldConfig.getChannelState(i);
-        auto newState = newConfig.getChannelState(i);
-
-        std::string cmd;
-
-        bool shouldUpdate = false;
-
-        if (oldState.enabled != newState.enabled) {
-            if (!newState.enabled) {
-                shouldUpdate = true;
-            } else {
-                if (newState.mode == Model::Channel::ChannelMode::Toggle &&
-                    newState.toggle) {
-                    shouldUpdate = true;
-                } else if (
-                    newState.mode == Model::Channel::ChannelMode::Timer &&
-                    newState.timerEnabled
-                ) {
-                    shouldUpdate = true;
-                }
-            }
-        } else if (newState.enabled) {
-            if (oldState.mode != newState.mode) {
-                bool oldActive =
-                    (oldState.mode == Model::Channel::ChannelMode::Toggle &&
-                     oldState.toggle) ||
-                    (oldState.mode == Model::Channel::ChannelMode::Timer &&
-                     oldState.timerEnabled);
-                bool newActive =
-                    (newState.mode == Model::Channel::ChannelMode::Toggle &&
-                     newState.toggle) ||
-                    (newState.mode == Model::Channel::ChannelMode::Timer &&
-                     newState.timerEnabled);
-                if (oldActive || newActive) {
-                    shouldUpdate = true;
-                }
-            } else {
-                if (newState.mode == Model::Channel::ChannelMode::Toggle) {
-                    if (oldState.toggle != newState.toggle) {
-                        shouldUpdate = true;
-                    }
-                } else if (
-                    newState.mode == Model::Channel::ChannelMode::Timer
-                ) {
-                    if (oldState.timerEnabled != newState.timerEnabled ||
-                        (newState.timerEnabled &&
-                         oldState.timer != newState.timer)) {
-                        shouldUpdate = true;
-                    }
-                }
-            }
-        }
-
-        if (shouldUpdate) {
-            std::string logMsg = std::format(
-                "Channel {} state changed: enabled={}, mode={}, "
-                "toggle={}, timer={}, timerEnabled={}",
-                i, newState.enabled, static_cast<int>(newState.mode),
-                newState.toggle, newState.timer, newState.timerEnabled
-            );
-
-            m_logger->log(logMsg, Logger::LogLevel::Info);
-
-            cmd = m_commandFormatter->getCommandState(i, newState);
-        }
-
-        if (newState.enabled &&
-            newState.mode == Model::Channel::ChannelMode::Pulse &&
-            newState.pulseTriggered && !oldState.pulseTriggered) {
-
-            std::string logMsg = std::format(
-                "Channel {} pulse triggered: duration={}ms", i,
-                newState.pulseTime
-            );
-
-            m_logger->log(logMsg, Logger::LogLevel::Info);
-
-            cmd = m_commandFormatter->getCommandPulse(i, newState);
-        }
-
-        if (newState.enabled &&
-            newState.mode == Model::Channel::ChannelMode::Blink) {
-            if (oldState.blinkEnabled != newState.blinkEnabled ||
-                oldState.blinkOnTime != newState.blinkOnTime ||
-                oldState.blinkOffTime != newState.blinkOffTime ||
-                oldState.blinkCount != newState.blinkCount) {
-
-                std::string logMsg = std::format(
-                    "Channel {} blink state changed: enabled={}, on={}ms, "
-                    "off={}ms, count={}",
-                    i, newState.blinkEnabled, newState.blinkOnTime,
-                    newState.blinkOffTime, newState.blinkCount
-                );
-
-                m_logger->log(logMsg, Logger::LogLevel::Info);
-
-                if (newState.blinkEnabled) {
-                    cmd = m_commandFormatter->getCommandBlink(i, newState);
-                } else {
-                    cmd = std::format("<mh#ch#{}#off#end>", i + 1);
-                }
-            }
-        }
-
-        if (!cmd.empty()) {
-            std::vector<uint8_t> cmdBytes(cmd.begin(), cmd.end());
-
-            if (m_comChannel && m_comChannel->isOpen()) {
-                m_comChannel->write(cmdBytes);
-            }
-        }
-    }
-}
-
-bool AppController::hasSerialConfigChanged(
-    const Model::IModel &oldConfig, const Model::IModel &newConfig
-) {
-    for (int k = static_cast<int>(Model::ModelSerialKey::Device);
-         k <= static_cast<int>(Model::ModelSerialKey::Flow); ++k) {
-        auto key = oldConfig.toString(static_cast<Model::ModelSerialKey>(k));
-
-        if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool AppController::hasLoggerConfigChanged(
-    const Model::IModel &oldConfig, const Model::IModel &newConfig
-) {
-    for (int k = static_cast<int>(Model::ModelLogKey::FilePath);
-         k <= static_cast<int>(Model::ModelLogKey::LogLevel); ++k) {
-        auto key = oldConfig.toString(static_cast<Model::ModelLogKey>(k));
-
-        if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool AppController::hasGeneralConfigChanged(
-    const Model::IModel &oldConfig, const Model::IModel &newConfig
-) {
-    for (int k = static_cast<int>(Model::ModelGeneralKey::ComType);
-         k <= static_cast<int>(Model::ModelGeneralKey::TcpPort); ++k) {
-        auto key = oldConfig.toString(static_cast<Model::ModelGeneralKey>(k));
-
-        if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool AppController::hasBleConfigChanged(
-    const Model::IModel &oldConfig, const Model::IModel &newConfig
-) {
-    for (int k = static_cast<int>(Model::ModelBleKey::Address);
-         k <= static_cast<int>(Model::ModelBleKey::TxUuid); ++k) {
-        auto key = oldConfig.toString(static_cast<Model::ModelBleKey>(k));
-
-        if (oldConfig.getEntity(key) != newConfig.getEntity(key)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-sigc::signal<void(const std::string &)> AppController::signal_data_received() {
-    return m_signalDataReceived;
-}
-
-void AppController::readLoop() {
-    while (!m_stopThread) {
-        try {
-            if (m_comChannel && m_comChannel->isOpen()) {
-                std::vector<uint8_t> buffer;
-                m_comChannel->read(buffer, 1);
-
-                if (!m_stopThread && !m_comChannel->isOpen()) {
-                    std::string errorMsg = "\n[Error] Connection lost.";
-                    auto *switchable =
-                        dynamic_cast<Com::SwitchableCom *>(m_comChannel.get());
-                    if (switchable) {
-                        if (switchable->getActiveCom() ==
-                            switchable->getSerialCom()) {
-                            errorMsg =
-                                "\n[Error] Serial port is no longer available "
-                                "(I/O error). Device disconnected.";
-                        } else if (
-                            switchable->getActiveCom() ==
-                            switchable->getTcpCom()
-                        ) {
-                            errorMsg =
-                                "\n[Error] TCP connection lost (I/O error).";
-                        } else if (
-                            switchable->getActiveCom() ==
-                            switchable->getBleCom()
-                        ) {
-                            errorMsg =
-                                "\n[Error] BLE connection lost (I/O error).";
-                        }
-                    }
-                    m_signalDataReceived.emit(errorMsg);
-                    if (m_logger) {
-                        m_logger->log(
-                            "Communication channel lost (I/O error).",
-                            Logger::LogLevel::Error
-                        );
-                    }
-                } else if (!buffer.empty()) {
-                    std::string dataStr(buffer.begin(), buffer.end());
-
-                    if (m_responseProcessor) {
-                        auto payloads = m_responseProcessor->process(dataStr);
-
-                        for (const auto &payload : payloads) {
-                            m_signalDataReceived.emit(payload);
-                        }
-
-                    } else {
-                        m_signalDataReceived.emit(dataStr);
-                    }
-                }
-
-            } else {
-                static auto lastReconnectTry = std::chrono::steady_clock::now();
-                auto now = std::chrono::steady_clock::now();
-                if (now - lastReconnectTry >= std::chrono::seconds(2)) {
-                    lastReconnectTry = now;
-                    if (m_logger) {
-                        m_logger->log(
-                            "Communication channel closed. Attempting to "
-                            "reconnect...",
-                            Logger::LogLevel::Warning
-                        );
-                    }
-                    configureComChannel();
-                }
-                std::this_thread::sleep_for(cThreadSleepDuration);
-            }
-        } catch (...) {
-            std::this_thread::sleep_for(cThreadSleepDuration);
-        }
-    }
 }

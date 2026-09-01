@@ -137,6 +137,8 @@ void AppSettings::onButtonOkClicked() {
 
 void AppSettings::onButtonCancelClicked() { hide(); }
 
-void AppSettings::show() { set_visible(true); }
+void AppSettings::show() { present(); }
 
 void AppSettings::hide() { set_visible(false); }
+
+Gtk::Window &AppSettings::getGtkWindow() { return *this; }

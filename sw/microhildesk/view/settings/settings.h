@@ -56,6 +56,7 @@ namespace Electux::App::View::Settings {
 
         void show() override;
         void hide() override;
+        Gtk::Window &getGtkWindow() override;
 
       protected:
         void mapping();

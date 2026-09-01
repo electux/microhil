@@ -19,6 +19,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <gtkmm/box.h>
+#include <gtkmm/button.h>
+#include <gtkmm/label.h>
+#include <gtkmm/scrolledwindow.h>
 #include <gtkmm/window.h>
 #include <view/help/ihelp_view.h>
 
@@ -35,6 +39,18 @@ namespace Electux::App::View::Help {
         explicit AppHelp();
         virtual ~AppHelp() override = default;
 
+        AppHelp(const AppHelp &) = delete;
+        AppHelp &operator=(const AppHelp &) = delete;
+
         void show() override;
+        Gtk::Window &getGtkWindow() override;
+
+      private:
+        Gtk::Box m_boxMain{Gtk::Orientation::VERTICAL, 10};
+        Gtk::ScrolledWindow m_scrolledWindow{};
+        Gtk::Box m_boxContent{Gtk::Orientation::VERTICAL, 8};
+        Gtk::Label m_labelTitle{};
+        Gtk::Label m_labelContent{};
+        Gtk::Button m_buttonClose{};
     };
 } // namespace Electux::App::View::Help

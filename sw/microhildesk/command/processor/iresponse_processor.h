@@ -24,6 +24,16 @@
 
 namespace Electux::App::Command {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// @struct ChannelEvent
+    /// @brief Represents a parsed channel status update from device response.
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    struct ChannelEvent {
+        bool valid{false};
+        size_t channelIndex{0};
+        bool active{false};
+    };
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class IResponseProcessor
     /// @brief Interface defining the contract for parsing raw incoming data streams into response payloads.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,5 +45,10 @@ namespace Electux::App::Command {
         /// @param data String containing a chunk of raw incoming data.
         /// @return Vector of extracted payload strings.
         virtual std::vector<std::string> process(const std::string &data) = 0;
+
+        /// @brief Parses a response payload string to detect channel state events.
+        /// @param payload A single response payload string.
+        /// @return ChannelEvent structure with parsed event details.
+        virtual ChannelEvent parseChannelEvent(const std::string &payload) const = 0;
     };
 } // namespace Electux::App::Command

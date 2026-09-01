@@ -17,20 +17,18 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-#include <com/icom.h>
-#include <com/ble/ible.h>
 #include <com/ble/configurator/ble_com_configurator.h>
+#include <com/ble/ible.h>
+#include <com/icom.h>
 #include <model/imodel.h>
 #include <string>
 
 namespace Electux::App::Com {
-    BleComConfigurator::BleComConfigurator(IBle *ble) : m_ble(ble) {}
-
     bool BleComConfigurator::configure(
-        const Model::IModel &model, ICom *comChannel
+        const Model::IModel &model, ICom &comChannel
     ) {
-        if (m_ble == nullptr || comChannel == nullptr) {
+        auto *ble = dynamic_cast<IBle *>(&comChannel);
+        if (ble == nullptr) {
             return false;
         }
 
@@ -44,11 +42,11 @@ namespace Electux::App::Com {
         std::string rx = model.getEntity(rxKey);
         std::string tx = model.getEntity(txKey);
 
-        m_ble->setBleAddress(addr);
-        m_ble->setServiceUuid(service);
-        m_ble->setRxUuid(rx);
-        m_ble->setTxUuid(tx);
+        ble->setBleAddress(addr);
+        ble->setServiceUuid(service);
+        ble->setRxUuid(rx);
+        ble->setTxUuid(tx);
 
-        return comChannel->open();
+        return comChannel.open();
     }
 } // namespace Electux::App::Com

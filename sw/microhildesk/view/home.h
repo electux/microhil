@@ -59,6 +59,7 @@ namespace Electux::App::View {
         Gtk::Window &getGtkWindow() override;
 
         void postData(const std::string& data) override;
+        void setConnectionState(Worker::ConnectionState state) override;
 
       private:
         void onChannelChanged(size_t index);
@@ -74,6 +75,8 @@ namespace Electux::App::View {
         std::vector<std::unique_ptr<ChannelWidget>> m_channelWidgets{};
 
         Glib::Dispatcher m_dispatcher{};
+        Glib::Dispatcher m_connectionDispatcher{};
+        std::atomic<Worker::ConnectionState> m_latestConnectionState{Worker::ConnectionState::Disconnected};
         std::queue<std::string> m_incomingDataQueue{};
         std::mutex m_mutex{};
     };

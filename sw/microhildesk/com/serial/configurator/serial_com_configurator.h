@@ -22,33 +22,21 @@
 #include <com/icom_configurator.h>
 
 namespace Electux::App::Com {
-    class ISerial;
-    class ICom;
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class SerialComConfigurator
     /// @brief Configures serial communication parameters using the model.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class SerialComConfigurator : public IComConfigurator {
       public:
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        /// @brief Constructs a new SerialComConfigurator object.
-        /// @param serial Pointer to the ISerial interface representing the
-        /// serial channel.
-        ////////////////////////////////////////////////////////////////////////////////////////////////
-        explicit SerialComConfigurator(ISerial *serial);
-
+        SerialComConfigurator() = default;
         ~SerialComConfigurator() override = default;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         /// @brief Configures the serial port.
         /// @param model Reference to the configuration model.
-        /// @param comChannel Pointer to the communication channel interface.
+        /// @param comChannel Reference to the communication channel interface.
         /// @return true if configuration was successful, else false.
         ////////////////////////////////////////////////////////////////////////////////////////////////
-        bool configure(const Model::IModel &model, ICom *comChannel) override;
-
-      private:
-        ISerial *m_serial;
+        bool configure(const Model::IModel &model, ICom &comChannel) override;
     };
 } // namespace Electux::App::Com

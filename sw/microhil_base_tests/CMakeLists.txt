@@ -30,6 +30,7 @@ add_executable(
     mocks/mocks.cc
     ../microhil_base/src/command/parser.c
     ../microhil_base/src/command/command_tbl.c
+    ../microhil_base/src/command/response.c
     tests/test_parser.cc
     tests/test_command.cc
 )

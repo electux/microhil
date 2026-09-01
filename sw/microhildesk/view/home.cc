@@ -30,6 +30,7 @@ namespace {
     constexpr std::string_view cTextViewCss{"textview text { background-color: black; color: white; }"};
     constexpr int cWidgetMargin{10};
     constexpr int cScrolledWindowHeight{250};
+    constexpr std::string_view cNewline{"\n"};
 } // namespace
 
 using namespace Electux::App::View;
@@ -45,7 +46,7 @@ AppHome::AppHome() {
     m_boxChannels.set_orientation(Gtk::Orientation::HORIZONTAL);
     m_textView.set_editable(false);
     m_textView.set_cursor_visible(false);
-    m_textView.set_wrap_mode(Gtk::WrapMode::CHAR);
+    m_textView.set_wrap_mode(Gtk::WrapMode::WORD_CHAR);
     m_textView.set_monospace(true);
     m_textView.set_left_margin(cWidgetMargin);
     m_textView.set_right_margin(cWidgetMargin);
@@ -57,6 +58,7 @@ AppHome::AppHome() {
     m_textView.get_style_context()->add_provider(css_provider, GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     m_scrolled_window.set_child(m_textView);
+    m_scrolled_window.set_policy(Gtk::PolicyType::NEVER, Gtk::PolicyType::AUTOMATIC);
     m_scrolled_window.set_vexpand(true);
     m_scrolled_window.set_hexpand(true);
     m_scrolled_window.set_size_request(-1, cScrolledWindowHeight);
@@ -64,9 +66,24 @@ AppHome::AppHome() {
     m_scrolled_window.set_margin_end(cWidgetMargin);
     m_scrolled_window.set_margin_bottom(cWidgetMargin);
 
+    auto vadj = m_scrolled_window.get_vadjustment();
+    if (vadj) {
+        vadj->signal_value_changed().connect([vadj]() {
+            double max_val = std::max(0.0, vadj->get_upper() - vadj->get_page_size());
+            if (vadj->get_value() > max_val) {
+                vadj->set_value(max_val);
+            }
+        });
+    }
+
     m_dispatcher.connect(
         sigc::mem_fun(*this, &AppHome::onDataReceivedDispatcher)
     );
+    m_connectionDispatcher.connect([this]() {
+        m_boxChannels.set_sensitive(
+            m_latestConnectionState.load() == Worker::ConnectionState::Ready
+        );
+    });
 
     m_boxRoot.append(m_boxChannels);
     m_boxRoot.append(m_scrolled_window);
@@ -85,42 +102,49 @@ AppHome::AppHome() {
         m_boxChannels.append(*widget);
         m_channelWidgets.push_back(std::move(widget));
     }
+    m_boxChannels.set_sensitive(false);
 }
 
 SigSettings AppHome::controlChanged() { return m_controlSignal; }
 
-void AppHome::setControlSetup(const SettingsSetup &setup) { m_setup = setup; }
-
-void AppHome::updateUiData() {
-    const auto &config = *m_setup.m_config;
-
-    for (ssize_t i = 0; i < cNumOfChannels; i++) {
-        m_channelWidgets[static_cast<size_t>(i)]->updateState(
-            config.getChannelState(static_cast<size_t>(i))
-        );
-    }
+void AppHome::setControlSetup(const SettingsSetup &setup) {
+    m_setup = setup;
+    updateUiData();
 }
 
 void AppHome::getUiData() {
-    auto &config = *m_setup.m_config;
-
-    for (ssize_t i = 0; i < cNumOfChannels; i++) {
-        config.setChannelState(
-            static_cast<size_t>(i),
-            m_channelWidgets[static_cast<size_t>(i)]->getState()
-        );
+    if (!m_setup.m_config) {
+        return;
     }
-
+    auto &config = *m_setup.m_config;
+    for (size_t i = 0; i < cNumOfChannels; i++) {
+        config.setChannelState(i, m_channelWidgets[i]->getState());
+    }
     m_controlSignal.emit(m_setup);
 }
 
+void AppHome::updateUiData() {
+    if (!m_setup.m_config) {
+        return;
+    }
+
+    const auto &config = *m_setup.m_config;
+    for (size_t i = 0; i < cNumOfChannels; i++) {
+        m_channelWidgets[i]->updateState(config.getChannelState(i));
+    }
+}
+
 void AppHome::onChannelChanged(size_t index) {
+    if (!m_setup.m_config) {
+        return;
+    }
+
     auto &config = *m_setup.m_config;
     config.setChannelState(index, m_channelWidgets[index]->getState());
     m_controlSignal.emit(m_setup);
 }
 
-void AppHome::show() { set_visible(true); }
+void AppHome::show() { present(); }
 
 void AppHome::hide() { set_visible(false); }
 
@@ -136,6 +160,11 @@ void AppHome::postData(const std::string &data) {
     m_dispatcher.emit();
 }
 
+void AppHome::setConnectionState(Worker::ConnectionState state) {
+    m_latestConnectionState = state;
+    m_connectionDispatcher.emit();
+}
+
 void AppHome::onDataReceivedDispatcher() {
     std::lock_guard<std::mutex> lock(m_mutex);
     auto buffer = m_textView.get_buffer();
@@ -143,8 +172,14 @@ void AppHome::onDataReceivedDispatcher() {
     while (!m_incomingDataQueue.empty()) {
         std::string data = m_incomingDataQueue.front();
         buffer->insert(buffer->end(), data);
-        buffer->insert(buffer->end(), "\n");
-
+        buffer->insert(buffer->end(), cNewline.data());
         m_incomingDataQueue.pop();
     }
+
+    auto vadj = m_scrolled_window.get_vadjustment();
+    if (vadj) {
+        double max_val = std::max(0.0, vadj->get_upper() - vadj->get_page_size());
+        vadj->set_value(max_val);
+    }
 }
+

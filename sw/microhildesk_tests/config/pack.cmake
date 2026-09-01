@@ -14,6 +14,8 @@ set(
     MICROHIL_CONFIG_SOURCES
     ${PROJECT_SOURCE_DIR}/../microhildesk/config/config_manager.cc
     ${PROJECT_SOURCE_DIR}/../microhildesk/config/config_manager_utils.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/config/detector/config_change_detector.cc
+    ${PROJECT_SOURCE_DIR}/../microhildesk/config/detector/config_detector_factory.cc
 )
 
 set(
@@ -23,4 +25,5 @@ set(
     ${PROJECT_SOURCE_DIR}/config/test_config_serial.cc
     ${PROJECT_SOURCE_DIR}/config/test_config_load.cc
     ${PROJECT_SOURCE_DIR}/config/test_config_store.cc
+    ${PROJECT_SOURCE_DIR}/config/test_config_change_detector.cc
 )

@@ -20,6 +20,7 @@
 #include "buzzer.h"
 #include "io/io_gpio.h"
 #include "pico/stdlib.h"
+#include <stddef.h>
 #include <stdio.h>
 
 static const uint32_t relay_pins[RELAY_NUM_CHANNELS] = {
@@ -42,6 +43,7 @@ typedef struct {
 
 static relay_state_internal_t relay_states[RELAY_NUM_CHANNELS];
 static bool current_phys_state[RELAY_NUM_CHANNELS] = {false};
+static relay_state_cb_t s_state_callback = NULL;
 
 bool relay_init(void) {
   for (int i = 0; i < RELAY_NUM_CHANNELS; i++) {
@@ -59,6 +61,10 @@ bool relay_init(void) {
     relay_states[i].blink_phase = false;
   }
   return true;
+}
+
+void relay_set_state_callback(relay_state_cb_t callback) {
+  s_state_callback = callback;
 }
 
 static void relay_set_phys(uint32_t channel, bool state) {
@@ -130,8 +136,9 @@ void relay_tick(void) {
         relay_set_phys(i, false);
         relay_states[i].active = false;
         relay_states[i].mode = RELAY_MODE_TOGGLE;
-        printf("<mh#sys#channel %u off#end>", i + 1);
-        fflush(stdout);
+        if (s_state_callback != NULL) {
+          s_state_callback(i, false);
+        }
       }
     } else if (relay_states[i].mode == RELAY_MODE_BLINK) {
       if (relay_states[i].blink_phase) {
@@ -147,8 +154,9 @@ void relay_tick(void) {
             if (relay_states[i].blink_count == 0) {
               relay_states[i].active = false;
               relay_states[i].mode = RELAY_MODE_TOGGLE;
-              printf("<mh#sys#channel %u off#end>", i + 1);
-              fflush(stdout);
+              if (s_state_callback != NULL) {
+                s_state_callback(i, false);
+              }
               continue;
             }
           }

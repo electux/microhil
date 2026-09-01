@@ -17,16 +17,23 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-#include <com/com_factory.h>
-#include <com/serial/serial_com.h>
-#include <com/tcp/tcp_com.h>
 #include <com/ble/ble_com.h>
+#include <com/com_factory.h>
+#include <com/serial/driver/iserial_port.h>
+#include <com/serial/serial_com.h>
 #include <com/switchable_com.h>
+#include <com/tcp/tcp_com.h>
 
 namespace Electux::App::Com {
     std::unique_ptr<ICom> createSerialCom(bool verbose) {
         return std::make_unique<SerialCom>(verbose);
+    }
+
+    std::unique_ptr<ICom> createSerialCom(
+        bool verbose,
+        std::unique_ptr<ISerialPort> port
+    ) {
+        return std::make_unique<SerialCom>(verbose, std::move(port));
     }
 
     std::unique_ptr<ICom> createTcpCom(bool verbose) {
@@ -37,17 +44,19 @@ namespace Electux::App::Com {
         return std::make_unique<BleCom>(verbose);
     }
 
-    std::unique_ptr<ICom> createSwitchableCom(
+    std::unique_ptr<ICom> createBleCom(
         bool verbose,
-        std::unique_ptr<ICom> serialCom,
-        std::unique_ptr<ICom> tcpCom,
-        std::unique_ptr<ICom> bleCom
+        std::unique_ptr<IBleClient> client
+    ) {
+        return std::make_unique<BleCom>(verbose, std::move(client));
+    }
+
+    std::unique_ptr<ICom> createSwitchableCom(
+        bool verbose, std::unique_ptr<ICom> serialCom,
+        std::unique_ptr<ICom> tcpCom, std::unique_ptr<ICom> bleCom
     ) {
         return std::make_unique<SwitchableCom>(
-            verbose,
-            std::move(serialCom),
-            std::move(tcpCom),
-            std::move(bleCom)
+            verbose, std::move(serialCom), std::move(tcpCom), std::move(bleCom)
         );
     }
 } // namespace Electux::App::Com

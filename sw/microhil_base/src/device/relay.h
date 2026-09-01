@@ -39,6 +39,12 @@ typedef enum {
 } relay_mode_t;
 
 ////////////////////////////////////////////////////////////////////////////
+/// @brief Relay state changed event callback function type
+/// @param channel [in] Relay channel index (0 to RELAY_NUM_CHANNELS - 1)
+/// @param state [in] True if ON, false if OFF
+typedef void (*relay_state_cb_t)(uint32_t channel, bool state);
+
+////////////////////////////////////////////////////////////////////////////
 /// @brief Initializes all relay GPIO channels
 ///
 /// @return True if initialization succeeded, false otherwise
@@ -78,6 +84,11 @@ void relay_tick(void);
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Returns a status string for the given relay channel
 void relay_get_status(uint32_t channel, char *buf, uint32_t max_len);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Registers an event callback for asynchronous relay state changes
+/// @param callback [in] Callback function or NULL to unregister
+void relay_set_state_callback(relay_state_cb_t callback);
 
 #ifdef __cplusplus
 }

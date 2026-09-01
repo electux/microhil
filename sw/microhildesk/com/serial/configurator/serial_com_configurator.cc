@@ -17,22 +17,19 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include <com/icom.h>
-#include <com/serial/iserial.h>
 #include <com/serial/configurator/serial_com_configurator.h>
+#include <com/serial/iserial.h>
 #include <com/serial/serial_utils.h>
 #include <model/imodel.h>
 #include <string>
 
 namespace Electux::App::Com {
-    SerialComConfigurator::SerialComConfigurator(ISerial *serial)
-        : m_serial(serial) {}
-
     bool SerialComConfigurator::configure(
-        const Model::IModel &model, ICom *comChannel
+        const Model::IModel &model, ICom &comChannel
     ) {
-        if (m_serial == nullptr || comChannel == nullptr) {
+        auto *serial = dynamic_cast<ISerial *>(&comChannel);
+        if (serial == nullptr) {
             return false;
         }
 
@@ -65,9 +62,9 @@ namespace Electux::App::Com {
         ));
         params.flow = Com::SerialUtils::uintToFlowControl(flowIdx);
 
-        m_serial->setDevice(params.device);
-        if (comChannel->open()) {
-            return m_serial->setup(params);
+        serial->setDevice(params.device);
+        if (comChannel.open()) {
+            return serial->setup(params);
         }
         return false;
     }

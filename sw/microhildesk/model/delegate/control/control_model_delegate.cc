@@ -72,12 +72,13 @@ namespace Electux::App::Model {
 
         std::string update_param_value_by_index(
             const std::string_view &input, size_t index,
-            const std::string_view &newValue
+            const std::string_view &newValue,
+            const std::string_view &defaultVal
         ) {
             auto elements = split_to_vector(input);
             if (elements.size() < static_cast<size_t>(Electux::App::Model::Channel::cNumOfChannels)) {
                 std::string defaultValue =
-                    elements.empty() ? std::string(newValue) : elements.back();
+                    elements.empty() ? std::string(defaultVal) : elements.back();
                 elements.resize(
                     static_cast<size_t>(Electux::App::Model::Channel::cNumOfChannels),
                     defaultValue
@@ -195,25 +196,28 @@ namespace Electux::App::Model {
     ) const {
         using Electux::App::Model::Channel::toConfigString;
 
-        auto updateEntity = [&](ModelControlKey key, const std::string &newValue) {
+        auto updateEntity = [&](
+            ModelControlKey key, const std::string &newValue, const std::string_view &defaultVal
+        ) {
             auto keyStr = std::string(toString(key));
             auto it = entities.find(keyStr);
-            if (it != entities.end()) {
-                it->second = update_param_value_by_index(it->second, index, newValue);
+            if (it == entities.end()) {
+                it = entities.emplace(keyStr, "").first;
             }
+            it->second = update_param_value_by_index(it->second, index, newValue, defaultVal);
         };
 
-        updateEntity(ModelControlKey::Enable, state.enabled ? std::string(cTrueVal) : std::string(cFalseVal));
-        updateEntity(ModelControlKey::Mode, std::string(toConfigString(state.mode)));
-        updateEntity(ModelControlKey::Toggle, state.toggle ? std::string(cTrueVal) : std::string(cFalseVal));
-        updateEntity(ModelControlKey::Timer, std::to_string(state.timer));
-        updateEntity(ModelControlKey::TimerEnable, state.timerEnabled ? std::string(cTrueVal) : std::string(cFalseVal));
-        updateEntity(ModelControlKey::PulseTime, std::to_string(state.pulseTime));
-        updateEntity(ModelControlKey::PulseTriggered, state.pulseTriggered ? std::string(cTrueVal) : std::string(cFalseVal));
-        updateEntity(ModelControlKey::BlinkOn, std::to_string(state.blinkOnTime));
-        updateEntity(ModelControlKey::BlinkOff, std::to_string(state.blinkOffTime));
-        updateEntity(ModelControlKey::BlinkCount, std::to_string(state.blinkCount));
-        updateEntity(ModelControlKey::BlinkEnabled, state.blinkEnabled ? std::string(cTrueVal) : std::string(cFalseVal));
+        updateEntity(ModelControlKey::Enable, state.enabled ? std::string(cTrueVal) : std::string(cFalseVal), cFalseVal);
+        updateEntity(ModelControlKey::Mode, std::string(toConfigString(state.mode)), cModeToggleVal);
+        updateEntity(ModelControlKey::Toggle, state.toggle ? std::string(cTrueVal) : std::string(cFalseVal), cFalseVal);
+        updateEntity(ModelControlKey::Timer, std::to_string(state.timer), "0");
+        updateEntity(ModelControlKey::TimerEnable, state.timerEnabled ? std::string(cTrueVal) : std::string(cFalseVal), cFalseVal);
+        updateEntity(ModelControlKey::PulseTime, std::to_string(state.pulseTime), "0");
+        updateEntity(ModelControlKey::PulseTriggered, state.pulseTriggered ? std::string(cTrueVal) : std::string(cFalseVal), cFalseVal);
+        updateEntity(ModelControlKey::BlinkOn, std::to_string(state.blinkOnTime), "0");
+        updateEntity(ModelControlKey::BlinkOff, std::to_string(state.blinkOffTime), "0");
+        updateEntity(ModelControlKey::BlinkCount, std::to_string(state.blinkCount), "0");
+        updateEntity(ModelControlKey::BlinkEnabled, state.blinkEnabled ? std::string(cTrueVal) : std::string(cFalseVal), cFalseVal);
     }
 
     std::unique_ptr<IControlModelDelegate> ControlModelDelegate::clone() const {

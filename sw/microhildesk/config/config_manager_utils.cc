@@ -64,10 +64,10 @@ namespace {
     constexpr std::string_view cConfigDefaultGeneralTcpIp{"127.0.0.1"};
     constexpr std::string_view cConfigDefaultGeneralTcpPort{"5000"};
     // Default values for BLE Model
-    constexpr std::string_view cConfigDefaultBleAddress{"00:00:00:00:00:00"};
-    constexpr std::string_view cConfigDefaultBleServiceUuid{"0000ffe0-0000-1000-8000-00805f9b34fb"};
-    constexpr std::string_view cConfigDefaultBleRxUuid{"0000ffe1-0000-1000-8000-00805f9b34fb"};
-    constexpr std::string_view cConfigDefaultBleTxUuid{"0000ffe1-0000-1000-8000-00805f9b34fb"};
+    constexpr std::string_view cConfigDefaultBleAddress{"microhil-ble"};
+    constexpr std::string_view cConfigDefaultBleServiceUuid{"6e400001-b5a3-f393-e0a9-e50e24dcca9e"};
+    constexpr std::string_view cConfigDefaultBleRxUuid{"6e400003-b5a3-f393-e0a9-e50e24dcca9e"};
+    constexpr std::string_view cConfigDefaultBleTxUuid{"6e400002-b5a3-f393-e0a9-e50e24dcca9e"};
     /// @}
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 } // namespace

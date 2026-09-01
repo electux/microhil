@@ -19,7 +19,7 @@
 #pragma once
 
 #include <gmock/gmock.h>
-#include <com/serial/serialw/ilib.h>
+#include <com/serial/driver/iserial_port.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @namespace com::mock

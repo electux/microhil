@@ -22,6 +22,7 @@
 
 namespace {
     constexpr std::string_view cChannelToggleBtnActivate{"Activate"};
+    constexpr std::string_view cChannelToggleBtnDeactivate{"Deactivate"};
     constexpr std::string_view cChannelToggleDesc{"Manually control the channel state."};
     constexpr int cBoxSpacing{5};
     constexpr int cMarginTopBottom{15};
@@ -55,6 +56,9 @@ ToggleModePage::ToggleModePage(size_t index)
 
 void ToggleModePage::updateState(const ChannelState &state) {
     m_toggleBtn.set_active(state.toggle);
+    m_toggleBtn.set_label(
+        state.toggle ? cChannelToggleBtnDeactivate.data() : cChannelToggleBtnActivate.data()
+    );
     m_progressBar.set_fraction(state.toggle ? 1.0 : 0.0);
 }
 
@@ -63,6 +67,10 @@ void ToggleModePage::getState(ChannelState &state) const {
 }
 
 void ToggleModePage::onToggleClicked() {
-    m_progressBar.set_fraction(m_toggleBtn.get_active() ? 1.0 : 0.0);
+    bool active = m_toggleBtn.get_active();
+    m_toggleBtn.set_label(
+        active ? cChannelToggleBtnDeactivate.data() : cChannelToggleBtnActivate.data()
+    );
+    m_progressBar.set_fraction(active ? 1.0 : 0.0);
     m_signalChanged.emit();
 }

@@ -17,7 +17,6 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include <com/com_types.h>
 #include <com/switchable_com.h>
 #include <com/switchable_com_configurator.h>
@@ -26,38 +25,42 @@
 
 namespace Electux::App::Com {
     SwitchableComConfigurator::SwitchableComConfigurator(
-        SwitchableCom *switchableCom,
         std::unique_ptr<IComConfigurator> serialConfigurator,
         std::unique_ptr<IComConfigurator> tcpConfigurator,
         std::unique_ptr<IComConfigurator> bleConfigurator
     )
-        : m_switchableCom(switchableCom),
-          m_serialConfigurator(std::move(serialConfigurator)),
+        : m_serialConfigurator(std::move(serialConfigurator)),
           m_tcpConfigurator(std::move(tcpConfigurator)),
           m_bleConfigurator(std::move(bleConfigurator)) {}
 
     bool SwitchableComConfigurator::configure(
-        const Model::IModel &model, ICom *comChannel
+        const Model::IModel &model, ICom &comChannel
     ) {
-        (void)comChannel; // Suppress unused parameter warning
+        auto *switchable = dynamic_cast<SwitchableCom *>(&comChannel);
+        if (switchable == nullptr) {
+            return false;
+        }
 
         auto comTypeKey = model.toString(Model::ModelGeneralKey::ComType);
         std::string comType = model.getEntity(comTypeKey);
 
-        m_switchableCom->setComType(comType);
+        switchable->setComType(comType);
 
         if (comType == toConfigString(ComType::Tcp)) {
-            return m_tcpConfigurator->configure(
-                model, m_switchableCom->getTcpCom()
-            );
+            auto *tcpCom = switchable->getTcpCom();
+            return (tcpCom != nullptr && m_tcpConfigurator)
+                ? m_tcpConfigurator->configure(model, *tcpCom)
+                : false;
         } else if (comType == toConfigString(ComType::Ble)) {
-            return m_bleConfigurator->configure(
-                model, m_switchableCom->getBleCom()
-            );
+            auto *bleCom = switchable->getBleCom();
+            return (bleCom != nullptr && m_bleConfigurator)
+                ? m_bleConfigurator->configure(model, *bleCom)
+                : false;
         } else {
-            return m_serialConfigurator->configure(
-                model, m_switchableCom->getSerialCom()
-            );
+            auto *serialCom = switchable->getSerialCom();
+            return (serialCom != nullptr && m_serialConfigurator)
+                ? m_serialConfigurator->configure(model, *serialCom)
+                : false;
         }
     }
 } // namespace Electux::App::Com

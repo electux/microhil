@@ -21,8 +21,9 @@
 #include <view/channel/page/mode_page_pulse.h>
 
 namespace {
-    constexpr std::string_view cChannelPulseLabel{"Pulse (ms) #"};
-    constexpr std::string_view cChannelPulseBtnTrigger{"Trigger"};
+    constexpr std::string_view cChannelPulseLabel{"Pulse (ms)"};
+    constexpr std::string_view cChannelPulseBtnStart{"Start"};
+    constexpr std::string_view cChannelPulseBtnStop{"Stop"};
     constexpr std::string_view cChannelPulseDesc{"Generate a short momentary pulse."};
     constexpr int cBoxSpacing{5};
     constexpr int cMarginTopBottom{15};
@@ -37,7 +38,7 @@ using namespace Electux::App::View;
 PulseModePage::PulseModePage(size_t index)
     : Gtk::Box(Gtk::Orientation::VERTICAL, cBoxSpacing),
       m_index(index) {
-    m_pulseLabel.set_label(std::format("{} {}", cChannelPulseLabel.data(), index));
+    m_pulseLabel.set_label(cChannelPulseLabel.data());
     m_descLabel.set_label(cChannelPulseDesc.data());
 
     append(m_pulseLabel);
@@ -54,8 +55,8 @@ PulseModePage::PulseModePage(size_t index)
     m_descLabel.set_valign(Gtk::Align::END);
     append(m_descLabel);
 
-    m_pulseTriggerBtn.set_label(cChannelPulseBtnTrigger.data());
-    append(m_pulseTriggerBtn);
+    m_pulseToggleBtn.set_label(cChannelPulseBtnStart.data());
+    append(m_pulseToggleBtn);
 
     m_progressBar.set_fraction(0.0);
     append(m_progressBar);
@@ -63,28 +64,34 @@ PulseModePage::PulseModePage(size_t index)
     m_pulseSpin.signal_value_changed().connect(
         sigc::mem_fun(*this, &PulseModePage::onPulseSpinChanged)
     );
-    m_pulseTriggerBtn.signal_clicked().connect(
-        sigc::mem_fun(*this, &PulseModePage::onTriggerClicked)
+    m_pulseToggleBtn.signal_clicked().connect(
+        sigc::mem_fun(*this, &PulseModePage::onPulseToggleClicked)
     );
 }
 
 void PulseModePage::updateState(const ChannelState &state) {
     m_pulseSpin.set_value(state.pulseTime);
+    m_pulseToggleBtn.set_active(state.pulseTriggered);
+    m_pulseToggleBtn.set_label(
+        state.pulseTriggered ? cChannelPulseBtnStop.data() : cChannelPulseBtnStart.data()
+    );
     m_progressBar.set_fraction(state.pulseTriggered ? 1.0 : 0.0);
 }
 
 void PulseModePage::getState(ChannelState &state) const {
     state.pulseTime = m_pulseSpin.get_value_as_int();
-    state.pulseTriggered = m_pulseTriggered;
-    m_pulseTriggered = false; // Latch mechanism resets flag after read
+    state.pulseTriggered = m_pulseToggleBtn.get_active();
 }
 
 void PulseModePage::onPulseSpinChanged() {
     m_signalChanged.emit();
 }
 
-void PulseModePage::onTriggerClicked() {
-    m_pulseTriggered = true;
-    m_progressBar.set_fraction(1.0);
+void PulseModePage::onPulseToggleClicked() {
+    bool active = m_pulseToggleBtn.get_active();
+    m_pulseToggleBtn.set_label(
+        active ? cChannelPulseBtnStop.data() : cChannelPulseBtnStart.data()
+    );
+    m_progressBar.set_fraction(active ? 1.0 : 0.0);
     m_signalChanged.emit();
 }

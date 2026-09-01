@@ -17,26 +17,59 @@
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-#include <app_controller_factory.h>
 #include <app_controller.h>
+#include <app_controller_factory.h>
+#include <worker/device_worker_factory.h>
 
 namespace Electux::App {
+    std::unique_ptr<IAppController> createAppController(
+        std::unique_ptr<Config::IConfig> configManager,
+        std::unique_ptr<Worker::IDeviceWorker> deviceWorker,
+        std::unique_ptr<Logger::ILog> logger,
+        std::unique_ptr<Command::ICommandFormatter> commandFormatter,
+        std::unique_ptr<Command::IChannelCommandMapper> channelMapper,
+        std::unique_ptr<Config::IConfigChangeDetector> configDetector,
+        std::unique_ptr<Command::IResponseProcessor> responseProcessor
+    ) {
+        return std::make_unique<AppController>(
+            std::move(configManager),
+            std::move(deviceWorker),
+            std::move(logger),
+            std::move(commandFormatter),
+            std::move(channelMapper),
+            std::move(configDetector),
+            std::move(responseProcessor)
+        );
+    }
+
     std::unique_ptr<IAppController> createAppController(
         std::unique_ptr<Config::IConfig> configManager,
         std::unique_ptr<Com::ICom> comChannel,
         std::unique_ptr<Com::IComConfigurator> comConfigurator,
         std::unique_ptr<Logger::ILog> logger,
         std::unique_ptr<Command::ICommandFormatter> commandFormatter,
-        std::unique_ptr<Command::IResponseProcessor> responseProcessor
+        std::unique_ptr<Command::IChannelCommandMapper> channelMapper,
+        std::unique_ptr<Command::IResponseProcessor> workerResponseProcessor,
+        std::unique_ptr<Command::IResponseProcessor> controllerResponseProcessor,
+        std::unique_ptr<Config::IConfigChangeDetector> configDetector
     ) {
-        return std::make_unique<AppController>(
-            std::move(configManager),
+        auto *loggerPtr = logger.get();
+        auto deviceWorker = Worker::createDeviceWorker(
             std::move(comChannel),
             std::move(comConfigurator),
+            nullptr,
+            std::move(workerResponseProcessor),
+            loggerPtr
+        );
+
+        return createAppController(
+            std::move(configManager),
+            std::move(deviceWorker),
             std::move(logger),
             std::move(commandFormatter),
-            std::move(responseProcessor)
+            std::move(channelMapper),
+            std::move(configDetector),
+            std::move(controllerResponseProcessor)
         );
     }
 } // namespace Electux::App

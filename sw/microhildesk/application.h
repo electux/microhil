@@ -21,6 +21,8 @@
 
 #include <gtkmm/application.h>
 #include <memory>
+#include <view/action/iapp_action_manager.h>
+#include <view/menu/iapp_menu_builder.h>
 
 namespace Electux::App {
     class IAppController;
@@ -48,12 +50,16 @@ namespace Electux::App {
     /// @class EntryApplication
     /// @brief Entry point for application and main application class.
     ///
-    /// Manages the application lifecycle, signal mapping, and coordinates
-    /// between the configuration manager and the various UI views.
+    /// Manages the application lifecycle and coordinates views with the controller.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class EntryApplication : public Gtk::Application {
       public:
-        explicit EntryApplication(bool verbose = false);
+        explicit EntryApplication(
+            bool verbose = false,
+            std::unique_ptr<IAppController> controller = nullptr,
+            std::unique_ptr<View::Menu::IAppMenuBuilder> menuBuilder = nullptr,
+            std::unique_ptr<View::Action::IAppActionManager> actionManager = nullptr
+        );
         ~EntryApplication() override;
 
         static Glib::RefPtr<EntryApplication> create(bool verbose = false);
@@ -64,22 +70,14 @@ namespace Electux::App {
         void on_shutdown() override;
 
       private:
-        void mapping();
-        void onActionSettings();
-        void onActionDoc();
-        void onActionAbout();
-        void onActionQuit();
-        void onActionCmdAllOn();
-        void onActionCmdAllOff();
-        void onActionCmdAllStat();
-        void onActionCmdSysReset();
-        void onActionCmdSysId();
-        void onActionCmdSysVersion();
         bool onHandleClose();
         void onSetupChanged(const SettingsSetup &setup);
 
         bool m_verbose{false};
         std::unique_ptr<IAppController> m_controller;
+        std::unique_ptr<View::Menu::IAppMenuBuilder> m_menuBuilder;
+        std::unique_ptr<View::Action::IAppActionManager> m_actionManager;
+
         std::unique_ptr<View::IHomeView> m_home;
         std::unique_ptr<View::Settings::ISettingsView> m_settings;
         std::unique_ptr<View::Help::IHelpView> m_help;

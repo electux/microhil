@@ -21,6 +21,7 @@
 
 #include <sigc++/sigc++.h>
 #include <string>
+#include <worker/connection_state.h>
 
 namespace Electux::App {
     namespace Model {
@@ -45,6 +46,8 @@ namespace Electux::App {
         virtual void onSetupChanged(const Model::SettingsSetup &setup) = 0;
 
         virtual sigc::signal<void(const std::string&)> signal_data_received() = 0;
+        virtual sigc::signal<void(Worker::ConnectionState)> signal_connection_state() = 0;
+        virtual Worker::ConnectionState getConnectionState() const = 0;
 
         virtual void turnOnAllChannels() = 0;
         virtual void turnOffAllChannels() = 0;

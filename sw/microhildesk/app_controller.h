@@ -19,43 +19,36 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <command/formatter/icommand_formatter.h>
+#include <command/mapper/ichannel_command_mapper.h>
+#include <command/processor/iresponse_processor.h>
+#include <config/detector/iconfig_change_detector.h>
 #include <config/iconfig.h>
 #include <iapp_controller.h>
+#include <log/ilog.h>
 #include <memory>
 #include <model/imodel.h>
 #include <view/settings_setup.h>
-#include <thread>
-#include <atomic>
-
-namespace Electux::App::Com {
-    class ICom;
-    class IComConfigurator;
-} // namespace Electux::App::Com
-namespace Electux::App::Logger {
-    class ILog;
-}
-namespace Electux::App::Command {
-    class ICommandFormatter;
-    class IResponseProcessor;
-}
+#include <worker/connection_state.h>
+#include <worker/idevice_worker.h>
 
 namespace Electux::App {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class AppController
-    /// @brief Coordination controller managing config loading, storing, and
-    /// model change propagation.
+    /// @brief High-level application coordinator managing config, logging, mapping, and worker.
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     class AppController : public IAppController {
       public:
         AppController(
             std::unique_ptr<Config::IConfig> configManager,
-            std::unique_ptr<Com::ICom> comChannel,
-            std::unique_ptr<Com::IComConfigurator> comConfigurator,
+            std::unique_ptr<Worker::IDeviceWorker> deviceWorker,
             std::unique_ptr<Logger::ILog> logger,
             std::unique_ptr<Command::ICommandFormatter> commandFormatter,
+            std::unique_ptr<Command::IChannelCommandMapper> channelMapper,
+            std::unique_ptr<Config::IConfigChangeDetector> configDetector,
             std::unique_ptr<Command::IResponseProcessor> responseProcessor
         );
-        virtual ~AppController() override;
+        ~AppController() override = default;
 
         AppController(const AppController &) = delete;
         AppController &operator=(const AppController &) = delete;
@@ -64,10 +57,11 @@ namespace Electux::App {
         void shutdown() override;
 
         const Model::IModel &getModel() const override;
-
         void onSetupChanged(const Model::SettingsSetup &setup) override;
 
-        sigc::signal<void(const std::string&)> signal_data_received() override;
+        sigc::signal<void(const std::string &)> signal_data_received() override;
+        sigc::signal<void(Worker::ConnectionState)> signal_connection_state() override;
+        Worker::ConnectionState getConnectionState() const override;
 
         void turnOnAllChannels() override;
         void turnOffAllChannels() override;
@@ -78,34 +72,18 @@ namespace Electux::App {
 
       private:
         void configureLogger();
-        void configureComChannel();
-        void handleChannelStateChanges(
-            const Model::IModel &oldConfig, const Model::IModel &newConfig
+        void handleChannelStateChange(
+            size_t channelIndex, const Model::ChannelState &state
         );
-        bool hasSerialConfigChanged(
-            const Model::IModel &oldConfig, const Model::IModel &newConfig
-        );
-        bool hasGeneralConfigChanged(
-            const Model::IModel &oldConfig, const Model::IModel &newConfig
-        );
-        bool hasBleConfigChanged(
-            const Model::IModel &oldConfig, const Model::IModel &newConfig
-        );
-        bool hasLoggerConfigChanged(
-            const Model::IModel &oldConfig, const Model::IModel &newConfig
-        );
-
-        void readLoop();
+        void onDeviceDataReceived(const std::string &data);
 
         std::unique_ptr<Config::IConfig> m_configManager;
-        std::unique_ptr<Com::ICom> m_comChannel;
-        std::unique_ptr<Com::IComConfigurator> m_comConfigurator;
+        std::unique_ptr<Worker::IDeviceWorker> m_deviceWorker;
         std::unique_ptr<Logger::ILog> m_logger;
         std::unique_ptr<Command::ICommandFormatter> m_commandFormatter;
+        std::unique_ptr<Command::IChannelCommandMapper> m_channelMapper;
+        std::unique_ptr<Config::IConfigChangeDetector> m_configDetector;
         std::unique_ptr<Command::IResponseProcessor> m_responseProcessor;
-
-        std::thread m_readThread;
-        std::atomic<bool> m_stopThread{false};
-        sigc::signal<void(const std::string&)> m_signalDataReceived;
+        sigc::signal<void(const std::string &)> m_signalDataReceived;
     };
 } // namespace Electux::App

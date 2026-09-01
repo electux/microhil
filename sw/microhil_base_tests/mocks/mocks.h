@@ -28,6 +28,8 @@ struct RelayMockCall {
 extern std::vector<RelayMockCall> relay_calls;
 void mock_clear_relay_calls();
 void mock_set_channel_status(uint32_t channel, const std::string& status);
+void mock_trigger_relay_callback(uint32_t channel, bool state);
+bool mock_has_relay_callback();
 
 // Mock states for buzzer, status_led, watchdog
 extern bool buzzer_beep_stop_called;
