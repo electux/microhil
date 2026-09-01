@@ -50,6 +50,26 @@ To install **microhil-base** type the following:
    # Deploy by copying the generated microhil-base.uf2 file to the Pico mounted storage
    cp src/microhil-base.uf2 /media/$USER/RPI-RP2/
 
+To install **microhil-base-ble** type the following:
+
+.. code-block:: bash
+
+   # Clone the repository
+   git clone https://github.com/electux/microhil.git
+   cd microhil/sw/microhil_base_ble
+
+   # Create build directory
+   mkdir build && cd build
+
+   # Configure build (ensure PICO_SDK_PATH is set)
+   cmake -DPICO_SDK_PATH=/path/to/pico-sdk ..
+
+   # Build
+   make
+
+   # Deploy by copying the generated microhil-base-ble.uf2 file to the Pico W mounted storage
+   cp src/microhil-base-ble.uf2 /media/$USER/RPI-RP2/
+
 To install **microhil-nuttx** type the following:
 
 .. code-block:: bash
@@ -126,6 +146,15 @@ Dependencies
   * GNU Arm Embedded Toolchain (``gcc-arm-none-eabi``)
   * ``CMake`` (v3.12+)
 
+**microhil-base-ble** requires next modules and libraries:
+
+* **Runtime:**
+  * Raspberry Pi Pico W (RP2040 + CYW43439) hardware
+* **Development / Build:**
+  * Raspberry Pi Pico SDK (``pico-sdk``) with BTstack & CYW43 driver support
+  * GNU Arm Embedded Toolchain (``gcc-arm-none-eabi``)
+  * ``CMake`` (v3.13+)
+
 **microhil-nuttx** requires next modules and libraries:
 
 * **Runtime:**
@@ -165,6 +194,7 @@ The repository is organized as follows:
    ├── hw/                     # Hardware design files (schematics, PCB layouts)
    └── sw/                     # Software and firmware source directories
        ├── microhil_base/      # C-based firmware for Pico (direct HWIL interface)
+       ├── microhil_base_ble/  # C-based BLE firmware for Pico W (wireless HWIL interface)
        ├── microhil_nuttx/     # NuttX-based RTOS firmware for Pico
        ├── microhil_upy/       # MicroPython-based firmware for Pico
        ├── microhildesk/       # Desktop GUI application (gtkmm/C++)

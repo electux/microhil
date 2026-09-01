@@ -64,6 +64,19 @@ A C-based firmware designed for the microHIL hardware controller (Raspberry Pi P
     *   **System Reset:** Trigger a watchdog-based hardware reboot.
     *   **Diagnostics:** Query system board identity and firmware version info.
 
+**microhil-base-ble**
+
+A C-based firmware designed for the microHIL hardware controller (Raspberry Pi Pico W). It integrates the CYW43439 wireless chipset with the BTstack Bluetooth stack, exposing a Nordic BLE UART (SPP) GATT service for wireless HWIL control, physical relay management, status LEDs, and buzzer alerts.
+
+*   **Supported Operations:**
+    *   **Wireless BLE Transport:** Nordic UART Service (NUS) GATT implementation over Bluetooth Low Energy.
+    *   **Channel Toggle:** Control individual relays (channels 1-8) by turning them ON or OFF.
+    *   **Timer & Pulse Mode:** Activate channels with second-level precision or trigger millisecond-level pulses.
+    *   **Blink Mode:** Trigger repeating blinking loops with configurable duty cycles and loop counts.
+    *   **Channel Masking:** Apply an 8-bit binary mask (e.g., `10101010`) to update all 8 channels at once.
+    *   **System Status & Reset:** Monitor channel status and reboot the board via hardware watchdog.
+    *   **Diagnostics:** Query device identification (`microhil-ble`) and firmware version details.
+
 **microhil-nuttx**
 
 An RTOS-based firmware built on Apache NuttX (v12.0.0+) for the microHIL hardware controller (Raspberry Pi Pico). It runs a low-latency, non-blocking background daemon (`microhil_daemon`) for controlling hardware channels and features a combined boot mode that exposes a NuttX Shell (NSH) console on the physical UART0 interface.
@@ -125,6 +138,26 @@ make
 
 # Deploy by copying the generated microhil-base.uf2 file to the Pico mounted storage
 cp src/microhil-base.uf2 /media/$USER/RPI-RP2/
+```
+
+To install **microhil-base-ble** type the following
+
+```bash
+# Clone the repository
+git clone https://github.com/electux/microhil.git
+cd microhil/sw/microhil_base_ble
+
+# Create build directory
+mkdir build && cd build
+
+# Configure build (ensure PICO_SDK_PATH is set)
+cmake -DPICO_SDK_PATH=/path/to/pico-sdk ..
+
+# Build
+make
+
+# Deploy by copying the generated microhil-base-ble.uf2 file to the Pico W mounted storage
+cp src/microhil-base-ble.uf2 /media/$USER/RPI-RP2/
 ```
 
 To install **microhil-nuttx** type the following
@@ -203,6 +236,15 @@ sudo dpkg -i sw/microhildesk/build/deb_dist/microhildesk_*.deb
     *   Raspberry Pi Pico SDK (`pico-sdk`)
     *   GNU Arm Embedded Toolchain (`gcc-arm-none-eabi`)
     *   `CMake` (v3.12+)
+
+**microhil-base-ble** requires next modules and libraries
+
+*   **Runtime:**
+    *   Raspberry Pi Pico W (RP2040 + CYW43439) hardware
+*   **Development / Build:**
+    *   Raspberry Pi Pico SDK (`pico-sdk`) with BTstack & CYW43 driver support
+    *   GNU Arm Embedded Toolchain (`gcc-arm-none-eabi`)
+    *   `CMake` (v3.13+)
 
 **microhil-nuttx** requires next modules and libraries
 

@@ -63,6 +63,24 @@ make
 cp<span class="w"> </span>src/microhil-base.uf2<span class="w"> </span>/media/<span class="nv">$USER</span>/RPI-RP2/
 </pre></div>
 </div>
+<p>To install <strong>microhil-base-ble</strong> type the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/electux/microhil.git
+<span class="nb">cd</span><span class="w"> </span>microhil/sw/microhil_base_ble
+
+<span class="c1"># Create build directory</span>
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+
+<span class="c1"># Configure build (ensure PICO_SDK_PATH is set)</span>
+cmake<span class="w"> </span>-DPICO_SDK_PATH<span class="o">=</span>/path/to/pico-sdk<span class="w"> </span>..
+
+<span class="c1"># Build</span>
+make
+
+<span class="c1"># Deploy by copying the generated microhil-base-ble.uf2 file to the Pico W mounted storage</span>
+cp<span class="w"> </span>src/microhil-base-ble.uf2<span class="w"> </span>/media/<span class="nv">$USER</span>/RPI-RP2/
+</pre></div>
+</div>
 <p>To install <strong>microhil-nuttx</strong> type the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository recursively (to pull the NuttX submodule)</span>
 git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/electux/microhil.git
@@ -130,6 +148,15 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
 * GNU Arm Embedded Toolchain (<code class="docutils literal notranslate"><span class="pre">gcc-arm-none-eabi</span></code>)
 * <code class="docutils literal notranslate"><span class="pre">CMake</span></code> (v3.12+)</p></li>
 </ul>
+<p><strong>microhil-base-ble</strong> requires next modules and libraries:</p>
+<ul class="simple">
+<li><p><strong>Runtime:</strong>
+* Raspberry Pi Pico W (RP2040 + CYW43439) hardware</p></li>
+<li><p><strong>Development / Build:</strong>
+* Raspberry Pi Pico SDK (<code class="docutils literal notranslate"><span class="pre">pico-sdk</span></code>) with BTstack &amp; CYW43 driver support
+* GNU Arm Embedded Toolchain (<code class="docutils literal notranslate"><span class="pre">gcc-arm-none-eabi</span></code>)
+* <code class="docutils literal notranslate"><span class="pre">CMake</span></code> (v3.13+)</p></li>
+</ul>
 <p><strong>microhil-nuttx</strong> requires next modules and libraries:</p>
 <ul class="simple">
 <li><p><strong>Runtime:</strong>
@@ -166,6 +193,7 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
 ├── hw/                     # Hardware design files (schematics, PCB layouts)
 └── sw/                     # Software and firmware source directories
     ├── microhil_base/      # C-based firmware for Pico (direct HWIL interface)
+    ├── microhil_base_ble/  # C-based BLE firmware for Pico W (wireless HWIL interface)
     ├── microhil_nuttx/     # NuttX-based RTOS firmware for Pico
     ├── microhil_upy/       # MicroPython-based firmware for Pico
     ├── microhildesk/       # Desktop GUI application (gtkmm/C++)
