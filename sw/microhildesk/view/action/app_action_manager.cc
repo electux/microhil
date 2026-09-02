@@ -25,6 +25,8 @@ using namespace Electux::App::View::Action;
 namespace {
     constexpr std::string_view cFileQuitActionName{"file_quit"};
     constexpr std::string_view cOptionSettingsActionName{"option_settings"};
+    constexpr std::string_view cDeviceConnectActionName{"device_connect"};
+    constexpr std::string_view cDeviceDisconnectActionName{"device_disconnect"};
     constexpr std::string_view cCmdAllOnActionName{"cmd_all_on"};
     constexpr std::string_view cCmdAllOffActionName{"cmd_all_off"};
     constexpr std::string_view cCmdAllStatActionName{"cmd_all_stat"};
@@ -36,6 +38,13 @@ namespace {
 
     constexpr std::string_view cDetailedQuitAction{"app.file_quit"};
     constexpr std::string_view cQuitAccelerator{"<Primary>q"};
+    constexpr std::string_view cDetailedConnectAction{"app.device_connect"};
+    constexpr std::string_view cConnectAccelerator{"<Primary>k"};
+    constexpr std::string_view cDetailedDisconnectAction{"app.device_disconnect"};
+    constexpr std::string_view cDisconnectAccelerator{"<Primary>d"};
+    constexpr std::string_view cDetailedClearAction{"app.console_clear"};
+    constexpr std::string_view cClearAccelerator{"<Primary>l"};
+    constexpr std::string_view cConsoleClearActionName{"console_clear"};
 } // namespace
 
 void AppActionManager::registerActions(
@@ -45,6 +54,15 @@ void AppActionManager::registerActions(
 ) {
     app.set_accel_for_action(
         cDetailedQuitAction.data(), cQuitAccelerator.data()
+    );
+    app.set_accel_for_action(
+        cDetailedConnectAction.data(), cConnectAccelerator.data()
+    );
+    app.set_accel_for_action(
+        cDetailedDisconnectAction.data(), cDisconnectAccelerator.data()
+    );
+    app.set_accel_for_action(
+        cDetailedClearAction.data(), cClearAccelerator.data()
     );
 
     app.add_action(
@@ -65,6 +83,29 @@ void AppActionManager::registerActions(
         [views]() {
             if (views.settings) {
                 views.settings->show();
+            }
+        }
+    );
+
+    app.add_action(
+        cDeviceConnectActionName.data(),
+        [&controller]() {
+            controller.connectDevice();
+        }
+    );
+
+    app.add_action(
+        cDeviceDisconnectActionName.data(),
+        [&controller]() {
+            controller.disconnectDevice();
+        }
+    );
+
+    app.add_action(
+        cConsoleClearActionName.data(),
+        [views]() {
+            if (views.home) {
+                views.home->clearConsole();
             }
         }
     );

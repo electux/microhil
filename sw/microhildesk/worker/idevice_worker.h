@@ -35,6 +35,8 @@ namespace Electux::App::Worker {
 
         virtual void start() = 0;
         virtual void stop() = 0;
+        virtual void connect() = 0;
+        virtual void disconnect() = 0;
         virtual void configure(const Model::IModel &model) = 0;
         virtual void send(const std::string &command) = 0;
         virtual void setNeedInitialQuery(bool need) = 0;

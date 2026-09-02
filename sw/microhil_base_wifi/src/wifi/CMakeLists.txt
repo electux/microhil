@@ -8,6 +8,7 @@
 add_library(wifi STATIC
     wifi_ring_buffer.c
     wifi_manager.c
+    dhcpserver.c
     tcp_server.c
     wifi_transport.c
 )

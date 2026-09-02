@@ -58,10 +58,16 @@ namespace Electux::App {
 
         const Model::IModel &getModel() const override;
         void onSetupChanged(const Model::SettingsSetup &setup) override;
+        void onChannelStateChanged(
+            size_t channelIndex, const Model::ChannelState &state
+        ) override;
 
         sigc::signal<void(const std::string &)> signal_data_received() override;
         sigc::signal<void(Worker::ConnectionState)> signal_connection_state() override;
         Worker::ConnectionState getConnectionState() const override;
+
+        void connectDevice() override;
+        void disconnectDevice() override;
 
         void turnOnAllChannels() override;
         void turnOffAllChannels() override;

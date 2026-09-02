@@ -47,6 +47,6 @@ namespace Electux::App::Com {
         ble->setRxUuid(rx);
         ble->setTxUuid(tx);
 
-        return comChannel.open();
+        return true;
     }
 } // namespace Electux::App::Com

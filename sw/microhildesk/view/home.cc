@@ -18,16 +18,18 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <model/model.h>
-#include <view/home.h>
 #include <gtkmm/cssprovider.h>
 #include <gtkmm/stylecontext.h>
+#include <model/model.h>
+#include <view/home.h>
 
 namespace {
     constexpr std::string_view cHomeTitle{"microhildesk"};
     constexpr int cHomeWidth{600};
     constexpr int cHomeHeight{520};
-    constexpr std::string_view cTextViewCss{"textview text { background-color: black; color: white; }"};
+    constexpr std::string_view cTextViewCss{
+        "textview text { background-color: black; color: white; }"
+    };
     constexpr int cWidgetMargin{10};
     constexpr int cScrolledWindowHeight{250};
     constexpr std::string_view cNewline{"\n"};
@@ -55,26 +57,20 @@ AppHome::AppHome() {
 
     auto css_provider = Gtk::CssProvider::create();
     css_provider->load_from_data(cTextViewCss.data());
-    m_textView.get_style_context()->add_provider(css_provider, GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    m_textView.get_style_context()->add_provider(
+        css_provider, GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
+    );
 
     m_scrolled_window.set_child(m_textView);
-    m_scrolled_window.set_policy(Gtk::PolicyType::NEVER, Gtk::PolicyType::AUTOMATIC);
+    m_scrolled_window.set_policy(
+        Gtk::PolicyType::NEVER, Gtk::PolicyType::AUTOMATIC
+    );
     m_scrolled_window.set_vexpand(true);
     m_scrolled_window.set_hexpand(true);
     m_scrolled_window.set_size_request(-1, cScrolledWindowHeight);
     m_scrolled_window.set_margin_start(cWidgetMargin);
     m_scrolled_window.set_margin_end(cWidgetMargin);
     m_scrolled_window.set_margin_bottom(cWidgetMargin);
-
-    auto vadj = m_scrolled_window.get_vadjustment();
-    if (vadj) {
-        vadj->signal_value_changed().connect([vadj]() {
-            double max_val = std::max(0.0, vadj->get_upper() - vadj->get_page_size());
-            if (vadj->get_value() > max_val) {
-                vadj->set_value(max_val);
-            }
-        });
-    }
 
     m_dispatcher.connect(
         sigc::mem_fun(*this, &AppHome::onDataReceivedDispatcher)
@@ -107,6 +103,8 @@ AppHome::AppHome() {
 
 SigSettings AppHome::controlChanged() { return m_controlSignal; }
 
+SigChannelChanged AppHome::channelChanged() { return m_channelSignal; }
+
 void AppHome::setControlSetup(const SettingsSetup &setup) {
     m_setup = setup;
     updateUiData();
@@ -135,13 +133,13 @@ void AppHome::updateUiData() {
 }
 
 void AppHome::onChannelChanged(size_t index) {
-    if (!m_setup.m_config) {
-        return;
+    if (index < m_channelWidgets.size()) {
+        auto state = m_channelWidgets[index]->getState();
+        if (m_setup.m_config) {
+            m_setup.m_config->setChannelState(index, state);
+        }
+        m_channelSignal.emit(index, state);
     }
-
-    auto &config = *m_setup.m_config;
-    config.setChannelState(index, m_channelWidgets[index]->getState());
-    m_controlSignal.emit(m_setup);
 }
 
 void AppHome::show() { present(); }
@@ -178,8 +176,16 @@ void AppHome::onDataReceivedDispatcher() {
 
     auto vadj = m_scrolled_window.get_vadjustment();
     if (vadj) {
-        double max_val = std::max(0.0, vadj->get_upper() - vadj->get_page_size());
+        double max_val =
+            std::max(0.0, vadj->get_upper() - vadj->get_page_size());
         vadj->set_value(max_val);
     }
 }
 
+void AppHome::clearConsole() {
+    auto buffer = m_textView.get_buffer();
+
+    if (buffer) {
+        buffer->set_text("");
+    }
+}

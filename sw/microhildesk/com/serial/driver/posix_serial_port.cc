@@ -18,9 +18,9 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <cerrno>
 #include <com/serial/driver/posix_serial_port.h>
 #include <com/serial/driver/termios/serial_termios_factory.h>
-#include <cerrno>
 #include <cstring>
 #include <fcntl.h>
 #include <filesystem>
@@ -52,11 +52,10 @@ namespace {
 PosixSerialPort::PosixSerialPort(
     std::unique_ptr<ISerialTermiosConfigurator> termiosConfigurator
 )
-    : m_fd(-1),
-      m_termiosConfigurator(
-          termiosConfigurator ? std::move(termiosConfigurator)
-                              : createSerialTermiosConfigurator()
-      ) {}
+    : m_fd(-1), m_termiosConfigurator(
+                    termiosConfigurator ? std::move(termiosConfigurator)
+                                        : createSerialTermiosConfigurator()
+                ) {}
 
 PosixSerialPort::~PosixSerialPort() { Close(); }
 
@@ -159,7 +158,10 @@ void PosixSerialPort::Read(std::vector<uint8_t> &data, size_t len) {
             throw std::runtime_error(cConnectionLostEofMsg);
         }
         totalRead += static_cast<size_t>(n);
+        break;
     }
+
+    data.resize(totalRead);
 }
 
 void PosixSerialPort::Write(const std::vector<uint8_t> &data) {
@@ -167,9 +169,8 @@ void PosixSerialPort::Write(const std::vector<uint8_t> &data) {
     size_t totalWritten = 0;
 
     while (totalWritten < data.size()) {
-        ssize_t n = write(
-            m_fd, data.data() + totalWritten, data.size() - totalWritten
-        );
+        ssize_t n =
+            write(m_fd, data.data() + totalWritten, data.size() - totalWritten);
 
         if (n < 0) {
             if (errno == EINTR) {

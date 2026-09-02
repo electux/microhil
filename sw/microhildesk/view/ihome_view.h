@@ -19,6 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <model/channel_state.h>
 #include <sigc++/sigc++.h>
 #include <string>
 #include <view/settings_setup.h>
@@ -30,7 +31,9 @@ namespace Gtk {
 
 namespace Electux::App::View {
     using SettingsSetup = Electux::App::Model::SettingsSetup;
+    using ChannelState = Electux::App::Model::Channel::ChannelState;
     using SigSettings = sigc::signal<void(SettingsSetup &)>;
+    using SigChannelChanged = sigc::signal<void(size_t, const ChannelState &)>;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// @class IHomeView
@@ -41,6 +44,7 @@ namespace Electux::App::View {
         virtual ~IHomeView() = default;
 
         virtual SigSettings controlChanged() = 0;
+        virtual SigChannelChanged channelChanged() = 0;
         virtual void setControlSetup(const SettingsSetup &setup) = 0;
         virtual void updateUiData() = 0;
         virtual void getUiData() = 0;
@@ -52,5 +56,6 @@ namespace Electux::App::View {
 
         virtual void postData(const std::string& data) = 0;
         virtual void setConnectionState(Worker::ConnectionState state) = 0;
+        virtual void clearConsole() = 0;
     };
 } // namespace Electux::App::View

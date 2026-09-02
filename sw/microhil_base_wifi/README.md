@@ -2,14 +2,15 @@
 
 Wi-Fi & TCP/IP Socket Server C firmware for the microHIL hardware controller (Raspberry Pi Pico W).
 
-This component runs on the Raspberry Pi Pico W using the Raspberry Pi Pico SDK, CYW43439 wireless driver, lwIP TCP/IP stack, and non-volatile Flash memory (NVM). It provides a high-speed TCP socket server on port `5000` for remote HWIL relay control, status LED, buzzer notifications, and persistent runtime Wi-Fi provisioning over USB-Serial or TCP socket.
+This component runs on the Raspberry Pi Pico W using the Raspberry Pi Pico SDK, CYW43439 wireless driver, lwIP TCP/IP stack, built-in DHCP server, and non-volatile Flash memory (NVM). It provides a high-speed TCP socket server on port `5000` for remote HWIL relay control, status LED, buzzer notifications, and persistent runtime Wi-Fi provisioning over USB-Serial or TCP socket.
 
 ## Features
 
 - **8-Channel Relay Control:** Independent toggling, pulse duration, timing, and blinking cycles on 8 physical channels.
 - **Dual Wi-Fi Operation Modes:**
-  - **Access Point (AP) Mode (Default):** Pico W broadcasts its own Wi-Fi hotspot (`SSID: microhil-wifi`, `IP: 192.168.4.1`, `Port: 5000`).
+  - **Access Point (AP) Mode (Default):** Pico W broadcasts its own Wi-Fi hotspot (`SSID: microhil-wifi`, `Password: microhil123`, `Gateway IP: 192.168.4.1`, `Port: 5000`).
   - **Station (STA) Mode:** Connects to an existing Wi-Fi network with DHCP.
+- **Built-in DHCP Server:** Automatically assigns IP addresses (`192.168.4.16` - `192.168.4.24`) to connected clients (smartphones, tablets, PCs) in AP mode without requiring static IP configuration.
 - **Dual-Stream Command Tokenizer:** Seamlessly receives and processes commands from both the Wi-Fi TCP socket and the USB CDC serial console.
 - **Persistent NVM Configuration:** Store Wi-Fi credentials, mode, and port in RP2040 Flash memory.
 - **Raw lwIP TCP Server:** High-throughput, non-blocking TCP socket server on port `5000`.
@@ -29,13 +30,14 @@ sw/microhil_base_wifi/
 │   ├── config/                 # NVM Flash storage & default settings
 │   │   ├── nvm_config.h/.c     # Flash read/write/checksum
 │   │   └── wifi_default_config.h
-│   ├── wifi/                   # Wi-Fi manager, TCP server & ring buffer
+│   ├── wifi/                   # Wi-Fi manager, DHCP server, TCP server & ring buffer
 │   │   ├── wifi_manager.h/.c   # AP/STA mode management
+│   │   ├── dhcpserver.h/.c     # Built-in lightweight DHCP server
 │   │   ├── tcp_server.h/.c     # lwIP raw TCP socket server
 │   │   ├── wifi_ring_buffer.h/.c
 │   │   └── wifi_transport.h/.c # Unified transport facade
 │   ├── command/                # Command parsing, network commands, and dispatching
-│   │   ├── ble_command.h/.c    # Net command handlers
+│   │   ├── net_command.h/.c    # Net command handlers
 │   │   ├── command_tbl.c       # Command dispatch table
 │   │   ├── parser.h/.c         # Dual-stream tokenizer
 │   │   └── response.h/.c       # Formatted response emitter
@@ -44,6 +46,27 @@ sw/microhil_base_wifi/
 │   └── ws2812/                 # WS2812 PIO driver
 └── build/                      # Build output directory (generates microhil-base-wifi.uf2)
 ```
+
+## Network Configuration & Client Connection
+
+### Default AP Mode Parameters
+* **SSID:** `microhil-wifi`
+* **Password:** `microhil123` (WPA2 Mixed PSK)
+* **Server / Gateway IP:** `192.168.4.1`
+* **Server Port:** `5000`
+* **DHCP IP Pool:** `192.168.4.16` – `192.168.4.24`
+
+### Connecting via Android App: ABComm
+You can remotely control microHIL using the open-source Android application [**ABComm**](https://github.com/electux/abcomm):
+1. Connect your Android device to the Wi-Fi network **`microhil-wifi`** using password **`microhil123`**.
+2. Open **ABComm** and configure the connection settings:
+   - **Mode:** `TCP Client`
+   - **Host / IP:** `192.168.4.1`
+   - **Port:** `5000`
+3. Tap **Connect**.
+4. Send commands directly from ABComm (e.g. `<mh#sys#id#end>` or `<mh#ch#1#on#end>`).
+
+---
 
 ## Command Protocol
 

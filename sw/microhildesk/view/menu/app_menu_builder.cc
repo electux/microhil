@@ -31,6 +31,14 @@ namespace {
     constexpr std::string_view cOptionSettingsLabel{"_Settings"};
     constexpr std::string_view cOptionSettingsDetailedAction{"app.option_settings"};
 
+    constexpr std::string_view cDeviceLabel{"Device"};
+    constexpr std::string_view cDeviceConnectLabel{"_Connect"};
+    constexpr std::string_view cDeviceConnectDetailedAction{"app.device_connect"};
+    constexpr std::string_view cDeviceDisconnectLabel{"_Disconnect"};
+    constexpr std::string_view cDeviceDisconnectDetailedAction{"app.device_disconnect"};
+    constexpr std::string_view cDeviceClearLabel{"_Clear Console"};
+    constexpr std::string_view cDeviceClearDetailedAction{"app.console_clear"};
+
     constexpr std::string_view cCommandLabel{"Command"};
     constexpr std::string_view cCmdAllOnLabel{"_All Channels On"};
     constexpr std::string_view cCmdAllOnDetailedAction{"app.cmd_all_on"};
@@ -64,6 +72,18 @@ Glib::RefPtr<Gio::Menu> AppMenuBuilder::buildMenu() const {
         cOptionSettingsLabel.data(), cOptionSettingsDetailedAction.data()
     );
     menu->append_submenu(cOptionLabel.data(), submenuOption);
+
+    auto submenuDevice = Gio::Menu::create();
+    submenuDevice->append(
+        cDeviceConnectLabel.data(), cDeviceConnectDetailedAction.data()
+    );
+    submenuDevice->append(
+        cDeviceDisconnectLabel.data(), cDeviceDisconnectDetailedAction.data()
+    );
+    submenuDevice->append(
+        cDeviceClearLabel.data(), cDeviceClearDetailedAction.data()
+    );
+    menu->append_submenu(cDeviceLabel.data(), submenuDevice);
 
     auto submenuCommand = Gio::Menu::create();
     submenuCommand->append(

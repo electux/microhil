@@ -7,7 +7,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASE_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 BUILD_DIR="${BASE_DIR}/build"
-DEFAULT_UF2="${BUILD_DIR}/src/microhil-base.uf2"
+DEFAULT_UF2="${BUILD_DIR}/src/microhil-base-wifi.uf2"
 
 # Locate picotool binary
 if command -v picotool >/dev/null 2>&1; then

@@ -132,6 +132,7 @@ namespace Electux::App::Com {
         ////////////////////////////////////////////////////////////////////////////////////////////////
         std::unique_ptr<ISerialPort> m_serialPort{nullptr};
         std::string m_device{};
+        SerialParams m_params{};
         bool m_verbose{false};
     };
 } // namespace Electux::App::Com

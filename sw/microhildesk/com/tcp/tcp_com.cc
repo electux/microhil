@@ -21,8 +21,10 @@
 #include <arpa/inet.h>
 #include <com/tcp/tcp_com.h>
 #include <cstring>
+#include <fcntl.h>
 #include <iostream>
 #include <netinet/in.h>
+#include <poll.h>
 #include <sys/socket.h>
 #include <unistd.h>
 
@@ -40,6 +42,7 @@ namespace {
     constexpr std::string_view cTcpWriteError{"TcpCom write: Connection lost or write error."};
     constexpr std::string_view cTcpWriteNotOpenError{"TcpCom write error: Connection is not open."};
     constexpr uint16_t cDefaultPort{5000};
+    constexpr int cConnectTimeoutMs{1000};
 } // namespace
 
 TcpCom::TcpCom(bool verbose) : m_ip(cDefaultIp), m_port(cDefaultPort), m_socketFd(-1), m_verbose(verbose) {
@@ -62,7 +65,9 @@ bool TcpCom::open() {
 
     m_socketFd = ::socket(AF_INET, SOCK_STREAM, 0);
     if (m_socketFd < 0) {
-        std::cerr << cTcpOpenSocketError << std::endl;
+        if (m_verbose) {
+            std::cerr << cTcpOpenSocketError << std::endl;
+        }
         return false;
     }
 
@@ -72,20 +77,68 @@ bool TcpCom::open() {
     serv_addr.sin_port = htons(m_port);
 
     if (::inet_pton(AF_INET, m_ip.c_str(), &serv_addr.sin_addr) <= 0) {
-        std::cerr << cTcpOpenAddrError << std::endl;
+        if (m_verbose) {
+            std::cerr << cTcpOpenAddrError << std::endl;
+        }
         ::close(m_socketFd);
         m_socketFd = -1;
         return false;
     }
 
-    if (::connect(
-            m_socketFd, reinterpret_cast<struct sockaddr *>(&serv_addr), sizeof(serv_addr)
-        ) < 0) {
-        std::cerr << cTcpOpenConnError << std::endl;
-        ::close(m_socketFd);
-        m_socketFd = -1;
-        return false;
+    int flags = ::fcntl(m_socketFd, F_GETFL, 0);
+    if (flags >= 0) {
+        ::fcntl(m_socketFd, F_SETFL, flags | O_NONBLOCK);
     }
+
+    int res = ::connect(
+        m_socketFd, reinterpret_cast<struct sockaddr *>(&serv_addr), sizeof(serv_addr)
+    );
+
+    if (res < 0) {
+        if (errno == EINPROGRESS) {
+            struct pollfd pfd{};
+            pfd.fd = m_socketFd;
+            pfd.events = POLLOUT;
+
+            int pollRes = ::poll(&pfd, 1, cConnectTimeoutMs);
+            if (pollRes > 0 && (pfd.revents & POLLOUT) &&
+                !(pfd.revents & (POLLERR | POLLHUP | POLLNVAL))) {
+                int so_error = 0;
+                socklen_t len = sizeof(so_error);
+                if (::getsockopt(m_socketFd, SOL_SOCKET, SO_ERROR, &so_error, &len) < 0 || so_error != 0) {
+                    if (m_verbose) {
+                        std::cerr << cTcpOpenConnError << std::endl;
+                    }
+                    ::close(m_socketFd);
+                    m_socketFd = -1;
+                    return false;
+                }
+            } else {
+                if (m_verbose) {
+                    std::cerr << cTcpOpenConnError << std::endl;
+                }
+                ::close(m_socketFd);
+                m_socketFd = -1;
+                return false;
+            }
+        } else {
+            if (m_verbose) {
+                std::cerr << cTcpOpenConnError << std::endl;
+            }
+            ::close(m_socketFd);
+            m_socketFd = -1;
+            return false;
+        }
+    }
+
+    if (flags >= 0) {
+        ::fcntl(m_socketFd, F_SETFL, flags);
+    }
+
+    struct timeval tv{};
+    tv.tv_sec = 0;
+    tv.tv_usec = 500000;
+    ::setsockopt(m_socketFd, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
 
     if (m_verbose) {
         std::cout << "TcpCom connected successfully to " << m_ip << ":" << m_port
@@ -96,8 +149,10 @@ bool TcpCom::open() {
 
 bool TcpCom::close() {
     if (isOpen()) {
-        ::close(m_socketFd);
+        int fd = m_socketFd;
         m_socketFd = -1;
+        ::shutdown(fd, SHUT_RDWR);
+        ::close(fd);
         if (m_verbose) {
             std::cout << cTcpCloseMsg << std::endl;
         }
@@ -113,17 +168,21 @@ void TcpCom::read(std::vector<uint8_t> &data, size_t len) {
         return;
     }
 
-    data.resize(len);
-    size_t totalRead = 0;
-    while (totalRead < len) {
-        ssize_t bytesRead =
-            ::recv(m_socketFd, &data.at(totalRead), len - totalRead, 0);
-        if (bytesRead <= 0) {
-            std::cerr << cTcpReadError << std::endl;
+    data.clear();
+    std::vector<uint8_t> buf(len);
+    ssize_t bytesRead = ::recv(m_socketFd, buf.data(), len, 0);
+    if (bytesRead > 0) {
+        buf.resize(static_cast<size_t>(bytesRead));
+        data = std::move(buf);
+    } else if (bytesRead == 0) {
+        close();
+    } else {
+        if (errno != EAGAIN && errno != EINTR) {
+            if (m_verbose) {
+                std::cerr << cTcpReadError << std::endl;
+            }
             close();
-            break;
         }
-        totalRead += static_cast<size_t>(bytesRead);
     }
 }
 

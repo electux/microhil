@@ -63,9 +63,7 @@ namespace Electux::App::Com {
         params.flow = Com::SerialUtils::uintToFlowControl(flowIdx);
 
         serial->setDevice(params.device);
-        if (comChannel.open()) {
-            return serial->setup(params);
-        }
-        return false;
+
+        return serial->setup(params);
     }
 } // namespace Electux::App::Com

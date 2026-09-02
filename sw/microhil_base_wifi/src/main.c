@@ -32,54 +32,43 @@
 enum { MICROHIL_REQ_LEN = 128 };
 
 static bool device_init(void) {
-  if (!stdio_init_all()) {
-    return false;
-  }
+	stdio_init_all();
 
-  if (!relay_init()) {
-    return false;
-  }
+	nvm_wifi_config_t config;
+	nvm_config_init(&config);
 
-  if (!status_led_init()) {
-    return false;
-  }
+	if (!wifi_transport_init(&config)) {
+		return false;
+	}
 
-  if (!buzzer_init()) {
-    return false;
-  }
+	relay_init();
+	status_led_init();
+	buzzer_init();
+	command_init();
 
-  nvm_wifi_config_t config;
-  nvm_config_init(&config);
+	buzzer_beep_start();
 
-  if (!wifi_transport_init(&config)) {
-    return false;
-  }
-
-  command_init();
-
-  buzzer_beep_start();
-
-  return true;
+	return true;
 }
 
 int main(void) {
-  if (!device_init()) {
-    return 1;
-  }
+	if (!device_init()) {
+		return 1;
+	}
 
-  char request[MICROHIL_REQ_LEN] = {0};
+	char request[MICROHIL_REQ_LEN] = {0};
 
-  while (true) {
-    wifi_transport_poll();
+	while (true) {
+		wifi_transport_poll();
 
-    relay_tick();
-    buzzer_tick();
+		relay_tick();
+		buzzer_tick();
 
-    if (parser_get_command(request, MICROHIL_REQ_LEN)) {
-      command_dispatch(request);
-      memset(request, 0, MICROHIL_REQ_LEN * sizeof(char));
-    }
-  }
+		if (parser_get_command(request, MICROHIL_REQ_LEN)) {
+			command_dispatch(request);
+			memset(request, 0, MICROHIL_REQ_LEN * sizeof(char));
+		}
+	}
 
-  return 0;
+	return 0;
 }

@@ -25,7 +25,9 @@ using namespace Electux::App;
 
 namespace {
     constexpr std::string_view cAppStartedLog{"Application started."};
-    constexpr std::string_view cAppShuttingDownLog{"Application shutting down."};
+    constexpr std::string_view cAppShuttingDownLog{
+        "Application shutting down."
+    };
 } // namespace
 
 AppController::AppController(
@@ -38,8 +40,7 @@ AppController::AppController(
     std::unique_ptr<Command::IResponseProcessor> responseProcessor
 )
     : m_configManager(std::move(configManager)),
-      m_deviceWorker(std::move(deviceWorker)),
-      m_logger(std::move(logger)),
+      m_deviceWorker(std::move(deviceWorker)), m_logger(std::move(logger)),
       m_commandFormatter(std::move(commandFormatter)),
       m_channelMapper(std::move(channelMapper)),
       m_configDetector(std::move(configDetector)),
@@ -117,6 +118,19 @@ void AppController::onSetupChanged(const Model::SettingsSetup &setup) {
     getModel().emit_changed();
 }
 
+void AppController::onChannelStateChanged(
+    size_t channelIndex, const Model::ChannelState &state
+) {
+    if (channelIndex >= Model::Channel::cNumOfChannels || !m_configManager) {
+        return;
+    }
+
+    auto &config = const_cast<Model::IModel &>(m_configManager->getConfig());
+    config.setChannelState(channelIndex, state);
+    handleChannelStateChange(channelIndex, state);
+    m_configManager->store();
+}
+
 void AppController::handleChannelStateChange(
     size_t channelIndex, const Model::ChannelState &state
 ) {
@@ -124,9 +138,8 @@ void AppController::handleChannelStateChange(
         return;
     }
 
-    auto [cmd, logMsg] = m_channelMapper->map(
-        channelIndex, state, *m_commandFormatter
-    );
+    auto [cmd, logMsg] =
+        m_channelMapper->map(channelIndex, state, *m_commandFormatter);
 
     if (!logMsg.empty() && m_logger) {
         m_logger->log(logMsg, Logger::LogLevel::Info);
@@ -173,63 +186,77 @@ void AppController::requestVersion() {
     }
 }
 
-sigc::signal<void(const std::string &)> AppController::signal_data_received() {
-    return m_signalDataReceived;
-}
-
-sigc::signal<void(Worker::ConnectionState)> AppController::signal_connection_state() {
+void AppController::connectDevice() {
     if (m_deviceWorker) {
-        return m_deviceWorker->signal_connection_state();
+        m_deviceWorker->connect();
     }
-    static sigc::signal<void(Worker::ConnectionState)> dummy;
-    return dummy;
 }
 
-Worker::ConnectionState AppController::getConnectionState() const {
-    return m_deviceWorker ? m_deviceWorker->getConnectionState()
-                          : Worker::ConnectionState::Disconnected;
+void AppController::disconnectDevice() {
+    if (m_deviceWorker) {
+        m_deviceWorker->disconnect();
+    }
 }
 
-void AppController::onDeviceDataReceived(const std::string &data) {
-    if (m_responseProcessor && m_configManager) {
-        auto event = m_responseProcessor->parseChannelEvent(data);
-        if (event.valid) {
-            auto newConfig = m_configManager->getConfig().clone();
-            auto state = newConfig->getChannelState(event.channelIndex);
-            if (event.active) {
-                if (state.mode == Model::Channel::ChannelMode::Toggle) {
-                    state.toggle = true;
-                }
-            } else {
-                state.toggle = false;
-                state.timerEnabled = false;
-                state.pulseTriggered = false;
-                state.blinkEnabled = false;
-            }
-            newConfig->setChannelState(event.channelIndex, state);
-            m_configManager->setConfig(*newConfig);
-            getModel().emit_changed();
+    sigc::signal<void(const std::string &)>
+    AppController::signal_data_received() {
+        return m_signalDataReceived;
+    }
+
+    sigc::signal<void(Worker::ConnectionState)>
+    AppController::signal_connection_state() {
+        if (m_deviceWorker) {
+            return m_deviceWorker->signal_connection_state();
         }
-    }
-    m_signalDataReceived.emit(data);
-}
-
-void AppController::configureLogger() {
-    if (!m_logger || !m_configManager) {
-        return;
+        static sigc::signal<void(Worker::ConnectionState)> dummy;
+        return dummy;
     }
 
-    m_logger->close();
+    Worker::ConnectionState AppController::getConnectionState() const {
+        return m_deviceWorker ? m_deviceWorker->getConnectionState()
+                              : Worker::ConnectionState::Disconnected;
+    }
 
-    auto &config = getModel();
-    auto pathKey = config.toString(Model::ModelLogKey::FilePath);
-    auto levelKey = config.toString(Model::ModelLogKey::LogLevel);
+    void AppController::onDeviceDataReceived(const std::string &data) {
+        if (m_responseProcessor && m_configManager) {
+            auto event = m_responseProcessor->parseChannelEvent(data);
+            if (event.valid) {
+                auto newConfig = m_configManager->getConfig().clone();
+                auto state = newConfig->getChannelState(event.channelIndex);
+                if (event.active) {
+                    if (state.mode == Model::Channel::ChannelMode::Toggle) {
+                        state.toggle = true;
+                    }
+                } else {
+                    state.toggle = false;
+                    state.timerEnabled = false;
+                    state.pulseTriggered = false;
+                    state.blinkEnabled = false;
+                }
+                newConfig->setChannelState(event.channelIndex, state);
+                m_configManager->setConfig(*newConfig);
+                getModel().emit_changed();
+            }
+        }
+        m_signalDataReceived.emit(data);
+    }
 
-    m_logger->setOutputFile(config.getEntity(pathKey));
+    void AppController::configureLogger() {
+        if (!m_logger || !m_configManager) {
+            return;
+        }
 
-    uint32_t levelIdx =
-        static_cast<uint32_t>(std::stoul(config.getEntity(levelKey)));
-    m_logger->setLevel(static_cast<Logger::LogLevel>(levelIdx));
+        m_logger->close();
 
-    m_logger->open();
-}
+        auto &config = getModel();
+        auto pathKey = config.toString(Model::ModelLogKey::FilePath);
+        auto levelKey = config.toString(Model::ModelLogKey::LogLevel);
+
+        m_logger->setOutputFile(config.getEntity(pathKey));
+
+        uint32_t levelIdx =
+            static_cast<uint32_t>(std::stoul(config.getEntity(levelKey)));
+        m_logger->setLevel(static_cast<Logger::LogLevel>(levelIdx));
+
+        m_logger->open();
+    }
