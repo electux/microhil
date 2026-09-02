@@ -31,6 +31,12 @@ sw/microhil_base_ble/
 │   ├── device/                 # Hardware controllers (relays, LED, buzzer)
 │   ├── io/                     # Low-level I/O abstractions
 │   └── ws2812/                 # WS2812 PIO driver
+├── scripts/                    # Host automation & testing scripts
+│   ├── ble_scan.sh             # Active LE scanner for microhil-ble discovery
+│   ├── ble_info.sh             # BlueZ cache and controller diagnostics
+│   ├── ble_reconnect_test.sh   # Stress testing connect/disconnect cycles
+│   ├── flash.sh                # Automated build and deploy script
+│   └── setup_udev.sh           # Linux udev rules for Pico W USB access
 └── build/                      # Build output directory (generates microhil-base-ble.uf2)
 ```
 
@@ -62,6 +68,16 @@ All packets are enclosed within `<` and `>`. Inside the packet, elements are sep
 | `mh#ch#<N>#pulse#<MS>#end` | Pulse mode for channel N | `<mh#sys#channel <N> pulse started: <MS> ms#end>` |
 | `mh#ch#<N>#blink#<ON>#<OFF>#<CNT>#end` | Blink mode for channel N | `<mh#sys#channel <N> blink started: on=<ON> ms, off=<OFF> ms, count=<CNT>#end>` |
 | `mh#all#mask#<MASK>#end` | Apply 8-bit binary mask (e.g. `10101010`) | `<mh#sys#channels mask applied: 10101010#end>` |
+
+## Helper Scripts
+
+The `scripts/` directory provides convenient utilities for setup, scanning, and testing:
+
+*   **`scripts/ble_scan.sh [TIMEOUT_SEC]`**: Runs an active LE discovery scan, filters for `microhil-ble`, and displays the detected MAC address with configuration advice.
+*   **`scripts/ble_info.sh [MAC]`**: Inspects local BlueZ adapter status and queries cached device details for `microhil-ble`.
+*   **`scripts/ble_reconnect_test.sh [MAC] [CYCLES] [DELAY_SEC]`**: Performs automated connect/disconnect stress testing against the BLE firmware.
+*   **`scripts/flash.sh`**: Builds the firmware and copies `microhil-base-ble.uf2` directly to a mounted Pico W in BOOTSEL mode.
+*   **`scripts/setup_udev.sh`**: Configures Linux udev permissions for non-root serial and picotool access.
 
 ## Building and Flashing
 
