@@ -41,10 +41,93 @@ other information that should be provided before the tool is installed.</p>
 <div class="toctree-wrapper compound">
 </div>
 <p><a class="reference external" href="https://github.com/electux/microhil/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/electux/microhil.svg" /></a> <a class="reference external" href="https://microhil.readthedocs.io/projects/microhil/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/microhil/badge/?version=latest" /></a> <a class="reference external" href="https://github.com/electux/microhil/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/electux/microhil.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml"><img alt="microhil_base C checker" src="https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_base_ble_c_checker.yml"><img alt="microhil_base_ble C checker" src="https://github.com/electux/microhil/actions/workflows/microhil_base_ble_c_checker.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_c_checker.yml"><img alt="microhil_base_wifi C checker" src="https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_c_checker.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml"><img alt="microhil_nuttx C checker" src="https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml"><img alt="microhil_upy Python checker" src="https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml/badge.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_base_tests.yml"><img alt="microhil_base tests" src="https://github.com/electux/microhil/actions/workflows/microhil_base_tests.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_base_ble_tests.yml"><img alt="microhil_base_ble tests" src="https://github.com/electux/microhil/actions/workflows/microhil_base_ble_tests.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_tests.yml"><img alt="microhil_base_wifi tests" src="https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_tests.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_nuttx_tests.yml"><img alt="microhil_nuttx tests" src="https://github.com/electux/microhil/actions/workflows/microhil_nuttx_tests.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_upy_tests.yml"><img alt="microhil_upy tests" src="https://github.com/electux/microhil/actions/workflows/microhil_upy_tests.yml/badge.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker_build.yml"><img alt="microhildesk build checker" src="https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker_build.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml"><img alt="microhil-desktop build checker" src="https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml/badge.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/electux/microhil/actions/workflows/microhildesk_tests.yml"><img alt="microhildesk tests" src="https://github.com/electux/microhil/actions/workflows/microhildesk_tests.yml/badge.svg" /></a></p>
+</section>
+<section id="development">
+<h1>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h1>
+<section id="sw-firmware-application">
+<h2>SW Firmware Application<a class="headerlink" href="#sw-firmware-application" title="Link to this heading">¶</a></h2>
+<p><strong>microhil-base</strong></p>
+<p>A C-based firmware designed for the microHIL hardware controller (Raspberry Pi Pico). It acts as the direct hardware interface layer, managing physical relays, status LEDs, and buzzer alerts by parsing and executing command protocols received over standard serial interfaces.</p>
+<ul class="simple">
+<li><p><strong>Supported Operations:</strong>
+* <strong>Channel Toggle:</strong> Control individual relays (channels 1-8) by turning them ON or OFF.
+* <strong>Timer Mode:</strong> Keep a channel active for a specified duration in seconds.
+* <strong>Pulse Mode:</strong> Trigger a brief pulse on a channel for a duration specified in milliseconds.
+* <strong>Blink Mode:</strong> Configure blinking loops with custom ON/OFF durations and a loop count.
+* <strong>Channel Masking:</strong> Apply an 8-bit binary mask (e.g., <code class="docutils literal notranslate"><span class="pre">10101010</span></code>) to update all 8 channel states at once.
+* <strong>Status Monitoring:</strong> Query the current state of a single channel or all channels.
+* <strong>System Reset:</strong> Trigger a watchdog-based hardware reboot.
+* <strong>Diagnostics:</strong> Query system board identity and firmware version info.</p></li>
+</ul>
+<p><strong>microhil-base-ble</strong></p>
+<p>A C-based firmware designed for the microHIL hardware controller (Raspberry Pi Pico W). It integrates the CYW43439 wireless chipset with the BTstack Bluetooth stack, exposing a Nordic BLE UART (SPP) GATT service for wireless HWIL control, physical relay management, status LEDs, and buzzer alerts.</p>
+<ul class="simple">
+<li><p><strong>Supported Operations:</strong>
+* <strong>Wireless BLE Transport:</strong> Nordic UART Service (NUS) GATT implementation over Bluetooth Low Energy.
+* <strong>Channel Toggle:</strong> Control individual relays (channels 1-8) by turning them ON or OFF.
+* <strong>Timer &amp; Pulse Mode:</strong> Activate channels with second-level precision or trigger millisecond-level pulses.
+* <strong>Blink Mode:</strong> Trigger repeating blinking loops with configurable duty cycles and loop counts.
+* <strong>Channel Masking:</strong> Apply an 8-bit binary mask (e.g., <code class="docutils literal notranslate"><span class="pre">10101010</span></code>) to update all 8 channels at once.
+* <strong>System Status &amp; Reset:</strong> Monitor channel status and reboot the board via hardware watchdog.
+* <strong>Diagnostics:</strong> Query device identification (<code class="docutils literal notranslate"><span class="pre">microhil-ble</span></code>) and firmware version details.</p></li>
+</ul>
+<p><strong>microhil-base-wifi</strong></p>
+<p>A C-based firmware designed for the microHIL hardware controller (Raspberry Pi Pico W). It utilizes the CYW43439 Wi-Fi chipset, lwIP raw TCP socket server, and on-board Flash NVM storage, allowing full remote HWIL control over Wi-Fi TCP/IP (Access Point or Station mode) with live USB-Serial network provisioning.</p>
+<ul class="simple">
+<li><p><strong>Supported Operations:</strong>
+* <strong>Wi-Fi &amp; TCP Server:</strong> Dual-mode Wi-Fi (AP hotspot on <code class="docutils literal notranslate"><span class="pre">192.168.4.1</span></code> or Station mode) hosting raw TCP server on port <code class="docutils literal notranslate"><span class="pre">5000</span></code>.
+* <strong>Persistent NVM Configuration:</strong> Live parameter provisioning and Flash persistence (<code class="docutils literal notranslate"><span class="pre">&lt;mh#net#...#end&gt;</span></code>).
+* <strong>Channel Toggle:</strong> Control individual relays (channels 1-8) by turning them ON or OFF.
+* <strong>Timer &amp; Pulse Mode:</strong> Activate channels with second-level precision or trigger millisecond-level pulses.
+* <strong>Blink Mode:</strong> Trigger repeating blinking loops with configurable duty cycles and loop counts.
+* <strong>Channel Masking:</strong> Apply an 8-bit binary mask (e.g., <code class="docutils literal notranslate"><span class="pre">10101010</span></code>) to update all 8 channels at once.
+* <strong>System Status &amp; Reset:</strong> Monitor channel status and reboot the board remotely.
+* <strong>Diagnostics:</strong> Query device identification (<code class="docutils literal notranslate"><span class="pre">microhil-wifi</span></code>) and network settings.</p></li>
+</ul>
+<p><strong>microhil-nuttx</strong></p>
+<p>An RTOS-based firmware built on Apache NuttX (v12.0.0+) for the microHIL hardware controller (Raspberry Pi Pico). It runs a low-latency, non-blocking background daemon (<code class="docutils literal notranslate"><span class="pre">microhil_daemon</span></code>) for controlling hardware channels and features a combined boot mode that exposes a NuttX Shell (NSH) console on the physical UART0 interface.</p>
+<ul class="simple">
+<li><p><strong>Supported Operations:</strong>
+* <strong>Background Daemon Execution:</strong> Automatically initializes hardware channels, buzzer and WS2812 status LED upon boot.
+* <strong>Channel Control:</strong> Turn individual relays (channels 1-8) ON or OFF.
+* <strong>Timer &amp; Pulse Mode:</strong> Activate channels with second-level precision or trigger millisecond-level pulses.
+* <strong>Blink Mode:</strong> Trigger repeating blinking loops with configurable duty cycles and loop counts.
+* <strong>Combined Console Support:</strong> Exposes standard NSH console on UART0 (GP0/GP1) for device diagnostics and <code class="docutils literal notranslate"><span class="pre">microhil</span></code> control daemon on the virtual USB CDC ACM serial interface (<code class="docutils literal notranslate"><span class="pre">/dev/ttyACM0</span></code>).
+* <strong>System Status &amp; Reset:</strong> Monitor real-time channel status and reboot the board remotely.</p></li>
+</ul>
+<p><strong>microhil-upy</strong></p>
+<p>A MicroPython-based firmware designed for the microHIL hardware controller (Raspberry Pi Pico). It implements a non-blocking execution loop that manages channel states, timer-based activities, status LEDs, and buzzer beeps by processing command strings in a structured <code class="docutils literal notranslate"><span class="pre">&lt;mh#...#end&gt;</span></code> format received over serial connections.</p>
+<ul class="simple">
+<li><p><strong>Supported Operations:</strong>
+* <strong>Channel Control:</strong> Toggle channel state ON/OFF or apply an 8-bit channel mask.
+* <strong>Timer &amp; Pulse Mode:</strong> Activate a channel for a duration in seconds or trigger a millisecond-precision pulse.
+* <strong>Blink Mode:</strong> Trigger repeating ON/OFF blinking cycles with a specific loop count.
+* <strong>System Status &amp; Reset:</strong> Monitor channel statuses and trigger remote system watchdog resets.
+* <strong>Diagnostics:</strong> Query device version and identification details.</p></li>
+</ul>
+</section>
+<section id="sw-desktop-application">
+<h2>SW Desktop Application<a class="headerlink" href="#sw-desktop-application" title="Link to this heading">¶</a></h2>
+<p><strong>microhildesk</strong></p>
+<p>A desktop GUI application built in C++ using <code class="docutils literal notranslate"><span class="pre">gtkmm</span></code>. It acts as the primary orchestration and control panel, allowing users to interact with and manage microHIL hardware controllers visually.</p>
+<ul class="simple">
+<li><p><strong>Supported Operations:</strong>
+* <strong>Multi-Interface Connectivity:</strong> Switch and communicate seamlessly over Serial, TCP (Socket), and BLE (Bluetooth Low Energy) interfaces.
+* <strong>Visual Control Dashboard:</strong> Visually toggle channel states, apply 8-bit channel masks, and monitor live statuses.
+* <strong>Advanced Control Configuration:</strong> Configure and execute timer, pulse, and blinking tasks on hardware channels through the GUI.
+* <strong>Diagnostics &amp; System Control:</strong> Read connected board IDs/versions and trigger remote watchdog system resets.</p></li>
+</ul>
+</section>
 </section>
 <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
 <p>Navigate to release <a class="reference external" href="https://github.com/electux/microhil/releases">page</a> download and extract release archive.</p>
+<section id="sw-firmware-application-installation">
+<h2>SW Firmware Application installation<a class="headerlink" href="#sw-firmware-application-installation" title="Link to this heading">¶</a></h2>
 <p>To install <strong>microhil-base</strong> type the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/electux/microhil.git
@@ -81,6 +164,24 @@ make
 cp<span class="w"> </span>src/microhil-base-ble.uf2<span class="w"> </span>/media/<span class="nv">$USER</span>/RPI-RP2/
 </pre></div>
 </div>
+<p>To install <strong>microhil-base-wifi</strong> type the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/electux/microhil.git
+<span class="nb">cd</span><span class="w"> </span>microhil/sw/microhil_base_wifi
+
+<span class="c1"># Create build directory</span>
+mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+
+<span class="c1"># Configure build (ensure PICO_SDK_PATH is set)</span>
+cmake<span class="w"> </span>-DPICO_SDK_PATH<span class="o">=</span>/path/to/pico-sdk<span class="w"> </span>..
+
+<span class="c1"># Build</span>
+make
+
+<span class="c1"># Deploy by copying the generated microhil-base-wifi.uf2 file to the Pico W mounted storage</span>
+cp<span class="w"> </span>src/microhil-base-wifi.uf2<span class="w"> </span>/media/<span class="nv">$USER</span>/RPI-RP2/
+</pre></div>
+</div>
 <p>To install <strong>microhil-nuttx</strong> type the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository recursively (to pull the NuttX submodule)</span>
 git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/electux/microhil.git
@@ -115,6 +216,9 @@ make
 make<span class="w"> </span>deploy
 </pre></div>
 </div>
+</section>
+<section id="sw-desktop-application-installation">
+<h2>SW Desktop Application installation<a class="headerlink" href="#sw-desktop-application-installation" title="Link to this heading">¶</a></h2>
 <p>To install <strong>microhildesk</strong> type the following:</p>
 <p><strong>From Source:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
@@ -137,8 +241,11 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
 </pre></div>
 </div>
 </section>
+</section>
 <section id="dependencies">
 <h1>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">¶</a></h1>
+<section id="sw-firmware-application-dependencies">
+<h2>SW Firmware Application dependencies<a class="headerlink" href="#sw-firmware-application-dependencies" title="Link to this heading">¶</a></h2>
 <p><strong>microhil-base</strong> requires next modules and libraries:</p>
 <ul class="simple">
 <li><p><strong>Runtime:</strong>
@@ -154,6 +261,15 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
 * Raspberry Pi Pico W (RP2040 + CYW43439) hardware</p></li>
 <li><p><strong>Development / Build:</strong>
 * Raspberry Pi Pico SDK (<code class="docutils literal notranslate"><span class="pre">pico-sdk</span></code>) with BTstack &amp; CYW43 driver support
+* GNU Arm Embedded Toolchain (<code class="docutils literal notranslate"><span class="pre">gcc-arm-none-eabi</span></code>)
+* <code class="docutils literal notranslate"><span class="pre">CMake</span></code> (v3.13+)</p></li>
+</ul>
+<p><strong>microhil-base-wifi</strong> requires next modules and libraries:</p>
+<ul class="simple">
+<li><p><strong>Runtime:</strong>
+* Raspberry Pi Pico W (RP2040 + CYW43439) hardware</p></li>
+<li><p><strong>Development / Build:</strong>
+* Raspberry Pi Pico SDK (<code class="docutils literal notranslate"><span class="pre">pico-sdk</span></code>) with lwIP &amp; CYW43 driver support
 * GNU Arm Embedded Toolchain (<code class="docutils literal notranslate"><span class="pre">gcc-arm-none-eabi</span></code>)
 * <code class="docutils literal notranslate"><span class="pre">CMake</span></code> (v3.13+)</p></li>
 </ul>
@@ -174,6 +290,9 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
 * <code class="docutils literal notranslate"><span class="pre">micropython-rp2-stubs</span></code> (for static analysis/autocomplete typings)
 * <code class="docutils literal notranslate"><span class="pre">micropython-stdlib-stubs</span></code> (for standard library autocomplete typings)</p></li>
 </ul>
+</section>
+<section id="sw-desktop-application-dependencies">
+<h2>SW Desktop Application dependencies<a class="headerlink" href="#sw-desktop-application-dependencies" title="Link to this heading">¶</a></h2>
 <p><strong>microhildesk</strong> requires next modules and libraries:</p>
 <ul class="simple">
 <li><p><strong>Runtime:</strong>
@@ -182,24 +301,16 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
 <li><p><strong>Development / Build:</strong>
 * <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code>
 * <code class="docutils literal notranslate"><span class="pre">libgtkmm-4.0-dev</span></code>
-* C++17 compliant compiler (<code class="docutils literal notranslate"><span class="pre">g++</span></code>)</p></li>
+* C++23 compliant compiler (<code class="docutils literal notranslate"><span class="pre">g++</span></code>)</p></li>
 </ul>
 </section>
-<section id="project-structure">
-<h1>Project structure<a class="headerlink" href="#project-structure" title="Link to this heading">¶</a></h1>
-<p>The repository is organized as follows:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>microhil/
-├── docs/                   # Documentation files
-├── hw/                     # Hardware design files (schematics, PCB layouts)
-└── sw/                     # Software and firmware source directories
-    ├── microhil_base/      # C-based firmware for Pico (direct HWIL interface)
-    ├── microhil_base_ble/  # C-based BLE firmware for Pico W (wireless HWIL interface)
-    ├── microhil_nuttx/     # NuttX-based RTOS firmware for Pico
-    ├── microhil_upy/       # MicroPython-based firmware for Pico
-    ├── microhildesk/       # Desktop GUI application (gtkmm/C++)
-    └── microhildesk_tests/ # Test suites for the desktop application
-</pre></div>
-</div>
+</section>
+<section id="docs">
+<h1>Docs<a class="headerlink" href="#docs" title="Link to this heading">¶</a></h1>
+<p><a class="reference external" href="https://microhil.readthedocs.io/projects/microhil/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/microhil/badge/?version=latest" /></a></p>
+<p>More documentation and info at
+* <a class="reference external" href="https://microhil.readthedocs.io/en/latest/">https://microhil.readthedocs.io/en/latest/</a>
+* <a class="reference external" href="https://www.gnome.org/">https://www.gnome.org</a></p>
 </section>
 <section id="copyright-and-licence">
 <h1>Copyright and licence<a class="headerlink" href="#copyright-and-licence" title="Link to this heading">¶</a></h1>
@@ -232,9 +343,22 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
     <h3><a href="#">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">microhil</a></li>
-<li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
-<li><a class="reference internal" href="#project-structure">Project structure</a></li>
+<li><a class="reference internal" href="#development">Development</a><ul>
+<li><a class="reference internal" href="#sw-firmware-application">SW Firmware Application</a></li>
+<li><a class="reference internal" href="#sw-desktop-application">SW Desktop Application</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#sw-firmware-application-installation">SW Firmware Application installation</a></li>
+<li><a class="reference internal" href="#sw-desktop-application-installation">SW Desktop Application installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li><a class="reference internal" href="#sw-firmware-application-dependencies">SW Firmware Application dependencies</a></li>
+<li><a class="reference internal" href="#sw-desktop-application-dependencies">SW Desktop Application dependencies</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#docs">Docs</a></li>
 <li><a class="reference internal" href="#copyright-and-licence">Copyright and licence</a><ul>
 <li><a class="reference internal" href="#microhil-licenses">microHIL Licenses</a></li>
 <li><a class="reference internal" href="#third-party-component-licenses">Third-Party Component Licenses</a></li>
