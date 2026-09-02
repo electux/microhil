@@ -28,7 +28,8 @@ namespace Electux::App::Worker {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     enum class ConnectionState : uint8_t {
         Disconnected = 0,
-        Handshaking = 1,
-        Ready = 2
+        Connecting = 1,
+        Handshaking = 2,
+        Ready = 3
     };
 } // namespace Electux::App::Worker

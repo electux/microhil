@@ -12,9 +12,9 @@ set(GOOGLETEST_VERSION 1.14.0)
 
 enable_testing()
 
-# Add gtkmm and glibmm packages
+# Add gtkmm-4.0 package
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(gtkmm REQUIRED IMPORTED_TARGET gtkmm-4.0 glibmm-2.4)
+pkg_check_modules(gtkmm REQUIRED IMPORTED_TARGET gtkmm-4.0)
 
 
 # Add sources and includes for googletest

@@ -143,6 +143,9 @@ void EntryApplication::on_startup() {
     m_settings->setupChanged().connect(
         sigc::mem_fun(*this, &EntryApplication::onSetupChanged)
     );
+    m_home->channelChanged().connect(
+        sigc::mem_fun(*m_controller, &IAppController::onChannelStateChanged)
+    );
     m_home->controlChanged().connect(
         sigc::mem_fun(*this, &EntryApplication::onSetupChanged)
     );

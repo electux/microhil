@@ -117,7 +117,15 @@ bool BluezBleClient::connect(NotificationCallback callback) {
 
     if (!m_dbusHelper->isDeviceConnected(devPath)) {
         if (!m_dbusHelper->connectDevice(devPath)) {
-            return false;
+            Glib::ustring adapterPath =
+                BluezDeviceResolver::findAdapterPath(objects);
+            m_dbusHelper->startLeDiscovery(adapterPath);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            bool connected = m_dbusHelper->connectDevice(devPath);
+            m_dbusHelper->stopDiscovery(adapterPath);
+            if (!connected) {
+                return false;
+            }
         }
     }
 
@@ -141,13 +149,28 @@ bool BluezBleClient::connect(NotificationCallback callback) {
         return false;
     }
 
-    auto gattObjects = m_dbusHelper->getManagedObjects();
     Glib::ustring rxPath;
     Glib::ustring txPath;
-    if (!BluezDeviceResolver::findGattPaths(
-            gattObjects, devPath, m_serviceUuid, m_rxUuid, m_txUuid, rxPath,
-            txPath
-        )) {
+    auto startGattTime = std::chrono::steady_clock::now();
+    while (!m_abort) {
+        auto gattObjects = m_dbusHelper->getManagedObjects();
+        if (BluezDeviceResolver::findGattPaths(
+                gattObjects, devPath, m_serviceUuid, m_rxUuid, m_txUuid, rxPath,
+                txPath
+            )) {
+            break;
+        }
+        auto now = std::chrono::steady_clock::now();
+        if (std::chrono::duration_cast<std::chrono::seconds>(
+                now - startGattTime
+            )
+                .count() > cServicesResolveTimeoutSec) {
+            break;
+        }
+        std::this_thread::sleep_for(cPollingInterval);
+    }
+
+    if (rxPath.empty() || txPath.empty() || m_abort) {
         if (m_verbose) {
             std::cerr << cErrGattNotFound << std::endl;
         }

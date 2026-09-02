@@ -54,20 +54,16 @@ BleCom::~BleCom() noexcept {
 }
 
 bool BleCom::open() {
-    if (m_isClosing) {
-        return false;
-    }
+    m_isClosing = false;
 
     std::unique_lock<std::mutex> lock(m_bufferMutex);
     if (m_client && m_client->isConnected()) {
         return true;
     }
 
-    if (!m_client) {
-        m_client = createBluezBleClient(
-            m_address, m_serviceUuid, m_rxUuid, m_txUuid, m_verbose
-        );
-    }
+    m_client = createBluezBleClient(
+        m_address, m_serviceUuid, m_rxUuid, m_txUuid, m_verbose
+    );
 
     auto callback = [this](const std::vector<uint8_t> &data) {
         onNotificationReceived(data);

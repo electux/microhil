@@ -93,21 +93,32 @@ SerialCom::~SerialCom() noexcept {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool SerialCom::open() {
     if (m_device.empty()) {
-        std::cerr << cOpenEmptyDeviceError << std::endl;
+        if (m_verbose) {
+            std::cerr << cOpenEmptyDeviceError << std::endl;
+        }
         return false;
     }
 
     if (!isOpen()) {
         try {
             m_serialPort->Open(m_device);
+            setBaudRate(m_params.baud);
+            setCharacterSize(m_params.data);
+            setParity(m_params.parity);
+            setStopBits(m_params.stop);
+            setFlowControl(m_params.flow);
             if (m_verbose) {
                 std::cout << cOpenSuccessMsg << std::endl;
             }
             return true;
         } catch (const std::exception &e) {
-            std::cerr << cOpenExceptionError << e.what() << std::endl;
+            if (m_verbose) {
+                std::cerr << cOpenExceptionError << e.what() << std::endl;
+            }
         } catch (...) {
-            std::cerr << cOpenExceptionError << "Unknown error during open." << std::endl;
+            if (m_verbose) {
+                std::cerr << cOpenExceptionError << "Unknown error during open." << std::endl;
+            }
         }
     }
 
@@ -138,10 +149,7 @@ bool SerialCom::close() {
 /// @return True if the port is open, false otherwise.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool SerialCom::isOpen() const {
-    bool open = m_serialPort->IsOpen();
-    // std::cout << "Serial port is " << (open ? "open." : "closed.") <<
-    // std::endl;
-    return open;
+    return m_serialPort->IsOpen();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -151,7 +159,6 @@ bool SerialCom::isOpen() const {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::read(std::vector<uint8_t> &data, size_t len) {
     if (!isOpen()) {
-        std::cerr << cReadError << std::endl;
         return;
     }
 
@@ -184,20 +191,26 @@ void SerialCom::read(std::vector<uint8_t> &data, size_t len) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::write(const std::vector<uint8_t> &data) {
     if (!isOpen()) {
-        std::cerr << cWriteError << std::endl;
+        if (m_verbose) {
+            std::cerr << cWriteError << std::endl;
+        }
         return;
     }
 
     try {
         m_serialPort->Write(data);
     } catch (const std::exception &e) {
-        std::cerr << cWriteError << ": " << e.what() << std::endl;
+        if (m_verbose) {
+            std::cerr << cWriteError << ": " << e.what() << std::endl;
+        }
         try {
             m_serialPort->Close();
         } catch (...) {
         }
     } catch (...) {
-        std::cerr << cWriteError << ": Unknown exception occurred during write." << std::endl;
+        if (m_verbose) {
+            std::cerr << cWriteError << ": Unknown exception occurred during write." << std::endl;
+        }
         try {
             m_serialPort->Close();
         } catch (...) {
@@ -209,16 +222,22 @@ void SerialCom::write(const std::vector<uint8_t> &data) {
 /// @brief Configures the serial port device file path.
 /// @param device Path to the serial port device.
 ////////////////////////////////////////////////////////////////////////////////////////////////
-void SerialCom::setDevice(const std::string &device) { m_device = device; }
+void SerialCom::setDevice(const std::string &device) {
+    m_device = device;
+    m_params.device = device;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @brief Sets the baud rate for the serial port.
 /// @param baudRate The desired baud rate.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::setBaudRate(BaudRate baudRate) {
-    try {
-        m_serialPort->SetBaudRate(baudRate);
-    } catch (...) {
+    m_params.baud = baudRate;
+    if (isOpen()) {
+        try {
+            m_serialPort->SetBaudRate(baudRate);
+        } catch (...) {
+        }
     }
 }
 
@@ -227,9 +246,12 @@ void SerialCom::setBaudRate(BaudRate baudRate) {
 /// @param characterSize The desired character size.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::setCharacterSize(CharacterSize characterSize) {
-    try {
-        m_serialPort->SetCharacterSize(characterSize);
-    } catch (...) {
+    m_params.data = characterSize;
+    if (isOpen()) {
+        try {
+            m_serialPort->SetCharacterSize(characterSize);
+        } catch (...) {
+        }
     }
 }
 
@@ -238,9 +260,12 @@ void SerialCom::setCharacterSize(CharacterSize characterSize) {
 /// @param parity The desired parity mode.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::setParity(Parity parity) {
-    try {
-        m_serialPort->SetParity(parity);
-    } catch (...) {
+    m_params.parity = parity;
+    if (isOpen()) {
+        try {
+            m_serialPort->SetParity(parity);
+        } catch (...) {
+        }
     }
 }
 
@@ -249,9 +274,12 @@ void SerialCom::setParity(Parity parity) {
 /// @param stopBits The desired number of stop bits.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::setStopBits(StopBits stopBits) {
-    try {
-        m_serialPort->SetStopBits(stopBits);
-    } catch (...) {
+    m_params.stop = stopBits;
+    if (isOpen()) {
+        try {
+            m_serialPort->SetStopBits(stopBits);
+        } catch (...) {
+        }
     }
 }
 
@@ -260,9 +288,12 @@ void SerialCom::setStopBits(StopBits stopBits) {
 /// @param flowControl The desired flow control mode.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void SerialCom::setFlowControl(FlowControl flowControl) {
-    try {
-        m_serialPort->SetFlowControl(flowControl);
-    } catch (...) {
+    m_params.flow = flowControl;
+    if (isOpen()) {
+        try {
+            m_serialPort->SetFlowControl(flowControl);
+        } catch (...) {
+        }
     }
 }
 
@@ -272,30 +303,29 @@ void SerialCom::setFlowControl(FlowControl flowControl) {
 /// @return True if setup was successful, false otherwise.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool SerialCom::setup(const SerialParams &params) {
-    if (!isOpen()) {
-        std::cerr << cSetupNotOpenError << std::endl;
-        return false;
+    m_params = params;
+    m_device = params.device;
+
+    if (isOpen()) {
+        try {
+            setBaudRate(params.baud);
+            setCharacterSize(params.data);
+            setParity(params.parity);
+            setStopBits(params.stop);
+            setFlowControl(params.flow);
+            return true;
+        } catch (const std::exception &e) {
+            if (m_verbose) {
+                std::cerr << cSetupExceptionError << e.what() << std::endl;
+            }
+            return false;
+        } catch (...) {
+            if (m_verbose) {
+                std::cerr << cSetupExceptionError << "Unknown error during setup." << std::endl;
+            }
+            return false;
+        }
     }
 
-    if (params.device.empty()) {
-        std::cerr << cSetupEmptyDeviceError << std::endl;
-        return false;
-    }
-
-    try {
-        setBaudRate(params.baud);
-        setCharacterSize(params.data);
-        setParity(params.parity);
-        setStopBits(params.stop);
-        setFlowControl(params.flow);
-        m_device = params.device;
-        return true;
-
-    } catch (const std::exception &e) {
-        std::cerr << cSetupExceptionError << e.what() << std::endl;
-        return false;
-    } catch (...) {
-        std::cerr << cSetupExceptionError << "Unknown error during setup." << std::endl;
-        return false;
-    }
+    return true;
 }

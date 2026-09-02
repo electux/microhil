@@ -24,6 +24,7 @@
 #include <model/model_factory.h>
 #include <model/imodel.h>
 #include "test_mock_ible.h"
+#include "test_mock_icom.h"
 
 using namespace Electux::App::Com;
 using namespace Electux::App::Model;
@@ -54,8 +55,6 @@ class BleComConfiguratorTest : public Test {
 };
 
 TEST_F(BleComConfiguratorTest, ConfigureSuccessTest) {
-    EXPECT_CALL(*m_bleMock, open()).WillOnce(Return(true));
-
     bool result = m_configurator->configure(*m_model, *m_bleMock);
 
     EXPECT_TRUE(result);
@@ -66,9 +65,9 @@ TEST_F(BleComConfiguratorTest, ConfigureSuccessTest) {
 }
 
 TEST_F(BleComConfiguratorTest, ConfigureFailureTest) {
-    EXPECT_CALL(*m_bleMock, open()).WillOnce(Return(false));
-
-    bool result = m_configurator->configure(*m_model, *m_bleMock);
+    // If a non-BLE ICom object is passed, dynamic_cast fails and returns false
+    com::mock::MockICom notBleMock;
+    bool result = m_configurator->configure(*m_model, notBleMock);
 
     EXPECT_FALSE(result);
 }

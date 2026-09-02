@@ -16,17 +16,21 @@
 /// You should have received a copy of the GNU General Public License along
 /// with this program. If not, see <http://www.gnu.org/licenses/>.
 ///
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include <atomic>
+#include <chrono>
 #include <com/icom.h>
 #include <com/icom_configurator.h>
 #include <command/formatter/icommand_formatter.h>
 #include <command/processor/iresponse_processor.h>
+#include <condition_variable>
+#include <glibmm/dispatcher.h>
 #include <log/ilog.h>
 #include <memory>
 #include <model/imodel.h>
+#include <mutex>
+#include <queue>
 #include <thread>
 #include <worker/connection_state.h>
 #include <worker/idevice_worker.h>
@@ -52,9 +56,10 @@ namespace Electux::App::Worker {
 
         void start() override;
         void stop() override;
+        void connect() override;
+        void disconnect() override;
         void configure(const Model::IModel &model) override;
         void send(const std::string &command) override;
-        void setNeedInitialQuery(bool need) override;
         bool isConnected() const override;
         ConnectionState getConnectionState() const override;
         sigc::signal<void(const std::string &)> signal_data_received() override;
@@ -62,8 +67,18 @@ namespace Electux::App::Worker {
 
       private:
         void readLoop();
+        void handleDisconnectedState();
+        bool handleConnectingState(
+            std::chrono::steady_clock::time_point &handshakeStartTime
+        );
+        bool checkHandshakeTimeout(
+            const std::chrono::steady_clock::time_point &handshakeStartTime
+        );
+        void handleDataIO();
+        void processIncomingData(const std::string &dataStr);
         void queryInitialDeviceStatus();
         void updateConnectionState(ConnectionState state);
+        void emitData(const std::string &data);
         std::string getConnectionLossErrorMessage() const;
 
         std::unique_ptr<Com::ICom> m_comChannel;
@@ -73,9 +88,17 @@ namespace Electux::App::Worker {
         Logger::ILog *m_logger;
 
         std::thread m_readThread;
+        std::mutex m_ioMutex;
+        std::mutex m_stateMutex;
+        std::condition_variable m_cv;
+        std::mutex m_queueMutex;
+        std::queue<std::string> m_dataQueue;
+        Glib::Dispatcher m_dataDispatcher;
+        Glib::Dispatcher m_stateDispatcher;
         std::atomic<bool> m_stopThread{false};
-        std::atomic<bool> m_needInitialQuery{true};
+        std::atomic<bool> m_connectRequested{false};
         std::atomic<ConnectionState> m_connectionState{ConnectionState::Disconnected};
+        std::atomic<ConnectionState> m_pendingState{ConnectionState::Disconnected};
         sigc::signal<void(const std::string &)> m_signalDataReceived;
         sigc::signal<void(ConnectionState)> m_signalConnectionState;
     };

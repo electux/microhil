@@ -13,6 +13,7 @@ add_compile_definitions(VERBOSE)
 
 # Adds sub-structure includes
 include_directories(.)
+include_directories(config)
 include_directories(io)
 include_directories(ws2812)
 include_directories(device)
@@ -20,6 +21,7 @@ include_directories(ble)
 include_directories(command)
 
 # Adds sub-structure sources
+add_subdirectory(config)
 add_subdirectory(io)
 add_subdirectory(ws2812)
 add_subdirectory(device)
@@ -37,13 +39,14 @@ pico_enable_stdio_uart("${CMAKE_PROJECT_NAME}" 0)
 
 # Links all libraries
 target_link_libraries("${CMAKE_PROJECT_NAME}"
+    config
     command
     device
     io
     ws2812
     ble
     pico_stdlib
-    pico_cyw43_arch_threadsafe_background
+    pico_cyw43_arch_none
     pico_btstack_cyw43
     pico_btstack_ble
 )

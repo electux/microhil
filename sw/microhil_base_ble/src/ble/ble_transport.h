@@ -18,6 +18,7 @@
  */
 #pragma once
 
+#include "config/nvm_config.h"
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -26,7 +27,7 @@ extern "C" {
 #endif
 
 ////////////////////////////////////////////////////////////////////////////
-/// @brief Initializes CYW43, BTstack, GATT database and starts advertising
+/// @brief Initializes NVM config, CYW43, BTstack, and starts advertising
 /// @return True on success, false on failure
 bool ble_transport_init(void);
 
@@ -51,6 +52,11 @@ bool ble_transport_send(const uint8_t *data, uint16_t length);
 /// @brief Checks if a BLE peer is currently connected
 /// @return True if connected, false otherwise
 bool ble_transport_is_connected(void);
+
+////////////////////////////////////////////////////////////////////////////
+/// @brief Gets active BLE NVM configuration
+/// @return Pointer to current nvm_ble_config_t
+const nvm_ble_config_t *ble_transport_get_config(void);
 
 #ifdef __cplusplus
 }

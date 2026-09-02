@@ -25,28 +25,37 @@
 using namespace Electux::App::Worker;
 
 namespace {
-    constexpr std::chrono::seconds cReconnectInterval{3};
     constexpr std::chrono::seconds cHandshakeTimeout{2};
     constexpr std::chrono::milliseconds cSleepStep{100};
-    constexpr int cSleepIterations{5};
-    constexpr std::string_view cErrGenericConnectionLost{"\n[Error] Connection lost."};
-    constexpr std::string_view cErrSerialDisconnected{
-        "\n[Error] Serial port is no longer available (I/O error). Device disconnected."
+    constexpr std::string_view cErrGenericConnectionLost{
+        "\n[Error] Connection lost."
     };
-    constexpr std::string_view cErrTcpLost{"\n[Error] TCP connection lost (I/O error)."};
-    constexpr std::string_view cErrBleLost{"\n[Error] BLE connection lost (I/O error)."};
-    constexpr std::string_view cLogConnectionLost{"Communication channel lost (I/O error)."};
-    constexpr std::string_view cLogReconnecting{
-        "Communication channel closed. Attempting to reconnect..."
+    constexpr std::string_view cErrSerialDisconnected{
+        "\n[Error] Serial port is no longer available (I/O error). Device "
+        "disconnected."
+    };
+    constexpr std::string_view cErrTcpLost{
+        "\n[Error] TCP connection lost (I/O error)."
+    };
+    constexpr std::string_view cErrBleLost{
+        "\n[Error] BLE connection lost (I/O error)."
+    };
+    constexpr std::string_view cErrConnectionFailed{
+        "\n[Error] Connection failed: Device not "
+        "reachable. Use Device -> Connect to retry."
+    };
+    constexpr std::string_view cErrHandshakeTimeout{
+        "\n[Error] Handshake timeout: Device did not "
+        "respond. Use Device -> Connect to retry."
+    };
+    constexpr std::string_view cLogConnectionLost{
+        "Communication channel lost (I/O error)."
     };
     constexpr std::string_view cMsgPortOpenedHandshaking{
         "\n[Info] Port opened. Handshaking with microHIL device..."
     };
     constexpr std::string_view cMsgHandshakeVerified{
         "\n[Info] Device handshake verified. Hardware ready."
-    };
-    constexpr std::string_view cMsgHandshakeTimeout{
-        "\n[Warning] Handshake timeout: Device did not respond. Retrying..."
     };
 } // namespace
 
@@ -60,16 +69,31 @@ DeviceWorker::DeviceWorker(
     : m_comChannel(std::move(comChannel)),
       m_comConfigurator(std::move(comConfigurator)),
       m_commandFormatter(std::move(commandFormatter)),
-      m_responseProcessor(std::move(responseProcessor)),
-      m_logger(logger) {}
+      m_responseProcessor(std::move(responseProcessor)), m_logger(logger) {
+    m_dataDispatcher.connect([this]() {
+        std::queue<std::string> localQueue;
+        {
+            std::lock_guard<std::mutex> lock(m_queueMutex);
+            std::swap(localQueue, m_dataQueue);
+        }
 
-DeviceWorker::~DeviceWorker() {
-    stop();
+        while (!localQueue.empty()) {
+            m_signalDataReceived.emit(localQueue.front());
+            localQueue.pop();
+        }
+    });
+
+    m_stateDispatcher.connect([this]() {
+        ConnectionState state = m_pendingState.load();
+        m_signalConnectionState.emit(state);
+    });
 }
 
+DeviceWorker::~DeviceWorker() { stop(); }
+
 void DeviceWorker::start() {
-    m_needInitialQuery = true;
     m_stopThread = false;
+
     if (!m_readThread.joinable()) {
         m_readThread = std::thread(&DeviceWorker::readLoop, this);
     }
@@ -77,9 +101,14 @@ void DeviceWorker::start() {
 
 void DeviceWorker::stop() {
     m_stopThread = true;
+    m_cv.notify_all();
 
-    if (m_comChannel) {
-        m_comChannel->close();
+    {
+        std::lock_guard<std::mutex> lock(m_ioMutex);
+
+        if (m_comChannel) {
+            m_comChannel->close();
+        }
     }
 
     if (m_readThread.joinable()) {
@@ -87,20 +116,79 @@ void DeviceWorker::stop() {
     }
 }
 
+void DeviceWorker::connect() {
+    if (m_stopThread) {
+        return;
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(m_stateMutex);
+
+        if (m_connectionState == ConnectionState::Ready ||
+            m_connectionState == ConnectionState::Handshaking ||
+            m_connectionState == ConnectionState::Connecting) {
+            return;
+        }
+
+        m_connectRequested = true;
+    }
+
+    m_cv.notify_all();
+}
+
+void DeviceWorker::disconnect() {
+    if (m_stopThread) {
+        return;
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(m_stateMutex);
+        m_connectRequested = false;
+    }
+
+    updateConnectionState(ConnectionState::Disconnected);
+
+    {
+        std::lock_guard<std::mutex> lock(m_ioMutex);
+
+        if (m_comChannel) {
+            m_comChannel->close();
+        }
+    }
+
+    emitData(std::string("\n[Info] Disconnected by user. Port released."));
+    m_cv.notify_all();
+}
+
 void DeviceWorker::configure(const Model::IModel &model) {
     if (m_stopThread || !m_comChannel || !m_comConfigurator) {
         return;
     }
 
-    m_comChannel->close();
+    {
+        std::lock_guard<std::mutex> lock(m_stateMutex);
+        m_connectRequested = false;
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(m_ioMutex);
+        m_comChannel->close();
+        m_comConfigurator->configure(model, *m_comChannel);
+    }
+
     updateConnectionState(ConnectionState::Disconnected);
+    emitData(
+        std::string(
+            "\n[Info] Settings updated. Previous connection closed. Use Device "
+            "-> Connect to connect."
+        )
+    );
 
     if (m_stopThread) {
         return;
     }
 
-    m_needInitialQuery = true;
-    m_comConfigurator->configure(model, *m_comChannel);
+    m_cv.notify_all();
 }
 
 void DeviceWorker::send(const std::string &command) {
@@ -108,12 +196,12 @@ void DeviceWorker::send(const std::string &command) {
         return;
     }
 
-    std::vector<uint8_t> cmdBytes(command.begin(), command.end());
-    m_comChannel->write(cmdBytes);
-}
+    std::lock_guard<std::mutex> lock(m_ioMutex);
 
-void DeviceWorker::setNeedInitialQuery(bool need) {
-    m_needInitialQuery = need;
+    if (m_comChannel && m_comChannel->isOpen()) {
+        std::vector<uint8_t> cmdBytes(command.begin(), command.end());
+        m_comChannel->write(cmdBytes);
+    }
 }
 
 bool DeviceWorker::isConnected() const {
@@ -132,10 +220,30 @@ sigc::signal<void(ConnectionState)> DeviceWorker::signal_connection_state() {
     return m_signalConnectionState;
 }
 
+void DeviceWorker::emitData(const std::string &data) {
+    if (m_stopThread) {
+        return;
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(m_queueMutex);
+        m_dataQueue.push(data);
+    }
+
+    m_dataDispatcher.emit();
+}
+
 void DeviceWorker::updateConnectionState(ConnectionState state) {
+    if (m_stopThread) {
+        m_connectionState = state;
+
+        return;
+    }
+
     if (m_connectionState != state) {
         m_connectionState = state;
-        m_signalConnectionState.emit(state);
+        m_pendingState = state;
+        m_stateDispatcher.emit();
     }
 }
 
@@ -150,108 +258,178 @@ void DeviceWorker::queryInitialDeviceStatus() {
 
 std::string DeviceWorker::getConnectionLossErrorMessage() const {
     auto *switchable = dynamic_cast<Com::SwitchableCom *>(m_comChannel.get());
+
     if (switchable) {
         if (switchable->getActiveCom() == switchable->getSerialCom()) {
             return std::string(cErrSerialDisconnected);
         }
+
         if (switchable->getActiveCom() == switchable->getTcpCom()) {
             return std::string(cErrTcpLost);
         }
+
         if (switchable->getActiveCom() == switchable->getBleCom()) {
             return std::string(cErrBleLost);
         }
     }
+
     return std::string(cErrGenericConnectionLost);
 }
 
+void DeviceWorker::handleDisconnectedState() {
+    std::unique_lock<std::mutex> lock(m_stateMutex);
+
+    m_cv.wait(lock, [this]() {
+        return m_stopThread.load() || m_connectRequested.load();
+    });
+
+    if (m_stopThread) {
+        return;
+    }
+
+    if (m_connectRequested) {
+        m_connectRequested = false;
+        updateConnectionState(ConnectionState::Connecting);
+        emitData(std::string("\n[Info] Connecting to device..."));
+    }
+}
+
+bool DeviceWorker::handleConnectingState(
+    std::chrono::steady_clock::time_point &handshakeStartTime
+) {
+    bool opened = false;
+
+    {
+        std::lock_guard<std::mutex> ioLock(m_ioMutex);
+
+        if (m_comChannel && !m_stopThread) {
+            opened = m_comChannel->open();
+        }
+    }
+
+    if (opened) {
+        updateConnectionState(ConnectionState::Handshaking);
+        emitData(std::string(cMsgPortOpenedHandshaking));
+        handshakeStartTime = std::chrono::steady_clock::now();
+        queryInitialDeviceStatus();
+        return true;
+    }
+
+    updateConnectionState(ConnectionState::Disconnected);
+    emitData(std::string(cErrConnectionFailed));
+
+    return false;
+}
+
+bool DeviceWorker::checkHandshakeTimeout(
+    const std::chrono::steady_clock::time_point &handshakeStartTime
+) {
+    auto now = std::chrono::steady_clock::now();
+
+    if (now - handshakeStartTime >= cHandshakeTimeout) {
+        {
+            std::lock_guard<std::mutex> ioLock(m_ioMutex);
+            if (m_comChannel) {
+                m_comChannel->close();
+            }
+        }
+
+        updateConnectionState(ConnectionState::Disconnected);
+        emitData(std::string(cErrHandshakeTimeout));
+
+        return true;
+    }
+
+    return false;
+}
+
+void DeviceWorker::handleDataIO() {
+    constexpr size_t cReadBufferSize{256};
+    std::vector<uint8_t> buffer;
+
+    if (m_comChannel && m_comChannel->isOpen()) {
+        m_comChannel->read(buffer, cReadBufferSize);
+    }
+
+    if (!m_stopThread &&
+        m_connectionState != ConnectionState::Disconnected &&
+        (!m_comChannel || !m_comChannel->isOpen())) {
+
+        updateConnectionState(ConnectionState::Disconnected);
+        emitData(getConnectionLossErrorMessage());
+
+        if (m_logger) {
+            m_logger->log(
+                cLogConnectionLost.data(), Logger::LogLevel::Error
+            );
+        }
+
+        return;
+    }
+
+    if (!buffer.empty()) {
+        std::string dataStr(buffer.begin(), buffer.end());
+        processIncomingData(dataStr);
+    }
+}
+
+void DeviceWorker::processIncomingData(const std::string &dataStr) {
+    auto verifyHandshakeIfNeeded = [this]() {
+        if (m_connectionState == ConnectionState::Handshaking) {
+            updateConnectionState(ConnectionState::Ready);
+            emitData(std::string(cMsgHandshakeVerified));
+
+            if (m_commandFormatter) {
+                send(m_commandFormatter->getCommandStatusAllChannels());
+            }
+        }
+    };
+
+    if (m_responseProcessor) {
+        auto payloads = m_responseProcessor->process(dataStr);
+
+        for (const auto &payload : payloads) {
+            verifyHandshakeIfNeeded();
+            emitData(payload);
+        }
+    } else {
+        verifyHandshakeIfNeeded();
+        emitData(dataStr);
+    }
+}
+
 void DeviceWorker::readLoop() {
-    auto lastReconnectTry =
-        std::chrono::steady_clock::now() - std::chrono::seconds(10);
     auto handshakeStartTime = std::chrono::steady_clock::now();
 
     while (!m_stopThread) {
         try {
-            if (m_comChannel && m_comChannel->isOpen()) {
-                if (m_needInitialQuery) {
-                    m_needInitialQuery = false;
-                    updateConnectionState(ConnectionState::Handshaking);
-                    m_signalDataReceived.emit(std::string(cMsgPortOpenedHandshaking));
-                    handshakeStartTime = std::chrono::steady_clock::now();
-                    queryInitialDeviceStatus();
-                }
+            if (m_connectionState == ConnectionState::Disconnected) {
+                handleDisconnectedState();
 
-                if (m_connectionState == ConnectionState::Handshaking) {
-                    auto now = std::chrono::steady_clock::now();
-                    if (now - handshakeStartTime >= cHandshakeTimeout) {
-                        handshakeStartTime = now;
-                        m_signalDataReceived.emit(std::string(cMsgHandshakeTimeout));
-                        queryInitialDeviceStatus();
-                    }
+                if (m_stopThread) {
+                    break;
                 }
+            }
 
-                std::vector<uint8_t> buffer;
-                m_comChannel->read(buffer, 1);
+            if (m_connectionState == ConnectionState::Connecting) {
+                if (!handleConnectingState(handshakeStartTime)) {
+                    continue;
+                }
+            }
 
-                if (!m_stopThread && !m_comChannel->isOpen()) {
-                    updateConnectionState(ConnectionState::Disconnected);
-                    m_signalDataReceived.emit(getConnectionLossErrorMessage());
-                    if (m_logger) {
-                        m_logger->log(
-                            cLogConnectionLost.data(),
-                            Logger::LogLevel::Error
-                        );
-                    }
-                } else if (!buffer.empty()) {
-                    std::string dataStr(buffer.begin(), buffer.end());
+            if (m_connectionState == ConnectionState::Handshaking) {
+                if (checkHandshakeTimeout(handshakeStartTime)) {
+                    continue;
+                }
+            }
 
-                    if (m_responseProcessor) {
-                        auto payloads = m_responseProcessor->process(dataStr);
-                        for (const auto &payload : payloads) {
-                            if (m_connectionState == ConnectionState::Handshaking) {
-                                updateConnectionState(ConnectionState::Ready);
-                                m_signalDataReceived.emit(std::string(cMsgHandshakeVerified));
-                                if (m_commandFormatter) {
-                                    send(m_commandFormatter->getCommandStatusAllChannels());
-                                }
-                            }
-                            m_signalDataReceived.emit(payload);
-                        }
-                    } else {
-                        if (m_connectionState == ConnectionState::Handshaking) {
-                            updateConnectionState(ConnectionState::Ready);
-                            m_signalDataReceived.emit(std::string(cMsgHandshakeVerified));
-                            if (m_commandFormatter) {
-                                send(m_commandFormatter->getCommandStatusAllChannels());
-                            }
-                        }
-                        m_signalDataReceived.emit(dataStr);
-                    }
-                }
-            } else {
-                updateConnectionState(ConnectionState::Disconnected);
-                auto now = std::chrono::steady_clock::now();
-                if (!m_stopThread && now - lastReconnectTry >= cReconnectInterval) {
-                    lastReconnectTry = now;
-                    if (m_logger) {
-                        m_logger->log(
-                            cLogReconnecting.data(),
-                            Logger::LogLevel::Warning
-                        );
-                    }
-                    if (m_comChannel && !m_stopThread) {
-                        if (m_comChannel->open()) {
-                            m_needInitialQuery = true;
-                        }
-                    }
-                }
-                for (int s = 0; s < cSleepIterations && !m_stopThread; ++s) {
-                    std::this_thread::sleep_for(cSleepStep);
-                }
+            if (m_connectionState == ConnectionState::Handshaking ||
+                m_connectionState == ConnectionState::Ready) {
+                handleDataIO();
             }
         } catch (...) {
-            for (int s = 0; s < cSleepIterations && !m_stopThread; ++s) {
-                std::this_thread::sleep_for(cSleepStep);
-            }
+            std::this_thread::sleep_for(cSleepStep);
         }
     }
 }
+

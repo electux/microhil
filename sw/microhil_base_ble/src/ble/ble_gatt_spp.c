@@ -28,8 +28,14 @@ static void nordic_spp_packet_handler(
     uint8_t packet_type, uint16_t channel, uint8_t *packet, uint16_t size
 ) {
   (void)channel;
+
   switch (packet_type) {
   case HCI_EVENT_PACKET:
+    if (hci_event_packet_get_type(packet) == HCI_EVENT_DISCONNECTION_COMPLETE) {
+      s_con_handle = HCI_CON_HANDLE_INVALID;
+      ble_gap_start_advertising();
+      break;
+    }
     if (hci_event_packet_get_type(packet) != HCI_EVENT_GATTSERVICE_META) {
       break;
     }

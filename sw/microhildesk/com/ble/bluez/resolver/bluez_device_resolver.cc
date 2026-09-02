@@ -41,9 +41,6 @@ namespace {
     constexpr const char *cDeviceProp{"Device"};
     constexpr const char *cDefaultAdapterPath{"/org/bluez/hci0"};
     constexpr const char *cEmptyString{""};
-    constexpr char cColonDelimiter{':'};
-    constexpr char cDashDelimiter{'-'};
-    constexpr char cUnderscoreDelimiter{'_'};
 } // namespace
 
 Glib::ustring BluezDeviceResolver::findAdapterPath(
@@ -101,15 +98,10 @@ Glib::ustring BluezDeviceResolver::findDevicePath(
         return cEmptyString;
     }
 
-    std::string formattedAddr = address;
-    std::replace(
-        formattedAddr.begin(), formattedAddr.end(), cColonDelimiter,
-        cUnderscoreDelimiter
-    );
-    std::replace(
-        formattedAddr.begin(), formattedAddr.end(), cDashDelimiter,
-        cUnderscoreDelimiter
-    );
+    std::string formattedAddr = BluezDbusUtils::normalizeMacAddress(address);
+    if (formattedAddr.empty()) {
+        formattedAddr = address;
+    }
 
     size_t nObjects = objectsBase.get_n_children();
 

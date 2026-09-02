@@ -42,6 +42,6 @@ namespace Electux::App::Com {
         tcp->setIpAddress(ip);
         tcp->setPort(port);
 
-        return comChannel.open();
+        return true;
     }
 } // namespace Electux::App::Com

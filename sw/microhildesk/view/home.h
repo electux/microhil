@@ -49,6 +49,7 @@ namespace Electux::App::View {
         AppHome &operator=(const AppHome &) = delete;
 
         SigSettings controlChanged() override;
+        SigChannelChanged channelChanged() override;
         void setControlSetup(const SettingsSetup &setup) override;
         void getUiData() override;
         void updateUiData() override;
@@ -60,6 +61,7 @@ namespace Electux::App::View {
 
         void postData(const std::string& data) override;
         void setConnectionState(Worker::ConnectionState state) override;
+        void clearConsole() override;
 
       private:
         void onChannelChanged(size_t index);
@@ -67,6 +69,7 @@ namespace Electux::App::View {
 
         SettingsSetup m_setup{};
         SigSettings m_controlSignal{};
+        SigChannelChanged m_channelSignal{};
 
         Gtk::Box m_boxRoot{};
         Gtk::Box m_boxChannels{};

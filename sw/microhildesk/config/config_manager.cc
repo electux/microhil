@@ -205,7 +205,14 @@ bool ConfigManager::store(bool forceVerbose) {
 /// @param config Reference to the Model configuration object.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 void ConfigManager::setConfig(const Electux::App::Model::IModel &config) {
-    m_config = config.clone();
+    if (m_config) {
+        m_config->clear();
+        for (const auto &[key, value] : config.getAllEntries()) {
+            m_config->add(key, value);
+        }
+    } else {
+        m_config = config.clone();
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////

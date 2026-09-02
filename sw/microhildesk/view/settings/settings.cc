@@ -18,6 +18,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <com/com_types.h>
 #include <model/model.h>
 #include <view/settings/settings.h>
 
@@ -104,6 +105,9 @@ void AppSettings::setSettingsSetup(const SettingsSetup &setup) {
 }
 
 void AppSettings::updateUiData() {
+    if (!m_setup.m_config) {
+        return;
+    }
     m_generalTab.updateData(*m_setup.m_config);
     m_serialTab.updateData(*m_setup.m_config);
     m_tcpTab.updateData(*m_setup.m_config);
@@ -137,7 +141,10 @@ void AppSettings::onButtonOkClicked() {
 
 void AppSettings::onButtonCancelClicked() { hide(); }
 
-void AppSettings::show() { present(); }
+void AppSettings::show() {
+    updateUiData();
+    present();
+}
 
 void AppSettings::hide() { set_visible(false); }
 

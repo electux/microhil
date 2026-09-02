@@ -1,0 +1,44 @@
+name: microhil_nuttx tests
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'sw/microhil_nuttx/apps/microhil/**/*.c'
+      - 'sw/microhil_nuttx/apps/microhil/**/*.h'
+      - 'sw/microhil_nuttx/apps/microhil/**/Make.defs'
+      - 'sw/microhil_nuttx/apps/microhil/**/Makefile'
+      - 'sw/microhil_nuttx_tests/**/*.cc'
+      - 'sw/microhil_nuttx_tests/**/*.h'
+      - 'sw/microhil_nuttx_tests/**/CMakeLists.txt'
+      - 'sw/microhil_nuttx_tests/**/*.cmake'
+      - '.github/workflows/microhil_nuttx_tests.yml'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'sw/microhil_nuttx/apps/microhil/**/*.c'
+      - 'sw/microhil_nuttx/apps/microhil/**/*.h'
+      - 'sw/microhil_nuttx/apps/microhil/**/Make.defs'
+      - 'sw/microhil_nuttx/apps/microhil/**/Makefile'
+      - 'sw/microhil_nuttx_tests/**/*.cc'
+      - 'sw/microhil_nuttx_tests/**/*.h'
+      - 'sw/microhil_nuttx_tests/**/CMakeLists.txt'
+      - 'sw/microhil_nuttx_tests/**/*.cmake'
+      - '.github/workflows/microhil_nuttx_tests.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure CMake
+        run: |
+          cd sw/microhil_nuttx_tests
+          mkdir -p build && cd build
+          cmake ..
+      - name: Build tests
+        run: |
+          cd sw/microhil_nuttx_tests/build
+          make -j$(nproc)
+      - name: Run unit tests
+        run: |
+          cd sw/microhil_nuttx_tests/build
+          ctest --output-on-failure
