@@ -19,15 +19,8 @@
 #include "ble_gap.h"
 #include "bluetooth.h"
 #include "btstack.h"
+#include "config/nvm_config.h"
 #include <string.h>
-
-static const uint8_t ADV_DATA[] = {
-    // Flags: general discoverable, BR/EDR not supported (3 bytes)
-    2, BLUETOOTH_DATA_TYPE_FLAGS, 0x06,
-    // Complete Local Name: "microhil-ble" (14 bytes)
-    13, BLUETOOTH_DATA_TYPE_COMPLETE_LOCAL_NAME, 'm', 'i', 'c', 'r', 'o', 'h',
-    'i', 'l', '-', 'b', 'l', 'e'
-};
 
 static const uint8_t SCAN_RESP_DATA[] = {
     // Complete 128-bit Service Class UUID: Nordic SPP (18 bytes)
@@ -38,8 +31,31 @@ static const uint8_t SCAN_RESP_DATA[] = {
 };
 
 void ble_gap_init(void) {
-  uint16_t adv_int_min = 0x0030;
-  uint16_t adv_int_max = 0x0060;
+  const nvm_ble_config_t *cfg = nvm_config_get();
+  uint8_t adv_data[31] = {0};
+  uint8_t adv_data_len = 0;
+
+  // Flags: general discoverable, BR/EDR not supported (3 bytes)
+  adv_data[adv_data_len++] = 2;
+  adv_data[adv_data_len++] = BLUETOOTH_DATA_TYPE_FLAGS;
+  adv_data[adv_data_len++] = 0x06;
+
+  // Complete Local Name
+  size_t name_len = strlen(cfg->device_name);
+  if (name_len > (sizeof(adv_data) - adv_data_len - 2)) {
+    name_len = sizeof(adv_data) - adv_data_len - 2;
+  }
+  adv_data[adv_data_len++] = (uint8_t)(name_len + 1);
+  adv_data[adv_data_len++] = BLUETOOTH_DATA_TYPE_COMPLETE_LOCAL_NAME;
+  memcpy(&adv_data[adv_data_len], cfg->device_name, name_len);
+  adv_data_len += (uint8_t)name_len;
+
+  uint16_t adv_interval = cfg->adv_interval_ms;
+  if (adv_interval < 20) {
+    adv_interval = 20;
+  }
+  uint16_t adv_int_min = (uint16_t)((adv_interval * 16) / 10);
+  uint16_t adv_int_max = adv_int_min + 0x20;
   uint8_t adv_type = 0;
   bd_addr_t null_addr;
   memset(null_addr, 0, sizeof(bd_addr_t));
@@ -47,7 +63,7 @@ void ble_gap_init(void) {
   gap_advertisements_set_params(
       adv_int_min, adv_int_max, adv_type, 0, null_addr, 0x07, 0x00
   );
-  gap_advertisements_set_data(sizeof(ADV_DATA), (uint8_t *)ADV_DATA);
+  gap_advertisements_set_data(adv_data_len, adv_data);
   gap_scan_response_set_data(sizeof(SCAN_RESP_DATA), (uint8_t *)SCAN_RESP_DATA);
 }
 

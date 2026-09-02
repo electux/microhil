@@ -18,62 +18,70 @@
  */
 #include "parser.h"
 #include "ble/ble_transport.h"
+#include "pico/stdlib.h"
 #include <stdint.h>
 
 typedef enum { PARSER_STATE_IDLE, PARSER_STATE_RECEIVING } parser_state_t;
 
-static parser_state_t parser_state = PARSER_STATE_IDLE;
-static uint32_t parser_idx = 0;
+typedef struct {
+  parser_state_t state;
+  uint32_t idx;
+} stream_parser_ctx_t;
 
-////////////////////////////////////////////////////////////////////////////
-/// @brief Processes a single character inside the parsing state machine
-///
-/// @param c [in] Character to process
-/// @param buf [out] Destination buffer to store parsed command
-/// @param max_len [in] Maximum capacity of the destination buffer
-/// @return True if a complete command frame was successfully parsed, else false
-static bool parser_process_char(char c, char *buf, uint32_t max_len) {
+static stream_parser_ctx_t ble_ctx = {PARSER_STATE_IDLE, 0};
+static stream_parser_ctx_t usb_ctx = {PARSER_STATE_IDLE, 0};
+
+static bool parser_process_char(
+    stream_parser_ctx_t *ctx, char c, char *buf, uint32_t max_len
+) {
   if (c == '\r' || c == '\n') {
     return false;
   }
-
   if (c == '<') {
-    parser_state = PARSER_STATE_RECEIVING;
-    parser_idx = 0;
+    ctx->state = PARSER_STATE_RECEIVING;
+    ctx->idx = 0;
     return false;
   }
-
-  if (parser_state == PARSER_STATE_RECEIVING) {
+  if (ctx->state == PARSER_STATE_RECEIVING) {
     if (c == '>') {
-      buf[parser_idx] = '\0';
-      parser_state = PARSER_STATE_IDLE;
-      parser_idx = 0;
+      buf[ctx->idx] = '\0';
+      ctx->state = PARSER_STATE_IDLE;
+      ctx->idx = 0;
       return true;
     }
-
-    if (parser_idx < (max_len - 1)) {
-      buf[parser_idx++] = c;
+    if (ctx->idx < (max_len - 1)) {
+      buf[ctx->idx++] = c;
     } else {
-      parser_state = PARSER_STATE_IDLE;
-      parser_idx = 0;
+      ctx->state = PARSER_STATE_IDLE;
+      ctx->idx = 0;
     }
   }
-
   return false;
 }
 
-////////////////////////////////////////////////////////////////////////////
-/// @brief Reads and parses command requests from the BLE input stream
-///
-/// @param buf [out] Destination buffer to store parsed command
-/// @param max_len [in] Maximum capacity of the destination buffer
-/// @return True if a command was parsed, else false
-bool parser_get_command(char *buf, uint32_t max_len) {
+bool parser_process_ble_stream(char *buf, uint32_t max_len) {
   uint8_t byte = 0;
   while (ble_transport_read_byte(&byte)) {
-    if (parser_process_char((char)byte, buf, max_len)) {
+    if (parser_process_char(&ble_ctx, (char)byte, buf, max_len)) {
       return true;
     }
   }
   return false;
+}
+
+bool parser_process_usb_serial_stream(char *buf, uint32_t max_len) {
+  int c;
+  while ((c = getchar_timeout_us(0)) >= 0) {
+    if (parser_process_char(&usb_ctx, (char)c, buf, max_len)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+bool parser_get_command(char *buf, uint32_t max_len) {
+  if (parser_process_ble_stream(buf, max_len)) {
+    return true;
+  }
+  return parser_process_usb_serial_stream(buf, max_len);
 }

@@ -72,6 +72,18 @@ sw/microhil_base/build/
 ### sw/microhil_base_tests
 sw/microhil_base_tests/build/
 
+### sw/microhil_base_ble
+sw/microhil_base_ble/build/
+
+### sw/microhil_base_ble_tests
+sw/microhil_base_ble_tests/build/
+
+### sw/microhil_base_wifi
+sw/microhil_base_wifi/build/
+
+### sw/microhil_base_wifi_tests
+sw/microhil_base_wifi_tests/build/
+
 ### sw/microhil_nuttx
 sw/microhil_nuttx/build/
 sw/microhil_nuttx/apps/.*

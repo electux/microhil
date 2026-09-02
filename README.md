@@ -40,11 +40,19 @@ other information that should be provided before the tool is installed.
 
 #### SW Firmware checks
 
-[![microhil_base C checker](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml) [![microhil_nuttx C checker](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml) [![microhil_upy Python checker](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml)
+[![microhil_base C checker](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml) [![microhil_base_ble C checker](https://github.com/electux/microhil/actions/workflows/microhil_base_ble_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_ble_c_checker.yml) [![microhil_base_wifi C checker](https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_c_checker.yml) [![microhil_nuttx C checker](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml) [![microhil_upy Python checker](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml)
+
+#### SW Firmware test checks
+
+[![microhil_base tests](https://github.com/electux/microhil/actions/workflows/microhil_base_tests.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_tests.yml) [![microhil_base_ble tests](https://github.com/electux/microhil/actions/workflows/microhil_base_ble_tests.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_ble_tests.yml) [![microhil_base_wifi tests](https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_tests.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_tests.yml) [![microhil_nuttx tests](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_tests.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_nuttx_tests.yml) [![microhil_upy tests](https://github.com/electux/microhil/actions/workflows/microhil_upy_tests.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_upy_tests.yml)
 
 #### SW Desktop checks
 
 [![microhildesk build checker](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker_build.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker_build.yml) [![microhil-desktop build checker](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhil_desktop_cc_checker.yml)
+
+#### SW Desktop test checks
+
+[![microhildesk tests](https://github.com/electux/microhil/actions/workflows/microhildesk_tests.yml/badge.svg)](https://github.com/electux/microhil/actions/workflows/microhildesk_tests.yml)
 
 ### Development
 
@@ -76,6 +84,20 @@ A C-based firmware designed for the microHIL hardware controller (Raspberry Pi P
     *   **Channel Masking:** Apply an 8-bit binary mask (e.g., `10101010`) to update all 8 channels at once.
     *   **System Status & Reset:** Monitor channel status and reboot the board via hardware watchdog.
     *   **Diagnostics:** Query device identification (`microhil-ble`) and firmware version details.
+
+**microhil-base-wifi**
+
+A C-based firmware designed for the microHIL hardware controller (Raspberry Pi Pico W). It utilizes the CYW43439 Wi-Fi chipset, lwIP raw TCP socket server, and on-board Flash NVM storage, allowing full remote HWIL control over Wi-Fi TCP/IP (Access Point or Station mode) with live USB-Serial network provisioning.
+
+*   **Supported Operations:**
+    *   **Wi-Fi & TCP Server:** Dual-mode Wi-Fi (AP hotspot on `192.168.4.1` or Station mode) hosting raw TCP server on port `5000`.
+    *   **Persistent NVM Configuration:** Live parameter provisioning and Flash persistence (`<mh#net#...#end>`).
+    *   **Channel Toggle:** Control individual relays (channels 1-8) by turning them ON or OFF.
+    *   **Timer & Pulse Mode:** Activate channels with second-level precision or trigger millisecond-level pulses.
+    *   **Blink Mode:** Trigger repeating blinking loops with configurable duty cycles and loop counts.
+    *   **Channel Masking:** Apply an 8-bit binary mask (e.g., `10101010`) to update all 8 channels at once.
+    *   **System Status & Reset:** Monitor channel status and reboot the board remotely.
+    *   **Diagnostics:** Query device identification (`microhil-wifi`) and network settings.
 
 **microhil-nuttx**
 
@@ -158,6 +180,26 @@ make
 
 # Deploy by copying the generated microhil-base-ble.uf2 file to the Pico W mounted storage
 cp src/microhil-base-ble.uf2 /media/$USER/RPI-RP2/
+```
+
+To install **microhil-base-wifi** type the following
+
+```bash
+# Clone the repository
+git clone https://github.com/electux/microhil.git
+cd microhil/sw/microhil_base_wifi
+
+# Create build directory
+mkdir build && cd build
+
+# Configure build (ensure PICO_SDK_PATH is set)
+cmake -DPICO_SDK_PATH=/path/to/pico-sdk ..
+
+# Build
+make
+
+# Deploy by copying the generated microhil-base-wifi.uf2 file to the Pico W mounted storage
+cp src/microhil-base-wifi.uf2 /media/$USER/RPI-RP2/
 ```
 
 To install **microhil-nuttx** type the following
@@ -243,6 +285,15 @@ sudo dpkg -i sw/microhildesk/build/deb_dist/microhildesk_*.deb
     *   Raspberry Pi Pico W (RP2040 + CYW43439) hardware
 *   **Development / Build:**
     *   Raspberry Pi Pico SDK (`pico-sdk`) with BTstack & CYW43 driver support
+    *   GNU Arm Embedded Toolchain (`gcc-arm-none-eabi`)
+    *   `CMake` (v3.13+)
+
+**microhil-base-wifi** requires next modules and libraries
+
+*   **Runtime:**
+    *   Raspberry Pi Pico W (RP2040 + CYW43439) hardware
+*   **Development / Build:**
+    *   Raspberry Pi Pico SDK (`pico-sdk`) with lwIP & CYW43 driver support
     *   GNU Arm Embedded Toolchain (`gcc-arm-none-eabi`)
     *   `CMake` (v3.13+)
 

@@ -40,16 +40,19 @@ All packets are enclosed within `<` and `>`. Inside the packet, elements are sep
 
 | Command | Action | Example Output / Response |
 |---|---|---|
-| `mh#sys#id#end` | Query system board identity | `<mh#sys#microhil-base#end>` |
-| `mh#sys#ver#end` | Query firmware version | `<mh#sys#microHIL v1.0.0#end>` |
-| `mh#sys#status#end` | Query all channels status | `<mh#sys#00000000#end>` |
-| `mh#sys#rst#end` | Trigger hardware watchdog reset | `<mh#sys#resetting#end>` |
-| `mh#ch#<N>#on#end` | Turn channel N ON (1-8) | `<mh#ch#<N>#on#end>` |
-| `mh#ch#<N>#off#end` | Turn channel N OFF (1-8) | `<mh#ch#<N>#off#end>` |
-| `mh#ch#mask#<MASK>#end` | Apply 8-bit binary mask (e.g. `10101010`) | `<mh#ch#mask#<MASK>#end>` |
-| `mh#ch#<N>#time#<SEC>#end` | Timer mode for channel N | `<mh#ch#<N>#time#<SEC>#end>` |
-| `mh#ch#<N>#pulse#<MS>#end` | Pulse mode for channel N | `<mh#ch#<N>#pulse#<MS>#end>` |
-| `mh#ch#<N>#blink#<ON>#<OFF>#<CNT>#end` | Blink mode for channel N | `<mh#ch#<N>#blink#...#end>` |
+| `mh#sys#id#end` | Query system board identity | `<mh#sys#mh:333:2023:0:base#end>` |
+| `mh#sys#version#end` | Query firmware version | `<mh#sys#microHIL-BASE v1.0.0#end>` |
+| `mh#sys#reset#end` | Trigger hardware watchdog reset | `<mh#sys#system resetting...#end>` |
+| `mh#all#on#end` | Turn all channels ON | `<mh#sys#all channels on#end>` |
+| `mh#all#off#end` | Turn all channels OFF | `<mh#sys#all channels off#end>` |
+| `mh#all#stat#end` | Query all channels status | `<mh#sys#channels: 1:OFF 2:OFF ... 8:OFF#end>` |
+| `mh#ch#<N>#on#end` | Turn channel N ON (1-8) | `<mh#sys#channel <N> on#end>` |
+| `mh#ch#<N>#off#end` | Turn channel N OFF (1-8) | `<mh#sys#channel <N> off#end>` |
+| `mh#ch#<N>#stat#end` | Query status of channel N (1-8) | `<mh#sys#channel <N>: OFF#end>` |
+| `mh#ch#<N>#tmr#<SEC>#end` | Timer mode for channel N | `<mh#sys#channel <N> timer started: <SEC> seconds#end>` |
+| `mh#ch#<N>#pulse#<MS>#end` | Pulse mode for channel N | `<mh#sys#channel <N> pulse started: <MS> ms#end>` |
+| `mh#ch#<N>#blink#<ON>#<OFF>#<CNT>#end` | Blink mode for channel N | `<mh#sys#channel <N> blink started: on=<ON> ms, off=<OFF> ms, count=<CNT>#end>` |
+| `mh#all#mask#<MASK>#end` | Apply 8-bit binary mask (e.g. `10101010`) | `<mh#sys#channels mask applied: 10101010#end>` |
 
 ## Building and Flashing
 

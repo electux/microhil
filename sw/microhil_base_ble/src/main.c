@@ -28,7 +28,7 @@
 #include <stdint.h>
 #include <string.h>
 
-enum { MICROHIL_REQ_LEN = 32 };
+enum { MICROHIL_REQ_LEN = 64 };
 
 ////////////////////////////////////////////////////////////////////////////
 /// @brief Performs unified initialization of all hardware and BLE transport

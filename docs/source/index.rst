@@ -14,6 +14,10 @@ other information that should be provided before the tool is installed.
 
 |GitHub issues| |Documentation Status| |GitHub contributors|
 
+|microhil_base C checker| |microhil_base_ble C checker| |microhil_base_wifi C checker| |microhil_nuttx C checker| |microhil_upy Python checker|
+
+|microhil_base tests| |microhil_base_ble tests| |microhil_base_wifi tests| |microhil_nuttx tests| |microhil_upy tests| |microhildesk tests|
+
 .. |GitHub issues| image:: https://img.shields.io/github/issues/electux/microhil.svg
    :target: https://github.com/electux/microhil/issues
 
@@ -22,6 +26,39 @@ other information that should be provided before the tool is installed.
 
 .. |Documentation Status| image:: https://readthedocs.org/projects/microhil/badge/?version=latest
    :target: https://microhil.readthedocs.io/projects/microhil/en/latest/?badge=latest
+
+.. |microhil_base C checker| image:: https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_base_c_checker.yml
+
+.. |microhil_base_ble C checker| image:: https://github.com/electux/microhil/actions/workflows/microhil_base_ble_c_checker.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_base_ble_c_checker.yml
+
+.. |microhil_base_wifi C checker| image:: https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_c_checker.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_c_checker.yml
+
+.. |microhil_nuttx C checker| image:: https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_nuttx_c_checker.yml
+
+.. |microhil_upy Python checker| image:: https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_upy_c_checker.yml
+
+.. |microhil_base tests| image:: https://github.com/electux/microhil/actions/workflows/microhil_base_tests.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_base_tests.yml
+
+.. |microhil_base_ble tests| image:: https://github.com/electux/microhil/actions/workflows/microhil_base_ble_tests.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_base_ble_tests.yml
+
+.. |microhil_base_wifi tests| image:: https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_tests.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_base_wifi_tests.yml
+
+.. |microhil_nuttx tests| image:: https://github.com/electux/microhil/actions/workflows/microhil_nuttx_tests.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_nuttx_tests.yml
+
+.. |microhil_upy tests| image:: https://github.com/electux/microhil/actions/workflows/microhil_upy_tests.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhil_upy_tests.yml
+
+.. |microhildesk tests| image:: https://github.com/electux/microhil/actions/workflows/microhildesk_tests.yml/badge.svg
+   :target: https://github.com/electux/microhil/actions/workflows/microhildesk_tests.yml
 
 Installation
 ------------
@@ -69,6 +106,26 @@ To install **microhil-base-ble** type the following:
 
    # Deploy by copying the generated microhil-base-ble.uf2 file to the Pico W mounted storage
    cp src/microhil-base-ble.uf2 /media/$USER/RPI-RP2/
+
+To install **microhil-base-wifi** type the following:
+
+.. code-block:: bash
+
+   # Clone the repository
+   git clone https://github.com/electux/microhil.git
+   cd microhil/sw/microhil_base_wifi
+
+   # Create build directory
+   mkdir build && cd build
+
+   # Configure build (ensure PICO_SDK_PATH is set)
+   cmake -DPICO_SDK_PATH=/path/to/pico-sdk ..
+
+   # Build
+   make
+
+   # Deploy by copying the generated microhil-base-wifi.uf2 file to the Pico W mounted storage
+   cp src/microhil-base-wifi.uf2 /media/$USER/RPI-RP2/
 
 To install **microhil-nuttx** type the following:
 
@@ -155,6 +212,15 @@ Dependencies
   * GNU Arm Embedded Toolchain (``gcc-arm-none-eabi``)
   * ``CMake`` (v3.13+)
 
+**microhil-base-wifi** requires next modules and libraries:
+
+* **Runtime:**
+  * Raspberry Pi Pico W (RP2040 + CYW43439) hardware
+* **Development / Build:**
+  * Raspberry Pi Pico SDK (``pico-sdk``) with lwIP & CYW43 driver support
+  * GNU Arm Embedded Toolchain (``gcc-arm-none-eabi``)
+  * ``CMake`` (v3.13+)
+
 **microhil-nuttx** requires next modules and libraries:
 
 * **Runtime:**
@@ -193,12 +259,16 @@ The repository is organized as follows:
    ├── docs/                   # Documentation files
    ├── hw/                     # Hardware design files (schematics, PCB layouts)
    └── sw/                     # Software and firmware source directories
-       ├── microhil_base/      # C-based firmware for Pico (direct HWIL interface)
-       ├── microhil_base_ble/  # C-based BLE firmware for Pico W (wireless HWIL interface)
-       ├── microhil_nuttx/     # NuttX-based RTOS firmware for Pico
-       ├── microhil_upy/       # MicroPython-based firmware for Pico
-       ├── microhildesk/       # Desktop GUI application (gtkmm/C++)
-       └── microhildesk_tests/ # Test suites for the desktop application
+       ├── microhil_base/            # C-based firmware for Pico (direct HWIL interface)
+       ├── microhil_base_tests/      # Unit tests for microhil_base firmware
+       ├── microhil_base_ble/        # C-based BLE firmware for Pico W (wireless HWIL interface)
+       ├── microhil_base_ble_tests/  # Unit tests for microhil_base_ble firmware
+       ├── microhil_base_wifi/       # C-based Wi-Fi firmware for Pico W (TCP socket HWIL interface)
+       ├── microhil_base_wifi_tests/ # Unit tests for microhil_base_wifi firmware
+       ├── microhil_nuttx/           # NuttX-based RTOS firmware for Pico
+       ├── microhil_upy/             # MicroPython-based firmware for Pico
+       ├── microhildesk/             # Desktop GUI application (gtkmm/C++)
+       └── microhildesk_tests/       # Test suites for the desktop application
 
 Copyright and licence
 ----------------------

@@ -5,11 +5,13 @@ on:
     paths:
       - 'sw/microhil_base/src/**/*.c'
       - 'sw/microhil_base/src/**/*.h'
+      - '.github/workflows/microhil_base_c_checker.yml'
   pull_request:
     branches: [ master ]
     paths:
       - 'sw/microhil_base/src/**/*.c'
       - 'sw/microhil_base/src/**/*.h'
+      - '.github/workflows/microhil_base_c_checker.yml'
 jobs:
   build:
     runs-on: ubuntu-latest

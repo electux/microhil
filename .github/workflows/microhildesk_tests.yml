@@ -1,0 +1,50 @@
+name: microhildesk tests
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'sw/microhildesk/src/**/*.cc'
+      - 'sw/microhildesk/src/**/*.h'
+      - 'sw/microhildesk/**/Makefile'
+      - 'sw/microhildesk/**/CMakeLists.txt'
+      - 'sw/microhildesk/**/*.cmake'
+      - 'sw/microhildesk_tests/**/*.cc'
+      - 'sw/microhildesk_tests/**/*.h'
+      - 'sw/microhildesk_tests/**/CMakeLists.txt'
+      - 'sw/microhildesk_tests/**/*.cmake'
+      - '.github/workflows/microhildesk_tests.yml'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'sw/microhildesk/src/**/*.cc'
+      - 'sw/microhildesk/src/**/*.h'
+      - 'sw/microhildesk/**/Makefile'
+      - 'sw/microhildesk/**/CMakeLists.txt'
+      - 'sw/microhildesk/**/*.cmake'
+      - 'sw/microhildesk_tests/**/*.cc'
+      - 'sw/microhildesk_tests/**/*.h'
+      - 'sw/microhildesk_tests/**/CMakeLists.txt'
+      - 'sw/microhildesk_tests/**/*.cmake'
+      - '.github/workflows/microhildesk_tests.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pkg-config libserial-dev libgtkmm-4.0-dev libgtk-4-dev
+      - name: Configure CMake
+        run: |
+          cd sw/microhildesk_tests
+          mkdir -p build && cd build
+          cmake ..
+      - name: Build tests
+        run: |
+          cd sw/microhildesk_tests/build
+          make -j$(nproc)
+      - name: Run unit tests
+        run: |
+          cd sw/microhildesk_tests/build
+          ctest --output-on-failure

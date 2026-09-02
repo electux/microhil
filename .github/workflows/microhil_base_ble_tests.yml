@@ -1,0 +1,44 @@
+name: microhil_base_ble tests
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'sw/microhil_base_ble/src/**/*.c'
+      - 'sw/microhil_base_ble/src/**/*.h'
+      - 'sw/microhil_base_ble/**/CMakeLists.txt'
+      - 'sw/microhil_base_ble/**/*.cmake'
+      - 'sw/microhil_base_ble_tests/**/*.cc'
+      - 'sw/microhil_base_ble_tests/**/*.h'
+      - 'sw/microhil_base_ble_tests/**/CMakeLists.txt'
+      - 'sw/microhil_base_ble_tests/**/*.cmake'
+      - '.github/workflows/microhil_base_ble_tests.yml'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'sw/microhil_base_ble/src/**/*.c'
+      - 'sw/microhil_base_ble/src/**/*.h'
+      - 'sw/microhil_base_ble/**/CMakeLists.txt'
+      - 'sw/microhil_base_ble/**/*.cmake'
+      - 'sw/microhil_base_ble_tests/**/*.cc'
+      - 'sw/microhil_base_ble_tests/**/*.h'
+      - 'sw/microhil_base_ble_tests/**/CMakeLists.txt'
+      - 'sw/microhil_base_ble_tests/**/*.cmake'
+      - '.github/workflows/microhil_base_ble_tests.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure CMake
+        run: |
+          cd sw/microhil_base_ble_tests
+          mkdir -p build && cd build
+          cmake ..
+      - name: Build tests
+        run: |
+          cd sw/microhil_base_ble_tests/build
+          make -j$(nproc)
+      - name: Run unit tests
+        run: |
+          cd sw/microhil_base_ble_tests/build
+          ctest --output-on-failure

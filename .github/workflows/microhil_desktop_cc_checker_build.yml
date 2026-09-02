@@ -5,11 +5,19 @@ on:
     paths:
       - 'sw/microhildesk/**/*.cc'
       - 'sw/microhildesk/**/*.h'
+      - 'sw/microhildesk/**/Makefile'
+      - 'sw/microhildesk/**/CMakeLists.txt'
+      - 'sw/microhildesk/**/*.cmake'
+      - '.github/workflows/microhil_desktop_cc_checker_build.yml'
   pull_request:
     branches: [ master ]
     paths:
       - 'sw/microhildesk/**/*.cc'
       - 'sw/microhildesk/**/*.h'
+      - 'sw/microhildesk/**/Makefile'
+      - 'sw/microhildesk/**/CMakeLists.txt'
+      - 'sw/microhildesk/**/*.cmake'
+      - '.github/workflows/microhil_desktop_cc_checker_build.yml'
 jobs:
   build:
     runs-on: ubuntu-latest

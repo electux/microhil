@@ -21,6 +21,7 @@
 #include "ble_gatt_spp.h"
 #include "ble_ring_buffer.h"
 #include "btstack.h"
+#include "config/nvm_config.h"
 #include "microhil_ble.h"
 #include "pico/cyw43_arch.h"
 #include "pico/stdlib.h"
@@ -36,17 +37,28 @@ static void btstack_packet_handler(
 ) {
   (void)channel;
   (void)size;
+
   if (packet_type != HCI_EVENT_PACKET) {
     return;
   }
-  if (hci_event_packet_get_type(packet) == BTSTACK_EVENT_STATE) {
+
+  switch (hci_event_packet_get_type(packet)) {
+  case BTSTACK_EVENT_STATE:
     if (btstack_event_state_get_state(packet) == HCI_STATE_WORKING) {
       ble_gap_start_advertising();
     }
+    break;
+  case HCI_EVENT_DISCONNECTION_COMPLETE:
+    ble_gap_start_advertising();
+    break;
+  default:
+    break;
   }
 }
 
 bool ble_transport_init(void) {
+  nvm_config_init();
+
   if (cyw43_arch_init()) {
     return false;
   }
@@ -64,6 +76,7 @@ bool ble_transport_init(void) {
   hci_add_event_handler(&s_hci_event_callback_registration);
 
   hci_power_control(HCI_POWER_ON);
+
   return true;
 }
 
@@ -81,4 +94,8 @@ bool ble_transport_send(const uint8_t *data, uint16_t length) {
 
 bool ble_transport_is_connected(void) {
   return ble_gatt_spp_is_connected();
+}
+
+const nvm_ble_config_t *ble_transport_get_config(void) {
+  return nvm_config_get();
 }
