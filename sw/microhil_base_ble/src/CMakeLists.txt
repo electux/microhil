@@ -46,7 +46,7 @@ target_link_libraries("${CMAKE_PROJECT_NAME}"
     ws2812
     ble
     pico_stdlib
-    pico_cyw43_arch_threadsafe_background
+    pico_cyw43_arch_none
     pico_btstack_cyw43
     pico_btstack_ble
 )

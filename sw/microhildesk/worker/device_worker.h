@@ -19,6 +19,7 @@
 #pragma once
 
 #include <atomic>
+#include <chrono>
 #include <com/icom.h>
 #include <com/icom_configurator.h>
 #include <command/formatter/icommand_formatter.h>
@@ -59,7 +60,6 @@ namespace Electux::App::Worker {
         void disconnect() override;
         void configure(const Model::IModel &model) override;
         void send(const std::string &command) override;
-        void setNeedInitialQuery(bool need) override;
         bool isConnected() const override;
         ConnectionState getConnectionState() const override;
         sigc::signal<void(const std::string &)> signal_data_received() override;
@@ -67,6 +67,15 @@ namespace Electux::App::Worker {
 
       private:
         void readLoop();
+        void handleDisconnectedState();
+        bool handleConnectingState(
+            std::chrono::steady_clock::time_point &handshakeStartTime
+        );
+        bool checkHandshakeTimeout(
+            const std::chrono::steady_clock::time_point &handshakeStartTime
+        );
+        void handleDataIO();
+        void processIncomingData(const std::string &dataStr);
         void queryInitialDeviceStatus();
         void updateConnectionState(ConnectionState state);
         void emitData(const std::string &data);
@@ -88,7 +97,6 @@ namespace Electux::App::Worker {
         Glib::Dispatcher m_stateDispatcher;
         std::atomic<bool> m_stopThread{false};
         std::atomic<bool> m_connectRequested{false};
-        std::atomic<bool> m_needInitialQuery{true};
         std::atomic<ConnectionState> m_connectionState{ConnectionState::Disconnected};
         std::atomic<ConnectionState> m_pendingState{ConnectionState::Disconnected};
         sigc::signal<void(const std::string &)> m_signalDataReceived;

@@ -65,6 +65,7 @@ void ble_gap_init(void) {
   );
   gap_advertisements_set_data(adv_data_len, adv_data);
   gap_scan_response_set_data(sizeof(SCAN_RESP_DATA), (uint8_t *)SCAN_RESP_DATA);
+  gap_advertisements_enable(1);
 }
 
 void ble_gap_start_advertising(void) {
